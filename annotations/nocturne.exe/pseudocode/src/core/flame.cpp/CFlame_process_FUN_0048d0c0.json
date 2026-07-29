@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 224,
+    "complexity_score": 222,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
+    "pseudocode_lines": 137,
     "suspect_count": 6,
     "suspect_types": [
       "bit_int_float_compare",
-      "raw_address_constant",
+      "raw_address_pointer_store",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 522
+    "total_lines": 520
   },
   "cross_references": [
     {
@@ -515,27 +515,27 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 85,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x34))(iVar4,&local_94);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
-      "match": "code *",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 86,
+      "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&SStack_6c);",
-      "type": "unresolved_funcptr"
+      "text": "pCVar2 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
     },
     {
-      "description": "Raw hex address 0x48d528 assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 122,
-      "match": "0x48d528",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 113,
+      "match": "*(CCharacter **)(0x01E57284 + 0x150bf8",
       "severity": "moderate",
-      "text": "uVar7 = 0x48d528;",
-      "type": "raw_address_constant"
+      "text": "pCVar2 = *(CCharacter **)(0x01E57284 + 0x150bf8 + this_ptr->enemy_burn_index * 4);",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40ffffff is the IEEE 754 bit pattern of 8f. Rewrite in a .keep as a plain float compare against 8f.",

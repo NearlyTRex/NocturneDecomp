@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stranger_cpp_FUN_0053c800(CDemonActor *param_1)
+; int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
 ; undefined8       Stack[-0x100]:8  local_100
@@ -100,7 +102,7 @@ section .text
     PUSH EDX                            ; 0053c836
     PUSH EBX                            ; 0053c837
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053c838
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xe0],EAX      ; 0053c83d
     FLD float ptr [ESP + 0xe0]          ; 0053c844
     ADD ESP,0x8                         ; 0053c84b
@@ -114,7 +116,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0053c85f
     PUSH EAX                            ; 0053c865
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 0053c866
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xe0],EAX      ; 0053c86b
     FLD float ptr [ESP + 0xe0]          ; 0053c872
     FLD1                                ; 0053c879
@@ -519,7 +521,7 @@ section .text
     MOV dword ptr [ESP + 0x44],ECX      ; 0053cd20
     MOV dword ptr [ESP + 0x48],EDI      ; 0053cd24
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0053cd28
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0053cd2d
     FLD float ptr [ESP + 0x7c]          ; 0053cd30
     FADD float ptr [EAX]                ; 0053cd34
@@ -545,7 +547,7 @@ section .text
     PUSH EBX                            ; 0053cd8c
     MOV dword ptr [ESP + 0xa8],ECX      ; 0053cd8d
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0053cd94
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0053cd99
     PUSH 0x40400000                     ; 0053cd9c
     PUSH 0x3dcccccd                     ; 0053cda1
@@ -557,7 +559,7 @@ section .text
     PUSH dword ptr [ESP + 0x94]         ; 0053cdc6
     PUSH ESI                            ; 0053cdcd | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 0053cdce
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40()
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0xf8],EAX      ; 0053cdd3
     FLD float ptr [ESP + 0xf8]          ; 0053cdda
     FLD1                                ; 0053cde1
@@ -587,7 +589,7 @@ section .text
     PUSH EDI                            ; 0053ce31 | DAT_01e57284
     FSTP float ptr [ESP + 0x30]         ; 0053ce32
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0053ce36
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0xe4],EAX      ; 0053ce3b
     FLD float ptr [ESP + 0xe4]          ; 0053ce42
     ADD ESP,0xc                         ; 0053ce49

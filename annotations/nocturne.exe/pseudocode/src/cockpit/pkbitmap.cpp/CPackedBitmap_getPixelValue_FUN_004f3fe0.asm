@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0(int param_1,int param_2,int param_3)
+; int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0(CPackedBitmap *this_ptr,int x_coordinate,int row_index)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x_coordinate
+; int              Stack[0xc]:4   row_index
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_drawLineListFromBitmap_FUN_0042f260 at 0042f2b3

@@ -2,11 +2,11 @@
 // Address: 0055caf0
 // Address Range: [[0055caf0, 0055cc2c]]
 // Convention: unknown
-// Signature: void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(float *param_1,float param_2)
+// Signature: void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(CVector3f *param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(float *param_1,float param_2)
+void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(CVector3f *param_1,float param_2)
 
 {
   CVector3f *euler_angles;
@@ -25,16 +25,16 @@ void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(float *param_1,float param
   CMatrix3x4f local_84;
   uint local_54 [12];
   CVector3f local_24;
-  byte local_18 [12];
+  CVector3f local_18;
   float local_c;
   
   bVar5 = 0;
-  local_c = param_2 / (param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);
-  local_24.x = *param_1 * local_c;
-  local_24.y = param_1[1] * local_c;
-  local_24.z = param_1[2] * local_c;
-  euler_angles = (CVector3f *)
-                 core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_18,param_1);
+  local_c = param_2 / (param_1->z * param_1->z + param_1->x * param_1->x + param_1->y * param_1->y);
+  local_24.x = param_1->x * local_c;
+  local_24.y = param_1->y * local_c;
+  local_24.z = param_1->z * local_c;
+  euler_angles = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_18,param_1)
+  ;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(&local_84,&local_24,euler_angles);
   core_xform_cpp_inverse_FUN_0055bd00(&local_84);
   puVar3 = local_b4;

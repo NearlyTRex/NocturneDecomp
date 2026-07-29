@@ -14,7 +14,7 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_00494
   
   fVar1 = emission_rate * delta_time + this_ptr->particle_accumulator;
   this_ptr->particle_accumulator = fVar1;
-  dVar2 = (double)floor((double)fVar1);
+  dVar2 = floor((double)fVar1);
   dVar2 = round(dVar2);
   this_ptr->particle_accumulator = this_ptr->particle_accumulator - (float)(int)ROUND(dVar2);
   return (int)ROUND(dVar2);

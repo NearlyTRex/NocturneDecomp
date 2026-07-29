@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_0057f109
 ;   undefined4 DAT_0059cb2c
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059cb34 = 00553f10
+;   CWeapon_full_vtable g_CElephantGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -31,7 +31,7 @@ section .text
     MOV EBX,EAX                         ; 00477723
     ADD EAX,0x150                       ; 00477725
     PUSH EAX                            ; 0047772a
-    MOV dword ptr [EAX + -0x4],0x59cb34 ; 0047772b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059cb34
+    MOV dword ptr [EAX + -0x4],0x59cb34 ; 0047772b | g_CElephantGunVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00477732
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x570],0x41200000 ; 00477737

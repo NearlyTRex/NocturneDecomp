@@ -19,7 +19,7 @@ section .text
         ;   Label: core_vampboss.cpp_FUN_0054c5f0
     PUSH dword ptr [ESP + 0x10]         ; 0054c5f3
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 0054c5f7
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0xc],EAX       ; 0054c5fc
     FLD float ptr [ESP + 0xc]           ; 0054c600
     ADD ESP,0x4                         ; 0054c604

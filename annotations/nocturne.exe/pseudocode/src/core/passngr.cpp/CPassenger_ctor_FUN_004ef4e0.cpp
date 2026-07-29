@@ -10,19 +10,19 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *t
 
 {
   char cVar1;
-  int iVar2;
+  CNPC *pCVar2;
   CMorph *pCVar3;
   char *pcVar4;
   char *pcVar5;
   int *piVar6;
   SMRGLTextureBasic *pSVar7;
   
-  iVar2 = core_npc_cpp_FUN_004ee950(this_ptr);
+  pCVar2 = core_npc_cpp_FUN_004ee950(&this_ptr->base);
   pcVar4 = "wolfbrn.dfm";
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(iVar2 + 0x1f67c));
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar2[1].base.base.scale.y);
   piVar6 = &pCVar3[-1].models[1].textures[0x12].textures[0].base.count;
-  *(byte ***)pCVar3[-0x2a].models[1].textures[0xc].textures[2].texture_name =
-       &PTR_core_passngr_cpp_CPassenger_setup_FUN_004ef6d0_005a1074;
+  *(CCharacter_full_vtable **)pCVar3[-0x2a].models[1].textures[0xc].textures[2].texture_name =
+       &g_CPassengerVTable;
   do {
     cVar1 = *pcVar4;
     *(char *)piVar6 = cVar1;
@@ -46,7 +46,8 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *t
   pcVar5 = "nameMePlease";
   pCVar3[-1].rescale_enabled = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (pCVar3[-0x2a].models[1].textures[0xc].textures[2].texture_name + 4,
+            ((CDeformableModelInstance *)
+             (pCVar3[-0x2a].models[1].textures[0xc].textures[2].texture_name + 4),
              "trainman.dfm");
   pcVar4 = pCVar3[-1].models[1].textures[0x12].textures[1].texture_name + 4;
   pCVar3[1].models[0].parts[0].vertex_count = 0x3f800000;

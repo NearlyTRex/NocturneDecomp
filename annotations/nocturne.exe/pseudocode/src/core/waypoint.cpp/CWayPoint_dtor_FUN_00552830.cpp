@@ -1,24 +1,24 @@
 // Name: core_waypoint.cpp_CWayPoint_dtor_FUN_00552830
 // Address: 00552830
 // Address Range: [[00552830, 0055287d]]
-// Convention: unknown
-// Signature: CDemonActor * core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CDemonActor *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CWayPoint *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CDemonActor *param_1,byte param_2)
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CWayPoint *this_ptr,uint flags)
 
 {
-  CDemonActor *pCVar1;
+  CWayPoint *pCVar1;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CWayPointTypeInfo_005a4110);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CWayPointTypeInfo_005a4110);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(param_1,1);
-  if ((param_2 & 2) == 0) {
+  pCVar1 = (CWayPoint *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)this_ptr,1);
+  if ((flags & 2) == 0) {
     return pCVar1;
   }
   FUN_00564494(pCVar1);

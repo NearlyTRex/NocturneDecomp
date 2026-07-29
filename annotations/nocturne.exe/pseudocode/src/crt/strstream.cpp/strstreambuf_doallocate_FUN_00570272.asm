@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_strstream_cpp_strstreambuf_doallocate_FUN_00570272(streambuf *param_1)
+; int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_00570272(strstreambuf *this_ptr)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

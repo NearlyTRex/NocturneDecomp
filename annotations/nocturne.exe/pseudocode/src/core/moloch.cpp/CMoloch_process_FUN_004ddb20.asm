@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_004ddb42
     PUSH EBX                            ; 004ddb45
     CALL core_charactr.cpp_FUN_004259f0 ; 004ddb46
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ddb4b
     TEST EAX,EAX                        ; 004ddb4e
     JZ 0x004ddb3b                       ; 004ddb50
@@ -151,7 +151,7 @@ section .text
         ;   Label: LAB_004ddbfd
     PUSH EBX                            ; 004ddc00
     CALL core_charactr.cpp_FUN_00428c00 ; 004ddc01
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ddc06
     TEST EAX,EAX                        ; 004ddc09
     JZ 0x004dde4e                       ; 004ddc0b
@@ -193,11 +193,11 @@ section .text
     LEA EAX,[ESP + 0x1acc]              ; 004ddc6b
     PUSH EAX                            ; 004ddc72
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004ddc73
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004ddc78
     PUSH dword ptr [EAX + 0x4]          ; 004ddc7b
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004ddc7e
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x1b08],EAX    ; 004ddc83
     FLD float ptr [ESP + 0x1b08]        ; 004ddc8a
     ADD ESP,0x4                         ; 004ddc91
@@ -302,7 +302,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004dddb6
     PUSH EBX                            ; 004dddb9
     CALL core_charactr.cpp_FUN_0042a150 ; 004dddba
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x21cf4]   ; 004dddbf
     ADD ESP,0x8                         ; 004dddc5
     TEST EDX,EDX                        ; 004dddc8
@@ -570,7 +570,7 @@ section .text
     PUSH EDI                            ; 004de0db
     MOV dword ptr [ESP + 0x1afc],EAX    ; 004de0dc
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004de0e3
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004de0e8
     PUSH EDI                            ; 004de0eb
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004de0ec
@@ -587,7 +587,7 @@ section .text
     PUSH EDX                            ; 004de113 | = "moloch_d.dfm"
     PUSH ESI                            ; 004de114
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004de115
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004de11a
     PUSH ESI                            ; 004de11d
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004de11e

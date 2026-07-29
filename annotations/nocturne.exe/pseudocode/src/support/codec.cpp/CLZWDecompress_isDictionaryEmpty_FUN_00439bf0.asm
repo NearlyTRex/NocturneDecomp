@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(int param_1)
+; int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(CLZWDecompress *this_ptr)
 ;
+; Parameters:
+; CLZWDecompress * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

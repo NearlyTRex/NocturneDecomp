@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(int param_1,int param_2,_ostream *param_3)
+; int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(CLZWDictionary *this_ptr,int code,_ostream *ostream)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   code
+; _ostream *       Stack[0xc]:4   ostream
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWDecompress_finalize_FUN_00439af0 at 00439b0d
@@ -34,7 +38,7 @@ section .text
     PUSH EDX                            ; 00439780
     PUSH EDI                            ; 00439781
     CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760 ; 00439782
-        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760()
+        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(CLZWDictionary * this_ptr, int code, _ostream * ostream)
     MOV ESI,EAX                         ; 00439787
     MOV EAX,dword ptr [EDI + 0x10]      ; 00439789
     ADD EBX,EAX                         ; 0043978c

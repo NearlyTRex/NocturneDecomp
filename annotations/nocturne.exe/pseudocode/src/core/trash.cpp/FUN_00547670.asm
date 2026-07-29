@@ -72,7 +72,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDX      ; 005476d0
     MOV dword ptr [ESP + 0x30],EDX      ; 005476d4
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 005476d8
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 005476dd
     LEA EAX,[ESP + 0x28]                ; 005476e0
     PUSH EAX                            ; 005476e4

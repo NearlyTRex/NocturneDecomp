@@ -59,7 +59,7 @@ section .text
     PUSH EDI                            ; 0053c3c4
     MOV dword ptr [EDI + 0x1fa90],0x0   ; 0053c3c5
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053c3cf
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xe8],EAX      ; 0053c3d4
     FLD float ptr [ESP + 0xe8]          ; 0053c3db
     ADD ESP,0x8                         ; 0053c3e2
@@ -364,7 +364,7 @@ section .text
     PUSH EAX                            ; 0053c7c8
     FSTP float ptr [ESP + 0xbc]         ; 0053c7c9
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0053c7d0
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0053c7d5
     ADD ESP,0x8                         ; 0053c7d8
     FSTP float ptr [EDI + 0x1fcc8]      ; 0053c7db

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)
+; float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   min_value
+; float            Stack[0x8]:4   max_value
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

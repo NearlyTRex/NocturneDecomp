@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 153,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 13,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 41
   },
@@ -144,10 +143,10 @@
         "004d9fc2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mmx.c_getCPUInfo_FUN_004d9f6f",
-    "signature": "bool core_mmx_c_getCPUInfo_FUN_004d9f6f(uint *param_1)"
+    "signature": "int __cdecl core_mmx_c_getCPUInfo_FUN_004d9f6f(SCPUInfo *cpu_info)"
   },
   "function_calls": [
     {
@@ -197,9 +196,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -225,117 +224,61 @@
     "pcode_op_count": 58
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cpu_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SCPUInfo *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bool core_mmx_c_getCPUInfo_FUN_004d9f6f(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != (uint *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (uint)DAT_005bb118;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_005bb118",
       "severity": "mild",
-      "text": "*param_1 = (uint)DAT_005bb118;",
+      "text": "cpu_info->family = (uint)DAT_005bb118;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = (uint)DAT_005bb119;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_005bb119",
       "severity": "mild",
-      "text": "param_1[1] = (uint)DAT_005bb119;",
+      "text": "cpu_info->model = (uint)DAT_005bb119;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = (uint)DAT_005bb11a;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_005bb11a",
       "severity": "mild",
-      "text": "param_1[2] = (uint)DAT_005bb11a;",
+      "text": "cpu_info->stepping = (uint)DAT_005bb11a;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] = (uint)DAT_005bb11c;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_005bb11c",
       "severity": "mild",
-      "text": "param_1[3] = (uint)DAT_005bb11c;",
+      "text": "cpu_info->is_intel = (uint)DAT_005bb11c;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4] = (uint)DAT_005bb121;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005bb121",
       "severity": "mild",
-      "text": "param_1[4] = (uint)DAT_005bb121;",
+      "text": "cpu_info->mmx_supported = (uint)DAT_005bb121;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 != (uint *)0x0;",
-      "type": "unnamed_param"
     }
   ]
 }

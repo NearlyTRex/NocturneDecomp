@@ -14,15 +14,13 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,C
   UOrientationVector *pUVar1;
   CDemonActor *pCVar2;
   CCharacter *this_ptr_00;
-  float *pfVar3;
-  int iVar4;
-  byte local_34 [12];
+  CVector3f *pCVar3;
+  EDeathState EVar4;
+  CVector3f local_34;
   float local_28;
   float local_24;
   float local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
+  CVector3f local_1c;
   
   if ((((target != (CDemonActor *)0x0) && (target != this_ptr->target_actor)) &&
       (this_ptr->target_actor == (CDemonActor *)0x0)) &&
@@ -30,18 +28,18 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,C
                      core_actor_cpp_castToClassHash_FUN_0040d890
                                (target,g_CCharacterActorType_00765a60.name_hash),
       this_ptr_00 == (CCharacter *)0x0 ||
-      (iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00), iVar4 < 1)))
-     ) {
+      (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), (int)EVar4 < 1
+      )))) {
     this_ptr->target_actor = target;
-    local_1c = 0;
-    local_18 = 0;
-    local_14 = 0xc0000000;
-    pfVar3 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                (this_ptr->target_actor,local_34,&local_1c);
+    local_1c.x = 0.0;
+    local_1c.y = 0.0;
+    local_1c.z = -2.0;
+    pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                       (this_ptr->target_actor,&local_34,&local_1c);
     pCVar2 = this_ptr->target_actor;
-    local_28 = (pCVar2->location).position.x + *pfVar3;
-    local_24 = (pCVar2->location).position.y + pfVar3[1];
-    local_20 = (pCVar2->location).position.z + pfVar3[2];
+    local_28 = (pCVar2->location).position.x + pCVar3->x;
+    local_24 = (pCVar2->location).position.y + pCVar3->y;
+    local_20 = (pCVar2->location).position.z + pCVar3->z;
     (this_ptr->base).base.base.location.position.x = local_28;
     (this_ptr->base).base.base.location.position.y = local_24;
     (this_ptr->base).base.base.location.position.z = local_20;

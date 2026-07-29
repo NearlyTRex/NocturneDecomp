@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d26
 ;
 ; Referenced Globals:
-;   undefined1* PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74 = 00473b80
+;   CStrList_vtable g_CStrListVTable
 ;   WatcomTypeInfo g_CStrListTypeInfo_0059caf0
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     JNZ 0x00473ba7                      ; 00473b8a
         ;   XREF to: 00473ba7 (CONDITIONAL_JUMP)  ; LAB_00473ba7
     PUSH EBX                            ; 00473b8c
-    MOV dword ptr [EBX + 0xc],0x59ca74  ; 00473b8d | PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74
+    MOV dword ptr [EBX + 0xc],0x59ca74  ; 00473b8d | g_CStrListVTable
     CALL shape_edittool.cpp_CStrList_clear_FUN_00473c50 ; 00473b94
         ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_clear_FUN_00473c50(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00473b99

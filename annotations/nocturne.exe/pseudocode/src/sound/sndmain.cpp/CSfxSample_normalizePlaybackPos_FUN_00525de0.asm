@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(int param_1,double param_2,undefined4 param_3)
+; double sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0(CSampleInfo *param_1,double param_2,uint param_3)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
@@ -35,7 +35,7 @@ section .text
     PUSH ESI                            ; 00525dfb
     PUSH EBX                            ; 00525dfc
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70 ; 00525dfd
-        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70()
+        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00525e02
     MOV dword ptr [ESP + 0x20],EDX      ; 00525e06
     FLD double ptr [ESP + 0x1c]         ; 00525e0a
@@ -70,7 +70,7 @@ section .text
     PUSH EDX                            ; 00525e56
     PUSH EBX                            ; 00525e57
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70 ; 00525e58
-        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70()
+        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00525e5d
     MOV dword ptr [ESP + 0x20],EDX      ; 00525e61
     FLD double ptr [ESP + 0x1c]         ; 00525e65
@@ -90,7 +90,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2c]      ; 00525e83
     PUSH EDI                            ; 00525e87
     CALL crt_math.c_floor_FUN_005648c0  ; 00525e88
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 00525e8d
     MOV dword ptr [ESP + 0x14],EDX      ; 00525e91
     FLD double ptr [ESP + 0x10]         ; 00525e95

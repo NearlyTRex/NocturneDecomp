@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0
 // Address: 0042b5d0
 // Address Range: [[0042b5d0, 0042b688]]
-// Convention: unknown
-// Signature: CDemonActor * core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CDemonActor *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CDemonActor *param_1,byte param_2)
+CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags)
 
 {
   CFlame *pCVar1;
@@ -17,13 +17,12 @@ CDemonActor * core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CDemonActor *param_
   CDemonActor *pCVar6;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CCharacterTypeInfo_0059b200);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CCharacterTypeInfo_0059b200);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return &this_ptr->base;
   }
-  pCVar1 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
-                     ((CFlame *)(param_1[0x27].create_event + 0x1c),0);
+  pCVar1 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(this_ptr->flames,0);
   pSVar2 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
                      ((SFire *)(pCVar1[-2].base.create_event + 0x10),0);
   pCVar3 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10((CVector3f *)&pSVar2[-0x16].bone_index,0);
@@ -33,7 +32,7 @@ CDemonActor * core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CDemonActor *param_
                      ((CDeformableModelInstance *)(pCVar4[-0x18].filenames[2] + 0x10),0);
   pCVar6 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
                      ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 9),1);
-  if ((param_2 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return pCVar6;
   }
   FUN_00564494(pCVar6);

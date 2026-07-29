@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 240,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 20,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
+      "stack_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 88
@@ -145,9 +144,9 @@
         "0045cb09"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50",
-    "signature": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
   },
   "function_calls": [
     {
@@ -202,9 +201,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -230,10 +229,10 @@
     "pcode_op_count": 202
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 48,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -249,8 +248,60 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDrawSurface_drawAntiAliasedLine_FUN_0045ca50.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 65,
+          "line": 28,
+          "message": "Uninitialized variable: in_stack_00000018",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -262,156 +313,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c58 = *(uint *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c60 = *(uint *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c5c = *(uint *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c64 = *(uint *)(param_1 + 0x1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 + *(int *)(param_1 + 8),param_3 + *(int *)(param_1 + 0xc),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 + *(int *)(param_1 + 8),param_3 + *(int *)(param_1 + 0xc),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_2 + *(int *)(param_1 + 8),param_3 + *(int *)(param_1 + 0xc),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 + *(int *)(param_1 + 8),param_3 + *(int *)(param_1 + 0xc),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 + *(int *)(param_1 + 8),param_5 + *(int *)(param_1 + 0xc),_DAT_01b4d714);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_4 + *(int *)(param_1 + 8),param_5 + *(int *)(param_1 + 0xc),_DAT_01b4d714);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_4 + *(int *)(param_1 + 8),param_5 + *(int *)(param_1 + 0xc),_DAT_01b4d714);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_4 + *(int *)(param_1 + 8),param_5 + *(int *)(param_1 + 0xc),_DAT_01b4d714);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "_DAT_01c00c5c = unaff_EBX;",
-      "type": "unaffected_reg"
+      "text": "(y1 + this_ptr->x,x2 + this_ptr->y,y2 + this_ptr->x,in_stack_00000018 + this_ptr->y,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000018",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(y1 + this_ptr->x,x2 + this_ptr->y,y2 + this_ptr->x,in_stack_00000018 + this_ptr->y,",
+      "type": "static_uninitvar"
     }
   ]
 }

@@ -50,7 +50,7 @@ switchD_004dc309_default:
       ((iVar1 != this_ptr->part_indices[3] && (iVar1 != this_ptr->part_indices[9])))) &&
      (iVar1 != this_ptr->part_indices[10])) goto LAB_004dc56a;
   if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
-    fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
     if ((float)0.33300000000000002 <= fVar2) {
       if (0.66600000000000004 <= (double)fVar2) goto LAB_004dc363;
       iVar1 = this_ptr->part_indices[2];
@@ -102,8 +102,10 @@ LAB_004dc363:
                 ((CCharacter *)this_ptr,this_ptr->part_indices[1],initial_velocity,0);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
                 ((CCharacter *)this_ptr,this_ptr->part_indices[10],initial_velocity,0);
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     }
     core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490
               ((CCharacter *)this_ptr,"limb?.wav");
@@ -114,12 +116,15 @@ LAB_004dc363:
     damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     if ((damage_info->hit_part_index == this_ptr->part_indices[2]) ||
        (damage_info->hit_part_index == this_ptr->part_indices[3])) {
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     }
     if ((damage_info->hit_part_index == this_ptr->part_indices[0]) ||
        (damage_info->hit_part_index == this_ptr->part_indices[1])) {
-      (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+      (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     }
   }
 LAB_004dc56a:

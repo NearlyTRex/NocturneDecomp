@@ -16,7 +16,7 @@ int FUN_00574000(char *param_1)
   while( true ) {
     iVar1 = mbstring_termination_check(param_1);
     if (iVar1 != 0) break;
-    param_1 = (char *)mbtowc_next(param_1);
+    param_1 = mbtowc_next(param_1);
     iVar2 = iVar2 + 1;
   }
   return iVar2;

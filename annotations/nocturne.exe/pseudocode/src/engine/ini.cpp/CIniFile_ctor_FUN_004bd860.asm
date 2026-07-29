@@ -35,7 +35,7 @@ section .text
     PUSH ECX                            ; 004bd877
     PUSH EBX                            ; 004bd878
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0 ; 004bd879
-        ;   XREF to: 004bd8d0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0()
+        ;   XREF to: 004bd8d0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004bd87e
     MOV EAX,EBX                         ; 004bd881
     POP EBX                             ; 004bd883

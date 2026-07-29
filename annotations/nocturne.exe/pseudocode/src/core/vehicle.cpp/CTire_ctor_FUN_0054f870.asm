@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_vehicle_cpp_CTire_ctor_FUN_0054f870(int param_1)
+; CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_0054f870(CTire *this_ptr)
 ;
+; Parameters:
+; CTire *          Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490

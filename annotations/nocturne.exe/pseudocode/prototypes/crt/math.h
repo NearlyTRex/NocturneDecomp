@@ -9,7 +9,7 @@ double __fpureg_safe round(double value);
 
 // Original: crt_math.c_floor_FUN_005648c0
 // Address: 005648c0
-double floor(undefined4 param_1,undefined4 param_2);
+double __crtmath floor(double input_value);
 
 // Original: crt_math.c_pow_FUN_00565ad6
 // Address: 00565ad6
@@ -29,11 +29,11 @@ float10 __fpureg atan2(float10 y,float10 x);
 
 // Original: crt_math.c_modf_FUN_00566fb6
 // Address: 00566fb6
-double modf(undefined4 param_1,double *param_2);
+double __crtmath modf(double value,double *integer_part);
 
 // Original: crt_math.c_ceil_FUN_00567121
 // Address: 00567121
-double ceil(double param_1);
+double __crtmath ceil(double value);
 
 // Original: crt_math.c_set_domain_error_errno_FUN_00568e90
 // Address: 00568e90
@@ -45,7 +45,7 @@ void __cdecl set::range_error_errno(void);
 
 // Original: crt_math.c_math_domain_error_FUN_0056bd22
 // Address: 0056bd22
-undefined8 math::domain_error(double param_1,double param_2,byte param_3);
+double __cdecl math::domain_error(double x,double y,uchar error_type);
 
 // Original: crt_math.c_exp_FUN_0056bdd2
 // Address: 0056bdd2
@@ -61,7 +61,7 @@ float10 __watcallRegister function::dispatch(int function_index);
 
 // Original: crt_math.c_dispatch_divide_FUN_0056bf9f
 // Address: 0056bf9f
-void dispatch::divide(void);
+float10 * __watcallRegister dispatch::divide(float10 *__return_storage_ptr__);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c007
 // Address: 0056c007
@@ -113,7 +113,7 @@ double __cdecl set::math_errno(int errorFlags,double *valuePtr);
 
 // Original: crt_math.c_process_math_error_FUN_005706dd
 // Address: 005706dd
-double process::math_error(uint param_1,undefined4 *param_2,undefined4 *param_3);
+double __cdecl process::math_error(int errorFlags,double *value1,double *value2);
 
 // Original: crt_math.c_handle_math_error_FUN_005707db
 // Address: 005707db
@@ -125,7 +125,7 @@ ulonglong __watcallRegister udivmod64(ulonglong dividend,ulonglong divisor);
 
 // Original: crt_math.c_print_error_message_FUN_005729e8
 // Address: 005729e8
-void print::error_message(int param_1,char *param_2);
+void __cdecl print::error_message(int errorType,char *errorData);
 
 // Original: crt_math.c_report_math_error_FUN_00572a35
 // Address: 00572a35

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(float *param_1)
+; float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; *****************************************************************************
 

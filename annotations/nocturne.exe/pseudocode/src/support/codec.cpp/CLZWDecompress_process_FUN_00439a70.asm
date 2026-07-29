@@ -37,7 +37,7 @@ section .text
     LEA ESI,[EBX + 0x4]                 ; 00439a86
     PUSH ESI                            ; 00439a89
     CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760 ; 00439a8a
-        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760()
+        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(CLZWDictionary * this_ptr, int code, _ostream * ostream)
     MOV EDX,dword ptr [EBX + 0x28]      ; 00439a8f
     ADD ESP,0xc                         ; 00439a92
     TEST EDX,EDX                        ; 00439a95

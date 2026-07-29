@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_loadSingleEdgeList_FUN_0042edc0(void)
+; void __cdecl cockpit_ckptutil_c_loadSingleEdgeList_FUN_0042edc0(char *filename,void **edge_data_out,int *edge_count_out)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; void * *         Stack[0x8]:4   edge_data_out
+; int *            Stack[0xc]:4   edge_count_out
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4

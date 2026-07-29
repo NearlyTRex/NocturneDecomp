@@ -15,7 +15,7 @@ void __cdecl wincore_winrun_cpp_sleep_FUN_00559cc0(double seconds)
     Sleep(0);
     return;
   }
-  dVar1 = (double)ceil(seconds * 1000);
+  dVar1 = ceil(seconds * 1000);
   dVar1 = round(dVar1);
   Sleep((DWORD)(longlong)ROUND(dVar1));
   return;

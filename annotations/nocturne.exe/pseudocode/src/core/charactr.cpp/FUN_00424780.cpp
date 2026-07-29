@@ -13,9 +13,10 @@ float core_charactr_cpp_FUN_00424780(void)
 {
   float fVar1;
   float fVar2;
+  float in_stack_00000004;
   float in_stack_00000008;
   
-  fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00();
+  fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(in_stack_00000004);
   fVar2 = -in_stack_00000008;
   if ((-in_stack_00000008 <= fVar1) && (fVar2 = in_stack_00000008, fVar1 <= in_stack_00000008)) {
     return fVar1;

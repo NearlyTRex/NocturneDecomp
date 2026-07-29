@@ -47,7 +47,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (DAT_005ae704,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,&DAT_01c08d08,0);
+              (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
     local_18 = this_ptr->drag_factor;
     local_54 = 0;
     local_64.z = (int)-local_18;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool sound_sndmain_cpp_isSampleLoaded_FUN_005279b0(void)
+; int __cdecl sound_sndmain_cpp_isSampleLoaded_FUN_005279b0(char *sample_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   sample_name
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSample_FUN_00522480

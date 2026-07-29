@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pod_cpp_CPod_remount_FUN_004f8970(int *param_1)
+; void __cdecl engine_pod_cpp_CPod_remount_FUN_004f8970(CPod *this_ptr)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
 ; undefined1       Stack[-0x10f]:1  local_10f

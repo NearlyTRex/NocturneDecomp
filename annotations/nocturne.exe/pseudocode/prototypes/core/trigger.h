@@ -81,4 +81,4 @@ int __cdecl CTrigger::containsActor(CTrigger *this_ptr,CDemonActor *actor);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_00548a50
 // Address: 00548a50
-CDemonActor * CTrigger::dtor(CDemonActor *param_1,byte param_2);
+CTrigger * __cdecl CTrigger::dtor(CTrigger *this_ptr,uint flags);

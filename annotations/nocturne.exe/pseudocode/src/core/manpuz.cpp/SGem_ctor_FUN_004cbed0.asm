@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_manpuz_cpp_SGem_ctor_FUN_004cbed0(int param_1)
+; SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_004cbed0(SGem *this_ptr)
 ;
+; Parameters:
+; SGem *           Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080

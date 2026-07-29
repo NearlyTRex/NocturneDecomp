@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_00461d80(int *param_1,int *param_2)
+; int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_00461d80(SFace **face_ptr_a,SFace **face_ptr_b)
 ;
+; Parameters:
+; SFace * *        Stack[0x4]:4   face_ptr_a
+; SFace * *        Stack[0x8]:4   face_ptr_b
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 at 00461e95

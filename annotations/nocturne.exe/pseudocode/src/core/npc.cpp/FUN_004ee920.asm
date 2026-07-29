@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004ee932
         ;   Label: LAB_004ee932
     CALL core_npc.cpp_FUN_004ee950      ; 004ee933
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004ee938
     RET                                 ; 004ee93b
 

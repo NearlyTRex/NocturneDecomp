@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 315,
+    "complexity_score": 210,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 23,
+    "suspect_count": 13,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -137,7 +137,6 @@
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 125
@@ -151,9 +150,9 @@
         "004f2044"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80",
-    "signature": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *position,int depth,int red,int green,int fog)"
   },
   "function_calls": [
     {
@@ -214,9 +213,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -250,10 +249,10 @@
     "pcode_op_count": 317
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 64,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -283,6 +282,41 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "depth",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -327,46 +361,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
       "match": "aiStackY_1010",
@@ -375,19 +369,11 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);",
+      "text": "core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,position);",
       "type": "undefined_data"
     },
     {
@@ -429,38 +415,6 @@
       "severity": "moderate",
       "text": "this_ptr = *(CPathMap **)(iVar1 + 0x1e312fc);",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffffdc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

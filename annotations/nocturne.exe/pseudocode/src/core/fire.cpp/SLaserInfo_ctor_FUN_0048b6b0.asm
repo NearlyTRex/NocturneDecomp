@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(undefined4 *param_1)
+; SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo *this_ptr)
 ;
+; Parameters:
+; SLaserInfo *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_emitter.cpp_FUN_00478f80 at 00478fe4

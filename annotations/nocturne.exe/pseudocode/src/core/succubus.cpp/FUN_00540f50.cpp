@@ -7,6 +7,7 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005415cb) */
+/* WARNING: Type propagation algorithm not settling */
 
 void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
 
@@ -30,10 +31,16 @@ void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
   char *pcVar15;
   CDeformableModelInstance *pCVar16;
   char (*pacVar17) [40];
-  CVector3f *in_stack_ffffff8c;
   CVector3f *pCVar18;
   float fVar19;
   float fVar20;
+  CVector3f local_68;
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
   CVector3f local_44;
   float local_38;
   float local_34;
@@ -42,9 +49,9 @@ void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
   SMotion *local_20;
   float local_1c;
   CHotDemon *local_18;
-  uint local_14;
+  float local_14;
   
-  iVar10 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  iVar10 = core_charactr_cpp_FUN_004259f0(&param_1->base,param_2);
   if (iVar10 == 0) {
     return;
   }
@@ -75,11 +82,10 @@ void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                       (&pCVar16->motion_controller);
   uVar13 = pSVar11->state_index;
-  iVar10 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
+  iVar10 = core_charactr_cpp_FUN_00428c00(&param_1->base,param_2);
   if (iVar10 == 0) {
     if (uVar13 == 0) {
-      (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
-                (&param_1->base,(int)param_2,in_stack_ffffff8c);
+      (*(((param_1->base).base.vtable._ue)->_ue).updateVictim)(param_1,param_2);
       pCVar5 = param_1->victim;
       if (pCVar5 == (CCharacter *)0x0) {
         iVar10 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
@@ -100,8 +106,7 @@ void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
       }
     }
     else if ((uVar13 < 2) || (uVar13 == 2)) {
-      (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
-                (&param_1->base,(int)param_2,in_stack_ffffff8c);
+      (*(((param_1->base).base.vtable._ue)->_ue).updateVictim)(param_1,param_2);
       if (param_1->victim == (CCharacter *)0x0) {
         iVar10 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
         pCVar16 = &(param_1->base).model;
@@ -115,14 +120,17 @@ void core_succubus_cpp_FUN_00540f50(CEnemy *param_1,float param_2)
         }
       }
       else {
-        fVar19 = 0.17453292;
-        pCVar18 = (CVector3f *)0x3f000000;
+        fVar20 = 0.17453292;
+        fVar19 = 0.5;
         (param_1->base).model.accumulated_root_motion.z = 0.0;
         (param_1->base).model.accumulated_root_motion.y =
              (param_1->base).model.accumulated_root_motion.z;
         (param_1->base).model.accumulated_root_motion.x =
              (param_1->base).model.accumulated_root_motion.y;
-        fVar20 = 0.0;
+        local_68.x = 0.0;
+        local_68.z = 1.5f;
+        pCVar18 = &local_68;
+        local_68.y = 0.0;
         path_map = (*((param_1->victim->base).vtable._ub)->getPathMap)(&param_1->victim->base);
         iVar10 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
                            (&param_1->base,&(param_1->victim->base).location.position,path_map,
@@ -188,13 +196,17 @@ LAB_00541090:
   iVar10 = core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(&param_1->base);
   if (iVar10 != 0) {
     (param_1->base).velocity.y = (param_1->base).velocity.y - param_2 * (float)32;
+    local_5c = (param_1->base).velocity.x * param_2;
+    local_58 = (param_1->base).velocity.y * param_2;
     pCVar18 = &(param_1->base).position_delta;
+    local_54 = param_2 * (param_1->base).velocity.z;
     pCVar2 = &(param_1->base).model.accumulated_root_motion;
-    local_44.x = (param_1->base).velocity.x * param_2 + pCVar18->x + pCVar2->x;
-    local_44.y = (param_1->base).velocity.y * param_2 + (param_1->base).position_delta.y +
-                 (param_1->base).model.accumulated_root_motion.y;
-    local_44.z = param_2 * (param_1->base).velocity.z + (param_1->base).position_delta.z +
-                 (param_1->base).model.accumulated_root_motion.z;
+    local_50 = local_5c + pCVar18->x;
+    local_4c = local_58 + (param_1->base).position_delta.y;
+    local_48 = local_54 + (param_1->base).position_delta.z;
+    local_44.x = local_50 + pCVar2->x;
+    local_44.y = local_4c + (param_1->base).model.accumulated_root_motion.y;
+    local_44.z = local_48 + (param_1->base).model.accumulated_root_motion.z;
     (param_1->base).position_delta.z = 0.0;
     (param_1->base).position_delta.y = (param_1->base).position_delta.z;
     pCVar18->x = (param_1->base).position_delta.y;
@@ -207,7 +219,7 @@ LAB_00541090:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(&param_1->base);
   pCVar16 = &(param_1->base).model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar16);
-  core_charactr_cpp_FUN_0042a150();
+  core_charactr_cpp_FUN_0042a150(&param_1->base,param_2);
   local_20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&pCVar16->motion_controller);
   local_1c = (param_1->base).model.motion_controller.current_frame_number;
@@ -218,7 +230,7 @@ LAB_00541090:
   if ((*(int *)(param_1[1].base.descriptive_name + 0x38) != 0) &&
      (fVar19 = *(float *)(param_1[1].base.descriptive_name + 0x3c) + param_2,
      *(float *)(param_1[1].base.descriptive_name + 0x3c) = fVar19, 4.0f < fVar19)) {
-    this_ptr = (CHotDemon *)FUN_0056497c();
+    this_ptr = (CHotDemon *)FUN_0056497c(0xbd58);
     pCVar12 = (CHotDemon *)0x0;
     if (this_ptr != (CHotDemon *)0x0) {
       pCVar12 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(this_ptr);
@@ -283,9 +295,9 @@ LAB_00541090:
     if ((iVar10 == 0) &&
        (param_2 = *(float *)(param_1[1].base.descriptive_name + 0x34) - param_2,
        *(float *)(param_1[1].base.descriptive_name + 0x34) = param_2, param_2 < 0.0)) {
-      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,10.0);
       pCVar6 = (param_1->base).base.vtable._ub;
-      *(uint *)(param_1[1].base.descriptive_name + 0x34) = local_14;
+      *(float *)(param_1[1].base.descriptive_name + 0x34) = local_14;
       uVar13 = (*pCVar6->playSound)((CDemonActor *)param_1,"succubus-horny-?.wav");
       *(uint *)(param_1[1].base.descriptive_name + 0x30) = uVar13;
       return;

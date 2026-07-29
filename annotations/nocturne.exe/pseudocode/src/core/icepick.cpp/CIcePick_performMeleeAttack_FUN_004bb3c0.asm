@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CCharacter *param_1,int param_2)
+; void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick *this_ptr,int bone_index)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
@@ -86,7 +89,7 @@ section .text
     PUSH 0x43020000                     ; 004bb42a
     PUSH 0x42b40000                     ; 004bb42f
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004bb434
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x60],EAX      ; 004bb439
     MOV EDX,0x3f000000                  ; 004bb43d
     FLD float ptr [ESP + 0x60]          ; 004bb442

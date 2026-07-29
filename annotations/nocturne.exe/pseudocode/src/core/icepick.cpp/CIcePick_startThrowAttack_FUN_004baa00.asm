@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004baa00(int param_1)
+; int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004baa00(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_icepick.cpp_FUN_004b9fe0 at 004ba4ba

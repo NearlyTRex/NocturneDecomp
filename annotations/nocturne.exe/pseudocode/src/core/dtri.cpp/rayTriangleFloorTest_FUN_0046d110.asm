@@ -261,7 +261,7 @@ section .text
     PUSH ESI                            ; 0046d33c
     PUSH EBX                            ; 0046d33d
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 0046d33e
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x80],EAX      ; 0046d343
     FLD float ptr [ESP + 0x80]          ; 0046d34a
     FLDZ                                ; 0046d351
@@ -363,7 +363,7 @@ section .text
     PUSH EAX                            ; 0046d451
     PUSH EBX                            ; 0046d452
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 0046d453
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x80],EAX      ; 0046d458
     FLD float ptr [ESP + 0x80]          ; 0046d45f
     ADD ESP,0xc                         ; 0046d466

@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_00504ee5
     PUSH EBP                            ; 00504eea
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00504eeb
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00504ef0
     PUSH EBP                            ; 00504ef3
     CALL crt_stdio.c_ftell_FUN_00566e70 ; 00504ef4
@@ -120,7 +120,7 @@ section .text
     PUSH 0x58fbd4                       ; 00504f1e | = "%[^,], %[^,], %[^\n]\n"
     PUSH EBP                            ; 00504f23
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00504f24
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x14                        ; 00504f29
     CMP EAX,0x3                         ; 00504f2c
     JZ 0x00504f60                       ; 00504f2f

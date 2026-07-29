@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_getc_helper_FUN_00563290(int param_1)
+; int __cdecl crt_unknown_c_getc_helper_FUN_00563290(scanf_state_t *state)
 ;
+; Parameters:
+; scanf_state_t *  Stack[0x4]:4   state
 ;
 ; XREF[1]:
 ;   crt_unknown.c_vfscanf_FUN_005632c8 at 00563328

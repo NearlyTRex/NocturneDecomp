@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 005619e8
     PUSH EBX                            ; 005619e9
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 005619ea
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005619ef
     LEA EAX,[EBP + -0x66]               ; 005619f2
     PUSH EAX                            ; 005619f5
@@ -129,7 +129,7 @@ section .text
     PUSH EAX                            ; 00561a18
     PUSH EBX                            ; 00561a19
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00561a1a
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [EBP + 0x72]          ; 00561a1f
     FLD float ptr [EBP + 0x76]          ; 00561a22
     FLD float ptr [EBP + 0x7a]          ; 00561a25
@@ -150,7 +150,7 @@ section .text
     PUSH EAX                            ; 00561a4b
     FSTP float ptr [EBP + 0x32]         ; 00561a4c
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00561a4f
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00561a54
     PUSH 0x40c00000                     ; 00561a57
     LEA EAX,[EBP + 0x12]                ; 00561a5c

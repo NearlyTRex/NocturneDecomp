@@ -34,6 +34,6 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter 
   this_ptr->walk_to_target = target;
   this_ptr->walk_min_distance = min_distance;
   this_ptr->walk_max_distance = max_distance;
-  (*(((this_ptr->base).vtable._uc)->_uc).setDoorTarget)(this_ptr,(CDoor *)0xbf800000);
+  (*(((this_ptr->base).vtable._uc)->_uc).setWalkTimeout)(this_ptr,-1.0);
   return;
 }

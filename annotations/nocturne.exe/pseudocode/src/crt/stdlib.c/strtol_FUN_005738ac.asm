@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdlib_c_strtol_FUN_005738ac(char *param_1,char **param_2,int param_3)
+; long __cdecl crt_stdlib_c_strtol_FUN_005738ac(char *str,char **endptr,int base)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; char * *         Stack[0x8]:4   endptr
+; int              Stack[0xc]:4   base
 ;
 ; XREF[1]:
 ;   FUN_00572b70 at 00572bd8

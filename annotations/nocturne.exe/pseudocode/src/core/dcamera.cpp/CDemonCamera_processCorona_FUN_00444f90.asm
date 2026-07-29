@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCamera *param_1)
+; void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_00509a80 at 00509b2d

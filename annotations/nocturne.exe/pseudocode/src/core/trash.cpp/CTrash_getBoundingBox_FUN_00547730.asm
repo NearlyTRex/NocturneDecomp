@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(int param_1,float *param_2)
+; float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(CDemonActor *param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -59,7 +59,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EDX      ; 00547796
     MOV dword ptr [ESP + 0x20],EDX      ; 0054779a
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0054779e
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 005477a3
     FLD float ptr [EBX]                 ; 005477a6
     FADD float ptr [ESP]                ; 005477a8

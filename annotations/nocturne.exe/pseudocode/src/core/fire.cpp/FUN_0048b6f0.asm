@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)
+; void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   origin
+; CVector3f *      Stack[0xc]:4   direction
+; SLaserInfo *     Stack[0x10]:4   laser_info
+; int              Stack[0x14]:4   recursion_depth
 ; Local Variables:
 ; undefined4       Stack[-0x290]:4  local_290
 ; undefined4       Stack[-0x28c]:4  local_28c
@@ -239,7 +245,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0048b772 | DAT_005be368
     PUSH ECX                            ; 0048b778 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00511840 ; 0048b779
-        ;   XREF to: 00511840 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00511840()
+        ;   XREF to: 00511840 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00511840(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     MOV EAX,dword ptr [EBP + 0x86]      ; 0048b77e
     MOV EAX,dword ptr [EAX]             ; 0048b784
     MOV dword ptr [EBP + -0x62],EAX     ; 0048b786
@@ -267,7 +273,7 @@ section .text
     PUSH EDI                            ; 0048b7cc | DAT_01e57284
     FSTP float ptr [EBP + 0xffffff52]   ; 0048b7cd
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0048b7d3
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     FLDZ                                ; 0048b7d8
     MOV dword ptr [EBP + 0x6a],EAX      ; 0048b7da
     ADD ESP,0xc                         ; 0048b7dd
@@ -385,7 +391,7 @@ section .text
     PUSH EAX                            ; 0048b945
     PUSH EDI                            ; 0048b946
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0048b947
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     MOV EDX,dword ptr [EBP + 0x66]      ; 0048b94c
     ADD ESP,0xc                         ; 0048b94f
     CMP EAX,EDX                         ; 0048b952
@@ -694,7 +700,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x82]      ; 0048bd00
     PUSH EAX                            ; 0048bd06
     CALL core_fire.cpp_FUN_0048b6f0     ; 0048bd07
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 0048bd0c
     MOV EDX,dword ptr [0x005be368]      ; 0048bd0f | DAT_005be368
     PUSH EDX                            ; 0048bd15 | DAT_01e57284
@@ -875,7 +881,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x82]      ; 0048bf81
     PUSH ECX                            ; 0048bf87
     CALL core_fire.cpp_FUN_0048b6f0     ; 0048bf88
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     FLD float ptr [EBX + 0x48]          ; 0048bf8d
     FLD1                                ; 0048bf90
     FSUBRP                              ; 0048bf92

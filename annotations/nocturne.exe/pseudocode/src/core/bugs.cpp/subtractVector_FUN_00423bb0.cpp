@@ -1,21 +1,16 @@
 // Name: core_bugs.cpp_subtractVector_FUN_00423bb0
 // Address: 00423bb0
 // Address Range: [[00423bb0, 00423bd0]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_subtractVector_FUN_00423bb0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_bugs_cpp_subtractVector_FUN_00423bb0(CVector3f *dest,CVector3f *src)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_bugs_cpp_subtractVector_FUN_00423bb0(void)
+CVector3f * __cdecl core_bugs_cpp_subtractVector_FUN_00423bb0(CVector3f *dest,CVector3f *src)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  
-  *in_stack_00000004 = *in_stack_00000004 - *in_stack_00000008;
-  in_stack_00000004[1] = in_stack_00000004[1] - in_stack_00000008[1];
-  in_stack_00000004[2] = in_stack_00000004[2] - in_stack_00000008[2];
-  return;
+  dest->x = dest->x - src->x;
+  dest->y = dest->y - src->y;
+  dest->z = dest->z - src->z;
+  return dest;
 }

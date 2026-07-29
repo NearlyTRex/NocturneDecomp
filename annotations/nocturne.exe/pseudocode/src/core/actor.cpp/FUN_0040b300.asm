@@ -97,7 +97,7 @@ section .text
     MOV dword ptr [ESP + 0x1cc],EDI     ; 0040b39c
     MOV dword ptr [ESP + 0x1d0],EDI     ; 0040b3a3
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0040b3aa
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040b3af
     LEA EDX,[ESP + 0x208]               ; 0040b3b2
     FLD float ptr [ESP + 0x1d8]         ; 0040b3b9
@@ -133,7 +133,7 @@ section .text
     MOV dword ptr [ESP + 0x200],EDX     ; 0040b443
     MOV dword ptr [ESP + 0x204],EDI     ; 0040b44a
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0040b451
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040b456
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0040b459
     PUSH EBX                            ; 0040b45f
@@ -402,7 +402,7 @@ section .text
     ADD ESP,0x10                        ; 0040b783
     PUSH EDI                            ; 0040b786
     CALL core_glass.cpp_FUN_004aded0    ; 0040b787
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040b78c
     TEST EAX,EAX                        ; 0040b78f
     JZ 0x0040b4bd                       ; 0040b791
@@ -444,7 +444,7 @@ section .text
     MOV EAX,[0x005be368]                ; 0040b7e2 | DAT_005be368
     PUSH EAX                            ; 0040b7e7 | DAT_01e57284
     CALL core_setcolid.cpp_FUN_00511740 ; 0040b7e8
-        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00511740()
+        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511740(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040b7ed
     MOV EDX,dword ptr [ESP + 0x278]     ; 0040b7f0
     TEST EDX,EDX                        ; 0040b7f7
@@ -461,7 +461,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0040b818 | DAT_005be368
     PUSH EDX                            ; 0040b81e | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0040b81f
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x294],EAX     ; 0040b824
     FLD float ptr [ESP + 0x294]         ; 0040b82b
     ADD ESP,0xc                         ; 0040b832
@@ -732,7 +732,7 @@ section .text
     ADD ESP,0x10                        ; 0040bbb7
     PUSH EDI                            ; 0040bbba
     CALL core_glass.cpp_FUN_004aded0    ; 0040bbbb
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0040bbc0
     TEST EAX,EAX                        ; 0040bbc3
     JZ 0x0040b7b9                       ; 0040bbc5

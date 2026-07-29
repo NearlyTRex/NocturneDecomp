@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_print_error_message_FUN_005729e8(int param_1,char *param_2)
+; void __cdecl crt_math_c_print_error_message_FUN_005729e8(int errorType,char *errorData)
 ;
+; Parameters:
+; int              Stack[0x4]:4   errorType
+; char *           Stack[0x8]:4   errorData
 ;
 ; XREF[1]:
 ;   crt_math.c_report_math_error_FUN_00572a35 at 00572a55

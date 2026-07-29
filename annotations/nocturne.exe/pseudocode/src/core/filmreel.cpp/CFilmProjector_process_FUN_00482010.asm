@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CActorDestination *param_1,float param_2)
+; void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjector *this_ptr,float delta_time)
 ;
+; Parameters:
+; CFilmProjector * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_35_loop_wav_00580fe1

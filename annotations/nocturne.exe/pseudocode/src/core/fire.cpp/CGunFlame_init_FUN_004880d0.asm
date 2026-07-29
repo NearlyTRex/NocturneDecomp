@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 004881fc
     PUSH EBX                            ; 004881fd
     CALL core_charactr.cpp_FUN_00427730 ; 004881fe
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 00488203
     JMP 0x00488118                      ; 00488206
         ;   XREF to: 00488118 (UNCONDITIONAL_JUMP)  ; LAB_00488118

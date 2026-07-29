@@ -197,7 +197,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0055ef65
     PUSH EBX                            ; 0055ef6b
     CALL core_charactr.cpp_FUN_004259f0 ; 0055ef6c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055ef71
     TEST EAX,EAX                        ; 0055ef74
     JNZ 0x0055ef80                      ; 0055ef76
@@ -530,7 +530,7 @@ section .text
     PUSH 0x41c80000                     ; 0055f30a
     PUSH 0x41700000                     ; 0055f30f
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0055f314
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     LEA EDX,[EBP + 0xfffffcde]          ; 0055f319
     MOV dword ptr [EBP + 0x76],EAX      ; 0055f31f
     ADD ESP,0x8                         ; 0055f322
@@ -868,7 +868,7 @@ section .text
     PUSH EAX                            ; 0055f74d
     PUSH EBX                            ; 0055f74e
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0055f74f
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     FLD1                                ; 0055f754
     FLD float ptr [EAX]                 ; 0055f756
     FXCH                                ; 0055f758
@@ -1052,7 +1052,7 @@ section .text
     PUSH EBX                            ; 0055f95a
     MOV dword ptr [EBP + 0x42],EAX      ; 0055f95b
     CALL core_charactr.cpp_FUN_00428c00 ; 0055f95e
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055f963
     TEST EAX,EAX                        ; 0055f966
     JZ 0x0056095b                       ; 0055f968
@@ -1124,7 +1124,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0055fa1f
     PUSH EBX                            ; 0055fa25
     CALL core_charactr.cpp_FUN_0042a150 ; 0055fa26
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055fa2b
     CMP dword ptr [EBX + 0xbc90],0x0    ; 0055fa2e
         ;   Label: LAB_0055fa2e
@@ -1141,7 +1141,7 @@ section .text
     PUSH EDX                            ; 0055fa61
     PUSH EBX                            ; 0055fa62
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 0055fa63
-        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0()
+        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xbde0]    ; 0055fa68
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x2290] ; 0055fa6e
     ADD ESP,0x10                        ; 0055fa75
@@ -1155,7 +1155,7 @@ section .text
     PUSH EDI                            ; 0055fa8e
     PUSH EBX                            ; 0055fa8f
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 0055fa90
-        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0()
+        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0055fa95
     MOV EAX,dword ptr [EBX + 0xbdcc]    ; 0055fa98
         ;   Label: LAB_0055fa98
@@ -1165,7 +1165,7 @@ section .text
     PUSH EDX                            ; 0055faaa
     PUSH EBX                            ; 0055faab
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 0055faac
-        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0()
+        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xbde8]    ; 0055fab1
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x2290] ; 0055fab7
     ADD ESP,0x10                        ; 0055fabe
@@ -1179,7 +1179,7 @@ section .text
     PUSH EDI                            ; 0055fad7
     PUSH EBX                            ; 0055fad8
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 0055fad9
-        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0()
+        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0055fade
     MOV EAX,dword ptr [EBX + 0xbdb4]    ; 0055fae1
         ;   Label: LAB_0055fae1
@@ -1519,7 +1519,7 @@ section .text
     PUSH dword ptr [EBX + 0x20]         ; 0055fef0
     PUSH EDX                            ; 0055fef3 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 0055fef4
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40()
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV ECX,dword ptr [0x005be368]      ; 0055fef9 | DAT_005be368
     MOV dword ptr [EBP + 0x76],EAX      ; 0055feff
     ADD ESP,0x20                        ; 0055ff02
@@ -1928,7 +1928,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 005603c4
     MOV dword ptr [EAX],EDX             ; 005603c7
     CALL core_zombie.cpp_FUN_00561010   ; 005603c9
-        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_00561010()
+        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_FUN_00561010(CZombie * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005603ce
     TEST EAX,EAX                        ; 005603d1
     JNZ 0x0055fc6b                      ; 005603d3
@@ -2159,7 +2159,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe72]          ; 0056065d
     PUSH EAX                            ; 00560663
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00560664
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 00560669
     FABS                                ; 0056066c
     ADD ESP,0x8                         ; 0056066e
@@ -2491,7 +2491,7 @@ section .text
     PUSH EAX                            ; 005609ff
     PUSH EBX                            ; 00560a00
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00560a01
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 00560a06
     LEA EAX,[EBX + 0x20]                ; 00560a08
     FLD float ptr [EDX]                 ; 00560a0b
@@ -2655,7 +2655,7 @@ section .text
     LEA EAX,[EBP + 0xffffff62]          ; 00560c08
     PUSH EAX                            ; 00560c0e
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00560c0f
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 00560c14
     FABS                                ; 00560c17
     ADD ESP,0x8                         ; 00560c19
@@ -2707,7 +2707,7 @@ section .text
     PUSH EAX                            ; 00560cac
     PUSH EBX                            ; 00560cad
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 00560cae
-        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0()
+        ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     MOV EAX,dword ptr [EBX + 0xbdf4]    ; 00560cb3
     ADD ESP,0x10                        ; 00560cb9
     MOV dword ptr [EBX + EAX*0x4 + 0x2290],0x1 ; 00560cbc

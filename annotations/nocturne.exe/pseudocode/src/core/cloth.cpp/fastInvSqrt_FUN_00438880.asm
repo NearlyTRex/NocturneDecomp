@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_cloth_cpp_fastInvSqrt_FUN_00438880(void)
+; float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00438880(float dist_sq)
 ;
+; Parameters:
+; float            Stack[0x4]:4   dist_sq
 ;
 ; Referenced Globals:
 ;   undefined4 CVector3f_01c70708.z

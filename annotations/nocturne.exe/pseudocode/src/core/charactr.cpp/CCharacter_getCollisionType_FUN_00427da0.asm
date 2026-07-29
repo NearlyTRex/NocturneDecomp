@@ -10,9 +10,9 @@
 ; XREF[14]:
 ;   core_armour.cpp_FUN_0040fc10 at 0040fc1a
 ;   core_batcreat.cpp_FUN_004132a0 at 004132aa
-;   core_batman.cpp_FUN_00414c40 at 00414c56
+;   core_batman.cpp_CBatman_getCollisionType_FUN_00414c40 at 00414c56
 ;   core_biggs.cpp_FUN_00415a10 at 00415a1a
-;   core_boneguy.cpp_FUN_0041a3e0 at 0041a3f6
+;   core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_0041a3e0 at 0041a3f6
 ;   core_dracbrid.cpp_FUN_0045a240 at 0045a256
 ;   core_gargoyle.cpp_FUN_004a88d0 at 004a88da
 ;   core_hotdemon.cpp_FUN_004b99b0 at 004b99ba

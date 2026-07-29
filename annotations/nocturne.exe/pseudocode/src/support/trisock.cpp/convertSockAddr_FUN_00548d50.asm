@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * support_trisock_cpp_convertSockAddr_FUN_00548d50(undefined4 *param_1,short *param_2)
+; SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_00548d50(SNetworkAddr *dest_addr,SOCKADDR *src_addr)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   dest_addr
+; SOCKADDR *       Stack[0x8]:4   src_addr
 ;
 ; XREF[3]:
 ;   support_trisock.cpp_acceptConnection_FUN_00549170 at 005491c2
@@ -45,7 +48,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00548d77
     PUSH EAX                            ; 00548d7b
     CALL support_trisock.cpp_copyIPAddress_FUN_00548ae0 ; 00548d7c
-        ;   XREF to: 00548ae0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_copyIPAddress_FUN_00548ae0()
+        ;   XREF to: 00548ae0 (UNCONDITIONAL_CALL)  ; uint * support_trisock.cpp_copyIPAddress_FUN_00548ae0(uint * dest_ip, uint * src_ip)
     MOV EAX,dword ptr [EAX]             ; 00548d81
     ADD ESP,0x8                         ; 00548d83
     MOV dword ptr [EBX],EAX             ; 00548d86

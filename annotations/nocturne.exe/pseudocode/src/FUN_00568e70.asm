@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00568e70(void)
+; int __cdecl FUN_00568e70(uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[1]:
 ;   crt_unknown.c_InternalHeapAlloc_FUN_005635c0 at 0056368f

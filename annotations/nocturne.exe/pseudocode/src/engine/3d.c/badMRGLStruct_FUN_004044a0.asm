@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_3d_c_badMRGLStruct_FUN_004044a0(undefined4 param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004044a0(SMRGLHeaderExtended *prim)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_005774e5

@@ -1,18 +1,19 @@
 // Name: engine_font.cpp_FUN_00490d70
 // Address: 00490d70
 // Address Range: [[00490d70, 00490dd4]]
-// Convention: unknown
-// Signature: void engine_font_cpp_FUN_00490d70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,char *param_6,va_list_t param_7)
+// Convention: __cdecl
+// Signature: int __cdecl engine_font_cpp_FUN_00490d70(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 
 #include "nocturne.h"
 
-void engine_font_cpp_FUN_00490d70(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,char *param_6,va_list_t param_7)
+int __cdecl engine_font_cpp_FUN_00490d70(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 
 {
+  int iVar1;
   char acStack_1010 [4096];
   
-  _vsprintf(acStack_1010,param_6,param_7);
-  engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0
-            (param_1,param_2,param_3,param_4,param_5,acStack_1010);
-  return;
+  _vsprintf(acStack_1010,format_string,args);
+  iVar1 = engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0
+                    (this_ptr,center_x,y_pos,color_mode,color_value,acStack_1010);
+  return iVar1;
 }

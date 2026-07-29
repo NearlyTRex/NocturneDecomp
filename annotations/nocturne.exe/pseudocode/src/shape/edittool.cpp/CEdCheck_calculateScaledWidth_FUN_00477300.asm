@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00477301
     PUSH EDX                            ; 00477305
     CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340 ; 00477306
-        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340()
+        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340(CEdCheck * this_ptr)
     IMUL EAX,dword ptr [0x005b761c]     ; 0047730b | DAT_005b761c
     LEA EDX,[EAX*0x4 + 0x0]             ; 00477312
     SUB EDX,EAX                         ; 00477319

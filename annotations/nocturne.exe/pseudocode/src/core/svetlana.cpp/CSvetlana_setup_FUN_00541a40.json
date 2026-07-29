@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 255,
+    "complexity_score": 223,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 46,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 75,
-    "suspect_count": 17,
+    "pseudocode_lines": 83,
+    "suspect_count": 13,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 300
+    "total_lines": 308
   },
   "cross_references": [],
   "function": {
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_svetlana.cpp_CSvetlana_setup_FUN_00541a40",
-    "signature": "void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(int param_1)"
+    "signature": "void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CHero *param_1)"
   },
   "function_calls": [
     {
@@ -531,20 +531,20 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(int param_1)",
+      "text": "void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CHero *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(param_1 + 0x150,pcVar2);",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,model_name);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004b48d0(param_1);",
@@ -552,42 +552,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fa3c) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_cloth_cpp_CCloth_load_FUN_00435240((CCloth *)(param_1 + 0x1fa44),\"svetcape.cth\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)(param_1 + 0x1fa44),(CVector3f *)(param_1 + 0x20),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)(param_1 + 0x1fa44),(CVector3f *)(param_1 + 0x20),",
+      "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -595,7 +563,7 @@
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(CVector3f *)(param_1 + 0x30),this_ptr);",
+      "text": "pCVar1 = (CCloth *)(param_1[1].base.base.actor_name + 8);",
       "type": "unnamed_param"
     },
     {
@@ -603,31 +571,15 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_CCloth_load_FUN_00435240((CCloth *)(param_1 + 0x5a574),\"svethair.cth\");",
+      "text": "pCVar2 = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CCloth *)(param_1 + 0x5a574),(CVector3f *)(param_1 + 0x20),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CCloth *)(param_1 + 0x5a574),(CVector3f *)(param_1 + 0x20),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(CVector3f *)(param_1 + 0x30),this_ptr);",
+      "text": "euler = &(param_1->base).base.orient;",
       "type": "unnamed_param"
     },
     {
@@ -635,23 +587,39 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x950b8) = iVar1;",
+      "text": "position = &(param_1->base).base.location;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x950a4) = 0;",
+      "text": "pCVar1 = (CCloth *)(param_1[2].path_map.height_cache_tags[0x38] + 0x13);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x950bc) = iVar1;",
+      "text": "param_1[4].path_map.height_cache_tags[9][0x22] = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4].path_map.height_cache_tags[9][0x1d] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4].path_map.height_cache_tags[9][0x23] = iVar3;",
       "type": "unnamed_param"
     }
   ],

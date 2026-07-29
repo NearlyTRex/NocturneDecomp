@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *param_1,char *param_2,undefined4 param_3)
+; void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *this_ptr,char *key,int value)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; int              Stack[0xc]:4   value
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
 ;

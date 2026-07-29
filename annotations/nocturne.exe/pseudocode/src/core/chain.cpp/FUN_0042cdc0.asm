@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_0042cd30 at 0042cd45
+;   core_chain.cpp_CChain_dtor_FUN_0042cd30 at 0042cd45
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SChainVertexTypeInfo_0059b320

@@ -1,14 +1,14 @@
 // Name: engine_prim.c_FUN_004f9dd0
 // Address: 004f9dd0
 // Address Range: [[004f9dd0, 004fa2dc]]
-// Convention: unknown
-// Signature: void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
+void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count)
 
 {
   int *piVar1;
@@ -27,7 +27,7 @@ void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
   int local_1c;
   SSoftwareEdge *local_14;
   
-  if ((DAT_005b7644 != 0) && (iVar8 = 0, pSVar4 = param_1, 0 < param_2)) {
+  if ((DAT_005b7644 != 0) && (iVar8 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
       if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
         (pSVar4->projected_vertex).inv_z =
@@ -41,24 +41,24 @@ void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
       }
       iVar8 = iVar8 + 1;
       pSVar4 = pSVar4 + 1;
-    } while (iVar8 < param_2);
+    } while (iVar8 < vertex_count);
   }
   if (DAT_006b0280 != 0) {
-    pSVar11 = param_1 + 1;
-    pSVar4 = param_1 + 2;
-    if (param_2 < 4) {
-      iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,pSVar11,pSVar4);
+    pSVar11 = vertices + 1;
+    pSVar4 = vertices + 2;
+    if (vertex_count < 4) {
+      iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(vertices,pSVar11,pSVar4);
       if (iVar8 == 0) {
         return;
       }
     }
     else {
-      iVar8 = param_2 + -2;
+      iVar8 = vertex_count + -2;
       iVar9 = 0;
       iVar7 = 0;
       if (0 < iVar8) {
         do {
-          iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,pSVar11,pSVar4);
+          iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(vertices,pSVar11,pSVar4);
           if (iVar3 == 0) {
             iVar7 = iVar7 + 1;
           }
@@ -74,37 +74,37 @@ void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
   if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon_FUN_00532620(vertices,vertex_count,_DAT_01c039a0);
     return;
   }
   switch(_DAT_01c039a4) {
   case 1:
-    engine_prim_c_prepareDepthBuffer_FUN_004f9870(param_1,param_2);
+    engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertices,vertex_count);
     break;
   case 2:
-    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);
+    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(vertices,vertex_count);
     break;
   case 3:
-    engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(param_1,param_2);
+    engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(vertices,vertex_count);
     break;
   case 5:
-    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);
+    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(vertices,vertex_count);
     break;
   case 6:
-    engine_prim_c_replaceWWithDepth_FUN_004f99d0(param_1,param_2);
+    engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertices,vertex_count);
   }
   _DAT_01e52ef0 = 0;
   _DAT_01e52a68 = 0;
   local_1c = 0;
   _DAT_01e52eec = 0x4b0;
-  if (0 < param_2) {
+  if (0 < vertex_count) {
     do {
       iVar8 = local_1c + 1;
-      if (param_2 <= iVar8) {
+      if (vertex_count <= iVar8) {
         iVar8 = 0;
       }
-      pSVar4 = param_1 + iVar8;
-      pSVar11 = param_1 + local_1c;
+      pSVar4 = vertices + iVar8;
+      pSVar11 = vertices + local_1c;
       iVar8 = (pSVar11->projected_vertex).screen_y >> 0x10;
       iVar7 = (pSVar4->projected_vertex).screen_y >> 0x10;
       if (iVar8 != iVar7) {
@@ -180,7 +180,7 @@ void engine_prim_c_FUN_004f9dd0(SRenderVertex *param_1,int param_2)
         _DAT_01e52a68 = _DAT_01e52a68 + 1;
       }
       local_1c = local_1c + 1;
-    } while (local_1c < param_2);
+    } while (local_1c < vertex_count);
   }
   edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_004f9830(_DAT_01e52eec,(SSoftwareEdge *)0x0);
   if ((edge_ptr != (SSoftwareEdge *)0x0) &&

@@ -227,7 +227,7 @@ section .text
     PUSH EBP                            ; 00526750 | DAT_02dbd494
     MOV dword ptr [EDX + 0x12c],ECX     ; 00526751 | DAT_02dc2170
     CALL sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 ; 00526757
-        ;   XREF to: 00525a80 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80()
+        ;   XREF to: 00525a80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80(CSfxSlot * this_ptr)
     MOV dword ptr [EBP + 0x114],0x0     ; 0052675c
     FLD float ptr [EBP + 0x44]          ; 00526766
     MOV dword ptr [EBP + 0x10c],0xbf800000 ; 00526769
@@ -274,7 +274,7 @@ section .text
     PUSH 0x0                            ; 0052680f
     PUSH EBP                            ; 00526811 | DAT_02dbd494
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 ; 00526812
-        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830()
+        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00526817
     CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0 ; 0052681a
         ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()

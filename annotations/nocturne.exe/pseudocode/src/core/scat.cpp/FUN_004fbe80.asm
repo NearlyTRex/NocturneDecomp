@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_FUN_004fbe80(int param_1)
+; void __cdecl core_scat_cpp_FUN_004fbe80(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_scat.cpp_FUN_004fbc00 at 004fbc57

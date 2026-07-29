@@ -29,7 +29,7 @@ void __cdecl CDemonMission::load(CDemonMission *this_ptr,char *mission_filename,
 
 // Original: core_mission.cpp_CDemonMission_save_FUN_004d7f80
 // Address: 004d7f80
-void CDemonMission::save(undefined4 param_1,char *param_2);
+void CDemonMission::save(CDemonMission *param_1,char *param_2);
 
 // Original: core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0
 // Address: 004d7fe0
@@ -45,7 +45,7 @@ int __cdecl CDemonMission::loadScript(CDemonMission *this_ptr,int is_loading);
 
 // Original: core_mission.cpp_FUN_004d8720
 // Address: 004d8720
-void FUN_004d8720(CDemonMission *param_1,_FILE *param_2);
+void __cdecl FUN_004d8720(CDemonMission *this_ptr,_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0
 // Address: 004d8aa0
@@ -93,7 +93,7 @@ CDemonActor * __cdecl CDemonMission::findActorByName(CDemonMission *this_ptr,cha
 
 // Original: core_mission.cpp_FUN_004d90e0
 // Address: 004d90e0
-void FUN_004d90e0(int param_1,undefined4 *param_2);
+void __cdecl FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target);
 
 // Original: core_mission.cpp_FUN_004d9110
 // Address: 004d9110

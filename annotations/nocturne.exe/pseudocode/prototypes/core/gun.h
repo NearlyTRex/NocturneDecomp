@@ -21,11 +21,11 @@ CWeapon * FUN_004b2760(CWeapon *param_1);
 
 // Original: core_gun.cpp_FUN_004b27c0
 // Address: 004b27c0
-undefined4 FUN_004b27c0(CWeapon *param_1);
+undefined4 FUN_004b27c0(CCharacter *param_1);
 
 // Original: core_gun.cpp_FUN_004b2fc0
 // Address: 004b2fc0
-undefined4 FUN_004b2fc0(void);
+float FUN_004b2fc0(void);
 
 // Original: core_gun.cpp_FUN_004b2ff0
 // Address: 004b2ff0

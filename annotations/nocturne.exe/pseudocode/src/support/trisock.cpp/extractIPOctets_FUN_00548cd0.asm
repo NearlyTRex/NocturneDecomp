@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trisock_cpp_extractIPOctets_FUN_00548cd0(void)
+; void __cdecl support_trisock_cpp_extractIPOctets_FUN_00548cd0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   ip_bytes
+; uint *           Stack[0x8]:4   octet1_ptr
+; uint *           Stack[0xc]:4   octet2_ptr
+; uint *           Stack[0x10]:4   octet3_ptr
+; uint *           Stack[0x14]:4   octet4_ptr
 ;
 ; *****************************************************************************
 

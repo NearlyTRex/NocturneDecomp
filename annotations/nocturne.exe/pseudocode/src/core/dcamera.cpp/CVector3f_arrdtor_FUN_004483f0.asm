@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(void)
+; CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(CVector3f *objs,uint flags)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

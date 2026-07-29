@@ -17,7 +17,7 @@ void core_emitter_cpp_FUN_00478790(CEmitter *param_1,float param_2)
   int iVar4;
   CKeyFramedModel *model_ptr;
   CBoundingBox3D *pCVar5;
-  float *pfVar6;
+  CVector3f *pCVar6;
   uint uVar7;
   int iVar8;
   float10 fVar9;
@@ -36,11 +36,10 @@ void core_emitter_cpp_FUN_00478790(CEmitter *param_1,float param_2)
   float local_a4;
   CVector3f local_a0;
   CVector3f local_94;
-  float fStack_88;
-  float fStack_84;
-  float fStack_80;
+  CVector3f CStack_88;
   CVector3f CStack_7c;
-  CVector3f local_70 [2];
+  CVector3f local_70;
+  CVector3f CStack_64;
   CVector3f CStack_58;
   CVector3f local_4c [2];
   float local_2c;
@@ -105,27 +104,27 @@ LAB_0047883d:
     pCVar1 = &(param_1->base).location;
     iVar8 = 0;
     do {
-      if ((CLocation *)local_70 != pCVar1) {
-        local_70[0].x = (pCVar1->position).x;
-        local_70[0].y = (param_1->base).location.position.y;
-        local_70[0].z = (param_1->base).location.position.z;
+      if ((CLocation *)&local_70 != pCVar1) {
+        local_70.x = (pCVar1->position).x;
+        local_70.y = (param_1->base).location.position.y;
+        local_70.z = (param_1->base).location.position.z;
       }
-      local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbf000000,0x3f000000);
-      local_70[0].x = local_14 * (param_1->emitter_size).x + local_70[0].x;
-      local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbf000000,0x3f000000);
-      local_70[0].z = local_14 * (param_1->emitter_size).z + local_70[0].z;
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.5,0.5);
+      local_70.x = local_14 * (param_1->emitter_size).x + local_70.x;
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.5,0.5);
+      local_70.z = local_14 * (param_1->emitter_size).z + local_70.z;
       local_d0.x = 0.0;
       local_d0.y = (param_1->emitter_size).y;
       iVar8 = iVar8 + 1;
       local_d0.z = 0.0;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-                (0x01C08D04,local_70,1.0,&local_d0,0xffff);
+                (0x01C08D04,&local_70,1.0,&local_d0,0xffff);
     } while (iVar8 < 4);
     break;
   case 4:
-    local_28 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f490fdb,0x3fc90fdb);
+    local_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
     local_14 = local_28;
-    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40c90fdb);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
     local_2c = param_1->rock_speed;
     fVar9 = (float10)fcos((float10)local_28);
     fVar10 = (float10)fcos((float10)local_14);
@@ -140,7 +139,8 @@ LAB_0047883d:
     break;
   case 5:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(param_1,&local_b8);
-    core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0();
+    core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
+              (0x01C08D04,&local_b8,&(param_1->base).orient.vec,2,1);
     pCVar2 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     pCVar1 = &(param_1->base).location;
     local_ac = (pCVar2->location).position.x - (pCVar1->position).x;
@@ -150,7 +150,7 @@ LAB_0047883d:
         (float)2.5) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(pCVar2,&local_a0,&pCVar1->position);
       core_charactr_cpp_FUN_00427730
-                (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,0x3f800000,1);
+                (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,1.0,1);
     }
     break;
   case 6:
@@ -200,15 +200,16 @@ LAB_00478902:
       pCVar5 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_e8);
       fStack_c4 = (pCVar5->min).x + (pCVar5->max).x;
       fStack_c0 = (pCVar5->min).y + (pCVar5->max).y;
-      fStack_88 = fStack_c4 * 5.2220990168285998e-315._0_4_;
+      CStack_88.x = fStack_c4 * 5.2220990168285998e-315._0_4_;
       fStack_bc = (pCVar5->min).z + (pCVar5->max).z;
-      fStack_84 = fStack_c0 * 5.2220990168285998e-315._0_4_;
-      fStack_80 = fStack_bc * 5.2220990168285998e-315._0_4_;
-      pfVar6 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200();
+      CStack_88.y = fStack_c0 * 5.2220990168285998e-315._0_4_;
+      CStack_88.z = fStack_bc * 5.2220990168285998e-315._0_4_;
+      pCVar6 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                         (param_1->dest_actor,&CStack_64,&CStack_88);
       pCVar2 = param_1->dest_actor;
-      CStack_7c.x = (pCVar2->location).position.x + *pfVar6;
-      CStack_7c.y = (pCVar2->location).position.y + pfVar6[1];
-      CStack_7c.z = (pCVar2->location).position.z + pfVar6[2];
+      CStack_7c.x = (pCVar2->location).position.x + pCVar6->x;
+      CStack_7c.y = (pCVar2->location).position.y + pCVar6->y;
+      CStack_7c.z = (pCVar2->location).position.z + pCVar6->z;
       if (&CStack_58 != &CStack_7c) {
         CStack_58.x = CStack_7c.x;
         CStack_58.y = CStack_7c.y;

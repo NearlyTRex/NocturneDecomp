@@ -66,7 +66,8 @@ LAB_00428579:
   if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (&this_ptr->base,(CVector3f *)local_28,&damage_info->impact_direction);
-    core_charactr_cpp_FUN_00427730(this_ptr,local_28,damage_info->hit_part_index,0,0x3f800000,0);
+    core_charactr_cpp_FUN_00427730
+              (this_ptr,(CVector3f *)local_28,damage_info->hit_part_index,0,1.0,0);
   }
   if (0.0 < damage_info->gore_multiplier) {
     pCVar5 = &local_1c;

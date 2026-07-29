@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052bdf0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052bdf0(CDirectSoundDevice *this_ptr)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

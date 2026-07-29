@@ -14,7 +14,8 @@ void core_fire_cpp_CRock_render_FUN_00484d40(CVector3f *param_1)
   CBoundingBox3D local_20;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
-  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(DAT_005ae704,&param_1[4].z,0);
+  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
+            (DAT_005ae704,(CVector3i *)&param_1[4].z,(CVector3i *)0x0);
   pfVar1 = *(float **)((int)param_1[5].z + 0x350);
   local_20.min.x = *pfVar1;
   local_20.min.y = pfVar1[1];

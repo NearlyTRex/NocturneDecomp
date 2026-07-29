@@ -1,29 +1,26 @@
 // Name: shape_edittool.cpp_CEdCheck_ctor_FUN_00477190
 // Address: 00477190
 // Address Range: [[00477190, 004771cd]]
-// Convention: unknown
-// Signature: void shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(void)
+// Convention: __cdecl
+// Signature: CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(CEdCheck *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(void)
+CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(CEdCheck *this_ptr)
 
 {
-  uint uVar1;
-  uint *in_stack_00000004;
+  int iVar1;
   
-  in_stack_00000004[1] = 0;
-  in_stack_00000004[2] = 0;
-  *(byte *)(in_stack_00000004 + 9) = 0;
-  in_stack_00000004[7] = 0;
-  in_stack_00000004[8] = 0;
-  in_stack_00000004[3] = 0;
-  *in_stack_00000004 = 0;
-  uVar1 = in_stack_00000004[7];
-  in_stack_00000004[6] = uVar1;
-  in_stack_00000004[5] = uVar1;
-  in_stack_00000004[4] = uVar1;
-  return;
+  this_ptr->checked_state = 0;
+  this_ptr->interactive_flag = 0;
+  this_ptr->checkbox_text[0] = '\0';
+  this_ptr->right_boundary = 0;
+  this_ptr->border_style_flag = 0;
+  this_ptr->text_color_mode = 0;
+  this_ptr->checkbox_mode = 0;
+  iVar1 = this_ptr->right_boundary;
+  this_ptr->total_width = iVar1;
+  this_ptr->y_position = iVar1;
+  this_ptr->x_position = iVar1;
+  return this_ptr;
 }

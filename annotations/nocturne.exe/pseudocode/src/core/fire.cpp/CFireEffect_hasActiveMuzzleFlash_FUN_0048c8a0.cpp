@@ -1,14 +1,14 @@
 // Name: core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0
 // Address: 0048c8a0
 // Address Range: [[0048c8a0, 0048c8c9]]
-// Convention: unknown
-// Signature: undefined4 core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEffect *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(void)
+int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEffect *this_ptr)
 
 {
   int iVar1;

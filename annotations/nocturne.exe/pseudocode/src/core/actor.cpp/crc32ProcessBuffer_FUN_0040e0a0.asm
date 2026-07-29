@@ -37,7 +37,7 @@ section .text
     INC EBX                             ; 0040e0b9
     DEC ESI                             ; 0040e0ba
     CALL core_actor.cpp_crc32ProcessByte_FUN_0040dfc0 ; 0040e0bb
-        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessByte_FUN_0040dfc0()
+        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040dfc0(uint * crc_state, byte input_byte)
     ADD ESP,0x8                         ; 0040e0c0
     TEST ESI,ESI                        ; 0040e0c3
     JG 0x0040e0b3                       ; 0040e0c5

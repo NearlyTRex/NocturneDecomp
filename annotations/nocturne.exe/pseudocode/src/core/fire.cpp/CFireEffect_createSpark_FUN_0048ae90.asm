@@ -14,7 +14,7 @@
 ;
 ; XREF[20]:
 ;   core_batcreat.cpp_FUN_00413040 at 004131a7
-;   core_batman.cpp_FUN_00414930 at 00414a97
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414a97
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420db7
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a842
 ;   core_dynamite.cpp_CDynamite_process_FUN_0046edc0 at 0046ef1d

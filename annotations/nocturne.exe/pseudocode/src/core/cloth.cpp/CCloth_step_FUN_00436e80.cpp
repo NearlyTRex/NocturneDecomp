@@ -12,9 +12,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
 
 {
   float *pfVar1;
-  SMRGLTextureLod *pSVar2;
-  CVector3f *pCVar3;
-  float *pfVar4;
+  float *pfVar2;
+  SMRGLTextureLod *pSVar3;
+  CVector3f *pCVar4;
   float fVar5;
   char *pcVar6;
   int iVar7;
@@ -45,21 +45,11 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   float local_174;
   float local_170;
   float local_16c;
-  uint local_168;
-  uint local_164;
-  float local_160;
-  float local_15c;
-  float local_158;
-  float local_154;
-  float local_150;
-  float local_14c;
-  float local_148;
-  float local_144;
-  float local_140;
-  float local_13c;
-  uint local_138;
-  float local_134;
-  uint local_130;
+  CVector3f local_168;
+  CVector3f local_15c;
+  CVector3f local_150;
+  CVector3f local_144;
+  CVector3f local_138;
   float local_12c;
   float local_128;
   float local_124;
@@ -81,17 +71,15 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   float local_e4;
   float local_e0;
   float local_dc;
-  float local_d8;
-  float local_d4;
-  float local_d0;
-  byte local_cc [12];
+  CVector3f local_d8;
+  CVector3f local_cc;
   float local_c0;
   float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
   float local_ac;
-  byte local_a8 [12];
+  CVector3f local_a8;
   CVector3f local_9c;
   float local_90;
   float local_8c;
@@ -149,11 +137,11 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
           local_28 = (CVector3f *)(piVar13 + 0x3b);
           local_30 = piVar13;
           do {
-            pCVar3 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
+            pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                (&local_9c,local_28,local_38 + local_30[0x38]);
-            local_174 = pCVar3->x * *pfVar9;
-            local_170 = pCVar3->y * *pfVar9;
-            local_16c = pCVar3->z * *pfVar9;
+            local_174 = pCVar4->x * *pfVar9;
+            local_170 = pCVar4->y * *pfVar9;
+            local_16c = pCVar4->z * *pfVar9;
             pfVar9 = pfVar9 + 1;
             local_28 = local_28 + 1;
             local_30 = local_30 + 1;
@@ -185,15 +173,15 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
       local_64 = iVar8 * 0x11c;
       iVar10 = (local_84->model).texture_list[0xb].textures[2].base.count;
       if (iVar10 != -1) {
-        local_160 = local_24[iVar10 * 0x2b + 0x11];
-        local_168 = 0;
-        local_164 = 0;
-        local_80 = local_160;
-        pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                    (local_24 + iVar10 * 0x2b + 0x1e,local_cc,&local_168);
-        local_18c = pfVar9[iVar10 * 0x2b + 0x28] + *pfVar4;
-        local_188 = pfVar9[iVar10 * 0x2b + 0x29] + pfVar4[1];
-        local_184 = pfVar9[iVar10 * 0x2b + 0x2a] + pfVar4[2];
+        local_168.z = local_24[iVar10 * 0x2b + 0x11];
+        local_168.x = 0.0;
+        local_168.y = 0.0;
+        local_80 = local_168.z;
+        pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                           ((CMatrix3x3f *)(local_24 + iVar10 * 0x2b + 0x1e),&local_cc,&local_168);
+        local_18c = pfVar9[iVar10 * 0x2b + 0x28] + pCVar4->x;
+        local_188 = pfVar9[iVar10 * 0x2b + 0x29] + pCVar4->y;
+        local_184 = pfVar9[iVar10 * 0x2b + 0x2a] + pCVar4->z;
         pfVar9 = (float *)((int)local_20 + local_64);
         if (pfVar9 != &local_18c) {
           *pfVar9 = local_18c;
@@ -230,23 +218,23 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   if (0.0 < local_18) {
     local_1e0 = 0.0;
   }
-  local_d0 = local_1e0 * (float)_DAT_0057ae35;
-  local_d8 = *(float *)(0x01E57284 + 0x15a878) * local_d0;
-  local_d4 = *(float *)(0x01E57284 + 0x15a87c) * local_d0;
-  local_d0 = *(float *)(0x01E57284 + 0x15a880) * local_d0;
+  local_d8.z = local_1e0 * (float)_DAT_0057ae35;
+  local_d8.x = *(float *)(0x01E57284 + 0x15a878) * local_d8.z;
+  local_d8.y = *(float *)(0x01E57284 + 0x15a87c) * local_d8.z;
+  local_d8.z = *(float *)(0x01E57284 + 0x15a880) * local_d8.z;
   piVar13 = this_ptr->vertices[0x300].connected_indices + 6;
-  pfVar9 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                              (&local_1d8,local_a8,&local_d8);
-  local_198 = *pfVar9 + (float)*piVar13;
-  local_194 = pfVar9[1] + (float)this_ptr->vertices[0x300].connected_indices[7];
-  local_190 = pfVar9[2] + (float)this_ptr->vertices[0x300].connected_indices[8];
+  pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                     (&local_1d8,&local_a8,&local_d8);
+  local_198 = pCVar4->x + (float)*piVar13;
+  local_194 = pCVar4->y + (float)this_ptr->vertices[0x300].connected_indices[7];
+  local_190 = pCVar4->z + (float)this_ptr->vertices[0x300].connected_indices[8];
   this_ptr->vertices[0x300].connected_indices[8] = 0;
   piVar11 = &this_ptr->vertices[0x300].connected_count;
   this_ptr->vertices[0x300].connected_indices[7] = this_ptr->vertices[0x300].connected_indices[8];
   *piVar13 = this_ptr->vertices[0x300].connected_indices[7];
-  local_150 = position->x - (float)*piVar11;
-  local_14c = position->y - (float)this_ptr->vertices[0x300].connected_indices[0];
-  local_148 = position->z - (float)this_ptr->vertices[0x300].connected_indices[1];
+  local_150.x = position->x - (float)*piVar11;
+  local_150.y = position->y - (float)this_ptr->vertices[0x300].connected_indices[0];
+  local_150.z = position->z - (float)this_ptr->vertices[0x300].connected_indices[1];
   if ((CVector3f *)piVar11 != position) {
     *piVar11 = (int)position->x;
     this_ptr->vertices[0x300].connected_indices[0] = (int)position->y;
@@ -255,25 +243,25 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
             (&local_1d8,&local_15c,&local_150);
   local_100 = 1.0 / delta_time;
-  local_b4 = local_15c * local_100;
-  local_b0 = local_158 * local_100;
+  local_b4 = local_15c.x * local_100;
+  local_b0 = local_15c.y * local_100;
   local_180 = local_b4 - local_198;
-  local_ac = local_154 * local_100;
+  local_ac = local_15c.z * local_100;
   local_108 = local_180 * local_100;
   local_17c = local_b0 - local_194;
   local_178 = local_ac - local_190;
   local_104 = local_17c * local_100;
   local_100 = local_178 * local_100;
-  pCVar3 = (CVector3f *)(this_ptr->vertices[0x300].connected_indices + 2);
-  local_e4 = euler->x - pCVar3->x;
+  pCVar4 = (CVector3f *)(this_ptr->vertices[0x300].connected_indices + 2);
+  local_e4 = euler->x - pCVar4->x;
   local_e0 = euler->y - (float)this_ptr->vertices[0x300].connected_indices[3];
   local_dc = euler->z - (float)this_ptr->vertices[0x300].connected_indices[4];
-  if (pCVar3 != euler) {
-    pCVar3->x = euler->x;
+  if (pCVar4 != euler) {
+    pCVar4->x = euler->x;
     this_ptr->vertices[0x300].connected_indices[3] = (int)euler->y;
     this_ptr->vertices[0x300].connected_indices[4] = (int)euler->z;
   }
-  fVar5 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_e0);
+  fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_e0);
   local_78 = fVar5 * (1.0 / delta_time) * (1.0 / delta_time);
   iVar8 = 0;
   if (0 < (this_ptr->model).vertex_count) {
@@ -285,11 +273,11 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
       *(uint *)(pcVar6 + 8) = 0;
       *(uint *)(pcVar6 + 4) = *(uint *)(pcVar6 + 8);
       *(uint *)pcVar6 = *(uint *)(pcVar6 + 8);
-      pSVar2 = (pCVar12->model).texture_list + 0xb;
-      pSVar2->textures[0].texture_name[0xc] = '\0';
-      pSVar2->textures[0].texture_name[0xd] = '\0';
-      pSVar2->textures[0].texture_name[0xe] = '\0';
-      pSVar2->textures[0].texture_name[0xf] = '\0';
+      pSVar3 = (pCVar12->model).texture_list + 0xb;
+      pSVar3->textures[0].texture_name[0xc] = '\0';
+      pSVar3->textures[0].texture_name[0xd] = '\0';
+      pSVar3->textures[0].texture_name[0xe] = '\0';
+      pSVar3->textures[0].texture_name[0xf] = '\0';
       piVar13 = local_6c + iVar8 * 0x47;
       (pCVar12->model).texture_list[0xb].textures[1].base.type = 0;
       if (piVar13 != (int *)local_4c) {
@@ -303,10 +291,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
       local_4c = local_4c + 0x11c;
     } while (iVar8 < (this_ptr->model).vertex_count);
   }
-  local_134 = -this_ptr->vertices[0x2d4].bone_weights[0];
-  local_138 = 0;
-  local_130 = 0;
-  local_14 = local_134;
+  local_138.y = -this_ptr->vertices[0x2d4].bone_weights[0];
+  local_138.x = 0.0;
+  local_138.z = 0.0;
+  local_14 = local_138.y;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
             (&local_1d8,&local_144,&local_138);
   local_3c = this_ptr->vertices[0x2d4].bone_weights[0] / this_ptr->vertices[0x2d4].bone_weights[1];
@@ -332,21 +320,21 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
         local_1b0 = local_c0 * local_54->x;
         local_1ac = local_bc * local_54->x;
         local_1a8 = local_b8 * local_54->x;
-        pCVar3 = &vertex->force;
-        pCVar3->x = pCVar3->x - local_1b0;
+        pCVar4 = &vertex->force;
+        pCVar4->x = pCVar4->x - local_1b0;
         (vertex->force).y = (vertex->force).y - local_1ac;
         (vertex->force).z = (vertex->force).z - local_1a8;
-        pCVar3->x = pCVar3->x + local_144;
-        (vertex->force).y = (vertex->force).y + local_140;
-        (vertex->force).z = (vertex->force).z + local_13c;
+        pCVar4->x = pCVar4->x + local_144.x;
+        (vertex->force).y = (vertex->force).y + local_144.y;
+        (vertex->force).z = (vertex->force).z + local_144.z;
         local_1a0 = local_68 * this_ptr->vertices[0x2d5].force.y;
         local_124 = 1.0 / local_3c;
         local_f0 = (vertex->position).y * 0.0 - (vertex->position).z * local_1a0;
         local_ec = (vertex->position).z * 0.0 - (vertex->position).x * 0.0;
         local_e8 = (vertex->position).x * local_1a0 - (vertex->position).y * 0.0;
-        pCVar3->x = pCVar3->x + local_f0;
+        pCVar4->x = pCVar4->x + local_f0;
         (vertex->force).y = (vertex->force).y + local_ec;
-        local_12c = pCVar3->x * local_124;
+        local_12c = pCVar4->x * local_124;
         (vertex->force).z = (vertex->force).z + local_e8;
         local_128 = (vertex->force).y * local_124;
         local_124 = local_124 * (vertex->force).z;
@@ -358,10 +346,10 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
         local_fc = (vertex->velocity).x * delta_time;
         local_f8 = (vertex->velocity).y * delta_time;
         local_f4 = (vertex->velocity).z * delta_time;
-        pCVar3 = &vertex->secondary_velocity;
-        pCVar3->x = pCVar3->x + local_fc;
+        pCVar4 = &vertex->secondary_velocity;
+        pCVar4->x = pCVar4->x + local_fc;
         (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_f8;
-        local_120 = pCVar3->x * delta_time;
+        local_120 = pCVar4->x * delta_time;
         (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_f4;
         local_11c = (vertex->secondary_velocity).y * delta_time;
         local_118 = delta_time * (vertex->secondary_velocity).z;
@@ -403,17 +391,17 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   iVar8 = 0;
   if (0 < (this_ptr->model).vertex_count) {
     pfVar9 = &this_ptr->vertices[0x2d5].position.z;
-    pfVar4 = &this_ptr->vertices[0x2d5].position.y;
+    pfVar2 = &this_ptr->vertices[0x2d5].position.y;
     iVar10 = 0;
     do {
       iVar7 = *(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x) * 0x11c;
       if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x32c) != 0) {
         pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);
-        *pfVar1 = *pfVar4 * *pfVar1;
+        *pfVar1 = *pfVar2 * *pfVar1;
         *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c) =
-             *pfVar4 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);
+             *pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);
         *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0) =
-             *pfVar4 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);
+             *pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);
       }
       if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x330) != 0) {
         pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);

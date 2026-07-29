@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_xform_cpp_multiplyMatrix3x4InPlace_FUN_0055abb0(undefined4 *param_1,undefined4 param_2)
+; CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_0055abb0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00

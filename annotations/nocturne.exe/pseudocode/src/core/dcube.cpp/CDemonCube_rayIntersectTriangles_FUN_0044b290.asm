@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5)
+; float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material)
 ;
+; Parameters:
+; CDemonCube *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   hit_normal
+; uint *           Stack[0x14]:4   hit_material
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined4       Stack[-0x30]:4  local_30
@@ -64,7 +70,7 @@ section .text
     ADD EAX,ESI                         ; 0044b2c7
     PUSH EAX                            ; 0044b2c9
     CALL core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150 ; 0044b2ca
-        ;   XREF to: 00449150 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150()
+        ;   XREF to: 00449150 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(CDemonCubeTriangle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x2c],EAX      ; 0044b2cf
     FLD float ptr [ESP + 0x2c]          ; 0044b2d3
     ADD ESP,0xc                         ; 0044b2d7

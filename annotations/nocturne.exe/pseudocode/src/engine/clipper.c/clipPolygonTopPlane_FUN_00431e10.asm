@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_clipper_c_clipPolygonTopPlane_FUN_00431e10(int *param_1,int param_2,int param_3)
+; int __cdecl engine_clipper_c_clipPolygonTopPlane_FUN_00431e10(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   input_vertices
+; SRenderVertex * * Stack[0x8]:4   output_vertices
+; int              Stack[0xc]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -114,7 +118,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431ed0 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431ed5
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 00431ed9
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431ede
     JMP 0x00431e6c                      ; 00431ee1
         ;   XREF to: 00431e6c (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -145,7 +149,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431f28 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431f2d
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 00431f31
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431f36
     JMP 0x00431e6c                      ; 00431f39
         ;   XREF to: 00431e6c (UNCONDITIONAL_JUMP)  ; caseD_3

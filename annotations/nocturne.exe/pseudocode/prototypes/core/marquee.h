@@ -55,6 +55,6 @@ undefined4 FUN_004cc8f0(void);
 // Address: 004cc900
 void CMarquee::getBoundingBox(int param_1,undefined4 *param_2);
 
-// Original: core_marquee.cpp_FUN_004cc960
+// Original: core_marquee.cpp_CMarquee_dtor_FUN_004cc960
 // Address: 004cc960
-CDemonActor * FUN_004cc960(CDemonActor *param_1,byte param_2);
+CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);

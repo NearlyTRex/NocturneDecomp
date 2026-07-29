@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dstrender_cpp_memcpyMMX_FUN_00465341(uint param_1,uint param_2,uint param_3)
+; void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00465341(void *dest,void *src,int byte_count)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest
+; void *           Stack[0x8]:4   src
+; int              Stack[0xc]:4   byte_count
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00440c50 at 00440d0d

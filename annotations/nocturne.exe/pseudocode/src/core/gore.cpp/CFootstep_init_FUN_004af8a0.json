@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 193,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 11,
+    "pseudocode_lines": 55,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "self_copy_guard",
       "shadow_pointer_walk",
       "undefined_data"
     ],
-    "total_lines": 197
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -374,43 +373,26 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CFootstep_init_FUN_004af8a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 44,
-          "message": "Uninitialized variable: local_30",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "(&DAT_01fba938,&local_40,&local_34,0,0);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,&local_40,local_34,(CVector3f *)0x0,",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&FLOAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 22,
       "match": "(int)&FLOAT_005ba83c",
       "severity": "moderate",
-      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
+      "text": "local_40.x = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&FLOAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
+      "line": 23,
       "match": "(int)&FLOAT_005ba82c",
       "severity": "moderate",
       "text": "-fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +",
@@ -418,39 +400,31 @@
     },
     {
       "description": "Pointer value `&FLOAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 25,
       "match": "(int)&FLOAT_005ba83c",
       "severity": "moderate",
-      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
+      "text": "local_40.z = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&FLOAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 26,
       "match": "(int)&FLOAT_005ba82c",
       "severity": "moderate",
       "text": "fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + position->z;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_34 != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 31,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_34 != &local_40) {",
-      "type": "self_copy_guard"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
+      "line": 22,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
+      "text": "local_40.x = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
+      "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "-fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +",
@@ -458,15 +432,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 29,
+      "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
+      "text": "local_40.z = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
+      "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + position->z;",
@@ -474,19 +448,11 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pfVar3` was initialized to the address of an array element's subfield (`pfVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 54,
+      "line": 51,
       "match": "pfVar3 = pfVar3 + N",
       "severity": "moderate",
       "text": "pfVar3 = pfVar3 + 3;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_30",
-      "line": 44,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_30 = local_30 + -3.0f;",
-      "type": "static_uninitvar"
     }
   ]
 }

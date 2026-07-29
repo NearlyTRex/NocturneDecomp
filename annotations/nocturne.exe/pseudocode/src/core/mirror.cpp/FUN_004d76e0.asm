@@ -39,7 +39,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004d7702 | DAT_005ae704
     PUSH EBX                            ; 004d7708 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 004d7709
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004d770e
     POP EBX                             ; 004d7711
     RET                                 ; 004d7712

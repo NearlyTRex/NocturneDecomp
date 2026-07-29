@@ -15,8 +15,8 @@ CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930(
   float fVar4;
   float fVar5;
   
-  fVar5 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                           (this_ptr,ray_start,ray_end,0,0);
+  fVar5 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
+                    (this_ptr,ray_start,ray_end,(CVector3f *)0x0,(int *)0x0);
   if ((0.0 <= fVar5) && (fVar5 < 1.0)) {
     fVar1 = ray_end->y;
     fVar2 = ray_start->y;

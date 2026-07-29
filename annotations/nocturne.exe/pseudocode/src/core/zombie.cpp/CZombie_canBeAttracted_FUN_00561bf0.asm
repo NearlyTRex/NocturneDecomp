@@ -42,7 +42,7 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 00561c00
     PUSH EBX                            ; 00561c06
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 00561c07
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x44],EAX      ; 00561c0c
     FLD float ptr [ESP + 0x44]          ; 00561c10
     FLDZ                                ; 00561c14

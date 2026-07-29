@@ -16,9 +16,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride 
   float local_b0;
   CMatrix3x3f local_ac;
   CBoundingBox3D local_84;
-  uint local_6c;
-  uint local_68;
-  float local_64;
+  CVector3f local_6c;
   CVector3f CStack_60;
   CVector3f CStack_54;
   CVector3f local_48;
@@ -47,18 +45,16 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride 
           if ((direction != (CVector3f *)0x0) && (0.0 < local_b0)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_3c,direction);
             local_20 = -local_b0;
-            local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
-            ;
+            local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0);
             local_3c.y = local_18 + local_3c.y;
-            local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
-            ;
+            local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0);
             local_3c.x = local_18 + local_3c.x;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_ac,&local_3c);
-            local_64 = SQRT(direction->z * direction->z +
-                            direction->x * direction->x + direction->y * direction->y);
-            local_6c = 0;
-            local_68 = 0;
-            local_1c = local_64;
+            local_6c.z = SQRT(direction->z * direction->z +
+                              direction->x * direction->x + direction->y * direction->y);
+            local_6c.x = 0.0;
+            local_6c.y = 0.0;
+            local_1c = local_6c.z;
             core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_ac,&local_48,&local_6c);
             initial_velocity = &local_48;
           }

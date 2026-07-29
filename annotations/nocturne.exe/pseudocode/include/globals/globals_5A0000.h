@@ -2,11 +2,104 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/fstream.h"
+#include "system/strstream.h"
 #include "system/watcom.h"
+#include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CDemonActor_vtable.h"
+#include "types/classes/CDemonPod_vtable.h"
+#include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CFont_vtable.h"
+#include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CMobster_full_vtable.h"
+#include "types/classes/CMotionController_vtable.h"
+#include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPod_vtable.h"
+#include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CSoundDeviceFull_vtable.h"
+#include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5A0000
 // =============================================================================
+
+// CCharacter_full_vtable
+extern CCharacter_full_vtable g_CNPCVTable;
+extern CCharacter_full_vtable g_CPassengerVTable;
+extern CCharacter_full_vtable g_CBassPlayerVTable;
+extern CCharacter_full_vtable g_CDrummerVTable;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
+extern CDemonActor_vtable g_CMirrorHackVTable;
+extern CDemonActor_vtable g_CMarqueeVTable;
+extern CDemonActor_vtable g_CMinecarVTable;
+extern CDemonActor_vtable g_CPendulumVTable;
+extern CDemonActor_vtable g_CPlatformVTable;
+extern CDemonActor_vtable g_CSimBoxVTable;
+extern CDemonActor_vtable g_CSpikeVTable;
+extern CDemonActor_vtable g_CStairsVTable;
+extern CDemonActor_vtable g_CTempleStoneVTable;
+extern CDemonActor_vtable g_CTeleportDestVTable;
+extern CDemonActor_vtable g_CTeleportVTable;
+extern CDemonActor_vtable g_CTrapVTable;
+extern CDemonActor_vtable g_CTrashVTable;
+extern CDemonActor_vtable g_CTriggerVTable;
+extern CDemonActor_vtable g_CVehicleVTable;
+extern CDemonActor_vtable g_CCryptVesselVTable;
+extern CDemonActor_vtable g_CWaterActorVTable;
+extern CDemonActor_vtable g_CWayPointVTable;
+
+// CDemonPod_vtable
+extern CDemonPod_vtable g_CDemonPodVTable;
+
+// CEnemy_full_vtable
+extern CEnemy_full_vtable g_CMimicVTable;
+extern CEnemy_full_vtable g_CSentinelVTable;
+extern CEnemy_full_vtable g_CSuccubusVTable;
+extern CEnemy_full_vtable g_CTentacleVTable;
+extern CEnemy_full_vtable g_CTVBatVTable;
+extern CEnemy_full_vtable g_CVampireBossVTable;
+extern CEnemy_full_vtable g_CWerewolfVTable;
+extern CEnemy_full_vtable g_CZombieVTable;
+
+// CFont_vtable
+extern CFont_vtable g_CFontVTable;
+extern CFont_vtable g_CWinFontVTable;
+
+// CHero_full_vtable
+extern CHero_full_vtable g_CMolochVTable;
+extern CHero_full_vtable g_CScatVTable;
+extern CHero_full_vtable g_CStrangerVTable;
+extern CHero_full_vtable g_CSvetlanaVTable;
+
+// CMobster_full_vtable
+extern CMobster_full_vtable g_CMobsterVTable;
+
+// CMotionController_vtable
+extern CMotionController_vtable g_CMotionControllerVTable;
+extern CMotionController_vtable g_CDeformableModelInstanceVTable;
+
+// CParticle_vtable
+extern CParticle_vtable g_CParticleVTable;
+
+// CPod_vtable
+extern CPod_vtable g_CPodVTable;
+
+// CSmiley_full_vtable
+extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
+
+// CWeapon_full_vtable
+extern CWeapon_full_vtable g_CMeleeVTable;
+extern CWeapon_full_vtable g_CShotgunVTable;
+extern CWeapon_full_vtable g_CShovelVTable;
+extern CWeapon_full_vtable g_CTommyGunVTable;
+extern CWeapon_full_vtable g_CTurretVTable;
+extern CWeapon_full_vtable g_CWeaponVTable;
 
 // WatcomTypeInfo
 extern WatcomTypeInfo g_SPanelTypeInfo_005a0210;
@@ -105,6 +198,9 @@ extern WatcomTypeInfo g_fstreambaseTypeInfo_005a4a60;
 extern WatcomTypeInfo g_strstreambufTypeInfo_005a4af0;
 extern WatcomTypeInfo g_filebufTypeInfo_005a4b60;
 
+// filebuf_vtable
+extern filebuf_vtable g_FilebufVTable;
+
 // float
 extern float FLOAT_005a2158;
 extern float FLOAT_005a2160;
@@ -144,10 +240,17 @@ extern int g_INT_005ae678;
 extern int g_INT_005ae690;
 extern int g_INT_005ae6c8;
 
+// strstreambuf_vtable
+extern strstreambuf_vtable g_StrstreambufVTable;
+
 // undefined1
 extern undefined1 DAT_005acc8f;
 extern undefined1 DAT_005acc90;
 extern undefined1 DAT_005acc91;
+
+// undefined1*
+extern undefined1* g_StreambufVTable;
+extern undefined1* g_MRGLBlockHandlerTable;
 
 // undefined4
 extern undefined4 DAT_005a4b78;

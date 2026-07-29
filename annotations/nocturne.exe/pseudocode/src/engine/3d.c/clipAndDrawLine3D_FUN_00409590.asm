@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_3d_c_clipAndDrawLine3D_FUN_00409590(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5)
+; void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00409590(SRenderVertex vertex1,SRenderVertex vertex2)
 ;
+; Parameters:
+; SRenderVertex    Stack[0x4]:48   vertex1
+; SRenderVertex    Stack[0x34]:48   vertex2
 ;
 ; XREF[2]:
 ;   engine_3d.c_FUN_00409510 at 00409575
@@ -56,7 +59,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 004095c6
     LEA ESI,[ESP + 0xc]                 ; 004095cd
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 004095d1
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 004095d6
     ADD ESP,0xc                         ; 004095db
     MOVSD.REP ES:EDI,ESI                ; 004095de
@@ -76,7 +79,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 004095fb
     LEA ESI,[ESP + 0xc]                 ; 00409602
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 00409606
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 0040960b
     ADD ESP,0xc                         ; 00409610
     MOVSD.REP ES:EDI,ESI                ; 00409613
@@ -94,7 +97,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 0040962c
     LEA ESI,[ESP + 0xc]                 ; 00409633
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00409637
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 0040963c
     ADD ESP,0xc                         ; 00409641
     MOVSD.REP ES:EDI,ESI                ; 00409644
@@ -114,7 +117,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 00409661
     LEA ESI,[ESP + 0xc]                 ; 00409668
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 0040966c
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00409671
     ADD ESP,0xc                         ; 00409676
     MOVSD.REP ES:EDI,ESI                ; 00409679
@@ -132,7 +135,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00409692
     LEA ESI,[ESP + 0xc]                 ; 00409696
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 0040969a
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 0040969f
     ADD ESP,0xc                         ; 004096a4
     MOVSD.REP ES:EDI,ESI                ; 004096a7
@@ -152,7 +155,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 004096c4
     LEA ESI,[ESP + 0xc]                 ; 004096c8
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_00431630 ; 004096cc
-        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_00431630()
+        ;   XREF to: 00431630 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_00431630(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 004096d1
     ADD ESP,0xc                         ; 004096d6
     MOVSD.REP ES:EDI,ESI                ; 004096d9
@@ -170,7 +173,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 004096f2
     LEA ESI,[ESP + 0xc]                 ; 004096f6
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 004096fa
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 004096ff
     ADD ESP,0xc                         ; 00409704
     MOVSD.REP ES:EDI,ESI                ; 00409707
@@ -190,7 +193,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00409724
     LEA ESI,[ESP + 0xc]                 ; 00409728
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_00431830 ; 0040972c
-        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_00431830()
+        ;   XREF to: 00431830 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_00431830(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00409731
     ADD ESP,0xc                         ; 00409736
     MOVSD.REP ES:EDI,ESI                ; 00409739

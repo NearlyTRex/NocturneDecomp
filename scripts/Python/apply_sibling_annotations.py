@@ -10,10 +10,17 @@
 # Gating, because a wrong name is worse than no name -- it produces
 # confident-looking decompiler output that is quietly false:
 #
-#   NAME_SIG    confidence + shape agree + sig_verdict == agree -> name & signature
+#   NAME_SIG    passes the name gate and the signature gate -> name & prototype
 #   NAME        passes the name gate, but the signature is unverified/conflicting
+#   SIG_ONLY    fails the name gate on confidence alone, yet the prototype is
+#               independently supported -> prototype applied, name left as-is
 #   ALREADY     nocturne already carries this name
 #   SKIP_CONF   below --min-confidence, or flagged ambiguous by the matcher
+#
+# The name gate and the signature gate are deliberately separate, because
+# --min-confidence answers "is this the same function?" and a prototype answers
+# "what does it take?", and the evidence for the two is not the same evidence.
+# See signature_supported().
 #   SKIP_SHAPE  bodies disagree too much in size to trust the pairing
 #   SKIP_CRT    CRT interior: reachable only from other CRT, deliberately walled off
 #   SKIP_NAMED  nocturne already has a class/method core that differs; never
@@ -50,8 +57,80 @@ import sibling_match as sm
 # Shape verdicts that are too weak to hang a name on by themselves.
 WEAK_SHAPES = frozenset(("size_mismatch",))
 
-ORDER = ["NAME_SIG", "NAME", "ALREADY", "SKIP_CONF", "SKIP_SHAPE",
+# Conventions whose storage Ghidra cannot allocate from the convention alone:
+# the Watcom FPU family returns in ST0 and passes in ST0/ST1, and there is no
+# rule for that. Asking for DYNAMIC_STORAGE_FORMAL_PARAMS throws, and the throw
+# leaves the function *unreadable* rather than merely un-annotated -- every
+# later getReturnType() raises IndexOutOfBounds, which aborts the annotation
+# export outright.
+#
+# These are not un-transferable, they just belong to a different tool:
+# transfer_custom_storage.py copies the source's ST0/ST1 varnodes across
+# verbatim, which is both the faithful answer and the only one that works. So
+# take the name here and leave the prototype to it.
+FPU_CONV_PREFIX = "__fpu"
+
+
+def needs_custom_storage(conv, spec):
+    """Would this prototype have to be placed by hand rather than by rule?"""
+    if conv and conv.startswith(FPU_CONV_PREFIX):
+        return True
+    for p in (spec or {}).get("params") or []:
+        # A source parameter pinned to a register was pinned deliberately,
+        # because allocating it from the convention was wrong.
+        if (p.get("storage") or {}).get("reg"):
+            return True
+    return False
+
+
+# Shape verdicts strong enough to stand in for a signature measurement: the
+# bodies are byte-identical, or identical once relocated operands are
+# normalised away. Same code, therefore same parameters.
+PROVEN_SHAPES = frozenset(("identical", "same_mnemonics"))
+
+ORDER = ["NAME_SIG", "NAME", "SIG_ONLY", "ALREADY", "SKIP_CONF", "SKIP_SHAPE",
          "SKIP_CRT", "SKIP_NAMED", "SKIP_TU"]
+
+
+def signature_supported(shape, sig_verdict, confidence, min_confidence):
+    """Is there enough evidence to hang nocedit's prototype on this pair?
+
+    Two admissible proofs, either one sufficient:
+
+      sig_verdict == agree   nocturne's *own* bytes were measured against
+                             nocedit's prototype and the argument size matched.
+
+      a proven body shape    byte-identical bodies take identical parameters.
+                             This is strictly stronger evidence than the
+                             argument-size check, not weaker: that check
+                             returns `unverifiable` merely because there was no
+                             `RET imm16` and no caller-side `ADD ESP, n` to
+                             measure, which is a limit of the measurement, not
+                             a finding about the function. It should not veto a
+                             body that is provably the same code.
+
+    A `conflict` vetoes both. It is the one positive finding that the two
+    builds really do differ here, so an identical-looking shape must not talk
+    us out of it -- hence the explicit `unverifiable` test rather than merely
+    "not agree".
+
+    The shape proof still asks for a confident pairing: an identical body
+    proves the parameters match whatever it was paired *with*, so it says
+    nothing if the pairing itself is a guess. The argument-size proof needs no
+    such backing because it was measured against the target's own bytes.
+
+    Independent of the name gate on purpose. --min-confidence protects the
+    name, which is the expensive thing to get wrong; a wrong name is read by
+    every future person who opens the function, while a prototype that fits
+    the measured stack is self-limiting.
+    """
+    if shape in WEAK_SHAPES:
+        return False
+    if sig_verdict == "agree":
+        return True
+    return (sig_verdict == "unverifiable"
+            and shape in PROVEN_SHAPES
+            and confidence >= min_confidence)
 
 
 def target_name(nocedit_name, nocturne_name, nocturne_addr):
@@ -103,6 +182,14 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         tu_conflict = (require_tu_match and cur_tu and edit_tu
                        and cur_tu != edit_tu and cur_tu != "crt_unknown.c")
 
+        # Evaluated up front because it is independent of everything the name
+        # gate below decides -- including the confidence test that the name
+        # gate rejects on.
+        sig_ok = (want_signatures
+                  and not p.get("ambiguous")
+                  and signature_supported(row["shape"], row["sig_verdict"],
+                                          p["confidence"], min_confidence))
+
         if b in interior:
             row["action"] = "SKIP_CRT"
         elif want is None:
@@ -115,15 +202,13 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             # these is idempotent, so refresh sweeps up what has since become
             # applicable.
             #
-            # The confidence gate still applies. This branch sits above the
-            # one below that enforces it, so without repeating it here refresh
-            # would quietly signature every already-named function no matter
-            # how weak its pairing -- which is not what --min-confidence says.
+            # Gated on the signature gate, which this branch sits above and so
+            # must apply itself -- otherwise refresh would quietly signature
+            # every already-named function on no evidence at all. The name
+            # matching is not the evidence: it is the same transfer coming
+            # round again, so it corroborates nothing on its own.
             row["action"] = ("NAME_SIG"
-                             if (refresh_signatures and want_signatures
-                                 and row["sig_verdict"] == "agree"
-                                 and p["confidence"] >= min_confidence
-                                 and not p.get("ambiguous"))
+                             if (refresh_signatures and sig_ok)
                              else "ALREADY")
         elif cur_core is not None:
             # A core already present is either hand-written or from an earlier
@@ -135,13 +220,20 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["detail"] = "unit disagrees: nocturne %s vs nocedit %s" % (
                 cur_tu, edit_tu)
         elif p["confidence"] < min_confidence or p.get("ambiguous"):
-            row["action"] = "SKIP_CONF"
-            row["detail"] = ("ambiguous" if p.get("ambiguous")
-                             else "confidence %.2f" % p["confidence"])
+            # Too weak to name, but the prototype stands on its own evidence,
+            # so take the half we can prove and leave the name alone.
+            if sig_ok:
+                row["action"] = "SIG_ONLY"
+                row["detail"] = ("confidence %.2f: prototype only, name withheld"
+                                 % p["confidence"])
+            else:
+                row["action"] = "SKIP_CONF"
+                row["detail"] = ("ambiguous" if p.get("ambiguous")
+                                 else "confidence %.2f" % p["confidence"])
         elif row["shape"] in WEAK_SHAPES:
             row["action"] = "SKIP_SHAPE"
             row["detail"] = row["shape"]
-        elif want_signatures and row["sig_verdict"] == "agree":
+        elif sig_ok:
             row["action"] = "NAME_SIG"
         else:
             row["action"] = "NAME"
@@ -234,26 +326,82 @@ def build_signature(dtm, func, spec, cache):
     return ReturnParameterImpl(ret, func.getProgram()), params
 
 
+def signature_readable(func):
+    """Can the function's own prototype still be enumerated?
+
+    Half-assigned storage does not fail at write time -- it fails for every
+    reader afterwards. Checking here keeps that blast radius to the one
+    function instead of the next export.
+    """
+    try:
+        rt = func.getReturnType()
+        if rt is not None:
+            rt.getName()
+        for p in func.getParameters():
+            p.getName()
+            p.getDataType().getName()
+            p.getVariableStorage()
+        func.getSignature()
+        return True
+    except Exception:
+        return False
+
+
+def make_readable(func):
+    """Best-effort return to a state later passes can enumerate."""
+    from ghidra.program.model.symbol import SourceType
+    from ghidra.program.model.listing import Function, ReturnParameterImpl
+    from ghidra.program.model.data import Undefined4DataType
+    from java.util import ArrayList
+
+    try:
+        func.setCustomVariableStorage(False)
+    except Exception:
+        pass
+    if signature_readable(func):
+        return True
+    try:
+        # Strip the prototype outright. An un-annotated function is a known
+        # quantity; a throwing one poisons every tool that walks the program.
+        func.updateFunction(
+            None, ReturnParameterImpl(Undefined4DataType(), func.getProgram()),
+            ArrayList(), Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
+            True, SourceType.ANALYSIS)
+    except Exception:
+        pass
+    return signature_readable(func)
+
+
 def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
-    """Set the name, and the full prototype where the signature is verified.
+    """Set the name, and the full prototype where the signature is supported.
 
     Returns what was actually applied, so the report distinguishes a signature
     that transferred from one that was skipped for an unresolvable type.
     """
     from ghidra.program.model.symbol import SourceType
 
-    func.setName(row["want"], SourceType.USER_DEFINED)
-    if not (want_signatures and row["action"] == "NAME_SIG"):
+    # A SIG_ONLY row is here *because* the pairing was not confident enough to
+    # name. Renaming is the one thing it must not do.
+    sig_only = row["action"] == "SIG_ONLY"
+    if not sig_only:
+        func.setName(row["want"], SourceType.USER_DEFINED)
+    if not (want_signatures and row["action"] in ("NAME_SIG", "SIG_ONLY")):
         return "name"
 
     spec = row.get("sig")
-    if not spec or dtm is None:
-        if row.get("conv"):
-            func.setCallingConvention(row["conv"])
-        return "name+conv"
+    if needs_custom_storage(row.get("conv"), spec):
+        # Left to transfer_custom_storage.py; see FPU_CONV_PREFIX.
+        return "skipped (custom storage)" if sig_only else "name (custom storage)"
 
-    built = build_signature(dtm, func, spec, cache if cache is not None else {})
+    built = (build_signature(dtm, func, spec, cache if cache is not None else {})
+             if (spec and dtm is not None) else None)
     if built is None:
+        # SIG_ONLY exists only to carry a prototype. With no prototype to carry
+        # there is nothing left worth doing -- pinning a calling convention
+        # onto a function this run declined to even name adds no readability
+        # and can only misinform.
+        if sig_only:
+            return "skipped (no prototype)"
         if row.get("conv"):
             func.setCallingConvention(row["conv"])
         return "name+conv"
@@ -267,20 +415,23 @@ def apply_row(program, func, row, want_signatures, dtm=None, cache=None):
         func.updateFunction(row.get("conv"), ret_var, params,
                             Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
                             True, SourceType.USER_DEFINED)
-        return "name+signature"
+        # updateFunction returning is not proof the result can be read back:
+        # storage can land half-assigned and only fail for later readers.
+        if not signature_readable(func):
+            ok = make_readable(func)
+            return ("unreadable, reset" if ok else "UNREADABLE")
+        return "signature" if sig_only else "name+signature"
     except Exception:
         # A failed updateFunction can leave storage half-assigned, and anything
         # that later enumerates parameters then throws as well -- the function
-        # becomes unreadable rather than merely un-annotated. Reset it to
-        # dynamic storage so it is at least consistent, and do NOT then set the
-        # convention: doing that is what locked seven `crt_math.c` functions
-        # into a broken state, because it pins a convention onto storage that
-        # does not match it.
-        try:
-            func.setCustomVariableStorage(False)
-        except Exception:
-            pass
-        return "name (prototype rejected)"
+        # becomes unreadable rather than merely un-annotated, which aborts the
+        # annotation export outright. Do NOT then set the convention: that
+        # pins a convention onto storage which does not match it, and is what
+        # locked seven `crt_math.c` functions into a broken state.
+        ok = make_readable(func)
+        if not ok:
+            return "UNREADABLE"
+        return "prototype rejected" if sig_only else "name (prototype rejected)"
 
 
 def main():
@@ -294,7 +445,8 @@ def main():
     ap.add_argument("--crt-wall", help="wall_off_crt.py output; skips CRT interior")
     ap.add_argument("--min-confidence", type=float, default=0.90)
     ap.add_argument("--signatures", action="store_true",
-                    help="also set the calling convention where sig_verdict==agree")
+                    help="also transfer prototypes where the signature gate is "
+                         "satisfied (see signature_supported)")
     ap.add_argument("--refresh-signatures", action="store_true",
                     help="also (re)apply signatures to already-named functions, "
                          "for prototypes blocked earlier by a missing type")
@@ -382,9 +534,12 @@ def main():
                 lines.append("== %s (%d) ==" % (action, len(sub)))
                 for r in sub:
                     extra = ("  <- %s" % r["detail"]) if r["detail"] else ""
+                    # SIG_ONLY keeps nocturne's name, so showing the name it
+                    # declined to apply would read as though it had applied it.
+                    shown = (r["current"] if action == "SIG_ONLY" else r["want"])
                     lines.append("  %s <- %s  %.2f  %-14s %s%s"
                                  % (r["b"], r["a"], r["confidence"], r["shape"],
-                                    r["want"], extra))
+                                    shown, extra))
                 lines.append("")
             with open(out_path, "w") as fh:
                 fh.write("\n".join(lines) + "\n")
@@ -396,10 +551,12 @@ def main():
             print("Report written to: %s" % out_path)
 
             to_apply = [r for r in rows
-                        if r["action"] in ("NAME", "NAME_SIG") and r["b"] in funcs]
+                        if r["action"] in ("NAME", "NAME_SIG", "SIG_ONLY")
+                        and r["b"] in funcs]
             if args.limit:
                 # Prefer rows that exercise the signature path when sampling.
-                to_apply.sort(key=lambda r: r["action"] != "NAME_SIG")
+                to_apply.sort(key=lambda r: r["action"] not in ("NAME_SIG",
+                                                                "SIG_ONLY"))
                 to_apply = to_apply[:args.limit]
                 print("[limit] applying only %d row(s)" % len(to_apply))
             if args.apply and to_apply:

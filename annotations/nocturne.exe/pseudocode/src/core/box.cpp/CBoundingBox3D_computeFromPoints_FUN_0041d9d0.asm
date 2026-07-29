@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(float *param_1,int param_2,float *param_3)
+; void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   point_count
+; CVector3f *      Stack[0xc]:4   points
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004fe770(int param_1)
+; void __cdecl core_script_cpp_FUN_004fe770(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -61,7 +63,7 @@ section .text
         ;   XREF to: 004fe991 (CONDITIONAL_JUMP)  ; LAB_004fe991
     PUSH EAX                            ; 004fe78e | DAT_01c775ec
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe78f
-        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
+        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe794
     FLD float ptr [ESP + 0x20]          ; 004fe798
     FDIV float ptr [0x0058e24a]         ; 004fe79c | FLOAT_0058e24a
@@ -94,7 +96,7 @@ section .text
     XOR ESI,ESI                         ; 004fe7ed
     MOV dword ptr [ESP + 0x10],EAX      ; 004fe7ef
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 004fe7f3
-        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710()
+        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     MOV dword ptr [ESP + 0xc],ESI       ; 004fe7f8
     ADD ESP,0x4                         ; 004fe7fc
     MOV ESI,EAX                         ; 004fe7ff
@@ -216,7 +218,7 @@ section .text
         ;   Label: LAB_004fe934
     PUSH EBP                            ; 004fe935
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004fe936
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004fe93b
     MOV EDX,dword ptr [ESP + 0x10]      ; 004fe93e
     SUB EDX,EAX                         ; 004fe942
@@ -257,7 +259,7 @@ section .text
         ;   Label: LAB_004fe991
     MOV dword ptr [0x01e53410],EDX      ; 004fe992 | DAT_01e53410
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe998
-        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
+        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe99d
     FLD float ptr [ESP + 0x20]          ; 004fe9a1
     FDIV float ptr [0x0058e24a]         ; 004fe9a5 | FLOAT_0058e24a

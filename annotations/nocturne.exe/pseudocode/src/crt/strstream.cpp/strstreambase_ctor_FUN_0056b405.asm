@@ -15,7 +15,7 @@
 ;   crt_strstream.cpp_ostrstream_ctor_FUN_00564d92 at 00564dd1
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884 = 0056ff82
+;   strstreambuf_vtable g_StrstreambufVTable
 ;   undefined4 DAT_005a48b0
 ;   void* PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc = 0056b5ad
 ;   void* PTR_FUN_005a48c4 = 0056b491
@@ -52,9 +52,9 @@ section .text
     MOV EBX,EAX                         ; 0056b42d
     PUSH EAX                            ; 0056b42f
     SUB EBX,0x4                         ; 0056b430
-    MOV dword ptr [EAX + 0x28],0x5a4884 ; 0056b433 | PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884
+    MOV dword ptr [EAX + 0x28],0x5a4884 ; 0056b433 | g_StrstreambufVTable
     CALL crt_strstream.cpp_strstreambuf_init_FUN_0056fe65 ; 0056b43a
-        ;   XREF to: 0056fe65 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_strstreambuf_init_FUN_0056fe65()
+        ;   XREF to: 0056fe65 (UNCONDITIONAL_CALL)  ; void crt_strstream.cpp_strstreambuf_init_FUN_0056fe65(strstreambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
     MOV EAX,dword ptr [EBX]             ; 0056b43f
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b441
     LEA EDX,[EBX + EAX*0x1]             ; 0056b444

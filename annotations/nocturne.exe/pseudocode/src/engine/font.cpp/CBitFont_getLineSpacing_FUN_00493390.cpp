@@ -1,25 +1,21 @@
 // Name: engine_font.cpp_CBitFont_getLineSpacing_FUN_00493390
 // Address: 00493390
 // Address Range: [[00493390, 004933ba]]
-// Convention: unknown
-// Signature: undefined4 engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(void)
+// Convention: __cdecl
+// Signature: int __cdecl engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(CBitFont *this_ptr,char character)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-uint engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(void)
+int __cdecl engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(CBitFont *this_ptr,char character)
 
 {
-  int *piVar1;
-  uint uVar2;
-  int in_stack_00000004;
-  byte in_stack_00000008;
+  CWinFont *this_ptr_00;
+  int iVar1;
   
-  if ((*(int *)(in_stack_00000004 + 0x3190) != 0) &&
-     (piVar1 = *(int **)(in_stack_00000004 + 0x3194), piVar1 != (int *)0x0)) {
-    uVar2 = (**(code **)(*piVar1 + 0x10))(piVar1,in_stack_00000008);
-    return uVar2;
+  if ((this_ptr->win_font_enabled != 0) &&
+     (this_ptr_00 = this_ptr->win_font_helper, this_ptr_00 != (CWinFont *)0x0)) {
+    iVar1 = (*((this_ptr_00->base).vtable)->getLineSpacing)(&this_ptr_00->base);
+    return iVar1;
   }
   return 0;
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 // Forward declarations
-struct CActorPropertyList;
 struct CBoundingBox3D;
 struct CDemonActor;
 struct CDemonActorType;
@@ -14,14 +13,12 @@ struct SInteractionInfo;
 struct SIntersectXZCylinder;
 struct SLaserInfo;
 struct SPlayerInput;
-struct _FILE;
 union UOrientationVector;
 
 // Dependencies
 #include "system/basetypes.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
-#include "types/funcdefs/CDemonActor_addFilesToExtract.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
 #include "types/funcdefs/CDemonActor_archive.h"
 #include "types/funcdefs/CDemonActor_calculateChecksum.h"
@@ -44,12 +41,8 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_getGroundType.h"
 #include "types/funcdefs/CDemonActor_getInteractionInfo.h"
 #include "types/funcdefs/CDemonActor_getPathMap.h"
-#include "types/funcdefs/CDemonActor_getPropertyList.h"
 #include "types/funcdefs/CDemonActor_getTargetPoints.h"
 #include "types/funcdefs/CDemonActor_handleFootstep.h"
-#include "types/funcdefs/CDemonActor_initializeInEditor.h"
-#include "types/funcdefs/CDemonActor_onActorDeleted.h"
-#include "types/funcdefs/CDemonActor_onAreaDeleted.h"
 #include "types/funcdefs/CDemonActor_onDropped.h"
 #include "types/funcdefs/CDemonActor_onLaserHit.h"
 #include "types/funcdefs/CDemonActor_onPickup.h"
@@ -63,7 +56,6 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"
 #include "types/funcdefs/CDemonActor_processFootstepAt.h"
-#include "types/funcdefs/CDemonActor_processInEditor.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
 #include "types/funcdefs/CDemonActor_renderOpaque.h"
@@ -72,7 +64,6 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_setPositionAndOrientation.h"
 #include "types/funcdefs/CDemonActor_setup.h"
 #include "types/funcdefs/CDemonActor_shouldIgnoreForTargeting.h"
-#include "types/funcdefs/CDemonActor_showEditorHelp.h"
 #include "types/funcdefs/CDemonActor_spawnFlies.h"
 #include "types/funcdefs/CDemonActor_startInteraction.h"
 #include "types/funcdefs/CDemonActor_stopInteraction.h"
@@ -82,7 +73,7 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_updateInteraction.h"
 
 // Structure: CDemonActor_vtable
-// Ghidra size: 0xec (236 bytes)
+// Ghidra size: 0xd0 (208 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonActor_vtable {
     CDemonActor_setup* setup; // 0x0
@@ -135,15 +126,8 @@ typedef struct CDemonActor_vtable {
     CDemonActor_getPathMap* getPathMap; // 0xbc
     CDemonActor_calculateChecksum* calculateChecksum; // 0xc0
     CDemonActor_getActorType* getActorType; // 0xc4
-    CDemonActor_onAreaDeleted* onAreaDeleted; // 0xc8
-    CDemonActor_onActorDeleted* onActorDeleted; // 0xcc
-    CDemonActor_processInEditor* processInEditor; // 0xd0
-    CDemonActor_getPropertyList* getPropertyList; // 0xd4
-    CDemonActor_initializeInEditor* initializeInEditor; // 0xd8
-    CDemonActor_showEditorHelp* showEditorHelp; // 0xdc
-    CDemonActor_addFilesToExtract* addFilesToExtract; // 0xe0
-    CDemonActor_dtor* dtor; // 0xe4
-    CDemonActor_archive* archive; // 0xe8
+    CDemonActor_dtor* dtor; // 0xc8
+    CDemonActor_archive* archive; // 0xcc
 } CDemonActor_vtable;
 #pragma pack(pop)
 

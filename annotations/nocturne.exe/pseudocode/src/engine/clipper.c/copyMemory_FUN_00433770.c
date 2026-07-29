@@ -1,25 +1,25 @@
 // Name: engine_clipper.c_copyMemory_FUN_00433770
 // Address: 00433770
 // Address Range: [[00433770, 00433790]]
-// Convention: unknown
-// Signature: void engine_clipper_c_copyMemory_FUN_00433770(undefined4 *param_1,undefined4 *param_2,uint param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_clipper_c_copyMemory_FUN_00433770(void *dest_ptr,void *src_ptr,int byte_count)
 
 #include "nocturne.h"
 
-void engine_clipper_c_copyMemory_FUN_00433770(uint *param_1,uint *param_2,uint param_3)
+void __cdecl engine_clipper_c_copyMemory_FUN_00433770(void *dest_ptr,void *src_ptr,int byte_count)
 
 {
   uint uVar1;
   
-  for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *param_1 = *param_2;
-    param_2 = param_2 + 1;
-    param_1 = param_1 + 1;
+  for (uVar1 = (uint)byte_count >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
+    *(uint *)dest_ptr = *(uint *)src_ptr;
+    src_ptr = (uint *)((int)src_ptr + 4);
+    dest_ptr = (uint *)((int)dest_ptr + 4);
   }
-  for (param_3 = param_3 & 3; param_3 != 0; param_3 = param_3 - 1) {
-    *(byte *)param_1 = *(byte *)param_2;
-    param_2 = (uint *)((int)param_2 + 1);
-    param_1 = (uint *)((int)param_1 + 1);
+  for (uVar1 = byte_count & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+    *(byte *)dest_ptr = *(byte *)src_ptr;
+    src_ptr = (uint *)((int)src_ptr + 1);
+    dest_ptr = (uint *)((int)dest_ptr + 1);
   }
   return;
 }

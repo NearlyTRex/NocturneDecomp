@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ncursfx_cpp_FUN_004ee680(void)
+; void __cdecl engine_ncursfx_cpp_FUN_004ee680(CMouse *this_ptr)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c90e0 at 004c932d

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744 = 00416500
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_CBodyPartTypeInfo_0059a860
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     PUSH 0x0                            ; 00415e4c
     PUSH 0x0                            ; 00415e4e
     PUSH EBX                            ; 00415e50
-    MOV dword ptr [EBX + 0x14c],0x59a744 ; 00415e51 | PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744
+    MOV dword ptr [EBX + 0x14c],0x59a744 ; 00415e51 | g_CBodyPartVTable
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 ; 00415e5b
         ;   XREF to: 00415ee0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0()
     ADD ESP,0xc                         ; 00415e60

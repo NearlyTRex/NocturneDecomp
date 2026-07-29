@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_trisock_cpp_connectSocket_FUN_00548fc0(void)
+; int __cdecl support_trisock_cpp_connectSocket_FUN_00548fc0(_SOCKET *socket_handle,SNetworkAddr *dest_addr)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; SNetworkAddr *   Stack[0x8]:4   dest_addr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x18]:1  local_18

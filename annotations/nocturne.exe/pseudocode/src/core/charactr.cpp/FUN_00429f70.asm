@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00429f70(int param_1,uint *param_2)
+; void core_charactr_cpp_FUN_00429f70(CDemonActor *param_1,uint *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 00429f7b
     PUSH EDI                            ; 00429f7c
     CALL core_actor.cpp_FUN_0040b0d0    ; 00429f7d
-        ;   XREF to: 0040b0d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b0d0()
+        ;   XREF to: 0040b0d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b0d0(CDemonActor * this_ptr, uint * out_crc)
     ADD ESP,0x8                         ; 00429f82
     PUSH dword ptr [EDI + 0x2434]       ; 00429f85
     LEA ESI,[EDI + 0x150]               ; 00429f8b

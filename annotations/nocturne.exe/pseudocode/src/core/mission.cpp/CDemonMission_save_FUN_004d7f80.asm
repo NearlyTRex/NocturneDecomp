@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_CDemonMission_save_FUN_004d7f80(undefined4 param_1,char *param_2)
+; void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 004d7fa0
     PUSH EDI                            ; 004d7fa4
     CALL core_mission.cpp_FUN_004d8720  ; 004d7fa5
-        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d8720()
+        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004d7faa
     PUSH EBX                            ; 004d7fad
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004d7fae

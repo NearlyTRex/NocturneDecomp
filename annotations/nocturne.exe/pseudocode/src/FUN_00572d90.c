@@ -24,7 +24,7 @@ char * FUN_00572d90(char *param_1)
     iVar1 = mblen(acStack_c);
     acStack_c[iVar1] = '\0';
     FUN_00572d50(str,acStack_c);
-    str = (char *)mbtowc_next(str);
+    str = mbtowc_next(str);
   }
   return param_1;
 }

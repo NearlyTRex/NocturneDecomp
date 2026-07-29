@@ -11,6 +11,8 @@ int __watcallStack stream_setup(_FILE *stream,int operation_type)
 {
   _FILE *stream_00;
   FileEmbeddedData *embedded_data;
+  char *unaff_EBX;
+  int unaff_retaddr;
   
   if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {
     stream->_cnt = 0;
@@ -20,7 +22,7 @@ int __watcallStack stream_setup(_FILE *stream,int operation_type)
     }
     if ((operation_type == 0) &&
        ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {
-      mbstrncpy_core(stream);
+      mbstrncpy_core((char *)stream,unaff_EBX,unaff_retaddr);
       embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
       if ((embedded_data->state_field & 4) != 0) {
         reportStreamError(embedded_data,2);

@@ -9,12 +9,12 @@
 void core_armour_cpp_FUN_0040f930(void)
 
 {
-  int iVar1;
+  CArmour *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd88);
-  if (iVar1 == 0) {
+  this_ptr = (CArmour *)FUN_0056497c(0xbd88);
+  if (this_ptr == (CArmour *)0x0) {
     return;
   }
-  core_armour_cpp_FUN_0040f960(iVar1);
+  core_armour_cpp_FUN_0040f960(this_ptr);
   return;
 }

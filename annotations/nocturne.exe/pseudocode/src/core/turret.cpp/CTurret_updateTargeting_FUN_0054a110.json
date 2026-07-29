@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 414,
+    "complexity_score": 417,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 147,
     "suspect_count": 24,
     "suspect_types": [
       "bit_int_float_compare",
       "raw_address_pointer_store",
-      "self_copy_guard",
       "stack_param",
       "stack_ref",
-      "unknown_field"
+      "unknown_field",
+      "unrolled_memcpy"
     ],
-    "total_lines": 548
+    "total_lines": 551
   },
   "cross_references": [
     {
@@ -392,69 +392,62 @@
   "static_analysis": {
     "analyzed_file": "CTurret_updateTargeting_FUN_0054a110.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 9,
+      "diagnostic_count": 8,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 76,
+          "line": 79,
           "message": "Uninitialized variable: fStack_c0",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 77,
+          "line": 80,
           "message": "Uninitialized variable: fStack_bc",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 78,
+          "line": 81,
           "message": "Uninitialized variable: fStack_b8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 62,
-          "line": 133,
+          "line": 136,
           "message": "Uninitialized variable: fStack_a8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 22,
-          "line": 134,
+          "line": 137,
           "message": "Uninitialized variable: fStack_a4",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 12,
-          "line": 135,
+          "line": 138,
           "message": "Uninitialized variable: fStack_a0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 38,
-          "line": 135,
+          "line": 138,
           "message": "Uninitialized variable: fStack_9c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 66,
-          "line": 135,
+          "line": 138,
           "message": "Uninitialized variable: fStack_98",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 14,
-          "line": 142,
-          "message": "Uninitialized variable: fStack_38",
           "severity": "error"
         }
       ],
@@ -476,12 +469,12 @@
       "line": 13,
       "match": "in_stack_fffffeac",
       "severity": "moderate",
-      "text": "int *in_stack_fffffeac;",
+      "text": "CDemonActor *in_stack_fffffeac;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 71,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_d0._12_4_ = (float)auStack_d0._12_4_ + -15.0f;",
@@ -489,7 +482,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 71,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_d0._12_4_ = (float)auStack_d0._12_4_ + -15.0f;",
@@ -497,7 +490,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 75,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_b4._0_4_ = (float)local_b4._0_4_ + 15.0f;",
@@ -505,7 +498,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 75,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_b4._0_4_ = (float)local_b4._0_4_ + 15.0f;",
@@ -513,7 +506,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 76,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_b4._4_4_ = (float)local_b4._4_4_ + 15.0f;",
@@ -521,7 +514,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 76,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_b4._4_4_ = (float)local_b4._4_4_ + 15.0f;",
@@ -529,7 +522,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 83,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(this_ptr,aCStack_34,in_stack_00000010);",
@@ -537,15 +530,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 86,
       "match": "in_stack_fffffeac",
       "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,in_stack_fffffeac);",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffeac);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 91,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(this_ptr,in_stack_00000010);",
@@ -553,39 +546,39 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 91,
+      "line": 94,
       "match": "*(CDemonActor **)(0x01E57284 + 0x14cd70",
       "severity": "moderate",
-      "text": "pCVar1 = *(CDemonActor **)(0x01E57284 + 0x14cd70 + iVar5);",
+      "text": "actor_ptr = *(CDemonActor **)(0x01E57284 + 0x14cd70 + iVar4);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 96,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "if ((((iVar3 != 0) && ((float)auStack_d0._12_4_ <= (pCVar1->location).position.x)) &&",
+      "text": "if ((((iVar2 != 0) && ((float)auStack_d0._12_4_ <= (actor_ptr->location).position.x)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 100,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "(((pCVar1->location).position.y <= (float)local_b4._0_4_ &&",
+      "text": "(((actor_ptr->location).position.y <= (float)local_b4._0_4_ &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 101,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "((pCVar1->location).position.z <= (float)local_b4._4_4_)))))) break;",
+      "text": "((actor_ptr->location).position.z <= (float)local_b4._4_4_)))))) break;",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 108,
       "match": "&stack0xfffffeb0",
       "severity": "moderate",
       "text": "__arrinit(&stack0xfffffeb0,10,&g_CVectorTypeInfo_005993b0);",
@@ -593,71 +586,71 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 109,
       "match": "in_stack_fffffeac",
       "severity": "moderate",
-      "text": "in_stack_fffffeac = (int *)&stack0xfffffeb0;",
+      "text": "in_stack_fffffeac = (CDemonActor *)&stack0xfffffeb0;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 109,
       "match": "&stack0xfffffeb0",
       "severity": "moderate",
-      "text": "in_stack_fffffeac = (int *)&stack0xfffffeb0;",
+      "text": "in_stack_fffffeac = (CDemonActor *)&stack0xfffffeb0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 110,
       "match": "&stack0xfffffeb0",
       "severity": "moderate",
-      "text": "iVar3 = (*((pCVar1->vtable)._ub)->getTargetPoints)(pCVar1,(CVector3f *)&stack0xfffffeb0);",
+      "text": "iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffeb0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 112,
       "match": "in_stack_fffffeac",
       "severity": "moderate",
-      "text": "in_stack_fffffeac = (int *)0x54a36c;",
+      "text": "in_stack_fffffeac = (CDemonActor *)0x54a36c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 126,
       "match": "&stack0xfffffeac",
       "severity": "moderate",
-      "text": "(pCVar1,&CStack_4c,(CVector3f *)&stack0xfffffeac);",
+      "text": "(actor_ptr,&CStack_4c,(CVector3f *)&stack0xfffffeac);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 126,
+      "line": 129,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "if (((pCVar2->x < (float)local_b4._8_4_) || (pCVar2->y < fStack_a8)) ||",
+      "text": "if (((pCVar1->x < (float)local_b4._8_4_) || (pCVar1->y < fStack_a8)) ||",
       "type": "unknown_field"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_88 != &fStack_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 137,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 141,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_88 != &fStack_40) {",
-      "type": "self_copy_guard"
+      "text": "CStack_88.x = CStack_40.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c60001 is the IEEE 754 bit pattern of 99f. Rewrite in a .keep as a plain float compare against 99f.",
-      "line": 79,
-      "match": "(int)fStack_84 < 0x42c60001",
+      "line": 82,
+      "match": "(int)CStack_88.y < 0x42c60001",
       "severity": "moderate",
-      "text": "if ((int)fStack_84 < 0x42c60001) {",
+      "text": "if ((int)CStack_88.y < 0x42c60001) {",
       "type": "bit_int_float_compare"
     },
     {
       "description": "Uninitialized variable: fStack_c0",
-      "line": 76,
+      "line": 79,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_c0 = fStack_c0 + -15.0f;",
@@ -665,7 +658,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_bc",
-      "line": 77,
+      "line": 80,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_bc = fStack_bc + -15.0f;",
@@ -673,7 +666,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_b8",
-      "line": 78,
+      "line": 81,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fStack_b8 = fStack_b8 + 15.0f;",
@@ -681,50 +674,42 @@
     },
     {
       "description": "Uninitialized variable: fStack_a8",
-      "line": 133,
+      "line": 136,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "if (((pCVar2->x < (float)local_b4._8_4_) || (pCVar2->y < fStack_a8)) ||",
+      "text": "if (((pCVar1->x < (float)local_b4._8_4_) || (pCVar1->y < fStack_a8)) ||",
       "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_a4",
-      "line": 134,
+      "line": 137,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "((pCVar2->z < fStack_a4 ||",
+      "text": "((pCVar1->z < fStack_a4 ||",
       "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_a0",
-      "line": 135,
+      "line": 138,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "(((fStack_a0 < pCVar2->x || (fStack_9c < pCVar2->y)) || (fStack_98 < pCVar2->z))))))",
+      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
       "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_9c",
-      "line": 135,
+      "line": 138,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "(((fStack_a0 < pCVar2->x || (fStack_9c < pCVar2->y)) || (fStack_98 < pCVar2->z))))))",
+      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
       "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_98",
-      "line": 135,
+      "line": 138,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "(((fStack_a0 < pCVar2->x || (fStack_9c < pCVar2->y)) || (fStack_98 < pCVar2->z))))))",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_38",
-      "line": 142,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c)))",
+      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
       "type": "static_legacy_uninitvar"
     }
   ]

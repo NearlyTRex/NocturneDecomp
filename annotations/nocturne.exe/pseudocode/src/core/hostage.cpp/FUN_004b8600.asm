@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_FUN_004b8600(int param_1,int param_2)
+; void core_hostage_cpp_FUN_004b8600(CNPC *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_004b8681
     PUSH EBX                            ; 004b8682
     CALL core_npc.cpp_FUN_004eeea0      ; 004b8683
-        ;   XREF to: 004eeea0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eeea0()
+        ;   XREF to: 004eeea0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eeea0(CNPC * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004b8688
     POP EDI                             ; 004b868b
     POP ESI                             ; 004b868c
@@ -112,7 +112,7 @@ section .text
     PUSH ESI                            ; 004b86f2
     PUSH EBX                            ; 004b86f3
     CALL core_npc.cpp_FUN_004eeea0      ; 004b86f4
-        ;   XREF to: 004eeea0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eeea0()
+        ;   XREF to: 004eeea0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eeea0(CNPC * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004b86f9
     POP EDI                             ; 004b86fc
     POP ESI                             ; 004b86fd

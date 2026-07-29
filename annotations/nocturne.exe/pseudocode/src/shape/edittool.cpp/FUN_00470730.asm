@@ -374,7 +374,7 @@ section .text
     LEA EAX,[ESP + 0x8cc]               ; 00470ab7
     PUSH EAX                            ; 00470abe
     CALL crt_unknown.c_FUN_00566570     ; 00470abf
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470ac4
     LEA EAX,[ESP + 0x18d4]              ; 00470ac7
     PUSH EAX                            ; 00470ace
@@ -390,7 +390,7 @@ section .text
     LEA EAX,[ESP + 0x9d0]               ; 00470aeb
     PUSH EAX                            ; 00470af2
     CALL crt_unknown.c_FUN_00566570     ; 00470af3
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470af8
     JMP 0x00470781                      ; 00470afb
         ;   XREF to: 00470781 (UNCONDITIONAL_JUMP)  ; LAB_00470781
@@ -550,7 +550,7 @@ section .text
     LEA EAX,[ESP + 0x7c8]               ; 00470cd2
     PUSH EAX                            ; 00470cd9
     CALL crt_unknown.c_FUN_00566570     ; 00470cda
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470cdf
     MOV EAX,dword ptr [ESP + 0x1c84]    ; 00470ce2
     POP ESI                             ; 00470ce9
@@ -563,7 +563,7 @@ section .text
         ;   Label: LAB_00470cf4
     PUSH EAX                            ; 00470cfb
     CALL crt_unknown.c_FUN_00566570     ; 00470cfc
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470d01
     TEST EAX,EAX                        ; 00470d04
     JZ 0x00470a21                       ; 00470d06
@@ -578,7 +578,7 @@ section .text
     LEA EAX,[ESP + 0x4bc]               ; 00470d22
     PUSH EAX                            ; 00470d29
     CALL crt_unknown.c_FUN_00566570     ; 00470d2a
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470d2f
     JMP 0x004709fc                      ; 00470d32
         ;   XREF to: 004709fc (UNCONDITIONAL_JUMP)  ; LAB_004709fc
@@ -618,7 +618,7 @@ section .text
     LEA EAX,[ESP + 0xcd4]               ; 00470d99
     PUSH EAX                            ; 00470da0
     CALL crt_unknown.c_FUN_00566570     ; 00470da1
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 00470da6
     PUSH 0x0                            ; 00470da9
     LEA EAX,[ESP + 0x3ac]               ; 00470dab

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_saveCameraFog_FUN_00447dd0(int param_1,undefined4 param_2)
+; void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00447dd0(SFog *fog,_FILE *file_handle)
 ;
+; Parameters:
+; SFog *           Stack[0x4]:4   fog
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x24]:8  local_24
 ; undefined8       Stack[-0x1c]:8  local_1c

@@ -28,7 +28,7 @@ section .text
     ADD EBX,0x200                       ; 0043f8ee
     PUSH EBX                            ; 0043f8f4
     CALL core_curtain.cpp_FUN_0043f980  ; 0043f8f5
-        ;   XREF to: 0043f980 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0043f980()
+        ;   XREF to: 0043f980 (UNCONDITIONAL_CALL)  ; SCurtainVertex * core_curtain.cpp_FUN_0043f980(SCurtainVertex * objs, uint flags)
     ADD ESP,0x8                         ; 0043f8fa
     PUSH 0x1                            ; 0043f8fd
     LEA EBX,[EAX + 0xfffffe00]          ; 0043f8ff

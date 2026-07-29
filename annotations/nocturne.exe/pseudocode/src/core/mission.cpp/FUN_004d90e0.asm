@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_FUN_004d90e0(int param_1,undefined4 *param_2)
+; void __cdecl core_mission_cpp_FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CLocation *      Stack[0x8]:4   teleport_target
 ;
 ; XREF[1]:
 ;   core_teleport.cpp_CTeleport_process_FUN_00543910 at 005439ab

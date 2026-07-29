@@ -130,7 +130,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
           if (_DAT_01c02594 == 0) {
             if (render_mode == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0
-                        (DAT_005ae704,&DAT_005c1374);
+                        (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
             }
             else {
               engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
@@ -140,13 +140,13 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
           else {
             engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(DAT_005ae704,1);
             engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
-                      (DAT_005ae704,&DAT_005c1374);
+                      (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
           }
         }
         else {
           engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xa000);
           engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370
-                    (DAT_005ae704,&DAT_005c1374);
+                    (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
         }
         local_18 = local_18 + 4;
         local_1c = local_1c + 1;

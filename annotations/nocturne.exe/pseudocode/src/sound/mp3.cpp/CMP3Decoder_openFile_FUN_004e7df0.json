@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -172,7 +172,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -359,7 +359,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)",
+      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -367,7 +367,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)",
+      "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -391,7 +391,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "p_Var3 = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,\"rb\");",
+      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00456a60(\"sound\",param_2,\"rb\");",
       "type": "unnamed_param"
     },
     {
@@ -407,7 +407,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = sound_mp3_cpp_FUN_004e7ed0(param_1,p_Var3,iVar2);",
+      "text": "iVar2 = sound_mp3_cpp_FUN_004e7ed0(param_1,file_handle,iVar2);",
       "type": "unnamed_param"
     },
     {
@@ -431,7 +431,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = cVar1;",
+      "text": "param_1->filename[0] = cVar1;",
       "type": "unnamed_param"
     },
     {
@@ -463,7 +463,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1] = cVar1;",
+      "text": "param_1->filename[1] = cVar1;",
       "type": "unnamed_param"
     },
     {
@@ -471,7 +471,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = param_1 + 2;",
+      "text": "param_1 = (CMP3Decoder *)(param_1->filename + 2);",
       "type": "unnamed_param"
     },
     {
@@ -479,7 +479,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = param_1 + 2;",
+      "text": "param_1 = (CMP3Decoder *)(param_1->filename + 2);",
       "type": "unnamed_param"
     },
     {

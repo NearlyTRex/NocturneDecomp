@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_crossbow_kfm_0057b478
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059bb54 = 00553f10
+;   CWeapon_full_vtable g_CCrossbowVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -38,7 +38,7 @@ section .text
     PUSH 0x57b478                       ; 0043cf32 | = "crossbow.kfm"
     LEA EAX,[EBX + 0x150]               ; 0043cf37
     PUSH EAX                            ; 0043cf3d
-    MOV dword ptr [EBX + 0x14c],0x59bb54 ; 0043cf3e | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059bb54
+    MOV dword ptr [EBX + 0x14c],0x59bb54 ; 0043cf3e | g_CCrossbowVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0043cf48
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2f8],0x0     ; 0043cf4d

@@ -13,11 +13,11 @@ undefined4 FUN_0043ac50(undefined4 param_1);
 
 // Original: engine_console.cpp_CConsole_printf_FUN_0043ac60
 // Address: 0043ac60
-void CConsole::printf(int *param_1,char *param_2);
+void CConsole::printf(CConsole *param_1,char *param_2);
 
 // Original: engine_console.cpp_CConsole_writeChar_FUN_0043ad30
 // Address: 0043ad30
-void CConsole::writeChar(CConsole *param_1,char param_2);
+void __cdecl CConsole::writeChar(CConsole *this_ptr,char character);
 
 // Original: engine_console.cpp_CConsole_reset_FUN_0043ae00
 // Address: 0043ae00

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(float *param_1,float *param_2,float *param_3,float *param_4)
+; float __cdecl core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x5c]:4  local_5c

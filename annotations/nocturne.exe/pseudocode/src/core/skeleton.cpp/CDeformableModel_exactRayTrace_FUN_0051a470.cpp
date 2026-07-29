@@ -2,13 +2,13 @@
 // Address: 0051a470
 // Address Range: [[0051a470, 0051a6f4]]
 // Convention: unknown
-// Signature: float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
+// Signature: float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,uint param_3,uint param_4,int *param_5,byte *param_6)
+float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 
 {
   int iVar1;
@@ -68,7 +68,7 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,
                     (&local_6c,(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + iVar5) * 0xc)
                      ,(CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 2 + iVar5) * 0xc),
                      (CVector3f *)(&DAT_026757d0 + (uint)*(ushort *)(iVar4 + 4 + iVar5) * 0xc));
-          local_14 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620();
+          local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&local_6c,param_3,param_4);
           if (((local_14 < local_18) && (0.0 <= local_14)) && (local_14 <= 1.0)) {
             local_34 = -local_6c.normal.x;
             local_30 = -local_6c.normal.y;

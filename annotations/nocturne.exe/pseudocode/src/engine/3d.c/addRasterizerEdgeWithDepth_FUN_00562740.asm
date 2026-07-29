@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_addRasterizerEdgeWithDepth_FUN_00562740(int param_1,int param_2)
+; void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_00562740(SRenderVertex *v0,SRenderVertex *v1)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v0
+; SRenderVertex *  Stack[0x8]:4   v1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de497c

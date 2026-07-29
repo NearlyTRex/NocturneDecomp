@@ -1,35 +1,32 @@
 // Name: support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0
 // Address: 004397d0
 // Address Range: [[004397d0, 0043982f]]
-// Convention: unknown
-// Signature: undefined4 support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(int param_1,int param_2,int *param_3)
+// Convention: __cdecl
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 
 #include "nocturne.h"
 
-uint support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(int param_1,int param_2,int *param_3)
+int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
-  uint *puVar3;
+  int iVar3;
   int iVar4;
-  int iVar5;
   
-  iVar5 = 0;
-  iVar2 = param_2;
+  iVar4 = 0;
+  iVar2 = code;
   do {
-    puVar3 = (uint *)(iVar2 * 0x10 + *(int *)(param_1 + 0x10));
-    iVar5 = iVar5 + 1;
-    uVar1 = *puVar3;
-    iVar2 = puVar3[1];
-    iVar4 = iVar5;
+    iVar4 = iVar4 + 1;
+    iVar1 = this_ptr->node_table[iVar2].code;
+    iVar2 = this_ptr->node_table[iVar2].parent_index;
+    iVar3 = iVar4;
   } while (-1 < iVar2);
   do {
-    *(byte *)(*param_3 + iVar4 + -1) =
-         *(byte *)(*(int *)(param_1 + 0x10) + param_2 * 0x10);
-    param_2 = *(int *)(param_2 * 0x10 + 4 + *(int *)(param_1 + 0x10));
-    iVar4 = iVar4 + -1;
-  } while (-1 < param_2);
-  *param_3 = *param_3 + iVar5;
-  return uVar1;
+    (*buffer_ptr_ptr)[iVar3 + -1] = (char)this_ptr->node_table[code].code;
+    code = this_ptr->node_table[code].parent_index;
+    iVar3 = iVar3 + -1;
+  } while (-1 < code);
+  *buffer_ptr_ptr = *buffer_ptr_ptr + iVar4;
+  return iVar1;
 }

@@ -200,7 +200,7 @@ section .text
     ADD EAX,EDI                         ; 004f58f1
     PUSH EAX                            ; 004f58f3
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700 ; 004f58f4
-        ;   XREF to: 004f4700 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700()
+        ;   XREF to: 004f4700 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700(CPackedBitmap * this_ptr, uchar * raw_bitmap_data, int row_stride)
     JMP 0x004f57ff                      ; 004f58f9
         ;   XREF to: 004f57ff (UNCONDITIONAL_JUMP)  ; LAB_004f57ff
     PUSH ESI                            ; 004f58fe

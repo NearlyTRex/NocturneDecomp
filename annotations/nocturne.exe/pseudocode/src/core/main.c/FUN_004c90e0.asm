@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_004c90e0(void)
+; void __cdecl core_main_c_FUN_004c90e0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -108,7 +108,7 @@ section .text
     MOV ECX,dword ptr [0x014b98f8]      ; 004c9180 | DAT_014b98f8
     PUSH ECX                            ; 004c9186
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c9187
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c918c
     SAR EDX,0x1f                        ; 004c918e
     SUB EAX,EDX                         ; 004c9191
@@ -132,7 +132,7 @@ section .text
     MOV ESI,dword ptr [0x014b98f8]      ; 004c91c9 | DAT_014b98f8
     PUSH ESI                            ; 004c91cf
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c91d0
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c91d5
     SAR EDX,0x1f                        ; 004c91d7
     SUB EAX,EDX                         ; 004c91da
@@ -219,7 +219,7 @@ section .text
     PUSH EDX                            ; 004c92a9
     MOV EBX,EAX                         ; 004c92aa
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c92ac
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c92b1
     SAR EDX,0x1f                        ; 004c92b3
     SUB EAX,EDX                         ; 004c92b6
@@ -267,7 +267,7 @@ section .text
     MOV EDI,dword ptr [0x005be060]      ; 004c9326 | DAT_005be060
     PUSH EDI                            ; 004c932c
     CALL engine_ncursfx.cpp_FUN_004ee680 ; 004c932d
-        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; undefined engine_ncursfx.cpp_FUN_004ee680()
+        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_FUN_004ee680(CMouse * this_ptr)
     ADD ESP,0x4                         ; 004c9332
     MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | DAT_005baf90
     PUSH EBP                            ; 004c933b
@@ -277,26 +277,26 @@ section .text
     MOV EAX,[0x005bed68]                ; 004c9344 | DAT_005bed68
     PUSH EAX                            ; 004c9349
     CALL core_sound.cpp_FUN_00527e10    ; 004c934a
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_00527e10()
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c934f
     CALL core_dmodel.cpp_FUN_00454460   ; 004c9352
-        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00454460()
+        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00454460()
     CALL core_skeleton.cpp_FUN_0051f650 ; 004c9357
-        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f650()
+        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f650()
     CALL core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 ; 004c935c
         ;   XREF to: 0051f730 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllSkeletons_FUN_0051f730()
     CALL engine_matrix.c_FUN_004cca50   ; 004c9361
-        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004cca50()
+        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_FUN_004cca50()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c9366
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     CALL engine_2d.c_FUN_004012a0       ; 004c936b
-        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004012a0()
+        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004012a0()
     CALL engine_3d.c_FUN_005458d0       ; 004c9370
         ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_005458d0()
     CALL core_dfont.cpp_FUN_0044cc00    ; 004c9375
-        ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; undefined core_dfont.cpp_FUN_0044cc00()
+        ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044cc00()
     CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a
-        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559e90()
+        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00559e90()
     MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | DAT_005be1cc
     PUSH EDX                            ; 004c9385
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004c9386

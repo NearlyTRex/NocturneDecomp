@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 325,
+    "complexity_score": 295,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 185,
-    "suspect_count": 13,
+    "pseudocode_lines": 175,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 762
+    "total_lines": 752
   },
   "cross_references": [
     {
@@ -519,10 +519,76 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "C3DSLight_load_FUN_00514a70.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 38,
+          "line": 145,
+          "message": "Uninitialized variable: local_44",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 38,
+          "line": 153,
+          "message": "Uninitialized variable: local_40",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 165,
+          "message": "Uninitialized variable: local_48",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 168,
+          "message": "Uninitialized variable: local_3c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 57,
+          "line": 174,
+          "message": "Uninitialized variable: local_38",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 57,
+          "line": 175,
+          "message": "Uninitialized variable: local_30",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 57,
+          "line": 176,
+          "message": "Uninitialized variable: local_34",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 57,
+          "line": 177,
+          "message": "Uninitialized variable: local_2c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 88,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->filter_indices + local_1c) = 0;",
@@ -530,74 +596,74 @@
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 139,
       "match": "(int)&this_ptr->camera_light_bounds[0].x_min",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
+      "line": 140,
       "match": "(int)&this_ptr->camera_light_bounds[0].x_max",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar3) = 0x13e;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 148,
+      "line": 141,
       "match": "(int)&this_ptr->camera_light_bounds[0].y_min",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar3) = 1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
+      "line": 142,
       "match": "(int)&this_ptr->camera_light_bounds[0].y_max",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar3) = 0xee;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&local_24->x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
-      "match": "(int)&local_24->x_min",
+      "description": "Pointer value `&pCVar2->light_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&pCVar2->light_type",
       "severity": "moderate",
-      "text": "iVar2 = (int)&local_24->x_min + iVar5;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar4->light_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 158,
-      "match": "(int)&pCVar4->light_type",
-      "severity": "moderate",
-      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
+      "text": "pCVar2 = (C3DSLight *)((int)&pCVar2->light_type + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 146,
+      "line": 139,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 147,
+      "line": 140,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar3) = 0x13e;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 148,
+      "line": 141,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar3) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar3) = 0xee;",
       "type": "pointer_cast"
     },
     {
@@ -605,24 +671,72 @@
       "line": 149,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;",
+      "text": "pCVar2 = (C3DSLight *)((int)&pCVar2->light_type + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 152,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar2 = (int)&local_24->x_min + iVar5;",
-      "type": "pointer_cast"
+      "description": "Uninitialized variable: local_44",
+      "line": 145,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "pCVar2->visible_flags[0] = local_44;",
+      "type": "static_uninitvar"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 158,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
-      "type": "pointer_cast"
+      "description": "Uninitialized variable: local_40",
+      "line": 153,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "pCVar2->visible_flags[0] = local_40;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_48",
+      "line": 165,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (0 < local_48) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_3c",
+      "line": 168,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (0xf9 < local_3c) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_38",
+      "line": 174,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->camera_light_bounds[local_3c].x_min = local_38;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_30",
+      "line": 175,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->camera_light_bounds[local_3c].x_max = local_30;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_34",
+      "line": 176,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->camera_light_bounds[local_3c].y_min = local_34;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_2c",
+      "line": 177,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->camera_light_bounds[local_3c].y_max = local_2c;",
+      "type": "static_uninitvar"
     }
   ]
 }

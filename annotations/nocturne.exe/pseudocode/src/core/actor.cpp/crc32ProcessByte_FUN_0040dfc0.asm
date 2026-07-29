@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(uint *param_1,byte param_2)
+; void __cdecl core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(uint *crc_state,byte input_byte)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   crc_state
+; byte             Stack[0x8]:1   input_byte
 ;
 ; XREF[3]:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0 at 0040e0bb

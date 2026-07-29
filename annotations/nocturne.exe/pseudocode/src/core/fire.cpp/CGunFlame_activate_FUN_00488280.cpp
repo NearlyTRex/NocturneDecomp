@@ -1,58 +1,59 @@
 // Name: core_fire.cpp_CGunFlame_activate_FUN_00488280
 // Address: 00488280
 // Address Range: [[00488280, 00488421]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2,float *param_3,float param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CGunFlame_activate_FUN_00488280(CGunFlame *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_type)
 
 #include "nocturne.h"
 
-void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2,float *param_3,float param_4)
+void __cdecl core_fire_cpp_CGunFlame_activate_FUN_00488280(CGunFlame *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_type)
 
 {
-  float *pfVar1;
+  float fVar1;
   float fVar2;
+  CVector3f *pCVar3;
+  float fVar4;
   CMatrix3x3f local_6c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  byte local_2c [12];
+  CVector3f local_38;
+  CVector3f local_2c;
   CVector3f local_20;
-  uint local_10;
+  float local_10;
   float local_c;
   
-  if (param_1 + 1 != param_2) {
-    param_1[1] = *param_2;
-    param_1[2] = param_2[1];
-    param_1[3] = param_2[2];
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f800000);
-  *param_1 = 2.0f * local_c;
-  local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41980000);
-  param_1[7] = local_c;
-  local_20.x = *param_3;
-  local_20.y = param_3[1];
-  local_20.z = param_3[2];
-  local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd567750,0x3d567750);
+  local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.9,1.0);
+  this_ptr->lifetime = 2.0f * local_c;
+  local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,19.0);
+  this_ptr->anim_frame = local_c;
+  local_20.x = euler_angles->x;
+  local_20.y = euler_angles->y;
+  local_20.z = euler_angles->z;
+  local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05235988,0.05235988);
   local_20.y = local_c + local_20.y;
-  local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd567750,0x3d567750);
+  local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05235988,0.05235988);
   local_20.x = local_c + local_20.x;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_6c,&local_20);
-  local_30 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a33333,0x40cccccd);
-  local_38 = 0;
-  local_34 = 0;
-  local_10 = local_30;
-  local_c = (float)local_30;
-  pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                              (&local_6c,local_2c,&local_38);
-  if (param_1 + 4 != pfVar1) {
-    param_1[4] = *pfVar1;
-    param_1[5] = pfVar1[1];
-    param_1[6] = pfVar1[2];
+  local_38.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.1,6.4);
+  local_38.x = 0.0;
+  local_38.y = 0.0;
+  local_10 = local_38.z;
+  local_c = local_38.z;
+  pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_6c,&local_2c,&local_38);
+  if (&this_ptr->velocity != pCVar3) {
+    (this_ptr->velocity).x = pCVar3->x;
+    (this_ptr->velocity).y = pCVar3->y;
+    (this_ptr->velocity).z = pCVar3->z;
   }
-  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3dcccccd);
-  param_1[1] = param_1[1] + param_1[4] * fVar2;
-  param_1[2] = param_1[2] + param_1[5] * fVar2;
-  param_1[3] = param_1[3] + param_1[6] * fVar2;
-  param_1[8] = param_4;
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,0.1);
+  fVar1 = (this_ptr->velocity).y;
+  fVar2 = (this_ptr->velocity).z;
+  (this_ptr->position).x = (this_ptr->position).x + (this_ptr->velocity).x * fVar4;
+  (this_ptr->position).y = (this_ptr->position).y + fVar1 * fVar4;
+  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar4;
+  this_ptr->flame_type = flame_type;
   return;
 }

@@ -10,15 +10,16 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042b750(CChain *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   void *pvVar3;
   char *pcVar4;
   char *pcVar5;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pvVar3 = __arrinit
-                     ((void *)(iVar2 + 0x284),0x14,&g_SChainVertexTypeInfo_0059b320);
-  *(byte ***)((int)pvVar3 + -0x138) = &PTR_core_chain_cpp_CChain_setup_FUN_0042b8f0_0059b244;
+                     (&pCVar2[1].previous_transform_state.orientation,0x14,
+                      &g_SChainVertexTypeInfo_0059b320);
+  *(CDemonActor_vtable **)((int)pvVar3 + -0x138) = &g_CChainVTable;
   *(uint *)((int)pvVar3 + -0x134) = 10;
   *(uint *)((int)pvVar3 + -0x130) = 0x40a00000;
   *(uint *)((int)pvVar3 + 0x2d0) = 0x3f800000;

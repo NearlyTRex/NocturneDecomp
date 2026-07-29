@@ -1,24 +1,24 @@
 // Name: engine_model.c_byteswapMRGLData_FUN_004dcc90
 // Address: 004dcc90
 // Address Range: [[004dcc90, 004dcd02]]
-// Convention: unknown
-// Signature: void engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *mrgl_data,int data_size)
 
 #include "nocturne.h"
 
-void engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *param_1,int param_2)
+void __cdecl engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *mrgl_data,int data_size)
 
 {
   uint uVar1;
   int iVar2;
   
 joined_r0x004dcc9d:
-  if (param_2 < 1) {
+  if (data_size < 1) {
     return;
   }
   do {
-    uVar1 = engine_model_c_getMRGLSize_FUN_004dd520(param_1);
-    switch((param_1->base).type) {
+    uVar1 = engine_model_c_getMRGLSize_FUN_004dd520(mrgl_data);
+    switch((mrgl_data->base).type) {
     case 0:
     case 1:
     case 2:
@@ -91,15 +91,15 @@ joined_r0x004dcc9d:
       PTR_01cc4800 = "..\\engine\\model.c";
       INT_01cc4804 = 0xce;
       core_main_c_FUN_004c8440("Need a new byteswap!");
-      param_2 = param_2 - uVar1;
-      param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
-      if (param_2 < 1) {
+      data_size = data_size - uVar1;
+      mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
+      if (data_size < 1) {
         return;
       }
     }
   } while( true );
 switchD_004dccb6_caseD_d:
-  param_2 = param_2 - uVar1;
-  param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + uVar1);
+  data_size = data_size - uVar1;
+  mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
   goto joined_r0x004dcc9d;
 }

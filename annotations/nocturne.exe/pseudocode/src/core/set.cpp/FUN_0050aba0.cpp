@@ -63,7 +63,7 @@ int core_set_cpp_FUN_0050aba0(CDemonSet *param_1)
       puVar2 = (uint *)(&DAT_01fb9b58 + iVar7);
       iVar7 = iVar7 + 4;
       iVar6 = iVar6 + 1;
-      core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(*puVar2);
+      core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970((CDemonLight *)*puVar2);
       iVar5 = _DAT_01fb9b54;
     } while (iVar6 < _DAT_01fb9b54);
   }

@@ -12,13 +12,12 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(CFlame *this_ptr)
   CFlame *pCVar1;
   float fVar2;
   
-  pCVar1 = (CFlame *)core_actor_cpp_FUN_00409d30(this_ptr);
-  (pCVar1->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_flame_cpp_CFlame_setup_FUN_0048d050_0059d584;
+  pCVar1 = (CFlame *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CFlameVTable;
   (pCVar1->flame_size).x = 1.0;
   (pCVar1->flame_size).y = 2.0;
   (pCVar1->flame_size).z = 1.0;
-  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41000000);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,8.0);
   pCVar1->which_flame = 0;
   pCVar1->globe_scalar = 1.0;
   pCVar1->is_visible = 1;

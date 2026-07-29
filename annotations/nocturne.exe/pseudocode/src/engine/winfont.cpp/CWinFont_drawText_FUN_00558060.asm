@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_winfont_cpp_CWinFont_drawText_FUN_00558060(CWinFont *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6)
+; int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_00558060(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text_string
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   foreground_color
+; int              Stack[0x18]:4   background_color
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0

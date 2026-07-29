@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(void *param_1)
+; SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(SFreaky *objs,uint flags)
 ;
+; Parameters:
+; SFreaky *        Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f

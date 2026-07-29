@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 244,
+    "complexity_score": 238,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 58,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 204
+    "total_lines": 198
   },
   "cross_references": [],
   "function": {
@@ -419,44 +419,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00561940.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 64,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 64,
-          "message": "Uninitialized variable: local_30",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 65,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 65,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
@@ -468,7 +430,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->was_rendered_opaque != 0) && (*(int *)param_1[1].base.footstep_sound_code != 0)) {",
@@ -476,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->was_rendered_opaque != 0) && (*(int *)param_1[1].base.footstep_sound_code != 0)) {",
@@ -484,7 +446,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->model,param_1[1].base.previous_transform_state.position.x);",
@@ -492,7 +454,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->model,param_1[1].base.previous_transform_state.position.x);",
@@ -500,7 +462,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 35,
       "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -508,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&param_1->base,&local_88,pCVar1);",
@@ -516,23 +478,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_34,pCVar1);",
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_34,pCVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_1c,pCVar1);",
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_1c,pCVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->was_rendered_opaque == 0) {",
@@ -540,7 +502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1->was_rendered_opaque;",
@@ -548,7 +510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(param_1);",
@@ -556,7 +518,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1->was_rendered_opaque;",
@@ -564,7 +526,7 @@
     },
     {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 35,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
@@ -572,7 +534,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -585,38 +547,6 @@
       "severity": "moderate",
       "text": "// 005619a5: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 64,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_60 = local_18 - local_30;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_30",
-      "line": 64,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_60 = local_18 - local_30;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 65,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_14 - local_2c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 65,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_14 - local_2c;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

@@ -1,12 +1,12 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
 // Address: 0052b880
 // Address Range: [[0052b880, 0052b999]]
-// Convention: unknown
-// Signature: double sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-double sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(uint param_1,int param_2)
+double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ double sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(uint pa
   uint uStack_20;
   char local_18 [8];
   
-  iVar1 = *(int *)(param_2 + 0x6c);
+  iVar1 = (slot->options).dead;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     apcStack_1bc[0] = "DirectSoundDevice::getSfxPlaybackPos - invalid handle";
@@ -36,6 +36,6 @@ double sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880(uint pa
     return -1.0;
   }
   uVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                    (*(CSfxSample **)(param_2 + 0x74));
+                    ((CSfxSample *)slot->playback_state);
   return (double)(uStack_20 / uVar3);
 }

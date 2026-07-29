@@ -206,7 +206,7 @@ section .text
     PUSH EAX                            ; 0054ecf2
     PUSH EBX                            ; 0054ecf3
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0054ecf4
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     LEA EDX,[EBX + 0x8c8]               ; 0054ecf9
     ADD ESP,0xc                         ; 0054ecff
     CMP EDX,EAX                         ; 0054ed02
@@ -520,7 +520,7 @@ section .text
         ;   XREF to: 0054f0a7 (CONDITIONAL_JUMP)  ; LAB_0054f0a7
     PUSH EAX                            ; 0054f09e
     CALL core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90 ; 0054f09f
-        ;   XREF to: 00545b90 (UNCONDITIONAL_CALL)  ; undefined core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90()
+        ;   XREF to: 00545b90 (UNCONDITIONAL_CALL)  ; CTommyGun * core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90(CTommyGun * this_ptr)
     ADD ESP,0x4                         ; 0054f0a4
     MOV EDI,EAX                         ; 0054f0a7
         ;   Label: LAB_0054f0a7
@@ -550,7 +550,7 @@ section .text
     PUSH EAX                            ; 0054f0f5
         ;   Label: LAB_0054f0f5
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0054f0f6
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0054f0fb
     MOV ECX,dword ptr [ESP + 0xec]      ; 0054f0fe
     MOV dword ptr [ESI + 0xbd48],EBX    ; 0054f105

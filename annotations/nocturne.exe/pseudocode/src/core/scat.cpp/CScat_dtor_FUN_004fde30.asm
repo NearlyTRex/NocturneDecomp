@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_scat_cpp_CScat_dtor_FUN_004fde30(CHero *param_1,byte param_2)
+; CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_004fde30(CScat *this_ptr,uint flags)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CScatTypeInfo_005a16a0

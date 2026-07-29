@@ -9,22 +9,20 @@
 int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00514980(C3DSCamera *this_ptr,CVector3f *world_position,float radius)
 
 {
-  float local_1c;
-  float local_18;
-  float local_14;
-  float local_10;
-  float local_c;
-  float local_8;
+  CVector3f local_1c;
+  CVector3f local_10;
   
-  local_1c = world_position->x - (this_ptr->position).x;
-  local_18 = world_position->y - (this_ptr->position).y;
-  local_14 = world_position->z - (this_ptr->position).z;
+  local_1c.x = world_position->x - (this_ptr->position).x;
+  local_1c.y = world_position->y - (this_ptr->position).y;
+  local_1c.z = world_position->z - (this_ptr->position).z;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
             (&this_ptr->rotation_matrix,&local_10,&local_1c);
-  if (((((float)this_ptr->reverb_preset <= local_10 + radius) &&
-       ((this_ptr->box).min.x <= local_c + radius)) && ((this_ptr->box).min.y <= local_8 + radius))
-     && (((local_10 - radius <= (this_ptr->box).min.z && (local_c - radius <= (this_ptr->box).max.x)
-          ) && (local_8 - radius <= (this_ptr->box).max.y)))) {
+  if (((((float)this_ptr->reverb_preset <= local_10.x + radius) &&
+       ((this_ptr->box).min.x <= local_10.y + radius)) &&
+      ((this_ptr->box).min.y <= local_10.z + radius)) &&
+     (((local_10.x - radius <= (this_ptr->box).min.z &&
+       (local_10.y - radius <= (this_ptr->box).max.x)) &&
+      (local_10.z - radius <= (this_ptr->box).max.y)))) {
     return 1;
   }
   return 0;

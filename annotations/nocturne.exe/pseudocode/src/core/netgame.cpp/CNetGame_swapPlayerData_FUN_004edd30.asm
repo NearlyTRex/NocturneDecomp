@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(undefined4 *param_1,undefined4 *param_2)
+; void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *this_ptr,SNetPlayer *other)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetPlayer *     Stack[0x8]:4   other
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
@@ -61,7 +64,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 004edd60
     PUSH EAX                            ; 004edd64
     CALL core_netgame.cpp_FUN_004edfb0  ; 004edd65
-        ;   XREF to: 004edfb0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_004edfb0()
+        ;   XREF to: 004edfb0 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_FUN_004edfb0(int * dest, int * src)
     ADD ESP,0x8                         ; 004edd6a
     MOV AX,word ptr [ESI + 0x4]         ; 004edd6d
     MOV word ptr [ESP + 0x20],AX        ; 004edd71

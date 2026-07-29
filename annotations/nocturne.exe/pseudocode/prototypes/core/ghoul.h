@@ -29,11 +29,11 @@ void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr,float delta_time);
 
 // Original: core_ghoul.cpp_FUN_004a9270
 // Address: 004a9270
-void FUN_004a9270(UOrientationVector *param_1,float param_2);
+void FUN_004a9270(CGhoul *param_1,float param_2);
 
 // Original: core_ghoul.cpp_CGhoul_renderBackground_FUN_004aae00
 // Address: 004aae00
-void CGhoul::renderBackground(int param_1,undefined4 param_2);
+void CGhoul::renderBackground(CEnemy *param_1,int param_2);
 
 // Original: core_ghoul.cpp_CGhoul_archive_FUN_004aae30
 // Address: 004aae30
@@ -55,10 +55,10 @@ void __cdecl CGhoul::processDismemberment(CGhoul *this_ptr,SDamageInfo *damage_i
 // Address: 004ab450
 void FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2);
 
-// Original: core_ghoul.cpp_FUN_004ab830
+// Original: core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004ab830
 // Address: 004ab830
-int FUN_004ab830(int param_1,CVector3f *param_2);
+int __cdecl CGhoul::getTargetPoints(CGhoul *this_ptr,CVector3f *out_points_array);
 
 // Original: core_ghoul.cpp_CGhoul_dtor_FUN_004aba30
 // Address: 004aba30
-CDemonActor * CGhoul::dtor(CDemonActor *param_1,byte param_2);
+CGhoul * __cdecl CGhoul::dtor(CGhoul *this_ptr,uint flags);

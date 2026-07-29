@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_00497810(int param_1)
+; float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_00497810(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

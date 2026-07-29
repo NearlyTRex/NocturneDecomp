@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_inv.cpp_getItemModel_FUN_004beb40
 // Address: 004beb40
-CDemonActor * getItemModel(CDemonActor *param_1);
+CKeyFramedModelInstance * __cdecl getItemModel(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_getItemDisplayName_FUN_004beca0
 // Address: 004beca0
@@ -29,7 +29,7 @@ CInventory * __cdecl CInventory::ctor(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004bee60
 // Address: 004bee60
-CInventory * FUN_004bee60(CInventory *param_1);
+CInventory * __cdecl FUN_004bee60(CInventory *this_ptr,uint flags);
 
 // Original: core_inv.cpp_CInventory_clear_FUN_004bee80
 // Address: 004bee80
@@ -153,7 +153,7 @@ void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004c2470
 // Address: 004c2470
-void FUN_004c2470(CInventory *param_1);
+void __cdecl FUN_004c2470(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
 // Address: 004c31b0

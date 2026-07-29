@@ -9,12 +9,12 @@
 void core_melee_cpp_FUN_004cec30(void)
 
 {
-  int iVar1;
+  CMelee *this_ptr;
   
-  iVar1 = FUN_0056497c(0x6c4);
-  if (iVar1 == 0) {
+  this_ptr = (CMelee *)FUN_0056497c(0x6c4);
+  if (this_ptr == (CMelee *)0x0) {
     return;
   }
-  core_melee_cpp_CMelee_ctor_FUN_004cec60(iVar1);
+  core_melee_cpp_CMelee_ctor_FUN_004cec60(this_ptr);
   return;
 }

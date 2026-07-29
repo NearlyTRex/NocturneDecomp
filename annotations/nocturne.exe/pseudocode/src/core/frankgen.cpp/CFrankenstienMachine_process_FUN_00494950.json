@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 621,
+    "complexity_score": 620,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
+    "pseudocode_lines": 150,
     "suspect_count": 45,
     "suspect_types": [
       "bit_int_float_compare",
@@ -135,7 +135,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 517
+    "total_lines": 516
   },
   "cross_references": [],
   "function": {
@@ -627,7 +627,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
@@ -638,12 +646,12 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);",
@@ -651,15 +659,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,&CStack_20,&CStack_38);",
@@ -667,7 +667,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1.0,\"frankx-bed1.wav\");",
@@ -675,7 +675,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,475.0,\"frankx-bed2.wav\");",
@@ -683,7 +683,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,809.0,\"frankx-bed3.wav\");",
@@ -691,7 +691,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1050.0,\"frankx-bed4.wav\");",
@@ -699,7 +699,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1380.0,\"frankx-water-dip.wav\");",
@@ -707,7 +707,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,2040.0,\"frankx-big-ramp-bed5.wav\");",
@@ -715,7 +715,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,131.0,\"frankx-crane1.wav\");",
@@ -723,7 +723,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 125,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,527.0,\"frankx-crane2.wav\");",
@@ -731,7 +731,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1089.0,\"frankx-crane3.wav\");",
@@ -739,7 +739,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,864.0,\"frankx-arm.wav\");",
@@ -747,7 +747,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1702.0,\"frankx-flap-up.wav\");",
@@ -755,7 +755,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1881.0,\"frankx-flap-down.wav\");",
@@ -763,7 +763,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,1950.0,\"frankx-big-ramp.wav\");",
@@ -779,7 +779,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 99,
+      "line": 98,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_38.x = pCVar4->x;",
@@ -803,7 +803,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
-      "line": 87,
+      "line": 86,
       "match": "0x44e10000 < (int)param_1->master_frame)",
       "severity": "moderate",
       "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",

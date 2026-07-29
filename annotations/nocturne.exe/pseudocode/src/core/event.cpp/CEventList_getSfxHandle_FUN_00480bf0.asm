@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList *param_1,char *param_2)
+; uint __cdecl core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047fbb0

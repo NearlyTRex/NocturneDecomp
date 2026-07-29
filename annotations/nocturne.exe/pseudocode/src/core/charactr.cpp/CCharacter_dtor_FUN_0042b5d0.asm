@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CDemonActor *param_1,byte param_2)
+; CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CCharacterTypeInfo_0059b200

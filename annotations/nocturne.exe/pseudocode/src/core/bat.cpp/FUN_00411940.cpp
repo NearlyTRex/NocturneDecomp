@@ -12,13 +12,13 @@ float core_bat_cpp_FUN_00411940(float param_1,float param_2)
   double dVar1;
   
   if (param_1 < 0.0) {
-    dVar1 = (double)floor((double)(-param_1 / param_2));
+    dVar1 = floor((double)(-param_1 / param_2));
     param_1 = (float)dVar1 * param_2 + param_1;
     if (param_1 < 0.0) {
       param_1 = param_1 + param_2;
     }
     return param_1;
   }
-  dVar1 = (double)floor((double)(param_1 / param_2));
+  dVar1 = floor((double)(param_1 / param_2));
   return param_1 - (float)dVar1 * param_2;
 }

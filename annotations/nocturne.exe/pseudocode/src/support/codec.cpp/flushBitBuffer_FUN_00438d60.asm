@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,_ostream *param_2)
+; void __cdecl support_codec_cpp_flushBitBuffer_FUN_00438d60(SBitBuffer *bit_buffer,_ostream *ostream)
 ;
+; Parameters:
+; SBitBuffer *     Stack[0x4]:4   bit_buffer
+; _ostream *       Stack[0x8]:4   ostream
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_004399a0 at 004399b6

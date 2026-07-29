@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(undefined4 param_1,int param_2,undefined4 *param_3)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(CDrawSurface *this_ptr,int point_count,CVector2i *points)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   point_count
+; CVector2i *      Stack[0xc]:4   points
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0
@@ -37,7 +41,7 @@ section .text
     PUSH EAX                            ; 0045d6fc
     ADD ESI,0x8                         ; 0045d6fd
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 ; 0045d700
-        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0()
+        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     MOV EAX,EBX                         ; 0045d705
     INC EBX                             ; 0045d707
     ADD ESP,0x14                        ; 0045d708

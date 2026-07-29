@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 engine_special_cpp_renderScanlineSwapped_FUN_00530716(void)
+; void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
 ;
+; Parameters:
+; int              Stack[0x4]:4   scanline_y
+; SHardwareEdge *  Stack[0x8]:4   right
+; SHardwareEdge *  Stack[0xc]:4   left
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bf4a4

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_computeComplexFFT_FUN_005211f0(undefined4 *param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005211f0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input_real
+; float *          Stack[0x8]:4   input_imag
+; float *          Stack[0xc]:4   output_real
+; float *          Stack[0x10]:4   output_imag
+; int              Stack[0x14]:4   size
 ; Local Variables:
 ; undefined4       Stack[-0xa0]:4  local_a0
 ; undefined4       Stack[-0x9c]:4  local_9c

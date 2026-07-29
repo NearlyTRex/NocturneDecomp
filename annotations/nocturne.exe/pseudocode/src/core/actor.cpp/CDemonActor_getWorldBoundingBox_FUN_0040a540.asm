@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 0040a591
     PUSH EDI                            ; 0040a592
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0040a593
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040a598
     MOV EDX,ESI                         ; 0040a59b
     MOV EBX,EAX                         ; 0040a59d
@@ -92,7 +92,7 @@ section .text
     PUSH EAX                            ; 0040a5d7
     PUSH EDI                            ; 0040a5d8
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0040a5d9
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040a5de
     PUSH EAX                            ; 0040a5e1
     PUSH ESI                            ; 0040a5e2

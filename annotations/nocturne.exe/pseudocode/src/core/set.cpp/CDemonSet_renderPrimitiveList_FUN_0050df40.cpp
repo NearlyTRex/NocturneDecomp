@@ -14,7 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *
   int iVar1;
   
   if (*(int *)(0x01C775EC + 0x1f0) == 0) {
-    if (*(int *)(DAT_005ae704 + 0x18) == 0) {
+    if (DAT_005ae704->advanced_culling_enabled == 0) {
       iVar1 = 0;
       if (0 < primitive_count) {
         do {

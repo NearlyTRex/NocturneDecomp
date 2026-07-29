@@ -21,7 +21,8 @@ uint core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CDemonActor *param_1,CV
   float local_10;
   
   this_ptr = (CDeformableModelInstance *)(param_1 + 1);
-  local_10 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(this_ptr,3);
+  local_10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       ((CMotionController *)this_ptr,3);
   if (local_10 <= 0.0) {
     return 0;
   }

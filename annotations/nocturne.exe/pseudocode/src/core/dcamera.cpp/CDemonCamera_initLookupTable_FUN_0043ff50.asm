@@ -56,7 +56,7 @@ section .text
     ADD ESP,0xc                         ; 0043ff94
     PUSH EBX                            ; 0043ff97
     CALL core_dcamera.cpp_FUN_00446800  ; 0043ff98
-        ;   XREF to: 00446800 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00446800()
+        ;   XREF to: 00446800 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00446800(CDemonCamera * this_ptr)
     MOV ECX,0x40                        ; 0043ff9d
     ADD ESP,0x4                         ; 0043ffa2
     XOR EBP,EBP                         ; 0043ffa5

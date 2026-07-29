@@ -1,20 +1,20 @@
 // Name: core_dcube.cpp_CDemonCube_ctor_FUN_0044abd0
 // Address: 0044abd0
 // Address Range: [[0044abd0, 0044ac04]]
-// Convention: unknown
-// Signature: void core_dcube_cpp_CDemonCube_ctor_FUN_0044abd0(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_0044abd0(CDemonCube *this_ptr)
 
 #include "nocturne.h"
 
-void core_dcube_cpp_CDemonCube_ctor_FUN_0044abd0(uint *param_1)
+CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_0044abd0(CDemonCube *this_ptr)
 
 {
-  param_1[9] = 0;
-  param_1[10] = 0;
-  param_1[0xb] = 0;
-  param_1[0xc] = 0;
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[8] = 0;
-  return;
+  this_ptr->vertex_buffer = (CVector3f *)0x0;
+  this_ptr->triangle_count = 0;
+  this_ptr->triangle_buffer = (CDemonCubeTriangle *)0x0;
+  this_ptr->ground_type_memory = (void *)0x0;
+  this_ptr->voxel_buffer1 = (SVoxelGrid *)0x0;
+  this_ptr->voxel_buffer2 = (SVoxelGrid *)0x0;
+  this_ptr->vertex_count = 0;
+  return this_ptr;
 }

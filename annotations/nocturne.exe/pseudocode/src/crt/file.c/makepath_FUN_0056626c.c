@@ -56,8 +56,8 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
       wchar_to_bytes((wchar_t)iVar2,path_buffer);
       iVar2 = mblen(path_buffer);
       path_buffer[iVar2] = 0;
-      path_buffer = (char *)mbtowc_next(path_buffer);
-      directory = (char *)mbtowc_next(directory);
+      path_buffer = mbtowc_next(path_buffer);
+      directory = mbtowc_next(directory);
     } while (*directory != '\0');
     if (local_18 == 0) {
       local_18 = 0x5c;
@@ -84,14 +84,14 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
     if ((uVar4 != local_18) && ((byte)*path_buffer == local_18)) {
       path_buffer = path_buffer + 1;
     }
-    for (; *filename != '\0'; filename = (char *)mbtowc_next(filename)) {
+    for (; *filename != '\0'; filename = mbtowc_next(filename)) {
       puVar7 = &local_18;
       iVar2 = mbtowc_peek(filename);
       iVar2 = normalize_path_separator(iVar2,(int *)puVar7);
       wchar_to_bytes((wchar_t)iVar2,path_buffer);
       iVar2 = mblen(path_buffer);
       path_buffer[iVar2] = 0;
-      path_buffer = (char *)mbtowc_next(path_buffer);
+      path_buffer = mbtowc_next(path_buffer);
     }
   }
   if ((extension != (char *)0x0) && (*extension != '\0')) {

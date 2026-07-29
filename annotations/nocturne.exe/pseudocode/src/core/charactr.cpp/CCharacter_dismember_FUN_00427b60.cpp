@@ -16,9 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *thi
   float local_b0;
   CMatrix3x3f local_ac;
   CBoundingBox3D local_84;
-  uint local_6c;
-  uint local_68;
-  float local_64;
+  CVector3f local_6c;
   CVector3f CStack_60;
   CVector3f CStack_54;
   CVector3f local_48;
@@ -48,18 +46,17 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *thi
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_3c,impact_point)
             ;
             local_20 = -local_b0;
-            local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
-            ;
+            local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0);
             local_3c.y = local_18 + local_3c.y;
-            local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
-            ;
+            local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0);
             local_3c.x = local_18 + local_3c.x;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_ac,&local_3c);
-            local_64 = SQRT(impact_point->z * impact_point->z +
-                            impact_point->x * impact_point->x + impact_point->y * impact_point->y);
-            local_6c = 0;
-            local_68 = 0;
-            local_1c = local_64;
+            local_6c.z = SQRT(impact_point->z * impact_point->z +
+                              impact_point->x * impact_point->x + impact_point->y * impact_point->y)
+            ;
+            local_6c.x = 0.0;
+            local_6c.y = 0.0;
+            local_1c = local_6c.z;
             core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_ac,&local_48,&local_6c);
             initial_velocity = &local_48;
           }

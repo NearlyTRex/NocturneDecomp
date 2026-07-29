@@ -1,20 +1,22 @@
 // Name: core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
 // Address: 00449150
 // Address Range: [[00449150, 00449395]]
-// Convention: unknown
-// Signature: float core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(undefined4 *param_1,float *param_2,float *param_3)
+// Convention: __cdecl
+// Signature: float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 #include "nocturne.h"
 
-float core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(uint *param_1,float *param_2,float *param_3)
+float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 
 {
   float fVar1;
   float fVar2;
   uint uVar3;
-  float fVar4;
-  float fVar5;
-  float *pfVar6;
+  CVector3f *pCVar4;
+  CVector3f *pCVar5;
+  float fVar6;
+  float fVar7;
+  CVector3f *pCVar8;
   float local_28;
   float local_24;
   float local_20;
@@ -22,61 +24,69 @@ float core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(uin
   float local_18;
   float local_14;
   
-  fVar2 = (float)param_1[5] * param_3[2] +
-          (float)param_1[3] * *param_3 + (float)param_1[4] * param_3[1];
+  fVar2 = (this_ptr->triangle).normal.z * ray_direction->z +
+          (this_ptr->triangle).normal.x * ray_direction->x +
+          (this_ptr->triangle).normal.y * ray_direction->y;
   if (fVar2 <= 0.0) {
     return -1.0;
   }
-  fVar4 = -((float)param_1[5] * param_2[2] +
-           (float)param_1[4] * param_2[1] + (float)param_1[3] * *param_2 + (float)param_1[6]);
-  if (fVar4 < 0.0) {
+  fVar6 = -((this_ptr->triangle).normal.z * ray_origin->z +
+           (this_ptr->triangle).normal.y * ray_origin->y +
+           (this_ptr->triangle).normal.x * ray_origin->x + (this_ptr->triangle).plane_distance);
+  if (fVar6 < 0.0) {
     return -1.0;
   }
-  if (fVar2 < fVar4) {
+  if (fVar2 < fVar6) {
     return -1.0;
   }
-  fVar4 = fVar4 / fVar2;
-  fVar2 = fVar4 * *param_3 + *param_2;
-  fVar5 = fVar4 * param_3[1] + param_2[1];
-  uVar3 = param_1[7];
+  fVar6 = fVar6 / fVar2;
+  fVar2 = fVar6 * ray_direction->x + ray_origin->x;
+  fVar7 = fVar6 * ray_direction->y + ray_origin->y;
+  uVar3 = this_ptr->dominant_axis;
   if (uVar3 == 0) {
-    pfVar6 = (float *)*param_1;
-    fVar1 = *(float *)(param_1[2] + 8);
-    local_14 = fVar5 - pfVar6[1];
-    fVar2 = pfVar6[2];
-    local_1c = *(float *)(param_1[1] + 4) - pfVar6[1];
-    local_28 = *(float *)(param_1[1] + 8) - pfVar6[2];
-    local_18 = *(float *)(param_1[2] + 4) - pfVar6[1];
+    pCVar4 = (this_ptr->triangle).vertices[1];
+    pCVar8 = (this_ptr->triangle).vertices[0];
+    pCVar5 = (this_ptr->triangle).vertices[2];
+    fVar1 = pCVar5->z;
+    local_14 = fVar7 - pCVar8->y;
+    fVar2 = pCVar8->z;
+    local_1c = pCVar4->y - pCVar8->y;
+    local_28 = pCVar4->z - pCVar8->z;
+    local_18 = pCVar5->y - pCVar8->y;
   }
   else {
     if (1 < uVar3) {
       if (uVar3 == 2) {
-        pfVar6 = (float *)*param_1;
-        local_14 = fVar2 - *pfVar6;
-        local_20 = fVar5 - pfVar6[1];
-        local_1c = *(float *)param_1[1] - *pfVar6;
-        local_28 = ((float *)param_1[1])[1] - pfVar6[1];
-        local_18 = *(float *)param_1[2] - *pfVar6;
-        local_24 = ((float *)param_1[2])[1] - pfVar6[1];
+        pCVar8 = (this_ptr->triangle).vertices[1];
+        pCVar4 = (this_ptr->triangle).vertices[0];
+        pCVar5 = (this_ptr->triangle).vertices[2];
+        local_14 = fVar2 - pCVar4->x;
+        local_20 = fVar7 - pCVar4->y;
+        local_1c = pCVar8->x - pCVar4->x;
+        local_28 = pCVar8->y - pCVar4->y;
+        local_18 = pCVar5->x - pCVar4->x;
+        local_24 = pCVar5->y - pCVar4->y;
       }
       goto LAB_0044925e;
     }
-    pfVar6 = (float *)*param_1;
-    fVar1 = ((float *)param_1[2])[2];
-    local_14 = fVar2 - *pfVar6;
-    fVar2 = pfVar6[2];
-    local_1c = *(float *)param_1[1] - *pfVar6;
-    local_28 = ((float *)param_1[1])[2] - pfVar6[2];
-    local_18 = *(float *)param_1[2] - *pfVar6;
+    pCVar4 = (this_ptr->triangle).vertices[1];
+    pCVar8 = (this_ptr->triangle).vertices[0];
+    pCVar5 = (this_ptr->triangle).vertices[2];
+    fVar1 = pCVar5->z;
+    local_14 = fVar2 - pCVar8->x;
+    fVar2 = pCVar8->z;
+    local_1c = pCVar4->x - pCVar8->x;
+    local_28 = pCVar4->z - pCVar8->z;
+    local_18 = pCVar5->x - pCVar8->x;
   }
-  local_20 = (fVar4 * param_3[2] + param_2[2]) - fVar2;
-  local_24 = fVar1 - pfVar6[2];
+  local_20 = (fVar6 * ray_direction->z + ray_origin->z) - fVar2;
+  local_24 = fVar1 - pCVar8->z;
 LAB_0044925e:
-  fVar5 = 1.0 / (local_1c * local_24 - local_28 * local_18);
-  fVar2 = (local_14 * local_24 - local_18 * local_20) * fVar5;
-  if (((0.0 <= fVar2) && (fVar5 = (local_1c * local_20 - local_28 * local_14) * fVar5, 0.0 <= fVar5)
-      ) && (fVar2 + fVar5 <= 1.0)) {
-    return fVar4;
+  fVar7 = 1.0 / (local_1c * local_24 - local_28 * local_18);
+  fVar2 = (local_14 * local_24 - local_18 * local_20) * fVar7;
+  if (((0.0 <= fVar2) && (fVar7 = (local_1c * local_20 - local_28 * local_14) * fVar7, 0.0 <= fVar7)
+      ) && (fVar2 + fVar7 <= 1.0)) {
+    return fVar6;
   }
   return -1.0;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_00566570(LPCSTR param_1)
+; int __cdecl crt_unknown_c_FUN_00566570(char *path)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   path
 ;
 ; XREF[2]:
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c93f

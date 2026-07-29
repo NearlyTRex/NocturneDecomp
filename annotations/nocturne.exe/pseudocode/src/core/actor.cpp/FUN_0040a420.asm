@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_FUN_0040a420(int param_1,float *param_2,float *param_3,float *param_4)
+; int __cdecl core_actor_cpp_FUN_0040a420(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   line_start
+; CVector3f *      Stack[0xc]:4   line_end
+; CVector3f *      Stack[0x10]:4   out_intersection_point
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ;
@@ -72,7 +77,7 @@ section .text
     PUSH EAX                            ; 0040a495
     FSTP float ptr [ESP + 0x70]         ; 0040a496
     CALL core_actor.cpp_rayCylinderIntersect_FUN_00409860 ; 0040a49a
-        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00409860()
+        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_00409860(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x74],EAX      ; 0040a49f
     FLD float ptr [ESP + 0x74]          ; 0040a4a3
     ADD ESP,0x10                        ; 0040a4a7

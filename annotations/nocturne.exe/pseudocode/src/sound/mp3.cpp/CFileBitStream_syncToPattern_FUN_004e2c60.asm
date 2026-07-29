@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004e2c60(CFileBitStream *param_1,uint param_2,int param_3)
+; int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004e2c60(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   sync_pattern
+; uint             Stack[0xc]:4   pattern_bits
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0

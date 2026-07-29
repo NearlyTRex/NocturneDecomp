@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 004c9d57
     PUSH EBX                            ; 004c9d58
     CALL core_manpuz.cpp_FUN_004cb010   ; 004c9d59
-        ;   XREF to: 004cb010 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004cb010()
+        ;   XREF to: 004cb010 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004cb010(CMansionPuzzleCircle * this_ptr, int gem_index, float delta_time)
     INC ESI                             ; 004c9d5e
     ADD ESP,0xc                         ; 004c9d5f
     CMP ESI,0xc                         ; 004c9d62

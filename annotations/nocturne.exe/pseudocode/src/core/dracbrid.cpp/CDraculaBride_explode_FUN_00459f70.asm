@@ -163,7 +163,7 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0045a099
     PUSH EAX                            ; 0045a09d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0045a09e
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0045a0a3
     PUSH dword ptr [ESP]                ; 0045a0a6
     FLD float ptr [ESP + 0x4]           ; 0045a0a9
@@ -171,7 +171,7 @@ section .text
     FSTP float ptr [ESP + 0x94]         ; 0045a0af
     PUSH dword ptr [ESP + 0x94]         ; 0045a0b6
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045a0bd
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0045a0c2
     FLD float ptr [ESP + 0xa0]          ; 0045a0c9
     ADD ESP,0x8                         ; 0045a0d0
@@ -180,7 +180,7 @@ section .text
     PUSH dword ptr [ESP + 0x94]         ; 0045a0da
     FSTP float ptr [ESP + 0x80]         ; 0045a0e1
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045a0e8
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0045a0ed
     FLD float ptr [ESP + 0xa0]          ; 0045a0f4
     ADD ESP,0x8                         ; 0045a0fb
@@ -215,7 +215,7 @@ section .text
     MOV dword ptr [ESP + 0x50],EDX      ; 0045a14f
     MOV dword ptr [ESP + 0x54],EDX      ; 0045a153
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0045a157
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0045a15c
     MOV EAX,dword ptr [EBP + 0x20]      ; 0045a15f
     PUSH EAX                            ; 0045a162

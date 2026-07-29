@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gore_cpp_CFootstep_ctor_FUN_004b09b0(int param_1)
+; CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004b09b0(CFootstep *this_ptr)
 ;
+; Parameters:
+; CFootstep *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

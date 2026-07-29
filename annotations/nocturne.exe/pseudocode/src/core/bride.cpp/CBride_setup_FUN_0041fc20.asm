@@ -206,7 +206,7 @@ section .text
     PUSH 0x41a00000                     ; 0041fe06
     PUSH 0x40000000                     ; 0041fe0b
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041fe10
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBX + 0xbd4c],0x0    ; 0041fe15
     MOV dword ptr [ESP + 0x8],EAX       ; 0041fe1f
     MOV dword ptr [EBX + 0xbd50],0x0    ; 0041fe23

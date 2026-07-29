@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2)
+; void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count,int *vertex_indices)
 ;
+; Parameters:
+; int              Stack[0x4]:4   vertex_count
+; int *            Stack[0x8]:4   vertex_indices
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

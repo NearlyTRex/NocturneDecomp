@@ -1,14 +1,14 @@
 // Name: crt_exception.c_ExceptionHandler_FUN_0056ed08
 // Address: 0056ed08
 // Address Range: [[0056ed08, 0056eed5]]
-// Convention: unknown
-// Signature: undefined4 crt_exception_c_ExceptionHandler_FUN_0056ed08(PEXCEPTION_RECORD param_1,undefined4 param_2,PCONTEXT param_3)
+// Convention: __cdecl
+// Signature: EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0056ed08(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0056eda9) */
 
-uint ExceptionHandler(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)
+EXCEPTION_DISPOSITION __cdecl ExceptionHandler(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)
 
 {
   byte *pbVar1;
@@ -17,10 +17,10 @@ uint ExceptionHandler(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)
   int iVar4;
   _EXCEPTION_POINTERS local_14;
   
-  if ((param_1->ExceptionFlags & 6) != 0) {
-    return 1;
+  if ((ExceptionRecord->ExceptionFlags & 6) != 0) {
+    return ExceptionContinueSearch;
   }
-  switch(param_1->ExceptionCode) {
+  switch(ExceptionRecord->ExceptionCode) {
   case 0xc000008d:
     iVar4 = 0x82;
     break;
@@ -32,7 +32,7 @@ switchD_0056ed30_caseD_c000008e:
     iVar4 = 0x86;
     break;
   case 0xc0000090:
-    pbVar1 = (byte *)(param_3->FloatSave).ErrorOffset;
+    pbVar1 = (byte *)(ContextRecord->FloatSave).ErrorOffset;
     iVar4 = 0x81;
     if (*(short *)pbVar1 == -0x527) {
       iVar4 = 0x88;
@@ -45,9 +45,9 @@ switchD_0056ed30_caseD_c000008e:
         iVar4 = 0x8d;
       }
       if ((((*pbVar1 & 1) == 0) && ((pbVar1[1] & 0x30) == 0x30)) &&
-         ((((param_3->FloatSave).TagWord & 0xffff) >>
-           ((byte)(((param_3->FloatSave).StatusWord & 0xffff) >> 0xb) & 7) * '\x02' & 1) == 1))
-      goto switchD_0056ed30_caseD_c000008e;
+         ((((ContextRecord->FloatSave).TagWord & 0xffff) >>
+           ((byte)(((ContextRecord->FloatSave).StatusWord & 0xffff) >> 0xb) & 7) * '\x02' & 1) == 1)
+         ) goto switchD_0056ed30_caseD_c000008e;
       if (iVar4 == -1) goto switchD_0056ed30_default;
     }
     break;
@@ -55,7 +55,7 @@ switchD_0056ed30_caseD_c000008e:
     iVar4 = 0x84;
     break;
   case 0xc0000092:
-    if (((param_3->FloatSave).StatusWord & 0x200) == 0) {
+    if (((ContextRecord->FloatSave).StatusWord & 0x200) == 0) {
       iVar4 = 0x8b;
     }
     else {
@@ -70,13 +70,13 @@ switchD_0056ed30_default:
     if (DAT_005c1f70 != (code *)0x0) {
       iVar4 = 1;
       do {
-        iVar2 = (*DAT_005c1f6c)(iVar4,param_1->ExceptionCode);
+        iVar2 = (*DAT_005c1f6c)(iVar4,ExceptionRecord->ExceptionCode);
         if (iVar2 != 0) {
           if (((iVar2 == 1) || (iVar2 == 2)) || (iVar2 == 3)) break;
           DAT_02de5c24 = '\x01';
           (*DAT_005c1f70)(iVar4);
           if (DAT_02de5c24 != '\0') {
-            return 0;
+            return ExceptionContinueExecution;
           }
         }
         iVar4 = iVar4 + 1;
@@ -88,16 +88,16 @@ switchD_0056ed30_default:
   FUN_00571500();
   iVar4 = raiseFPE(iVar4);
   if ((iVar4 != -1) && (DAT_02de5c24 != '\0')) {
-    *(ushort *)&(param_3->FloatSave).StatusWord =
-         ((ushort)(param_3->FloatSave).StatusWord >> 8 & 0x7f) << 8;
-    return 0;
+    *(ushort *)&(ContextRecord->FloatSave).StatusWord =
+         ((ushort)(ContextRecord->FloatSave).StatusWord >> 8 & 0x7f) << 8;
+    return ExceptionContinueExecution;
   }
 LAB_0056eeab:
-  local_14.ExceptionRecord = param_1;
-  local_14.ContextRecord = param_3;
+  local_14.ExceptionRecord = (PEXCEPTION_RECORD)ExceptionRecord;
+  local_14.ContextRecord = (PCONTEXT)ContextRecord;
   LVar3 = UnhandledExceptionFilter(&local_14);
   if (LVar3 == 0) {
-    return 1;
+    return ExceptionContinueSearch;
   }
                     /* WARNING: Subroutine does not return */
   ExitProcess(0xffffffff);

@@ -1,24 +1,24 @@
 // Name: core_dynamite.cpp_CDynamite_dtor_FUN_0046ef30
 // Address: 0046ef30
 // Address Range: [[0046ef30, 0046ef7d]]
-// Convention: unknown
-// Signature: CWeapon * core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CWeapon *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CDynamite *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CWeapon * core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CWeapon *param_1,byte param_2)
+CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CDynamite *this_ptr,uint flags)
 
 {
-  CWeapon *pCVar1;
+  CDynamite *pCVar1;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CDynamiteTypeInfo_0059ca20);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CDynamiteTypeInfo_0059ca20);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(param_1,1);
-  if ((param_2 & 2) == 0) {
+  pCVar1 = (CDynamite *)core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(&this_ptr->base,1);
+  if ((flags & 2) == 0) {
     return pCVar1;
   }
   FUN_00564494(pCVar1);

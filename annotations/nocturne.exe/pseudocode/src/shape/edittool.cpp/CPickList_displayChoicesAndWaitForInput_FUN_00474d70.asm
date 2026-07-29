@@ -97,12 +97,12 @@ section .text
     PUSH ESI                            ; 00474e07
         ;   Label: LAB_00474e07
     CALL shape_edittool.cpp_FUN_00475230 ; 00474e08
-        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00475230()
+        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00475230(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00474e0d
     PUSH ESI                            ; 00474e10
     MOV EBX,EAX                         ; 00474e11
     CALL shape_edittool.cpp_FUN_004759d0 ; 00474e13
-        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004759d0()
+        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_004759d0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00474e18
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00474e1b
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
@@ -113,7 +113,7 @@ section .text
     PUSH ESI                            ; 00474e28
     PUSH EDI                            ; 00474e29
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 00474e2a
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     ADD ESP,0x8                         ; 00474e2f
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00474e32
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()

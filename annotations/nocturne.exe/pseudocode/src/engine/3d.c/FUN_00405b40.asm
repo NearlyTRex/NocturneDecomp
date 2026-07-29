@@ -92,7 +92,7 @@ section .text
     INC ESI                             ; 00405bb4
     MOV dword ptr [0x006b0264],EDI      ; 00405bb5 | DAT_006b0264
     CALL engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90 ; 00405bbb
-        ;   XREF to: 00405c90 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90()
+        ;   XREF to: 00405c90 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive * primitive)
     MOV ECX,dword ptr [0x006b0268]      ; 00405bc0 | DAT_006b0268
     ADD ESP,0x4                         ; 00405bc6
     CMP ESI,ECX                         ; 00405bc9
@@ -134,7 +134,7 @@ section .text
     PUSH 0x6b415c                       ; 00405c00 | DAT_006b415c
     XOR EDI,EDI                         ; 00405c05
     CALL crt_stdlib.c__qsort_FUN_00563db8 ; 00405c07
-        ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_00563db8()
+        ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_00563db8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     XOR EBP,EBP                         ; 00405c0c
     MOV EAX,[0x006b0268]                ; 00405c0e | DAT_006b0268
     ADD ESP,0x10                        ; 00405c13
@@ -171,7 +171,7 @@ section .text
     ADD ESI,0x4                         ; 00405c66
     INC EDI                             ; 00405c69
     CALL engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340 ; 00405c6a
-        ;   XREF to: 00405340 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340()
+        ;   XREF to: 00405340 (UNCONDITIONAL_CALL)  ; void * engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340(SMRGLHeaderPrimitive * prim)
     MOV EDX,dword ptr [0x006b0268]      ; 00405c6f | DAT_006b0268
     ADD ESP,0x4                         ; 00405c75
     CMP EDI,EDX                         ; 00405c78

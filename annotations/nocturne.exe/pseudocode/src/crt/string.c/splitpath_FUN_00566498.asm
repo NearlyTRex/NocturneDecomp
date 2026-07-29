@@ -89,7 +89,7 @@ section .text
     PUSH EBX                            ; 005664f0
         ;   Label: LAB_005664f0
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005664f1
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     MOV EBX,EAX                         ; 005664f6
     ADD ESP,0x4                         ; 005664f8
     CMP ESI,0x5c                        ; 005664fb

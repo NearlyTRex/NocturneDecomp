@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 663,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 55,
+    "pseudocode_lines": 78,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "unnamed_param",
-      "unrolled_strcpy",
+      "pointer_truncation",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 268
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -155,10 +153,10 @@
         "00504b69"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_script.cpp_CScript_getDialogDuration_FUN_005049b0",
-    "signature": "float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)"
+    "signature": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)"
   },
   "function_calls": [
     {
@@ -259,13 +257,10 @@
         "call_addr": "00501037",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -273,13 +268,10 @@
         "call_addr": "0050114d",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -287,12 +279,10 @@
         "call_addr": "00503219",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -300,21 +290,19 @@
         "call_addr": "00504173",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 6,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.75,
@@ -357,10 +345,10 @@
     "pcode_op_count": 703
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 60,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -397,6 +385,34 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "actor_specifier",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_text",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -427,439 +443,44 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "if (*(float *)((int)param_1 + 0x44c) < 0.0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)((int)param_1 + 0x44c) < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar3 = sscanf(param_3,&DOUBLE_0058fa9a,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_28 = (float)core_sound_cpp_FUN_0052ebc0(0x02DC9450,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)0x1e56c30,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "pcVar5 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "local_28 = *(float *)((int)param_1 + 0x44c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = *(float *)((int)param_1 + 0x44c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,g_CCharacterActorType_00765a60.name_hash,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(CDemonActor **)((int)param_1",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)((int)param_1 + 4) = pCVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)((int)param_1 + 4) = pCVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(CDemonActor **)((int)param_1",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)((int)param_1 + 8) = pCVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)((int)param_1 + 8) = pCVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "if ((*(int *)((int)param_1 + 0x14) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)param_1 + 0x14) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "(*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "(*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x10) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0x10) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(char *)((int)param_1",
-      "severity": "moderate",
-      "text": "pcVar5 = (char *)((int)param_1 + 0x4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar5 = (char *)((int)param_1 + 0x4c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 67,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "cVar1 = *param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "cVar1 = param_4[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
+      "match": "(char *)((int)pfVar7",
+      "severity": "moderate",
+      "text": "*(char *)((int)pfVar7 + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(int *)((int)param_1",
+      "line": 68,
+      "match": "(float *)((int)pfVar7",
       "severity": "moderate",
-      "text": "if (*(int *)((int)param_1 + 4) != 0) {",
+      "text": "pfVar7 = (float *)((int)pfVar7 + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)((int)param_1 + 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)param_1",
+      "description": "Pointer value `pfVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)pfVar7",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)((int)param_1 + 4) + 0x2610) = local_28;",
-      "type": "pointer_cast"
+      "text": "*(char *)((int)pfVar7 + 1) = cVar1;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(*(int *)((int)param_1 + 4) + 0x2610) = local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar4 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar4 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)param_1",
+      "description": "Pointer value `pfVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)pfVar7",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x24) = uVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_1 + 0x24) = uVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 21,
-      "match": "(float *)((int)param_1 + 0x44c)",
-      "severity": "moderate",
-      "text": "if (*(float *)((int)param_1 + 0x44c) < 0.0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 46,
-      "match": "(float *)((int)param_1 + 0x44c)",
-      "severity": "moderate",
-      "text": "local_28 = *(float *)((int)param_1 + 0x44c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 59,
-      "match": "(int *)((int)param_1 + 0x14)",
-      "severity": "moderate",
-      "text": "if ((*(int *)((int)param_1 + 0x14) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 60,
-      "match": "(int *)((int)param_1 + 0xc)",
-      "severity": "moderate",
-      "text": "(*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 61,
-      "match": "(uint *)((int)param_1 + 0x10)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x10) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 62,
-      "match": "(uint *)((int)param_1 + 0xc)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 65,
-      "match": "(char *)((int)param_1 + 0x4c)",
-      "severity": "moderate",
-      "text": "pcVar5 = (char *)((int)param_1 + 0x4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 82,
-      "match": "(uint *)((int)param_1 + 0x24)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x24) = uVar4;",
-      "type": "pointer_cast"
+      "text": "pfVar7 = (float *)((int)pfVar7 + 2);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 30,
+      "line": 27,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

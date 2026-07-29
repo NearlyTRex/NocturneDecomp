@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_0051da90(CDeformableModelInstance *param_1,CVector3f *param_2,int param_3,int param_4)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_0051da90(CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_pos
+; int              Stack[0xc]:4   lod_index
+; int              Stack[0x10]:4   vertex_index
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_00518320

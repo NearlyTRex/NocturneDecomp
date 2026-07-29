@@ -50,7 +50,7 @@
   "globals": [
     {
       "addr": "005a4ab0",
-      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4ab0",
+      "name": "g_StreambufVTable",
       "type": "undefined1*",
       "value": "0056ff82"
     }
@@ -131,7 +131,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte ***)(param_1 + 0x28) = &PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4ab0;",
+      "text": "*(byte ***)(param_1 + 0x28) = &g_StreambufVTable;",
       "type": "unnamed_param"
     },
     {
@@ -155,7 +155,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00571ef0(*(uint *)(param_1 + 4));",
+      "text": "FUN_00571ef0(*(void **)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {

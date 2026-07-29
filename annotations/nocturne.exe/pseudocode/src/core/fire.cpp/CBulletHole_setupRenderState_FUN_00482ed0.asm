@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(void)
+; void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(CBulletHole *this_ptr)
 ;
+; Parameters:
+; CBulletHole *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970 at 0048a97d

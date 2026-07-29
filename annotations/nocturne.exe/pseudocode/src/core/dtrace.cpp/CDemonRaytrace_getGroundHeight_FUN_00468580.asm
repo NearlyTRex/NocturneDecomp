@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,float *param_4)
+; float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   pos
+; int *            Stack[0xc]:4   hit_flag
+; CVector3f *      Stack[0x10]:4   normal_out
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x5c]:4  local_5c
@@ -160,7 +165,7 @@ section .text
     PUSH EDX                            ; 004686a8
     PUSH EAX                            ; 004686a9
     CALL core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290 ; 004686aa
-        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290()
+        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(CDemonCube * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * hit_normal, ...)
     MOV dword ptr [ESP + 0x5c],EAX      ; 004686af
     FLD float ptr [ESP + 0x5c]          ; 004686b3
     ADD ESP,0x14                        ; 004686b7

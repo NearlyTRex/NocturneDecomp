@@ -37,7 +37,7 @@ void FUN_00560cd0(int param_1,int param_2);
 
 // Original: core_zombie.cpp_FUN_00561010
 // Address: 00561010
-undefined4 FUN_00561010(CZombie *param_1,float param_2);
+int __cdecl FUN_00561010(CZombie *this_ptr,float delta_time);
 
 // Original: core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0
 // Address: 005617e0
@@ -81,11 +81,11 @@ int FUN_005621f0(int param_1,CVector3f *param_2);
 
 // Original: core_zombie.cpp_CZombie_isGrabbable_FUN_005623f0
 // Address: 005623f0
-int CZombie::isGrabbable(CCharacter *param_1,CDemonActor *param_2);
+int __cdecl CZombie::isGrabbable(CZombie *this_ptr,CDemonActor *grabber);
 
 // Original: core_zombie.cpp_CZombie_canBeGrabbed_FUN_00562430
 // Address: 00562430
-bool CZombie::canBeGrabbed(undefined4 param_1,undefined4 param_2,int param_3);
+int __cdecl CZombie::canBeGrabbed(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_zombie.cpp_CZombie_getGrabbed_FUN_00562440
 // Address: 00562440
@@ -93,7 +93,7 @@ undefined4 CZombie::getGrabbed(int param_1,undefined4 param_2,int param_3);
 
 // Original: core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0
 // Address: 005624b0
-undefined4 CZombie::shouldIgnoreForTargeting(int param_1);
+int CZombie::shouldIgnoreForTargeting(CDemonActor *param_1);
 
 // Original: core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0
 // Address: 005624e0
@@ -101,4 +101,4 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_00562550
 // Address: 00562550
-CDemonActor * CZombie::dtor(CDemonActor *param_1,byte param_2);
+CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);

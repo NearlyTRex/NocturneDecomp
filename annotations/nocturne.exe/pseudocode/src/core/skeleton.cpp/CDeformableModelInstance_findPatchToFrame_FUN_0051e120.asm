@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051e120(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4)
+; int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051e120(CDeformableModelInstance *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   source_motion_index
+; float            Stack[0xc]:4   source_frame
+; int              Stack[0x10]:4   target_motion_index
 ; Local Variables:
 ; undefined4       Stack[-0x35a0]:4  local_35a0
 ; undefined        Stack[-0x3598]:1  local_3598

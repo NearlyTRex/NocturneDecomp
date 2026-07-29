@@ -1,15 +1,15 @@
 // Name: engine_matrix.c_projectToScreen_FUN_004cea50
 // Address: 004cea50
 // Address Range: [[004cea50, 004ceada]]
-// Convention: unknown
-// Signature: int engine_matrix_c_projectToScreen_FUN_004cea50(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl engine_matrix_c_projectToScreen_FUN_004cea50(int input_value)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_matrix_c_projectToScreen_FUN_004cea50(int param_1)
+int __cdecl engine_matrix_c_projectToScreen_FUN_004cea50(int input_value)
 
 {
   byte bVar1;
@@ -23,7 +23,7 @@ int engine_matrix_c_projectToScreen_FUN_004cea50(int param_1)
   int iStack_18;
   
   bVar1 = 0;
-  iStack_4c = param_1;
+  iStack_4c = input_value;
   uStack_50 = 0;
   iStack_48 = 0;
   engine_matrix_c_transformWorldToView_FUN_004cd0e0(&stack0xffffffb0);
@@ -33,10 +33,10 @@ int engine_matrix_c_projectToScreen_FUN_004cea50(int param_1)
   *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
   if (0 < iStack_48) {
-    iStack_1c = param_1;
+    iStack_1c = input_value;
     iStack_18 = iStack_48;
     dVar2 = round
-                      (((-(double)param_1 * (double)_DAT_01c00c4c) / (double)iStack_48) /
+                      (((-(double)input_value * (double)_DAT_01c00c4c) / (double)iStack_48) /
                        (double)DAT_005b7648);
     return (int)ROUND(dVar2);
   }

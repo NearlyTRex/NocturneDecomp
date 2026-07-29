@@ -9,13 +9,13 @@
 void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00551920(CWaterActor *this_ptr)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
   float local_30;
   float local_2c;
   float local_28;
-  byte local_24 [12];
+  CVector3f local_24;
   SWaterVertex *local_18;
   CMatrix3x3f *local_14;
   
@@ -25,11 +25,11 @@ void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00551920(CWa
     local_14 = &(this_ptr->base).orient_matrix;
     pCVar2 = &this_ptr->vertices[0].world_position;
     do {
-      pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                  (local_14,local_24,local_18 + iVar3);
-      local_30 = *pfVar1 + (this_ptr->base).location.position.x;
-      local_2c = pfVar1[1] + (this_ptr->base).location.position.y;
-      local_28 = pfVar1[2] + (this_ptr->base).location.position.z;
+      pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                         (local_14,&local_24,&local_18[iVar3].local_position);
+      local_30 = pCVar1->x + (this_ptr->base).location.position.x;
+      local_2c = pCVar1->y + (this_ptr->base).location.position.y;
+      local_28 = pCVar1->z + (this_ptr->base).location.position.z;
       if (pCVar2 != (CVector3f *)&local_30) {
         pCVar2->x = local_30;
         pCVar2->y = local_2c;

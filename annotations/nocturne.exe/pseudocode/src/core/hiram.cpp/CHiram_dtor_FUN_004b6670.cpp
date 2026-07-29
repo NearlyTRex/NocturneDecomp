@@ -23,7 +23,7 @@ CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte 
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  (param_1->vtable)._ub = (CDemonActor_vtable *)&PTR_core_hiram_cpp_FUN_004b6750_0059eda4;
+  (param_1->vtable)._ub = &g_CHiramVTable._ub;
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0((CPathMap *)&param_1[0x8f].standing_platform,0);
   pCVar2 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
                      ((CFlame *)(pCVar1[-1].height_cache_tags[0xc] + 0x39),0);

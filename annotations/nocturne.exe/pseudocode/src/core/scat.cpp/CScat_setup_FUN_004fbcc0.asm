@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_CScat_setup_FUN_004fbcc0(int param_1)
+; void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 004fbcc2
     PUSH ESI                            ; 004fbcc6
     CALL core_hero.cpp_FUN_004b48d0     ; 004fbcc7
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b48d0()
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004fbccc
     LEA EAX,[ESI + 0x150]               ; 004fbccf
     PUSH EAX                            ; 004fbcd5

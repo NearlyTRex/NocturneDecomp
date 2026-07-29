@@ -12,8 +12,8 @@
 uint sound_sndmain_cpp_FUN_00526f60(void)
 
 {
-  int iVar1;
-  uint uVar2;
+  CSfxSlot *this_ptr;
+  uint uVar1;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   uint in_stack_00000010;
@@ -21,23 +21,23 @@ uint sound_sndmain_cpp_FUN_00526f60(void)
   uint in_stack_00000018;
   uint in_stack_0000001c;
   
-  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0();
-  if (iVar1 == 0) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0();
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(uint *)(iVar1 + 0x3c) = 0;
-  *(uint *)(iVar1 + 0x40) = 0;
-  *(uint *)(iVar1 + 0x24) = in_stack_00000008;
-  *(uint *)(iVar1 + 0x28) = in_stack_0000000c;
-  *(uint *)(iVar1 + 0x2c) = in_stack_00000010;
-  *(uint *)(iVar1 + 0x30) = in_stack_00000014;
-  *(uint *)(iVar1 + 0x34) = in_stack_00000018;
-  uVar2 = 1;
-  *(uint *)(iVar1 + 0x38) = in_stack_0000001c;
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(iVar1,0);
-  if ((*(int *)(iVar1 + 0x6c) != 0) && (_DAT_02dc8318 != (int *)0x0)) {
-    uVar2 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,iVar1,4);
+  (this_ptr->options).velocity_source_ptr = (void *)0x0;
+  (this_ptr->options).velocity_format = 0;
+  *(uint *)&(this_ptr->options).velocity.x = in_stack_00000008;
+  *(uint *)((int)&(this_ptr->options).velocity.x + 4) = in_stack_0000000c;
+  *(uint *)&(this_ptr->options).velocity.y = in_stack_00000010;
+  *(uint *)((int)&(this_ptr->options).velocity.y + 4) = in_stack_00000014;
+  *(uint *)&(this_ptr->options).velocity.z = in_stack_00000018;
+  uVar1 = 1;
+  *(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_0000001c;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr,0.0);
+  if (((this_ptr->options).dead != 0) && (_DAT_02dc8318 != (int *)0x0)) {
+    uVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,4);
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();
-  return uVar2;
+  return uVar1;
 }

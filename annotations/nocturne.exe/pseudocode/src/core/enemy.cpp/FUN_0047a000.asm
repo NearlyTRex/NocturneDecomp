@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_FUN_0047a000(int param_1,int param_2)
+; void __cdecl core_enemy_cpp_FUN_0047a000(CEnemy *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ;
 ; XREF[1]:
 ;   core_ghoul.cpp_CGhoul_renderBackground_FUN_004aae00 at 004aae1e
@@ -28,7 +31,7 @@ section .text
         ;   Label: LAB_0047a01f
     PUSH EAX                            ; 0047a020
     CALL core_charactr.cpp_FUN_00426510 ; 0047a021
-        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00426510()
+        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00426510(CCharacter * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0047a026
     RET                                 ; 0047a029
         ;   Label: LAB_0047a029

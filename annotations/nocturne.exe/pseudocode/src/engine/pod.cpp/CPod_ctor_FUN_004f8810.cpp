@@ -12,7 +12,7 @@ CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(CPod *this_ptr)
   CPod *pCVar1;
   
   this_ptr->pod_file_count = 0;
-  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
+  this_ptr->vtable = &g_CPodVTable;
   pCVar1 = this_ptr;
   do {
     pCVar1 = (CPod *)pCVar1->pod_files;

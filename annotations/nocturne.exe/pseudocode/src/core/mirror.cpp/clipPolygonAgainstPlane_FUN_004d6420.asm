@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane *param_1,CVector3f *param_2,uint param_3,int param_4,int *param_5)
+; void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   clip_plane
+; CVector3f *      Stack[0x8]:4   input_vertices
+; int              Stack[0xc]:4   input_count
+; CVector3f *      Stack[0x10]:4   output_vertices
+; int *            Stack[0x14]:4   output_count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

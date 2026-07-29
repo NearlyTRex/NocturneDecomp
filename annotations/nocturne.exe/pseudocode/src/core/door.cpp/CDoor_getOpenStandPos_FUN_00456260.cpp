@@ -14,30 +14,25 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this
   float fVar3;
   float fVar4;
   CVector3f *pCVar5;
-  float *pfVar6;
-  byte local_68 [12];
-  float local_5c;
-  float local_58;
-  float local_54;
+  CVector3f local_68;
+  CVector3f local_5c;
   CVector3f local_50;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_38;
   CVector3f local_2c;
-  byte local_20 [16];
+  CVector3f local_20;
   
-  local_5c = direction->x;
-  local_58 = direction->y;
-  local_54 = direction->z;
-  if (local_54 < 0.0) {
-    local_38 = -local_5c;
-    local_34 = -local_58;
-    local_30 = -local_54;
+  local_5c.x = direction->x;
+  local_5c.y = direction->y;
+  local_5c.z = direction->z;
+  if (local_5c.z < 0.0) {
+    local_38.x = -local_5c.x;
+    local_38.y = -local_5c.y;
+    local_38.z = -local_5c.z;
     if (&local_5c != &local_38) {
-      local_5c = local_38;
-      local_58 = local_34;
-      local_54 = local_30;
+      local_5c.x = local_38.x;
+      local_5c.y = local_38.y;
+      local_5c.z = local_38.z;
     }
   }
   switch(this_ptr->door_type) {
@@ -47,14 +42,14 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this
     pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                        (&this_ptr->base,&local_2c,actor_pos);
     if (pCVar5->z <= 0.0) {
-      pfVar6 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                  (this_ptr,local_20,&local_5c);
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                         (&this_ptr->base,&local_20,&local_5c);
       fVar1 = (this_ptr->open_position).y;
-      fVar2 = pfVar6[1];
+      fVar2 = pCVar5->y;
       fVar3 = (this_ptr->open_position).z;
-      fVar4 = pfVar6[2];
+      fVar4 = pCVar5->z;
       if (out_pos != &local_50) {
-        out_pos->x = (this_ptr->open_position).x - *pfVar6;
+        out_pos->x = (this_ptr->open_position).x - pCVar5->x;
         out_pos->y = fVar1 - fVar2;
         out_pos->z = fVar3 - fVar4;
         out_pos->y = (this_ptr->base).location.position.y;
@@ -62,14 +57,14 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this
       }
     }
     else {
-      pfVar6 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                  (this_ptr,local_68,&local_5c);
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                         (&this_ptr->base,&local_68,&local_5c);
       fVar1 = (this_ptr->open_position).y;
-      fVar2 = pfVar6[1];
+      fVar2 = pCVar5->y;
       fVar3 = (this_ptr->open_position).z;
-      fVar4 = pfVar6[2];
+      fVar4 = pCVar5->z;
       if (out_pos != &local_44) {
-        out_pos->x = (this_ptr->open_position).x + *pfVar6;
+        out_pos->x = (this_ptr->open_position).x + pCVar5->x;
         out_pos->y = fVar1 + fVar2;
         out_pos->z = fVar3 + fVar4;
         out_pos->y = (this_ptr->base).location.position.y;

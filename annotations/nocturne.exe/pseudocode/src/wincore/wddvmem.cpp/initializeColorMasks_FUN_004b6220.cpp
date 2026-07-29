@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_initializeColorMasks_FUN_004b6220
 // Address: 004b6220
 // Address Range: [[004b6220, 004b6360]]
-// Convention: unknown
-// Signature: undefined8 wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-ulonglong wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
+void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
 
 {
   byte *pbVar1;
@@ -47,5 +47,5 @@ ulonglong wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
   _DAT_005bf618 = _DAT_01c0062c + _DAT_01c00638 + _DAT_01c00644;
   _DAT_005bf658 = _DAT_01c00644;
   _DAT_005bf638 = _DAT_01c00638 + _DAT_01c00644;
-  return CONCAT44(_DAT_01c00638,_DAT_01c00638 + _DAT_01c00644);
+  return;
 }

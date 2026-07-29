@@ -34,7 +34,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 00439b09
     PUSH EAX                            ; 00439b0c
     CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760 ; 00439b0d
-        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760()
+        ;   XREF to: 00439760 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(CLZWDictionary * this_ptr, int code, _ostream * ostream)
     ADD ESP,0xc                         ; 00439b12
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 00439b15
     MOV EAX,0x1                         ; 00439b1c

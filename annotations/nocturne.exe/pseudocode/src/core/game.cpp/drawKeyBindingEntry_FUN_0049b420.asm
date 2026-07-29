@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_drawKeyBindingEntry_FUN_0049b420(EInputCodeType param_1,undefined4 param_2)
+; void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_0049b420(EInputCodeType key_code,char *action_name)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   key_code
+; char *           Stack[0x8]:4   action_name
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ;

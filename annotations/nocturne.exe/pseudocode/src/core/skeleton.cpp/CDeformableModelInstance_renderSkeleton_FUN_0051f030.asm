@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_0051f030(void)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_0051f030(CDeformableModelInstance *this_ptr,int color,int render_flags)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   color
+; int              Stack[0xc]:4   render_flags
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60

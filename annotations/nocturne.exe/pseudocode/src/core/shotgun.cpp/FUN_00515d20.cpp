@@ -16,8 +16,7 @@ CWeapon * core_shotgun_cpp_FUN_00515d20(CWeapon *param_1)
   CWeapon *pCVar3;
   
   pCVar3 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  (pCVar3->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_005a1af4;
+  (pCVar3->base).vtable._ub = &g_CShotgunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&pCVar3->model,"shotgun.kfm");
   pCVar3[1].base.actor_name[0] = '\0';

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * core_sound_cpp_CSound_getSoundModeName_FUN_0052ec90(void)
+; char * __cdecl core_sound_cpp_CSound_getSoundModeName_FUN_0052ec90(CSound *this_ptr,int sound_mode_index)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   sound_mode_index
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00594bfe

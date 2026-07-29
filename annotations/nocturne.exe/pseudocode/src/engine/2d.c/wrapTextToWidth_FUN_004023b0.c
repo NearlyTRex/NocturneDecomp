@@ -1,12 +1,12 @@
 // Name: engine_2d.c_wrapTextToWidth_FUN_004023b0
 // Address: 004023b0
 // Address Range: [[004023b0, 004024d0]]
-// Convention: unknown
-// Signature: void engine_2d_c_wrapTextToWidth_FUN_004023b0(char *param_1,int param_2,char *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_wrapTextToWidth_FUN_004023b0(char *input_text,int max_width,char *output_buffer)
 
 #include "nocturne.h"
 
-void engine_2d_c_wrapTextToWidth_FUN_004023b0(char *param_1,int param_2,char *param_3)
+void __cdecl engine_2d_c_wrapTextToWidth_FUN_004023b0(char *input_text,int max_width,char *output_buffer)
 
 {
   char cVar1;
@@ -22,28 +22,28 @@ void engine_2d_c_wrapTextToWidth_FUN_004023b0(char *param_1,int param_2,char *pa
   
   bVar8 = 0;
   local_14 = 1;
-  pcVar5 = param_3;
-  if (*param_1 == '\0') {
-    *param_3 = '\0';
+  pcVar5 = output_buffer;
+  if (*input_text == '\0') {
+    *output_buffer = '\0';
   }
   else {
     do {
-      cVar1 = *param_1;
+      cVar1 = *input_text;
       *pcVar5 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = param_1[1];
-      param_1 = param_1 + 2;
+      cVar1 = input_text[1];
+      input_text = input_text + 2;
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    iVar2 = engine_2d_c_getStringWidth_FUN_00401ed0(param_3);
-    pcVar5 = param_3;
-    if (param_2 < iVar2) {
+    iVar2 = engine_2d_c_getStringWidth_FUN_00401ed0(output_buffer);
+    pcVar5 = output_buffer;
+    if (max_width < iVar2) {
       do {
-        cVar1 = *param_3;
+        cVar1 = *output_buffer;
         if (((cVar1 == '\0') || (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 2) != 0)) || (cVar1 == '\n'))
         {
-          uVar4 = (int)param_3 - (int)pcVar5;
+          uVar4 = (int)output_buffer - (int)pcVar5;
           pcVar6 = pcVar5;
           pcVar7 = acStack_114;
           for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
@@ -58,23 +58,23 @@ void engine_2d_c_wrapTextToWidth_FUN_004023b0(char *param_1,int param_2,char *pa
           }
           acStack_114[uVar4] = '\0';
           iVar2 = engine_2d_c_getStringWidth_FUN_00401ed0(acStack_114);
-          if (param_2 < iVar2) {
-            cVar1 = param_3[-1];
-            pcVar6 = param_3;
-            while ((param_3 = pcVar6 + -1, cVar1 != '\n' && (*param_3 != ' '))) {
+          if (max_width < iVar2) {
+            cVar1 = output_buffer[-1];
+            pcVar6 = output_buffer;
+            while ((output_buffer = pcVar6 + -1, cVar1 != '\n' && (*output_buffer != ' '))) {
               cVar1 = pcVar6[-2];
-              pcVar6 = param_3;
+              pcVar6 = output_buffer;
             }
-            *param_3 = '\n';
+            *output_buffer = '\n';
           }
-          if (*param_3 == '\n') {
-            pcVar5 = param_3 + 1;
+          if (*output_buffer == '\n') {
+            pcVar5 = output_buffer + 1;
           }
-          if (*param_3 == '\0') {
+          if (*output_buffer == '\0') {
             local_14 = 0;
           }
         }
-        param_3 = param_3 + 1;
+        output_buffer = output_buffer + 1;
       } while (local_14 != 0);
       return;
     }

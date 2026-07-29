@@ -11,21 +11,17 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90(CD
 {
   float fVar1;
   float fVar2;
-  float *pfVar3;
+  CVector3f *pCVar3;
   int iVar4;
   double dVar5;
   float fVar6;
   float fVar7;
-  byte local_98 [12];
-  byte local_8c [32];
-  float fStack_6c;
-  float fStack_68;
+  byte local_98 [40];
+  CVector3f CStack_70;
   float local_5c;
   CVector3f local_58;
-  float local_4c;
-  float local_48;
-  float local_44;
-  byte local_40 [12];
+  CVector3f local_4c;
+  CVector3f local_40;
   int local_34;
   int iStack_30;
   int iStack_2c;
@@ -35,7 +31,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90(CD
   int local_1c;
   int local_18;
   
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0((CMatrix3x3f *)local_8c,rotation);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+            ((CMatrix3x3f *)(local_98 + 0xc),rotation);
   local_58.x = end->x - start->x;
   local_58.y = end->y - start->y;
   local_58.z = end->z - start->z;
@@ -64,19 +61,19 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90(CD
           if (0 < local_28) {
             do {
               fVar2 = (float)0.5;
-              local_4c = fVar1 * fVar2 + (float)iStack_2c * fVar1 + start->x;
-              local_48 = fVar6 * fVar2 + (float)local_24 * fVar6 + start->y;
-              local_44 = (float)iVar4 * fVar7 + start->z + fVar7 * fVar2;
+              local_4c.x = fVar1 * fVar2 + (float)iStack_2c * fVar1 + start->x;
+              local_4c.y = fVar6 * fVar2 + (float)local_24 * fVar6 + start->y;
+              local_4c.z = (float)iVar4 * fVar7 + start->z + fVar7 * fVar2;
               local_20 = iVar4;
-              pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                          (local_98,local_40,&local_4c);
-              local_8c._28_4_ = *pfVar3 + offset->x;
-              fStack_6c = pfVar3[1] + offset->y;
-              fStack_68 = pfVar3[2] + offset->z;
-              if (&local_58 != (CVector3f *)(local_8c + 0x1c)) {
-                local_58.x = (float)local_8c._28_4_;
-                local_58.y = fStack_6c;
-                local_58.z = fStack_68;
+              pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                 ((CMatrix3x3f *)local_98,&local_40,&local_4c);
+              CStack_70.x = pCVar3->x + offset->x;
+              CStack_70.y = pCVar3->y + offset->y;
+              CStack_70.z = pCVar3->z + offset->z;
+              if (&local_58 != &CStack_70) {
+                local_58.x = CStack_70.x;
+                local_58.y = CStack_70.y;
+                local_58.z = CStack_70.z;
               }
               core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100
                         (this_ptr,&local_58);

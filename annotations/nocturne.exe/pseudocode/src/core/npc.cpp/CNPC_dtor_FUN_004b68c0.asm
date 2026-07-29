@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_npc_cpp_CNPC_dtor_FUN_004b68c0(CDemonActor *param_1,byte param_2)
+; CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_004b68c0(CNPC *this_ptr,uint flags)
 ;
+; Parameters:
+; CNPC *           Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CNPCTypeInfo_0059ef00

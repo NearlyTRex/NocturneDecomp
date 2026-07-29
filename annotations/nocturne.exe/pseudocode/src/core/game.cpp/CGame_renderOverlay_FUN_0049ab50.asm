@@ -123,12 +123,12 @@ section .text
     MOV EAX,[0x005be220]                ; 0049abf5 | DAT_005be220
     PUSH EAX                            ; 0049abfa | DAT_01e56da0
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049abfb
-        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710()
+        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049ac00
     MOV EDX,dword ptr [0x005be220]      ; 0049ac03 | DAT_005be220
     PUSH EDX                            ; 0049ac09 | DAT_01e56da0
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049ac0a
-        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710()
+        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     MOV EDX,dword ptr [0x005b7620]      ; 0049ac0f | DAT_005b7620
     SUB EDX,EAX                         ; 0049ac15
     MOV EAX,EDX                         ; 0049ac17
@@ -411,7 +411,7 @@ section .text
     PUSH EDI                            ; 0049afe1 | DAT_01e56da0
     MOV EBX,EAX                         ; 0049afe2
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049afe4
-        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710()
+        ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     SUB EBX,EAX                         ; 0049afe9
     MOV EAX,EBX                         ; 0049afeb
     MOV EDX,dword ptr [0x014b9904]      ; 0049afed | DAT_014b9904
@@ -437,7 +437,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0049b02a
     PUSH EAX                            ; 0049b031
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0049b032
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0049b037
     MOV EDX,dword ptr [ESP + 0x124]     ; 0049b03a
     SUB EDX,EAX                         ; 0049b041

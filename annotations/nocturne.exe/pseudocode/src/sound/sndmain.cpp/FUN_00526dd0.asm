@@ -32,7 +32,7 @@ section .text
     PUSH 0x0                            ; 00526de9
     PUSH EAX                            ; 00526deb
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 ; 00526dec
-        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830()
+        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00526df1
     MOV ECX,0x1b                        ; 00526df4
     MOV EDI,dword ptr [ESP + 0x10]      ; 00526df9

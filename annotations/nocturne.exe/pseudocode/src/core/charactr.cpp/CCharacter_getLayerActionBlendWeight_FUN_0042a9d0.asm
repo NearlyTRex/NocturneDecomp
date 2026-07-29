@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(int param_1,int param_2)
+; float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter *this_ptr,int state_index)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   state_index
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;

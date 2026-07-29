@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_copyNetAddr_FUN_004edf80(void)
+; void __cdecl core_netgame_cpp_copyNetAddr_FUN_004edf80(SNetworkAddr *dest,SNetworkAddr *src)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   dest
+; SNetworkAddr *   Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

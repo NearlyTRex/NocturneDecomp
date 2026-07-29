@@ -21,7 +21,7 @@ void __cdecl HandleRuntimeError(char *error_message,int error_level);
 
 // Original: crt_startup.cpp_WinMainBootstrap_FUN_0056df10
 // Address: 0056df10
-void WinMainBootstrap(void);
+void __watcallRegister WinMainBootstrap(void);
 
 // Original: crt_startup.c_ExitApplication_FUN_0056fcd4
 // Address: 0056fcd4

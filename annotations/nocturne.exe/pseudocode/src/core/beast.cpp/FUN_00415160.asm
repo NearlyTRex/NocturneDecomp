@@ -37,7 +37,7 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 00415188
     PUSH EBX                            ; 0041518e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 0041518f
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00415194
     PUSH 0x578db9                       ; 00415197 | = "motion state"
     PUSH EBX                            ; 0041519c

@@ -18,9 +18,9 @@ int __cdecl _mbstrnicmp(char *str1,char *str2,SIZE_T count)
     if (iVar1 != 0) {
       return iVar1;
     }
-    str1 = (char *)mbtowc_next(str1);
+    str1 = mbtowc_next(str1);
     count = count - 1;
-    str2 = (char *)mbtowc_next(str2);
+    str2 = mbtowc_next(str2);
   }
   if ((count != 0) &&
      ((iVar1 = mbstring_termination_check(str1), iVar1 != 0 ||

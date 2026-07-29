@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a400(CDemonActor *param_1,byte param_2)
+; CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a400(CBoneGuy *this_ptr,uint flags)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBoneGuyTypeInfo_0059aa20

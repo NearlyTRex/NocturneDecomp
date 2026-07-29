@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_FUN_004b49a0(CCharacter *param_1)
+; void __cdecl core_hero_cpp_FUN_004b49a0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xd4]:1  local_d4
 ; undefined        Stack[-0x70]:1  local_70

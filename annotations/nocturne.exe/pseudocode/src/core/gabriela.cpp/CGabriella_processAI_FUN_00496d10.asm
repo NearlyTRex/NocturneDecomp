@@ -176,14 +176,14 @@ section .text
     PUSH EAX                            ; 00496e67
     FSTP float ptr [ESP + 0xcc]         ; 00496e68
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00496e6f
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 00496e74
     ADD ESP,0x8                         ; 00496e77
     FSUB float ptr [EBX + 0x34]         ; 00496e7a
     SUB ESP,0x4                         ; 00496e7d
     FSTP float ptr [ESP]                ; 00496e80
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00496e83
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x114],EAX     ; 00496e88
     FLD float ptr [ESP + 0x114]         ; 00496e8f
     FMUL double ptr [0x0058208a]        ; 00496e96 | DOUBLE_0058208a
@@ -409,7 +409,7 @@ section .text
     PUSH EAX                            ; 004971c6 | DAT_01e57284
     MOV dword ptr [EAX + 0x14cd5c],0x0  ; 004971c7 | DAT_01fa3fe0
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004971d1
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     ADD ESP,0xc                         ; 004971d6
     MOV EDI,dword ptr [0x005be368]      ; 004971d9 | DAT_005be368
     PUSH EDI                            ; 004971df | DAT_01e57284
@@ -477,7 +477,7 @@ section .text
     SUB ESP,0x4                         ; 0049728e
     FSTP float ptr [ESP]                ; 00497291
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00497294
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x114],EAX     ; 00497299
     FLD float ptr [ESP + 0x114]         ; 004972a0
     FMUL double ptr [0x0058208a]        ; 004972a7 | DOUBLE_0058208a

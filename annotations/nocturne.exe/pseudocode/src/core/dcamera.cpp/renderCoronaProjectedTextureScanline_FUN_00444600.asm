@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int param_1,int param_2,int param_3)
+; void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int scanline_y,int x_start,int x_end)
 ;
+; Parameters:
+; int              Stack[0x4]:4   scanline_y
+; int              Stack[0x8]:4   x_start
+; int              Stack[0xc]:4   x_end
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c

@@ -1,27 +1,27 @@
 // Name: core_glass.cpp_FUN_004abb50
 // Address: 004abb50
 // Address Range: [[004abb50, 004abc84]]
-// Convention: unknown
-// Signature: int core_glass_cpp_FUN_004abb50(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CGlass * __cdecl core_glass_cpp_FUN_004abb50(CGlass *this_ptr)
 
 #include "nocturne.h"
 
-int core_glass_cpp_FUN_004abb50(uint param_1)
+CGlass * __cdecl core_glass_cpp_FUN_004abb50(CGlass *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CMirror *pCVar3;
   void *pvVar4;
   char *pcVar5;
   char *pcVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004d6550((CMirror *)(iVar2 + 0x1e4));
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004d6550((CMirror *)(pCVar2[1].create_event + 0x1c));
   pvVar4 = __arrinit
                      (&pCVar3[1].reflection.reflection_matrix.m[1].y,0x19,
                       &g_CVectorTypeInfo_005993b0);
-  *(byte ***)((int)pvVar4 + -0x238) = &PTR_core_glass_cpp_CGlass_setup_FUN_004abc90_0059e3b4;
+  *(CDemonActor_vtable **)((int)pvVar4 + -0x238) = &g_CGlassVTable;
   pcVar5 = "HEADLITE.RAW";
   *(uint *)((int)pvVar4 + -0x234) = 0x40800000;
   *(uint *)((int)pvVar4 + -0x230) = 0x40800000;
@@ -68,5 +68,5 @@ int core_glass_cpp_FUN_004abb50(uint param_1)
   *(uint *)((int)pvVar4 + -0x14) = 0;
   *(uint *)((int)pvVar4 + -0x18) = 0xd;
   *(uint *)((int)pvVar4 + 0x7b0) = 0;
-  return (int)pvVar4 + -900;
+  return (CGlass *)((int)pvVar4 + -900);
 }

@@ -17,7 +17,7 @@ CDemonActorType * FUN_0040fec0(void);
 
 // Original: core_backgnd.cpp_FUN_0040fed0
 // Address: 0040fed0
-int * FUN_0040fed0(undefined4 param_1);
+int * FUN_0040fed0(CDemonActor *param_1);
 
 // Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30
 // Address: 0040ff30
@@ -43,13 +43,13 @@ undefined4 * FUN_0040fff0(int param_1,undefined4 *param_2);
 // Address: 00410040
 void CBackgroundActor::archive(CDemonActor *param_1);
 
-// Original: core_backgnd.cpp_FUN_004100a0
+// Original: core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004100a0
 // Address: 004100a0
-undefined4 FUN_004100a0(int param_1,int param_2);
+ECollisionType __cdecl CBackgroundActor::getCollisionType(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_backgnd.cpp_FUN_004100e0
+// Original: core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_004100e0
 // Address: 004100e0
-undefined4 FUN_004100e0(int param_1);
+EGroundType __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_FUN_004100f0
 // Address: 004100f0

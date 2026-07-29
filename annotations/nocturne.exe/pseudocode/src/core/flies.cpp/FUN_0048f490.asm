@@ -269,7 +269,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0048f764 | DAT_005ae704
     PUSH EDX                            ; 0048f76a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0048f76b
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV EAX,[0x01c038f4]                ; 0048f770 | DAT_01c038f4
     SAR EAX,0x8                         ; 0048f775
     MOV [0x01c70754],EAX                ; 0048f778 | DAT_01c70754

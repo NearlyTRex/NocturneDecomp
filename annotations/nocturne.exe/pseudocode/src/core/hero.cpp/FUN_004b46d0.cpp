@@ -1,25 +1,25 @@
 // Name: core_hero.cpp_FUN_004b46d0
 // Address: 004b46d0
 // Address Range: [[004b46d0, 004b47f7]]
-// Convention: unknown
-// Signature: CDemonActor * core_hero_cpp_FUN_004b46d0(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: CHero * __cdecl core_hero_cpp_FUN_004b46d0(CHero *this_ptr)
 
 #include "nocturne.h"
 
-CDemonActor * core_hero_cpp_FUN_004b46d0(CCharacter *param_1)
+CHero * __cdecl core_hero_cpp_FUN_004b46d0(CHero *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  CHero *pCVar1;
   CCharacter *pCVar2;
   CPathMap *pCVar3;
   CInventory *pCVar4;
   
-  pCVar2 = core_charactr_cpp_CCharacter_ctor_FUN_00423f40(param_1);
+  pCVar2 = core_charactr_cpp_CCharacter_ctor_FUN_00423f40(&this_ptr->base);
   pCVar3 = core_path_cpp_CPathMap_ctor_FUN_004efd50((CPathMap *)((int)&pCVar2[1].base.orient + 4));
   pCVar4 = core_inv_cpp_CInventory_ctor_FUN_004bedc0((CInventory *)&pCVar3[1].current_position.y);
-  pCVar1 = (CDemonActor *)(pCVar4[-0x73].items + 0x5d);
-  pCVar4->owner = pCVar1;
-  pCVar4[-0x73].item_angles[0x4c] = (float)&PTR_core_hero_cpp_FUN_004b48d0_0059eb34;
+  pCVar1 = (CHero *)(pCVar4[-0x73].items + 0x5d);
+  pCVar4->owner = (CDemonActor *)pCVar1;
+  pCVar4[-0x73].item_angles[0x4c] = (float)&g_CHeroVTable;
   memset(pCVar4[-0x48].item_angles + 0x16,0,0x2c);
   pCVar4[-0x48].item_angles[0x14] = 0.0;
   pCVar4[-0xffffffff00000069].message_text[0x48] = -0x66;

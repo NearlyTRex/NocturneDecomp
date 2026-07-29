@@ -1,19 +1,20 @@
 // Name: core_set.cpp_FUN_0050ad20
 // Address: 0050ad20
 // Address Range: [[0050ad20, 0050adbc]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050ad20(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_set_cpp_FUN_0050ad20(int param_1)
+void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
 
 {
   int iVar1;
   uint uVar2;
   int iVar3;
+  C3DSLight *this_ptr_00;
   int iVar4;
   
   iVar4 = 0;
@@ -32,13 +33,13 @@ void core_set_cpp_FUN_0050ad20(int param_1)
   }
   iVar4 = 0;
   _DAT_01fb99d0 = 0;
-  if (0 < *(int *)(param_1 + 0x19644)) {
-    iVar3 = param_1 + 0x19648;
+  if (0 < (int)this_ptr->cameras[0xf7].position.y) {
+    this_ptr_00 = (C3DSLight *)&this_ptr->cameras[0xf7].position.z;
     do {
-      core_setutil_cpp_FUN_00515410(iVar3);
+      core_setutil_cpp_FUN_00515410(this_ptr_00);
       iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 0x1898;
-    } while (iVar4 < *(int *)(param_1 + 0x19644));
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (iVar4 < (int)this_ptr->cameras[0xf7].position.y);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
   core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)0x1fb8508);

@@ -19,7 +19,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CDemonActor *para
     core_actor_cpp_archiveVector_FUN_0040c450
               ((CVector3f *)(param_1[4].create_event + 0xc),"pGemPos");
     core_actor_cpp_archiveOrientation_FUN_0040c4f0
-              (param_1[4].create_event + 0x18,"pGemOrient");
+              ((COrientation *)(param_1[4].create_event + 0x18),"pGemOrient");
     core_actor_cpp_archiveVector_FUN_0040c450
               ((CVector3f *)(param_1[4].create_event + 0x24),"pEmitterPos");
   }

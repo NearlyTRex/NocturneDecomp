@@ -67,7 +67,7 @@ section .text
     PUSH EDX                            ; 004d468c
         ;   Label: LAB_004d468c
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004d468d
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004d4692
     LEA EDI,[EBX + 0x150]               ; 004d4695
     PUSH EDI                            ; 004d469b

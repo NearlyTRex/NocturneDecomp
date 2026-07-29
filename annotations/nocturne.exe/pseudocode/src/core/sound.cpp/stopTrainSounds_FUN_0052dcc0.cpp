@@ -1,15 +1,14 @@
 // Name: core_sound.cpp_stopTrainSounds_FUN_0052dcc0
 // Address: 0052dcc0
 // Address Range: [[0052dcc0, 0052dcfc]]
-// Convention: unknown
-// Signature: void core_sound_cpp_stopTrainSounds_FUN_0052dcc0(void)
+// Convention: __watcallRegister
+// Signature: void __watcallRegister core_sound_cpp_stopTrainSounds_FUN_0052dcc0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_sound_cpp_stopTrainSounds_FUN_0052dcc0(void)
+void __watcallRegister core_sound_cpp_stopTrainSounds_FUN_0052dcc0(void)
 
 {
   uint *puVar1;

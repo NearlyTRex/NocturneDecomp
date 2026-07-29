@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 236,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 20,
+    "pseudocode_lines": 33,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "pointer_truncation"
     ],
-    "total_lines": 78
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -24,9 +23,9 @@
         "00570074"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallStack",
     "name": "crt_strstream.cpp_strstreambuf_overflow_FUN_0057000d",
-    "signature": "int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)"
+    "signature": "int __watcallStack crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(strstreambuf *this_ptr,int character)"
   },
   "function_calls": [],
   "globals": [],
@@ -34,9 +33,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -64,173 +63,60 @@
     "pcode_op_count": 200
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambuf *"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0x3c) & 2) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0x3c) & 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Pointer value `pvVar4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 12,
-      "match": "code *",
+      "match": "(uint)pvVar4",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x28) + 0x28))(param_1);",
-      "type": "unresolved_funcptr"
+      "text": "if (((uint)pvVar4 & 2) == 0) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x28) + 0x28))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x28) + 0x28))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `pvVar4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "**(byte **)(param_1 + 0x20) = (byte)param_2;",
-      "type": "unnamed_param"
+      "match": "(uint)pvVar4",
+      "severity": "moderate",
+      "text": "if (((uint)pvVar4 & 4) == 0) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "**(byte **)(param_1 + 0x20) = (byte)param_2;",
-      "type": "unnamed_param"
+      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)pcVar2",
+      "severity": "moderate",
+      "text": "(this_ptr->_streambuf).__put_ptr + ((int)pcVar2 - (int)pcVar3);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c) = *(int *)(param_1 + 0x1c) + 0x200;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c) = *(int *)(param_1 + 0x1c) + 0x200;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + (iVar1 - *(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + (iVar1 - *(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + (iVar1 - *(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
+      "description": "Pointer value `pcVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)pcVar3",
+      "severity": "moderate",
+      "text": "(this_ptr->_streambuf).__put_ptr + ((int)pcVar2 - (int)pcVar3);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

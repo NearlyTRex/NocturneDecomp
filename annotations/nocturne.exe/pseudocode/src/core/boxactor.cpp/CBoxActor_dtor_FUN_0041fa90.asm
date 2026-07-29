@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_boxactor_cpp_CBoxActor_dtor_FUN_0041fa90(CDemonActor *param_1,byte param_2)
+; CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_0041fa90(CBoxActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBoxActorTypeInfo_0059acd0

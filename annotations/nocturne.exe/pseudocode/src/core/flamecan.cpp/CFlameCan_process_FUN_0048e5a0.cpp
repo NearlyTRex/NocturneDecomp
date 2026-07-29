@@ -51,7 +51,6 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float p
   fStack_28 = (param_1->base).location.position.x + fStack_1c;
   fStack_24 = (param_1->base).location.position.y + fStack_18;
   fStack_20 = (param_1->base).location.position.z + fStack_14;
-  core_fire_cpp_FUN_0048c0d0
-            (0x01C08D04,&(param_1->flame).base.location,0x41800000,0x44bb8000,0x40800000);
+  core_fire_cpp_FUN_0048c0d0(0x01C08D04,&(param_1->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

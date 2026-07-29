@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 00417bbc
     FSTP float ptr [EDX + 0x8]          ; 00417bbd
     CALL core_flame.cpp_CFlame_setup_FUN_0048d050 ; 00417bc0
-        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_setup_FUN_0048d050()
+        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_setup_FUN_0048d050(CFlame * this_ptr)
     MOV dword ptr [ESI + 0x1b0],0x0     ; 00417bc5
     MOV dword ptr [ESI + 0x15c],0x3fc00000 ; 00417bcf
     MOV dword ptr [ESI + 0x160],0x40400000 ; 00417bd9
@@ -126,7 +126,7 @@ section .text
         ;   Label: LAB_00417c60
     PUSH 0x41400000                     ; 00417c65
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00417c6a
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00417c6f
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00417c73
     MOV dword ptr [EBX + 0xcb0],EAX     ; 00417c77

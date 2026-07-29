@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void)
+; int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void)
 ;
 ;
 ; Referenced Globals:

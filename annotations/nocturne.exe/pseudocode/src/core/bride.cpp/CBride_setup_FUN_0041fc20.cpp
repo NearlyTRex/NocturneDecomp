@@ -71,7 +71,7 @@ void core_bride_cpp_CBride_setup_FUN_0041fc20(CEnemy *param_1)
                            (this_ptr_01,"headpiece",1);
   param_1[1].base.base.location.position.x = fVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
-  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40000000,0x41a00000);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(2.0,20.0);
   param_1[1].base.base.location.position.z = 0.0;
   param_1[1].base.base.location.area_id = 0;
   param_1[1].base.base.location.position.y = fVar2;

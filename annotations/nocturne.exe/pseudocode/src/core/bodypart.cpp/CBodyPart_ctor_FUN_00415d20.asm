@@ -11,7 +11,7 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415c32
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744 = 00416500
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_SBodyPartModelTypeInfo_0059a820
 ;   WatcomTypeInfo g_SBodyPartFireTypeInfo_0059a840
 ;
@@ -28,7 +28,7 @@ section .text
         ;   Label: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
     PUSH EAX                            ; 00415d24
     CALL core_actor.cpp_FUN_00409d30    ; 00415d25
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00415d2a
     PUSH 0x59a820                       ; 00415d2d | g_SBodyPartModelTypeInfo_0059a820
     PUSH 0x3                            ; 00415d32
@@ -49,7 +49,7 @@ section .text
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 00415d5d
         ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     SUB EAX,0xcb4                       ; 00415d62
-    MOV dword ptr [EAX + 0x14c],0x59a744 ; 00415d67 | PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744
+    MOV dword ptr [EAX + 0x14c],0x59a744 ; 00415d67 | g_CBodyPartVTable
     MOV dword ptr [EAX + 0xf10],0x0     ; 00415d71
     MOV dword ptr [EAX + 0x16c],0x0     ; 00415d7b
     MOV dword ptr [EAX + 0x170],0x0     ; 00415d85

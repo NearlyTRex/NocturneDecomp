@@ -41,15 +41,15 @@ void CCurtain::process(CCurtain *param_1,float param_2);
 
 // Original: core_curtain.cpp_FUN_0043f330
 // Address: 0043f330
-int FUN_0043f330(CDemonActor *param_1);
+int __cdecl FUN_0043f330(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_FUN_0043f610
 // Address: 0043f610
-undefined4 FUN_0043f610(int param_1);
+int FUN_0043f610(CCurtain *param_1);
 
 // Original: core_curtain.cpp_CCurtain_renderTransparent_FUN_0043f630
 // Address: 0043f630
-undefined4 CCurtain::renderTransparent(int param_1);
+int CCurtain::renderTransparent(CCurtain *param_1);
 
 // Original: core_curtain.cpp_FUN_0043f640
 // Address: 0043f640
@@ -63,9 +63,9 @@ void FUN_0043f650(int param_1,float *param_2);
 // Address: 0043f6b0
 void CCurtain::archive(CDemonActor *param_1);
 
-// Original: core_curtain.cpp_FUN_0043f8d0
+// Original: core_curtain.cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_0043f8d0
 // Address: 0043f8d0
-undefined4 FUN_0043f8d0(int param_1);
+int __cdecl CCurtain::getBlockVirtualDirectorFlag(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_FUN_0043f8e0
 // Address: 0043f8e0
@@ -85,7 +85,7 @@ undefined4 SCollisionInfo::dtor(undefined4 param_1);
 
 // Original: core_curtain.cpp_FUN_0043f980
 // Address: 0043f980
-void FUN_0043f980(void *param_1);
+SCurtainVertex * __cdecl FUN_0043f980(SCurtainVertex *objs,uint flags);
 
 // Original: core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0
 // Address: 0043f9a0

@@ -112,7 +112,7 @@ section .text
     ADD EBX,0x4                         ; 00508950
     INC ESI                             ; 00508953
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 00508954
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
     MOV ECX,dword ptr [0x01fba2d8]      ; 00508959 | DAT_01fba2d8
     ADD ESP,0x4                         ; 0050895f
     CMP ESI,ECX                         ; 00508962
@@ -133,7 +133,7 @@ section .text
     ADD EBX,0x4                         ; 00508985
     INC ESI                             ; 00508988
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 00508989
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
     MOV EAX,[0x01fb9b54]                ; 0050898e | DAT_01fb9b54
     ADD ESP,0x4                         ; 00508993
     CMP ESI,EAX                         ; 00508996
@@ -153,7 +153,7 @@ section .text
     ADD EBX,0x4                         ; 005089b5
     INC ESI                             ; 005089b8
     CALL core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440 ; 005089b9
-        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440()
+        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(CDemonLight * this_ptr)
     MOV EDI,dword ptr [0x01fb9b54]      ; 005089be | DAT_01fb9b54
     ADD ESP,0x4                         ; 005089c4
     CMP ESI,EDI                         ; 005089c7
@@ -187,7 +187,7 @@ section .text
     MOV [0x01fba2ec],EAX                ; 00508a3b | DAT_01fba2ec
     MOV [0x01fba480],EAX                ; 00508a40 | DAT_01fba480
     CALL core_setutil.cpp_FUN_005148b0  ; 00508a45
-        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_005148b0()
+        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00508a4a
     LEA EAX,[EBP + 0x15a86c]            ; 00508a4d
     MOV EDI,dword ptr [EBX + EBP*0x1 + 0x150] ; 00508a53
@@ -227,7 +227,7 @@ section .text
     PUSH 0x1fb8508                      ; 00508ab2
     XOR EBX,EBX                         ; 00508ab7
     CALL core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0 ; 00508ab9
-        ;   XREF to: 004474e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0()
+        ;   XREF to: 004474e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera * this_ptr, SFog * fog_config)
     ADD ESP,0x8                         ; 00508abe
     XOR EAX,EAX                         ; 00508ac1
     MOV EDX,dword ptr [EBP + 0x14cd6c]  ; 00508ac3
@@ -288,7 +288,7 @@ section .text
     PUSH 0x1fb8508                      ; 00508b5a
     MOV dword ptr [0x01ffb060],EDX      ; 00508b5f | DAT_01ffb060
     CALL core_dcamera.cpp_FUN_004421b0  ; 00508b65
-        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004421b0()
+        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_004421b0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508b6a
     PUSH 0x1fb8508                      ; 00508b6d
     CALL core_dcamera.cpp_FUN_00448380  ; 00508b72
@@ -506,7 +506,7 @@ section .text
     PUSH EDI                            ; 00508e0f
     XOR ESI,ESI                         ; 00508e10
     CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0 ; 00508e12
-        ;   XREF to: 005557d0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0()
+        ;   XREF to: 005557d0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     MOV EAX,dword ptr [EBP + 0x14cd6c]  ; 00508e17
     ADD ESP,0xc                         ; 00508e1d
     TEST EAX,EAX                        ; 00508e20
@@ -660,7 +660,7 @@ section .text
     ADD ESP,0x8                         ; 00508feb
     PUSH EBX                            ; 00508fee
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 00508fef
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00508ff4
     PUSH EDI                            ; 00508ff7
     PUSH EBX                            ; 00508ff8

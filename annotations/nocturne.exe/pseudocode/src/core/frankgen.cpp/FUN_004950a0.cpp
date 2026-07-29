@@ -1,18 +1,18 @@
 // Name: core_frankgen.cpp_FUN_004950a0
 // Address: 004950a0
 // Address Range: [[004950a0, 0049523c]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *param_1)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *param_1)
+CVector3f * __cdecl core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;
-  CKeyFramedModel *this_ptr;
+  CKeyFramedModel *this_ptr_00;
   CVector3i *pCVar2;
   CVector3f *pCVar3;
   uint *puVar4;
@@ -29,25 +29,25 @@ void core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *param_1)
   int local_18;
   
   bVar5 = 0;
-  switch(param_1->which_part) {
+  switch(this_ptr->which_part) {
   case 0:
     start_frame = 0.0;
     end_frame = 2300.0f;
     goto LAB_004950c9;
   case 1:
-    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,131.0,671.0);
+    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(this_ptr,131.0,671.0);
     break;
   case 2:
-    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,527.0,887.0);
+    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(this_ptr,527.0,887.0);
     break;
   case 3:
-    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,1089.0,1741.0);
+    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(this_ptr,1089.0,1741.0);
     break;
   case 4:
-    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,350.0,400.0);
+    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(this_ptr,350.0,400.0);
     break;
   case 5:
-    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(param_1,864.0,1044.0);
+    core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(this_ptr,864.0,1044.0);
     break;
   case 6:
   case 7:
@@ -59,20 +59,21 @@ void core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *param_1)
     end_frame = 2300.0;
 LAB_004950c9:
     core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340
-              (param_1,start_frame,end_frame);
+              (this_ptr,start_frame,end_frame);
     break;
   default:
     PTR_01cc4800 = "..\\core\\frankgen.cpp";
     INT_01cc4804 = 0x1bb;
     core_main_c_FUN_004c8440();
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&param_1->base);
-  dVar6 = round((double)param_1->part_frame);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
+  dVar6 = round((double)this_ptr->part_frame);
   frame_index = (int)ROUND(dVar6);
-  iVar1 = param_1->anchor_vertex_index;
+  iVar1 = this_ptr->anchor_vertex_index;
   local_18 = frame_index;
-  this_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&param_1->bed_model);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(this_ptr,frame_index);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                          (&this_ptr->bed_model);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(this_ptr_00,frame_index);
   puVar4 = (uint *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);
   iStack_30 = pCVar2[iVar1].x;
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar4;
@@ -82,12 +83,12 @@ LAB_004950c9:
   local_24.y = (float)local_2c * _DAT_0059db58;
   local_24.z = (float)local_28 * _DAT_0059db58;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (&param_1->base,(CVector3f *)&stack0xffffffc4,&local_24);
-  if (&param_1->anchor_world_position != pCVar3) {
-    (param_1->anchor_world_position).x = pCVar3->x;
-    (param_1->anchor_world_position).y = pCVar3->y;
-    (param_1->anchor_world_position).z = pCVar3->z;
-    return;
+                     (&this_ptr->base,(CVector3f *)&stack0xffffffc4,&local_24);
+  if (&this_ptr->anchor_world_position != pCVar3) {
+    (this_ptr->anchor_world_position).x = pCVar3->x;
+    (this_ptr->anchor_world_position).y = pCVar3->y;
+    (this_ptr->anchor_world_position).z = pCVar3->z;
+    return pCVar3;
   }
-  return;
+  return pCVar3;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(undefined4 param_1,CDemonActor *param_2)
+; undefined4 core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -81,7 +81,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004c7130 | DAT_005be368
     PUSH ECX                            ; 004c7136
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004c7137
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV EAX,[0x005be368]                ; 004c713c | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004c7141
     ADD ESP,0xc                         ; 004c7147

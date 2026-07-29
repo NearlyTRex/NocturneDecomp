@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_pod_cpp_CPod_locateFile_FUN_004f9170(int *param_1,char *param_2,char *param_3,int *param_4)
+; CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_004f9170(CPod *this_ptr,char *base_path,char *filename,int *file_index_out)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   base_path
+; char *           Stack[0xc]:4   filename
+; int *            Stack[0x10]:4   file_index_out
 ; Local Variables:
 ; undefined        Stack[-0x224]:1  local_224
 ;

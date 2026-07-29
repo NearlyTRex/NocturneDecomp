@@ -1,14 +1,14 @@
 // Name: crt_iostream.cpp_streambuf_seekoff_FUN_005701af
 // Address: 005701af
 // Address Range: [[005701af, 005701cb]]
-// Convention: unknown
-// Signature: void crt_iostream_cpp_streambuf_seekoff_FUN_005701af(int param_1,undefined4 param_2,undefined4 param_3)
+// Convention: __watcallStack
+// Signature: void __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_005701af(streambuf *this_ptr,int off,int dir,int which)
 
 #include "nocturne.h"
 
-void crt_iostream_cpp_streambuf_seekoff_FUN_005701af(int param_1,uint param_2,uint param_3)
+void __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_005701af(streambuf *this_ptr,int off,int dir,int which)
 
 {
-  (**(code **)(*(int *)(param_1 + 0x28) + 0x18))(param_1,param_2,0,param_3);
+  (**(code **)((int)this_ptr[1].__b_lock + 0x18))(this_ptr,off,0,dir);
   return;
 }

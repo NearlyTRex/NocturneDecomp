@@ -90,7 +90,7 @@ section .text
     PUSH 0x0                            ; 0049975f
     MOV dword ptr [EBX + 0x2590],0x0    ; 00499761
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0049976b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + -0x4],EAX      ; 00499770
     ADD ESP,0x8                         ; 00499773
     FLD float ptr [EBP + -0x4]          ; 00499776
@@ -115,7 +115,7 @@ section .text
     PUSH 0x3e800000                     ; 004997b2
     MOV EDI,dword ptr [EBX + 0x14c]     ; 004997b7
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004997bd
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     ADD ESP,0x8                         ; 004997c2
     MOV dword ptr [EBP + -0x4],EAX      ; 004997c5
     SUB ESP,0x4                         ; 004997c8
@@ -182,7 +182,7 @@ section .text
     PUSH 0x3e800000                     ; 00499853
     MOV EDI,dword ptr [EBX + 0x14c]     ; 00499858
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0049985e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     ADD ESP,0x8                         ; 00499863
     MOV dword ptr [EBP + -0x4],EAX      ; 00499866
     SUB ESP,0x4                         ; 00499869
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_00499892
     PUSH EAX                            ; 00499897 | DAT_01c775ec
     CALL core_game.cpp_FUN_004a3a90     ; 00499898
-        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a3a90()
+        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049989d
     PUSH ESI                            ; 004998a0
     PUSH EBX                            ; 004998a1

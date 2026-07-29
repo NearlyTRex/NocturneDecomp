@@ -1,8 +1,8 @@
 // Name: core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 // Address: 0055e040
 // Address Range: [[0055e040, 0055e774]]
-// Convention: unknown
-// Signature: void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 
@@ -15,7 +15,7 @@
 /* WARNING: Removing unreachable block (ram,0x0055e377) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2)
+void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count,int *vertex_indices)
 
 {
   longlong lVar1;
@@ -50,29 +50,29 @@ void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *para
   bVar22 = 0;
   iVar11 = 0;
   iVar16 = 0;
-  piVar13 = param_2;
-  if (0 < (int)param_1) {
+  piVar13 = vertex_indices;
+  if (0 < vertex_count) {
     do {
       if (((&DAT_005c5024)[*piVar13 * 0xc] & 0x80000000) != 0) {
         iVar16 = iVar16 + 1;
       }
       iVar11 = iVar11 + 1;
       piVar13 = piVar13 + 1;
-    } while (iVar11 < (int)param_1);
+    } while (iVar11 < vertex_count);
   }
   if (iVar16 == 0) {
-    DAT_00766c70 = param_1;
-    if (0 < (int)param_1) {
+    DAT_00766c70 = vertex_count;
+    if (0 < vertex_count) {
       plVar14 = (longlong *)&DAT_00766c74;
       local_24 = 0;
       do {
         iVar11 = 0x30;
-        plVar19 = (longlong *)(&DAT_005c5014 + *param_2 * 0xc);
+        plVar19 = (longlong *)(&DAT_005c5014 + *vertex_indices * 0xc);
         plVar20 = plVar14;
         if (((uint)plVar14 & 7) != 0) {
           plVar20 = (longlong *)((int)plVar14 + 4);
-          plVar19 = (longlong *)(&DAT_005c5018 + *param_2 * 0xc);
-          *(int *)plVar14 = (int)*(longlong *)(&DAT_005c5014 + *param_2 * 0xc);
+          plVar19 = (longlong *)(&DAT_005c5018 + *vertex_indices * 0xc);
+          *(int *)plVar14 = (int)*(longlong *)(&DAT_005c5014 + *vertex_indices * 0xc);
           iVar11 = 0x2c;
         }
         while (7 < iVar11) {
@@ -88,22 +88,22 @@ void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *para
             *(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar19 + 4);
           }
         }
-        param_2 = param_2 + 1;
+        vertex_indices = vertex_indices + 1;
         local_24 = local_24 + 1;
         plVar14 = plVar14 + 6;
-      } while (local_24 < (int)param_1);
+      } while (local_24 < vertex_count);
     }
   }
   else {
-    _DAT_02de3130 = param_1;
+    _DAT_02de3130 = vertex_count;
     iVar11 = 0;
     _DAT_02de3134 = 0;
     _DAT_02de3138 = 0;
     _DAT_02de313c = 0;
     DAT_00766c70 = 0;
-    if (0 < (int)param_1) {
+    if (0 < vertex_count) {
       plVar14 = (longlong *)&DAT_02de3740;
-      local_28 = param_2;
+      local_28 = vertex_indices;
       do {
         plVar20 = (longlong *)(&DAT_005c5014 + *local_28 * 0xc);
         iVar16 = 0x30;
@@ -124,7 +124,7 @@ void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *para
         iVar11 = iVar11 + 1;
         local_28 = local_28 + 1;
         plVar14 = plVar14 + 6;
-      } while (iVar11 < (int)param_1);
+      } while (iVar11 < vertex_count);
     }
     local_20 = 0;
     if (0 < (int)_DAT_02de3130) {
@@ -424,10 +424,10 @@ void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *para
               pSVar17 = pSVar17 + 1;
             } while (local_1c < (int)_DAT_02de313c);
           }
-          if (2 < (int)DAT_00766c70) {
+          if (2 < DAT_00766c70) {
             piVar13 = &DAT_00766c74;
             iVar11 = 0;
-            if (0 < (int)DAT_00766c70) {
+            if (0 < DAT_00766c70) {
               do {
                 iVar16 = piVar13[2];
                 if (iVar16 == 0) {
@@ -455,7 +455,7 @@ void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *para
                 }
                 iVar11 = iVar11 + 1;
                 piVar13 = piVar13 + 0xc;
-              } while (iVar11 < (int)DAT_00766c70);
+              } while (iVar11 < DAT_00766c70);
             }
           }
         }

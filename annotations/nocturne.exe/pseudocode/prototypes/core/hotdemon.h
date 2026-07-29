@@ -49,4 +49,4 @@ void FUN_004b99b0(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004b99d0
 // Address: 004b99d0
-CDemonActor * CHotDemon::dtor(CDemonActor *param_1,byte param_2);
+CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

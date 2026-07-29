@@ -35,7 +35,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x161268]  ; 0050e4a5
     PUSH EDX                            ; 0050e4ab
     CALL core_mirror.cpp_FUN_004d7720   ; 0050e4ac
-        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d7720()
+        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; int core_mirror.cpp_FUN_004d7720(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0050e4b1
     RET                                 ; 0050e4b4
     PUSH ECX                            ; 0050e4b5

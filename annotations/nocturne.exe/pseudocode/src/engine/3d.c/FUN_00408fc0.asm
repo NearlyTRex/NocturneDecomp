@@ -204,7 +204,7 @@ section .text
     PUSH EDI                            ; 00409158
         ;   Label: LAB_00409158
     CALL engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90 ; 00409159
-        ;   XREF to: 00405c90 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90()
+        ;   XREF to: 00405c90 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x4                         ; 0040915e
     JMP 0x0040900f                      ; 00409161
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f

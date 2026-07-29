@@ -19,25 +19,25 @@ CDemonActorType * FUN_00515d10(void);
 // Address: 00515d20
 CWeapon * FUN_00515d20(CWeapon *param_1);
 
-// Original: core_shotgun.cpp_FUN_00515db0
+// Original: core_shotgun.cpp_CShotgun_process_FUN_00515db0
 // Address: 00515db0
-void FUN_00515db0(CWeapon *param_1,undefined4 param_2,float param_3);
+void __cdecl CShotgun::process(CShotgun *this_ptr,float delta_time);
 
 // Original: core_shotgun.cpp_FUN_00515ea0
 // Address: 00515ea0
-undefined4 FUN_00515ea0(CWeapon *param_1);
+undefined4 FUN_00515ea0(CCharacter *param_1);
 
 // Original: core_shotgun.cpp_CShotgun_onFired_FUN_00516620
 // Address: 00516620
-void CShotgun::onFired(int param_1);
+void CShotgun::onFired(CDemonActor *param_1);
 
-// Original: core_shotgun.cpp_FUN_00516730
+// Original: core_shotgun.cpp_CShotgun_getDamage_FUN_00516730
 // Address: 00516730
-undefined4 FUN_00516730(int param_1);
+float __cdecl CShotgun::getDamage(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_00516770
+// Original: core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770
 // Address: 00516770
-void FUN_00516770(CDemonActor *param_1);
+void __cdecl CShotgun::fireProjectile(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_FUN_00516960
 // Address: 00516960

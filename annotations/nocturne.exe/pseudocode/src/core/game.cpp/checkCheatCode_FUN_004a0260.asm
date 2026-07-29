@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_game_cpp_checkCheatCode_FUN_004a0260(byte *param_1)
+; int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   cheat_string
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

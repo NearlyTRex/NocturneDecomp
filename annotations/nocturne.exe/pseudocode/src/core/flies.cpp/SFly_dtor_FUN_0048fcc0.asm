@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_flies_cpp_SFly_dtor_FUN_0048fcc0(int param_1)
+; SFly * __cdecl core_flies_cpp_SFly_dtor_FUN_0048fcc0(SFly *this_ptr,uint flags)
 ;
+; Parameters:
+; SFly *           Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410

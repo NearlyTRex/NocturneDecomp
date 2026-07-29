@@ -38,7 +38,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x28]      ; 004b1d22
     PUSH ESI                            ; 004b1d25
     CALL core_texlist.cpp_CTextureList_captureTexture_FUN_00544db0 ; 004b1d26
-        ;   XREF to: 00544db0 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_CTextureList_captureTexture_FUN_00544db0()
+        ;   XREF to: 00544db0 (UNCONDITIONAL_CALL)  ; void core_texlist.cpp_CTextureList_captureTexture_FUN_00544db0(CTextureList * this_ptr, uint texture_index)
     MOV EDX,dword ptr [EBX + 0x50]      ; 004b1d2b
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b1d2e
     SUB EAX,EDX                         ; 004b1d35

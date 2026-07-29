@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074 = 004ef6d0
+;   CCharacter_full_vtable g_CPassengerVTable
 ;   WatcomTypeInfo g_CPassengerTypeInfo_005a11b0
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     JNZ 0x004ef69b                      ; 004ef5ca
         ;   XREF to: 004ef69b (CONDITIONAL_JUMP)  ; LAB_004ef69b
     MOV EDX,dword ptr [EBX + 0x1f678]   ; 004ef5d0
-    MOV dword ptr [EBX + 0x14c],0x5a1074 ; 004ef5d6 | PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074
+    MOV dword ptr [EBX + 0x14c],0x5a1074 ; 004ef5d6 | g_CPassengerVTable
     TEST EDX,EDX                        ; 004ef5e0
     JZ 0x004ef5fa                       ; 004ef5e2
         ;   XREF to: 004ef5fa (CONDITIONAL_JUMP)  ; LAB_004ef5fa

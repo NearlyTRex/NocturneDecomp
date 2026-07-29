@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 209,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 62,
     "suspect_count": 12,
     "suspect_types": [
       "unaffected_reg",
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 190
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -359,7 +359,7 @@
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 79,
+          "line": 67,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -395,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_2 * 0x44 + param_1 + 0x24a4);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_2 * 0x44 + param_1 + 0x24a4);",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1) {",
@@ -419,15 +419,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_90,iVar1 * 0x30 + param_1 + 0xfd0);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_90,iVar1 * 0x30 + param_1 + 0xfd0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 60,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar2;",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 74,
+      "line": 62,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 74,
+      "line": 62,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 71,
+      "line": 59,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -467,7 +467,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 79,
+      "line": 67,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_ESI = *puVar2;",

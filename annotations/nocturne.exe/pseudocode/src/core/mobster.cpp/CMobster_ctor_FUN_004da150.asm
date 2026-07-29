@@ -18,7 +18,7 @@
 ;   undefined4 s_e_0058a18e+3
 ;   float FLOAT_005a0920 = 50
 ;   float FLOAT_005a0924 = 100
-;   undefined1* PTR_core_mobster.cpp_CMobster_setup_FUN_004da290_005a0934 = 004da290
+;   CMobster_full_vtable g_CMobsterVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
@@ -42,9 +42,9 @@ section .text
     MOV EBX,EAX                         ; 004da165
     ADD EAX,0x150                       ; 004da167
     PUSH EAX                            ; 004da16c
-    MOV dword ptr [EAX + -0x4],0x5a0934 ; 004da16d | PTR_core_mobster.cpp_CMobster_setup_FUN_004da290_005a0934
+    MOV dword ptr [EAX + -0x4],0x5a0934 ; 004da16d | g_CMobsterVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004da174
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005a0920]          ; 004da179 | FLOAT_005a0920
     ADD ESP,0x8                         ; 004da17f
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004da182

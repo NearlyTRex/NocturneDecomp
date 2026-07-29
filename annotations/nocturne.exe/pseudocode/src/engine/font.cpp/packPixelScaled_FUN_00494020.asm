@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_font_cpp_packPixelScaled_FUN_00494020(uint param_1,uint param_2,uint param_3)
+; uint __cdecl engine_font_cpp_packPixelScaled_FUN_00494020(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00624

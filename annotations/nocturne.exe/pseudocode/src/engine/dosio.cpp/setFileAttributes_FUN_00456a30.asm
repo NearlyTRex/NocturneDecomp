@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool engine_dosio_cpp_setFileAttributes_FUN_00456a30(void)
+; int __cdecl engine_dosio_cpp_setFileAttributes_FUN_00456a30(char *filename,byte flags)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; byte             Stack[0x8]:1   flags
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0

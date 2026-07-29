@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_transformAndStoreVertex_FUN_00445f70(int param_1,float param_2,float param_3,float param_4)
+; void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00445f70(int vertex_index,float x,float y,float z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   vertex_index
+; float            Stack[0x8]:4   x
+; float            Stack[0xc]:4   y
+; float            Stack[0x10]:4   z
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

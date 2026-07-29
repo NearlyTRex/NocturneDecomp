@@ -30,8 +30,8 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680
       pcVar6 = *(char **)(pcVar6 + 0x144)) {
     iVar2 = _strnicmp(pcVar6,base_name,~uVar4 - 1);
     if (((iVar2 == 0) &&
-        (iVar2 = sscanf(pcVar6 + (~uVar4 - 1),"%d",&local_14),
-        iVar2 == 1)) && (iVar5 < local_14)) {
+        (iVar2 = sscanf(pcVar6 + (~uVar4 - 1),"%d"), iVar2 == 1))
+       && (iVar5 < local_14)) {
       iVar5 = local_14;
     }
   }

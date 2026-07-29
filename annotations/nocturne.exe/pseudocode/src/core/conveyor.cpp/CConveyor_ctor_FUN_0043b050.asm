@@ -18,7 +18,7 @@
 ;   undefined4 s_one_0057b1d9+1
 ;   undefined4 s_ne_0057b1d9+2
 ;   undefined4 s_e_0057b1d9+3
-;   undefined1* PTR_core_conveyor.cpp_FUN_0043b110_0059b734 = 0043b110
+;   CDemonActor_vtable g_CConveyorVTable
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_FUN_004f5d90
@@ -34,7 +34,7 @@ section .text
     PUSH EDX                            ; 0043b056
     CALL core_platfrm.cpp_FUN_004f5d90  ; 0043b057
         ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
-    MOV dword ptr [EAX + 0x14c],0x59b734 ; 0043b05c | PTR_core_conveyor.cpp_FUN_0043b110_0059b734
+    MOV dword ptr [EAX + 0x14c],0x59b734 ; 0043b05c | g_CConveyorVTable
     MOV ESI,0x57b1d4                    ; 0043b066 | = "none"
     MOV dword ptr [EAX + 0x720],0x3f800000 ; 0043b06b
     MOV EDX,EAX                         ; 0043b075

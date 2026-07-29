@@ -11,9 +11,10 @@ CCharacter * core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *pa
 {
   CCharacter *this_ptr;
   CDemonActor *pCVar1;
-  int iVar2;
+  EDeathState EVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   CVector3f aCStack_a8 [10];
   float fStack_30;
   float fStack_2c;
@@ -23,24 +24,24 @@ CCharacter * core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *pa
   float *local_14;
   
   *param_2 = 9999.9;
-  iVar3 = 0;
+  iVar4 = 0;
   local_14 = (float *)(param_1 + 0x20);
   local_1c = (CCharacter *)0x0;
-  for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x150bf4); iVar4 = iVar4 + 1) {
-    this_ptr = *(CCharacter **)(iVar3 + 0x150bf8 + 0x01E57284);
+  for (iVar5 = 0; iVar5 < *(int *)(0x01E57284 + 0x150bf4); iVar5 = iVar5 + 1) {
+    this_ptr = *(CCharacter **)(iVar4 + 0x150bf8 + 0x01E57284);
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                        (&this_ptr->base,g_CVehicleActorType_02dd1190.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {
       pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                          (&this_ptr->base,g_CMobsterActorType_01ccdbd8.name_hash);
       if ((pCVar1 == (CDemonActor *)0x0) || (pCVar1[0x90].orient_matrix.m[1].x == 0.0)) {
-        iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr);
-        if (iVar2 == 0) {
-          iVar2 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr->base);
-          if (iVar2 == 0) {
+        EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+        if (EVar2 == DEATH_STATE_ALIVE) {
+          iVar3 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr->base);
+          if (iVar3 == 0) {
             __arrinit(aCStack_a8,10,&g_CVectorTypeInfo_005993b0);
-            iVar2 = (*((this_ptr->base).vtable._ub)->getTargetPoints)(&this_ptr->base,aCStack_a8);
-            if (0 < iVar2) {
+            iVar3 = (*((this_ptr->base).vtable._ub)->getTargetPoints)(&this_ptr->base,aCStack_a8);
+            if (0 < iVar3) {
               fStack_30 = *local_14 - (this_ptr->base).location.position.x;
               fStack_2c = (local_14[1] - (this_ptr->base).location.position.y) *
                           (float)2;
@@ -55,7 +56,7 @@ CCharacter * core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *pa
         }
       }
     }
-    iVar3 = iVar3 + 4;
+    iVar4 = iVar4 + 4;
   }
   if (local_1c == (CCharacter *)0x0) {
     return (CCharacter *)0x0;

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050e080(int param_1,int param_2)
+; void __cdecl core_set_cpp_FUN_0050e080(CDemonSet *this_ptr,int mirror_index,int enable_flag)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   mirror_index
+; int              Stack[0xc]:4   enable_flag
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ; undefined4       Stack[-0x14]:4  local_14
@@ -117,7 +121,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0050e163 | DAT_005ae704
     PUSH EDX                            ; 0050e169 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0 ; 0050e16a
-        ;   XREF to: 004613a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0()
+        ;   XREF to: 004613a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(CDemonRenderer * this_ptr, int alpha_mask)
     MOV EAX,dword ptr [ESI + 0x15a8d0]  ; 0050e16f
     ADD EAX,0x1e4                       ; 0050e175
     ADD ESP,0x8                         ; 0050e17a

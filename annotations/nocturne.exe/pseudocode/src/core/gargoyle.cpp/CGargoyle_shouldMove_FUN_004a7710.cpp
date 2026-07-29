@@ -16,31 +16,31 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(CGargoyle *this_
   CDemonActor *pCVar3;
   float fVar4;
   float fVar5;
-  float *pfVar6;
+  CVector3f *pCVar6;
   float fVar7;
-  float local_24;
-  float local_20;
-  float local_1c;
-  byte local_18 [16];
+  CVector3f local_24;
+  CVector3f local_18;
   
   pCVar2 = (this_ptr->base).victim;
   this_ptr->returning_home = 0;
   if (pCVar2 != (CCharacter *)0x0) {
     pCVar1 = &(this_ptr->base).base.base.location;
-    local_24 = (pCVar1->position).x - (pCVar2->base).location.position.x;
-    local_20 = (this_ptr->base).base.base.location.position.y - (pCVar2->base).location.position.y;
-    local_1c = (this_ptr->base).base.base.location.position.z - (pCVar2->base).location.position.z;
-    if (SQRT(local_1c * local_1c + local_24 * local_24 + local_20 * local_20) <=
+    local_24.x = (pCVar1->position).x - (pCVar2->base).location.position.x;
+    local_24.y = (this_ptr->base).base.base.location.position.y - (pCVar2->base).location.position.y
+    ;
+    local_24.z = (this_ptr->base).base.base.location.position.z - (pCVar2->base).location.position.z
+    ;
+    if (SQRT(local_24.z * local_24.z + local_24.x * local_24.x + local_24.y * local_24.y) <=
         (this_ptr->base).guard_distance) {
-      pfVar6 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                                  (local_18,&local_24);
-      if (&local_24 != pfVar6) {
-        local_24 = *pfVar6;
-        local_20 = pfVar6[1];
-        local_1c = pfVar6[2];
+      pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_18,&local_24)
+      ;
+      if (&local_24 != pCVar6) {
+        local_24.x = pCVar6->x;
+        local_24.y = pCVar6->y;
+        local_24.z = pCVar6->z;
       }
-      fVar7 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               ((((this_ptr->base).victim)->base).orient.vec.y - local_20);
+      fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                        ((((this_ptr->base).victim)->base).orient.vec.y - local_24.y);
       if ((fVar7 < (float)-0.31415926534999999) || ((float)0.31415926534999999 < fVar7)) {
         return 1;
       }

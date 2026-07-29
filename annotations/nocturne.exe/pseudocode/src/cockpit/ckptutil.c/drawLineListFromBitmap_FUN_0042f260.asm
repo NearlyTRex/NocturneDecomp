@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_drawLineListFromBitmap_FUN_0042f260(void)
+; void __cdecl cockpit_ckptutil_c_drawLineListFromBitmap_FUN_0042f260(CPackedBitmap *bitmap,short *line_data,int line_count,int offset_x,int offset_y)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   bitmap
+; short *          Stack[0x8]:4   line_data
+; int              Stack[0xc]:4   line_count
+; int              Stack[0x10]:4   offset_x
+; int              Stack[0x14]:4   offset_y
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -51,7 +57,7 @@ section .text
     PUSH ECX                            ; 0042f2ae
     MOV dword ptr [ESP + 0x18],EAX      ; 0042f2af
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0 ; 0042f2b3
-        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0()
+        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0042f2b8
     ADD ESP,0xc                         ; 0042f2bc
     MOV EAX,dword ptr [ESP + 0xc]       ; 0042f2bf
@@ -61,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 0042f2c9
     PUSH ECX                            ; 0042f2cd
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0 ; 0042f2ce
-        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0()
+        ;   XREF to: 004f3fe0 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
     MOV DX,word ptr [EBX + 0x6]         ; 0042f2d3
     ADD ESP,0xc                         ; 0042f2d7
     SHR DX,0xf                          ; 0042f2da

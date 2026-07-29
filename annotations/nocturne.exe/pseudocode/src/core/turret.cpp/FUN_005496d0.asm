@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_turret_cpp_FUN_005496d0(CDemonActor *param_1)
+; int core_turret_cpp_FUN_005496d0(CTurret *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
@@ -54,7 +54,7 @@ section .text
     PUSH 0x0                            ; 00549708
     PUSH EBX                            ; 0054970a
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0 ; 0054970b
-        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0()
+        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 00549710
     FLD float ptr [ESP + 0x24]          ; 00549714
     ADD ESP,0x8                         ; 00549718
@@ -110,7 +110,7 @@ section .text
     PUSH 0x1                            ; 0054978e
     PUSH EBX                            ; 00549790
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0 ; 00549791
-        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0()
+        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0x28],EAX      ; 00549796
     FLD float ptr [ESP + 0x28]          ; 0054979a
     ADD ESP,0x8                         ; 0054979e

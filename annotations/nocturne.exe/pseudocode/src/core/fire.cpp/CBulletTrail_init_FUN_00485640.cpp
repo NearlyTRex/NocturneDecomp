@@ -1,26 +1,26 @@
 // Name: core_fire.cpp_CBulletTrail_init_FUN_00485640
 // Address: 00485640
 // Address Range: [[00485640, 00485692]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CBulletTrail_init_FUN_00485640(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CBulletTrail_init_FUN_00485640(CBulletTrail *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length)
 
 #include "nocturne.h"
 
-void core_fire_cpp_CBulletTrail_init_FUN_00485640(uint *param_1,uint *param_2,uint *param_3,uint param_4,uint param_5)
+void __cdecl core_fire_cpp_CBulletTrail_init_FUN_00485640(CBulletTrail *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length)
 
 {
-  if (param_1 != param_2) {
-    *param_1 = *param_2;
-    param_1[1] = param_2[1];
-    param_1[2] = param_2[2];
+  if (this_ptr != (CBulletTrail *)start_position) {
+    (this_ptr->start_position).x = start_position->x;
+    (this_ptr->start_position).y = start_position->y;
+    (this_ptr->start_position).z = start_position->z;
   }
-  if (param_1 + 3 != param_3) {
-    param_1[3] = *param_3;
-    param_1[4] = param_3[1];
-    param_1[5] = param_3[2];
+  if (&this_ptr->end_position != end_position) {
+    (this_ptr->end_position).x = end_position->x;
+    (this_ptr->end_position).y = end_position->y;
+    (this_ptr->end_position).z = end_position->z;
   }
-  param_1[8] = 2;
-  param_1[6] = param_4;
-  param_1[7] = param_5;
+  this_ptr->frames_remaining = 2;
+  this_ptr->model_ptr = model_ptr;
+  this_ptr->segment_length = segment_length;
   return;
 }

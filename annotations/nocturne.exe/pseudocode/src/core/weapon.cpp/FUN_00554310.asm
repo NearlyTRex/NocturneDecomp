@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_FUN_00554310(CWeapon *param_1,float *param_2)
+; void core_weapon_cpp_FUN_00554310(CCharacter *param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x318]               ; 0055435c
     PUSH EAX                            ; 00554362
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 00554363
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x34c]               ; 00554368
     ADD ESP,0xc                         ; 0055436e
     CMP EDX,EAX                         ; 00554371

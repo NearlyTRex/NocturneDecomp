@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(void)
+; void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *this_ptr,uint control_flags)
 ;
+; Parameters:
+; CSpotView *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   control_flags
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ;

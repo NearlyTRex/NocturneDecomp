@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0043994b
     PUSH EDI                            ; 0043994c
     CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0 ; 0043994d
-        ;   XREF to: 004396d0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0()
+        ;   XREF to: 004396d0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, _ostream * ostream)
     MOV EDX,dword ptr [EBX + 0x34]      ; 00439952
     ADD ESP,0x10                        ; 00439955
     TEST EDX,EDX                        ; 00439958

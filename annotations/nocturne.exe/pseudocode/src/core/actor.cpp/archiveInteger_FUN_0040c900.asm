@@ -11,7 +11,7 @@
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d33c
 ;   core_ammo.cpp_FUN_0040ecf0 at 0040ed32
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f3d2
-;   core_anvil.cpp_FUN_0040f7d0 at 0040f826
+;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f826
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 0041006e
 ;   core_baron.cpp_CBaron_archive_FUN_00411080 at 004110cf
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 0041184f
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x00763e84]      ; 0040c916 | DAT_00763e84
     PUSH ESI                            ; 0040c91c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c91d
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040c922
     CMP EAX,0x1                         ; 0040c925
     JNZ 0x0040c940                      ; 0040c928

@@ -17,10 +17,8 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(CCh
   int iVar4;
   int iVar5;
   CVector3f *direction;
-  uint uVar6;
+  float fVar6;
   float fVar7;
-  uint uVar8;
-  float fVar9;
   uint local_1f80 [2005];
   int local_2c;
   int local_28;
@@ -35,15 +33,15 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(CCh
     this_ptr->wander_target = (CWayPoint *)0x0;
     return 0;
   }
-  fVar7 = this_ptr->wander_cooldown - delta_time;
-  this_ptr->wander_cooldown = fVar7;
-  if (0.0 < fVar7) goto LAB_0042a39c;
+  fVar6 = this_ptr->wander_cooldown - delta_time;
+  this_ptr->wander_cooldown = fVar6;
+  if (0.0 < fVar6) goto LAB_0042a39c;
   pCVar3 = this_ptr->wander_target;
   if ((pCVar3 == (CWayPoint *)0x0) ||
-     (fVar7 = (pCVar3->base).base.location.position.x - (this_ptr->base).location.position.x,
+     (fVar6 = (pCVar3->base).base.location.position.x - (this_ptr->base).location.position.x,
      fVar1 = (pCVar3->base).base.location.position.y - (this_ptr->base).location.position.y,
-     fVar9 = (pCVar3->base).base.location.position.z - (this_ptr->base).location.position.z,
-     (float)4 <= SQRT(fVar9 * fVar9 + fVar1 * fVar1 + fVar7 * fVar7))) {
+     fVar7 = (pCVar3->base).base.location.position.z - (this_ptr->base).location.position.z,
+     (float)4 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
     if (this_ptr->wander_nearest_waypoint == (CWayPoint *)0x0) goto LAB_0042a274;
     if (this_ptr->wander_target == (CWayPoint *)0x0) goto LAB_0042a27e;
     pCVar3 = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680
@@ -65,10 +63,10 @@ LAB_0042a27e:
       iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(pattern,target_string,0);
       iVar4 = iVar5;
       if ((iVar2 != 0) &&
-         (fVar7 = (local_1c->position).x - *(float *)(target_string + 0x20),
+         (fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),
          fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),
-         fVar9 = (local_1c->position).z - *(float *)(target_string + 0x28),
-         20.0f <= SQRT(fVar9 * fVar9 + fVar1 * fVar1 + fVar7 * fVar7))) {
+         fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),
+         20.0f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
         iVar4 = iVar5 + 4;
         local_28 = local_28 + 1;
         *(char **)((int)local_1f80 + iVar5) = target_string;
@@ -100,27 +98,27 @@ LAB_0042a27e:
   }
 LAB_0042a369:
   if (this_ptr->wander_nearest_waypoint == (CWayPoint *)0x0) {
-    uVar8 = 0x41200000;
-    uVar6 = 0x40800000;
+    fVar7 = 10.0;
+    fVar6 = 4.0;
   }
   else {
-    uVar8 = 0x40000000;
-    uVar6 = 0x3f800000;
+    fVar7 = 2.0;
+    fVar6 = 1.0;
   }
-  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uVar6,uVar8);
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar6,fVar7);
   this_ptr->wander_cooldown = local_14;
 LAB_0042a39c:
   pCVar3 = this_ptr->wander_nearest_waypoint;
   if (pCVar3 == (CWayPoint *)0x0) {
     return 0;
   }
-  fVar9 = 0.0;
   fVar7 = 0.0;
+  fVar6 = 0.0;
   direction = (CVector3f *)&DAT_02dd1184;
   path_map = (*((pCVar3->base).base.vtable._ub)->getPathMap)((CDemonActor *)pCVar3);
   iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
                     (this_ptr,&(this_ptr->wander_nearest_waypoint->base).base.location.position,
-                     path_map,direction,fVar7,fVar9);
+                     path_map,direction,fVar6,fVar7);
   if (iVar5 == 0) {
     return 1;
   }

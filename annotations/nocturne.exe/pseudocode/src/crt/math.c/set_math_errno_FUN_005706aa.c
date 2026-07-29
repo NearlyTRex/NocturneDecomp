@@ -11,6 +11,6 @@ double __cdecl set_math_errno(int errorFlags,double *valuePtr)
 {
   double dVar1;
   
-  dVar1 = (double)process_math_error(errorFlags,valuePtr,valuePtr);
+  dVar1 = process_math_error(errorFlags,valuePtr,valuePtr);
   return dVar1;
 }

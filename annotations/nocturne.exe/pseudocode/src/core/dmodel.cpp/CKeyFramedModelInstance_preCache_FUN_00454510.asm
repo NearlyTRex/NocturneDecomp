@@ -14,7 +14,7 @@
 ;   core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30 at 0040ff3c
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 0041046a
 ;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411aef
-;   core_battery.cpp_FUN_00414de0 at 00414df5
+;   core_battery.cpp_CBattery_setup_FUN_00414de0 at 00414df5
 ;   core_biggs.cpp_FUN_00415430 at 00415456
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 at 00417b1e
 ;   ... and 38 more

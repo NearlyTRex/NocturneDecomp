@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(undefined4 param_1,undefined4 param_2)
+; double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_handle,uint output_format)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; uint             Stack[0x8]:4   output_format
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -70,7 +73,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x74]      ; 00526d5c
     PUSH EAX                            ; 00526d5f
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70 ; 00526d60
-        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70()
+        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x24],EAX      ; 00526d65
     MOV dword ptr [ESP + 0x28],EDX      ; 00526d69
     FLD double ptr [ESP + 0x24]         ; 00526d6d

@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 0050e01b
     INC EBX                             ; 0050e01c
     CALL core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760 ; 0050e01d
-        ;   XREF to: 004d7760 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760()
+        ;   XREF to: 004d7760 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESI,0x48                        ; 0050e022
     ADD ESP,0x8                         ; 0050e025
     CMP EBX,EDI                         ; 0050e028
@@ -85,7 +85,7 @@ section .text
     PUSH ECX                            ; 0050e04d | DAT_01b4d738
     INC ESI                             ; 0050e04e
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 0050e04f
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EBX,0x48                        ; 0050e054
     ADD ESP,0x8                         ; 0050e057
     CMP ESI,EDI                         ; 0050e05a

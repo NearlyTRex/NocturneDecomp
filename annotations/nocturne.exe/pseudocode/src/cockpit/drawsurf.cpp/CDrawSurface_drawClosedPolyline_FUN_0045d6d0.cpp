@@ -1,31 +1,31 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0
 // Address: 0045d6d0
 // Address Range: [[0045d6d0, 0045d713]]
-// Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(undefined4 param_1,int param_2,undefined4 *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(CDrawSurface *this_ptr,int point_count,CVector2i *points)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(uint param_1,int param_2,uint *param_3)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_0045d6d0(CDrawSurface *this_ptr,int point_count,CVector2i *points)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  uint *puVar4;
+  CVector2i *pCVar4;
   
-  iVar1 = param_2 + -1;
+  iVar1 = point_count + -1;
   iVar2 = 0;
-  puVar4 = param_3;
-  if (0 < param_2) {
+  pCVar4 = points;
+  if (0 < point_count) {
     do {
       cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0
-                (param_1,param_3[iVar1 * 2],param_3[iVar1 * 2 + 1],*puVar4,puVar4[1]);
+                (this_ptr,points[iVar1].x,points[iVar1].y,pCVar4->x,pCVar4->y);
       iVar3 = iVar2 + 1;
       iVar1 = iVar2;
       iVar2 = iVar3;
-      puVar4 = puVar4 + 2;
-    } while (iVar3 < param_2);
+      pCVar4 = pCVar4 + 1;
+    } while (iVar3 < point_count);
   }
   return;
 }

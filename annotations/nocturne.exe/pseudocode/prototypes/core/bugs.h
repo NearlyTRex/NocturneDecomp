@@ -57,7 +57,7 @@ void FUN_004219d0(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_bugs.cpp_FUN_004219f0
 // Address: 004219f0
-void FUN_004219f0(CBugs *param_1,int param_2,ushort *param_3);
+void __cdecl FUN_004219f0(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 
 // Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0
 // Address: 00421ad0
@@ -65,15 +65,15 @@ void __cdecl CBugs::addSwarmGraphEdge(CBugs *this_ptr,int vertex_index,int neigh
 
 // Original: core_bugs.cpp_FUN_00421b80
 // Address: 00421b80
-void FUN_00421b80(int param_1);
+void __cdecl FUN_00421b80(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00
 // Address: 00421f00
-undefined4 CBugs::sampleGroundHeight(int param_1,float param_2,float param_3);
+float __cdecl CBugs::sampleGroundHeight(CBugs *this_ptr,float x,float z);
 
 // Original: core_bugs.cpp_FUN_00422050
 // Address: 00422050
-void FUN_00422050(CBugs *param_1,float param_2);
+void __cdecl FUN_00422050(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
 // Address: 00422370
@@ -85,7 +85,7 @@ void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
 // Address: 004227b0
-undefined4 CBugs::updateBugPathfinding(undefined4 param_1,int *param_2,float param_3,float *param_4);
+int __cdecl CBugs::updateBugPathfinding(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 
 // Original: core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70
 // Address: 00422c70
@@ -109,35 +109,35 @@ void __cdecl CBugs::applySwarmTranslation(CBugs *this_ptr,CVector3f *new_positio
 
 // Original: core_bugs.cpp_createVector_FUN_00423b70
 // Address: 00423b70
-void createVector(void);
+CVector3f * __cdecl createVector(CVector3f *dest,float x,float y,float z);
 
 // Original: core_bugs.cpp_scaleVector_FUN_00423b90
 // Address: 00423b90
-void scaleVector(void);
+CVector3f * __cdecl scaleVector(CVector3f *dest,CVector3f *src);
 
 // Original: core_bugs.cpp_subtractVector_FUN_00423bb0
 // Address: 00423bb0
-void subtractVector(void);
+CVector3f * __cdecl subtractVector(CVector3f *dest,CVector3f *src);
 
 // Original: core_bugs.cpp_crossVector_FUN_00423be0
 // Address: 00423be0
-float * crossVector(void);
+CVector3f * __cdecl crossVector(CVector3f *a,CVector3f *result,CVector3f *b);
 
 // Original: core_bugs.cpp_normalizeVector_FUN_00423c20
 // Address: 00423c20
-void normalizeVector(void);
+void __cdecl normalizeVector(CVector3f *dest);
 
 // Original: core_bugs.cpp_convertVector_FUN_00423c90
 // Address: 00423c90
-void convertVector(void);
+CVector3i * __cdecl convertVector(CVector3f *dest,CVector3i *src);
 
 // Original: core_bugs.cpp_copyVectorToPair_FUN_00423cc0
 // Address: 00423cc0
-void copyVectorToPair(void);
+CVector3i * __cdecl copyVectorToPair(CVector3i *dest,CVector3i *src);
 
 // Original: core_bugs.cpp_getBugVertex_FUN_00423d00
 // Address: 00423d00
-undefined4 getBugVertex(void);
+int __cdecl getBugVertex(SBug *bug_data,int bug_index);
 
 // Original: core_bugs.cpp_FUN_00423d20
 // Address: 00423d20
@@ -149,15 +149,15 @@ char * __cdecl getDeformableModelName(CDeformableModelInstance *model_ptr);
 
 // Original: core_bugs.cpp_swapIntegers_FUN_00423d40
 // Address: 00423d40
-void swapIntegers(undefined4 *param_1,undefined4 *param_2);
+int * __cdecl swapIntegers(int *a,int *b);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00423d60
 // Address: 00423d60
-float maxFloat(float param_1,float param_2);
+float __cdecl maxFloat(float a,float b);
 
-// Original: core_bugs.cpp_FUN_00423d90
+// Original: core_bugs.cpp_CBugs_dtor_FUN_00423d90
 // Address: 00423d90
-CDemonActor * FUN_00423d90(CDemonActor *param_1,byte param_2);
+CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint flags);
 
 // Original: core_bugs.cpp_FUN_00423e60
 // Address: 00423e60

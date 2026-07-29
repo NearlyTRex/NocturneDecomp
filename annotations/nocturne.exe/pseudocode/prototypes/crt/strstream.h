@@ -33,23 +33,23 @@ strstreambase * __cdecl strstreambase::dtor(strstreambase *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambuf_init_FUN_0056fe65
 // Address: 0056fe65
-void strstreambuf::init(streambuf *param_1,char *param_2,int param_3,char *param_4);
+void __watcallStack strstreambuf::init(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start);
 
 // Original: crt_strstream.cpp_strstreambuf_overflow_FUN_0057000d
 // Address: 0057000d
-int strstreambuf::overflow(int param_1,int param_2);
+int __watcallStack strstreambuf::overflow(strstreambuf *this_ptr,int character);
 
 // Original: crt_strstream.cpp_strstreambuf_underflow_FUN_00570075
 // Address: 00570075
-uint strstreambuf::underflow(int param_1);
+int __watcallStack strstreambuf::underflow(strstreambuf *this_ptr);
 
 // Original: crt_strstream.cpp_strstreambuf_setbuf_FUN_005700c0
 // Address: 005700c0
-void strstreambuf::setbuf(int param_1,undefined4 param_2,int param_3);
+strstreambuf * __watcallStack strstreambuf::setbuf(strstreambuf *this_ptr,char *ignored_buffer,int allocation_size);
 
 // Original: crt_strstream.cpp_strstreambuf_seekoff_FUN_005700d0
 // Address: 005700d0
-int strstreambuf::seekoff(int param_1,int param_2,int param_3,uint param_4);
+int __watcallStack strstreambuf::seekoff(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags);
 
 // Original: crt_strstream.cpp_strstreambuf_sync_FUN_005701cc
 // Address: 005701cc
@@ -61,8 +61,8 @@ strstreambuf * __cdecl strstreambuf::dtor(strstreambuf *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambuf_ctor_FUN_00570248
 // Address: 00570248
-streambuf * strstreambuf::ctor(streambuf *param_1);
+strstreambuf * __cdecl strstreambuf::ctor(strstreambuf *this_ptr);
 
 // Original: crt_strstream.cpp_strstreambuf_doallocate_FUN_00570272
 // Address: 00570272
-undefined4 strstreambuf::doallocate(streambuf *param_1);
+int __watcallStack strstreambuf::doallocate(strstreambuf *this_ptr);

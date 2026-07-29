@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boneguy_cpp_FUN_004196b0(CCharacter *param_1,float param_2)
+; int __cdecl core_boneguy_cpp_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x24]:4  local_24
@@ -103,7 +106,7 @@ section .text
     PUSH 0x40a00000                     ; 00419732
     MOV dword ptr [EAX + 0xbd24],EDX    ; 00419737
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041973d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xd0],EAX      ; 00419742
     FLD float ptr [ESP + 0xd0]          ; 00419749
     ADD ESP,0x8                         ; 00419750

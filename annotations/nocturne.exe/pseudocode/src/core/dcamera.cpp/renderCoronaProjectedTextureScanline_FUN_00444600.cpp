@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_00444600
 // Address: 00444600
 // Address Range: [[00444600, 00444802]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int scanline_y,int x_start,int x_end)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int param_1,int param_2,int param_3)
+void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int scanline_y,int x_start,int x_end)
 
 {
   uint uVar1;
@@ -26,13 +26,13 @@ void core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(int para
   char *local_18;
   
   bVar3 = 0;
-  local_24 = param_1 * 0xf00 + 0x8d9278 + param_2 * 0xc;
-  local_18 = (char *)(param_2 + param_1 * 0x140 + 0xa9d078);
-  local_1c = (uint *)(param_1 * 0x500 + 0x146ba10 + param_2 * 4);
-  local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (param_1 << (DAT_012b0660 & 0x1f)) * 4) +
-                     (param_2 << (DAT_012b0660 & 0x1f)) * 4);
-  pfVar2 = (float *)(param_2 * 0xc + param_1 * 0xf00 + 0x9bb178);
-  for (; param_2 < param_3; param_2 = param_2 + 1) {
+  local_24 = scanline_y * 0xf00 + 0x8d9278 + x_start * 0xc;
+  local_18 = (char *)(x_start + scanline_y * 0x140 + 0xa9d078);
+  local_1c = (uint *)(scanline_y * 0x500 + 0x146ba10 + x_start * 4);
+  local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (scanline_y << (DAT_012b0660 & 0x1f)) * 4) +
+                     (x_start << (DAT_012b0660 & 0x1f)) * 4);
+  pfVar2 = (float *)(x_start * 0xc + scanline_y * 0xf00 + 0x9bb178);
+  for (; x_start < x_end; x_start = x_start + 1) {
     if ((*local_20 < *local_1c) &&
        (0.0 <= pfVar2[2] * _DAT_012b0658 + *pfVar2 * _DAT_012b0640 + pfVar2[1] * _DAT_012b064c)) {
       core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610

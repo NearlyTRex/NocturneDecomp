@@ -65,7 +65,7 @@ section .text
     PUSH EDI                            ; 0051da09
     PUSH EBX                            ; 0051da0a
     CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0 ; 0051da0b
-        ;   XREF to: 0051dbc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0()
+        ;   XREF to: 0051dbc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance * this_ptr, int render_flags, int skip_texture_capture)
     ADD ESP,0xc                         ; 0051da10
     POP EDI                             ; 0051da13
     POP ESI                             ; 0051da14

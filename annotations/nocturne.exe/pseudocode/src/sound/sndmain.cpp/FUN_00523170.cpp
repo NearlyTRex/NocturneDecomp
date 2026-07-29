@@ -13,6 +13,7 @@ void sound_sndmain_cpp_FUN_00523170(void)
 {
   int *piVar1;
   int iVar2;
+  CSfxSlot *this_ptr;
   byte *puVar3;
   ulong count;
   uint *puVar4;
@@ -68,11 +69,11 @@ void sound_sndmain_cpp_FUN_00523170(void)
     } while (iVar2 < DAT_005bea68 * 4);
   }
   fStack_14 = (float)_DAT_02dc8330 / (float)DAT_005bea6c;
-  puVar3 = (byte *)0x2dbd374;
+  this_ptr = (CSfxSlot *)0x2dbd374;
   do {
-    sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830();
-    puVar3 = puVar3 + 0x120;
-  } while (puVar3 != &DAT_02dc1b74);
+    sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr,fStack_14);
+    this_ptr = (CSfxSlot *)((int)&this_ptr->prev_hardware_playback_pos + 4);
+  } while (this_ptr != (CSfxSlot *)&DAT_02dc1b74);
   puVar3 = (byte *)0x2dbd374;
   do {
     puVar4 = auStack_40;

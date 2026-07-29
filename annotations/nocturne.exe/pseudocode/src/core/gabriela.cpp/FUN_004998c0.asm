@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_FUN_004998c0(CDemonActor *param_1,float param_2,int param_3)
+; void __cdecl core_gabriela_cpp_FUN_004998c0(CGabriella *this_ptr,float delta_time,int has_carried_objects)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; int              Stack[0xc]:4   has_carried_objects
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -214,7 +218,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 00499abf
     PUSH ESI                            ; 00499ac5
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00499ac6
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 00499acb
     PUSH 0x51b650                       ; 00499ace
     MOV EDI,dword ptr [0x01c713a0]      ; 00499ad3 | DAT_01c713a0
@@ -224,7 +228,7 @@ section .text
     PUSH 0x0                            ; 00499ae2
     PUSH ESI                            ; 00499ae4
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00499ae5
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 00499aea
     ADD ESP,0x58                        ; 00499aed
     POP EBP                             ; 00499af0

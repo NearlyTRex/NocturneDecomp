@@ -24,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0(
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30
-                (this_ptr,primitive_array,render_flags);
+                (this_ptr,&primitive_array->base,render_flags);
       primitive_array = primitive_array + 1;
     } while (iVar1 < primitive_count);
   }

@@ -1,8 +1,8 @@
 // Name: core_xform.cpp_clipPolygonStage3_FUN_0055dcb0
 // Address: 0055dcb0
 // Address Range: [[0055dcb0, 0055de0d]]
-// Convention: unknown
-// Signature: void core_xform_cpp_clipPolygonStage3_FUN_0055dcb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_xform_cpp_clipPolygonStage3_FUN_0055dcb0(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* WARNING: Removing unreachable block (ram,0x0055dd2e) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_xform_cpp_clipPolygonStage3_FUN_0055dcb0(void)
+void __cdecl core_xform_cpp_clipPolygonStage3_FUN_0055dcb0(void)
 
 {
   longlong lVar1;

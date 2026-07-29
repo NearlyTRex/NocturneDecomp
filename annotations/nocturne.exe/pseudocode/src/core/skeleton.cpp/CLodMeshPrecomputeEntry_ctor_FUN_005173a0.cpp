@@ -1,15 +1,15 @@
 // Name: core_skeleton.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0
 // Address: 005173a0
 // Address Range: [[005173a0, 005173bb]]
-// Convention: unknown
-// Signature: undefined4 core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CLodMeshPrecomputeEntry * __cdecl core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(CLodMeshPrecomputeEntry *this_ptr)
 
 #include "nocturne.h"
 
-uint core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(uint param_1)
+CLodMeshPrecomputeEntry * __cdecl core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(CLodMeshPrecomputeEntry *this_ptr)
 
 {
   FUN_005670b1(0xc);
-  core_skeleton_cpp_FUN_005174e0(param_1);
-  return param_1;
+  core_skeleton_cpp_FUN_005174e0(this_ptr);
+  return this_ptr;
 }

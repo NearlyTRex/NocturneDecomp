@@ -11,7 +11,7 @@
 ;   TerminatedCString s_batcreat_dfm_0057883c
 ;   float FLOAT_00599fb0 = 50
 ;   float FLOAT_00599fb4 = 100
-;   undefined1* PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4 = 00412160
+;   CEnemy_full_vtable g_CBatCreatureVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -32,9 +32,9 @@ section .text
     MOV EBX,EAX                         ; 00412113
     ADD EAX,0x150                       ; 00412115
     PUSH EAX                            ; 0041211a
-    MOV dword ptr [EAX + -0x4],0x599fc4 ; 0041211b | PTR_core_batcreat.cpp_CBatCreature_setup_FUN_00412160_00599fc4
+    MOV dword ptr [EAX + -0x4],0x599fc4 ; 0041211b | g_CBatCreatureVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00412122
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x00599fb0]          ; 00412127 | FLOAT_00599fb0
     FLD float ptr [0x00599fb4]          ; 0041212d | FLOAT_00599fb4
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 00412133

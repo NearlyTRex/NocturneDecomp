@@ -79,7 +79,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00540f5c
     PUSH EBX                            ; 00540f5f
     CALL core_charactr.cpp_FUN_004259f0 ; 00540f60
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00540f65
     TEST EAX,EAX                        ; 00540f68
     JZ 0x0054139a                       ; 00540f6a
@@ -159,7 +159,7 @@ section .text
     PUSH EBX                            ; 00541039
     MOV EDI,dword ptr [EAX + 0x24]      ; 0054103a
     CALL core_charactr.cpp_FUN_00428c00 ; 0054103d
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00541042
     TEST EAX,EAX                        ; 00541045
     JZ 0x005415be                       ; 00541047
@@ -278,7 +278,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0054118c
     PUSH EBX                            ; 0054118f
     CALL core_charactr.cpp_FUN_0042a150 ; 00541190
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00541195
     PUSH ESI                            ; 00541198
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00541199
@@ -693,7 +693,7 @@ section .text
         ;   Label: LAB_005415fa
     PUSH 0x40a00000                     ; 005415ff
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00541604
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     ADD ESP,0x8                         ; 00541609
     MOV dword ptr [EBP + -0x4],EAX      ; 0054160c
     PUSH 0x5961a3                       ; 0054160f | = "succubus-horny-?.wav"

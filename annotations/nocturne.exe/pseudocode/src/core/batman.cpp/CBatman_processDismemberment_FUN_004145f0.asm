@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_batman.cpp_FUN_00414930 at 004149b6
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 004149b6
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004145cc = 0041462d
@@ -354,7 +354,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],ESI      ; 004148fb
     MOV dword ptr [ESP + 0x20],ESI      ; 004148ff
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00414903
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00414908
     PUSH 0x1                            ; 0041490b
     LEA EAX,[ESP + 0x4]                 ; 0041490d

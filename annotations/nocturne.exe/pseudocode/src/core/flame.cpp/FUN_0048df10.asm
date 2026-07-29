@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_FUN_0048df10(int param_1)
+; void __cdecl core_flame_cpp_FUN_0048df10(CFlame *this_ptr)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0 at 0043d080

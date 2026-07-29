@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0050fab0(undefined4 param_1,CVector3f *param_2)
+; float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0050fab0(CDemonSet *this_ptr,CVector3f *world_position)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   world_position
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0

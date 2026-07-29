@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_00495610(undefined4 param_1,undefined4 param_2,float param_3,int param_4)
+; float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_00495610(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; int              Stack[0x4]:4   current_bone_index
+; int              Stack[0x8]:4   target_bone_index
+; float            Stack[0xc]:4   blend_weight
+; int              Stack[0x10]:4   hierarchy_distance
+; CDeformableModelInstance * Stack[0x14]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

@@ -8,20 +8,20 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[38]:
+;   core_armour.cpp_CArmour_dtor_FUN_0040fc30 at 0040fc99
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd59
-;   core_armour.cpp_FUN_0040fc30 at 0040fc99
-;   core_batcreat.cpp_FUN_004132c0 at 00413329
-;   core_batman.cpp_FUN_00414c60 at 00414cc9
-;   core_beast.cpp_FUN_00415250 at 004152b9
-;   core_biggs.cpp_FUN_00415a30 at 00415aa9
+;   core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0 at 00413329
+;   core_batman.cpp_CBatman_dtor_FUN_00414c60 at 00414cc9
+;   core_beast.cpp_CBeast_dtor_FUN_00415250 at 004152b9
+;   core_biggs.cpp_CBiggs_dtor_FUN_00415a30 at 00415aa9
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400 at 0041a479
 ;   core_bride.cpp_CBride_dtor_FUN_00420f20 at 00420f89
-;   core_bugs.cpp_FUN_00423d90 at 00423e09
+;   core_bugs.cpp_CBugs_dtor_FUN_00423d90 at 00423e09
 ;   core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 at 0042b639
 ;   ... and 28 more
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4 = 0051b6e0
+;   CMotionController_vtable g_CDeformableModelInstanceVTable
 ;   WatcomTypeInfo g_CDeformableModelInstanceTypeInfo_005a1f00
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     JNZ 0x0051b727                      ; 0051b6ea
         ;   XREF to: 0051b727 (CONDITIONAL_JUMP)  ; LAB_0051b727
     PUSH EBX                            ; 0051b6ec
-    MOV dword ptr [EBX + 0x50],0x5a1ed4 ; 0051b6ed | PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4
+    MOV dword ptr [EBX + 0x50],0x5a1ed4 ; 0051b6ed | g_CDeformableModelInstanceVTable
     CALL core_skeleton.cpp_FUN_0051b7d0 ; 0051b6f4
         ;   XREF to: 0051b7d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051b7d0()
     ADD ESP,0x4                         ; 0051b6f9

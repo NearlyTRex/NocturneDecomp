@@ -17,15 +17,15 @@ CDemonActorType * FUN_00516a00(void);
 
 // Original: core_shovel.cpp_CShovel_ctor_FUN_00516a10
 // Address: 00516a10
-CWeapon * __cdecl CShovel::ctor(CWeapon *param_1);
+CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_fire_FUN_00516a90
 // Address: 00516a90
-undefined4 CShovel::fire(undefined4 param_1);
+int __cdecl CShovel::fire(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_FUN_00516ab0
 // Address: 00516ab0
-undefined4 FUN_00516ab0(void);
+float FUN_00516ab0(void);
 
 // Original: core_shovel.cpp_FUN_00516ae0
 // Address: 00516ae0

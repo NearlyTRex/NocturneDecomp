@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)
+; streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *this_ptr,void *buffer_start,int buffer_size)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   this_ptr
+; void *           Stack[0x8]:4   buffer_start
+; int              Stack[0xc]:4   buffer_size
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_setBuffer_FUN_00571df8

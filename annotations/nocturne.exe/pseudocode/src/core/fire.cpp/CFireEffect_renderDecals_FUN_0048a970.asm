@@ -32,7 +32,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 0048a974
     PUSH 0x1c20148                      ; 0048a978
     CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0 ; 0048a97d
-        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0()
+        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0048a982
     TEST EBP,EBP                        ; 0048a985
     JZ 0x0048aa45                       ; 0048a987

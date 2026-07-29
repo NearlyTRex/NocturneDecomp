@@ -17,7 +17,7 @@ int __watcallStack WriteConsoleChar(int character)
   local_8[0] = (byte)character;
   if (DAT_005c1d90 == (code *)0x0) {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(1);
-    hConsoleOutput = (HANDLE)FUN_005714ec();
+    hConsoleOutput = FUN_005714ec();
     WriteConsoleA(hConsoleOutput,local_8,1,&DStack_c,(LPVOID)0x0);
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(1);
   }

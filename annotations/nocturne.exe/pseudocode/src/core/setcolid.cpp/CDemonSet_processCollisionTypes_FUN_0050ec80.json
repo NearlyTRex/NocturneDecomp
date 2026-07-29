@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,25 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 883,
-    "complexity_score": 1451,
+    "complexity_score": 836,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 416,
-    "suspect_count": 99,
+    "pseudocode_lines": 376,
+    "suspect_count": 43,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "self_copy_guard",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1299
+    "total_lines": 1259
   },
   "cross_references": [
     {
@@ -194,9 +191,9 @@
         "0050f90f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80",
-    "signature": "float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *param_1,CVector3f *param_2,float param_3)"
+    "signature": "float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *this_ptr,CVector3f *position,float radius)"
   },
   "function_calls": [
     {
@@ -360,14 +357,10 @@
         "call_addr": "00487725",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004876d0",
-        "estimated_params": 6,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -375,13 +368,10 @@
         "call_addr": "00487925",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004876d0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -389,13 +379,10 @@
         "call_addr": "0048794b",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004876d0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -403,13 +390,10 @@
         "call_addr": "00487971",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004876d0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -417,13 +401,10 @@
         "call_addr": "00487997",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004876d0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -431,13 +412,10 @@
         "call_addr": "0040a18c",
         "call_type": "direct",
         "caller": "core_actor.cpp_FUN_0040a140",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -445,12 +423,10 @@
         "call_addr": "0040d9ab",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -458,12 +434,10 @@
         "call_addr": "0040da81",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -471,13 +445,10 @@
         "call_addr": "0040daa7",
         "call_type": "direct",
         "caller": "core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -485,21 +456,19 @@
         "call_addr": "004af75b",
         "call_type": "direct",
         "caller": "core_gore.cpp_CBloodPool_init_FUN_004af730",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.450064850843061,
@@ -542,10 +511,10 @@
     "pcode_op_count": 3431
   },
   "stack_frame": {
-    "frame_size": 348,
+    "frame_size": 360,
     "local_size": 348,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -659,6 +628,27 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -672,160 +662,24 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *param_1,CVector3f *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *param_1,CVector3f *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *param_1,CVector3f *param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar21 = param_1->lights[199].filter_names[0x13] + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar20 = (CVector3f *)(param_1->lights[199].filter_names[0x12] + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (0.0 < param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,param_2,param_3,(int *)pcVar21,pCVar20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,param_2,param_3,(int *)pcVar21,pCVar20);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 77,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "((CDemonRaytrace *)&DAT_01fba938,param_2,param_3,(int *)pcVar21,pCVar20);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,position,radius,(int *)hit_flag,pCVar20);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&DAT_01fba938,param_2,pcVar21,pCVar20);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 81,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "(&DAT_01fba938,param_2,pcVar21,pCVar20);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,position,(int *)hit_flag,pCVar20);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1->lights[199].filter_names[0x13] + 8) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 8) = param_1->vdir_boxes[0xeb].extents.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 8) = param_1->vdir_boxes[0xeb].extents.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&local_e8 != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e8.x = param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e8.y = param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e8.z = param_2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar2 = param_1->lights[199].filter_names;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 107,
+      "line": 93,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x18) = '\\0';",
@@ -833,7 +687,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 108,
+      "line": 94,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x19) = '\\0';",
@@ -841,7 +695,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 109,
+      "line": 95,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1a) = '\\0';",
@@ -849,23 +703,15 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 110,
+      "line": 96,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1b) = '\\0';",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar2 = param_1->lights[199].filter_names;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 112,
+      "line": 98,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1c) = -1;",
@@ -873,7 +719,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 113,
+      "line": 99,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1d) = -1;",
@@ -881,7 +727,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 114,
+      "line": 100,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1e) = -1;",
@@ -889,31 +735,15 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 115,
+      "line": 101,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x1f) = -1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1->vdir_boxes[0xeb].rotation_matrix.m[1].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar2 = param_1->lights[199].filter_names;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 118,
+      "line": 104,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x20) = -1;",
@@ -921,7 +751,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 119,
+      "line": 105,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x21) = -1;",
@@ -929,7 +759,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 120,
+      "line": 106,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x22) = -1;",
@@ -937,159 +767,55 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 121,
+      "line": 107,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 0x23) = -1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_100.max.x = local_100.max.x + param_3;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 176,
+      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 0) = '\\0';",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_100.max.z = local_100.max.z + param_3;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 177,
+      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 1) = '\\0';",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_100.min.x = local_100.min.x - param_3;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 178,
+      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 2) = -0x80;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_100.min.z = local_100.min.z - param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 142,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1->waypoints[0x6d6]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar21 = param_1->lights[199].filter_names[0x12] + 0x24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 148,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(CDemonActor *)actor);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->vdir_boxes[0xec].rotation_matrix.m[2].x == 0.0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 179,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(this_ptr,0,&CStack_58,param_3,&fStack_24,",
-      "type": "unnamed_param"
+      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 3) = '?';",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 181,
+      "match": "(char *)((int)(pacVar2 + 0x13) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar2 + 0x13) + 4) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 182,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CWayPoint **)(param_1->lights[199].filter_names[0x13] + 0x18) = actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 201,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1->lights + 199;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 202,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 0) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 203,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 204,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 2) = -0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 205,
-      "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 3) = '?';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 206,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar2 = param_1->lights[199].filter_names;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 207,
-      "match": "(char *)((int)(pacVar2 + 0x13) +",
-      "severity": "moderate",
-      "text": "*(char *)((int)(pacVar2 + 0x13) + 4) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 208,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 5) = '\\0';",
@@ -1097,7 +823,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 209,
+      "line": 183,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 6) = '\\0';",
@@ -1105,159 +831,15 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 210,
+      "line": 184,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 7) = '\\0';",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 237,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_270,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_270,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 255,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_1c8,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 259,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_1c8,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 273,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_200,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 277,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_200,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 291,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_190,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 295,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_190,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 309,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_2a8,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 313,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_2a8,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 327,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_238,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 331,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&CStack_238,&local_e8,param_3,&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 345,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CWayPoint **)(param_1->lights[199].filter_names[0x13] + 0x18) = actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 350,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)param_1->lights[199].filter_names[0x13] =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 352,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1->lights[199].filter_names[0x13] + 4) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 370,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((CDemonActor *)actor,&CStack_4c,param_3,&fStack_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 372,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CWayPoint **)(param_1->lights[199].filter_names[0x13] + 0x18) = actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 391,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1->lights + 199;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 392,
       "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 0) = '\\0';",
@@ -1265,7 +847,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 393,
+      "line": 353,
       "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 1) = '\\0';",
@@ -1273,7 +855,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 394,
+      "line": 354,
       "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 2) = -0x80;",
@@ -1281,23 +863,15 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 395,
+      "line": 355,
       "match": "(char *)((int)(pCVar3->filter_names + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pCVar3->filter_names + 0x13) + 3) = '?';",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 396,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar2 = param_1->lights[199].filter_names;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 397,
+      "line": 357,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 4) = '\\0';",
@@ -1305,7 +879,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 398,
+      "line": 358,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 5) = '\\0';",
@@ -1313,7 +887,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 399,
+      "line": 359,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 6) = '\\0';",
@@ -1321,55 +895,31 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 400,
+      "line": 360,
       "match": "(char *)((int)(pacVar2 + 0x13) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar2 + 0x13) + 7) = '\\0';",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 410,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_1c < (int)param_1->waypoints[0x6d6]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 412,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1->lights[199].filter_names[0x13] + 0x18);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 414,
+      "line": 374,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar19 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x3c))(iVar4);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 415,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1->lights[199].filter_names[0x13] + 8) = uVar19;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 101,
+      "line": 87,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_e8.x = param_2->x;",
+      "text": "local_e8.x = position->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 125,
+      "line": 111,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.max.x = local_e8.x;",
@@ -1377,7 +927,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 134,
+      "line": 120,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.min.y = local_100.max.y;",
@@ -1385,78 +935,67 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 227,
+      "line": 201,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar20->x = pCVar6->x;",
+      "text": "pCVar18->x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 246,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 221,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_a0) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_a0.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 264,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 239,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_40) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_40.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 282,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 257,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_34) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_34.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_dc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 300,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 275,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_dc) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_dc.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 318,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 293,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_94) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_94.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_64 != &fStack_c4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 336,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 311,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_64 != &fStack_c4) {",
-      "type": "self_copy_guard"
+      "text": "CStack_64.x = CStack_c4.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 408,
+      "line": 368,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "call_site_count": 12,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

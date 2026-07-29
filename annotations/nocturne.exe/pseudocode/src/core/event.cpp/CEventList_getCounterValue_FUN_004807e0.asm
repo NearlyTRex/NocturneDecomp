@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004807e5
     PUSH ECX                            ; 004807e9
     CALL core_event.cpp_CEventList_findCounter_FUN_00480900 ; 004807ea
-        ;   XREF to: 00480900 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findCounter_FUN_00480900()
+        ;   XREF to: 00480900 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findCounter_FUN_00480900(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 004807ef
     TEST EAX,EAX                        ; 004807f2
     JL 0x00480808                       ; 004807f4

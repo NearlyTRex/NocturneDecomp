@@ -26,8 +26,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
   int iVar8;
   int iVar9;
   int iVar10;
-  CPathMap *grabber;
-  CDemonActor *in_stack_ffffff5c;
+  CPathMap *damage_info;
   CVector3f aCStack_94 [3];
   EDamageType EStack_70;
   CVector3f CStack_64;
@@ -61,9 +60,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
   }
   _DAT_01fba2d8 = 0;
   _DAT_01fba2ec = 0;
-  grabber = *(CPathMap **)(0x01C775EC + 0x264);
-  if (0.0 < (float)grabber) {
-    local_50 = grabber;
+  damage_info = *(CPathMap **)(0x01C775EC + 0x264);
+  if (0.0 < (float)damage_info) {
+    local_50 = damage_info;
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(this_ptr);
     iVar5 = 0;
     pCVar7 = this_ptr;
@@ -74,7 +73,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
         pCVar7 = (CDemonSet *)pCVar7->cameras;
       } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
     }
-    if (0.0 < (float)grabber) {
+    if (0.0 < (float)damage_info) {
       local_24 = -999999;
       iVar5 = local_24;
       do {
@@ -96,7 +95,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                 if (*(int *)(0x01C775EC + 0x20c) == 2) {
                   local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
                 }
-                (*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)grabber);
+                (*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);
                 if (*(int *)(0x01C775EC + 0x20c) == 2) {
                   iVar10 = wincore_winrun_cpp_getTime_FUN_00558a30();
                   *(int *)(iVar8 + 0x1ffb078) = iVar10 - local_20;
@@ -106,14 +105,12 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                   iStack_18 = iStack_18 + 1;
                   iVar8 = iVar8 + 4;
                 }
-                grabber = (CPathMap *)0x509346;
-                in_stack_ffffff5c = DAT_00763e44;
+                damage_info = (CPathMap *)0x509346;
                 this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);
                 if (this_ptr_00 != (CPathMap *)0x0) {
-                  in_stack_ffffff5c = (CDemonActor *)&DAT_00763e44->location;
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360
-                            (this_ptr_00,(CVector3f *)in_stack_ffffff5c,0);
-                  grabber = this_ptr_00;
+                            (this_ptr_00,&(DAT_00763e44->location).position,0);
+                  damage_info = this_ptr_00;
                 }
                 if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&
                     ((float)local_50 == (DAT_00763e44->orient).vec.x)) &&
@@ -121,7 +118,6 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                   DAT_00763e44 = (CDemonActor *)0x0;
                 }
                 else {
-                  in_stack_ffffff5c = (CDemonActor *)0x509380;
                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(DAT_00763e44);
                   DAT_00763e44 = (CDemonActor *)0x0;
                 }
@@ -147,13 +143,13 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                                  g_CCharacterActorType_00765a60.name_hash);
         local_38 = this_ptr_01;
         if ((this_ptr_01 != (CCharacter *)0x0) &&
-           (fVar6 = (float)(*(((this_ptr_01->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_01),
+           (fVar6 = (float)(*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
            fVar6 == 0.0)) {
-          grabber = (CPathMap *)&local_44;
+          damage_info = (CPathMap *)&local_44;
           local_44 = fVar6;
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                             (0x01C08D04,&(this_ptr_01->base).location.position,0.0,&CStack_64,
-                             (float *)grabber);
+                             (float *)damage_info);
           if (iVar8 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);
             EStack_70 = DAMAGE_TYPE_SHATTER;
@@ -162,9 +158,9 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
               aCStack_94[0].y = CStack_64.y;
               aCStack_94[0].z = CStack_64.z;
             }
-            grabber = (CPathMap *)&stack0xffffff60;
-            (*(((pCStack_34->base).vtable._uc)->_uc).getGrabbed)
-                      (pCStack_34,(CDemonActor *)grabber,(int)in_stack_ffffff5c);
+            damage_info = (CPathMap *)&stack0xffffff60;
+            (*(((pCStack_34->base).vtable._uc)->_uc).processDamage)
+                      (pCStack_34,(SDamageInfo *)damage_info);
           }
         }
         this_ptr_02 = (CGlass *)
@@ -176,7 +172,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                             (0x01C08D04,(CVector3f *)pCStack_34,0.0,(CVector3f *)0x0,(float *)0x0)
           ;
-          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_FUN_004aded0(), iVar8 != 0)) {
+          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_FUN_004aded0(this_ptr_02), iVar8 != 0)) {
             core_glass_cpp_CGlass_shatter_FUN_004ada20(this_ptr_02,(CVector3f *)pCStack_34);
           }
         }
@@ -249,7 +245,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (PTR_DAT_005ad350,"%d. %s : %3.2f ms\n",iVar8,*puVar2,
                        ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-                       (double)(float)grabber);
+                       (double)(float)damage_info);
             iVar8 = iVar9;
           } while (iVar9 < iVar5);
         }
@@ -259,7 +255,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Process time (%d actors) : %3.2f ms\n",local_20,
                  ((double)iStack_18 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-                 (double)(float)grabber);
+                 (double)(float)damage_info);
     }
     iVar5 = 0;
     if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {

@@ -2,38 +2,35 @@
 // Address: 0043a470
 // Address Range: [[0043a470, 0043a973]]
 // Convention: __cdecl
-// Signature: void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float param_2)
+// Signature: void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float param_2)
+void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  bool bVar2;
-  float fVar3;
-  int iVar4;
-  float *pfVar5;
-  SMotion *pSVar6;
-  CPathMap *this_ptr;
-  int iVar7;
+  EHeroTask EVar2;
+  bool bVar3;
+  float fVar4;
+  int iVar5;
+  CVector3f *pCVar6;
+  SMotion *pSVar7;
+  CPathMap *this_ptr_01;
+  int iVar8;
   float local_8c;
   float local_88;
   CVector3f local_84;
-  float local_78;
-  float local_74;
-  float local_70;
-  byte local_6c [12];
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
+  CVector3f local_78;
+  CVector3f local_6c;
+  CVector3f local_60;
+  CVector3f local_54;
   float local_44;
-  byte local_3c [12];
+  CVector3f local_3c;
   float local_30;
   float local_2c;
   float local_28;
@@ -42,135 +39,136 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float 
   float local_18;
   float local_14;
   
-  bVar2 = false;
+  bVar3 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  memset((void *)(param_1 + 0xbc94),0,0x2c);
-  if (*(int *)(param_1 + 0x1fa38) != 0) {
-    iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    local_54 = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
-    local_50 = *(float *)(param_1 + 0x24) - *(float *)(iVar4 + 0x24);
-    local_4c = *(float *)(param_1 + 0x28) - *(float *)(iVar4 + 0x28);
-    local_2c = SQRT(local_4c * local_4c + local_54 * local_54 + local_50 * local_50);
-    if ((((*(int *)(param_1 + 0x1fa38) == 3) || (local_2c < 5.4396864758631248e-315._0_4_)) &&
-        ((*(int *)(param_1 + 0x1fa38) == 2 || (*(int *)(param_1 + 0x1fa38) == 3)))) &&
-       ((iVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,&local_88), iVar4 != 0 &&
-        (local_88 < (float)20)))) {
-      bVar2 = true;
-      iVar7 = iVar4;
+  iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  memset(&(this_ptr->base).player_input,0,0x2c);
+  if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
+    iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    local_54.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
+    local_54.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
+    local_54.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
+    local_2c = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
+    if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_2c < 5.4396864758631248e-315._0_4_)) &&
+        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
+       && ((iVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(this_ptr,&local_88), iVar5 != 0 &&
+           (local_88 < (float)20)))) {
+      bVar3 = true;
+      iVar8 = iVar5;
     }
-    local_60 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    local_5c = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    local_58 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    local_60.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_60.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_60.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
     if (&local_54 != &local_60) {
-      local_54 = local_60;
-      local_50 = local_5c;
-      local_4c = local_58;
+      local_54.x = local_60.x;
+      local_54.y = local_60.y;
+      local_54.z = local_60.z;
     }
-    fVar1 = SQRT(local_4c * local_4c + local_54 * local_54 + local_50 * local_50);
+    fVar1 = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
     local_30 = fVar1;
     if ((float)6 <= fVar1) {
-      this_ptr = (CPathMap *)0x0;
-      if (!bVar2) {
-        iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
+      this_ptr_01 = (CPathMap *)0x0;
+      if (!bVar3) {
+        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);
       }
-      if (this_ptr == (CPathMap *)0x0) {
-        this_ptr = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar7 + 0x20));
+      if (this_ptr_01 == (CPathMap *)0x0) {
+        this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar8 + 0x20));
       }
-      iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
-                        (this_ptr,(CVector3f *)(param_1 + 0x20),&local_84,*(int *)(param_1 + 0x6c));
-      if (iVar4 != 0) {
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (local_84.y - *(float *)(param_1 + 0x34));
-        fVar3 = local_14 * (float)0.31830988619288902 * (float)4;
+      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+                        (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_84,
+                         (this_ptr->base).base.base.direction_hint);
+      if (iVar5 != 0) {
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                             (local_84.y - (this_ptr->base).base.base.orient.vec.y);
+        fVar4 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
-        *(float *)(param_1 + 0xbcb8) = fVar3;
-        if (fVar3 < local_28) {
-          *(float *)(param_1 + 0xbcb8) = local_28;
+        (this_ptr->base).player_input.turn_speed = fVar4;
+        if (fVar4 < local_28) {
+          (this_ptr->base).player_input.turn_speed = local_28;
         }
-        if (local_1c < *(float *)(param_1 + 0xbcb8)) {
-          *(float *)(param_1 + 0xbcb8) = local_1c;
+        if (local_1c < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_1c;
         }
-        if (((float)10 <= fVar1) || (bVar2)) {
-          *(uint *)(param_1 + 0xbc9c) = 1;
-          *(uint *)(param_1 + 0xbc94) = 1;
+        if (((float)10 <= fVar1) || (bVar3)) {
+          (this_ptr->base).player_input.action_state.run = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
         else {
-          *(uint *)(param_1 + 0xbc94) = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
     else {
-      if (bVar2) {
-        if (*(int *)(param_1 + 0x1fa3c) == 0) {
-          *(uint *)(param_1 + 0xbcac) = 1;
+      this_ptr_00 = &(this_ptr->base).base.model;
+      if (bVar3) {
+        if (this_ptr->guns_drawn == 0) {
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
         else {
-          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                             ((CMotionController *)(param_1 + 0x150));
-          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
-            *(uint *)(param_1 + 0xbca0) = 1;
+          pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                             (&this_ptr_00->motion_controller);
+          if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
+            (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
       }
       else {
         core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                  ((CMotionController *)(param_1 + 0x150));
+                  (&this_ptr_00->motion_controller);
       }
-      if (bVar2) {
-        iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_3c,&local_54)
-        ;
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
+      if (bVar3) {
+        pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                           (&local_3c,&local_54);
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                             (pCVar6->y - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_14 * (float)0.31830988619288902 * (float)4;
         local_18 = -local_1c;
-        *(float *)(param_1 + 0xbcb8) = fVar1;
+        (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < local_18) {
-          *(float *)(param_1 + 0xbcb8) = local_18;
+          (this_ptr->base).player_input.turn_speed = local_18;
         }
-        if (local_1c < *(float *)(param_1 + 0xbcb8)) {
-          *(float *)(param_1 + 0xbcb8) = local_1c;
+        if (local_1c < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_1c;
         }
-        if ((((float)-0.25 < *(float *)(param_1 + 0xbcb8)) &&
-            ((double)*(float *)(param_1 + 0xbcb8) < 0.25)) &&
-           (*(int *)(param_1 + 0xbca0) != 0)) {
-          *(uint *)(param_1 + 0xbcb8) = 0;
+        fVar1 = (this_ptr->base).player_input.turn_speed;
+        if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
+           ((this_ptr->base).player_input.action_state.fire != 0)) {
+          (this_ptr->base).player_input.turn_speed = 0.0;
         }
       }
     }
-    local_78 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    local_74 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    local_70 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    local_78.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_78.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_78.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
     if (&local_54 != &local_78) {
-      local_54 = local_78;
-      local_50 = local_74;
-      local_4c = local_70;
+      local_54.x = local_78.x;
+      local_54.y = local_78.y;
+      local_54.z = local_78.z;
     }
-    pfVar5 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                                (local_6c,&local_54);
-    if (&local_54 != pfVar5) {
-      local_54 = *pfVar5;
-      local_50 = pfVar5[1];
-      local_4c = pfVar5[2];
+    pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_6c,&local_54);
+    if (&local_54 != pCVar6) {
+      local_54.x = pCVar6->x;
+      local_54.y = pCVar6->y;
+      local_54.z = pCVar6->z;
     }
-    local_44 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                (local_50 - *(float *)(param_1 + 0x34));
+    local_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                         (local_54.y - (this_ptr->base).base.base.orient.vec.y);
     if (local_20 < local_44) {
       local_44 = local_20;
     }
     if (local_44 < -local_20) {
       local_44 = -local_20;
     }
-    local_8c = local_44 - *(float *)(param_1 + 0x1fa48);
-    if (param_2 * (float)3.1415926535000001 < local_8c) {
-      local_8c = param_2 * (float)3.1415926535000001;
+    local_8c = local_44 - (this_ptr->head_look_euler).y;
+    if (delta_time * (float)3.1415926535000001 < local_8c) {
+      local_8c = delta_time * (float)3.1415926535000001;
     }
-    if (local_8c < param_2 * (float)-3.1415926535000001) {
-      local_8c = param_2 * (float)-3.1415926535000001;
+    if (local_8c < delta_time * (float)-3.1415926535000001) {
+      local_8c = delta_time * (float)-3.1415926535000001;
     }
-    *(float *)(param_1 + 0x1fa48) = *(float *)(param_1 + 0x1fa48) + local_8c;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_8c;
   }
   return;
 }

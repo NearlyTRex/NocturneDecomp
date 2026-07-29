@@ -58,7 +58,7 @@ section .text
     MOV EBX,dword ptr [0x00763e84]      ; 0040c46d | DAT_00763e84
     PUSH EBX                            ; 0040c473
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c474
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040c479
     CMP EAX,0x3                         ; 0040c47c
     JNZ 0x0040c496                      ; 0040c47f

@@ -13,7 +13,7 @@ CVector3f * __cdecl transformVector3x4InPlace(CVector3f *input_output_vector,CMa
 
 // Original: core_xform.cpp_transformVector3x3_FUN_0055a9a0
 // Address: 0055a9a0
-float * transformVector3x3(void);
+CVector3f * __cdecl transformVector3x3(CMatrix3x3f *matrix,CVector3f *output_vector,CVector3f *input_vector);
 
 // Original: core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
 // Address: 0055aa00
@@ -21,11 +21,11 @@ void multiplyMatrix3x4(float *param_1,float *param_2);
 
 // Original: core_xform.cpp_multiplyMatrix3x4InPlace_FUN_0055abb0
 // Address: 0055abb0
-undefined4 * multiplyMatrix3x4InPlace(undefined4 *param_1,undefined4 param_2);
+CMatrix3x4f * __cdecl multiplyMatrix3x4InPlace(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b);
 
 // Original: core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0
 // Address: 0055abf0
-void setIdentityMatrix3x4(undefined4 *param_1);
+void __cdecl setIdentityMatrix3x4(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_setRotationScaleIdentity_FUN_0055ac80
 // Address: 0055ac80
@@ -33,11 +33,11 @@ void __cdecl setRotationScaleIdentity(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_normalizeMatrix_FUN_0055acd0
 // Address: 0055acd0
-void normalizeMatrix(float *param_1);
+void __cdecl normalizeMatrix(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_clearTranslation_FUN_0055ae60
 // Address: 0055ae60
-void clearTranslation(int param_1);
+void __cdecl clearTranslation(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
 // Address: 0055ae80
@@ -45,7 +45,7 @@ void __cdecl buildMatrixFromEulerAndPosition(CMatrix3x4f *output_matrix,CVector3
 
 // Original: core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 // Address: 0055afb0
-void buildMatrixFromEulerAndPositionDirect(float *param_1,float *param_2,float *param_3);
+void __cdecl buildMatrixFromEulerAndPositionDirect(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 
 // Original: core_xform.cpp_FUN_0055b0b0
 // Address: 0055b0b0
@@ -65,11 +65,11 @@ CVector3f * __cdecl getTranslation(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 
 // Original: core_xform.cpp_invertAndGetTranslation_FUN_0055bc30
 // Address: 0055bc30
-CVector3f * invertAndGetTranslation(undefined4 param_1,CVector3f *param_2);
+CVector3f * __cdecl invertAndGetTranslation(CMatrix3x4f *matrix_in,CVector3f *vector_out);
 
 // Original: core_xform.cpp_inverseInPlace_FUN_0055bc80
 // Address: 0055bc80
-void inverseInPlace(void);
+void __cdecl inverseInPlace(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_determinant_FUN_0055bcb0
 // Address: 0055bcb0
@@ -81,15 +81,15 @@ float * inverse(CMatrix3x4f *param_1);
 
 // Original: core_xform.cpp_computeOrthogonalityError_FUN_0055bf50
 // Address: 0055bf50
-float computeOrthogonalityError(float *param_1);
+float __cdecl computeOrthogonalityError(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_orthonormalizeMatrix3x3_FUN_0055c180
 // Address: 0055c180
-void orthonormalizeMatrix3x3(float *param_1,int param_2);
+void __cdecl orthonormalizeMatrix3x3(CMatrix3x3f *matrix,int preserve_scale);
 
 // Original: core_xform.cpp_hasNegativeDeterminant_FUN_0055c6d0
 // Address: 0055c6d0
-bool hasNegativeDeterminant(void);
+int __cdecl hasNegativeDeterminant(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_buildRotationX_FUN_0055c730
 // Address: 0055c730
@@ -129,7 +129,7 @@ undefined4 * __stack_esi buildZFlipMatrix(float param_1,undefined4 *param_2);
 
 // Original: core_xform.cpp_buildMirrorTransform_FUN_0055caf0
 // Address: 0055caf0
-void buildMirrorTransform(float *param_1,float param_2);
+void buildMirrorTransform(CVector3f *param_1,float param_2);
 
 // Original: core_xform.cpp_lerpMatrix3x4_FUN_0055cc30
 // Address: 0055cc30
@@ -153,7 +153,7 @@ CQuaternion4f * __stack_esi negateFirstComponent(CQuaternion4f *vector_in,CQuate
 
 // Original: core_xform.cpp_setIdentityQuaternion_FUN_0055d110
 // Address: 0055d110
-void setIdentityQuaternion(undefined4 *param_1);
+void __cdecl setIdentityQuaternion(CQuaternion4f *quaternion);
 
 // Original: core_xform.cpp_multiplyQuaternion_FUN_0055d130
 // Address: 0055d130
@@ -161,11 +161,11 @@ void multiplyQuaternion(float *param_1,float *param_2);
 
 // Original: core_xform.cpp_multiplyQuaternionInPlace_FUN_0055d1f0
 // Address: 0055d1f0
-undefined4 * multiplyQuaternionInPlace(undefined4 *param_1,undefined4 param_2);
+CQuaternion4f * __cdecl multiplyQuaternionInPlace(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr);
 
 // Original: core_xform.cpp_quaternionToAxisAngle_FUN_0055d220
 // Address: 0055d220
-void quaternionToAxisAngle(float *param_1,float *param_2,float *param_3);
+void __cdecl quaternionToAxisAngle(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
 
 // Original: core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 // Address: 0055d2d0
@@ -197,7 +197,7 @@ CVector3f * FUN_0055d5e0(CVector3f *param_1,CQuaternion4f *param_2);
 
 // Original: core_xform.cpp_eulerToQuaternion_FUN_0055d610
 // Address: 0055d610
-void eulerToQuaternion(undefined4 param_1);
+void eulerToQuaternion(CVector3f *param_1);
 
 // Original: core_xform.cpp_FUN_0055d660
 // Address: 0055d660
@@ -221,15 +221,15 @@ void __cdecl clipInterpolateBottomPlane(SRenderVertex *vertex_a,SRenderVertex *v
 
 // Original: core_xform.cpp_clipPolygonStage1_FUN_0055d9c0
 // Address: 0055d9c0
-void clipPolygonStage1(void);
+void __cdecl clipPolygonStage1(void);
 
 // Original: core_xform.cpp_clipPolygonStage2_FUN_0055db30
 // Address: 0055db30
-void clipPolygonStage2(void);
+void __cdecl clipPolygonStage2(void);
 
 // Original: core_xform.cpp_clipPolygonStage3_FUN_0055dcb0
 // Address: 0055dcb0
-void clipPolygonStage3(void);
+void __cdecl clipPolygonStage3(void);
 
 // Original: core_xform.cpp_FUN_0055de20
 // Address: 0055de20
@@ -249,4 +249,4 @@ void FUN_0055df90(void);
 
 // Original: core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 // Address: 0055e040
-void transformAndClipGeometry(uint param_1,int *param_2);
+void __cdecl transformAndClipGeometry(int vertex_count,int *vertex_indices);

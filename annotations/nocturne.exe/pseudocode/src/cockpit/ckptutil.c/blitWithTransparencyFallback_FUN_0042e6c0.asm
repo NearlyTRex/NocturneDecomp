@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042e6c0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042e6c0(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   src_data
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; void *           Stack[0x10]:4   background_base
+; int              Stack[0x14]:4   dest_x
+; int              Stack[0x18]:4   dest_y
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

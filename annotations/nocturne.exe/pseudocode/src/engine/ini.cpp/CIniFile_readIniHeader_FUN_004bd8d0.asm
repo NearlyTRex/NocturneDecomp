@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(int param_1,char *param_2)
+; void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(CIniFile *this_ptr,char *section)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   section
 ;
 ; XREF[3]:
 ;   core_inivar.cpp_FUN_004bdb80 at 004bdbc2

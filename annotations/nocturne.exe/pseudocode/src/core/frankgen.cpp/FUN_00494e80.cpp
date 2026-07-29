@@ -2,68 +2,63 @@
 // Address: 00494e80
 // Address Range: [[00494e80, 00494ff6]]
 // Convention: unknown
-// Signature: int core_frankgen_cpp_FUN_00494e80(CDemonActor *param_1)
+// Signature: int core_frankgen_cpp_FUN_00494e80(CFrankenstienMachine *param_1)
 
 #include "nocturne.h"
 
-int core_frankgen_cpp_FUN_00494e80(CDemonActor *param_1)
+int core_frankgen_cpp_FUN_00494e80(CFrankenstienMachine *param_1)
 
 {
-  int iVar1;
-  float fVar2;
-  CDemonActor *pCVar3;
+  float fVar1;
+  CDemonActor *pCVar2;
   CBoundingBox3D *this_ptr;
-  int iVar4;
-  float10 fVar5;
+  int iVar3;
+  float10 fVar4;
   float fStack_38;
   CBoundingBox3D local_34;
-  ulonglong uStack_1c;
+  double dStack_1c;
   
   if (*(int *)(0x01CC9450 + 4) != 0) {
-    pCVar3 = core_frankgen_cpp_findLeader_FUN_00495240();
-    *(uint *)(param_1[1].actor_name + 4) = *(uint *)(pCVar3[1].actor_name + 4);
-    core_frankgen_cpp_FUN_004950a0();
+    pCVar2 = core_frankgen_cpp_findLeader_FUN_00495240();
+    param_1->master_frame = *(float *)(pCVar2[1].actor_name + 4);
+    core_frankgen_cpp_FUN_004950a0(param_1);
   }
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
-  this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);
-  iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);
-  if (iVar4 != 0) {
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);
+  this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);
+  iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr);
+  if (iVar3 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-              ((CKeyFramedModelInstance *)&param_1[1].location.area_id,
-               param_1[1].location.position.z,-1);
-    if (*(char *)&param_1[2].standing_platform != '\0') {
-      iVar1 = *(int *)(param_1[1].actor_name + 4);
-      if (iVar1 < 0x4400c000) {
+              (&param_1->bed_model,param_1->part_frame,-1);
+    if ((param_1->body_model).model_name[0] != '\0') {
+      fVar1 = param_1->master_frame;
+      if ((int)fVar1 < 0x4400c000) {
         fStack_38 = 201.0;
       }
-      else if (iVar1 < 0x44e10000) {
+      else if ((int)fVar1 < 0x44e10000) {
         fStack_38 = 0.0;
-        uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
       }
-      else if (iVar1 < 0x44ed8000) {
-        fStack_38 = *(float *)(param_1[1].actor_name + 4) + -1800.0f;
-        uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
+      else if ((int)fVar1 < 0x44ed8000) {
+        fStack_38 = param_1->master_frame + -1800.0f;
       }
-      else if (iVar1 < 0x44fa0000) {
+      else if ((int)fVar1 < 0x44fa0000) {
         fStack_38 = 100.0;
-        uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));
       }
       else {
-        fVar2 = (*(float *)(param_1[1].actor_name + 4) + -2000.0f) * (float)3;
-        uStack_1c = (double)floor((double)(fVar2 * 0.005f));
-        fVar5 = (float10)fVar2 - (float10)uStack_1c * (float10)200;
-        fStack_38 = (float)fVar5;
-        if ((float10)100.0f < fVar5) {
+        fVar1 = (param_1->master_frame + -2000.0f) * (float)3;
+        dStack_1c = floor((double)(fVar1 * 0.005f));
+        fVar4 = (float10)fVar1 - (float10)dStack_1c * (float10)200;
+        fStack_38 = (float)fVar4;
+        if ((float10)100.0f < fVar4) {
           fStack_38 = 200.0f - fStack_38;
         }
         fStack_38 = fStack_38 + 99.0f;
       }
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
-                ((CKeyFramedModelInstance *)&param_1[2].health,fStack_38,-1);
-      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
-      return iVar4;
+                (&param_1->body_model,fStack_38,-1);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);
+      return iVar3;
     }
   }
-  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
-  return iVar4;
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);
+  return iVar3;
 }

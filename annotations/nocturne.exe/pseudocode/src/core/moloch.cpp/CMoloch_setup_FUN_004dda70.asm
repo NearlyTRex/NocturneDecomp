@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_CMoloch_setup_FUN_004dda70(int param_1)
+; void core_moloch_cpp_CMoloch_setup_FUN_004dda70(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -35,13 +35,13 @@ section .text
     PUSH 0x58a73b                       ; 004dda8d | = "moloch_h.dfm"
     PUSH EAX                            ; 004dda92
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004dda93
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004dda98
     PUSH 0x58a748                       ; 004dda9b | = "moloch_d.dfm"
     PUSH ESI                            ; 004ddaa0
         ;   Label: LAB_004ddaa0
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004ddaa1
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004ddaa6
     LEA ESI,[EBX + 0x150]               ; 004ddaa9
     PUSH ESI                            ; 004ddaaf
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0x4                         ; 004ddaf5
     PUSH EBX                            ; 004ddaf8
     CALL core_hero.cpp_FUN_004b48d0     ; 004ddaf9
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b48d0()
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ddafe
     POP EDI                             ; 004ddb01
     POP ESI                             ; 004ddb02
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_004ddb05
     PUSH EAX                            ; 004ddb0a
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004ddb0b
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004ddb10
     PUSH 0x58a762                       ; 004ddb13 | = "moloch_h.dfm"
     JMP 0x004ddaa0                      ; 004ddb18

@@ -146,7 +146,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
               ((CKeyFramedModel *)0x1cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
     }
     0x01E57284->renderable_actors[0x766] = (CDemonActor *)0x0;
     local_10 = _DAT_014b9900;

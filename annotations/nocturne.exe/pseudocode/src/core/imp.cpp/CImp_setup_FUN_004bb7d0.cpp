@@ -18,7 +18,6 @@ void core_imp_cpp_CImp_setup_FUN_004bb7d0(CEnemy *param_1)
   CDeformableModel *this_ptr_01;
   int iVar3;
   float fVar4;
-  uint uVar5;
   
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   this_ptr = &(param_1->base).model;
@@ -108,7 +107,7 @@ void core_imp_cpp_CImp_setup_FUN_004bb7d0(CEnemy *param_1)
   (param_1->base).carry_hands[1].bone_index = _DAT_01cae314;
   (param_1->base).carry_hands[1].secondary_bone_index =
        *(int *)(param_1[1].base.base.actor_name + 0x18);
-  uVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41a00000);
-  *(uint *)(param_1[1].base.base.actor_name + 8) = uVar5;
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,20.0);
+  *(float *)(param_1[1].base.base.actor_name + 8) = fVar4;
   return;
 }

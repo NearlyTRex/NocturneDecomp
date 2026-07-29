@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0048c0d0(CDemonActor *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,float param_5)
+; void __cdecl core_fire_cpp_FUN_0048c0d0(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   scale
+; float            Stack[0x10]:4   gore_multiplier
+; float            Stack[0x14]:4   radius
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0 at 00427b37
@@ -44,7 +50,7 @@ section .text
     ADD EAX,0x1c5d708                   ; 0048c0ef
     PUSH EAX                            ; 0048c0f4
     CALL core_fire.cpp_CExplosion_activate_FUN_00486e40 ; 0048c0f5
-        ;   XREF to: 00486e40 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CExplosion_activate_FUN_00486e40()
+        ;   XREF to: 00486e40 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_00486e40(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier)
     MOV EDX,dword ptr [0x01c5d704]      ; 0048c0fa | DAT_01c5d704
     INC EDX                             ; 0048c100
     ADD ESP,0x10                        ; 0048c101

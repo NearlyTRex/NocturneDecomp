@@ -1,12 +1,12 @@
 // Name: crt_string.c_strtod_main_FUN_0056f852
 // Address: 0056f852
 // Address Range: [[0056f852, 0056f937]]
-// Convention: unknown
-// Signature: double crt_string_c_strtod_main_FUN_0056f852(undefined4 param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: double __cdecl crt_string_c_strtod_main_FUN_0056f852(char *str,char **endptr)
 
 #include "nocturne.h"
 
-double strtod_main(uint param_1,uint param_2)
+double __cdecl strtod_main(char *str,char **endptr)
 
 {
   uint uVar1;
@@ -18,11 +18,12 @@ double strtod_main(uint param_1,uint param_2)
   ulonglong uStack_34;
   byte uStack_2c;
   byte bStack_2b;
+  ushort uStack_2a;
   ulonglong uStack_28;
   ulonglong uStack_20;
   ulonglong uStack_18;
   
-  iVar4 = parseFloatString(param_1,&uStack_34,param_2);
+  iVar4 = parseFloatString(str,&uStack_34,endptr);
   if (iVar4 == 0) {
     uVar5 = 0;
     uVar1 = 0;
@@ -32,6 +33,9 @@ LAB_0056f878:
   }
   uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);
   if (0x43fe < uVar6) {
+    uStack_2c = 0x97;
+    bStack_2b = 0xf8;
+    uStack_2a = 0x56;
     set_range_error_errno();
     uVar5 = 0x7FF00000;
     uVar1 = DAT_005a4b78;
@@ -42,6 +46,9 @@ LAB_0056f878:
   }
   if (uVar6 < 0x3bcd) {
     if ((int)uVar6 < -0x34) {
+      uStack_2c = 0xcf;
+      bStack_2b = 0xf8;
+      uStack_2a = 0x56;
       set_range_error_errno();
       return 0.0;
     }
@@ -64,6 +71,9 @@ LAB_0056f878:
     return uStack_28;
   }
 LAB_0056f928:
+  uStack_2c = 0x2d;
+  bStack_2b = 0xf9;
+  uStack_2a = 0x56;
   set_range_error_errno();
   return uStack_28;
 }

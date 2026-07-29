@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
+; void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
 ;
 ;
 ; Referenced Globals:
@@ -31,7 +31,7 @@ section .text
     MOV ECX,dword ptr [0x02dd0f84]      ; 00545ab0 | DAT_02dd0f84
     PUSH ECX                            ; 00545ab6
     CALL engine_texture.cpp_FUN_00545700 ; 00545ab7
-        ;   XREF to: 00545700 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00545700()
+        ;   XREF to: 00545700 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_00545700(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 00545abc
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 00545abf
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()

@@ -2,11 +2,11 @@
 // Address: 004c7ca0
 // Address Range: [[004c7ca0, 004c8033]]
 // Convention: unknown
-// Signature: void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
+// Signature: void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
 
 #include "nocturne.h"
 
-void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
+void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
 
 {
   float fVar1;
@@ -21,9 +21,7 @@ void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
   float fStack_70;
   float fStack_6c;
   float fStack_68;
-  uint uStack_64;
-  uint uStack_60;
-  float fStack_5c;
+  CVector3f CStack_64;
   float fStack_58;
   float fStack_54;
   float fStack_50;
@@ -32,26 +30,25 @@ void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
+  CVector3f CStack_28;
   float fStack_1c;
   int iStack_18;
   
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar2 == 0) {
-    input_local_point = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&CStack_4c,input_local_point);
-    fStack_5c = param_1[2].orient_matrix.m[0].y;
-    uStack_64 = 0;
-    uStack_60 = 0;
-    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_28,&uStack_64);
-    fStack_58 = -fStack_28;
-    fStack_54 = -fStack_24;
-    fStack_50 = -fStack_20;
-    CStack_40.x = CStack_4c.x + fStack_28;
-    CStack_40.y = CStack_4c.y + fStack_24;
-    CStack_40.z = CStack_4c.z + fStack_20;
+    input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+              (&param_1->base,&CStack_4c,input_local_point);
+    CStack_64.z = (param_1->model).transformed_vertices[0x1a].x;
+    CStack_64.x = 0.0;
+    CStack_64.y = 0.0;
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&CStack_28,&CStack_64);
+    fStack_58 = -CStack_28.x;
+    fStack_54 = -CStack_28.y;
+    fStack_50 = -CStack_28.z;
+    CStack_40.x = CStack_4c.x + CStack_28.x;
+    CStack_40.y = CStack_4c.y + CStack_28.y;
+    CStack_40.z = CStack_4c.z + CStack_28.z;
     if (&fStack_34 != &fStack_58) {
       fStack_34 = fStack_58;
       fStack_30 = fStack_54;
@@ -72,8 +69,8 @@ void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
     fVar4 = (float10)fpatan((float10)18 / (float10)112.0f,(float10)1);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0
               (0x01C08D04,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,(float)fVar4);
-    if (param_1[4].orient_matrix.m[0].y != 0.0) {
-      param_1[4].orient_matrix.m[0].y = 0.0;
+    if ((param_1->model).transformed_vertices[0x52].x != 0.0) {
+      (param_1->model).transformed_vertices[0x52].x = 0.0;
       iVar2 = 1;
       do {
         iVar3 = iVar2 + 1;
@@ -101,7 +98,7 @@ void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
         fStack_70 = 0.0;
         fStack_68 = 0.0;
       }
-      fStack_1c = param_1[4].orient_matrix.m[0].z * (float)0.015625;
+      fStack_1c = (param_1->model).transformed_vertices[0x52].y * (float)0.015625;
       fStack_7c = fStack_70 * fStack_1c;
       fStack_78 = fStack_6c * fStack_1c;
       fStack_74 = fStack_68 * fStack_1c;

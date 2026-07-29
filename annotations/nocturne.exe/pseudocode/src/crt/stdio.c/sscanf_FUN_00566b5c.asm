@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_sscanf_FUN_00566b5c(char *param_1,char *param_2)
+; int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

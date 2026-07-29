@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_skeleton_cpp_SVert_dtor_FUN_0051f860(int param_1)
+; SVert * __cdecl core_skeleton_cpp_SVert_dtor_FUN_0051f860(SVert *this_ptr,uint flags)
 ;
+; Parameters:
+; SVert *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0

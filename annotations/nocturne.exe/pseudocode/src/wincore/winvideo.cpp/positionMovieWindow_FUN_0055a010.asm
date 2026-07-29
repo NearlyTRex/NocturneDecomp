@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND param_1)
+; void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_window)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   parent_window
 ; Local Variables:
 ; undefined        Stack[-0xa4]:1  local_a4
 ; undefined1       Stack[-0xa3]:1  local_a3

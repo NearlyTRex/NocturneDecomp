@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(int param_1,int param_2,int *param_3)
+; int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   code
+; char * *         Stack[0xc]:4   buffer_ptr_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

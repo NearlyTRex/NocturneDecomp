@@ -46,7 +46,7 @@ section .text
     PUSH EDX                            ; 004af757 | DAT_01e57284
     FSTP float ptr [ESI + 0x4]          ; 004af758
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 004af75b
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0xc],EAX       ; 004af760
     FLD float ptr [ESP + 0xc]           ; 004af764
     LEA EAX,[ESI + 0x4]                 ; 004af768

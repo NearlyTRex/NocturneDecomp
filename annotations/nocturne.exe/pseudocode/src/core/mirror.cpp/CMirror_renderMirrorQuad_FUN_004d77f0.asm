@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(float *param_1)
+; int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_ptr)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x64]:1  local_64
 ; undefined4       Stack[-0x60]:4  local_60

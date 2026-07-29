@@ -243,7 +243,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0050d8fc | DAT_005ae704
     PUSH EAX                            ; 0050d901 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20 ; 0050d902
-        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20()
+        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x0050d884                      ; 0050d907
         ;   XREF to: 0050d884 (UNCONDITIONAL_JUMP)  ; LAB_0050d884
 

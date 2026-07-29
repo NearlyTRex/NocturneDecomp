@@ -232,7 +232,7 @@ section .text
     MOV dword ptr [ESP + 0x100],EDI     ; 0053ee47
     MOV dword ptr [ESP + 0x80],ESI      ; 0053ee4e
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0053ee55
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 0053ee5a
     LEA EAX,[ESP + 0x90]                ; 0053ee5c
     ADD ESP,0xc                         ; 0053ee63
@@ -309,7 +309,7 @@ section .text
     MOV EAX,[0x005be368]                ; 0053ef6c | DAT_005be368
     PUSH EAX                            ; 0053ef71 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0053ef72
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x104],EAX     ; 0053ef77
     FLD float ptr [ESP + 0x104]         ; 0053ef7e
     ADD ESP,0xc                         ; 0053ef85
@@ -411,7 +411,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 0053f0c4 | DAT_005be368
     PUSH EBX                            ; 0053f0ca | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0053f0cb
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x104],EAX     ; 0053f0d0
     FLD float ptr [ESP + 0x104]         ; 0053f0d7
     ADD ESP,0xc                         ; 0053f0de

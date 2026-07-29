@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00545b72
         ;   Label: LAB_00545b72
     CALL core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90 ; 00545b73
-        ;   XREF to: 00545b90 (UNCONDITIONAL_CALL)  ; undefined core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90()
+        ;   XREF to: 00545b90 (UNCONDITIONAL_CALL)  ; CTommyGun * core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90(CTommyGun * this_ptr)
     ADD ESP,0x4                         ; 00545b78
     RET                                 ; 00545b7b
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(undefined4 param_1,int *param_2)
+; void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -53,7 +53,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x48]      ; 004d7b68
     PUSH EDX                            ; 004d7b6c
     CALL core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480 ; 004d7b6d
-        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480()
+        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(CMirrorReflection * this_ptr, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 004d7b72
     LEA EAX,[ESP + 0x18]                ; 004d7b74
     ADD ESP,0xc                         ; 004d7b78

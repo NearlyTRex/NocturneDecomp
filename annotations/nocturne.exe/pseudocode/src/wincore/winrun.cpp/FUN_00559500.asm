@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_FUN_00559500(undefined4 param_1)
+; void __cdecl wincore_winrun_cpp_FUN_00559500(char *message)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   message
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c8440 at 004c84c8

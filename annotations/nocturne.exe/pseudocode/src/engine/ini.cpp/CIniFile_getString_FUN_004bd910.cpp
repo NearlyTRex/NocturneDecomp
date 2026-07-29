@@ -1,25 +1,25 @@
 // Name: engine_ini.cpp_CIniFile_getString_FUN_004bd910
 // Address: 004bd910
 // Address Range: [[004bd910, 004bd994]]
-// Convention: unknown
-// Signature: void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004bd910(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size)
 
 #include "nocturne.h"
 
-void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
+void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004bd910(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size)
 
 {
-  if (*param_1 == '\0') {
+  if (this_ptr->filename[0] == '\0') {
     PTR_01cc4800 = "..\\engine\\ini.cpp";
     INT_01cc4804 = 0x265;
     core_main_c_FUN_004c8440("CIniFile::getString - filename not write!");
   }
-  if (param_1[0x100] == '\0') {
+  if (this_ptr->section[0] == '\0') {
     PTR_01cc4800 = "..\\engine\\ini.cpp";
     INT_01cc4804 = 0x266;
     core_main_c_FUN_004c8440("CIniFile::getString - section not write!");
   }
   engine_ini_cpp_getProfileString_FUN_004bd750
-            (param_1 + 0x100,param_2,param_3,param_3,param_4,param_1);
+            (this_ptr->section,key,output_buffer,output_buffer,buffer_size,this_ptr->filename);
   return;
 }

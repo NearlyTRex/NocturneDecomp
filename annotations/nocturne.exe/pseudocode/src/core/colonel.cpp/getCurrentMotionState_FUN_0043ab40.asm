@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(void)
+; int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(CMotionController *motion_ptr)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   motion_ptr
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660

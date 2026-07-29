@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_CHero_reset_FUN_004b5ec0(int param_1)
+; void __cdecl core_hero_cpp_CHero_reset_FUN_004b5ec0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_00540820 at 0054082c

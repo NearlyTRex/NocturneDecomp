@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 643,
-    "complexity_score": 490,
+    "complexity_score": 468,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 290,
-    "suspect_count": 16,
+    "pseudocode_lines": 288,
+    "suspect_count": 15,
     "suspect_types": [
-      "pointer_truncation",
-      "raw_address_constant",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
@@ -139,7 +137,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 933
+    "total_lines": 931
   },
   "cross_references": [
     {
@@ -596,20 +594,13 @@
   "static_analysis": {
     "analyzed_file": "CStranger_processMotionEvents_FUN_00537cd0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 28,
-          "line": 107,
-          "message": "Uninitialized variable: unaff_EBP",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 29,
-          "line": 210,
-          "message": "Uninitialized variable: fStack_a0",
+          "line": 207,
+          "message": "Uninitialized variable: fStack_a4",
           "severity": "error"
         }
       ],
@@ -628,7 +619,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 18,
+      "line": 17,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -636,23 +627,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "CStranger *in_stack_ffffff48;",
+      "text": "char *in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 90,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,pCVar4,EVar3,(float)in_stack_ffffff48);",
+      "text": "((CDemonActor *)this_ptr,pCVar3,EVar2,(float)in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 99,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(**(code **)(unaff_EBP + 0x20))",
@@ -660,7 +651,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
+      "line": 99,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(unaff_EBP + 0x20))",
@@ -668,98 +659,82 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 100,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,pCVar4,EVar3,(float)in_stack_ffffff48);",
+      "text": "((CDemonActor *)this_ptr,pCVar3,EVar2,(float)in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 131,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "in_stack_ffffff48 = this_ptr_04, iVar6 == 4)) {",
+      "text": "in_stack_ffffff48 = pCVar7->actor_name, iVar5 == 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 137,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "in_stack_ffffff48 = 0x01BCD074;",
+      "text": "in_stack_ffffff48 = 0x01BCD074->actor_name;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 188,
+      "line": 186,
       "match": "&stack0xffffff50",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_ffffff48",
-      "severity": "moderate",
-      "text": "(local_18,(CDemonActor *)&stack0xffffff50,(int)in_stack_ffffff48);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 202,
+      "line": 199,
       "match": "&stack0xffffff50",
       "severity": "moderate",
-      "text": "(local_18,(CDemonActor *)&stack0xffffff50,(int)in_stack_ffffff48);",
+      "text": "(local_18,(SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 202,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = (int)ROUND(dVar6);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 205,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP + 1,0);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 206,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "in_stack_ffffff48 = this_ptr;",
+      "text": "in_stack_ffffff48 = \"kick1.wav\";",
       "type": "stack_param"
     },
     {
-      "description": "Pointer value `in_stack_ffffff48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 202,
-      "match": "(int)in_stack_ffffff48",
-      "severity": "moderate",
-      "text": "(local_18,(CDemonActor *)&stack0xffffff50,(int)in_stack_ffffff48);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x1bcd074 assigned to bare local `in_stack_ffffff48`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffff48` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 139,
-      "match": "0x1bcd074",
-      "severity": "moderate",
-      "text": "in_stack_ffffff48 = 0x01BCD074;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 195,
+      "line": 192,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_94[0].x = pCVar4->x;",
+      "text": "local_94[0].x = pCVar3->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: unaff_EBP",
-      "line": 107,
+      "description": "Uninitialized variable: fStack_a4",
+      "line": 207,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "(**(code **)(unaff_EBP + 0x20))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_a0",
-      "line": 210,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0.0 < (double)fStack_a0) {",
+      "text": "if (0.0 < (double)fStack_a4) {",
       "type": "static_uninitvar"
     }
   ]

@@ -1,25 +1,20 @@
 // Name: core_cloth.cpp_applyLightAttenuation_FUN_00438900
 // Address: 00438900
 // Address Range: [[00438900, 0043894e]]
-// Convention: unknown
-// Signature: void core_cloth_cpp_applyLightAttenuation_FUN_00438900(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_00438900(CVector3f *v)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_cloth_cpp_applyLightAttenuation_FUN_00438900(void)
+CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_00438900(CVector3f *v)
 
 {
   float fVar1;
-  float *in_stack_00000004;
   
-  fVar1 = (float)((int)CVector3f_01c70708.z -
-                 ((int)(in_stack_00000004[2] * in_stack_00000004[2] +
-                       *in_stack_00000004 * *in_stack_00000004 +
-                       in_stack_00000004[1] * in_stack_00000004[1]) >> 1));
-  *in_stack_00000004 = *in_stack_00000004 * fVar1;
-  in_stack_00000004[1] = in_stack_00000004[1] * fVar1;
-  in_stack_00000004[2] = in_stack_00000004[2] * fVar1;
-  return;
+  fVar1 = (float)((int)CVector3f_01c70708.z - ((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1))
+  ;
+  v->x = v->x * fVar1;
+  v->y = v->y * fVar1;
+  v->z = v->z * fVar1;
+  return v;
 }

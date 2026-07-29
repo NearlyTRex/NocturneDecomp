@@ -34,7 +34,7 @@ section .text
     ADD EAX,0x1c625f8                   ; 0048c388
     PUSH EAX                            ; 0048c38d
     CALL core_fire.cpp_CCrater_activate_FUN_004876d0 ; 0048c38e
-        ;   XREF to: 004876d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_activate_FUN_004876d0()
+        ;   XREF to: 004876d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_activate_FUN_004876d0(CCrater * this_ptr, CVector3f * center_position, float radius)
     MOV ECX,dword ptr [0x01c625f4]      ; 0048c393 | DAT_01c625f4
     INC ECX                             ; 0048c399
     ADD ESP,0xc                         ; 0048c39a

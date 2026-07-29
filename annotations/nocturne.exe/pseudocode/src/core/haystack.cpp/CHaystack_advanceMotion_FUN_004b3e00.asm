@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CCharacter *param_1,float param_2)
+; void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack *this_ptr,float delta_time)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
@@ -57,7 +60,7 @@ section .text
     PUSH EDI                            ; 004b3e3a
     PUSH EBX                            ; 004b3e3b
     CALL core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40 ; 004b3e3c
-        ;   XREF to: 004b3f40 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40()
+        ;   XREF to: 004b3f40 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack * this_ptr, int bone_index)
     MOV EDX,dword ptr [EBX + 0x1fa40]   ; 004b3e41
     ADD ESP,0x8                         ; 004b3e47
     TEST EDX,EDX                        ; 004b3e4a
@@ -84,7 +87,7 @@ section .text
     PUSH EDX                            ; 004b3e73
     PUSH EBX                            ; 004b3e74
     CALL core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40 ; 004b3e75
-        ;   XREF to: 004b3f40 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40()
+        ;   XREF to: 004b3f40 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack * this_ptr, int bone_index)
     MOV ECX,dword ptr [EBX + 0x1fa40]   ; 004b3e7a
     ADD ESP,0x8                         ; 004b3e80
     TEST ECX,ECX                        ; 004b3e83

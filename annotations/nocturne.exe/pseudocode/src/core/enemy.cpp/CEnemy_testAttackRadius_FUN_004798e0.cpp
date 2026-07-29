@@ -20,7 +20,8 @@ int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(CEnemy *this_ptr
   
   this_ptr_00 = this_ptr->victim;
   if (this_ptr_00 != (CCharacter *)0x0) {
-    (*(((this_ptr_00->base).vtable._uc)->_uc).isGrabbable)(this_ptr_00,(CDemonActor *)point);
+    (*(((this_ptr_00->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
+              (this_ptr_00,point,radius,damage_info);
     auStack_28 = (byte  [8])(double)damage_info->damage_amount;
     if (0.0 < (double)auStack_28) {
       fStack_20 = point->x;

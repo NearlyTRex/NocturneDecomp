@@ -12,7 +12,7 @@
 ;   crt_strstream.cpp_strstreambuf_ctor_FUN_00570248 at 0057024e
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4ab0 = 0056ff82
+;   undefined1* g_StreambufVTable = 0056ff82
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0056fe12
         ;   Label: crt_iostream.cpp_streambuf_ctor_FUN_0056fe12
-    MOV dword ptr [EAX + 0x28],0x5a4ab0 ; 0056fe16 | PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4ab0
+    MOV dword ptr [EAX + 0x28],0x5a4ab0 ; 0056fe16 | g_StreambufVTable
     MOV dword ptr [EAX],0x0             ; 0056fe1d
     MOV dword ptr [EAX + 0x4],0x0       ; 0056fe23
     MOV dword ptr [EAX + 0x8],0x0       ; 0056fe2a

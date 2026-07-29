@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_FUN_00447c60(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_dcamera_cpp_FUN_00447c60(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   screen_x
+; int              Stack[0xc]:4   screen_y
+; int              Stack[0x10]:4   offset
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

@@ -21,8 +21,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
   float *pfVar7;
   byte bVar8;
   float afStackY_185c [1519];
-  uint uVar9;
-  float fVar10;
+  float fVar9;
   code *blend_callback;
   float local_88;
   float local_84;
@@ -32,11 +31,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
   CQuaternion4f local_60;
   CVector3f local_50;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
+  CVector3f local_38;
+  CVector3f local_2c;
   float local_20;
   float local_1c;
   CDeformableModelInstance *local_18;
@@ -72,62 +68,62 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_44,pCVar4);
       pCVar1 = (this_ptr->base).victim;
-      local_38 = (pCVar1->base).location.position.x - pCVar4->x;
-      local_34 = (pCVar1->base).location.position.y - pCVar4->y;
-      local_30 = (pCVar1->base).location.position.z - pCVar4->z;
+      local_38.x = (pCVar1->base).location.position.x - pCVar4->x;
+      local_38.y = (pCVar1->base).location.position.y - pCVar4->y;
+      local_38.z = (pCVar1->base).location.position.z - pCVar4->z;
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
                          (&((this_ptr->base).victim)->base,g_CHeroActorType_01cae0ec.name_hash);
-      fVar10 = 3.0f;
+      fVar9 = 3.0f;
       if (pCVar3 != (CDemonActor *)0x0) {
-        fVar10 = 5.3464347077054713e-315._0_4_;
+        fVar9 = 5.3464347077054713e-315._0_4_;
       }
-      local_34 = local_34 + fVar10;
+      local_38.y = local_38.y + fVar9;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_2c,&local_38);
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                           (local_28 - (this_ptr->base).base.base.orient.vec.y);
-      local_84 = SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34);
+                           (local_2c.y - (this_ptr->base).base.base.orient.vec.y);
+      local_84 = SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y);
       if ((local_88 <= ABS((float)local_18)) || (local_84 <= (float)2)) {
-        fVar10 = this_ptr->firing_blend - delta_time;
-        this_ptr->firing_blend = fVar10;
-        if (fVar10 < 0.0) {
+        fVar9 = this_ptr->firing_blend - delta_time;
+        this_ptr->firing_blend = fVar9;
+        if (fVar9 < 0.0) {
           this_ptr->firing_blend = 0.0;
         }
       }
       else {
-        fVar10 = this_ptr->firing_blend + delta_time;
-        this_ptr->firing_blend = fVar10;
-        if (1.0 < fVar10) {
+        fVar9 = this_ptr->firing_blend + delta_time;
+        this_ptr->firing_blend = fVar9;
+        if (1.0 < fVar9) {
           this_ptr->firing_blend = 1.0;
         }
       }
       local_1c = -local_88;
-      if (local_2c < local_1c) {
-        local_2c = local_1c;
+      if (local_2c.x < local_1c) {
+        local_2c.x = local_1c;
       }
-      if (local_88 < local_2c) {
-        local_2c = local_88;
+      if (local_88 < local_2c.x) {
+        local_2c.x = local_88;
       }
       local_20 = -local_88;
-      local_28 = (float)local_18;
+      local_2c.y = (float)local_18;
       if ((float)local_18 < local_20) {
-        local_28 = local_20;
+        local_2c.y = local_20;
       }
-      if (local_88 < local_28) {
-        local_28 = local_88;
+      if (local_88 < local_2c.y) {
+        local_2c.y = local_88;
       }
       if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
-        fVar10 = this_ptr->firing_blend;
-        uVar9 = 2;
+        fVar9 = this_ptr->firing_blend;
+        iVar2 = 2;
       }
       else {
-        fVar10 = this_ptr->firing_blend;
-        uVar9 = 6;
+        fVar9 = this_ptr->firing_blend;
+        iVar2 = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                (&(this_ptr->base).base.model,uVar9,0x40c00000,fVar10,_DAT_01ccdbd0,
+                (&(this_ptr->base).base.model,iVar2,6.0,fVar9,_DAT_01ccdbd0,
                  core_skeleton_cpp_FUN_0051b650);
-      core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(local_2c,&local_60);
+      core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(local_2c.x,&local_60);
       local_80.w = local_60.w;
       puVar6 = (uint *)((int)&local_80 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       puVar5 = (uint *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
@@ -139,7 +135,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (local_18,&local_80,this_ptr->firing_blend,_DAT_01ccdbd0,
                  core_skeleton_cpp_FUN_0051b650);
-      core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_28);
+      core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_2c.y);
       blend_callback = core_skeleton_cpp_FUN_0051b650;
       local_80.w = local_70;
       pfVar7 = (float *)((int)&local_80 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

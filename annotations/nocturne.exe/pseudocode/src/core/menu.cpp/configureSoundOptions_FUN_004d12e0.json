@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1481,
-    "complexity_score": 1688,
+    "complexity_score": 1689,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 57,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 793,
+    "pseudocode_lines": 794,
     "suspect_count": 82,
     "suspect_types": [
       "bitcast_double_pair",
@@ -146,7 +146,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2274
+    "total_lines": 2275
   },
   "cross_references": [
     {
@@ -1282,7 +1282,7 @@
       "line": 546,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "uStack_44 = __BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)) *",
+      "text": "fVar17 = (float10)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)) *",
       "type": "bitcast_double_pair"
     },
     {
@@ -1290,20 +1290,20 @@
       "line": 547,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_808,uStack_80c));",
+      "text": "(float10)__BITCAST_DOUBLE(CONCAT44(local_808,uStack_80c));",
       "type": "bitcast_double_pair"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 549,
+      "line": 550,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "(iVar9,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)));",
+      "text": "(iVar9,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)),(float)fVar17);",
       "type": "bitcast_double_pair"
     },
     {
       "description": "Undefined global data reference",
-      "line": 550,
+      "line": 551,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "y_top = DAT_005b7620 + -1;",
@@ -1311,7 +1311,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 553,
+      "line": 554,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "((double)((float)DAT_005b7620 -",
@@ -1319,7 +1319,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 554,
+      "line": 555,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "fVar8 * (float)DAT_005b7620 * 0.25f));",
@@ -1327,7 +1327,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 557,
+      "line": 558,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "dVar18 = __BITCAST_DOUBLE(CONCAT44(uVar20,height_half));",
@@ -1335,7 +1335,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 664,
+      "line": 665,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_7f0 = local_7f0 + 1.5774054650233886e-314._0_4_;",
@@ -1343,7 +1343,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 792,
+      "line": 793,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
@@ -1367,7 +1367,7 @@
     },
     {
       "description": "Raw hex address 0x4d1ac4 assigned to bare local `uVar20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 551,
+      "line": 552,
       "match": "0x4d1ac4",
       "severity": "moderate",
       "text": "uVar20 = 0x4d1ac4;",
@@ -1567,7 +1567,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 756,
+      "line": 757,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar19 = CONCAT44(uVar20,local_7e8);",
@@ -1575,7 +1575,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 764,
+      "line": 765,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar19 = CONCAT44(uVar20,&local_560);",
@@ -1583,7 +1583,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 791,
+      "line": 792,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "uVar19 = CONCAT44(uVar20,1);",

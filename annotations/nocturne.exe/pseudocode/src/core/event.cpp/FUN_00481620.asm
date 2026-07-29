@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_FUN_00481620(undefined4 *param_1)
+; void __cdecl core_event_cpp_FUN_00481620(CRuleList *this_ptr)
 ;
+; Parameters:
+; CRuleList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_door.cpp_CDoor_ctor_FUN_00455050 at 00455075

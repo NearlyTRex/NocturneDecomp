@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(undefined4 param_1,undefined4 param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)
+; CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; CVector3f *      Stack[0xc]:4   position
+; UOrientationVector * Stack[0x10]:4   orientation
+; CVector3f *      Stack[0x14]:4   initial_velocity
+; CDemonActor *    Stack[0x18]:4   scale_source
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
@@ -40,7 +47,7 @@ section .text
     MOV EBX,EAX                         ; 0051e891
     MOV ESI,EAX                         ; 0051e893
     CALL core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0 ; 0051e895
-        ;   XREF to: 0051e8c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0()
+        ;   XREF to: 0051e8c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(CDeformableModelInstance * this_ptr, CBodyPart * body_part, int part_index)
     ADD ESP,0xc                         ; 0051e89a
     TEST EBX,EBX                        ; 0051e89d
     JNZ 0x0051e8a8                      ; 0051e89f

@@ -21,7 +21,7 @@ void FUN_004c6a40(void);
 
 // Original: engine_light.cpp_setLightingMultipliers_FUN_004c6a50
 // Address: 004c6a50
-void setLightingMultipliers(void);
+void __cdecl setLightingMultipliers(int diffuse_multiplier,int specular_multiplier);
 
 // Original: engine_light.cpp_calculatePhongLighting_FUN_004c6a70
 // Address: 004c6a70
@@ -37,4 +37,4 @@ void FUN_004c6d70(void);
 
 // Original: engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90
 // Address: 004c6d90
-void calculateAndStoreVertexLight(int param_1,int *param_2);
+void __cdecl calculateAndStoreVertexLight(int vertex_index,CVector3i *vertex_position);

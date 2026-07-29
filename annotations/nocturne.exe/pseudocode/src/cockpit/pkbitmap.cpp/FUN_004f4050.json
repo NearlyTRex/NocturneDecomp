@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 331,
+    "complexity_score": 275,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 26,
+    "pseudocode_lines": 45,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 154
+    "total_lines": 153
   },
   "cross_references": [],
   "function": {
@@ -301,14 +300,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar6;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_1",
@@ -349,22 +340,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar6 = (code *)cockpit_ckptutil_c_FUN_0042d130(param_2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar6 = (code *)cockpit_ckptutil_c_FUN_0042d130(param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_3",
@@ -377,7 +352,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar9 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));",
+      "text": "puVar7 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -385,7 +360,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar9 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));",
+      "text": "puVar7 = (ushort *)(*(int *)(param_1 + 0x14) + **(int **)(param_1 + 0x20));",
       "type": "unnamed_param"
     },
     {
@@ -393,7 +368,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(*(int *)(param_1 + 0x20) + local_24 + 4);",
+      "text": "iVar3 = *(int *)(*(int *)(param_1 + 0x20) + local_24 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -401,7 +376,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x14);",
+      "text": "iVar4 = *(int *)(param_1 + 0x14);",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +384,7 @@
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar8 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
+      "text": "iVar6 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
       "type": "unnamed_param"
     },
     {
@@ -417,15 +392,15 @@
       "line": 30,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "iVar8 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
+      "text": "iVar6 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(ushort *)((int)puVar2",
+      "match": "(ushort *)((int)src_buffer",
       "severity": "moderate",
-      "text": "puVar9 = (ushort *)((int)puVar2 + (*puVar1 + 3 & 0xfffffffc));",
+      "text": "puVar7 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));",
       "type": "pointer_cast"
     },
     {
@@ -437,51 +412,35 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pcVar6)(iVar7,puVar2,(uint)*puVar1,param_2,param_3);",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(void *)((int)dest_buffer",
+      "severity": "moderate",
+      "text": "dest_buffer = (void *)((int)dest_buffer + (uint)uVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(*pcVar6)(iVar7,puVar2,(uint)*puVar1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_1c < *(int *)(param_1 + 0x1c));",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
-      "match": "(int)puVar2",
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar9 = (ushort *)((int)puVar2 + (*puVar1 + 3 & 0xfffffffc));",
+      "text": "puVar7 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)dest_buffer",
+      "severity": "moderate",
+      "text": "dest_buffer = (void *)((int)dest_buffer + (uint)uVar2);",
       "type": "pointer_truncation"
     }
   ]

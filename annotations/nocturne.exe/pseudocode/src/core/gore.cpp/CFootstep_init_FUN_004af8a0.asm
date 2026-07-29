@@ -118,7 +118,7 @@ section .text
     PUSH 0x1fba938                      ; 004af96e | DAT_01fba938
     FSTP float ptr [ESP + 0x24]         ; 004af973
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 004af977
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x3c],EAX      ; 004af97c
     FLD float ptr [ESP + 0x3c]          ; 004af980
     FMUL double ptr [0x00585188]        ; 004af984 | DOUBLE_00585188

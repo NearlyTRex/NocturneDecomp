@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 853,
+    "complexity_score": 863,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 213,
-    "suspect_count": 60,
+    "suspect_count": 61,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -930,14 +930,14 @@
         {
           "check_id": "objectIndex",
           "column": 50,
-          "line": 92,
+          "line": 91,
           "message": "The address of local variable 'fStack_e8' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 91,
+          "line": 90,
           "message": "Uninitialized variable: local_ec",
           "severity": "error"
         }
@@ -973,7 +973,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1cbc) != 0) {",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3f *)local_74);",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 65,
+      "line": 64,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_74._0_4_ = (float)local_74._0_4_ - *(float *)(param_1 + 0x104);",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 65,
+      "line": 64,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_74._0_4_ = (float)local_74._0_4_ - *(float *)(param_1 + 0x104);",
@@ -1005,7 +1005,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "local_74._0_4_ = (float)local_74._0_4_ - *(float *)(param_1 + 0x104);",
@@ -1013,7 +1013,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 65,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_74._4_4_ = (float)local_74._4_4_ - *(float *)(param_1 + 0x108);",
@@ -1021,7 +1021,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 65,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_74._4_4_ = (float)local_74._4_4_ - *(float *)(param_1 + 0x108);",
@@ -1029,7 +1029,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "local_74._4_4_ = (float)local_74._4_4_ - *(float *)(param_1 + 0x108);",
@@ -1037,7 +1037,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 66,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_74._8_4_ = (float)local_74._8_4_ - *(float *)(param_1 + 0x10c);",
@@ -1045,7 +1045,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 66,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_74._8_4_ = (float)local_74._8_4_ - *(float *)(param_1 + 0x10c);",
@@ -1053,7 +1053,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "local_74._8_4_ = (float)local_74._8_4_ - *(float *)(param_1 + 0x10c);",
@@ -1061,39 +1061,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x110,local_b0,local_74);",
+      "text": "((CMatrix3x3f *)(param_1 + 0x110),&local_b0,(CVector3f *)local_74);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_74._0_4_ = pCVar2->x;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 71,
-      "match": "._0_4_",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "local_74._0_4_ = *pfVar2;",
+      "text": "local_74._4_4_ = pCVar2->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 72,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_74._4_4_ = pfVar2[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 73,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_74._8_4_ = pfVar2[2];",
+      "text": "local_74._8_4_ = pCVar2->z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 74,
       "match": "._8_4_",
       "severity": "mild",
       "text": "if ((float)local_74._8_4_ <= *(float *)(param_1 + 0x100)) {",
@@ -1101,7 +1101,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((float)local_74._8_4_ <= *(float *)(param_1 + 0x100)) {",
@@ -1109,7 +1109,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 75,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_30 = (float)local_74._4_4_ * (float)local_74._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_30 = (float)local_74._4_4_ * (float)local_74._4_4_;",
@@ -1118,14 +1126,6 @@
     {
       "description": "Unknown/mangled field access",
       "line": 76,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_30 = (float)local_74._4_4_ * (float)local_74._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 77,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_24 = (float *)((((float)local_74._8_4_ * (float)18) /",
@@ -1133,7 +1133,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x138)) * (float)2);",
@@ -1141,7 +1141,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 78,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_28 = (float)local_74._0_4_ * (float)local_74._0_4_ + local_30;",
@@ -1149,7 +1149,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 78,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_28 = (float)local_74._0_4_ * (float)local_74._0_4_ + local_30;",
@@ -1157,7 +1157,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 82,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_FUN_00460d10(DAT_005ae704);",
@@ -1165,7 +1165,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "local_80 = local_f8 - *(float *)(param_1 + 0x104);",
@@ -1173,7 +1173,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "local_7c = local_f4 - *(float *)(param_1 + 0x108);",
@@ -1181,7 +1181,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "local_78 = local_f0 - *(float *)(param_1 + 0x10c);",
@@ -1189,23 +1189,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x110,local_c8,&local_8c);",
+      "text": "((CMatrix3x3f *)(param_1 + 0x110),(CVector3f *)local_c8,&local_8c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 107,
+      "line": 106,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "4.6004211948482694e-315._0_4_) {",
+      "text": "* 4.6004211948482694e-315._0_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 108,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar5 = DAT_005ae704;",
@@ -1213,7 +1213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 113,
       "match": "DAT_005ae488",
       "severity": "mild",
       "text": "texture = (SMRGLTextureBasic *)&DAT_005ae488;",
@@ -1221,7 +1221,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = (float *)(param_1 + 0x104);",
@@ -1229,7 +1229,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 118,
+      "line": 117,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar1 = (float)local_1c * 5.1299985056169162e-315._0_4_ * *(float *)(param_1 + 0x100);",
@@ -1237,7 +1237,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = (float)local_1c * 5.1299985056169162e-315._0_4_ * *(float *)(param_1 + 0x100);",
@@ -1245,7 +1245,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 118,
       "match": "param_1",
       "severity": "mild",
       "text": "local_114 = *(float *)(param_1 + 0x118);",
@@ -1253,7 +1253,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "local_110 = *(float *)(param_1 + 0x124);",
@@ -1261,7 +1261,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "local_10c = *(float *)(param_1 + 0x130);",
@@ -1269,7 +1269,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
       "text": "((fVar1 * (float)18) / *(float *)(param_1 + 0x138)) *",
@@ -1277,7 +1277,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 129,
+      "line": 128,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_74._8_4_ = *local_24 + local_108;",
@@ -1285,7 +1285,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 133,
+      "line": 132,
       "match": "._8_4_",
       "severity": "mild",
       "text": "CStack_e4.x = (float)local_74._8_4_;",
@@ -1293,7 +1293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 137,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&CStack_e4);",
@@ -1301,7 +1301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 139,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,local_48);",
@@ -1309,7 +1309,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 141,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,local_48,(CVector3f *)0x0);",
@@ -1317,7 +1317,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 149,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_d8);",
@@ -1325,7 +1325,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 155,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_60);",
@@ -1333,18 +1333,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 161,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_54);",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_c8._8_4_ = (uint)ROUND(local_a0[1] * _DAT_0059c030);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 167,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,",
       "type": "undefined_data"
     },
     {
@@ -1381,7 +1389,7 @@
     },
     {
       "description": "Pointer value `&CStack_e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "(int)&CStack_e4",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_e4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -1389,7 +1397,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
+      "line": 111,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr,(int)pCVar5);",
@@ -1397,7 +1405,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_e4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
@@ -1432,7 +1440,7 @@
     },
     {
       "description": "The address of local variable 'fStack_e8' might be accessed at non-zero index.",
-      "line": 92,
+      "line": 91,
       "match": "Cppcheck: pointer-to-object indexed past bounds",
       "severity": "moderate",
       "text": "local_a0[(uint)bVar3 * -2] = (&fStack_e8)[(uint)bVar3 * -2];",
@@ -1440,7 +1448,7 @@
     },
     {
       "description": "Uninitialized variable: local_ec",
-      "line": 91,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_a4 = local_ec;",

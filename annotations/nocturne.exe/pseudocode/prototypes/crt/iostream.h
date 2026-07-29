@@ -13,7 +13,7 @@ _ostream * __cdecl ostream::put(_ostream *this_ptr,int character);
 
 // Original: crt_iostream.cpp_ostream_ctor_FUN_0056b4a9
 // Address: 0056b4a9
-void ostream::ctor(char *param_1,byte param_2);
+_ostream * __cdecl ostream::ctor(_ostream *this_ptr,uint c1);
 
 // Original: crt_iostream.cpp_ios_ctor_FUN_0056b503
 // Address: 0056b503
@@ -29,7 +29,7 @@ ios * __cdecl ios::dtor(ios *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_istream_ctor_FUN_0056b67d
 // Address: 0056b67d
-void istream::ctor(void **param_1,byte param_2);
+_istream * __cdecl istream::ctor(_istream *this_ptr,uint c1);
 
 // Original: crt_iostream.cpp_istream_dtor_FUN_0056b6e8
 // Address: 0056b6e8
@@ -37,7 +37,7 @@ _istream * __cdecl istream::dtor(_istream *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_streambuf_do_sputn_FUN_0056bc70
 // Address: 0056bc70
-int streambuf::do_sputn(int param_1,undefined4 *param_2,uint param_3);
+int __watcallStack streambuf::do_sputn(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write);
 
 // Original: crt_iostream.cpp_streambuf_ctor_FUN_0056fe12
 // Address: 0056fe12
@@ -49,11 +49,11 @@ void __watcallStack streambuf::initBuffer(streambuf *this_ptr,char *buffer_ptr);
 
 // Original: crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82
 // Address: 0056ff82
-int streambuf::do_sgetn(int param_1,undefined4 *param_2,uint param_3);
+int __watcallStack streambuf::do_sgetn(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read);
 
 // Original: crt_iostream.cpp_streambuf_seekoff_FUN_005701af
 // Address: 005701af
-void streambuf::seekoff(int param_1,undefined4 param_2,undefined4 param_3);
+void __watcallStack streambuf::seekoff(streambuf *this_ptr,int off,int dir,int which);
 
 // Original: crt_iostream.cpp_ios_freeBufferChain_FUN_00570410
 // Address: 00570410
@@ -61,7 +61,7 @@ void __cdecl ios::freeBufferChain(ios *stream_ptr);
 
 // Original: crt_iostream.cpp_streambuf_setbuf_FUN_00571d4f
 // Address: 00571d4f
-streambuf * streambuf::setbuf(streambuf *param_1,void *param_2,int param_3);
+streambuf * __watcallStack streambuf::setbuf(streambuf *this_ptr,void *buffer_start,int buffer_size);
 
 // Original: crt_iostream.cpp_streambuf_destructor_FUN_00571d9f
 // Address: 00571d9f
@@ -69,7 +69,7 @@ int streambuf::destructor(int param_1);
 
 // Original: crt_iostream.cpp_doallocate_FUN_00571dc7
 // Address: 00571dc7
-undefined4 doallocate(streambuf *param_1);
+int __watcallStack doallocate(streambuf *this_ptr);
 
 // Original: crt_iostream.cpp_setBuffer_FUN_00571df8
 // Address: 00571df8
@@ -85,4 +85,4 @@ undefined4 streambuf::seekoff(void);
 
 // Original: crt_iostream.cpp_streambuf_sync_FUN_005747f6
 // Address: 005747f6
-undefined4 streambuf::sync(int param_1);
+int __watcallStack streambuf::sync(streambuf *streambuf_ptr);

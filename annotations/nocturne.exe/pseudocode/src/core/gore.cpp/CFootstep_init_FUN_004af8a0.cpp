@@ -15,12 +15,8 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(CFootstep *this_ptr,CVect
   CVector3f *pCVar4;
   float10 fVar5;
   float10 fVar6;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_40;
+  CVector3f local_34 [2];
   float local_18;
   
   iVar2 = 0;
@@ -30,25 +26,26 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(CFootstep *this_ptr,CVect
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
     fVar5 = fVar5 * (float10)0.5;
     fVar6 = fVar6 * (float10)0.5;
-    local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
-                       -fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +
-                      (float10)position->x);
-    local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
-                      fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + position->z;
-    if (&local_34 != &local_40) {
-      local_34 = local_40;
-      local_30 = position->y;
-      local_2c = local_38;
+    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
+                         -fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +
+                        (float10)position->x);
+    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
+                        fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + position->z;
+    if (local_34 != &local_40) {
+      local_34[0].x = local_40.x;
+      local_34[0].y = position->y;
+      local_34[0].z = local_40.z;
     }
-    local_3c = position->y + 1.0;
-    local_30 = local_30 + -3.0f;
-    local_18 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                                (&DAT_01fba938,&local_40,&local_34,0,0);
-    fVar1 = (local_3c - local_18 * (float)4) + 0.08333334f;
-    if (pCVar4 != (CVector3f *)&local_40) {
-      pCVar4->x = local_40;
+    local_40.y = position->y + 1.0;
+    local_34[0].y = local_34[0].y + -3.0f;
+    local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
+                         ((CDemonRaytrace *)&DAT_01fba938,&local_40,local_34,(CVector3f *)0x0,
+                          (int *)0x0);
+    fVar1 = (local_40.y - local_18 * (float)4) + 0.08333334f;
+    if (pCVar4 != &local_40) {
+      pCVar4->x = local_40.x;
       pCVar4->y = fVar1;
-      pCVar4->z = local_38;
+      pCVar4->z = local_40.z;
     }
     iVar2 = iVar2 + 4;
     pCVar4 = pCVar4 + 1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2)
+; void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -79,7 +79,7 @@ section .text
         ;   Label: LAB_0043d079
     PUSH EAX                            ; 0043d07f
     CALL core_flame.cpp_FUN_0048df10    ; 0043d080
-        ;   XREF to: 0048df10 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048df10()
+        ;   XREF to: 0048df10 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_FUN_0048df10(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0043d085
     MOV dword ptr [EBX + 0x570],0x0     ; 0043d088
     JMP 0x0043d055                      ; 0043d092

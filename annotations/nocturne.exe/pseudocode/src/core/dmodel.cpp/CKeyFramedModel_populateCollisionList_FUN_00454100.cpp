@@ -17,12 +17,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(
   CDemonTriangle *this_ptr_01;
   int iVar3;
   int iVar4;
-  byte local_78 [12];
-  byte local_6c [12];
+  CVector3f local_78;
+  CVector3f local_6c;
   CVector3f local_60;
   CVector3f local_54;
   CVector3f local_48;
-  byte local_3c [12];
+  CVector3f local_3c;
   int local_30;
   char *local_2c;
   char *local_28;
@@ -63,17 +63,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(
           local_54.x = (float)pCVar1->x * _DAT_0059c064;
           local_54.y = (float)pCVar1->y * _DAT_0059c064;
           local_54.z = (float)pCVar1->z * _DAT_0059c064;
-          pCVar2 = (CVector3f *)
-                   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                             (local_28,local_3c,&local_48);
+          pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                             ((CMatrix3x3f *)local_28,&local_3c,&local_48);
           if (&local_48 != pCVar2) {
             local_48.x = pCVar2->x;
             local_48.y = pCVar2->y;
             local_48.z = pCVar2->z;
           }
-          pCVar2 = (CVector3f *)
-                   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                             (local_2c,local_78,&local_54);
+          pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                             ((CMatrix3x3f *)local_2c,&local_78,&local_54);
           if (&local_54 != pCVar2) {
             local_54.x = pCVar2->x;
             local_54.y = pCVar2->y;
@@ -87,9 +85,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(
               local_60.x = (float)pCVar1->x * _DAT_0059c064;
               local_60.y = (float)pCVar1->y * _DAT_0059c064;
               local_60.z = (float)pCVar1->z * _DAT_0059c064;
-              pCVar2 = (CVector3f *)
-                       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                 (local_1c,local_6c,&local_60);
+              pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                 ((CMatrix3x3f *)local_1c,&local_6c,&local_60);
               if (&local_60 != pCVar2) {
                 local_60.x = pCVar2->x;
                 local_60.y = pCVar2->y;

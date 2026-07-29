@@ -21,7 +21,7 @@ CDemonActorType * FUN_00411a00(void);
 
 // Original: core_bat.cpp_FUN_00411a10
 // Address: 00411a10
-CKeyFramedModel ** FUN_00411a10(undefined4 param_1);
+CKeyFramedModel ** FUN_00411a10(CDemonActor *param_1);
 
 // Original: core_bat.cpp_CBat_setup_FUN_00411ae0
 // Address: 00411ae0
@@ -49,7 +49,7 @@ void __cdecl CBat::updateCoursePosition(CBat *this_ptr);
 
 // Original: core_bat.cpp_CStairs_dtor_FUN_00412000
 // Address: 00412000
-CDemonActor * CStairs::dtor(CDemonActor *param_1,byte param_2);
+CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
 // Original: core_bat.cpp_FUN_0041206c
 // Address: 0041206c

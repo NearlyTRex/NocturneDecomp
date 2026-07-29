@@ -1,26 +1,27 @@
 // Name: engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00407880
 // Address: 00407880
 // Address Range: [[00407880, 00407a12]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_00407880(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_00407880(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_00407880(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_00407880(SMRGLHeaderPrimitive *prim)
 
 {
-  int iVar1;
+  SMRGLHeaderBasic *pSVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  SMRGLHeaderPrimitive *pSVar4;
   int iVar5;
   int iVar6;
+  int iVar7;
   
-  piVar4 = (int *)(param_1 + 0x18);
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
-  if (iVar1 != 0) {
+  pSVar4 = prim + 1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
+  if (iVar2 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
         _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
@@ -35,51 +36,51 @@ int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_00407880(int param_1)
     else {
       _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
     }
-    iVar6 = 0;
+    iVar7 = 0;
     _DAT_01c039a0 = 0xc3;
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     _DAT_01c039a4 = 1;
-    iVar1 = 0;
-    for (iVar5 = 0; iVar5 < *(int *)(param_1 + 4) * 3; iVar5 = iVar5 + 3) {
-      *(int *)((int)&DAT_006b029c + iVar1) = *piVar4;
-      iVar2 = piVar4[1];
-      iVar3 = piVar4[2];
+    iVar2 = 0;
+    for (iVar6 = 0; iVar6 < (prim->base).count * 3; iVar6 = iVar6 + 3) {
+      *(int *)((int)&DAT_006b029c + iVar2) = (pSVar4->base).type;
+      iVar3 = (pSVar4->base).count;
+      iVar5 = (pSVar4->surface_normal).A.i;
       if (DAT_005b762c < 0x41) {
-        if (iVar2 < 0x40000) {
-          iVar2 = 0x40000;
-        }
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;
         }
-        if (0xfbffff < iVar2) {
-          iVar2 = 0xfbffff;
+        if (iVar5 < 0x40000) {
+          iVar5 = 0x40000;
         }
         if (0xfbffff < iVar3) {
           iVar3 = 0xfbffff;
         }
+        if (0xfbffff < iVar5) {
+          iVar5 = 0xfbffff;
+        }
       }
       else {
-        if (iVar2 < 0x10000) {
-          iVar2 = 0x10000;
-        }
         if (iVar3 < 0x10000) {
           iVar3 = 0x10000;
         }
-        if (0xfeffff < iVar2) {
-          iVar2 = 0xfeffff;
+        if (iVar5 < 0x10000) {
+          iVar5 = 0x10000;
         }
         if (0xfeffff < iVar3) {
           iVar3 = 0xfeffff;
         }
+        if (0xfeffff < iVar5) {
+          iVar5 = 0xfeffff;
+        }
       }
-      (&DAT_005c502c)[*piVar4 * 0xc] = iVar2;
-      iVar2 = *piVar4;
-      iVar1 = iVar1 + 4;
-      iVar6 = iVar6 + 1;
-      piVar4 = piVar4 + 3;
-      *(int *)(&DAT_005c5030 + iVar2 * 0x30) = iVar3;
+      (&DAT_005c502c)[(pSVar4->base).type * 0xc] = iVar3;
+      pSVar1 = &pSVar4->base;
+      iVar2 = iVar2 + 4;
+      iVar7 = iVar7 + 1;
+      pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
+      *(int *)(&DAT_005c5030 + pSVar1->type * 0x30) = iVar5;
     }
-    engine_clipper_c_FUN_00432cd0(iVar6,&DAT_006b029c);
+    engine_clipper_c_FUN_00432cd0(iVar7,&DAT_006b029c);
   }
-  return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

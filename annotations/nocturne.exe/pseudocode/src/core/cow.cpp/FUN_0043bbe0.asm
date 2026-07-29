@@ -11,7 +11,7 @@
 ;   TerminatedCString s_cow_dfm_0057b2d5
 ;   float FLOAT_0059b88c = 50
 ;   float FLOAT_0059b890 = 100
-;   undefined1* PTR_core_cow.cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4 = 0043bc50
+;   CEnemy_full_vtable g_CZombieCowVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -32,9 +32,9 @@ section .text
     MOV EBX,EAX                         ; 0043bbf3
     ADD EAX,0x150                       ; 0043bbf5
     PUSH EAX                            ; 0043bbfa
-    MOV dword ptr [EAX + -0x4],0x59b8a4 ; 0043bbfb | PTR_core_cow.cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4
+    MOV dword ptr [EAX + -0x4],0x59b8a4 ; 0043bbfb | g_CZombieCowVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0043bc02
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0059b88c]          ; 0043bc07 | FLOAT_0059b88c
     MOV dword ptr [EBX + 0x2dd4],0x3fe00000 ; 0043bc0d
     FLD float ptr [0x0059b890]          ; 0043bc17 | FLOAT_0059b890

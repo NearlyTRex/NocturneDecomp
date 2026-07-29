@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00596932
-;   undefined1* PTR_core_trash.cpp_CTrash_setup_FUN_00546ce0_005a3544 = 00546ce0
+;   CDemonActor_vtable g_CTrashVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00546c91
     PUSH EBX                            ; 00546c95
     CALL core_actor.cpp_FUN_00409d30    ; 00546c96
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00546c9b
     ADD EAX,0x150                       ; 00546c9e
     PUSH EAX                            ; 00546ca3
@@ -38,7 +38,7 @@ section .text
     PUSH 0x596932                       ; 00546cb2 | = "question.kfm"
     LEA EAX,[EBX + 0x150]               ; 00546cb7
     PUSH EAX                            ; 00546cbd
-    MOV dword ptr [EBX + 0x14c],0x5a3544 ; 00546cbe | PTR_core_trash.cpp_CTrash_setup_FUN_00546ce0_005a3544
+    MOV dword ptr [EBX + 0x14c],0x5a3544 ; 00546cbe | g_CTrashVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00546cc8
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00546ccd

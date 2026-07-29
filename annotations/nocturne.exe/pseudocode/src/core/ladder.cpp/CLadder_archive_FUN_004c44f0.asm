@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_CLadder_archive_FUN_004c44f0(CDemonActor *param_1)
+; void core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x8                         ; 004c4537
     PUSH EBX                            ; 004c453a
     CALL core_ladder.cpp_FUN_004c46b0   ; 004c453b
-        ;   XREF to: 004c46b0 (UNCONDITIONAL_CALL)  ; undefined core_ladder.cpp_FUN_004c46b0()
+        ;   XREF to: 004c46b0 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_FUN_004c46b0(CLadder * this_ptr)
     MOV EDX,dword ptr [0x005bac68]      ; 004c4540 | INT_005bac68
     ADD ESP,0x4                         ; 004c4546
     CMP EDX,0x2                         ; 004c4549

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
+; void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 ;
+; Parameters:
+; SPose *          Stack[0x4]:4   result_pose
+; SPose *          Stack[0x8]:4   bone_data_out
+; SPose *          Stack[0xc]:4   bone_data_in
+; float            Stack[0x10]:4   blend_weight
+; CDeformableModelInstance * Stack[0x14]:4   instance_ptr
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ; undefined4       Stack[-0x44]:4  local_44

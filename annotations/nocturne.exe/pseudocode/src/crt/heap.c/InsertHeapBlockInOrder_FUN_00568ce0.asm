@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * crt_heap_c_InsertHeapBlockInOrder_FUN_00568ce0(int *param_1)
+; HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_00568ce0(HeapBlock *new_block)
 ;
+; Parameters:
+; HeapBlock *      Stack[0x4]:4   new_block
 ;
 ; XREF[1]:
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00568d58 at 00568dd0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dynamite_cpp_FUN_0046ed80(int param_1)
+; int __cdecl core_dynamite_cpp_FUN_0046ed80(CDynamite *this_ptr)
 ;
+; Parameters:
+; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_0053f310 at 0053f4a6

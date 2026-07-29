@@ -82,8 +82,8 @@ LAB_00542c3c:
     local_84.ammo_type = AMMO_TYPE_SILVER;
     local_84.dismember_prob = 0.7;
     local_84.damage_type = DAMAGE_TYPE_MELEE;
-    iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).canBeGrabbed)
-                      ((CCharacter *)this_ptr_01,(CDemonActor *)&local_24,(int)&local_3c);
+    iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).testDamageLine)
+                      ((CCharacter *)this_ptr_01,&local_24,&local_3c,&local_84,(CVector3f *)0x0);
     if (iVar3 == 0) goto LAB_00542c3c;
     local_14 = 1;
     iVar4 = iVar4 + 1;

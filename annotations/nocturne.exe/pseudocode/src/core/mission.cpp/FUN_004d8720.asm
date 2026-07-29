@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_FUN_004d8720(CDemonMission *param_1,_FILE *param_2)
+; void __cdecl core_mission_cpp_FUN_004d8720(CDemonMission *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -330,7 +333,7 @@ section .text
         ;   Label: LAB_004d8a1e
     PUSH ESI                            ; 004d8a1f
     CALL core_actor.cpp_CDemonActor_save_FUN_0040c040 ; 004d8a20
-        ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_save_FUN_0040c040()
+        ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040c040(CDemonActor * this_ptr, _FILE * file_handle)
     MOV ESI,dword ptr [ESI + 0x144]     ; 004d8a25
     ADD ESP,0x8                         ; 004d8a2b
     TEST ESI,ESI                        ; 004d8a2e

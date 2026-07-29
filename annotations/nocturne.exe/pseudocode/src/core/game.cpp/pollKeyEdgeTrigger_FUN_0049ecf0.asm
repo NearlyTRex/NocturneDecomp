@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_pollKeyEdgeTrigger_FUN_0049ecf0(void)
+; void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_0049ecf0(int key_index,uint *out_state)
 ;
+; Parameters:
+; int              Stack[0x4]:4   key_index
+; uint *           Stack[0x8]:4   out_state
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c02598

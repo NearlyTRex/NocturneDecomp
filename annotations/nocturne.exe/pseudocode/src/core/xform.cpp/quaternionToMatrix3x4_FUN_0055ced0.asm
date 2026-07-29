@@ -35,7 +35,7 @@ section .text
     MOV EDI,ESI                         ; 0055ceec
     LEA ESI,[ESP + 0x4]                 ; 0055ceee
     CALL core_xform.cpp_clearTranslation_FUN_0055ae60 ; 0055cef2
-        ;   XREF to: 0055ae60 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clearTranslation_FUN_0055ae60()
+        ;   XREF to: 0055ae60 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clearTranslation_FUN_0055ae60(CMatrix3x4f * matrix)
     MOV ECX,0xc                         ; 0055cef7
     ADD ESP,0x4                         ; 0055cefc
     MOVSD.REP ES:EDI,ESI                ; 0055ceff

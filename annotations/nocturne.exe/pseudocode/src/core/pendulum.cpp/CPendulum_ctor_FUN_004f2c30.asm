@@ -19,7 +19,7 @@
 ;   undefined4 s_one_0058d000+1
 ;   undefined4 s_ne_0058d000+2
 ;   undefined4 s_e_0058d000+3
-;   undefined1* PTR_core_pendulum.cpp_CPendulum_setup_FUN_004f2d40_005a1244 = 004f2d40
+;   CDemonActor_vtable g_CPendulumVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004f2c33
     PUSH EBX                            ; 004f2c37
     CALL core_actor.cpp_FUN_00409d30    ; 004f2c38
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f2c3d
     ADD EAX,0x150                       ; 004f2c40
     PUSH EAX                            ; 004f2c45
@@ -48,7 +48,7 @@ section .text
     PUSH 0x58cff2                       ; 004f2c54 | = "pend.kfm"
     LEA EAX,[EBX + 0x150]               ; 004f2c59
     PUSH EAX                            ; 004f2c5f
-    MOV dword ptr [EBX + 0x14c],0x5a1244 ; 004f2c60 | PTR_core_pendulum.cpp_CPendulum_setup_FUN_004f2d40_005a1244
+    MOV dword ptr [EBX + 0x14c],0x5a1244 ; 004f2c60 | g_CPendulumVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004f2c6a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f2c6f

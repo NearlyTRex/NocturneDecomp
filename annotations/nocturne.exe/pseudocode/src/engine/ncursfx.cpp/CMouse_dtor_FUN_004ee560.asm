@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(int param_1)
+; CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(CMouse *this_ptr,uint flags)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_menu.cpp_CAlphaBitmap_arrdtor_FUN_004d4370

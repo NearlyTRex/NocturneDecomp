@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00411332
         ;   Label: LAB_00411332
     CALL core_baron.cpp_CBaronWeapon_ctor_FUN_00411350 ; 00411333
-        ;   XREF to: 00411350 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaronWeapon_ctor_FUN_00411350()
+        ;   XREF to: 00411350 (UNCONDITIONAL_CALL)  ; CBaronWeapon * core_baron.cpp_CBaronWeapon_ctor_FUN_00411350(CBaronWeapon * this_ptr)
     ADD ESP,0x4                         ; 00411338
     RET                                 ; 0041133b
 

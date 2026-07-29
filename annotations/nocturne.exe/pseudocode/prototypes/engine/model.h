@@ -5,7 +5,7 @@
 
 // Original: engine_model.c_byteswapMRGLData_FUN_004dcc90
 // Address: 004dcc90
-void byteswapMRGLData(SMRGLHeaderExtended *param_1,int param_2);
+void __cdecl byteswapMRGLData(SMRGLHeaderExtended *mrgl_data,int data_size);
 
 // Original: engine_model.c_loadModelFile_FUN_004dcd10
 // Address: 004dcd10
@@ -29,7 +29,7 @@ void __cdecl loadMRGLTextures(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_model.c_initializeMRGLModel_FUN_004dd760
 // Address: 004dd760
-void initializeMRGLModel(void);
+void __cdecl initializeMRGLModel(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_model.c_loadModelChunk_FUN_004dd790
 // Address: 004dd790

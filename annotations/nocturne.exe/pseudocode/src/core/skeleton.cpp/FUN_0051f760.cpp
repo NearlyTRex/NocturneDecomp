@@ -1,14 +1,14 @@
 // Name: core_skeleton.cpp_FUN_0051f760
 // Address: 0051f760
 // Address Range: [[0051f760, 0051f7f6]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_FUN_0051f760(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_FUN_0051f760(char *output_buffer)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_skeleton_cpp_FUN_0051f760(uint param_1)
+void __cdecl core_skeleton_cpp_FUN_0051f760(char *output_buffer)
 
 {
   int iVar1;
@@ -40,6 +40,7 @@ void core_skeleton_cpp_FUN_0051f760(uint param_1)
       this_ptr_00 = (CDeformableModel *)(this_ptr_00->texture_sets[1].textures[0x45].textures + 1);
     } while (iVar3 < _DAT_0268cef0);
   }
-  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,iVar1);
+  _sprintf(output_buffer,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,
+             iVar1);
   return;
 }

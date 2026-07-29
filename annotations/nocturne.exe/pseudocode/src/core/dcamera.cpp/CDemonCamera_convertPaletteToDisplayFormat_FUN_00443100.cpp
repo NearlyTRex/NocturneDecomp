@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100
 // Address: 00443100
 // Address Range: [[00443100, 00443173]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
-void core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100(void)
+void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100(CDemonCamera *this_ptr)
 
 {
   int iVar1;

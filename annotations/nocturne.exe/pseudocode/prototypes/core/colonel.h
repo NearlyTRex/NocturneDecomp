@@ -17,19 +17,19 @@ CDemonActorType * FUN_00439d20(void);
 
 // Original: core_colonel.cpp_FUN_00439d30
 // Address: 00439d30
-int FUN_00439d30(undefined4 param_1);
+CHero * FUN_00439d30(CHero *param_1);
 
-// Original: core_colonel.cpp_FUN_00439da0
+// Original: core_colonel.cpp_CColonel_setup_FUN_00439da0
 // Address: 00439da0
-void FUN_00439da0(int param_1);
+void __cdecl CColonel::setup(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_FUN_00439f50
 // Address: 00439f50
-void FUN_00439f50(CHero *param_1,float param_2);
+void FUN_00439f50(CColonel *param_1,float param_2);
 
 // Original: core_colonel.cpp_CColonel_processAI_FUN_0043a470
 // Address: 0043a470
-void __cdecl CColonel::processAI(int param_1,float param_2);
+void __cdecl CColonel::processAI(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_processMotionEvents_FUN_0043a980
 // Address: 0043a980
@@ -37,7 +37,7 @@ ushort CColonel::processMotionEvents(CCharacter *param_1,float param_2);
 
 // Original: core_colonel.cpp_FUN_0043a9e0
 // Address: 0043a9e0
-void FUN_0043a9e0(undefined4 param_1);
+void FUN_0043a9e0(CHero *param_1);
 
 // Original: core_colonel.cpp_FUN_0043a9f0
 // Address: 0043a9f0
@@ -47,17 +47,17 @@ void FUN_0043a9f0(CCharacter *param_1);
 // Address: 0043aa00
 void CColonel::processDamage(CCharacter *param_1,SDamageInfo *param_2);
 
-// Original: core_colonel.cpp_FUN_0043ab20
+// Original: core_colonel.cpp_CColonel_isWeaponDrawn_FUN_0043ab20
 // Address: 0043ab20
-undefined4 FUN_0043ab20(int param_1);
+int __cdecl CColonel::isWeaponDrawn(CColonel *this_ptr);
 
-// Original: core_colonel.cpp_FUN_0043ab30
+// Original: core_colonel.cpp_CColonel_drawWeapon_FUN_0043ab30
 // Address: 0043ab30
-void FUN_0043ab30(int param_1,undefined4 param_2);
+void __cdecl CColonel::drawWeapon(CColonel *this_ptr,int drawn);
 
 // Original: core_colonel.cpp_getCurrentMotionState_FUN_0043ab40
 // Address: 0043ab40
-int getCurrentMotionState(void);
+int __cdecl getCurrentMotionState(CMotionController *motion_ptr);
 
 // Original: core_colonel.cpp_FUN_0043ab60
 // Address: 0043ab60

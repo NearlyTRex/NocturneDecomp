@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 00425c6b (CONDITIONAL_JUMP)  ; LAB_00425c6b
     PUSH EBX                            ; 00425c62
     CALL core_charactr.cpp_FUN_004270e0 ; 00425c63
-        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004270e0()
+        ;   XREF to: 004270e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_004270e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00425c68
     PUSH EBX                            ; 00425c6b
         ;   Label: LAB_00425c6b

@@ -1,19 +1,19 @@
 // Name: core_teleport.cpp_CTeleportDest_getBoundingBox_FUN_00543860
 // Address: 00543860
 // Address Range: [[00543860, 0054388d]]
-// Convention: unknown
-// Signature: void core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(undefined4 param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(uint param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
 
 {
-  param_2[1] = 0xbf800000;
-  param_2[2] = 0xc0e00000;
-  param_2[3] = 0x40e00000;
-  param_2[4] = 0x41000000;
-  param_2[5] = 0x40e00000;
-  *param_2 = 0xc0e00000;
-  return;
+  (out_box->min).y = -1.0;
+  (out_box->min).z = -7.0;
+  (out_box->max).x = 7.0;
+  (out_box->max).y = 8.0;
+  (out_box->max).z = 7.0;
+  (out_box->min).x = -7.0;
+  return out_box;
 }

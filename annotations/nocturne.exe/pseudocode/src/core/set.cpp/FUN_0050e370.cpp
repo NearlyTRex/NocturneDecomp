@@ -1,35 +1,33 @@
 // Name: core_set.cpp_FUN_0050e370
 // Address: 0050e370
 // Address Range: [[0050e370, 0050e3f8]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050e370(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0050e370(CDemonSet *this_ptr,CVector3f *position)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_set_cpp_FUN_0050e370(int param_1,float *param_2)
+void __cdecl core_set_cpp_FUN_0050e370(CDemonSet *this_ptr,CVector3f *position)
 
 {
-  uint uVar1;
-  uint uVar2;
-  int local_10;
-  int local_c;
-  int local_8;
+  CDemonActor *pCVar1;
+  CDemonActor *pCVar2;
+  CVector3i local_10;
   
-  if (param_2 == (float *)0x0) {
-    *(uint *)(param_1 + 0x161270) = 0;
+  if (position == (CVector3f *)0x0) {
+    this_ptr->sorted_render_actors[0x6e2] = (CDemonActor *)0x0;
     return;
   }
-  local_10 = (int)ROUND(*param_2 * _DAT_005a18f0);
-  local_c = (int)ROUND(param_2[1] * _DAT_005a18f0);
-  local_8 = (int)ROUND(param_2[2] * _DAT_005a18f0);
-  core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,&local_10,0,0,0);
-  uVar1 = DAT_005c5034;
-  *(uint *)(param_1 + 0x161270) = 1;
-  uVar2 = DAT_005c503c;
-  *(uint *)(param_1 + 0x161274) = uVar1;
-  *(uint *)(param_1 + 0x16127c) = uVar2;
-  *(uint *)(param_1 + 0x161278) = DAT_005c5038;
+  local_10.x = (int)ROUND(position->x * _DAT_005a18f0);
+  local_10.y = (int)ROUND(position->y * _DAT_005a18f0);
+  local_10.z = (int)ROUND(position->z * _DAT_005a18f0);
+  core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(this_ptr,&local_10,(CVector3i *)0x0,0,0);
+  pCVar1 = DAT_005c5034;
+  this_ptr->sorted_render_actors[0x6e2] = (CDemonActor *)0x1;
+  pCVar2 = DAT_005c503c;
+  this_ptr->sorted_render_actors[0x6e3] = pCVar1;
+  this_ptr->sorted_render_actors[0x6e5] = pCVar2;
+  this_ptr->sorted_render_actors[0x6e4] = DAT_005c5038;
   return;
 }

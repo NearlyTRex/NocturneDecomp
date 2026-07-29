@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_fstream_cpp_filebuf_underflow_FUN_005721d7(int param_1)
+; int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_ptr)
 ;
+; Parameters:
+; filebuf *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0

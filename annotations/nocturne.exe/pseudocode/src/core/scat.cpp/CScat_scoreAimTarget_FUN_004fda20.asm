@@ -127,7 +127,7 @@ section .text
     LEA EAX,[ESP + 0xac]                ; 004fdaff
     PUSH EAX                            ; 004fdb06
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004fdb07
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004fdb0c
     MOV EAX,dword ptr [EAX + 0x4]       ; 004fdb0f
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004fdb12
@@ -244,7 +244,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004fdc7d | DAT_005be368
     PUSH ECX                            ; 004fdc83 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004fdc84
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x108],EAX     ; 004fdc89
     FLD float ptr [ESP + 0x108]         ; 004fdc90
     ADD ESP,0xc                         ; 004fdc97

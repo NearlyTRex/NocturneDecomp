@@ -27,7 +27,7 @@ section .text
     PUSH EAX                            ; 004116f2
         ;   Label: LAB_004116f2
     CALL core_barrier.cpp_CBarrier_ctor_FUN_00411710 ; 004116f3
-        ;   XREF to: 00411710 (UNCONDITIONAL_CALL)  ; undefined core_barrier.cpp_CBarrier_ctor_FUN_00411710()
+        ;   XREF to: 00411710 (UNCONDITIONAL_CALL)  ; CBarrier * core_barrier.cpp_CBarrier_ctor_FUN_00411710(CBarrier * this_ptr)
     ADD ESP,0x4                         ; 004116f8
     RET                                 ; 004116fb
 

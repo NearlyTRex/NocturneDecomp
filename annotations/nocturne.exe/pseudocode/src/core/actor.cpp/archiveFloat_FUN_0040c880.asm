@@ -12,7 +12,7 @@
 ; XREF[67]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d31d
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f3f7
-;   core_anvil.cpp_FUN_0040f7d0 at 0040f812
+;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f812
 ;   core_armour.cpp_FUN_0040fb60 at 0040fb7b
 ;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411b7e
 ;   core_batcreat.cpp_FUN_00412d80 at 00412d9b
@@ -52,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x00763e84]      ; 0040c895 | DAT_00763e84
     PUSH EBX                            ; 0040c89b
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c89c
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040c8a1
     CMP EAX,0x1                         ; 0040c8a4
     JNZ 0x0040c8be                      ; 0040c8a7

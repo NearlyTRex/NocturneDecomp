@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(int param_1)
+; void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004118af | DAT_005be368
     PUSH ECX                            ; 004118b5 | DAT_01e57284
     CALL core_setcolid.cpp_FUN_00511a10 ; 004118b6
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00511a10()
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004118bb
     RET                                 ; 004118be
 

@@ -54,7 +54,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 0050bb68
     PUSH EDI                            ; 0050bb6c
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050bb6d
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 0050bb72
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0050bb75
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050bb79

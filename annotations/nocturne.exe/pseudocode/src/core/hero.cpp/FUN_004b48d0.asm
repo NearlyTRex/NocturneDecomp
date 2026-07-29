@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_FUN_004b48d0(CCharacter *param_1)
+; void __cdecl core_hero_cpp_FUN_004b48d0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102c7
-;   core_colonel.cpp_FUN_00439da0 at 00439da7
+;   core_colonel.cpp_CColonel_setup_FUN_00439da0 at 00439da7
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 004957c8
-;   core_haystack.cpp_FUN_004b3110 at 004b3117
+;   core_haystack.cpp_CHaystack_setup_FUN_004b3110 at 004b3117
 ;   core_icepick.cpp_CIcePick_setup_FUN_004b9db0 at 004b9db7
 ;   core_moloch.cpp_CMoloch_setup_FUN_004dda70 at 004ddaf9
 ;   core_scat.cpp_CScat_setup_FUN_004fbcc0 at 004fbcc7

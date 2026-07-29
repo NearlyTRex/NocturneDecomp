@@ -1,21 +1,22 @@
 // Name: core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
 // Address: 0054c690
 // Address Range: [[0054c690, 0054d89b]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,float param_2)
+void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *this_ptr,float delta_time)
 
 {
-  CVector3f *pCVar1;
-  CLocation *pCVar2;
+  CLocation *pCVar1;
   UOrientationVector *euler;
-  CBoundingBox3D *pCVar3;
-  CDeformableModelInstance *pCVar4;
+  CBoundingBox3D *pCVar2;
+  CDeformableModelInstance *pCVar3;
+  float fVar4;
   float fVar5;
   CEventList *pCVar6;
   CGame *pCVar7;
@@ -23,46 +24,38 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,f
   SMotion *pSVar9;
   CBoundingBox3D *pCVar10;
   uint uVar11;
-  CCharacter *this_ptr;
-  CVampireBoss *pCVar12;
-  float10 fVar13;
-  float10 fVar14;
+  CCharacter *this_ptr_00;
+  CVector3f *pCVar12;
+  int iVar13;
+  CVampireBoss *pCVar14;
   float10 fVar15;
   float10 fVar16;
   float10 fVar17;
   float10 fVar18;
-  uint uVar19;
-  uint uVar20;
-  float fVar21;
-  int iVar22;
+  float10 fVar19;
+  float10 fVar20;
   SDamageInfo local_244;
-  byte auStack_208 [4];
-  float fStack_204;
+  SDamageInfo SStack_208;
   CBoundingBox3D local_1cc;
   byte local_1b4 [48];
   CBoundingBox3D local_184;
   CBoundingBox3D local_16c;
   CBoundingBox3D local_154;
-  float local_13c;
-  float local_138;
-  float local_134;
-  byte local_130 [16];
+  CVector3f local_13c;
+  CVector3f local_130;
   float local_120;
   float local_114;
-  byte auStack_108 [12];
-  float local_fc;
-  float local_f8;
+  CVector3f CStack_10c;
+  CVector3f local_100;
   float local_f4;
   float local_f0;
-  char local_ec [4];
+  float local_ec;
   float local_e8;
   float local_e4;
   float local_e0;
-  byte local_dc [12];
-  uint local_d0 [2];
-  float local_c8;
-  CDemonActor *pCStack_c0;
-  UActorVTable UStack_bc;
+  CVector3f local_dc;
+  CVector3f local_d0;
+  CVector3f CStack_c4;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -85,75 +78,74 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,f
   float local_1c;
   CVector3f *local_18;
   
-  pCVar12 = param_1;
+  pCVar14 = this_ptr;
   do {
-    if ((pCVar12->skirt_cloth).vertices[0x275].connected_indices[9] == 0) {
+    if ((pCVar14->skirt_cloth).vertices[0x275].connected_indices[9] == 0) {
       PTR_01cc4800 = "..\\core\\vampboss.cpp";
       INT_01cc4804 = 0xcf;
       core_main_c_FUN_004c8440("CVampireBoss::process - Need 4 waypoints");
     }
-    pCVar12 = (CVampireBoss *)((pCVar12->base).base.base.actor_name + 4);
-  } while (pCVar12 != (CVampireBoss *)((param_1->base).base.base.actor_name + 0x10));
-  iVar8 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+    pCVar14 = (CVampireBoss *)((pCVar14->base).base.base.actor_name + 4);
+  } while (pCVar14 != (CVampireBoss *)((this_ptr->base).base.base.actor_name + 0x10));
+  iVar8 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     return;
   }
-  iVar8 = (param_1->skirt_cloth).vertices[0x26a].connected_indices[3];
+  iVar8 = (this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3];
   if (iVar8 == 2) {
-    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(param_1,param_2);
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
-              (&param_1->model);
+              (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              (&param_1->wing_cloth,&(param_1->base).base.base.location.position,
-               &(param_1->base).base.base.orient.vec,param_2,
-               (param_1->base).base.closest_distance_threshold,&param_1->model);
-    if ((param_1->base).base.hit_points < (float)25) {
-      iVar8 = (param_1->skirt_cloth).vertices[0x275].connected_indices[7];
-      (param_1->base).base.hit_points = 24.999;
+              (&this_ptr->wing_cloth,&(this_ptr->base).base.base.location.position,
+               &(this_ptr->base).base.base.orient.vec,delta_time,
+               (this_ptr->base).base.closest_distance_threshold,&this_ptr->model);
+    if ((this_ptr->base).base.hit_points < (float)25) {
+      iVar8 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7];
+      (this_ptr->base).base.hit_points = 24.999;
       if ((iVar8 != 2) && (iVar8 != 3)) {
-        core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(param_1);
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[7] = 2;
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[4] = 0x40a00000;
+        core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(this_ptr);
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 2;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] = 0x40a00000;
       }
     }
-    iVar8 = (param_1->skirt_cloth).vertices[0x275].connected_indices[7];
+    iVar8 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7];
     if ((iVar8 != 2) && (iVar8 != 3)) {
       iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      local_f4 = (param_1->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
-      local_f0 = (param_1->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
-      local_ec = (char  [4])
-                 ((param_1->base).base.base.location.position.z - *(float *)(iVar8 + 0x28));
-      fVar21 = SQRT(local_f4 * local_f4 + (float)local_ec * (float)local_ec);
-      if (fVar21 < (float)5) {
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[7] = 1;
+      local_f4 = (this_ptr->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
+      local_f0 = (this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
+      local_ec = (this_ptr->base).base.base.location.position.z - *(float *)(iVar8 + 0x28);
+      fVar4 = SQRT(local_f4 * local_f4 + local_ec * local_ec);
+      if (fVar4 < (float)5) {
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 1;
         local_18 = (CVector3f *)(uint)(local_f0 < (float)10);
         if ((float10)0 != ABS((float10)(int)local_18)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_244);
           local_244.damage_amount = 10.0;
-          local_244.attacker = (CDemonActor *)param_1;
+          local_244.attacker = (CDemonActor *)this_ptr;
           iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-          local_244.wielder = (CDemonActor *)param_1;
+          local_244.wielder = (CDemonActor *)this_ptr;
           (**(code **)(*(int *)(iVar8 + 0x14c) + 0x100))(iVar8,&local_244);
         }
       }
-      if ((float)40 < fVar21) {
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40a00000;
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[5] = 0;
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[7] = 0;
+      if ((float)40 < fVar4) {
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40a00000;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[5] = 0;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 0;
       }
-      if (((param_1->skirt_cloth).vertices[0x275].connected_indices[7] == 0) &&
-         (fVar5 = (float)(param_1->skirt_cloth).vertices[0x275].connected_indices[3] - param_2,
-         (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = (int)fVar5, fVar5 < 0.0)) {
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[7] = 1;
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0;
+      if (((this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] == 0) &&
+         (fVar5 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] - delta_time,
+         (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = (int)fVar5, fVar5 < 0.0)) {
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 1;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0;
       }
       pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(param_1->model).motion_controller);
+                         (&(this_ptr->model).motion_controller);
       if ((((pSVar9->state_index == 0) &&
-           ((param_1->skirt_cloth).vertices[0x275].connected_indices[7] == 0)) &&
-          (fVar21 < (float)24)) &&
-         ((param_1->skirt_cloth).vertices[0x275].connected_indices[5] == 0)) {
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[5] = 1;
+           ((this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] == 0)) &&
+          (fVar4 < (float)24)) &&
+         ((this_ptr->skirt_cloth).vertices[0x275].connected_indices[5] == 0)) {
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[5] = 1;
         iVar8 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
         if (iVar8 == 0) {
           iVar8 = 2;
@@ -162,7 +154,7 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,f
           iVar8 = 1;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(param_1->model).motion_controller,iVar8,1);
+                  (&(this_ptr->model).motion_controller,iVar8,1);
       }
     }
     iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
@@ -171,285 +163,280 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *param_1,f
       local_b4 = *(float *)(iVar8 + 0x24);
       local_b0 = *(float *)(iVar8 + 0x28);
     }
-    iVar8 = (param_1->skirt_cloth).vertices[0x275].connected_indices[7];
+    iVar8 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7];
     if (iVar8 == 2) {
-      iVar8 = (param_1->skirt_cloth).vertices[0x275].connected_indices[8];
-      (param_1->skirt_cloth).vertices[0x275].connected_indices[4] =
-           (int)((float)(param_1->skirt_cloth).vertices[0x275].connected_indices[4] - param_2);
-      iVar8 = *(int *)((int)param_1 + (4 - iVar8) * 4 + 0xbedb0);
+      iVar8 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices[8];
+      (this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] =
+           (int)((float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] - delta_time);
+      iVar8 = *(int *)((int)this_ptr + (4 - iVar8) * 4 + 0xbedb0);
       if (&local_b8 != (float *)(iVar8 + 0x20)) {
         local_b8 = *(float *)(iVar8 + 0x20);
         local_b4 = *(float *)(iVar8 + 0x24);
         local_b0 = *(float *)(iVar8 + 0x28);
       }
-      if (((float)(param_1->skirt_cloth).vertices[0x275].connected_indices[4] <= 0.0) ||
-         (fVar21 = local_b8 - (param_1->base).base.base.location.position.x,
-         fVar5 = local_b0 - (param_1->base).base.base.location.position.z,
-         SQRT(fVar5 * fVar5 + fVar21 * fVar21) < (float)6)) {
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[4] = 0x40a00000;
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[7] = 3;
+      if (((float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] <= 0.0) ||
+         (fVar4 = local_b8 - (this_ptr->base).base.base.location.position.x,
+         fVar5 = local_b0 - (this_ptr->base).base.base.location.position.z,
+         SQRT(fVar5 * fVar5 + fVar4 * fVar4) < (float)6)) {
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] = 0x40a00000;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] = 3;
       }
     }
     else if (iVar8 == 3) {
-      iVar8 = (param_1->skirt_cloth).vertices[0x275].connected_indices
-              [(param_1->skirt_cloth).vertices[0x275].connected_indices[8] + 9];
+      iVar8 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices
+              [(this_ptr->skirt_cloth).vertices[0x275].connected_indices[8] + 9];
       if (&local_b8 != (float *)(iVar8 + 0x20)) {
         local_b8 = *(float *)(iVar8 + 0x20);
         local_b4 = *(float *)(iVar8 + 0x24);
         local_b0 = *(float *)(iVar8 + 0x28);
       }
-      fVar21 = (float)(param_1->skirt_cloth).vertices[0x275].connected_indices[4] - param_2;
-      (param_1->skirt_cloth).vertices[0x275].connected_indices[4] = (int)fVar21;
-      if ((fVar21 <= 0.0) ||
-         (fVar21 = local_b8 - (param_1->base).base.base.location.position.x,
-         fVar5 = local_b0 - (param_1->base).base.base.location.position.z,
-         SQRT(fVar5 * fVar5 + fVar21 * fVar21) < (float)4)) {
-        core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(param_1);
+      fVar4 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] - delta_time;
+      (this_ptr->skirt_cloth).vertices[0x275].connected_indices[4] = (int)fVar4;
+      if ((fVar4 <= 0.0) ||
+         (fVar4 = local_b8 - (this_ptr->base).base.base.location.position.x,
+         fVar5 = local_b0 - (this_ptr->base).base.base.location.position.z,
+         SQRT(fVar5 * fVar5 + fVar4 * fVar4) < (float)4)) {
+        core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(this_ptr);
       }
     }
     local_b4 = local_b4 + 4.0f;
-    local_e8 = local_b8 - (param_1->base).base.base.location.position.x;
-    local_e4 = local_b4 - (param_1->base).base.base.location.position.y;
-    fVar13 = (float10)local_b0 - (float10)(param_1->base).base.base.location.position.z;
-    local_e0 = (float)fVar13;
-    uVar20 = 0x54ca26;
-    atan2((float10)local_e8,fVar13);
-    fVar13 = SQRT((float10)(float)local_ec * (float10)(float)local_ec +
-                  (float10)local_e4 * (float10)local_e4);
-    uVar19 = 0x54ca48;
-    fVar14 = atan2((float10)local_e8,fVar13);
+    local_e8 = local_b8 - (this_ptr->base).base.base.location.position.x;
+    local_e4 = local_b4 - (this_ptr->base).base.base.location.position.y;
+    fVar15 = (float10)local_b0 - (float10)(this_ptr->base).base.base.location.position.z;
+    local_e0 = (float)fVar15;
+    atan2((float10)local_e8,fVar15);
+    fVar15 = SQRT((float10)local_ec * (float10)local_ec + (float10)local_e4 * (float10)local_e4);
+    fVar16 = atan2((float10)local_e8,fVar15);
     fStack_70 = 1.2;
     local_4c = (CVector3f *)0x41a00000;
-    local_48 = (CVector3f *)(float)fVar13;
-    local_40 = (float)-fVar14;
-    if ((param_1->skirt_cloth).vertices[0x275].connected_indices[7] == 1) {
+    local_48 = (CVector3f *)(float)fVar15;
+    local_40 = (float)-fVar16;
+    if ((this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] == 1) {
       local_48 = (CVector3f *)-(float)local_48;
       local_40 = -local_40;
     }
-    local_20 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                ((float)local_48 - (param_1->base).base.base.orient.vec.y,uVar19,
-                                 uVar20);
-    fVar21 = local_20 * param_2 * fStack_70;
-    if (ABS(fVar21) <= ABS(local_20)) {
-      (param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.y + fVar21;
+    local_20 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                         ((float)local_48 - (this_ptr->base).base.base.orient.vec.y);
+    fVar4 = local_20 * delta_time * fStack_70;
+    if (ABS(fVar4) <= ABS(local_20)) {
+      (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + fVar4;
     }
     else {
-      (param_1->base).base.base.orient.vec.y = (float)local_48;
+      (this_ptr->base).base.base.orient.vec.y = (float)local_48;
     }
-    local_40 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                (local_40 - (param_1->base).base.base.orient.vec.x,uVar19);
-    fVar21 = (param_1->base).base.hit_points;
+    local_40 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                         (local_40 - (this_ptr->base).base.base.orient.vec.x);
+    fVar4 = (this_ptr->base).base.hit_points;
     local_60 = -0.3926991;
     fStack_2c = 0.3926991;
-    (param_1->base).base.base.orient.vec.x =
-         local_40 * param_2 * fStack_70 + (param_1->base).base.base.orient.vec.x;
-    if ((fVar21 < (float)25) &&
-       ((param_1->skirt_cloth).vertices[0x275].connected_indices[7] == 0)) {
+    (this_ptr->base).base.base.orient.vec.x =
+         local_40 * delta_time * fStack_70 + (this_ptr->base).base.base.orient.vec.x;
+    if ((fVar4 < (float)25) &&
+       ((this_ptr->skirt_cloth).vertices[0x275].connected_indices[7] == 0)) {
       fStack_2c = 1.5707964;
       local_60 = -1.5707964;
     }
-    if ((param_1->base).base.base.orient.vec.x < local_60) {
-      (param_1->base).base.base.orient.vec.x = local_60;
+    if ((this_ptr->base).base.base.orient.vec.x < local_60) {
+      (this_ptr->base).base.base.orient.vec.x = local_60;
     }
-    if (fStack_2c < (param_1->base).base.base.orient.vec.x) {
-      (param_1->base).base.base.orient.vec.x = fStack_2c;
+    if (fStack_2c < (this_ptr->base).base.base.orient.vec.x) {
+      (this_ptr->base).base.base.orient.vec.x = fStack_2c;
     }
-    fVar13 = (float10)(param_1->base).base.base.orient.vec.x;
-    fVar14 = (float10)fsin(fVar13);
-    fVar15 = (float10)(param_1->base).base.base.orient.vec.y;
+    fVar15 = (float10)(this_ptr->base).base.base.orient.vec.x;
     fVar16 = (float10)fsin(fVar15);
-    fVar13 = (float10)fcos(fVar13);
+    fVar17 = (float10)(this_ptr->base).base.base.orient.vec.y;
+    fVar18 = (float10)fsin(fVar17);
     fVar15 = (float10)fcos(fVar15);
-    fVar17 = (float10)(float)local_4c;
-    fVar18 = (float10)param_2;
-    fVar14 = -fVar14 * fVar17 * fVar18 + (float10)(param_1->base).base.base.location.position.y;
-    (param_1->base).base.base.location.position.y = (float)fVar14;
-    fVar21 = (param_1->base).base.base.location.position.z;
-    (param_1->base).base.base.location.position.x =
-         (float)(fVar16 * fVar13 * fVar17 * fVar18 +
-                (float10)(param_1->base).base.base.location.position.x);
-    (param_1->base).base.base.location.position.z =
-         (float)(fVar15 * fVar13 * fVar17 * fVar18 + (float10)fVar21);
-    if (fVar14 < (float10)(float)UStack_bc) {
-      (param_1->base).base.base.location.position.y = (float)UStack_bc;
+    fVar17 = (float10)fcos(fVar17);
+    fVar19 = (float10)(float)local_4c;
+    fVar20 = (float10)delta_time;
+    fVar16 = -fVar16 * fVar19 * fVar20 + (float10)(this_ptr->base).base.base.location.position.y;
+    (this_ptr->base).base.base.location.position.y = (float)fVar16;
+    fVar4 = (this_ptr->base).base.base.location.position.z;
+    (this_ptr->base).base.base.location.position.x =
+         (float)(fVar18 * fVar15 * fVar19 * fVar20 +
+                (float10)(this_ptr->base).base.base.location.position.x);
+    (this_ptr->base).base.base.location.position.z =
+         (float)(fVar17 * fVar15 * fVar19 * fVar20 + (float10)fVar4);
+    if (fVar16 < (float10)CStack_c4.z) {
+      (this_ptr->base).base.base.location.position.y = CStack_c4.z;
     }
     local_20 = local_40;
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)param_1);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)this_ptr);
     pCVar10 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-                        (&param_1->model,(CBoundingBox3D *)(local_1b4 + 0x10));
-    pCVar3 = &(param_1->base).base.cached_bounding_box;
-    if (pCVar3 != pCVar10) {
-      (pCVar3->min).x = (pCVar10->min).x;
-      (param_1->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
-      (param_1->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
+                        (&this_ptr->model,(CBoundingBox3D *)(local_1b4 + 0x10));
+    pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+    if (pCVar2 != pCVar10) {
+      (pCVar2->min).x = (pCVar10->min).x;
+      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
+      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
     }
-    pCVar1 = &(param_1->base).base.cached_bounding_box.max;
-    if (pCVar1 != &pCVar10->max) {
-      pCVar1->x = (pCVar10->max).x;
-      (param_1->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
-      (param_1->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
+    pCVar12 = &(this_ptr->base).base.cached_bounding_box.max;
+    if (pCVar12 != &pCVar10->max) {
+      pCVar12->x = (pCVar10->max).x;
+      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
+      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
     }
     goto LAB_0054cc7f;
   }
   if (iVar8 == 1) {
-    fVar21 = param_2 / 5.0f +
-             (float)(param_1->skirt_cloth).vertices[0x275].connected_indices[2];
-    (param_1->skirt_cloth).vertices[0x275].connected_indices[2] = (int)fVar21;
+    fVar4 = delta_time / 5.0f +
+            (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+    (this_ptr->skirt_cloth).vertices[0x275].connected_indices[2] = (int)fVar4;
     pCVar6 = 0x01C03A10;
-    if (1.0 <= fVar21) {
-      (param_1->skirt_cloth).vertices[0x26a].connected_indices[3] = 2;
+    if (1.0 <= fVar4) {
+      (this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] = 2;
       core_event_cpp_CEventList_executeCommands_FUN_0047ab70(pCVar6,"morphCompleted");
     }
-    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(param_1,param_2);
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
-              (&param_1->model);
+              (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              (&param_1->wing_cloth,&(param_1->base).base.base.location.position,
-               &(param_1->base).base.base.orient.vec,param_2,
-               (param_1->base).base.closest_distance_threshold,&param_1->model);
-    pCVar4 = &(param_1->base).base.model;
-    local_20 = param_2;
+              (&this_ptr->wing_cloth,&(this_ptr->base).base.base.location.position,
+               &(this_ptr->base).base.base.orient.vec,delta_time,
+               (this_ptr->base).base.closest_distance_threshold,&this_ptr->model);
+    pCVar3 = &(this_ptr->base).base.model;
+    local_20 = delta_time;
     while (0.0 < local_20) {
-      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar4->motion_controller,&local_20);
+      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar3->motion_controller,&local_20);
     }
-    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar4);
-    local_18 = (CVector3f *)&(param_1->base).base.base.orient;
-    pCVar2 = &(param_1->base).base.base.location;
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar3);
+    local_18 = (CVector3f *)&(this_ptr->base).base.base.orient;
+    pCVar1 = &(this_ptr->base).base.base.location;
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              ((CCloth *)((param_1->wing_cloth).vertices[0x300].connected_indices + 9),
-               &pCVar2->position,local_18,param_2,(param_1->base).base.closest_distance_threshold,
-               pCVar4);
+              ((CCloth *)((this_ptr->wing_cloth).vertices[0x300].connected_indices + 9),
+               &pCVar1->position,local_18,delta_time,
+               (this_ptr->base).base.closest_distance_threshold,pCVar3);
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              ((CCloth *)((param_1->cape_cloth).vertices[0x2b5].connected_indices + 6),
-               &pCVar2->position,local_18,param_2,(param_1->base).base.closest_distance_threshold,
-               pCVar4);
+              ((CCloth *)((this_ptr->cape_cloth).vertices[0x2b5].connected_indices + 6),
+               &pCVar1->position,local_18,delta_time,
+               (this_ptr->base).base.closest_distance_threshold,pCVar3);
     pCVar10 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-                        (pCVar4,&local_154);
-    pCVar3 = &(param_1->base).base.cached_bounding_box;
-    if (pCVar3 != pCVar10) {
-      (pCVar3->min).x = (pCVar10->min).x;
-      (param_1->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
-      (param_1->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
+                        (pCVar3,&local_154);
+    pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+    if (pCVar2 != pCVar10) {
+      (pCVar2->min).x = (pCVar10->min).x;
+      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
+      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
     }
-    pCVar1 = &(param_1->base).base.cached_bounding_box.max;
-    if (pCVar1 != &pCVar10->max) {
-      pCVar1->x = (pCVar10->max).x;
-      (param_1->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
-      (param_1->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
+    pCVar12 = &(this_ptr->base).base.cached_bounding_box.max;
+    if (pCVar12 != &pCVar10->max) {
+      pCVar12->x = (pCVar10->max).x;
+      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
+      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-              (&param_1->model,&local_184);
-    pCVar3 = &(param_1->base).base.cached_bounding_box;
-    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar3,&local_184.min);
-    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar3,&local_184.max);
-    (param_1->base).base.base.location.position.y =
-         (param_1->base).base.base.location.position.y + param_2;
+              (&this_ptr->model,&local_184);
+    pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar2,&local_184.min);
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar2,&local_184.max);
+    (this_ptr->base).base.base.location.position.y =
+         (this_ptr->base).base.base.location.position.y + delta_time;
     goto LAB_0054cc7f;
   }
   if (iVar8 == 3) {
-    local_64 = param_2 / 5.0f;
-    local_60 = (float)(param_1->skirt_cloth).vertices[0x275].connected_indices[2];
-    (param_1->skirt_cloth).vertices[0x275].connected_indices[2] = (int)(local_60 - local_64);
+    local_64 = delta_time / 5.0f;
+    local_60 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+    (this_ptr->skirt_cloth).vertices[0x275].connected_indices[2] = (int)(local_60 - local_64);
     pCVar6 = 0x01C03A10;
     if (0.0 < local_60 - local_64) {
-      fVar21 = (local_64 / local_60) *
-               ((param_1->base).base.closest_distance_threshold -
-               (param_1->base).base.base.location.position.y) +
-               (param_1->base).base.base.location.position.y;
+      fVar4 = (local_64 / local_60) *
+              ((this_ptr->base).base.closest_distance_threshold -
+              (this_ptr->base).base.base.location.position.y) +
+              (this_ptr->base).base.base.location.position.y;
     }
     else {
-      (param_1->skirt_cloth).vertices[0x26a].connected_indices[3] = 0;
+      (this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] = 0;
       core_event_cpp_CEventList_executeCommands_FUN_0047ab70(pCVar6,"backToHuman");
-      fVar21 = (param_1->base).base.closest_distance_threshold;
-      (param_1->skirt_cloth).vertices[0x275].connected_indices[2] = 0;
+      fVar4 = (this_ptr->base).base.closest_distance_threshold;
+      (this_ptr->skirt_cloth).vertices[0x275].connected_indices[2] = 0;
     }
-    (param_1->base).base.base.location.position.y = fVar21;
-    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(param_1,param_2);
+    (this_ptr->base).base.base.location.position.y = fVar4;
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
-              (&param_1->model);
+              (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              (&param_1->wing_cloth,&(param_1->base).base.base.location.position,
-               &(param_1->base).base.base.orient.vec,param_2,
-               (param_1->base).base.closest_distance_threshold,&param_1->model);
-    pCVar4 = &(param_1->base).base.model;
-    local_1c = param_2;
+              (&this_ptr->wing_cloth,&(this_ptr->base).base.base.location.position,
+               &(this_ptr->base).base.base.orient.vec,delta_time,
+               (this_ptr->base).base.closest_distance_threshold,&this_ptr->model);
+    pCVar3 = &(this_ptr->base).base.model;
+    local_1c = delta_time;
     while (0.0 < local_1c) {
-      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar4->motion_controller,&local_1c);
+      core_motion_cpp_CMotionController_advance_FUN_004e11c0(&pCVar3->motion_controller,&local_1c);
     }
-    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar4);
-    euler = &(param_1->base).base.base.orient;
-    local_18 = &(param_1->base).base.base.location.position;
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(pCVar3);
+    euler = &(this_ptr->base).base.base.orient;
+    local_18 = &(this_ptr->base).base.base.location.position;
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              ((CCloth *)((param_1->wing_cloth).vertices[0x300].connected_indices + 9),local_18,
-               &euler->vec,param_2,(param_1->base).base.closest_distance_threshold,pCVar4);
+              ((CCloth *)((this_ptr->wing_cloth).vertices[0x300].connected_indices + 9),local_18,
+               &euler->vec,delta_time,(this_ptr->base).base.closest_distance_threshold,pCVar3);
     core_cloth_cpp_CCloth_process_FUN_00436e50
-              ((CCloth *)((param_1->cape_cloth).vertices[0x2b5].connected_indices + 6),local_18,
-               &euler->vec,param_2,(param_1->base).base.closest_distance_threshold,pCVar4);
+              ((CCloth *)((this_ptr->cape_cloth).vertices[0x2b5].connected_indices + 6),local_18,
+               &euler->vec,delta_time,(this_ptr->base).base.closest_distance_threshold,pCVar3);
     pCVar10 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-                        (pCVar4,(CBoundingBox3D *)local_1b4);
-    pCVar3 = &(param_1->base).base.cached_bounding_box;
-    if (pCVar3 != pCVar10) {
-      (pCVar3->min).x = (pCVar10->min).x;
-      (param_1->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
-      (param_1->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
+                        (pCVar3,(CBoundingBox3D *)local_1b4);
+    pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+    if (pCVar2 != pCVar10) {
+      (pCVar2->min).x = (pCVar10->min).x;
+      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
+      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
     }
-    pCVar1 = &(param_1->base).base.cached_bounding_box.max;
-    if (pCVar1 != &pCVar10->max) {
-      pCVar1->x = (pCVar10->max).x;
-      (param_1->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
-      (param_1->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
+    pCVar12 = &(this_ptr->base).base.cached_bounding_box.max;
+    if (pCVar12 != &pCVar10->max) {
+      pCVar12->x = (pCVar10->max).x;
+      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
+      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-              (&param_1->model,&local_1cc);
-    pCVar3 = &(param_1->base).base.cached_bounding_box;
-    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar3,&local_1cc.min);
-    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar3,&local_1cc.max);
+              (&this_ptr->model,&local_1cc);
+    pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar2,&local_1cc.min);
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(pCVar2,&local_1cc.max);
     goto LAB_0054cc7f;
   }
-  local_30 = &(param_1->base).base.model;
-  local_78[0] = param_2;
+  local_30 = &(this_ptr->base).base.model;
+  local_78[0] = delta_time;
   while (0.0 < local_78[0]) {
     uVar11 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
                        (&local_30->motion_controller,local_78);
     if (uVar11 < 2) {
       if (uVar11 == 1) {
-        core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(param_1);
+        core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(this_ptr);
 LAB_0054d1ae:
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0x3f800000;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0x3f800000;
       }
     }
     else {
       if (uVar11 < 3) {
-        core_vampboss_cpp_FUN_0054e130(param_1);
+        core_vampboss_cpp_FUN_0054e130(this_ptr);
         goto LAB_0054d1ae;
       }
       if (uVar11 < 4) {
-        core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(param_1);
+        core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(this_ptr);
         goto LAB_0054d1ae;
       }
       if (uVar11 == 0x29a) {
-        (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);
-        pCStack_c0 = (CDemonActor *)0x0;
-        UStack_bc._ub = (CDemonActor_vtable *)0x41a00000;
-        local_b8 = 20.0;
-        core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,auStack_108,&pCStack_c0);
-        iVar22 = 0;
+        (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                  ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
+        CStack_c4.x = 0.0;
+        CStack_c4.y = 20.0;
+        CStack_c4.z = 20.0;
+        core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                  ((CDemonActor *)this_ptr,&CStack_10c,&CStack_c4);
         core_charactr_cpp_CCharacter_dismember_FUN_00427b60
-                  ((CCharacter *)param_1,(CVector3f *)auStack_108,-1.0,0);
+                  ((CCharacter *)this_ptr,&CStack_10c,-1.0,0);
         iVar8 = 0;
-        local_28 = (CVector3f *)0x0;
-        for (; (int)fStack_2c < *(int *)(0x01E57284 + 0x150bf4);
+        for (fStack_2c = 0.0; (int)fStack_2c < *(int *)(0x01E57284 + 0x150bf4);
             fStack_2c = (float)((int)fStack_2c + 1)) {
-          this_ptr = (CCharacter *)
-                     core_actor_cpp_castToClassHash_FUN_0040d890
-                               (*(CDemonActor **)(iVar8 + 0x150bf8 + 0x01E57284),
-                                g_CTVBatActorType_02dd110c.name_hash);
-          if ((this_ptr != (CCharacter *)0x0) &&
-             (this_ptr[1].model.transformed_vertices[0xc].z != 0.0)) {
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_208);
-            fStack_204 = 999.0;
-            (*(((this_ptr->base).vtable._uc)->_uc).getGrabbed)
-                      (this_ptr,(CDemonActor *)auStack_208,iVar22);
+          this_ptr_00 = (CCharacter *)
+                        core_actor_cpp_castToClassHash_FUN_0040d890
+                                  (*(CDemonActor **)(iVar8 + 0x150bf8 + 0x01E57284),
+                                   g_CTVBatActorType_02dd110c.name_hash);
+          if ((this_ptr_00 != (CCharacter *)0x0) &&
+             (this_ptr_00[1].model.transformed_vertices[0xc].z != 0.0)) {
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_208);
+            SStack_208.damage_amount = 999.0;
+            (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_208);
           }
           iVar8 = iVar8 + 4;
         }
@@ -458,177 +445,176 @@ LAB_0054d1ae:
   }
   pCVar10 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
                       (local_30,&local_16c);
-  pCVar3 = &(param_1->base).base.cached_bounding_box;
-  if (pCVar3 != pCVar10) {
-    (pCVar3->min).x = (pCVar10->min).x;
-    (param_1->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
-    (param_1->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
+  pCVar2 = &(this_ptr->base).base.cached_bounding_box;
+  if (pCVar2 != pCVar10) {
+    (pCVar2->min).x = (pCVar10->min).x;
+    (this_ptr->base).base.cached_bounding_box.min.y = (pCVar10->min).y;
+    (this_ptr->base).base.cached_bounding_box.min.z = (pCVar10->min).z;
   }
-  pCVar1 = &(param_1->base).base.cached_bounding_box.max;
-  if (pCVar1 != &pCVar10->max) {
-    pCVar1->x = (pCVar10->max).x;
-    (param_1->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
-    (param_1->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
+  pCVar12 = &(this_ptr->base).base.cached_bounding_box.max;
+  if (pCVar12 != &pCVar10->max) {
+    pCVar12->x = (pCVar10->max).x;
+    (this_ptr->base).base.cached_bounding_box.max.y = (pCVar10->max).y;
+    (this_ptr->base).base.cached_bounding_box.max.z = (pCVar10->max).z;
   }
-  pCVar4 = &(param_1->base).base.model;
+  pCVar3 = &(this_ptr->base).base.model;
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&pCVar4->motion_controller);
+                     (&pCVar3->motion_controller);
   pCVar7 = 0x01C775EC;
   iVar8 = pSVar9->state_index;
   switch(iVar8) {
   case 0:
-    (param_1->base).base.turn_speed = 3.141593f * param_2;
+    (this_ptr->base).base.turn_speed = 3.141593f * delta_time;
     pCVar6 = 0x01C03A10;
     if (pCVar7->letterbox_mode == 0) {
-      iVar22 = (param_1->skirt_cloth).vertices[0x275].connected_indices[8];
-      (param_1->base).base.walk_step_speed = 10.0f * param_2;
+      iVar13 = (this_ptr->skirt_cloth).vertices[0x275].connected_indices[8];
+      (this_ptr->base).base.walk_step_speed = 10.0f * delta_time;
       core_charactr_cpp_CCharacter_followActor_FUN_00428780
-                ((CCharacter *)param_1,
-                 (CDemonActor *)(param_1->skirt_cloth).vertices[0x275].connected_indices[iVar22 + 9]
-                 ,0.2,999999.0,(param_1->skirt_cloth).vertices[0x275].connected_indices + 0xd);
-      switch((param_1->skirt_cloth).vertices[0x275].connected_indices[0xd]) {
+                ((CCharacter *)this_ptr,
+                 (CDemonActor *)
+                 (this_ptr->skirt_cloth).vertices[0x275].connected_indices[iVar13 + 9],0.2,999999.0,
+                 (this_ptr->skirt_cloth).vertices[0x275].connected_indices + 0xd);
+      switch((this_ptr->skirt_cloth).vertices[0x275].connected_indices[0xd]) {
       default:
-        fVar21 = ((param_1->base).base.max_hit_points * param_2) / 120.0f +
-                 (param_1->base).base.hit_points;
-        (param_1->base).base.hit_points = fVar21;
-        if ((float)50 < fVar21) goto LAB_0054d280;
-        pCVar2 = &(param_1->base).base.base.location;
-        iVar22 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&pCVar2->position,12.0);
-        if (iVar22 == 0) {
-          iVar22 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-          local_d0[0] = *(float *)(iVar22 + 0x20) - (pCVar2->position).x;
-          local_d0[1] = *(float *)(iVar22 + 0x24) - (param_1->base).base.base.location.position.y;
-          local_c8 = *(float *)(iVar22 + 0x28) - (param_1->base).base.base.location.position.z;
-          iVar22 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                             (local_dc,local_d0);
-          local_114 = *(float *)(iVar22 + 4);
+        fVar4 = ((this_ptr->base).base.max_hit_points * delta_time) / 120.0f +
+                (this_ptr->base).base.hit_points;
+        (this_ptr->base).base.hit_points = fVar4;
+        if ((float)50 < fVar4) goto LAB_0054d280;
+        pCVar1 = &(this_ptr->base).base.base.location;
+        iVar13 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&pCVar1->position,12.0);
+        if (iVar13 == 0) {
+          iVar13 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+          local_d0.x = *(float *)(iVar13 + 0x20) - (pCVar1->position).x;
+          local_d0.y = *(float *)(iVar13 + 0x24) - (this_ptr->base).base.base.location.position.y;
+          local_d0.z = *(float *)(iVar13 + 0x28) - (this_ptr->base).base.base.location.position.z;
+          pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                              (&local_dc,&local_d0);
+          local_114 = pCVar12->y;
           local_18 = (CVector3f *)
                      core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               (local_114 - (param_1->base).base.base.orient.vec.y);
-          (param_1->base).base.turn_angle_accumulator = (float)local_18;
-          local_3c = (CVector3f *)(param_1->base).base.turn_angle_accumulator;
-          local_48 = (CVector3f *)(param_1->base).base.turn_speed;
-          local_3c = (CVector3f *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_3c);
+                               (local_114 - (this_ptr->base).base.base.orient.vec.y);
+          (this_ptr->base).base.turn_angle_accumulator = (float)local_18;
+          local_3c = (CVector3f *)(this_ptr->base).base.turn_angle_accumulator;
+          local_48 = (CVector3f *)(this_ptr->base).base.turn_speed;
+          local_3c = (CVector3f *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00((float)local_3c);
           local_28 = (CVector3f *)-(float)local_48;
           local_4c = local_28;
           if (((float)local_28 <= (float)local_3c) &&
              (local_4c = local_3c, (float)local_48 < (float)local_3c)) {
             local_4c = local_48;
           }
-          fVar21 = (float)(param_1->skirt_cloth).vertices[0x275].connected_indices[3] - param_2;
-          (param_1->base).base.turn_angle_accumulator = (float)local_4c;
-          (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = (int)fVar21;
+          fVar4 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] - delta_time;
+          (this_ptr->base).base.turn_angle_accumulator = (float)local_4c;
+          (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = (int)fVar4;
           local_18 = local_3c;
-          if (fVar21 <= 0.0) {
-            (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0;
-            iVar22 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
-            pCVar4 = &(param_1->base).base.model;
-            if (iVar22 == 0) {
+          if (fVar4 <= 0.0) {
+            (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0;
+            iVar13 = core_actor_cpp_getRandomInt_FUN_0040de00(0,2);
+            pCVar3 = &(this_ptr->base).base.model;
+            if (iVar13 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar4->motion_controller,4,1);
+                        (&pCVar3->motion_controller,4,1);
             }
-            else if (iVar22 == 1) {
+            else if (iVar13 == 1) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar4->motion_controller,5,1);
+                        (&pCVar3->motion_controller,5,1);
             }
-            else if (iVar22 == 2) {
+            else if (iVar13 == 2) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&pCVar4->motion_controller,6,1);
+                        (&pCVar3->motion_controller,6,1);
             }
           }
         }
         else {
-          core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(param_1);
+          core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(this_ptr);
         }
         break;
       case 1:
       case 2:
-        (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40400000;
+        (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40400000;
       }
     }
     else {
-      (param_1->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40400000;
-      iVar22 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+      (this_ptr->skirt_cloth).vertices[0x275].connected_indices[3] = 0x40400000;
+      iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                          (pCVar6,"morphToBat");
-      if (iVar22 == 0) {
-        iVar22 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        local_13c = *(float *)(iVar22 + 0x20) - (param_1->base).base.base.location.position.x;
-        local_138 = *(float *)(iVar22 + 0x24) - (param_1->base).base.base.location.position.y;
-        local_134 = *(float *)(iVar22 + 0x28) - (param_1->base).base.base.location.position.z;
-        iVar22 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                           (local_130,&local_13c);
-        local_120 = *(float *)(iVar22 + 4);
+      if (iVar13 == 0) {
+        iVar13 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+        local_13c.x = *(float *)(iVar13 + 0x20) - (this_ptr->base).base.base.location.position.x;
+        local_13c.y = *(float *)(iVar13 + 0x24) - (this_ptr->base).base.base.location.position.y;
+        local_13c.z = *(float *)(iVar13 + 0x28) - (this_ptr->base).base.base.location.position.z;
+        pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                            (&local_130,&local_13c);
+        local_120 = pCVar12->y;
         local_18 = (CVector3f *)
                    core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                             (local_120 - (param_1->base).base.base.orient.vec.y);
-        (param_1->base).base.turn_angle_accumulator = (float)local_18;
-        local_34 = (CVector3f *)(param_1->base).base.turn_angle_accumulator;
-        local_50 = (CVector3f *)(param_1->base).base.turn_speed;
-        local_34 = (CVector3f *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_34);
+                             (local_120 - (this_ptr->base).base.base.orient.vec.y);
+        (this_ptr->base).base.turn_angle_accumulator = (float)local_18;
+        local_34 = (CVector3f *)(this_ptr->base).base.turn_angle_accumulator;
+        local_50 = (CVector3f *)(this_ptr->base).base.turn_speed;
+        local_34 = (CVector3f *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00((float)local_34);
         local_5c = (CVector3f *)-(float)local_50;
         local_54 = local_5c;
         if (((float)local_5c <= (float)local_34) &&
            (local_54 = local_34, (float)local_50 < (float)local_34)) {
           local_54 = local_50;
         }
-        (param_1->base).base.turn_angle_accumulator = (float)local_54;
+        (this_ptr->base).base.turn_angle_accumulator = (float)local_54;
         local_18 = local_34;
       }
       else {
 LAB_0054d280:
-        core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(param_1);
+        core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(this_ptr);
       }
     }
     break;
   case 2:
-    iVar22 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+    iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                        (0x01C03A10,"flyout");
-    if (iVar22 != 0) {
-      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar4->motion_controller,0,1)
+    if (iVar13 != 0) {
+      core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar3->motion_controller,0,1)
       ;
     }
   }
   if ((0x01C775EC->letterbox_mode == 0) && (iVar8 != 2)) {
-    auStack_108._8_4_ =
-         (param_1->base).base.position_delta.x +
-         (param_1->base).base.model.accumulated_root_motion.x;
-    local_f8 = (param_1->base).base.position_delta.z +
-               (param_1->base).base.model.accumulated_root_motion.z;
-    local_fc = ((param_1->base).base.position_delta.y +
-               (param_1->base).base.model.accumulated_root_motion.y) -
-               param_2 * (float)3;
-    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050
-              ((CCharacter *)param_1,(CVector3f *)(auStack_108 + 8));
+    local_100.x = (this_ptr->base).base.position_delta.x +
+                  (this_ptr->base).base.model.accumulated_root_motion.x;
+    local_100.z = (this_ptr->base).base.position_delta.z +
+                  (this_ptr->base).base.model.accumulated_root_motion.z;
+    local_100.y = ((this_ptr->base).base.position_delta.y +
+                  (this_ptr->base).base.model.accumulated_root_motion.y) -
+                  delta_time * (float)3;
+    core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050((CCharacter *)this_ptr,&local_100);
   }
-  (param_1->base).base.position_delta.z = 0.0;
-  (param_1->base).base.position_delta.y = (param_1->base).base.position_delta.z;
-  (param_1->base).base.position_delta.x = (param_1->base).base.position_delta.y;
-  (param_1->base).base.model.accumulated_root_motion.z = 0.0;
-  (param_1->base).base.model.accumulated_root_motion.y =
-       (param_1->base).base.model.accumulated_root_motion.z;
-  (param_1->base).base.model.accumulated_root_motion.x =
-       (param_1->base).base.model.accumulated_root_motion.y;
-  core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)param_1);
-  pCVar4 = &(param_1->base).base.model;
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar4);
-  core_charactr_cpp_FUN_0042a150(param_1,param_2);
-  local_18 = (CVector3f *)&(param_1->base).base.base.orient;
-  pCVar2 = &(param_1->base).base.base.location;
+  (this_ptr->base).base.position_delta.z = 0.0;
+  (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
+  (this_ptr->base).base.position_delta.x = (this_ptr->base).base.position_delta.y;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y =
+       (this_ptr->base).base.model.accumulated_root_motion.z;
+  (this_ptr->base).base.model.accumulated_root_motion.x =
+       (this_ptr->base).base.model.accumulated_root_motion.y;
+  core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
+  pCVar3 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar3);
+  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  local_18 = (CVector3f *)&(this_ptr->base).base.base.orient;
+  pCVar1 = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CCloth_process_FUN_00436e50
-            ((CCloth *)((param_1->wing_cloth).vertices[0x300].connected_indices + 9),
-             &pCVar2->position,local_18,param_2,(param_1->base).base.closest_distance_threshold,
-             pCVar4);
+            ((CCloth *)((this_ptr->wing_cloth).vertices[0x300].connected_indices + 9),
+             &pCVar1->position,local_18,delta_time,(this_ptr->base).base.closest_distance_threshold,
+             pCVar3);
   core_cloth_cpp_CCloth_process_FUN_00436e50
-            ((CCloth *)((param_1->cape_cloth).vertices[0x2b5].connected_indices + 6),
-             &pCVar2->position,local_18,param_2,(param_1->base).base.closest_distance_threshold,
-             pCVar4);
+            ((CCloth *)((this_ptr->cape_cloth).vertices[0x2b5].connected_indices + 6),
+             &pCVar1->position,local_18,delta_time,(this_ptr->base).base.closest_distance_threshold,
+             pCVar3);
 LAB_0054cc7f:
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(param_1->base).base.model.motion_controller);
+                     (&(this_ptr->base).base.model.motion_controller);
   if ((pSVar9->state_index != 2) && (0x01C775EC->letterbox_mode == 0)) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
-              (0x01C775EC,(param_1->base).base.descriptive_name,
-               (int)((param_1->base).base.hit_points / (param_1->base).base.max_hit_points),0.5);
+              (0x01C775EC,(this_ptr->base).base.descriptive_name,
+               (int)((this_ptr->base).base.hit_points / (this_ptr->base).base.max_hit_points),0.5);
     return;
   }
   return;

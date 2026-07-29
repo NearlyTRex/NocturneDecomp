@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollBar *param_1)
+; void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollBar *this_ptr)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_FUN_00475230 at 004752cc
@@ -93,7 +95,7 @@ section .text
         ;   Label: LAB_004769c5
     PUSH EAX                            ; 004769c6
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 004769c7
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     MOV EAX,dword ptr [EBX + 0x8]       ; 004769cc
     MOV EBP,dword ptr [EBX + 0x4]       ; 004769cf
     ADD ESP,0x8                         ; 004769d2
@@ -251,7 +253,7 @@ section .text
     MOV EBP,dword ptr [0x01bcde34]      ; 00476b3c | DAT_01bcde34
     PUSH EBP                            ; 00476b42
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 00476b43
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     ADD ESP,0x8                         ; 00476b48
     JMP 0x004769e3                      ; 00476b4b
         ;   XREF to: 004769e3 (UNCONDITIONAL_JUMP)  ; LAB_004769e3
@@ -361,7 +363,7 @@ section .text
     PUSH EBX                            ; 00476c64
     MOV [0x01bcde30],EAX                ; 00476c65 | DAT_01bcde30
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 ; 00476c6a
-        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920()
+        ;   XREF to: 00476920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00476c6f
     POP EBP                             ; 00476c72
     POP EDI                             ; 00476c73

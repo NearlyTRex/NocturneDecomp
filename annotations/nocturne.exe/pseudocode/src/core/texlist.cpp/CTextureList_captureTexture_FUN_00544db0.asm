@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0(int param_1,uint param_2)
+; void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0(CTextureList *this_ptr,uint texture_index)
 ;
+; Parameters:
+; CTextureList *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   texture_index
 ;
 ; XREF[1]:
 ;   core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00 at 004b1d26

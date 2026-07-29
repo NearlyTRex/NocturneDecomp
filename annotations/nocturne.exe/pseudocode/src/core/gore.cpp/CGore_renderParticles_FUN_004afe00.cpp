@@ -19,7 +19,7 @@ void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
               (0x01E57284,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     puVar2 = (byte *)0x1c78cec;
-    core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(0x1c78cec);
+    core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0((CBloodParticle *)0x1c78cec);
     do {
       if (0.0 < *(float *)(puVar2 + 0x18)) {
         (**(code **)(*(int *)(puVar2 + 0x34) + 8))(puVar2);

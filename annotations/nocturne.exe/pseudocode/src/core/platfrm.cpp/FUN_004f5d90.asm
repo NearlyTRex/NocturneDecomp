@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(undefined4 param_1)
+; CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_slider1_kfm_0058d75f
-;   undefined1* PTR_core_platfrm.cpp_FUN_004f5f60_005a1384 = 004f5f60
+;   CDemonActor_vtable g_CPlatformVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -35,7 +35,7 @@ section .text
     PUSH ESI                            ; 004f5d99
     PUSH EBX                            ; 004f5d9a
     CALL core_actor.cpp_FUN_00409d30    ; 004f5d9b
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f5da0
     ADD EAX,0x150                       ; 004f5da3
     PUSH EAX                            ; 004f5da8
@@ -51,7 +51,7 @@ section .text
     PUSH 0x58d75f                       ; 004f5dc5 | = "slider1.kfm"
     LEA EAX,[EBX + 0x150]               ; 004f5dca
     PUSH EAX                            ; 004f5dd0
-    MOV dword ptr [EBX + 0x14c],0x5a1384 ; 004f5dd1 | PTR_core_platfrm.cpp_FUN_004f5f60_005a1384
+    MOV dword ptr [EBX + 0x14c],0x5a1384 ; 004f5dd1 | g_CPlatformVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004f5ddb
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV byte ptr [EBX + 0x34c],0x0      ; 004f5de0

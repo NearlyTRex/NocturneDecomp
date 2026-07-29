@@ -1,40 +1,39 @@
 // Name: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530
 // Address: 00471530
 // Address Range: [[00471530, 004715fa]]
-// Convention: unknown
-// Signature: undefined4 shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *param_1,char *param_2,float *param_3,byte param_4)
+// Convention: __cdecl
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
 
 #include "nocturne.h"
 
-uint shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *param_1,char *param_2,float *param_3,byte param_4)
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
 
 {
   int iVar1;
   char acStack_40 [40];
-  float fStack_18;
-  float fStack_14;
-  float fStack_10;
+  CVector3f CStack_18;
   
-  if ((param_4 & 1) == 0) {
+  if ((show_current_value & 1U) == 0) {
     acStack_40[0] = '\0';
   }
   else {
-    _sprintf(acStack_40,"%g,%g,%g",(double)*param_3,(double)param_3[1],(double)param_3[2]);
+    _sprintf(acStack_40,"%g,%g,%g",(double)result_ptr->x,(double)result_ptr->y,
+               (double)result_ptr->z);
   }
   while( true ) {
     iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
-                      (param_1,param_2,acStack_40,0x28,1);
+                      (editor_tools,prompt_text,acStack_40,0x28,1);
     if (iVar1 == 0) {
       return 0;
     }
-    iVar1 = sscanf();
+    iVar1 = sscanf(acStack_40,"%f%*[ ,]%f%*[ ,]%f");
     if (iVar1 == 3) break;
-    shape_edittool_cpp_FUN_0046fcd0(param_1);
+    shape_edittool_cpp_FUN_0046fcd0(editor_tools);
   }
-  if (param_3 != &fStack_18) {
-    *param_3 = fStack_18;
-    param_3[1] = fStack_14;
-    param_3[2] = fStack_10;
+  if (result_ptr != &CStack_18) {
+    result_ptr->x = CStack_18.x;
+    result_ptr->y = CStack_18.y;
+    result_ptr->z = CStack_18.z;
   }
   return 1;
 }

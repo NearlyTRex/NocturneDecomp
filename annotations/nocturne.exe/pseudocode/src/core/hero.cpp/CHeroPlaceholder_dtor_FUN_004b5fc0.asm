@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_hero_cpp_CHeroPlaceholder_dtor_FUN_004b5fc0(CDemonActor *param_1,byte param_2)
+; CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004b5fc0(CHeroPlaceholder *this_ptr,uint flags)
 ;
+; Parameters:
+; CHeroPlaceholder * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84 = 00409fc0
+;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;   WatcomTypeInfo g_CHeroPlaceholderTypeInfo_0059ed60
 ;
 ; Called Functions:
@@ -26,7 +29,7 @@ section .text
         ;   XREF to: 004b5ff0 (CONDITIONAL_JUMP)  ; LAB_004b5ff0
     PUSH 0x1                            ; 004b5fcc
     PUSH EBX                            ; 004b5fce
-    MOV dword ptr [EBX + 0x14c],0x59ec84 ; 004b5fcf | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84
+    MOV dword ptr [EBX + 0x14c],0x59ec84 ; 004b5fcf | g_CHeroPlaceholderVTable
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004b5fd9
         ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b5fde

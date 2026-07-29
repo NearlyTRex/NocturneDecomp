@@ -32,7 +32,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8]       ; 005706b5
     PUSH ECX                            ; 005706b8
     CALL crt_math.c_process_math_error_FUN_005706dd ; 005706b9
-        ;   XREF to: 005706dd (UNCONDITIONAL_CALL)  ; undefined crt_math.c_process_math_error_FUN_005706dd()
+        ;   XREF to: 005706dd (UNCONDITIONAL_CALL)  ; double crt_math.c_process_math_error_FUN_005706dd(int errorFlags, double * value1, double * value2)
     MOV dword ptr [EBP + -0x10],EAX     ; 005706be
     MOV dword ptr [EBP + -0xc],EDX      ; 005706c1
     ADD ESP,0xc                         ; 005706c4

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_motion_cpp_CMotionList_save_FUN_004e0d20(int *param_1,undefined4 param_2)
+; void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c
 ; undefined8       Stack[-0x20]:8  local_20

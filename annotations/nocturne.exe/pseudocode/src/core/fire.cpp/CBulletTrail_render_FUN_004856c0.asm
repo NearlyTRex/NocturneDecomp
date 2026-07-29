@@ -142,7 +142,7 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 004857b9
     FSTP float ptr [ESP + 0x3c]         ; 004857bd
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004857c1
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004857c6
     MOV EDX,dword ptr [ESP + 0x60]      ; 004857c9
     XOR ESI,ESI                         ; 004857cd

@@ -1,21 +1,21 @@
 // Name: core_dcamera.cpp_saveCameraFog_FUN_00447dd0
 // Address: 00447dd0
 // Address Range: [[00447dd0, 00447e73]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_saveCameraFog_FUN_00447dd0(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00447dd0(SFog *fog,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void core_dcamera_cpp_saveCameraFog_FUN_00447dd0(int param_1,uint param_2)
+void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00447dd0(SFog *fog,_FILE *file_handle)
 
 {
-  _fprintf(param_2,"fogR,fogG,fogB\n");
+  _fprintf(file_handle,"fogR,fogG,fogB\n");
   _fprintf();
-  _fprintf(param_2,"fogVel\n");
-  _fprintf(param_2,"%f,%f,%f\n",(double)*(float *)(param_1 + 0xc),
-             (double)*(float *)(param_1 + 0x10),(double)*(float *)(param_1 + 0x14));
-  _fprintf(param_2,"%f,%f\n",(double)*(float *)(param_1 + 0x18),
-             (double)*(float *)(param_1 + 0x1c));
-  _fprintf(param_2,"%f\n",(double)*(float *)(param_1 + 0x20));
+  _fprintf(file_handle,"fogVel\n");
+  _fprintf(file_handle,"%f,%f,%f\n",(double)(fog->scroll).x,(double)(fog->scroll).y,
+             (double)(fog->scroll).z);
+  _fprintf(file_handle,"%f,%f\n",(double)fog->height_threshold,
+             (double)fog->density_multiplier);
+  _fprintf(file_handle,"%f\n",(double)fog->temperature);
   return;
 }

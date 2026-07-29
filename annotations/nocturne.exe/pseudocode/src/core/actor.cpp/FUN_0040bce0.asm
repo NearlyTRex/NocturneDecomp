@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_FUN_0040bce0(int param_1,uint param_2)
+; void __cdecl core_actor_cpp_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   attack_flags
+; SDamageInfo *    Stack[0xc]:4   damage_info
+; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; XREF[1]:
 ;   core_melee.cpp_FUN_004cefe0 at 004ceff8

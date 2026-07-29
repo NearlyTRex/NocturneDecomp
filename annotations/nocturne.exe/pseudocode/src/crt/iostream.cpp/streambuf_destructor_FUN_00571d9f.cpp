@@ -9,10 +9,10 @@
 int crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(int param_1)
 
 {
-  *(byte ***)(param_1 + 0x28) = &PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4ab0;
+  *(byte ***)(param_1 + 0x28) = &g_StreambufVTable;
   if ((*(byte *)(param_1 + 0x24) & 2) == 0) {
     return param_1;
   }
-  FUN_00571ef0(*(uint *)(param_1 + 4));
+  FUN_00571ef0(*(void **)(param_1 + 4));
   return param_1;
 }

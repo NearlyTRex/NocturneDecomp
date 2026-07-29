@@ -399,7 +399,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 005510f0 | DAT_005ae704
     PUSH ECX                            ; 005510f6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 ; 005510f7
-        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370()
+        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 005510fc
         ;   Label: LAB_005510fc
     MOV EDI,dword ptr [ESP + 0x58]      ; 005510ff
@@ -452,7 +452,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 00551175 | DAT_005ae704
     PUSH EAX                            ; 0055117a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 0055117b
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005510fc                      ; 00551180
         ;   XREF to: 005510fc (UNCONDITIONAL_JUMP)  ; LAB_005510fc
     PUSH 0x5c1374                       ; 00551185 | DAT_005c1374
@@ -460,7 +460,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 0055118a | DAT_005ae704
     PUSH ECX                            ; 00551190 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0 ; 00551191
-        ;   XREF to: 0045f9d0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0()
+        ;   XREF to: 0045f9d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005510fc                      ; 00551196
         ;   XREF to: 005510fc (UNCONDITIONAL_JUMP)  ; LAB_005510fc
 

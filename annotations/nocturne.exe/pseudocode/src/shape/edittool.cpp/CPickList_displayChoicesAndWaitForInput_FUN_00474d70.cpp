@@ -12,9 +12,9 @@ int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPic
 
 {
   uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  int iVar4;
+  int x;
+  int y;
+  int iVar2;
   
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
@@ -23,22 +23,22 @@ int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPic
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
-  uVar3 = _DAT_01bd1d90;
-  uVar2 = _DAT_01bd1d8c;
+  y = _DAT_01bd1d90;
+  x = _DAT_01bd1d8c;
   uVar1 = DAT_005b7630;
   if (0 < (param_1->base).item_count) {
     DAT_005b7630 = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(param_1,param_2,param_3,0);
     do {
-      iVar4 = shape_edittool_cpp_FUN_00475230(param_1);
+      iVar2 = shape_edittool_cpp_FUN_00475230(param_1);
       shape_edittool_cpp_FUN_004759d0(param_1);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    } while (iVar4 == -2);
-    wincore_winrun_cpp_setCursorPosition_FUN_00558d60(uVar2,uVar3);
+    } while (iVar2 == -2);
+    wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     shape_edittool_cpp_FUN_004720c0(0x01BCD074);
     DAT_005b7630 = uVar1;
-    return iVar4;
+    return iVar2;
   }
   return -1;
 }

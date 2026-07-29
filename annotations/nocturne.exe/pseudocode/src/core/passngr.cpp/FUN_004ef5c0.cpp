@@ -26,8 +26,7 @@ CDemonActor * core_passngr_cpp_FUN_004ef5c0(CDemonActor *param_1,byte param_2)
     return param_1;
   }
   uVar1 = param_1[0x17e].blood_effect_color;
-  (param_1->vtable)._ub =
-       (CDemonActor_vtable *)&PTR_core_passngr_cpp_CPassenger_setup_FUN_004ef6d0_005a1074;
+  (param_1->vtable)._ub = &g_CPassengerVTable._ub;
   if (uVar1 != 0) {
     (**(code **)(*(int *)(uVar1 + 0x14c) + 200))(uVar1,2);
   }

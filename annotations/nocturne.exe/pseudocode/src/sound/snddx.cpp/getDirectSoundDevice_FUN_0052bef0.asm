@@ -61,7 +61,7 @@ section .text
     PUSH EAX                            ; 0052bf22
     PUSH EBX                            ; 0052bf23
     CALL sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0052be40 ; 0052bf24
-        ;   XREF to: 0052be40 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0052be40()
+        ;   XREF to: 0052be40 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0052be40(UINT device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 0052bf29
     TEST EAX,EAX                        ; 0052bf2c
     JZ 0x0052bf11                       ; 0052bf2e

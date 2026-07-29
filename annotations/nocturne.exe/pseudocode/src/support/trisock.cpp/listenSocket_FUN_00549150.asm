@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_trisock_cpp_listenSocket_FUN_00549150(void)
+; int __cdecl support_trisock_cpp_listenSocket_FUN_00549150(_SOCKET *socket_handle)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; Called Functions:
 ;   Ordinal_13

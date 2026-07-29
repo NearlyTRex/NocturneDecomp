@@ -170,9 +170,10 @@
         "start":"0056d774"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_time.c_parse_dst_rule_FUN_0056d774",
-    "ret":"undefined1",
+    "ret":"char*",
     "vars":{
       "locals":[
         {
@@ -240,8 +241,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"rule_string",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"rule",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"dst_rule*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

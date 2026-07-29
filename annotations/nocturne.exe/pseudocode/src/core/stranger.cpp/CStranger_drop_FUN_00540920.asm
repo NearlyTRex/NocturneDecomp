@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_drop_FUN_00540920(int param_1,int param_2,undefined4 param_3)
+; void core_stranger_cpp_CStranger_drop_FUN_00540920(CEnemy *param_1,CPlatform *param_2,CVector3f *param_3)
 ;
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@ section .text
     PUSH ESI                            ; 0054093b
     PUSH EBX                            ; 0054093c
     CALL core_charactr.cpp_FUN_00428100 ; 0054093d
-        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428100()
+        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00428100(CCharacter * this_ptr, CDemonActor * carrier, CVector3f * drop_position)
     ADD ESP,0xc                         ; 00540942
     POP ESI                             ; 00540945
     POP EBX                             ; 00540946

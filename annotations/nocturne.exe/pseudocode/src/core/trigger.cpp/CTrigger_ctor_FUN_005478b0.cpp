@@ -14,9 +14,8 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(CTrigger *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CTrigger *)core_actor_cpp_FUN_00409d30(this_ptr);
-  (pCVar2->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_trigger_cpp_CTrigger_setup_FUN_00547a00_005a3664;
+  pCVar2 = (CTrigger *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CTriggerVTable;
   (pCVar2->trigger_size).x = 5.0;
   (pCVar2->trigger_size).y = 9.0;
   (pCVar2->trigger_size).z = 5.0;

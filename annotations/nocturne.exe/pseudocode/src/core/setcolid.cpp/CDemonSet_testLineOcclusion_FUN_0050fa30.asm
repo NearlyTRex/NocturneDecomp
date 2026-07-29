@@ -67,7 +67,7 @@ section .text
     PUSH 0xbf800000                     ; 0050fa71
     PUSH EDI                            ; 0050fa76
     CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 ; 0050fa77
-        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0()
+        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0050fa7c
     FLD float ptr [ESP + 0x1c]          ; 0050fa80
     ADD ESP,0x14                        ; 0050fa84

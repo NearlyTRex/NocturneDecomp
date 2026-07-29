@@ -17,9 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0(CChar
   CVector3f local_5c;
   CVector3f local_50;
   CVector3f local_44;
-  uint local_38;
-  uint local_34;
-  uint local_30;
+  CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
   CMatrix3x4f *local_14;
@@ -41,10 +39,11 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0(CChar
           core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_20,input_vector,matrix);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     (&this_ptr->base,&local_44,&local_20);
-          local_34 = 0;
-          local_30 = 0;
-          local_38 = 0x40400000;
-          core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,&local_5c,&local_38);
+          local_38.y = 0.0;
+          local_38.z = 0.0;
+          local_38.x = 3.0;
+          core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                    (&this_ptr->base,&local_5c,&local_38);
           core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
                     ((CGore *)INT_005b96c4,&local_44,&local_5c,this_ptr->blood_type);
         }

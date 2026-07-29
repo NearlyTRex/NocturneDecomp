@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,char *param_2,char *param_3)
+; int __cdecl support_codec_cpp_CCodec_processFiles_FUN_004391b0(CCodec *this_ptr,char *input_file_path,char *output_file_path)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   input_file_path
+; char *           Stack[0xc]:4   output_file_path
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ; undefined4       Stack[-0xac]:4  local_ac

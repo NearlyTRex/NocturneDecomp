@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 347,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 227,
-    "suspect_count": 10,
+    "pseudocode_lines": 217,
+    "suspect_count": 12,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 809
+    "total_lines": 799
   },
   "cross_references": [
     {
@@ -459,41 +459,10 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_findSomethingToLookAt_FUN_00429730.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 100,
-          "message": "Uninitialized variable: fStack_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 73,
-          "line": 101,
-          "message": "Uninitialized variable: fStack_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 29,
-          "line": 137,
-          "message": "Uninitialized variable: fStack_3c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 53,
       "match": "(CCharacter **)((int)0x01E57284",
       "severity": "moderate",
       "text": "pCVar4 = *(CCharacter **)((int)0x01E57284->actors + iStack_18 + 0x1b5c);",
@@ -501,7 +470,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 65,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_ec.y = CStack_ec.y + 5.3619766690650802e-315._0_4_;",
@@ -509,7 +478,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 174,
+      "line": 165,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_74.y = CStack_74.y + 5.3619766690650802e-315._0_4_;",
@@ -517,83 +486,75 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 207,
+      "line": 199,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar7 = delta_time / 5.2220990168285998e-315._0_4_ + this_ptr->look_at_weight;",
+      "text": "fVar6 = delta_time / 5.2220990168285998e-315._0_4_ + this_ptr->look_at_weight;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 221,
+      "line": 211,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar7 = this_ptr->look_at_weight - delta_time / 5.2220990168285998e-315._0_4_;",
+      "text": "fVar6 = this_ptr->look_at_weight - delta_time / 5.2220990168285998e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 71,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_ec.x = (pCVar8->position).x;",
+      "text": "CStack_ec.x = (pCVar7->position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 83,
+      "line": 73,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_ec.x = pCVar6->x;",
+      "text": "CStack_ec.x = pCVar5->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 170,
+      "line": 119,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_74.x = (pCVar8->position).x;",
+      "text": "CStack_d4.x = CStack_44.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 182,
+      "line": 161,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_74.x = pCVar6->x;",
+      "text": "CStack_74.x = (pCVar7->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 173,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_74.x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 186,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_d4.x = pCVar5->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44610001 is the IEEE 754 bit pattern of 900f. Rewrite in a .keep as a plain float compare against 900f.",
-      "line": 95,
-      "match": "(int)fVar7 < 0x44610001",
+      "line": 86,
+      "match": "(int)fVar6 < 0x44610001",
       "severity": "moderate",
-      "text": "fStack_24 = fVar7, (int)fVar7 < 0x44610001)) &&",
+      "text": "(int)fVar6 < 0x44610001)) &&",
       "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Uninitialized variable: fStack_48",
-      "line": 100,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((0.0 <= fStack_48) &&",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_4c",
-      "line": 101,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(fVar7 = fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c,",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_3c",
-      "line": 137,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_cc = fStack_3c;",
-      "type": "static_uninitvar"
     }
   ]
 }

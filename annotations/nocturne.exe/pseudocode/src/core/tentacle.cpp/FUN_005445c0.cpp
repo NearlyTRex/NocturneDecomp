@@ -20,7 +20,7 @@ uint core_tentacle_cpp_FUN_005445c0(int param_1,int param_2)
   uint local_1cc [12];
   uint local_19c [12];
   uint local_16c [12];
-  byte local_13c [48];
+  CMatrix3x4f local_13c;
   CMatrix3x4f local_10c;
   uint local_dc [12];
   float local_ac [12];
@@ -43,8 +43,8 @@ uint core_tentacle_cpp_FUN_005445c0(int param_1,int param_2)
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_13c,param_1 + 0x20,param_1 + 0x30);
-  core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(param_1,local_13c);
+            (&local_13c,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
+  core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(param_1,&local_13c);
   puVar3 = local_4c;
   puVar5 = local_dc;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_FUN_00552cb0
 // Address: 00552cb0
 // Address Range: [[00552cb0, 00552d6a]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_FUN_00552cb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_00552cb0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_wddvmem_cpp_FUN_00552cb0(void)
+void __cdecl wincore_wddvmem_cpp_FUN_00552cb0(void)
 
 {
   if (DAT_005c5010 != 0) {

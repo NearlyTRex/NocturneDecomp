@@ -27,7 +27,7 @@ int __watcallStack mbstrnbytes(char *str,int char_count)
       iVar1 = mblen(str);
       iVar2 = iVar2 + iVar1;
     }
-    str = (char *)mbtowc_next(str);
+    str = mbtowc_next(str);
   }
   return iVar2;
 }

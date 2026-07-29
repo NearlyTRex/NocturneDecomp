@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CWeapon *param_1)
+; CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CDynamite *this_ptr)
 ;
+; Parameters:
+; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dynamite.cpp_FUN_0046eba0 at 0046ebb3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_0057e4d0
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059c924 = 00553f10
+;   CWeapon_full_vtable g_CDynamiteVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -30,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 0046ebe3
     ADD EAX,0x150                       ; 0046ebe5
     PUSH EAX                            ; 0046ebea
-    MOV dword ptr [EAX + -0x4],0x59c924 ; 0046ebeb | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059c924
+    MOV dword ptr [EAX + -0x4],0x59c924 ; 0046ebeb | g_CDynamiteVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0046ebf2
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     LEA EAX,[EBX + 0x574]               ; 0046ebf7

@@ -75,7 +75,7 @@ section .text
     PUSH ESI                            ; 004164cc
         ;   Label: LAB_004164cc
     CALL core_flame.cpp_FUN_0048d5d0    ; 004164cd
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048d5d0()
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_FUN_0048d5d0(CFlame * this_ptr)
     INC EBX                             ; 004164d2
     ADD ESP,0x4                         ; 004164d3
     MOV ECX,dword ptr [EDI + 0x744]     ; 004164d6

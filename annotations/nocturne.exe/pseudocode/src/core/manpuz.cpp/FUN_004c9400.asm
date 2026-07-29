@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c9412
         ;   Label: LAB_004c9412
     CALL core_manpuz.cpp_FUN_004c9430   ; 004c9413
-        ;   XREF to: 004c9430 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004c9430()
+        ;   XREF to: 004c9430 (UNCONDITIONAL_CALL)  ; CMansionPuzzleCircle * core_manpuz.cpp_FUN_004c9430(CMansionPuzzleCircle * this_ptr)
     ADD ESP,0x4                         ; 004c9418
     RET                                 ; 004c941b
 

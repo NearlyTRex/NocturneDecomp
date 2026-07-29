@@ -1,19 +1,19 @@
 // Name: engine_3d.c_renderPolygonTexturedOp45_FUN_004074b0
 // Address: 004074b0
 // Address Range: [[004074b0, 00407543]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonTexturedOp45_FUN_004074b0(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedOp45_FUN_004074b0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonTexturedOp45_FUN_004074b0(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedOp45_FUN_004074b0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
@@ -31,7 +31,7 @@ int engine_3d_c_renderPolygonTexturedOp45_FUN_004074b0(int param_1)
     }
     _DAT_01c039a0 = 1;
     _DAT_01c039a4 = 0;
-    engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+    engine_clipper_c_FUN_00432cd0((prim->base).count,prim + 1);
   }
-  return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

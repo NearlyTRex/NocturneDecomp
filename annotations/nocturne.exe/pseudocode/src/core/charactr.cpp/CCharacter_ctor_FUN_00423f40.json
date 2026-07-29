@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 1489,
+    "complexity_score": 1488,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
+    "pseudocode_lines": 93,
     "suspect_count": 138,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "preinc_loop_idiom"
     ],
-    "total_lines": 233
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -211,9 +211,9 @@
     },
     {
       "addr": "0059b0a4",
-      "name": "PTR_core_charactr.cpp_CCharacter_setup_FUN_00424260_0059b0a4",
-      "type": "void*",
-      "value": "00424260"
+      "name": "g_CCharacterVTable",
+      "type": "CCharacter_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -350,14 +350,14 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(byte ***)((int)pvVar4",
+      "match": "(CCharacter_full_vtable **)((int)pvVar4",
       "severity": "moderate",
-      "text": "*(byte ***)((int)pvVar4 + -0x3278) =",
+      "text": "*(CCharacter_full_vtable **)((int)pvVar4 + -0x3278) = &g_CCharacterVTable;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xfc0) = 0;",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf9c) = 0;",
@@ -373,7 +373,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
+      "match": "(uint *)((int)pvVar4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
@@ -384,12 +392,12 @@
       "line": 30,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
-      "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
+      "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
@@ -398,14 +406,6 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(uint *)((int)pvVar4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf8c) = 0x42c80000;",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f0) = 0x3f800000;",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5ec) = 0x40000000;",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e8) = 0x41a00000;",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e4) = 0x42480000;",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e0) = 0x40000000;",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5dc) = 0xc479c000;",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5d8) = 0;",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x4bc) = 0;",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x4b4) = 0x40000000;",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe04) = 0xffffffff;",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe08) = 0xffffffff;",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 43,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f4) = 0;",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe1c) = 0;",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe2c) = 0;",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe28) = 0x40400000;",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe24) = 0x7149f2ca;",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe20) = 0xbf800000;",
@@ -549,7 +549,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe18) = 0;",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf90) = 0x42c80000;",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "if ((uint *)((int)pvVar4 + -0xe14) != local_c) {",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe14) = 0;",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe10) = 0;",
@@ -589,7 +589,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe0c) = 0x40000000;",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde4) = 0;",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde0) = 0;",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xddc) = 0;",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdd8) = 0;",
@@ -629,7 +629,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde8) = 0xffffffff;",
@@ -637,7 +637,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(CCharacter *)((int)pvVar4",
       "severity": "moderate",
       "text": "pCVar5 = (CCharacter *)((int)pvVar4 + -0x33c4);",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(float *)((int)pvVar4",
       "severity": "moderate",
       "text": "} while (pfVar6 != (float *)((int)pvVar4 + -0x333c));",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf4) = 0;",
@@ -661,7 +661,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf0) = 0;",
@@ -669,7 +669,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdec) = 0;",
@@ -677,7 +677,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdfc) = 0;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf8) = 0;",
@@ -693,7 +693,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdbc) = 0;",
@@ -701,7 +701,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + 0x827c) = 0;",
@@ -709,7 +709,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb8) = 0;",
@@ -717,7 +717,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe34) = 0;",
@@ -725,7 +725,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe30) = 0;",
@@ -733,7 +733,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb4) = 0;",
@@ -741,7 +741,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + 0x8284) = 0;",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb0) = 0x3f800000;",
@@ -757,7 +757,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdac) = 0;",
@@ -765,7 +765,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xda4) = 0;",
@@ -773,7 +773,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 84,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x940) = 0;",
@@ -781,7 +781,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 85,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x93c) = 0;",
@@ -789,7 +789,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xda8) = 1;",
@@ -797,7 +797,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf88) = 0;",
@@ -805,7 +805,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(byte *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)pvVar4 + -0xf84) = 0;",
@@ -813,7 +813,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x77c) = 0;",
@@ -821,7 +821,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 90,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x778) = 0;",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 91,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x774) = 0;",
@@ -837,7 +837,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x608) = 0;",
@@ -845,7 +845,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(uint *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f8) = 0;",
@@ -853,7 +853,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(byte *)((int)pvVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)pvVar4 + -0xe98) = 0;",
@@ -861,7 +861,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(CCharacter *)((int)pvVar4",
       "severity": "moderate",
       "text": "return (CCharacter *)((int)pvVar4 + -0x33c4);",
@@ -896,12 +896,12 @@
       "line": 26,
       "match": "(int)pvVar4",
       "severity": "moderate",
-      "text": "*(byte ***)((int)pvVar4 + -0x3278) =",
+      "text": "*(CCharacter_full_vtable **)((int)pvVar4 + -0x3278) = &g_CCharacterVTable;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xfc0) = 0;",
@@ -909,7 +909,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf9c) = 0;",
@@ -917,7 +917,15 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 29,
+      "match": "(int)pvVar4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
@@ -928,12 +936,12 @@
       "line": 30,
       "match": "(int)pvVar4",
       "severity": "moderate",
-      "text": "*(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);",
+      "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 30,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
@@ -942,14 +950,6 @@
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 31,
-      "match": "(int)pvVar4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar4 + -0xfa4) = *(uint *)((int)pvVar4 + -4000);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf8c) = 0x42c80000;",
@@ -957,7 +957,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f0) = 0x3f800000;",
@@ -965,7 +965,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 33,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5ec) = 0x40000000;",
@@ -973,7 +973,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e8) = 0x41a00000;",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 35,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e4) = 0x42480000;",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 36,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5e0) = 0x40000000;",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5dc) = 0xc479c000;",
@@ -1005,7 +1005,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 38,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5d8) = 0;",
@@ -1013,7 +1013,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x4bc) = 0;",
@@ -1021,7 +1021,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x4b4) = 0x40000000;",
@@ -1029,7 +1029,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe04) = 0xffffffff;",
@@ -1037,7 +1037,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 42,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe08) = 0xffffffff;",
@@ -1045,7 +1045,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f4) = 0;",
@@ -1053,7 +1053,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe1c) = 0;",
@@ -1061,7 +1061,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe2c) = 0;",
@@ -1069,7 +1069,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe28) = 0x40400000;",
@@ -1077,7 +1077,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 48,
+      "line": 47,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe24) = 0x7149f2ca;",
@@ -1085,7 +1085,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe20) = 0xbf800000;",
@@ -1093,7 +1093,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe18) = 0;",
@@ -1101,7 +1101,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf90) = 0x42c80000;",
@@ -1109,7 +1109,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 51,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "if ((uint *)((int)pvVar4 + -0xe14) != local_c) {",
@@ -1117,7 +1117,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe14) = 0;",
@@ -1125,7 +1125,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe10) = 0;",
@@ -1133,7 +1133,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe0c) = 0x40000000;",
@@ -1141,7 +1141,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde4) = 0;",
@@ -1149,7 +1149,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 57,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde0) = 0;",
@@ -1157,7 +1157,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 58,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xddc) = 0;",
@@ -1165,7 +1165,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdd8) = 0;",
@@ -1173,7 +1173,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xde8) = 0xffffffff;",
@@ -1181,7 +1181,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 61,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "pCVar5 = (CCharacter *)((int)pvVar4 + -0x33c4);",
@@ -1189,7 +1189,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "} while (pfVar6 != (float *)((int)pvVar4 + -0x333c));",
@@ -1197,7 +1197,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf4) = 0;",
@@ -1205,7 +1205,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf0) = 0;",
@@ -1213,7 +1213,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdec) = 0;",
@@ -1221,7 +1221,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdfc) = 0;",
@@ -1229,7 +1229,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdf8) = 0;",
@@ -1237,7 +1237,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 75,
+      "line": 74,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdbc) = 0;",
@@ -1245,7 +1245,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + 0x827c) = 0;",
@@ -1253,7 +1253,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 77,
+      "line": 76,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb8) = 0;",
@@ -1261,7 +1261,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 77,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe34) = 0;",
@@ -1269,7 +1269,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xe30) = 0;",
@@ -1277,7 +1277,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb4) = 0;",
@@ -1285,7 +1285,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + 0x8284) = 0;",
@@ -1293,7 +1293,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 82,
+      "line": 81,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdb0) = 0x3f800000;",
@@ -1301,7 +1301,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xdac) = 0;",
@@ -1309,7 +1309,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
+      "line": 83,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xda4) = 0;",
@@ -1317,7 +1317,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x940) = 0;",
@@ -1325,7 +1325,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 86,
+      "line": 85,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x93c) = 0;",
@@ -1333,7 +1333,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xda8) = 1;",
@@ -1341,7 +1341,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 88,
+      "line": 87,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0xf88) = 0;",
@@ -1349,7 +1349,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 89,
+      "line": 88,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)pvVar4 + -0xf84) = 0;",
@@ -1357,7 +1357,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 89,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x77c) = 0;",
@@ -1365,7 +1365,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 91,
+      "line": 90,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x778) = 0;",
@@ -1373,7 +1373,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
+      "line": 91,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x774) = 0;",
@@ -1381,7 +1381,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
+      "line": 92,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x608) = 0;",
@@ -1389,7 +1389,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
+      "line": 93,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar4 + -0x5f8) = 0;",
@@ -1397,7 +1397,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 95,
+      "line": 94,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "*(byte *)((int)pvVar4 + -0xe98) = 0;",
@@ -1405,7 +1405,7 @@
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
+      "line": 95,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "return (CCharacter *)((int)pvVar4 + -0x33c4);",
@@ -1421,7 +1421,7 @@
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar5` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar5 = pCVar5;` self-assign or two-var `tmp = &pCVar5->field; pCVar5 = tmp;` ping-pong \u2014 plus a constant-index store on `pCVar5`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 63,
+      "line": 62,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

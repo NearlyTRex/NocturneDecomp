@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6)
+; void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest_buffer
+; int              Stack[0x8]:4   src_x
+; int              Stack[0xc]:4   src_y
+; int              Stack[0x10]:4   start_row
+; int              Stack[0x14]:4   bytes_per_row
+; int              Stack[0x18]:4   height
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_hiram.cpp_FUN_004b6750_0059eda4 = 004b6750
+;   CCharacter_full_vtable g_CHiramVTable
 ;   WatcomTypeInfo g_CHiramTypeInfo_0059eee0
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     PUSH 0x0                            ; 004b6680
     ADD EBX,0xbc8c                      ; 004b6682
     PUSH EBX                            ; 004b6688
-    MOV dword ptr [EBX + 0xffff44c0],0x59eda4 ; 004b6689 | PTR_core_hiram.cpp_FUN_004b6750_0059eda4
+    MOV dword ptr [EBX + 0xffff44c0],0x59eda4 ; 004b6689 | g_CHiramVTable
     CALL core_path.cpp_CPathMap_dtor_FUN_004efdd0 ; 004b6693
         ;   XREF to: 004efdd0 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_dtor_FUN_004efdd0(CPathMap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b6698

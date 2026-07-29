@@ -1,51 +1,51 @@
 // Name: core_setutil.cpp_FUN_005148b0
 // Address: 005148b0
 // Address Range: [[005148b0, 0051497d]]
-// Convention: unknown
-// Signature: void core_setutil_cpp_FUN_005148b0(char *param_1,CDemonCamera *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_setutil_cpp_FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera)
 
 #include "nocturne.h"
 
-void core_setutil_cpp_FUN_005148b0(char *param_1,CDemonCamera *param_2)
+void __cdecl core_setutil_cpp_FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera)
 
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
-  CDemonCamera *pCVar5;
+  CMatrix3x3f *pCVar3;
+  C3DSCamera *pCVar4;
+  char *pcVar5;
+  CDemonCamera *pCVar6;
   
-  if (param_2->camera_name + 0xc4 != param_1 + 0x100) {
-    *(uint *)(param_2->camera_name + 0xc4) = *(uint *)(param_1 + 0x100);
-    *(uint *)(param_2->camera_name + 200) = *(uint *)(param_1 + 0x104);
-    *(uint *)(param_2->camera_name + 0xcc) = *(uint *)(param_1 + 0x108);
+  if ((CVector3f *)(camera->camera_name + 0xc4) != &this_ptr->position) {
+    *(float *)(camera->camera_name + 0xc4) = (this_ptr->position).x;
+    *(float *)(camera->camera_name + 200) = (this_ptr->position).y;
+    *(float *)(camera->camera_name + 0xcc) = (this_ptr->position).z;
   }
-  pcVar3 = param_1 + 0x118;
-  pcVar4 = param_2->camera_name + 0xd0;
+  pCVar3 = &this_ptr->rotation_matrix;
+  pcVar5 = camera->camera_name + 0xd0;
   for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar4 = *(uint *)pcVar3;
-    pcVar3 = pcVar3 + 4;
-    pcVar4 = pcVar4 + 4;
+    *(float *)pcVar5 = pCVar3->m[0].x;
+    pCVar3 = (CMatrix3x3f *)&pCVar3->m[0].y;
+    pcVar5 = pcVar5 + 4;
   }
-  *(uint *)(param_2->camera_name + 0xf8) = *(uint *)(param_1 + 0x140);
-  pcVar3 = param_1;
-  pCVar5 = param_2;
+  *(int *)(camera->camera_name + 0xf8) = this_ptr->is_panning;
+  pCVar4 = this_ptr;
+  pCVar6 = camera;
   do {
-    cVar1 = *pcVar3;
-    *(char *)&(pCVar5->base).fixed_point_scale = cVar1;
+    cVar1 = pCVar4->name[0];
+    *(char *)&(pCVar6->base).fixed_point_scale = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    *(char *)((int)&(pCVar5->base).fixed_point_scale + 1) = cVar1;
-    pCVar5 = (CDemonCamera *)((int)&(pCVar5->base).fixed_point_scale + 2);
+    cVar1 = pCVar4->name[1];
+    pCVar4 = (C3DSCamera *)(pCVar4->name + 2);
+    *(char *)((int)&(pCVar6->base).fixed_point_scale + 1) = cVar1;
+    pCVar6 = (CDemonCamera *)((int)&(pCVar6->base).fixed_point_scale + 2);
   } while (cVar1 != '\0');
-  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(param_2,*(float *)(param_1 + 0x144))
-  ;
-  if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {
+  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(camera,this_ptr->projection_scale);
+  if (this_ptr->projection_scale < *(float *)(0x01E57284 + 0x14cd68)) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (PTR_DAT_005ad350,"Ambient set low by script\n");
   }
-  if (*(float *)(param_1 + 0x144) <= (float)0.25) {
+  if (this_ptr->projection_scale <= (float)0.25) {
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60

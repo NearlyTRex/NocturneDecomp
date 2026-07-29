@@ -5,7 +5,7 @@
 
 // Original: core_dpart.cpp_CDemonPart_ctor_FUN_00456ef0
 // Address: 00456ef0
-void CDemonPart::ctor(undefined1 *param_1);
+CDemonPart * __cdecl CDemonPart::ctor(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_dtor_FUN_00456f40
 // Address: 00456f40
@@ -21,11 +21,11 @@ void __cdecl CDemonPart::free(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_load_FUN_004570c0
 // Address: 004570c0
-void CDemonPart::load(void);
+void __cdecl CDemonPart::load(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_save_FUN_004570f0
 // Address: 004570f0
-void CDemonPart::save(void);
+void __cdecl CDemonPart::save(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120
 // Address: 00457120
@@ -33,4 +33,4 @@ void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0
 // Address: 004571f0
-void CDemonPart::loadFromFile(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
+void __cdecl CDemonPart::loadFromFile(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);

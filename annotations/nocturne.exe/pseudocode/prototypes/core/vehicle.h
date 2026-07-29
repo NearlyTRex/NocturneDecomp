@@ -55,13 +55,13 @@ void FUN_0054f790(void);
 // Address: 0054f7a0
 uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
-// Original: core_vehicle.cpp_FUN_0054f7f0
+// Original: core_vehicle.cpp_CVehicle_dtor_FUN_0054f7f0
 // Address: 0054f7f0
-CDemonActor * FUN_0054f7f0(CDemonActor *param_1,byte param_2);
+CVehicle * __cdecl CVehicle::dtor(CVehicle *this_ptr,uint flags);
 
 // Original: core_vehicle.cpp_CTire_ctor_FUN_0054f870
 // Address: 0054f870
-char * CTire::ctor(int param_1);
+CTire * __cdecl CTire::ctor(CTire *this_ptr);
 
 // Original: core_vehicle.cpp_CTire_dtor_FUN_0054f890
 // Address: 0054f890

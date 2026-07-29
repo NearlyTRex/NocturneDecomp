@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_skeleton_cpp_distancePointToLineSegment_FUN_005171b0(float *param_1,float *param_2,float *param_3)
+; float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005171b0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   line_start
+; CVector3f *      Stack[0x8]:4   line_end
+; CVector3f *      Stack[0xc]:4   test_point
 ;
 ; *****************************************************************************
 

@@ -21,7 +21,7 @@ CCrossbow * __cdecl CCrossbow::ctor(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0
 // Address: 0043cfd0
-void CCrossbow::process(CWeapon *param_1,float param_2);
+void CCrossbow::process(CCharacter *param_1,float param_2);
 
 // Original: core_crossbow.cpp_FUN_0043d0a0
 // Address: 0043d0a0
@@ -37,7 +37,7 @@ undefined4 * FUN_0043d150(int param_1,undefined4 *param_2);
 
 // Original: core_crossbow.cpp_FUN_0043d1c0
 // Address: 0043d1c0
-undefined4 FUN_0043d1c0(CWeapon *param_1);
+undefined4 FUN_0043d1c0(CCharacter *param_1);
 
 // Original: core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810
 // Address: 0043d810
@@ -45,8 +45,8 @@ float CCrossbow::getCurFrame(int param_1);
 
 // Original: core_crossbow.cpp_FUN_0043d840
 // Address: 0043d840
-undefined4 FUN_0043d840(void);
+float FUN_0043d840(void);
 
-// Original: core_crossbow.cpp_FUN_0043d870
+// Original: core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870
 // Address: 0043d870
-CWeapon * FUN_0043d870(CWeapon *param_1,byte param_2);
+CCrossbow * __cdecl CCrossbow::dtor(CCrossbow *this_ptr,uint flags);

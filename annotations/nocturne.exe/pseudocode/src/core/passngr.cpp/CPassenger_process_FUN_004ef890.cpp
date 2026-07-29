@@ -19,9 +19,9 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float 
   CDemonMission *pCVar5;
   SMotion *pSVar6;
   int iVar7;
-  float *pfVar8;
+  CVector3f *pCVar8;
   float local_20;
-  byte local_1c [12];
+  CVector3f local_1c;
   
   if (1.0 <= *(float *)(param_1[2].flames[0x20].off_event + 0x38)) {
     return;
@@ -68,12 +68,12 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float 
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar7);
   }
   if (iVar2 != 0) {
-    pfVar8 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                (param_1,local_1c,&(param_1->model).accumulated_root_motion);
+    pCVar8 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                       (&param_1->base,&local_1c,&(param_1->model).accumulated_root_motion);
     pCVar1 = &(param_1->base).location;
-    (pCVar1->position).x = *pfVar8 + (pCVar1->position).x;
-    (param_1->base).location.position.y = pfVar8[1] + (param_1->base).location.position.y;
-    (param_1->base).location.position.z = pfVar8[2] + (param_1->base).location.position.z;
+    (pCVar1->position).x = pCVar8->x + (pCVar1->position).x;
+    (param_1->base).location.position.y = pCVar8->y + (param_1->base).location.position.y;
+    (param_1->base).location.position.z = pCVar8->z + (param_1->base).location.position.z;
     iVar2 = *(int *)(param_1[2].flames[0x1c].base.create_event + 0x14);
     if (iVar2 != 0) {
       *(float *)(iVar2 + 0x20) = (pCVar1->position).x;

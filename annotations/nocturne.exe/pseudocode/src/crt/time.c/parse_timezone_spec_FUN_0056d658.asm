@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte * crt_time_c_parse_timezone_spec_FUN_0056d658(byte *param_1,byte *param_2,int *param_3)
+; char * __cdecl crt_time_c_parse_timezone_spec_FUN_0056d658(char *tz_string,char *name_buffer,int *offset_seconds)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   tz_string
+; char *           Stack[0x8]:4   name_buffer
+; int *            Stack[0xc]:4   offset_seconds
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

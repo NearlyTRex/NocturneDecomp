@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0051b82d
     ADD EBX,0x4                         ; 0051b82e
     CALL core_xform.cpp_setIdentityQuaternion_FUN_0055d110 ; 0051b831
-        ;   XREF to: 0055d110 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityQuaternion_FUN_0055d110()
+        ;   XREF to: 0055d110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityQuaternion_FUN_0055d110(CQuaternion4f * quaternion)
     INC ESI                             ; 0051b836
     FLD float ptr [EBX + 0x510]         ; 0051b837
     ADD ESP,0x4                         ; 0051b83d

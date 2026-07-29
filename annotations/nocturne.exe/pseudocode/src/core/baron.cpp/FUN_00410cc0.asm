@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_FUN_00410cc0(CDemonActor *param_1)
+; void __cdecl core_baron_cpp_FUN_00410cc0(CBaron *this_ptr)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x150]:8  local_150
 ; undefined        Stack[-0x148]:1  local_148
@@ -89,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0xd8]                ; 00410d0d
     PUSH EAX                            ; 00410d14
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00410d15
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 00410d1a
     LEA EAX,[ESP + 0x118]               ; 00410d1c
     ADD ESP,0x8                         ; 00410d23
@@ -105,7 +107,7 @@ section .text
     PUSH dword ptr [ESP + 0x114]        ; 00410d47
         ;   Label: LAB_00410d47
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00410d4e
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x140],EAX     ; 00410d53
     FLD float ptr [ESP + 0x140]         ; 00410d5a
     ADD ESP,0x4                         ; 00410d61

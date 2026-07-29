@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_glever_kfm_005878f4
-;   undefined1* PTR_core_lever.cpp_CLever_setup_FUN_004c6110_0059fc44 = 004c6110
+;   CDemonActor_vtable g_CLeverVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -28,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c6041
     PUSH EBX                            ; 004c6045
     CALL core_actor.cpp_FUN_00409d30    ; 004c6046
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c604b
     ADD EAX,0x150                       ; 004c604e
     PUSH EAX                            ; 004c6053
@@ -38,13 +38,13 @@ section .text
     LEA EBX,[EAX + 0x2c8]               ; 004c605c
     PUSH EBX                            ; 004c6062
     CALL core_event.cpp_FUN_00481620    ; 004c6063
-        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00481620()
+        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00481620(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 004c6068
     SUB EBX,0x418                       ; 004c606b
     PUSH 0x5878f4                       ; 004c6071 | = "glever.kfm"
     LEA EAX,[EBX + 0x150]               ; 004c6076
     PUSH EAX                            ; 004c607c
-    MOV dword ptr [EBX + 0x14c],0x59fc44 ; 004c607d | PTR_core_lever.cpp_CLever_setup_FUN_004c6110_0059fc44
+    MOV dword ptr [EBX + 0x14c],0x59fc44 ; 004c607d | g_CLeverVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c6087
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 004c608c

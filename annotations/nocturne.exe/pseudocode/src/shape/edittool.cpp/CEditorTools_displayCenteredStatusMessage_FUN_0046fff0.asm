@@ -97,7 +97,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 00470084 | DAT_01bcd070
     PUSH EAX                            ; 00470089
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 0047008a
-        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 0047008f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00470092
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

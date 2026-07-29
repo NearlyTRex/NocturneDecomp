@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(CCharacter *param_1)
+; void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -51,7 +53,7 @@ section .text
     PUSH EAX                            ; 004b4d94
     PUSH EBX                            ; 004b4d95
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 004b4d96
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 004b4d9b
     FLD float ptr [ESP + 0x8]           ; 004b4d9f
     FLDZ                                ; 004b4da3

@@ -2,13 +2,13 @@
 // Address: 00535450
 // Address Range: [[00535450, 00535778]]
 // Convention: unknown
-// Signature: void core_stranger_cpp_FUN_00535450(int param_1)
+// Signature: void core_stranger_cpp_FUN_00535450(CStranger *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_stranger_cpp_FUN_00535450(int param_1)
+void core_stranger_cpp_FUN_00535450(CStranger *param_1)
 
 {
   CDeformableModelInstance *this_ptr;
@@ -21,8 +21,8 @@ void core_stranger_cpp_FUN_00535450(int param_1)
   CVector3f local_24;
   CVector3f local_18;
   
-  core_hero_cpp_FUN_004b48d0(param_1);
-  this_ptr = (CDeformableModelInstance *)(param_1 + 0x150);
+  core_hero_cpp_FUN_004b48d0(&param_1->base);
+  this_ptr = &(param_1->base).base.model;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   _DAT_02dc9f50 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 head",1);
@@ -66,48 +66,47 @@ void core_stranger_cpp_FUN_00535450(int param_1)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Pelvis",1);
   iVar4 = 1;
   pcVar3 = "turnlstart";
-  *(int *)(param_1 + 0x24a4) = _DAT_02dc9f84;
-  *(int *)(param_1 + 0x24e8) = _DAT_02dc9f88;
+  (param_1->base).base.carry_hands[0].bone_index = _DAT_02dc9f84;
+  (param_1->base).base.carry_hands[1].bone_index = _DAT_02dc9f88;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     ((CMotionController *)this_ptr);
+                     (&this_ptr->motion_controller);
   _DAT_02dc9fa0 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "turnrstart";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     ((CMotionController *)this_ptr);
+                     (&this_ptr->motion_controller);
   _DAT_02dc9fa4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   iVar4 = 1;
   pcVar3 = "pickup";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     ((CMotionController *)this_ptr);
+                     (&this_ptr->motion_controller);
   iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(pCVar1,pcVar3,iVar4);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0(this_ptr,iVar4,22.0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                      (this_ptr,&local_18,_DAT_02dc9f88);
-  if ((CVector3f *)(param_1 + 0x1fb24) != pCVar2) {
-    ((CVector3f *)(param_1 + 0x1fb24))->x = pCVar2->x;
-    *(float *)(param_1 + 0x1fb28) = pCVar2->y;
-    *(float *)(param_1 + 0x1fb2c) = pCVar2->z;
+  if (&param_1->ref_r_hand_bone_pos != pCVar2) {
+    (param_1->ref_r_hand_bone_pos).x = pCVar2->x;
+    (param_1->ref_r_hand_bone_pos).y = pCVar2->y;
+    (param_1->ref_r_hand_bone_pos).z = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-                     ((CDeformableModelInstance *)(param_1 + 0x150),&local_24,_DAT_02dc9f60);
-  if ((CVector3f *)(param_1 + 0x1fb30) != pCVar2) {
-    ((CVector3f *)(param_1 + 0x1fb30))->x = pCVar2->x;
-    *(float *)(param_1 + 0x1fb34) = pCVar2->y;
-    *(float *)(param_1 + 0x1fb38) = pCVar2->z;
+                     (&(param_1->base).base.model,&local_24,_DAT_02dc9f60);
+  if (&param_1->ref_r_upperarm_bone_pos != pCVar2) {
+    (param_1->ref_r_upperarm_bone_pos).x = pCVar2->x;
+    (param_1->ref_r_upperarm_bone_pos).y = pCVar2->y;
+    (param_1->ref_r_upperarm_bone_pos).z = pCVar2->z;
   }
   core_stranger_cpp_FUN_005384d0(param_1);
-  *(uint *)(param_1 + 0x1fb3c) = 0;
-  *(uint *)(param_1 + 0x1fccc) = 0;
+  param_1->grab_timer = 0.0;
+  param_1->ladder_blend_time = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            ((CKeyFramedModelInstance *)(param_1 + 0x1fb40),"stranger-hat.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)(param_1 + 0x1fb40));
-  *(uint *)(param_1 + 0x1fcd4) = 0;
-  *(uint *)(param_1 + 0x1fab0) = 0;
-  *(uint *)(param_1 + 0x1fab4) = 0;
+            (&param_1->model,"stranger-hat.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&param_1->model);
+  param_1->fall_velocity_snapshot = 0.0;
+  param_1->goggle_sfx_handles[0] = 0;
+  param_1->goggle_sfx_handles[1] = 0;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-                          ((CDeformableModelInstance *)(param_1 + 0x150));
+                          (&(param_1->base).base.model);
   _DAT_02dc9fa8 =
        core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00519b30
                  (this_ptr_01,"head01",1);

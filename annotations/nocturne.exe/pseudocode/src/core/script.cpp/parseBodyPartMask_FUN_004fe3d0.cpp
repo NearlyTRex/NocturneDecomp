@@ -26,7 +26,7 @@ int __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(CCharacter *character
   pcVar4 = local_74;
   while( true ) {
     local_10 = -1;
-    sscanf(part_names," %[^ \t),]%n",local_74,&local_10);
+    sscanf(part_names," %[^ \t),]%n");
     if (local_10 < 1) {
       return 1;
     }

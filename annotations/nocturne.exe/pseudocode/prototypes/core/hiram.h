@@ -17,7 +17,7 @@ CDemonActorType * FUN_004b6600(void);
 
 // Original: core_hiram.cpp_FUN_004b6610
 // Address: 004b6610
-int FUN_004b6610(undefined4 param_1);
+CNPC * FUN_004b6610(CNPC *param_1);
 
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004b6670
 // Address: 004b6670
@@ -33,4 +33,4 @@ void CHiram::process(CCharacter *param_1,float param_2);
 
 // Original: core_hiram.cpp_FUN_004b68b0
 // Address: 004b68b0
-void FUN_004b68b0(undefined4 param_1);
+void FUN_004b68b0(CNPC *param_1);

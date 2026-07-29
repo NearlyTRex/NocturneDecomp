@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_renderAllPathMaps_FUN_004f1ef0(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_path_cpp_renderAllPathMaps_FUN_004f1ef0(int depth,int red,int green,int fog)
 ;
+; Parameters:
+; int              Stack[0x4]:4   depth
+; int              Stack[0x8]:4   red
+; int              Stack[0xc]:4   green
+; int              Stack[0x10]:4   fog
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce6f

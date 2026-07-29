@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CTrail_activate_FUN_004892c0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl core_fire_cpp_CTrail_activate_FUN_004892c0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 ;
+; Parameters:
+; CTrail *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   size
+; float            Stack[0x10]:4   alpha
+; float            Stack[0x14]:4   lifetime
+; SMRGLTextureBasic * Stack[0x18]:4   texture_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createTrailSegment_FUN_0048c530 at 0048c55f

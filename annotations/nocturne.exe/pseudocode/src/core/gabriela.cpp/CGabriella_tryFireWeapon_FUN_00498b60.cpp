@@ -1,23 +1,25 @@
 // Name: core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60
 // Address: 00498b60
 // Address Range: [[00498b60, 00498bca]]
-// Convention: unknown
-// Signature: void core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CGabriella *this_ptr)
 
 #include "nocturne.h"
 
-void core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CDemonActor *param_1)
+void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CGabriella *this_ptr)
 
 {
+  CCharacter *this_ptr_00;
   int iVar1;
+  CDemonActor *unaff_ESI;
   
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
-  iVar1 = (**(code **)(*(int *)(*(int *)(param_1[0x180].create_event + 0x58) + 0x14c) + 0xdc))
-                    (*(int *)(param_1[0x180].create_event + 0x58));
-  if ((iVar1 != 0) && (*(int *)(*(int *)(param_1[0x180].create_event + 0x58) + 0x2d4) == 1)) {
-    param_1[0x181].dead2 = 0x3f800000;
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)this_ptr);
+  this_ptr_00 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
+  iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).isGrabbable)(this_ptr_00,unaff_ESI);
+  if ((iVar1 != 0) && (((this_ptr->base).inventory.selected_weapon)->fire_mode == 1)) {
+    this_ptr->fire_cooldown_timer = 1.0;
   }
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  param_1[0x181].process_disabled = 0;
+  this_ptr->fire_state = 0;
   return;
 }

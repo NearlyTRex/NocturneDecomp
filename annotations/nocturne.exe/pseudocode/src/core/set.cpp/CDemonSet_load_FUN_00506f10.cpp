@@ -27,7 +27,6 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   char local_c4 [100];
   CVector3f local_60;
   CVector3f local_54;
-  byte local_48 [4];
   CDemonActor **local_44;
   CDemonActor **local_40;
   float *local_3c;
@@ -52,11 +51,11 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     INT_01cc4804 = 0x11b;
     core_main_c_FUN_004c8440("CDemonSet::Unable to open %s",filename);
   }
-  _fscanf(p_Var4,"%d\n",this_ptr->renderable_actors + 0x6f5);
-  _fscanf(p_Var4,"%f\n",this_ptr->renderable_actors + 0x76f);
-  _fscanf(p_Var4,"%s\n",local_228);
-  _fscanf(p_Var4,"%s\n",local_128);
-  _fscanf(p_Var4,"%f\n",this_ptr->lights[199].filter_names[0x13] + 0x24);
+  _fscanf(p_Var4,"%d\n");
+  _fscanf(p_Var4,"%f\n");
+  _fscanf(p_Var4,"%s\n");
+  _fscanf(p_Var4,"%s\n");
+  _fscanf(p_Var4,"%f\n");
   if (this_ptr->renderable_actors[0x6f5] == (CDemonActor *)0x0) {
     _fgets(local_228,0xff,p_Var4);
     _fgets(local_228,0xff,p_Var4);
@@ -64,13 +63,10 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   if ((int)this_ptr->renderable_actors[0x6f5] < 0x11) {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d,%d,%d,%d\n",local_48,(SFog *)(this_ptr->renderable_actors + 0x6d6),
-               this_ptr->renderable_actors + 0x6d7,this_ptr->renderable_actors + 0x6d8);
+    _fscanf(p_Var4,"%d,%d,%d,%d\n");
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%f,%f,%f\n",this_ptr->renderable_actors + 0x6d9,
-               this_ptr->renderable_actors + 0x6da,this_ptr->renderable_actors + 0x6db);
-    _fscanf(p_Var4,"%f,%f,%f,%f\n",this_ptr->renderable_actors + 0x6dc,
-               this_ptr->renderable_actors + 0x6dd,local_48,local_48);
+    _fscanf(p_Var4,"%f,%f,%f\n");
+    _fscanf(p_Var4,"%f,%f,%f,%f\n");
     this_ptr->renderable_actors[0x6de] = (CDemonActor *)0x42480000;
   }
   else {
@@ -79,10 +75,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
                (int)this_ptr->renderable_actors[0x6f5]);
   }
   _fgets(local_228,0xff,p_Var4);
-  _fscanf(p_Var4,"%f,%f\n",0x02DD1210 + 1,0x02DD1210 + 2);
+  _fscanf(p_Var4,"%f,%f\n");
   _fgets(local_228,0xff,p_Var4);
-  _fscanf(p_Var4,"%d,%s\n",this_ptr->renderable_actors + 0x6ef,
-             this_ptr->renderable_actors + 0x6f0);
+  _fscanf(p_Var4,"%d,%s\n");
   if ((int)this_ptr->renderable_actors[0x6f5] < 5) {
     iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
@@ -94,14 +89,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",0x02DD1210);
+    _fscanf(p_Var4,"%d\n");
   }
   if ((int)this_ptr->renderable_actors[0x6f5] < 6) {
     this_ptr->sorted_render_actors[0x6d6] = (CDemonActor *)0x1;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",this_ptr->sorted_render_actors + 0x6d6);
+    _fscanf(p_Var4,"%d\n");
   }
   ppCVar9 = this_ptr->sorted_render_actors + 0x6d7;
   if ((int)this_ptr->renderable_actors[0x6f5] < 0xc) {
@@ -118,7 +113,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     this_ptr->sorted_render_actors[0x6df] = (CDemonActor *)0x4000;
   }
   else {
-    _fscanf(p_Var4,"%d,%s\n",this_ptr->sorted_render_actors + 0x6df,ppCVar9);
+    _fscanf(p_Var4,"%d,%s\n");
   }
   ppCVar9 = this_ptr->renderable_actors + 0x75e;
   if ((int)this_ptr->renderable_actors[0x6f5] < 0xd) {
@@ -136,14 +131,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d,%s\n",this_ptr->renderable_actors + 0x75d,ppCVar9);
+    _fscanf(p_Var4,"%d,%s\n");
   }
   if ((int)this_ptr->renderable_actors[0x6f5] < 0x19) {
     this_ptr->sorted_render_actors[0x6e6] = (CDemonActor *)0x0;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",this_ptr->sorted_render_actors + 0x6e6);
+    _fscanf(p_Var4,"%d\n");
   }
   iVar10 = _strnicmp(local_128,"train",5);
   this_ptr_00 = 0x02DD10C8;
@@ -159,7 +154,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
   }
   iVar10 = 0;
-  _fscanf(p_Var4,"%d\n",&this_ptr->cameras[0xf7].position.y);
+  _fscanf(p_Var4,"%d\n");
   if (0 < (int)this_ptr->cameras[0xf7].position.y) {
     this_ptr_01 = (C3DSLight *)&this_ptr->cameras[0xf7].position.z;
     do {
@@ -172,7 +167,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
   }
   iVar10 = 0;
-  _fscanf(p_Var4,"%d\n",this_ptr);
+  _fscanf(p_Var4,"%d\n");
   if (0 < this_ptr->camera_count) {
     pCVar6 = this_ptr->cameras;
     do {
@@ -207,9 +202,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",this_ptr->renderable_actors + 0x778);
+    _fscanf(p_Var4,"%d\n");
     iVar10 = 0;
-    _fscanf(p_Var4,"%d\n",this_ptr->renderable_actors + 0x779);
+    _fscanf(p_Var4,"%d\n");
     if (0 < (int)this_ptr->renderable_actors[0x779]) {
       local_38 = this_ptr->renderable_actors + 0x77a;
       local_40 = this_ptr->renderable_actors + 0x78a;
@@ -220,13 +215,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
       local_20 = this_ptr->renderable_actors + 0x77b;
       local_44 = this_ptr->renderable_actors + 0x77c;
       do {
-        _fscanf(p_Var4,"%f,%f,%f\n",local_38 + iVar10 * 0x11,local_20,local_44);
-        _fscanf(p_Var4,"%f,%f,%f\n",local_18,local_2c,local_28);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_54,&local_54.z,&local_54.y);
+        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n");
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
                   ((CMatrix3x3f *)ppCVar9,&local_54);
         iVar10 = iVar10 + 1;
-        _fscanf(p_Var4,"%d\n",local_40);
+        _fscanf(p_Var4,"%d\n");
         ppCVar9 = ppCVar9 + 0x11;
         local_40 = local_40 + 0x11;
         local_18 = local_18 + 0x11;
@@ -266,14 +261,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",&this_ptr->vdir_boxes[0xeb].extents.z);
+    _fscanf(p_Var4,"%d\n");
   }
   if ((int)this_ptr->renderable_actors[0x6f5] < 0x18) {
     this_ptr->renderable_actors[0x6e9] = (CDemonActor *)0x0;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",this_ptr->renderable_actors + 0x6e9);
+    _fscanf(p_Var4,"%d\n");
   }
   if ((3 < (int)this_ptr->renderable_actors[0x6f5]) &&
      ((int)this_ptr->renderable_actors[0x6f5] < 10)) {
@@ -285,7 +280,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   else {
     _fgets(local_228,0xff,p_Var4);
     iVar10 = 0;
-    _fscanf(p_Var4,"%d\n",&this_ptr->rooms[5].extents.z);
+    _fscanf(p_Var4,"%d\n");
     if (0 < (int)this_ptr->rooms[5].extents.z) {
       local_34 = &this_ptr->rooms[5].rotation_matrix;
       this_ptr_02 = this_ptr->rooms[5].rotation_matrix.m + 2;
@@ -295,9 +290,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
       local_24 = &this_ptr->rooms[5].rotation_matrix.m[0].y;
       local_14 = &this_ptr->rooms[5].rotation_matrix.m[0].z;
       do {
-        _fscanf(p_Var4,"%f,%f,%f\n",iVar10 * 0x44 + (int)local_34,local_24,local_14);
-        _fscanf(p_Var4,"%f,%f,%f\n",local_1c,local_3c,local_30);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_60,&local_60.z,&local_60.y);
+        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n");
         iVar10 = iVar10 + 1;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
                   ((CMatrix3x3f *)this_ptr_02,&local_60);

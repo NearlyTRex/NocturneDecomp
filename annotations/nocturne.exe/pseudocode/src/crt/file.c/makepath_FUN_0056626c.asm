@@ -132,12 +132,12 @@ section .text
     PUSH EBX                            ; 0056631e
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 0056631f
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00566323
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 00566328
     PUSH EDI                            ; 0056632b
     MOV EBX,EAX                         ; 0056632c
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0056632e
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 00566333
     MOV DH,byte ptr [EAX]               ; 00566336
     MOV dword ptr [ESP + 0x24],EAX      ; 00566338
@@ -226,12 +226,12 @@ section .text
     PUSH EBX                            ; 005663e8
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 005663e9
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005663ed
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 005663f2
     PUSH ESI                            ; 005663f5
     MOV EBX,EAX                         ; 005663f6
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005663f8
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 005663fd
     MOV dword ptr [ESP + 0x28],EAX      ; 00566400
     JMP 0x005663b3                      ; 00566404

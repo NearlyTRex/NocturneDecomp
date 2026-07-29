@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 231,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 19,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param",
-      "suspect_float",
-      "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 60
+    "total_lines": 53
   },
   "cross_references": [],
   "function": {
@@ -148,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260",
-    "signature": "undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)"
+    "signature": "undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4)"
   },
   "function_calls": [
     {
@@ -209,30 +206,13 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_checkCylinderCollisionWorld_FUN_00428260.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 5,
-          "line": 22,
-          "message": "Uninitialized variable: in_stack_0000001c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -240,7 +220,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -248,44 +228,36 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "CDemonActor *in_stack_0000001c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)&local_10,param_2);",
+      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(&param_1->base,&local_10,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)&local_10,param_2);",
+      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(&param_1->base,&local_10,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = (*((param_1->base).vtable._ub)->testCylinderCollision)",
@@ -293,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,(SCollisionReturnInfo *)&local_10,param_3);",
@@ -301,91 +273,43 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 10,
       "match": "param_3",
       "severity": "mild",
       "text": "(&param_1->base,(SCollisionReturnInfo *)&local_10,param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4->damage_amount = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 15,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "in_stack_0000001c->actor_name[4] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "in_stack_0000001c->actor_name[5] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "in_stack_0000001c->actor_name[6] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "in_stack_0000001c->actor_name[7] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 21,
-      "match": "6.108039e-39",
-      "severity": "mild",
-      "text": "local_10 = 6.108039e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Uninitialized variable: in_stack_0000001c",
-      "line": 22,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "in_stack_0000001c->actor_name[4] = '\\0';",
-      "type": "static_uninitvar"
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).processDamage)(param_1,param_4);",
+      "type": "unnamed_param"
     }
   ],
   "vtable_info": {
@@ -401,7 +325,7 @@
         "vtable_addr": "005a3104"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBeast",
         "offset": 248,
         "vtable_addr": "0059a414"
       },

@@ -12,12 +12,10 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *thi
 
 {
   bool bVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   CMatrix3x3f local_5c;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  byte local_28 [12];
+  CVector3f local_34;
+  CVector3f local_28;
   CVector3f local_1c;
   
   bVar1 = false;
@@ -40,14 +38,13 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *thi
     goto switchD_0048b08a_caseD_6;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_5c,orientation_angles);
-  local_34 = 0;
-  local_30 = 0;
-  local_2c = 0x3f333333;
-  pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                              (&local_5c,local_28,&local_34);
-  local_1c.x = impact_position->x - *pfVar2;
-  local_1c.y = impact_position->y - pfVar2[1];
-  local_1c.z = impact_position->z - pfVar2[2];
+  local_34.x = 0.0;
+  local_34.y = 0.0;
+  local_34.z = 0.7;
+  pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_5c,&local_28,&local_34);
+  local_1c.x = impact_position->x - pCVar2->x;
+  local_1c.y = impact_position->y - pCVar2->y;
+  local_1c.z = impact_position->z - pCVar2->z;
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_00483320
               ((CStake *)(_DAT_01c23d4c * 0x260 + 0x1c23d50),&local_1c,orientation_angles,

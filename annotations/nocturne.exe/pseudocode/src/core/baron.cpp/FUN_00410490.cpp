@@ -60,7 +60,7 @@ void core_baron_cpp_FUN_00410490(CBaron *param_1,float param_2)
     }
   }
   if (((param_1->summoned == 0) && ((param_1->base).control_type == HERO_CONTROL_AI)) ||
-     (iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2), iVar2 == 0)) {
+     (iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2), iVar2 == 0)) {
     return;
   }
   if ((param_1->base).control_type == HERO_CONTROL_AI) {
@@ -85,7 +85,7 @@ void core_baron_cpp_FUN_00410490(CBaron *param_1,float param_2)
   if (param_1->summoned == 0) {
     return;
   }
-  iVar2 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
+  iVar2 = core_charactr_cpp_FUN_00428c00((CCharacter *)param_1,param_2);
   pCVar7 = &(param_1->base).base.model;
   if (iVar2 == 0) {
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -222,13 +222,13 @@ switchD_00410a6d_default:
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
             (pCVar7,source_quaternions,fVar8,iVar2,blend_callback);
   iVar2 = 0;
-  core_charactr_cpp_FUN_0042a150(param_1,param_2);
+  core_charactr_cpp_FUN_0042a150((CCharacter *)param_1,param_2);
   do {
-    local_60.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000);
+    local_60.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
     iVar2 = iVar2 + 1;
     local_60.y = 2.0;
     local_10 = local_60.x;
-    local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000);
+    local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
     local_60.x = local_60.x + (param_1->base).base.base.location.position.x;
     local_60.y = local_60.y + (param_1->base).base.base.location.position.y;
     local_60.z = local_10 + (param_1->base).base.base.location.position.z;

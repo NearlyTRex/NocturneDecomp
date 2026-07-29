@@ -673,9 +673,10 @@
         "start":"0056ed08"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_exception.c_ExceptionHandler_FUN_0056ed08",
-    "ret":"undefined1",
+    "ret":"EXCEPTION_DISPOSITION",
     "vars":{
       "locals":[
         {
@@ -711,8 +712,81 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"ExceptionRecord",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"EXCEPTION_RECORD*"
+        },
+        {
+          "name":"EstablisherFrame",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"ContextRecord",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CONTEXT*"
+        },
+        {
+          "name":"DispatcherContext",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

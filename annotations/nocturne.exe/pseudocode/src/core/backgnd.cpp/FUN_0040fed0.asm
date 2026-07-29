@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_backgnd_cpp_FUN_0040fed0(undefined4 param_1)
+; int * core_backgnd_cpp_FUN_0040fed0(CDemonActor *param_1)
 ;
 ;
 ; XREF[1]:
@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_candle_kfm_005784ca
-;   undefined1* PTR_core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30_005999a4 = 0040ff30
+;   CDemonActor_vtable g_CBackgroundActorVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -25,7 +25,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0040fed1
     PUSH EBX                            ; 0040fed5
     CALL core_actor.cpp_FUN_00409d30    ; 0040fed6
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040fedb
     ADD EAX,0x150                       ; 0040fede
     PUSH EAX                            ; 0040fee3
@@ -36,7 +36,7 @@ section .text
     PUSH 0x5784ca                       ; 0040fef2 | = "candle.kfm"
     LEA EAX,[EBX + 0x150]               ; 0040fef7
     PUSH EAX                            ; 0040fefd
-    MOV dword ptr [EBX + 0x14c],0x5999a4 ; 0040fefe | PTR_core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30_005999a4
+    MOV dword ptr [EBX + 0x14c],0x5999a4 ; 0040fefe | g_CBackgroundActorVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ff08
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ff0d

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int param_1,int param_2,int param_3)
+; int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride)
 ;
+; Parameters:
+; int              Stack[0x4]:4   poly_count
+; SMRGLHeaderPrimitive * Stack[0x8]:4   poly_headers
+; int              Stack[0xc]:4   poly_stride
 ;
 ; *****************************************************************************
 

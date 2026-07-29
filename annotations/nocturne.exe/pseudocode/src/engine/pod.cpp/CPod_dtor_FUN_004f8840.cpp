@@ -16,7 +16,7 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(CPod *this_ptr,uint flags)
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
+  this_ptr->vtable = &g_CPodVTable;
   engine_pod_cpp_CPod_cleanup_FUN_004f8b40(this_ptr);
   if ((flags & 2) == 0) {
     return this_ptr;

@@ -1,21 +1,17 @@
 // Name: engine_ncursfx.cpp_CMouse_getPosition_FUN_004ee720
 // Address: 004ee720
 // Address Range: [[004ee720, 004ee736]]
-// Convention: unknown
-// Signature: void engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(void)
+void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y)
 
 {
-  uint *in_stack_00000008;
-  uint *in_stack_0000000c;
-  
-  *in_stack_00000008 = _DAT_01bd1d8c;
-  *in_stack_0000000c = _DAT_01bd1d90;
+  *out_x = _DAT_01bd1d8c;
+  *out_y = _DAT_01bd1d90;
   return;
 }

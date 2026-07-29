@@ -13,9 +13,9 @@
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040efbc
 ;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4dc
 ;   core_anvil.cpp_FUN_0040f8b0 at 0040f8dc
+;   core_armour.cpp_CArmour_dtor_FUN_0040fc30 at 0040fcc7
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd87
 ;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdec
-;   core_armour.cpp_FUN_0040fc30 at 0040fcc7
 ;   core_backgnd.cpp_FUN_004100f0 at 0041011c
 ;   core_baron.cpp_CBaronWeapon_dtor_FUN_00411610 at 0041163c
 ;   ... and 127 more

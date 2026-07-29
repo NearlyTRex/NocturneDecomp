@@ -13,7 +13,7 @@ int __cdecl validateActorVariableName(char *variable_name);
 
 // Original: core_script.cpp_trimLine_FUN_004fdf60
 // Address: 004fdf60
-void trimLine(char *param_1,char *param_2);
+void __cdecl trimLine(char *input_line,char *output_buffer);
 
 // Original: core_script.cpp_trimString_FUN_004fe000
 // Address: 004fe000
@@ -45,7 +45,7 @@ int __cdecl parseBodyPartMask(CCharacter *character,char *part_names,int *part_m
 
 // Original: core_script.cpp_FUN_004fe490
 // Address: 004fe490
-CStrList * FUN_004fe490(int param_1);
+CScript * __cdecl FUN_004fe490(CScript *this_ptr);
 
 // Original: core_script.cpp_FUN_004fe4d0
 // Address: 004fe4d0
@@ -65,15 +65,15 @@ void __cdecl CScript::process(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
 // Address: 004fe710
-int CScript::getLetterboxHeight(void);
+int __cdecl CScript::getLetterboxHeight(CScript *this_ptr);
 
 // Original: core_script.cpp_FUN_004fe770
 // Address: 004fe770
-void FUN_004fe770(int param_1);
+void __cdecl FUN_004fe770(CScript *this_ptr);
 
 // Original: core_script.cpp_FUN_004fe9d0
 // Address: 004fe9d0
-void FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom);
 
 // Original: core_script.cpp_FUN_004febd0
 // Address: 004febd0
@@ -81,15 +81,15 @@ undefined4 FUN_004febd0(CScript *param_1,char *param_2,int param_3);
 
 // Original: core_script.cpp_FUN_004fee30
 // Address: 004fee30
-void FUN_004fee30(CScript *param_1);
+void __cdecl FUN_004fee30(CScript *this_ptr);
 
 // Original: core_script.cpp_FUN_004fef60
 // Address: 004fef60
-undefined * FUN_004fef60(CScript *param_1,int *param_2);
+char * __cdecl FUN_004fef60(CScript *this_ptr,int *error_line_out);
 
 // Original: core_script.cpp_FUN_004feff0
 // Address: 004feff0
-void FUN_004feff0(undefined4 *param_1);
+void __cdecl FUN_004feff0(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_executeInitSection_FUN_004ff170
 // Address: 004ff170
@@ -101,7 +101,7 @@ int __cdecl CScript::step(CScript *this_ptr,float *time_remaining);
 
 // Original: core_script.cpp_CScript_getDialogDuration_FUN_005049b0
 // Address: 005049b0
-float CScript::getDialogDuration(void *param_1,char *param_2,char *param_3,char *param_4);
+float __cdecl CScript::getDialogDuration(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 
 // Original: core_script.cpp_CScript_processTimer_FUN_00504b70
 // Address: 00504b70
@@ -117,7 +117,7 @@ int __cdecl CScript::findLabelIndex(CScript *this_ptr,char *label_name);
 
 // Original: core_script.cpp_CScript_skipCommands_FUN_00504c70
 // Address: 00504c70
-int CScript::skipCommands(int param_1,int param_2,int param_3);
+int __cdecl CScript::skipCommands(CScript *this_ptr,int direction,int count);
 
 // Original: core_script.cpp_FUN_00504d60
 // Address: 00504d60
@@ -125,7 +125,7 @@ void FUN_00504d60(CScript *param_1);
 
 // Original: core_script.cpp_FUN_00504d90
 // Address: 00504d90
-undefined4 FUN_00504d90(CScript *param_1);
+int __cdecl FUN_00504d90(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dbLoad_FUN_00504e70
 // Address: 00504e70
@@ -149,7 +149,7 @@ void __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
 
 // Original: core_script.cpp_FUN_005055f0
 // Address: 005055f0
-void FUN_005055f0(CScript *param_1,_FILE *param_2);
+void __cdecl FUN_005055f0(CScript *this_ptr,_FILE *file_handle);
 
 // Original: core_script.cpp_CScript_computeChecksum_FUN_00505820
 // Address: 00505820

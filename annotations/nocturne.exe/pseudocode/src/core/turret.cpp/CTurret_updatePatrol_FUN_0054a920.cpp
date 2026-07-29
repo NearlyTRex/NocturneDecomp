@@ -18,7 +18,7 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr
   float fVar6;
   int iVar7;
   CVector3f *pCVar8;
-  int *in_stack_ffffffac;
+  CDemonActor *in_stack_ffffffac;
   float fStack_4c;
   float fStack_48;
   float fStack_44;
@@ -40,9 +40,9 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr
         iVar7 = 0;
         fVar3 = (this_ptr->patrol_target).z;
         while( true ) {
-          fStack_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+          fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.1,0.9);
           (this_ptr->patrol_target).x = fStack_4c * fStack_1c + (1.0 - fStack_1c) * fStack_40;
-          fStack_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+          fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.1,0.9);
           (this_ptr->patrol_target).z = fStack_44 * fStack_1c + (1.0 - fStack_1c) * fStack_38;
           (this_ptr->patrol_target).y = fStack_48;
           pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -65,8 +65,8 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr
     }
   }
   else if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
-    (*((this_ptr->base).base.vtable._ub)->showEditorHelp)((CDemonActor *)this_ptr,in_stack_ffffffac)
-    ;
+    (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)
+              ((CCharacter *)this_ptr,in_stack_ffffffac);
   }
   return;
 }

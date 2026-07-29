@@ -47,7 +47,8 @@ void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1)
       *(float *)(iVar5 + 0x38) = (param_1->base).base.orient.vec.z;
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-              (param_1[1].base.base.scale.x + 0x150,&param_1[1].base.base.health);
+              ((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150),
+               (char *)&param_1[1].base.base.health);
     *(float *)(param_1[1].base.base.scale.x + 0x2614) =
          param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].z;
     iVar5 = param_1[1].base.base.scale.x;

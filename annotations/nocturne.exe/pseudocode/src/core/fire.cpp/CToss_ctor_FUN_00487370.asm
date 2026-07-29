@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_fire_cpp_CToss_ctor_FUN_00487370(int param_1)
+; CToss * __cdecl core_fire_cpp_CToss_ctor_FUN_00487370(CToss *this_ptr)
 ;
+; Parameters:
+; CToss *          Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_ctor_FUN_0041a610

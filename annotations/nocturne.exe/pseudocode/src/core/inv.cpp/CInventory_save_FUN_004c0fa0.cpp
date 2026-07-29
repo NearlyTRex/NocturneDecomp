@@ -44,7 +44,7 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004c0fa0(CInventory *this_ptr,_FIL
   if (0 < this_ptr->item_count) {
     do {
       iVar3 = iVar3 + 1;
-      core_actor_cpp_CDemonActor_save_FUN_0040c040(pCVar2->items[0]);
+      core_actor_cpp_CDemonActor_save_FUN_0040c040(pCVar2->items[0],file_handle);
       pCVar2 = (CInventory *)&pCVar2->owner;
     } while (iVar3 < this_ptr->item_count);
   }

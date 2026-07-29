@@ -114,7 +114,7 @@ section .text
     MOV EBP,dword ptr [0x01bcd070]      ; 00471b32 | DAT_01bcd070
     PUSH EBP                            ; 00471b38
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00471b39
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00471b3e
     CMP EBX,EAX                         ; 00471b41
     JGE 0x00471add                      ; 00471b43

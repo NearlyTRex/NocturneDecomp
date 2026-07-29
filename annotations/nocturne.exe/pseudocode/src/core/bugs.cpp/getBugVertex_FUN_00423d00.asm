@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_getBugVertex_FUN_00423d00(void)
+; int __cdecl core_bugs_cpp_getBugVertex_FUN_00423d00(SBug *bug_data,int bug_index)
 ;
+; Parameters:
+; SBug *           Stack[0x4]:4   bug_data
+; int              Stack[0x8]:4   bug_index
 ;
 ; *****************************************************************************
 

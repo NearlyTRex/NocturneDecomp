@@ -252,7 +252,7 @@ section .text
     ADD ESP,0x4                         ; 004c7c22
     PUSH dword ptr [ESP + 0x10]         ; 004c7c25
     CALL sound_sndmain.cpp_FUN_00526120 ; 004c7c29
-        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00526120()
+        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00526120(float base_frequency)
     ADD ESP,0x4                         ; 004c7c2e
     PUSH 0x587a89                       ; 004c7c31 | = "cre-charge.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004c7c36

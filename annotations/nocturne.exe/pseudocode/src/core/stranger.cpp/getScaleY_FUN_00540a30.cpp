@@ -1,17 +1,13 @@
 // Name: core_stranger.cpp_getScaleY_FUN_00540a30
 // Address: 00540a30
 // Address Range: [[00540a30, 00540a3a]]
-// Convention: unknown
-// Signature: undefined4 core_stranger_cpp_getScaleY_FUN_00540a30(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-uint core_stranger_cpp_getScaleY_FUN_00540a30(void)
+int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor)
 
 {
-  int in_stack_00000004;
-  
-  return *(uint *)(in_stack_00000004 + 0x10c);
+  return (actor->scale).y;
 }

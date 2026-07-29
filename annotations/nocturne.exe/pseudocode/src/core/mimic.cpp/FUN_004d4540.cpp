@@ -26,7 +26,7 @@ CDemonActor * core_mimic_cpp_FUN_004d4540(CDemonActor *param_1,byte param_2)
     return param_1;
   }
   fVar1 = param_1[0x365].platform_orientation_delta.x;
-  (param_1->vtable)._ub = (CDemonActor_vtable *)&PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
+  (param_1->vtable)._ub = &g_CMimicVTable._ub;
   if (fVar1 != 0.0) {
     (**(code **)(*(int *)((int)fVar1 + 0x14c) + 200))(fVar1,2);
   }

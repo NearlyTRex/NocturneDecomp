@@ -49,7 +49,7 @@ section .text
     PUSH EAX                            ; 00461400
     INC EBX                             ; 00461401
     CALL engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30 ; 00461402
-        ;   XREF to: 00461a30 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30()
+        ;   XREF to: 00461a30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive, int render_flags)
     ADD ESI,0x3c                        ; 00461407
     ADD ESP,0xc                         ; 0046140a
     CMP EBX,EBP                         ; 0046140d

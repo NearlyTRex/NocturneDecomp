@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_FUN_0040b0d0(char *param_1,uint *param_2)
+; void __cdecl core_actor_cpp_FUN_0040b0d0(CDemonActor *this_ptr,uint *out_crc)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; uint *           Stack[0x8]:4   out_crc
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_FUN_00429f70 at 00429f7d

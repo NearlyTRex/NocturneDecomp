@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_createVector_FUN_00423b70(void)
+; CVector3f * __cdecl core_bugs_cpp_createVector_FUN_00423b70(CVector3f *dest,float x,float y,float z)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dest
+; float            Stack[0x8]:4   x
+; float            Stack[0xc]:4   y
+; float            Stack[0x10]:4   z
 ;
 ; *****************************************************************************
 

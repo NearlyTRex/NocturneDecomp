@@ -127,13 +127,13 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004b50ae
     PUSH ECX                            ; 004b50b1
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 004b50b2
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 004b50b7
     PUSH EAX                            ; 004b50ba
     LEA EAX,[ESP + 0x10]                ; 004b50bb
     PUSH EAX                            ; 004b50bf
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004b50c0
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004b50c5
     FABS                                ; 004b50c8
     ADD ESP,0x8                         ; 004b50ca

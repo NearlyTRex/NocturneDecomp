@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 40,
+    "complexity_score": 38,
     "cross_reference_count": 38,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 23,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 77
+    "total_lines": 75
   },
   "cross_references": [
+    {
+      "addr": "0040fc30",
+      "from_addr": "0040fc99",
+      "name": "core_armour.cpp_CArmour_dtor_FUN_0040fc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0040fcf0",
       "from_addr": "0040fd59",
@@ -142,33 +148,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040fc30",
-      "from_addr": "0040fc99",
-      "name": "core_armour.cpp_FUN_0040fc30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004132c0",
       "from_addr": "00413329",
-      "name": "core_batcreat.cpp_FUN_004132c0",
+      "name": "core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414c60",
       "from_addr": "00414cc9",
-      "name": "core_batman.cpp_FUN_00414c60",
+      "name": "core_batman.cpp_CBatman_dtor_FUN_00414c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00415250",
       "from_addr": "004152b9",
-      "name": "core_beast.cpp_FUN_00415250",
+      "name": "core_beast.cpp_CBeast_dtor_FUN_00415250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00415a30",
       "from_addr": "00415aa9",
-      "name": "core_biggs.cpp_FUN_00415a30",
+      "name": "core_biggs.cpp_CBiggs_dtor_FUN_00415a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -186,7 +186,7 @@
     {
       "addr": "00423d90",
       "from_addr": "00423e09",
-      "name": "core_bugs.cpp_FUN_00423d90",
+      "name": "core_bugs.cpp_CBugs_dtor_FUN_00423d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,13 +198,13 @@
     {
       "addr": "0043c6f0",
       "from_addr": "0043c759",
-      "name": "core_cow.cpp_FUN_0043c6f0",
+      "name": "core_cow.cpp_CZombieCow_dtor_FUN_0043c6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00454f30",
       "from_addr": "00454f99",
-      "name": "core_dog.cpp_FUN_00454f30",
+      "name": "core_dog.cpp_CZombieDog_dtor_FUN_00454f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -216,13 +216,13 @@
     {
       "addr": "00463310",
       "from_addr": "00463379",
-      "name": "core_drone.cpp_FUN_00463310",
+      "name": "core_drone.cpp_CDrone_dtor_FUN_00463310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a88f0",
       "from_addr": "004a8959",
-      "name": "core_gargoyle.cpp_FUN_004a88f0",
+      "name": "core_gargoyle.cpp_CGargoyle_dtor_FUN_004a88f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -258,19 +258,19 @@
     {
       "addr": "004b9bf0",
       "from_addr": "004b9c69",
-      "name": "core_hpriest.cpp_FUN_004b9bf0",
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004b9bf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bcfd0",
       "from_addr": "004bd039",
-      "name": "core_imp.cpp_FUN_004bcfd0",
+      "name": "core_imp.cpp_CImp_dtor_FUN_004bcfd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c5540",
       "from_addr": "004c55a9",
-      "name": "core_larva.cpp_FUN_004c5540",
+      "name": "core_larva.cpp_CLarva_dtor_FUN_004c5540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -306,13 +306,13 @@
     {
       "addr": "00506a80",
       "from_addr": "00506ae9",
-      "name": "core_sentinel.cpp_FUN_00506a80",
+      "name": "core_sentinel.cpp_CSentinel_dtor_FUN_00506a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005210d0",
       "from_addr": "00521139",
-      "name": "core_smiley.cpp_FUN_005210d0",
+      "name": "core_smiley.cpp_CSmiley_dtor_FUN_005210d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -322,21 +322,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00543620",
-      "from_addr": "00543699",
-      "name": "core_tbplayer.cpp_FUN_00543620",
+      "addr": "005436f0",
+      "from_addr": "00543769",
+      "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005436f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005436f0",
-      "from_addr": "00543769",
-      "name": "core_tbplayer.cpp_FUN_005436f0",
+      "addr": "00543620",
+      "from_addr": "00543699",
+      "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_00543620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00544850",
       "from_addr": "005448b9",
-      "name": "core_tentacle.cpp_FUN_00544850",
+      "name": "core_tentacle.cpp_CTentacle_dtor_FUN_00544850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -411,9 +411,9 @@
   "globals": [
     {
       "addr": "005a1ed4",
-      "name": "PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4",
-      "type": "undefined1*",
-      "value": "0051b6e0"
+      "name": "g_CDeformableModelInstanceVTable",
+      "type": "CMotionController_vtable",
+      "value": null
     },
     {
       "addr": "005a1f00",
@@ -428,7 +428,7 @@
       {
         "call_addr": "0040fc99",
         "call_type": "direct",
-        "caller": "core_armour.cpp_FUN_0040fc30",
+        "caller": "core_armour.cpp_CArmour_dtor_FUN_0040fc30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -461,7 +461,7 @@
       {
         "call_addr": "00413329",
         "call_type": "direct",
-        "caller": "core_batcreat.cpp_FUN_004132c0",
+        "caller": "core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -472,7 +472,7 @@
       {
         "call_addr": "00414cc9",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00414c60",
+        "caller": "core_batman.cpp_CBatman_dtor_FUN_00414c60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -483,7 +483,7 @@
       {
         "call_addr": "004152b9",
         "call_type": "direct",
-        "caller": "core_beast.cpp_FUN_00415250",
+        "caller": "core_beast.cpp_CBeast_dtor_FUN_00415250",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -494,7 +494,7 @@
       {
         "call_addr": "00415aa9",
         "call_type": "direct",
-        "caller": "core_biggs.cpp_FUN_00415a30",
+        "caller": "core_biggs.cpp_CBiggs_dtor_FUN_00415a30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -527,7 +527,7 @@
       {
         "call_addr": "00423e09",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00423d90",
+        "caller": "core_bugs.cpp_CBugs_dtor_FUN_00423d90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -590,7 +590,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar1[-8].",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionController_dtor_FUN_004e1150((CMotionController *)&pCVar1[-8].z,1)",

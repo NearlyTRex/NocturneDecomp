@@ -190,25 +190,25 @@ section .text
     MOV EDI,dword ptr [0x005bac64]      ; 0049ea60 | INT_005bac64
     PUSH EDI                            ; 0049ea66 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ea67
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049ea6c
     PUSH 0x252                          ; 0049ea6f
     MOV EBP,dword ptr [0x005bac64]      ; 0049ea74 | INT_005bac64
     PUSH EBP                            ; 0049ea7a | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ea7b
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049ea80
     PUSH 0x253                          ; 0049ea83
     MOV EAX,[0x005bac64]                ; 0049ea88 | INT_005bac64
     PUSH EAX                            ; 0049ea8d | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ea8e
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049ea93
     PUSH 0x254                          ; 0049ea96
     MOV EDX,dword ptr [0x005bac64]      ; 0049ea9b | INT_005bac64
     PUSH EDX                            ; 0049eaa1 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049eaa2
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     MOV EDX,dword ptr [EBX + 0xa4]      ; 0049eaa7
     MOV ECX,dword ptr [EBX + 0xac]      ; 0049eaad
     SUB EDX,ECX                         ; 0049eab3
@@ -292,7 +292,7 @@ section .text
     MOV ECX,dword ptr [0x005bac64]      ; 0049eb8e | INT_005bac64
     PUSH ECX                            ; 0049eb94 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049eb95
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e8f7                      ; 0049eb9a
         ;   XREF to: 0049e8f7 (UNCONDITIONAL_JUMP)  ; LAB_0049e8f7
     PUSH 0x203                          ; 0049eb9f
@@ -300,7 +300,7 @@ section .text
     MOV EDI,dword ptr [0x005bac64]      ; 0049eba4 | INT_005bac64
     PUSH EDI                            ; 0049ebaa | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ebab
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e91e                      ; 0049ebb0
         ;   XREF to: 0049e91e (UNCONDITIONAL_JUMP)  ; LAB_0049e91e
     PUSH 0x204                          ; 0049ebb5
@@ -308,7 +308,7 @@ section .text
     MOV EAX,[0x005bac64]                ; 0049ebba | INT_005bac64
     PUSH EAX                            ; 0049ebbf | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ebc0
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e945                      ; 0049ebc5
         ;   XREF to: 0049e945 (UNCONDITIONAL_JUMP)  ; LAB_0049e945
     PUSH 0x205                          ; 0049ebca
@@ -316,7 +316,7 @@ section .text
     MOV ECX,dword ptr [0x005bac64]      ; 0049ebcf | INT_005bac64
     PUSH ECX                            ; 0049ebd5 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ebd6
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e96c                      ; 0049ebdb
         ;   XREF to: 0049e96c (UNCONDITIONAL_JUMP)  ; LAB_0049e96c
     PUSH 0x206                          ; 0049ebe0
@@ -324,7 +324,7 @@ section .text
     MOV EDI,dword ptr [0x005bac64]      ; 0049ebe5 | INT_005bac64
     PUSH EDI                            ; 0049ebeb | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ebec
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e993                      ; 0049ebf1
         ;   XREF to: 0049e993 (UNCONDITIONAL_JUMP)  ; LAB_0049e993
     PUSH 0x207                          ; 0049ebf6
@@ -332,7 +332,7 @@ section .text
     MOV EAX,[0x005bac64]                ; 0049ebfb | INT_005bac64
     PUSH EAX                            ; 0049ec00 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ec01
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e9ba                      ; 0049ec06
         ;   XREF to: 0049e9ba (UNCONDITIONAL_JUMP)  ; LAB_0049e9ba
     PUSH 0x208                          ; 0049ec0b
@@ -340,7 +340,7 @@ section .text
     MOV ECX,dword ptr [0x005bac64]      ; 0049ec10 | INT_005bac64
     PUSH ECX                            ; 0049ec16 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ec17
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049e9e1                      ; 0049ec1c
         ;   XREF to: 0049e9e1 (UNCONDITIONAL_JUMP)  ; LAB_0049e9e1
     PUSH 0x209                          ; 0049ec21
@@ -348,7 +348,7 @@ section .text
     MOV EDI,dword ptr [0x005bac64]      ; 0049ec26 | INT_005bac64
     PUSH EDI                            ; 0049ec2c | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ec2d
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049ea08                      ; 0049ec32
         ;   XREF to: 0049ea08 (UNCONDITIONAL_JUMP)  ; LAB_0049ea08
     PUSH 0x20a                          ; 0049ec37
@@ -356,7 +356,7 @@ section .text
     MOV EAX,[0x005bac64]                ; 0049ec3c | INT_005bac64
     PUSH EAX                            ; 0049ec41 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ec42
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049ea30                      ; 0049ec47
         ;   XREF to: 0049ea30 (UNCONDITIONAL_JUMP)  ; LAB_0049ea30
     PUSH 0x20b                          ; 0049ec4c
@@ -364,7 +364,7 @@ section .text
     MOV ECX,dword ptr [0x005bac64]      ; 0049ec51 | INT_005bac64
     PUSH ECX                            ; 0049ec57 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200 ; 0049ec58
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200()
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200(CKeys * this_ptr, EInputCodeType key_code)
     JMP 0x0049ea58                      ; 0049ec5d
         ;   XREF to: 0049ea58 (UNCONDITIONAL_JUMP)  ; LAB_0049ea58
     PUSH 0x254                          ; 0049ec62

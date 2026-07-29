@@ -203,7 +203,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00453326 | DAT_005be368
     PUSH EDX                            ; 0045332c | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 0045332d
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00453332
     JMP 0x00453219                      ; 00453335
         ;   XREF to: 00453219 (UNCONDITIONAL_JUMP)  ; LAB_00453219
@@ -250,7 +250,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0045339c | DAT_005be368
     PUSH EDX                            ; 004533a2 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 004533a3
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 004533a8
     CMP EBX,dword ptr [ESP + 0x24]      ; 004533ab
     JL 0x00453348                       ; 004533af

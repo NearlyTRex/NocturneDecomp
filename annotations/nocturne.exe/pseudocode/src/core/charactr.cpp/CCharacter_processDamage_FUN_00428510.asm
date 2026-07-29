@@ -117,7 +117,7 @@ section .text
     PUSH EAX                            ; 004285a1
     PUSH EBX                            ; 004285a2
     CALL core_charactr.cpp_FUN_00427730 ; 004285a3
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004285a8
     FLD float ptr [ESI + 0x8]           ; 004285ab
         ;   Label: LAB_004285ab
@@ -239,7 +239,7 @@ section .text
         ;   Label: LAB_004286ae
     PUSH EBX                            ; 004286b0
     CALL core_charactr.cpp_FUN_00427a60 ; 004286b1
-        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427a60()
+        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427a60(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004286b6
     JMP 0x00428579                      ; 004286b9
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579

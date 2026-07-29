@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet *param_1,int param_2,CVector3i *param_3)
+; void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; CVector3i *      Stack[0xc]:4   input_vertices
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

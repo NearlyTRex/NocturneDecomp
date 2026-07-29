@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_font_cpp_packPixelNative_FUN_00494080(void)
+; uint __cdecl engine_font_cpp_packPixelNative_FUN_00494080(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

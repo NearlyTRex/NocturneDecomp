@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 164,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 36,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 54,
     "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 197
+    "total_lines": 202
   },
   "cross_references": [],
   "function": {
@@ -147,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_baron.cpp_CBaron_setup_FUN_004102c0",
-    "signature": "void core_baron_cpp_CBaron_setup_FUN_004102c0(int param_1)"
+    "signature": "void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)"
   },
   "function_calls": [
     {
@@ -440,12 +440,12 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_baron_cpp_CBaron_setup_FUN_004102c0(int param_1)",
+      "text": "void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004b48d0(param_1);",
@@ -453,15 +453,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150));",
+      "text": "(&(param_1->base).model);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_007642e8",
       "severity": "mild",
       "text": "DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,\"Bip01 head\",1)",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 40,
       "match": "DAT_0076431c",
       "severity": "mild",
       "text": "DAT_0076431c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_00764320",
       "severity": "mild",
       "text": "DAT_00764320 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0",
@@ -485,23 +485,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fb14) = 0;",
+      "text": "pCVar1 = &param_1[1].base;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x25bc) = iVar1;",
+      "text": "(param_1->base).gesture_branch_root = iVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 56,
       "match": "DAT_0076436c",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_0076436c);",

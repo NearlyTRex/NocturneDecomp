@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fire_cpp_CFireball_onCollision_FUN_00484b60(CVector3f *param_1)
+; int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00484b60(CFireball *this_ptr,CVector3f *collision_normal)
 ;
+; Parameters:
+; CFireball *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   collision_normal
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_actor_cpp_CBoundingBox3D_copy_FUN_0040e240(undefined4 *param_1,undefined4 *param_2)
+; CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_copy_FUN_0040e240(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   other
 ;
 ; *****************************************************************************
 

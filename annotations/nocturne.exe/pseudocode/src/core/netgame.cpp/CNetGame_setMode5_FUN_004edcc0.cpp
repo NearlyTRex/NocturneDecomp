@@ -1,19 +1,15 @@
 // Name: core_netgame.cpp_CNetGame_setMode5_FUN_004edcc0
 // Address: 004edcc0
 // Address Range: [[004edcc0, 004edcce]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_setMode5_FUN_004edcc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_setMode5_FUN_004edcc0(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_netgame_cpp_CNetGame_setMode5_FUN_004edcc0(void)
+void __cdecl core_netgame_cpp_CNetGame_setMode5_FUN_004edcc0(CNetGame *this_ptr)
 
 {
-  uint *in_stack_00000004;
-  
-  *(byte *)(in_stack_00000004 + 1) = 5;
-  *in_stack_00000004 = 9;
+  *(byte *)&this_ptr->network_mode = 5;
+  this_ptr->connection_type = 9;
   return;
 }

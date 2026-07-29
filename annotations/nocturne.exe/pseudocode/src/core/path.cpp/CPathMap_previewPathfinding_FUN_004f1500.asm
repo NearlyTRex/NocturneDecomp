@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
+; void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(CPathMap *this_ptr)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0058ce1b

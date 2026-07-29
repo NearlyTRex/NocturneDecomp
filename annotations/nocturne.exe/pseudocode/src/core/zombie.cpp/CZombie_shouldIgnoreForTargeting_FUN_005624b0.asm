@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(int param_1)
+; int core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CDemonActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_005624d0
     PUSH EDX                            ; 005624d4
     CALL core_actor.cpp_FUN_0040d830    ; 005624d5
-        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d830()
+        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d830(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005624da
     RET                                 ; 005624dd
 

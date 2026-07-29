@@ -1,15 +1,14 @@
 // Name: core_sound.cpp_syncChannel3WithChannel0_FUN_0052dd90
 // Address: 0052dd90
 // Address Range: [[0052dd90, 0052dde7]]
-// Convention: unknown
-// Signature: void core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
+void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
 
 {
   int iVar1;

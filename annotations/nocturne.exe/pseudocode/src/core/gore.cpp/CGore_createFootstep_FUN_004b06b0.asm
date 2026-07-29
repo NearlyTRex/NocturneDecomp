@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CGore_createFootstep_FUN_004b06b0(undefined4 param_1,CVector3f *param_2,UOrientationVector *param_3,int param_4,int param_5,int param_6)
+; void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004b06b0(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; UOrientationVector * Stack[0xc]:4   orientation
+; int              Stack[0x10]:4   surface_type
+; int              Stack[0x14]:4   alpha
+; int              Stack[0x18]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_actor.cpp_FUN_0040db50 at 0040dc20

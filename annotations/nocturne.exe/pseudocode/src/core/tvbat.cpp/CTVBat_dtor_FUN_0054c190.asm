@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_tvbat_cpp_CTVBat_dtor_FUN_0054c190(CDemonActor *param_1,byte param_2)
+; CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_0054c190(CTVBat *this_ptr,uint flags)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTVBatTypeInfo_005a3a40

@@ -1,14 +1,14 @@
 // Name: engine_3d.c_addPolygonEdge_FUN_004940e0
 // Address: 004940e0
 // Address Range: [[004940e0, 00494214]]
-// Convention: unknown
-// Signature: void engine_3d_c_addPolygonEdge_FUN_004940e0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_3d_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_3d_c_addPolygonEdge_FUN_004940e0(int param_1,int param_2)
+void __cdecl engine_3d_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2)
 
 {
   longlong lVar1;
@@ -17,18 +17,18 @@ void engine_3d_c_addPolygonEdge_FUN_004940e0(int param_1,int param_2)
   int iVar4;
   int iVar5;
   uint uVar6;
-  int iVar7;
+  SRenderVertex *pSVar7;
   
-  iVar3 = *(int *)(param_2 + 0x14) >> 0x10;
-  iVar5 = *(int *)(param_1 + 0x14) >> 0x10;
+  iVar3 = (vertex2->projected_vertex).screen_y >> 0x10;
+  iVar5 = (vertex1->projected_vertex).screen_y >> 0x10;
   if (iVar5 != iVar3) {
     iVar4 = iVar3;
-    iVar7 = param_1;
-    if (*(int *)(param_2 + 0x14) < *(int *)(param_1 + 0x14)) {
+    pSVar7 = vertex1;
+    if ((vertex2->projected_vertex).screen_y < (vertex1->projected_vertex).screen_y) {
       iVar4 = iVar5;
       iVar5 = iVar3;
-      iVar7 = param_2;
-      param_2 = param_1;
+      pSVar7 = vertex2;
+      vertex2 = vertex1;
     }
     iVar3 = _DAT_01c70f78 * 0x38;
     *(int *)(&DAT_01c70f7c + iVar3) = iVar5;
@@ -40,23 +40,24 @@ void engine_3d_c_addPolygonEdge_FUN_004940e0(int param_1,int param_2)
     if (_DAT_01c71300 < iVar4) {
       _DAT_01c71300 = iVar4;
     }
-    *(uint *)(iVar3 + 0x1c70f84) = *(uint *)(iVar7 + 0x10);
-    *(uint *)(iVar3 + 0x1c70f94) = *(uint *)(iVar7 + 0x18);
-    *(uint *)(iVar3 + 0x1c70f9c) = *(uint *)(iVar7 + 0x1c);
-    uVar6 = *(int *)(param_2 + 0x14) - *(int *)(iVar7 + 0x14);
+    *(int *)(iVar3 + 0x1c70f84) = (pSVar7->projected_vertex).screen_x;
+    *(int *)(iVar3 + 0x1c70f94) = pSVar7->u;
+    *(int *)(iVar3 + 0x1c70f9c) = pSVar7->v;
+    uVar6 = (vertex2->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
     if (uVar6 < 0x10000) {
       iVar5 = 0;
     }
     else {
       iVar5 = (int)(0xffffffff / (ulonglong)uVar6);
     }
-    lVar1 = (longlong)iVar5 * (longlong)(*(int *)(param_2 + 0x10) - *(int *)(iVar7 + 0x10));
+    lVar1 = (longlong)iVar5 *
+            (longlong)((vertex2->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
     *(uint *)(iVar3 + 0x1c70f88) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar5 * (longlong)(*(int *)(param_2 + 0x18) - *(int *)(iVar7 + 0x18));
+    lVar1 = (longlong)iVar5 * (longlong)(vertex2->u - pSVar7->u);
     *(uint *)(iVar3 + 0x1c70f98) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar5 * (longlong)(*(int *)(param_2 + 0x1c) - *(int *)(iVar7 + 0x1c));
+    lVar1 = (longlong)iVar5 * (longlong)(vertex2->v - pSVar7->v);
     *(uint *)(iVar3 + 0x1c70fa0) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    uVar6 = (uint)(ushort)((ushort)*(uint *)(iVar7 + 0x14) ^ 0xffff);
+    uVar6 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
     lVar1 = (longlong)(int)uVar6 * (longlong)*(int *)(iVar3 + 0x1c70f88);
     *(uint *)(iVar3 + 0x1c70f84) =
          *(int *)(iVar3 + 0x1c70f84) +

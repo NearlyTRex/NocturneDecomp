@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_flame_cpp_FUN_0048d5d0(CDemonActor *param_1)
+; int __cdecl core_flame_cpp_FUN_0048d5d0(CFlame *this_ptr)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xf0]:1  local_f0
 ;
@@ -156,7 +158,7 @@ section .text
     MOV dword ptr [ESP + 0xac],ESI      ; 0048d6e2
     MOV dword ptr [ESP + 0xb0],ESI      ; 0048d6e9
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 0048d6f0
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     MOV EDX,0x1                         ; 0048d6f5
     ADD ESP,0xc                         ; 0048d6fa
     MOV EDI,dword ptr [0x005ae704]      ; 0048d6fd | DAT_005ae704
@@ -194,7 +196,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0048d77b | DAT_005ae704
     PUSH EAX                            ; 0048d780 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 0048d781
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     FLD float ptr [EBP + 0x150]         ; 0048d786
     FMUL float ptr [0x0058157f]         ; 0048d78c | DOUBLE_0058157f
     LEA EBX,[ESP + 0xe8]                ; 0048d792
@@ -474,7 +476,7 @@ section .text
     PUSH 0x3f828f5c                     ; 0048dba0
     PUSH 0x3f7ae148                     ; 0048dba5
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048dbaa
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x144],EAX     ; 0048dbaf
     FLD float ptr [ESP + 0x144]         ; 0048dbb6
     ADD ESP,0x8                         ; 0048dbbd

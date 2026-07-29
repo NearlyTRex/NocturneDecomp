@@ -15,8 +15,8 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004129cc
 ;   core_batcreat.cpp_FUN_00413040 at 00413107
 ;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00413780 at 004137a0
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 004149f7
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413d66
-;   core_batman.cpp_FUN_00414930 at 004149f7
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 00415940
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 0041556b
 ;   ... and 88 more

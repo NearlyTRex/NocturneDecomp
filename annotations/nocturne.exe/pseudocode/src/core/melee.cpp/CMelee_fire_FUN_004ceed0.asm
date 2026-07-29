@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_melee_cpp_CMelee_fire_FUN_004ceed0(void)
+; int __cdecl core_melee_cpp_CMelee_fire_FUN_004ceed0(CMelee *this_ptr)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_melee_cpp_0058842d

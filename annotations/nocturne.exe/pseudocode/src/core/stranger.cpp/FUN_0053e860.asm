@@ -342,7 +342,7 @@ section .text
     MOV EAX,[0x005b9354]                ; 0053eb87 | DAT_005b9354
     PUSH EAX                            ; 0053eb8c | DAT_01c775ec
     CALL core_game.cpp_FUN_004a3a90     ; 0053eb8d
-        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a3a90()
+        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0053eb92
     PUSH ESI                            ; 0053eb95
         ;   Label: LAB_0053eb95
@@ -391,7 +391,7 @@ section .text
     PUSH 0x42c80000                     ; 0053ebeb
     PUSH 0x0                            ; 0053ebf0
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0053ebf2
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + -0x4],EAX      ; 0053ebf7
     ADD ESP,0x8                         ; 0053ebfa
     FLD float ptr [EBP + -0x4]          ; 0053ebfd

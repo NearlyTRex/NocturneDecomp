@@ -11,17 +11,17 @@
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040ef9f
 ;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4bf
 ;   core_anvil.cpp_FUN_0040f8b0 at 0040f8bf
+;   core_armour.cpp_CArmour_dtor_FUN_0040fc30 at 0040fcaa
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd6a
 ;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdcf
-;   core_armour.cpp_FUN_0040fc30 at 0040fcaa
 ;   core_backgnd.cpp_FUN_004100f0 at 004100ff
 ;   core_barrier.cpp_FUN_004118c0 at 004118cf
 ;   core_bat.cpp_CStairs_dtor_FUN_00412000 at 00412026
-;   core_batcreat.cpp_FUN_004132c0 at 0041333a
+;   core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0 at 0041333a
 ;   ... and 82 more
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4 = 00409fc0
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CDemonActorTypeInfo_005993d0
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     JNZ 0x00409ed1                      ; 00409eab
         ;   XREF to: 00409ed1 (CONDITIONAL_JUMP)  ; LAB_00409ed1
     MOV dword ptr [EBX + 0x68],0x495fd67 ; 00409ead
-    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409eb4 | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4
+    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409eb4 | g_CDemonActorVTable
     TEST AL,0x2                         ; 00409ebe
     JNZ 0x00409eec                      ; 00409ec0
         ;   XREF to: 00409eec (CONDITIONAL_JUMP)  ; LAB_00409eec

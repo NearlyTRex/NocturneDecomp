@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_crate_cpp_FUN_0043c810(undefined4 param_1)
+; int * core_crate_cpp_FUN_0043c810(CDemonActor *param_1)
 ;
 ;
 ; XREF[1]:
@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_0057b422
-;   undefined1* PTR_core_crate.cpp_CCrate_setup_FUN_0043c870_0059ba34 = 0043c870
+;   CDemonActor_vtable g_CCrateVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -25,7 +25,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043c811
     PUSH EBX                            ; 0043c815
     CALL core_actor.cpp_FUN_00409d30    ; 0043c816
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043c81b
     ADD EAX,0x150                       ; 0043c81e
     PUSH EAX                            ; 0043c823
@@ -36,7 +36,7 @@ section .text
     PUSH 0x57b422                       ; 0043c832 | = "question.kfm"
     LEA EAX,[EBX + 0x150]               ; 0043c837
     PUSH EAX                            ; 0043c83d
-    MOV dword ptr [EBX + 0x14c],0x59ba34 ; 0043c83e | PTR_core_crate.cpp_CCrate_setup_FUN_0043c870_0059ba34
+    MOV dword ptr [EBX + 0x14c],0x59ba34 ; 0043c83e | g_CCrateVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0043c848
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0043c84d

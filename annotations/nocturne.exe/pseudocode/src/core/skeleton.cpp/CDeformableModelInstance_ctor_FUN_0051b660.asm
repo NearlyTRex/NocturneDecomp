@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined1* PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4 = 0051b6e0
+;   CMotionController_vtable g_CDeformableModelInstanceVTable
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_ctor_FUN_004e1120
@@ -39,7 +39,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0051b678
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0x58                        ; 0051b67d
-    MOV dword ptr [EAX + 0x50],0x5a1ed4 ; 0051b680 | PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4
+    MOV dword ptr [EAX + 0x50],0x5a1ed4 ; 0051b680 | g_CDeformableModelInstanceVTable
     MOV byte ptr [EAX + 0x2260],0x0     ; 0051b687
     MOV dword ptr [EAX + 0x22b0],0x0    ; 0051b68e
     MOV dword ptr [EAX + 0x2234],0x0    ; 0051b698

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *param_1)
+; void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcard_pattern)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   wildcard_pattern
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc9610

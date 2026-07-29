@@ -2,18 +2,18 @@
 // Address: 0043f630
 // Address Range: [[0043f630, 0043f63f]]
 // Convention: unknown
-// Signature: undefined4 core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(int param_1)
+// Signature: int core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *param_1)
 
 #include "nocturne.h"
 
-uint core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(int param_1)
+int core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *param_1)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  if (65000 < *(int *)(param_1 + 0x174)) {
+  if (65000 < param_1->opacity) {
     return 0;
   }
-  uVar1 = core_curtain_cpp_FUN_0043f330(param_1);
-  return uVar1;
+  iVar1 = core_curtain_cpp_FUN_0043f330(param_1);
+  return iVar1;
 }

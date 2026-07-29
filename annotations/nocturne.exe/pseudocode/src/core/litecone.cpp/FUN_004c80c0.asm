@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c80d2
         ;   Label: LAB_004c80d2
     CALL core_litecone.cpp_CLightCone_ctor_FUN_004c80f0 ; 004c80d3
-        ;   XREF to: 004c80f0 (UNCONDITIONAL_CALL)  ; undefined core_litecone.cpp_CLightCone_ctor_FUN_004c80f0()
+        ;   XREF to: 004c80f0 (UNCONDITIONAL_CALL)  ; CLightCone * core_litecone.cpp_CLightCone_ctor_FUN_004c80f0(CLightCone * this_ptr)
     ADD ESP,0x4                         ; 004c80d8
     RET                                 ; 004c80db
 

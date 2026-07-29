@@ -1,19 +1,19 @@
 // Name: FUN_0056bbf0
 // Address: 0056bbf0
 // Address Range: [[0056bbf0, 0056bc06]]
-// Convention: unknown
-// Signature: int FUN_0056bbf0(LPCSTR param_1)
+// Convention: __watcallStack
+// Signature: int __watcallStack FUN_0056bbf0(char *filename)
 
 #include "nocturne.h"
 
-int FUN_0056bbf0(LPCSTR param_1)
+int __watcallStack FUN_0056bbf0(char *filename)
 
 {
   BOOL BVar1;
   DWORD windows_error;
   int iVar2;
   
-  BVar1 = DeleteFileA(param_1);
+  BVar1 = DeleteFileA(filename);
   if (BVar1 != 0) {
     return 0;
   }

@@ -43,18 +43,18 @@ void CBatman::archive(CEnemy *param_1);
 // Address: 004145f0
 void __cdecl CBatman::processDismemberment(CBatman *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batman.cpp_FUN_00414930
+// Original: core_batman.cpp_CBatman_processDamage_FUN_00414930
 // Address: 00414930
-void FUN_00414930(CBatman *param_1,SDamageInfo *param_2);
+void __cdecl CBatman::processDamage(CBatman *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batman.cpp_FUN_00414b40
+// Original: core_batman.cpp_CBatman_getTargetPoints_FUN_00414b40
 // Address: 00414b40
-int FUN_00414b40(int param_1,CVector3f *param_2);
+int __cdecl CBatman::getTargetPoints(CBatman *this_ptr,CVector3f *out_points_array);
 
-// Original: core_batman.cpp_FUN_00414c40
+// Original: core_batman.cpp_CBatman_getCollisionType_FUN_00414c40
 // Address: 00414c40
-ECollisionType FUN_00414c40(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CBatman::getCollisionType(CBatman *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_batman.cpp_FUN_00414c60
+// Original: core_batman.cpp_CBatman_dtor_FUN_00414c60
 // Address: 00414c60
-CDemonActor * FUN_00414c60(CDemonActor *param_1,byte param_2);
+CBatman * __cdecl CBatman::dtor(CBatman *this_ptr,uint flags);

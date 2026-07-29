@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_bugs_cpp_maxFloat_FUN_00423d60(float param_1,float param_2)
+; float __cdecl core_bugs_cpp_maxFloat_FUN_00423d60(float a,float b)
 ;
+; Parameters:
+; float            Stack[0x4]:4   a
+; float            Stack[0x8]:4   b
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

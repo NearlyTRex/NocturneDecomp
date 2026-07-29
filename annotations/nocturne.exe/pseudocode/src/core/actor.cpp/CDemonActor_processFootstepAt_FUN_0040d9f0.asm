@@ -90,7 +90,7 @@ section .text
     MOV ESI,dword ptr [0x005be368]      ; 0040da7a | DAT_005be368
     PUSH ESI                            ; 0040da80 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040da81
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x40],EAX      ; 0040da86
     FLD float ptr [ESP + 0x40]          ; 0040da8a
     ADD ESP,0xc                         ; 0040da8e
@@ -102,7 +102,7 @@ section .text
     FSTP float ptr [ESP + 0x2c]         ; 0040da9d
     MOV ESI,dword ptr [EAX + 0x14cd4c]  ; 0040daa1 | DAT_01fa3fd0
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040daa7
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x40],EAX      ; 0040daac
     FLD float ptr [ESP + 0x40]          ; 0040dab0
     ADD ESP,0xc                         ; 0040dab4

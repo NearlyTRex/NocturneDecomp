@@ -80,7 +80,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 00487536 | DAT_005b80f0
     PUSH ECX                            ; 0048753c
     CALL core_fire.cpp_FUN_0048c0d0     ; 0048753d
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048c0d0()
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 00487542
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 00487545
     PUSH ESI                            ; 0048754b
@@ -113,7 +113,7 @@ section .text
     PUSH EBX                            ; 00487598
     FSTP float ptr [ESP + 0x14]         ; 00487599
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0048759d
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 004875a2
     FADD float ptr [EAX]                ; 004875a4
     ADD ESP,0xc                         ; 004875a6

@@ -58,13 +58,13 @@ section .text
         ;   XREF to: 0056dd5b (CONDITIONAL_JUMP)  ; LAB_0056dd5b
     PUSH ESI                            ; 0056dd10
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0056dd11
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 0056dd16
     PUSH EBX                            ; 0056dd19
     DEC EDI                             ; 0056dd1a
     MOV ESI,EAX                         ; 0056dd1b
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0056dd1d
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 0056dd22
     MOV EBX,EAX                         ; 0056dd25
     TEST EDI,EDI                        ; 0056dd27

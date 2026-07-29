@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 608,
+    "complexity_score": 610,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 90,
     "suspect_count": 49,
     "suspect_types": [
       "pointer_cast",
@@ -137,7 +137,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 291
+    "total_lines": 293
   },
   "cross_references": [],
   "function": {
@@ -492,20 +492,20 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,param_1[1].previous_transform_state.dirty_flags,&DAT_02dda6b8);",
+      "text": "(0x01E57284,param_1[1].previous_transform_state.dirty_flags,",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_02dda6b8",
       "severity": "mild",
-      "text": "(0x01E57284,param_1[1].previous_transform_state.dirty_flags,&DAT_02dda6b8);",
+      "text": "(CVector3i *)&DAT_02dda6b8);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[1].previous_transform_state.dirty_flags) {",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "vertex_position = param_1 + 2;",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(0x01E57284,(CVector3f *)vertex_position,(CVector3f *)&DAT_02dd1184,iVar3);",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pSVar1 = DAT_005ae704->vertex_buffer_ptr;",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar2 = (longlong)((int)param_1[1].previous_transform_state.orientation.vec.x << 8) *",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar2 = (longlong)((int)param_1[1].previous_transform_state.orientation.vec.y << 8) *",
@@ -553,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar2 = (longlong)((int)param_1[1].previous_transform_state.orientation.vec.z << 8) *",
@@ -561,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar3 < param_1[1].previous_transform_state.dirty_flags);",
@@ -569,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "poly = (SMRGLPrimitivePoly *)&param_1[0x61].orient_matrix.m[1].z;",
@@ -577,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[1].actor_name + 0xc) < 0xfde9) {",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)param_1[0x20d].footstep_sound_code) {",
@@ -593,7 +593,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,poly,0x267);",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar3 < *(int *)param_1[0x20d].footstep_sound_code);",
@@ -609,15 +609,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,poly,*(uint *)param_1[0x20d].footstep_sound_code,0xffffffff);",
+      "text": "*(int *)param_1[0x20d].footstep_sound_code,-1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 88,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
@@ -633,7 +633,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->r + iVar6);",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&pSVar1->r",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar6) =",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
+      "line": 59,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->g + iVar6);",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)&pSVar1->g",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar6) =",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->b + iVar6);",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Pointer value `&pSVar1->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "(int)&pSVar1->b",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar6) =",
@@ -681,7 +681,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->r + iVar6);",
@@ -689,7 +689,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->r + iVar6) =",
@@ -697,7 +697,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 58,
+      "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->g + iVar6);",
@@ -705,7 +705,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->g + iVar6) =",
@@ -713,7 +713,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(longlong)*(int *)((int)&pSVar1->b + iVar6);",
@@ -721,7 +721,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&pSVar1->b + iVar6) =",
@@ -737,7 +737,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 71,
+      "line": 72,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "if (*(int *)(param_1[1].actor_name + 0xc) < 0xfde9) {",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_position` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&vertex_position->owner`). Replace `vertex_position->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 66,
+      "line": 67,
       "match": "vertex_position = (T *)&vertex_position->FIELD",
       "severity": "moderate",
       "text": "vertex_position = (CDemonActor *)&vertex_position->location;",

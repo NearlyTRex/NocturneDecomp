@@ -11,64 +11,60 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(CDemonActor *this_ptr,
 {
   char cVar1;
   uint uVar2;
+  uint uVar3;
   char *str1;
-  int iVar3;
-  char *pcVar4;
-  _FILE *unaff_EDI;
-  CDemonActor *pCVar5;
-  int in_stack_00000010;
-  uint in_stack_ffffff24;
-  CDemonActor *deleted_actor;
-  char acStack_d4 [92];
-  char local_78 [8];
-  char acStack_70 [92];
-  _FILE *local_14;
+  int iVar4;
+  char *pcVar5;
+  CDemonActor *pCVar6;
+  char local_dc [100];
+  char local_78 [100];
+  uint local_14;
   
   str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(this_ptr);
-  deleted_actor = (CDemonActor *)(in_stack_ffffff24 & 0xffffff00);
+  local_dc[0] = '\0';
   local_78[0] = '\0';
-  _fscanf(file_handle," { %s \"%[^\"]\"\n",&stack0xffffff24,local_78);
-  iVar3 = _stricmp(str1,&stack0xffffff24);
-  if (iVar3 != 0) {
+  _fscanf(file_handle," { %s \"%[^\"]\"\n");
+  iVar4 = _stricmp(str1,local_dc);
+  if (iVar4 != 0) {
     PTR_01cc4800 = "..\\core\\actor.cpp";
     INT_01cc4804 = 0x7c6;
     core_main_c_FUN_004c8440("Start of actor file tag mismatch for class %s",str1);
   }
-  pcVar4 = local_78;
-  pCVar5 = this_ptr;
+  pcVar5 = local_78;
+  pCVar6 = this_ptr;
   do {
-    cVar1 = *pcVar4;
-    pCVar5->actor_name[0] = cVar1;
+    cVar1 = *pcVar5;
+    pCVar6->actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pCVar5->actor_name[1] = cVar1;
-    pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pCVar6->actor_name[1] = cVar1;
+    pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
   } while (cVar1 != '\0');
-  pCVar5 = DAT_00763e8c;
+  uVar3 = DAT_00763e8c;
   uVar2 = DAT_00763e88;
   local_14 = DAT_00763e84;
   DAT_00763e84 = file_handle;
   DAT_00763e88 = 1;
   DAT_00763e8c = this_ptr;
-  (*((this_ptr->vtable)._ub)->onActorDeleted)(this_ptr,deleted_actor);
-  acStack_d4[0] = '\0';
-  acStack_70[0] = '\0';
-  _fscanf(in_stack_00000010," } %s \"%[^\"]\"\n");
-  iVar3 = _stricmp(str1,acStack_d4);
-  if ((iVar3 != 0) ||
-     (iVar3 = _stricmp(this_ptr->actor_name,acStack_70), iVar3 != 0)) {
+  (*((this_ptr->vtable)._ub)->archive)(this_ptr);
+  local_dc[0] = '\0';
+  local_78[0] = '\0';
+  _fscanf(file_handle," } %s \"%[^\"]\"\n");
+  iVar4 = _stricmp(str1,local_dc);
+  if ((iVar4 != 0) ||
+     (iVar4 = _stricmp(this_ptr->actor_name,local_78), iVar4 != 0)) {
     PTR_01cc4800 = "..\\core\\actor.cpp";
     INT_01cc4804 = 0x7e3;
-    core_main_c_FUN_004c8440("End of actor file tag mismatch for class %s name \"%s\"");
+    core_main_c_FUN_004c8440("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);
   }
-  if ((*(byte *)(in_stack_00000010 + 0xc) & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     PTR_01cc4800 = "..\\core\\actor.cpp";
     INT_01cc4804 = 0x7e8;
-    core_main_c_FUN_004c8440("IO Error after reading %s \"%s\"");
+    core_main_c_FUN_004c8440("IO Error after reading %s \"%s\"",str1,this_ptr);
   }
-  DAT_00763e8c = pCVar5;
+  DAT_00763e8c = (CDemonActor *)uVar3;
   DAT_00763e88 = uVar2;
-  DAT_00763e84 = unaff_EDI;
+  DAT_00763e84 = (_FILE *)local_14;
   return;
 }

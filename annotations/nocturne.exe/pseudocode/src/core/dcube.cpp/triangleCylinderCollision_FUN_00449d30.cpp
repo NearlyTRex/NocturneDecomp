@@ -26,9 +26,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34 [3];
   
   if ((triangle->triangle).normal.y <= (float)-0.34000000000000002) {
     fVar1 = (triangle->triangle).vertices[0]->x - cylinder_center->x;
@@ -118,20 +116,20 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
-          local_34 = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
-          local_2c = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
-          local_30 = cylinder_center->y;
-          fVar9 = (float)core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                                   (triangle,&local_34,&DAT_014b846c);
+          local_34[0].x = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
+          local_34[0].z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
+          local_34[0].y = cylinder_center->y;
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
+                            (triangle,local_34,(CVector3f *)&DAT_014b846c);
           if ((0.0 <= fVar9) &&
-             (local_30 = fVar9 * _DAT_014b8470 + local_30, *out_height < local_30)) {
-            *out_height = local_30;
+             (local_34[0].y = fVar9 * _DAT_014b8470 + local_34[0].y, *out_height < local_34[0].y)) {
+            *out_height = local_34[0].y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
-          fVar9 = (float)core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
-                                   (triangle,cylinder_center,&DAT_014b846c);
+          fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
+                            (triangle,cylinder_center,(CVector3f *)&DAT_014b846c);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_58.y;

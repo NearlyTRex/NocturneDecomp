@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 004efd6c
     MOV dword ptr [EBX + 0x138b0],EAX   ; 004efd6d
     CALL core_path.cpp_CPathMap_reset_FUN_004f1e10 ; 004efd73
-        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_reset_FUN_004f1e10()
+        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_004f1e10(CPathMap * this_ptr)
     MOV EDX,dword ptr [0x01e312f8]      ; 004efd78 | DAT_01e312f8
     ADD ESP,0x4                         ; 004efd7e
     CMP EDX,0xc8                        ; 004efd81

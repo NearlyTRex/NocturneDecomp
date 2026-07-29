@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CToss_create_FUN_004873b0(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
+; void __cdecl core_fire_cpp_CToss_create_FUN_004873b0(CToss *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 ;
+; Parameters:
+; CToss *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   toss_type
+; CVector3f *      Stack[0xc]:4   position
+; UOrientationVector * Stack[0x10]:4   orientation
+; CVector3f *      Stack[0x14]:4   velocity
+; float            Stack[0x18]:4   fuse_time
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

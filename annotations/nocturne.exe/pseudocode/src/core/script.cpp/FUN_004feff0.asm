@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004feff0(undefined4 *param_1)
+; void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70
 ; undefined1       Stack[-0x6f]:1  local_6f

@@ -1,42 +1,42 @@
 // Name: engine_console.cpp_CConsole_writeChar_FUN_0043ad30
 // Address: 0043ad30
 // Address Range: [[0043ad30, 0043adf8]]
-// Convention: unknown
-// Signature: void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *param_1,char param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character)
 
 #include "nocturne.h"
 
-void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *param_1,char param_2)
+void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character)
 
 {
   int iVar1;
   int iVar2;
   
-  if (param_2 == '\n') {
-    param_1->current_column = 0;
-    iVar2 = param_1->current_row + 1;
-    iVar1 = param_1->console_height + -1;
-    param_1->current_row = iVar2;
+  if (character == '\n') {
+    this_ptr->current_column = 0;
+    iVar2 = this_ptr->current_row + 1;
+    iVar1 = this_ptr->console_height + -1;
+    this_ptr->current_row = iVar2;
     if (iVar1 < iVar2) {
 LAB_0043adc5:
-      param_1->current_row = iVar1;
-      engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(param_1);
+      this_ptr->current_row = iVar1;
+      engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(this_ptr);
       return;
     }
   }
   else {
-    if (param_2 == '\0') {
-      param_1->console_buffer[param_1->current_column + param_1->current_row * 0x50] = '\0';
+    if (character == '\0') {
+      this_ptr->console_buffer[this_ptr->current_column + this_ptr->current_row * 0x50] = '\0';
       return;
     }
-    param_1->console_buffer[param_1->current_column + param_1->current_row * 0x50] = param_2;
-    iVar1 = param_1->current_column + 1;
-    param_1->current_column = iVar1;
-    if (param_1->console_width + -1 < iVar1) {
-      param_1->current_column = 0;
-      iVar2 = param_1->current_row + 1;
-      iVar1 = param_1->console_height + -1;
-      param_1->current_row = iVar2;
+    this_ptr->console_buffer[this_ptr->current_column + this_ptr->current_row * 0x50] = character;
+    iVar1 = this_ptr->current_column + 1;
+    this_ptr->current_column = iVar1;
+    if (this_ptr->console_width + -1 < iVar1) {
+      this_ptr->current_column = 0;
+      iVar2 = this_ptr->current_row + 1;
+      iVar1 = this_ptr->console_height + -1;
+      this_ptr->current_row = iVar2;
       if (iVar1 < iVar2) goto LAB_0043adc5;
     }
   }

@@ -41,7 +41,7 @@ int __cdecl CEnemy::canSeeTarget(CEnemy *this_ptr,CDemonActor *target);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_00479b60
 // Address: 00479b60
-void CEnemy::updateVictim(CEnemy *param_1,float param_2);
+void __cdecl CEnemy::updateVictim(CEnemy *this_ptr,float delta_time);
 
 // Original: core_enemy.cpp_CEnemy_setVictim_FUN_00479f50
 // Address: 00479f50
@@ -53,7 +53,7 @@ void __cdecl CEnemy::processDamage(CEnemy *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_enemy.cpp_FUN_0047a000
 // Address: 0047a000
-void FUN_0047a000(int param_1,int param_2);
+void __cdecl FUN_0047a000(CEnemy *this_ptr,int layer_flag);
 
 // Original: core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
 // Address: 0047a030

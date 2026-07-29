@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_clipPolygonStage2_FUN_0055db30(void)
+; void __cdecl core_xform_cpp_clipPolygonStage2_FUN_0055db30(void)
 ;
 ;
 ; Referenced Globals:

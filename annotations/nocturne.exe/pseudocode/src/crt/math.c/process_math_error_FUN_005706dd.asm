@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double crt_math_c_process_math_error_FUN_005706dd(uint param_1,undefined4 *param_2,undefined4 *param_3)
+; double __cdecl crt_math_c_process_math_error_FUN_005706dd(int errorFlags,double *value1,double *value2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   errorFlags
+; double *         Stack[0x8]:4   value1
+; double *         Stack[0xc]:4   value2
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

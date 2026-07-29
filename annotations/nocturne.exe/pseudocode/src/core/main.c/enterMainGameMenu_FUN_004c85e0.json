@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 463,
+    "complexity_score": 462,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 178,
+    "pseudocode_lines": 177,
     "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
@@ -138,7 +138,7 @@
       "unresolved_funcptr",
       "unrolled_strcpy"
     ],
-    "total_lines": 181
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -225,7 +225,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (DAT_005b7620 < 0x1e0) {",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7d10;",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 62,
       "match": "DAT_01cc7e10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7e10;",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 73,
       "match": "DAT_01cc7f10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7f10;",
@@ -257,7 +257,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 83,
       "match": "DAT_01cc8010",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc8010;",
@@ -265,7 +265,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "puVar5 = &DAT_01cc7d10;",
@@ -273,7 +273,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 98,
+      "line": 97,
       "match": "*(byte **)(iVar4 + 0x1cc8110",
       "severity": "moderate",
       "text": "*(byte **)(iVar4 + 0x1cc8110) = puVar5;",
@@ -281,7 +281,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);",
@@ -289,7 +289,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 114,
+      "line": 113,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar4 == 0)) {",
@@ -297,7 +297,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
+      "line": 114,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
@@ -305,7 +305,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
+      "line": 146,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 151,
+      "line": 150,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
@@ -321,7 +321,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 152,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x32), iVar4 != 0)) {",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 158,
+      "line": 157,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
@@ -337,7 +337,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 160,
+      "line": 159,
       "match": "code *",
       "severity": "moderate",
       "text": "((iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x20), iVar4 != 0 ||",
@@ -345,7 +345,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
+      "line": 160,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x26), iVar4 != 0)))) {",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 166,
+      "line": 165,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 168,
+      "line": 167,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x21);",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Pointer value `&PTR_s_f0100_005baf18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "(int)&PTR_s_f0100_005baf18",
       "severity": "moderate",
       "text": "(this_ptr,*(char **)((int)&PTR_s_f0100_005baf18 + iVar6),0x40,0x40);",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
+      "line": 16,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "pCVar2 = 0x01C775EC;",
@@ -385,7 +385,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -393,7 +393,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -401,7 +401,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 74,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -409,7 +409,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 87,
+      "line": 86,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -417,7 +417,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(this_ptr,*(char **)((int)&PTR_s_f0100_005baf18 + iVar6),0x40,0x40);",

@@ -245,7 +245,7 @@ section .text
     SUB ESP,0x8                         ; 004e4298
     FSTP double ptr [ESP]               ; 004e429b
     CALL crt_math.c_modf_FUN_00566fb6   ; 004e429e
-        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_modf_FUN_00566fb6()
+        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00566fb6(double value, double * integer_part)
     FLD double ptr [EBP + -0x54]        ; 004e42a3
     ADD ESP,0xc                         ; 004e42a6
         ;   Label: LAB_004e42a6
@@ -284,7 +284,7 @@ section .text
     SUB ESP,0x8                         ; 004e4302
     FSTP double ptr [ESP]               ; 004e4305
     CALL crt_math.c_modf_FUN_00566fb6   ; 004e4308
-        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_modf_FUN_00566fb6()
+        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00566fb6(double value, double * integer_part)
     FLD double ptr [EBP + -0x4c]        ; 004e430d
     JMP 0x004e42a6                      ; 004e4310
         ;   XREF to: 004e42a6 (UNCONDITIONAL_JUMP)  ; LAB_004e42a6

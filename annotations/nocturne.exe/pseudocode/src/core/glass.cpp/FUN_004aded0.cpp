@@ -1,14 +1,17 @@
 // Name: core_glass.cpp_FUN_004aded0
 // Address: 004aded0
 // Address Range: [[004aded0, 004adee9]]
-// Convention: unknown
-// Signature: void core_glass_cpp_FUN_004aded0(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_glass_cpp_FUN_004aded0(CGlass *this_ptr)
 
 #include "nocturne.h"
 
-void core_glass_cpp_FUN_004aded0(int param_1)
+int __cdecl core_glass_cpp_FUN_004aded0(CGlass *this_ptr)
 
 {
-  core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,(char *)(param_1 + 0x304));
-  return;
+  int iVar1;
+  
+  iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                    (0x01C03A10,this_ptr->breakable_condition);
+  return iVar1;
 }

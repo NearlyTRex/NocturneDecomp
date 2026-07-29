@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeleton * core_skeleton_cpp_FUN_0051f680(char *param_1)
+; CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0 at 005180b2

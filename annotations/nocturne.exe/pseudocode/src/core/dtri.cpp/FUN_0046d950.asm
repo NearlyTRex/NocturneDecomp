@@ -127,7 +127,7 @@ section .text
     PUSH EAX                            ; 0046da23
     MOV dword ptr [0x01bc9bb8],EBX      ; 0046da24 | DAT_01bc9bb8
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046da2a
-        ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_0046d4e0()
+        ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EBX,dword ptr [0x01bc9bb8]      ; 0046da2f | DAT_01bc9bb8
     ADD ESP,0x2c                        ; 0046da35
     JMP 0x0046d9de                      ; 0046da38
@@ -164,7 +164,7 @@ section .text
     PUSH EDX                            ; 0046da81 | DAT_01bc9af8
     MOV dword ptr [0x01bc9bb8],EBX      ; 0046da82 | DAT_01bc9bb8
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046da88
-        ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_0046d4e0()
+        ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EBX,dword ptr [0x01bc9bb8]      ; 0046da8d | DAT_01bc9bb8
     ADD ESP,0x2c                        ; 0046da93
     JMP 0x0046d9de                      ; 0046da96

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int param_1)
+; CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int flags)
 ;
+; Parameters:
+; int              Stack[0x4]:4   flags
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

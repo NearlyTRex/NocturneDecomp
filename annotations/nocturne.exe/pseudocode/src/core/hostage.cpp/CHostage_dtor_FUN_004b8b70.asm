@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_hostage_cpp_CHostage_dtor_FUN_004b8b70(CDemonActor *param_1,byte param_2)
+; CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004b8b70(CHostage *this_ptr,uint flags)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CHostageTypeInfo_0059f080

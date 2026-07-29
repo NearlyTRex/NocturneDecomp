@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_texlist_cpp_CTextureList_captureAllTextures_FUN_00544d70(int *param_1)
+; void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_00544d70(CTextureList *this_ptr)
 ;
+; Parameters:
+; CTextureList *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

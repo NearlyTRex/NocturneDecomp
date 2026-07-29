@@ -10,7 +10,8 @@ void core_turret_cpp_CTurret_archive_FUN_0054a000(CWeapon *param_1)
 
 {
   core_weapon_cpp_CWeapon_archive_FUN_00554170(param_1);
-  core_actor_cpp_archiveOrientation_FUN_0040c4f0(param_1 + 1,"homeOrient");
+  core_actor_cpp_archiveOrientation_FUN_0040c4f0
+            ((COrientation *)(param_1 + 1),"homeOrient");
   core_actor_cpp_archiveInteger_FUN_0040c900
             (param_1[1].model.part_visibility_flags + 0xe,"state");
   core_actor_cpp_archiveString_FUN_0040c6d0

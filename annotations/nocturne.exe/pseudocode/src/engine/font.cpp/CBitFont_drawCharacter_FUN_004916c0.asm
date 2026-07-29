@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   character_code
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   color_mode
+; int              Stack[0x18]:4   color_value
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
@@ -275,7 +282,7 @@ section .text
     PUSH EDI                            ; 00491911
     PUSH EBX                            ; 00491912
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 ; 00491913
-        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0()
+        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x18                        ; 00491918
     JMP 0x0049171b                      ; 0049191b
         ;   XREF to: 0049171b (UNCONDITIONAL_JUMP)  ; LAB_0049171b

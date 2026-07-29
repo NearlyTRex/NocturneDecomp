@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle *this
   }
   this_ptr->age = 0.0;
   this_ptr->drag_factor = drag_factor;
-  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f733333,0x3f866666);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.95,1.05);
   this_ptr->active = 1;
   this_ptr->vertical_accel = fVar2;
   this_ptr->alpha_value = alpha_value;

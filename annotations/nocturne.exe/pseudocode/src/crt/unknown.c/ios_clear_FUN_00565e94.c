@@ -1,18 +1,18 @@
 // Name: crt_unknown.c_ios_clear_FUN_00565e94
 // Address: 00565e94
 // Address Range: [[00565e94, 00565eb4]]
-// Convention: unknown
-// Signature: uint crt_unknown_c_ios_clear_FUN_00565e94(FileEmbeddedData *param_1,uint param_2)
+// Convention: __cdecl
+// Signature: uint __cdecl crt_unknown_c_ios_clear_FUN_00565e94(ios *this_ptr,uint state_flags)
 
 #include "nocturne.h"
 
-uint ios_clear(FileEmbeddedData *param_1,uint param_2)
+uint __cdecl ios_clear(ios *this_ptr,uint state_flags)
 
 {
   uint uVar1;
   
-  uVar1 = param_1->state_field;
-  param_1->state_field = 0;
-  reportStreamError(param_1,param_2);
+  uVar1 = this_ptr->__enabled_exceptions;
+  this_ptr->__enabled_exceptions = 0;
+  reportStreamError((FileEmbeddedData *)this_ptr,state_flags);
   return uVar1;
 }

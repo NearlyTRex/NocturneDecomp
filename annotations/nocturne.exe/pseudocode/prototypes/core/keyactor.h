@@ -17,11 +17,11 @@ CDemonActorType * FUN_004c3450(void);
 
 // Original: core_keyactor.cpp_FUN_004c3460
 // Address: 004c3460
-int * FUN_004c3460(undefined4 param_1);
+int * FUN_004c3460(CDemonActor *param_1);
 
-// Original: core_keyactor.cpp_FUN_004c34c0
+// Original: core_keyactor.cpp_CKeyActor_setup_FUN_004c34c0
 // Address: 004c34c0
-void FUN_004c34c0(CDemonActor *param_1);
+void __cdecl CKeyActor::setup(CKeyActor *this_ptr);
 
 // Original: core_keyactor.cpp_CKeyActor_process_FUN_004c34e0
 // Address: 004c34e0
@@ -49,7 +49,7 @@ undefined4 FUN_004c36d0(undefined4 param_1,CDemonActor *param_2);
 
 // Original: core_keyactor.cpp_FUN_004c36f0
 // Address: 004c36f0
-void FUN_004c36f0(undefined4 param_1,undefined4 param_2);
+void FUN_004c36f0(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_keyactor.cpp_FUN_004c3710
 // Address: 004c3710

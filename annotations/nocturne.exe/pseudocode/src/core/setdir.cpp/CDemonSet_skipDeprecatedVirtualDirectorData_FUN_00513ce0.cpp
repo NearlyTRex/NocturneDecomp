@@ -16,11 +16,11 @@ void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005
   int local_14;
   
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&local_18);
+  _fscanf(file_handle,"%d\n");
   iVar2 = 0;
   if (0 < local_18) {
     do {
-      _fscanf(file_handle,"\"%*[^\"]\", %d\n",&local_14);
+      _fscanf(file_handle,"\"%*[^\"]\", %d\n");
       iVar1 = 0;
       if (0 < local_14) {
         do {

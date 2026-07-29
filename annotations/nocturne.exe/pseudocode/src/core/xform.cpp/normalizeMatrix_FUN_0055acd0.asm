@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_normalizeMatrix_FUN_0055acd0(float *param_1)
+; void __cdecl core_xform_cpp_normalizeMatrix_FUN_0055acd0(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; *****************************************************************************
 

@@ -1,16 +1,19 @@
 // Name: core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
 // Address: 0044daa0
 // Address Range: [[0044daa0, 0044daf4]]
-// Convention: unknown
-// Signature: float * core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(float *param_1,float *param_2,float *param_3)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
 
 #include "nocturne.h"
 
-float * core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(float *param_1,float *param_2,float *param_3)
+CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
 
 {
-  *param_2 = param_3[2] * param_1[6] + *param_3 * *param_1 + param_3[1] * param_1[3];
-  param_2[1] = param_3[2] * param_1[7] + *param_3 * param_1[1] + param_3[1] * param_1[4];
-  param_2[2] = param_3[2] * param_1[8] + *param_3 * param_1[2] + param_3[1] * param_1[5];
-  return param_2;
+  output->x = input->z * this_ptr->m[2].x +
+              input->x * this_ptr->m[0].x + input->y * this_ptr->m[1].x;
+  output->y = input->z * this_ptr->m[2].y +
+              input->x * this_ptr->m[0].y + input->y * this_ptr->m[1].y;
+  output->z = input->z * this_ptr->m[2].z +
+              input->x * this_ptr->m[0].z + input->y * this_ptr->m[1].z;
+  return output;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(int param_1)
+; void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -44,13 +44,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 004957c3
     PUSH ESI                            ; 004957c7
     CALL core_hero.cpp_FUN_004b48d0     ; 004957c8
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b48d0()
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004957cd
     PUSH 0x581e62                       ; 004957d0 | = "gabriela.dfm"
     LEA EDI,[ESI + 0x150]               ; 004957d5
     PUSH EDI                            ; 004957db
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004957dc
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004957e1
     PUSH EDI                            ; 004957e4
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004957e5

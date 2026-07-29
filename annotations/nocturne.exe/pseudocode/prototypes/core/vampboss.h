@@ -29,7 +29,7 @@ float FUN_0054c5f0(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
 // Address: 0054c690
-void CVampireBoss::process(CVampireBoss *param_1,float param_2);
+void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 
 // Original: core_vampboss.cpp_FUN_0054d8a0
 // Address: 0054d8a0
@@ -69,7 +69,7 @@ void __cdecl CVampireBoss::summonStalagmites(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_FUN_0054e130
 // Address: 0054e130
-void FUN_0054e130(int param_1);
+void __cdecl FUN_0054e130(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_transformToBat_FUN_0054e1a0
 // Address: 0054e1a0

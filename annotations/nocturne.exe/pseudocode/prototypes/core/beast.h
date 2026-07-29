@@ -19,9 +19,9 @@ CDemonActorType * FUN_00415040(void);
 // Address: 00415050
 CEnemy * FUN_00415050(CEnemy *param_1);
 
-// Original: core_beast.cpp_FUN_004150b0
+// Original: core_beast.cpp_CBeast_setup_FUN_004150b0
 // Address: 004150b0
-void FUN_004150b0(CEnemy *param_1);
+void __cdecl CBeast::setup(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_process_FUN_004150d0
 // Address: 004150d0
@@ -47,6 +47,6 @@ undefined4 FUN_004151e0(int param_1,CVector3f *param_2);
 // Address: 00415230
 undefined4 CBeast::getCollisionType(int param_1,int *param_2);
 
-// Original: core_beast.cpp_FUN_00415250
+// Original: core_beast.cpp_CBeast_dtor_FUN_00415250
 // Address: 00415250
-CDemonActor * FUN_00415250(CDemonActor *param_1,byte param_2);
+CBeast * __cdecl CBeast::dtor(CBeast *this_ptr,uint flags);

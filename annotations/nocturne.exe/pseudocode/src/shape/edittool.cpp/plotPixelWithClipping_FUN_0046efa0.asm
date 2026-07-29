@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_plotPixelWithClipping_FUN_0046efa0(void)
+; void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0046efa0(int x_coord,int y_coord,int use_clipping)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_coord
+; int              Stack[0x8]:4   y_coord
+; int              Stack[0xc]:4   use_clipping
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

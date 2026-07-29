@@ -1,34 +1,30 @@
 // Name: shape_edittool.cpp_extractTabDelimitedField_FUN_0046f060
 // Address: 0046f060
 // Address Range: [[0046f060, 0046f091]]
-// Convention: unknown
-// Signature: char * shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(void)
+// Convention: __cdecl
+// Signature: char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(char *source_str,char *dest_buffer)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-char * shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(void)
+char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(char *source_str,char *dest_buffer)
 
 {
   char *pcVar1;
   char cVar2;
-  char *in_stack_00000004;
-  char *in_stack_00000008;
   
-  cVar2 = *in_stack_00000004;
+  cVar2 = *source_str;
   while( true ) {
     if (cVar2 == '\0') {
-      *in_stack_00000008 = '\0';
-      return in_stack_00000004;
+      *dest_buffer = '\0';
+      return source_str;
     }
-    pcVar1 = in_stack_00000004 + 1;
-    if (*in_stack_00000004 == '\t') break;
-    *in_stack_00000008 = *in_stack_00000004;
-    in_stack_00000008 = in_stack_00000008 + 1;
+    pcVar1 = source_str + 1;
+    if (*source_str == '\t') break;
+    *dest_buffer = *source_str;
+    dest_buffer = dest_buffer + 1;
     cVar2 = *pcVar1;
-    in_stack_00000004 = pcVar1;
+    source_str = pcVar1;
   }
-  *in_stack_00000008 = '\0';
+  *dest_buffer = '\0';
   return pcVar1;
 }

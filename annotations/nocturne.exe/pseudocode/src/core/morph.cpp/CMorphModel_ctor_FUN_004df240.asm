@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_morph_cpp_CMorphModel_ctor_FUN_004df240(undefined4 *param_1)
+; CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

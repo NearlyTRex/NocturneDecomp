@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00533023
     PUSH EBX                            ; 00533027
     CALL core_actor.cpp_FUN_00409d30    ; 00533028
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0053302d
     ADD EAX,0x150                       ; 00533030
     PUSH EAX                            ; 00533035
@@ -55,7 +55,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00533049
     PUSH EAX                            ; 0053304f
     MOV ESI,0x59501b                    ; 00533050 | = "none"
-    MOV dword ptr [EBX + 0x14c],0x5a2334 ; 00533055 | PTR_core_spike.cpp_CSpike_setup_FUN_00533160_005a2334
+    MOV dword ptr [EBX + 0x14c],0x5a2334 ; 00533055 | g_CSpikeVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0053305f
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x0     ; 00533064

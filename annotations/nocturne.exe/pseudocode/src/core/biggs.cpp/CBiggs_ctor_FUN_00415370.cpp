@@ -25,10 +25,10 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00415370(CBiggs *this_ptr)
                      ((CKeyFramedModelInstance *)(pCVar6 + 1));
   pCVar8 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)(pCVar7[1].part_visibility_flags + 2));
   pcVar1 = pCVar8[-0x10].models[0].textures[0xd].textures[0].texture_name;
-  pCVar8[-0x10].models[0].textures[0x11].textures[2].base.count =
-       (int)&PTR_core_biggs_cpp_FUN_00415430_0059a5b4;
+  pCVar8[-0x10].models[0].textures[0x11].textures[2].base.count = (int)&g_CBiggsVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (pCVar8[-0x10].models[0].textures[0x11].textures[2].texture_name,"biggs.dfm");
+            ((CDeformableModelInstance *)
+             pCVar8[-0x10].models[0].textures[0x11].textures[2].texture_name,"biggs.dfm");
   pcVar9 = "bigAlien";
   pCVar10 = pCVar8 + 1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580

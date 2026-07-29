@@ -51,7 +51,8 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
     local_20 = 0.666;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
-  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(DAT_005ae704,&param_1[6].y,0);
+  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
+            (DAT_005ae704,(CVector3i *)&param_1[6].y,(CVector3i *)0x0);
   if (param_1[5].z == 0.0) {
     this_ptr = (CKeyFramedModelInstance *)0x1c08ec4;
   }
@@ -89,7 +90,7 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
     _DAT_005c50bc = 0x80000;
     _DAT_005c50c0 = 0x80000;
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,&DAT_01c08d08,0);
+              (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
     local_74 = -local_20;
     local_6c = 0;
     local_68.x = (int)ROUND(local_74 * 256.0f);
@@ -178,7 +179,7 @@ void core_fire_cpp_CFireball_render_FUN_00484390(CVector3f *param_1)
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,&local_50);
         engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-                  (DAT_005ae704,&DAT_01c08d08,0);
+                  (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
         local_74 = -local_20 * local_e8;
         local_6c = 0;
         local_98.x = (int)ROUND(local_74 * 256.0f);

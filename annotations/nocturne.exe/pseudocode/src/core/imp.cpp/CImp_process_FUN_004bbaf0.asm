@@ -117,7 +117,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004bbb05
     PUSH EBX                            ; 004bbb0b
     CALL core_charactr.cpp_FUN_004259f0 ; 004bbb0c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004bbb11
     TEST EAX,EAX                        ; 004bbb14
     JZ 0x004bbfe5                       ; 004bbb16
@@ -336,7 +336,7 @@ section .text
     PUSH 0x41200000                     ; 004bbd24
     PUSH 0x40a00000                     ; 004bbd29
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004bbd2e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     LEA EDX,[EBP + 0xffffff26]          ; 004bbd33
     MOV dword ptr [EBP + 0x76],EAX      ; 004bbd39
     ADD ESP,0x8                         ; 004bbd3c
@@ -428,7 +428,7 @@ section .text
     PUSH EBX                            ; 004bbe58
     MOV dword ptr [EBP + 0x66],EDI      ; 004bbe59
     CALL core_charactr.cpp_FUN_00428c00 ; 004bbe5c
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004bbe61
     TEST EAX,EAX                        ; 004bbe64
     JZ 0x004bc7a4                       ; 004bbe66
@@ -550,7 +550,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004bbfd6
     PUSH EBX                            ; 004bbfdc
     CALL core_charactr.cpp_FUN_0042a150 ; 004bbfdd
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004bbfe2
     LEA ESP,[EBP + 0x7a]                ; 004bbfe5
         ;   Label: LAB_004bbfe5
@@ -671,7 +671,7 @@ section .text
     PUSH 0x40a00000                     ; 004bc103
     PUSH 0x40400000                     ; 004bc108
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004bc10d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc112
     ADD ESP,0x8                         ; 004bc115
     LEA EAX,[EBP + 0xfffffeea]          ; 004bc118
@@ -854,14 +854,14 @@ section .text
     LEA EAX,[EBP + -0x56]               ; 004bc2fa
     PUSH EAX                            ; 004bc2fd
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004bc2fe
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + -0x52]         ; 004bc303
     ADD ESP,0x8                         ; 004bc306
     FSUB float ptr [EBX + 0x34]         ; 004bc309
     SUB ESP,0x4                         ; 004bc30c
     FSTP float ptr [ESP]                ; 004bc30f
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004bc312
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc317
     FLD float ptr [EBP + 0x76]          ; 004bc31a
     FABS                                ; 004bc31d
@@ -1062,14 +1062,14 @@ section .text
     PUSH EAX                            ; 004bc52f
     FSTP float ptr [EBP + 0x1e]         ; 004bc530
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004bc533
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + -0x5e]         ; 004bc538
     ADD ESP,0x8                         ; 004bc53b
     FSUB float ptr [EBX + 0x34]         ; 004bc53e
     SUB ESP,0x4                         ; 004bc541
     FSTP float ptr [ESP]                ; 004bc544
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004bc547
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc54c
     FLD float ptr [EBP + 0x76]          ; 004bc54f
     FABS                                ; 004bc552
@@ -1131,14 +1131,14 @@ section .text
     PUSH EAX                            ; 004bc5e9
     FSTP float ptr [EBP + -0x42]        ; 004bc5ea
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004bc5ed
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + 0xffffff72]    ; 004bc5f2
     ADD ESP,0x8                         ; 004bc5f8
     FSUB float ptr [EBX + 0x34]         ; 004bc5fb
     SUB ESP,0x4                         ; 004bc5fe
     FSTP float ptr [ESP]                ; 004bc601
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004bc604
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc609
     FLD float ptr [EBP + 0x76]          ; 004bc60c
     FABS                                ; 004bc60f
@@ -1206,7 +1206,7 @@ section .text
     PUSH 0x41200000                     ; 004bc6cb
     MOV dword ptr [EBX + 0xbd24],EAX    ; 004bc6d0
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004bc6d6
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc6db
     ADD ESP,0x8                         ; 004bc6de
     MOV EAX,dword ptr [EBP + 0x76]      ; 004bc6e1
@@ -1259,7 +1259,7 @@ section .text
     PUSH 0x41200000                     ; 004bc780
     MOV dword ptr [EBX + 0xbd24],EAX    ; 004bc785
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004bc78b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc790
     ADD ESP,0x8                         ; 004bc793
     MOV EAX,dword ptr [EBP + 0x76]      ; 004bc796

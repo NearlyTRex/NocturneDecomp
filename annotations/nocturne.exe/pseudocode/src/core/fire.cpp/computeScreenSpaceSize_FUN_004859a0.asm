@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_fire_cpp_computeScreenSpaceSize_FUN_004859a0(float param_1,float param_2)
+; float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004859a0(float depth,float min_size)
 ;
+; Parameters:
+; float            Stack[0x4]:4   depth
+; float            Stack[0x8]:4   min_size
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

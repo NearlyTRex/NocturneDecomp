@@ -1,12 +1,12 @@
 // Name: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
 // Address: 00419bf0
 // Address Range: [[00419bf0, 00419c11]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
-void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
+void __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CBoneGuy *this_ptr)
 
 {
   int iVar1;
@@ -15,6 +15,6 @@ void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
   if (iVar1 == 0) {
     return;
   }
-  core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
   return;
 }

@@ -10,7 +10,7 @@
 ;   core_frankgen.cpp_FUN_00494600 at 00494613
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0_0059db84 = 004946c0
+;   CDemonActor_vtable g_CFrankenstienMachineVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -25,7 +25,7 @@ section .text
         ;   Label: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630
     PUSH EAX                            ; 00494634
     CALL core_actor.cpp_FUN_00409d30    ; 00494635
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0049463a
     ADD EAX,0x17c                       ; 0049463d
     PUSH EAX                            ; 00494642
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 0049465c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0049465d
         ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
-    MOV dword ptr [EAX + 0xfffffe48],0x59db84 ; 00494662 | PTR_core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0_0059db84
+    MOV dword ptr [EAX + 0xfffffe48],0x59db84 ; 00494662 | g_CFrankenstienMachineVTable
     MOV dword ptr [EAX + 0xfffffe50],0x0 ; 0049466c
     MOV byte ptr [EAX + 0xfffffe54],0x0 ; 00494676
     MOV dword ptr [EAX + 0xfffffe74],0x0 ; 0049467d

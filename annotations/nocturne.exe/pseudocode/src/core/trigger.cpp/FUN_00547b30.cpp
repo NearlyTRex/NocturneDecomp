@@ -27,9 +27,7 @@ void core_trigger_cpp_FUN_00547b30(CTrigger *param_1,float param_2)
   float fStack_88;
   float fStack_84;
   float fStack_80;
-  int iStack_7c;
-  int iStack_78;
-  int iStack_74;
+  CVector3i CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
   CVector3f aCStack_58 [3];
@@ -104,11 +102,11 @@ LAB_00547bbc:
         aCStack_58[0].y = pCVar8->y;
         aCStack_58[0].z = pCVar8->z;
       }
-      iStack_7c = (int)ROUND(aCStack_58[0].x * _DAT_005a3640);
-      iStack_78 = (int)ROUND(aCStack_58[0].y * _DAT_005a3640);
-      iStack_74 = (int)ROUND(aCStack_58[0].z * _DAT_005a3640);
+      CStack_7c.x = (int)ROUND(aCStack_58[0].x * _DAT_005a3640);
+      CStack_7c.y = (int)ROUND(aCStack_58[0].y * _DAT_005a3640);
+      CStack_7c.z = (int)ROUND(aCStack_58[0].z * _DAT_005a3640);
       iStack_18 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
-                            (0x01E57284,&iStack_7c,0);
+                            (0x01E57284,&CStack_7c,(CVector3i *)0x0);
       if ((param_1->light_min * (float)65536 <= (float)iStack_18) &&
          ((float)iStack_18 <= param_1->light_max * (float)65536)) {
         local_34 = 1;
@@ -154,8 +152,9 @@ LAB_00547bbc:
                       (&(param_1->base).location.position,param_1->test_radius);
     if (iVar9 != 0) {
       local_28 = 0;
-      for (iVar9 = 0; iVar9 < *(int *)(0x01E57284 + 0x14cd6c); iVar9 = iVar9 + 1) {
-        pCVar6 = *(CDemonActor **)(0x01E57284 + local_28 + 0x14cd70);
+      for (iVar9 = 0; iVar9 < *(int *)0x01E57284->lights[199].filter_names[0x14];
+          iVar9 = iVar9 + 1) {
+        pCVar6 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x14] + local_28 + 4);
         iVar10 = (*((pCVar6->vtable)._ub)->canLookAt)(pCVar6);
         if ((iVar10 != 0) &&
            (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,pCVar6),
@@ -177,8 +176,9 @@ LAB_00547bbc:
       local_2c = param_1->actor_type;
       local_24 = 0;
       local_20 = pCVar1;
-      for (iVar9 = 0; iVar9 < *(int *)(0x01E57284 + 0x14cd6c); iVar9 = iVar9 + 1) {
-        actor_ptr = *(CTrigger **)(0x01E57284 + local_24 + 0x14cd70);
+      for (iVar9 = 0; iVar9 < *(int *)0x01E57284->lights[199].filter_names[0x14];
+          iVar9 = iVar9 + 1) {
+        actor_ptr = *(CTrigger **)(0x01E57284->lights[199].filter_names[0x14] + local_24 + 4);
         fVar2 = (actor_ptr->base).location.position.x - (local_20->position).x;
         fVar4 = (actor_ptr->base).location.position.y - (local_20->position).y;
         fVar3 = (actor_ptr->base).location.position.z - (local_20->position).z;

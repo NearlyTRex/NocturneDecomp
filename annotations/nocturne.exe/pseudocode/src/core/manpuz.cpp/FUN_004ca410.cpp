@@ -1,82 +1,88 @@
 // Name: core_manpuz.cpp_FUN_004ca410
 // Address: 004ca410
 // Address Range: [[004ca410, 004ca63a]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_FUN_004ca410(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_FUN_004ca410(int param_1)
+void __cdecl core_manpuz_cpp_FUN_004ca410(CMansionPuzzleCircle *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
+  float fVar1;
+  CMansionPuzzleCircle *pCVar2;
+  CMansionPuzzleCircle *pCVar3;
+  CMansionPuzzleCircle *pCVar4;
+  SGem *pSVar5;
+  float *pfVar6;
+  int iVar7;
+  float *pfVar8;
   
-  iVar1 = param_1;
-  iVar3 = param_1;
+  pCVar2 = this_ptr;
+  pCVar4 = this_ptr;
   do {
-    *(uint *)(iVar3 + 0x5ec) = 0;
-    *(uint *)(iVar3 + 0x5f0) = 0;
-    *(uint *)(iVar3 + 0x634) = 0;
-    *(uint *)(iVar3 + 0x638) = 0;
-    *(uint *)(iVar3 + 0x63c) = 0;
-    iVar2 = iVar1 + 4;
-    *(uint *)(iVar3 + 0x5e8) = 1;
-    *(uint *)(iVar1 + 0x13f8) = 0;
-    *(uint *)(iVar1 + 0x1428) = 0;
-    *(uint *)(iVar1 + 0x1458) = 0;
-    iVar3 = iVar3 + 100;
-    *(uint *)(iVar1 + 0x1488) = 0;
-    iVar1 = iVar2;
-  } while (iVar2 != param_1 + 0x30);
-  *(uint *)(param_1 + 0x63c) = 0xff;
-  *(uint *)(param_1 + 0x698) = 0xff;
-  *(uint *)(param_1 + 0x6fc) = 0xff;
-  *(uint *)(param_1 + 0x714) = 0;
-  *(uint *)(param_1 + 0x7c4) = 0xff;
-  *(uint *)(param_1 + 0x830) = 0xff;
-  *(uint *)(param_1 + 0x840) = 0;
-  *(uint *)(param_1 + 0x8f0) = 0xff;
-  *(uint *)(param_1 + 0x95c) = 0xff;
-  *(uint *)(param_1 + 0x9b8) = 0xff;
-  *(uint *)(param_1 + 0xa24) = 0xff;
-  *(uint *)(param_1 + 0xa88) = 0xff;
-  *(uint *)(param_1 + 0x1458) = 0xff;
-  *(uint *)(param_1 + 0x145c) = 0xff;
-  *(uint *)(param_1 + 0x1400) = 0xff;
-  *(uint *)(param_1 + 0x1404) = 0xff;
-  *(uint *)(param_1 + 0x1468) = 0xff;
-  *(uint *)(param_1 + 0x140c) = 0xff;
-  *(uint *)(param_1 + 0x1410) = 0xff;
-  *(uint *)(param_1 + 0x1474) = 0xff;
-  *(uint *)(param_1 + 0x1478) = 0xff;
-  *(uint *)(param_1 + 0x147c) = 0xff;
-  *(uint *)(param_1 + 0x1420) = 0xff;
-  *(uint *)(param_1 + 0x634) = *(uint *)(param_1 + 0x63c);
-  iVar2 = 0;
-  *(uint *)(param_1 + 0x13f8) = *(uint *)(param_1 + 0x1458);
-  *(uint *)(param_1 + 0x1424) = 0xff;
-  iVar1 = param_1 + 0xaa0;
-  iVar3 = param_1 + 0xa9c;
+    pCVar4->panels[0].anim_progress = 0.0;
+    pCVar4->panels[0].anim_speed = 0.0;
+    pCVar4->panels[0].color.r = 0;
+    pCVar4->panels[0].color.g = 0;
+    pCVar4->panels[0].color.b = 0;
+    pCVar3 = (CMansionPuzzleCircle *)((pCVar2->base).actor_name + 4);
+    pCVar4->panels[0].exists = 1;
+    pCVar2->laser_color_r[0] = 0;
+    pCVar2->laser_color_g[0] = 0;
+    pCVar2->laser_color_b[0] = 0;
+    pCVar4 = (CMansionPuzzleCircle *)&(pCVar4->base).health;
+    pCVar2->laser_intensity[0] = 0;
+    pCVar2 = pCVar3;
+  } while (pCVar3 != (CMansionPuzzleCircle *)&(this_ptr->base).orient);
+  this_ptr->panels[0].color.b = 0xff;
+  iVar7 = this_ptr->panels[0].color.b;
+  this_ptr->panels[1].color.r = 0xff;
+  this_ptr->panels[2].color.r = 0xff;
+  this_ptr->panels[3].exists = 0;
+  this_ptr->panels[4].color.r = 0xff;
+  this_ptr->panels[5].color.b = 0xff;
+  this_ptr->panels[6].exists = 0;
+  this_ptr->panels[7].color.r = 0xff;
+  this_ptr->panels[8].color.b = 0xff;
+  this_ptr->panels[9].color.r = 0xff;
+  this_ptr->panels[10].color.b = 0xff;
+  this_ptr->panels[0xb].color.b = 0xff;
+  this_ptr->laser_color_b[0] = 0xff;
+  this_ptr->laser_color_b[1] = 0xff;
+  this_ptr->laser_color_r[2] = 0xff;
+  this_ptr->laser_color_r[3] = 0xff;
+  this_ptr->laser_color_b[4] = 0xff;
+  this_ptr->laser_color_r[5] = 0xff;
+  this_ptr->laser_color_r[6] = 0xff;
+  this_ptr->laser_color_b[7] = 0xff;
+  this_ptr->laser_color_b[8] = 0xff;
+  this_ptr->laser_color_b[9] = 0xff;
+  this_ptr->laser_color_r[10] = 0xff;
+  this_ptr->panels[0].color.r = iVar7;
+  iVar7 = 0;
+  this_ptr->laser_color_r[0] = this_ptr->laser_color_b[0];
+  this_ptr->laser_color_r[0xb] = 0xff;
+  pfVar6 = &this_ptr->gems[0].color.b;
+  pfVar8 = &this_ptr->gems[0].color.g;
   do {
-    iVar4 = iVar2 * 0xb8 + param_1 + 0xa98;
-    core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20(param_1,iVar2,iVar4,iVar3,iVar1)
-    ;
-    *(uint *)(iVar4 + 0x14) = 0;
-    iVar2 = iVar2 + 1;
-    *(uint *)(iVar4 + 0x20) = 0;
-    *(uint *)(iVar4 + 0x10) = *(uint *)(iVar4 + 0x14);
-    *(uint *)(iVar4 + 0x1c) = *(uint *)(iVar4 + 0x20);
-    *(uint *)(iVar4 + 0xc) = *(uint *)(iVar4 + 0x10);
-    *(uint *)(iVar4 + 0x18) = *(uint *)(iVar4 + 0x20);
-    iVar1 = iVar1 + 0xb8;
-    iVar3 = iVar3 + 0xb8;
-  } while (iVar2 < 0xc);
-  *(uint *)(param_1 + 0x1394) = 1;
-  *(uint *)(param_1 + 0x13b0) = 0;
-  *(uint *)(param_1 + 0x13f4) = 0xb;
-  *(uint *)(param_1 + 0x1350) = 0;
+    pSVar5 = this_ptr->gems + iVar7;
+    core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
+              (this_ptr,iVar7,pSVar5,pfVar8,pfVar6);
+    (pSVar5->hum_color).b = 0.0;
+    iVar7 = iVar7 + 1;
+    (pSVar5->light).b = 0.0;
+    fVar1 = (pSVar5->light).b;
+    (pSVar5->hum_color).g = (pSVar5->hum_color).b;
+    (pSVar5->light).g = fVar1;
+    (pSVar5->hum_color).r = (pSVar5->hum_color).g;
+    (pSVar5->light).r = fVar1;
+    pfVar6 = pfVar6 + 0x2e;
+    pfVar8 = pfVar8 + 0x2e;
+  } while (iVar7 < 0xc);
+  this_ptr->reflectors[0].panel_index = 1;
+  this_ptr->reflectors[1].interp_factor = 0.0;
+  this_ptr->reflectors[1].panel_index = 0xb;
+  this_ptr->reflectors[0].interp_factor = 0.0;
   return;
 }

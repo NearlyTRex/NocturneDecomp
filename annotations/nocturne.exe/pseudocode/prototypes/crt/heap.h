@@ -17,7 +17,7 @@ void __watcallRegister CoalesceAndAddFreeBlock(void *ptr,HeapBlock *heap_block,u
 
 // Original: crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0
 // Address: 00568ce0
-int * InsertHeapBlockInOrder(int *param_1);
+HeapBlock * __cdecl InsertHeapBlockInOrder(HeapBlock *new_block);
 
 // Original: crt_heap.c_AllocateNewHeapBlock_FUN_00568d58
 // Address: 00568d58

@@ -1,20 +1,19 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970
 // Address: 0052a970
 // Address Range: [[0052a970, 0052aa3f]]
-// Convention: unknown
-// Signature: undefined4 sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
+// Convention: __cdecl
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples)
 
 {
-  uint uVar1;
+  int iVar1;
   uint uVar2;
   char *pcVar3;
-  int iVar4;
   int *piStack_1a8;
   byte *puStack_1a4;
   byte *puStack_1a0;
@@ -46,16 +45,16 @@ uint sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
         if (uVar2 == _DAT_02dc9240) {
           return 1;
         }
-        iVar4 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
-      } while (iVar4 != 0);
+        iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
+      } while (iVar1 != 0);
       return 0;
     }
-    uVar1 = 0;
+    iVar1 = 0;
   }
   else {
     puStack_1a0 = (byte *)0x52a999;
     sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810();
-    uVar1 = 1;
+    iVar1 = 1;
   }
-  return uVar1;
+  return iVar1;
 }

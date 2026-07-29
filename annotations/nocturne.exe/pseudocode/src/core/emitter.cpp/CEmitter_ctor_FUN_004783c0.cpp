@@ -10,16 +10,15 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004783c0(CEmitter *this_pt
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                          ((CKeyFramedModelInstance *)(iVar2 + 0x240));
-  *(byte ***)(this_ptr_00[-1].model_name + 0x10) =
-       &PTR_core_emitter_cpp_CEmitter_setup_FUN_00478520_0059cc74;
+                          ((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);
+  *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &g_CEmitterVTable;
   this_ptr_00[-0xffffffff00000001].model_name[0x18] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x19] = '\0';
   this_ptr_00[-0xffffffff00000001].model_name[0x1a] = -0x80;

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 200,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 79,
     "suspect_count": 10,
     "suspect_types": [
       "negative_offset",
@@ -135,7 +135,7 @@
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 189
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -279,9 +279,9 @@
     },
     {
       "addr": "005a2334",
-      "name": "PTR_core_spike.cpp_CSpike_setup_FUN_00533160_005a2334",
-      "type": "undefined1*",
-      "value": "00533160"
+      "name": "g_CSpikeVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -351,12 +351,12 @@
       "line": 16,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "this_ptr_00[-1].model_ptr =",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CSpikeVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(char *)((int)piVar5",
       "severity": "moderate",
       "text": "*(char *)((int)piVar5 + 1) = cVar1;",
@@ -364,7 +364,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(int *)((int)piVar5",
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
@@ -372,7 +372,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 82,
+      "line": 81,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "return (CSpike *)(this_ptr_00[-1].part_visibility_flags + 0xb);",
@@ -380,7 +380,7 @@
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(char *)((int)piVar5 + 1) = cVar1;",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 30,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -420,7 +420,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(byte *)(this_ptr_00[2].part_visibility_flags + 0xf) = 0;",

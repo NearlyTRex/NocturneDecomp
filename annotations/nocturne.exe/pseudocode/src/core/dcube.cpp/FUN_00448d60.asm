@@ -126,7 +126,7 @@ section .text
     PUSH EAX                            ; 00448e3b
     MOV dword ptr [0x014b8924],EBX      ; 00448e3c | DAT_014b8924
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448e42
-        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_004484c0()
+        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EBX,dword ptr [0x014b8924]      ; 00448e47 | DAT_014b8924
     ADD ESP,0x2c                        ; 00448e4d
     JMP 0x00448df8                      ; 00448e50
@@ -162,7 +162,7 @@ section .text
     PUSH EDX                            ; 00448e97 | DAT_014b8864
     MOV dword ptr [0x014b8924],EBX      ; 00448e98 | DAT_014b8924
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448e9e
-        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_004484c0()
+        ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EBX,dword ptr [0x014b8924]      ; 00448ea3 | DAT_014b8924
     ADD ESP,0x2c                        ; 00448ea9
     JMP 0x00448df8                      ; 00448eac

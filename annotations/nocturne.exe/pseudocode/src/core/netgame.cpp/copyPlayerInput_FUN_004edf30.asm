@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_copyPlayerInput_FUN_004edf30(void)
+; void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SPlayerInput *src)
 ;
+; Parameters:
+; SPlayerInput *   Stack[0x4]:4   dest
+; SPlayerInput *   Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

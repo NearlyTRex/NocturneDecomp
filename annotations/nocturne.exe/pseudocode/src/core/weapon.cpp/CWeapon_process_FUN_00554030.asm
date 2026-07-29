@@ -11,11 +11,11 @@
 ;   core_baron.cpp_CBaronWeapon_process_FUN_004113d0 at 004113e6
 ;   core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0 at 0043cfdd
 ;   core_dynamite.cpp_CDynamite_process_FUN_0046edc0 at 0046edd2
-;   core_elephant.cpp_FUN_004777a0 at 004777c1
+;   core_elephant.cpp_CElephantGun_process_FUN_004777a0 at 004777c1
 ;   core_flamegun.cpp_FUN_0048eb30 at 0048eb43
 ;   core_lightgun.cpp_FUN_004c79a0 at 004c79af
 ;   core_melee.cpp_CMelee_process_FUN_004cf0c0 at 004cf0cd
-;   core_shotgun.cpp_FUN_00515db0 at 00515dd1
+;   core_shotgun.cpp_CShotgun_process_FUN_00515db0 at 00515dd1
 ;   core_tommygun.cpp_FUN_005464a0 at 005464b6
 ;
 ; Referenced Globals:

@@ -164,7 +164,7 @@ section .text
     ADD ESI,0x4                         ; 004c10df
     INC EDI                             ; 004c10e2
     CALL core_actor.cpp_CDemonActor_save_FUN_0040c040 ; 004c10e3
-        ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_save_FUN_0040c040()
+        ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_save_FUN_0040c040(CDemonActor * this_ptr, _FILE * file_handle)
     MOV ECX,dword ptr [EBX + 0x8]       ; 004c10e8
     ADD ESP,0x8                         ; 004c10eb
     CMP EDI,ECX                         ; 004c10ee

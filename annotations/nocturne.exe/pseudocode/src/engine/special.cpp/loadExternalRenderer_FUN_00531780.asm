@@ -75,7 +75,7 @@ section .text
     PUSH 0x5c0e80                       ; 005317b9 | DAT_005c0e80
         ;   Label: LAB_005317b9
     CALL wincore_wddvmem.cpp_FUN_00553d30 ; 005317be
-        ;   XREF to: 00553d30 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553d30()
+        ;   XREF to: 00553d30 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_FUN_00553d30(LPCSTR lpLibFileName)
     ADD ESP,0x4                         ; 005317c3
     MOV [0x02dc9e08],EAX                ; 005317c6 | DAT_02dc9e08
     TEST EAX,EAX                        ; 005317cb

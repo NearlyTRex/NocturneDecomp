@@ -10,26 +10,24 @@ int __cdecl support_trisock_cpp_getSocketName_FUN_005491e0(_SOCKET *socket_handl
 
 {
   int iVar1;
-  uint *puVar2;
+  SOCKADDR_IN *pSVar2;
   byte bVar3;
-  _SOCKET _Stack_28;
-  byte *puStack_24;
-  uint **ppuStack_20;
+  byte auStack_28 [12];
   byte auStack_1c [4];
-  byte auStack_18 [20];
+  SNetworkAddr aSStack_18 [2];
   uint *puStack_4;
   
   bVar3 = 0;
-  puStack_24 = auStack_1c;
-  ppuStack_20 = &puStack_4;
+  auStack_28._4_4_ = auStack_1c;
+  auStack_28._8_4_ = &puStack_4;
   puStack_4 = (uint *)0x10;
-  _Stack_28 = *socket_handle;
+  auStack_28._0_4_ = *socket_handle;
   iVar1 = Ordinal_6();
   if (iVar1 != 0) {
     return 0;
   }
-  puVar2 = (uint *)support_trisock_cpp_convertSockAddr_FUN_00548d50(auStack_18,&_Stack_28);
-  *puStack_4 = *puVar2;
-  puStack_4[(uint)bVar3 * -2 + 1] = puVar2[(uint)bVar3 * -2 + 1];
+  pSVar2 = support_trisock_cpp_convertSockAddr_FUN_00548d50(aSStack_18,(SOCKADDR *)auStack_28);
+  *puStack_4 = *(uint *)pSVar2;
+  puStack_4[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);
   return 1;
 }

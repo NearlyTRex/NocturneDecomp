@@ -190,7 +190,7 @@ section .text
         ;   Label: LAB_00411dfe
     PUSH dword ptr [EBX + 0x370]        ; 00411e04
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00411e0a
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00411e0f
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00411e13
     MOV dword ptr [EBX + 0x37c],EAX     ; 00411e17

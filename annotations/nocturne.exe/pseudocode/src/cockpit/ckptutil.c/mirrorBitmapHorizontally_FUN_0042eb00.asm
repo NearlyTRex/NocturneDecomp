@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(undefined1 *param_1,int param_2,int param_3,int param_4)
+; void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(uchar *bitmap_data,int width,int height,int bytes_per_pixel)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   bitmap_data
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   bytes_per_pixel
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [0x01c039a0],ESI      ; 00460ed2 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDI      ; 00460ed8 | DAT_01c039a4
     CALL core_xform.cpp_transformAndClipGeometry_FUN_0055e040 ; 00460ede
-        ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformAndClipGeometry_FUN_0055e040()
+        ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count, int * vertex_indices)
     MOV EAX,[0x00766c70]                ; 00460ee3 | DAT_00766c70
     ADD ESP,0x8                         ; 00460ee8
     CMP EAX,0x2                         ; 00460eeb

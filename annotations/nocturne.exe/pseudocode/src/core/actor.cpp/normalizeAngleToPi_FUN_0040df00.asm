@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_normalizeAngleToPi_FUN_0040df00(float param_1)
+; float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -69,7 +71,7 @@ section .text
     SUB ESP,0x8                         ; 0040df46
     FSTP double ptr [ESP]               ; 0040df49
     CALL crt_math.c_floor_FUN_005648c0  ; 0040df4c
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 0040df51
     MOV dword ptr [ESP + 0x14],EDX      ; 0040df55
     FLD double ptr [ESP + 0x10]         ; 0040df59
@@ -88,7 +90,7 @@ section .text
     SUB ESP,0x8                         ; 0040df82
     FSTP double ptr [ESP]               ; 0040df85
     CALL crt_math.c_floor_FUN_005648c0  ; 0040df88
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 0040df8d
     MOV dword ptr [ESP + 0x14],EDX      ; 0040df91
     FLD double ptr [ESP + 0x10]         ; 0040df95

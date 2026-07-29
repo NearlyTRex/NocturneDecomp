@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00516a10(CWeapon *param_1)
+; CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00516a10(CShovel *this_ptr)
 ;
+; Parameters:
+; CShovel *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_shovel.cpp_FUN_005169e0 at 005169f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_005910c5
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1c34 = 00553f10
+;   CWeapon_full_vtable g_CShovelVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -30,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 00516a23
     ADD EAX,0x150                       ; 00516a25
     PUSH EAX                            ; 00516a2a
-    MOV dword ptr [EAX + -0x4],0x5a1c34 ; 00516a2b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1c34
+    MOV dword ptr [EAX + -0x4],0x5a1c34 ; 00516a2b | g_CShovelVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00516a32
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d8],0x7     ; 00516a37

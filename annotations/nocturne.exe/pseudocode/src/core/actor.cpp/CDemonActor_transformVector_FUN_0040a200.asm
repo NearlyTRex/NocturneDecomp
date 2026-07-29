@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(int param_1,undefined4 param_2,undefined4 param_3)
+; CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor *this_ptr,CVector3f *output,CVector3f *input)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output
+; CVector3f *      Stack[0xc]:4   input
 ;
 ; XREF[54]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 at 0040a593
@@ -34,7 +38,7 @@ section .text
     ADD EAX,0x3c                        ; 0040a20f
     PUSH EAX                            ; 0040a212
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0040a213
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040a218
     MOV EAX,EBX                         ; 0040a21b
     POP EBX                             ; 0040a21d

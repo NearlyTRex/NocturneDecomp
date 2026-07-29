@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(undefined4 *param_1,int param_2,ushort param_3,int param_4,uint *param_5)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bits_per_sample
+; int              Stack[0xc]:4   channels
+; int              Stack[0x10]:4   sample_rate
+; int *            Stack[0x14]:4   out_samples_per_block
 ; Local Variables:
 ; undefined2       Stack[-0x48]:2  local_48
 ; undefined2       Stack[-0x46]:2  local_46

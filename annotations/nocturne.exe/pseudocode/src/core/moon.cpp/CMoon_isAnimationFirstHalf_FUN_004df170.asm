@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(void)
+; int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon *this_ptr)
 ;
+; Parameters:
+; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440 at 004cf4ca

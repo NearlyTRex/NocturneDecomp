@@ -69,7 +69,7 @@ section .text
     PUSH 0x3f666666                     ; 005464d4
     MOV dword ptr [EBX + 0x570],ESI     ; 005464d9
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 005464df
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1b8],EAX     ; 005464e4
     FLD float ptr [ESP + 0x1b8]         ; 005464eb
     ADD ESP,0x8                         ; 005464f2
@@ -143,7 +143,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x574]     ; 005465a8
     PUSH ECX                            ; 005465ae
     CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 ; 005465af
-        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10()
+        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_handle, uint output_format)
     MOV dword ptr [ESP + 0x1b0],EAX     ; 005465b4
     MOV dword ptr [ESP + 0x1b4],EDX     ; 005465bb
     FLD double ptr [ESP + 0x1b0]        ; 005465c2
@@ -166,7 +166,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1ac]     ; 005465ff
     PUSH EAX                            ; 00546606
     CALL crt_math.c_floor_FUN_005648c0  ; 00546607
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x1a8],EAX     ; 0054660c
     MOV dword ptr [ESP + 0x1ac],EDX     ; 00546613
     FLD double ptr [ESP + 0x1a8]        ; 0054661a

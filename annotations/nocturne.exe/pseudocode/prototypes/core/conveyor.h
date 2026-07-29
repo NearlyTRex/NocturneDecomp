@@ -21,7 +21,7 @@ CConveyor * __cdecl CConveyor::ctor(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_FUN_0043b110
 // Address: 0043b110
-void FUN_0043b110(int param_1);
+void FUN_0043b110(CPlatform *param_1);
 
 // Original: core_conveyor.cpp_CConveyor_process_FUN_0043b1a0
 // Address: 0043b1a0
@@ -43,14 +43,14 @@ void FUN_0043b310(CPlatform *param_1);
 // Address: 0043b3b0
 undefined4 FUN_0043b3b0(void);
 
-// Original: core_conveyor.cpp_FUN_0043b3c0
+// Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_0043b3c0
 // Address: 0043b3c0
-void FUN_0043b3c0(int param_1,float *param_2);
+CBoundingBox3D * __cdecl CConveyor::getBoundingBox(CConveyor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_conveyor.cpp_FUN_0043b420
+// Original: core_conveyor.cpp_CConveyor_dtor_FUN_0043b420
 // Address: 0043b420
-CDemonActor * FUN_0043b420(CDemonActor *param_1,byte param_2);
+CConveyor * __cdecl CConveyor::dtor(CConveyor *this_ptr,uint flags);
 
-// Original: core_conveyor.cpp_FUN_0043b490
+// Original: core_conveyor.cpp_CPlatform_dtor_FUN_0043b490
 // Address: 0043b490
-CDemonActor * FUN_0043b490(CDemonActor *param_1,byte param_2);
+CPlatform * __cdecl CPlatform::dtor(CPlatform *this_ptr,uint flags);

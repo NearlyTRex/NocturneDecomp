@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(CCharacter *param_1,float param_2)
+; void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(CIcePick *this_ptr,float delta_time)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_icepick.cpp_FUN_004b9fe0 at 004ba083
@@ -74,7 +77,7 @@ section .text
     PUSH EDI                            ; 004bb339
     PUSH EBX                            ; 004bb33a
     CALL core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0 ; 004bb33b
-        ;   XREF to: 004bb3c0 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0()
+        ;   XREF to: 004bb3c0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004bb340
     JMP 0x004bb320                      ; 004bb343
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320
@@ -83,7 +86,7 @@ section .text
     PUSH ECX                            ; 004bb34b
     PUSH EBX                            ; 004bb34c
     CALL core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0 ; 004bb34d
-        ;   XREF to: 004bb3c0 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0()
+        ;   XREF to: 004bb3c0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CIcePick * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004bb352
     JMP 0x004bb320                      ; 004bb355
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320

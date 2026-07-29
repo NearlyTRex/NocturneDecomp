@@ -11,21 +11,22 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_004dd930(CMoloch *this_ptr)
 {
   char cVar1;
   SMRGLTextureBasic *pSVar2;
-  int iVar3;
+  CHero *pCVar3;
   CDeformableModelInstance *pCVar4;
   CMorph *pCVar5;
   char *pcVar6;
   char *pcVar7;
   SMRGLTextureLod *pSVar8;
   
-  iVar3 = core_hero_cpp_FUN_004b46d0(this_ptr);
+  pCVar3 = core_hero_cpp_FUN_004b46d0(&this_ptr->base);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
-                     ((CDeformableModelInstance *)(iVar3 + 0x1fa3c));
+                     ((CDeformableModelInstance *)(pCVar3 + 1));
   pCVar5 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar4[1].transformed_vertices[10].y);
-  *(byte ***)(pCVar5[-0x2d].models[1].textures[2].textures[2].texture_name + 0xc) =
-       &PTR_core_moloch_cpp_CMoloch_setup_FUN_004dda70_005a0ac4;
+  *(CHero_full_vtable **)(pCVar5[-0x2d].models[1].textures[2].textures[2].texture_name + 0xc) =
+       &g_CMolochVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (pCVar5[-0x2d].models[1].textures + 3,"moloch_h.dfm");
+            ((CDeformableModelInstance *)(pCVar5[-0x2d].models[1].textures + 3),
+             "moloch_h.dfm");
   pcVar6 = "molochToDemon";
   pcVar7 = pCVar5[-1].models[1].textures[0x11].textures[1].texture_name + 0xc;
   do {

@@ -128,7 +128,7 @@ section .text
         ;   Label: LAB_0045ee21
     PUSH EBX                            ; 0045ee22
     CALL core_xform.cpp_transformAndClipGeometry_FUN_0055e040 ; 0045ee23
-        ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformAndClipGeometry_FUN_0055e040()
+        ;   XREF to: 0055e040 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count, int * vertex_indices)
     MOV ECX,dword ptr [0x00766c70]      ; 0045ee28 | DAT_00766c70
     ADD ESP,0x8                         ; 0045ee2e
     CMP ECX,0x2                         ; 0045ee31

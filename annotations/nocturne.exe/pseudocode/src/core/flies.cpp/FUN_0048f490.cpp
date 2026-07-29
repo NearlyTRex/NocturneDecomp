@@ -66,7 +66,7 @@ int core_flies_cpp_FUN_0048f490(CDemonActor *param_1)
     }
     pCVar2 = DAT_005ae704;
     if (_DAT_01c02594 == 0) {
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(DAT_005ae704,0,0);
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(DAT_005ae704,0,0,0);
       uVar5 = _DAT_01c038f4 >> 8;
       _DAT_01c70754 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
       _DAT_01c70758 = _DAT_01c70754 ^ 0xffffff;

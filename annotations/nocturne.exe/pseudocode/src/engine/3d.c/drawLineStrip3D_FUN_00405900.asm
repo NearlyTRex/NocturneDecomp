@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_drawLineStrip3D_FUN_00405900(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00405900(SLineStrip *line_strip)
 ;
+; Parameters:
+; SLineStrip *     Stack[0x4]:4   line_strip
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00409590
@@ -65,7 +67,7 @@ section .text
     INC EBP                             ; 00405983
     MOVSD.REP ES:EDI,ESI                ; 00405984
     CALL engine_3d.c_clipAndDrawLine3D_FUN_00409590 ; 00405986
-        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine3D_FUN_00409590()
+        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00409590(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040598b
     JMP 0x00405915                      ; 0040598e
         ;   XREF to: 00405915 (UNCONDITIONAL_JUMP)  ; LAB_00405915

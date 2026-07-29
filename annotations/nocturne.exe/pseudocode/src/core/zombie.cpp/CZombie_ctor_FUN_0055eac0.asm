@@ -20,7 +20,7 @@
 ;   TerminatedCString s_mine_geo_005983f7
 ;   float FLOAT_005a453c = 50
 ;   float FLOAT_005a4540 = 100
-;   undefined1* PTR_core_zombie.cpp_CZombie_setup_FUN_0055ec20_005a4554 = 0055ec20
+;   CEnemy_full_vtable g_CZombieVTable
 ;   undefined4 DAT_005be368
 ;
 ; Called Functions:
@@ -50,9 +50,9 @@ section .text
     ADD EAX,0x150                       ; 0055eadb
     PUSH EAX                            ; 0055eae0
     MOV ESI,0x5983f2                    ; 0055eae1 | = "true"
-    MOV dword ptr [EAX + -0x4],0x5a4554 ; 0055eae6 | PTR_core_zombie.cpp_CZombie_setup_FUN_0055ec20_005a4554
+    MOV dword ptr [EAX + -0x4],0x5a4554 ; 0055eae6 | g_CZombieVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0055eaed
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x3f000000 ; 0055eaf2
     LEA EDI,[EBX + 0xbd44]              ; 0055eafc
     MOV dword ptr [EBX + 0x2dd8],0x3f800000 ; 0055eb02
@@ -83,7 +83,7 @@ section .text
     PUSH 0x3f800000                     ; 0055eb57
     PUSH 0x3e99999a                     ; 0055eb5c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0055eb61
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 0055eb66
     FLD float ptr [ESP + 0x8]           ; 0055eb6a
     ADD ESP,0x8                         ; 0055eb6e

@@ -42,7 +42,7 @@ section .text
     ADD EAX,0x44                        ; 00565382
     PUSH EAX                            ; 00565385
     CALL crt_iostream.cpp_ostream_ctor_FUN_0056b4a9 ; 00565386
-        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_ctor_FUN_0056b4a9()
+        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_ctor_FUN_0056b4a9(_ostream * this_ptr, uint c1)
     SUB EAX,0x44                        ; 0056538b
     MOV EDX,dword ptr [EAX]             ; 0056538e
     MOV EDX,dword ptr [EDX + 0x4]       ; 00565390

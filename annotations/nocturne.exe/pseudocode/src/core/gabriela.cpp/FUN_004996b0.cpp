@@ -18,10 +18,10 @@ void core_gabriela_cpp_FUN_004996b0(CCharacter *param_1,SDamageInfo *param_2)
   if ((*(uint *)param_1[1].base.actor_name & 0x7fffffff) != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x1d0) != 0) {
+  if (0x01C775EC->god_mode_enabled != 0) {
     param_2->damage_amount = 0.0;
   }
-  if (*(int *)(0x01C775EC + 0x22c) == 0) {
+  if (0x01C775EC->allow_damage_flag == 0) {
     param_2->damage_amount = 0.0;
   }
   *(float *)param_1[1].base.actor_name = 0.5f;
@@ -34,9 +34,9 @@ void core_gabriela_cpp_FUN_004996b0(CCharacter *param_1,SDamageInfo *param_2)
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&this_ptr->motion_controller,8,1);
       }
-      if (*(int *)(0x01C775EC + 0xc0) != 2) {
+      if (0x01C775EC->hero_number != HERO_TYPE_STRANGER) {
         pCVar1 = (param_1->base).vtable._ub;
-        fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3e800000,0x3ecccccd);
+        fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.25,0.4);
         (*pCVar1->playSoundWithDelay)(&param_1->base,"gb-hit[1,6].wav",fVar3);
       }
     }
@@ -51,13 +51,13 @@ void core_gabriela_cpp_FUN_004996b0(CCharacter *param_1,SDamageInfo *param_2)
       if (pSVar2->state_index != 0xb) {
         force_immediate = 1;
         param_1->grabbed_by = (CDemonActor *)0x0;
-        fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x42c80000);
+        fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(param_1->model).motion_controller,(fVar3 <= 50.0f) + 9,force_immediate
                   );
-        if (*(int *)(0x01C775EC + 0xc0) != 2) {
+        if (0x01C775EC->hero_number != HERO_TYPE_STRANGER) {
           pCVar1 = (param_1->base).vtable._ub;
-          fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3e800000,0x3ecccccd);
+          fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.25,0.4);
           (*pCVar1->playSoundWithDelay)(&param_1->base,"gb-die[1,6].wav",fVar3);
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670

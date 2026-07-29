@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_project3DPointClipped_FUN_00401df0(int param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_project3DPointClipped_FUN_00401df0(int x_3d,int y_3d,int z_depth)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_3d
+; int              Stack[0x8]:4   y_3d
+; int              Stack[0xc]:4   z_depth
 ;
 ; Called Functions:
 ;   engine_2d.c_project3DPointToScreen_FUN_00401da0

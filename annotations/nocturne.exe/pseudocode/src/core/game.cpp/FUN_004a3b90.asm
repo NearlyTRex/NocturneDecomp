@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
+; void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   save_filename
 ; Local Variables:
 ; undefined8       Stack[-0x570]:8  local_570
 ; undefined8       Stack[-0x568]:8  local_568
@@ -173,7 +176,7 @@ section .text
     MOV EDI,dword ptr [0x005baf90]      ; 004a3c9d | DAT_005baf90
     PUSH EDI                            ; 004a3ca3
     CALL core_mission.cpp_FUN_004d8720  ; 004a3ca4
-        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d8720()
+        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004a3ca9
     PUSH 0x583ba0                       ; 004a3cac | = "// Hero count, local hero index, hero..."
     PUSH ESI                            ; 004a3cb1
@@ -222,7 +225,7 @@ section .text
     MOV ESI,dword ptr [0x005be220]      ; 004a3d21 | DAT_005be220
     PUSH ESI                            ; 004a3d27 | DAT_01e56da0
     CALL core_script.cpp_FUN_005055f0   ; 004a3d28
-        ;   XREF to: 005055f0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005055f0()
+        ;   XREF to: 005055f0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005055f0(CScript * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004a3d2d
     PUSH EBX                            ; 004a3d30
     MOV EDI,dword ptr [0x005b80f0]      ; 004a3d31 | DAT_005b80f0

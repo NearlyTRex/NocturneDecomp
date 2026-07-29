@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(void)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(CWavOutDevice *this_ptr)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   void* PTR_waveOutReset_00575400 = 001758a4

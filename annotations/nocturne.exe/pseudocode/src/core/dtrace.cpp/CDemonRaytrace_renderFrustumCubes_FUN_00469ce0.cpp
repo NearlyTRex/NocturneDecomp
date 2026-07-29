@@ -346,7 +346,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_50,iVar7,iVar9,local_d4);
+                            (this_ptr,(int)local_50,iVar7,iVar9,local_d4);
                   iVar7 = iVar10;
                 } while (iVar10 <= (this_ptr->grid_bounds_max).y);
               }
@@ -355,7 +355,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_50,iVar7,iVar9,local_d0);
+                            (this_ptr,(int)local_50,iVar7,iVar9,local_d0);
                   iVar7 = iVar10;
                 } while ((this_ptr->grid_bounds_min).y <= iVar10);
               }
@@ -408,7 +408,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_58,iVar7,iVar9,local_c4);
+                            (this_ptr,(int)local_58,iVar7,iVar9,local_c4);
                   iVar7 = iVar10;
                 } while (iVar10 <= (this_ptr->grid_bounds_max).y);
               }
@@ -419,7 +419,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               while (bVar13 == iVar10 < 0) {
                 iVar8 = iVar7 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,local_58,iVar7,iVar9,local_c0);
+                          (this_ptr,(int)local_58,iVar7,iVar9,local_c0);
                 iVar7 = (this_ptr->grid_bounds_min).y;
                 iVar10 = iVar8 - iVar7;
                 bVar13 = SBORROW4(iVar8,iVar7);
@@ -476,7 +476,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_60,iVar9,iVar7,local_f4);
+                            (this_ptr,(int)local_60,iVar9,iVar7,local_f4);
                   iVar7 = iVar10;
                 } while (iVar10 <= (this_ptr->grid_bounds_max).z);
               }
@@ -485,7 +485,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_60,iVar9,iVar7,local_f0);
+                            (this_ptr,(int)local_60,iVar9,iVar7,local_f0);
                   iVar7 = iVar10;
                 } while ((this_ptr->grid_bounds_min).z <= iVar10);
               }
@@ -538,7 +538,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
                 do {
                   iVar10 = iVar7 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                            (this_ptr,local_68,iVar9,iVar7,local_e4);
+                            (this_ptr,(int)local_68,iVar9,iVar7,local_e4);
                   iVar7 = iVar10;
                 } while (iVar10 <= (this_ptr->grid_bounds_max).z);
               }
@@ -549,7 +549,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               while (bVar13 == iVar10 < 0) {
                 iVar8 = iVar7 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,local_68,iVar9,iVar7,local_e0);
+                          (this_ptr,(int)local_68,iVar9,iVar7,local_e0);
                 iVar7 = (this_ptr->grid_bounds_min).z;
                 iVar10 = iVar8 - iVar7;
                 bVar13 = SBORROW4(iVar8,iVar7);
@@ -607,7 +607,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               do {
                 iVar7 = iVar9 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,fVar11,local_40,iVar9,local_114);
+                          (this_ptr,(int)fVar11,local_40,iVar9,local_114);
                 iVar9 = iVar7;
               } while (iVar7 <= (this_ptr->grid_bounds_max).z);
             }
@@ -616,7 +616,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               do {
                 iVar7 = iVar9 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,fVar11,local_40,iVar9,local_110);
+                          (this_ptr,(int)fVar11,local_40,iVar9,local_110);
                 iVar9 = iVar7;
               } while ((this_ptr->grid_bounds_min).z <= iVar7);
             }
@@ -633,7 +633,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               do {
                 iVar7 = iVar9 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,fVar11,local_44,iVar9,local_10c);
+                          (this_ptr,(int)fVar11,local_44,iVar9,local_10c);
                 iVar9 = iVar7;
               } while (iVar7 <= (this_ptr->grid_bounds_max).z);
             }
@@ -642,7 +642,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
               do {
                 iVar7 = iVar9 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
-                          (this_ptr,fVar11,local_44,iVar9,local_108);
+                          (this_ptr,(int)fVar11,local_44,iVar9,local_108);
                 iVar9 = iVar7;
               } while ((this_ptr->grid_bounds_min).z <= iVar7);
             }

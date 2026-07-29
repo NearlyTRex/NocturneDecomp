@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_process_FUN_004cf0c0(CWeapon *param_1,float param_2)
+; void core_melee_cpp_CMelee_process_FUN_004cf0c0(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24

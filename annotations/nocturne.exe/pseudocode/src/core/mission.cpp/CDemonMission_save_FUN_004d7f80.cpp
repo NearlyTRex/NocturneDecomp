@@ -2,11 +2,11 @@
 // Address: 004d7f80
 // Address Range: [[004d7f80, 004d7fdf]]
 // Convention: unknown
-// Signature: void core_mission_cpp_CDemonMission_save_FUN_004d7f80(undefined4 param_1,char *param_2)
+// Signature: void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2)
 
 #include "nocturne.h"
 
-void core_mission_cpp_CDemonMission_save_FUN_004d7f80(uint param_1,char *param_2)
+void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2)
 
 {
   _FILE *file_handle;

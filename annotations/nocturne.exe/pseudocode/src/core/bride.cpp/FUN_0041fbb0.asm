@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEnemy * core_bride_cpp_FUN_0041fbb0(CEnemy *param_1)
+; CBride * __cdecl core_bride_cpp_FUN_0041fbb0(CBride *this_ptr)
 ;
+; Parameters:
+; CBride *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_bride.cpp_FUN_0041fb80 at 0041fb93
@@ -11,7 +13,7 @@
 ;   TerminatedCString s_bride_dfm_005799f4
 ;   float FLOAT_0059ad10 = 50
 ;   float FLOAT_0059ad14 = 100
-;   undefined1* PTR_core_bride.cpp_CBride_setup_FUN_0041fc20_0059ad24 = 0041fc20
+;   CEnemy_full_vtable g_CBrideVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -32,9 +34,9 @@ section .text
     MOV EBX,EAX                         ; 0041fbc3
     ADD EAX,0x150                       ; 0041fbc5
     PUSH EAX                            ; 0041fbca
-    MOV dword ptr [EAX + -0x4],0x59ad24 ; 0041fbcb | PTR_core_bride.cpp_CBride_setup_FUN_0041fc20_0059ad24
+    MOV dword ptr [EAX + -0x4],0x59ad24 ; 0041fbcb | g_CBrideVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0041fbd2
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0059ad10]          ; 0041fbd7 | FLOAT_0059ad10
     MOV dword ptr [EBX + 0x2dd4],0x3f400000 ; 0041fbdd
     FLD float ptr [0x0059ad14]          ; 0041fbe7 | FLOAT_0059ad14

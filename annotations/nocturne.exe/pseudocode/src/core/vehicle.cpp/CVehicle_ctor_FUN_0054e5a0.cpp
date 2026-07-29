@@ -10,23 +10,22 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle *this_pt
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   void *pvVar4;
   CCourse *pCVar5;
   char *pcVar6;
   int *piVar7;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pvVar4 = __arrinit
                      (pCVar3 + 1,4,&g_CKeyFramedModelInstanceTypeInfo_0059b030);
   pvVar4 = __arrinit
                      ((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo_005a3d20);
   pCVar5 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)((int)pvVar4 + 0x6e4));
-  pCVar5[-0x13c].frames = (CCourseFrame *)&PTR_core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0_005a3c44
-  ;
+  pCVar5[-0x13c].frames = (CCourseFrame *)&g_CVehicleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)&pCVar5[-0x13c].loop,"32ford.kfm");
   pCVar5[-0x94].loop = 4;

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_nbride2_dfm_0057d4ac
 ;   float FLOAT_0059c3f0 = 50
 ;   float FLOAT_0059c3f4 = 100
-;   undefined1* PTR_core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730_0059c414 = 00458730
+;   CEnemy_full_vtable g_CDraculaBrideVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -36,9 +36,9 @@ section .text
     MOV ESI,EAX                         ; 00458656
     ADD EAX,0x150                       ; 00458658
     PUSH EAX                            ; 0045865d
-    MOV dword ptr [EAX + -0x4],0x59c414 ; 0045865e | PTR_core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730_0059c414
+    MOV dword ptr [EAX + -0x4],0x59c414 ; 0045865e | g_CDraculaBrideVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00458665
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x3f000000 ; 0045866a
     MOV dword ptr [EBX + 0x2dd8],0x3f800000 ; 00458674
     MOV byte ptr [EBX + 0xbd48],0x0     ; 0045867e

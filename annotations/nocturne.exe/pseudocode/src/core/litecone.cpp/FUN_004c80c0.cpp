@@ -9,12 +9,12 @@
 void core_litecone_cpp_FUN_004c80c0(void)
 
 {
-  int iVar1;
+  CLightCone *this_ptr;
   
-  iVar1 = FUN_0056497c(0x224);
-  if (iVar1 == 0) {
+  this_ptr = (CLightCone *)FUN_0056497c(0x224);
+  if (this_ptr == (CLightCone *)0x0) {
     return;
   }
-  core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(iVar1);
+  core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(this_ptr);
   return;
 }

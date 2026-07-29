@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(undefined1 *param_1)
+; CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(CDemonPart *this_ptr)
 ;
+; Parameters:
+; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

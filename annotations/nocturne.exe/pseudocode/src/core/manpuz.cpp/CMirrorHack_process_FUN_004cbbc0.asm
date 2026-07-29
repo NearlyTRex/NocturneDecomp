@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMirrorHack_process_FUN_004cbbc0(CDemonActor *param_1,float param_2)
+; void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_004cbbc0(CMirrorHack *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

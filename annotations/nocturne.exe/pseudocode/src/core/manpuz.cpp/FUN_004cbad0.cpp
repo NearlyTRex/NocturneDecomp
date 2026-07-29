@@ -9,12 +9,12 @@
 void core_manpuz_cpp_FUN_004cbad0(void)
 
 {
-  int iVar1;
+  CMirrorHack *this_ptr;
   
-  iVar1 = FUN_0056497c(0x2d0);
-  if (iVar1 == 0) {
+  this_ptr = (CMirrorHack *)FUN_0056497c(0x2d0);
+  if (this_ptr == (CMirrorHack *)0x0) {
     return;
   }
-  core_manpuz_cpp_FUN_004cbb00(iVar1);
+  core_manpuz_cpp_FUN_004cbb00(this_ptr);
   return;
 }

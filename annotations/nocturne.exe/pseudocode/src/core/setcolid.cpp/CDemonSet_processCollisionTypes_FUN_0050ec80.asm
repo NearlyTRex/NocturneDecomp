@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *param_1,CVector3f *param_2,float param_3)
+; float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet *this_ptr,CVector3f *position,float radius)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x138]:4  local_138
@@ -88,7 +92,7 @@ section .text
     PUSH EBX                            ; 0050ecc1
     PUSH 0x1fba938                      ; 0050ecc2 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580 ; 0050ecc7
-        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580()
+        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0x304],EAX     ; 0050eccc
     FLD float ptr [ESP + 0x304]         ; 0050ecd3
     ADD ESP,0x10                        ; 0050ecda
@@ -783,7 +787,7 @@ section .text
     PUSH EAX                            ; 0050f6a0
     PUSH EDI                            ; 0050f6a1
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0050f6a2
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0050f6a7
     CMP EBP,EAX                         ; 0050f6aa
     JZ 0x0050eebd                       ; 0050f6ac

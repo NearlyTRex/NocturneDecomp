@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_curtain_cpp_FUN_0043f330(CDemonActor *param_1)
+; int __cdecl core_curtain_cpp_FUN_0043f330(CCurtain *this_ptr)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
@@ -126,7 +128,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0043f428 | DAT_005be368
     PUSH ECX                            ; 0043f42e | DAT_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0043f42f
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 0043f434
     PUSH 0x1                            ; 0043f437
     MOV EBX,dword ptr [0x005ae704]      ; 0043f439 | DAT_005ae704
@@ -184,7 +186,7 @@ section .text
     PUSH EDX                            ; 0043f4d8 | DAT_01b4d738
     INC EDI                             ; 0043f4d9
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 ; 0043f4da
-        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370()
+        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EBX,0x48                        ; 0043f4df
     ADD ESP,0x8                         ; 0043f4e2
     JMP 0x0043f4bc                      ; 0043f4e5
@@ -223,7 +225,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 0043f533 | DAT_005be368
     PUSH EBX                            ; 0043f539 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 0043f53a
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0043f53f
     TEST EBP,EBP                        ; 0043f542
         ;   Label: LAB_0043f542
@@ -264,7 +266,7 @@ section .text
     PUSH EAX                            ; 0043f5ac | DAT_01b4d738
     INC EBX                             ; 0043f5ad
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 ; 0043f5ae
-        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370()
+        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EDI,0x48                        ; 0043f5b3
     ADD ESP,0x8                         ; 0043f5b6
     JMP 0x0043f591                      ; 0043f5b9
@@ -279,7 +281,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 0043f5ce | DAT_005be368
     PUSH EBX                            ; 0043f5d4 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 0043f5d5
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0043f5da
     PUSH 0x0                            ; 0043f5dd
         ;   Label: LAB_0043f5dd

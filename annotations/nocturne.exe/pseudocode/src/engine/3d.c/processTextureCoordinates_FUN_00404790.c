@@ -1,26 +1,26 @@
 // Name: engine_3d.c_processTextureCoordinates_FUN_00404790
 // Address: 00404790
 // Address Range: [[00404790, 004047db]]
-// Convention: unknown
-// Signature: int engine_3d_c_processTextureCoordinates_FUN_00404790(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00404790(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-int engine_3d_c_processTextureCoordinates_FUN_00404790(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00404790(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
-  uint *puVar2;
+  UIntegerFloat *pUVar2;
   
-  puVar2 = (uint *)(param_1 + 0xc);
+  pUVar2 = &(prim->surface_normal).B;
   iVar1 = 0;
-  if (0 < *(int *)(param_1 + 8)) {
+  if (0 < (prim->surface_normal).A.i) {
     do {
-      (&DAT_005c502c)[(*(int *)(param_1 + 4) + iVar1) * 0xc] = *puVar2;
-      *(uint *)(&DAT_005c5030 + (*(int *)(param_1 + 4) + iVar1) * 0x30) = puVar2[1];
+      *(UIntegerFloat *)(&DAT_005c502c + ((prim->base).count + iVar1) * 0xc) = *pUVar2;
+      *(UIntegerFloat *)(&DAT_005c5030 + ((prim->base).count + iVar1) * 0x30) = pUVar2[1];
       iVar1 = iVar1 + 1;
-      puVar2 = puVar2 + 2;
-    } while (iVar1 < *(int *)(param_1 + 8));
+      pUVar2 = pUVar2 + 2;
+    } while (iVar1 < (prim->surface_normal).A.i);
   }
-  return *(int *)(param_1 + 8) * 8 + param_1 + 0xc;
+  return (SMRGLHeaderExtended *)(&(prim->surface_normal).B + (prim->surface_normal).A.i * 2);
 }

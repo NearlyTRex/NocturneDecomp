@@ -1,14 +1,14 @@
 // Name: core_game.cpp_FUN_004a3b90
 // Address: 004a3b90
 // Address Range: [[004a3b90, 004a4163]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
+void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename)
 
 {
   char cVar1;
@@ -33,7 +33,7 @@ void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
   int local_18;
   int local_14;
   
-  if (*(int *)(param_1 + 0x228) != 0) {
+  if (this_ptr->letterbox_mode != 0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Unable to save during cinematic")
     ;
     shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,pcVar4);
@@ -62,7 +62,7 @@ void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
   pcVar3 = local_558;
   output_buffer = local_558;
   pcVar4 = local_558;
-  if (param_2 == (char *)0x0) {
+  if (save_filename == (char *)0x0) {
     flags = 1;
     file_extension = "noc";
     directory_path = "save";
@@ -77,11 +77,11 @@ void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
   }
   else {
     do {
-      cVar1 = *param_2;
+      cVar1 = *save_filename;
       *pcVar3 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = param_2[1];
-      param_2 = param_2 + 2;
+      cVar1 = save_filename[1];
+      save_filename = save_filename + 2;
       pcVar3[1] = cVar1;
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
@@ -123,9 +123,9 @@ void core_game_cpp_FUN_004a3b90(int param_1,char *param_2)
     } while (iVar2 <= _DAT_01c7869c);
   }
   _fprintf(file_handle,"Game stats\n");
-  _fprintf(file_handle,"%f,%f,%d,%d\n",(double)*(float *)(param_1 + 0x250),
-             (double)*(float *)(param_1 + 0x248),*(uint *)(param_1 + 0x24c),
-             *(uint *)(param_1 + 0x254));
+  _fprintf(file_handle,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,
+             (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
+             this_ptr->total_kill_count);
   core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(0x01E57284,file_handle);
   _fclose(file_handle);
   DAT_00763e90 = (_FILE *)0x0;

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0040f542
         ;   Label: LAB_0040f542
     CALL core_anvil.cpp_FUN_0040f560    ; 0040f543
-        ;   XREF to: 0040f560 (UNCONDITIONAL_CALL)  ; undefined core_anvil.cpp_FUN_0040f560()
+        ;   XREF to: 0040f560 (UNCONDITIONAL_CALL)  ; CAnvil * core_anvil.cpp_FUN_0040f560(CAnvil * this_ptr)
     ADD ESP,0x4                         ; 0040f548
     RET                                 ; 0040f54b
 

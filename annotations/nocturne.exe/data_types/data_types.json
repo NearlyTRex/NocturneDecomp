@@ -33,6 +33,14 @@
       "type":"struct"
     },
     {
+      "name":"CBoneGuy_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CBoneGuy_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CCameraView_dtor",
       "type":"function_definition"
     },
@@ -509,15 +517,15 @@
       "type":"function_definition"
     },
     {
-      "name":"CEnemy_reset",
-      "type":"function_definition"
-    },
-    {
       "name":"CEnemy_updateVictim",
       "type":"function_definition"
     },
     {
       "name":"CEnemy_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CBoneGuy_full_vtable",
       "type":"struct"
     },
     {
@@ -654,6 +662,18 @@
     },
     {
       "name":"CMP3Decoder",
+      "type":"struct"
+    },
+    {
+      "name":"CMobster_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CMobster_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CMobster_full_vtable",
       "type":"struct"
     },
     {
@@ -945,6 +965,14 @@
       "type":"struct"
     },
     {
+      "name":"CPickList_handleInput",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPickList_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CPodDirectoryEntry",
       "type":"struct"
     },
@@ -1153,6 +1181,18 @@
       "type":"struct"
     },
     {
+      "name":"CSmiley_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CSmiley_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CSmiley_full_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CSound",
       "type":"struct"
     },
@@ -1289,10 +1329,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CStrList_handleInput",
-      "type":"function_definition"
-    },
-    {
       "name":"CStrList_insert",
       "type":"function_definition"
     },
@@ -1310,6 +1346,10 @@
     },
     {
       "name":"CStrList_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CPickList_full_vtable",
       "type":"struct"
     },
     {
@@ -1583,6 +1623,10 @@
     {
       "name":"CWeapon_full_vtable",
       "type":"struct"
+    },
+    {
+      "name":"ColorConversionFunc",
+      "type":"function_definition"
     },
     {
       "name":"CustomScanlineFunc",
@@ -1911,6 +1955,10 @@
     {
       "name":"FileListNode",
       "type":"struct"
+    },
+    {
+      "name":"FileSearchHandlerFunc",
+      "type":"function_definition"
     },
     {
       "name":"FormatSpec",
@@ -3861,6 +3909,14 @@
       "type":"struct"
     },
     {
+      "name":"CDSEModel",
+      "type":"struct"
+    },
+    {
+      "name":"CMultiCram",
+      "type":"struct"
+    },
+    {
       "name":"SVertexPair",
       "type":"struct"
     },
@@ -5101,6 +5157,10 @@
       "type":"typedef"
     },
     {
+      "name":"CBarrier",
+      "type":"struct"
+    },
+    {
       "name":"CBat",
       "type":"struct"
     },
@@ -5761,12 +5821,20 @@
       "type":"struct"
     },
     {
+      "name":"CColonel",
+      "type":"struct"
+    },
+    {
       "name":"CGabriella",
       "type":"struct"
     },
     {
       "name":"CGabriella_ptr_130068",
       "type":"typedef"
+    },
+    {
+      "name":"CHaystack",
+      "type":"struct"
     },
     {
       "name":"CHero_ptr_10900",
@@ -5799,6 +5867,10 @@
     {
       "name":"CHero_ptr_48728",
       "type":"typedef"
+    },
+    {
+      "name":"CIcePick",
+      "type":"struct"
     },
     {
       "name":"CKeyActor",
@@ -5863,6 +5935,10 @@
     {
       "name":"CLightActor_ptr_916",
       "type":"typedef"
+    },
+    {
+      "name":"CLightCone",
+      "type":"struct"
     },
     {
       "name":"CMansionPuzzleCircle",
@@ -6433,6 +6509,10 @@
       "type":"typedef"
     },
     {
+      "name":"CTeleport",
+      "type":"struct"
+    },
+    {
       "name":"CTeleportDest",
       "type":"struct"
     },
@@ -6597,6 +6677,10 @@
       "type":"struct"
     },
     {
+      "name":"CBaronWeapon",
+      "type":"struct"
+    },
+    {
       "name":"CCrossbow",
       "type":"struct"
     },
@@ -6605,7 +6689,39 @@
       "type":"typedef"
     },
     {
+      "name":"CDynamite",
+      "type":"struct"
+    },
+    {
+      "name":"CElephantGun",
+      "type":"struct"
+    },
+    {
+      "name":"CFlameThrower",
+      "type":"struct"
+    },
+    {
+      "name":"CFlashlight",
+      "type":"struct"
+    },
+    {
       "name":"CLightGun",
+      "type":"struct"
+    },
+    {
+      "name":"CMelee",
+      "type":"struct"
+    },
+    {
+      "name":"CShotgun",
+      "type":"struct"
+    },
+    {
+      "name":"CShovel",
+      "type":"struct"
+    },
+    {
+      "name":"CTommyGun",
       "type":"struct"
     },
     {
@@ -9277,6 +9393,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CBoneGuy_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CBoneGuy*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCameraView_dtor",
       "parameters":[
         {
@@ -11234,20 +11364,6 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CEnemy_reset",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CEnemy*"
-        }
-      ],
-      "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
       "name":"CEnemy_updateVictim",
       "parameters":[
         {
@@ -11468,6 +11584,20 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CMobster_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CMobster*"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -12566,6 +12696,28 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"ColorConversionFunc",
+      "parameters":[
+        {
+          "name":"dest_buffer",
+          "type":"void*"
+        },
+        {
+          "name":"src_buffer",
+          "type":"void*"
+        },
+        {
+          "name":"count",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CParticle_onCollision",
       "parameters":[
         {
@@ -12628,6 +12780,20 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CPickList_handleInput",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPickList*"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -13576,6 +13742,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CSmiley_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSmiley*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CSoundDevice_allocateSample",
       "parameters":[
         {
@@ -14054,20 +14234,6 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CStrList_handleInput",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CStrList*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
       "name":"CStrList_insert",
       "parameters":[
         {
@@ -14326,6 +14492,20 @@
       "importable":true,
       "name":"FARPROC",
       "parameters":[],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"FileSearchHandlerFunc",
+      "parameters":[
+        {
+          "name":"param0",
+          "type":"void*"
+        }
+      ],
       "return_type":"int",
       "type":"function_definition"
     },
@@ -20642,6 +20822,66 @@
       "desc":"",
       "fields":[
         {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"baron",
+          "offset":1392,
+          "type":"CBaron*"
+        }
+      ],
+      "importable":true,
+      "len":1396,
+      "name":"CBaronWeapon",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":336,
+          "name":"base",
+          "offset":0,
+          "type":"CDemonActor"
+        },
+        {
+          "len":12,
+          "name":"size",
+          "offset":336,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"add_to_path_grid",
+          "offset":348,
+          "type":"int"
+        },
+        {
+          "len":200,
+          "name":"effect_class_name_list",
+          "offset":352,
+          "type":"char[200]"
+        }
+      ],
+      "importable":true,
+      "len":552,
+      "name":"CBarrier",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":128368,
           "name":"base",
           "offset":0,
@@ -21509,6 +21749,60 @@
       "importable":true,
       "len":49996,
       "name":"CBoneGuy",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":208,
+          "name":"_ud",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":208,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":8,
+          "name":"_ue",
+          "offset":312,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_ub",
+          "offset":320,
+          "type":"CBoneGuy_vtable"
+        }
+      ],
+      "importable":true,
+      "len":324,
+      "name":"CBoneGuy_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CBoneGuy_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CBoneGuy_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -22850,7 +23144,7 @@
       "desc":"",
       "fields":[
         {
-          "len":236,
+          "len":208,
           "name":"_ub",
           "offset":0,
           "type":"CDemonActor_vtable"
@@ -22858,12 +23152,12 @@
         {
           "len":104,
           "name":"_uc",
-          "offset":236,
+          "offset":208,
           "type":"CCharacter_vtable"
         }
       ],
       "importable":true,
-      "len":340,
+      "len":312,
       "name":"CCharacter_full_vtable",
       "pack":false,
       "type":"struct"
@@ -23334,6 +23628,48 @@
       "importable":true,
       "len":36,
       "name":"CCodec_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":129596,
+          "name":"base",
+          "offset":0,
+          "type":"CHero"
+        },
+        {
+          "len":4,
+          "name":"guns_drawn",
+          "offset":129596,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dead",
+          "offset":129600,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"head_look_euler",
+          "offset":129604,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"head_look_blend_weight",
+          "offset":129616,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":129620,
+      "name":"CColonel",
       "pack":false,
       "type":"struct"
     },
@@ -24869,61 +25205,19 @@
         },
         {
           "len":4,
-          "name":"onAreaDeleted",
-          "offset":200,
-          "type":"CDemonActor_onAreaDeleted*"
-        },
-        {
-          "len":4,
-          "name":"onActorDeleted",
-          "offset":204,
-          "type":"CDemonActor_onActorDeleted*"
-        },
-        {
-          "len":4,
-          "name":"processInEditor",
-          "offset":208,
-          "type":"CDemonActor_processInEditor*"
-        },
-        {
-          "len":4,
-          "name":"getPropertyList",
-          "offset":212,
-          "type":"CDemonActor_getPropertyList*"
-        },
-        {
-          "len":4,
-          "name":"initializeInEditor",
-          "offset":216,
-          "type":"CDemonActor_initializeInEditor*"
-        },
-        {
-          "len":4,
-          "name":"showEditorHelp",
-          "offset":220,
-          "type":"CDemonActor_showEditorHelp*"
-        },
-        {
-          "len":4,
-          "name":"addFilesToExtract",
-          "offset":224,
-          "type":"CDemonActor_addFilesToExtract*"
-        },
-        {
-          "len":4,
           "name":"dtor",
-          "offset":228,
+          "offset":200,
           "type":"CDemonActor_dtor*"
         },
         {
           "len":4,
           "name":"archive",
-          "offset":232,
+          "offset":204,
           "type":"CDemonActor_archive*"
         }
       ],
       "importable":true,
-      "len":236,
+      "len":208,
       "name":"CDemonActor_vtable",
       "pack":false,
       "type":"struct"
@@ -27271,6 +27565,84 @@
       "fields":[
         {
           "len":4,
+          "name":"vertex_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":100000,
+          "name":"vertices",
+          "offset":4,
+          "type":"SVertexData[5000]"
+        },
+        {
+          "len":4,
+          "name":"polygon_count",
+          "offset":100004,
+          "type":"int"
+        },
+        {
+          "len":1940000,
+          "name":"polygons",
+          "offset":100008,
+          "type":"SShapeEditorPolygon[5000]"
+        },
+        {
+          "len":20,
+          "name":"model_name",
+          "offset":2040008,
+          "type":"char[20]"
+        }
+      ],
+      "importable":true,
+      "len":2040028,
+      "name":"CDSEModel",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"fuse_timer",
+          "offset":1392,
+          "type":"float"
+        },
+        {
+          "len":12,
+          "name":"toss_velocity",
+          "offset":1396,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":1408,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":1412,
+      "name":"CDynamite",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"enabled",
           "offset":0,
           "type":"int"
@@ -27502,6 +27874,42 @@
       "importable":true,
       "len":52,
       "name":"CEdScrollBar",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"spread_angle",
+          "offset":1392,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"muzzle_flash_active",
+          "offset":1396,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"projectile_distance",
+          "offset":1400,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":1404,
+      "name":"CElephantGun",
       "pack":false,
       "type":"struct"
     },
@@ -27763,7 +28171,7 @@
       "desc":"",
       "fields":[
         {
-          "len":236,
+          "len":208,
           "name":"_ub",
           "offset":0,
           "type":"CDemonActor_vtable"
@@ -27771,18 +28179,18 @@
         {
           "len":104,
           "name":"_uc",
-          "offset":236,
+          "offset":208,
           "type":"CCharacter_vtable"
         },
         {
-          "len":16,
+          "len":8,
           "name":"_ue",
-          "offset":340,
+          "offset":312,
           "type":"CEnemy_vtable"
         }
       ],
       "importable":true,
-      "len":356,
+      "len":320,
       "name":"CEnemy_full_vtable",
       "pack":false,
       "type":"struct"
@@ -27803,22 +28211,10 @@
           "name":"updateVictim",
           "offset":4,
           "type":"CEnemy_updateVictim*"
-        },
-        {
-          "len":4,
-          "name":"randomize",
-          "offset":8,
-          "type":"CEnemy_randomize*"
-        },
-        {
-          "len":4,
-          "name":"reset",
-          "offset":12,
-          "type":"CEnemy_reset*"
         }
       ],
       "importable":true,
-      "len":16,
+      "len":8,
       "name":"CEnemy_vtable",
       "pack":false,
       "type":"struct"
@@ -28558,6 +28954,66 @@
       "importable":true,
       "len":1496,
       "name":"CFlameCan",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"is_firing",
+          "offset":1392,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":1396,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"was_firing_prev_frame",
+          "offset":1400,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"fire_rate_timer",
+          "offset":1404,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":1408,
+      "name":"CFlameThrower",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        }
+      ],
+      "importable":true,
+      "len":1392,
+      "name":"CFlashlight",
       "pack":false,
       "type":"struct"
     },
@@ -30301,6 +30757,48 @@
       "desc":"",
       "fields":[
         {
+          "len":129596,
+          "name":"base",
+          "offset":0,
+          "type":"CHero"
+        },
+        {
+          "len":4,
+          "name":"guns_drawn",
+          "offset":129596,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"attack_side",
+          "offset":129600,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"head_look_euler",
+          "offset":129604,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"head_look_blend_weight",
+          "offset":129616,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":129620,
+      "name":"CHaystack",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":336,
           "name":"base",
           "offset":0,
@@ -30457,7 +30955,7 @@
       "desc":"",
       "fields":[
         {
-          "len":236,
+          "len":208,
           "name":"_ub",
           "offset":0,
           "type":"CDemonActor_vtable"
@@ -30465,18 +30963,18 @@
         {
           "len":104,
           "name":"_uc",
-          "offset":236,
+          "offset":208,
           "type":"CCharacter_vtable"
         },
         {
           "len":16,
           "name":"_uh",
-          "offset":340,
+          "offset":312,
           "type":"CHero_vtable"
         }
       ],
       "importable":true,
-      "len":356,
+      "len":328,
       "name":"CHero_full_vtable",
       "pack":false,
       "type":"struct"
@@ -30778,6 +31276,78 @@
       "importable":true,
       "len":48472,
       "name":"CHotDemon",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":129596,
+          "name":"base",
+          "offset":0,
+          "type":"CHero"
+        },
+        {
+          "len":4,
+          "name":"guns_drawn",
+          "offset":129596,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"attack_count",
+          "offset":129600,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"sfx_handles",
+          "offset":129604,
+          "type":"uint[2]"
+        },
+        {
+          "len":12,
+          "name":"head_look_euler",
+          "offset":129612,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"head_look_blend_weight",
+          "offset":129624,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"is_armed",
+          "offset":129628,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"pending_pickup_target",
+          "offset":129632,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"shoot_blend_weight",
+          "offset":129636,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"aim_pitch",
+          "offset":129640,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":129644,
+      "name":"CIcePick",
       "pack":false,
       "type":"struct"
     },
@@ -31715,6 +32285,54 @@
       "desc":"",
       "fields":[
         {
+          "len":336,
+          "name":"base",
+          "offset":0,
+          "type":"CDemonActor"
+        },
+        {
+          "len":4,
+          "name":"fov",
+          "offset":336,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"falloff",
+          "offset":340,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"state",
+          "offset":344,
+          "type":"int"
+        },
+        {
+          "len":100,
+          "name":"on_event",
+          "offset":348,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"off_event",
+          "offset":448,
+          "type":"char[100]"
+        }
+      ],
+      "importable":true,
+      "len":548,
+      "name":"CLightCone",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":1392,
           "name":"base",
           "offset":0,
@@ -32465,6 +33083,102 @@
       "desc":"",
       "fields":[
         {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"allowed_attack_types",
+          "offset":1392,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"strength_lo",
+          "offset":1396,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"strength_hi",
+          "offset":1400,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"dismember_prob",
+          "offset":1404,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"can_go_in_inventory",
+          "offset":1408,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_gore_type",
+          "offset":1412,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_count",
+          "offset":1416,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_timer",
+          "offset":1420,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_interval",
+          "offset":1424,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"ammo_type",
+          "offset":1428,
+          "type":"int"
+        },
+        {
+          "len":100,
+          "name":"thrust_hit_character_sound",
+          "offset":1432,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"swing_hit_character_sound",
+          "offset":1532,
+          "type":"char[100]"
+        },
+        {
+          "len":100,
+          "name":"hit_other_sound",
+          "offset":1632,
+          "type":"char[100]"
+        }
+      ],
+      "importable":true,
+      "len":1732,
+      "name":"CMelee",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"buffer_size_limit",
           "offset":0,
@@ -32852,6 +33566,60 @@
       "importable":true,
       "len":48636,
       "name":"CMobster",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":208,
+          "name":"_ud",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":208,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":8,
+          "name":"_ue",
+          "offset":312,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_um",
+          "offset":320,
+          "type":"CMobster_vtable"
+        }
+      ],
+      "importable":true,
+      "len":324,
+      "name":"CMobster_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CMobster_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CMobster_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -33350,6 +34118,30 @@
       "importable":true,
       "len":34352,
       "name":"CMP3Decoder",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"model_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4000,
+          "name":"models",
+          "offset":4,
+          "type":"CDSEModel*[1000]"
+        }
+      ],
+      "importable":true,
+      "len":4004,
+      "name":"CMultiCram",
       "pack":false,
       "type":"struct"
     },
@@ -34600,6 +35392,48 @@
       "importable":true,
       "len":936,
       "name":"CPickList",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"_us",
+          "offset":0,
+          "type":"CStrList_vtable"
+        },
+        {
+          "len":4,
+          "name":"_up",
+          "offset":24,
+          "type":"CPickList_vtable"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"CPickList_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"handleInput",
+          "offset":0,
+          "type":"CPickList_handleInput*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CPickList_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -36241,6 +37075,60 @@
       "desc":"",
       "fields":[
         {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"spread_angle",
+          "offset":1392,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"muzzle_flash_active",
+          "offset":1396,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"muzzle_flash_distance",
+          "offset":1400,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":1404,
+      "name":"CShotgun",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        }
+      ],
+      "importable":true,
+      "len":1392,
+      "name":"CShovel",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":336,
           "name":"base",
           "offset":0,
@@ -36466,6 +37354,60 @@
       "importable":true,
       "len":48488,
       "name":"CSmiley",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":208,
+          "name":"_ud",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":208,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":8,
+          "name":"_ue",
+          "offset":312,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_us",
+          "offset":320,
+          "type":"CSmiley_vtable"
+        }
+      ],
+      "importable":true,
+      "len":324,
+      "name":"CSmiley_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CSmiley_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CSmiley_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -37379,16 +38321,10 @@
           "name":"clear",
           "offset":20,
           "type":"CStrList_clear*"
-        },
-        {
-          "len":4,
-          "name":"handleInput",
-          "offset":24,
-          "type":"CStrList_handleInput*"
         }
       ],
       "importable":true,
-      "len":28,
+      "len":24,
       "name":"CStrList_vtable",
       "pack":false,
       "type":"struct"
@@ -37516,6 +38452,36 @@
       "importable":true,
       "len":653120,
       "name":"CSvetlana",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":336,
+          "name":"base",
+          "offset":0,
+          "type":"CDemonActor"
+        },
+        {
+          "len":12,
+          "name":"trigger_extents",
+          "offset":336,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"destination",
+          "offset":348,
+          "type":"CDemonActor*"
+        }
+      ],
+      "importable":true,
+      "len":352,
+      "name":"CTeleport",
       "pack":false,
       "type":"struct"
     },
@@ -37798,6 +38764,36 @@
       "importable":true,
       "len":436,
       "name":"CTire",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1392,
+          "name":"base",
+          "offset":0,
+          "type":"CWeapon"
+        },
+        {
+          "len":4,
+          "name":"fire_frames_remaining",
+          "offset":1392,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"sfx_handles",
+          "offset":1396,
+          "type":"uint[2]"
+        }
+      ],
+      "importable":true,
+      "len":1404,
+      "name":"CTommyGun",
       "pack":false,
       "type":"struct"
     },
@@ -39355,7 +40351,7 @@
       "desc":"",
       "fields":[
         {
-          "len":236,
+          "len":208,
           "name":"_ub",
           "offset":0,
           "type":"CDemonActor_vtable"
@@ -39363,12 +40359,12 @@
         {
           "len":32,
           "name":"_uw",
-          "offset":236,
+          "offset":208,
           "type":"CWeapon_vtable"
         }
       ],
       "importable":true,
-      "len":268,
+      "len":240,
       "name":"CWeapon_full_vtable",
       "pack":false,
       "type":"struct"

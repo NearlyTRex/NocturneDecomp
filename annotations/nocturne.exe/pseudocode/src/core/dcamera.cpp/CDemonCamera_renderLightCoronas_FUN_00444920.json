@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 626,
+    "complexity_score": 571,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
-    "suspect_count": 43,
+    "pseudocode_lines": 136,
+    "suspect_count": 38,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -142,7 +142,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 412
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -163,7 +163,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920",
-    "signature": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)"
+    "signature": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)"
   },
   "function_calls": [
     {
@@ -495,14 +495,14 @@
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 113,
+          "line": 109,
           "message": "Uninitialized variable: local_54",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 35,
-          "line": 116,
+          "column": 34,
+          "line": 111,
           "message": "Uninitialized variable: iStack_58",
           "severity": "error"
         }
@@ -525,7 +525,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)",
+      "text": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -533,7 +533,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)",
+      "text": "void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -546,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "_DAT_012b0634 = param_2;",
@@ -554,15 +554,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar7 = (uint *)(param_2 + 0x110);",
+      "text": "pcVar7 = (param_2->base).camera_name + 0xd0;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_012b0638",
       "severity": "mild",
       "text": "puVar8 = (uint *)&DAT_012b0638;",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x154)) {",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(iVar4 + 0x146b290) = *(uint *)(param_1 + 0x150);",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)(param_1 + 0x154));",
@@ -594,23 +594,23 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_dlight_cpp_FUN_0044f0b0(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 64,
       "match": "param_2",
       "severity": "mild",
-      "text": "iStack_64 = param_2;",
+      "text": "fVar1 = *(float *)((param_2->base).camera_name + 0xc0) * (float)256;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_2 + 0x100) * (float)256;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x154)) {",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x150) != *(int *)(local_34 + 0x146b290)) {",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 86,
       "match": "DAT_01bd4260",
       "severity": "mild",
       "text": "local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 86,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 87,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "(local_20 << (DAT_012b0660 & 0x1f)) * 4);",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 94,
+      "line": 90,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
@@ -658,7 +658,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 98,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
@@ -666,15 +666,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 99,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8);",
+      "text": "*(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 100,
       "match": "&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 101,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 117,
       "match": "DAT_00b0e600",
       "severity": "mild",
       "text": "(DAT_00b0e600 & 0x1f));",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 124,
       "match": "DAT_012b0660",
       "severity": "mild",
       "text": "local_28 = local_28 + (1 << (DAT_012b0660 & 0x1f));",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 132,
+      "line": 127,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_38 < *(int *)(param_1 + 0x154));",
@@ -722,55 +722,31 @@
     },
     {
       "description": "Pointer value `&stack0xffffffa8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 102,
+      "line": 98,
       "match": "(int)&stack0xffffffa8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&stack0xffffff9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
-      "match": "(int)&stack0xffffff9c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `&stack0xffffffac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 100,
       "match": "(int)&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x444952 assigned to bare local `iStack_64`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_64` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 49,
-      "match": "0x444952",
-      "severity": "moderate",
-      "text": "iStack_64 = 0x444952;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x4449a9 assigned to bare local `iStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 65,
+      "line": 62,
       "match": "0x4449a9",
       "severity": "moderate",
       "text": "iStack_68 = 0x4449a9;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x4449cd assigned to bare local `iStack_64`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_64` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 69,
-      "match": "0x4449cd",
-      "severity": "moderate",
-      "text": "iStack_64 = 0x4449cd;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x4449d6 assigned to bare local `iStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 71,
+      "line": 67,
       "match": "0x4449d6",
       "severity": "moderate",
       "text": "iStack_68 = 0x4449d6;",
@@ -778,7 +754,7 @@
     },
     {
       "description": "Raw hex address 0x9bb178 assigned to bare local `local_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 79,
+      "line": 75,
       "match": "0x9bb178",
       "severity": "moderate",
       "text": "local_40 = 0x9bb178;",
@@ -786,7 +762,7 @@
     },
     {
       "description": "Raw hex address 0x146ba10 assigned to bare local `iStack_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 80,
+      "line": 76,
       "match": "0x146ba10",
       "severity": "moderate",
       "text": "iStack_44 = 0x146ba10;",
@@ -794,7 +770,7 @@
     },
     {
       "description": "Raw hex address 0xa9d078 assigned to bare local `iStack_48`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_48` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 81,
+      "line": 77,
       "match": "0xa9d078",
       "severity": "moderate",
       "text": "iStack_48 = 0xa9d078;",
@@ -802,23 +778,15 @@
     },
     {
       "description": "Raw hex address 0x8d9278 assigned to bare local `local_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 78,
       "match": "0x8d9278",
       "severity": "moderate",
       "text": "local_3c = 0x8d9278;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 98,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
@@ -826,15 +794,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 103,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 104,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -861,7 +821,7 @@
     },
     {
       "description": "Uninitialized variable: local_54",
-      "line": 113,
+      "line": 109,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((0 < local_54) &&",
@@ -869,10 +829,10 @@
     },
     {
       "description": "Uninitialized variable: iStack_58",
-      "line": 116,
+      "line": 111,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "((iStack_58 >> 0x10) * *(int *)(_DAT_012b0634 + 0x1cc0) +",
+      "text": "[(iStack_58 >> 0x10) * _DAT_012b0634->shadow_map_width +",
       "type": "static_uninitvar"
     }
   ]

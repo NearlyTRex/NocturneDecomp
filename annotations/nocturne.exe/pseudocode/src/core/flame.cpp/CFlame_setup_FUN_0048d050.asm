@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_CFlame_setup_FUN_0048d050(CDemonActor *param_1)
+; void __cdecl core_flame_cpp_CFlame_setup_FUN_0048d050(CFlame *this_ptr)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 at 00417bc0

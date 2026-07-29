@@ -15,8 +15,8 @@ CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040
   CBoundingBox3D CStack_54;
   CVector3f CStack_3c;
   CVector3f CStack_30;
-  byte auStack_24 [12];
-  byte auStack_18 [12];
+  CVector3f CStack_24;
+  CVector3f CStack_18;
   
   if ((uint)bounding_box_type < 2) {
     if (bounding_box_type != 1) {
@@ -48,7 +48,7 @@ LAB_0040a68d:
   (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&CStack_54);
   pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&CStack_54,&CStack_3c,0);
   pCVar2 = (CBoundingBox3D *)
-           core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,auStack_18,pCVar1);
+           core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,&CStack_18,pCVar1);
   if (output_bbox != pCVar2) {
     (output_bbox->min).x = (pCVar2->min).x;
     (output_bbox->min).y = (pCVar2->min).y;
@@ -62,8 +62,7 @@ LAB_0040a68d:
   corner_index = 1;
   do {
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&CStack_54,&CStack_30,corner_index);
-    pCVar1 = (CVector3f *)
-             core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,auStack_24,pCVar1);
+    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,&CStack_24,pCVar1);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(output_bbox,pCVar1);
   } while ((int)corner_index < 8);

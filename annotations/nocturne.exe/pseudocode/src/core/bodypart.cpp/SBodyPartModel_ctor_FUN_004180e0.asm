@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_bodypart_cpp_SBodyPartModel_ctor_FUN_004180e0(int param_1)
+; SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_004180e0(SBodyPartModel *this_ptr)
 ;
+; Parameters:
+; SBodyPartModel * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490

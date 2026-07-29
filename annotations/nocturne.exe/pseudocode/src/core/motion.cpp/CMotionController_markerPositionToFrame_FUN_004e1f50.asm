@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(int *param_1,int param_2,float param_3)
+; float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController *this_ptr,int motion_index,float marker_position)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   motion_index
+; float            Stack[0xc]:4   marker_position
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

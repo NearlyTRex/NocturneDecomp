@@ -1,14 +1,14 @@
 // Name: core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0
 // Address: 00482ed0
 // Address Range: [[00482ed0, 00482f4f]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(CBulletHole *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(void)
+void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(CBulletHole *this_ptr)
 
 {
   _DAT_01c08d24 = 4;

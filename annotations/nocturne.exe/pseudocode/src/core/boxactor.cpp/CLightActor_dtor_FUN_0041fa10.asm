@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_boxactor_cpp_CLightActor_dtor_FUN_0041fa10(CDemonActor *param_1,byte param_2)
+; CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_0041fa10(CLightActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CLightActor *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLightActorTypeInfo_0059acb0

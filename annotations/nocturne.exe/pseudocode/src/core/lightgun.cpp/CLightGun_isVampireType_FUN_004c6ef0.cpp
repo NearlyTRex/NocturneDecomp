@@ -1,26 +1,24 @@
 // Name: core_lightgun.cpp_CLightGun_isVampireType_FUN_004c6ef0
 // Address: 004c6ef0
 // Address Range: [[004c6ef0, 004c6f45]]
-// Convention: unknown
-// Signature: undefined4 core_lightgun_cpp_CLightGun_isVampireType_FUN_004c6ef0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004c6ef0(CLightGun *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-uint core_lightgun_cpp_CLightGun_isVampireType_FUN_004c6ef0(void)
+int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_004c6ef0(CLightGun *this_ptr)
 
 {
   int iVar1;
-  CDemonActor *in_stack_00000004;
   
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(in_stack_00000004,"CDraculaBride");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)this_ptr,"CDraculaBride");
   if (iVar1 == 0) {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(in_stack_00000004,"CBatman");
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)this_ptr,"CBatman");
     if (iVar1 == 0) {
-      iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(in_stack_00000004,"CBatCreature");
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)this_ptr,"CBatCreature")
+      ;
       if (iVar1 == 0) {
-        iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(in_stack_00000004,"CBride");
+        iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)this_ptr,"CBride");
         if (iVar1 == 0) {
           return 0;
         }

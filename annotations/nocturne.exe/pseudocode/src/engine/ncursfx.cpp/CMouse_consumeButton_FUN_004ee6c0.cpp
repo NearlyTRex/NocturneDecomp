@@ -1,31 +1,26 @@
 // Name: engine_ncursfx.cpp_CMouse_consumeButton_FUN_004ee6c0
 // Address: 004ee6c0
 // Address Range: [[004ee6c0, 004ee713]]
-// Convention: unknown
-// Signature: undefined4 engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(void)
+// Convention: __cdecl
+// Signature: int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-uint engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(void)
+int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect)
 
 {
-  int in_stack_00000004;
-  uint in_stack_00000008;
-  int in_stack_0000000c;
-  
-  if ((_DAT_01bd1d94 & in_stack_00000008) != 0) {
-    if (*(int *)(in_stack_00000004 + 0x25c) == 0) {
-      if (in_stack_0000000c == 0) {
-        *(uint *)(in_stack_00000004 + 0x25c) = 1;
+  if ((_DAT_01bd1d94 & button_mask) != 0) {
+    if (this_ptr->effect_mode == 0) {
+      if (use_skull_effect == 0) {
+        this_ptr->effect_mode = 1;
       }
       else {
-        *(uint *)(in_stack_00000004 + 0x25c) = 2;
+        this_ptr->effect_mode = 2;
       }
     }
-    _DAT_01bd1d94 = _DAT_01bd1d94 & (in_stack_00000008 ^ 0xff);
+    _DAT_01bd1d94 = _DAT_01bd1d94 & (button_mask ^ 0xff);
     return 1;
   }
   return 0;

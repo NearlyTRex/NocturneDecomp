@@ -22,7 +22,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
   double dVar5;
   double dVar6;
   uint uVar7;
-  uint uVar8;
   float local_30;
   float local_2c;
   
@@ -41,18 +40,18 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     }
     local_2c = current_progress / total_progress;
   }
-  uVar8 = 0x4717ca;
+  uVar7 = 0x4717ca;
   dVar5 = round
                     ((double)(local_2c * (float)100 + (float)0.5));
   iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
   if (((int)ROUND(dVar5) != *(int *)(iVar1 + 0x1bcd250)) ||
      (0x47ffff < iVar4 - *(int *)(iVar1 + 0x1bcd254))) {
-    shape_edittool_cpp_FUN_004722b0(this_ptr,uVar8);
+    shape_edittool_cpp_FUN_004722b0(this_ptr,uVar7);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c5c,_DAT_01bcddec,0xffffffff,
-               "%d%% complete",(int)ROUND(dVar5));
+              (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c5c,_DAT_01bcddec,-1,
+               "%d%% complete");
     iVar3 = _DAT_01c00c60;
     iVar1 = _DAT_01bcd9bc * 2 + _DAT_01c00c5c + 1;
     y2 = _DAT_01bcd9bc * 4 + _DAT_01c00c5c + -1;
@@ -73,21 +72,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
               (float)8.4771050347222196e-07;
       dVar5 = (double)fVar2;
       if ((float)5 < fVar2) {
-        uVar8 = 0x471966;
+        uVar7 = 0x471966;
         dVar6 = round
                           ((double)(((total_progress - current_progress) * fVar2) / current_progress
                                    + (float)0.5));
-        iVar1 = (int)ROUND(dVar6);
-        if (0 < iVar1) {
-          uVar7 = 0x4719a2;
-          dVar6 = round
-                            (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar8)) + 0.5);
+        if (0 < (int)ROUND(dVar6)) {
+          round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar7)) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
                     (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c64 - _DAT_01bcd9bc,
-                     _DAT_01bcddec,0xffffffff,"%d:%02d elapsed, approximately %d:%02d remaining",
-                     (int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,
-                     uVar7,uVar8,dVar5);
+                     _DAT_01bcddec,-1,"%d:%02d elapsed, approximately %d:%02d remaining");
         }
       }
     }

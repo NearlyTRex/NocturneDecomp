@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_FUN_0040b1a0(void)
+; void __cdecl core_actor_cpp_FUN_0040b1a0(CDemonActor *this_ptr,CDemonActor *owner)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   owner
 ;
 ; XREF[4]:
 ;   core_boxactor.cpp_FUN_0041f170 at 0041f17a

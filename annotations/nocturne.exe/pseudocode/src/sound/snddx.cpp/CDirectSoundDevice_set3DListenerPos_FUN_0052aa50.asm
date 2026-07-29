@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_0052aa50(undefined4 param_1,double param_2,double param_3,double param_4)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_0052aa50(CDirectSoundDevice *this_ptr,double x,double y,double z)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   x
+; double           Stack[0x10]:8   y
+; double           Stack[0x18]:8   z
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

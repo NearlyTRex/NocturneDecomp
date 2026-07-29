@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,24 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 601,
+    "complexity_score": 507,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 261,
-    "suspect_count": 30,
+    "pseudocode_lines": 257,
+    "suspect_count": 22,
     "suspect_types": [
-      "pointer_truncation",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "stack_param",
       "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 814
+    "total_lines": 810
   },
   "cross_references": [
     {
@@ -541,21 +539,21 @@
         {
           "check_id": "uninitvar",
           "column": 23,
-          "line": 118,
+          "line": 115,
           "message": "Uninitialized variable: fStack_4c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 120,
+          "line": 117,
           "message": "Uninitialized variable: fStack_48",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 31,
-          "line": 106,
+          "line": 105,
           "message": "Uninitialized variable: iStack_18",
           "severity": "error"
         }
@@ -574,24 +572,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "CDemonActor *in_stack_ffffff5c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 57,
+      "line": 56,
       "match": "*(CPathMap **)(0x01C775EC",
       "severity": "moderate",
-      "text": "grabber = *(CPathMap **)(0x01C775EC + 0x264);",
+      "text": "damage_info = *(CPathMap **)(0x01C775EC + 0x264);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "DAT_00763e44 = pCVar3;",
@@ -599,23 +589,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 91,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)grabber);",
+      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 91,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)grabber);",
+      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
+      "line": 95,
       "match": "*(CDemonActor **)(iVar8 + 0x1ffcfb8",
       "severity": "moderate",
       "text": "*(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;",
@@ -623,31 +613,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 95,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "*(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "in_stack_ffffff5c = DAT_00763e44;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_00763e44",
-      "severity": "mild",
-      "text": "in_stack_ffffff5c = DAT_00763e44;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
+      "line": 102,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);",
@@ -655,39 +629,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 102,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "in_stack_ffffff5c = (CDemonActor *)&DAT_00763e44->location;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 105,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "in_stack_ffffff5c = (CDemonActor *)&DAT_00763e44->location;",
+      "text": "(this_ptr_00,&(DAT_00763e44->location).position,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Undefined global data reference",
       "line": 108,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "(this_ptr_00,(CVector3f *)in_stack_ffffff5c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
@@ -695,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 109,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "((float)local_50 == (DAT_00763e44->orient).vec.x)) &&",
@@ -703,10 +661,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 110,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_00763e44",
+      "severity": "mild",
+      "text": "DAT_00763e44 = (CDemonActor *)0x0;",
       "type": "undefined_data"
     },
     {
@@ -714,28 +680,12 @@
       "line": 114,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "DAT_00763e44 = (CDemonActor *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "in_stack_ffffff5c = (CDemonActor *)0x509380;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_00763e44",
-      "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(DAT_00763e44);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 115,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "DAT_00763e44 = (CDemonActor *)0x0;",
@@ -743,7 +693,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 151,
+      "line": 147,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);",
@@ -751,31 +701,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 158,
+      "line": 154,
       "match": "&stack0xffffff60",
       "severity": "moderate",
-      "text": "grabber = (CPathMap *)&stack0xffffff60;",
+      "text": "damage_info = (CPathMap *)&stack0xffffff60;",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "(pCStack_34,(CDemonActor *)grabber,(int)in_stack_ffffff5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Pointer value `in_stack_ffffff5c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 160,
-      "match": "(int)in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "(pCStack_34,(CDemonActor *)grabber,(int)in_stack_ffffff5c);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 154,
+      "line": 150,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_94[0].x = CStack_64.x;",
@@ -783,7 +717,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 67,
+      "line": 66,
       "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
@@ -791,7 +725,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 127,
+      "line": 123,
       "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
@@ -799,7 +733,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 201,
+      "line": 197,
       "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
@@ -807,7 +741,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_4c",
-      "line": 118,
+      "line": 115,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
@@ -815,7 +749,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_48",
-      "line": 120,
+      "line": 117,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
@@ -823,7 +757,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_18",
-      "line": 106,
+      "line": 105,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iStack_18 = iStack_18 + 1;",

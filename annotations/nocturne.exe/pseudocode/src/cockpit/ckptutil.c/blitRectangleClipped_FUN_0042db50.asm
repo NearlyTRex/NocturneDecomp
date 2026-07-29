@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_ckptutil_c_blitRectangleClipped_FUN_0042db50(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_0042db50(void *sprite_data,int dest_x,int dest_y,int width,int height)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; int              Stack[0x8]:4   dest_x
+; int              Stack[0xc]:4   dest_y
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -51,7 +57,7 @@ section .text
     POP EBX                             ; 0042db96
     RET                                 ; 0042db97
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042db98
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d130()
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
         ;   Label: LAB_0042db98
     MOV ECX,dword ptr [ESP + 0x38]      ; 0042db9d
     MOV EDI,dword ptr [0x005b7624]      ; 0042dba1 | DAT_005b7624

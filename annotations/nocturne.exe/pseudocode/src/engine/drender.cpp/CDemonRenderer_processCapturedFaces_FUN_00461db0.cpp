@@ -17,10 +17,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
   byte *puVar4;
   int iVar5;
   int iVar6;
-  code *pcVar7;
+  code *compar;
   
   if (this_ptr->face_count == 0) {
-    if (0 < _DAT_01b4d7ac) {
+    if (0 < (int)_DAT_01b4d7ac) {
       puVar4 = &DAT_01b4d7b4;
       iVar6 = _DAT_01b4d7ac * 4;
       iVar3 = 0;
@@ -31,19 +31,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
       } while (iVar3 < iVar6);
     }
     if (this_ptr->texture_capture_enabled == 1) {
-      pcVar7 = engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_00461d80;
+      compar = engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_00461d80;
     }
     else {
-      pcVar7 = engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50;
+      compar = engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50;
     }
-    _qsort(0x1b748b4,_DAT_01b4d7ac,4,pcVar7);
+    _qsort((void *)0x1b748b4,_DAT_01b4d7ac,4,compar);
     this_ptr->texture_capture_enabled = 0;
     if (this_ptr->face_capture_enabled != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(this_ptr,1);
     }
     iVar6 = -1;
     iVar3 = 0;
-    if (0 < _DAT_01b4d7ac) {
+    if (0 < (int)_DAT_01b4d7ac) {
       iVar5 = 0;
       do {
         iVar2 = **(int **)(iVar5 + 0x1b748b4);
@@ -56,8 +56,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
-                  (this_ptr,*piVar1 + 0xc,*(uint *)(*piVar1 + 4));
-      } while (iVar3 < _DAT_01b4d7ac);
+                  (this_ptr,(SInputFace *)(*piVar1 + 0xc),*(int *)(*piVar1 + 4));
+      } while (iVar3 < (int)_DAT_01b4d7ac);
     }
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(this_ptr,0);
   }

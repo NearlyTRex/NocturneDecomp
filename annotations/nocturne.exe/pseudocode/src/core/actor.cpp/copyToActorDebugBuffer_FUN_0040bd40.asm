@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(void)
+; char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_string)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   source_string
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00763e10

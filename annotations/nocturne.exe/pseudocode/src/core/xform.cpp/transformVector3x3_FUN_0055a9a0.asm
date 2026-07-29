@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_transformVector3x3_FUN_0055a9a0(void)
+; CVector3f * __cdecl core_xform_cpp_transformVector3x3_FUN_0055a9a0(CMatrix3x3f *matrix,CVector3f *output_vector,CVector3f *input_vector)
 ;
+; Parameters:
+; CMatrix3x3f *    Stack[0x4]:4   matrix
+; CVector3f *      Stack[0x8]:4   output_vector
+; CVector3f *      Stack[0xc]:4   input_vector
 ;
 ; *****************************************************************************
 

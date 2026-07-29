@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEdCheck_render_FUN_00477390(CEdCheck *param_1)
+; void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00477390(CEdCheck *this_ptr)
 ;
+; Parameters:
+; CEdCheck *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -37,7 +39,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x10]      ; 004773a2
     ADD ESI,ECX                         ; 004773a5
     CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340 ; 004773a7
-        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340()
+        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 004773ac
     SUB EDX,EAX                         ; 004773ae
     MOV EAX,EDX                         ; 004773b0
@@ -53,7 +55,7 @@ section .text
     PUSH EBX                            ; 004773c7
     LEA EDI,[EAX + EBP*0x1]             ; 004773c8
     CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340 ; 004773cb
-        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340()
+        ;   XREF to: 00477340 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 004773d0
     ADD ESP,0x4                         ; 004773d2
     ADD EDX,EAX                         ; 004773d5

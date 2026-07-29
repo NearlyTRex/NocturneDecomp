@@ -1,10 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_popViewport_FUN_004ce920(CDemonRenderer *this_ptr)
+; void __cdecl engine_matrix_c_popViewport_FUN_004ce920(void)
 ;
-; Parameters:
-; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 at 00460e70

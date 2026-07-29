@@ -19,7 +19,7 @@ void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(CPlatf
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_bc;
-  byte local_8c [48];
+  CMatrix3x4f local_8c;
   uint local_5c [12];
   CVector3f local_2c;
   CVector3f local_20;
@@ -27,12 +27,12 @@ void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(CPlatf
   
   bVar6 = 0;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_8c,&(this_ptr->base).location,&(this_ptr->base).orient);
+            (&local_8c,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
   local_14 = this_ptr->attach_actors;
   iVar3 = 0;
   do {
     if (this_ptr->attach_actors[0].actor != (CDemonActor *)0x0) {
-      core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_14[iVar3].matrix,local_8c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_14[iVar3].matrix,&local_8c);
       puVar4 = local_5c;
       pCVar5 = &local_bc;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

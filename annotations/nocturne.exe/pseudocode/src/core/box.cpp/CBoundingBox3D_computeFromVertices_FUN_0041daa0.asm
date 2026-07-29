@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(float *param_1,int param_2,int *param_3)
+; void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; CVector3i *      Stack[0xc]:4   vertices
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

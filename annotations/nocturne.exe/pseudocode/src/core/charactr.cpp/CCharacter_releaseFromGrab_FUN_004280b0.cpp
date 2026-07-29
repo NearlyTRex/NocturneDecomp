@@ -16,6 +16,6 @@ void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacte
     return;
   }
   this_ptr->grabbed_by = (CDemonActor *)0x0;
-  (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
+  (*(((this_ptr_00->base).vtable._uc)->_uc).onVictimLost)(this_ptr_00,&this_ptr->base);
   return;
 }

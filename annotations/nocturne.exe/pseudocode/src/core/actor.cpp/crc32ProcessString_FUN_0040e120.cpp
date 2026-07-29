@@ -9,14 +9,14 @@
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040e120(uint *crc_state,char *string)
 
 {
-  char cVar1;
+  byte bVar1;
   
-  cVar1 = *string;
-  while (cVar1 != '\0') {
-    cVar1 = *string;
+  bVar1 = *string;
+  while (bVar1 != 0) {
+    bVar1 = *string;
     string = string + 1;
-    core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(crc_state,cVar1);
-    cVar1 = *string;
+    core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(crc_state,bVar1);
+    bVar1 = *string;
   }
   return;
 }

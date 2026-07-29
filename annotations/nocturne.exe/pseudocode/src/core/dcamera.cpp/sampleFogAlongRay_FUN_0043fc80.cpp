@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80
 // Address: 0043fc80
 // Address Range: [[0043fc80, 0043fe52]]
-// Convention: unknown
-// Signature: uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,int *param_3,int param_4)
+// Convention: __cdecl
+// Signature: uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 
 #include "nocturne.h"
 
-uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,int *param_3,int param_4)
+uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 
 {
   longlong lVar1;
@@ -19,32 +19,32 @@ uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,in
   int local_24;
   uint local_14;
   
-  if (param_4 == 0) {
+  if (ray_length == 0) {
     local_14 = 0;
   }
   else {
-    iVar2 = (int)((param_4 + (param_4 >> 0x1f) * -0x100) - (uint)((param_4 >> 0x1f) << 7 < 0)) >> 8;
+    iVar2 = (int)((ray_length + (ray_length >> 0x1f) * -0x100) -
+                 (uint)((ray_length >> 0x1f) << 7 < 0)) >> 8;
     local_14 = 0;
     if (iVar2 != 0) {
       local_14 = 0;
-      local_2c = *param_2 + *(int *)(param_1 + 0x1000);
-      local_28 = param_2[1] + *(int *)(param_1 + 0x1004);
+      local_2c = start_pos->x + (fog_ptr->sampling_offset).x;
+      local_28 = start_pos->y + (fog_ptr->sampling_offset).y;
       iVar5 = 0;
-      local_24 = param_2[2] + *(int *)(param_1 + 0x1008);
+      local_24 = start_pos->z + (fog_ptr->sampling_offset).z;
       if (0 < iVar2) {
         do {
-          lVar1 = (longlong)*(int *)(param_1 + 0x101c) *
+          lVar1 = (longlong)fog_ptr->density_multiplier *
                   (longlong)
-                  (int)(uint)*(byte *)(((int)((local_24 + (local_24 >> 0x1f) * -0x100) -
-                                             (uint)((local_24 >> 0x1f) << 7 < 0)) >> 8 & 0xfU) *
-                                       0x100 + param_1 +
-                                       ((int)((local_28 + (local_28 >> 0x1f) * -0x100) -
-                                             (uint)((local_28 >> 0x1f) << 7 < 0)) >> 8 & 0xfU) *
-                                       0x10 + ((int)((local_2c + (local_2c >> 0x1f) * -0x100) -
-                                                    (uint)((local_2c >> 0x1f) << 7 < 0)) >> 8 & 0xfU
-                                              ));
+                  (int)(uint)(byte)fog_ptr->planes
+                                   [(int)((local_24 + (local_24 >> 0x1f) * -0x100) -
+                                         (uint)((local_24 >> 0x1f) << 7 < 0)) >> 8 & 0xf].grid
+                                   [(int)((local_28 + (local_28 >> 0x1f) * -0x100) -
+                                         (uint)((local_28 >> 0x1f) << 7 < 0)) >> 8 & 0xf]
+                                   [(int)((local_2c + (local_2c >> 0x1f) * -0x100) -
+                                         (uint)((local_2c >> 0x1f) << 7 < 0)) >> 8 & 0xf];
           uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          iVar4 = *(int *)(param_1 + 0x1018);
+          iVar4 = fog_ptr->height_threshold;
           if (iVar4 != 0) {
             if (iVar4 < local_28) {
               iVar4 = 0;
@@ -65,10 +65,10 @@ uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,in
           if (0x4000 < local_14) {
             return 0x4000;
           }
-          local_2c = local_2c + (*param_3 - *param_2) / iVar2;
+          local_2c = local_2c + (end_pos->x - start_pos->x) / iVar2;
           iVar5 = iVar5 + 1;
-          local_28 = local_28 + (param_3[1] - param_2[1]) / iVar2;
-          local_24 = local_24 + (param_3[2] - param_2[2]) / iVar2;
+          local_28 = local_28 + (end_pos->y - start_pos->y) / iVar2;
+          local_24 = local_24 + (end_pos->z - start_pos->z) / iVar2;
         } while (iVar5 < iVar2);
       }
     }

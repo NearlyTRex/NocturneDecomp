@@ -63,7 +63,7 @@ section .text
     MOV EDI,dword ptr [0x01bcd070]      ; 004770df | DAT_01bcd070
     PUSH EDI                            ; 004770e5
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004770e6
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004770eb
     POP EDI                             ; 004770ee
     POP EBX                             ; 004770ef

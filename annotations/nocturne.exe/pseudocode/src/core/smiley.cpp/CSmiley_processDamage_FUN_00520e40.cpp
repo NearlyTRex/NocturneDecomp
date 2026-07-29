@@ -39,7 +39,8 @@ LAB_00520e74:
     if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&this_ptr->motion_controller,7,1);
-      (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);
+      (*(((param_1->base).base.base.vtable._uc)->_uc).dropCarriedObject)
+                ((CCharacter *)param_1,1,(CVector3f *)0x0);
       (*((param_1->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)param_1,"smiley_die??.wav");
     }

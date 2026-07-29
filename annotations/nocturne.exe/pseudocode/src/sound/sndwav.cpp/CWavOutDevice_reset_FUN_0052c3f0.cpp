@@ -1,26 +1,26 @@
 // Name: sound_sndwav.cpp_CWavOutDevice_reset_FUN_0052c3f0
 // Address: 0052c3f0
 // Address Range: [[0052c3f0, 0052c459]]
-// Convention: unknown
-// Signature: undefined4 sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(void)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(CWavOutDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(void)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(CWavOutDevice *this_ptr)
 
 {
   MMRESULT MVar1;
   int iVar2;
-  uint uVar3;
+  int iVar3;
   
-  uVar3 = 1;
+  iVar3 = 1;
   if (_DAT_02dc93a4 != (HWAVEOUT)0x0) {
     MVar1 = waveOutReset(_DAT_02dc93a4);
     if (MVar1 != 0) {
       sound_sndmain_cpp_FUN_00529980("waveOutReset failed!");
-      uVar3 = 0;
+      iVar3 = 0;
     }
   }
   iVar2 = 0;
@@ -32,7 +32,7 @@ uint sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(void)
   } while (iVar2 != 0x20);
   iVar2 = sound_sndmain_cpp_killSoundThread_FUN_00528780();
   if (iVar2 != 0) {
-    return uVar3;
+    return iVar3;
   }
   return 0;
 }

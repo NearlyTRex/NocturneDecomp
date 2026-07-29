@@ -9,12 +9,12 @@
 _ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(void *this_ptr,int flags,char *buffer,int buffer_size,int mode)
 
 {
-  _ostrstream *p_Var1;
+  void **ppvVar1;
   char cVar2;
-  WatcomVirtualBaseDescriptor *pWVar3;
+  void *pvVar3;
   char *pcVar4;
   strstreambase *psVar5;
-  int iVar6;
+  _ostream *p_Var6;
   ios *piVar7;
   uint uVar8;
   int iVar9;
@@ -48,14 +48,14 @@ _ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(void *this_
     pcVar4 = buffer + iVar9;
   }
   psVar5 = crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(this_ptr,1,buffer,buffer_size,pcVar4);
-  iVar6 = crt_iostream_cpp_ostream_ctor_FUN_0056b4a9(&psVar5->_ios,1);
-  p_Var1 = (_ostrstream *)(iVar6 + -0x48);
-  iVar9 = ((p_Var1->_strstreambase_core).layout_info)->offset_to_vbase;
-  *(int *)((p_Var1->_ios).padding + iVar9 + -0x75) = iVar9;
-  *(byte ***)(iVar6 + -4) = &PTR_crt_strstream_cpp_ostrstream_dtor_FUN_00564e98_005a46cc;
-  pWVar3 = (p_Var1->_strstreambase_core).layout_info;
-  *(byte ***)(iVar6 + 4) = &PTR_crt_unknown_c_FUN_00564e3d_005a46d4;
-  *(byte ***)(iVar6 + -0x20 + pWVar3->offset_to_vbase) =
+  p_Var6 = crt_iostream_cpp_ostream_ctor_FUN_0056b4a9((_ostream *)&psVar5->_ios,1);
+  ppvVar1 = &p_Var6[-2]._ios.__xalloc_list;
+  *(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);
+  p_Var6[-1]._ios.cleanup_vtable = &PTR_crt_strstream_cpp_ostrstream_dtor_FUN_00564e98_005a46cc;
+  pvVar3 = *ppvVar1;
+  (p_Var6->_ostream_core).destructor_vtable =
+       (WatcomThunkedDestructor *)&PTR_crt_unknown_c_FUN_00564e3d_005a46d4;
+  *(byte ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) =
        &PTR_crt_unknown_c_FUN_00564e53_005a46dc;
-  return p_Var1;
+  return (_ostrstream *)ppvVar1;
 }

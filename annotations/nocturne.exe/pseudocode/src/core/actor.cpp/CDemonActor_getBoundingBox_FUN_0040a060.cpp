@@ -1,19 +1,19 @@
 // Name: core_actor.cpp_CDemonActor_getBoundingBox_FUN_0040a060
 // Address: 0040a060
 // Address Range: [[0040a060, 0040a08d]]
-// Convention: unknown
-// Signature: void core_actor_cpp_CDemonActor_getBoundingBox_FUN_0040a060(undefined4 param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_0040a060(CDemonActor *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_actor_cpp_CDemonActor_getBoundingBox_FUN_0040a060(uint param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_0040a060(CDemonActor *this_ptr,CBoundingBox3D *out_box)
 
 {
-  param_2[1] = 0;
-  param_2[2] = 0xc0800000;
-  param_2[3] = 0x40800000;
-  param_2[4] = 0x41000000;
-  param_2[5] = 0x40800000;
-  *param_2 = 0xc0800000;
-  return;
+  (out_box->min).y = 0.0;
+  (out_box->min).z = -4.0;
+  (out_box->max).x = 4.0;
+  (out_box->max).y = 8.0;
+  (out_box->max).z = 4.0;
+  (out_box->min).x = -4.0;
+  return out_box;
 }

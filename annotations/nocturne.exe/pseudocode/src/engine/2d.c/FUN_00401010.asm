@@ -55,7 +55,7 @@ section .text
     MOV ECX,dword ptr [0x005b761c]      ; 00401020 | DAT_005b761c
     PUSH ECX                            ; 00401026
     CALL wincore_wddvmem.cpp_FUN_00552b40 ; 00401027
-        ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00552b40()
+        ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00552b40(int width, int height)
     ADD ESP,0x8                         ; 0040102c
     TEST EAX,EAX                        ; 0040102f
     JZ 0x004011fd                       ; 00401031
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0xc                         ; 00401054
     PUSH 0x57703f                       ; 00401057 | = "vga.act"
     CALL engine_2d.c_FUN_00401bd0       ; 0040105c
-        ;   XREF to: 00401bd0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401bd0()
+        ;   XREF to: 00401bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00401bd0(char * filename)
     ADD ESP,0x4                         ; 00401061
     PUSH 0x577047                       ; 00401064 | = "vga.lte"
     CALL engine_2d.c_FUN_00403460       ; 00401069
@@ -81,11 +81,11 @@ section .text
     ADD ESP,0x4                         ; 0040106e
     PUSH 0x57704f                       ; 00401071 | = "vga.map"
     CALL engine_2d.c_FUN_00403630       ; 00401076
-        ;   XREF to: 00403630 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403630()
+        ;   XREF to: 00403630 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00403630(char * filename)
     ADD ESP,0x4                         ; 0040107b
     PUSH 0x577057                       ; 0040107e | = "vga.act"
     CALL engine_2d.c_FUN_00401990       ; 00401083
-        ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401990()
+        ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00401990(char * filename)
     ADD ESP,0x4                         ; 00401088
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 ; 0040108b
         ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
@@ -110,7 +110,7 @@ section .text
     PUSH ESI                            ; 004010cd
     ADD EBX,0x4                         ; 004010ce
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004010d1
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004010d6
     CMP EBX,EDI                         ; 004010d9
     JNZ 0x004010c7                      ; 004010db

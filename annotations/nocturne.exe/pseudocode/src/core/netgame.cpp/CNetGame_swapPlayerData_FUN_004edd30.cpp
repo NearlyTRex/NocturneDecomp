@@ -1,90 +1,92 @@
 // Name: core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
 // Address: 004edd30
 // Address Range: [[004edd30, 004ede28]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(undefined4 *param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *this_ptr,SNetPlayer *other)
 
 #include "nocturne.h"
 
-void core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(uint *param_1,uint *param_2)
+void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *this_ptr,SNetPlayer *other)
 
 {
   int iVar1;
-  uint *puVar2;
-  byte bVar3;
-  uint uStack_88;
-  uint uStack_84;
+  SNetPlayer *pSVar2;
+  EConnectionType *pEVar3;
+  byte bVar4;
+  EConnectionType EStack_88;
+  ENetworkMode EStack_84;
   uint uStack_80;
   uint uStack_7c;
   uint uStack_78;
   uint local_74;
   uint local_70;
-  byte local_6c [4];
+  int local_6c;
   ushort local_68;
   uint local_64;
   uint local_60;
   uint local_5c;
   uint local_58;
-  uint local_54;
-  uint local_50;
+  EHeroType local_54;
+  int local_50;
   uint local_4c;
   uint local_48;
   uint local_44;
-  uint local_40;
+  float local_40;
   uint local_3c;
   uint local_38;
-  uint local_34;
+  int local_34;
   uint local_30;
-  uint local_2c;
+  int local_2c;
   uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   
-  bVar3 = 0;
-  uStack_88 = *param_1;
-  uStack_84 = param_1[1];
-  uStack_80 = param_1[2];
-  uStack_7c = param_1[3];
-  uStack_78 = param_1[4];
-  local_74 = param_1[5];
-  local_70 = param_1[6];
-  core_netgame_cpp_FUN_004edfb0(local_6c,param_1 + 7);
-  local_68 = *(ushort *)(param_1 + 8);
-  local_64 = param_1[9];
-  local_60 = param_1[10];
-  local_5c = param_1[0xb];
-  local_58 = param_1[0xc];
-  local_54 = param_1[0xd];
-  local_50 = param_1[0xe];
-  local_4c = param_1[0xf];
-  local_48 = param_1[0x10];
-  local_44 = param_1[0x11];
-  local_40 = param_1[0x12];
-  local_3c = param_1[0x13];
-  local_38 = param_1[0x14];
-  local_34 = param_1[0x15];
-  local_30 = param_1[0x16];
-  local_2c = param_1[0x17];
-  local_28 = param_1[0x18];
-  local_24 = param_1[0x19];
-  local_20 = param_1[0x1a];
-  local_1c = param_1[0x1b];
-  local_18 = param_1[0x1c];
-  local_14 = param_1[0x1d];
-  puVar2 = param_2;
+  bVar4 = 0;
+  EStack_88 = this_ptr->connection_type;
+  EStack_84 = this_ptr->network_mode;
+  uStack_80 = *(uint *)this_ptr->player_name;
+  uStack_7c = *(uint *)(this_ptr->player_name + 4);
+  uStack_78 = *(uint *)(this_ptr->player_name + 8);
+  local_74 = *(uint *)(this_ptr->player_name + 0xc);
+  local_70 = *(uint *)(this_ptr->player_name + 0x10);
+  core_netgame_cpp_FUN_004edfb0(&local_6c,&this_ptr->player_count);
+  local_68 = *(ushort *)this_ptr->players[0].name;
+  local_64 = *(uint *)(this_ptr->players[0].name + 4);
+  local_60 = *(uint *)(this_ptr->players[0].name + 8);
+  local_5c = *(uint *)(this_ptr->players[0].name + 0xc);
+  local_58 = *(uint *)(this_ptr->players[0].name + 0x10);
+  local_54 = this_ptr->players[0].hero_number;
+  local_50 = this_ptr->players[0].aim_mode;
+  local_4c = this_ptr->players[0].addr.ip_address;
+  local_48._0_2_ = this_ptr->players[0].addr.port;
+  local_48._2_2_ = this_ptr->players[0].addr.other;
+  local_44 = this_ptr->players[0].last_arrival_time;
+  local_40 = this_ptr->players[0].ping_quality;
+  local_3c = this_ptr->players[0].last_ping_sent;
+  local_38 = this_ptr->players[0].last_ping_response;
+  local_34 = this_ptr->players[0].player_id;
+  local_30 = this_ptr->players[0].last_update_time;
+  local_2c = this_ptr->players[0].local_sync_stage;
+  local_28 = this_ptr->players[0].state_change_time;
+  local_24 = this_ptr->players[0].ready_flag;
+  local_20 = this_ptr->players[0].sim_frame_index;
+  local_1c = this_ptr->players[0].player_input.action_state.walk;
+  local_18 = this_ptr->players[0].player_input.action_state.backup;
+  local_14 = this_ptr->players[0].player_input.action_state.run;
+  pSVar2 = other;
   for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *param_1 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    param_1 = param_1 + (uint)bVar3 * -2 + 1;
+    this_ptr->connection_type = *(EConnectionType *)pSVar2->name;
+    pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
+    this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);
   }
-  puVar2 = &uStack_88;
+  pEVar3 = &EStack_88;
   for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *param_2 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    param_2 = param_2 + (uint)bVar3 * -2 + 1;
+    *(EConnectionType *)other->name = *pEVar3;
+    pEVar3 = pEVar3 + (uint)bVar4 * -2 + 1;
+    other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
   }
   return;
 }

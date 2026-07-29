@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_anvil_cpp_FUN_0040f560(undefined4 param_1)
+; CAnvil * __cdecl core_anvil_cpp_FUN_0040f560(CAnvil *this_ptr)
 ;
+; Parameters:
+; CAnvil *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_anvil.cpp_FUN_0040f530 at 0040f543
@@ -13,7 +15,7 @@
 ;   undefined4 s_cmeanvilinc_005783fc+1
 ;   undefined4 s_meanvilinc_005783fc+2
 ;   undefined4 s_eanvilinc_005783fc+3
-;   undefined1* PTR_core_anvil.cpp_FUN_0040f5f0_00599694 = 0040f5f0
+;   CDemonActor_vtable g_CAnvilVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -31,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040f563
     PUSH EBX                            ; 0040f567
     CALL core_actor.cpp_FUN_00409d30    ; 0040f568
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040f56d
     ADD EAX,0x150                       ; 0040f570
     PUSH EAX                            ; 0040f575
@@ -43,7 +45,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040f589
     PUSH EAX                            ; 0040f58f
     MOV ESI,0x5783fc                    ; 0040f590 | = "acmeanvilinc"
-    MOV dword ptr [EBX + 0x14c],0x599694 ; 0040f595 | PTR_core_anvil.cpp_FUN_0040f5f0_00599694
+    MOV dword ptr [EBX + 0x14c],0x599694 ; 0040f595 | g_CAnvilVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040f59f
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x330],0x41c80000 ; 0040f5a4

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,15 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 17,
+    "complexity_score": 16,
     "cross_reference_count": 92,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 55
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -152,6 +152,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0040fc30",
+      "from_addr": "0040fcaa",
+      "name": "core_armour.cpp_CArmour_dtor_FUN_0040fc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040fcf0",
       "from_addr": "0040fd6a",
       "name": "core_armour.cpp_CEnemy_dtor_FUN_0040fcf0",
@@ -161,12 +167,6 @@
       "addr": "0040fdc0",
       "from_addr": "0040fdcf",
       "name": "core_armour.cpp_CFlame_dtor_FUN_0040fdc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040fc30",
-      "from_addr": "0040fcaa",
-      "name": "core_armour.cpp_FUN_0040fc30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -190,13 +190,13 @@
     {
       "addr": "004132c0",
       "from_addr": "0041333a",
-      "name": "core_batcreat.cpp_FUN_004132c0",
+      "name": "core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414c60",
       "from_addr": "00414cda",
-      "name": "core_batman.cpp_FUN_00414c60",
+      "name": "core_batman.cpp_CBatman_dtor_FUN_00414c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -208,13 +208,13 @@
     {
       "addr": "00415250",
       "from_addr": "004152ca",
-      "name": "core_beast.cpp_FUN_00415250",
+      "name": "core_beast.cpp_CBeast_dtor_FUN_00415250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00415a30",
       "from_addr": "00415aba",
-      "name": "core_biggs.cpp_FUN_00415a30",
+      "name": "core_biggs.cpp_CBiggs_dtor_FUN_00415a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,13 +256,13 @@
     {
       "addr": "00423d90",
       "from_addr": "00423e1a",
-      "name": "core_bugs.cpp_FUN_00423d90",
+      "name": "core_bugs.cpp_CBugs_dtor_FUN_00423d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042cd30",
       "from_addr": "0042cd56",
-      "name": "core_chain.cpp_FUN_0042cd30",
+      "name": "core_chain.cpp_CChain_dtor_FUN_0042cd30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -274,19 +274,19 @@
     {
       "addr": "0043b420",
       "from_addr": "0043b446",
-      "name": "core_conveyor.cpp_FUN_0043b420",
+      "name": "core_conveyor.cpp_CConveyor_dtor_FUN_0043b420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0043b490",
       "from_addr": "0043b4b6",
-      "name": "core_conveyor.cpp_FUN_0043b490",
+      "name": "core_conveyor.cpp_CPlatform_dtor_FUN_0043b490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0043c6f0",
       "from_addr": "0043c76a",
-      "name": "core_cow.cpp_FUN_0043c6f0",
+      "name": "core_cow.cpp_CZombieCow_dtor_FUN_0043c6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -298,7 +298,7 @@
     {
       "addr": "0043d870",
       "from_addr": "0043d885",
-      "name": "core_crossbow.cpp_FUN_0043d870",
+      "name": "core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -316,7 +316,7 @@
     {
       "addr": "00454f30",
       "from_addr": "00454faa",
-      "name": "core_dog.cpp_FUN_00454f30",
+      "name": "core_dog.cpp_CZombieDog_dtor_FUN_00454f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -340,7 +340,7 @@
     {
       "addr": "00463310",
       "from_addr": "0046338a",
-      "name": "core_drone.cpp_FUN_00463310",
+      "name": "core_drone.cpp_CDrone_dtor_FUN_00463310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -364,7 +364,7 @@
     {
       "addr": "0048e8f0",
       "from_addr": "0048e905",
-      "name": "core_flamecan.cpp_FUN_0048e8f0",
+      "name": "core_flamecan.cpp_CFlameCan_dtor_FUN_0048e8f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -376,13 +376,13 @@
     {
       "addr": "00495430",
       "from_addr": "00495456",
-      "name": "core_frankgen.cpp_FUN_00495430",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_00495430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a88f0",
       "from_addr": "004a896a",
-      "name": "core_gargoyle.cpp_FUN_004a88f0",
+      "name": "core_gargoyle.cpp_CGargoyle_dtor_FUN_004a88f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -448,13 +448,13 @@
     {
       "addr": "004b9bf0",
       "from_addr": "004b9c7a",
-      "name": "core_hpriest.cpp_FUN_004b9bf0",
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004b9bf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bcfd0",
       "from_addr": "004bd04a",
-      "name": "core_imp.cpp_FUN_004bcfd0",
+      "name": "core_imp.cpp_CImp_dtor_FUN_004bcfd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -472,7 +472,7 @@
     {
       "addr": "004c5540",
       "from_addr": "004c55ba",
-      "name": "core_larva.cpp_FUN_004c5540",
+      "name": "core_larva.cpp_CLarva_dtor_FUN_004c5540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -502,7 +502,7 @@
     {
       "addr": "004cc960",
       "from_addr": "004cc986",
-      "name": "core_marquee.cpp_FUN_004cc960",
+      "name": "core_marquee.cpp_CMarquee_dtor_FUN_004cc960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -514,7 +514,7 @@
     {
       "addr": "004d60d0",
       "from_addr": "004d60f6",
-      "name": "core_minecar.cpp_FUN_004d60d0",
+      "name": "core_minecar.cpp_CMineCar_dtor_FUN_004d60d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -544,7 +544,7 @@
     {
       "addr": "00506a80",
       "from_addr": "00506afa",
-      "name": "core_sentinel.cpp_FUN_00506a80",
+      "name": "core_sentinel.cpp_CSentinel_dtor_FUN_00506a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -556,7 +556,7 @@
     {
       "addr": "005210d0",
       "from_addr": "0052114a",
-      "name": "core_smiley.cpp_FUN_005210d0",
+      "name": "core_smiley.cpp_CSmiley_dtor_FUN_005210d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -584,15 +584,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00543620",
-      "from_addr": "005436aa",
-      "name": "core_tbplayer.cpp_FUN_00543620",
+      "addr": "005436f0",
+      "from_addr": "0054377a",
+      "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005436f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005436f0",
-      "from_addr": "0054377a",
-      "name": "core_tbplayer.cpp_FUN_005436f0",
+      "addr": "00543620",
+      "from_addr": "005436aa",
+      "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_00543620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -610,7 +610,7 @@
     {
       "addr": "00544850",
       "from_addr": "005448ca",
-      "name": "core_tentacle.cpp_FUN_00544850",
+      "name": "core_tentacle.cpp_CTentacle_dtor_FUN_00544850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -646,19 +646,19 @@
     {
       "addr": "0054f7f0",
       "from_addr": "0054f826",
-      "name": "core_vehicle.cpp_FUN_0054f7f0",
+      "name": "core_vehicle.cpp_CVehicle_dtor_FUN_0054f7f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005506c0",
       "from_addr": "005506d5",
-      "name": "core_vessel.cpp_FUN_005506c0",
+      "name": "core_vessel.cpp_CCryptVessel_dtor_FUN_005506c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005522d0",
       "from_addr": "005522f6",
-      "name": "core_wateract.cpp_FUN_005522d0",
+      "name": "core_wateract.cpp_CWaterActor_dtor_FUN_005522d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -722,9 +722,9 @@
   "globals": [
     {
       "addr": "005992d4",
-      "name": "PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4",
-      "type": "undefined1*",
-      "value": "00409fc0"
+      "name": "g_CDemonActorVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "005993d0",
@@ -772,7 +772,7 @@
       {
         "call_addr": "0040fcaa",
         "call_type": "direct",
-        "caller": "core_armour.cpp_FUN_0040fc30",
+        "caller": "core_armour.cpp_CArmour_dtor_FUN_0040fc30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

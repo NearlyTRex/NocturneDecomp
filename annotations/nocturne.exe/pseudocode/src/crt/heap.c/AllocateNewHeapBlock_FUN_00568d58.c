@@ -10,10 +10,10 @@ int __cdecl AllocateNewHeapBlock(uint size)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint uVar3;
-  uint *puVar4;
-  int iVar5;
+  HeapBlock *new_block;
+  uint uVar2;
+  HeapBlock *pHVar3;
+  int iVar4;
   
   if (0x00000001 == 0) {
     return 0;
@@ -22,28 +22,28 @@ int __cdecl AllocateNewHeapBlock(uint size)
     return 0;
   }
   iVar1 = CalculateHeapBlockSize(&size);
-  iVar5 = 0;
+  iVar4 = 0;
   if (iVar1 != 0) {
-    puVar2 = VirtualAlloc((LPVOID)0x0,size,0x1000,0x40);
-    iVar5 = 0;
-    if (puVar2 != (uint *)0x0) {
-      uVar3 = size - 4;
-      if (size < uVar3) {
+    new_block = VirtualAlloc((LPVOID)0x0,size,0x1000,0x40);
+    iVar4 = 0;
+    if (new_block != (HeapBlock *)0x0) {
+      uVar2 = size - 4;
+      if (size < uVar2) {
         return 0;
       }
-      if (uVar3 < 0x38) {
+      if (uVar2 < 0x38) {
         return 0;
       }
-      *puVar2 = uVar3;
-      size = uVar3;
-      puVar4 = (uint *)InsertHeapBlockInOrder(puVar2);
-      size = *puVar4;
-      *puVar4 = size | 1;
-      puVar2[5] = 0;
-      puVar2[6] = puVar2[6] + 1;
-      ValidateHeapIntegrity(puVar4 + 1);
-      iVar5 = 1;
+      new_block->size = uVar2;
+      size = uVar2;
+      pHVar3 = InsertHeapBlockInOrder(new_block);
+      size = pHVar3->size;
+      pHVar3->size = size | 1;
+      new_block->block_size = 0;
+      new_block->alloc_count = new_block->alloc_count + 1;
+      ValidateHeapIntegrity(&pHVar3->prev);
+      iVar4 = 1;
     }
   }
-  return iVar5;
+  return iVar4;
 }

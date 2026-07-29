@@ -172,7 +172,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x320]     ; 004fecf9
     PUSH ESI                            ; 004fed00
     CALL core_script.cpp_FUN_004fee30   ; 004fed01
-        ;   XREF to: 004fee30 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004fee30()
+        ;   XREF to: 004fee30 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004fee30(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fed06
     CMP dword ptr [ESP + 0x328],0x0     ; 004fed09
     JNZ 0x004fee03                      ; 004fed11
@@ -181,7 +181,7 @@ section .text
     PUSH EAX                            ; 004fed1e
     PUSH ESI                            ; 004fed1f
     CALL core_script.cpp_FUN_004fef60   ; 004fed20
-        ;   XREF to: 004fef60 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004fef60()
+        ;   XREF to: 004fef60 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_FUN_004fef60(CScript * this_ptr, int * error_line_out)
     ADD ESP,0x8                         ; 004fed25
     PUSH 0x1e56c30                      ; 004fed28
     MOV EBX,EAX                         ; 004fed2d
@@ -265,7 +265,7 @@ section .text
         ;   Label: LAB_004fee03
     PUSH EBX                            ; 004fee0a
     CALL core_script.cpp_FUN_004feff0   ; 004fee0b
-        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004feff0()
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004feff0(CScript * this_ptr)
     MOV EAX,0x1                         ; 004fee10
     ADD ESP,0x4                         ; 004fee15
     ADD ESP,0x30c                       ; 004fee18

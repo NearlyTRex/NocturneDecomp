@@ -35,10 +35,10 @@ void FUN_00454dc0(CEnemy *param_1);
 // Address: 00454e30
 void CZombieDog::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
-// Original: core_dog.cpp_FUN_00454ee0
+// Original: core_dog.cpp_CZombieDog_getTargetPoints_FUN_00454ee0
 // Address: 00454ee0
-undefined4 FUN_00454ee0(int param_1,CVector3f *param_2);
+int __cdecl CZombieDog::getTargetPoints(CZombieDog *this_ptr,CVector3f *out_points_array);
 
-// Original: core_dog.cpp_FUN_00454f30
+// Original: core_dog.cpp_CZombieDog_dtor_FUN_00454f30
 // Address: 00454f30
-CDemonActor * FUN_00454f30(CDemonActor *param_1,byte param_2);
+CZombieDog * __cdecl CZombieDog::dtor(CZombieDog *this_ptr,uint flags);

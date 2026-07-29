@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 00480da0
     XOR ESI,ESI                         ; 00480da1
     CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 ; 00480da3
-        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10()
+        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_handle, uint output_format)
     MOV dword ptr [ESP + 0x130],EAX     ; 00480da8
     MOV dword ptr [ESP + 0x134],EDX     ; 00480daf
     FLDZ                                ; 00480db6

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_trimLine_FUN_004fdf60(char *param_1,char *param_2)
+; void __cdecl core_script_cpp_trimLine_FUN_004fdf60(char *input_line,char *output_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   input_line
+; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[1]:
 ;   core_script.cpp_FUN_004fee30 at 004fee78

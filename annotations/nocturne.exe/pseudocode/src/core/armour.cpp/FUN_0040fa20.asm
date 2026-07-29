@@ -37,7 +37,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0040fa2f
     PUSH ESI                            ; 0040fa32
     CALL core_charactr.cpp_FUN_004259f0 ; 0040fa33
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fa38
     TEST EAX,EAX                        ; 0040fa3b
     JZ 0x0040fb06                       ; 0040fa3d
@@ -74,7 +74,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0040faa9
     PUSH ESI                            ; 0040faac
     CALL core_charactr.cpp_FUN_00428c00 ; 0040faad
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fab2
     TEST EAX,EAX                        ; 0040fab5
     JZ 0x0040fad1                       ; 0040fab7
@@ -94,7 +94,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0040fae0
     PUSH ESI                            ; 0040fae3
     CALL core_charactr.cpp_FUN_0042a150 ; 0040fae4
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0040fae9
     LEA EAX,[ESI + 0xbd24]              ; 0040faec
     PUSH EAX                            ; 0040faf2

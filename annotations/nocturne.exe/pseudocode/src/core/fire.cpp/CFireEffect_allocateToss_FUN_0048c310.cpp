@@ -1,21 +1,22 @@
 // Name: core_fire.cpp_CFireEffect_allocateToss_FUN_0048c310
 // Address: 0048c310
 // Address Range: [[0048c310, 0048c36d]]
-// Convention: unknown
-// Signature: int core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Convention: __cdecl
+// Signature: int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(CFireEffect *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(CFireEffect *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 
 {
   int iVar1;
   
   iVar1 = _DAT_01c5d820;
   core_fire_cpp_CToss_create_FUN_004873b0
-            (_DAT_01c5d820 * 0x3e4 + 0x1c5d824,param_2,param_3,param_4,param_5,param_6);
+            ((CToss *)(_DAT_01c5d820 * 0x3e4 + 0x1c5d824),toss_type,position,orientation,velocity,
+             fuse_time);
   _DAT_01c5d820 = _DAT_01c5d820 + 1;
   if (_DAT_01c5d820 < 0x14) {
     return iVar1;

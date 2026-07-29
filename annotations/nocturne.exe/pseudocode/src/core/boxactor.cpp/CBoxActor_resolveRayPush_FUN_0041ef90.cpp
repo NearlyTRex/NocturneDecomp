@@ -14,22 +14,21 @@ void __cdecl core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_0041ef90(CBoxActor *
   float fVar3;
   CBoundingBox3D local_60;
   CVector3f local_48;
-  byte auStack_3c [12];
+  CVector3f CStack_3c;
   float fStack_30;
   float fStack_2c;
   float fStack_28;
-  float local_24;
-  float local_20;
-  float local_1c;
+  CVector3f local_24;
   float fStack_18;
   float fStack_14;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(&this_ptr->base,&local_48,ray_origin);
-  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220(this_ptr,&local_24,ray_direction);
-  if (local_1c * local_48.z + local_24 * local_48.x + local_20 * local_48.y < 0.0) {
+  core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+            (&this_ptr->base,&local_24,ray_direction);
+  if (local_24.z * local_48.z + local_24.x * local_48.x + local_24.y * local_48.y < 0.0) {
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_60);
-    fStack_14 = (float)core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
-                                 (&local_60,&local_48,&local_24,auStack_3c);
+    fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
+                          (&local_60,&local_48,&local_24,&CStack_3c);
     if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
       fStack_18 = (float)1.01 - fStack_14;
       fStack_30 = ray_direction->x * fStack_18;

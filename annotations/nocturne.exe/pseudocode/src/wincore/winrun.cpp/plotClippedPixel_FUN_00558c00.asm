@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_plotClippedPixel_FUN_00558c00(void)
+; void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00558c00(int x_coord,int y_coord)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_coord
+; int              Stack[0x8]:4   y_coord
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c58

@@ -25,8 +25,11 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(CEventList 
     dest = (this_ptr->sfx_handles).entries;
     local_18 = (this_ptr->sfx_handles).entries + 1;
     do {
-      dVar5 = (double)sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(dest->sfx_handle,1);
-      dest->playback_position = dVar5;
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(dest->sfx_handle,1);
+      local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);
+      *(int *)&dest->playback_position = (int)local_20;
+      local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);
+      *(int *)((int)&dest->playback_position + 4) = local_20._4_4_;
       local_20 = dVar5;
       if (0.0 <= dest->playback_position) {
         sound_sndmain_cpp_CSfxSample_init_FUN_00525b70((CSfxSample *)local_148);

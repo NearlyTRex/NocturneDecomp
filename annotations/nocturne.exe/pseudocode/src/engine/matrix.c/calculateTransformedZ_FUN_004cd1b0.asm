@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_matrix_c_calculateTransformedZ_FUN_004cd1b0(void)
+; int __cdecl engine_matrix_c_calculateTransformedZ_FUN_004cd1b0(int *input_coords)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   input_coords
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c039b8

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004a3a70(void)
+; void __cdecl core_game_cpp_FUN_004a3a70(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_FUN_00495a20 at 00495f5f

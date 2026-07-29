@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)
+; void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   attack_flags
+; SDamageInfo *    Stack[0xc]:4   out_damage_info
+; CDemonActor *    Stack[0x10]:4   victim
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -32,7 +37,7 @@ section .text
     PUSH 0x41700000                     ; 00417f31
     PUSH 0x40a00000                     ; 00417f36
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00417f3b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00417f40
     MOV dword ptr [EBX + 0x2c],0x3ca3d70a ; 00417f44
     MOV EAX,dword ptr [ESP + 0x8]       ; 00417f4b

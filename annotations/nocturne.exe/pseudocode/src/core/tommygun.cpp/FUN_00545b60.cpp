@@ -9,12 +9,12 @@
 void core_tommygun_cpp_FUN_00545b60(void)
 
 {
-  int iVar1;
+  CTommyGun *this_ptr;
   
-  iVar1 = FUN_0056497c(0x57c);
-  if (iVar1 == 0) {
+  this_ptr = (CTommyGun *)FUN_0056497c(0x57c);
+  if (this_ptr == (CTommyGun *)0x0) {
     return;
   }
-  core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(iVar1);
+  core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(this_ptr);
   return;
 }

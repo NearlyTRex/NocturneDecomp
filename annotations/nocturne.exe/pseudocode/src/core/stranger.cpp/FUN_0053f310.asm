@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_0053f310(CStranger *param_1,float param_2)
+; void __cdecl core_stranger_cpp_FUN_0053f310(CStranger *this_ptr,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ; undefined        Stack[-0x54]:1  local_54
@@ -174,7 +177,7 @@ section .text
     PUSH EAX                            ; 0053f432
     PUSH EBX                            ; 0053f433
     CALL core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500 ; 0053f434
-        ;   XREF to: 0042a500 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500()
+        ;   XREF to: 0042a500 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500(CCharacter * this_ptr, float * remaining_time, int target_bone_index)
     MOV EDX,dword ptr [EBX + 0x2a84]    ; 0053f439
     MOV EDI,EAX                         ; 0053f43f
     IMUL EAX,EDX,0x38                   ; 0053f441
@@ -211,7 +214,7 @@ section .text
         ;   XREF to: 0053f4b6 (CONDITIONAL_JUMP)  ; caseD_b
     PUSH EAX                            ; 0053f4a5
     CALL core_dynamite.cpp_FUN_0046ed80 ; 0053f4a6
-        ;   XREF to: 0046ed80 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0046ed80()
+        ;   XREF to: 0046ed80 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0046ed80(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 0053f4ab
     TEST EAX,EAX                        ; 0053f4ae
     JZ 0x0053f8a2                       ; 0053f4b0
@@ -396,7 +399,7 @@ section .text
     PUSH ESI                            ; 0053f693
     PUSH EBX                            ; 0053f694
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053f695
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x54],EAX      ; 0053f69a
     FLD float ptr [ESP + 0x54]          ; 0053f69e
     ADD ESP,0x8                         ; 0053f6a2
@@ -631,7 +634,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x40]      ; 0053f8ca
     PUSH ECX                            ; 0053f8ce
     CALL core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30 ; 0053f8cf
-        ;   XREF to: 0046ed30 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30()
+        ;   XREF to: 0046ed30 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 0053f8d4
     JMP 0x0053f4b6                      ; 0053f8d7
         ;   XREF to: 0053f4b6 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -675,7 +678,7 @@ section .text
     PUSH EAX                            ; 0053f94a
     PUSH EBX                            ; 0053f94b
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0053f94c
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0053f951
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0053f954
     ADD EDX,0x574                       ; 0053f958

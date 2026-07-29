@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004182b2
         ;   Label: LAB_004182b2
     CALL core_boneguy.cpp_FUN_00418630  ; 004182b3
-        ;   XREF to: 00418630 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_00418630()
+        ;   XREF to: 00418630 (UNCONDITIONAL_CALL)  ; CBoneGuy * core_boneguy.cpp_FUN_00418630(CBoneGuy * this_ptr)
     ADD ESP,0x4                         ; 004182b8
     RET                                 ; 004182bb
 

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 232,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 25,
     "suspect_types": [
+      "stack_param",
+      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 84
+    "total_lines": 86
   },
   "cross_references": [],
   "function": {
@@ -145,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_weapon.cpp_FUN_00554310",
-    "signature": "void core_weapon_cpp_FUN_00554310(CWeapon *param_1,float *param_2)"
+    "signature": "void core_weapon_cpp_FUN_00554310(CCharacter *param_1,CVector3f *param_2)"
   },
   "function_calls": [
     {
@@ -217,7 +219,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_weapon_cpp_FUN_00554310(CWeapon *param_1,float *param_2)",
+      "text": "void core_weapon_cpp_FUN_00554310(CCharacter *param_1,CVector3f *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -225,47 +227,47 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_weapon_cpp_FUN_00554310(CWeapon *param_1,float *param_2)",
+      "text": "void core_weapon_cpp_FUN_00554310(CCharacter *param_1,CVector3f *param_2)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->carried_by_actor = (CDemonActor *)0x0;",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "CVector3f *in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_fffffff0",
+      "severity": "moderate",
+      "text": "float in_stack_fffffff0;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(param_1);",
+      "text": "(param_1->model).transformed_vertices[0x1c].y = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != (float *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&(param_1->physics_box).rotation_matrix,local_14,param_2);",
+      "text": "core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660((CWeapon *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "(&(param_1->physics_box).rotation_matrix,local_14,param_2);",
+      "text": "if (param_2 != (CVector3f *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -273,23 +275,39 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = &(param_1->physics_box).linear_velocity_local;",
+      "text": "((CMatrix3x3f *)&(param_1->model).transformed_vertices[0x1e].z,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "(CVector3f *)&stack0xffffffec,param_2);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(CVector3f *)&stack0xffffffec,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity_local.y = pfVar2[1];",
+      "text": "pCVar1 = (param_1->model).transformed_vertices + 0x23;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity_local.z = pfVar2[2];",
+      "text": "(param_1->model).transformed_vertices[0x23].y = pCVar2->y;",
       "type": "unnamed_param"
     },
     {
@@ -297,31 +315,15 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = &(param_1->physics_box).linear_velocity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (pCVar1 != (CVector3f *)param_2) {",
+      "text": "(param_1->model).transformed_vertices[0x23].z = pCVar2->z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pCVar1->x = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity.y = param_2[1];",
+      "text": "pCVar1 = (param_1->model).transformed_vertices + 0x22;",
       "type": "unnamed_param"
     },
     {
@@ -329,15 +331,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity.y = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity.z = param_2[2];",
+      "text": "if (pCVar1 != param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -345,31 +339,79 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1->physics_box).linear_velocity.z = param_2[2];",
+      "text": "pCVar1->x = param_2->x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_1->base).vtable._ub)->getPropertyList)(&param_1->base,(CActorPropertyList *)0x0);",
+      "text": "(param_1->model).transformed_vertices[0x22].y = param_2->y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
+      "line": 25,
+      "match": "param_2",
       "severity": "mild",
-      "text": "(*((param_1->base).vtable._ub)->getPropertyList)(&param_1->base,(CActorPropertyList *)0x0);",
+      "text": "(param_1->model).transformed_vertices[0x22].y = param_2->y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->sim_timer = 5.0;",
+      "text": "(param_1->model).transformed_vertices[0x22].z = param_2->z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1->model).transformed_vertices[0x22].z = param_2->z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).kill)(param_1,0,in_stack_ffffffec,in_stack_fffffff0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_fffffff0",
+      "severity": "moderate",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).kill)(param_1,0,in_stack_ffffffec,in_stack_fffffff0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).kill)(param_1,0,in_stack_ffffffec,in_stack_fffffff0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).kill)(param_1,0,in_stack_ffffffec,in_stack_fffffff0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).transformed_vertices[0x50].x = 5.0;",
       "type": "unnamed_param"
     }
   ],

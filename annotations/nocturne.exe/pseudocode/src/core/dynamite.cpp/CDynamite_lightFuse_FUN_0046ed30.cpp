@@ -2,21 +2,21 @@
 // Address: 0046ed30
 // Address Range: [[0046ed30, 0046ed70]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(int param_1)
+// Signature: void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(CDynamite *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(int param_1)
+void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(CDynamite *this_ptr)
 
 {
   uint uVar1;
-  byte local_68 [100];
+  char local_68 [100];
   
-  *(uint *)(param_1 + 0x570) = _DAT_0059c91c;
+  this_ptr->fuse_timer = _DAT_0059c91c;
   _sprintf(local_68,"fuse.wav");
-  uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_68);
-  *(uint *)(param_1 + 0x580) = uVar1;
+  uVar1 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,local_68);
+  this_ptr->sfx_handle = uVar1;
   return;
 }

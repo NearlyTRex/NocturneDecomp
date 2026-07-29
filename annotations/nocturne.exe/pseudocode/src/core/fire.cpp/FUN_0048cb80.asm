@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_0059d2a4 = 004ef040
+;   CParticle_vtable g_CRockVTable
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_ctor_FUN_004ef010
@@ -20,6 +20,6 @@ section .text
     CALL core_particle.cpp_CParticle_ctor_FUN_004ef010 ; 0048cb85
         ;   XREF to: 004ef010 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_ctor_FUN_004ef010(CParticle * this_ptr)
     ADD ESP,0x4                         ; 0048cb8a
-    MOV dword ptr [EAX + 0x34],0x59d2a4 ; 0048cb8d | PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_0059d2a4
+    MOV dword ptr [EAX + 0x34],0x59d2a4 ; 0048cb8d | g_CRockVTable
     RET                                 ; 0048cb94
 

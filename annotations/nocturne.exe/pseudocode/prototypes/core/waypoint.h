@@ -21,7 +21,7 @@ CDemonActorType * FUN_005524c0(void);
 
 // Original: core_waypoint.cpp_FUN_005524d0
 // Address: 005524d0
-void FUN_005524d0(CTrigger *param_1);
+CWayPoint * __cdecl FUN_005524d0(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWaypoint_setup_FUN_00552510
 // Address: 00552510
@@ -41,4 +41,4 @@ CWayPoint * __cdecl CWayPoint::findNearestReachable(CWayPoint *this_ptr,CWayPoin
 
 // Original: core_waypoint.cpp_CWayPoint_dtor_FUN_00552830
 // Address: 00552830
-CDemonActor * CWayPoint::dtor(CDemonActor *param_1,byte param_2);
+CWayPoint * __cdecl CWayPoint::dtor(CWayPoint *this_ptr,uint flags);

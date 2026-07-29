@@ -1,14 +1,14 @@
 // Name: core_main.c_waitWithSkip_FUN_004c8e10
 // Address: 004c8e10
 // Address Range: [[004c8e10, 004c8ea9]]
-// Convention: unknown
-// Signature: void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
+void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
   iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
   do {
     iVar2 = iVar1;
-    if (param_1 < 1) {
+    if (duration_ms < 1) {
       return;
     }
     while( true ) {
@@ -30,7 +30,7 @@ void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
       if (0x4000 < _DAT_01bd1d80) {
         _DAT_01bd1d80 = 0x4000;
       }
-      param_1 = param_1 - _DAT_01bd1d80;
+      duration_ms = duration_ms - _DAT_01bd1d80;
       iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);
       if (iVar2 == 0) break;
       iVar2 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
@@ -38,7 +38,7 @@ void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
         return;
       }
       iVar2 = iVar1;
-      if (param_1 < 1) {
+      if (duration_ms < 1) {
         return;
       }
     }

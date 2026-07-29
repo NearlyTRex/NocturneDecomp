@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uint param_3,uint param_4)
+; void __cdecl engine_special_cpp_fillDepthRegion_FUN_0052efc2(int left,int right,int top,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   right
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   bottom
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_005bf48c

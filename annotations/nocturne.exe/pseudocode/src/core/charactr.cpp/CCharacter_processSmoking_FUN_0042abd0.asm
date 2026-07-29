@@ -189,7 +189,7 @@ section .text
     MOV dword ptr [EBP + -0x3c],EDI     ; 0042ad36
     MOV dword ptr [EBP + -0x34],EDX     ; 0042ad39
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0042ad3c
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0042ad41
     PUSH ESI                            ; 0042ad44
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ad45

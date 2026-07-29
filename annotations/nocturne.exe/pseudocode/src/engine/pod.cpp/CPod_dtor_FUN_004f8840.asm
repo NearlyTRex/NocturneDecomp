@@ -11,7 +11,7 @@
 ;   core_podmain.cpp_FUN_004f93e0 at 004f93ef
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484 = 004f8840
+;   CPod_vtable g_CPodVTable
 ;   WatcomTypeInfo g_CPodTypeInfo_005a14a0
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     JNZ 0x004f8871                      ; 004f884a
         ;   XREF to: 004f8871 (CONDITIONAL_JUMP)  ; LAB_004f8871
     PUSH EBX                            ; 004f884c
-    MOV dword ptr [EBX + 0x194],0x5a1484 ; 004f884d | PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484
+    MOV dword ptr [EBX + 0x194],0x5a1484 ; 004f884d | g_CPodVTable
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004f8857
         ;   XREF to: 004f8b40 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_cleanup_FUN_004f8b40(CPod * this_ptr)
     ADD ESP,0x4                         ; 004f885c

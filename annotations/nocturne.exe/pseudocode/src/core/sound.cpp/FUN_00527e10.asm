@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_FUN_00527e10(void)
+; void __cdecl core_sound_cpp_FUN_00527e10(CSound *this_ptr)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004c8440 at 004c84b1

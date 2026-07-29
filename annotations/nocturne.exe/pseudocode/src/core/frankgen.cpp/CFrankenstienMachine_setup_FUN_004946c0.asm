@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CDemonActor *param_1)
+; void core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CFrankenstienMachine *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 004948c2 (CONDITIONAL_JUMP)  ; LAB_004948c2
     PUSH EBX                            ; 00494766
     CALL core_frankgen.cpp_FUN_004950a0 ; 00494767
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_FUN_004950a0(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 0049476c
     POP EDI                             ; 0049476f
     POP ESI                             ; 00494770
@@ -242,7 +242,7 @@ section .text
     ADD ESP,0x8                         ; 004948d5
     PUSH EBX                            ; 004948d8
     CALL core_frankgen.cpp_FUN_004950a0 ; 004948d9
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_FUN_004950a0(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 004948de
     POP EDI                             ; 004948e1
     POP ESI                             ; 004948e2

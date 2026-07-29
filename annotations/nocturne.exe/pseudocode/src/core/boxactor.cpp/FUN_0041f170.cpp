@@ -2,11 +2,11 @@
 // Address: 0041f170
 // Address Range: [[0041f170, 0041f182]]
 // Convention: unknown
-// Signature: void core_boxactor_cpp_FUN_0041f170(undefined4 param_1,undefined4 param_2)
+// Signature: void core_boxactor_cpp_FUN_0041f170(CDemonActor *param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_FUN_0041f170(uint param_1,uint param_2)
+void core_boxactor_cpp_FUN_0041f170(CDemonActor *param_1,CDemonActor *param_2)
 
 {
   core_actor_cpp_FUN_0040b1a0(param_1,param_2);

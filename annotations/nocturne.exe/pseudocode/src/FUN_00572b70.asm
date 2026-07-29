@@ -82,7 +82,7 @@ section .text
     MOV byte ptr [ESP + ESI*0x1 + 0xc],DL ; 00572bd1
     LEA ESI,[EDI + 0x1]                 ; 00572bd5
     CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572bd8
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; long crt_stdlib.c_strtol_FUN_005738ac(char * str, char * * endptr, int base)
     MOV DL,0x3a                         ; 00572bdd
     ADD ESP,0xc                         ; 00572bdf
     MOV EBP,EAX                         ; 00572be2
@@ -124,7 +124,7 @@ section .text
     MOV byte ptr [ESP + ESI*0x1 + 0xc],DH ; 00572c1c
     LEA ESI,[EDI + 0x1]                 ; 00572c20
     CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572c23
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; long crt_stdlib.c_strtol_FUN_005738ac(char * str, char * * endptr, int base)
     MOV dword ptr [ESP + 0x18],EAX      ; 00572c28
     ADD ESP,0xc                         ; 00572c2c
     MOV DL,0x2a                         ; 00572c2f
@@ -165,7 +165,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 00572c68
     PUSH EBX                            ; 00572c6c
     CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572c6d
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; long crt_stdlib.c_strtol_FUN_005738ac(char * str, char * * endptr, int base)
     ADD ESP,0xc                         ; 00572c72
     PUSH EBP                            ; 00572c75
     MOV EDX,dword ptr [ESP + 0x10]      ; 00572c76

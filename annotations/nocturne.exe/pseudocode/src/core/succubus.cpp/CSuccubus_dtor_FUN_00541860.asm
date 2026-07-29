@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_succubus_cpp_CSuccubus_dtor_FUN_00541860(CDemonActor *param_1,byte param_2)
+; CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00541860(CSuccubus *this_ptr,uint flags)
 ;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSuccubusTypeInfo_005a2a30

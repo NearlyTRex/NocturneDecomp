@@ -155,7 +155,7 @@ section .text
         ;   Label: LAB_00418a73
     PUSH EBX                            ; 00418a79
     CALL core_charactr.cpp_FUN_004259f0 ; 00418a7a
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00418a7f
     TEST EAX,EAX                        ; 00418a82
     JZ 0x00418c90                       ; 00418a84
@@ -473,7 +473,7 @@ section .text
     PUSH EBX                            ; 00418e0d
     MOV dword ptr [EBP + 0x56],EDI      ; 00418e0e
     CALL core_charactr.cpp_FUN_00428c00 ; 00418e11
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00418e16
     TEST EAX,EAX                        ; 00418e19
     JZ 0x0041949d                       ; 00418e1b
@@ -611,7 +611,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00418f9a
     PUSH EBX                            ; 00418fa0
     CALL core_charactr.cpp_FUN_0042a150 ; 00418fa1
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBP + 0x56]      ; 00418fa6
     ADD ESP,0x8                         ; 00418fa9
     CMP ECX,0x1                         ; 00418fac
@@ -648,7 +648,7 @@ section .text
     PUSH 0x3f800000                     ; 00419005
     PUSH 0x0                            ; 0041900a
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041900c
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     ADD ESP,0x8                         ; 00419011
     MOV dword ptr [EBP + 0x76],EAX      ; 00419014
     SUB ESP,0x8                         ; 00419017
@@ -706,7 +706,7 @@ section .text
     PUSH 0x41700000                     ; 00419094
     PUSH 0x40e00000                     ; 00419099
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041909e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 004190a3
     ADD ESP,0x8                         ; 004190a6
     LEA EAX,[EBP + 0xffffff0a]          ; 004190a9
@@ -848,7 +848,7 @@ section .text
     PUSH 0x41c80000                     ; 00419233
     PUSH 0x41700000                     ; 00419238
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041923d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 00419242
     MOV EAX,dword ptr [EBP + 0x76]      ; 00419245
     MOV dword ptr [EBP + 0xfffffed2],EAX ; 00419248
@@ -952,7 +952,7 @@ section .text
         ;   Label: LAB_00419363
     PUSH EBX                            ; 00419369
     CALL core_boneguy.cpp_FUN_004196b0  ; 0041936a
-        ;   XREF to: 004196b0 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_004196b0()
+        ;   XREF to: 004196b0 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_FUN_004196b0(CBoneGuy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041936f
     TEST EAX,EAX                        ; 00419372
     JNZ 0x00418e64                      ; 00419374

@@ -21,7 +21,7 @@
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   undefined1* PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94 = 00474cf0
+;   CPickList_full_vtable g_CPickListVTable
 ;   WatcomTypeInfo g_CPickListTypeInfo_0059cad0
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     JNZ 0x00474d3d                      ; 00474cfa
         ;   XREF to: 00474d3d (CONDITIONAL_JUMP)  ; LAB_00474d3d
     PUSH EBX                            ; 00474cfc
-    MOV dword ptr [EBX + 0xc],0x59ca94  ; 00474cfd | PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94
+    MOV dword ptr [EBX + 0xc],0x59ca94  ; 00474cfd | g_CPickListVTable
     CALL shape_edittool.cpp_FUN_00476160 ; 00474d04
         ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
     ADD ESP,0x4                         ; 00474d09
@@ -51,7 +51,7 @@ section .text
     ADD EBX,0x138                       ; 00474d0e
     PUSH EBX                            ; 00474d14
     CALL shape_edittool.cpp_FUN_00476490 ; 00474d15
-        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476490()
+        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_FUN_00476490(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00474d1a
     PUSH 0x1                            ; 00474d1d
     LEA EBX,[EAX + 0xfffffec8]          ; 00474d1f

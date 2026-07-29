@@ -1,14 +1,14 @@
 // Name: core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
 // Address: 004fe710
 // Address Range: [[004fe710, 004fe767]]
-// Convention: unknown
-// Signature: int core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(void)
+int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *this_ptr)
 
 {
   double dVar1;

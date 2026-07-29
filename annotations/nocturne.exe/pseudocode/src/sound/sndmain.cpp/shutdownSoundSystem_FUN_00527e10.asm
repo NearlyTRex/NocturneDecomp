@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_shutdownSoundSystem_FUN_00527e10(void)
+; void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_00527e10(CSound *this_ptr)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_sound.cpp_FUN_00527e10 at 0052dd80

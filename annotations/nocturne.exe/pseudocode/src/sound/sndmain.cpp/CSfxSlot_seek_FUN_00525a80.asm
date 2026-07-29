@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
@@ -56,7 +58,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x74]      ; 00525ac2
     PUSH EDX                            ; 00525ac5
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70 ; 00525ac6
-        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70()
+        ;   XREF to: 00525c70 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x14],EAX      ; 00525acb
     MOV dword ptr [ESP + 0x18],EDX      ; 00525acf
     MOV dword ptr [EBX + 0x68],0x0      ; 00525ad3

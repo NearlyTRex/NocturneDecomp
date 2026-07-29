@@ -80,7 +80,7 @@ section .text
     PUSH ESI                            ; 0040e74f
         ;   Label: LAB_0040e74f
     CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0 ; 0040e750
-        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0()
+        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0040e755
     MOV EAX,dword ptr [ESI]             ; 0040e758
     MOV dword ptr [ESP + 0x18],EAX      ; 0040e75a

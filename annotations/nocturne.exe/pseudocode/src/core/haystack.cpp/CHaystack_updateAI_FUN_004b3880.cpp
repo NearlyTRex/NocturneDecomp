@@ -2,38 +2,35 @@
 // Address: 004b3880
 // Address Range: [[004b3880, 004b3dd3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float param_2)
+// Signature: void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float param_2)
+void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(CHaystack *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  bool bVar2;
-  float fVar3;
-  int iVar4;
-  float *pfVar5;
-  SMotion *pSVar6;
-  CPathMap *this_ptr;
-  int iVar7;
+  EHeroTask EVar2;
+  bool bVar3;
+  float fVar4;
+  int iVar5;
+  CVector3f *pCVar6;
+  SMotion *pSVar7;
+  CPathMap *this_ptr_01;
+  int iVar8;
   float local_8c;
   float local_88;
   CVector3f local_84;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  byte local_60 [16];
+  CVector3f local_78;
+  CVector3f local_6c;
+  CVector3f local_60;
   float local_50;
-  float local_48;
-  float local_44;
-  float local_40;
-  byte local_3c [12];
+  CVector3f local_48;
+  CVector3f local_3c;
   float local_30;
   float local_28;
   float local_24;
@@ -42,145 +39,147 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
   float local_18;
   float local_14;
   
-  bVar2 = false;
+  bVar3 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  memset((void *)(param_1 + 0xbc94),0,0x2c);
-  if (*(int *)(param_1 + 0x1fa38) != 0) {
-    iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    local_48 = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
-    local_44 = *(float *)(param_1 + 0x24) - *(float *)(iVar4 + 0x24);
-    local_40 = *(float *)(param_1 + 0x28) - *(float *)(iVar4 + 0x28);
-    local_30 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-    if (((*(int *)(param_1 + 0x1fa38) == 3) || (local_30 < 20.0f)) &&
-       ((*(int *)(param_1 + 0x1fa38) == 2 || (*(int *)(param_1 + 0x1fa38) == 3)))) {
+  iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  memset(&(this_ptr->base).player_input,0,0x2c);
+  if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
+    iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    local_48.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
+    local_48.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
+    local_48.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
+    local_30 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);
+    if ((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_30 < 20.0f)) &&
+       ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
+    {
       local_88 = 9999.9;
-      iVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(param_1,&local_88);
-      if ((iVar4 == 0) || ((float)20 <= local_88)) {
-        if (*(int *)(param_1 + 0x1fa3c) != 0) {
-          *(uint *)(param_1 + 0xbcac) = 1;
+      iVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(this_ptr,&local_88);
+      if ((iVar5 == 0) || ((float)20 <= local_88)) {
+        if (this_ptr->guns_drawn != 0) {
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
       else {
-        bVar2 = true;
-        iVar7 = iVar4;
+        bVar3 = true;
+        iVar8 = iVar5;
       }
     }
-    local_78 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    local_74 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    local_70 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    local_78.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_78.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_78.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
     if (&local_48 != &local_78) {
-      local_48 = local_78;
-      local_44 = local_74;
-      local_40 = local_70;
+      local_48.x = local_78.x;
+      local_48.y = local_78.y;
+      local_48.z = local_78.z;
     }
-    fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
+    fVar1 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);
     local_18 = fVar1;
     if ((float)6 <= fVar1) {
-      this_ptr = (CPathMap *)0x0;
-      if (!bVar2) {
-        iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
+      this_ptr_01 = (CPathMap *)0x0;
+      if (!bVar3) {
+        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);
       }
-      if (this_ptr == (CPathMap *)0x0) {
-        this_ptr = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar7 + 0x20));
+      if (this_ptr_01 == (CPathMap *)0x0) {
+        this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar8 + 0x20));
       }
-      iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
-                        (this_ptr,(CVector3f *)(param_1 + 0x20),&local_84,*(int *)(param_1 + 0x6c));
-      if (iVar4 != 0) {
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (local_84.y - *(float *)(param_1 + 0x34));
-        fVar3 = local_14 * (float)0.31830988619288902 * (float)4;
+      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+                        (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_84,
+                         (this_ptr->base).base.base.direction_hint);
+      if (iVar5 != 0) {
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                             (local_84.y - (this_ptr->base).base.base.orient.vec.y);
+        fVar4 = local_14 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
-        *(float *)(param_1 + 0xbcb8) = fVar3;
-        if (fVar3 < local_24) {
-          *(float *)(param_1 + 0xbcb8) = local_24;
+        (this_ptr->base).player_input.turn_speed = fVar4;
+        if (fVar4 < local_24) {
+          (this_ptr->base).player_input.turn_speed = local_24;
         }
-        if (local_1c < *(float *)(param_1 + 0xbcb8)) {
-          *(float *)(param_1 + 0xbcb8) = local_1c;
+        if (local_1c < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_1c;
         }
-        if (((float)10 <= fVar1) || (bVar2)) {
-          *(uint *)(param_1 + 0xbc9c) = 1;
-          *(uint *)(param_1 + 0xbc94) = 1;
+        if (((float)10 <= fVar1) || (bVar3)) {
+          (this_ptr->base).player_input.action_state.run = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
         else {
-          *(uint *)(param_1 + 0xbc94) = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
     else {
-      if (bVar2) {
-        if (*(int *)(param_1 + 0x1fa3c) == 0) {
-          *(uint *)(param_1 + 0xbcac) = 1;
+      this_ptr_00 = &(this_ptr->base).base.model;
+      if (bVar3) {
+        if (this_ptr->guns_drawn == 0) {
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
         else {
-          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                             ((CMotionController *)(param_1 + 0x150));
-          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
-            *(uint *)(param_1 + 0xbca0) = 1;
+          pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                             (&this_ptr_00->motion_controller);
+          if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
+            (this_ptr->base).player_input.action_state.fire = 1;
           }
         }
       }
       else {
-        pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                           ((CMotionController *)(param_1 + 0x150));
-        if ((pSVar6->state_index == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
-          *(uint *)(param_1 + 0xbcac) = 1;
+        pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                           (&this_ptr_00->motion_controller);
+        if ((pSVar7->state_index == 10) && (this_ptr->guns_drawn != 0)) {
+          (this_ptr->base).player_input.action_state.draw = 1;
         }
       }
-      if (bVar2) {
-        iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_60,&local_48)
-        ;
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (*(float *)(iVar4 + 4) - *(float *)(param_1 + 0x34));
+      if (bVar3) {
+        pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                           (&local_60,&local_48);
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                             (pCVar6->y - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
-        *(float *)(param_1 + 0xbcb8) = fVar1;
+        (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < local_28) {
-          *(float *)(param_1 + 0xbcb8) = local_28;
+          (this_ptr->base).player_input.turn_speed = local_28;
         }
-        if (local_1c < *(float *)(param_1 + 0xbcb8)) {
-          *(float *)(param_1 + 0xbcb8) = local_1c;
+        if (local_1c < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = local_1c;
         }
-        if ((((float)-0.25 < *(float *)(param_1 + 0xbcb8)) &&
-            ((double)*(float *)(param_1 + 0xbcb8) < 0.25)) &&
-           (*(int *)(param_1 + 0xbca0) != 0)) {
-          *(uint *)(param_1 + 0xbcb8) = 0;
+        fVar1 = (this_ptr->base).player_input.turn_speed;
+        if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
+           ((this_ptr->base).player_input.action_state.fire != 0)) {
+          (this_ptr->base).player_input.turn_speed = 0.0;
         }
       }
     }
-    local_6c = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    local_68 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    local_64 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    local_6c.x = *(float *)(iVar8 + 0x20) - (this_ptr->base).base.base.location.position.x;
+    local_6c.y = *(float *)(iVar8 + 0x24) - (this_ptr->base).base.base.location.position.y;
+    local_6c.z = *(float *)(iVar8 + 0x28) - (this_ptr->base).base.base.location.position.z;
     if (&local_48 != &local_6c) {
-      local_48 = local_6c;
-      local_44 = local_68;
-      local_40 = local_64;
+      local_48.x = local_6c.x;
+      local_48.y = local_6c.y;
+      local_48.z = local_6c.z;
     }
-    pfVar5 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                                (local_3c,&local_48);
-    if (&local_48 != pfVar5) {
-      local_48 = *pfVar5;
-      local_44 = pfVar5[1];
-      local_40 = pfVar5[2];
+    pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_3c,&local_48);
+    if (&local_48 != pCVar6) {
+      local_48.x = pCVar6->x;
+      local_48.y = pCVar6->y;
+      local_48.z = pCVar6->z;
     }
-    local_50 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                (local_44 - *(float *)(param_1 + 0x34));
+    local_50 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                         (local_48.y - (this_ptr->base).base.base.orient.vec.y);
     if (local_20 < local_50) {
       local_50 = local_20;
     }
     if (local_50 < -local_20) {
       local_50 = -local_20;
     }
-    local_8c = local_50 - *(float *)(param_1 + 0x1fa48);
-    if (param_2 * (float)3.1415926535000001 < local_8c) {
-      local_8c = param_2 * (float)3.1415926535000001;
+    local_8c = local_50 - (this_ptr->head_look_euler).y;
+    if (delta_time * (float)3.1415926535000001 < local_8c) {
+      local_8c = delta_time * (float)3.1415926535000001;
     }
-    if (local_8c < param_2 * (float)-3.1415926535000001) {
-      local_8c = param_2 * (float)-3.1415926535000001;
+    if (local_8c < delta_time * (float)-3.1415926535000001) {
+      local_8c = delta_time * (float)-3.1415926535000001;
     }
-    *(float *)(param_1 + 0x1fa48) = *(float *)(param_1 + 0x1fa48) + local_8c;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_8c;
   }
   return;
 }

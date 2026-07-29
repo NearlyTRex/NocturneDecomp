@@ -2,21 +2,23 @@
 // Address: 004b9db0
 // Address Range: [[004b9db0, 004b9fc4]]
 // Convention: unknown
-// Signature: void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(int param_1)
+// Signature: void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(int param_1)
+void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)
 
 {
-  int iVar1;
+  CHero *pCVar1;
+  CCharacter *pCVar2;
+  int iVar3;
   CSkeleton *this_ptr;
   
   core_hero_cpp_FUN_004b48d0(param_1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-                       ((CDeformableModelInstance *)(param_1 + 0x150));
+                       (&(param_1->base).model);
   _DAT_01cae288 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 head",1);
   _DAT_01cae28c =
@@ -53,19 +55,31 @@ void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(int param_1)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine1",1);
   _DAT_01cae2cc =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine",1);
-  *(uint *)(param_1 + 0x24a8) = 0;
-  *(uint *)(param_1 + 0x24ec) = 0;
-  *(uint *)(param_1 + 0x1fa3c) = 0;
-  *(int *)(param_1 + 0x24a4) = _DAT_01cae2bc;
-  *(int *)(param_1 + 0x24e8) = _DAT_01cae2c0;
-  iVar1 = _DAT_01cae0e8;
-  *(uint *)(param_1 + 0x1fa60) = 0;
-  iVar1 = *(int *)(iVar1 * 4 + 0x1cae0d8);
-  if (param_1 == iVar1) {
-    *(uint *)(iVar1 + 0x2dd8) = 0x3fc00000;
+  (param_1->base).carry_hands[0].secondary_bone_index = 0;
+  (param_1->base).carry_hands[1].secondary_bone_index = 0;
+  pCVar1 = param_1 + 1;
+  (pCVar1->base).base.actor_name[0] = '\0';
+  (pCVar1->base).base.actor_name[1] = '\0';
+  (pCVar1->base).base.actor_name[2] = '\0';
+  (pCVar1->base).base.actor_name[3] = '\0';
+  (param_1->base).carry_hands[0].bone_index = _DAT_01cae2bc;
+  (param_1->base).carry_hands[1].bone_index = _DAT_01cae2c0;
+  iVar3 = _DAT_01cae0e8;
+  param_1[1].base.base.location.position.y = 0.0;
+  pCVar1 = *(CHero **)(iVar3 * 4 + 0x1cae0d8);
+  if (param_1 == pCVar1) {
+    (pCVar1->base).collision_cylinder_radius = 1.5;
   }
-  *(uint *)(param_1 + 0x1fa48) = 0;
-  *(uint *)(param_1 + 0x1fa44) = 0;
-  *(uint *)(param_1 + 0x1fa68) = 0;
+  pCVar2 = &param_1[1].base;
+  (pCVar2->base).actor_name[0xc] = '\0';
+  (pCVar2->base).actor_name[0xd] = '\0';
+  (pCVar2->base).actor_name[0xe] = '\0';
+  (pCVar2->base).actor_name[0xf] = '\0';
+  pCVar2 = &param_1[1].base;
+  (pCVar2->base).actor_name[8] = '\0';
+  (pCVar2->base).actor_name[9] = '\0';
+  (pCVar2->base).actor_name[10] = '\0';
+  (pCVar2->base).actor_name[0xb] = '\0';
+  param_1[1].base.base.location.area_id = 0;
   return;
 }

@@ -38,7 +38,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 00565732
     PUSH EDX                            ; 00565736
     CALL crt_unknown.c_OpenModeStringParser_FUN_005653e0 ; 00565737
-        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_OpenModeStringParser_FUN_005653e0()
+        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_OpenModeStringParser_FUN_005653e0(char * mode_string, char * output_flags)
     ADD ESP,0x8                         ; 0056573c
     MOV EDI,EAX                         ; 0056573f
     TEST EAX,EAX                        ; 00565741

@@ -1,19 +1,19 @@
 // Name: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10
 // Address: 00417f10
 // Address Range: [[00417f10, 00417f5a]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(uint param_1,uint param_2,int param_3,uint param_4)
+void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  core_actor_cpp_FUN_0040bca0(param_1,param_2,param_3,param_4);
-  uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41700000);
-  *(uint *)(param_3 + 0x2c) = 0x3ca3d70a;
-  *(uint *)(param_3 + 4) = uVar1;
+  core_actor_cpp_FUN_0040bca0(this_ptr,attack_flags,out_damage_info,victim);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,15.0);
+  out_damage_info->dismember_prob = 0.02;
+  out_damage_info->damage_amount = fVar1;
   return;
 }

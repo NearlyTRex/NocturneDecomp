@@ -9,11 +9,11 @@ uint __cdecl crc32UpdateByte(uint current_crc,uchar data_byte);
 
 // Original: engine_pod.cpp_crc32UpdateBuffer_FUN_004f7890
 // Address: 004f7890
-uint crc32UpdateBuffer(uchar *param_1,uint param_2,uint param_3);
+uint __cdecl crc32UpdateBuffer(uchar *data_buffer,uint byte_count,uint initial_crc);
 
 // Original: engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0
 // Address: 004f78d0
-uint crc32ComputeFromFile(_FILE *param_1,SIZE_T param_2);
+uint __cdecl crc32ComputeFromFile(_FILE *file_stream,uint total_bytes);
 
 // Original: engine_pod.cpp_FUN_004f7980
 // Address: 004f7980
@@ -73,7 +73,7 @@ void CPod::mount(int *param_1,undefined4 param_2);
 
 // Original: engine_pod.cpp_CPod_remount_FUN_004f8970
 // Address: 004f8970
-void CPod::remount(int *param_1);
+void __cdecl CPod::remount(CPod *this_ptr);
 
 // Original: engine_pod.cpp_FUN_004f8a10
 // Address: 004f8a10
@@ -109,8 +109,8 @@ int FUN_004f9100(void);
 
 // Original: engine_pod.cpp_CPod_locateFile_FUN_004f9170
 // Address: 004f9170
-int CPod::locateFile(int *param_1,char *param_2,char *param_3,int *param_4);
+CPodFile * __cdecl CPod::locateFile(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_004f9200
 // Address: 004f9200
-undefined4 CPod::findFile(int *param_1,char *param_2);
+int __cdecl CPod::findFile(CPod *this_ptr,SFoundFileInfo *found_file_info);

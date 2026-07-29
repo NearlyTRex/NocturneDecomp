@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(int param_1,float param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     ADD ECX,0x150                       ; 0042a741
     PUSH ECX                            ; 0042a747
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 0042a748
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0042a74d
     POP ESI                             ; 0042a750
     POP EBX                             ; 0042a751

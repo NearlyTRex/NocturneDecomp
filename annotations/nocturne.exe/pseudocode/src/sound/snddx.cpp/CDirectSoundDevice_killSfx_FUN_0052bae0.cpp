@@ -1,12 +1,12 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0
 // Address: 0052bae0
 // Address Range: [[0052bae0, 0052bbc9]]
-// Convention: unknown
-// Signature: void sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-void sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(uint param_1,int param_2)
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ void sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(uint param_1,int pa
   int *piVar4;
   byte auStack_1a0 [400];
   
-  iVar1 = *(int *)(param_2 + 0x6c);
+  iVar1 = (slot->options).dead;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     sound_sndmain_cpp_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");

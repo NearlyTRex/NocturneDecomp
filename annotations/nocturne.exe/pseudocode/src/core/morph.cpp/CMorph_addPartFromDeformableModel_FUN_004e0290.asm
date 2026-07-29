@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_004e0290(void)
+; void __cdecl core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_004e0290(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
+; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0

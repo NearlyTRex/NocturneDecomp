@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tentacle_dfm_00596512
-;   undefined1* PTR_core_tentacle.cpp_CTentacle_setup_FUN_00543bc0_005a3104 = 00543bc0
+;   CEnemy_full_vtable g_CTentacleVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -30,9 +30,9 @@ section .text
     MOV EBX,EAX                         ; 00543b73
     ADD EAX,0x150                       ; 00543b75
     PUSH EAX                            ; 00543b7a
-    MOV dword ptr [EAX + -0x4],0x5a3104 ; 00543b7b | PTR_core_tentacle.cpp_CTentacle_setup_FUN_00543bc0_005a3104
+    MOV dword ptr [EAX + -0x4],0x5a3104 ; 00543b7b | g_CTentacleVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00543b82
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x42480000 ; 00543b87
     MOV dword ptr [EBX + 0x2de0],0x42c80000 ; 00543b91
     MOV dword ptr [EBX + 0xbd24],0x0    ; 00543b9b

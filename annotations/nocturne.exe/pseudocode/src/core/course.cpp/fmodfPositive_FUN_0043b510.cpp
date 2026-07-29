@@ -12,13 +12,13 @@ float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2)
   double dVar1;
   
   if (param_1 < 0.0) {
-    dVar1 = (double)floor((double)(-param_1 / param_2));
+    dVar1 = floor((double)(-param_1 / param_2));
     param_1 = (float)dVar1 * param_2 + param_1;
     if (param_1 < 0.0) {
       param_1 = param_1 + param_2;
     }
     return param_1;
   }
-  dVar1 = (double)floor((double)(param_1 / param_2));
+  dVar1 = floor((double)(param_1 / param_2));
   return param_1 - (float)dVar1 * param_2;
 }

@@ -1,30 +1,30 @@
 // Name: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920
 // Address: 004f5920
 // Address Range: [[004f5920, 004f59c0]]
-// Convention: unknown
-// Signature: void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920(CPackedBitmapSet *param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
 
 #include "nocturne.h"
 
-void cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920(CPackedBitmapSet *param_1,uint param_2,int param_3,int param_4,uint param_5)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
 
 {
   int iVar1;
   byte local_74 [100];
   
-  cockpit_pkbitmap_cpp_FUN_004f5320(param_1);
-  cockpit_pkbitmap_cpp_FUN_004f5290(param_1);
-  cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(param_1,(param_4 - param_3) + 1);
-  if (param_3 <= param_4) {
+  cockpit_pkbitmap_cpp_FUN_004f5320(this_ptr);
+  cockpit_pkbitmap_cpp_FUN_004f5290(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(this_ptr,(end_index - start_index) + 1);
+  if (start_index <= end_index) {
     iVar1 = 0;
     do {
-      _sprintf(local_74,param_2,param_3);
-      param_3 = param_3 + 1;
+      _sprintf(local_74,filename_format,start_index);
+      start_index = start_index + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
-                (param_1->bitmap_array->filename + iVar1,local_74,param_5);
+                (this_ptr->bitmap_array->filename + iVar1,local_74,apply_palette_flag);
       iVar1 = iVar1 + 0x24;
-    } while (param_3 <= param_4);
+    } while (start_index <= end_index);
   }
-  cockpit_pkbitmap_cpp_FUN_004f52c0(param_1);
+  cockpit_pkbitmap_cpp_FUN_004f52c0(this_ptr);
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_xform_cpp_multiplyQuaternionInPlace_FUN_0055d1f0(undefined4 *param_1,undefined4 param_2)
+; CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_0055d1f0(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat1_inout
+; CQuaternion4f *  Stack[0x8]:4   quat2_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;

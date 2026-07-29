@@ -66,13 +66,13 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMa
       uStack_3c = 0;
       if (0 < iVar3) {
         do {
-          CStack_2c.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                         (local_68.min.x,local_68.max.x);
+          CStack_2c.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                  (local_68.min.x,local_68.max.x);
           fStack_c = CStack_2c.x;
-          fStack_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3ecccccd);
+          fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,0.4);
           CStack_2c.y = (1.0 - fStack_c) * local_68.min.y + local_68.max.y * fStack_c;
-          CStack_2c.z = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                         (local_68.min.z,local_68.max.z);
+          CStack_2c.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                  (local_68.min.z,local_68.max.z);
           fStack_c = CStack_2c.z;
           pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                              (&param_1->base,&CStack_50,&CStack_2c);
@@ -83,8 +83,7 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMa
           }
           alpha_value = 0xffff;
           pCVar4 = (CVector3f *)0x0;
-          fStack_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                      (0x3f000000,0x3fc00000);
+          fStack_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.5,1.5);
           iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
                     (0x01C08D04,&CStack_2c,fStack_c,pCVar4,alpha_value);
@@ -93,12 +92,12 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMa
     }
     if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {
       (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);
-      CStack_38.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                     (local_80.min.x,local_80.max.x);
+      CStack_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                              (local_80.min.x,local_80.max.x);
       CStack_38.y = local_80.min.y;
       fStack_c = CStack_38.x;
-      CStack_38.z = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                     (local_80.min.z,local_80.max.z);
+      CStack_38.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                              (local_80.min.z,local_80.max.z);
       fStack_c = CStack_38.z;
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          (&param_1->base,&CStack_20,&CStack_38);

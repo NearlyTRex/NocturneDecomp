@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_trigger_cpp_CTrigger_dtor_FUN_00548a50(CDemonActor *param_1,byte param_2)
+; CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_00548a50(CTrigger *this_ptr,uint flags)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTriggerTypeInfo_005a3740

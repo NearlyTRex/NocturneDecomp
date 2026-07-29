@@ -47,6 +47,6 @@ undefined4 CSentinel::getTargetPoints(int param_1,CVector3f *param_2);
 // Address: 00506a60
 void FUN_00506a60(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_sentinel.cpp_FUN_00506a80
+// Original: core_sentinel.cpp_CSentinel_dtor_FUN_00506a80
 // Address: 00506a80
-CDemonActor * FUN_00506a80(CDemonActor *param_1,byte param_2);
+CSentinel * __cdecl CSentinel::dtor(CSentinel *this_ptr,uint flags);

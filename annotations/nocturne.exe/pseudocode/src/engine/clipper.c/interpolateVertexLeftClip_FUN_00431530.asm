@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(int *param_1,int *param_2,int *param_3)
+; void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v1
+; SRenderVertex *  Stack[0x8]:4   v2
+; SRenderVertex *  Stack[0xc]:4   output
 ;
 ; XREF[6]:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290 at 004092d1

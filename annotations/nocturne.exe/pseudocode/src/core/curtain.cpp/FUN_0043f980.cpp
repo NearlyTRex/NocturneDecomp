@@ -1,14 +1,16 @@
 // Name: core_curtain.cpp_FUN_0043f980
 // Address: 0043f980
 // Address Range: [[0043f980, 0043f997]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_FUN_0043f980(void *param_1)
+// Convention: __cdecl
+// Signature: SCurtainVertex * __cdecl core_curtain_cpp_FUN_0043f980(SCurtainVertex *objs,uint flags)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_FUN_0043f980(void *param_1)
+SCurtainVertex * __cdecl core_curtain_cpp_FUN_0043f980(SCurtainVertex *objs,uint flags)
 
 {
-  __arrfini(param_1,1000,&g_SCurtainVertexTypeInfo_0059bd90);
-  return;
+  SCurtainVertex *pSVar1;
+  
+  pSVar1 = (SCurtainVertex *)__arrfini(objs,1000,&g_SCurtainVertexTypeInfo_0059bd90);
+  return pSVar1;
 }

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 1471,
+    "complexity_score": 1490,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 281,
-    "suspect_count": 116,
+    "pseudocode_lines": 280,
+    "suspect_count": 118,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -137,7 +137,7 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 798
+    "total_lines": 797
   },
   "cross_references": [],
   "function": {
@@ -692,21 +692,28 @@
         {
           "check_id": "invalidPointerCast",
           "column": 6,
-          "line": 156,
+          "line": 154,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 6,
-          "line": 158,
+          "line": 156,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 58,
-          "line": 170,
+          "line": 168,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 8,
+          "line": 202,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
@@ -714,13 +721,6 @@
           "check_id": "invalidPointerCast",
           "column": 8,
           "line": 203,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 8,
-          "line": 204,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -740,7 +740,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
@@ -748,7 +748,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
@@ -756,7 +756,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&param_1[2].location.area_id);",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&param_1[3].orient_matrix.m[2].y);",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&param_1[0xf].scale);",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 72,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(SMRGLTextureBasic *)&param_1[0xf].scale);",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x10].actor_name[4] = -0x3f;",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x10].actor_name[5] = '9';",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x10].actor_name[6] = 'B';",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x10].actor_name[7] = 'A';",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1[4].create_event + 0x28);",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = *(float *)(param_1[4].create_event + 0x24);",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_1[4].create_event + 0x2c);",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)param_1[0x10].actor_name =",
@@ -860,15 +860,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(((float10)*(float *)(param_1[0x10].actor_name + 4) + (float10)local_b0) / fVar18);",
+      "text": "(float)(((float10)*(float *)(param_1[0x10].actor_name + 4) + (float10)local_b0) / fVar17);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[0x10].actor_name + 8) = local_b4 - local_c0;",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 93,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1[0x10].actor_name + 8);",
@@ -884,7 +884,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x24] = '\\0';",
@@ -892,7 +892,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x25] = '\\0';",
@@ -900,7 +900,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x26] = '\\0';",
@@ -908,7 +908,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x27] = '\\0';",
@@ -916,7 +916,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x2c] = -0x33;",
@@ -924,7 +924,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x2d] = -0x34;",
@@ -932,7 +932,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x2e] = -0x74;",
@@ -940,7 +940,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x2f] = -0x41;",
@@ -948,7 +948,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[4].create_event + 0x28) = fVar1 + fVar2;",
@@ -956,7 +956,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "if (SQRT(*(float *)(param_1[4].create_event + 0x14) * *(float *)(param_1[4].create_event + 0x14) +",
@@ -964,7 +964,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "if (SQRT(*(float *)(param_1[4].create_event + 0x14) * *(float *)(param_1[4].create_event + 0x14) +",
@@ -972,7 +972,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[4].create_event + 0xc) * *(float *)(param_1[4].create_event + 0xc) +",
@@ -980,7 +980,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[4].create_event + 0xc) * *(float *)(param_1[4].create_event + 0xc) +",
@@ -988,7 +988,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[4].create_event + 0x10) * *(float *)(param_1[4].create_event + 0x10))",
@@ -996,7 +996,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[4].create_event + 0x10) * *(float *)(param_1[4].create_event + 0x10))",
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x10] = '\\0';",
@@ -1012,7 +1012,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x11] = '\\0';",
@@ -1020,7 +1020,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x12] = '@';",
@@ -1028,7 +1028,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x13] = '@';",
@@ -1036,7 +1036,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x14] = -0x33;",
@@ -1044,7 +1044,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x15] = -0x34;",
@@ -1052,7 +1052,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x16] = -0x34;",
@@ -1060,7 +1060,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0x17] = -0x43;",
@@ -1068,7 +1068,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0xc] = '\\0';",
@@ -1076,7 +1076,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 118,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0xd] = '\\0';",
@@ -1084,7 +1084,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0xe] = '\\0';",
@@ -1092,7 +1092,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4].create_event[0xf] = '\\0';",
@@ -1100,23 +1100,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 124,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_17c,param_1[4].create_event + 0xc,param_1[4].create_event + 0x18);",
+      "text": "(&local_17c,(CVector3f *)(param_1[4].create_event + 0xc),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_1[4].create_event + 0x18));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(local_17c,param_1[4].create_event + 0xc,param_1[4].create_event + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&param_1[2].location.area_id);",
@@ -1124,7 +1124,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = param_1[8].actor_name + 0x18;",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = param_1[8].orient_matrix.m;",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = param_1[8].actor_name + 0x1c;",
@@ -1148,7 +1148,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 137,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = &param_1[8].location;",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 141,
       "match": "param_1",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(param_1,local_38);",
@@ -1164,31 +1164,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,iVar12,pcVar13,local_2c,local_30);",
+      "text": "(param_1,iVar11,pcVar12,local_2c,local_30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 170,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_80 = *(uint *)(param_1[0x10].actor_name + 4);",
+      "text": "local_88.z = *(float *)(param_1[0x10].actor_name + 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(CMatrix3x4f *)((int)pCVar16",
+      "line": 182,
+      "match": "(CMatrix3x4f *)((int)pCVar15",
       "severity": "moderate",
-      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);",
+      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 225,
+      "line": 224,
       "match": "(CLocation *)((int)(local_30 + 0xb) +",
       "severity": "moderate",
       "text": "local_30 = (CLocation *)((int)(local_30 + 0xb) + 8);",
@@ -1196,7 +1196,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 234,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1[4].create_event + 0x10);",
@@ -1204,7 +1204,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 238,
+      "line": 237,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = *(float *)(param_1[0x10].actor_name + 4);",
@@ -1212,15 +1212,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 239,
+      "line": 238,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar14 = &param_1[0xe].platform_position_delta.y;",
+      "text": "pfVar13 = &param_1[0xe].platform_position_delta.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 240,
+      "line": 239,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = *(float *)(param_1[4].create_event + 0x28);",
@@ -1228,7 +1228,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 242,
+      "line": 241,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].platform_orientation_delta.x =",
@@ -1236,15 +1236,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 242,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(fVar18 * (float10)*(float *)(param_1[0x10].actor_name + 4) * fVar20);",
+      "text": "(float)(fVar17 * (float10)*(float *)(param_1[0x10].actor_name + 4) * fVar19);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 244,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].platform_position_delta.z = fVar3 * fVar6 + fVar1 * fVar7;",
@@ -1252,10 +1252,18 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 245,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((float *)(param_1[0xe].create_event + 0x60) != pfVar13) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 246,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float *)(param_1[0xe].create_event + 0x60) != pfVar14) {",
+      "text": "*(float *)(param_1[0xe].create_event + 0x60) = *pfVar13;",
       "type": "unnamed_param"
     },
     {
@@ -1263,12 +1271,12 @@
       "line": 247,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1[0xe].create_event + 0x60) = *pfVar14;",
+      "text": "param_1[0xe].standing_platform = (CPlatform *)param_1[0xe].platform_position_delta.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 248,
+      "line": 247,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].standing_platform = (CPlatform *)param_1[0xe].platform_position_delta.z;",
@@ -1279,12 +1287,12 @@
       "line": 248,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].standing_platform = (CPlatform *)param_1[0xe].platform_position_delta.z;",
+      "text": "param_1[0xe].platform_position_delta.x = param_1[0xe].platform_orientation_delta.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 248,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].platform_position_delta.x = param_1[0xe].platform_orientation_delta.x;",
@@ -1292,15 +1300,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0xe].platform_position_delta.x = param_1[0xe].platform_orientation_delta.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 251,
+      "line": 250,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].collision_disabled = -0x425b218f;",
@@ -1308,7 +1308,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].scale.x = 0;",
@@ -1316,7 +1316,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 253,
+      "line": 252,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].process_disabled = -0x403ad624;",
@@ -1324,7 +1324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 253,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].standing_platform =",
@@ -1332,7 +1332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 254,
       "match": "param_1",
       "severity": "mild",
       "text": "(CPlatform *)((float)param_1[0xe].standing_platform + -4.0f);",
@@ -1340,7 +1340,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 257,
+      "line": 256,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&param_1[0xe].scale.y,(CVector3f *)&param_1[0xe].collision_disabled);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 256,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMatrix3x3f *)&param_1[0xe].scale.y,(CVector3f *)&param_1[0xe].collision_disabled);",
@@ -1349,14 +1357,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 257,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&param_1[0xe].scale.y,(CVector3f *)&param_1[0xe].collision_disabled);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 258,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(param_1[0xe].create_event + 0x60);",
@@ -1364,7 +1364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
+      "line": 258,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = param_1[0xe].platform_position_delta.x;",
@@ -1372,7 +1372,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 260,
+      "line": 259,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar4 = (CDemonActor *)param_1[0xe].platform_position_delta.z;",
@@ -1380,7 +1380,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 261,
+      "line": 260,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = param_1[0xe].platform_position_delta.y;",
@@ -1388,7 +1388,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 262,
+      "line": 261,
       "match": "param_1",
       "severity": "mild",
       "text": "UVar5 = (UActorVTable)param_1[0xe].platform_orientation_delta.x;",
@@ -1396,7 +1396,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 263,
+      "line": 262,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float)param_1[0xe].collision_disabled;",
@@ -1404,7 +1404,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 264,
+      "line": 263,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0xe].previous_transform_state.orientation.vec.z = (float)param_1[0xe].standing_platform;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 263,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0xe].previous_transform_state.orientation.vec.z = (float)param_1[0xe].standing_platform;",
@@ -1415,7 +1423,7 @@
       "line": 264,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].previous_transform_state.orientation.vec.z = (float)param_1[0xe].standing_platform;",
+      "text": "iVar11 = param_1[0xe].scale.x;",
       "type": "unnamed_param"
     },
     {
@@ -1423,7 +1431,7 @@
       "line": 265,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar12 = param_1[0xe].scale.x;",
+      "text": "param_1[0xe].previous_transform_state.dirty_flags = (int)fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -1431,7 +1439,7 @@
       "line": 266,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].previous_transform_state.dirty_flags = (int)fVar2;",
+      "text": "fVar2 = (float)param_1[0xe].process_disabled;",
       "type": "unnamed_param"
     },
     {
@@ -1439,7 +1447,7 @@
       "line": 267,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = (float)param_1[0xe].process_disabled;",
+      "text": "param_1[0xe].prev_actor = pCVar4;",
       "type": "unnamed_param"
     },
     {
@@ -1447,7 +1455,7 @@
       "line": 268,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].prev_actor = pCVar4;",
+      "text": "param_1[0xe].vtable = UVar5;",
       "type": "unnamed_param"
     },
     {
@@ -1455,7 +1463,7 @@
       "line": 269,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].vtable = UVar5;",
+      "text": "((CVector3f *)(param_1[0xf].actor_name + 0x10))->x = fVar6;",
       "type": "unnamed_param"
     },
     {
@@ -1463,7 +1471,7 @@
       "line": 270,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CVector3f *)(param_1[0xf].actor_name + 0x10))->x = fVar6;",
+      "text": "*(int *)(param_1[0xf].actor_name + 0x18) = iVar11;",
       "type": "unnamed_param"
     },
     {
@@ -1471,7 +1479,7 @@
       "line": 271,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1[0xf].actor_name + 0x18) = iVar12;",
+      "text": "param_1[0xe].previous_transform_state.orientation.vec.y = -fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -1479,7 +1487,7 @@
       "line": 272,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].previous_transform_state.orientation.vec.y = -fVar1;",
+      "text": "param_1[0xe].next_actor = (CDemonActor *)-fVar3;",
       "type": "unnamed_param"
     },
     {
@@ -1487,20 +1495,12 @@
       "line": 273,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xe].next_actor = (CDemonActor *)-fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 274,
-      "match": "param_1",
-      "severity": "mild",
       "text": "*(float *)(param_1[0xf].actor_name + 0x14) = -fVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
+      "line": 276,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMatrix3x3f *)(param_1[0xf].actor_name + 0x1c),",
@@ -1508,7 +1508,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 278,
+      "line": 277,
       "match": "param_1",
       "severity": "mild",
       "text": "(CVector3f *)(param_1[0xf].actor_name + 0x10));",
@@ -1516,23 +1516,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 280,
+      "line": 279,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(param_1,iVar12);",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(param_1,iVar11);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pCVar16` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 183,
-      "match": "(int)pCVar16",
+      "description": "Pointer value `pCVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(int)pCVar15",
       "severity": "moderate",
-      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);",
+      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `(local_30 + 0xb)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 225,
+      "line": 224,
       "match": "(int)(local_30 + 0xb)",
       "severity": "moderate",
       "text": "local_30 = (CLocation *)((int)(local_30 + 0xb) + 8);",
@@ -1540,31 +1540,31 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 180,
+      "line": 179,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar12 = 0xc; pCVar11 = local_28, iVar12 != 0; iVar12 = iVar12 + -1) {",
+      "text": "for (iVar11 = 0xc; pCVar10 = local_28, iVar11 != 0; iVar11 = iVar11 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 188,
+      "line": 187,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar11->x = pCVar10->x;",
+      "text": "pCVar10->x = pCVar9->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 216,
+      "line": 215,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar11->x = pCVar10->x;",
+      "text": "pCVar10->x = pCVar9->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 89,
+      "line": 86,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "fVar1 = *(float *)(param_1[4].create_event + 0x28);",
@@ -1572,7 +1572,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 90,
+      "line": 87,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "fVar2 = *(float *)(param_1[4].create_event + 0x24);",
@@ -1580,7 +1580,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 91,
+      "line": 88,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "fVar3 = *(float *)(param_1[4].create_event + 0x2c);",
@@ -1588,7 +1588,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 106,
+      "line": 103,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(float *)(param_1[4].create_event + 0x28) = fVar1 + fVar2;",
@@ -1596,7 +1596,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 108,
+      "line": 105,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "if (SQRT(*(float *)(param_1[4].create_event + 0x14) * *(float *)(param_1[4].create_event + 0x14) +",
@@ -1604,7 +1604,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 109,
+      "line": 106,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(float *)(param_1[4].create_event + 0xc) * *(float *)(param_1[4].create_event + 0xc) +",
@@ -1612,7 +1612,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 110,
+      "line": 107,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(float *)(param_1[4].create_event + 0x10) * *(float *)(param_1[4].create_event + 0x10))",
@@ -1620,7 +1620,23 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 235,
+      "line": 124,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(&local_17c,(CVector3f *)(param_1[4].create_event + 0xc),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 125,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(CVector3f *)(param_1[4].create_event + 0x18));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 234,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "fVar1 = *(float *)(param_1[4].create_event + 0x10);",
@@ -1628,7 +1644,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 240,
+      "line": 239,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "fVar3 = *(float *)(param_1[4].create_event + 0x28);",
@@ -1636,7 +1652,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via element-arithmetic `(int)(local_30 + N) + M`, where `N*sizeof(*local_30) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_30->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 225,
+      "line": 224,
       "match": "local_30 = (T *)((int)(local_30 + N) + M)",
       "severity": "moderate",
       "text": "local_30 = (CLocation *)((int)(local_30 + 0xb) + 8);",
@@ -1644,7 +1660,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_28) + offsetof(subfield)` equals the real array stride. Replace `local_28->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 230,
+      "line": 229,
       "match": "local_28 = (T *)&local_28[N].SUBFIELD",
       "severity": "moderate",
       "text": "local_28 = (CVector3f *)&local_28[0xf].y;",
@@ -1660,26 +1676,34 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 154,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar12 + 0x10) = *(float *)(pcVar12 + 0x14);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
       "line": 156,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "*(float *)(pcVar13 + 0x10) = *(float *)(pcVar13 + 0x14);",
+      "text": "*(float *)(pcVar12 + 0xc) = *(float *)(pcVar12 + 0x10);",
       "type": "static_invalid_pointer_cast"
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 158,
+      "line": 168,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "*(float *)(pcVar13 + 0xc) = *(float *)(pcVar13 + 0x10);",
+      "text": "(((UOrientationVector *)(pcVar12 + 0x18))->vec).x = *(float *)(pcVar12 + 0x1c);",
       "type": "static_invalid_pointer_cast"
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 170,
+      "line": 202,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(((UOrientationVector *)(pcVar13 + 0x18))->vec).x = *(float *)(pcVar13 + 0x1c);",
+      "text": "*(float *)(pcVar12 + 0x34) = pCVar10->y;",
       "type": "static_invalid_pointer_cast"
     },
     {
@@ -1687,15 +1711,7 @@
       "line": 203,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "*(float *)(pcVar13 + 0x34) = pCVar11->y;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 204,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar13 + 0x38) = pCVar11->z;",
+      "text": "*(float *)(pcVar12 + 0x38) = pCVar10->z;",
       "type": "static_invalid_pointer_cast"
     }
   ],

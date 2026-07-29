@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_exception_c_ExceptionHandler_FUN_0056ed08(PEXCEPTION_RECORD param_1,undefined4 param_2,PCONTEXT param_3)
+; EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0056ed08(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)
 ;
+; Parameters:
+; EXCEPTION_RECORD * Stack[0x4]:4   ExceptionRecord
+; void *           Stack[0x8]:4   EstablisherFrame
+; CONTEXT *        Stack[0xc]:4   ContextRecord
+; void *           Stack[0x10]:4   DispatcherContext
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -143,7 +148,7 @@ section .text
     MOV byte ptr [0x02de5c24],0x1       ; 0056ee13 | DAT_02de5c24
         ;   Label: LAB_0056ee13
     CALL FUN_00571500                   ; 0056ee1a
-        ;   XREF to: 00571500 (UNCONDITIONAL_CALL)  ; undefined FUN_00571500()
+        ;   XREF to: 00571500 (UNCONDITIONAL_CALL)  ; void FUN_00571500()
     PUSH EBX                            ; 0056ee1f
     CALL crt_signal.c_raiseFPE_FUN_005716d8 ; 0056ee20
         ;   XREF to: 005716d8 (UNCONDITIONAL_CALL)  ; int crt_signal.c_raiseFPE_FUN_005716d8(int fpe_code)

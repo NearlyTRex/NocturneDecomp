@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(undefined4 param_1,int *param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera *this_ptr,SFog *fog_config)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; SFog *           Stack[0x8]:4   fog_config
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 0050852b

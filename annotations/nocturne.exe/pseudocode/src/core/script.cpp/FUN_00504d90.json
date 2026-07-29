@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 249,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 19,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -154,9 +152,9 @@
         "00504e63"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_script.cpp_FUN_00504d90",
-    "signature": "undefined4 core_script_cpp_FUN_00504d90(CScript *param_1)"
+    "signature": "int __cdecl core_script_cpp_FUN_00504d90(CScript *this_ptr)"
   },
   "function_calls": [
     {
@@ -237,21 +235,19 @@
         "call_addr": "0049e3c8",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.205882352941177,
@@ -283,10 +279,10 @@
     "pcode_op_count": 286
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 20,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -295,136 +291,47 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_script_cpp_FUN_00504d90(CScript *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1->current_message + 0x3fc) < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_script_cpp_FUN_00504d60(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->script_text).data_array = *(char ***)(param_1->current_message + 0x3fc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->script_text).data_array = *(char ***)(param_1->current_message + 0x3fc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while ((*(int *)(0x01C775EC + 0x228) != 0 && (param_1->script_pause_flag == 0))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ppcVar1 = (param_1->script_text).data_array;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(param_1,&local_c);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(uint *)(param_1->xref_entries->name + (int)ppcVar1",
+      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
       "severity": "moderate",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8),",
+      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8),",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(uint *)(param_1->xref_entries->name + (int)ppcVar1",
+      "match": "(uint *)(this_ptr->xref_entries->name + (int)ppcVar1",
       "severity": "moderate",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420);",
+      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420);",
+      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->xref_entries->name + (int)(param_1->script_text).data_array * 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->xref_entries->name + (int)(param_1->script_text).data_array * 8));",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `ppcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
       "match": "(int)ppcVar1",
       "severity": "moderate",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8),",
+      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8),",
       "type": "pointer_truncation"
     },
     {
@@ -432,27 +339,16 @@
       "line": 24,
       "match": "(int)ppcVar1",
       "severity": "moderate",
-      "text": "*(uint *)(param_1->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420);",
+      "text": "*(uint *)(this_ptr->xref_entries->name + (int)ppcVar1 * 8 + 4),&DAT_01e56420)",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "*(uint *)",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

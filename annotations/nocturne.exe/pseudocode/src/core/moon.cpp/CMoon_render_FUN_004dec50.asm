@@ -256,7 +256,7 @@ section .text
     PUSH 0x1ccdc50                      ; 004deeb3 | DAT_01ccdc50
     MOV dword ptr [EAX + 0x15aa88],0x0  ; 004deeb8 | DAT_01fb1d0c
     CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0 ; 004deec2
-        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0()
+        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap * this_ptr)
     MOV EAX,[0x01ccdebc]                ; 004deec7 | DAT_01ccdebc
     ADD ESP,0x4                         ; 004deecc
     SAR EAX,0x10                        ; 004deecf

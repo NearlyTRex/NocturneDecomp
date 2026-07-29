@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(int param_1)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap *this_ptr)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004deec2

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 crt_math_c_math_domain_error_FUN_0056bd22(double param_1,double param_2,byte param_3)
+; double __cdecl crt_math_c_math_domain_error_FUN_0056bd22(double x,double y,uchar error_type)
 ;
+; Parameters:
+; double           Stack[0x4]:8   x
+; double           Stack[0xc]:8   y
+; uchar            Stack[0x14]:1   error_type
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -88,7 +92,7 @@ section .text
     PUSH EDX                            ; 0056bd94
     PUSH EAX                            ; 0056bd95
     CALL crt_math.c_process_math_error_FUN_005706dd ; 0056bd96
-        ;   XREF to: 005706dd (UNCONDITIONAL_CALL)  ; undefined crt_math.c_process_math_error_FUN_005706dd()
+        ;   XREF to: 005706dd (UNCONDITIONAL_CALL)  ; double crt_math.c_process_math_error_FUN_005706dd(int errorFlags, double * value1, double * value2)
     MOV dword ptr [EBP + -0xc],EAX      ; 0056bd9b
     MOV dword ptr [EBP + -0x8],EDX      ; 0056bd9e
     ADD ESP,0xc                         ; 0056bda1

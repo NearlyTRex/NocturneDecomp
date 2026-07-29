@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *param_1,int param_2,int param_3)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *this_ptr,int render_flags,int skip_texture_capture)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_flags
+; int              Stack[0xc]:4   skip_texture_capture
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_FUN_004270e0 at 00427225

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -466,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->triggering_actor = (CDemonActor *)0x0;",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(param_1->hero_triggers_me) {",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).location.position,param_1->test_radius);",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).location.position,param_1->test_radius);",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_a0);",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_a0);",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 51,
+      "line": 49,
       "match": "*(CDemonActor **)(iVar10 + 0x1cae0d8",
       "severity": "moderate",
       "text": "(param_1,*(CDemonActor **)(iVar10 + 0x1cae0d8));",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*(CDemonActor **)(iVar10 + 0x1cae0d8));",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 53,
+      "line": 51,
       "match": "*(CDemonActor **)(iVar10 + 0x1cae0d8",
       "severity": "moderate",
       "text": "pCVar6 = *(CDemonActor **)(iVar10 + 0x1cae0d8);",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->cached_actor == (CDemonActor *)0x0) {",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01CC9450,param_1->actor_name);",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->cached_actor = pCVar6;",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar6 = param_1->cached_actor;",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar2 = (param_1->base).location.position.x - (pCVar6->location).position.x,",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = (param_1->base).location.position.y - (pCVar6->location).position.y,",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = (param_1->base).location.position.z - (pCVar6->location).position.z,",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= param_1->test_radius * param_1->test_radius",
@@ -602,7 +602,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= param_1->test_radius * param_1->test_radius",
@@ -610,7 +610,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": ")) && (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,pCVar6),",
@@ -618,7 +618,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar6 = param_1->cached_actor;",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->triggering_actor = pCVar6;",
@@ -634,7 +634,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).location.position,param_1->test_radius);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).location.position,param_1->test_radius);",
@@ -645,12 +653,12 @@
       "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&(param_1->base).location.position,param_1->test_radius);",
+      "text": "pCVar7 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_b8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_b8);",
@@ -658,15 +666,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar7 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_b8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->base,&CStack_64,&CStack_70);",
@@ -674,7 +674,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->light_min * (float)65536 <= (float)iStack_18) &&",
@@ -682,7 +682,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "((float)iStack_18 <= param_1->light_max * (float)65536)) {",
@@ -690,7 +690,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = param_1->event_flag;",
@@ -698,7 +698,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->event_flag = 0;",
@@ -706,7 +706,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
@@ -714,7 +714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&pCVar1->position,param_1->test_radius)",
@@ -722,7 +722,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (param_1->trigger_size).x;",
@@ -730,7 +730,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = (param_1->trigger_size).y;",
@@ -738,7 +738,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = (param_1->trigger_size).z;",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1->damage_cooldown - param_2;",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
       "text": "param_2 = param_1->damage_cooldown - param_2;",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_1->damage_cooldown - param_2;",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->damage_cooldown = param_2;",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 132,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1->damage_cooldown = param_2;",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < 0.0) {",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->damage_cooldown = 0.0;",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0.0 < param_1->hit_points) {",
@@ -810,7 +810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).location.position,param_1->test_radius);",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).location.position,param_1->test_radius);",
@@ -826,15 +826,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 151,
-      "match": "*(CDemonActor **)(0x01E57284 + local_28 + 0x14cd70",
+      "line": 150,
+      "match": "*(CDemonActor **)(0x01E57284",
       "severity": "moderate",
-      "text": "pCVar6 = *(CDemonActor **)(0x01E57284 + local_28 + 0x14cd70);",
+      "text": "pCVar6 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x14] + local_28 + 4);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(param_1,pCVar6),",
@@ -842,7 +842,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 155,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->triggering_actor = pCVar6;",
@@ -850,7 +850,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = &(param_1->base).location;",
@@ -858,7 +858,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(&pCVar1->position,param_1->test_radius)",
@@ -866,7 +866,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 168,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = param_1->actor_name;",
@@ -874,7 +874,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = param_1->actor_type;",
@@ -883,9 +883,9 @@
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 174,
-      "match": "*(CTrigger **)(0x01E57284 + local_24 + 0x14cd70",
+      "match": "*(CTrigger **)(0x01E57284",
       "severity": "moderate",
-      "text": "actor_ptr = *(CTrigger **)(0x01E57284 + local_24 + 0x14cd70);",
+      "text": "actor_ptr = *(CTrigger **)(0x01E57284->lights[199].filter_names[0x14] + local_24 + 4);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -1034,7 +1034,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 96,
+      "line": 94,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_58[0].x = pCVar8->x;",

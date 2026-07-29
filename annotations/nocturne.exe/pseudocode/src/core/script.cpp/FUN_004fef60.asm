@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * core_script_cpp_FUN_004fef60(CScript *param_1,int *param_2)
+; char * __cdecl core_script_cpp_FUN_004fef60(CScript *this_ptr,int *error_line_out)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   error_line_out
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
@@ -31,7 +34,7 @@ section .text
     PUSH EBX                            ; 004fef6f
     MOV dword ptr [0x01e56418],EDX      ; 004fef70 | DAT_01e56418
     CALL core_script.cpp_FUN_004feff0   ; 004fef76
-        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004feff0()
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004feff0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fef7b
     PUSH 0x1e56c30                      ; 004fef7e
     CALL shape_edittool.cpp_FUN_00476160 ; 004fef83

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(void)
+; void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   test_font
 ; Local Variables:
 ; undefined        Stack[-0xc4]:1  local_c4
 ; undefined        Stack[-0xa4]:1  local_a4
@@ -138,7 +140,7 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0045e451
     PUSH EAX                            ; 0045e455
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 ; 0045e456
-        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0()
+        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045e45b
     PUSH 0x64                           ; 0045e45e
     PUSH 0x32                           ; 0045e460
@@ -359,7 +361,7 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 0045e6b0
     PUSH EAX                            ; 0045e6b4
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 ; 0045e6b5
-        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0()
+        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045e6ba
     PUSH 0x6                            ; 0045e6bd
     PUSH 0x5                            ; 0045e6bf
@@ -396,7 +398,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0045e710
     PUSH EAX                            ; 0045e714
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 ; 0045e715
-        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0()
+        ;   XREF to: 0045bfb0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     MOV EAX,[0x005ae6fc]                ; 0045e71a | DAT_005ae6fc
     ADD ESP,0x14                        ; 0045e71f
     MOV dword ptr [ESP + 0xa8],EAX      ; 0045e722

@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_archiveVector_FUN_0040c450(CVector3f *vector_ptr,cha
   int iVar1;
   
   if (DAT_00763e88 == 1) {
-    iVar1 = _fscanf();
+    iVar1 = _fscanf(DAT_00763e84,"%f,%f,%f");
     if (iVar1 != 3) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("3D vector",property_name);

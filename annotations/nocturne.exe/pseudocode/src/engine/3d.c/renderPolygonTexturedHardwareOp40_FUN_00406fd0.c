@@ -1,14 +1,14 @@
 // Name: engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00406fd0
 // Address: 00406fd0
 // Address Range: [[00406fd0, 0040706c]]
-// Convention: unknown
-// Signature: undefined4 * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(SMRGLHeaderPrimitive *prim)
 
 {
   if (_DAT_01c03948 == 0) {
@@ -29,9 +29,9 @@ uint * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1)
   _DAT_01c039a0 = 1;
   if (DAT_006b0270 != 0) {
     engine_3d_c_rasterizePolygonHardware_FUN_00494260
-              ((SRenderVertex **)(param_1 + 0x18),*(int *)(param_1 + 4));
-    return &DAT_006b0288;
+              ((SRenderVertex **)(prim + 1),(prim->base).count);
+    return (SMRGLHeaderExtended *)&DAT_006b0288;
   }
-  engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),(SRenderVertex **)(param_1 + 0x18));
-  return &DAT_006b0288;
+  engine_clipper_c_FUN_00432cd0((prim->base).count,prim + 1);
+  return (SMRGLHeaderExtended *)&DAT_006b0288;
 }

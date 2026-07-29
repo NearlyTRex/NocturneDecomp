@@ -1,12 +1,12 @@
 // Name: core_xform.cpp_computeOrthogonalityError_FUN_0055bf50
 // Address: 0055bf50
 // Address Range: [[0055bf50, 0055c176]]
-// Convention: unknown
-// Signature: float core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(float *param_1)
+// Convention: __cdecl
+// Signature: float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 
-float core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(float *param_1)
+float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(CMatrix3x4f *matrix)
 
 {
   float fVar1;
@@ -23,15 +23,15 @@ float core_xform_cpp_computeOrthogonalityError_FUN_0055bf50(float *param_1)
   double dStack_60;
   double dStack_58;
   
-  fVar1 = *param_1;
-  fVar2 = param_1[1];
-  fVar3 = param_1[2];
-  dVar9 = (double)param_1[6];
-  fVar4 = param_1[8];
-  fVar5 = param_1[9];
-  dVar7 = (double)param_1[4];
-  fVar6 = param_1[10];
-  dVar8 = (double)param_1[5];
+  fVar1 = matrix->m[0].w;
+  fVar2 = matrix->m[0].x;
+  fVar3 = matrix->m[0].y;
+  dVar9 = (double)matrix->m[1].y;
+  fVar4 = matrix->m[2].w;
+  fVar5 = matrix->m[2].x;
+  dVar7 = (double)matrix->m[1].w;
+  fVar6 = matrix->m[2].y;
+  dVar8 = (double)matrix->m[1].x;
   dStack_60 = SQRT(dVar9 * dVar9 + dVar8 * dVar8 + dVar7 * dVar7);
   dStack_58 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   dStack_68 = (double)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);

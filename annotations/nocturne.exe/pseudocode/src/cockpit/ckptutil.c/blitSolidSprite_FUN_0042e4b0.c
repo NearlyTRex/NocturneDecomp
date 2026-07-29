@@ -1,15 +1,15 @@
 // Name: cockpit_ckptutil.c_blitSolidSprite_FUN_0042e4b0
 // Address: 0042e4b0
 // Address Range: [[0042e4b0, 0042e4e5]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *param_1,void *param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *sprite_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height ,int src_y_param)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *param_1,void *param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+void __cdecl cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *sprite_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height ,int src_y_param)
 
 {
   cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042d900
-            (param_1,param_2,0,param_7,param_3,param_4,param_5,param_6);
+            (sprite_data,(void *)screen_x,0,height,screen_y,src_x,src_y,width);
   return;
 }

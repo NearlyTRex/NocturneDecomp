@@ -24,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440(CDem
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0
-                (this_ptr,primitive_array,render_flags);
+                (this_ptr,&primitive_array->base,render_flags);
       primitive_array = primitive_array + 1;
     } while (iVar1 < primitive_count);
   }

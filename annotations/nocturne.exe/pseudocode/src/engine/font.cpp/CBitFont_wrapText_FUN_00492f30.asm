@@ -199,7 +199,7 @@ section .text
     PUSH ECX                            ; 00493080
     MOV byte ptr [ESI],0x0              ; 00493081
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00493084
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00493089
     MOV DL,byte ptr [ESP + 0xc]         ; 0049308c
     MOV byte ptr [ESI],DL               ; 00493090

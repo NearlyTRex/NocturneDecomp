@@ -30,14 +30,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
   core_inv_cpp_CInventory_initialize_FUN_004bef10(this_ptr);
   _fgets(local_1dc,0xff,file_handle);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&this_ptr->save_version);
+  _fscanf(file_handle,"%d\n");
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&this_ptr->item_count);
+  _fscanf(file_handle,"%d\n");
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&local_14);
+  _fscanf(file_handle,"%d\n");
   if (0 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
-    _fscanf(file_handle,"%f\n",this_ptr);
+    _fscanf(file_handle,"%f\n");
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar7 = 0;
@@ -58,7 +58,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
         piVar8 = piVar8 + (uint)bVar11 * -2 + 1;
         piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
       }
-      _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,&local_78);
+      _fscanf(file_handle," %s \"%[^\"]\"\n");
       if (0x01CC9450->has_inventory_actors == 0) {
         pcVar9 = (char *)&local_78;
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040d540((char *)local_dc);

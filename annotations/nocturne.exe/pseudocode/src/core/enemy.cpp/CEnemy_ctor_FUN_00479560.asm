@@ -26,7 +26,7 @@
 ;   undefined4 s_ne_0057f2be+1
 ;   undefined4 s_e_0057f2be+2
 ;   undefined4 s__0057f2be+3
-;   void* PTR_core_enemy.cpp_CEnemy_setup_FUN_004796b0_0059cdb4 = 004796b0
+;   CEnemy_full_vtable g_CEnemyVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -50,9 +50,9 @@ section .text
     PUSH 0x3f8ccccd                     ; 00479573
     MOV EBX,EAX                         ; 00479578
     PUSH 0x3f666666                     ; 0047957a
-    MOV dword ptr [EAX + 0x14c],0x59cdb4 ; 0047957f | PTR_core_enemy.cpp_CEnemy_setup_FUN_004796b0_0059cdb4
+    MOV dword ptr [EAX + 0x14c],0x59cdb4 ; 0047957f | g_CEnemyVTable
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00479589
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBX + 0xbc90],0x0    ; 0047958e
     MOV dword ptr [EBX + 0xbd14],0x0    ; 00479598
     MOV dword ptr [EBX + 0xbca4],0x0    ; 004795a2

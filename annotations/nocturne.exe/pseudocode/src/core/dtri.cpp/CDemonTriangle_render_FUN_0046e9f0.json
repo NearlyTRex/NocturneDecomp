@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 267,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 21,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 148
+    "total_lines": 141
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "0046eb3b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0",
-    "signature": "void core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(float *param_1)"
+    "signature": "void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(CDemonTriangle *this_ptr)"
   },
   "function_calls": [
     {
@@ -208,9 +207,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -241,10 +240,10 @@
     "pcode_op_count": 558
   },
   "stack_frame": {
-    "frame_size": 120,
+    "frame_size": 124,
     "local_size": 120,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -337,6 +336,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonTriangle *"
       }
     ]
   },
@@ -348,28 +354,28 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
+          "line": 37,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 38,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 39,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
           "line": 42,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 43,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 46,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 49,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         }
@@ -388,163 +394,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(float *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30.x = (int)ROUND(*param_1 * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30.y = (int)ROUND(param_1[1] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30.z = (int)ROUND(param_1[2] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18.x = (int)ROUND(param_1[3] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18.y = (int)ROUND(param_1[4] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18.z = (int)ROUND(param_1[5] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.x = (int)ROUND(param_1[6] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.y = (int)ROUND(param_1[7] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24.z = (int)ROUND(param_1[8] * _DAT_0059c8e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "round((double)param_1[9] * _DAT_0057e4ae);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "round((double)param_1[10] * dVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "round(dVar1 * (double)param_1[0xb]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((double)(param_1[0xc] * (float)65536 * (float)256));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x46ea35 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 19,
-      "match": "0x46ea35",
-      "severity": "moderate",
-      "text": "uStack_84 = 0x46ea35;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x46ea77 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 25,
-      "match": "0x46ea77",
-      "severity": "moderate",
-      "text": "uStack_84 = 0x46ea77;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x46eab9 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 31,
-      "match": "0x46eab9",
-      "severity": "moderate",
-      "text": "uStack_84 = 0x46eab9;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x46eaef assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 38,
-      "match": "0x46eaef",
-      "severity": "moderate",
-      "text": "uStack_84 = 0x46eaef;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x46eb29 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
-      "match": "0x46eb29",
-      "severity": "moderate",
-      "text": "uVar2 = 0x46eb29;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1b4d738 assigned to bare local `piVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `piVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 41,
+      "description": "Raw hex address 0x1b4d738 assigned to bare local `poly`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `poly` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 34,
       "match": "0x1b4d738",
       "severity": "moderate",
-      "text": "piVar3 = 0x01B4D738;",
+      "text": "poly = 0x01B4D738;",
       "type": "raw_address_constant"
     }
   ]

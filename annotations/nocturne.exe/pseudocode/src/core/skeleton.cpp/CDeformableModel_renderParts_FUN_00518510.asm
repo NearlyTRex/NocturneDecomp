@@ -581,7 +581,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 00518c60 | DAT_005ae704
     PUSH EBX                            ; 00518c66 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 00518c67
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV EAX,0x3                         ; 00518c6c
     ADD ESP,0x10                        ; 00518c71
     MOV dword ptr [ESP + 0x8],EAX       ; 00518c74
@@ -599,7 +599,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00518c9a | DAT_005ae704
     PUSH EDX                            ; 00518ca0 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 00518ca1
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00518ca6
     MOV ECX,dword ptr [ESP + 0xec]      ; 00518ca9
     ADD ECX,0x12                        ; 00518cb0

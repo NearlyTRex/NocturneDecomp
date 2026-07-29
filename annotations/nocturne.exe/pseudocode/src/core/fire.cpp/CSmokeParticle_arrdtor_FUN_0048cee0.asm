@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CSmokeParticle_arrdtor_FUN_0048cee0(void)
+; CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_arrdtor_FUN_0048cee0(CSmokeParticle *objs,uint flags)
 ;
+; Parameters:
+; CSmokeParticle * Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSmokeParticleTypeInfo_0059d300

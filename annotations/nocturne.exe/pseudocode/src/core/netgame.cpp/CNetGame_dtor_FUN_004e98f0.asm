@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _SOCKET * core_netgame_cpp_CNetGame_dtor_FUN_004e98f0(int param_1)
+; CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_004e98f0(CNetGame *this_ptr,uint flags)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   support_trisock.cpp_bindSocketWrapper_FUN_00548ee0

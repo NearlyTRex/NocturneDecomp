@@ -1,41 +1,36 @@
 // Name: core_pendulum.cpp_didPhaseCross_FUN_004f3340
 // Address: 004f3340
 // Address Range: [[004f3340, 004f3422]]
-// Convention: unknown
-// Signature: bool core_pendulum_cpp_didPhaseCross_FUN_004f3340(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_pendulum_cpp_didPhaseCross_FUN_004f3340(float threshold,float old_phase,float new_phase)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-bool core_pendulum_cpp_didPhaseCross_FUN_004f3340(void)
+int __cdecl core_pendulum_cpp_didPhaseCross_FUN_004f3340(float threshold,float old_phase,float new_phase)
 
 {
-  float in_stack_00000004;
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  
-  if (in_stack_00000008 < in_stack_00000004 + (float)_DAT_0058d020) {
-    in_stack_00000008 = in_stack_00000008 + 1.0;
+  if (old_phase < threshold + (float)_DAT_0058d020) {
+    old_phase = old_phase + 1.0;
   }
-  if (in_stack_00000004 + (float)_DAT_0058d028 < in_stack_00000008) {
-    in_stack_00000008 = in_stack_00000008 + _DAT_0058d030;
+  if (threshold + (float)_DAT_0058d028 < old_phase) {
+    old_phase = old_phase + _DAT_0058d030;
   }
-  if (in_stack_00000008 <= in_stack_00000004) {
-    if (in_stack_0000000c < in_stack_00000008) {
-      in_stack_0000000c = in_stack_0000000c + 1.0;
+  if (old_phase <= threshold) {
+    if (new_phase < old_phase) {
+      new_phase = new_phase + 1.0;
     }
-    if (in_stack_0000000c < in_stack_00000008) {
-      in_stack_0000000c = in_stack_0000000c + 1.0;
+    if (new_phase < old_phase) {
+      new_phase = new_phase + 1.0;
     }
-    if (in_stack_00000008 + 1.0 < in_stack_0000000c) {
-      in_stack_0000000c = in_stack_0000000c + _DAT_0058d030;
+    if (old_phase + 1.0 < new_phase) {
+      new_phase = new_phase + _DAT_0058d030;
     }
-    if (in_stack_00000008 + 1.0 < in_stack_0000000c) {
-      in_stack_0000000c = in_stack_0000000c + _DAT_0058d030;
+    if (old_phase + 1.0 < new_phase) {
+      new_phase = new_phase + _DAT_0058d030;
     }
-    return in_stack_00000004 < in_stack_0000000c;
+    return (uint)(threshold < new_phase);
   }
-  return false;
+  return 0;
 }

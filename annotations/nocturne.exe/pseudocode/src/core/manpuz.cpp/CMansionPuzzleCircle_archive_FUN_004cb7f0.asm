@@ -100,7 +100,7 @@ section .text
     LEA EAX,[ESI + 0x5d0]               ; 004cb8ab
     PUSH EAX                            ; 004cb8b1
     CALL core_actor.cpp_archiveOrientation_FUN_0040c4f0 ; 004cb8b2
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040c4f0(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb8b7
     PUSH 0x5880f6                       ; 004cb8ba | = "pEmitterPos"
     LEA EAX,[ESI + 0x5dc]               ; 004cb8bf

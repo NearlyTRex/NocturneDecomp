@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_unknown_c_string_getc_FUN_00566af0(int param_1)
+; int __cdecl crt_unknown_c_string_getc_FUN_00566af0(scanf_state_t *state)
 ;
+; Parameters:
+; scanf_state_t *  Stack[0x4]:4   state
 ;
 ; XREF[1]:
 ;   crt_unknown.c_vsscanf_FUN_00566b20 at 00566b46

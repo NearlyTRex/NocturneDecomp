@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 31,
+    "complexity_score": 42,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 72
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -203,7 +203,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
+      "match": "(ios *)((int)stream_obj",
+      "severity": "moderate",
+      "text": "((ios *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
       "match": "(FileEmbeddedData *)((int)stream_obj",
       "severity": "moderate",
       "text": "embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));",

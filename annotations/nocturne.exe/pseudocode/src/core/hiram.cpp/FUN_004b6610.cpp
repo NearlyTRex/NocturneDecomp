@@ -2,33 +2,34 @@
 // Address: 004b6610
 // Address Range: [[004b6610, 004b666a]]
 // Convention: unknown
-// Signature: int core_hiram_cpp_FUN_004b6610(undefined4 param_1)
+// Signature: CNPC * core_hiram_cpp_FUN_004b6610(CNPC *param_1)
 
 #include "nocturne.h"
 
-int core_hiram_cpp_FUN_004b6610(uint param_1)
+CNPC * core_hiram_cpp_FUN_004b6610(CNPC *param_1)
 
 {
   char cVar1;
-  int iVar2;
+  CNPC *pCVar2;
   char *pcVar3;
-  char *pcVar4;
+  CNPC *pCVar4;
   
-  iVar2 = core_npc_cpp_FUN_004ee950(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_hiram_cpp_FUN_004b6750_0059eda4;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"hiram.dfm");
+  pCVar2 = core_npc_cpp_FUN_004ee950(param_1);
+  (pCVar2->base).base.vtable._ub = &g_CHiramVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (&(pCVar2->base).model,"hiram.dfm");
   pcVar3 = "killHiram";
-  pcVar4 = (char *)(iVar2 + 0x1f570);
+  pCVar4 = pCVar2 + 1;
   do {
     cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    (pCVar4->base).base.actor_name[0] = cVar1;
     if (cVar1 == '\0') {
-      return iVar2;
+      return pCVar2;
     }
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    (pCVar4->base).base.actor_name[1] = cVar1;
+    pCVar4 = (CNPC *)((pCVar4->base).base.actor_name + 2);
   } while (cVar1 != '\0');
-  return iVar2;
+  return pCVar2;
 }

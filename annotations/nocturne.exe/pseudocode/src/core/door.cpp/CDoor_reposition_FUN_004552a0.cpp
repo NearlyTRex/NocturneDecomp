@@ -12,13 +12,12 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
   CLocation *pCVar1;
   float fVar2;
   CVector3f *pCVar3;
-  float *pfVar4;
   CBoundingBox3D local_c8;
   float fStack_b0;
   float fStack_ac;
   float fStack_a8;
-  float afStack_a4 [3];
-  byte auStack_98 [12];
+  CVector3f CStack_a4;
+  CVector3f CStack_98;
   CVector3f CStack_8c;
   float fStack_80;
   float fStack_7c;
@@ -29,11 +28,9 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
   CVector3f CStack_50;
   CVector3f CStack_44;
   CVector3f CStack_38;
-  byte auStack_2c [12];
-  uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  float fStack_14;
   
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_c8);
   switch(this_ptr->door_type) {
@@ -73,18 +70,18 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
     break;
   case DOOR_TYPE_SLIDE:
     if (this_ptr->door_side == 1) {
-      afStack_a4[0] = this_ptr->param;
+      CStack_a4.x = this_ptr->param;
     }
     else {
-      afStack_a4[0] = -this_ptr->param;
+      CStack_a4.x = -this_ptr->param;
     }
-    afStack_a4[1] = 0.0;
-    afStack_a4[2] = 0.0;
-    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (&(this_ptr->base).orient_matrix,auStack_2c,afStack_a4);
-    fStack_80 = (this_ptr->orig_pos).x + *pfVar4;
-    fStack_7c = (this_ptr->orig_pos).y + pfVar4[1];
-    fStack_78 = (this_ptr->orig_pos).z + pfVar4[2];
+    CStack_a4.y = 0.0;
+    CStack_a4.z = 0.0;
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (&(this_ptr->base).orient_matrix,&CStack_2c,&CStack_a4);
+    fStack_80 = (this_ptr->orig_pos).x + pCVar3->x;
+    fStack_7c = (this_ptr->orig_pos).y + pCVar3->y;
+    fStack_78 = (this_ptr->orig_pos).z + pCVar3->z;
     (this_ptr->base).location.position.x = fStack_80;
     (this_ptr->base).location.position.y = fStack_7c;
     (this_ptr->base).location.position.z = fStack_78;
@@ -119,19 +116,19 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(CDoor *this_ptr)
   }
 LAB_00455399:
   if (0.0 < this_ptr->swing_range) {
-    uStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                          (-this_ptr->swing_range,this_ptr->swing_range);
-    uStack_1c = 0;
-    uStack_14 = uStack_20;
-    uStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                          (-this_ptr->swing_range,this_ptr->swing_range);
-    uStack_14 = uStack_18;
-    pfVar4 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                (this_ptr,auStack_98,&uStack_20);
+    CStack_20.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                            (-this_ptr->swing_range,this_ptr->swing_range);
+    CStack_20.y = 0.0;
+    fStack_14 = CStack_20.x;
+    CStack_20.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                            (-this_ptr->swing_range,this_ptr->swing_range);
+    fStack_14 = CStack_20.z;
+    pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                       (&this_ptr->base,&CStack_98,&CStack_20);
     pCVar1 = &(this_ptr->base).location;
-    (pCVar1->position).x = *pfVar4 + (pCVar1->position).x;
-    (this_ptr->base).location.position.y = pfVar4[1] + (this_ptr->base).location.position.y;
-    (this_ptr->base).location.position.z = pfVar4[2] + (this_ptr->base).location.position.z;
+    (pCVar1->position).x = pCVar3->x + (pCVar1->position).x;
+    (this_ptr->base).location.position.y = pCVar3->y + (this_ptr->base).location.position.y;
+    (this_ptr->base).location.position.z = pCVar3->z + (this_ptr->base).location.position.z;
     this_ptr->swing_range = 0.0;
     return;
   }

@@ -15,7 +15,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this
   float *pfVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  byte local_a0 [48];
+  CMatrix3x4f local_a0;
   float local_70 [12];
   CMatrix3x4f local_40;
   
@@ -33,11 +33,11 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                      (local_a0,&actor->location,&actor->orient);
+                      (&local_a0,&(actor->location).position,&(actor->orient).vec);
             core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar2->attach_actors[0].actor = actor;
-            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_a0,&local_40);
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_a0,&local_40);
             pfVar4 = local_70;
             pCVar5 = &pCVar2->attach_actors[0].matrix;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

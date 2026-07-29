@@ -11,7 +11,7 @@
 ; XREF[50]:
 ;   core_ammo.cpp_FUN_0040ecf0 at 0040ecf6
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f396
-;   core_anvil.cpp_FUN_0040f7d0 at 0040f7d6
+;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7d6
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 00410046
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 00411806
 ;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411b56
@@ -55,7 +55,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040d2ee
     PUSH EAX                            ; 0040d2f1
     CALL core_actor.cpp_archiveOrientation_FUN_0040c4f0 ; 0040d2f2
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040c4f0(COrientation * orient_ptr, char * property_name)
     MOV EDX,dword ptr [0x005acc88]      ; 0040d2f7 | g_INT_005acc88
     ADD ESP,0x8                         ; 0040d2fd
     CMP EDX,0x7                         ; 0040d300

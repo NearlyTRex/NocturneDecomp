@@ -9,12 +9,12 @@
 void core_stranger_cpp_FUN_00535090(void)
 
 {
-  int iVar1;
+  CStranger *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1fcd8);
-  if (iVar1 == 0) {
+  this_ptr = (CStranger *)FUN_0056497c(0x1fcd8);
+  if (this_ptr == (CStranger *)0x0) {
     return;
   }
-  core_stranger_cpp_FUN_005350c0(iVar1);
+  core_stranger_cpp_FUN_005350c0(this_ptr);
   return;
 }

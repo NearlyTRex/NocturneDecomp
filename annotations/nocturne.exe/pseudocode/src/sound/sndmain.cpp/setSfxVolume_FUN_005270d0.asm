@@ -51,7 +51,7 @@ section .text
     MOV ESI,0x1                         ; 005270f1
     MOV dword ptr [EBX + 0x44],EAX      ; 005270f6
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 ; 005270f9
-        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830()
+        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBX + 0x6c]      ; 005270fe
     ADD ESP,0x8                         ; 00527101
     TEST ECX,ECX                        ; 00527104

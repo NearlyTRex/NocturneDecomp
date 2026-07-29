@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *position,int depth,int red,int green,int fog)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   position
+; int              Stack[0x8]:4   depth
+; int              Stack[0xc]:4   red
+; int              Stack[0x10]:4   green
+; int              Stack[0x14]:4   fog
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

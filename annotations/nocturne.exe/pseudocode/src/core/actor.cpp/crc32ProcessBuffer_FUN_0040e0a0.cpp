@@ -9,12 +9,12 @@
 void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040e0a0(uint *crc_state,byte *buffer,int buffer_length)
 
 {
-  byte bVar1;
+  byte input_byte;
   
   for (; 0 < buffer_length; buffer_length = buffer_length + -1) {
-    bVar1 = *buffer;
+    input_byte = *buffer;
     buffer = buffer + 1;
-    core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(crc_state,bVar1);
+    core_actor_cpp_crc32ProcessByte_FUN_0040dfc0(crc_state,input_byte);
   }
   return;
 }

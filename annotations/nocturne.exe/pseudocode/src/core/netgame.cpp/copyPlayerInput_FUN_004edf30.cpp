@@ -1,29 +1,24 @@
 // Name: core_netgame.cpp_copyPlayerInput_FUN_004edf30
 // Address: 004edf30
 // Address Range: [[004edf30, 004edf78]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_copyPlayerInput_FUN_004edf30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SPlayerInput *src)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_netgame_cpp_copyPlayerInput_FUN_004edf30(void)
+void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SPlayerInput *src)
 
 {
-  uint *in_stack_00000004;
-  uint *in_stack_00000008;
-  
-  *in_stack_00000004 = *in_stack_00000008;
-  in_stack_00000004[1] = in_stack_00000008[1];
-  in_stack_00000004[2] = in_stack_00000008[2];
-  in_stack_00000004[3] = in_stack_00000008[3];
-  in_stack_00000004[4] = in_stack_00000008[4];
-  in_stack_00000004[5] = in_stack_00000008[5];
-  in_stack_00000004[6] = in_stack_00000008[6];
-  in_stack_00000004[7] = in_stack_00000008[7];
-  in_stack_00000004[8] = in_stack_00000008[8];
-  in_stack_00000004[9] = in_stack_00000008[9];
-  in_stack_00000004[10] = in_stack_00000008[10];
+  (dest->action_state).walk = (src->action_state).walk;
+  (dest->action_state).backup = (src->action_state).backup;
+  (dest->action_state).run = (src->action_state).run;
+  (dest->action_state).fire = (src->action_state).fire;
+  (dest->action_state).use_item = (src->action_state).use_item;
+  (dest->action_state).light = (src->action_state).light;
+  (dest->action_state).draw = (src->action_state).draw;
+  (dest->action_state).jump = (src->action_state).jump;
+  dest->strafe_speed = src->strafe_speed;
+  dest->turn_speed = src->turn_speed;
+  dest->look_up_down_speed = src->look_up_down_speed;
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CCharacter *param_1,int param_2)
+; void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CHaystack *this_ptr,int bone_index)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x30]:4  local_30

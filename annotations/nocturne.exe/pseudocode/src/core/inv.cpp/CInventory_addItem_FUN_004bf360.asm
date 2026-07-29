@@ -1413,7 +1413,7 @@ section .text
     MOV ESI,dword ptr [0x014b9904]      ; 004bff05 | DAT_014b9904
     PUSH ESI                            ; 004bff0b
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004bff0c
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004bff11
     MOV dword ptr [ESP + 0x320],EAX     ; 004bff14
     FILD dword ptr [ESP + 0x320]        ; 004bff1b

@@ -205,7 +205,7 @@ section .text
     PUSH EBX                            ; 005098e5
     PUSH ESI                            ; 005098e6
     CALL core_set.cpp_FUN_0050e080      ; 005098e7
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 005098ec
     MOV EAX,dword ptr [EDI + 0x15f300]  ; 005098ef
     PUSH EAX                            ; 005098f5

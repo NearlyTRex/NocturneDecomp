@@ -47,7 +47,7 @@ section .text
     ADD EAX,0x1c684e0                   ; 0048c6de
     PUSH EAX                            ; 0048c6e3
     CALL core_fire.cpp_CShell_setup_FUN_00489640 ; 0048c6e4
-        ;   XREF to: 00489640 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CShell_setup_FUN_00489640()
+        ;   XREF to: 00489640 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CShell_setup_FUN_00489640(CShell * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
     MOV EDI,dword ptr [0x01c684dc]      ; 0048c6e9 | DAT_01c684dc
     INC EDI                             ; 0048c6ef
     ADD ESP,0x14                        ; 0048c6f0

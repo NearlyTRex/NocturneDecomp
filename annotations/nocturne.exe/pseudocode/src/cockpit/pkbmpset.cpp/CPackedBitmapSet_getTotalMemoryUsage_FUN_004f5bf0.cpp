@@ -1,12 +1,12 @@
 // Name: cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0
 // Address: 004f5bf0
 // Address Range: [[004f5bf0, 004f5c30]]
-// Convention: unknown
-// Signature: int cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(int *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(CPackedBitmapSet *this_ptr)
 
 #include "nocturne.h"
 
-int cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(int *param_1)
+int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(CPackedBitmapSet *this_ptr)
 
 {
   int iVar1;
@@ -15,16 +15,16 @@ int cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(int *
   int iVar4;
   
   iVar2 = 0;
-  iVar4 = *param_1 * 0x24;
-  if (0 < *param_1) {
+  iVar4 = this_ptr->bitmap_count * 0x24;
+  if (0 < this_ptr->bitmap_count) {
     iVar3 = 0;
     do {
       iVar2 = iVar2 + 1;
       iVar1 = cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0
-                        (param_1[1] + iVar3);
+                        ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar3));
       iVar3 = iVar3 + 0x24;
       iVar4 = iVar4 + iVar1;
-    } while (iVar2 < *param_1);
+    } while (iVar2 < this_ptr->bitmap_count);
   }
   return iVar4;
 }

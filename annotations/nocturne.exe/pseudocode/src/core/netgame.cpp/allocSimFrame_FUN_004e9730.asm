@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_netgame_cpp_allocSimFrame_FUN_004e9730(int param_1)
+; SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_004e9730(int sequence_number)
 ;
+; Parameters:
+; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058ba54

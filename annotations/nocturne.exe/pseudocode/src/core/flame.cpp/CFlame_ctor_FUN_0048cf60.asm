@@ -16,7 +16,7 @@
 ;   core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920 at 0054f944
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_flame.cpp_CFlame_setup_FUN_0048d050_0059d584 = 0048d050
+;   CDemonActor_vtable g_CFlameVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -32,9 +32,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048cf64
     PUSH EDX                            ; 0048cf68
     CALL core_actor.cpp_FUN_00409d30    ; 0048cf69
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048cf6e
-    MOV dword ptr [EAX + 0x14c],0x59d584 ; 0048cf71 | PTR_core_flame.cpp_CFlame_setup_FUN_0048d050_0059d584
+    MOV dword ptr [EAX + 0x14c],0x59d584 ; 0048cf71 | g_CFlameVTable
     MOV EBX,EAX                         ; 0048cf7b
     MOV dword ptr [EAX + 0x150],0x3f800000 ; 0048cf7d
     PUSH 0x41000000                     ; 0048cf87
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 0048cf96
     MOV dword ptr [EAX + 0x158],0x3f800000 ; 0048cf98
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048cfa2
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBX + 0x1a0],0x0     ; 0048cfa7
     MOV dword ptr [EBX + 0x1a4],0x3f800000 ; 0048cfb1
     MOV dword ptr [EBX + 0x288],0x1     ; 0048cfbb

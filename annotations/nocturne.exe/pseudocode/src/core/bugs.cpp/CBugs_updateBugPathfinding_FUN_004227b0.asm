@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(undefined4 param_1,int *param_2,float param_3,float *param_4)
+; int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_004227b0(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; SBug *           Stack[0x8]:4   bug_data
+; float            Stack[0xc]:4   delta_time
+; CVector3f *      Stack[0x10]:4   dest_vertex
 ; Local Variables:
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x90]:4  local_90
@@ -107,7 +112,7 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 00422827
     PUSH ECX                            ; 0042282a
     CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00 ; 0042282b
-        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00()
+        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0x88],EAX      ; 00422830
     FLD float ptr [ESP + 0x88]          ; 00422837
     ADD ESP,0xc                         ; 0042283e
@@ -133,7 +138,7 @@ section .text
     FSTP float ptr [ESP + 0x7c]         ; 0042287f
     PUSH dword ptr [ESP + 0x7c]         ; 00422883
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00422887
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x84],EAX      ; 0042288c
     FLD float ptr [ESP + 0x84]          ; 00422893
     ADD ESP,0x8                         ; 0042289a
@@ -141,7 +146,7 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 004228a1
     FSTP float ptr [EBX + 0x20]         ; 004228a5
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004228a8
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x84],EAX      ; 004228ad
     FLD float ptr [ESP + 0x84]          ; 004228b4
     ADD ESP,0x8                         ; 004228bb
@@ -151,7 +156,7 @@ section .text
     PUSH dword ptr [EBX + 0x20]         ; 004228c7
     PUSH ECX                            ; 004228ca
     CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00 ; 004228cb
-        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00()
+        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0x88],EAX      ; 004228d0
     MOV EAX,dword ptr [ESP + 0x88]      ; 004228d7
     MOV dword ptr [EBX + 0x24],EAX      ; 004228de
@@ -193,7 +198,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00422944
     PUSH EAX                            ; 00422948
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00422949
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0042294e
     FLD float ptr [ESP]                 ; 00422951
     FLDZ                                ; 00422954
@@ -242,7 +247,7 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 004229da
     PUSH EDI                            ; 004229de
     CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00 ; 004229df
-        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00()
+        ;   XREF to: 00421f00 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0x88],EAX      ; 004229e4
     FLD float ptr [ESP + 0x88]          ; 004229eb
     ADD ESP,0xc                         ; 004229f2
@@ -282,14 +287,14 @@ section .text
     PUSH dword ptr [ESP + 0x38]         ; 00422a57
     FSTP float ptr [ESP + 0x40]         ; 00422a5b
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00422a5f
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x80],EAX      ; 00422a64
     FLD float ptr [ESP + 0x80]          ; 00422a6b
     ADD ESP,0x4                         ; 00422a72
     PUSH dword ptr [ESP + 0x34]         ; 00422a75
     FSTP float ptr [ESP + 0x70]         ; 00422a79
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00422a7d
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x80],EAX      ; 00422a82
     FLD float ptr [ESP + 0x80]          ; 00422a89
     ADD ESP,0x4                         ; 00422a90
@@ -345,7 +350,7 @@ section .text
     SUB ESP,0x4                         ; 00422b17
     FSTP float ptr [ESP]                ; 00422b1a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00422b1d
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x80],EAX      ; 00422b22
     FLD float ptr [EBX + 0x14]          ; 00422b29
     FLD float ptr [ESP + 0x80]          ; 00422b2c
@@ -358,7 +363,7 @@ section .text
     FSTP float ptr [EBX + 0x18]         ; 00422b48
     FSTP float ptr [ESP]                ; 00422b4b
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 00422b4e
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x80],EAX      ; 00422b53
     FLD float ptr [ESP + 0x80]          ; 00422b5a
     XOR EAX,EAX                         ; 00422b61

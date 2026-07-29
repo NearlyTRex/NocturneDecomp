@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cloth_cpp_CClothList_applyRotation_FUN_00438620(int *param_1,undefined4 param_2)
+; void __cdecl core_cloth_cpp_CClothList_applyRotation_FUN_00438620(CClothList *this_ptr,CVector3f *euler)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   euler
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_applyRotation_FUN_00438780
@@ -31,7 +34,7 @@ section .text
     ADD ESI,0x4                         ; 0043863e
     INC EBX                             ; 00438641
     CALL core_cloth.cpp_CCloth_applyRotation_FUN_00438780 ; 00438642
-        ;   XREF to: 00438780 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_applyRotation_FUN_00438780()
+        ;   XREF to: 00438780 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_applyRotation_FUN_00438780(CCloth * this_ptr, CVector3f * euler)
     MOV EAX,dword ptr [EDI]             ; 00438647
     ADD ESP,0x8                         ; 00438649
     CMP EBX,EAX                         ; 0043864c

@@ -11,31 +11,26 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float
 {
   float local_38;
   float local_34;
-  float local_30;
-  float local_2c;
-  float local_24;
-  float local_20;
-  float local_1c;
+  CVector3f local_30;
+  CVector3f local_24;
   float local_18;
   float local_14;
   float local_10;
   float local_c;
   
-  local_24 = *param_2 - (param_1->location).position.x;
-  local_20 = param_2[1] - (param_1->location).position.y;
-  local_1c = param_2[2] - (param_1->location).position.z;
+  local_24.x = *param_2 - (param_1->location).position.x;
+  local_24.y = param_2[1] - (param_1->location).position.y;
+  local_24.z = param_2[2] - (param_1->location).position.z;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_30,&local_24);
-  if (local_30 < -0.5235988f) {
-    local_30 = -0.5235988f;
+  if (local_30.x < -0.5235988f) {
+    local_30.x = -0.5235988f;
   }
-  if (1.22173f < local_30) {
-    local_30 = 1.22173f;
+  if (1.22173f < local_30.x) {
+    local_30.x = 1.22173f;
   }
-  local_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                              (local_2c - (param_1->orient).vec.y);
+  local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.y - (param_1->orient).vec.y);
   local_c = local_34;
-  local_c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                             (local_30 - (param_1->orient).vec.x);
+  local_c = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.x - (param_1->orient).vec.x);
   local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;
   local_18 = -local_10;
   if (local_34 < local_18) {

@@ -1,19 +1,19 @@
 // Name: engine_drender.cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50
 // Address: 00461d50
 // Address Range: [[00461d50, 00461d7a]]
-// Convention: unknown
-// Signature: undefined4 engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50(int *param_1,int *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50(SFace **face_ptr_a,SFace **face_ptr_b)
 
 #include "nocturne.h"
 
-uint engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50(int *param_1,int *param_2)
+int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_00461d50(SFace **face_ptr_a,SFace **face_ptr_b)
 
 {
-  if (*(int *)(*param_2 + 8) < *(int *)(*param_1 + 8)) {
+  if ((*face_ptr_b)->depth < (*face_ptr_a)->depth) {
     return 1;
   }
-  if (*(int *)(*param_1 + 8) < *(int *)(*param_2 + 8)) {
-    return 0xffffffff;
+  if ((*face_ptr_a)->depth < (*face_ptr_b)->depth) {
+    return -1;
   }
   return 0;
 }

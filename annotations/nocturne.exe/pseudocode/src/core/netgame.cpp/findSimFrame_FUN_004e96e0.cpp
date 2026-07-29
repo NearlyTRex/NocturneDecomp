@@ -1,26 +1,24 @@
 // Name: core_netgame.cpp_findSimFrame_FUN_004e96e0
 // Address: 004e96e0
 // Address Range: [[004e96e0, 004e9722]]
-// Convention: unknown
-// Signature: int core_netgame_cpp_findSimFrame_FUN_004e96e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_netgame_cpp_findSimFrame_FUN_004e96e0(int sequence_number)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-int core_netgame_cpp_findSimFrame_FUN_004e96e0(void)
+int __cdecl core_netgame_cpp_findSimFrame_FUN_004e96e0(int sequence_number)
 
 {
   int iVar1;
   int iVar2;
-  int in_stack_00000004;
   
   iVar2 = 0;
   if (0 < _DAT_01d09c00) {
     iVar1 = 0;
     do {
-      if (in_stack_00000004 == *(int *)(iVar1 + 0x1d09c04)) {
+      if (sequence_number == *(int *)(iVar1 + 0x1d09c04)) {
         return iVar2;
       }
       iVar1 = iVar1 + 100;

@@ -1,14 +1,14 @@
 // Name: core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930
 // Address: 0052c930
 // Address Range: [[0052c930, 0052c9c5]]
-// Convention: unknown
-// Signature: void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcard_pattern)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *param_1)
+void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcard_pattern)
 
 {
   char cVar1;
@@ -26,7 +26,7 @@ void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *param_1)
   do {
     iVar4 = 0;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,index);
-    iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(param_1,pcVar2,iVar4);
+    iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar2,iVar4);
     if (iVar4 != 0) {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080((CStrList *)&DAT_02dc9610,index)
       ;

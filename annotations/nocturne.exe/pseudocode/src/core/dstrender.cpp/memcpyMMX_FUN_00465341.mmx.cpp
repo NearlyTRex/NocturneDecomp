@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_memcpyMMX_FUN_00465341
 // Address: 00465341
 // Address Range: [[00465341, 00465381]]
-// Convention: unknown
-// Signature: undefined4 core_dstrender_cpp_memcpyMMX_FUN_00465341(uint param_1,uint param_2,uint param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00465341(void *dest,void *src,int byte_count)
 
 #include "nocturne.h"
 
-uint core_dstrender_cpp_memcpyMMX_FUN_00465341(uint param_1,uint param_2,uint param_3)
+void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00465341(void *dest,void *src,int byte_count)
 {
 __asm {
         push EAX

@@ -13,7 +13,7 @@ CDemonLight * __cdecl CDemonLight::ctor(CDemonLight *this_ptr,int shadow_map_wid
 
 // Original: core_dlight.cpp_FUN_0044e1c0
 // Address: 0044e1c0
-void FUN_0044e1c0(undefined4 param_1);
+void FUN_0044e1c0(CDemonLight *param_1);
 
 // Original: core_dlight.cpp_CDemonLight_init_FUN_0044e1e0
 // Address: 0044e1e0
@@ -21,7 +21,7 @@ void __cdecl CDemonLight::init(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_FUN_0044e2c0
 // Address: 0044e2c0
-void FUN_0044e2c0(int param_1);
+void __cdecl FUN_0044e2c0(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_0044e340
 // Address: 0044e340
@@ -37,7 +37,7 @@ void __cdecl CDemonLight::allocMasterZBuffer(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440
 // Address: 0044e440
-void CDemonLight::freeMasterZBuffer(int param_1);
+void __cdecl CDemonLight::freeMasterZBuffer(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_beginScene_FUN_0044e470
 // Address: 0044e470
@@ -61,7 +61,7 @@ void __cdecl CDemonLight::endBackgroundScene(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970
 // Address: 0044e970
-void CDemonLight::restoreDirtyRegions(CDemonLight *param_1);
+void __cdecl CDemonLight::restoreDirtyRegions(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60
 // Address: 0044ec60
@@ -73,7 +73,7 @@ void FUN_0044ed50(int param_1,int param_2,int param_3);
 
 // Original: core_dlight.cpp_FUN_0044ed80
 // Address: 0044ed80
-void FUN_0044ed80(int param_1,int param_2,int param_3,int param_4);
+void FUN_0044ed80(char *param_1,int param_2,int param_3,int param_4);
 
 // Original: core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0
 // Address: 0044efb0
@@ -81,7 +81,7 @@ void __cdecl CDemonLight::clearCircularShadowMapEdges(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_FUN_0044f0b0
 // Address: 0044f0b0
-void FUN_0044f0b0(CDemonLight *param_1);
+void __cdecl FUN_0044f0b0(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 // Address: 0044f430

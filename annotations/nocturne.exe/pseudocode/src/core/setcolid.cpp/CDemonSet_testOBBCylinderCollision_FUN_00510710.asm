@@ -82,7 +82,7 @@ section .text
     PUSH EAX                            ; 00510763
     PUSH EBP                            ; 00510764
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00510765
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [EAX]                 ; 0051076a
     FADD float ptr [EDI]                ; 0051076c
     ADD ESP,0xc                         ; 0051076e

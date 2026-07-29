@@ -17,9 +17,8 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00479560(CEnemy *this_ptr)
   char *pcVar6;
   
   pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00423f40(&this_ptr->base);
-  (pCVar2->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_enemy_cpp_CEnemy_setup_FUN_004796b0_0059cdb4;
-  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f8ccccd);
+  (pCVar2->base).base.vtable._ub = &g_CEnemyVTable._ub;
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.9,1.1);
   pCVar2->pool_me = 0;
   pCVar2->special_form_flag = 0;
   pCVar2->victim = (CCharacter *)0x0;

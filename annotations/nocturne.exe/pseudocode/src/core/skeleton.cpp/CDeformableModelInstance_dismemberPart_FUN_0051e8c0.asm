@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(CDeformableModelInstance *param_1,CBodyPart *param_2,int param_3)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CBodyPart *      Stack[0x8]:4   body_part
+; int              Stack[0xc]:4   part_index
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00427f0c

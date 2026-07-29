@@ -795,7 +795,7 @@ section .text
     MOV EDI,ESP                         ; 004e8e93
     MOVSD.REP ES:EDI,ESI                ; 004e8e95
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0 ; 004e8e97
-        ;   XREF to: 004e77d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0()
+        ;   XREF to: 004e77d0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 004e8e9c
     MOV ESI,EAX                         ; 004e8e9f
     TEST EAX,EAX                        ; 004e8ea1
@@ -874,7 +874,7 @@ section .text
     MOV EDI,ESP                         ; 004e8f5c
     MOVSD.REP ES:EDI,ESI                ; 004e8f5e
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0 ; 004e8f60
-        ;   XREF to: 004e77d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0()
+        ;   XREF to: 004e77d0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 004e8f65
     MOV EDX,dword ptr [EBP + 0x14]      ; 004e8f68
     MOV EDI,dword ptr [EDX + 0x534c]    ; 004e8f6b
@@ -1239,7 +1239,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004e946c
     PUSH EDX                            ; 004e946f
     CALL sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000 ; 004e9470
-        ;   XREF to: 004e5000 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000()
+        ;   XREF to: 004e5000 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * side_info, int channel, ...)
     JMP 0x004e9098                      ; 004e9475
         ;   XREF to: 004e9098 (UNCONDITIONAL_JUMP)  ; LAB_004e9098
     CMP EDI,0x2                         ; 004e947a

@@ -17,7 +17,6 @@ int __cdecl core_menu_cpp_FUN_004d23d0(void)
   CAlphaBitmap *this_ptr;
   int iVar6;
   char *pcVar7;
-  uint uVar8;
   int local_c;
   int local_8;
   
@@ -121,16 +120,16 @@ int __cdecl core_menu_cpp_FUN_004d23d0(void)
          (iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar4 == 0)) {
         iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
         if (iVar4 == 0) {
-          uVar8 = 0;
+          iVar4 = 0;
         }
         else {
-          uVar8 = 1;
+          iVar4 = 1;
         }
       }
       else {
-        uVar8 = 2;
+        iVar4 = 2;
       }
-      core_game_cpp_FUN_004a4b50(0x01C775EC,uVar8);
+      core_game_cpp_FUN_004a4b50(0x01C775EC,iVar4);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)0x1cc5780);
@@ -141,7 +140,7 @@ int __cdecl core_menu_cpp_FUN_004d23d0(void)
     case 2:
       core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)0x1cc5780);
       core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
-      core_game_cpp_FUN_004a4170(0x01C775EC,0,1);
+      core_game_cpp_FUN_004a4170(0x01C775EC,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)0x1cc5780);

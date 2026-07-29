@@ -34,48 +34,39 @@ void engine_matrix_c_FUN_004cdfa0(int param_1,uint param_2,int param_3)
   float10 fVar20;
   double dVar21;
   double dVar22;
-  uint uVar23;
-  uint uVar24;
-  uint uVar25;
   int local_4c;
   int local_48;
   int local_44;
   
-  iVar9 = _DAT_01cc5174;
+  iVar4 = _DAT_01cc5174;
   *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = _DAT_01c039b8;
-  *(int *)(iVar9 * 4 + 0x1cc5308) = _DAT_01c039bc;
-  *(int *)(iVar9 * 4 + 0x1cc5330) = _DAT_01c039c0;
-  *(int *)(iVar9 * 4 + 0x1cc5358) = _DAT_01c039dc;
-  *(int *)(iVar9 * 4 + 0x1cc5380) = _DAT_01c039e0;
-  *(int *)(iVar9 * 4 + 0x1cc53a8) = _DAT_01c039e4;
-  *(int *)(iVar9 * 4 + 0x1cc5178) = _DAT_01c039e8;
-  *(int *)(iVar9 * 4 + 0x1cc51a0) = _DAT_01c039ec;
-  *(int *)(iVar9 * 4 + 0x1cc51c8) = _DAT_01c039f0;
-  *(int *)(iVar9 * 4 + 0x1cc51f0) = _DAT_01c039f4;
-  *(int *)(iVar9 * 4 + 0x1cc5218) = _DAT_01c039f8;
-  *(int *)(iVar9 * 4 + 0x1cc5240) = _DAT_01c039fc;
-  *(int *)(iVar9 * 4 + 0x1cc5268) = _DAT_01c03a00;
-  *(int *)(iVar9 * 4 + 0x1cc5290) = _DAT_01c03a04;
+  *(int *)(iVar4 * 4 + 0x1cc5308) = _DAT_01c039bc;
+  *(int *)(iVar4 * 4 + 0x1cc5330) = _DAT_01c039c0;
+  *(int *)(iVar4 * 4 + 0x1cc5358) = _DAT_01c039dc;
+  *(int *)(iVar4 * 4 + 0x1cc5380) = _DAT_01c039e0;
+  *(int *)(iVar4 * 4 + 0x1cc53a8) = _DAT_01c039e4;
+  *(int *)(iVar4 * 4 + 0x1cc5178) = _DAT_01c039e8;
+  *(int *)(iVar4 * 4 + 0x1cc51a0) = _DAT_01c039ec;
+  *(int *)(iVar4 * 4 + 0x1cc51c8) = _DAT_01c039f0;
+  *(int *)(iVar4 * 4 + 0x1cc51f0) = _DAT_01c039f4;
+  *(int *)(iVar4 * 4 + 0x1cc5218) = _DAT_01c039f8;
+  *(int *)(iVar4 * 4 + 0x1cc5240) = _DAT_01c039fc;
+  *(int *)(iVar4 * 4 + 0x1cc5268) = _DAT_01c03a00;
+  *(int *)(iVar4 * 4 + 0x1cc5290) = _DAT_01c03a04;
   x = (float10)param_3;
-  *(int *)(iVar9 * 4 + 0x1cc52b8) = _DAT_01c03a08;
+  *(int *)(iVar4 * 4 + 0x1cc52b8) = _DAT_01c03a08;
   atan2((float10)param_1,x);
-  uVar25 = 0x4ce0a6;
   fVar18 = atan2((float10)param_1,x);
   fVar19 = (float10)_DAT_005882b3;
   fVar20 = (float10)_DAT_005882bb;
-  uVar24 = 0x4ce0d1;
   dVar21 = round((double)(-fVar18 * fVar19 * fVar20));
-  uVar23 = 0x4ce0de;
-  iVar4 = (int)ROUND(dVar21);
   dVar22 = round((double)(x * fVar19 * fVar20));
-  iVar9 = (int)ROUND(dVar22);
-  iVar4 = engine_matrix_c_interpolatedSin_FUN_004cca60
-                    ((int)ROUND(dVar21),uVar23,uVar24,uVar25,iVar4,iVar9);
-  iVar5 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(uVar25);
+  iVar4 = engine_matrix_c_interpolatedSin_FUN_004cca60((int)ROUND(dVar21));
+  iVar5 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(0x4ce0a6);
   iVar6 = engine_matrix_c_interpolatedSin_FUN_004cca60(0);
   iVar7 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(0);
-  iVar8 = engine_matrix_c_interpolatedSin_FUN_004cca60(iVar9);
-  iVar9 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(iVar9);
+  iVar8 = engine_matrix_c_interpolatedSin_FUN_004cca60((int)ROUND(dVar22));
+  iVar9 = engine_matrix_c_interpolatedCos_FUN_004ccaa0((int)ROUND(dVar22));
   lVar1 = (longlong)
           (int)((uint)((longlong)iVar6 * (longlong)iVar4) >> 0x10 |
                (int)((ulonglong)((longlong)iVar6 * (longlong)iVar4) >> 0x20) << 0x10) *

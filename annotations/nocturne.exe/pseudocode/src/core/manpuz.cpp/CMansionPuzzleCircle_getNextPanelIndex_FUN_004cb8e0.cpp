@@ -1,17 +1,19 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0
 // Address: 004cb8e0
 // Address Range: [[004cb8e0, 004cb8ec]]
-// Convention: unknown
-// Signature: int core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 #include "nocturne.h"
 
-int core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(uint param_1,int param_2)
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
-  param_2 = param_2 + 1;
-  if (0xb < param_2) {
-    param_2 = 0;
+  int iVar1;
+  
+  iVar1 = panel_index + 1;
+  if (0xb < iVar1) {
+    iVar1 = 0;
   }
-  return param_2;
+  return iVar1;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_004c85f0(void)
+; void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
 ;
+; Parameters:
+; int              Stack[0x4]:4   argc
+; char * *         Stack[0x8]:4   argv
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_FUN_00559260 at 005594de
@@ -110,7 +113,7 @@ section .text
     CALL xxx_unk.c_FUN_0048ee80         ; 004c86b6
         ;   XREF to: 0048ee80 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_0048ee80()
     CALL core_inivar.cpp_FUN_004bdb80   ; 004c86bb
-        ;   XREF to: 004bdb80 (UNCONDITIONAL_CALL)  ; undefined core_inivar.cpp_FUN_004bdb80()
+        ;   XREF to: 004bdb80 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_FUN_004bdb80()
     MOV EDI,dword ptr [0x005be1cc]      ; 004c86c0 | DAT_005be1cc
     MOV ESI,0x2                         ; 004c86c6
     PUSH EDI                            ; 004c86cb
@@ -176,7 +179,7 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c878c
     CALL core_dfont.cpp_FUN_0044c560    ; 004c878f
-        ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; undefined core_dfont.cpp_FUN_0044c560()
+        ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044c560()
         ;   Label: LAB_004c878f
     CMP dword ptr [0x02de20a8],0x3c00000 ; 004c8794 | DAT_02de20a8
     JGE 0x004c8a11                      ; 004c879e
@@ -671,7 +674,7 @@ section .text
         ;   Label: LAB_004c8ba8
     PUSH 0x587e10                       ; 004c8bad | = "video"
     CALL wincore_winvideo.cpp_FUN_0055a510 ; 004c8bb2
-        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_FUN_0055a510()
+        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; int wincore_winvideo.cpp_FUN_0055a510(char * directory_path, char * movie_filename)
     ADD ESP,0x8                         ; 004c8bb7
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004c8bba
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
@@ -702,7 +705,7 @@ section .text
     MOV EAX,[0x014b9900]                ; 004c8bf7 | DAT_014b9900
     PUSH EAX                            ; 004c8bfc
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8bfd
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004c8c02
     PUSH 0x58                           ; 004c8c05
     MOV EDX,dword ptr [0x014b9900]      ; 004c8c07 | DAT_014b9900

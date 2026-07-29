@@ -11,16 +11,16 @@
 int __cdecl sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(uint sfx_handle,float base_frequency)
 
 {
-  int iVar1;
+  CSfxSlot *this_ptr;
   
-  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
-  if (iVar1 == 0) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(float *)(iVar1 + 0x48) = base_frequency;
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(iVar1,0);
-  if ((*(int *)(iVar1 + 0x6c) != 0) && (_DAT_02dc8318 != (int *)0x0)) {
-    (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,iVar1,0x10);
+  (this_ptr->options).base_frequency = base_frequency;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr,0.0);
+  if (((this_ptr->options).dead != 0) && (_DAT_02dc8318 != (int *)0x0)) {
+    (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,0x10);
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();
   return 1;

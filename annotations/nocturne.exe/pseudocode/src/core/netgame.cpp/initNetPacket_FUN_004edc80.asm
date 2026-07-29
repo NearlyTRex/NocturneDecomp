@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_initNetPacket_FUN_004edc80(void)
+; void __cdecl core_netgame_cpp_initNetPacket_FUN_004edc80(SNetPacketHeader *packet,int packet_size,uchar packet_type)
 ;
+; Parameters:
+; SNetPacketHeader * Stack[0x4]:4   packet
+; int              Stack[0x8]:4   packet_size
+; uchar            Stack[0xc]:1   packet_type
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0045fe40(CDemonRenderer *param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0045fe40(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

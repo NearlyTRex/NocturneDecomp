@@ -89,7 +89,7 @@ uint __cdecl CDoor::onLocked(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_00456690
 // Address: 00456690
-undefined4 FUN_00456690(void);
+CRuleList * FUN_00456690(void);
 
 // Original: core_door.cpp_FUN_004566b0
 // Address: 004566b0

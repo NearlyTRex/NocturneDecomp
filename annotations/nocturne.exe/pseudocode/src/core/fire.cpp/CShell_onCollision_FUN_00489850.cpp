@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_CShell_onCollision_FUN_00489850
 // Address: 00489850
 // Address Range: [[00489850, 00489973]]
-// Convention: unknown
-// Signature: undefined4 core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_fire_cpp_CShell_onCollision_FUN_00489850(CShell *this_ptr,CVector3f *collision_normal)
 
 #include "nocturne.h"
 
-uint core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
+int __cdecl core_fire_cpp_CShell_onCollision_FUN_00489850(CShell *this_ptr,CVector3f *collision_normal)
 
 {
   float fVar1;
@@ -16,15 +16,16 @@ uint core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
   int iVar5;
   float local_18;
   
-  local_18 = (float)(4 - (int)param_1[6].z) * (float)0.25;
+  local_18 = (float)(4 - this_ptr->bounce_count) * (float)0.25;
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }
-  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0c90fdb,0x40c90fdb);
-  param_1[5].z = fVar1 * local_18;
-  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-  param_1[6].x = fVar1 * local_18;
-  if (param_1[6].z == 0.0) {
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-6.2831855,6.2831855);
+  (this_ptr->angular_velocity).x = fVar1 * local_18;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-3.1415927,3.1415927);
+  iVar4 = this_ptr->bounce_count;
+  (this_ptr->angular_velocity).y = fVar1 * local_18;
+  if (iVar4 == 0) {
     iVar5 = 0;
     iVar4 = 0;
     do {
@@ -34,21 +35,22 @@ uint core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
       iVar5 = iVar5 + 1;
     } while (iVar4 < 0xc);
     if (iVar5 != 3) {
-      iVar4 = _stricmp((char *)param_1[7].x,"shell.kfm");
+      iVar4 = _stricmp
+                        (this_ptr->model_ptr->model_filename,"shell.kfm");
       if (iVar4 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
-                          (0x02DC9450,0x01C08D04,"sh-sh?c @ .15",param_1);
+                          (0x02DC9450,0x01C08D04,"sh-sh?c @ .15",(CVector3f *)this_ptr);
         *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
-        param_1[6].z = (float)((int)param_1[6].z + 1);
+        this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
-                        (0x02DC9450,0x01C08D04,"44-sh?c @ .2",param_1);
+                        (0x02DC9450,0x01C08D04,"44-sh?c @ .2",(CVector3f *)this_ptr);
       *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
-      param_1[6].z = (float)((int)param_1[6].z + 1);
+      this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;
     }
   }
-  param_1[6].z = (float)((int)param_1[6].z + 1);
+  this_ptr->bounce_count = this_ptr->bounce_count + 1;
   return 0;
 }

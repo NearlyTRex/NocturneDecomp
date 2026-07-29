@@ -13,7 +13,7 @@
 ;   TerminatedCString s_gabriela_dfm_00581e4a
 ;   TerminatedCString s_gabgun_kfm_00581e57
 ;   float FLOAT_0059dcdc = 10
-;   undefined1* PTR_core_gabriela.cpp_CGabriella_setup_FUN_004957c0_0059dcf4 = 004957c0
+;   CHero_full_vtable g_CGabriellaVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
@@ -32,14 +32,14 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 004956a4
     PUSH EBX                            ; 004956a7
     CALL core_hero.cpp_FUN_004b46d0     ; 004956a8
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004956ad
     ADD EAX,0x1fa7c                     ; 004956b0
     PUSH EAX                            ; 004956b5
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 004956b6
         ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffe0584]          ; 004956bb
-    MOV dword ptr [EBX + 0x14c],0x59dcf4 ; 004956c1 | PTR_core_gabriela.cpp_CGabriella_setup_FUN_004957c0_0059dcf4
+    MOV dword ptr [EBX + 0x14c],0x59dcf4 ; 004956c1 | g_CGabriellaVTable
     MOV dword ptr [EBX + 0x1fa3c],0x0   ; 004956cb
     MOV dword ptr [EBX + 0x1fa40],0x0   ; 004956d5
     MOV dword ptr [EBX + 0x1fa44],0x0   ; 004956df
@@ -66,7 +66,7 @@ section .text
     FSTP float ptr [EBX + 0x1fa70]      ; 00495780
     FSTP float ptr [EBX + 0x1fa68]      ; 00495786
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0049578c
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1f5a0]             ; 00495791
     ADD ESP,0x8                         ; 00495797
     MOV EAX,dword ptr [EAX + 0x330]     ; 0049579a

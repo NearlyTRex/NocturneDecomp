@@ -1,17 +1,16 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0
 // Address: 0045d2d0
 // Address Range: [[0045d2d0, 0045d30d]]
-// Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(int param_1,int param_2,int param_3,CPackedBitmap *param_4)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(int param_1,int param_2,int param_3,CPackedBitmap *param_4)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
 
 {
   cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_004f4410
-            (param_4,param_2 + *(int *)(param_1 + 8),param_3 + *(int *)(param_1 + 0xc),
-             *(int *)(param_1 + 0x10),*(int *)(param_1 + 0x14),*(int *)(param_1 + 0x18),
-             *(int *)(param_1 + 0x1c));
+            (bitmap_ptr,x_offset + this_ptr->x,y_offset + this_ptr->y,this_ptr->clip_left,
+             this_ptr->clip_top,this_ptr->clip_right,this_ptr->clip_bottom);
   return;
 }

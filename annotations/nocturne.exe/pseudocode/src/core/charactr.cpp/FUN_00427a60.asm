@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00427a60(int param_1)
+; void __cdecl core_charactr_cpp_FUN_00427a60(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004286b1

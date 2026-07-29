@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -1253,7 +1253,7 @@
       "line": 112,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar4 + 0x14c) + 0x60))(iVar4,&local_b0,&local_b0.orientation);",
+      "text": "(**(code **)(*(int *)(iVar3 + 0x14c) + 0x60))(iVar3,&local_b0,&local_b0.orientation);",
       "type": "unresolved_funcptr"
     },
     {
@@ -1269,7 +1269,7 @@
       "line": 130,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar4 + 0x14c) + 0x60))(iVar4,&local_70,iVar4 + 0x30);",
+      "text": "(**(code **)(*(int *)(iVar3 + 0x14c) + 0x60))(iVar3,&local_70,iVar3 + 0x30);",
       "type": "unresolved_funcptr"
     },
     {
@@ -1301,7 +1301,7 @@
       "line": 160,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x3e);",
+      "text": "iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x3e);",
       "type": "unresolved_funcptr"
     },
     {
@@ -1309,7 +1309,7 @@
       "line": 173,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
+      "text": "iVar3 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
       "type": "unresolved_funcptr"
     },
     {
@@ -1317,7 +1317,7 @@
       "line": 175,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x2f), iVar4 != 0)) {",
+      "text": "(iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x2f), iVar3 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -1341,7 +1341,7 @@
       "line": 201,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "iVar4 = (local_38 * DAT_005b7620) / 0x00000040;",
+      "text": "iVar3 = (local_38 * DAT_005b7620) / 0x00000040;",
       "type": "undefined_data"
     },
     {
@@ -1349,7 +1349,7 @@
       "line": 202,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "iVar6 = (local_3c * DAT_005b7620) / 0x00000040;",
+      "text": "iVar5 = (local_3c * DAT_005b7620) / 0x00000040;",
       "type": "undefined_data"
     },
     {
@@ -1357,7 +1357,7 @@
       "line": 212,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "puVar8 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));",
+      "text": "puVar7 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));",
       "type": "undefined_data"
     },
     {
@@ -1453,23 +1453,23 @@
       "line": 323,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);",
+      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 333,
-      "match": "(char *)((int)piVar11",
+      "match": "(char *)((int)piVar10",
       "severity": "moderate",
-      "text": "*(char *)((int)piVar11 + 1) = cVar1;",
+      "text": "*(char *)((int)piVar10 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 334,
-      "match": "(int *)((int)piVar11",
+      "match": "(int *)((int)piVar10",
       "severity": "moderate",
-      "text": "piVar11 = (int *)((int)piVar11 + 2);",
+      "text": "piVar10 = (int *)((int)piVar10 + 2);",
       "type": "pointer_cast"
     },
     {
@@ -1501,7 +1501,7 @@
       "line": 347,
       "match": "DAT_01c78424",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004759d0(&DAT_01c78424);",
+      "text": "shape_edittool_cpp_FUN_004759d0((CPickList *)&DAT_01c78424);",
       "type": "undefined_data"
     },
     {
@@ -1513,27 +1513,27 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `piVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 333,
-      "match": "(int)piVar11",
+      "match": "(int)piVar10",
       "severity": "moderate",
-      "text": "*(char *)((int)piVar11 + 1) = cVar1;",
+      "text": "*(char *)((int)piVar10 + 1) = cVar1;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `piVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 334,
-      "match": "(int)piVar11",
+      "match": "(int)piVar10",
       "severity": "moderate",
-      "text": "piVar11 = (int *)((int)piVar11 + 2);",
+      "text": "piVar10 = (int *)((int)piVar10 + 2);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1cea280 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x1cea280 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 65,
       "match": "0x1cea280",
       "severity": "moderate",
-      "text": "pCVar3 = 0x01CEA280;",
+      "text": "this_ptr_00 = 0x01CEA280;",
       "type": "raw_address_constant"
     },
     {

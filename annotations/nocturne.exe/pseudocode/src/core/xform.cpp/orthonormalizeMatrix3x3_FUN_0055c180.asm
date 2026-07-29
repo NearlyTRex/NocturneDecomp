@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int param_2)
+; void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(CMatrix3x3f *matrix,int preserve_scale)
 ;
+; Parameters:
+; CMatrix3x3f *    Stack[0x4]:4   matrix
+; int              Stack[0x8]:4   preserve_scale
 ; Local Variables:
 ; undefined8       Stack[-0xf0]:8  local_f0
 ; undefined8       Stack[-0xe8]:8  local_e8

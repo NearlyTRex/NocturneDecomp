@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0
 // Address: 004474e0
 // Address Range: [[004474e0, 0044759e]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(undefined4 param_1,int *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera *this_ptr,SFog *fog_config)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera *this_ptr,SFog *fog_config)
 
 {
   float fVar1;
@@ -19,19 +19,19 @@ void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *
   double dVar6;
   double dVar7;
   
-  DAT_005ad450 = *param_2;
-  DAT_005ad454 = param_2[1];
-  DAT_005ad458 = param_2[2];
+  DAT_005ad450 = (fog_config->color_index).r;
+  DAT_005ad454 = (fog_config->color_index).g;
+  DAT_005ad458 = (fog_config->color_index).b;
   engine_special_cpp_setFogColor_FUN_00532af0
-            (*(uint *)(&DAT_00b0e1fc + *param_2 * 4) & 0xff,
-             *(uint *)(&DAT_00b0e1fc + param_2[1] * 4) & 0xff,
+            (*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).r * 4) & 0xff,
+             *(uint *)(&DAT_00b0e1fc + (fog_config->color_index).g * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);
-  dVar4 = (double)(float)param_2[4] * 65536;
-  dVar5 = (double)(float)param_2[5] * 65536;
-  fVar1 = (float)param_2[6];
+  dVar4 = (double)(fog_config->scroll).y * 65536;
+  dVar5 = (double)(fog_config->scroll).z * 65536;
+  fVar1 = fog_config->height_threshold;
   fVar2 = (float)256;
-  dVar7 = (double)(float)param_2[7] * 65536;
-  dVar3 = round((double)(float)param_2[3] * 65536);
+  dVar7 = (double)fog_config->density_multiplier * 65536;
+  dVar3 = round((double)(fog_config->scroll).x * 65536);
   dVar4 = round(dVar4);
   dVar5 = round(dVar5);
   dVar6 = round((double)(fVar1 * fVar2));

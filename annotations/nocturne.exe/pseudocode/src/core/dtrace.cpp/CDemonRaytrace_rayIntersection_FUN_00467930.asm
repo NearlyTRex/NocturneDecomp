@@ -47,7 +47,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0046794b
     PUSH EDX                            ; 0046794e
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0046794f
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x38],EAX      ; 00467954
     FLD float ptr [ESP + 0x38]          ; 00467958
     ADD ESP,0x14                        ; 0046795c

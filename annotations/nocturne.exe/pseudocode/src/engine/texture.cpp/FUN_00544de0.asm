@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * engine_texture_cpp_FUN_00544de0(undefined4 *param_1,undefined4 param_2)
+; CTextureCache * __cdecl engine_texture_cpp_FUN_00544de0(CTextureCache *this_ptr,int max_texture_count)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   max_texture_count
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_FUN_005458a0 at 005458bd

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_updateTextureWithPalette_FUN_00545a10(void)
+; void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00545a10(SMRGLTextureBasic *texture)
 ;
+; Parameters:
+; SMRGLTextureBasic * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00020

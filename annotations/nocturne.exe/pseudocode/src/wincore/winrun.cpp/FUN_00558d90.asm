@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; LRESULT wincore_winrun_cpp_FUN_00558d90(HWND param_1,uint param_2,HWND param_3,uint param_4)
+; LRESULT __stdcall wincore_winrun_cpp_FUN_00558d90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   hWnd
+; UINT             Stack[0x8]:4   message
+; WPARAM           Stack[0xc]:4   wParam
+; LPARAM           Stack[0x10]:4   lParam
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_FUN_00559260 at 005593d1
@@ -131,7 +136,7 @@ section .text
     PUSH EAX                            ; 00558e61
     CALL dword ptr CS:[0x5755b0]        ; 00558e62 | PTR_SetThreadPriority_005755b0
     CALL wincore_wddvmem.cpp_FUN_00553ba0 ; 00558e69
-        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553ba0()
+        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00553ba0()
     CMP dword ptr [0x005c1668],-0x1     ; 00558e6e | INT_005c1668
     JZ 0x00558ddf                       ; 00558e75
         ;   XREF to: 00558ddf (CONDITIONAL_JUMP)  ; LAB_00558ddf
@@ -164,12 +169,12 @@ section .text
     JZ 0x00558ddf                       ; 00558ec4
         ;   XREF to: 00558ddf (CONDITIONAL_JUMP)  ; LAB_00558ddf
     CALL wincore_wddvmem.cpp_FUN_00553ca0 ; 00558eca
-        ;   XREF to: 00553ca0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553ca0()
+        ;   XREF to: 00553ca0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00553ca0()
         ;   Label: LAB_00558eca
     JMP 0x00558ddf                      ; 00558ecf
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf
     CALL wincore_wddvmem.cpp_FUN_00553ca0 ; 00558ed4
-        ;   XREF to: 00553ca0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553ca0()
+        ;   XREF to: 00553ca0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00553ca0()
         ;   Label: LAB_00558ed4
     JMP 0x00558ddf                      ; 00558ed9
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf

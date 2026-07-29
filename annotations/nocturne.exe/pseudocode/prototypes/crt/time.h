@@ -33,11 +33,11 @@ void __cdecl tzset(void);
 
 // Original: crt_time.c_parse_timezone_spec_FUN_0056d658
 // Address: 0056d658
-byte * parse::timezone_spec(byte *param_1,byte *param_2,int *param_3);
+char * __cdecl parse::timezone_spec(char *tz_string,char *name_buffer,int *offset_seconds);
 
 // Original: crt_time.c_parse_dst_rule_FUN_0056d774
 // Address: 0056d774
-char * parse::dst_rule(char *param_1,int *param_2);
+char * __cdecl parse::dst_rule(char *rule_string,dst_rule *rule);
 
 // Original: crt_time.c_parse_tz_string_FUN_0056d87c
 // Address: 0056d87c

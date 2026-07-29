@@ -17,69 +17,69 @@ void __cdecl core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(CGame *this_ptr)
   _DAT_01c0390c = 2;
   wincore_winrun_cpp_getJoystickState_FUN_00559eb0();
   if ((_DAT_01c03908 & 1) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x202);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON1);
   }
   else if ((uVar1 & 1) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON1);
   }
   if ((_DAT_01c03908 & 2) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x203);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON2);
   }
   else if ((uVar1 & 2) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON2);
   }
   if ((_DAT_01c03908 & 4) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x204);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON3);
   }
   else if ((uVar1 & 4) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON3);
   }
   if ((_DAT_01c03908 & 8) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x205);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON4);
   }
   else if ((uVar1 & 8) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON4);
   }
   if ((_DAT_01c03908 & 0x10) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x206);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON5);
   }
   else if ((uVar1 & 0x10) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON5);
   }
   if ((_DAT_01c03908 & 0x20) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x207);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON6);
   }
   else if ((uVar1 & 0x20) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON6);
   }
   if ((_DAT_01c03908 & 0x40) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x208);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON7);
   }
   else if ((uVar1 & 0x40) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON7);
   }
   if ((_DAT_01c03908 & 0x80) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x209);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON8);
   }
   else if ((uVar1 & 0x80) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON8);
   }
   if ((_DAT_01c03908 & 0x100) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x20a);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON9);
   }
   else if ((uVar1 & 0x100) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON9);
   }
   if ((_DAT_01c03908 & 0x200) == 0) {
-    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x20b);
+    engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_BUTTON10);
   }
   else if ((uVar1 & 0x200) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_BUTTON10);
   }
-  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x251);
-  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x252);
-  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x253);
-  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(INT_005bac64,0x254);
+  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_LEFT);
+  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_RIGHT);
+  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_UP);
+  engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200((CKeys *)INT_005bac64,DIJ_DOWN);
   if (_DAT_01c038f8 < this_ptr->x_center - (this_ptr->x_center - this_ptr->x_stick_min) / 2) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0((CKeys *)INT_005bac64,DIJ_LEFT);
   }

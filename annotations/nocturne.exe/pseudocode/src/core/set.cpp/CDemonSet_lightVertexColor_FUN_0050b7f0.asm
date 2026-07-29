@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(int param_1,undefined4 param_2,int *param_3,int param_4,int param_5)
+; void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_position
+; CVector3i *      Stack[0xc]:4   surface_normal
+; int              Stack[0x10]:4   vertex_index
+; int              Stack[0x14]:4   skip_lighting_calculation
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -180,7 +186,7 @@ section .text
     PUSH EDX                            ; 0050b997
     PUSH EBX                            ; 0050b998
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 0050b999
-        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0()
+        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
     ADD ESP,0xc                         ; 0050b99e
     MOV ESI,dword ptr [ESP + 0x20]      ; 0050b9a1
     ADD ESI,EAX                         ; 0050b9a5
@@ -280,7 +286,7 @@ section .text
     PUSH ESI                            ; 0050ba83
     PUSH EBX                            ; 0050ba84
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 0050ba85
-        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0()
+        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
     MOV EBP,dword ptr [0x01fb96f0]      ; 0050ba8a | DAT_01fb96f0
     ADD ESP,0xc                         ; 0050ba90
     MOV ECX,EAX                         ; 0050ba93

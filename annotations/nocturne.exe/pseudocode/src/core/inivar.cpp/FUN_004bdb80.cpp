@@ -1,14 +1,14 @@
 // Name: core_inivar.cpp_FUN_004bdb80
 // Address: 004bdb80
 // Address Range: [[004bdb80, 004be2c6]]
-// Convention: unknown
-// Signature: void core_inivar_cpp_FUN_004bdb80(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_inivar_cpp_FUN_004bdb80(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_inivar_cpp_FUN_004bdb80(void)
+void __cdecl core_inivar_cpp_FUN_004bdb80(void)
 
 {
   CGame *pCVar1;
@@ -23,22 +23,24 @@ void core_inivar_cpp_FUN_004bdb80(void)
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004bd860(&local_204,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Graphics");
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"gamePIXX",0x01C775EC);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"gamePIXX",&DAT_005b9354->game_pixx);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"gamePIXY",&DAT_005b9354->game_pixy);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"gameBPP",&DAT_005b9354->game_bpp);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useDirect3D",&INT_02dc9d60);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useAGPFlag",&DAT_02dc9d6c);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"useAGPFlag",(int *)&DAT_02dc9d6c);
   engine_ini_cpp_CIniFile_getString_FUN_004bd910
             (&local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"gamma",&DAT_005b9354->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"heroNumber",&DAT_005b9354->hero_number);
+            (&local_204,"heroNumber",(int *)&DAT_005b9354->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"haloMode",&DAT_005b9354->halo_mode);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"firstTimeFlag",&DAT_01cae37c)
-  ;
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"firstTimeFlag",(int *)&DAT_01cae37c);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"subtitleMode",&DAT_005b9354->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
@@ -58,12 +60,13 @@ void core_inivar_cpp_FUN_004bdb80(void)
     pCVar1->blood_flag = 0;
   }
   _DAT_01cc64a4 = 0;
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"currentBoard",&DAT_01cc64a4);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"currentBoard",(int *)&DAT_01cc64a4);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Sound");
   sound_sndmain_cpp_FUN_005289f0(&local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"gameControl",&DAT_005b9354->game_control);
+            (&local_204,"gameControl",(int *)&DAT_005b9354->game_control);
   core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(0x01C775EC);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"keyWalk",&DAT_005b9354->key_walk);
@@ -140,12 +143,12 @@ void core_inivar_cpp_FUN_004bdb80(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"yStickMax",&DAT_005b9354->y_stick_max);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"aimMode",&DAT_005b9354->aim_mode);
+            (&local_204,"aimMode",(int *)&DAT_005b9354->aim_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"autoUseHealth",&DAT_005b9354->auto_use_health);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Debug");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (&local_204,"logConsoleFlag",PTR_DAT_005ad350);
+            (&local_204,"logConsoleFlag",(int *)PTR_DAT_005ad350);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"headOfHorrorCheat",&DAT_005b9354->head_of_horror_cheat);
   return;

@@ -1,12 +1,12 @@
 // Name: core_manpuz.cpp_FUN_004cb010
 // Address: 004cb010
 // Address Range: [[004cb010, 004cb2c4]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)
+void __cdecl core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time)
 
 {
   float fVar1;
@@ -30,11 +30,11 @@ void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,floa
   float local_18;
   float local_14;
   
-  local_28 = param_3 * 255.0f;
+  local_28 = delta_time * 255.0f;
   local_14 = local_28 / 2.0f;
-  pSVar11 = param_1->gems + param_2;
+  pSVar11 = this_ptr->gems + gem_index;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-            (&param_1->base,&local_3c,&pSVar11->position);
+            (&this_ptr->base,&local_3c,&pSVar11->position);
   uVar6 = core_manpuz_cpp_updateGemHumChannel_FUN_004caef0
                     (&(pSVar11->hum_color).r,(pSVar11->light).r,local_14,pSVar11->sfx_handles,
                      "manpuz-chargegemloop-red.wav",&local_3c);
@@ -48,7 +48,7 @@ void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,floa
   (pSVar11->light).g = (pSVar11->light).b;
   (pSVar11->light).r = (pSVar11->light).g;
   core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20
-            (param_1,param_2,&local_30,&local_2c,&local_24);
+            (this_ptr,gem_index,&local_30,&local_2c,&local_24);
   local_14 = local_28 / 2.0f;
   local_20 = local_30 - (pSVar11->color).r;
   bVar4 = 1;
@@ -98,21 +98,21 @@ LAB_004cb16e:
   bVar2 = 0;
 LAB_004cb1a0:
   if ((((((bool)(bVar4 & bVar3 & bVar2)) && ((uVar6 & 1 & uVar7 & uVar8) != 0)) &&
-       (pSVar10 = param_1->panels + param_2, pSVar10->exists != 0)) &&
+       (pSVar10 = this_ptr->panels + gem_index, pSVar10->exists != 0)) &&
       ((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&
      (((float)(pSVar10->color).r == (pSVar11->hum_color).r &&
       (((float)(pSVar10->color).g == (pSVar11->hum_color).g &&
        ((float)(pSVar10->color).b == (pSVar11->hum_color).b)))))) {
-    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);
-    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,iVar9);
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(this_ptr,gem_index);
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(this_ptr,iVar9);
     if (iVar9 == 0) {
-      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);
+      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(this_ptr,gem_index);
       return;
     }
-    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);
-    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,iVar9);
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(this_ptr,gem_index);
+    iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(this_ptr,iVar9);
     if (iVar9 == 0) {
-      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);
+      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(this_ptr,gem_index);
       return;
     }
   }

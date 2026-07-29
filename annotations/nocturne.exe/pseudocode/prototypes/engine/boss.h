@@ -5,7 +5,7 @@
 
 // Original: engine_boss.c_modelStructNotSupported1_FUN_0041a510
 // Address: 0041a510
-undefined4 modelStructNotSupported1(void);
+SMRGLHeaderExtended * __cdecl modelStructNotSupported1(SMRGLHeaderExtended *mrgl_data);
 
 // Original: engine_boss.c_modelStructNotSupported2_FUN_0041a540
 // Address: 0041a540

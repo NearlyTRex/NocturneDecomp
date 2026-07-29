@@ -14,11 +14,10 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
   float fVar1;
   CLadder *this_ptr_00;
   CVector3f *pCVar2;
-  int iVar3;
-  float10 fVar4;
+  float10 fVar3;
   CBoundingBox3D local_e8;
   CVector3f local_d0;
-  byte auStack_c4 [12];
+  CVector3f CStack_c4;
   float fStack_b8;
   float fStack_b4;
   float fStack_b0;
@@ -38,9 +37,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
   float fStack_60;
   float fStack_5c;
   CVector3f CStack_58;
-  float fStack_4c;
-  float fStack_48;
-  float fStack_44;
+  CVector3f CStack_4c;
   float fStack_40;
   float fStack_3c;
   float fStack_38;
@@ -54,7 +51,8 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
   float local_18;
   
   this_ptr->ladder_to_descend = (CLadder *)0x0;
-  local_18 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(this_ptr,0);
+  local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+                       ((CCharacter *)this_ptr,0);
   if ((((float)0.98999999999999999 <= local_18) &&
       ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) &&
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
@@ -102,7 +100,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
           fStack_b8 = (this_ptr_00->base).orient_matrix.m[0].z;
           fStack_b4 = (this_ptr_00->base).orient_matrix.m[1].z;
           fStack_b0 = (this_ptr_00->base).orient_matrix.m[2].z;
-          fVar4 = (float10)fcos((float10)0.261799387791667);
+          fVar3 = (float10)fcos((float10)0.261799387791667);
           fVar1 = ABS(fStack_a4 * fStack_b0 + fStack_ac * fStack_b8 + fStack_a8 * fStack_b4);
           fStack_40 = fStack_a8;
           fStack_3c = fStack_b8;
@@ -110,7 +108,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
           fStack_34 = fStack_b0;
           fStack_30 = fStack_a4;
           fStack_24 = fStack_ac;
-          if (fVar4 <= (float10)fVar1) {
+          if (fVar3 <= (float10)fVar1) {
             pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                                ((CDemonActor *)this_ptr,&CStack_70,
                                 &(this_ptr_00->base).location.position);
@@ -135,12 +133,12 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
                 (this_ptr->ladder_offset).y = fStack_60;
                 (this_ptr->ladder_offset).z = fStack_5c;
               }
-              fStack_4c = local_d0.x - (this_ptr->base).base.base.location.position.x;
-              fStack_48 = local_d0.y - (this_ptr->base).base.base.location.position.y;
-              fStack_44 = local_d0.z - (this_ptr->base).base.base.location.position.z;
-              iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                                (auStack_c4,&fStack_4c);
-              this_ptr->ladder_facing_angle = *(float *)(iVar3 + 4);
+              CStack_4c.x = local_d0.x - (this_ptr->base).base.base.location.position.x;
+              CStack_4c.y = local_d0.y - (this_ptr->base).base.base.location.position.y;
+              CStack_4c.z = local_d0.z - (this_ptr->base).base.base.location.position.z;
+              pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                                 (&CStack_c4,&CStack_4c);
+              this_ptr->ladder_facing_angle = pCVar2->y;
               this_ptr->ladder_blend_time = 1.0;
               return 1;
             }

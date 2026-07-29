@@ -9,15 +9,15 @@ void __cdecl CMatrix3x3f::buildRotationMatrix(CMatrix3x3f *this_ptr,CVector3f *e
 
 // Original: core_dirmat.cpp_CMatrix3x3f_invert_FUN_0044d880
 // Address: 0044d880
-void CMatrix3x3f::invert(float *param_1);
+void __cdecl CMatrix3x3f::invert(CMatrix3x3f *this_ptr);
 
 // Original: core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
 // Address: 0044da40
-float * CMatrix3x3f::transformVector(float *param_1,float *param_2,float *param_3);
+CVector3f * __cdecl CMatrix3x3f::transformVector(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);
 
 // Original: core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
 // Address: 0044daa0
-float * CMatrix3x3f::transformVectorTranspose(float *param_1,float *param_2,float *param_3);
+CVector3f * __cdecl CMatrix3x3f::transformVectorTranspose(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);
 
 // Original: core_dirmat.cpp_FUN_0044db00
 // Address: 0044db00

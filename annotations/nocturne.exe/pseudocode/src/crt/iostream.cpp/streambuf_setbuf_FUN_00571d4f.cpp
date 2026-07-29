@@ -1,30 +1,30 @@
 // Name: crt_iostream.cpp_streambuf_setbuf_FUN_00571d4f
 // Address: 00571d4f
 // Address Range: [[00571d4f, 00571d9e]]
-// Convention: unknown
-// Signature: streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)
+// Convention: __watcallStack
+// Signature: streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *this_ptr,void *buffer_start,int buffer_size)
 
 #include "nocturne.h"
 
-streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)
+streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *this_ptr,void *buffer_start,int buffer_size)
 
 {
   void *buffer_end;
   
-  if (param_1->__reserve_base != (char *)0x0) {
+  if (this_ptr->__reserve_base != (char *)0x0) {
     return (streambuf *)0x0;
   }
-  if ((param_2 == (void *)0x0) || (param_3 < 1)) {
+  if ((buffer_start == (void *)0x0) || (buffer_size < 1)) {
     buffer_end = (void *)0x0;
-    param_2 = (void *)0x0;
+    buffer_start = (void *)0x0;
   }
   else {
-    if (param_3 < 5) {
-      crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,(void *)0x0,(void *)0x0,0);
+    if (buffer_size < 5) {
+      crt_iostream_cpp_setBuffer_FUN_00571df8(this_ptr,(void *)0x0,(void *)0x0,0);
       return (streambuf *)0x0;
     }
-    buffer_end = (void *)((int)param_2 + param_3);
+    buffer_end = (void *)((int)buffer_start + buffer_size);
   }
-  crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,param_2,buffer_end,0);
-  return param_1;
+  crt_iostream_cpp_setBuffer_FUN_00571df8(this_ptr,buffer_start,buffer_end,0);
+  return this_ptr;
 }

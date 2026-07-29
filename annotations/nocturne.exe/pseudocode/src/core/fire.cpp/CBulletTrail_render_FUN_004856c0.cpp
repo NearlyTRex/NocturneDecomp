@@ -17,9 +17,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_p
   CVector3f local_7c;
   float local_6c;
   float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
+  CVector3f local_64;
   float local_58;
   float local_54;
   float local_50;
@@ -34,17 +32,18 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_p
   float fStack_1c;
   int local_18;
   
-  local_60 = (this_ptr->end_position).x - (this_ptr->start_position).x;
-  local_5c = (this_ptr->end_position).y - (this_ptr->start_position).y;
+  local_64.y = (this_ptr->end_position).x - (this_ptr->start_position).x;
+  local_64.z = (this_ptr->end_position).y - (this_ptr->start_position).y;
   local_58 = (this_ptr->end_position).z - (this_ptr->start_position).z;
   pCVar2 = this_ptr->model_ptr;
   local_6c = *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 8) -
              (float)pCVar2->texture_list[7].textures[1].base.count;
   local_68 = *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 0xc) -
              *(float *)pCVar2->texture_list[7].textures[1].texture_name;
-  local_64 = (float)pCVar2->texture_list[7].textures[2].base.type -
-             *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 4);
-  local_7c.x = SQRT(local_58 * local_58 + local_60 * local_60 + local_5c * local_5c) - local_64;
+  local_64.x = (float)pCVar2->texture_list[7].textures[2].base.type -
+               *(float *)(pCVar2->texture_list[7].textures[1].texture_name + 4);
+  local_7c.x = SQRT(local_58 * local_58 + local_64.y * local_64.y + local_64.z * local_64.z) -
+               local_64.x;
   if (0.0 < local_7c.x) {
     local_20 = 2;
     if (0.0 < this_ptr->segment_length) {
@@ -60,9 +59,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_p
     local_18 = local_24;
     local_28 = (float)local_24;
     local_50 = 1.0 / local_28;
-    local_58 = local_64 * local_50;
-    local_54 = local_60 * local_50;
-    local_50 = local_5c * local_50;
+    local_58 = local_64.x * local_50;
+    local_54 = local_64.y * local_50;
+    local_50 = local_64.z * local_50;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_7c,&local_64);
     iVar4 = 0;
     if (0 < local_24) {

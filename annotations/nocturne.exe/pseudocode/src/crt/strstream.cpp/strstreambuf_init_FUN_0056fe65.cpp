@@ -1,63 +1,68 @@
 // Name: crt_strstream.cpp_strstreambuf_init_FUN_0056fe65
 // Address: 0056fe65
 // Address Range: [[0056fe65, 0056ff29]]
-// Convention: unknown
-// Signature: void crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(streambuf *param_1,char *param_2,int param_3,char *param_4)
+// Convention: __watcallStack
+// Signature: void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
 
 #include "nocturne.h"
 
-void crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(streambuf *param_1,char *param_2,int param_3,char *param_4)
+void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
 
 {
   char cVar1;
-  char *pcVar2;
-  uint uVar3;
-  char *pcVar4;
+  byte bVar2;
+  char *pcVar3;
+  uint uVar4;
   char *pcVar5;
+  char *pcVar6;
   
-  param_1[1].__reserve_base = (char *)0x0;
-  param_1[1].__reserve_end = (char *)0x0;
-  param_1[1].__get_base = (char *)0x20;
-  param_1[1].__get_end = (char *)0x0;
-  *(byte *)&param_1[1].__get_ptr = *(byte *)&param_1[1].__get_ptr & 0xf8;
-  if (param_2 == (char *)0x0) {
-    *(byte *)&param_1[1].__get_ptr = *(byte *)&param_1[1].__get_ptr | 2;
+  this_ptr->__alloc_fn = (void *)0x0;
+  this_ptr->__free_fn = (void *)0x0;
+  this_ptr->__allocation_size = 0x20;
+  bVar2 = *(byte *)&this_ptr[1]._streambuf.__b_lock;
+  this_ptr->__minbuf_size = 0;
+  this_ptr->__bit_flags = '\0';
+  this_ptr->padding = '\0';
+  *(byte *)&this_ptr[1]._streambuf.__b_lock = bVar2 & 0xf8;
+  if (buffer_ptr == (char *)0x0) {
+    *(byte *)&this_ptr[1]._streambuf.__b_lock = *(byte *)&this_ptr[1]._streambuf.__b_lock | 2;
     return;
   }
-  if (param_3 < 1) {
-    if (param_3 != 0) {
-      pcVar5 = param_2 + 0x200;
-      *(byte *)&param_1[1].__get_ptr = *(byte *)&param_1[1].__get_ptr | 4;
+  if (buffer_size < 1) {
+    if (buffer_size != 0) {
+      pcVar6 = buffer_ptr + 0x200;
+      *(byte *)&this_ptr[1]._streambuf.__b_lock = *(byte *)&this_ptr[1]._streambuf.__b_lock | 4;
       goto LAB_0056feab;
     }
-    uVar3 = 0xffffffff;
-    pcVar5 = param_2;
+    uVar4 = 0xffffffff;
+    pcVar6 = buffer_ptr;
     do {
-      if (uVar3 == 0) break;
-      uVar3 = uVar3 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    param_3 = ~uVar3 - 1;
+    buffer_size = ~uVar4 - 1;
   }
-  pcVar5 = param_2 + param_3;
+  pcVar6 = buffer_ptr + buffer_size;
 LAB_0056feab:
-  crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,param_2,pcVar5,0);
-  if (((param_4 == (char *)0x0) || (param_4 < param_2)) ||
-     ((pcVar2 = param_2, pcVar4 = pcVar5, pcVar5 <= param_4 &&
-      (((uint)param_1[1].__get_ptr & 4) == 0)))) {
-    param_4 = (char *)0x0;
-    pcVar2 = (char *)0x0;
-    pcVar4 = (char *)0x0;
+  crt_iostream_cpp_setBuffer_FUN_00571df8(&this_ptr->_streambuf,buffer_ptr,pcVar6,0);
+  if (((put_start == (char *)0x0) || (put_start < buffer_ptr)) ||
+     ((pcVar3 = buffer_ptr, pcVar5 = pcVar6, pcVar6 <= put_start &&
+      (((uint)this_ptr[1]._streambuf.__b_lock & 4) == 0)))) {
+    put_start = (char *)0x0;
+    pcVar3 = (char *)0x0;
+    pcVar5 = (char *)0x0;
   }
-  param_1->__get_base = param_2;
-  param_1->__get_ptr = param_2;
-  param_1->__get_end = pcVar5;
-  param_1->__put_base = pcVar2;
-  param_1->__put_ptr = pcVar2;
-  param_1->__put_end = pcVar4;
-  if (pcVar2 < param_4) {
-    param_1->__put_ptr = param_1->__put_ptr + ((int)param_4 - (int)pcVar2);
+  (this_ptr->_streambuf).__get_base = buffer_ptr;
+  (this_ptr->_streambuf).__get_ptr = buffer_ptr;
+  (this_ptr->_streambuf).__get_end = pcVar6;
+  (this_ptr->_streambuf).__put_base = pcVar3;
+  (this_ptr->_streambuf).__put_ptr = pcVar3;
+  (this_ptr->_streambuf).__put_end = pcVar5;
+  if (pcVar3 < put_start) {
+    (this_ptr->_streambuf).__put_ptr =
+         (this_ptr->_streambuf).__put_ptr + ((int)put_start - (int)pcVar3);
     return;
   }
   return;

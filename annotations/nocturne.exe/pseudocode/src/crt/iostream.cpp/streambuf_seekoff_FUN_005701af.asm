@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_iostream_cpp_streambuf_seekoff_FUN_005701af(int param_1,undefined4 param_2,undefined4 param_3)
+; void __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_005701af(streambuf *this_ptr,int off,int dir,int which)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   off
+; int              Stack[0xc]:4   dir
+; int              Stack[0x10]:4   which
 ;
 ; *****************************************************************************
 

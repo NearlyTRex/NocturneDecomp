@@ -69,7 +69,7 @@ section .text
     PUSH ECX                            ; 004cf90b
     MOV EBX,EAX                         ; 004cf90c
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf90e
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004cf913
     SAR EDX,0x1f                        ; 004cf915
     SUB EAX,EDX                         ; 004cf918
@@ -150,7 +150,7 @@ section .text
     MOV EAX,[0x014b98f8]                ; 004cf9ea | DAT_014b98f8
     PUSH EAX                            ; 004cf9ef
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf9f0
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004cf9f5
     SAR EDX,0x1f                        ; 004cf9f7
     SUB EAX,EDX                         ; 004cf9fa

@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_archiveLocation_FUN_0040c590(CLocation *location_ptr
   int iVar1;
   
   if (DAT_00763e88 == 1) {
-    iVar1 = _fscanf();
+    iVar1 = _fscanf(DAT_00763e84,"%d,%f,%f,%f");
     if (iVar1 != 4) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("4D location",property_name);

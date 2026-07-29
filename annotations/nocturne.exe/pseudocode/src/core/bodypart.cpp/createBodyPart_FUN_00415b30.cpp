@@ -41,8 +41,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(CVector3f *pos
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr_00->base);
   if (initial_velocity == (CVector3f *)0x0) {
-    fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f490fdb,0x3fc90fdb);
-    fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40c90fdb);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
+    fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
     fVar4 = (float10)fcos((float10)fVar3);
     fVar5 = (float10)fcos((float10)fVar2);
     fVar6 = (float10)fsin((float10)fVar3);

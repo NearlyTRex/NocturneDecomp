@@ -25,7 +25,7 @@ CHero * CMoloch::dtor(CHero *param_1,byte param_2);
 
 // Original: core_moloch.cpp_CMoloch_setup_FUN_004dda70
 // Address: 004dda70
-void CMoloch::setup(int param_1);
+void CMoloch::setup(CHero *param_1);
 
 // Original: core_moloch.cpp_CMoloch_process_FUN_004ddb20
 // Address: 004ddb20
@@ -41,7 +41,7 @@ int FUN_004de550(CCharacter *param_1);
 
 // Original: core_moloch.cpp_FUN_004de680
 // Address: 004de680
-void FUN_004de680(int param_1);
+void FUN_004de680(CHero *param_1);
 
 // Original: core_moloch.cpp_CMoloch_startMorph_FUN_004de700
 // Address: 004de700

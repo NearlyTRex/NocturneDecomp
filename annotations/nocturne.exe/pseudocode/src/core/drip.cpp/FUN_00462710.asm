@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_FUN_00462710(int param_1)
+; void __cdecl core_drip_cpp_FUN_00462710(CDrip *this_ptr)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0 at 0054e119

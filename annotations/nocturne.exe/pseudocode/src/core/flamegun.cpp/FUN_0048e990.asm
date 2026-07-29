@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0048e9a2
         ;   Label: LAB_0048e9a2
     CALL core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0 ; 0048e9a3
-        ;   XREF to: 0048e9c0 (UNCONDITIONAL_CALL)  ; undefined core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0()
+        ;   XREF to: 0048e9c0 (UNCONDITIONAL_CALL)  ; CFlameThrower * core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0(CFlameThrower * this_ptr)
     ADD ESP,0x4                         ; 0048e9a8
     RET                                 ; 0048e9ab
 

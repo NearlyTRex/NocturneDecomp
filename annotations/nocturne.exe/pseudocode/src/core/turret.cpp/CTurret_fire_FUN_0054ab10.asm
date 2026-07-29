@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_fire_FUN_0054ab10(CDemonActor *param_1)
+; undefined4 core_turret_cpp_CTurret_fire_FUN_0054ab10(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [ESP + 0x8c],EDX      ; 0054ab69
     MOV dword ptr [ESP + 0x90],EDX      ; 0054ab70
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0054ab77
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0054ab7c
     MOV ESI,dword ptr [0x005be368]      ; 0054ab7f | DAT_005be368
     FLD float ptr [ESP + 0x44]          ; 0054ab85
@@ -123,7 +123,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0054ac08 | DAT_005be368
     PUSH EDX                            ; 0054ac0e | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0054ac0f
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0xdc],EAX      ; 0054ac14
     FLD float ptr [ESP + 0xdc]          ; 0054ac1b
     ADD ESP,0xc                         ; 0054ac22
@@ -391,7 +391,7 @@ section .text
     PUSH ECX                            ; 0054af9e
         ;   Label: LAB_0054af9e
     CALL core_glass.cpp_FUN_004aded0    ; 0054af9f
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 0054afa4
     TEST EAX,EAX                        ; 0054afa7
     JZ 0x0054aec3                       ; 0054afa9

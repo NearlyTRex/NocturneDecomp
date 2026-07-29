@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_tommygun_cpp_FUN_00546470(void)
+; float core_tommygun_cpp_FUN_00546470(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -19,7 +19,7 @@ section .text
     PUSH 0x41700000                     ; 00546473
     PUSH 0x41200000                     ; 00546478
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054647d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 00546482
     FLD float ptr [ESP + 0xc]           ; 00546486
     ADD ESP,0x8                         ; 0054648a

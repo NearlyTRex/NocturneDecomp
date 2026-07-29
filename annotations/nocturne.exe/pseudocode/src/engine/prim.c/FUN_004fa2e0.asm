@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_prim_c_FUN_004fa2e0(int *param_1,int param_2)
+; void __cdecl engine_prim_c_FUN_004fa2e0(int *vertex_indices,int vertex_count)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   vertex_indices
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x24]:4  local_24

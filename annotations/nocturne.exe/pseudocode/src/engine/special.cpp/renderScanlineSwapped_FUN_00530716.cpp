@@ -1,14 +1,14 @@
 // Name: engine_special.cpp_renderScanlineSwapped_FUN_00530716
 // Address: 00530716
 // Address Range: [[00530716, 0053075b]]
-// Convention: unknown
-// Signature: undefined8 engine_special_cpp_renderScanlineSwapped_FUN_00530716(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-ulonglong engine_special_cpp_renderScanlineSwapped_FUN_00530716(void)
+void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
 
 {
   uint in_EAX;
@@ -21,5 +21,5 @@ ulonglong engine_special_cpp_renderScanlineSwapped_FUN_00530716(void)
   _DAT_005bf4ac = in_ECX;
   _DAT_005bf4b0 = in_EDX;
   (*_DAT_01c00c7c)();
-  return CONCAT44(_DAT_005bf4b0,_DAT_005bf4a4);
+  return;
 }

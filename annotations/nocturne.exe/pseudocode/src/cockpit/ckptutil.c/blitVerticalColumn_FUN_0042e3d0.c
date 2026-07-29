@@ -1,47 +1,47 @@
 // Name: cockpit_ckptutil.c_blitVerticalColumn_FUN_0042e3d0
 // Address: 0042e3d0
 // Address Range: [[0042e3d0, 0042e4a7]]
-// Convention: unknown
-// Signature: int cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 
 #include "nocturne.h"
 
-int cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6)
+void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 
 {
   int *piVar1;
-  int iVar2;
-  code *pcVar3;
+  int count;
+  ColorConversionFunc *pCVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
   
-  iVar2 = (param_5 - param_3) + 1;
-  iVar5 = iVar2;
-  if (param_1 != 0) {
-    pcVar3 = (code *)cockpit_ckptutil_c_FUN_0042d130();
-    iVar5 = param_4 * 4;
+  count = (end_x - start_x) + 1;
+  if (sprite_data != (void *)0x0) {
+    pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
+    iVar4 = start_y * 4;
     if (DAT_005b7624 == 8) {
-      if (param_4 < param_6) {
+      if (start_y < end_y) {
         do {
-          iVar4 = DAT_005b761c * param_4;
-          piVar1 = (int *)(&DAT_01bd2fa0 + iVar5);
-          iVar5 = iVar5 + 4;
-          param_4 = param_4 + 1;
-          iVar4 = (*pcVar3)(*piVar1 + param_3,param_1 + iVar4 + param_3,iVar2);
-        } while (param_4 < param_6);
-        return iVar4;
+          iVar3 = DAT_005b761c * start_y;
+          piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);
+          iVar4 = iVar4 + 4;
+          start_y = start_y + 1;
+          (*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);
+        } while (start_y < end_y);
+        return;
       }
     }
-    else if (param_4 < param_6) {
+    else if (start_y < end_y) {
       do {
-        iVar4 = DAT_005b761c * param_4;
-        piVar1 = (int *)(&DAT_01bd2fa0 + iVar5);
-        iVar5 = iVar5 + 4;
-        param_4 = param_4 + 1;
-        iVar4 = (*pcVar3)(*piVar1 + param_3 * 2,iVar4 + param_3 + param_1,iVar2);
-      } while (param_4 < param_6);
-      return iVar4;
+        iVar3 = DAT_005b761c * start_y;
+        piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);
+        iVar4 = iVar4 + 4;
+        start_y = start_y + 1;
+        (*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar3 + start_x + (int)sprite_data),count
+                 );
+      } while (start_y < end_y);
+      return;
     }
   }
-  return iVar5;
+  return;
 }

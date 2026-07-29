@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_divideVector_FUN_0042b4d0(void)
+; CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042b4d0(CVector3f *src,CVector3f *dst,float *scalar)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   src
+; CVector3f *      Stack[0x8]:4   dst
+; float *          Stack[0xc]:4   scalar
 ;
 ; *****************************************************************************
 

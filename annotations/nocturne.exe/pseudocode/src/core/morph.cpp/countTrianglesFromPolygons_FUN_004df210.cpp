@@ -1,22 +1,22 @@
 // Name: core_morph.cpp_countTrianglesFromPolygons_FUN_004df210
 // Address: 004df210
 // Address Range: [[004df210, 004df237]]
-// Convention: unknown
-// Signature: int core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride)
 
 #include "nocturne.h"
 
-int core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int param_1,int param_2,int param_3)
+int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride)
 
 {
-  int *piVar1;
+  SMRGLHeaderBasic *pSVar1;
   int iVar2;
   
   iVar2 = 0;
-  for (; 0 < param_1; param_1 = param_1 + -1) {
-    piVar1 = (int *)(param_2 + 4);
-    param_2 = param_2 + param_3;
-    iVar2 = iVar2 + *piVar1 + -2;
+  for (; 0 < poly_count; poly_count = poly_count + -1) {
+    pSVar1 = &poly_headers->base;
+    poly_headers = (SMRGLHeaderPrimitive *)((int)&(poly_headers->base).type + poly_stride);
+    iVar2 = iVar2 + pSVar1->count + -2;
   }
   return iVar2;
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
+; void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   code_value
+; SBitBuffer *     Stack[0xc]:4   bit_buffer
+; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

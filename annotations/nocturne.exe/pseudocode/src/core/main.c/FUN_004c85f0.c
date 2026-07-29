@@ -1,14 +1,14 @@
 // Name: core_main.c_FUN_004c85f0
 // Address: 004c85f0
 // Address Range: [[004c85f0, 004c8db1]]
-// Convention: unknown
-// Signature: void core_main_c_FUN_004c85f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_main_c_FUN_004c85f0(void)
+void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
 
 {
   uint *puVar1;
@@ -462,7 +462,7 @@ void core_main_c_FUN_004c85f0(void)
     puVar1[2] = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }
-  wincore_winvideo_cpp_FUN_0055a510("video");
+  wincore_winvideo_cpp_FUN_0055a510("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0052ee70();
   pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading...");
   pcVar4 = acStack_328;
@@ -475,7 +475,7 @@ void core_main_c_FUN_004c85f0(void)
     pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b9900);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b9900,acStack_328);
   engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_014b9900,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(&CStack_28,"fangs",0x280,0x1e0);

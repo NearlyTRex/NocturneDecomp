@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEdScrollBar * shape_edittool_cpp_FUN_00476490(CEdScrollBar *param_1)
+; CEdScrollBar * __cdecl shape_edittool_cpp_FUN_00476490(CEdScrollBar *this_ptr,uint flags)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d15

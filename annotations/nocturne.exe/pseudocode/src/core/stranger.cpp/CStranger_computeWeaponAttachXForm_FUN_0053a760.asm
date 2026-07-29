@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int param_1,CDemonActor *param_2,float param_3)
+; float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xd64]:4  local_d64
@@ -288,7 +288,7 @@ section .text
     LEA EAX,[EBP + 0xfffff92a]          ; 0053a816
     PUSH EAX                            ; 0053a81c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053a81d
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053a822
     PUSH ESI                            ; 0053a825
     LEA EAX,[EBP + 0xfffff92a]          ; 0053a826
@@ -376,7 +376,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffe9e],EDI ; 0053a957
     MOV EDI,0x3f6f2b67                  ; 0053a95d
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053a962
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EDX,0xbed430d3                  ; 0053a967
     MOV ECX,0x3feb40a3                  ; 0053a96c
     LEA EAX,[EBP + 0x56]                ; 0053a971
@@ -396,13 +396,13 @@ section .text
     MOV dword ptr [EBP + 0xfffffeda],EDX ; 0053a9a4
     MOV dword ptr [EBP + 0xfffffede],ECX ; 0053a9aa
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053a9b0
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053a9b5
     PUSH ESI                            ; 0053a9b8
     PUSH 0x3                            ; 0053a9b9
     PUSH EBX                            ; 0053a9bb
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053a9bc
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053a9c1
     ADD ESP,0x8                         ; 0053a9c4
     FLD float ptr [EBP + 0x76]          ; 0053a9c7
@@ -453,7 +453,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffefe],EDI ; 0053aa7c
     MOV EDI,0x3fac74a7                  ; 0053aa82
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053aa87
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EDX,0xbe93c947                  ; 0053aa8c
     MOV ECX,0x3fdd1cc1                  ; 0053aa91
     LEA EAX,[EBP + 0xfffffea6]          ; 0053aa96
@@ -473,13 +473,13 @@ section .text
     MOV dword ptr [EBP + 0x42],EDX      ; 0053aacf
     MOV dword ptr [EBP + 0x46],ECX      ; 0053aad2
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053aad5
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053aada
     PUSH ESI                            ; 0053aadd
     PUSH 0x3                            ; 0053aade
     PUSH EBX                            ; 0053aae0
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053aae1
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053aae6
     ADD ESP,0x8                         ; 0053aae9
     FLD float ptr [EBP + 0x76]          ; 0053aaec
@@ -530,7 +530,7 @@ section .text
     MOV dword ptr [EBP + -0x12],EDI     ; 0053ab98
     MOV EDI,0x3f93df3b                  ; 0053ab9b
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053aba0
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EDX,0xbeedcbbc                  ; 0053aba5
     MOV ECX,0x3fe3381d                  ; 0053abaa
     LEA EAX,[EBP + 0x32]                ; 0053abaf
@@ -550,13 +550,13 @@ section .text
     MOV dword ptr [EBP + -0x42],EDX     ; 0053abdc
     MOV dword ptr [EBP + -0x3e],ECX     ; 0053abdf
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053abe2
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053abe7
     PUSH ESI                            ; 0053abea
     PUSH 0x3                            ; 0053abeb
     PUSH EBX                            ; 0053abed
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053abee
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053abf3
     ADD ESP,0x8                         ; 0053abf6
     FLD float ptr [EBP + 0x76]          ; 0053abf9
@@ -606,7 +606,7 @@ section .text
     MOV dword ptr [EBP + 0x6a],EDX      ; 0053ac96
     MOV dword ptr [EBP + 0x66],ECX      ; 0053ac99
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053ac9c
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053aca1
     PUSH ESI                            ; 0053aca4
     LEA EAX,[EBP + 0xfffff89a]          ; 0053aca5
@@ -638,7 +638,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff1e],ECX ; 0053ad10
     MOV dword ptr [EBP + 0xffffff22],EDX ; 0053ad16
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053ad1c
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053ad21
     PUSH ESI                            ; 0053ad24
     LEA EAX,[EBP + 0xfffffd4a]          ; 0053ad25
@@ -672,7 +672,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffee6],EDX ; 0053ad91
     MOV dword ptr [EBP + 0xfffffeea],ECX ; 0053ad97
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053ad9d
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,0x3f252f1b                  ; 0053ada2
     MOV EDX,0xbe083dff                  ; 0053ada7
     ADD ESP,0xc                         ; 0053adac
@@ -692,13 +692,13 @@ section .text
     MOV dword ptr [EBP + -0x6a],ECX     ; 0053add9
     MOV dword ptr [EBP + -0x66],EDI     ; 0053addc
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053addf
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053ade4
     PUSH ESI                            ; 0053ade7
     PUSH 0x0                            ; 0053ade8
     PUSH EBX                            ; 0053adea
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053adeb
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053adf0
     ADD ESP,0x8                         ; 0053adf3
     FLD float ptr [EBP + 0x76]          ; 0053adf6
@@ -734,7 +734,7 @@ section .text
     LEA EAX,[EBP + 0xfffff59a]          ; 0053ae64
     PUSH EAX                            ; 0053ae6a
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053ae6b
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053ae70
     PUSH ESI                            ; 0053ae73
     LEA EAX,[EBP + 0xfffff59a]          ; 0053ae74
@@ -889,7 +889,7 @@ section .text
     MOV dword ptr [EBP + 0xfffffeba],EDI ; 0053b0d2
     MOV EDI,0xbc47e649                  ; 0053b0d8
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053b0dd
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,0x3e99e450                  ; 0053b0e2
     ADD ESP,0xc                         ; 0053b0e7
     MOV dword ptr [EBP + 0xffffff2a],EAX ; 0053b0ea
@@ -908,7 +908,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff32],EDX ; 0053b126
     MOV dword ptr [EBP + 0xffffff2e],ECX ; 0053b12c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053b132
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EDX,dword ptr [EBP + 0x72]      ; 0053b137
     LEA EAX,[EDX*0x4 + 0x0]             ; 0053b13a
     SUB EAX,EDX                         ; 0053b141
@@ -920,7 +920,7 @@ section .text
     PUSH 0x0                            ; 0053b152
     PUSH EBX                            ; 0053b154
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053b155
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053b15a
     ADD ESP,0x8                         ; 0053b15d
     FLD float ptr [EBP + 0x76]          ; 0053b160
@@ -1006,7 +1006,7 @@ section .text
     LEA EAX,[EBP + 0xfffff62a]          ; 0053b24e
     PUSH EAX                            ; 0053b254
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053b255
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0053b25a
     LEA EAX,[EBP + 0xfffff62a]          ; 0053b25d
     PUSH EAX                            ; 0053b263
@@ -1128,7 +1128,7 @@ section .text
     PUSH EAX                            ; 0053b3dd
     FSTP float ptr [EBP + -0x7e]        ; 0053b3de
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 0053b3e1
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     MOV EAX,dword ptr [EBP + 0xffffff7e] ; 0053b3e6
     MOV dword ptr [EBP + 0xfffffde6],EAX ; 0053b3ec
     MOV EAX,dword ptr [EBP + -0x7e]     ; 0053b3f2
@@ -1247,7 +1247,7 @@ section .text
         ;   Label: LAB_0053b575
     PUSH EAX                            ; 0053b57b
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 0053b57c
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 0053b581
     JMP 0x0053b4b9                      ; 0053b584
         ;   XREF to: 0053b4b9 (UNCONDITIONAL_JUMP)  ; LAB_0053b4b9

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_fire_cpp_CCrater_ctor_FUN_0048ca50(int param_1)
+; CCrater * __cdecl core_fire_cpp_CCrater_ctor_FUN_0048ca50(CCrater *this_ptr)
 ;
+; Parameters:
+; CCrater *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00490f19
     ADD EBX,EDI                         ; 00490f1a
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00490f1c
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     LEA EDX,[EBX + 0x1]                 ; 00490f21
     SUB EDX,EAX                         ; 00490f24
     MOV EAX,EDX                         ; 00490f26

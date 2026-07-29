@@ -69,7 +69,7 @@ void __cdecl CKeyFramedModel::captureTextures(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990
 // Address: 00453990
-float CKeyFramedModel::intersectRay(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5);
+float __cdecl CKeyFramedModel::intersectRay(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10
 // Address: 00453e10
@@ -93,7 +93,7 @@ CKeyFramedModel * __cdecl loadModel(char *filename);
 
 // Original: core_dmodel.cpp_FUN_00454460
 // Address: 00454460
-void FUN_00454460(void);
+void __cdecl FUN_00454460(void);
 
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 // Address: 00454490

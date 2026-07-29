@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shovel_cpp_CShovel_fire_FUN_00516a90(undefined4 param_1)
+; int __cdecl core_shovel_cpp_CShovel_fire_FUN_00516a90(CShovel *this_ptr)
 ;
+; Parameters:
+; CShovel *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Warning_called_fire_for_005910d1

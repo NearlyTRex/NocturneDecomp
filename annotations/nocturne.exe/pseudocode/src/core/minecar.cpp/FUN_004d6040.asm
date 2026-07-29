@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_minecar_cpp_FUN_004d6040(int param_1,float param_2)
+; void core_minecar_cpp_FUN_004d6040(CPlatform *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -21,7 +21,7 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 004d6045
     PUSH EBX                            ; 004d6049
     CALL core_platfrm.cpp_FUN_004f6170  ; 004d604a
-        ;   XREF to: 004f6170 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f6170()
+        ;   XREF to: 004f6170 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_004f6170(CPlatform * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x2cc]     ; 004d604f
     ADD ESP,0x8                         ; 004d6055
     CMP EDX,0x3                         ; 004d6058

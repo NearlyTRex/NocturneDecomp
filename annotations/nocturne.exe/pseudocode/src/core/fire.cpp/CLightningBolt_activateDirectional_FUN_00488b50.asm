@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CLightningBolt_activateDirectional_FUN_00488b50(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CLightningBolt_activateDirectional_FUN_00488b50(CLightningBolt *this_ptr,CVector3f *start_position,CVector3f *end_position,float end_width,float end_spread)
 ;
+; Parameters:
+; CLightningBolt * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_position
+; CVector3f *      Stack[0xc]:4   end_position
+; float            Stack[0x10]:4   end_width
+; float            Stack[0x14]:4   end_spread
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0 at 0048c4d0

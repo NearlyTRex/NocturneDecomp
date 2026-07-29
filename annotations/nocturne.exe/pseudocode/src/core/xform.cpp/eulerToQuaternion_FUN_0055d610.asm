@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_eulerToQuaternion_FUN_0055d610(undefined4 param_1)
+; void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [EBP + -0x8],ECX      ; 0055d62b
     MOV dword ptr [EBP + -0x4],ECX      ; 0055d62e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0055d631
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0055d636
     LEA ESI,[EBP + -0x4c]               ; 0055d639
     PUSH ESI                            ; 0055d63c

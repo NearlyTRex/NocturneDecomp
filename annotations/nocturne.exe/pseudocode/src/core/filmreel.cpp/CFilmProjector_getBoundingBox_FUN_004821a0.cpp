@@ -1,19 +1,19 @@
 // Name: core_filmreel.cpp_CFilmProjector_getBoundingBox_FUN_004821a0
 // Address: 004821a0
 // Address Range: [[004821a0, 004821cd]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0(undefined4 param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
 
 #include "nocturne.h"
 
-void core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0(uint param_1,uint *param_2)
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
 
 {
-  param_2[1] = 0;
-  param_2[2] = 0xbdcccccd;
-  param_2[3] = 0x3f800000;
-  param_2[4] = 0x40400000;
-  param_2[5] = 0x3dcccccd;
-  *param_2 = 0xbf800000;
-  return;
+  (out_box->min).y = 0.0;
+  (out_box->min).z = -0.1;
+  (out_box->max).x = 1.0;
+  (out_box->max).y = 3.0;
+  (out_box->max).z = 0.1;
+  (out_box->min).x = -1.0;
+  return out_box;
 }

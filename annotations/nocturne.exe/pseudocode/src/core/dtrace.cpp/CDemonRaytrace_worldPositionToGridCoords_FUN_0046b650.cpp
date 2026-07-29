@@ -15,36 +15,37 @@ void core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(int p
   uint *unaff_ESI;
   byte bVar4;
   double dVar5;
-  int aiStackY_100c [1016];
+  uint auStackY_100c [1016];
   uint uVar6;
-  int iStack_20;
-  byte local_18 [8];
-  double local_10;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint uStack_c;
   
   bVar4 = 0;
-  dVar5 = (double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28));
-  iStack_20 = (int)((ulonglong)dVar5 >> 0x20);
-  local_10 = (double)floor(SUB84(__BITCAST_UINT64(dVar5),0));
+  dVar5 = floor
+                    ((double)((*param_2 - *(float *)(param_1 + 0x10)) / *(float *)(param_1 + 0x28)))
+  ;
   fVar1 = param_2[1];
   fVar2 = *(float *)(param_1 + 0x14);
   fVar3 = *(float *)(param_1 + 0x2c);
-  iStack_20 = 0x46b68f;
-  dVar5 = round(local_10);
-  iStack_20 = (int)ROUND(dVar5);
-  dVar5 = (double)floor((double)((fVar1 - fVar2) / fVar3));
+  local_10 = SUB84(__BITCAST_UINT64(dVar5),0);
+  uStack_c = (uint)((ulonglong)dVar5 >> 0x20);
+  round(dVar5);
+  dVar5 = floor((double)((fVar1 - fVar2) / fVar3));
   fVar1 = param_2[2];
   fVar2 = *(float *)(param_1 + 0x18);
   fVar3 = *(float *)(param_1 + 0x30);
+  local_14 = SUB84(__BITCAST_UINT64(dVar5),0);
+  local_10 = (uint)((ulonglong)dVar5 >> 0x20);
   uVar6 = 0x46b6ba;
-  unique0x1000017b = dVar5;
-  dVar5 = round(dVar5);
-  iStack_20 = (int)ROUND(dVar5);
-  dVar5 = (double)floor((double)((fVar1 - fVar2) / fVar3));
-  local_18 = (byte  [8])dVar5;
-  dVar5 = round(dVar5);
-  iStack_20 = (int)ROUND(dVar5);
+  round(dVar5);
+  dVar5 = floor((double)((fVar1 - fVar2) / fVar3));
+  local_18 = SUB84(__BITCAST_UINT64(dVar5),0);
+  local_14 = (uint)((ulonglong)dVar5 >> 0x20);
+  round(dVar5);
   *unaff_ESI = uVar6;
-  unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)((int)&stack0xffffffe0 + (uint)bVar4 * -8);
+  unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);
   (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
        *(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   return;

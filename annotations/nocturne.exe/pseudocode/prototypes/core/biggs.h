@@ -39,14 +39,14 @@ void CBiggs::archive(CEnemy *param_1);
 // Address: 00415900
 void CBiggs::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
-// Original: core_biggs.cpp_FUN_004159c0
+// Original: core_biggs.cpp_CBiggs_getTargetPoints_FUN_004159c0
 // Address: 004159c0
-undefined4 FUN_004159c0(int param_1,CVector3f *param_2);
+int __cdecl CBiggs::getTargetPoints(CBiggs *this_ptr,CVector3f *out_points_array);
 
 // Original: core_biggs.cpp_FUN_00415a10
 // Address: 00415a10
 void FUN_00415a10(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_biggs.cpp_FUN_00415a30
+// Original: core_biggs.cpp_CBiggs_dtor_FUN_00415a30
 // Address: 00415a30
-CDemonActor * FUN_00415a30(CDemonActor *param_1,byte param_2);
+CBiggs * __cdecl CBiggs::dtor(CBiggs *this_ptr,uint flags);

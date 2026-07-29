@@ -17,7 +17,7 @@ int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *se
 
 // Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004cf810
 // Address: 004cf810
-void showJoystickCalibrationScreen(char *param_1);
+void __cdecl showJoystickCalibrationScreen(char *instruction_text,char *message_text);
 
 // Original: core_menu.cpp_calibrateGamepad_FUN_004cf8d0
 // Address: 004cf8d0
@@ -45,7 +45,7 @@ void __cdecl configureCustomKeys(void);
 
 // Original: core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_004d1290
 // Address: 004d1290
-void renderAudioSpectrumBarByBounds(void);
+void __cdecl renderAudioSpectrumBarByBounds(int x_center,int y_bottom,int y_top);
 
 // Original: core_menu.cpp_configureSoundOptions_FUN_004d12e0
 // Address: 004d12e0
@@ -73,7 +73,7 @@ int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description
 
 // Original: core_menu.cpp_getSinglePressedKey_FUN_004d2c80
 // Address: 004d2c80
-int getSinglePressedKey(void);
+int __cdecl getSinglePressedKey(void);
 
 // Original: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00
 // Address: 004d2d00

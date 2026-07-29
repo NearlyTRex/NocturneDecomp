@@ -26,7 +26,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEd
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf();
+      iVar1 = sscanf(local_38,"%f");
       if (iVar1 == 1) break;
       shape_edittool_cpp_FUN_0046fcd0(this_ptr);
     }

@@ -1,15 +1,14 @@
 // Name: engine_texture.cpp_renderTextureAtlas_FUN_00545aa0
 // Address: 00545aa0
 // Address Range: [[00545aa0, 00545acf]]
-// Convention: unknown
-// Signature: void engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
+void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
 
 {
   if (_DAT_01c02594 == 0) {

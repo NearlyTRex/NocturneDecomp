@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(int *param_1,float *param_2,int *param_3)
+; void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   direction
+; CVector3f *      Stack[0xc]:4   rotation
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -82,7 +86,7 @@ section .text
         ;   Label: LAB_0055581d
     PUSH 0x40a00000                     ; 00555822
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00555827
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 0055582c
     FLD float ptr [ESP + 0x44]          ; 00555830
     ADD ESP,0x8                         ; 00555834
@@ -97,7 +101,7 @@ section .text
     SUB ESP,0x4                         ; 00555855
     FSTP float ptr [ESP]                ; 00555858
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0055585b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00555860
     FLD float ptr [ESP + 0x44]          ; 00555864
     ADD ESP,0x8                         ; 00555868
@@ -166,7 +170,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 00555921 | DAT_005be368
     PUSH ECX                            ; 00555927 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 00555928
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x48],EAX      ; 0055592d
     FLD float ptr [ESP + 0x48]          ; 00555931
     ADD ESP,0xc                         ; 00555935
@@ -179,7 +183,7 @@ section .text
     FST float ptr [ESI + 0x2de0388]     ; 0055594d
     FSTP double ptr [ESP + 0x34]        ; 00555953
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00555957
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 0055595c
     FLD float ptr [ESP + 0x44]          ; 00555960
     FMUL double ptr [0x00597ca9]        ; 00555964 | DOUBLE_00597ca9

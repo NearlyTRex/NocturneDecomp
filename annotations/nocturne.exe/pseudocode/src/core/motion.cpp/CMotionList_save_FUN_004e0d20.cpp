@@ -1,96 +1,100 @@
 // Name: core_motion.cpp_CMotionList_save_FUN_004e0d20
 // Address: 004e0d20
 // Address Range: [[004e0d20, 004e1001]]
-// Convention: unknown
-// Signature: void core_motion_cpp_CMotionList_save_FUN_004e0d20(int *param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void core_motion_cpp_CMotionList_save_FUN_004e0d20(int *param_1,uint param_2)
+void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr,_FILE *file_handle)
 
 {
   int *piVar1;
   float *pfVar2;
   float *pfVar3;
   int *piVar4;
-  int *piVar5;
-  int iVar6;
+  EMotionTransitionCmd *pEVar5;
+  int *piVar6;
   int iVar7;
-  int *piVar8;
+  SMotionTransition *pSVar8;
+  SMotion *pSVar9;
+  char (*pacVar10) [30];
   int local_18;
-  int *local_14;
+  SMotion *local_14;
   
-  _fprintf(param_2,"// motion list version\n");
-  _fprintf(param_2,"%d\n",2);
-  _fprintf(param_2,"// state list\n");
-  _fprintf(param_2,"%d\n",*param_1);
+  _fprintf(file_handle,"// motion list version\n");
+  _fprintf(file_handle,"%d\n",2);
+  _fprintf(file_handle,"// state list\n");
+  _fprintf(file_handle,"%d\n",this_ptr->state_count);
   iVar7 = 0;
-  if (0 < *param_1) {
-    piVar8 = param_1 + 1;
+  if (0 < this_ptr->state_count) {
+    pacVar10 = this_ptr->state_names;
     do {
       iVar7 = iVar7 + 1;
-      _fprintf(param_2,"%s\n",piVar8);
-      piVar8 = (int *)((int)piVar8 + 0x1e);
-    } while (iVar7 < *param_1);
+      _fprintf(file_handle,"%s\n",pacVar10);
+      pacVar10 = pacVar10 + 1;
+    } while (iVar7 < this_ptr->state_count);
   }
-  _fprintf(param_2,"// motion count\n");
-  _fprintf(param_2,"%d\n",param_1[0x259]);
+  _fprintf(file_handle,"// motion count\n");
+  _fprintf(file_handle,"%d\n",this_ptr->motion_count);
   local_18 = 0;
-  if (0 < param_1[0x259]) {
-    local_14 = param_1 + 0x25a;
+  if (0 < this_ptr->motion_count) {
+    local_14 = this_ptr->motions;
     do {
-      _fprintf(param_2,"// motion %d: \"name\",fps,state,frameStart,frameCount\n",local_18);
-      _fprintf(param_2,"\"%s\",%g,%d,%d,%d\n",local_14,(double)(float)local_14[8],local_14[9],
-                 local_14[0x18],local_14[0x19]);
-      _fprintf(param_2,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n",local_18);
-      _fprintf(param_2,"%d,%d,%g\n",local_14[10],local_14[0xd],(double)(float)local_14[0xe]);
-      _fprintf(param_2,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n",local_18);
-      _fprintf(param_2,"%d,%g,%d\n",local_14[0xc],(double)(float)local_14[0xf],local_14[0x10])
-      ;
-      _fprintf(param_2,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n",local_18);
-      _fprintf(param_2,"%d,%g\n",local_14[0x14],(double)(float)local_14[0x15]);
-      _fprintf(param_2,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
+      _fprintf(file_handle,"// motion %d: \"name\",fps,state,frameStart,frameCount\n",local_18);
+      _fprintf(file_handle,"\"%s\",%g,%d,%d,%d\n",local_14,(double)local_14->fps,
+                 local_14->state_index,local_14->frame_start,local_14->frame_count);
+      _fprintf(file_handle,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n",local_18);
+      _fprintf(file_handle,"%d,%d,%g\n",local_14->exit_forward_from_frame,
+                 local_14->exit_forward_to_motion,(double)local_14->exit_forward_to_frame);
+      _fprintf(file_handle,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n",local_18);
+      _fprintf(file_handle,"%d,%g,%d\n",local_14->exit_forward_cmd,
+                 (double)local_14->exit_forward_tween_time,local_14->exit_forward_set_new_state);
+      _fprintf(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n",local_18);
+      _fprintf(file_handle,"%d,%g\n",local_14->exit_backward_to_motion,
+                 (double)local_14->exit_backward_to_frame);
+      _fprintf(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
       iVar7 = 0;
-      _fprintf(param_2,"%d\n",local_14[0x1a]);
-      if (0 < local_14[0x1a]) {
-        piVar8 = local_14 + 0x1b;
+      _fprintf(file_handle,"%d\n",local_14->transition_count);
+      if (0 < local_14->transition_count) {
+        pSVar8 = local_14->transitions;
         do {
-          piVar1 = piVar8 + 5;
-          pfVar2 = (float *)(piVar8 + 4);
-          pfVar3 = (float *)(piVar8 + 3);
-          piVar4 = piVar8 + 2;
-          piVar5 = piVar8 + 1;
-          iVar6 = *piVar8;
-          piVar8 = piVar8 + 6;
+          piVar1 = &pSVar8->set_new_state_as_desired;
+          pfVar2 = &pSVar8->tween_time;
+          pfVar3 = &pSVar8->to_frame_number;
+          piVar4 = &pSVar8->to_motion_number;
+          pEVar5 = &pSVar8->cmd;
+          piVar6 = &pSVar8->desired_state;
+          pSVar8 = pSVar8 + 1;
           iVar7 = iVar7 + 1;
-          _fprintf(param_2,"%d,%d,%d,%g,%g,%d\n",iVar6,*piVar5,*piVar4,(double)*pfVar3,
+          _fprintf(file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*pEVar5,*piVar4,(double)*pfVar3,
                      (double)*pfVar2,*piVar1);
-        } while (iVar7 < local_14[0x1a]);
+        } while (iVar7 < local_14->transition_count);
       }
-      _fprintf(param_2,"// motion %d signal count, list: frameNumber, value\n",local_18);
+      _fprintf(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);
       iVar7 = 0;
-      _fprintf(param_2,"%d\n",local_14[0x129]);
-      if (0 < local_14[0x129]) {
+      _fprintf(file_handle,"%d\n",local_14->signal_count);
+      if (0 < local_14->signal_count) {
         do {
           iVar7 = iVar7 + 1;
           _fprintf();
-        } while (iVar7 < local_14[0x129]);
+        } while (iVar7 < local_14->signal_count);
       }
-      _fprintf(param_2,"// motion %d marker count, list\n",local_18);
+      _fprintf(file_handle,"// motion %d marker count, list\n",local_18);
       iVar7 = 0;
-      _fprintf(param_2,"%d",local_14[0x148]);
-      piVar8 = local_14;
-      if (0 < local_14[0x148]) {
+      _fprintf(file_handle,"%d",local_14->marker_count);
+      pSVar9 = local_14;
+      if (0 < local_14->marker_count) {
         do {
           iVar7 = iVar7 + 1;
-          _fprintf(param_2," %d",piVar8[0x149]);
-          piVar8 = piVar8 + 1;
-        } while (iVar7 < local_14[0x148]);
+          _fprintf(file_handle," %d",pSVar9->markers[0]);
+          pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
+        } while (iVar7 < local_14->marker_count);
       }
-      _fprintf(param_2,"\n");
-      local_14 = local_14 + 0x153;
+      _fprintf(file_handle,"\n");
+      local_14 = local_14 + 1;
       local_18 = local_18 + 1;
-    } while (local_18 < param_1[0x259]);
+    } while (local_18 < this_ptr->motion_count);
   }
   return;
 }

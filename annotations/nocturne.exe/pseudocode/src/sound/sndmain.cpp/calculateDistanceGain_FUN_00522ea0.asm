@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float sound_sndmain_cpp_calculateDistanceGain_FUN_00522ea0(float param_1,float param_2,float param_3,float param_4)
+; float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_00522ea0(float distance,float reference_distance,float min_distance,float max_distance)
 ;
+; Parameters:
+; float            Stack[0x4]:4   distance
+; float            Stack[0x8]:4   reference_distance
+; float            Stack[0xc]:4   min_distance
+; float            Stack[0x10]:4   max_distance
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005927ee = 0.0500000000000000

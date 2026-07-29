@@ -61,7 +61,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0050e1e3 | DAT_005ae704
     PUSH EDI                            ; 0050e1e9 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0 ; 0050e1ea
-        ;   XREF to: 004613a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0()
+        ;   XREF to: 004613a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(CDemonRenderer * this_ptr, int alpha_mask)
     ADD ESP,0x8                         ; 0050e1ef
     MOV EAX,dword ptr [ESP + 0x10]      ; 0050e1f2
     MOV dword ptr [EAX + 0x161268],0x0  ; 0050e1f6

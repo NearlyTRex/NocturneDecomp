@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)
+; void __cdecl core_fire_cpp_CShell_setup_FUN_00489640(CShell *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 ;
+; Parameters:
+; CShell *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler_angles
+; CVector3f *      Stack[0x10]:4   velocity
+; CKeyFramedModel * Stack[0x14]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -47,7 +53,7 @@ section .text
     PUSH 0xc0c90fdb                     ; 00489680
     MOV dword ptr [EBX + 0x54],EAX      ; 00489685
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00489688
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 0048968d
     FLD float ptr [ESP + 0x8]           ; 00489691
     ADD ESP,0x8                         ; 00489695
@@ -55,7 +61,7 @@ section .text
     PUSH 0xc0490fdb                     ; 0048969d
     FSTP float ptr [EBX + 0x44]         ; 004896a2
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004896a5
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBX + 0x50],0x0      ; 004896aa
     MOV dword ptr [ESP + 0x8],EAX       ; 004896b1
     MOV dword ptr [EBX + 0x18],0x40400000 ; 004896b5

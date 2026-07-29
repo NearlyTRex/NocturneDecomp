@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [ESP + 0x24],EDX      ; 005331a5
     MOV dword ptr [ESP + 0x28],EDX      ; 005331a9
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 005331ad
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 005331b2
     FLD float ptr [EDX]                 ; 005331b5
     FSUB float ptr [EAX]                ; 005331b7

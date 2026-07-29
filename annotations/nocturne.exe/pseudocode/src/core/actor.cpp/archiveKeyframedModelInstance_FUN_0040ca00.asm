@@ -13,7 +13,7 @@
 ; XREF[29]:
 ;   core_ammo.cpp_FUN_0040ecf0 at 0040ed0a
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f3aa
-;   core_anvil.cpp_FUN_0040f7d0 at 0040f7ea
+;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7ea
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 0041005a
 ;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411bce
 ;   core_battery.cpp_CBattery_archive_FUN_00414ef0 at 00414f0a

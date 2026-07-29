@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00401bd0(char *param_1)
+; void __cdecl engine_2d_c_FUN_00401bd0(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
 ;   engine_2d.c_FUN_00401010 at 0040105c

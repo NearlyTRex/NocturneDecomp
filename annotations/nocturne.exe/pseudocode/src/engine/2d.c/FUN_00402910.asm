@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402910(undefined4 param_1,undefined4 param_2,char *param_3)
+; void engine_2d_c_FUN_00402910(int param_1,int param_2,char *param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x100c]:1  local_100c
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 00402959
     MOV dword ptr [ESP + 0x100c],ECX    ; 0040295a
     CALL engine_2d.c_FUN_004028b0       ; 00402961
-        ;   XREF to: 004028b0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004028b0()
+        ;   XREF to: 004028b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004028b0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402966
     ADD ESP,0x1004                      ; 00402969
     POP ESI                             ; 0040296f

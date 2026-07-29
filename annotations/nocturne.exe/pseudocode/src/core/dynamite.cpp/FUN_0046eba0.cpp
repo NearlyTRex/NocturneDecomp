@@ -9,12 +9,12 @@
 void core_dynamite_cpp_FUN_0046eba0(void)
 
 {
-  int iVar1;
+  CDynamite *this_ptr;
   
-  iVar1 = FUN_0056497c(0x584);
-  if (iVar1 == 0) {
+  this_ptr = (CDynamite *)FUN_0056497c(0x584);
+  if (this_ptr == (CDynamite *)0x0) {
     return;
   }
-  core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(iVar1);
+  core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(this_ptr);
   return;
 }

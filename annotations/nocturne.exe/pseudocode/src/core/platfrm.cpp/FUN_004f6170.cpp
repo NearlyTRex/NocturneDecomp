@@ -1,44 +1,46 @@
 // Name: core_platfrm.cpp_FUN_004f6170
 // Address: 004f6170
 // Address Range: [[004f6170, 004f6bc7]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_FUN_004f6170(CPlatform *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_platfrm_cpp_FUN_004f6170(CPlatform *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void core_platfrm_cpp_FUN_004f6170(CPlatform *param_1,float param_2)
+void __cdecl core_platfrm_cpp_FUN_004f6170(CPlatform *this_ptr,float delta_time)
 
 {
   char cVar1;
-  int iVar2;
-  float fVar3;
+  CCharacter *this_ptr_00;
+  float fVar2;
   char *name;
-  CDemonActor *pCVar4;
-  int iVar5;
-  uint uVar6;
+  CDemonActor *pCVar3;
+  int iVar4;
+  uint uVar5;
+  EDeathState EVar6;
   int iVar7;
+  ECollisionType EVar8;
   UOrientationVector *euler_angles;
-  char *pcVar8;
   char *pcVar9;
+  char *pcVar10;
   CLocation *position;
-  uint *puVar10;
-  float *pfVar11;
-  char *pcVar12;
-  int iVar13;
-  uint *puVar14;
-  CMatrix3x4f *pCVar15;
-  bool bVar16;
-  byte bVar17;
+  uint *puVar11;
+  float *pfVar12;
+  char *pcVar13;
+  int iVar14;
+  uint *puVar15;
+  CMatrix3x4f *pCVar16;
+  bool bVar17;
+  byte bVar18;
   char local_324 [256];
   CMatrix3x4f CStack_224;
   CMatrix3x4f CStack_1f4;
-  byte auStack_1c4 [48];
+  CMatrix3x4f CStack_1c4;
   float afStack_194 [12];
   uint auStack_164 [12];
   uint auStack_134 [12];
-  byte auStack_104 [48];
+  CMatrix3x4f CStack_104;
   SCollisionInfo SStack_d4;
   CBoundingBox3D CStack_ac;
   CVector3f CStack_94;
@@ -62,247 +64,249 @@ void core_platfrm_cpp_FUN_004f6170(CPlatform *param_1,float param_2)
   int iStack_24;
   int iStack_20;
   float fStack_1c;
-  float *pfStack_18;
+  CVector3f *pCStack_18;
   
-  bVar17 = 0;
-  if (1 < param_1->one_shot) {
+  bVar18 = 0;
+  if (1 < this_ptr->one_shot) {
     return;
   }
-  bVar16 = false;
-  local_34 = param_1->param;
+  bVar17 = false;
+  local_34 = this_ptr->param;
   local_30 = 0;
   local_2c = 0;
-  switch(param_1->state) {
+  switch(this_ptr->state) {
   case PLATFORM_STATE_TYPE_AT_START:
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->to_end_event);
-    bVar16 = iVar5 != 0;
-    if (bVar16) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,this_ptr->to_end_event);
+    bVar17 = iVar4 != 0;
+    if (bVar17) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
-                (param_1,1.0,1.0 / param_1->travel_time_to_end);
+                (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
-    param_1->param = 0.0;
+    this_ptr->param = 0.0;
     break;
   case PLATFORM_STATE_TYPE_AT_END:
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->to_start_event);
-    bVar16 = iVar5 != 0;
-    if (bVar16) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,this_ptr->to_start_event);
+    bVar17 = iVar4 != 0;
+    if (bVar17) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
-                (param_1,0.0,1.0 / param_1->travel_time_to_start);
+                (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
     }
-    param_1->param = 1.0;
+    this_ptr->param = 1.0;
     break;
   case PLATFORM_STATE_TYPE_WTF:
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->to_end_event);
-    if (iVar5 == 0) {
-      iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,param_1->to_start_event);
-      if (iVar5 != 0) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,this_ptr->to_end_event);
+    if (iVar4 == 0) {
+      iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                        (0x01C03A10,this_ptr->to_start_event);
+      if (iVar4 != 0) {
         core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
-                  (param_1,0.0,1.0 / param_1->travel_time_to_start);
+                  (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
       }
     }
     else {
       core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
-                (param_1,1.0,1.0 / param_1->travel_time_to_end);
+                (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
     break;
   case PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END:
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->stop_event);
-    if (iVar5 != 0) {
-      param_1->state = PLATFORM_STATE_TYPE_WTF;
-      if (param_1->stop_sound[0] != '\0') {
-        (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->stop_sound);
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,this_ptr->stop_event);
+    if (iVar4 != 0) {
+      this_ptr->state = PLATFORM_STATE_TYPE_WTF;
+      if (this_ptr->stop_sound[0] != '\0') {
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->stop_sound);
       }
       break;
     }
-    fVar3 = param_2 * param_1->current_movement_rate + param_1->param;
-    param_1->param = fVar3;
-    if (fVar3 <= param_1->goal_param) {
+    fVar2 = delta_time * this_ptr->current_movement_rate + this_ptr->param;
+    this_ptr->param = fVar2;
+    if (fVar2 <= this_ptr->goal_param) {
 LAB_004f65e2:
       local_2c = 1;
       break;
     }
-    param_1->param = param_1->goal_param;
-    if (1.0 <= param_1->param) {
-      param_1->state = PLATFORM_STATE_TYPE_AT_END;
-      if (param_1->one_shot != 0) {
-        param_1->one_shot = 2;
+    this_ptr->param = this_ptr->goal_param;
+    if (1.0 <= this_ptr->param) {
+      this_ptr->state = PLATFORM_STATE_TYPE_AT_END;
+      if (this_ptr->one_shot != 0) {
+        this_ptr->one_shot = 2;
       }
       local_30 = 1;
       break;
     }
     goto LAB_004f65d0;
   case 4:
-    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,param_1->stop_event);
-    if (iVar5 != 0) {
-      param_1->state = PLATFORM_STATE_TYPE_WTF;
-      if (param_1->stop_sound[0] != '\0') {
-        (*((param_1->base).vtable._ub)->playSound)(&param_1->base,param_1->stop_sound);
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,this_ptr->stop_event);
+    if (iVar4 != 0) {
+      this_ptr->state = PLATFORM_STATE_TYPE_WTF;
+      if (this_ptr->stop_sound[0] != '\0') {
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->stop_sound);
       }
       break;
     }
-    fVar3 = param_1->param - param_2 * param_1->current_movement_rate;
-    param_1->param = fVar3;
-    if (param_1->goal_param <= fVar3) goto LAB_004f65e2;
-    param_1->param = param_1->goal_param;
-    if (param_1->param <= 0.0) {
-      param_1->state = PLATFORM_STATE_TYPE_AT_START;
-      if (param_1->one_shot != 0) {
-        param_1->one_shot = 2;
+    fVar2 = this_ptr->param - delta_time * this_ptr->current_movement_rate;
+    this_ptr->param = fVar2;
+    if (this_ptr->goal_param <= fVar2) goto LAB_004f65e2;
+    this_ptr->param = this_ptr->goal_param;
+    if (this_ptr->param <= 0.0) {
+      this_ptr->state = PLATFORM_STATE_TYPE_AT_START;
+      if (this_ptr->one_shot != 0) {
+        this_ptr->one_shot = 2;
       }
       local_30 = 1;
       break;
     }
 LAB_004f65d0:
-    param_1->state = PLATFORM_STATE_TYPE_WTF;
+    this_ptr->state = PLATFORM_STATE_TYPE_WTF;
   }
-  if (param_1->render_in_background_when_not_moving_flag != 0) {
-    if (bVar16) {
-      pcVar12 = local_324;
-      pcVar9 = param_1->camera_while_moving;
-      pcVar8 = local_324;
+  if (this_ptr->render_in_background_when_not_moving_flag != 0) {
+    if (bVar17) {
+      pcVar13 = local_324;
+      pcVar10 = this_ptr->camera_while_moving;
+      pcVar9 = local_324;
       do {
-        cVar1 = *pcVar9;
-        *pcVar12 = cVar1;
-        name = pcVar8;
+        cVar1 = *pcVar10;
+        *pcVar13 = cVar1;
+        name = pcVar9;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar12[1] = cVar1;
-        pcVar12 = pcVar12 + 2;
+        cVar1 = pcVar10[1];
+        pcVar10 = pcVar10 + 2;
+        pcVar13[1] = cVar1;
+        pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
 joined_r0x004f6259:
       if (local_324[0] != '\0') {
-        if (*pcVar8 == ';') {
-          *pcVar8 = '\0';
-          pCVar4 = (CDemonActor *)
+        if (*pcVar9 == ';') {
+          *pcVar9 = '\0';
+          pCVar3 = (CDemonActor *)
                    core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(0x01E57284,name);
-          if ((pCVar4 != (CDemonActor *)0xffffffff) &&
-             (pCVar4 != 0x01E57284->renderable_actors[0x773])) {
-            core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,(int)pCVar4,999.0);
-            param_1->platform_type = PLATFORM_TYPE_DISABLED;
+          if ((pCVar3 != (CDemonActor *)0xffffffff) &&
+             (pCVar3 != 0x01E57284->renderable_actors[0x773])) {
+            core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,(int)pCVar3,999.0);
+            this_ptr->platform_type = PLATFORM_TYPE_DISABLED;
             goto LAB_004f62b0;
           }
-          pcVar8 = pcVar8 + 1;
-          local_324[0] = *pcVar8;
-          name = pcVar8;
+          pcVar9 = pcVar9 + 1;
+          local_324[0] = *pcVar9;
+          name = pcVar9;
         }
         else {
-          pcVar8 = pcVar8 + 1;
-          local_324[0] = *pcVar8;
+          pcVar9 = pcVar9 + 1;
+          local_324[0] = *pcVar9;
         }
         goto joined_r0x004f6259;
       }
 LAB_004f62b0:
-      pCVar4 = (CDemonActor *)
+      pCVar3 = (CDemonActor *)
                core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(0x01E57284,name);
-      if ((pCVar4 != (CDemonActor *)0xffffffff) &&
-         (pCVar4 != 0x01E57284->renderable_actors[0x773])) {
-        core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,(int)pCVar4,999.0);
-        param_1->platform_type = PLATFORM_TYPE_DISABLED;
+      if ((pCVar3 != (CDemonActor *)0xffffffff) &&
+         (pCVar3 != 0x01E57284->renderable_actors[0x773])) {
+        core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(0x01E57284,(int)pCVar3,999.0);
+        this_ptr->platform_type = PLATFORM_TYPE_DISABLED;
       }
     }
     if (local_30 != 0) {
       core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(0x01E57284);
     }
   }
-  if (param_1->param == local_34) {
+  if (this_ptr->param == local_34) {
     return;
   }
-  if ((local_2c == 0) || (param_1->active_sound[0] == '\0')) {
-    core_sound_cpp_CSound_killSound_FUN_0052ebb0(0x02DC9450,param_1->sfx_handle);
+  if ((local_2c == 0) || (this_ptr->active_sound[0] == '\0')) {
+    core_sound_cpp_CSound_killSound_FUN_0052ebb0(0x02DC9450,this_ptr->sfx_handle);
   }
   else {
-    iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,param_1->sfx_handle);
-    if (iVar5 == 0) {
-      uVar6 = (*((param_1->base).vtable._ub)->playAmbientSound)
-                        (&param_1->base,param_1->active_sound);
-      param_1->sfx_handle = uVar6;
+    iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,this_ptr->sfx_handle);
+    if (iVar4 == 0) {
+      uVar5 = (*((this_ptr->base).vtable._ub)->playAmbientSound)
+                        (&this_ptr->base,this_ptr->active_sound);
+      this_ptr->sfx_handle = uVar5;
     }
   }
-  euler_angles = &(param_1->base).orient;
-  position = &(param_1->base).location;
-  fStack_28 = (param_1->base).location.position.y;
+  euler_angles = &(this_ptr->base).orient;
+  position = &(this_ptr->base).location;
+  fStack_28 = (this_ptr->base).location.position.y;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
             (&CStack_224,&position->position,&euler_angles->vec);
-  core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(param_1);
+  core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(this_ptr);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (auStack_104,position,euler_angles);
-  iVar5 = 0;
-  (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&CStack_ac);
-  iVar13 = 0;
+            (&CStack_104,&position->position,&euler_angles->vec);
+  iVar4 = 0;
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_ac);
+  iVar14 = 0;
   do {
     while( true ) {
-      if ((int)0x01E57284->actors[0x6d6] <= iVar13) {
+      if ((int)0x01E57284->actors[0x6d6] <= iVar14) {
         iStack_24 = 0;
         for (iStack_20 = 0; iStack_20 < *(int *)0x01E57284->lights[199].filter_names[0x14];
             iStack_20 = iStack_20 + 1) {
-          iVar5 = *(int *)(0x01E57284->lights[199].filter_names[0x14] + iStack_24 + 4);
-          if (param_1 == *(CPlatform **)(iVar5 + 0xdc)) {
-            pfStack_18 = (float *)(iVar5 + 0x20);
+          iVar4 = *(int *)(0x01E57284->lights[199].filter_names[0x14] + iStack_24 + 4);
+          if (this_ptr == *(CPlatform **)(iVar4 + 0xdc)) {
+            pCStack_18 = (CVector3f *)(iVar4 + 0x20);
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                      (auStack_1c4,pfStack_18,iVar5 + 0x30);
-            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_1c4,&CStack_224);
-            puVar10 = auStack_134;
-            puVar14 = auStack_164;
-            for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {
-              *puVar14 = *puVar10;
-              puVar10 = puVar10 + (uint)bVar17 * -2 + 1;
-              puVar14 = puVar14 + (uint)bVar17 * -2 + 1;
+                      (&CStack_1c4,pCStack_18,(CVector3f *)(iVar4 + 0x30));
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_1c4,&CStack_224);
+            puVar11 = auStack_134;
+            puVar15 = auStack_164;
+            for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
+              *puVar15 = *puVar11;
+              puVar11 = puVar11 + (uint)bVar18 * -2 + 1;
+              puVar15 = puVar15 + (uint)bVar18 * -2 + 1;
             }
-            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_164,auStack_104);
-            pfVar11 = afStack_194;
-            pCVar15 = &CStack_1f4;
-            for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {
-              pCVar15->m[0].w = *pfVar11;
-              pfVar11 = pfVar11 + (uint)bVar17 * -2 + 1;
-              pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar17 * -2 + 1) * 4);
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_164,&CStack_104);
+            pfVar12 = afStack_194;
+            pCVar16 = &CStack_1f4;
+            for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
+              pCVar16->m[0].w = *pfVar12;
+              pfVar12 = pfVar12 + (uint)bVar18 * -2 + 1;
+              pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar18 * -2 + 1) * 4);
             }
             fStack_7c = CStack_1f4.m[0].z;
             fStack_78 = CStack_1f4.m[1].z;
             fStack_74 = CStack_1f4.m[2].z;
             core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&CStack_1f4,&CStack_94);
-            fStack_88 = fStack_7c - *pfStack_18;
-            fStack_84 = fStack_78 - pfStack_18[1];
-            fStack_80 = fStack_74 - pfStack_18[2];
-            if ((float *)(iVar5 + 0xe0) != &fStack_88) {
-              *(float *)(iVar5 + 0xe0) = fStack_88;
-              *(float *)(iVar5 + 0xe4) = fStack_84;
-              *(float *)(iVar5 + 0xe8) = fStack_80;
+            fStack_88 = fStack_7c - pCStack_18->x;
+            fStack_84 = fStack_78 - pCStack_18->y;
+            fStack_80 = fStack_74 - pCStack_18->z;
+            if ((float *)(iVar4 + 0xe0) != &fStack_88) {
+              *(float *)(iVar4 + 0xe0) = fStack_88;
+              *(float *)(iVar4 + 0xe4) = fStack_84;
+              *(float *)(iVar4 + 0xe8) = fStack_80;
             }
-            *(uint *)(iVar5 + 0xec) = 0;
-            *(uint *)(iVar5 + 0xf4) = 0;
-            pfStack_18 = (float *)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                            (CStack_94.y - *(float *)(iVar5 + 0x34));
-            *(float **)(iVar5 + 0xf0) = pfStack_18;
+            *(uint *)(iVar4 + 0xec) = 0;
+            *(uint *)(iVar4 + 0xf4) = 0;
+            pCStack_18 = (CVector3f *)
+                         core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                                   (CStack_94.y - *(float *)(iVar4 + 0x34));
+            *(CVector3f **)(iVar4 + 0xf0) = pCStack_18;
           }
           iStack_24 = iStack_24 + 4;
         }
-        core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(param_1);
+        core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(this_ptr);
         return;
       }
-      iVar2 = *(int *)((int)0x01E57284->actors + iVar5 + 0x1b5c);
-      iVar7 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2);
-      if ((iVar7 < 1) && (iVar7 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x68))(iVar2), iVar7 == 0))
-      break;
+      this_ptr_00 = *(CCharacter **)((int)0x01E57284->actors + iVar4 + 0x1b5c);
+      EVar6 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
+      if (((int)EVar6 < 1) &&
+         (iVar7 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base),
+         iVar7 == 0)) break;
 LAB_004f6a33:
-      iVar13 = iVar13 + 1;
-      iVar5 = iVar5 + 4;
+      iVar14 = iVar14 + 1;
+      iVar4 = iVar4 + 4;
     }
-    if (param_1->push_flag == 0) {
-      if (((param_1->base).location.position.y < fStack_28) &&
-         (iVar7 = core_platfrm_cpp_FUN_004f7360(param_1,iVar2), iVar7 != 0)) {
-        (**(code **)(*(int *)(iVar2 + 0x14c) + 0xd4))(iVar2,8,0,0xbf800000);
+    if (this_ptr->push_flag == 0) {
+      if (((this_ptr->base).location.position.y < fStack_28) &&
+         (iVar7 = core_platfrm_cpp_FUN_004f7360(this_ptr,&this_ptr_00->base), iVar7 != 0)) {
+        (*(((this_ptr_00->base).vtable._uc)->_uc).kill)(this_ptr_00,8,(CVector3f *)0x0,-1.0);
       }
       goto LAB_004f6a33;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-              (&param_1->base,&CStack_4c,(CVector3f *)(iVar2 + 0x20));
+              (&this_ptr->base,&CStack_4c,&(this_ptr_00->base).location.position);
     if ((CStack_ac.max.y < CStack_4c.y) || (CStack_4c.y < CStack_ac.min.y + (float)-20))
     goto LAB_004f6a33;
     core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(&CStack_ac,&CStack_70,&CStack_4c);
@@ -314,23 +318,26 @@ LAB_004f6a33:
     fStack_3c = 0.0;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_d4);
     SStack_d4.ray_query.ray_type = 0;
-    iVar7 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x34))(iVar2,&SStack_d4);
-    if ((((iVar7 != 2) || (CStack_ac.max.y < CStack_4c.y + SStack_d4.cylinder_bottom_y)) ||
+    EVar8 = (*((this_ptr_00->base).vtable._ub)->getCollisionType)(&this_ptr_00->base,&SStack_d4);
+    if ((((EVar8 != COLLISION_TYPE_CYLINDER) ||
+         (CStack_ac.max.y < CStack_4c.y + SStack_d4.cylinder_bottom_y)) ||
         (CStack_4c.y + SStack_d4.cylinder_top_y < CStack_ac.min.y)) ||
-       ((fVar3 = fStack_40 * fStack_40 + fStack_38 * fStack_38,
-        SStack_d4.cylinder_radius * SStack_d4.cylinder_radius < fVar3 ||
-        (fVar3 = SQRT(fVar3), fVar3 <= 0.0)))) goto LAB_004f6a33;
-    fStack_1c = (SStack_d4.cylinder_radius + (float)0.050000000000000003) / fVar3;
+       ((fVar2 = fStack_40 * fStack_40 + fStack_38 * fStack_38,
+        SStack_d4.cylinder_radius * SStack_d4.cylinder_radius < fVar2 ||
+        (fVar2 = SQRT(fVar2), fVar2 <= 0.0)))) goto LAB_004f6a33;
+    fStack_1c = (SStack_d4.cylinder_radius + (float)0.050000000000000003) / fVar2;
     fStack_40 = fStack_40 * fStack_1c;
     fStack_3c = fStack_3c * fStack_1c;
     fStack_38 = fStack_38 * fStack_1c;
     CStack_58.x = CStack_70.x + fStack_40;
     CStack_58.y = CStack_70.y + fStack_3c;
     CStack_58.z = CStack_70.z + fStack_38;
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&param_1->base,&CStack_64,&CStack_58);
-    CStack_64.y = *(float *)(iVar2 + 0x24);
-    (**(code **)(*(int *)(iVar2 + 0x14c) + 0x60))(iVar2,&CStack_64,iVar2 + 0x30);
-    iVar13 = iVar13 + 1;
-    iVar5 = iVar5 + 4;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&this_ptr->base,&CStack_64,&CStack_58)
+    ;
+    CStack_64.y = (this_ptr_00->base).location.position.y;
+    (*((this_ptr_00->base).vtable._ub)->setPositionAndOrientation)
+              (&this_ptr_00->base,&CStack_64,(CVector3f *)&(this_ptr_00->base).orient);
+    iVar14 = iVar14 + 1;
+    iVar4 = iVar4 + 4;
   } while( true );
 }

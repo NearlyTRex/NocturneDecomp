@@ -15,15 +15,15 @@ void core_hotdemon_cpp_CHotDemon_setup_FUN_004b8d00(CEnemy *param_1)
   CEnemy *pCVar1;
   CCharacter *pCVar2;
   CSkeleton *this_ptr_00;
-  char *pcVar3;
+  char *model_name;
   
   if (*(int *)(0x01C775EC + 0x18) == 0) {
-    pcVar3 = "hotdemonx.dfm";
+    model_name = "hotdemonx.dfm";
   }
   else {
-    pcVar3 = "hotdemon.dfm";
+    model_name = "hotdemon.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,pcVar3);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,model_name);
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   this_ptr = &(param_1->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(this_ptr);

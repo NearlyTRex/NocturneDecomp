@@ -151,7 +151,7 @@ section .text
     MOV EBX,dword ptr [0x01bcd070]      ; 00471852 | DAT_01bcd070
     PUSH EBX                            ; 00471858
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 00471859
-        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30()
+        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     MOV EAX,[0x01bcd9bc]                ; 0047185e | DAT_01bcd9bc
     MOV EDI,dword ptr [0x01c00c5c]      ; 00471863 | DAT_01c00c5c
     ADD EAX,EAX                         ; 00471869
@@ -301,7 +301,7 @@ section .text
     MOV EDI,dword ptr [0x01bcd070]      ; 00471a0e | DAT_01bcd070
     PUSH EDI                            ; 00471a14
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 00471a15
-        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30()
+        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x2c                        ; 00471a1a
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00471a1d
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

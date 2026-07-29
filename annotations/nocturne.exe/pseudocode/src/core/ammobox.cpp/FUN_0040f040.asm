@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_ammobox_cpp_FUN_0040f040(undefined4 param_1)
+; CAmmoBox * __cdecl core_ammobox_cpp_FUN_0040f040(CAmmoBox *this_ptr)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_ammobox.cpp_FUN_0040f010 at 0040f023
@@ -13,7 +15,7 @@
 ;   undefined4 s_Gun_00578359+1
 ;   undefined4 s_un_00578359+2
 ;   undefined4 s_n_00578359+3
-;   undefined1* PTR_core_ammobox.cpp_FUN_0040f0f0_00599574 = 0040f0f0
+;   CDemonActor_vtable g_CAmmoBoxVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -31,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040f043
     PUSH EBX                            ; 0040f047
     CALL core_actor.cpp_FUN_00409d30    ; 0040f048
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040f04d
     ADD EAX,0x150                       ; 0040f050
     PUSH EAX                            ; 0040f055
@@ -42,7 +44,7 @@ section .text
     PUSH 0x57834d                       ; 0040f064 | = "ammobag.kfm"
     LEA EAX,[EBX + 0x150]               ; 0040f069
     PUSH EAX                            ; 0040f06f
-    MOV dword ptr [EBX + 0x14c],0x599574 ; 0040f070 | PTR_core_ammobox.cpp_FUN_0040f0f0_00599574
+    MOV dword ptr [EBX + 0x14c],0x599574 ; 0040f070 | g_CAmmoBoxVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040f07a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040f07f

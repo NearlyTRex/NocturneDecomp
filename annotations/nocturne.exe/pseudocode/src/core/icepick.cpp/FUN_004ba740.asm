@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_FUN_004ba740(int param_1,float param_2)
+; void __cdecl core_icepick_cpp_FUN_004ba740(CIcePick *this_ptr,float delta_time)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ; undefined        Stack[-0x20]:1  local_20
@@ -74,7 +77,7 @@ section .text
     PUSH EAX                            ; 004ba7be
     PUSH ESI                            ; 004ba7bf
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 004ba7c0
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0xbcbc]        ; 004ba7c5
     FMUL double ptr [0x0058619a]        ; 004ba7cb | DOUBLE_0058619a
     FMUL double ptr [0x00586192]        ; 004ba7d1 | DOUBLE_00586192

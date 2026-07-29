@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_0053ffe0(CStranger *param_1)
+; void __cdecl core_stranger_cpp_FUN_0053ffe0(CStranger *this_ptr,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -103,7 +106,7 @@ section .text
         ;   Label: LAB_005400d9
     PUSH EBX                            ; 005400da
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 005400db
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 005400e0
     FLD float ptr [ESP + 0x8]           ; 005400e4
     ADD ESP,0x8                         ; 005400e8

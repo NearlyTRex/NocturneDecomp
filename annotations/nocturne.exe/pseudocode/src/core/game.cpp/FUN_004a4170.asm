@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)
+; void __cdecl core_game_cpp_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   save_filename
+; int              Stack[0xc]:4   load_mode
 ; Local Variables:
 ; undefined        Stack[-0x638]:1  local_638
 ; undefined        Stack[-0x534]:1  local_534
@@ -614,7 +618,7 @@ section .text
     PUSH 0x583d48                       ; 004a47b6 | = "%d\n"
     PUSH EBX                            ; 004a47bb
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a47bc
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004a47c1
     CMP dword ptr [ESP + 0x600],0x3     ; 004a47c4
     JL 0x004a4a74                       ; 004a47cc
@@ -639,7 +643,7 @@ section .text
     PUSH EBX                            ; 004a4808
     XOR EBP,EBP                         ; 004a4809
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a480b
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004a4810
     MOV EAX,[0x01cae0d4]                ; 004a4813 | DAT_01cae0d4
     MOV dword ptr [ESP + 0x624],EBP     ; 004a4818
@@ -656,7 +660,7 @@ section .text
     PUSH EBX                            ; 004a4845
     MOVSD.REP ES:EDI,ESI                ; 004a4846 | = "(file corrupt)" | s_file_corrupt_005b9388+4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a4848
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004a484d
     MOV EAX,[0x01cae124]                ; 004a4850 | g_CHeroActorType_01cae0ec.name_hash
     PUSH EAX                            ; 004a4855
@@ -754,7 +758,7 @@ section .text
     PUSH EBX                            ; 004a4968
     MOV ESI,0x1                         ; 004a4969
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a496e
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     MOV EBP,dword ptr [0x01c7869c]      ; 004a4973 | DAT_01c7869c
     ADD ESP,0xc                         ; 004a4979
     CMP EBP,ESI                         ; 004a497c
@@ -769,7 +773,7 @@ section .text
     INC ESI                             ; 004a498f
     ADD EBP,0x4                         ; 004a4990
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a4993
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     MOV EDI,dword ptr [0x01c7869c]      ; 004a4998 | DAT_01c7869c
     ADD ESP,0xc                         ; 004a499e
     CMP ESI,EDI                         ; 004a49a1
@@ -799,7 +803,7 @@ section .text
     PUSH 0x583da9                       ; 004a49ef | = "%f,%f,%d,%d\n"
     PUSH EBX                            ; 004a49f4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a49f5
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x18                        ; 004a49fa
     CMP dword ptr [ESP + 0x600],0x9     ; 004a49fd
         ;   Label: LAB_004a49fd

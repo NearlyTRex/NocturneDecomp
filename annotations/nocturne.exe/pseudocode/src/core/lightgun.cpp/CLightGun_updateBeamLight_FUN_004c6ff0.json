@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 132,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 8,
     "suspect_types": [
       "stack_ref",
@@ -136,7 +136,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 81
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -331,7 +331,7 @@
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 28,
+          "line": 27,
           "message": "Uninitialized variable: fStack_c",
           "severity": "error"
         }
@@ -359,7 +359,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 18,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != &DAT_01c74754) {",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 18,
       "match": "DAT_01c74754",
       "severity": "mild",
       "text": "if (&stack0x00000000 != &DAT_01c74754) {",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 21,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "_DAT_01c7474c = unaff_ESI;",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_01c74750",
       "severity": "mild",
       "text": "((CMatrix3x3f *)&DAT_01c74750,&(this_ptr->base).base.orient.vec);",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_01c74640",
       "severity": "mild",
       "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080((CDemonLight *)&DAT_01c74640,1.0);",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&DAT_01c74754` is always TRUE (the address of `DAT_01c74754` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 19,
+      "line": 18,
       "match": "if ((T *)0x0 != &DAT_01c74754)",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != &DAT_01c74754) {",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_c",
-      "line": 28,
+      "line": 27,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "_DAT_01c74748 = fStack_c;",

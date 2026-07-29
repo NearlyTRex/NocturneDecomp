@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,24 +122,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 331,
+    "complexity_score": 509,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 20,
+    "pseudocode_lines": 109,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "shadow_pointer_walk",
-      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
+      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 254
+    "total_lines": 272
   },
   "cross_references": [
     {
@@ -439,120 +441,240 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "auStackY_ac",
-      "severity": "moderate",
-      "text": "uint auStackY_ac [12];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
+      "description": "Unresolved stack parameter",
       "line": 19,
-      "match": "aiStackY_7c",
+      "match": "in_stack_ffffff54",
       "severity": "moderate",
-      "text": "int aiStackY_7c [8];",
-      "type": "stack_alignment_array"
+      "text": "SRenderVertex in_stack_ffffff54;",
+      "type": "stack_param"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
-      "match": "uStackY_5c",
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff84",
       "severity": "moderate",
-      "text": "uint uStackY_5c;",
-      "type": "stack_alignment_array"
+      "text": "byte in_stack_ffffff84 [32];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffffa4",
+      "severity": "moderate",
+      "text": "uint in_stack_ffffffa4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffffa8",
+      "severity": "moderate",
+      "text": "uint in_stack_ffffffa8;",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 47,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x +",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c",
       "type": "undefined_data"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffffa8",
+      "severity": "moderate",
+      "text": "in_stack_ffffffa8 = 0x518ff1;",
+      "type": "stack_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 64,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pSVar1 = DAT_005ae704->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 59,
-      "match": "aiStackY_7c",
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "piVar8 = aiStackY_7c;",
-      "type": "stack_alignment_array"
+      "text": "piVar8 = (int *)&stack0xffffff84;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 69,
       "match": "(SRenderVertex *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 66,
-      "match": "auStackY_ac",
+      "description": "Direct stack address reference",
+      "line": 73,
+      "match": "&stack0xffffff54",
       "severity": "moderate",
-      "text": "puVar9 = auStackY_ac;",
-      "type": "stack_alignment_array"
+      "text": "puVar9 = (uint *)&stack0xffffff54;",
+      "type": "stack_ref"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 84,
-      "match": "uStackY_5c",
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_ffffffa4",
       "severity": "moderate",
-      "text": "uStackY_5c = 0x5190ce;",
-      "type": "stack_alignment_array"
+      "text": "vertex2.r = in_stack_ffffffa4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_ffffff84",
+      "severity": "moderate",
+      "text": "auVar11 = in_stack_ffffff84._0_24_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._0_24_",
+      "severity": "mild",
+      "text": "auVar11 = in_stack_ffffff84._0_24_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_x = auVar11._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_y = auVar11._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_z = auVar11._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.inv_z = auVar11._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.screen_x = auVar11._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.screen_y = auVar11._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_ffffff84",
+      "severity": "moderate",
+      "text": "vertex2.u = in_stack_ffffff84._24_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "vertex2.u = in_stack_ffffff84._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_ffffff84",
+      "severity": "moderate",
+      "text": "vertex2.v = in_stack_ffffff84._28_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "vertex2.v = in_stack_ffffff84._28_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_ffffffa8",
+      "severity": "moderate",
+      "text": "vertex2.g = in_stack_ffffffa8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_ffffff54",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00409290(in_stack_ffffff54,vertex2);",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 105,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_40,&local_34);",
       "type": "undefined_data"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 87,
-      "match": "uStackY_5c",
-      "severity": "moderate",
-      "text": "uStackY_5c = 0x5190e6;",
-      "type": "stack_alignment_array"
-    },
-    {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 69,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x5190ce assigned to bare local `uStackY_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 84,
-      "match": "0x5190ce",
+      "description": "Pointer value `output` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 90,
+      "match": "(int)output",
       "severity": "moderate",
-      "text": "uStackY_5c = 0x5190ce;",
-      "type": "raw_address_constant"
+      "text": "vertex2.b = (int)output;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x5190e6 assigned to bare local `uStackY_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 87,
-      "match": "0x5190e6",
+      "description": "Raw hex address 0x518ff1 assigned to bare local `in_stack_ffffffa8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffa8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 50,
+      "match": "0x518ff1",
       "severity": "moderate",
-      "text": "uStackY_5c = 0x5190e6;",
+      "text": "in_stack_ffffffa8 = 0x518ff1;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 60,
+      "line": 67,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -560,7 +682,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
+      "line": 74,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -568,15 +690,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
+      "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x +",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
@@ -584,7 +706,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 75,
+      "line": 95,
       "match": "local_18 = (T *)((local_18->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
       "text": "local_18 = (CSkeleton *)((local_18->motion_list).state_names[1] + 2);",

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(int param_1,int param_2,int param_3,uint param_4)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   red_component
+; int              Stack[0xc]:4   green_component
+; int              Stack[0x10]:4   blue_component
 ;
 ; XREF[5]:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b198

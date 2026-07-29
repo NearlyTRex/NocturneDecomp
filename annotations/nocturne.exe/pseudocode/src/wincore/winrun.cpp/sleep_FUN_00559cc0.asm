@@ -45,7 +45,7 @@ section .text
     SUB ESP,0x8                         ; 00559ce5
     FSTP double ptr [ESP]               ; 00559ce8
     CALL crt_math.c_ceil_FUN_00567121   ; 00559ceb
-        ;   XREF to: 00567121 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_ceil_FUN_00567121()
+        ;   XREF to: 00567121 (UNCONDITIONAL_CALL)  ; double crt_math.c_ceil_FUN_00567121(double value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00559cf0
     MOV dword ptr [ESP + 0xc],EDX       ; 00559cf4
     FLD double ptr [ESP + 0x8]          ; 00559cf8

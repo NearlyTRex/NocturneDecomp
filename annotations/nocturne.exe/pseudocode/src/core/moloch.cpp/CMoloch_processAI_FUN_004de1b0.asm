@@ -135,7 +135,7 @@ section .text
     SUB ESP,0x4                         ; 004de2d4
     FSTP float ptr [ESP]                ; 004de2d7
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004de2da
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x7c],EAX      ; 004de2df
     FLD float ptr [ESP + 0x7c]          ; 004de2e3
     FMUL double ptr [0x0058a81a]        ; 004de2e7 | DOUBLE_0058a81a
@@ -206,7 +206,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 004de3be
     PUSH EAX                            ; 004de3c2
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004de3c3
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 004de3c8
     LEA EAX,[ESP + 0x24]                ; 004de3ca
     ADD ESP,0x8                         ; 004de3ce
@@ -225,7 +225,7 @@ section .text
     SUB ESP,0x4                         ; 004de3f0
     FSTP float ptr [ESP]                ; 004de3f3
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004de3f6
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x7c],EAX      ; 004de3fb
     FLD float ptr [ESP + 0x7c]          ; 004de3ff
     ADD ESP,0x4                         ; 004de403
@@ -312,7 +312,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004de4e1
     PUSH EBX                            ; 004de4e4
     CALL core_charactr.cpp_FUN_0042af70 ; 004de4e5
-        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042af70()
+        ;   XREF to: 0042af70 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042af70(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004de4ea
     CMP EAX,0x1                         ; 004de4ed
     JC 0x004de346                       ; 004de4f0

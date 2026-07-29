@@ -2,11 +2,11 @@
 // Address: 0043ac60
 // Address Range: [[0043ac60, 0043ad29]]
 // Convention: unknown
-// Signature: void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2)
+// Signature: void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2)
 
 #include "nocturne.h"
 
-void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2)
+void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2)
 
 {
   char cVar1;
@@ -38,8 +38,8 @@ void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2)
       engine_console_cpp_CConsole_writeChar_FUN_0043ad30(param_1,*pcVar4);
     } while (iVar3 < (int)(~uVar2 - 1));
   }
-  engine_console_cpp_CConsole_writeChar_FUN_0043ad30(param_1,0);
-  if (*param_1 != 0) {
+  engine_console_cpp_CConsole_writeChar_FUN_0043ad30(param_1,'\0');
+  if (param_1->file_logging_enabled != 0) {
     file_handle = _fopen("console.txt","at");
     if (file_handle != (_FILE *)0x0) {
       _fprintf(file_handle,"%s",local_1014);

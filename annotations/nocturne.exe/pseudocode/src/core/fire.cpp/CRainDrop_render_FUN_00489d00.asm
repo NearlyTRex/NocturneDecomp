@@ -143,7 +143,7 @@ section .text
     LEA EBX,[ESP + 0x50]                ; 00489daf
     MOV EDI,0xbe000000                  ; 00489db3
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 00489db8
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     LEA EAX,[ESP + 0x5c]                ; 00489dbd
     MOV ESI,dword ptr [0x005ae704]      ; 00489dc1 | DAT_005ae704
     ADD ESP,0xc                         ; 00489dc7

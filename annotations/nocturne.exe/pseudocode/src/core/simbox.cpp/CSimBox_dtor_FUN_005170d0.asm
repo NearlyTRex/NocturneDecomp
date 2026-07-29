@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_simbox_cpp_CSimBox_dtor_FUN_005170d0(CDemonActor *param_1,byte param_2)
+; CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005170d0(CSimBox *this_ptr,uint flags)
 ;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSimBoxTypeInfo_005a1e50

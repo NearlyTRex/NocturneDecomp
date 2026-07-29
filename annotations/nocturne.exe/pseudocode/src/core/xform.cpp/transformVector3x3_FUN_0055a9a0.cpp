@@ -1,28 +1,22 @@
 // Name: core_xform.cpp_transformVector3x3_FUN_0055a9a0
 // Address: 0055a9a0
 // Address Range: [[0055a9a0, 0055a9f4]]
-// Convention: unknown
-// Signature: float * core_xform_cpp_transformVector3x3_FUN_0055a9a0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_xform_cpp_transformVector3x3_FUN_0055a9a0(CMatrix3x3f *matrix,CVector3f *output_vector,CVector3f *input_vector)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-float * core_xform_cpp_transformVector3x3_FUN_0055a9a0(void)
+CVector3f * __cdecl core_xform_cpp_transformVector3x3_FUN_0055a9a0(CMatrix3x3f *matrix,CVector3f *output_vector,CVector3f *input_vector)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  
-  *in_stack_00000008 =
-       in_stack_0000000c[2] * in_stack_00000004[2] +
-       *in_stack_0000000c * *in_stack_00000004 + in_stack_0000000c[1] * in_stack_00000004[1];
-  in_stack_00000008[1] =
-       in_stack_0000000c[2] * in_stack_00000004[6] +
-       *in_stack_0000000c * in_stack_00000004[4] + in_stack_0000000c[1] * in_stack_00000004[5];
-  in_stack_00000008[2] =
-       in_stack_0000000c[2] * in_stack_00000004[10] +
-       *in_stack_0000000c * in_stack_00000004[8] + in_stack_0000000c[1] * in_stack_00000004[9];
-  return in_stack_00000008;
+  output_vector->x =
+       input_vector->z * matrix->m[0].z +
+       input_vector->x * matrix->m[0].x + input_vector->y * matrix->m[0].y;
+  output_vector->y =
+       input_vector->z * matrix->m[2].x +
+       input_vector->x * matrix->m[1].y + input_vector->y * matrix->m[1].z;
+  output_vector->z =
+       input_vector->z * matrix[1].m[0].y +
+       input_vector->x * matrix->m[2].z + input_vector->y * matrix[1].m[0].x;
+  return output_vector;
 }

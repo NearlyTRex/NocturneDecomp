@@ -1,14 +1,12 @@
 // Name: core_dpart.cpp_CDemonPart_load_FUN_004570c0
 // Address: 004570c0
 // Address Range: [[004570c0, 004570e3]]
-// Convention: unknown
-// Signature: void core_dpart_cpp_CDemonPart_load_FUN_004570c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dpart_cpp_CDemonPart_load_FUN_004570c0(CDemonPart *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_dpart_cpp_CDemonPart_load_FUN_004570c0(void)
+void __cdecl core_dpart_cpp_CDemonPart_load_FUN_004570c0(CDemonPart *this_ptr)
 
 {
   PTR_01cc4800 = "..\\core\\dpart.cpp";

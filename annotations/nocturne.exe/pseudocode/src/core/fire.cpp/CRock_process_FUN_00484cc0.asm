@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CRock_process_FUN_00484cc0(CParticle *param_1)
+; void __cdecl core_fire_cpp_CRock_process_FUN_00484cc0(CRock *this_ptr)
 ;
+; Parameters:
+; CRock *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

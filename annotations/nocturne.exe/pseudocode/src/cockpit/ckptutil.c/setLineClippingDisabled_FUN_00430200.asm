@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(void)
+; void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(int disabled)
 ;
+; Parameters:
+; int              Stack[0x4]:4   disabled
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 at 0045caa3

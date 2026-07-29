@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_setSolidColor_FUN_00404090(int param_1,int param_2,uint param_3)
+; void __cdecl engine_2d_c_setSolidColor_FUN_00404090(int red_component,int green_component,int blue_component)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red_component
+; int              Stack[0x8]:4   green_component
+; int              Stack[0xc]:4   blue_component
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

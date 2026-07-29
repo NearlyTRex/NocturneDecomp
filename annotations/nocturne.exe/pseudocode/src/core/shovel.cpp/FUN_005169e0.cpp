@@ -9,12 +9,12 @@
 void core_shovel_cpp_FUN_005169e0(void)
 
 {
-  int iVar1;
+  CShovel *this_ptr;
   
-  iVar1 = FUN_0056497c(0x570);
-  if (iVar1 == 0) {
+  this_ptr = (CShovel *)FUN_0056497c(0x570);
+  if (this_ptr == (CShovel *)0x0) {
     return;
   }
-  core_shovel_cpp_CShovel_ctor_FUN_00516a10(iVar1);
+  core_shovel_cpp_CShovel_ctor_FUN_00516a10(this_ptr);
   return;
 }

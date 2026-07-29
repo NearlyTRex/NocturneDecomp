@@ -9,12 +9,12 @@
 void core_ammobox_cpp_FUN_0040f010(void)
 
 {
-  int iVar1;
+  CAmmoBox *this_ptr;
   
-  iVar1 = FUN_0056497c(0x344);
-  if (iVar1 == 0) {
+  this_ptr = (CAmmoBox *)FUN_0056497c(0x344);
+  if (this_ptr == (CAmmoBox *)0x0) {
     return;
   }
-  core_ammobox_cpp_FUN_0040f040(iVar1);
+  core_ammobox_cpp_FUN_0040f040(this_ptr);
   return;
 }

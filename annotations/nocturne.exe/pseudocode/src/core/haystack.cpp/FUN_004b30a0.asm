@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_haystack_cpp_FUN_004b30a0(undefined4 param_1)
+; CHero * core_haystack_cpp_FUN_004b30a0(CHero *param_1)
 ;
 ;
 ; XREF[1]:
@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_haystack_dfm_0058544f
-;   undefined1* PTR_core_haystack.cpp_FUN_004b3110_0059e884 = 004b3110
+;   CHero_full_vtable g_CHaystackVTable
 ;
 ; Called Functions:
 ;   core_hero.cpp_FUN_004b46d0
@@ -24,17 +24,17 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b30a1
     PUSH EDX                            ; 004b30a5
     CALL core_hero.cpp_FUN_004b46d0     ; 004b30a6
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
     MOV EBX,EAX                         ; 004b30ab
     ADD EAX,0x150                       ; 004b30ad
     ADD ESP,0x4                         ; 004b30b2
-    MOV dword ptr [EAX + -0x4],0x59e884 ; 004b30b5 | PTR_core_haystack.cpp_FUN_004b3110_0059e884
+    MOV dword ptr [EAX + -0x4],0x59e884 ; 004b30b5 | g_CHaystackVTable
     PUSH 0x58544f                       ; 004b30bc | = "haystack.dfm"
     MOV dword ptr [EAX + 0x1f8ec],0x0   ; 004b30c1
     PUSH EAX                            ; 004b30cb
     MOV dword ptr [EAX + 0x1f8f0],0x0   ; 004b30cc
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b30d6
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1fa44]             ; 004b30db
     MOV dword ptr [EBX + 0x1fa50],0x3f800000 ; 004b30e1
     MOV dword ptr [EAX + 0x8],0x0       ; 004b30eb

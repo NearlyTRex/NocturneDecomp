@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_fstream_cpp_filebuf_seekoff_FUN_00572338(int param_1,long param_2,uint param_3)
+; int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_00572338(filebuf *this_ptr,long offset,int direction,int mode)
 ;
+; Parameters:
+; filebuf *        Stack[0x4]:4   this_ptr
+; long             Stack[0x8]:4   offset
+; int              Stack[0xc]:4   direction
+; int              Stack[0x10]:4   mode
 ;
 ; Called Functions:
 ;   crt_stdio.c_lseek_FUN_005689c0

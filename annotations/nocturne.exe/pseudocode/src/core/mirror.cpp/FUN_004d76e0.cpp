@@ -16,6 +16,6 @@ void core_mirror_cpp_FUN_004d76e0(CMirror *param_1,SMRGLHeaderPrimitive *param_2
     return;
   }
   engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-            (DAT_005ae704,&param_1->clip_primitive);
+            (DAT_005ae704,&(param_1->clip_primitive).base);
   return;
 }

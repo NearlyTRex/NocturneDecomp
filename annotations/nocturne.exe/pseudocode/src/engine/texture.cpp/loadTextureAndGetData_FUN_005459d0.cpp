@@ -1,14 +1,14 @@
 // Name: engine_texture.cpp_loadTextureAndGetData_FUN_005459d0
 // Address: 005459d0
 // Address Range: [[005459d0, 005459e4]]
-// Convention: unknown
-// Signature: SMRGLTextureBasic * engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(SMRGLTextureBasic *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(SMRGLTextureBasic *texture_info)
 
 #include "nocturne.h"
 
-SMRGLTextureBasic * engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(SMRGLTextureBasic *param_1)
+SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(SMRGLTextureBasic *texture_info)
 
 {
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(param_1);
-  return param_1 + 3;
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(texture_info);
+  return (SMRGLHeaderExtended *)(texture_info + 3);
 }

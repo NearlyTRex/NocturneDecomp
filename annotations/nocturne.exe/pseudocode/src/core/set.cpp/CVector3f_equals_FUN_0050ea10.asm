@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_set_cpp_CVector3f_equals_FUN_0050ea10(void)
+; int __cdecl core_set_cpp_CVector3f_equals_FUN_0050ea10(CVector3f *a,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   b
 ;
 ; *****************************************************************************
 

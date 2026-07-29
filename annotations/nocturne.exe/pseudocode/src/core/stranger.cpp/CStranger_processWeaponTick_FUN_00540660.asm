@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 00540671 (CONDITIONAL_JUMP)  ; LAB_00540671
     PUSH EAX                            ; 005406a2
     CALL core_dynamite.cpp_FUN_0046eda0 ; 005406a3
-        ;   XREF to: 0046eda0 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0046eda0()
+        ;   XREF to: 0046eda0 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0046eda0(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 005406a8
     TEST EAX,EAX                        ; 005406ab
     JZ 0x00540671                       ; 005406ad

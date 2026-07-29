@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * support_trisock_cpp_copyIPAddress_FUN_00548ae0(undefined4 *param_1,undefined4 *param_2)
+; uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_00548ae0(uint *dest_ip,uint *src_ip)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   dest_ip
+; uint *           Stack[0x8]:4   src_ip
 ;
 ; XREF[1]:
 ;   support_trisock.cpp_convertSockAddr_FUN_00548d50 at 00548d7c

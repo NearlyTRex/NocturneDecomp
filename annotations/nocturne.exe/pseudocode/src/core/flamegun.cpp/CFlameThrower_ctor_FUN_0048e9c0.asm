@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(CWeapon *param_1)
+; CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(CFlameThrower *this_ptr)
 ;
+; Parameters:
+; CFlameThrower *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_flamegun.cpp_FUN_0048e990 at 0048e9a3
@@ -10,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0058169c
 ;   float FLOAT_0059d79c = 8
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d7b4 = 00553f10
+;   CWeapon_full_vtable g_CFlameThrowerVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -31,7 +33,7 @@ section .text
     MOV EBX,EAX                         ; 0048e9d3
     ADD EAX,0x150                       ; 0048e9d5
     PUSH EAX                            ; 0048e9da
-    MOV dword ptr [EAX + -0x4],0x59d7b4 ; 0048e9db | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d7b4
+    MOV dword ptr [EAX + -0x4],0x59d7b4 ; 0048e9db | g_CFlameThrowerVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0048e9e2
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x574],0x0     ; 0048e9e7

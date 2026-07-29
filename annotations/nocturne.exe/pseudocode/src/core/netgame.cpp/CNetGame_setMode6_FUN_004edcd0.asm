@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_CNetGame_setMode6_FUN_004edcd0(void)
+; void __cdecl core_netgame_cpp_CNetGame_setMode6_FUN_004edcd0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

@@ -1,24 +1,24 @@
 // Name: core_manpuz.cpp_FUN_004c9430
 // Address: 004c9430
 // Address Range: [[004c9430, 004c9570]]
-// Convention: unknown
-// Signature: int core_manpuz_cpp_FUN_004c9430(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_004c9430(CMansionPuzzleCircle *this_ptr)
 
 #include "nocturne.h"
 
-int core_manpuz_cpp_FUN_004c9430(uint param_1)
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_004c9430(CMansionPuzzleCircle *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   void *pvVar4;
   char *pcVar5;
   char *pcVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(pCVar3 + 1);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(pCVar3 + 1);
   pvVar4 = __arrinit
@@ -27,7 +27,7 @@ int core_manpuz_cpp_FUN_004c9430(uint param_1)
                      ((void *)((int)pvVar4 + 0x4b0),0xc,&g_SGemTypeInfo_005a0230);
   pvVar4 = __arrinit
                      ((void *)((int)pvVar4 + 0x8a0),2,&g_SReflectorTypeInfo_005a0250);
-  *(byte ***)((int)pvVar4 + -0x11ec) = &PTR_core_manpuz_cpp_FUN_004c9580_005a0054;
+  *(CDemonActor_vtable **)((int)pvVar4 + -0x11ec) = &g_CMansionPuzzleCircleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)((int)pvVar4 + -0x11e8),"doorpuzz.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -54,6 +54,6 @@ int core_manpuz_cpp_FUN_004c9430(uint param_1)
   *(uint *)((int)pvVar4 + -0xd54) = 0;
   *(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);
   *(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);
-  core_manpuz_cpp_FUN_004ca410((int)pvVar4 + -0x1338);
-  return (int)pvVar4 + -0x1338;
+  core_manpuz_cpp_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338));
+  return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1338);
 }

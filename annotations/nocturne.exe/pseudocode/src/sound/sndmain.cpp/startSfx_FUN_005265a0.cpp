@@ -23,7 +23,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *filename)
   long lVar10;
   CSfxSample *pCVar11;
   int iVar12;
-  CSfxSlot *slot;
+  CSfxSlot *this_ptr_00;
   int *piVar13;
   CSfxOptions *pCVar14;
   int iVar15;
@@ -94,9 +94,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *filename)
     return 0;
   }
   iVar3 = local_1c * 0x120;
-  slot = (CSfxSlot *)(iVar3 + 0x2dbd374);
+  this_ptr_00 = (CSfxSlot *)(iVar3 + 0x2dbd374);
   pCVar14 = &local_8c;
-  pCVar5 = slot;
+  pCVar5 = this_ptr_00;
   for (iVar12 = 0x1b; iVar12 != 0; iVar12 = iVar12 + -1) {
     (pCVar5->options).channel_index = pCVar14->channel_index;
     pCVar14 = (CSfxOptions *)((int)pCVar14 + ((uint)bVar19 * -2 + 1) * 4);
@@ -242,12 +242,12 @@ LAB_0052673b:
   }
   else {
     *(int *)(iVar12 + 300) = *(int *)(iVar12 + 300) + 1;
-    sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(slot);
+    sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(this_ptr_00);
     *(uint *)(iVar3 + 0x2dbd488) = 0;
     *(uint *)(iVar3 + 0x2dbd480) = 0xbf800000;
     *(uint *)(iVar3 + 0x2dbd484) = 0;
     *(uint *)(iVar3 + 0x2dbd47c) = *(uint *)(iVar3 + 0x2dbd3b8);
-    pCVar5 = slot;
+    pCVar5 = this_ptr_00;
     do {
       pCVar6 = &(pCVar5->options).position;
       pCVar5->channel_target_buffer_offsets[7] = -1;
@@ -268,14 +268,14 @@ LAB_0052673b:
     iVar4 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0
                       (*(uint *)(&DAT_02dbd3e8 + iVar3),0x4479c000,0x4479c000);
     if (iVar4 != 0) {
-      sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(slot,0);
+      sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr_00,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0();
       if (uVar7 != 0) {
         iVar4 = (**(code **)(*_DAT_02dc8318 + 0x3c))
                           (_DAT_02dc8318,*(uint *)(*(int *)(&DAT_02dbd3e8 + iVar3) + 0x130));
         *(int *)(iVar3 + 0x2dbd3e0) = iVar4;
         if ((iVar4 == 0) ||
-           (iVar3 = (**(code **)(*_DAT_02dc8318 + 0x48))(_DAT_02dc8318,slot), iVar3 == 0))
+           (iVar3 = (**(code **)(*_DAT_02dc8318 + 0x48))(_DAT_02dc8318,this_ptr_00), iVar3 == 0))
         goto LAB_00526c2e;
       }
       sound_sndmain_cpp_unlockSound_FUN_00528890();
@@ -283,7 +283,7 @@ LAB_0052673b:
     }
   }
 LAB_00526c2e:
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(slot);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr_00);
   sound_sndmain_cpp_unlockSound_FUN_00528890();
   return 0;
 }

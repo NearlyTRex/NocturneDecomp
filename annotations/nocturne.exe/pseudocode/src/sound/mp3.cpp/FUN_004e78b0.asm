@@ -76,7 +76,7 @@ section .text
     PUSH 0x58b77f                       ; 004e7932 | = "%u"
     PUSH ESI                            ; 004e7937
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004e7938
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 004e793d
     CMP EBP,dword ptr [ESP]             ; 004e7940
     JNZ 0x004e7a09                      ; 004e7943

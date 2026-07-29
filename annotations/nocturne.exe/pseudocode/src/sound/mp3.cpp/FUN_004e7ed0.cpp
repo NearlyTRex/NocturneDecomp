@@ -1,12 +1,12 @@
 // Name: sound_mp3.cpp_FUN_004e7ed0
 // Address: 004e7ed0
 // Address Range: [[004e7ed0, 004e825f]]
-// Convention: unknown
-// Signature: void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)
 
 #include "nocturne.h"
 
-void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
+int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size)
 
 {
   SMpegFrameHeader *pSVar1;
@@ -34,51 +34,51 @@ void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
   ulong local_1c;
   int local_18;
   
-  sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(param_1);
+  sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(this_ptr);
   local_1c = 0x1000;
-  pCVar8 = &param_1->file_bitstream;
-  local_24 = param_3;
+  pCVar8 = &this_ptr->file_bitstream;
+  local_24 = file_size;
   if (pCVar8->file_handle != (_FILE *)0x0) {
     _fclose(pCVar8->file_handle);
     pCVar8->file_handle = (_FILE *)0x0;
   }
-  pcVar3 = (param_1->file_bitstream).buffer;
+  pcVar3 = (this_ptr->file_bitstream).buffer;
   if (pcVar3 != (char *)0x0) {
     FUN_005638d0(pcVar3);
-    (param_1->file_bitstream).buffer = (char *)0x0;
+    (this_ptr->file_bitstream).buffer = (char *)0x0;
   }
-  pCVar8->file_handle = param_2;
-  lVar2 = _ftell(param_2);
-  (param_1->file_bitstream).stream_start_position = lVar2;
-  (param_1->file_bitstream).stream_length = local_24;
-  (param_1->file_bitstream).buffer_size = local_1c;
+  pCVar8->file_handle = file_handle;
+  lVar2 = _ftell(file_handle);
+  (this_ptr->file_bitstream).stream_start_position = lVar2;
+  (this_ptr->file_bitstream).stream_length = local_24;
+  (this_ptr->file_bitstream).buffer_size = local_1c;
   pcVar3 = (char *)malloc(local_1c);
-  (param_1->file_bitstream).buffer = pcVar3;
+  (this_ptr->file_bitstream).buffer = pcVar3;
   if (pcVar3 == (char *)0x0) {
     PTR_01cc4800 = "..\\sound\\mp3.cpp";
     INT_01cc4804 = 0x1ff;
     core_main_c_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
   }
-  _fseek(pCVar8->file_handle,(param_1->file_bitstream).stream_start_position,0);
-  (param_1->file_bitstream).current_byte_index = 0;
-  (param_1->file_bitstream).bits_available = 0;
-  (param_1->file_bitstream).total_bits_read = 0;
-  (param_1->file_bitstream).bytes_remaining = (param_1->file_bitstream).stream_length;
-  (param_1->file_bitstream).end_of_stream_flag = 0;
-  pCVar8 = &param_1->file_bitstream;
-  (param_1->file_bitstream).error_flag = 0;
-  uVar7 = (param_1->file_bitstream).total_bits_read & 7;
+  _fseek(pCVar8->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
+  (this_ptr->file_bitstream).current_byte_index = 0;
+  (this_ptr->file_bitstream).bits_available = 0;
+  (this_ptr->file_bitstream).total_bits_read = 0;
+  (this_ptr->file_bitstream).bytes_remaining = (this_ptr->file_bitstream).stream_length;
+  (this_ptr->file_bitstream).end_of_stream_flag = 0;
+  pCVar8 = &this_ptr->file_bitstream;
+  (this_ptr->file_bitstream).error_flag = 0;
+  uVar7 = (this_ptr->file_bitstream).total_bits_read & 7;
   if (uVar7 != 0) {
     sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(pCVar8,8 - uVar7);
   }
   uVar7 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(pCVar8,0xc);
-  while (((uVar7 & 0x1fff) != 0xfff && ((param_1->file_bitstream).error_flag == 0))) {
+  while (((uVar7 & 0x1fff) != 0xfff && ((this_ptr->file_bitstream).error_flag == 0))) {
     uVar4 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(pCVar8,8);
     uVar7 = uVar7 << 8 | uVar4;
   }
   header_out = &local_48;
   local_48 = &local_78;
-  sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(&param_1->file_bitstream,header_out);
+  sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(&this_ptr->file_bitstream,header_out);
   pSVar1 = local_48;
   local_44 = local_48->channel_mode;
   local_38 = (local_44 != 3) + 1;
@@ -141,6 +141,6 @@ void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
                      1000);
   unaff_retaddr->sample_rate = (int)ROUND(dVar9);
   unaff_retaddr->num_channels = iStack_40;
-  sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(unaff_retaddr,iVar6);
-  return;
+  iVar6 = sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(unaff_retaddr,iVar6);
+  return iVar6;
 }

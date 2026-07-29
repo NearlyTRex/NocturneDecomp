@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -437,7 +437,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar10 = param_1->models[0].model_name;",
+      "text": "pcVar9 = param_1->models[0].model_name;",
       "type": "unnamed_param"
     },
     {
@@ -445,7 +445,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1->model_count + -1;",
+      "text": "iVar5 = param_1->model_count + -1;",
       "type": "unnamed_param"
     },
     {
@@ -453,7 +453,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->model_count = iVar6;",
+      "text": "param_1->model_count = iVar5;",
       "type": "unnamed_param"
     },
     {
@@ -461,7 +461,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = param_1->models + iVar7;",
+      "text": "local_20 = param_1->models + iVar6;",
       "type": "unnamed_param"
     },
     {
@@ -469,7 +469,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = param_1->models[iVar7 + 1].model_name;",
+      "text": "local_1c = param_1->models[iVar6 + 1].model_name;",
       "type": "unnamed_param"
     },
     {
@@ -477,7 +477,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar6 < param_1->model_count);",
+      "text": "} while (iVar5 < param_1->model_count);",
       "type": "unnamed_param"
     },
     {
@@ -485,7 +485,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar7);",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar6);",
       "type": "unnamed_param"
     },
     {
@@ -493,7 +493,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar7 < param_1->model_count);",
+      "text": "} while (iVar6 < param_1->model_count);",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +509,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar11 = &param_1->bugs[0].dest_position;",
+      "text": "pCVar10 = &param_1->bugs[0].dest_position;",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +517,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar8 = &param_1->bugs[0].orientation;",
+      "text": "pCVar7 = &param_1->bugs[0].orientation;",
       "type": "unnamed_param"
     },
     {
@@ -533,7 +533,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "pSVar9 = param_1->bugs + local_28;",
+      "text": "pSVar8 = param_1->bugs + local_28;",
       "type": "unnamed_param"
     },
     {
@@ -541,47 +541,47 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);",
+      "text": "iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);",
       "type": "unnamed_param"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 77,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pCVar11->x = pCVar8[-1].x;",
+      "text": "pCVar10->x = pCVar7[-1].x;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 78,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pCVar11->y = pCVar8[-1].y;",
+      "text": "pCVar10->y = pCVar7[-1].y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 79,
-      "match": "pCVar8[-1].",
+      "match": "pCVar7[-1].",
       "severity": "mild",
-      "text": "pCVar11->z = pCVar8[-1].z;",
+      "text": "pCVar10->z = pCVar7[-1].z;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 81,
-      "match": "(CVector3f *)((int)(pCVar11 + 5) +",
+      "match": "(CVector3f *)((int)(pCVar10 + 5) +",
       "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 82,
-      "match": "(CVector3f *)((int)(pCVar8 + 5) +",
+      "match": "(CVector3f *)((int)(pCVar7 + 5) +",
       "severity": "moderate",
-      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);",
       "type": "pointer_cast"
     },
     {
@@ -641,19 +641,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `(pCVar11 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `(pCVar10 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 81,
-      "match": "(int)(pCVar11 + 5)",
+      "match": "(int)(pCVar10 + 5)",
       "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(pCVar8 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `(pCVar7 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 82,
-      "match": "(int)(pCVar8 + 5)",
+      "match": "(int)(pCVar7 + 5)",
       "severity": "moderate",
-      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -669,7 +669,7 @@
       "line": 77,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar11->x = pCVar8[-1].x;",
+      "text": "pCVar10->x = pCVar7[-1].x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -685,23 +685,23 @@
       "line": 71,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "pCVar8->z = 0.0;",
+      "text": "pCVar7->z = 0.0;",
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via element-arithmetic `(int)(pCVar11 + N) + M`, where `N*sizeof(*pCVar11) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar11->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via element-arithmetic `(int)(pCVar10 + N) + M`, where `N*sizeof(*pCVar10) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar10->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 81,
-      "match": "pCVar11 = (T *)((int)(pCVar11 + N) + M)",
+      "match": "pCVar10 = (T *)((int)(pCVar10 + N) + M)",
       "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via element-arithmetic `(int)(pCVar8 + N) + M`, where `N*sizeof(*pCVar8) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar8->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via element-arithmetic `(int)(pCVar7 + N) + M`, where `N*sizeof(*pCVar7) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar7->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 82,
-      "match": "pCVar8 = (T *)((int)(pCVar8 + N) + M)",
+      "match": "pCVar7 = (T *)((int)(pCVar7 + N) + M)",
       "severity": "moderate",
-      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);",
       "type": "shadow_pointer_walk"
     },
     {

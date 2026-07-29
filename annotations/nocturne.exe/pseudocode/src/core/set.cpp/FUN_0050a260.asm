@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050a260(CDemonSet *param_1)
+; void __cdecl core_set_cpp_FUN_0050a260(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
 ; undefined4       Stack[-0x58]:4  local_58
@@ -280,7 +282,7 @@ section .text
     PUSH EAX                            ; 0050a4bc
     PUSH EDI                            ; 0050a4bd
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 0050a4be
-        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0()
+        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
     MOV EDX,EAX                         ; 0050a4c3
     SAR EDX,0x1f                        ; 0050a4c5
     SHL EDX,0x7                         ; 0050a4c8
@@ -291,7 +293,7 @@ section .text
     PUSH EDI                            ; 0050a4d9
     MOV ESI,EAX                         ; 0050a4da
     CALL core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0 ; 0050a4dc
-        ;   XREF to: 0048c8a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0()
+        ;   XREF to: 0048c8a0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEffect * this_ptr)
     SHL EAX,0x7                         ; 0050a4e1
     ADD ESI,EAX                         ; 0050a4e4
     MOV EAX,[0x005c15b8]                ; 0050a4e6 | DAT_005c15b8

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * crt_string_c_char_in_set_FUN_00572a90(char *param_1,int param_2)
+; char * __cdecl crt_string_c_char_in_set_FUN_00572a90(char *charset,wchar_t wc)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   charset
+; wchar_t          Stack[0x8]:2   wc
 ;
 ; XREF[2]:
 ;   crt_env.c_putenv_internal_FUN_00573930 at 00573950
@@ -56,7 +59,7 @@ section .text
         ;   XREF to: 00572ae2 (CONDITIONAL_JUMP)  ; LAB_00572ae2
     PUSH EBX                            ; 00572ad5
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00572ad6
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     MOV EBX,EAX                         ; 00572adb
     ADD ESP,0x4                         ; 00572add
     JMP 0x00572ab8                      ; 00572ae0

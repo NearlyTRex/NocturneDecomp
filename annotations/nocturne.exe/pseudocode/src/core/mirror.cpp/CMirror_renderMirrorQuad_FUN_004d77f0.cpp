@@ -1,12 +1,12 @@
 // Name: core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004d77f0
 // Address: 004d77f0
 // Address Range: [[004d77f0, 004d7979]]
-// Convention: unknown
-// Signature: int core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(float *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_ptr)
 
 #include "nocturne.h"
 
-int core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(float *param_1)
+int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_ptr)
 
 {
   int iVar1;
@@ -20,24 +20,24 @@ int core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(float *param_1)
   CVector3i local_24;
   CVector3i local_18;
   
-  local_24.x = (int)ROUND(*param_1 * 256.0f);
-  local_24.y = (int)ROUND(param_1[1] * 256.0f);
-  local_24.z = (int)ROUND(param_1[2] * 256.0f);
+  local_24.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
+  local_24.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
+  local_24.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
             (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_24);
-  local_30.x = (int)ROUND(param_1[3] * 256.0f);
-  local_30.y = (int)ROUND(param_1[4] * 256.0f);
-  local_30.z = (int)ROUND(param_1[5] * 256.0f);
+  local_30.x = (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);
+  local_30.y = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
+  local_30.z = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
             (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_30);
-  local_3c.x = (int)ROUND(param_1[6] * 256.0f);
-  local_3c.y = (int)ROUND(param_1[7] * 256.0f);
-  local_3c.z = (int)ROUND(param_1[8] * 256.0f);
+  local_3c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);
+  local_3c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
+  local_3c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
             (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_3c);
-  local_18.x = (int)ROUND(param_1[9] * 256.0f);
-  local_18.y = (int)ROUND(param_1[10] * 256.0f);
-  local_18.z = (int)ROUND(param_1[0xb] * 256.0f);
+  local_18.x = (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);
+  local_18.y = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
+  local_18.z = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
             (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_18);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);

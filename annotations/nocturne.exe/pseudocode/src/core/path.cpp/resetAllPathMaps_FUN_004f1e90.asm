@@ -53,7 +53,7 @@ section .text
     ADD EBX,0x4                         ; 004f1ed3
     INC ESI                             ; 004f1ed6
     CALL core_path.cpp_CPathMap_reset_FUN_004f1e10 ; 004f1ed7
-        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_reset_FUN_004f1e10()
+        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_004f1e10(CPathMap * this_ptr)
     MOV EDI,dword ptr [0x01e312f8]      ; 004f1edc | DAT_01e312f8
     ADD ESP,0x4                         ; 004f1ee2
     CMP ESI,EDI                         ; 004f1ee5

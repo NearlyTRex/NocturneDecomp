@@ -38,7 +38,7 @@ section .text
     PUSH EDX                            ; 004806e0
     PUSH EBX                            ; 004806e1
     CALL core_event.cpp_CEventList_findCounter_FUN_00480900 ; 004806e2
-        ;   XREF to: 00480900 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findCounter_FUN_00480900()
+        ;   XREF to: 00480900 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findCounter_FUN_00480900(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004806e7
     ADD ESP,0x8                         ; 004806e9
     TEST EAX,EAX                        ; 004806ec

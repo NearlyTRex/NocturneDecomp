@@ -17,7 +17,7 @@ CDemonActorType * FUN_0043c800(void);
 
 // Original: core_crate.cpp_FUN_0043c810
 // Address: 0043c810
-int * FUN_0043c810(undefined4 param_1);
+int * FUN_0043c810(CDemonActor *param_1);
 
 // Original: core_crate.cpp_CCrate_setup_FUN_0043c870
 // Address: 0043c870
@@ -25,7 +25,7 @@ void CCrate::setup(CDemonActor *param_1);
 
 // Original: core_crate.cpp_CCrate_canPickup_FUN_0043c940
 // Address: 0043c940
-undefined4 CCrate::canPickup(undefined4 param_1,CDemonActor *param_2);
+int __cdecl CCrate::canPickup(CCrate *this_ptr,CDemonActor *picker);
 
 // Original: core_crate.cpp_FUN_0043c960
 // Address: 0043c960

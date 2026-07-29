@@ -9,12 +9,12 @@
 void core_barrier_cpp_FUN_004116e0(void)
 
 {
-  int iVar1;
+  CBarrier *this_ptr;
   
-  iVar1 = FUN_0056497c(0x228);
-  if (iVar1 == 0) {
+  this_ptr = (CBarrier *)FUN_0056497c(0x228);
+  if (this_ptr == (CBarrier *)0x0) {
     return;
   }
-  core_barrier_cpp_CBarrier_ctor_FUN_00411710(iVar1);
+  core_barrier_cpp_CBarrier_ctor_FUN_00411710(this_ptr);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_CShotgun_onFired_FUN_00516620(int param_1)
+; void core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x64]:1  local_64
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0x48],ESI      ; 00516657
     MOV dword ptr [ESP + 0x4c],EDI      ; 0051665b
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0051665f
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x68],EAX      ; 00516664
     FLD float ptr [ESP + 0x68]          ; 00516668
     ADD ESP,0x8                         ; 0051666c
@@ -64,7 +64,7 @@ section .text
     PUSH 0xbec90fdb                     ; 00516674
     FSTP float ptr [ESP + 0x50]         ; 00516679
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0051667d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x68],EAX      ; 00516682
     FLD float ptr [ESP + 0x68]          ; 00516686
     ADD ESP,0x8                         ; 0051668a
@@ -85,14 +85,14 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 005166b3
     PUSH EAX                            ; 005166b7
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 005166b8
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005166bd
     PUSH EAX                            ; 005166c0
     LEA EAX,[ESP + 0x34]                ; 005166c1
     PUSH EAX                            ; 005166c5
     PUSH EBX                            ; 005166c6
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 005166c7
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 005166cc
     LEA EAX,[ESP + 0x48]                ; 005166ce
     ADD ESP,0xc                         ; 005166d2

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStrList * core_script_cpp_FUN_004fe490(int param_1)
+; CScript * __cdecl core_script_cpp_FUN_004fe490(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_script.cpp_staticInit_FUN_004fde80 at 004fde9f

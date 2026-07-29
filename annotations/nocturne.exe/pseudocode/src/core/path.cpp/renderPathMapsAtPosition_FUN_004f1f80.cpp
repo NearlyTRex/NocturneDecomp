@@ -1,14 +1,14 @@
 // Name: core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80
 // Address: 004f1f80
 // Address Range: [[004f1f80, 004f2044]]
-// Convention: unknown
-// Signature: void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *position,int depth,int red,int green,int fog)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *position,int depth,int red,int green,int fog)
 
 {
   CPathMap *this_ptr;
@@ -22,7 +22,7 @@ void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_
   int local_1c;
   
   bVar3 = 0;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,position);
   local_28 = local_1c;
   *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =
        *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
@@ -41,7 +41,7 @@ void core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(uint param_1,int param_
       if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&
            (local_28 == (this_ptr->voxel_coords).x)) && (local_24 == (this_ptr->voxel_coords).y)) &&
          (local_20 == (this_ptr->voxel_coords).z)) {
-        core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,param_2,param_3,param_4,param_5);
+        core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(this_ptr,depth,red,green,fog);
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 4;

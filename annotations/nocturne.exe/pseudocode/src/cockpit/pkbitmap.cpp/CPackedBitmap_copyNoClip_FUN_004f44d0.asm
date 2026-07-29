@@ -128,7 +128,7 @@ section .text
     JMP 0x004f450e                      ; 004f45bf
         ;   XREF to: 004f450e (UNCONDITIONAL_JUMP)  ; LAB_004f450e
     CALL cockpit_ckptutil.c_FUN_0042d170 ; 004f45c4
-        ;   XREF to: 0042d170 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d170()
+        ;   XREF to: 0042d170 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d170()
         ;   Label: LAB_004f45c4
     MOV dword ptr [ESP + 0x8],EAX       ; 004f45c9
     JMP 0x004f4519                      ; 004f45cd

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_getChannelLevels_FUN_005293f0(int param_1,float *param_2,float *param_3)
+; void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005293f0(int channel,float *out_peak,float *out_average)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel
+; float *          Stack[0x8]:4   out_peak
+; float *          Stack[0xc]:4   out_average
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

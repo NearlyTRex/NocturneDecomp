@@ -20,23 +20,22 @@ int sound_mp3_cpp_FUN_004e78b0(void)
   byte bVar9;
   char *pcVar10;
   int local_1c;
-  int local_18;
+  char *local_18;
   int local_14;
   
   bVar9 = 0;
   iVar5 = 0;
   iVar4 = 0;
-  local_18 = 0x1cd8c28;
+  local_18 = (char *)0x1cd8c28;
   local_14 = 0;
   do {
-    iVar3 = local_18;
     _sprintf(local_18,"%d",iVar5);
     *(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_005bdba0 + local_14);
     *(uint *)(iVar4 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_14);
     *(uint *)(iVar4 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_14);
     *(uint *)(iVar4 + 0x1cd8c34) = *(uint *)(&DAT_005bdbac + local_14);
     *(int *)(iVar4 + 0x1cd8c38) = (1 << (*(byte *)(iVar4 + 0x1cd8c34) & 0x1f)) + -1;
-    sscanf(iVar3,"%u",&local_1c);
+    sscanf(local_18,"%u");
     if (iVar5 != local_1c) {
       PTR_01cc4800 = "..\\sound\\mp3.cpp";
       INT_01cc4804 = 0xd6b;

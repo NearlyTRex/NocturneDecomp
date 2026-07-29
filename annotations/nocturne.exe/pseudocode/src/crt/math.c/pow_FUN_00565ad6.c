@@ -14,34 +14,45 @@ float10 __fpustack_safe pow(float10 base,float10 exp)
 
 {
   double dVar1;
+  double dVar2;
+  uint in_stack_ffffffe0;
+  byte uVar3;
   ushort uStack_e;
   short local_c;
   short sStack_a;
   short sStack_8;
   ushort uStack_6;
   
+  dVar2 = (double)base;
   if (base != (float10)0) {
     if ((float10)0 <= base) {
       if (ROUND(exp) == exp) goto LAB_00565b61;
 LAB_00565be8:
+      in_stack_ffffffe0 = 0x565bf9;
       exp((float10)0.6931471805599453 * exp * ABS(base));
     }
     else if (ROUND(exp) == exp) {
 LAB_00565b61:
-      uStack_e = (ushort)((ulonglong)(double)exp >> 0x30);
+      dVar1 = (double)exp;
+      uVar3 = (byte)((ulonglong)dVar1 >> 0x20);
+      uStack_e = (ushort)((ulonglong)dVar1 >> 0x30);
       if (0xff < (ushort)((uStack_e & 0x7ff0) + 0xc010)) goto LAB_00565be8;
       uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
       if (uStack_6 == 0) {
-        integer_power((double)base);
+        in_stack_ffffffe0 = 0x565b91;
+        integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);
       }
       else {
         if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_00565be8;
-        integer_power((double)base);
+        in_stack_ffffffe0 = 0x565ba5;
+        integer_power(dVar2,SUB84(__BITCAST_UINT64(dVar1),0),uVar3);
         if ((DAT_005c1d98 & 1) == 0) {
           base = (float10)1 / base;
         }
         else {
+          in_stack_ffffffe0 = 0x565bbe;
+          exp = base;
           base = function_dispatch(0xf);
         }
       }
@@ -54,8 +65,11 @@ LAB_00565b61:
       goto LAB_00565c07;
     }
   }
-  dVar1 = (double)math_domain_error();
-  base = (float10)dVar1;
+  dVar2 = math_domain_error
+                    (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),in_stack_ffffffe0)),
+                     __BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar2 >> 0x20))),
+                     (uchar)((ulonglong)(double)exp >> 0x20));
+  base = (float10)dVar2;
 LAB_00565c07:
   return (float10)(double)base;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_event_cpp_getVectorDistance_FUN_004818e0(void)
+; float __cdecl core_event_cpp_getVectorDistance_FUN_004818e0(CVector3f *a,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   b
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

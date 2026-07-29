@@ -1,43 +1,43 @@
 // Name: core_netgame.cpp_SNetPlayer_copy_FUN_004ede70
 // Address: 004ede70
 // Address Range: [[004ede70, 004edf2d]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(undefined4 *param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
 
 #include "nocturne.h"
 
-void core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(uint *param_1,uint *param_2)
+void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
 
 {
-  *param_1 = *param_2;
-  param_1[1] = param_2[1];
-  param_1[2] = param_2[2];
-  param_1[3] = param_2[3];
-  param_1[4] = param_2[4];
-  param_1[5] = param_2[5];
-  param_1[6] = param_2[6];
-  param_1[7] = param_2[7];
-  *(ushort *)(param_1 + 8) = *(ushort *)(param_2 + 8);
-  param_1[9] = param_2[9];
-  param_1[10] = param_2[10];
-  param_1[0xb] = param_2[0xb];
-  param_1[0xc] = param_2[0xc];
-  param_1[0xd] = param_2[0xd];
-  param_1[0xe] = param_2[0xe];
-  param_1[0xf] = param_2[0xf];
-  param_1[0x10] = param_2[0x10];
-  param_1[0x11] = param_2[0x11];
-  param_1[0x12] = param_2[0x12];
-  param_1[0x13] = param_2[0x13];
-  param_1[0x14] = param_2[0x14];
-  param_1[0x15] = param_2[0x15];
-  param_1[0x16] = param_2[0x16];
-  param_1[0x17] = param_2[0x17];
-  param_1[0x18] = param_2[0x18];
-  param_1[0x19] = param_2[0x19];
-  param_1[0x1a] = param_2[0x1a];
-  param_1[0x1b] = param_2[0x1b];
-  param_1[0x1c] = param_2[0x1c];
-  param_1[0x1d] = param_2[0x1d];
+  *(uint *)this_ptr->name = *(uint *)other->name;
+  *(uint *)(this_ptr->name + 4) = *(uint *)(other->name + 4);
+  *(uint *)(this_ptr->name + 8) = *(uint *)(other->name + 8);
+  *(uint *)(this_ptr->name + 0xc) = *(uint *)(other->name + 0xc);
+  *(uint *)(this_ptr->name + 0x10) = *(uint *)(other->name + 0x10);
+  this_ptr->hero_number = other->hero_number;
+  this_ptr->aim_mode = other->aim_mode;
+  (this_ptr->addr).ip_address = (other->addr).ip_address;
+  (this_ptr->addr).port = (other->addr).port;
+  this_ptr->last_arrival_time = other->last_arrival_time;
+  this_ptr->ping_quality = other->ping_quality;
+  this_ptr->last_ping_sent = other->last_ping_sent;
+  this_ptr->last_ping_response = other->last_ping_response;
+  this_ptr->player_id = other->player_id;
+  this_ptr->last_update_time = other->last_update_time;
+  this_ptr->local_sync_stage = other->local_sync_stage;
+  this_ptr->state_change_time = other->state_change_time;
+  this_ptr->ready_flag = other->ready_flag;
+  this_ptr->sim_frame_index = other->sim_frame_index;
+  (this_ptr->player_input).action_state.walk = (other->player_input).action_state.walk;
+  (this_ptr->player_input).action_state.backup = (other->player_input).action_state.backup;
+  (this_ptr->player_input).action_state.run = (other->player_input).action_state.run;
+  (this_ptr->player_input).action_state.fire = (other->player_input).action_state.fire;
+  (this_ptr->player_input).action_state.use_item = (other->player_input).action_state.use_item;
+  (this_ptr->player_input).action_state.light = (other->player_input).action_state.light;
+  (this_ptr->player_input).action_state.draw = (other->player_input).action_state.draw;
+  (this_ptr->player_input).action_state.jump = (other->player_input).action_state.jump;
+  (this_ptr->player_input).strafe_speed = (other->player_input).strafe_speed;
+  (this_ptr->player_input).turn_speed = (other->player_input).turn_speed;
+  (this_ptr->player_input).look_up_down_speed = (other->player_input).look_up_down_speed;
   return;
 }

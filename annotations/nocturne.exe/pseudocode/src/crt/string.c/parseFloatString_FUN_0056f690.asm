@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_string_c_parseFloatString_FUN_0056f690(byte *param_1,undefined4 *param_2,undefined4 *param_3)
+; int __cdecl crt_string_c_parseFloatString_FUN_0056f690(char *str,void *result,char **endptr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; void *           Stack[0x8]:4   result
+; char * *         Stack[0xc]:4   endptr
 ;
 ; XREF[1]:
 ;   crt_string.c_strtod_main_FUN_0056f852 at 0056f867

@@ -1,25 +1,25 @@
 // Name: support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0
 // Address: 004396d0
 // Address Range: [[004396d0, 00439752]]
-// Convention: unknown
-// Signature: void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
+// Convention: __cdecl
+// Signature: void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream)
 
 #include "nocturne.h"
 
-void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
+void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream)
 
 {
   int iVar1;
   uint uVar2;
   uint uVar3;
   
-  iVar1 = *(int *)(param_1 + 0xc);
-  uVar3 = 1 << ((char)*(uint *)(param_1 + 8) - 1U & 0x1f);
+  iVar1 = this_ptr->entry_count;
+  uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);
   if (uVar3 != 0) {
     do {
       if ((iVar1 - 1U & uVar3) != 0) {
-        if ((param_2 & uVar3) == 0) break;
-        support_codec_cpp_writeBitsToStream_FUN_00438c40(param_3,1,1,param_4);
+        if ((code_value & uVar3) == 0) break;
+        support_codec_cpp_writeBitsToStream_FUN_00438c40(bit_buffer,1,1,ostream);
       }
       uVar3 = (int)uVar3 >> 1;
       if (uVar3 == 0) {
@@ -29,9 +29,9 @@ void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uin
   }
   if (uVar3 != 0) {
     do {
-      uVar2 = uVar3 & param_2;
+      uVar2 = uVar3 & code_value;
       uVar3 = (int)uVar3 >> 1;
-      support_codec_cpp_writeBitsToStream_FUN_00438c40(param_3,1,(uint)(uVar2 != 0),param_4);
+      support_codec_cpp_writeBitsToStream_FUN_00438c40(bit_buffer,1,(uint)(uVar2 != 0),ostream);
     } while (uVar3 != 0);
     return;
   }

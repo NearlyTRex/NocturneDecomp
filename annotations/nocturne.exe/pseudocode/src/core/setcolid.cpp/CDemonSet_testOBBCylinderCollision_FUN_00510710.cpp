@@ -10,8 +10,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CD
 
 {
   CVector3f *pCVar1;
-  float *pfVar2;
-  CVector3f *pCVar3;
+  CVector3f *pCVar2;
   uint corner_index;
   CVector3f local_1e8;
   CVector3f local_1dc;
@@ -28,28 +27,28 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CD
   CDemonTriangle local_a8;
   CDemonTriangle local_70;
   CVector3f local_38;
-  byte local_2c [12];
+  CVector3f local_2c;
   CVector3f local_20;
   float local_14;
   
-  pCVar3 = &local_1e8;
+  pCVar2 = &local_1e8;
   corner_index = 0;
   __arrinit(&local_1e8,8,&g_CVectorTypeInfo_005993b0);
   do {
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(bounding_box,&local_38,corner_index)
     ;
-    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (orientation_matrix,local_2c,pCVar1);
-    local_20.x = *pfVar2 + position->x;
-    local_20.y = pfVar2[1] + position->y;
-    local_20.z = pfVar2[2] + position->z;
-    if (pCVar3 != &local_20) {
-      pCVar3->x = local_20.x;
-      pCVar3->y = local_20.y;
-      pCVar3->z = local_20.z;
+    pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (orientation_matrix,&local_2c,pCVar1);
+    local_20.x = pCVar1->x + position->x;
+    local_20.y = pCVar1->y + position->y;
+    local_20.z = pCVar1->z + position->z;
+    if (pCVar2 != &local_20) {
+      pCVar2->x = local_20.x;
+      pCVar2->y = local_20.y;
+      pCVar2->z = local_20.z;
     }
     corner_index = corner_index + 1;
-    pCVar3 = pCVar3 + 1;
+    pCVar2 = pCVar2 + 1;
   } while ((int)corner_index < 8);
   local_14 = cylinder->closest_t;
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0

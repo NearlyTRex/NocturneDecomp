@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_armour_cpp_CEnemy_dtor_FUN_0040fcf0(CDemonActor *param_1,byte param_2)
+; CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040fcf0(CEnemy *this_ptr,uint flags)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CEnemyTypeInfo_00599920

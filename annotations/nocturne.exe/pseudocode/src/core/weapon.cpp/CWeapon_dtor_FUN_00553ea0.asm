@@ -9,7 +9,7 @@
 ;
 ; XREF[13]:
 ;   core_baron.cpp_CBaronWeapon_dtor_FUN_00411610 at 0041161f
-;   core_crossbow.cpp_FUN_0043d870 at 0043d896
+;   core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870 at 0043d896
 ;   core_dynamite.cpp_CDynamite_dtor_FUN_0046ef30 at 0046ef3f
 ;   core_elephant.cpp_FUN_00478310 at 0047831f
 ;   core_flamegun.cpp_FUN_0048ecb0 at 0048ecbf
@@ -21,7 +21,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a4154 = 00553f10
+;   CWeapon_full_vtable g_CWeaponVTable
 ;   WatcomTypeInfo g_CWeaponTypeInfo_005a4250
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     PUSH 0x0                            ; 00553eac
     ADD EBX,0x300                       ; 00553eae
     PUSH EBX                            ; 00553eb4
-    MOV dword ptr [EBX + 0xfffffe4c],0x5a4154 ; 00553eb5 | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a4154
+    MOV dword ptr [EBX + 0xfffffe4c],0x5a4154 ; 00553eb5 | g_CWeaponVTable
     CALL core_box.cpp_CBox_dtor_FUN_0041a6c0 ; 00553ebf
         ;   XREF to: 0041a6c0 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041a6c0(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00553ec4

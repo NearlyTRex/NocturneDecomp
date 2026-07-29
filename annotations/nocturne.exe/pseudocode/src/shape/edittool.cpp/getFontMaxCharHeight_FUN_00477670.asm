@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_getFontMaxCharHeight_FUN_00477670(void)
+; int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_00477670(CBitFont *font_ptr)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   font_ptr
 ;
 ; *****************************************************************************
 

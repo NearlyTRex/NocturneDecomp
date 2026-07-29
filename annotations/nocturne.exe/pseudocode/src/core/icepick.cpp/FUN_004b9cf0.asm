@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004b9d02
         ;   Label: LAB_004b9d02
     CALL core_icepick.cpp_CIcePick_ctor_FUN_004b9d20 ; 004b9d03
-        ;   XREF to: 004b9d20 (UNCONDITIONAL_CALL)  ; undefined core_icepick.cpp_CIcePick_ctor_FUN_004b9d20()
+        ;   XREF to: 004b9d20 (UNCONDITIONAL_CALL)  ; CIcePick * core_icepick.cpp_CIcePick_ctor_FUN_004b9d20(CIcePick * this_ptr)
     ADD ESP,0x4                         ; 004b9d08
     RET                                 ; 004b9d0b
 

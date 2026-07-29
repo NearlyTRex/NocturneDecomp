@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_manpuz_cpp_CMirrorHack_dtor_FUN_004cbdd0(CDemonActor *param_1,byte param_2)
+; CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_004cbdd0(CMirrorHack *this_ptr,uint flags)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMirrorHackTypeInfo_005a0270

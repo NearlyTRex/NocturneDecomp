@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_addPolygonEdge_FUN_004940e0(int param_1,int param_2)
+; void __cdecl engine_3d_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex1
+; SRenderVertex *  Stack[0x8]:4   vertex2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c70f78

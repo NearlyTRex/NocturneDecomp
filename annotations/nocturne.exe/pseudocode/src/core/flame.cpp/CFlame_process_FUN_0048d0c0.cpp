@@ -12,12 +12,12 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
 
 {
   CLocation *pCVar1;
-  float fVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  double dVar6;
-  uint uVar7;
+  CCharacter *pCVar2;
+  float fVar3;
+  int iVar4;
+  uint uVar5;
+  ECollisionType EVar6;
+  double dVar7;
   char local_f8 [100];
   SCollisionInfo local_94;
   SCollisionInfo SStack_6c;
@@ -34,23 +34,23 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
   float local_14;
   
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
-     (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->on_event), iVar3 != 0)) {
+     (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                        (0x01C03A10,this_ptr->on_event), iVar4 != 0)) {
     if ((this_ptr->which_flame != 1) && (this_ptr->which_flame != 3)) {
-      iVar3 = 0;
+      iVar4 = 0;
       do {
-        iVar3 = iVar3 + 1;
+        iVar4 = iVar4 + 1;
         core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
                   (0x01C08D04,&(this_ptr->base).location.position,(CVector3f *)0x0,0x4000,0x10000,
                    1,0xffff);
-      } while (iVar3 < 10);
+      } while (iVar4 < 10);
     }
     this_ptr->is_visible = 1;
     this_ptr->flame_state = 1;
   }
   if (((this_ptr->off_event[0] != '\0') && (this_ptr->flame_state != 0)) &&
-     ((iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                         (0x01C03A10,this_ptr->off_event), iVar3 != 0 &&
+     ((iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                         (0x01C03A10,this_ptr->off_event), iVar4 != 0 &&
       (this_ptr->flame_state = 0, this_ptr->which_flame != 3)))) {
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
               (0x01C08D04,&(this_ptr->base).location.position,
@@ -72,40 +72,39 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
       }
     }
     else {
-      iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,this_ptr->sfx_handle);
-      if (iVar3 == 0) {
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f733333,0x3f866666)
-        ;
+      iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(0x02DC9450,this_ptr->sfx_handle);
+      if (iVar4 == 0) {
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.95,1.05);
         _sprintf(local_f8,"torch.wav * %f",(double)local_14);
         sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-        iVar3 = 2;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0((double)local_14,iVar3);
-        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
-        this_ptr->sfx_handle = uVar4;
+        iVar4 = 2;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
+        sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0((double)local_14,iVar4);
+        uVar5 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
+        this_ptr->sfx_handle = uVar5;
         sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
       }
     }
     if (this_ptr->burn_hero != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&local_94);
-      iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);
-      if (iVar3 == 2) {
-        iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+      iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+      iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x34))(iVar4,&local_94);
+      if (iVar4 == 2) {
+        pCVar2 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         pCVar1 = &(this_ptr->base).location;
-        fStack_40 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
-        fStack_3c = *(float *)(iVar3 + 0x24) - (this_ptr->base).location.position.y;
-        fStack_38 = *(float *)(iVar3 + 0x28) - (this_ptr->base).location.position.z;
+        fStack_40 = (pCVar2->base).location.position.x - (pCVar1->position).x;
+        fStack_3c = (pCVar2->base).location.position.y - (this_ptr->base).location.position.y;
+        fStack_38 = (pCVar2->base).location.position.z - (this_ptr->base).location.position.z;
         if (((float)-0.5 < fStack_3c) && (fStack_3c < local_94.cylinder_radius)) {
-          dVar6 = round
+          dVar7 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          fStack_18 = (float)(int)ROUND(dVar6);
+          fStack_18 = (float)(int)ROUND(dVar7);
           fStack_1c = (float)(int)fStack_18;
           local_14 = fStack_18;
           if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&
              (ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {
-            core_charactr_cpp_FUN_00427730(iVar3,pCVar1,0,0,0x40000000,1);
+            core_charactr_cpp_FUN_00427730(pCVar2,&pCVar1->position,0,0,2.0,1);
           }
         }
       }
@@ -118,26 +117,25 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
         this_ptr->enemy_burn_index = 0;
       }
       if (0 < *(int *)(0x01E57284 + 0x150bf4)) {
-        iVar3 = *(int *)(0x01E57284 + 0x150bf8 + this_ptr->enemy_burn_index * 4);
+        pCVar2 = *(CCharacter **)(0x01E57284 + 0x150bf8 + this_ptr->enemy_burn_index * 4);
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_6c);
-        iVar5 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&SStack_6c);
-        if (iVar5 == 2) {
+        EVar6 = (*((pCVar2->base).vtable._ub)->getCollisionType)(&pCVar2->base,&SStack_6c);
+        if (EVar6 == COLLISION_TYPE_CYLINDER) {
           pCVar1 = &(this_ptr->base).location;
-          fStack_38 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
-          fVar2 = *(float *)(iVar3 + 0x24) - (this_ptr->base).location.position.y;
-          fStack_30 = *(float *)(iVar3 + 0x28) - (this_ptr->base).location.position.z;
-          uVar7 = 0x48d528;
-          fStack_34 = fVar2;
-          dVar6 = round
+          fStack_38 = (pCVar2->base).location.position.x - (pCVar1->position).x;
+          fVar3 = (pCVar2->base).location.position.y - (this_ptr->base).location.position.y;
+          fStack_30 = (pCVar2->base).location.position.z - (this_ptr->base).location.position.z;
+          fStack_34 = fVar3;
+          dVar7 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                      (float)0.25));
-          iStack_24 = (int)ROUND(dVar6);
-          if (((float)-0.5 < fVar2) && (fStack_38 < SStack_6c.cylinder_bottom_y)) {
+          iStack_24 = (int)ROUND(dVar7);
+          if (((float)-0.5 < fVar3) && (fStack_38 < SStack_6c.cylinder_bottom_y)) {
             fStack_28 = (float)iStack_24;
             if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&
                (ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {
               fStack_18 = (float)iStack_24;
-              core_charactr_cpp_FUN_00427730(iVar3,pCVar1,0,0,0x40000000,0,uVar7);
+              core_charactr_cpp_FUN_00427730(pCVar2,&pCVar1->position,0,0,2.0,0);
             }
           }
         }

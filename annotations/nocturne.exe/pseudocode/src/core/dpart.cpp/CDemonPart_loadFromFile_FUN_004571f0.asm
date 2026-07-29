@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4)
+; void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 ;
+; Parameters:
+; CDemonPart *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; CVector3f *      Stack[0xc]:4   offset_position
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_newformat_0057d481

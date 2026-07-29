@@ -45,7 +45,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
       _fclose(file_handle);
       return;
     }
-    iVar3 = _fscanf(file_handle,"%[^,], %[^,], %[^\n]\n",local_334,local_2bc,local_29e);
+    iVar3 = _fscanf(file_handle,"%[^,], %[^,], %[^\n]\n");
     if (iVar3 != 3) {
       PTR_01cc4800 = "..\\core\\script.cpp";
       INT_01cc4804 = 0xed6;

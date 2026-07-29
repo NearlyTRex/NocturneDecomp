@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; longlong core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(int param_1)
+; longlong core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00411441
     PUSH EBX                            ; 00411445
     CALL core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 ; 00411446
-        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530()
+        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon * this_ptr)
     MOV EDX,dword ptr [EBX + 0x570]     ; 0041144b
     ADD ESP,0x4                         ; 00411451
     TEST EDX,EDX                        ; 00411454

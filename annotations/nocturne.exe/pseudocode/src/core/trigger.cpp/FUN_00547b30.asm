@@ -277,7 +277,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00547dae | DAT_005be368
     PUSH EDX                            ; 00547db4 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 00547db5
-        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0()
+        ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
     FLD float ptr [ESI + 0x214]         ; 00547dba
     ADD ESP,0xc                         ; 00547dc0
     FMUL double ptr [0x005969af]        ; 00547dc3 | DOUBLE_005969af

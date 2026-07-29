@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance *param_1,char *param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance *this_ptr,char *model_name)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   model_name
 ;
 ; XREF[52]:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 at 0040cab1

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_rayCylinderIntersect_FUN_00409860(int param_1,float *param_2,float *param_3,float *param_4)
+; float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00409860(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 ;
+; Parameters:
+; SCollisionInfo * Stack[0x4]:4   collision_info
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
 ; undefined8       Stack[-0x108]:8  local_108
 ; undefined8       Stack[-0x100]:8  local_100

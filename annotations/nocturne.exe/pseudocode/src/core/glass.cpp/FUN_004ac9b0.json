@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 548,
+    "complexity_score": 395,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 45,
+    "pseudocode_lines": 65,
+    "suspect_count": 31,
     "suspect_types": [
-      "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 223
+    "total_lines": 215
   },
   "cross_references": [],
   "function": {
@@ -149,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_glass.cpp_FUN_004ac9b0",
-    "signature": "void core_glass_cpp_FUN_004ac9b0(CDemonActor *param_1,int param_2)"
+    "signature": "void core_glass_cpp_FUN_004ac9b0(CGlass *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -292,7 +291,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_glass_cpp_FUN_004ac9b0(CDemonActor *param_1,int param_2)",
+      "text": "void core_glass_cpp_FUN_004ac9b0(CGlass *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +299,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_glass_cpp_FUN_004ac9b0(CDemonActor *param_1,int param_2)",
+      "text": "void core_glass_cpp_FUN_004ac9b0(CGlass *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -308,7 +307,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1[2].create_event + 0x50) == 0) {",
+      "text": "if (param_1->background_flag == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -316,7 +315,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (((param_2 != 0) && (param_1[1].location.position.z != 0.0)) &&",
+      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -324,20 +323,20 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((param_2 != 0) && (param_1[1].location.position.z != 0.0)) &&",
+      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((param_2 != 0) && (param_1->shattered != 0)) && (param_1->mirror_flag != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1[1].create_event + 0x18) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "core_glass_cpp_FUN_004ac7c0(param_1);",
@@ -345,10 +344,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "else if ((param_2 != 0) || (*(int *)(param_1[8].create_event + 0x3c) != 0)) {",
+      "text": "else if ((param_2 != 0) || (param_1->pending_background_render != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "else if ((param_2 != 0) || (param_1->pending_background_render != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -356,7 +363,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if ((param_2 != 0) || (*(int *)(param_1[8].create_event + 0x3c) != 0)) {",
+      "text": "param_1->pending_background_render = 0;",
       "type": "unnamed_param"
     },
     {
@@ -364,7 +371,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8].create_event[0x3c] = '\\0';",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -372,15 +379,15 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8].create_event[0x3d] = '\\0';",
+      "text": "this_ptr_00 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8].create_event[0x3e] = '\\0';",
+      "text": "this_ptr_00 = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_20);",
       "type": "unnamed_param"
     },
     {
@@ -388,7 +395,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8].create_event[0x3f] = '\\0';",
+      "text": "if (param_1->shattered == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -396,23 +403,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_20);",
+      "text": "texture = &param_1->glass_texture;",
       "type": "unnamed_param"
     },
     {
@@ -420,28 +411,12 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[1].location.position.z == 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(param_1[1].actor_name + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)(param_1[2].create_event + 0x54);",
+      "text": "texture = &param_1->broken_texture;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 34,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);",
@@ -449,26 +424,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar1 = &param_1[2].platform_position_delta.y;",
+      "text": "pCVar1 = param_1->broken_vertices;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = param_1[3].create_event + 0x48;",
+      "text": "pCVar2 = param_1->render_vertices;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x34)) {",
+      "text": "if (0 < param_1->broken_vertex_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < param_1->broken_vertex_count);",
       "type": "unnamed_param"
     },
     {
@@ -476,44 +459,36 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1[8].create_event + 0x34));",
+      "text": "(0x01E57284,param_1->broken_vertex_count,param_1->render_vertices);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01E57284,*(uint *)(param_1[8].create_event + 0x34),",
+      "text": "(0x01E57284,param_1->broken_vertex_count,param_1->render_vertices);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[3].create_event + 0x48);",
+      "text": "if (0 < param_1->broken_polygon_count) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x38)) {",
+      "text": "poly = (SMRGLPrimitivePoly *)param_1->broken_quads;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "poly = (SMRGLPrimitivePoly *)(param_1[5].actor_name + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1;",
@@ -521,7 +496,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 56,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "this_ptr = DAT_005ae704;",
@@ -529,114 +504,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1[8].create_event + 0x38));",
+      "text": "} while (iVar4 < param_1->broken_polygon_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 17,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (*(int *)(param_1[2].create_event + 0x50) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 19,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(*(int *)(param_1[1].create_event + 0x18) != 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 24,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "else if ((param_2 != 0) || (*(int *)(param_1[8].create_event + 0x3c) != 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 33,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "texture = (SMRGLTextureBasic *)(param_1[1].actor_name + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 36,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "texture = (SMRGLTextureBasic *)(param_1[2].create_event + 0x54);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 42,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x34)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 50,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "} while (iVar4 < *(int *)(param_1[8].create_event + 0x34));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 54,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "(0x01E57284,*(uint *)(param_1[8].create_event + 0x34),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 56,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)(param_1[8].create_event + 0x38)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 57,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "poly = (SMRGLPrimitivePoly *)(param_1[5].actor_name + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 72,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "} while (iVar4 < *(int *)(param_1[8].create_event + 0x38));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 69,
+      "line": 61,
       "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar3 = (CDemonActor *)((pCVar3->orient_matrix).m + 1);",
+      "text": "pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);",
       "type": "shadow_pointer_walk"
     }
   ],

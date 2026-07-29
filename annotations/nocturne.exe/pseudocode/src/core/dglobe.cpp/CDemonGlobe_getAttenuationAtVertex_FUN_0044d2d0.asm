@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(int param_1,int *param_2,int *param_3)
+; int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   vertex_position
+; CVector3i *      Stack[0xc]:4   surface_normal
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44

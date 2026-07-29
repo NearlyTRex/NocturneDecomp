@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 0042d1d0
     PUSH EBX                            ; 0042d1d1
     CALL cockpit_ckptutil.c_FUN_00431260 ; 0042d1d2
-        ;   XREF to: 00431260 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_00431260()
+        ;   XREF to: 00431260 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_FUN_00431260(void * bitmap_buffer, char * filename, SScanlineSpans * span_output, int width, ...)
     ADD ESP,0x18                        ; 0042d1d7
     MOV EAX,EDI                         ; 0042d1da
         ;   Label: LAB_0042d1da

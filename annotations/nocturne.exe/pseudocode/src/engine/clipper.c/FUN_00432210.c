@@ -15,16 +15,15 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
 {
   longlong lVar1;
   longlong lVar2;
-  int *piVar3;
-  byte bVar4;
+  byte bVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  int *piVar7;
-  char cVar8;
-  int iVar10;
-  longlong *plVar11;
-  int *piVar12;
-  SRenderVertex *v1;
+  int *piVar6;
+  char cVar7;
+  int iVar9;
+  longlong *plVar10;
+  uint *puVar11;
+  SRenderVertex *pSVar12;
   uint uVar13;
   int iVar14;
   uint uVar15;
@@ -34,8 +33,8 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
   longlong *plVar19;
   bool bVar20;
   byte bVar21;
-  int local_14c [31];
-  int aiStack_d0 [33];
+  uint local_14c [31];
+  uint auStack_d0 [33];
   byte *local_4c;
   uint local_48;
   int local_44;
@@ -47,30 +46,30 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
   int local_2c;
   int local_28;
   uint *local_24;
-  int *local_20;
-  int *local_1c;
+  uint *local_20;
+  uint *local_1c;
   int local_18;
   int local_14;
-  uint uVar9;
+  uint uVar8;
   
   bVar21 = 0;
-  uVar9 = 0xffffffff;
-  cVar8 = -1;
-  iVar5 = 0;
+  uVar8 = 0xffffffff;
+  cVar7 = -1;
+  iVar4 = 0;
   uVar13 = 0;
-  piVar7 = param_2;
+  piVar6 = param_2;
   if (0 < (int)param_1) {
     do {
-      if (((&DAT_005c5024)[*piVar7 * 0xc] & 0x80000000) != 0) {
+      if (((&DAT_005c5024)[*piVar6 * 0xc] & 0x80000000) != 0) {
         uVar13 = uVar13 + 1;
       }
-      iVar5 = iVar5 + 1;
-      uVar9 = uVar9 & (&DAT_005c5024)[*piVar7 * 0xc];
-      cVar8 = (char)uVar9;
-      piVar7 = piVar7 + 1;
-    } while (iVar5 < (int)param_1);
+      iVar4 = iVar4 + 1;
+      uVar8 = uVar8 & (&DAT_005c5024)[*piVar6 * 0xc];
+      cVar7 = (char)uVar8;
+      piVar6 = piVar6 + 1;
+    } while (iVar4 < (int)param_1);
   }
-  if ((uVar13 == param_1) && (cVar8 != '\0')) {
+  if ((uVar13 == param_1) && (cVar7 != '\0')) {
     DAT_00766c70 = uVar13 ^ param_1;
   }
   else {
@@ -79,67 +78,67 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
         DAT_00766c70 = param_1;
         local_18 = 0;
         if (0 < (int)param_1) {
-          plVar11 = (longlong *)&DAT_00766c74;
+          plVar10 = (longlong *)&DAT_00766c74;
           do {
-            iVar5 = 0x30;
+            iVar4 = 0x30;
             plVar19 = (longlong *)(&DAT_005c5014 + *param_2 * 0xc);
-            plVar16 = plVar11;
-            if (((uint)plVar11 & 7) != 0) {
-              plVar16 = (longlong *)((int)plVar11 + 4);
+            plVar16 = plVar10;
+            if (((uint)plVar10 & 7) != 0) {
+              plVar16 = (longlong *)((int)plVar10 + 4);
               plVar19 = (longlong *)(&DAT_005c5018 + *param_2 * 0xc);
-              *(int *)plVar11 = (int)*(longlong *)(&DAT_005c5014 + *param_2 * 0xc);
-              iVar5 = 0x2c;
+              *(int *)plVar10 = (int)*(longlong *)(&DAT_005c5014 + *param_2 * 0xc);
+              iVar4 = 0x2c;
             }
-            while (7 < iVar5) {
+            while (7 < iVar4) {
               lVar1 = *plVar19;
               plVar19 = plVar19 + 1;
               *plVar16 = (longlong)ROUND((float10)lVar1);
               plVar16 = plVar16 + 1;
-              iVar5 = iVar5 + -8;
+              iVar4 = iVar4 + -8;
             }
-            if (iVar5 != 0 && -9 < iVar5 + -8) {
+            if (iVar4 != 0 && -9 < iVar4 + -8) {
               *(int *)plVar16 = (int)*plVar19;
-              if (4 < iVar5) {
+              if (4 < iVar4) {
                 *(uint *)((int)plVar16 + 4) = *(uint *)((int)plVar19 + 4);
               }
             }
             param_2 = param_2 + 1;
             local_18 = local_18 + 1;
-            plVar11 = plVar11 + 6;
+            plVar10 = plVar10 + 6;
           } while (local_18 < (int)param_1);
         }
         return 0;
       }
-      iVar5 = 0;
+      iVar4 = 0;
       if (0 < (int)param_1) {
         do {
-          iVar10 = *param_2;
-          iVar5 = iVar5 + 1;
+          iVar9 = *param_2;
+          iVar4 = iVar4 + 1;
           param_2 = param_2 + 1;
-          *(uint **)(iVar5 * 4 + 0x767270) = &DAT_005c5014 + iVar10 * 0xc;
-        } while (iVar5 < (int)param_1);
+          *(uint **)(iVar4 * 4 + 0x767270) = &DAT_005c5014 + iVar9 * 0xc;
+        } while (iVar4 < (int)param_1);
       }
       if (DAT_006b0280 != 0) {
         if ((int)param_1 < 4) {
-          iVar5 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+          iVar4 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
                             (DAT_00767274,DAT_00767278,DAT_0076727c);
-          bVar20 = iVar5 == 0;
+          bVar20 = iVar4 == 0;
         }
         else {
           local_28 = param_1 - 2;
-          iVar10 = 0;
-          iVar5 = local_28 * 4;
+          iVar9 = 0;
+          iVar4 = local_28 * 4;
           iVar14 = 0;
-          if (0 < iVar5) {
+          if (0 < iVar4) {
             do {
-              iVar6 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
-                                (DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar10),
-                                 *(SRenderVertex **)((int)&DAT_0076727c + iVar10));
-              if (iVar6 == 0) {
+              iVar5 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10
+                                (DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar9),
+                                 *(SRenderVertex **)((int)&DAT_0076727c + iVar9));
+              if (iVar5 == 0) {
                 iVar14 = iVar14 + 1;
               }
-              iVar10 = iVar10 + 4;
-            } while (iVar10 < iVar5);
+              iVar9 = iVar9 + 4;
+            } while (iVar9 < iVar4);
           }
           bVar20 = iVar14 == local_28;
         }
@@ -151,37 +150,39 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
       engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);
       return 1;
     }
-    iVar5 = 0;
+    iVar4 = 0;
     if (0 < (int)param_1) {
       do {
-        iVar10 = *param_2;
-        iVar5 = iVar5 + 1;
+        iVar9 = *param_2;
+        iVar4 = iVar4 + 1;
         param_2 = param_2 + 1;
-        aiStack_d0[iVar5] = (int)(&DAT_005c5014 + iVar10 * 0xc);
-      } while (iVar5 < (int)param_1);
+        auStack_d0[iVar4] = &DAT_005c5014 + iVar9 * 0xc;
+      } while (iVar4 < (int)param_1);
     }
     DAT_00766c70 = param_1;
     local_48 = param_1;
-    uVar9 = 0;
+    uVar8 = 0;
     DAT_00767b38 = 0;
     local_4c = (byte *)local_14c;
     local_44 = 0;
     if (0 < (int)param_1) {
-      piVar7 = aiStack_d0;
-      piVar12 = (int *)aiStack_d0[param_1];
+      puVar11 = auStack_d0;
+      pSVar12 = (SRenderVertex *)auStack_d0[param_1];
       do {
-        iVar5 = DAT_00767b38;
-        piVar7 = piVar7 + 1;
-        piVar3 = (int *)*piVar7;
-        bVar4 = piVar12[2] <= *piVar12;
-        if (piVar3[2] <= *piVar3) {
-          bVar4 = bVar4 | 2;
+        iVar4 = DAT_00767b38;
+        puVar11 = puVar11 + 1;
+        pSVar17 = (SRenderVertex *)*puVar11;
+        bVar3 = (pSVar12->projected_vertex).transformed_z <=
+                (pSVar12->projected_vertex).transformed_x;
+        if ((pSVar17->projected_vertex).transformed_z <= (pSVar17->projected_vertex).transformed_x)
+        {
+          bVar3 = bVar3 | 2;
         }
-        switch(bVar4) {
+        switch(bVar3) {
         case 0:
-          iVar5 = uVar9 * 4;
-          uVar9 = uVar9 + 1;
-          *(int **)(local_4c + iVar5) = piVar12;
+          iVar4 = uVar8 * 4;
+          uVar8 = uVar8 + 1;
+          *(SRenderVertex **)(local_4c + iVar4) = pSVar12;
           break;
         case 1:
           if (0xb < DAT_00767b38) {
@@ -189,50 +190,54 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
             INT_01cc4804 = 0x5e;
             core_main_c_FUN_004c8440();
           }
-          iVar10 = DAT_00767b38 * 0x30;
+          iVar9 = DAT_00767b38 * 0x30;
           DAT_00767b38 = DAT_00767b38 + 1;
-          iVar5 = uVar9 * 4;
-          uVar9 = uVar9 + 1;
-          *(byte **)(local_4c + iVar5) = &DAT_007678f8 + iVar10;
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(piVar3,piVar12);
+          iVar4 = uVar8 * 4;
+          uVar8 = uVar8 + 1;
+          *(SRenderVertex **)(local_4c + iVar4) = (SRenderVertex *)(&DAT_007678f8 + iVar9);
+          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+                    (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar9));
           break;
         case 2:
-          iVar10 = uVar9 + 1;
-          *(int **)(local_4c + uVar9 * 4) = piVar12;
-          if (0xb < iVar5) {
+          iVar9 = uVar8 + 1;
+          *(SRenderVertex **)(local_4c + uVar8 * 4) = pSVar12;
+          if (0xb < iVar4) {
             PTR_01cc4800 = "..\\engine\\clipper.c";
             INT_01cc4804 = 0x5e;
             core_main_c_FUN_004c8440();
           }
-          iVar5 = DAT_00767b38 * 0x30;
+          iVar4 = DAT_00767b38 * 0x30;
           DAT_00767b38 = DAT_00767b38 + 1;
-          uVar9 = uVar9 + 2;
-          *(byte **)(local_4c + iVar10 * 4) = &DAT_007678f8 + iVar5;
-          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(piVar12,piVar3);
+          uVar8 = uVar8 + 2;
+          *(SRenderVertex **)(local_4c + iVar9 * 4) = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+          engine_clipper_c_interpolateVertexLeftClip_FUN_00431530
+                    (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
         }
         local_44 = local_44 + 1;
-        piVar12 = piVar3;
+        pSVar12 = pSVar17;
       } while (local_44 < (int)local_48);
     }
-    DAT_00766c70 = uVar9;
-    if (2 < (int)uVar9) {
+    DAT_00766c70 = uVar8;
+    if (2 < (int)uVar8) {
       uVar13 = 0;
-      local_40 = uVar9;
+      local_40 = uVar8;
       local_3c = 0;
-      piVar7 = (int *)local_14c[uVar9 - 1];
-      piVar12 = local_14c;
-      if (0 < (int)uVar9) {
+      pSVar12 = (SRenderVertex *)local_14c[uVar8 - 1];
+      puVar11 = local_14c;
+      if (0 < (int)uVar8) {
         do {
-          local_24 = piVar12;
-          piVar12 = (int *)*local_24;
-          bVar4 = *piVar7 <= -piVar7[2];
-          if (*piVar12 <= -piVar12[2]) {
-            bVar4 = bVar4 | 2;
+          local_24 = puVar11;
+          pSVar17 = (SRenderVertex *)*local_24;
+          bVar3 = (pSVar12->projected_vertex).transformed_x <=
+                  -(pSVar12->projected_vertex).transformed_z;
+          if ((pSVar17->projected_vertex).transformed_x <=
+              -(pSVar17->projected_vertex).transformed_z) {
+            bVar3 = bVar3 | 2;
           }
-          switch(bVar4) {
+          switch(bVar3) {
           case 0:
             uVar13 = uVar13 + 1;
-            aiStack_d0[uVar13] = (int)piVar7;
+            auStack_d0[uVar13] = pSVar12;
             break;
           case 1:
             if (0xb < DAT_00767b38) {
@@ -240,52 +245,56 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
               INT_01cc4804 = 0x5e;
               core_main_c_FUN_004c8440();
             }
-            iVar5 = DAT_00767b38 * 0x30;
+            iVar4 = DAT_00767b38 * 0x30;
             uVar13 = uVar13 + 1;
             DAT_00767b38 = DAT_00767b38 + 1;
-            aiStack_d0[uVar13] = (int)(&DAT_007678f8 + iVar5);
-            engine_clipper_c_interpolateVertexRightClip_FUN_00431630(piVar12,piVar7);
+            auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+            engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+                      (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
             break;
           case 2:
-            aiStack_d0[uVar13 + 1] = (int)piVar7;
+            auStack_d0[uVar13 + 1] = pSVar12;
             if (0xb < DAT_00767b38) {
               PTR_01cc4800 = "..\\engine\\clipper.c";
               INT_01cc4804 = 0x5e;
               core_main_c_FUN_004c8440();
             }
-            iVar5 = DAT_00767b38 * 0x30;
+            iVar4 = DAT_00767b38 * 0x30;
             uVar13 = uVar13 + 2;
             DAT_00767b38 = DAT_00767b38 + 1;
-            aiStack_d0[uVar13] = (int)(&DAT_007678f8 + iVar5);
-            engine_clipper_c_interpolateVertexRightClip_FUN_00431630(piVar7,piVar12);
+            auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+            engine_clipper_c_interpolateVertexRightClip_FUN_00431630
+                      (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
           }
           local_3c = local_3c + 1;
           local_24 = local_24 + 1;
-          piVar7 = piVar12;
-          piVar12 = local_24;
+          pSVar12 = pSVar17;
+          puVar11 = local_24;
         } while (local_3c < (int)local_40);
       }
       DAT_00766c70 = uVar13;
       if (2 < (int)uVar13) {
-        uVar9 = 0;
+        uVar8 = 0;
         local_38 = uVar13;
         local_34 = 0;
-        iVar5 = aiStack_d0[uVar13];
-        uVar15 = uVar9;
-        piVar7 = aiStack_d0 + 1;
+        pSVar12 = (SRenderVertex *)auStack_d0[uVar13];
+        uVar15 = uVar8;
+        puVar11 = auStack_d0 + 1;
         if (0 < (int)uVar13) {
           do {
-            local_20 = piVar7;
-            iVar10 = *local_20;
-            bVar4 = *(int *)(iVar5 + 8) <= *(int *)(iVar5 + 4);
-            if (*(int *)(iVar10 + 8) <= *(int *)(iVar10 + 4)) {
-              bVar4 = bVar4 | 2;
+            local_20 = puVar11;
+            pSVar17 = (SRenderVertex *)*local_20;
+            bVar3 = (pSVar12->projected_vertex).transformed_z <=
+                    (pSVar12->projected_vertex).transformed_y;
+            if ((pSVar17->projected_vertex).transformed_z <=
+                (pSVar17->projected_vertex).transformed_y) {
+              bVar3 = bVar3 | 2;
             }
-            uVar9 = uVar15;
-            switch(bVar4) {
+            uVar8 = uVar15;
+            switch(bVar3) {
             case 0:
-              uVar9 = uVar15 + 1;
-              local_14c[uVar15] = iVar5;
+              uVar8 = uVar15 + 1;
+              local_14c[uVar15] = pSVar12;
               break;
             case 1:
               if (0xb < DAT_00767b38) {
@@ -293,51 +302,55 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                 INT_01cc4804 = 0x5e;
                 core_main_c_FUN_004c8440();
               }
-              iVar14 = DAT_00767b38 * 0x30;
-              uVar9 = uVar15 + 1;
+              iVar4 = DAT_00767b38 * 0x30;
+              uVar8 = uVar15 + 1;
               DAT_00767b38 = DAT_00767b38 + 1;
-              local_14c[uVar15] = (int)(&DAT_007678f8 + iVar14);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(iVar10,iVar5);
+              local_14c[uVar15] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                        (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
               break;
             case 2:
-              local_14c[uVar15] = iVar5;
+              local_14c[uVar15] = pSVar12;
               if (0xb < DAT_00767b38) {
                 PTR_01cc4800 = "..\\engine\\clipper.c";
                 INT_01cc4804 = 0x5e;
                 core_main_c_FUN_004c8440();
               }
-              iVar14 = DAT_00767b38 * 0x30;
-              uVar9 = uVar15 + 2;
+              iVar4 = DAT_00767b38 * 0x30;
+              uVar8 = uVar15 + 2;
               DAT_00767b38 = DAT_00767b38 + 1;
-              local_14c[uVar15 + 1] = (int)(&DAT_007678f8 + iVar14);
-              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(iVar5,iVar10);
+              local_14c[uVar15 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+              engine_clipper_c_interpolateVertexBottomClip_FUN_00431730
+                        (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
             }
             local_34 = local_34 + 1;
             local_20 = local_20 + 1;
-            uVar15 = uVar9;
-            iVar5 = iVar10;
-            piVar7 = local_20;
+            uVar15 = uVar8;
+            pSVar12 = pSVar17;
+            puVar11 = local_20;
           } while (local_34 < (int)local_38);
         }
-        DAT_00766c70 = uVar9;
-        if (2 < (int)uVar9) {
+        DAT_00766c70 = uVar8;
+        if (2 < (int)uVar8) {
           uVar13 = 0;
-          local_30 = uVar9;
+          local_30 = uVar8;
           local_2c = 0;
-          iVar5 = local_14c[uVar9 - 1];
-          piVar7 = local_14c;
-          if (0 < (int)uVar9) {
+          pSVar12 = (SRenderVertex *)local_14c[uVar8 - 1];
+          puVar11 = local_14c;
+          if (0 < (int)uVar8) {
             do {
-              local_1c = piVar7;
-              iVar10 = *local_1c;
-              bVar4 = *(int *)(iVar5 + 4) <= -*(int *)(iVar5 + 8);
-              if (*(int *)(iVar10 + 4) <= -*(int *)(iVar10 + 8)) {
-                bVar4 = bVar4 | 2;
+              local_1c = puVar11;
+              pSVar17 = (SRenderVertex *)*local_1c;
+              bVar3 = (pSVar12->projected_vertex).transformed_y <=
+                      -(pSVar12->projected_vertex).transformed_z;
+              if ((pSVar17->projected_vertex).transformed_y <=
+                  -(pSVar17->projected_vertex).transformed_z) {
+                bVar3 = bVar3 | 2;
               }
-              switch(bVar4) {
+              switch(bVar3) {
               case 0:
                 uVar13 = uVar13 + 1;
-                aiStack_d0[uVar13] = iVar5;
+                auStack_d0[uVar13] = pSVar12;
                 break;
               case 1:
                 if (0xb < DAT_00767b38) {
@@ -345,46 +358,48 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                   INT_01cc4804 = 0x5e;
                   core_main_c_FUN_004c8440();
                 }
-                iVar14 = DAT_00767b38 * 0x30;
+                iVar4 = DAT_00767b38 * 0x30;
                 uVar13 = uVar13 + 1;
                 DAT_00767b38 = DAT_00767b38 + 1;
-                aiStack_d0[uVar13] = (int)(&DAT_007678f8 + iVar14);
-                engine_clipper_c_interpolateVertexTopClip_FUN_00431830(iVar10,iVar5);
+                auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+                engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+                          (pSVar17,pSVar12,(SRenderVertex *)(&DAT_007678f8 + iVar4));
                 break;
               case 2:
-                aiStack_d0[uVar13 + 1] = iVar5;
+                auStack_d0[uVar13 + 1] = pSVar12;
                 if (0xb < DAT_00767b38) {
                   PTR_01cc4800 = "..\\engine\\clipper.c";
                   INT_01cc4804 = 0x5e;
                   core_main_c_FUN_004c8440();
                 }
-                iVar14 = DAT_00767b38 * 0x30;
+                iVar4 = DAT_00767b38 * 0x30;
                 uVar13 = uVar13 + 2;
                 DAT_00767b38 = DAT_00767b38 + 1;
-                aiStack_d0[uVar13] = (int)(&DAT_007678f8 + iVar14);
-                engine_clipper_c_interpolateVertexTopClip_FUN_00431830(iVar5,iVar10);
+                auStack_d0[uVar13] = (SRenderVertex *)(&DAT_007678f8 + iVar4);
+                engine_clipper_c_interpolateVertexTopClip_FUN_00431830
+                          (pSVar12,pSVar17,(SRenderVertex *)(&DAT_007678f8 + iVar4));
               }
               local_2c = local_2c + 1;
               local_1c = local_1c + 1;
-              iVar5 = iVar10;
-              piVar7 = local_1c;
+              pSVar12 = pSVar17;
+              puVar11 = local_1c;
             } while (local_2c < (int)local_30);
           }
           DAT_00766c70 = uVar13;
           if (2 < (int)uVar13) {
-            iVar5 = 0;
+            iVar4 = 0;
             if (0 < (int)uVar13) {
-              plVar11 = (longlong *)&DAT_00766c74;
-              iVar10 = 0;
+              plVar10 = (longlong *)&DAT_00766c74;
+              iVar9 = 0;
               do {
-                plVar19 = *(longlong **)((int)aiStack_d0 + iVar10 + 4);
+                plVar19 = *(longlong **)((int)auStack_d0 + iVar9 + 4);
                 iVar14 = 0x30;
                 plVar16 = plVar19;
-                plVar18 = plVar11;
-                if (((uint)plVar11 & 7) != 0) {
-                  plVar18 = (longlong *)((int)plVar11 + (uint)bVar21 * -8 + 4);
+                plVar18 = plVar10;
+                if (((uint)plVar10 & 7) != 0) {
+                  plVar18 = (longlong *)((int)plVar10 + (uint)bVar21 * -8 + 4);
                   plVar16 = (longlong *)((int)plVar19 + (uint)bVar21 * -8 + 4);
-                  *(int *)plVar11 = (int)*plVar19;
+                  *(int *)plVar10 = (int)*plVar19;
                   iVar14 = 0x2c;
                 }
                 while (7 < iVar14) {
@@ -401,79 +416,79 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                          *(uint *)((int)plVar16 + (uint)bVar21 * -8 + 4);
                   }
                 }
-                iVar10 = iVar10 + 4;
-                iVar5 = iVar5 + 1;
-                plVar11 = plVar11 + 6;
-              } while (iVar5 < (int)DAT_00766c70);
+                iVar9 = iVar9 + 4;
+                iVar4 = iVar4 + 1;
+                plVar10 = plVar10 + 6;
+              } while (iVar4 < (int)DAT_00766c70);
             }
-            iVar5 = 0;
+            iVar4 = 0;
             if (DAT_005ad284 != 0) {
               if (0 < (int)DAT_00766c70) {
-                iVar10 = 0;
+                iVar9 = 0;
                 do {
-                  if (iVar5 < *(int *)((int)&DAT_00766c7c + iVar10)) {
-                    iVar5 = *(int *)((int)&DAT_00766c7c + iVar10);
+                  if (iVar4 < *(int *)((int)&DAT_00766c7c + iVar9)) {
+                    iVar4 = *(int *)((int)&DAT_00766c7c + iVar9);
                   }
-                  iVar10 = iVar10 + 0x30;
-                } while (iVar10 < (int)(DAT_00766c70 * 0x30));
+                  iVar9 = iVar9 + 0x30;
+                } while (iVar9 < (int)(DAT_00766c70 * 0x30));
               }
-              if (DAT_005ad284 <= iVar5) {
+              if (DAT_005ad284 <= iVar4) {
                 DAT_007672f4 = DAT_00766c70;
-                plVar11 = (longlong *)&DAT_00766c74;
+                plVar10 = (longlong *)&DAT_00766c74;
                 plVar19 = (longlong *)&DAT_007672f8;
-                iVar5 = DAT_00766c70 * 0x30;
-                while (7 < iVar5) {
-                  lVar1 = *plVar11;
-                  plVar11 = plVar11 + 1;
+                iVar4 = DAT_00766c70 * 0x30;
+                while (7 < iVar4) {
+                  lVar1 = *plVar10;
+                  plVar10 = plVar10 + 1;
                   *plVar19 = (longlong)ROUND((float10)lVar1);
                   plVar19 = plVar19 + 1;
-                  iVar5 = iVar5 + -8;
+                  iVar4 = iVar4 + -8;
                 }
-                if (iVar5 != 0 && -9 < iVar5 + -8) {
-                  *(int *)plVar19 = (int)*plVar11;
-                  if (4 < iVar5) {
+                if (iVar4 != 0 && -9 < iVar4 + -8) {
+                  *(int *)plVar19 = (int)*plVar10;
+                  if (4 < iVar4) {
                     *(uint *)((int)plVar19 + (uint)bVar21 * -8 + 4) =
-                         *(uint *)((int)plVar11 + (uint)bVar21 * -8 + 4);
+                         *(uint *)((int)plVar10 + (uint)bVar21 * -8 + 4);
                   }
                 }
                 DAT_00766c70 = 0;
                 local_14 = 0;
                 if (0 < (int)DAT_007672f4) {
-                  v1 = (SRenderVertex *)&DAT_007672f8;
+                  pSVar12 = (SRenderVertex *)&DAT_007672f8;
                   do {
-                    uVar9 = local_14 + 1;
-                    if (uVar9 == DAT_007672f4) {
-                      uVar9 = uVar9 ^ DAT_007672f4;
+                    uVar8 = local_14 + 1;
+                    if (uVar8 == DAT_007672f4) {
+                      uVar8 = uVar8 ^ DAT_007672f4;
                     }
-                    bVar4 = DAT_005ad284 <= (v1->projected_vertex).transformed_z;
-                    if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar9 * 0xc]) {
-                      bVar4 = bVar4 | 2;
+                    bVar3 = DAT_005ad284 <= (pSVar12->projected_vertex).transformed_z;
+                    if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar8 * 0xc]) {
+                      bVar3 = bVar3 | 2;
                     }
-                    switch(bVar4) {
+                    switch(bVar3) {
                     case 0:
                       plVar19 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
-                      iVar5 = 0x30;
-                      pSVar17 = v1;
-                      plVar11 = plVar19;
+                      iVar4 = 0x30;
+                      pSVar17 = pSVar12;
+                      plVar10 = plVar19;
                       if (((uint)plVar19 & 7) != 0) {
-                        plVar11 = (longlong *)
+                        plVar10 = (longlong *)
                                   (&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar21 * -2);
-                        pSVar17 = (SRenderVertex *)((int)v1 + (uint)bVar21 * -8 + 4);
-                        *(int *)plVar19 = (v1->projected_vertex).transformed_x;
-                        iVar5 = 0x2c;
+                        pSVar17 = (SRenderVertex *)((int)pSVar12 + (uint)bVar21 * -8 + 4);
+                        *(int *)plVar19 = (pSVar12->projected_vertex).transformed_x;
+                        iVar4 = 0x2c;
                       }
-                      while (7 < iVar5) {
+                      while (7 < iVar4) {
                         lVar2._0_4_ = (pSVar17->projected_vertex).transformed_x;
                         lVar2._4_4_ = (pSVar17->projected_vertex).transformed_y;
                         pSVar17 = (SRenderVertex *)&(pSVar17->projected_vertex).transformed_z;
-                        *plVar11 = (longlong)ROUND((float10)lVar2);
-                        plVar11 = plVar11 + 1;
-                        iVar5 = iVar5 + -8;
+                        *plVar10 = (longlong)ROUND((float10)lVar2);
+                        plVar10 = plVar10 + 1;
+                        iVar4 = iVar4 + -8;
                       }
-                      if (iVar5 != 0 && -9 < iVar5 + -8) {
-                        *(int *)plVar11 = (pSVar17->projected_vertex).transformed_x;
-                        if (4 < iVar5) {
-                          *(uint *)((int)plVar11 + (uint)bVar21 * -8 + 4) =
+                      if (iVar4 != 0 && -9 < iVar4 + -8) {
+                        *(int *)plVar10 = (pSVar17->projected_vertex).transformed_x;
+                        if (4 < iVar4) {
+                          *(uint *)((int)plVar10 + (uint)bVar21 * -8 + 4) =
                                *(uint *)((int)pSVar17 + (uint)bVar21 * -8 + 4);
                         }
                       }
@@ -481,84 +496,84 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                       break;
                     case 1:
                       engine_clipper_c_interpolateVertexNearClip_FUN_00431930
-                                ((SRenderVertex *)(&DAT_007672f8 + uVar9 * 0xc),v1,
+                                ((SRenderVertex *)(&DAT_007672f8 + uVar8 * 0xc),pSVar12,
                                  (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                       DAT_00766c70 = DAT_00766c70 + 1;
                       break;
                     case 2:
                       plVar19 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);
-                      iVar5 = 0x30;
-                      pSVar17 = v1;
-                      plVar11 = plVar19;
+                      iVar4 = 0x30;
+                      pSVar17 = pSVar12;
+                      plVar10 = plVar19;
                       if (((uint)plVar19 & 7) != 0) {
-                        plVar11 = (longlong *)
+                        plVar10 = (longlong *)
                                   (&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar21 * -2);
-                        pSVar17 = (SRenderVertex *)((int)v1 + (uint)bVar21 * -8 + 4);
-                        *(int *)plVar19 = (v1->projected_vertex).transformed_x;
-                        iVar5 = 0x2c;
+                        pSVar17 = (SRenderVertex *)((int)pSVar12 + (uint)bVar21 * -8 + 4);
+                        *(int *)plVar19 = (pSVar12->projected_vertex).transformed_x;
+                        iVar4 = 0x2c;
                       }
-                      while (7 < iVar5) {
+                      while (7 < iVar4) {
                         lVar1._0_4_ = (pSVar17->projected_vertex).transformed_x;
                         lVar1._4_4_ = (pSVar17->projected_vertex).transformed_y;
                         pSVar17 = (SRenderVertex *)&(pSVar17->projected_vertex).transformed_z;
-                        *plVar11 = (longlong)ROUND((float10)lVar1);
-                        plVar11 = plVar11 + 1;
-                        iVar5 = iVar5 + -8;
+                        *plVar10 = (longlong)ROUND((float10)lVar1);
+                        plVar10 = plVar10 + 1;
+                        iVar4 = iVar4 + -8;
                       }
-                      if (iVar5 != 0 && -9 < iVar5 + -8) {
-                        *(int *)plVar11 = (pSVar17->projected_vertex).transformed_x;
-                        if (4 < iVar5) {
-                          *(uint *)((int)plVar11 + (uint)bVar21 * -8 + 4) =
+                      if (iVar4 != 0 && -9 < iVar4 + -8) {
+                        *(int *)plVar10 = (pSVar17->projected_vertex).transformed_x;
+                        if (4 < iVar4) {
+                          *(uint *)((int)plVar10 + (uint)bVar21 * -8 + 4) =
                                *(uint *)((int)pSVar17 + (uint)bVar21 * -8 + 4);
                         }
                       }
                       DAT_00766c70 = DAT_00766c70 + 1;
                       engine_clipper_c_interpolateVertexNearClip_FUN_00431930
-                                (v1,(SRenderVertex *)(&DAT_007672f8 + uVar9 * 0xc),
+                                (pSVar12,(SRenderVertex *)(&DAT_007672f8 + uVar8 * 0xc),
                                  (SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));
                       DAT_00766c70 = DAT_00766c70 + 1;
                     }
                     local_14 = local_14 + 1;
-                    v1 = v1 + 1;
+                    pSVar12 = pSVar12 + 1;
                   } while (local_14 < (int)DAT_007672f4);
                 }
               }
             }
             if (2 < (int)DAT_00766c70) {
-              iVar5 = 0;
+              iVar4 = 0;
               if (0 < (int)DAT_00766c70) {
-                piVar7 = &DAT_00766c74;
+                piVar6 = &DAT_00766c74;
                 do {
-                  iVar10 = piVar7[2];
-                  if (iVar10 == 0) {
-                    piVar7[2] = 1;
-                    *piVar7 = 0;
-                    iVar6 = 0;
+                  iVar9 = piVar6[2];
+                  if (iVar9 == 0) {
+                    piVar6[2] = 1;
+                    *piVar6 = 0;
+                    iVar5 = 0;
 LAB_0043274e:
-                    piVar7[1] = iVar6;
+                    piVar6[1] = iVar5;
                   }
                   else {
-                    iVar14 = *piVar7;
-                    if (iVar10 < iVar14) {
-                      *piVar7 = iVar10;
+                    iVar14 = *piVar6;
+                    if (iVar9 < iVar14) {
+                      *piVar6 = iVar9;
                     }
                     else {
-                      iVar6 = -iVar10;
-                      if (-iVar14 == iVar10 || iVar6 < iVar14) {
-                        iVar14 = piVar7[1];
-                        if (piVar7[2] < iVar14) {
-                          piVar7[1] = piVar7[2];
+                      iVar5 = -iVar9;
+                      if (-iVar14 == iVar9 || iVar5 < iVar14) {
+                        iVar14 = piVar6[1];
+                        if (piVar6[2] < iVar14) {
+                          piVar6[1] = piVar6[2];
                         }
-                        else if (-iVar14 != iVar10 && iVar14 <= iVar6) goto LAB_0043274e;
+                        else if (-iVar14 != iVar9 && iVar14 <= iVar5) goto LAB_0043274e;
                       }
                       else {
-                        *piVar7 = iVar6;
+                        *piVar6 = iVar5;
                       }
                     }
                   }
-                  iVar5 = iVar5 + 1;
-                  piVar7 = piVar7 + 0xc;
-                } while (iVar5 < (int)DAT_00766c70);
+                  iVar4 = iVar4 + 1;
+                  piVar6 = piVar6 + 0xc;
+                } while (iVar4 < (int)DAT_00766c70);
               }
               return 0;
             }

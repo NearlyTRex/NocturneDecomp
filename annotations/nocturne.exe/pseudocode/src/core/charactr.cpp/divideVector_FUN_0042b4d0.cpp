@@ -1,22 +1,16 @@
 // Name: core_charactr.cpp_divideVector_FUN_0042b4d0
 // Address: 0042b4d0
 // Address Range: [[0042b4d0, 0042b4f2]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_divideVector_FUN_0042b4d0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042b4d0(CVector3f *src,CVector3f *dst,float *scalar)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_charactr_cpp_divideVector_FUN_0042b4d0(void)
+CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042b4d0(CVector3f *src,CVector3f *dst,float *scalar)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  
-  *in_stack_00000008 = *in_stack_00000004 / *in_stack_0000000c;
-  in_stack_00000008[1] = in_stack_00000004[1] / *in_stack_0000000c;
-  in_stack_00000008[2] = in_stack_00000004[2] / *in_stack_0000000c;
-  return;
+  dst->x = src->x / *scalar;
+  dst->y = src->y / *scalar;
+  dst->z = src->z / *scalar;
+  return dst;
 }

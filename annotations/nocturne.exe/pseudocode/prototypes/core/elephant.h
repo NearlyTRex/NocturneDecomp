@@ -19,25 +19,25 @@ CDemonActorType * FUN_00477700(void);
 // Address: 00477710
 CWeapon * FUN_00477710(CWeapon *param_1);
 
-// Original: core_elephant.cpp_FUN_004777a0
+// Original: core_elephant.cpp_CElephantGun_process_FUN_004777a0
 // Address: 004777a0
-void FUN_004777a0(CWeapon *param_1,undefined4 param_2,float param_3);
+void __cdecl CElephantGun::process(CElephantGun *this_ptr,float delta_time);
 
 // Original: core_elephant.cpp_FUN_00477890
 // Address: 00477890
-undefined4 FUN_00477890(CWeapon *param_1);
+undefined4 FUN_00477890(CCharacter *param_1);
 
 // Original: core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0
 // Address: 00477fd0
-void CElephantGun::onFired(int param_1);
+void CElephantGun::onFired(CDemonActor *param_1);
 
-// Original: core_elephant.cpp_FUN_004780e0
+// Original: core_elephant.cpp_CElephantGun_getDamage_FUN_004780e0
 // Address: 004780e0
-undefined4 FUN_004780e0(int param_1);
+float __cdecl CElephantGun::getDamage(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_00478120
+// Original: core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120
 // Address: 00478120
-void FUN_00478120(CDemonActor *param_1);
+void __cdecl CElephantGun::fireProjectile(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_FUN_00478310
 // Address: 00478310

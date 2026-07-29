@@ -17,7 +17,7 @@ CDemonActorType * FUN_0040f030(void);
 
 // Original: core_ammobox.cpp_FUN_0040f040
 // Address: 0040f040
-int * FUN_0040f040(undefined4 param_1);
+CAmmoBox * __cdecl FUN_0040f040(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_FUN_0040f0f0
 // Address: 0040f0f0
@@ -33,7 +33,7 @@ void __cdecl CAmmoBox::openBox(CAmmoBox *this_ptr,float open_pct);
 
 // Original: core_ammobox.cpp_FUN_0040f1a0
 // Address: 0040f1a0
-void FUN_0040f1a0(int param_1,CInventory *param_2);
+void __cdecl FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
 
 // Original: core_ammobox.cpp_FUN_0040f2b0
 // Address: 0040f2b0

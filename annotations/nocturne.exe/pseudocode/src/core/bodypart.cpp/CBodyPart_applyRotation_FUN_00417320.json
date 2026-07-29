@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 669,
+    "complexity_score": 779,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 184,
-    "suspect_count": 45,
+    "suspect_count": 56,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -541,14 +541,14 @@
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 101,
+          "line": 102,
           "message": "Uninitialized variable: iStack_50",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 107,
+          "line": 108,
           "message": "Uninitialized variable: local_4c",
           "severity": "error"
         }
@@ -560,10 +560,10 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
+      "line": 61,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "fVar5 = local_a4.m[0].y * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar5 = (float)local_a4._4_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -571,7 +571,15 @@
       "line": 61,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar6 = local_a4.m[0].z * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar5 = (float)local_a4._4_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fVar6 = (float)local_a4._8_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -579,7 +587,15 @@
       "line": 62,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar7 = local_a4.m[1].x * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar6 = (float)local_a4._8_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "fVar7 = (float)local_a4._12_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -587,7 +603,15 @@
       "line": 63,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar8 = local_a4.m[1].y * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar7 = (float)local_a4._12_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "fVar8 = (float)local_a4._16_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -595,7 +619,15 @@
       "line": 64,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar9 = local_a4.m[1].z * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar8 = (float)local_a4._16_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "fVar9 = (float)local_a4._20_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -603,7 +635,15 @@
       "line": 65,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar10 = local_a4.m[2].x * 5.9266679317975379e-315._0_4_;",
+      "text": "fVar9 = (float)local_a4._20_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "fVar10 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -611,28 +651,60 @@
       "line": 66,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "dVar20 = round((double)(local_a4.m[0].x * 5.9266679317975379e-315._0_4_));",
+      "text": "fVar10 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 67,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar11 = local_a4.m[2].x * 5.9266679317975379e-315._0_4_;",
+      "text": "dVar19 = round((double)((float)local_a4._0_4_ * 5.9266679317975379e-315._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 71,
+      "line": 67,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar5 = local_a4.m[2].x * 5.9266679317975379e-315._0_4_;",
+      "text": "dVar19 = round((double)((float)local_a4._0_4_ * 5.9266679317975379e-315._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "fVar11 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fVar11 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "fVar5 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fVar5 = (float)local_a4._24_4_ * 5.9266679317975379e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 122,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&CStack_188,(CVector3f *)&DAT_02dd1184,&euler_angles_00->vec);",
@@ -640,7 +712,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 124,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&CStack_158,(CVector3f *)&DAT_02dd1184,local_1c);",
@@ -648,10 +720,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(CMatrix3x4f *)((int)pCVar18",
+      "line": 131,
+      "match": "(CMatrix3x4f *)((int)pCVar17",
       "severity": "moderate",
-      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -659,140 +731,140 @@
       "line": 173,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(auStack_1b8,&DAT_02dd1184,pCVar13);",
+      "text": "(&CStack_1b8,(CVector3f *)&DAT_02dd1184,euler_angles_01);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 94,
-      "match": "(int)&pCVar1->x",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 95,
-      "match": "(int)&pCVar1->y",
+      "match": "(int)&pCVar1->x",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
+      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 96,
+      "match": "(int)&pCVar1->y",
+      "severity": "moderate",
+      "text": "lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
       "match": "(int)&pCVar1->z",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
+      "text": "lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
-      "match": "(int)&pCVar1->x",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 101,
-      "match": "(int)&pCVar1->y",
+      "match": "(int)&pCVar1->x",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
+      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 102,
+      "match": "(int)&pCVar1->y",
+      "severity": "moderate",
+      "text": "lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 103,
       "match": "(int)&pCVar1->z",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
+      "text": "lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
-      "match": "(int)&pCVar1->x",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 107,
-      "match": "(int)&pCVar1->y",
-      "severity": "moderate",
-      "text": "lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 108,
-      "match": "(int)&pCVar1->z",
-      "severity": "moderate",
-      "text": "lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
       "match": "(int)&pCVar1->x",
       "severity": "moderate",
-      "text": "*(int *)((int)&pCVar1->x + iVar16) = local_64;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
-      "match": "(int)&pCVar1->z",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1->z + iVar16) =",
+      "text": "lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 108,
       "match": "(int)&pCVar1->y",
       "severity": "moderate",
-      "text": "*(int *)((int)&pCVar1->y + iVar16) = iStack_60;",
+      "text": "lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
-      "match": "(int)pCVar18",
+      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 109,
+      "match": "(int)&pCVar1->z",
       "severity": "moderate",
-      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x41740c assigned to bare local `uVar28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 79,
+      "description": "Pointer value `&pCVar1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)&pCVar1->x",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pCVar1->x + iVar14) = local_64;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)&pCVar1->z",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&pCVar1->z + iVar14) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)&pCVar1->y",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pCVar1->y + iVar14) = iStack_60;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)pCVar17",
+      "severity": "moderate",
+      "text": "pCVar17 = (CMatrix3x4f *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x41740c assigned to bare local `uVar27`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar27` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 80,
       "match": "0x41740c",
       "severity": "moderate",
-      "text": "uVar28 = 0x41740c;",
+      "text": "uVar27 = 0x41740c;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x417413 assigned to bare local `uVar27`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar27` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 81,
+      "description": "Raw hex address 0x417413 assigned to bare local `uVar26`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar26` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 82,
       "match": "0x417413",
       "severity": "moderate",
-      "text": "uVar27 = 0x417413;",
+      "text": "uVar26 = 0x417413;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar16 = 0xc; iVar16 != 0; iVar16 = iVar16 + -1) {",
+      "text": "for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 134,
+      "line": 135,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(euler_angles_00->vec).x = pCVar12->x;",
@@ -808,26 +880,26 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 178,
+      "line": 167,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar13->x = pCVar12->x;",
+      "text": "pCVar12->x = pCVar13->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 94,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 178,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
-      "type": "pointer_cast"
+      "text": "euler_angles_01->x = pCVar13->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 95,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
+      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -835,15 +907,15 @@
       "line": 96,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
+      "text": "lVar3 = (longlong)iStack_5c * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
+      "line": 97,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
+      "text": "lVar4 = (longlong)iStack_54 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -851,7 +923,7 @@
       "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
+      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -859,15 +931,15 @@
       "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
+      "text": "lVar3 = (longlong)local_58 * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
+      "line": 103,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
+      "text": "lVar4 = (longlong)iStack_44 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -875,7 +947,7 @@
       "line": 107,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar16);",
+      "text": "lVar2 = (longlong)iStack_48 * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -883,7 +955,7 @@
       "line": 108,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar16);",
+      "text": "lVar3 = (longlong)local_3c * (longlong)*(int *)((int)&pCVar1->y + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -891,7 +963,7 @@
       "line": 109,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&pCVar1->x + iVar16) = local_64;",
+      "text": "lVar4 = (longlong)local_38 * (longlong)*(int *)((int)&pCVar1->z + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -899,15 +971,23 @@
       "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1->z + iVar16) =",
+      "text": "*(int *)((int)&pCVar1->x + iVar14) = local_64;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 114,
+      "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&pCVar1->y + iVar16) = iStack_60;",
+      "text": "*(uint *)((int)&pCVar1->z + iVar14) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 115,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pCVar1->y + iVar14) = iStack_60;",
       "type": "pointer_cast"
     },
     {
@@ -919,19 +999,27 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar12) + offsetof(subfield)` equals the real array stride. Replace `pCVar12->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 182,
+      "match": "pCVar12 = (T *)&pCVar12[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar12 = (CVector3f *)&pCVar12[0x21].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Uninitialized variable: iStack_50",
-      "line": 101,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
+      "text": "lVar2 = (longlong)iStack_50 * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_4c",
-      "line": 107,
+      "line": 108,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar16);",
+      "text": "lVar2 = (longlong)local_4c * (longlong)*(int *)((int)&pCVar1->x + iVar14);",
       "type": "static_uninitvar"
     }
   ]

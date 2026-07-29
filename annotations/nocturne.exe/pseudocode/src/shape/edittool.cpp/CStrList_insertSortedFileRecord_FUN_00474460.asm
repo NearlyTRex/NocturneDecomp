@@ -96,7 +96,7 @@ section .text
     ADD ESP,0x8                         ; 004744db
     PUSH EAX                            ; 004744de
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004744df
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 004744e4
     MOV EAX,ESP                         ; 004744e7
     PUSH EAX                            ; 004744e9

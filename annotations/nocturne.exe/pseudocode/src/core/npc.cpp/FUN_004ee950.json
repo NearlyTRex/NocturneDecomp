@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 143,
+    "complexity_score": 119,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 11,
+    "pseudocode_lines": 19,
+    "suspect_count": 9,
     "suspect_types": [
       "negative_offset",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
-    "total_lines": 48
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -188,9 +187,9 @@
         "004ee9d9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_npc.cpp_FUN_004ee950",
-    "signature": "int * core_npc_cpp_FUN_004ee950(CCharacter *param_1)"
+    "signature": "CNPC * __cdecl core_npc_cpp_FUN_004ee950(CNPC *this_ptr)"
   },
   "function_calls": [
     {
@@ -218,9 +217,9 @@
     },
     {
       "addr": "005a0eb4",
-      "name": "PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_005a0eb4",
-      "type": "undefined1*",
-      "value": "004ee9e0"
+      "name": "g_CNPCVTable",
+      "type": "CCharacter_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -230,12 +229,10 @@
         "call_addr": "004b6618",
         "call_type": "direct",
         "caller": "core_hiram.cpp_FUN_004b6610",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -243,12 +240,10 @@
         "call_addr": "004b69f8",
         "call_type": "direct",
         "caller": "core_hostage.cpp_CHostage_ctor_FUN_004b69f0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -256,12 +251,10 @@
         "call_addr": "004b9af8",
         "call_type": "direct",
         "caller": "core_hpriest.cpp_FUN_004b9af0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -269,12 +262,10 @@
         "call_addr": "004ef4e8",
         "call_type": "direct",
         "caller": "core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -282,12 +273,10 @@
         "call_addr": "005433a6",
         "call_type": "direct",
         "caller": "core_tbplayer.cpp_FUN_005433a0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -295,12 +284,10 @@
         "call_addr": "00543156",
         "call_type": "direct",
         "caller": "core_tbplayer.cpp_FUN_00543150",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -316,11 +303,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8076923076923075,
@@ -343,36 +330,28 @@
     "pcode_op_count": 99
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * core_npc_cpp_FUN_004ee950(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00423f40(param_1);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 10,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "pCVar2[-1].height_cache[0x50][0x1b] = (int)&PTR_core_npc_cpp_CNPC_setup_FUN_004ee9e0_005a0eb4;",
+      "text": "pCVar2[-1].height_cache[0x50][0x1b] = (int)&g_CNPCVTable;",
       "type": "negative_offset"
     },
     {
@@ -412,12 +391,12 @@
       "line": 16,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "(pCVar2[-1].height_cache[0x50] + 0x1c,\"priest.dfm\");",
+      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x50] + 0x1c),",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 18,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache_tags[3][0x53] = 0;",
@@ -425,18 +404,18 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 21,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "return pCVar2[-1].height_cache[0x4f] + 0x2c;",
+      "text": "return (CNPC *)(pCVar2[-1].height_cache[0x4f] + 0x2c);",
       "type": "negative_offset"
     },
     {
-      "description": "Pointer value `&PTR_core_npc_cpp_CNPC_setup_FUN_004ee9e0_005a0eb4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_CNPCVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 10,
-      "match": "(int)&PTR_core_npc_cpp_CNPC_setup_FUN_004ee9e0_005a0eb4",
+      "match": "(int)&g_CNPCVTable",
       "severity": "moderate",
-      "text": "pCVar2[-1].height_cache[0x50][0x1b] = (int)&PTR_core_npc_cpp_CNPC_setup_FUN_004ee9e0_005a0eb4;",
+      "text": "pCVar2[-1].height_cache[0x50][0x1b] = (int)&g_CNPCVTable;",
       "type": "pointer_truncation"
     }
   ],

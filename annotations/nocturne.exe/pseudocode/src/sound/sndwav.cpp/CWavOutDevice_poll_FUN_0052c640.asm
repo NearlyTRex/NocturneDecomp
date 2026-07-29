@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(void)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
+; short *          Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   num_samples
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_WavOutDevice_poll_NULL_p_00594955

@@ -45,7 +45,7 @@ section .text
     ADD EAX,0x1c67510                   ; 0048c4ca
     PUSH EAX                            ; 0048c4cf
     CALL core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50 ; 0048c4d0
-        ;   XREF to: 00488b50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50()
+        ;   XREF to: 00488b50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50(CLightningBolt * this_ptr, CVector3f * start_position, CVector3f * end_position, float end_width, ...)
     MOV EBX,dword ptr [0x01c6750c]      ; 0048c4d5 | DAT_01c6750c
     INC EBX                             ; 0048c4db
     ADD ESP,0x14                        ; 0048c4dc

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_cloth_cpp_vectorLengthFast_FUN_004388d0(void)
+; float __cdecl core_cloth_cpp_vectorLengthFast_FUN_004388d0(CVector3f *v)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   v
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

@@ -62,13 +62,13 @@ section .text
     PUSH 0x59603f                       ; 00540c48 | = "succubus.dfm"
     PUSH EAX                            ; 00540c4d
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540c4e
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00540c53
     PUSH 0x59604c                       ; 00540c56 | = "hotdemon.dfm"
     PUSH ESI                            ; 00540c5b
         ;   Label: LAB_00540c5b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540c5c
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00540c61
     PUSH EBX                            ; 00540c64
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 00540c65
@@ -317,7 +317,7 @@ section .text
         ;   Label: LAB_00540f2e
     PUSH EAX                            ; 00540f33
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540f34
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00540f39
     PUSH 0x596031                       ; 00540f3c | = "hotdemonx.dfm"
     JMP 0x00540c5b                      ; 00540f41

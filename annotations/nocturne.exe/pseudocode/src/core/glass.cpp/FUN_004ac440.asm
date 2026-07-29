@@ -122,7 +122,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004ac528 | DAT_005be368
     PUSH ECX                            ; 004ac52e | DAT_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 004ac52f
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,0xffff                      ; 004ac534
     MOV EBX,dword ptr [0x01c038f4]      ; 004ac539 | DAT_01c038f4
     ADD ESP,0xc                         ; 004ac53f
@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [EBX + 0x6b8],0x0     ; 004ac5bd
     ADD EBX,0x48                        ; 004ac5c7
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 ; 004ac5ca
-        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370()
+        ;   XREF to: 00460370 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EDI,0x48                        ; 004ac5cf
     MOV EDX,dword ptr [EBP + 0xb30]     ; 004ac5d2
     ADD ESP,0x8                         ; 004ac5d8

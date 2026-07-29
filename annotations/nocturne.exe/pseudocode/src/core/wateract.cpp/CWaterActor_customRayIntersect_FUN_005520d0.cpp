@@ -2,16 +2,19 @@
 // Address: 005520d0
 // Address Range: [[005520d0, 00552297]]
 // Convention: unknown
-// Signature: float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+// Signature: float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4)
 
 #include "nocturne.h"
 
-float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,uint param_2,uint param_3,float *param_4)
+float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4)
 
 {
-  uint uVar1;
+  CBoundingBox3D *this_ptr;
+  int iVar1;
   int iVar2;
-  int iVar3;
+  CVector3f *ray_origin;
+  CVector3f *ray_direction;
+  CVector3f *out_normal;
   float fStack_8c;
   CDemonTriangle CStack_88;
   byte local_50 [24];
@@ -25,25 +28,28 @@ float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,
   int iStack_1c;
   float fStack_18;
   
-  uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_50,param_2,param_3,0);
-  fStack_18 = (float)core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(uVar1);
+  out_normal = (CVector3f *)0x0;
+  ray_origin = param_2;
+  ray_direction = param_3;
+  this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_50);
+  fStack_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
+                        (this_ptr,ray_origin,ray_direction,out_normal);
   if ((fStack_18 < 0.0) || (1.0 < fStack_18)) {
     fStack_20 = 2.0;
   }
   else {
     iStack_1c = *(int *)(param_1 + 0x2b22c);
-    iVar3 = 0;
+    iVar2 = 0;
     fStack_8c = 2.0;
-    iVar2 = param_1 + 0x7fa0;
+    iVar1 = param_1 + 0x7fa0;
     if (0 < iStack_1c) {
       param_1 = param_1 + 0x294;
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                  (&CStack_88,(CVector3f *)(*(int *)(iVar2 + 0x18) * 0x20 + param_1),
-                   (CVector3f *)(*(int *)(iVar2 + 0x24) * 0x20 + param_1),
-                   (CVector3f *)(*(int *)(iVar2 + 0x30) * 0x20 + param_1));
-        fStack_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                                     (&CStack_88,param_2,param_3);
+                  (&CStack_88,(CVector3f *)(*(int *)(iVar1 + 0x18) * 0x20 + param_1),
+                   (CVector3f *)(*(int *)(iVar1 + 0x24) * 0x20 + param_1),
+                   (CVector3f *)(*(int *)(iVar1 + 0x30) * 0x20 + param_1));
+        fStack_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(&CStack_88,param_2,param_3);
         if (((fStack_18 < fStack_8c) && (0.0 <= fStack_18)) && (fStack_18 <= 1.0)) {
           fStack_38 = -CStack_88.normal.x;
           fStack_34 = -CStack_88.normal.y;
@@ -55,9 +61,9 @@ float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,
             fStack_24 = fStack_30;
           }
         }
-        iVar3 = iVar3 + 1;
-        iVar2 = iVar2 + 0x48;
-      } while (iVar3 < iStack_1c);
+        iVar2 = iVar2 + 1;
+        iVar1 = iVar1 + 0x48;
+      } while (iVar2 < iStack_1c);
     }
     if ((fStack_8c < 1.0) && (&fStack_2c != param_4)) {
       *param_4 = fStack_2c;

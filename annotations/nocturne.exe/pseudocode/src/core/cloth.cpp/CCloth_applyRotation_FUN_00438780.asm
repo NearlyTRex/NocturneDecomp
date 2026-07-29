@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cloth_cpp_CCloth_applyRotation_FUN_00438780(int param_1,float *param_2)
+; void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_00438780(CCloth *this_ptr,CVector3f *euler)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   euler
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CClothList_applyRotation_FUN_00438620 at 00438642
@@ -67,7 +70,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0043880b
     PUSH EAX                            ; 0043880f
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 00438810
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00438815
     CMP ESI,EAX                         ; 00438818
     JZ 0x0043882c                       ; 0043881a
@@ -87,7 +90,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0043883a
     PUSH EAX                            ; 0043883e
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 0043883f
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00438844
     CMP EBX,EAX                         ; 00438847
     JZ 0x0043885b                       ; 00438849

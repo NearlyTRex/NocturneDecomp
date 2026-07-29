@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_event_cpp_parseComparisonOp_FUN_0047a2b0(void)
+; int __cdecl core_event_cpp_parseComparisonOp_FUN_0047a2b0(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0057f3b3

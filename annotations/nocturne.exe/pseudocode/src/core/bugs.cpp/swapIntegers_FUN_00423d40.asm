@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_swapIntegers_FUN_00423d40(undefined4 *param_1,undefined4 *param_2)
+; int * __cdecl core_bugs_cpp_swapIntegers_FUN_00423d40(int *a,int *b)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   a
+; int *            Stack[0x8]:4   b
 ;
 ; *****************************************************************************
 

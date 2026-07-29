@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,char *param_2)
+; int __cdecl engine_pod_cpp_CPod_findFile_FUN_004f9200(CPod *this_ptr,SFoundFileInfo *found_file_info)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
+; SFoundFileInfo * Stack[0x8]:4   found_file_info
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150

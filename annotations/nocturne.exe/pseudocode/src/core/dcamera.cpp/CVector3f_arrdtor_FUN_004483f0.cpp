@@ -1,18 +1,16 @@
 // Name: core_dcamera.cpp_CVector3f_arrdtor_FUN_004483f0
 // Address: 004483f0
 // Address Range: [[004483f0, 00448407]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(CVector3f *objs,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(void)
+CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(CVector3f *objs,uint flags)
 
 {
-  void *in_stack_00000004;
+  CVector3f *pCVar1;
   
-  __arrfini(in_stack_00000004,0x12d40,&g_CVectorTypeInfo_005993b0);
-  return;
+  pCVar1 = (CVector3f *)__arrfini(objs,0x12d40,&g_CVectorTypeInfo_005993b0);
+  return pCVar1;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_moon_cpp_CMoon_dtor_FUN_004de830(CMoon *param_1)
+; CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_004de830(CMoon *this_ptr,uint flags)
 ;
+; Parameters:
+; CMoon *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00452630

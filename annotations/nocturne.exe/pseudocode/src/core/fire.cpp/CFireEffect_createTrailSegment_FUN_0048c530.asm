@@ -40,7 +40,7 @@ section .text
     ADD EAX,0x1c676cc                   ; 0048c559
     PUSH EAX                            ; 0048c55e
     CALL core_fire.cpp_CTrail_activate_FUN_004892c0 ; 0048c55f
-        ;   XREF to: 004892c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CTrail_activate_FUN_004892c0()
+        ;   XREF to: 004892c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_activate_FUN_004892c0(CTrail * this_ptr, CVector3f * position, float size, float alpha, ...)
     MOV EBX,dword ptr [0x01c676c8]      ; 0048c564 | DAT_01c676c8
     INC EBX                             ; 0048c56a
     ADD ESP,0x18                        ; 0048c56b

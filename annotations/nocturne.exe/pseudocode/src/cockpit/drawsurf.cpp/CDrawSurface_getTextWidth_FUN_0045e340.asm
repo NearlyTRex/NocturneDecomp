@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0045e340(void)
+; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0045e340(CDrawSurface *this_ptr,char *text)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d718
@@ -24,7 +27,7 @@ section .text
     PUSH EAX                            ; 0045e34e
     PUSH EDX                            ; 0045e34f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0045e350
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0045e355
     RET                                 ; 0045e358
     PUSH EAX                            ; 0045e359

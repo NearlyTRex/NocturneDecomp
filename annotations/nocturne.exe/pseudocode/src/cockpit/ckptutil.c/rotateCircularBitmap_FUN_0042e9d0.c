@@ -1,12 +1,12 @@
 // Name: cockpit_ckptutil.c_rotateCircularBitmap_FUN_0042e9d0
 // Address: 0042e9d0
 // Address Range: [[0042e9d0, 0042eaf6]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(int param_1,int param_2,uint param_3,uint param_4)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(void *bitmap_data,int width,int height,int num_iterations)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(int param_1,int param_2,uint param_3,uint param_4)
+void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(void *bitmap_data,int width,int height,int num_iterations)
 
 {
   byte uVar1;
@@ -23,16 +23,16 @@ void cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(int param_1,int param_
   int aiStack_28 [5];
   uint uStack_14;
   
-  aiStack_28[2] = param_2 * param_4;
-  aiStack_28[4] = param_2 / 2;
-  if (param_4 == 1) {
+  aiStack_28[2] = width * num_iterations;
+  aiStack_28[4] = width / 2;
+  if (num_iterations == 1) {
     uVar10 = 0;
-    if (param_3 != 0) {
+    if (height != 0) {
       iVar7 = 0;
       do {
-        puVar5 = (byte *)(param_1 + iVar7) + aiStack_28[2];
+        puVar5 = (byte *)((int)bitmap_data + iVar7) + aiStack_28[2];
         uVar2 = 0;
-        puVar3 = (byte *)(param_1 + iVar7);
+        puVar3 = (byte *)((int)bitmap_data + iVar7);
         if (aiStack_28[4] != 0) {
           do {
             puVar5 = puVar5 + -1;
@@ -45,61 +45,61 @@ void cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(int param_1,int param_
         }
         uVar10 = uVar10 + 1;
         iVar7 = iVar7 + aiStack_28[2];
-      } while (uVar10 < param_3);
+      } while (uVar10 < (uint)height);
     }
   }
   else {
     aiStack_28[3] = 0;
-    if (param_3 != 0) {
+    if (height != 0) {
       do {
-        puVar4 = (uint *)(aiStack_28[3] * aiStack_28[2] + param_1);
+        puVar4 = (uint *)(aiStack_28[3] * aiStack_28[2] + (int)bitmap_data);
         uStack_14 = 0;
-        puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - param_4));
+        puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - num_iterations));
         if (aiStack_28[4] != 0) {
           do {
             puVar8 = puVar4;
             piVar9 = aiStack_28;
-            for (uVar10 = param_4 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = (uint)num_iterations >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
               *piVar9 = *puVar8;
               puVar8 = puVar8 + 1;
               piVar9 = piVar9 + 1;
             }
-            for (uVar10 = param_4 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = num_iterations & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *(byte *)piVar9 = *(byte *)puVar8;
               puVar8 = (uint *)((int)puVar8 + 1);
               piVar9 = (uint *)((int)piVar9 + 1);
             }
             puVar8 = puVar6;
             puVar11 = puVar4;
-            for (uVar10 = param_4 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = (uint)num_iterations >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
               *puVar11 = *puVar8;
               puVar8 = puVar8 + 1;
               puVar11 = puVar11 + 1;
             }
-            for (uVar10 = param_4 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = num_iterations & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *(byte *)puVar11 = *(byte *)puVar8;
               puVar8 = (uint *)((int)puVar8 + 1);
               puVar11 = (uint *)((int)puVar11 + 1);
             }
             piVar9 = aiStack_28;
             puVar8 = puVar6;
-            for (uVar10 = param_4 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = (uint)num_iterations >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
               *puVar8 = *piVar9;
               piVar9 = piVar9 + 1;
               puVar8 = puVar8 + 1;
             }
-            for (uVar10 = param_4 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+            for (uVar10 = num_iterations & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *(byte *)puVar8 = *(byte *)piVar9;
               piVar9 = (uint *)((int)piVar9 + 1);
               puVar8 = (uint *)((int)puVar8 + 1);
             }
-            puVar4 = (uint *)((int)puVar4 + param_4);
+            puVar4 = (uint *)((int)puVar4 + num_iterations);
             uStack_14 = uStack_14 + 1;
-            puVar6 = (uint *)((int)puVar6 - param_4);
+            puVar6 = (uint *)((int)puVar6 - num_iterations);
           } while (uStack_14 < (uint)aiStack_28[4]);
         }
         aiStack_28[3] = aiStack_28[3] + 1;
-      } while ((uint)aiStack_28[3] < param_3);
+      } while ((uint)aiStack_28[3] < (uint)height);
     }
   }
   return;

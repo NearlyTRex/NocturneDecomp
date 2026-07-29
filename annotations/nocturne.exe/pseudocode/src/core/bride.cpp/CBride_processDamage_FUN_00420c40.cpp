@@ -40,7 +40,7 @@ void core_bride_cpp_CBride_processDamage_FUN_00420c40(CBride *param_1,SDamageInf
                    (&(param_1->base).base.model,&local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)param_1,&local_30,input_local_point);
-    core_charactr_cpp_FUN_00427730(param_1,&local_30,0,0,0x41200000,0);
+    core_charactr_cpp_FUN_00427730((CCharacter *)param_1,&local_30,0,0,10.0,0);
   }
   core_bride_cpp_CBride_processDismemberment_FUN_00420a10(param_1,param_2);
   iVar2 = param_1->part_indices[8];

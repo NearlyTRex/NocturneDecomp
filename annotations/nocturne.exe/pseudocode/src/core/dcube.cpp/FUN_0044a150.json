@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 971,
-    "complexity_score": 1486,
+    "complexity_score": 1491,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 101,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 381,
+    "pseudocode_lines": 386,
     "suspect_count": 109,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1352
+    "total_lines": 1357
   },
   "cross_references": [],
   "function": {
@@ -931,186 +931,178 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)*param_1;",
+      "text": "puVar1 = (uint *)*param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_014b8490",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b8490) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b8490) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)param_1[1];",
+      "text": "puVar1 = (uint *)param_1[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_014b849c",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b849c) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b849c) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)param_1[2];",
+      "text": "puVar1 = (uint *)param_1[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_014b84a8",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b84a8) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b84a8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_014b8490",
       "severity": "mild",
-      "text": "pfVar8 = (float *)&DAT_014b8490;",
+      "text": "pfVar9 = (float *)&DAT_014b8490;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "bVar5 = *param_3 < *pfVar8;",
-      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 43,
       "match": "param_3",
       "severity": "mild",
-      "text": "if (param_3[1] < pfVar8[1]) {",
+      "text": "bVar6 = *param_3 < *pfVar9;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_3",
       "severity": "mild",
-      "text": "if (param_3[2] < pfVar8[2]) {",
+      "text": "if (param_3[1] < pfVar9[1]) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3[2] < pfVar9[2]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*pfVar8 < *param_2) {",
+      "text": "if (*pfVar9 < *param_2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (pfVar8[1] < param_2[1]) {",
+      "text": "if (pfVar9[1] < param_2[1]) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (pfVar8[2] < param_2[2]) {",
+      "text": "if (pfVar9[2] < param_2[2]) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)*param_1;",
+      "text": "puVar1 = (uint *)*param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b8928) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b8928) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)param_1[1];",
+      "text": "puVar1 = (uint *)param_1[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 73,
       "match": "DAT_014b8934",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b8934) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b8934) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)param_1[2];",
+      "text": "puVar1 = (uint *)param_1[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_014b8940",
       "severity": "mild",
-      "text": "if (puVar7 != (uint *)&DAT_014b8940) {",
+      "text": "if (puVar1 != (uint *)&DAT_014b8940) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 87,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = param_3[1];",
+      "text": "fVar2 = param_3[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 89,
       "match": "DAT_014b8490",
       "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_014b8490;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b8490;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_014b8494",
       "severity": "mild",
-      "text": "if (fVar1 < *(float *)(&DAT_014b8494 + uVar3 * 0xc)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_014b8554",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8554 + iVar4) != puVar7) {",
+      "text": "if (fVar2 < *(float *)(&DAT_014b8494 + uVar4 * 0xc)) {",
       "type": "undefined_data"
     },
     {
@@ -1118,47 +1110,47 @@
       "line": 108,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8554 + iVar4) = *puVar7;",
+      "text": "if ((CVector3f *)(&DAT_014b8554 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 109,
-      "match": "DAT_014b8558",
+      "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8558 + iVar4) = puVar7[1];",
+      "text": "((CVector3f *)(&DAT_014b8554 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 110,
+      "match": "DAT_014b8558",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b8558 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
       "match": "DAT_014b855c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b855c + iVar4) = puVar7[2];",
+      "text": "*(float *)(&DAT_014b855c + iVar5) = pCVar8->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_014b8490",
       "severity": "mild",
-      "text": "(&DAT_014b8490 + uVar3 * 0xc,puVar7,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,",
+      "text": "((CVector3f *)(&DAT_014b8490 + uVar4 * 0xc),pCVar8,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 118,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "(&DAT_014b8490 + uVar3 * 0xc,puVar7,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_014b8554",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8554 + iVar4) != puVar7) {",
+      "text": "(CVector3f *)(&DAT_014b8554 + _DAT_014b8550 * 0xc),0.0,1.0,0.0,(double)-fVar2);",
       "type": "undefined_data"
     },
     {
@@ -1166,71 +1158,71 @@
       "line": 123,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8554 + iVar4) = *puVar7;",
+      "text": "if ((CVector3f *)(&DAT_014b8554 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 124,
-      "match": "DAT_014b8558",
+      "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8558 + iVar4) = puVar7[1];",
+      "text": "((CVector3f *)(&DAT_014b8554 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 125,
+      "match": "DAT_014b8558",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b8558 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 126,
       "match": "DAT_014b855c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b855c + iVar4) = puVar7[2];",
+      "text": "*(float *)(&DAT_014b855c + iVar5) = pCVar8->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_014b8490",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b8490 + uVar3 * 0xc,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,",
+      "text": "(pCVar8,(CVector3f *)(&DAT_014b8490 + uVar4 * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 131,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b8490 + uVar3 * 0xc,&DAT_014b8554 + _DAT_014b8550 * 0xc,0,0,0,",
+      "text": "(CVector3f *)(&DAT_014b8554 + _DAT_014b8550 * 0xc),0.0,1.0,0.0,(double)-fVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 138,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2[1];",
+      "text": "fVar2 = param_2[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 141,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_014b8554;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b8554;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 148,
       "match": "DAT_014b8558",
       "severity": "mild",
-      "text": "if (*(float *)(&DAT_014b8558 + uVar3 * 0xc) < fVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_014b8618",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8618 + iVar4) != puVar7) {",
+      "text": "if (*(float *)(&DAT_014b8558 + uVar4 * 0xc) < fVar2) {",
       "type": "undefined_data"
     },
     {
@@ -1238,535 +1230,543 @@
       "line": 154,
       "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8618 + iVar4) = *puVar7;",
+      "text": "if ((CVector3f *)(&DAT_014b8618 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 155,
-      "match": "DAT_014b861c",
+      "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b861c + iVar4) = puVar7[1];",
+      "text": "((CVector3f *)(&DAT_014b8618 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 156,
+      "match": "DAT_014b861c",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b861c + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 157,
       "match": "DAT_014b8620",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8620 + iVar4) = puVar7[2];",
+      "text": "*(float *)(&DAT_014b8620 + iVar5) = pCVar8->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 163,
       "match": "DAT_014b8554",
       "severity": "mild",
-      "text": "(&DAT_014b8554 + uVar3 * 0xc,puVar7,&DAT_014b8618 + _DAT_014b8614 * 0xc,0,0,0,",
+      "text": "((CVector3f *)(&DAT_014b8554 + uVar4 * 0xc),pCVar8,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 164,
       "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "(&DAT_014b8554 + uVar3 * 0xc,puVar7,&DAT_014b8618 + _DAT_014b8614 * 0xc,0,0,0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 168,
-      "match": "DAT_014b8618",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8618 + iVar4) != puVar7) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 169,
-      "match": "DAT_014b8618",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8618 + iVar4) = *puVar7;",
+      "text": "(CVector3f *)(&DAT_014b8618 + _DAT_014b8614 * 0xc),0.0,-1.0,0.0,(double)fVar2",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 170,
-      "match": "DAT_014b861c",
+      "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b861c + iVar4) = puVar7[1];",
+      "text": "if ((CVector3f *)(&DAT_014b8618 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 171,
-      "match": "DAT_014b8620",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8620 + iVar4) = puVar7[2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 175,
-      "match": "DAT_014b8554",
-      "severity": "mild",
-      "text": "(puVar7,&DAT_014b8554 + uVar3 * 0xc,&DAT_014b8618 + _DAT_014b8614 * 0xc,0,0,0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 175,
       "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b8554 + uVar3 * 0xc,&DAT_014b8618 + _DAT_014b8614 * 0xc,0,0,0,",
+      "text": "((CVector3f *)(&DAT_014b8618 + iVar5))->x = pCVar8->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 172,
+      "match": "DAT_014b861c",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b861c + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 173,
+      "match": "DAT_014b8620",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b8620 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 177,
+      "match": "DAT_014b8554",
+      "severity": "mild",
+      "text": "(pCVar8,(CVector3f *)(&DAT_014b8554 + uVar4 * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 178,
+      "match": "DAT_014b8618",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_014b8618 + _DAT_014b8614 * 0xc),0.0,-1.0,0.0,(double)fVar2",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 187,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = *param_3;",
+      "text": "fVar2 = *param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 187,
+      "line": 190,
       "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "pfVar8 = (float *)&DAT_014b8618;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b8618;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 193,
+      "line": 196,
       "match": "DAT_014b8618",
       "severity": "mild",
-      "text": "pfVar10 = (float *)(&DAT_014b8618 + uVar3 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_014b86dc",
-      "severity": "mild",
-      "text": "if ((float *)(&DAT_014b86dc + iVar4) != pfVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 202,
-      "match": "DAT_014b86dc",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b86dc + iVar4) = *pfVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
-      "match": "DAT_014b86e0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b86e0 + iVar4) = pfVar8[1];",
+      "text": "pCVar11 = (CVector3f *)(&DAT_014b8618 + uVar4 * 0xc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 204,
-      "match": "DAT_014b86e4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b86e4 + iVar4) = pfVar8[2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 210,
       "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "(pfVar10,pfVar8,&DAT_014b86dc + _DAT_014b86d8 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "if ((CVector3f *)(&DAT_014b86dc + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 216,
+      "line": 205,
       "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_014b86dc + iVar4) != pfVar8) {",
+      "text": "((CVector3f *)(&DAT_014b86dc + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_014b86dc",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b86dc + iVar4) = *pfVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
+      "line": 206,
       "match": "DAT_014b86e0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_014b86e0 + iVar4) = pfVar8[1];",
+      "text": "*(float *)(&DAT_014b86e0 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
+      "match": "DAT_014b86e4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b86e4 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 213,
+      "match": "DAT_014b86dc",
+      "severity": "mild",
+      "text": "(pCVar11,pCVar8,(CVector3f *)(&DAT_014b86dc + _DAT_014b86d8 * 0xc),1.0,0.0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 219,
-      "match": "DAT_014b86e4",
+      "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "*(float *)(&DAT_014b86e4 + iVar4) = pfVar8[2];",
+      "text": "if ((CVector3f *)(&DAT_014b86dc + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 223,
+      "line": 220,
       "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "(pfVar8,pfVar10,&DAT_014b86dc + _DAT_014b86d8 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "((CVector3f *)(&DAT_014b86dc + iVar5))->x = pCVar8->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 221,
+      "match": "DAT_014b86e0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b86e0 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 222,
+      "match": "DAT_014b86e4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b86e4 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 226,
+      "match": "DAT_014b86dc",
+      "severity": "mild",
+      "text": "(pCVar8,pCVar11,(CVector3f *)(&DAT_014b86dc + _DAT_014b86d8 * 0xc),1.0,0.0,",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 235,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = *param_2;",
+      "text": "fVar2 = *param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 238,
       "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "pfVar8 = (float *)&DAT_014b86dc;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b86dc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 244,
       "match": "DAT_014b86dc",
       "severity": "mild",
-      "text": "pfVar10 = (float *)(&DAT_014b86dc + uVar3 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 249,
-      "match": "DAT_014b87a0",
-      "severity": "mild",
-      "text": "if ((float *)(&DAT_014b87a0 + iVar4) != pfVar8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 250,
-      "match": "DAT_014b87a0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a0 + iVar4) = *pfVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 251,
-      "match": "DAT_014b87a4",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a4 + iVar4) = pfVar8[1];",
+      "text": "pCVar11 = (CVector3f *)(&DAT_014b86dc + uVar4 * 0xc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 252,
-      "match": "DAT_014b87a8",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a8 + iVar4) = pfVar8[2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 258,
       "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "(pfVar10,pfVar8,&DAT_014b87a0 + _DAT_014b879c * 0xc,0,0xbff00000,0,0,0,0,",
+      "text": "if ((CVector3f *)(&DAT_014b87a0 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 264,
+      "line": 253,
       "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_014b87a0 + iVar4) != pfVar8) {",
+      "text": "((CVector3f *)(&DAT_014b87a0 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 265,
-      "match": "DAT_014b87a0",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a0 + iVar4) = *pfVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 266,
+      "line": 254,
       "match": "DAT_014b87a4",
       "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a4 + iVar4) = pfVar8[1];",
+      "text": "*(float *)(&DAT_014b87a4 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 255,
+      "match": "DAT_014b87a8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b87a8 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 261,
+      "match": "DAT_014b87a0",
+      "severity": "mild",
+      "text": "(pCVar11,pCVar8,(CVector3f *)(&DAT_014b87a0 + _DAT_014b879c * 0xc),-1.0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 267,
-      "match": "DAT_014b87a8",
+      "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_014b87a8 + iVar4) = pfVar8[2];",
+      "text": "if ((CVector3f *)(&DAT_014b87a0 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 271,
+      "line": 268,
       "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "(pfVar8,pfVar10,&DAT_014b87a0 + _DAT_014b879c * 0xc,0,0xbff00000,0,0,0,0,",
+      "text": "((CVector3f *)(&DAT_014b87a0 + iVar5))->x = pCVar8->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 269,
+      "match": "DAT_014b87a4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b87a4 + iVar5) = pCVar8->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 270,
+      "match": "DAT_014b87a8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b87a8 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 274,
+      "match": "DAT_014b87a0",
+      "severity": "mild",
+      "text": "(pCVar8,pCVar11,(CVector3f *)(&DAT_014b87a0 + _DAT_014b879c * 0xc),-1.0,",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 280,
+      "line": 283,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2[2];",
+      "text": "fVar2 = param_2[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 283,
+      "line": 286,
       "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_014b87a0;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b87a0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 290,
+      "line": 293,
       "match": "DAT_014b87a8",
       "severity": "mild",
-      "text": "if (*(float *)(&DAT_014b87a8 + uVar3 * 0xc) < fVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 296,
-      "match": "DAT_014b8864",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8864 + iVar4) != puVar7) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 297,
-      "match": "DAT_014b8864",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8864 + iVar4) = *puVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 298,
-      "match": "DAT_014b8868",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8868 + iVar4) = puVar7[1];",
+      "text": "if (*(float *)(&DAT_014b87a8 + uVar4 * 0xc) < fVar2) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 299,
-      "match": "DAT_014b886c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b886c + iVar4) = puVar7[2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 305,
-      "match": "DAT_014b87a0",
-      "severity": "mild",
-      "text": "(&DAT_014b87a0 + uVar3 * 0xc,puVar7,&DAT_014b8864 + _DAT_014b8860 * 0xc,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 305,
       "match": "DAT_014b8864",
       "severity": "mild",
-      "text": "(&DAT_014b87a0 + uVar3 * 0xc,puVar7,&DAT_014b8864 + _DAT_014b8860 * 0xc,",
+      "text": "if ((CVector3f *)(&DAT_014b8864 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 311,
+      "line": 300,
       "match": "DAT_014b8864",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8864 + iVar4) != puVar7) {",
+      "text": "((CVector3f *)(&DAT_014b8864 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 312,
-      "match": "DAT_014b8864",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8864 + iVar4) = *puVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 313,
+      "line": 301,
       "match": "DAT_014b8868",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8868 + iVar4) = puVar7[1];",
+      "text": "*(float *)(&DAT_014b8868 + iVar5) = pCVar8->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 314,
+      "line": 302,
       "match": "DAT_014b886c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b886c + iVar4) = puVar7[2];",
+      "text": "*(float *)(&DAT_014b886c + iVar5) = pCVar8->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 318,
+      "line": 308,
       "match": "DAT_014b87a0",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b87a0 + uVar3 * 0xc,&DAT_014b8864 + _DAT_014b8860 * 0xc,",
+      "text": "((CVector3f *)(&DAT_014b87a0 + uVar4 * 0xc),pCVar8,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 309,
+      "match": "DAT_014b8864",
+      "severity": "mild",
+      "text": "(CVector3f *)(&DAT_014b8864 + _DAT_014b8860 * 0xc),0.0,0.0,-1.0,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 315,
+      "match": "DAT_014b8864",
+      "severity": "mild",
+      "text": "if ((CVector3f *)(&DAT_014b8864 + iVar5) != pCVar8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 316,
+      "match": "DAT_014b8864",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_014b8864 + iVar5))->x = pCVar8->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 317,
+      "match": "DAT_014b8868",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b8868 + iVar5) = pCVar8->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 318,
+      "match": "DAT_014b886c",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b886c + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 322,
+      "match": "DAT_014b87a0",
+      "severity": "mild",
+      "text": "(pCVar8,(CVector3f *)(&DAT_014b87a0 + uVar4 * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 323,
       "match": "DAT_014b8864",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b87a0 + uVar3 * 0xc,&DAT_014b8864 + _DAT_014b8860 * 0xc,",
+      "text": "(CVector3f *)(&DAT_014b8864 + _DAT_014b8860 * 0xc),0.0,0.0,-1.0,",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 332,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = param_3[2];",
+      "text": "fVar2 = param_3[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 330,
+      "line": 335,
       "match": "DAT_014b8864",
       "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_014b8864;",
+      "text": "pCVar8 = (CVector3f *)&DAT_014b8864;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 342,
       "match": "DAT_014b886c",
       "severity": "mild",
-      "text": "if (fVar1 < *(float *)(&DAT_014b886c + uVar3 * 0xc)) {",
+      "text": "if (fVar2 < *(float *)(&DAT_014b886c + uVar4 * 0xc)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 343,
+      "line": 348,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8928 + iVar4) != puVar7) {",
+      "text": "if ((CVector3f *)(&DAT_014b8928 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 344,
+      "line": 349,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8928 + iVar4) = *puVar7;",
+      "text": "((CVector3f *)(&DAT_014b8928 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 345,
+      "line": 350,
       "match": "DAT_014b892c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b892c + iVar4) = puVar7[1];",
+      "text": "*(float *)(&DAT_014b892c + iVar5) = pCVar8->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 346,
+      "line": 351,
       "match": "DAT_014b8930",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8930 + iVar4) = puVar7[2];",
+      "text": "*(float *)(&DAT_014b8930 + iVar5) = pCVar8->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 352,
+      "line": 357,
       "match": "DAT_014b8864",
       "severity": "mild",
-      "text": "(&DAT_014b8864 + uVar3 * 0xc,puVar7,",
+      "text": "((CVector3f *)(&DAT_014b8864 + uVar4 * 0xc),pCVar8,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 353,
+      "line": 358,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "&DAT_014b8928 + _DAT_014b8924 * 0xc,0,0,0,0,0,0xbff00000,",
+      "text": "(CVector3f *)(&DAT_014b8928 + _DAT_014b8924 * 0xc),0.0,0.0,-1.0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 359,
+      "line": 364,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_014b8928 + iVar4) != puVar7) {",
+      "text": "if ((CVector3f *)(&DAT_014b8928 + iVar5) != pCVar8) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 360,
+      "line": 365,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8928 + iVar4) = *puVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 361,
-      "match": "DAT_014b892c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b892c + iVar4) = puVar7[1];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 362,
-      "match": "DAT_014b8930",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_014b8930 + iVar4) = puVar7[2];",
+      "text": "((CVector3f *)(&DAT_014b8928 + iVar5))->x = pCVar8->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 366,
-      "match": "DAT_014b8864",
+      "match": "DAT_014b892c",
       "severity": "mild",
-      "text": "(puVar7,&DAT_014b8864 + uVar3 * 0xc,",
+      "text": "*(float *)(&DAT_014b892c + iVar5) = pCVar8->y;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 367,
+      "match": "DAT_014b8930",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_014b8930 + iVar5) = pCVar8->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 371,
+      "match": "DAT_014b8864",
+      "severity": "mild",
+      "text": "(pCVar8,(CVector3f *)(&DAT_014b8864 + uVar4 * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 372,
       "match": "DAT_014b8928",
       "severity": "mild",
-      "text": "&DAT_014b8928 + _DAT_014b8924 * 0xc,0,0,0,0,0,0xbff00000,",
+      "text": "(CVector3f *)(&DAT_014b8928 + _DAT_014b8924 * 0xc),0.0,0.0,-1.0,",
       "type": "undefined_data"
     }
   ]

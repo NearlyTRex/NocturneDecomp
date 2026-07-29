@@ -57,7 +57,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0050df0b | DAT_005ae704
     PUSH EBX                            ; 0050df11 | DAT_01b4d738
     CALL engine_drender.cpp_FUN_00461720 ; 0050df12
-        ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00461720()
+        ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_00461720(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
     ADD ESP,0x10                        ; 0050df17
     POP EBP                             ; 0050df1a
         ;   Label: LAB_0050df1a
@@ -74,7 +74,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050df2e
     PUSH EBP                            ; 0050df32
     CALL core_set.cpp_FUN_0050d910      ; 0050df33
-        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050d910()
+        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050d910(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
     ADD ESP,0x10                        ; 0050df38
     POP ESI                             ; 0050df3b
     POP EDI                             ; 0050df3c

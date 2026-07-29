@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(int param_1,double param_2,uint param_3,uint param_4)
+; double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 ;
+; Parameters:
+; CSampleInfo *    Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   position
+; uint             Stack[0x10]:4   input_type
+; uint             Stack[0x14]:4   output_type
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

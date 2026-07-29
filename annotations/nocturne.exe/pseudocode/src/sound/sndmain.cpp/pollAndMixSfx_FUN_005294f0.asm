@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_005296b5
     PUSH EBX                            ; 005296b9 | DAT_02dbd494
     CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 ; 005296ba
-        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830()
+        ;   XREF to: 00524830 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot * this_ptr, float delta_time)
     ADD EBX,0x120                       ; 005296bf
     ADD ESP,0x8                         ; 005296c5
     CMP EBX,ESI                         ; 005296c8

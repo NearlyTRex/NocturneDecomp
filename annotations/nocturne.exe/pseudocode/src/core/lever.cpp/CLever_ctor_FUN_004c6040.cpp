@@ -9,15 +9,14 @@
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004c6040(CLever *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   CKeyFramedModelInstance *this_ptr_00;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                          ((CKeyFramedModelInstance *)(iVar1 + 0x150));
-  core_event_cpp_FUN_00481620(this_ptr_00[1].model_name + 0xd4);
-  this_ptr_00[-1].model_ptr =
-       (CKeyFramedModel *)&PTR_core_lever_cpp_CLever_setup_FUN_004c6110_0059fc44;
+                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
+  core_event_cpp_FUN_00481620((CRuleList *)(this_ptr_00[1].model_name + 0xd4));
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLeverVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (this_ptr_00,"glever.kfm");
   this_ptr_00[1].part_visibility_flags[1] = 0;

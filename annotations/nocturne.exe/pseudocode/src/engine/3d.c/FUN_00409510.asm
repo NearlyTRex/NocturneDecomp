@@ -49,7 +49,7 @@ section .text
     MOV EDI,ESP                         ; 00409571
     MOVSD.REP ES:EDI,ESI                ; 00409573
     CALL engine_3d.c_clipAndDrawLine3D_FUN_00409590 ; 00409575
-        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine3D_FUN_00409590()
+        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00409590(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040957a
     ADD ESP,0x60                        ; 0040957d
     POP EDI                             ; 00409580

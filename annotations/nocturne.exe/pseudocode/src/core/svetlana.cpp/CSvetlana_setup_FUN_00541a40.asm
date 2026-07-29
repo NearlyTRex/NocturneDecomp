@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(int param_1)
+; void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CHero *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -55,11 +55,11 @@ section .text
     PUSH EAX                            ; 00541a67
         ;   Label: LAB_00541a67
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00541a68
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00541a6d
     PUSH ESI                            ; 00541a70
     CALL core_hero.cpp_FUN_004b48d0     ; 00541a71
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b48d0()
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 00541a76
     LEA EDI,[ESI + 0x150]               ; 00541a79
     PUSH EDI                            ; 00541a7f

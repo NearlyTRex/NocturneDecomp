@@ -14,62 +14,50 @@ void core_tbplayer_cpp_FUN_00543450(int param_1,int param_2)
   uint *puVar2;
   byte bVar3;
   uint local_c0 [12];
-  byte local_90 [48];
-  uint local_60;
-  uint local_5c;
-  uint local_58;
-  uint local_48;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
-  uint local_10;
+  CMatrix3x4f local_90;
+  CVector3f local_60 [2];
+  CVector3f local_48;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   bVar3 = 0;
   iVar1 = *(int *)(param_2 * 0x44 + param_1 + 0x24a4);
   if (param_2 == 0) {
-    local_5c = 0xbde353f8;
-    local_58 = 0xbe322d0e;
-    local_60 = 0x3f228f5c;
-    if (&local_18 != &local_60) {
-      local_18 = 0x3f228f5c;
-      local_14 = 0xbde353f8;
-      local_10 = 0xbe322d0e;
+    local_60[0].y = -0.111;
+    local_60[0].z = -0.174;
+    local_60[0].x = 0.635;
+    if (&local_18 != local_60) {
+      local_18.x = 0.635;
+      local_18.y = -0.111;
+      local_18.z = -0.174;
     }
-    local_28 = 0;
-    local_2c = 0;
-    local_30 = 0;
+    local_30.z = 0.0;
+    local_30.y = 0.0;
+    local_30.x = 0.0;
     if (&local_3c == &local_30) goto LAB_0054350c;
   }
   else {
-    local_20 = 0xbde353f8;
-    local_1c = 0xbe322d0e;
-    local_24 = 0xbf228f5c;
+    local_24.y = -0.111;
+    local_24.z = -0.174;
+    local_24.x = -0.635;
     if (&local_18 != &local_24) {
-      local_14 = 0xbde353f8;
-      local_10 = 0xbe322d0e;
-      local_18 = 0xbf228f5c;
+      local_18.y = -0.111;
+      local_18.z = -0.174;
+      local_18.x = -0.635;
     }
-    local_40 = 0;
-    local_44 = 0;
-    local_48 = 0;
+    local_48.z = 0.0;
+    local_48.y = 0.0;
+    local_48.x = 0.0;
     if (&local_3c == &local_48) goto LAB_0054350c;
   }
-  local_38 = 0;
-  local_34 = 0;
-  local_3c = 0;
+  local_3c.y = 0.0;
+  local_3c.z = 0.0;
+  local_3c.x = 0.0;
 LAB_0054350c:
-  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_90,&local_18,&local_3c);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_90,iVar1 * 0x30 + param_1 + 0xfd0);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_90,&local_18,&local_3c);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_90,iVar1 * 0x30 + param_1 + 0xfd0);
   puVar2 = local_c0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

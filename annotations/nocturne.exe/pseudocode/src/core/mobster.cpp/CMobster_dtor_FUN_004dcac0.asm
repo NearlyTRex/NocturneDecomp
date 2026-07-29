@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_mobster_cpp_CMobster_dtor_FUN_004dcac0(CDemonActor *param_1,byte param_2)
+; CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_004dcac0(CMobster *this_ptr,uint flags)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMobsterTypeInfo_005a0a80

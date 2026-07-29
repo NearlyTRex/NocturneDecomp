@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402980(char *param_1,int param_2,int param_3,int param_4)
+; void __cdecl engine_2d_c_FUN_00402980(char *text,int left_x,int right_x,int y)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   left_x
+; int              Stack[0xc]:4   right_x
+; int              Stack[0x10]:4   y
 ;
 ; XREF[2]:
 ;   engine_2d.c_FUN_004029c0 at 004029d6

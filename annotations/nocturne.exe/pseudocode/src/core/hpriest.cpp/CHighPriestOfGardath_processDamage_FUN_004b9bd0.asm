@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004b9bd0(undefined4 param_1,int param_2)
+; void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004b9bd0(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CHighPriestOfGardath * Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; *****************************************************************************
 

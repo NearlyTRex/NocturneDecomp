@@ -17,8 +17,7 @@ void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(CLightGun 
   float fStack_c;
   
   input_local_point =
-       (CVector3f *)
-       (*((this_ptr->base).base.vtable._ub)->initializeInEditor)((CDemonActor *)this_ptr);
+       (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,(CVector3f *)&fStack_10,input_local_point);
   _DAT_01c762f4 = 1;

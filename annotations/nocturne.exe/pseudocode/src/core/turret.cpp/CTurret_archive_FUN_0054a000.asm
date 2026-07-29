@@ -42,7 +42,7 @@ section .text
     LEA EAX,[EBX + 0x570]               ; 0054a013
     PUSH EAX                            ; 0054a019
     CALL core_actor.cpp_archiveOrientation_FUN_0040c4f0 ; 0054a01a
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040c4f0(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054a01f
     PUSH 0x596de8                       ; 0054a022 | = "state"
     LEA EAX,[EBX + 0x6f8]               ; 0054a027

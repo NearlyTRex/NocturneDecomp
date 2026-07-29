@@ -17,7 +17,7 @@ CDemonActorType * FUN_0054b100(void);
 
 // Original: core_tvbat.cpp_jitterValue_FUN_0054b110
 // Address: 0054b110
-float jitterValue(void);
+float __cdecl jitterValue(float value);
 
 // Original: core_tvbat.cpp_CTVBat_ctor_FUN_0054b140
 // Address: 0054b140
@@ -33,11 +33,11 @@ void CTVBat::archive(CEnemy *param_1);
 
 // Original: core_tvbat.cpp_CTVBat_process_FUN_0054b460
 // Address: 0054b460
-void CTVBat::process(CDemonActor *param_1,float param_2);
+void __cdecl CTVBat::process(CTVBat *this_ptr,float delta_time);
 
 // Original: core_tvbat.cpp_FUN_0054bfc0
 // Address: 0054bfc0
-void FUN_0054bfc0(int param_1);
+void __cdecl FUN_0054bfc0(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_FUN_0054bfd0
 // Address: 0054bfd0
@@ -65,4 +65,4 @@ void CTVBat::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_tvbat.cpp_CTVBat_dtor_FUN_0054c190
 // Address: 0054c190
-CDemonActor * CTVBat::dtor(CDemonActor *param_1,byte param_2);
+CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);

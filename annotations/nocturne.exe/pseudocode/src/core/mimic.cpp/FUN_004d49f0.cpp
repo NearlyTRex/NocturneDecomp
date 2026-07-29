@@ -30,7 +30,7 @@ void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2)
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);
     return;
   }
-  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
   if (iVar3 != 0) {
     iVar3 = (param_1->cloth).vertices[0x300].connected_indices[9];
     if (iVar3 < 2) {

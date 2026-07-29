@@ -2,21 +2,21 @@
 // Address: 00411710
 // Address Range: [[00411710, 0041175a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
+// Signature: CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(CBarrier *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(uint param_1)
+CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(CBarrier *this_ptr)
 
 {
-  int iVar1;
+  CBarrier *pCVar1;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_barrier_cpp_CBarrier_setup_FUN_00411760_00599d74;
-  *(uint *)(iVar1 + 0x158) = 0x40a00000;
-  *(byte *)(iVar1 + 0x160) = 0;
-  *(uint *)(iVar1 + 0x15c) = 1;
-  *(uint *)(iVar1 + 0x154) = *(uint *)(iVar1 + 0x158);
-  *(uint *)(iVar1 + 0x150) = *(uint *)(iVar1 + 0x154);
-  return;
+  pCVar1 = (CBarrier *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CBarrierVTable;
+  (pCVar1->size).z = 5.0;
+  pCVar1->effect_class_name_list[0] = '\0';
+  pCVar1->add_to_path_grid = 1;
+  (pCVar1->size).y = (pCVar1->size).z;
+  (pCVar1->size).x = (pCVar1->size).y;
+  return pCVar1;
 }

@@ -1,14 +1,14 @@
 // Name: core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0
 // Address: 004ae0a0
 // Address Range: [[004ae0a0, 004ae185]]
-// Convention: unknown
-// Signature: void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void)
+void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr)
 
 {
   int iVar1;

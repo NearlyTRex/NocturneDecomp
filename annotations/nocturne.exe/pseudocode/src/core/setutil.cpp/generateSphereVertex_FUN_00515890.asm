@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setutil_cpp_generateSphereVertex_FUN_00515890(void)
+; void __cdecl core_setutil_cpp_generateSphereVertex_FUN_00515890(int longitude_index,int latitude_index,int vertex_buffer_index,float radius)
 ;
+; Parameters:
+; int              Stack[0x4]:4   longitude_index
+; int              Stack[0x8]:4   latitude_index
+; int              Stack[0xc]:4   vertex_buffer_index
+; float            Stack[0x10]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40

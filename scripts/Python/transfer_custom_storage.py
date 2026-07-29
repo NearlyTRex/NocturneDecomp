@@ -80,6 +80,7 @@ def main():
                                                           ReturnParameterImpl,
                                                           VariableStorage)
                 from ghidra.program.model.symbol import SourceType
+                from ghidra.program.model.data import Undefined4DataType
                 from ghidra.util.task import ConsoleTaskMonitor
                 from java.util import ArrayList
 
@@ -87,6 +88,57 @@ def main():
                 dst_funcs = {}
                 for f in dst.getFunctionManager().getFunctions(True):
                     dst_funcs["%08x" % f.getEntryPoint().getOffset()] = f
+
+                def readable(f):
+                    """Can the function's prototype still be enumerated?
+
+                    A bare getParameterCount() returns happily on a function
+                    whose types and storage still throw, so touch everything a
+                    later pass would touch.
+                    """
+                    try:
+                        rt = f.getReturnType()
+                        if rt is not None:
+                            rt.getName()
+                        for q in f.getParameters():
+                            q.getName()
+                            q.getDataType().getName()
+                            q.getVariableStorage()
+                        f.getSignature()
+                        f.getSignatureSource()
+                        return True
+                    except Exception:
+                        return False
+
+                def storage_key(variable):
+                    st = variable.getVariableStorage()
+                    return "" if st is None else str(st)
+
+                def already_matches(sf, tf):
+                    """Does the target already carry exactly this prototype?
+
+                    Rewriting an identical signature is pure risk: for the FPU
+                    family the write can fail and take the *existing* correct
+                    storage down with it, and there is nothing to gain when the
+                    answer is already in place. Makes the pass idempotent.
+                    """
+                    try:
+                        if not tf.hasCustomVariableStorage():
+                            return False
+                        if tf.getParameterCount() != sf.getParameterCount():
+                            return False
+                        for a, b in zip(sf.getParameters(), tf.getParameters()):
+                            if a.getName() != b.getName():
+                                return False
+                            if a.getDataType().getName() != b.getDataType().getName():
+                                return False
+                            if storage_key(a) != storage_key(b):
+                                return False
+                        sr, tr = sf.getReturn(), tf.getReturn()
+                        return (sr.getDataType().getName() == tr.getDataType().getName()
+                                and storage_key(sr) == storage_key(tr))
+                    except Exception:
+                        return False
 
                 def storage_for(variable):
                     """Rebuild a variable's storage against the target program.
@@ -132,10 +184,14 @@ def main():
                               % (addr, conv, np, shape))
                     print("\n[dry-run] re-run with --apply to transfer.")
                 else:
-                    done = failed = 0
+                    done = failed = skipped = 0
                     problems = []
+                    unrepaired = []
                     for sf, tf, pair in jobs:
                         addr = "%08x" % tf.getEntryPoint().getOffset()
+                        if already_matches(sf, tf):
+                            skipped += 1
+                            continue
                         tx = dst.startTransaction("custom storage %s" % addr)
                         ok = True
                         try:
@@ -159,8 +215,16 @@ def main():
                                 True, SourceType.USER_DEFINED)
                             # Read it back: a write Ghidra accepted but cannot
                             # re-read is exactly the state worth rolling back.
-                            tf.getParameterCount()
-                            tf.getSignatureSource()
+                            # Enumerate everything a later pass would touch --
+                            # a bare getParameterCount() returns happily on a
+                            # function whose types and storage still throw.
+                            if not readable(tf):
+                                raise RuntimeError("unreadable after write")
+                            if tf.getParameterCount() != sf.getParameterCount():
+                                raise RuntimeError(
+                                    "parameter count %d != source %d"
+                                    % (tf.getParameterCount(),
+                                       sf.getParameterCount()))
                         except Exception as e:
                             ok = False
                             problems.append((addr, sf.getCallingConventionName(),
@@ -170,11 +234,44 @@ def main():
                             done += 1
                         else:
                             failed += 1
+                            # Ending the transaction uncommitted does NOT
+                            # reliably undo a half-assigned signature -- it was
+                            # measured leaving the FPU family unreadable on the
+                            # next open, which aborts the annotation export.
+                            # Repair explicitly instead of trusting rollback.
+                            rtx = dst.startTransaction("repair %s" % addr)
+                            try:
+                                tf.setCustomVariableStorage(False)
+                                tf.updateFunction(
+                                    None,
+                                    ReturnParameterImpl(Undefined4DataType(), dst),
+                                    ArrayList(),
+                                    Function.FunctionUpdateType
+                                    .DYNAMIC_STORAGE_FORMAL_PARAMS,
+                                    True, SourceType.ANALYSIS)
+                            except Exception:
+                                pass
+                            dst.endTransaction(rtx, True)
+                            # Verify only after the commit: the function's state
+                            # settles at the transaction boundary, so a check
+                            # inside the transaction reports the damage rather
+                            # than the repair.
+                            if not readable(tf):
+                                unrepaired.append(addr)
 
-                    print("\ntransferred %d, rejected %d" % (done, failed))
+                    print("\ntransferred %d, rejected %d, already correct %d"
+                          % (done, failed, skipped))
                     for addr, conv, msg in problems[:15]:
                         print("  %s conv=%-18s %s" % (addr, conv, msg))
-                    if done:
+                    if unrepaired:
+                        print("\n%d function(s) left UNREADABLE -- the annotation "
+                              "export will abort until these are repaired:"
+                              % len(unrepaired))
+                        for addr in unrepaired:
+                            print("  %s" % addr)
+                    # Repairs are mutations too, and are the ones that must not
+                    # be lost -- save whenever anything was written.
+                    if done or failed:
                         print("Saving...")
                         dst.getDomainFile().save(ConsoleTaskMonitor())
                         print("Saved.")

@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 0041efb8
     PUSH EBX                            ; 0041efb9
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0041efba
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 0041efbf
     FLD float ptr [ESP + 0x48]          ; 0041efc2
     FMUL float ptr [ESP + 0x24]         ; 0041efc6
@@ -94,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0041f00e
     PUSH EAX                            ; 0041f012
     CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 ; 0041f013
-        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550()
+        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x64],EAX      ; 0041f018
     FLD float ptr [ESP + 0x64]          ; 0041f01c
     ADD ESP,0x10                        ; 0041f020
@@ -143,7 +143,7 @@ section .text
     ADD ESP,0x4                         ; 0041f094
     PUSH EBX                            ; 0041f097
     CALL core_boxactor.cpp_FUN_0041f190 ; 0041f098
-        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041f190()
+        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_0041f190(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f09d
     MOV ESP,EBP                         ; 0041f0a0
     POP EBP                             ; 0041f0a2

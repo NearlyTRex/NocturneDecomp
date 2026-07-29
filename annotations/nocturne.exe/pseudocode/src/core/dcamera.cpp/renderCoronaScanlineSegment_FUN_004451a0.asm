@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_renderCoronaScanlineSegment_FUN_004451a0(int param_1,int param_2,int param_3)
+; void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_004451a0(int row_index,int column_start,int column_end)
 ;
+; Parameters:
+; int              Stack[0x4]:4   row_index
+; int              Stack[0x8]:4   column_start
+; int              Stack[0xc]:4   column_end
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

@@ -15,7 +15,7 @@
 ;   undefined4 s_one_00581646+1
 ;   undefined4 s_ne_00581646+2
 ;   undefined4 s_e_00581646+3
-;   undefined1* PTR_core_flamecan.cpp_CFlameCan_setup_FUN_0048e410_0059d684 = 0048e410
+;   CDemonActor_vtable g_CFlameCanVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0048e373
     PUSH EBX                            ; 0048e377
     CALL core_actor.cpp_FUN_00409d30    ; 0048e378
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048e37d
     ADD EAX,0x150                       ; 0048e380
     PUSH EAX                            ; 0048e385
@@ -51,7 +51,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0048e3a7
     PUSH EAX                            ; 0048e3ad
     MOV ESI,0x581646                    ; 0048e3ae | = "none"
-    MOV dword ptr [EBX + 0x14c],0x59d684 ; 0048e3b3 | PTR_core_flamecan.cpp_CFlameCan_setup_FUN_0048e410_0059d684
+    MOV dword ptr [EBX + 0x14c],0x59d684 ; 0048e3b3 | g_CFlameCanVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0048e3bd
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0048e3c2

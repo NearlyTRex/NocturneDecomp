@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_prim_c_setupColoredSoftwareEdge_FUN_004faa20(int param_1,int param_2)
+; void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_004faa20(SRenderVertex *vertex0,SRenderVertex *vertex1)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex0
+; SRenderVertex *  Stack[0x8]:4   vertex1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c0399c

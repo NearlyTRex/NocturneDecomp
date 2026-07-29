@@ -1,21 +1,16 @@
 // Name: core_stranger.cpp_setMatrixTranslation_FUN_005409f0
 // Address: 005409f0
 // Address Range: [[005409f0, 00540a09]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_setMatrixTranslation_FUN_005409f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_stranger_cpp_setMatrixTranslation_FUN_005409f0(void)
+void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation)
 
 {
-  int in_stack_00000004;
-  uint *in_stack_00000008;
-  
-  *(uint *)(in_stack_00000004 + 0xc) = *in_stack_00000008;
-  *(uint *)(in_stack_00000004 + 0x1c) = in_stack_00000008[1];
-  *(uint *)(in_stack_00000004 + 0x2c) = in_stack_00000008[2];
+  matrix->m[0].z = translation->x;
+  matrix->m[1].z = translation->y;
+  matrix->m[2].z = translation->z;
   return;
 }

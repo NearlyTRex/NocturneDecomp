@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_FUN_004219f0(CBugs *param_1,int param_2,ushort *param_3)
+; void __cdecl core_bugs_cpp_FUN_004219f0(CBugs *this_ptr,int tri_count,SInputFace *triangles)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   tri_count
+; SInputFace *     Stack[0xc]:4   triangles
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 004238a9

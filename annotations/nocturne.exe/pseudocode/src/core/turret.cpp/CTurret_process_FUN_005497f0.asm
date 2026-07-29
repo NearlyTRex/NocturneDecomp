@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *param_1,float param_2)
+; void __cdecl core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
 ; undefined4       Stack[-0xf8]:4  local_f8
@@ -142,7 +145,7 @@ section .text
     PUSH 0x3f666666                     ; 00549901
     MOV dword ptr [EBX + 0x8a8],ECX     ; 00549906
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054990c
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xec],EAX      ; 00549911
     FLD float ptr [ESP + 0xec]          ; 00549918
     ADD ESP,0x8                         ; 0054991f
@@ -403,7 +406,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8ac]     ; 00549c74
     PUSH EAX                            ; 00549c7a
     CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 ; 00549c7b
-        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10()
+        ;   XREF to: 00526d10 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_handle, uint output_format)
     MOV dword ptr [ESP + 0xdc],EAX      ; 00549c80
     MOV dword ptr [ESP + 0xe0],EDX      ; 00549c87
     FLD double ptr [ESP + 0xdc]         ; 00549c8e

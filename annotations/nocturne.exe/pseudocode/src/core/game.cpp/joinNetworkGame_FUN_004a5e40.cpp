@@ -1,12 +1,12 @@
 // Name: core_game.cpp_joinNetworkGame_FUN_004a5e40
 // Address: 004a5e40
 // Address Range: [[004a5e40, 004a5efe]]
-// Convention: unknown
-// Signature: void core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
+void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
 
 {
   uint *server_ip;

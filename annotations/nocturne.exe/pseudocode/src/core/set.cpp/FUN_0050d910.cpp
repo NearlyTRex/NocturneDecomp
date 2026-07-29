@@ -1,14 +1,14 @@
 // Name: core_set.cpp_FUN_0050d910
 // Address: 0050d910
 // Address Range: [[0050d910, 0050dd54]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
+void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
 
 {
   short *psVar1;
@@ -36,33 +36,33 @@ void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
   if (*(int *)(0x01C775EC + 500) == 2) {
-    param_4 = DAT_005b763c << 8;
+    alpha = DAT_005b763c << 8;
   }
   else {
-    lVar2 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)param_4;
+    lVar2 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (DAT_005ae704,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   }
   engine_drender_cpp_FUN_00460d10(DAT_005ae704);
   local_20 = 0;
-  if (0 < param_3) {
+  if (0 < count) {
     do {
       SStack_118.base.surface_normal.D.i = 0;
       SStack_118.base.surface_normal.C.i = 0;
       SStack_118.base.surface_normal.B.i = 0;
       SStack_118.base.surface_normal.A.i = 0;
       SStack_118.base.base.count = 3;
-      SStack_118.vertices[0].vertex_index = (uint)*param_2;
-      SStack_118.vertices[1].vertex_index = (uint)param_2[1];
-      SStack_118.vertices[2].vertex_index = (uint)param_2[2];
-      SStack_118.vertices[0].texture_u = (uint)param_2[3] << 8;
-      SStack_118.vertices[1].texture_u = (uint)param_2[4] << 8;
-      SStack_118.vertices[2].texture_u = (uint)param_2[5] << 8;
-      SStack_118.vertices[0].texture_v = (uint)param_2[6] << 8;
-      SStack_118.vertices[1].texture_v = (uint)param_2[7] << 8;
-      SStack_118.vertices[2].texture_v = (uint)param_2[8] << 8;
-      if (*(int *)(param_1 + 0x15aa9c) != 0) {
+      SStack_118.vertices[0].vertex_index = (uint)(face_data->vertex_indices).vertex_index_0;
+      SStack_118.vertices[1].vertex_index = (uint)(face_data->vertex_indices).vertex_index_1;
+      SStack_118.vertices[2].vertex_index = (uint)(face_data->vertex_indices).vertex_index_2;
+      SStack_118.vertices[0].texture_u = (uint)face_data->u_coord_0 << 8;
+      SStack_118.vertices[1].texture_u = (uint)face_data->u_coord_1 << 8;
+      SStack_118.vertices[2].texture_u = (uint)face_data->u_coord_2 << 8;
+      SStack_118.vertices[0].texture_v = (uint)face_data->v_coord_0 << 8;
+      SStack_118.vertices[1].texture_v = (uint)face_data->v_coord_1 << 8;
+      SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
+      if (this_ptr->renderable_actors[0x76b] != (CDemonActor *)0x0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920
                   ((CVector3i *)0x200b130,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
@@ -72,7 +72,7 @@ void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param
         local_14 = 0;
         do {
           iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_1c) * 0xc;
-          if ((((*(int *)(param_1 + 0x15aa9c) == 0) ||
+          if ((((this_ptr->renderable_actors[0x76b] == (CDemonActor *)0x0) ||
                (1.0 <= ABS(*(float *)(&DAT_02045ab0 + iVar4)))) ||
               (1.0 <= ABS(*(float *)(&DAT_02045ab4 + iVar4)))) ||
              (1.0 <= ABS(*(float *)(&DAT_02045ab8 + iVar4)))) {
@@ -136,13 +136,13 @@ void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param
           iVar5 = iVar5 + 0xc;
         } while (iVar4 < SStack_118.base.base.count);
       }
-      if (*(int *)(param_1 + 0x15aa9c) != 0) {
+      if (this_ptr->renderable_actors[0x76b] != (CDemonActor *)0x0) {
         SStack_118.base.surface_normal.C.i = 0;
         SStack_118.base.surface_normal.B.i = 0;
         SStack_118.base.surface_normal.A.i = 0;
         SStack_118.base.surface_normal.D.i = 0;
       }
-      if (param_4 < 0xfde9) {
+      if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
                   (DAT_005ae704,&SStack_118);
       }
@@ -150,9 +150,9 @@ void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param
         engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
                   (DAT_005ae704,&SStack_118);
       }
-      param_2 = param_2 + 9;
+      face_data = face_data + 1;
       local_20 = local_20 + 1;
-    } while (local_20 < param_3);
+    } while (local_20 < count);
   }
   return;
 }

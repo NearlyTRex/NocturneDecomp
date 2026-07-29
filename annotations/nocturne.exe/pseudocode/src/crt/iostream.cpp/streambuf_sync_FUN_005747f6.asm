@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_iostream_cpp_streambuf_sync_FUN_005747f6(int param_1)
+; int __watcallStack crt_iostream_cpp_streambuf_sync_FUN_005747f6(streambuf *streambuf_ptr)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   streambuf_ptr
 ;
 ; *****************************************************************************
 

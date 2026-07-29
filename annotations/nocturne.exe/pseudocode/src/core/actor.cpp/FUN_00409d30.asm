@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
+; CDemonActor * __cdecl core_actor_cpp_FUN_00409d30(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[48]:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 at 0040eb78
@@ -26,7 +28,7 @@
 ;   undefined4 s_tr_00577582+1
 ;   undefined4 s_r_00577582+2
 ;   undefined4 s__00577582+3
-;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4 = 00409fc0
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -47,7 +49,7 @@ section .text
     CALL core_actor.cpp_initTransformCache_FUN_00409cf0 ; 00409d3e
         ;   XREF to: 00409cf0 (UNCONDITIONAL_CALL)  ; CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00409cf0(CDemonActorTransformState * transform_cache)
     LEA EBX,[EAX + 0xfffffed8]          ; 00409d43
-    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409d49 | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4
+    MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409d49 | g_CDemonActorVTable
     MOV byte ptr [EBX],0x0              ; 00409d53
     MOV dword ptr [EBX + 0x144],0x0     ; 00409d56
     LEA EAX,[EBX + 0x20]                ; 00409d60

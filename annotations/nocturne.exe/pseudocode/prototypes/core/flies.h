@@ -17,7 +17,7 @@ CDemonActorType * FUN_0048eee0(void);
 
 // Original: core_flies.cpp_FUN_0048eef0
 // Address: 0048eef0
-int FUN_0048eef0(undefined4 param_1);
+int FUN_0048eef0(CDemonActor *param_1);
 
 // Original: core_flies.cpp_CFlies_setup_FUN_0048efb0
 // Address: 0048efb0
@@ -65,11 +65,11 @@ CDemonActor * FUN_0048fc30(CDemonActor *param_1,byte param_2);
 
 // Original: core_flies.cpp_SFly_ctor_FUN_0048fca0
 // Address: 0048fca0
-int SFly::ctor(int param_1);
+SFly * __cdecl SFly::ctor(SFly *this_ptr);
 
 // Original: core_flies.cpp_SFly_dtor_FUN_0048fcc0
 // Address: 0048fcc0
-float * SFly::dtor(int param_1);
+SFly * __cdecl SFly::dtor(SFly *this_ptr,uint flags);
 
 // Original: core_flies.cpp_FUN_0048fce0
 // Address: 0048fce0

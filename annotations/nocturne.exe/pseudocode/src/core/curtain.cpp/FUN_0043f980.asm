@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_FUN_0043f980(void *param_1)
+; SCurtainVertex * __cdecl core_curtain_cpp_FUN_0043f980(SCurtainVertex *objs,uint flags)
 ;
+; Parameters:
+; SCurtainVertex * Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_curtain.cpp_FUN_0043f8e0 at 0043f8f5

@@ -49,7 +49,8 @@ int core_wateract_cpp_FUN_00551c00(CDemonActor *param_1)
       }
       iVar3 = 0;
       core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-                (0x01E57284,param_1[1].previous_transform_state.dirty_flags,&DAT_02dda6b8);
+                (0x01E57284,param_1[1].previous_transform_state.dirty_flags,
+                 (CVector3i *)&DAT_02dda6b8);
       if (0 < param_1[1].previous_transform_state.dirty_flags) {
         vertex_position = param_1 + 2;
         iVar6 = 0;
@@ -88,7 +89,8 @@ int core_wateract_cpp_FUN_00551c00(CDemonActor *param_1)
       }
       else {
         core_set_cpp_FUN_0050ddd0
-                  (0x01E57284,poly,*(uint *)param_1[0x20d].footstep_sound_code,0xffffffff);
+                  (0x01E57284,(SMRGLPrimitiveQuad *)poly,
+                   *(int *)param_1[0x20d].footstep_sound_code,-1);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
     }

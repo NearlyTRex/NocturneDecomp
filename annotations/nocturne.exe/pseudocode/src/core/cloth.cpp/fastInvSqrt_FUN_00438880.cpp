@@ -1,17 +1,13 @@
 // Name: core_cloth.cpp_fastInvSqrt_FUN_00438880
 // Address: 00438880
 // Address Range: [[00438880, 00438890]]
-// Convention: unknown
-// Signature: int core_cloth_cpp_fastInvSqrt_FUN_00438880(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00438880(float dist_sq)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-int core_cloth_cpp_fastInvSqrt_FUN_00438880(void)
+float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00438880(float dist_sq)
 
 {
-  int in_stack_00000004;
-  
-  return (int)CVector3f_01c70708.z - (in_stack_00000004 >> 1);
+  return (float)((int)CVector3f_01c70708.z - ((int)dist_sq >> 1));
 }

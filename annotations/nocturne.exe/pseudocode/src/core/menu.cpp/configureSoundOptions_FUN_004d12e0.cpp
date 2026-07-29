@@ -550,10 +550,11 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
             iVar4 = local_18 * iVar9 + local_1c;
             iVar14 = (int)fVar7 * 4 + iVar4;
             do {
-              uStack_44 = __BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)) *
-                          __BITCAST_DOUBLE(CONCAT44(local_808,uStack_80c));
-              fVar8 = (float)sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60
-                                       (iVar9,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)));
+              fVar17 = (float10)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)) *
+                       (float10)__BITCAST_DOUBLE(CONCAT44(local_808,uStack_80c));
+              uStack_44 = (double)fVar17;
+              fVar8 = sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60
+                                (iVar9,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)),(float)fVar17);
               y_top = DAT_005b7620 + -1;
               uVar20 = 0x4d1ac4;
               dVar18 = round

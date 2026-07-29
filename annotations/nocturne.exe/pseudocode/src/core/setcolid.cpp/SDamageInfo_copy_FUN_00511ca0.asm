@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setcolid_cpp_SDamageInfo_copy_FUN_00511ca0(undefined4 *param_1,undefined4 *param_2)
+; void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_00511ca0(SDamageInfo *this_ptr,SDamageInfo *other)
 ;
+; Parameters:
+; SDamageInfo *    Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   other
 ;
 ; *****************************************************************************
 

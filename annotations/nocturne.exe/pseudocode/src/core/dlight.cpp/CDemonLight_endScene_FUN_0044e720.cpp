@@ -34,7 +34,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight *this
     *(float *)((this_ptr->base).camera_name + 0xc0) = (float)uVar5 * (float)0.00390625;
   }
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {

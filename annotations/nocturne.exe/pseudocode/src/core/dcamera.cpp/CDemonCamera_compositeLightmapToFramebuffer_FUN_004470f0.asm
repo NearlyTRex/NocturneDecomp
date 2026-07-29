@@ -252,7 +252,7 @@ section .text
     ADD EBX,0xc                         ; 00447344
     INC ESI                             ; 00447347
     CALL core_dcamera.cpp_FUN_00447c60  ; 00447348
-        ;   XREF to: 00447c60 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00447c60()
+        ;   XREF to: 00447c60 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00447c60(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
     ADD ESP,0x10                        ; 0044734d
     CMP ESI,dword ptr [0x012b0664]      ; 00447350 | DAT_012b0664
     JL 0x00447326                       ; 00447356
@@ -388,7 +388,7 @@ section .text
     ADD EBX,0xc                         ; 004474bc
     INC ESI                             ; 004474bf
     CALL core_dcamera.cpp_FUN_00447bb0  ; 004474c0
-        ;   XREF to: 00447bb0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00447bb0()
+        ;   XREF to: 00447bb0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00447bb0(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)
     ADD ESP,0x10                        ; 004474c5
     CMP ESI,dword ptr [0x012b0664]      ; 004474c8 | DAT_012b0664
     JL 0x0044749e                       ; 004474ce

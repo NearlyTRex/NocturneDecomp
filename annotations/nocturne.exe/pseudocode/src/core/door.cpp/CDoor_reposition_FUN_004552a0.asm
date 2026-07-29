@@ -177,7 +177,7 @@ section .text
     LEA ESI,[EBX + 0x98c]               ; 00455452
     MOV dword ptr [ESP + 0x48],EDI      ; 00455458
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0045545c
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 00455461
     FADD float ptr [EAX]                ; 00455463
     ADD ESP,0xc                         ; 00455465
@@ -272,7 +272,7 @@ section .text
     FCHS                                ; 00455590
     FSTP float ptr [ESP]                ; 00455592
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00455595
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xcc],EAX      ; 0045559a
     XOR ESI,ESI                         ; 004555a1
     FLD float ptr [ESP + 0xcc]          ; 004555a3
@@ -285,7 +285,7 @@ section .text
     FCHS                                ; 004555ca
     FSTP float ptr [ESP]                ; 004555cc
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004555cf
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xcc],EAX      ; 004555d4
     FLD float ptr [ESP + 0xcc]          ; 004555db
     ADD ESP,0x8                         ; 004555e2
@@ -296,7 +296,7 @@ section .text
     PUSH EBX                            ; 004555f2
     FSTP float ptr [ESP + 0xcc]         ; 004555f3
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004555fa
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV ESI,EAX                         ; 004555ff
     LEA EAX,[EBX + 0x20]                ; 00455601
     FLD float ptr [ESI]                 ; 00455604

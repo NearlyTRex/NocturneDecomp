@@ -153,7 +153,7 @@ section .text
     PUSH EAX                            ; 004f0cd8
     FSTP float ptr [ESP + 0xdc]         ; 004f0cd9
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f0ce0
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
         ;   Label: LAB_004f0ce0
     ADD ESP,0x8                         ; 004f0ce5
     MOV ECX,dword ptr [ESP + 0x124]     ; 004f0ce8
@@ -242,7 +242,7 @@ section .text
     PUSH EAX                            ; 004f0df6
     FSTP float ptr [ESP + 0xc4]         ; 004f0df7
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f0dfe
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f0e03
     MOV EDX,dword ptr [ESP + 0x124]     ; 004f0e06
     CMP EAX,EDX                         ; 004f0e0d
@@ -296,7 +296,7 @@ section .text
     PUSH EAX                            ; 004f0e98
     FSTP float ptr [ESP + 0x4c]         ; 004f0e99
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f0e9d
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f0ea2
     MOV EBP,dword ptr [ESP + 0x124]     ; 004f0ea5
     CMP EAX,EBP                         ; 004f0eac
@@ -444,7 +444,7 @@ section .text
     PUSH EAX                            ; 004f1094
     FSTP float ptr [ESP + 0x70]         ; 004f1095
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f1099
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f109e
     MOV ESI,dword ptr [ESP + 0x124]     ; 004f10a1
     CMP EAX,ESI                         ; 004f10a8
@@ -480,7 +480,7 @@ section .text
     PUSH EAX                            ; 004f1101
     FSTP float ptr [ESP + 0xe8]         ; 004f1102
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f1109
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f110e
     MOV EDI,dword ptr [ESP + 0x124]     ; 004f1111
     CMP EAX,EDI                         ; 004f1118
@@ -537,7 +537,7 @@ section .text
     PUSH EBP                            ; 004f119f
     MOV dword ptr [EDX + 0x8],0x0       ; 004f11a0
     CALL core_path.cpp_CPathMap_getDirection_FUN_004efeb0 ; 004f11a7
-        ;   XREF to: 004efeb0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getDirection_FUN_004efeb0()
+        ;   XREF to: 004efeb0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_004efeb0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x118],EAX     ; 004f11ac
     FLD float ptr [ESP + 0x118]         ; 004f11b3
     ADD ESP,0x14                        ; 004f11ba
@@ -702,7 +702,7 @@ section .text
     PUSH EDI                            ; 004f13ab
     PUSH EBP                            ; 004f13ac
     CALL core_path.cpp_CPathMap_getDirection_FUN_004efeb0 ; 004f13ad
-        ;   XREF to: 004efeb0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getDirection_FUN_004efeb0()
+        ;   XREF to: 004efeb0 (UNCONDITIONAL_CALL)  ; float core_path.cpp_CPathMap_getDirection_FUN_004efeb0(CPathMap * this_ptr, int current_direction, int next_direction, int prev_direction, ...)
     MOV dword ptr [ESP + 0x118],EAX     ; 004f13b2
     FLD float ptr [ESP + 0x118]         ; 004f13b9
     ADD ESP,0x14                        ; 004f13c0
@@ -731,7 +731,7 @@ section .text
     PUSH EAX                            ; 004f140f
     FSTP float ptr [ESP + 0x94]         ; 004f1410
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f1417
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f141c
     MOV EDX,dword ptr [ESP + 0x124]     ; 004f141f
     CMP EAX,EDX                         ; 004f1426
@@ -766,7 +766,7 @@ section .text
     PUSH EAX                            ; 004f1474
     FSTP float ptr [ESP + 0x10]         ; 004f1475
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f1479
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f147e
     MOV EDX,dword ptr [ESP + 0x124]     ; 004f1481
     CMP EAX,EDX                         ; 004f1488

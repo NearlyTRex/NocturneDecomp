@@ -2,11 +2,11 @@
 // Address: 0044ed80
 // Address Range: [[0044ed80, 0044efaa]]
 // Convention: unknown
-// Signature: void core_dlight_cpp_FUN_0044ed80(int param_1,int param_2,int param_3,int param_4)
+// Signature: void core_dlight_cpp_FUN_0044ed80(char *param_1,int param_2,int param_3,int param_4)
 
 #include "nocturne.h"
 
-void core_dlight_cpp_FUN_0044ed80(int param_1,int param_2,int param_3,int param_4)
+void core_dlight_cpp_FUN_0044ed80(char *param_1,int param_2,int param_3,int param_4)
 
 {
   int iVar1;

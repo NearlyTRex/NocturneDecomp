@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double crt_string_c_strtod_main_FUN_0056f852(undefined4 param_1,undefined4 param_2)
+; double __cdecl crt_string_c_strtod_main_FUN_0056f852(char *str,char **endptr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; char * *         Stack[0x8]:4   endptr
 ;
 ; XREF[1]:
 ;   FUN_0056a189 at 0056a195
@@ -33,7 +36,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8]       ; 0056f863
     PUSH EBX                            ; 0056f866
     CALL crt_string.c_parseFloatString_FUN_0056f690 ; 0056f867
-        ;   XREF to: 0056f690 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_parseFloatString_FUN_0056f690()
+        ;   XREF to: 0056f690 (UNCONDITIONAL_CALL)  ; int crt_string.c_parseFloatString_FUN_0056f690(char * str, void * result, char * * endptr)
     MOV EBX,EAX                         ; 0056f86c
     ADD ESP,0xc                         ; 0056f86e
     TEST EAX,EAX                        ; 0056f871

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_0042a150(CCharacter *param_1,float param_2)
+; void __cdecl core_charactr_cpp_FUN_0042a150(CCharacter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[37]:
 ;   core_armour.cpp_FUN_0040fa20 at 0040fae4

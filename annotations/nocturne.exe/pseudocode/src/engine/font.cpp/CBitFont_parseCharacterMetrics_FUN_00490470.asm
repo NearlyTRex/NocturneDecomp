@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
@@ -302,7 +302,7 @@ section .text
     PUSH ECX                            ; 004907fb
     PUSH ESI                            ; 004907fc
     CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920 ; 004907fd
-        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920()
+        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, ...)
     MOV dword ptr [EBX + 0x2968],EAX    ; 00490802
     MOV EDX,dword ptr [ESI + 0x316c]    ; 00490808
     ADD ESP,0x14                        ; 0049080e
@@ -342,7 +342,7 @@ section .text
     PUSH ECX                            ; 00490877
     PUSH ESI                            ; 00490878
     CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920 ; 00490879
-        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920()
+        ;   XREF to: 00490920 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, ...)
     MOV dword ptr [EBX + 0x2968],EAX    ; 0049087e
     MOV EDI,dword ptr [ESI + 0x316c]    ; 00490884
     ADD ESP,0x14                        ; 0049088a

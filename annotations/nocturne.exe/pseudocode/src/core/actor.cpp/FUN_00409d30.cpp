@@ -1,25 +1,24 @@
 // Name: core_actor.cpp_FUN_00409d30
 // Address: 00409d30
 // Address Range: [[00409d30, 00409e99]]
-// Convention: unknown
-// Signature: UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
+// Convention: __cdecl
+// Signature: CDemonActor * __cdecl core_actor_cpp_FUN_00409d30(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 
-UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
+CDemonActor * __cdecl core_actor_cpp_FUN_00409d30(CDemonActor *this_ptr)
 
 {
-  UOrientationVector *this_ptr;
+  UOrientationVector *this_ptr_00;
   char cVar1;
   CDemonActorTransformState *pCVar2;
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = core_actor_cpp_initTransformCache_FUN_00409cf0
-                     ((CDemonActorTransformState *)(param_1 + 0x128));
-  this_ptr = &pCVar2[-0xb].orientation;
-  pCVar2[1].position.z = (float)&PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005992d4;
-  *(byte *)this_ptr = 0;
+  pCVar2 = core_actor_cpp_initTransformCache_FUN_00409cf0(&this_ptr->previous_transform_state);
+  this_ptr_00 = &pCVar2[-0xb].orientation;
+  pCVar2[1].position.z = (float)&g_CDemonActorVTable;
+  *(byte *)this_ptr_00 = 0;
   pCVar2[1].position.x = 0.0;
   pCVar2[1].position.y = 0.0;
   pCVar2[-10].dirty_flags = 0;
@@ -30,7 +29,7 @@ UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
   pCVar2[-9].orientation.vec.x = 0.0;
   pCVar2[-9].position.z = pCVar2[-9].orientation.vec.x;
   pCVar2[-9].position.y = pCVar2[-9].position.z;
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)&this_ptr->vec);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)&this_ptr_00->vec);
   pcVar4 = (char *)((int)&pCVar2[-7].orientation + 8);
   pCVar2[-7].orientation.vec.y = 1.0;
   do {
@@ -66,12 +65,12 @@ UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') {
-      return this_ptr;
+      return (CDemonActor *)this_ptr_00;
     }
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  return this_ptr;
+  return (CDemonActor *)this_ptr_00;
 }

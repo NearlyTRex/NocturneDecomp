@@ -22,7 +22,7 @@
 ;   undefined4 s_chain_move_wav_0057a57a+1
 ;   undefined4 s_chain_move_wav_0057a57a+2
 ;   undefined4 s_chain_move_wav_0057a57a+3
-;   undefined1* PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244 = 0042b8f0
+;   CDemonActor_vtable g_CChainVTable
 ;   WatcomTypeInfo g_SChainVertexTypeInfo_0059b320
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0042b752
     PUSH EDX                            ; 0042b756
     CALL core_actor.cpp_FUN_00409d30    ; 0042b757
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042b75c
     PUSH 0x59b320                       ; 0042b75f | g_SChainVertexTypeInfo_0059b320
     PUSH 0x14                           ; 0042b764
@@ -48,7 +48,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0042b76c
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd7c]          ; 0042b771
-    MOV dword ptr [EDX + 0x14c],0x59b244 ; 0042b777 | PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244
+    MOV dword ptr [EDX + 0x14c],0x59b244 ; 0042b777 | g_CChainVTable
     MOV dword ptr [EDX + 0x150],0xa     ; 0042b781
     MOV dword ptr [EDX + 0x154],0x40a00000 ; 0042b78b
     MOV dword ptr [EDX + 0x554],0x3f800000 ; 0042b795

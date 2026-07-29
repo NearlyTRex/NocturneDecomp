@@ -9,12 +9,12 @@
 void core_boneguy_cpp_FUN_004182a0(void)
 
 {
-  int iVar1;
+  CBoneGuy *this_ptr;
   
-  iVar1 = FUN_0056497c(0xc34c);
-  if (iVar1 == 0) {
+  this_ptr = (CBoneGuy *)FUN_0056497c(0xc34c);
+  if (this_ptr == (CBoneGuy *)0x0) {
     return;
   }
-  core_boneguy_cpp_FUN_00418630(iVar1);
+  core_boneguy_cpp_FUN_00418630(this_ptr);
   return;
 }

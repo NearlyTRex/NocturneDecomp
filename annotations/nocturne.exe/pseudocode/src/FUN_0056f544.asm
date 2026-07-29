@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * FUN_0056f544(int param_1,undefined1 *param_2,int param_3)
+; char * FUN_0056f544(uint param_1,char *param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     PUSH EDX                            ; 0056f565
     PUSH EAX                            ; 0056f566
     CALL crt_stdlib.c_utoa_FUN_0056f4f0 ; 0056f567
-        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_utoa_FUN_0056f4f0()
+        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c_utoa_FUN_0056f4f0(uint value, char * buffer, int base)
     ADD ESP,0xc                         ; 0056f56c
     MOV EAX,EBX                         ; 0056f56f
     POP EBX                             ; 0056f571

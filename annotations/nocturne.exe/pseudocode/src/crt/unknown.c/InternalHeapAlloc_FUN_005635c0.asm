@@ -125,7 +125,7 @@ section .text
     PUSH EBP                            ; 0056368e
         ;   Label: LAB_0056368e
     CALL FUN_00568e70                   ; 0056368f
-        ;   XREF to: 00568e70 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e70()
+        ;   XREF to: 00568e70 (UNCONDITIONAL_CALL)  ; int FUN_00568e70(uint size)
     ADD ESP,0x4                         ; 00563694
     TEST EAX,EAX                        ; 00563697
     JZ 0x005636b0                       ; 00563699

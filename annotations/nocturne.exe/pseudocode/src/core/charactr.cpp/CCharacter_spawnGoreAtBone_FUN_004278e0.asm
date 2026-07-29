@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CDemonActor *param_1,int param_2,int param_3,float param_4)
+; void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; int              Stack[0xc]:4   bone_index
+; float            Stack[0x10]:4   chance
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -79,7 +84,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EDI      ; 0042794b
     MOV dword ptr [ESP + 0x1c],EDI      ; 0042794f
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00427953
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00427958
     MOV EAX,dword ptr [EBX + 0x2608]    ; 0042795b
     PUSH EAX                            ; 00427961

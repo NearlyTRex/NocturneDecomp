@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1,int *param_2)
+; int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_position
+; SProjectedVertex * Stack[0xc]:4   projected_vertex
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -77,7 +81,7 @@ section .text
     PUSH EDX                            ; 00447632
     PUSH 0x140d784                      ; 00447633
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80 ; 00447638
-        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80()
+        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     MOV EDX,EAX                         ; 0044763d
     SHL EAX,0x4                         ; 0044763f
     ADD EAX,EDX                         ; 00447642

@@ -1,14 +1,14 @@
 // Name: engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10
 // Address: 00405e10
 // Address Range: [[00405e10, 00406009]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderPrimitive *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderPrimitive *param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderPrimitive *primitive)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderP
   int iVar4;
   int iVar5;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&primitive->surface_normal);
   if (iVar2 != 0) {
     if (DAT_006b0278 == 0) {
       if (DAT_006b0274 == 0) {
@@ -37,7 +37,7 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderP
         }
         _DAT_01c039a0 = 0xd1;
         _DAT_01c039a4 = 3;
-        engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
+        engine_3d_c_calculatePolygonLighting_FUN_00404710(primitive);
       }
       else {
         if (_DAT_01c03948 == 0) {
@@ -57,8 +57,8 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderP
         _DAT_01c039a0 = 0xd0;
         _DAT_01c039a4 = 1;
         engine_light_cpp_calculateLighting_FUN_004c6cc0
-                  ((param_1->surface_normal).A.i,(param_1->surface_normal).B.i,
-                   (param_1->surface_normal).C.i);
+                  ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
+                   (primitive->surface_normal).C.i);
         _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
       }
     }
@@ -82,8 +82,8 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderP
     }
     iVar2 = 0;
     iVar5 = 0;
-    pSVar3 = param_1 + 1;
-    for (iVar4 = 0; iVar4 < (param_1->base).count * 3; iVar4 = iVar4 + 3) {
+    pSVar3 = primitive + 1;
+    for (iVar4 = 0; iVar4 < (primitive->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)&DAT_006b029c + iVar2) = iVar1;
       (&DAT_005c502c)[iVar1 * 0xc] = (pSVar3->base).count;
@@ -94,5 +94,5 @@ int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderP
     }
     engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);
   }
-  return (int)&param_1[1].base + (param_1->base).count * 0xc;
+  return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

@@ -25,7 +25,7 @@ void CSpike::setup(CDemonActor *param_1);
 
 // Original: core_spike.cpp_FUN_00533210
 // Address: 00533210
-void FUN_00533210(int param_1,float param_2);
+void FUN_00533210(CSpike *param_1,float param_2);
 
 // Original: core_spike.cpp_FUN_00533530
 // Address: 00533530
@@ -45,7 +45,7 @@ undefined4 FUN_00533740(void);
 
 // Original: core_spike.cpp_FUN_00533750
 // Address: 00533750
-void FUN_00533750(CDemonActor *param_1);
+void __cdecl FUN_00533750(CSpike *this_ptr);
 
 // Original: core_spike.cpp_FUN_00533c90
 // Address: 00533c90

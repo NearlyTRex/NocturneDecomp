@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_FUN_004eeea0(CCharacter *param_1,SDamageInfo *param_2)
+; void __cdecl core_npc_cpp_FUN_004eeea0(CNPC *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CNPC *           Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_FUN_004b8600 at 004b8683

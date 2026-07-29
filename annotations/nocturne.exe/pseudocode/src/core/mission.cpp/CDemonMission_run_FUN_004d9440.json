@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 334,
+    "complexity_score": 131,
     "cross_reference_count": 3,
     "function_call_count": 20,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 23,
+    "pseudocode_lines": 66,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_truncation",
       "raw_address_pointer_store",
-      "suspect_float",
-      "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 268
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -475,32 +472,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "CDemonActor *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_01ccbbf0",
       "severity": "mild",
       "text": "DAT_01ccbbf0 = '\\0';",
@@ -508,147 +481,27 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 32,
-      "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "line": 30,
+      "match": "*(CHero **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "text": "this_ptr_00 = *(CHero **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(this_ptr_00,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "(this_ptr_00,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(this_ptr_00,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 34,
       "match": "DAT_01ccbbf0",
       "severity": "mild",
       "text": "if ((iVar1 == 0) || (DAT_01ccbbf0 == '\\0')) break;",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = (CDemonActor *)0x4d9591;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 46,
       "match": "DAT_01ccbbf0",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,&DAT_01ccbbf0,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = 7.125002e-39;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 51,
-      "match": "7.125002e-39",
-      "severity": "mild",
-      "text": "unaff_EDI = 7.125002e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 7.125025e-39;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 54,
-      "match": "7.125025e-39",
-      "severity": "mild",
-      "text": "unaff_ESI = 7.125025e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = 3.47522e-43;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 60,
-      "match": "3.47522e-43",
-      "severity": "mild",
-      "text": "unaff_EDI = 3.47522e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = (CDemonActor *)(0x1db - iVar1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(_DAT_014b9900,0x27f,(int)unaff_EBP,(int)unaff_EDI,(int)color_value,text);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "(_DAT_014b9900,0x27f,(int)unaff_EBP,(int)unaff_EDI,(int)color_value,text);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = color_value;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Pointer value `unaff_EBP` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
-      "match": "(int)unaff_EBP",
-      "severity": "moderate",
-      "text": "(_DAT_014b9900,0x27f,(int)unaff_EBP,(int)unaff_EDI,(int)color_value,text);",
-      "type": "pointer_truncation"
     }
   ]
 }

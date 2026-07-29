@@ -1,16 +1,16 @@
 // Name: sound_sndmain.cpp_FUN_00526120
 // Address: 00526120
 // Address Range: [[00526120, 00526143]]
-// Convention: unknown
-// Signature: void sound_sndmain_cpp_FUN_00526120(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_00526120(float base_frequency)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void sound_sndmain_cpp_FUN_00526120(uint param_1)
+void __cdecl sound_sndmain_cpp_FUN_00526120(float base_frequency)
 
 {
-  *(uint *)(_DAT_02dc1b74 * 0x6c + 0x2dc1bc0) = param_1;
+  *(float *)(_DAT_02dc1b74 * 0x6c + 0x2dc1bc0) = base_frequency;
   return;
 }

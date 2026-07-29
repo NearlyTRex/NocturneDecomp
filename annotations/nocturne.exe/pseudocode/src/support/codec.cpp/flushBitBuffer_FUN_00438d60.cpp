@@ -1,28 +1,28 @@
 // Name: support_codec.cpp_flushBitBuffer_FUN_00438d60
 // Address: 00438d60
 // Address Range: [[00438d60, 00438dbd]]
-// Convention: unknown
-// Signature: void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,_ostream *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl support_codec_cpp_flushBitBuffer_FUN_00438d60(SBitBuffer *bit_buffer,_ostream *ostream)
 
 #include "nocturne.h"
 
-void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,_ostream *param_2)
+void __cdecl support_codec_cpp_flushBitBuffer_FUN_00438d60(SBitBuffer *bit_buffer,_ostream *ostream)
 
 {
   int iVar1;
   
-  iVar1 = *param_1;
+  iVar1 = bit_buffer->bits_available;
   while (7 < iVar1) {
-    crt_iostream_cpp_ostream_put_FUN_00564ce5(param_2,(uint)*(byte *)(param_1 + 1));
-    iVar1 = *param_1 + -8;
-    param_1[1] = (uint)param_1[1] >> 8;
-    *param_1 = iVar1;
+    crt_iostream_cpp_ostream_put_FUN_00564ce5(ostream,(uint)(byte)bit_buffer->accumulated_bits);
+    iVar1 = bit_buffer->bits_available + -8;
+    bit_buffer->accumulated_bits = bit_buffer->accumulated_bits >> 8;
+    bit_buffer->bits_available = iVar1;
   }
-  if (*param_1 < 1) {
+  if (bit_buffer->bits_available < 1) {
     return;
   }
-  crt_iostream_cpp_ostream_put_FUN_00564ce5(param_2,(uint)*(byte *)(param_1 + 1));
-  param_1[1] = 0;
-  *param_1 = 0;
+  crt_iostream_cpp_ostream_put_FUN_00564ce5(ostream,(uint)(byte)bit_buffer->accumulated_bits);
+  bit_buffer->accumulated_bits = 0;
+  bit_buffer->bits_available = 0;
   return;
 }

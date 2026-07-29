@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 332,
+    "complexity_score": 327,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 77,
     "suspect_count": 24,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data"
     ],
-    "total_lines": 340
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -507,10 +507,27 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "archivePartStatus_FUN_0040cbf0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 11,
+          "line": 53,
+          "message": "Uninitialized variable: local_14",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 11,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "if (DAT_00763e88 != 1) {",
@@ -518,7 +535,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 12,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
@@ -526,7 +543,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 12,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
@@ -534,7 +551,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%d\\n\",&DAT_005acc90,0x1e);",
@@ -542,7 +559,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%d\\n\",&DAT_005acc90,0x1e);",
@@ -550,7 +567,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
@@ -558,7 +575,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
@@ -566,139 +583,147 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar4->visibility_flags[0]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005acc90",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar4->texture_set_indices[0]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005acc90",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_00763e84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\"%d\",&local_14);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_00763e84,\"%d\",pSVar4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\" \");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_00763e84,\"%d\",piVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\" \");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "while (iVar1 = _fgetc(DAT_00763e84), -1 < iVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 20,
-      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar1->visibility_flags[0]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"\\n\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar1->texture_set_indices[0]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"\\n\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar2 = _fgetc(DAT_00763e84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\"%d\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar3 = _fscanf(DAT_00763e84,\"%d\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\" \");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar3 = _fscanf(DAT_00763e84,\"%d\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\" \");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "while (iVar2 = _fgetc(DAT_00763e84), -1 < iVar2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;",
+      "text": "pCVar4 = (CDeformableModelInstance *)&(pCVar4->motion_controller).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `model_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 28,
+      "line": 27,
       "match": "model_ptr = (T *)&(model_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: local_14",
+      "line": 53,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (0 < local_14) {",
+      "type": "static_uninitvar"
     }
   ]
 }

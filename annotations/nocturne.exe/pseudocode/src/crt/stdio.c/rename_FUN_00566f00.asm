@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; DWORD crt_stdio_c_rename_FUN_00566f00(LPCSTR param_1,LPCSTR param_2)
+; int __watcallStack crt_stdio_c_rename_FUN_00566f00(char *old_filename,char *new_filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   old_filename
+; char *           Stack[0x8]:4   new_filename
 ;
 ; XREF[2]:
 ;   FUN_00568690 at 0056872b

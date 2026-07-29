@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_FUN_0052d030(undefined4 param_1,char *param_2,char *param_3)
+; void __cdecl core_sound_cpp_FUN_0052d030(CSound *this_ptr,char *out_result,char *wildcard_pattern)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   out_result
+; char *           Stack[0xc]:4   wildcard_pattern
 ;
 ; XREF[2]:
 ;   core_dracbrid.cpp_FUN_0045ab40 at 0045afea

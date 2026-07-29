@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_dcamera_cpp_testCoronaVisibility_FUN_004450b0(int param_1,int param_2,int param_3)
+; int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_004450b0(int start_x,int start_y,int depth_reciprocal)
 ;
+; Parameters:
+; int              Stack[0x4]:4   start_x
+; int              Stack[0x8]:4   start_y
+; int              Stack[0xc]:4   depth_reciprocal
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

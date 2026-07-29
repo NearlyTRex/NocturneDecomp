@@ -10,7 +10,8 @@ void __cdecl core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(CGro
 
 {
   core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0
-            (this_ptr->texture_list,this_ptr->terrain_data[row * this_ptr->width + column].color);
+            (this_ptr->texture_list,
+             (uint)(ushort)this_ptr->terrain_data[row * this_ptr->width + column].color);
   (&DAT_005c502c)[this_ptr->vertex_indices[1] * 0xc] = 0xf80000;
   *(uint *)(&DAT_005c5030 + this_ptr->vertex_indices[1] * 0x30) = 0xf80000;
   (&DAT_005c502c)[this_ptr->vertex_indices[0] * 0xc] = 0x80000;

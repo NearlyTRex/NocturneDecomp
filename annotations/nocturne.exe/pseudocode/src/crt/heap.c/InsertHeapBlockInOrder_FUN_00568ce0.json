@@ -2,21 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 338,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 28,
+    "pseudocode_lines": 41,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
+      "negative_offset",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 83
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -34,9 +32,9 @@
         "00568d56"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0",
-    "signature": "int * crt_heap_c_InsertHeapBlockInOrder_FUN_00568ce0(int *param_1)"
+    "signature": "HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_00568ce0(HeapBlock *new_block)"
   },
   "function_calls": [],
   "globals": [
@@ -62,11 +60,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.789473684210526,
@@ -95,240 +93,53 @@
     "pcode_op_count": 144
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "new_block",
+        "offset": 4,
+        "size": 4,
+        "type": "HeapBlock *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * InsertHeapBlockInOrder(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (piVar2 = DAT_005c1680; (piVar2 != (int *)0x0 && (piVar2 <= param_1));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_005c1680",
       "severity": "mild",
-      "text": "for (piVar2 = DAT_005c1680; (piVar2 != (int *)0x0 && (piVar2 <= param_1));",
+      "text": "for (pHVar2 = DAT_005c1680; (pHVar2 != (HeapBlock *)0x0 && (pHVar2 <= new_block));",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = (int)piVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = (int)piVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_005c1680 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005c1680",
       "severity": "mild",
-      "text": "DAT_005c1680 = param_1;",
+      "text": "DAT_005c1680 = new_block;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pHVar3[-1].",
       "severity": "mild",
-      "text": "piVar1[2] = (int)param_1;",
-      "type": "unnamed_param"
+      "text": "puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);",
+      "type": "negative_offset"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2[1] = (int)param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar1 = param_1 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2 = param_1 + 0xb;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[8] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[6] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[7] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[9] = (int)piVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[10] = (int)piVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] = (int)piVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*piVar2 = *param_1 + -0x2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)piVar2",
+      "description": "Pointer value `puVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(uint)puVar1",
       "severity": "moderate",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
-      "match": "(int)piVar1",
-      "severity": "moderate",
-      "text": "param_1[1] = (int)piVar1;",
+      "text": "new_block->heap_info = (uint)puVar1;",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 14,
-      "match": "(int)piVar2",
-      "severity": "moderate",
-      "text": "param_1[2] = (int)piVar2;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)piVar1",
-      "severity": "moderate",
-      "text": "param_1[9] = (int)piVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)piVar1",
-      "severity": "moderate",
-      "text": "param_1[10] = (int)piVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)piVar1",
-      "severity": "moderate",
-      "text": "param_1[3] = (int)piVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
-      "match": "(int)piVar2",
-      "severity": "moderate",
-      "text": "*(uint *)((int)piVar2 + *param_1 + -0x2c) = 0xffffffff;",
-      "type": "pointer_truncation"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

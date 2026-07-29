@@ -150,7 +150,7 @@ section .text
     PUSH 0x1c20148                      ; 0048a72b
     XOR ESI,ESI                         ; 0048a730
     CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0 ; 0048a732
-        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0()
+        ;   XREF to: 00482ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_00482ed0(CBulletHole * this_ptr)
     MOV ECX,dword ptr [0x01c20140]      ; 0048a737 | DAT_01c20140
     ADD ESP,0x4                         ; 0048a73d
     TEST ECX,ECX                        ; 0048a740

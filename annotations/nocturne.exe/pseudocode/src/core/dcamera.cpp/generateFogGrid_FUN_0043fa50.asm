@@ -221,7 +221,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x50]      ; 0043fc64
     PUSH ECX                            ; 0043fc68
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20 ; 0043fc69
-        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20()
+        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid * fog)
     ADD ESP,0x4                         ; 0043fc6e
     ADD ESP,0x3c                        ; 0043fc71
     POP EBP                             ; 0043fc74

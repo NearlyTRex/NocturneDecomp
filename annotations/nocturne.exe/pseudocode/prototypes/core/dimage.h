@@ -5,7 +5,7 @@
 
 // Original: core_dimage.cpp_CDemonImage_ctor_FUN_0044d430
 // Address: 0044d430
-void CDemonImage::ctor(void);
+CDemonImage * __cdecl CDemonImage::ctor(CDemonImage *this_ptr);
 
 // Original: core_dimage.cpp_FUN_0044d440
 // Address: 0044d440

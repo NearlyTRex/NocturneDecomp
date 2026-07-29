@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_004270e0(int param_1)
+; void __cdecl core_charactr_cpp_FUN_004270e0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1aac]:1  local_1aac
 ;
@@ -150,7 +152,7 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 0042721e
     PUSH EBX                            ; 00427224
     CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0 ; 00427225
-        ;   XREF to: 0051dbc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0()
+        ;   XREF to: 0051dbc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance * this_ptr, int render_flags, int skip_texture_capture)
     MOV EAX,[0x005ae704]                ; 0042722a | DAT_005ae704
     ADD ESP,0xc                         ; 0042722f
     MOV dword ptr [EAX + 0x20],0x0      ; 00427232 | DAT_01b4d758

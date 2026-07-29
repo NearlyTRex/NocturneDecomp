@@ -47,7 +47,7 @@ section .text
     MOV dword ptr [EBP + -0x8],EAX      ; 00565af2
     MOV dword ptr [EBP + -0x4],EDX      ; 00565af5
     CALL crt_math.c_math_domain_error_FUN_0056bd22 ; 00565af8
-        ;   XREF to: 0056bd22 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_math_domain_error_FUN_0056bd22()
+        ;   XREF to: 0056bd22 (UNCONDITIONAL_CALL)  ; double crt_math.c_math_domain_error_FUN_0056bd22(double x, double y, uchar error_type)
     SUB ESP,0x8                         ; 00565afd
     PUSH EDX                            ; 00565b00
     PUSH EAX                            ; 00565b01

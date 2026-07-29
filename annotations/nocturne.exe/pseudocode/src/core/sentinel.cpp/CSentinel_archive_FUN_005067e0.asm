@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 005067f3
     PUSH EAX                            ; 005067f9
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 005067fa
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x005be310]      ; 005067ff | INT_005be310
     ADD ESP,0x8                         ; 00506805
     CMP EDX,0x2                         ; 00506808

@@ -18,23 +18,17 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   int iVar4;
   SMotion *pSVar5;
   CPathMap *this_ptr_00;
-  float *pfVar6;
+  CVector3f *pCVar6;
   int iVar7;
   int iVar8;
   float fStack_80;
   float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  byte auStack_6c [12];
-  float local_60;
-  float local_5c;
-  float local_58;
+  CVector3f local_78;
+  CVector3f CStack_6c;
+  CVector3f local_60;
   CVector3f CStack_54;
   float fStack_44;
-  float local_3c;
-  float local_38;
-  float local_34;
+  CVector3f local_3c;
   int local_30;
   int local_2c;
   float fStack_24;
@@ -50,9 +44,9 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   }
   memset(&(this_ptr->base).player_input,0,0x2c);
   iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  local_3c = (this_ptr->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
-  local_38 = (this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
-  local_34 = (this_ptr->base).base.base.location.position.z - *(float *)(iVar8 + 0x28);
+  local_3c.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
+  local_3c.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
+  local_3c.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar8 + 0x28);
   EVar1 = (this_ptr->base).ai_task;
   iVar8 = 0;
   if ((((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) &&
@@ -68,15 +62,15 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   if (iVar8 != this_ptr->guns_drawn) {
     (this_ptr->base).player_input.action_state.draw = 1;
   }
-  local_60 = *(float *)(iVar7 + 0x20) - (this_ptr->base).base.base.location.position.x;
-  local_5c = *(float *)(iVar7 + 0x24) - (this_ptr->base).base.base.location.position.y;
-  local_58 = *(float *)(iVar7 + 0x28) - (this_ptr->base).base.base.location.position.z;
+  local_60.x = *(float *)(iVar7 + 0x20) - (this_ptr->base).base.base.location.position.x;
+  local_60.y = *(float *)(iVar7 + 0x24) - (this_ptr->base).base.base.location.position.y;
+  local_60.z = *(float *)(iVar7 + 0x28) - (this_ptr->base).base.base.location.position.z;
   if (&local_3c != &local_60) {
-    local_3c = local_60;
-    local_38 = local_5c;
-    local_34 = local_58;
+    local_3c.x = local_60.x;
+    local_3c.y = local_60.y;
+    local_3c.z = local_60.z;
   }
-  local_7c = SQRT(local_34 * local_34 + local_3c * local_3c + local_38 * local_38);
+  local_7c = SQRT(local_3c.z * local_3c.z + local_3c.x * local_3c.x + local_3c.y * local_3c.y);
   if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
     local_7c = 0.0;
   }
@@ -114,8 +108,8 @@ LAB_004fc7c4:
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,
                      (this_ptr->base).base.base.direction_hint);
   if (iVar8 != 0) {
-    fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                 (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
+    fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                          (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
     fVar3 = fStack_18 * (float)0.31830988619288902 * (float)4;
     fStack_24 = -local_20;
     (this_ptr->base).player_input.turn_speed = fVar3;
@@ -131,23 +125,22 @@ LAB_004fc7c4:
     (this_ptr->base).player_input.action_state.walk = 1;
   }
 LAB_004fc893:
-  local_78 = *(float *)(iVar7 + 0x20) - (this_ptr->base).base.base.location.position.x;
-  local_74 = *(float *)(iVar7 + 0x24) - (this_ptr->base).base.base.location.position.y;
-  local_70 = *(float *)(iVar7 + 0x28) - (this_ptr->base).base.base.location.position.z;
+  local_78.x = *(float *)(iVar7 + 0x20) - (this_ptr->base).base.base.location.position.x;
+  local_78.y = *(float *)(iVar7 + 0x24) - (this_ptr->base).base.base.location.position.y;
+  local_78.z = *(float *)(iVar7 + 0x28) - (this_ptr->base).base.base.location.position.z;
   if (&local_3c != &local_78) {
-    local_3c = local_78;
-    local_38 = local_74;
-    local_34 = local_70;
+    local_3c.x = local_78.x;
+    local_3c.y = local_78.y;
+    local_3c.z = local_78.z;
   }
-  pfVar6 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                              (auStack_6c,&local_3c);
-  if (&local_3c != pfVar6) {
-    local_3c = *pfVar6;
-    local_38 = pfVar6[1];
-    local_34 = pfVar6[2];
+  pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_6c,&local_3c);
+  if (&local_3c != pCVar6) {
+    local_3c.x = pCVar6->x;
+    local_3c.y = pCVar6->y;
+    local_3c.z = pCVar6->z;
   }
-  fStack_44 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               (local_38 - (this_ptr->base).base.base.orient.vec.y);
+  fStack_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                        (local_3c.y - (this_ptr->base).base.base.orient.vec.y);
   if (local_1c < fStack_44) {
     fStack_44 = local_1c;
   }

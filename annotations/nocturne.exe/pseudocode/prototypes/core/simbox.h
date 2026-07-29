@@ -45,4 +45,4 @@ undefined4 FUN_005170c0(void);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_005170d0
 // Address: 005170d0
-CDemonActor * CSimBox::dtor(CDemonActor *param_1,byte param_2);
+CSimBox * __cdecl CSimBox::dtor(CSimBox *this_ptr,uint flags);

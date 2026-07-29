@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_iostream_cpp_streambuf_do_sputn_FUN_0056bc70(int param_1,undefined4 *param_2,uint param_3)
+; int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_0056bc70(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   buffer
+; void *           Stack[0x8]:4   input_buffer
+; SIZE_T           Stack[0xc]:4   bytes_to_write
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

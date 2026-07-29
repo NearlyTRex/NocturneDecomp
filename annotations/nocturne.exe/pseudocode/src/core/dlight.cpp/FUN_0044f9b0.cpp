@@ -12,7 +12,7 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
 
 {
   float fVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   SMRGLTextureBasic *texture;
   byte bVar3;
   double dVar4;
@@ -39,14 +39,13 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
   float fStack_e8;
   CVector3f CStack_e4;
   CVector3i local_d8;
-  byte local_c8 [8];
-  CVector3i CStack_c0;
-  byte local_b0 [12];
+  byte local_c8 [12];
+  int local_bc;
+  int local_b8;
+  CVector3f local_b0;
   int local_a4;
   float local_a0 [5];
-  uint local_8c;
-  uint local_88;
-  uint local_84;
+  CVector3f local_8c;
   float local_80;
   float local_7c;
   float local_78;
@@ -72,12 +71,12 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
     local_74._0_4_ = (float)local_74._0_4_ - *(float *)(param_1 + 0x104);
     local_74._4_4_ = (float)local_74._4_4_ - *(float *)(param_1 + 0x108);
     local_74._8_4_ = (float)local_74._8_4_ - *(float *)(param_1 + 0x10c);
-    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                                (param_1 + 0x110,local_b0,local_74);
-    if ((float *)local_74 != pfVar2) {
-      local_74._0_4_ = *pfVar2;
-      local_74._4_4_ = pfVar2[1];
-      local_74._8_4_ = pfVar2[2];
+    pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                       ((CMatrix3x3f *)(param_1 + 0x110),&local_b0,(CVector3f *)local_74);
+    if ((CVector3f *)local_74 != pCVar2) {
+      local_74._0_4_ = pCVar2->x;
+      local_74._4_4_ = pCVar2->y;
+      local_74._8_4_ = pCVar2->z;
     }
     if ((float)local_74._8_4_ <= *(float *)(param_1 + 0x100)) {
       local_30 = (float)local_74._4_4_ * (float)local_74._4_4_;
@@ -104,14 +103,14 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
           local_80 = local_80 * fVar1;
           local_7c = local_7c * fVar1;
           local_78 = local_78 * fVar1;
-          local_8c = 0;
-          local_88 = 0;
-          local_84 = 0x3f800000;
+          local_8c.x = 0.0;
+          local_8c.y = 0.0;
+          local_8c.z = 1.0;
           local_14 = (float)(0xffff - _DAT_01c038f4);
-          pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                      (param_1 + 0x110,local_c8,&local_8c);
-          if (0.0 < (local_78 * pfVar2[2] + local_80 * *pfVar2 + local_7c * pfVar2[1]) * local_14 *
-                    4.6004211948482694e-315._0_4_) {
+          pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                             ((CMatrix3x3f *)(param_1 + 0x110),(CVector3f *)local_c8,&local_8c);
+          if (0.0 < (local_78 * pCVar2->z + local_80 * pCVar2->x + local_7c * pCVar2->y) * local_14
+                    * 4.6004211948482694e-315._0_4_) {
             this_ptr = (CDemonRenderer *)0x44fcc3;
             pCVar5 = DAT_005ae704;
             dVar4 = round((double)(local_148 * (float)65535));
@@ -168,11 +167,12 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_54);
               local_a0[1] = -local_a0[1];
-              CStack_c0.x = (int)ROUND(local_a0[1] * _DAT_0059c030);
-              CStack_c0.y = (int)ROUND(local_a0[2] * _DAT_0059c030);
-              CStack_c0.z = (int)ROUND(local_a0[3] * _DAT_0059c030);
+              local_c8._8_4_ = (uint)ROUND(local_a0[1] * _DAT_0059c030);
+              local_bc = (int)ROUND(local_a0[2] * _DAT_0059c030);
+              local_b8 = (int)ROUND(local_a0[3] * _DAT_0059c030);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                        (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&CStack_c0);
+                        (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,
+                         (CVector3i *)(local_c8 + 8));
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
               pCVar5 = DAT_005ae704;
               local_13c.base.count = 4;

@@ -19,15 +19,15 @@ void core_tommygun_cpp_FUN_005464a0(CWeapon *param_1,float param_2)
   float10 fVar6;
   double dVar7;
   CSfxSample local_1b4;
-  ulonglong local_28;
+  double local_28;
   ulonglong local_20;
   float local_18;
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);
   iVar3 = *(int *)param_1[1].base.actor_name;
   if (iVar3 < 1) {
-    local_20 = (double)sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10
-                                 (*(uint *)(param_1[1].base.actor_name + 4),2);
+    local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10
+                         (*(uint *)(param_1[1].base.actor_name + 4),2);
     fVar2 = (float)local_20;
     if (fVar2 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1[1].base.actor_name + 4));
@@ -35,7 +35,7 @@ void core_tommygun_cpp_FUN_005464a0(CWeapon *param_1,float param_2)
     else {
       sound_sndmain_cpp_lockSound_FUN_00528800();
       local_20 = (double)(fVar2 * 6.0f);
-      local_28 = (double)floor(local_20);
+      local_28 = floor(local_20);
       fVar6 = (float10)local_28;
       fVar1 = (float10)local_20;
       sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(&local_1b4);
@@ -67,7 +67,7 @@ void core_tommygun_cpp_FUN_005464a0(CWeapon *param_1,float param_2)
   }
   else {
     *(int *)param_1[1].base.actor_name = iVar3 + -1;
-    fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f8e38e4);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.9,1.1111112);
     local_18 = fVar2;
     iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130
                       (*(uint *)(param_1[1].base.actor_name + 4),fVar2);

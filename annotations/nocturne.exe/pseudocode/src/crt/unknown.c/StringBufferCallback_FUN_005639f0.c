@@ -1,19 +1,19 @@
 // Name: crt_unknown.c_StringBufferCallback_FUN_005639f0
 // Address: 005639f0
 // Address Range: [[005639f0, 00563a06]]
-// Convention: unknown
-// Signature: void crt_unknown_c_StringBufferCallback_FUN_005639f0(int *param_1,undefined1 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl crt_unknown_c_StringBufferCallback_FUN_005639f0(StringOutputContext *context,char character)
 
 #include "nocturne.h"
 
-void StringBufferCallback(int *param_1,byte param_2)
+void __cdecl StringBufferCallback(StringOutputContext *context,char character)
 
 {
-  byte *puVar1;
+  char *pcVar1;
   
-  puVar1 = (byte *)*param_1;
-  *param_1 = (int)(puVar1 + 1);
-  *puVar1 = param_2;
-  param_1[4] = param_1[4] + 1;
+  pcVar1 = context->buffer_ptr;
+  context->buffer_ptr = pcVar1 + 1;
+  *pcVar1 = character;
+  context->chars_written = context->chars_written + 1;
   return;
 }

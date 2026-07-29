@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 271,
+    "complexity_score": 254,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 24,
+    "pseudocode_lines": 24,
+    "suspect_count": 22,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "pointer_truncation",
+      "unnamed_param"
     ],
-    "total_lines": 100
+    "total_lines": 103
   },
   "cross_references": [],
   "function": {
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_melee.cpp_FUN_004cefe0",
-    "signature": "void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,undefined4 param_3,CDemonActor *param_4)"
+    "signature": "void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)"
   },
   "function_calls": [
     {
@@ -221,7 +221,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,uint param_3,CDemonActor *param_4)",
+      "text": "void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -229,7 +229,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,uint param_3,CDemonActor *param_4)",
+      "text": "void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -237,7 +237,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,uint param_3,CDemonActor *param_4)",
+      "text": "void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -245,7 +245,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,uint param_3,CDemonActor *param_4)",
+      "text": "void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -253,7 +253,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bce0(param_1,param_2,param_3,param_4);",
+      "text": "core_actor_cpp_FUN_0040bce0((CDemonActor *)param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +261,7 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bce0(param_1,param_2,param_3,param_4);",
+      "text": "core_actor_cpp_FUN_0040bce0((CDemonActor *)param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -269,7 +269,7 @@
       "line": 7,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bce0(param_1,param_2,param_3,param_4);",
+      "text": "core_actor_cpp_FUN_0040bce0((CDemonActor *)param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -277,7 +277,7 @@
       "line": 7,
       "match": "param_4",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bce0(param_1,param_2,param_3,param_4);",
+      "text": "core_actor_cpp_FUN_0040bce0((CDemonActor *)param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -290,123 +290,107 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(param_1,0x14,pCVar1[0x1c].prev_actor);",
+      "text": "(param_1,0x14,(int)pCVar1[0x1c].prev_actor);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x598);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x598);",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x598);",
+      "text": "((CDemonActor *)param_1,param_1->thrust_hit_character_sound);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x598);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x5fc);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x5fc);",
+      "text": "((CDemonActor *)param_1,param_1->thrust_hit_character_sound);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x5fc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x5fc);",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->swing_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->swing_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 == (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
-      "match": "code *",
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pCVar1[0x1c].prev_actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)pCVar1[0x1c].prev_actor",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x660);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x660);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x660);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x660);",
-      "type": "unnamed_param"
+      "text": "(param_1,0x14,(int)pCVar1[0x1c].prev_actor);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

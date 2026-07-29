@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *param_1,SDamageInfo *param_2)
 
 {
@@ -14,16 +16,12 @@ void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *param_1,SDamage
   SMotion *pSVar2;
   CMotionList *this_ptr_00;
   uint uVar3;
-  float unaff_EBX;
-  int unaff_EBP;
   int iVar4;
-  CVector3f *unaff_EDI;
   char *pcVar5;
   int iVar6;
   
   core_zombie_cpp_CZombie_processDismemberment_FUN_00561cf0(param_1,param_2);
-  (*(((param_1->base).base.base.vtable._uc)->_uc).kill)
-            ((CCharacter *)param_1,unaff_EBP,unaff_EDI,unaff_EBX);
+  (*(((param_1->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)param_1);
   iVar4 = param_1->part_indices[6];
   (param_1->base).base.hit_points = (param_1->base).base.hit_points - param_2->damage_amount;
   if ((param_1->base).base.model.part_data.visibility_flags[iVar4] == 0) {

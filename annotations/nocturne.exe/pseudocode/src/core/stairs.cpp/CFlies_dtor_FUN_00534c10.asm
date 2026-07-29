@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_stairs_cpp_CFlies_dtor_FUN_00534c10(CDemonActor *param_1,byte param_2)
+; CFlies * __cdecl core_stairs_cpp_CFlies_dtor_FUN_00534c10(CFlies *this_ptr,uint flags)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CStairsTypeInfo_005a2590

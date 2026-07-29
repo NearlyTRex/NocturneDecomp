@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 1888,
+    "complexity_score": 485,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 428,
-    "suspect_count": 143,
+    "pseudocode_lines": 340,
+    "suspect_count": 13,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_pointer_store",
-      "self_copy_guard",
       "unknown_field",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 1245
+    "total_lines": 1157
   },
   "cross_references": [
     {
@@ -167,10 +164,10 @@
         "0048c0c9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_fire.cpp_FUN_0048b6f0",
-    "signature": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)"
+    "signature": "void __cdecl core_fire_cpp_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth)"
   },
   "function_calls": [
     {
@@ -304,12 +301,10 @@
         "call_addr": "005548e5",
         "call_type": "direct",
         "caller": "core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -317,12 +312,10 @@
         "call_addr": "004790c4",
         "call_type": "direct",
         "caller": "core_emitter.cpp_FUN_00478f80",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -330,21 +323,19 @@
         "call_addr": "004cb513",
         "call_type": "direct",
         "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 6,
-    "matches_declared": false
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.899463806970509,
@@ -391,10 +382,10 @@
     "pcode_op_count": 3655
   },
   "stack_frame": {
-    "frame_size": 660,
+    "frame_size": 680,
     "local_size": 660,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1453,1109 +1444,64 @@
         "offset": -16,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "laser_info",
+        "offset": 16,
+        "size": 4,
+        "type": "SLaserInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "recursion_depth",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 < 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_20 = &param_4->local_origin;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_50 = &(param_4->local_origin).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_4c = &(param_4->local_origin).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 155,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1c = &param_4->local_hit_position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_18 = &param_4->local_normal;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 157,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_54 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 158,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_60 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_5c = param_3 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_80 = &param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 161,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_58 = &param_2->z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(0x01E57284,param_4->laser_type,(param_4->color).r,(param_4->color).g,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(0x01E57284,param_4->laser_type,(param_4->color).r,(param_4->color).g,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(0x01E57284,param_4->laser_type,(param_4->color).r,(param_4->color).g,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->color).b);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e0.x = param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 169,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_134.x = local_e0.x + *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_134.y = local_e0.y + param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_134.z = local_e0.z + param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_110.x = -*param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 177,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_110.y = -param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 178,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_110.z = -param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_128 = *param_3 * (float)local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_124 = param_3[1] * (float)local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 201,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_120 = (float)local_24 * param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_140.x = param_2->x + local_128;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 203,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_140.y = param_2->y + local_124;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 204,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_140.z = param_2->z + local_120;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 217,
+      "line": 151,
       "match": "*(CDemonActor **)(0x01E57284",
       "severity": "moderate",
-      "text": "this_ptr = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);",
+      "text": "this_ptr_00 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 218,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4->reflectivity = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 219,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4->stored_angle = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 220,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4->transparency = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 224,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr,&local_c8,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 246,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((((param_5 == 0) && (param_4->is_hero_weapon != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 246,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((((param_5 == 0) && (param_4->is_hero_weapon != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 251,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->color).g = 0xff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 252,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->color).b = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 253,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_4->color).r = 0xff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 255,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_ec = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 270,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar6 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 270,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar6 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 270,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar6 = local_e4 * param_3[2] + local_ec * *param_3 + local_e8 * param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 284,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4->incidence_angle = local_2c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 285,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(*((this_ptr->vtable)._ub)->getSurfaceProperties)(this_ptr,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 288,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4->is_damaging != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 289,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_28 = param_4->intensity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 291,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0.0 < param_4->transparency) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_30 = (local_a4.z * param_3[2] + local_a4.x * *param_3 + local_a4.y * param_3[1]) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_30 = (local_a4.z * param_3[2] + local_a4.x * *param_3 + local_a4.y * param_3[1]) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_30 = (local_a4.z * param_3[2] + local_a4.x * *param_3 + local_a4.y * param_3[1]) *",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 293,
+      "line": 228,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "5.3049894774131808e-315._0_4_;",
+      "text": "local_a4.x * direction->x + local_a4.y * direction->y) * 5.3049894774131808e-315._0_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 297,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_bc = local_d4 - *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 298,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_b8 = local_d0 - param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 300,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_b4 = local_cc - param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 308,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar6 = param_4->beam_width;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 309,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar3 = param_4->laser_type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 310,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar7 = (param_4->color).r;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 311,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar8 = (param_4->color).g;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 312,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar9 = (param_4->color).b;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 313,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar10 = param_4->is_hero_weapon;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 314,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar11 = param_4->is_damaging;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 328,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar21 = param_4->incidence_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 329,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar22 = param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 330,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar23 = param_4->stored_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 331,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar24 = param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 332,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar5 = param_4->intensity * param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 332,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fVar5 = param_4->intensity * param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 335,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_23c = param_4->intensity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 336,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_238 = param_4->beam_width;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 337,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_234 = param_4->laser_type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 338,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_230 = (param_4->color).r;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 339,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_22c = (param_4->color).g;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 340,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_228 = (param_4->color).b;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 341,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_224 = param_4->is_hero_weapon;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 342,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_220 = param_4->is_damaging;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 352,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1f8 = param_4->incidence_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 353,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1f4 = param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 354,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1f0 = param_4->stored_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 355,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1ec = param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 357,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_134,&local_bc,&local_23c,local_54,fVar5,fVar6,iVar3,iVar7,iVar8,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 361,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_28 = (1.0 - param_4->transparency) * (float)0.25 * local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 363,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4->reflectivity <= 0.0) goto LAB_0048bfa9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((param_4->reflectivity != 1.0) || (param_4->stored_angle != param_4->incidence_angle))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((param_4->reflectivity != 1.0) || (param_4->stored_angle != param_4->incidence_angle))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((param_4->reflectivity != 1.0) || (param_4->stored_angle != param_4->incidence_angle))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 368,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_104 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 369,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_100 = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 370,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_fc = param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 371,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_190 = param_4->beam_width;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 372,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_18c = param_4->laser_type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 373,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_188 = (param_4->color).r;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 374,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_184 = (param_4->color).g;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 375,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_180 = (param_4->color).b;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 376,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_17c = param_4->is_hero_weapon;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 377,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_178 = param_4->is_damaging;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 378,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_7c = &param_4->local_origin;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 380,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_78 = &(param_4->local_origin).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 382,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_74 = &(param_4->local_origin).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 384,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_168 = (param_4->local_hit_position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 385,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_64 = &(param_4->local_hit_position).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 387,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_70 = &(param_4->local_hit_position).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 389,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_6c = &param_4->local_normal;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 391,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_68 = &(param_4->local_normal).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 393,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_14 = &(param_4->local_normal).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 395,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_150 = param_4->incidence_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 396,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_14c = param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 397,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_148 = param_4->stored_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 398,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_144 = param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 399,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_194 = param_4->intensity * param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 399,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_194 = param_4->intensity * param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 402,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1e8 = param_4->intensity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 403,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1e4 = param_4->beam_width;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 404,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1e0 = param_4->laser_type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 405,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1dc = (param_4->color).r;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 406,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1d8 = (param_4->color).g;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 407,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1d4 = (param_4->color).b;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 408,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1d0 = param_4->is_hero_weapon;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 409,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1cc = param_4->is_damaging;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 413,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1bc = (param_4->local_hit_position).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 419,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1a4 = param_4->incidence_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 420,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1a0 = param_4->reflectivity;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 421,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_19c = param_4->stored_angle;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 422,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_198 = param_4->transparency;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 423,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_fire_cpp_FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 423,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_fire_cpp_FUN_0048b6f0(param_1,&local_134,&local_104,&local_1e8,param_5 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 424,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_28 = (1.0 - param_4->reflectivity) * (float)0.25 * local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 427,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_e0,&local_134,param_4->intensity,local_28,&local_a4,(param_4->color).r",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 427,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,&local_e0,&local_134,param_4->intensity,local_28,&local_a4,(param_4->color).r",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 427,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,&local_e0,&local_134,param_4->intensity,local_28,&local_a4,(param_4->color).r",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 428,
-      "match": "param_4",
-      "severity": "mild",
-      "text": ",(param_4->color).g,(param_4->color).b,param_4->beam_width);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 428,
-      "match": "param_4",
-      "severity": "mild",
-      "text": ",(param_4->color).g,(param_4->color).b,param_4->beam_width);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 428,
-      "match": "param_4",
-      "severity": "mild",
-      "text": ",(param_4->color).g,(param_4->color).b,param_4->beam_width);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 180,
+      "line": 114,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_a4.x = local_110.x;",
@@ -2563,7 +1509,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 206,
+      "line": 140,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_134.x = local_140.x;",
@@ -2571,38 +1517,75 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 226,
+      "line": 160,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_20->x = pCVar1->x;",
+      "text": "local_20->x = pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 234,
+      "line": 168,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_1c->x = pCVar1->x;",
+      "text": "local_1c->x = pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_bc != &local_f8)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 303,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 176,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&local_bc != &local_f8) {",
-      "type": "self_copy_guard"
+      "text": "local_18->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 239,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_bc.x = local_f8.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 249,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.intensity = laser_info->intensity;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 266,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.incidence_angle = laser_info->incidence_angle;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 279,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_104.x = direction->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 313,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e8.intensity = laser_info->intensity;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 330,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e8.incidence_angle = laser_info->incidence_angle;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

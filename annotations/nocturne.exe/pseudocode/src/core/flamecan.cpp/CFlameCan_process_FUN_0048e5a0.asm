@@ -126,7 +126,7 @@ section .text
     PUSH EDI                            ; 0048e6ba
     FSTP float ptr [ESP + 0x3c]         ; 0048e6bb
     CALL core_fire.cpp_FUN_0048c0d0     ; 0048e6bf
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048c0d0()
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0048e6c4
     POP ESI                             ; 0048e6c7
     POP EDI                             ; 0048e6c8

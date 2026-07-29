@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_00540820(int param_1)
+; void core_stranger_cpp_FUN_00540820(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@ section .text
     PUSH EBX                            ; 00540825
     ADD EBX,0x150                       ; 00540826
     CALL core_hero.cpp_CHero_reset_FUN_004b5ec0 ; 0054082c
-        ;   XREF to: 004b5ec0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHero_reset_FUN_004b5ec0()
+        ;   XREF to: 004b5ec0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_reset_FUN_004b5ec0(CHero * this_ptr)
     MOV dword ptr [EBX + 0x1f940],0x0   ; 00540831
     ADD ESP,0x4                         ; 0054083b
     MOV dword ptr [EBX + 0x1f944],0x0   ; 0054083e

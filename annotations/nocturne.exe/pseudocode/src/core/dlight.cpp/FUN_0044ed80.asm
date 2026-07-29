@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_FUN_0044ed80(int param_1,int param_2,int param_3,int param_4)
+; void core_dlight_cpp_FUN_0044ed80(char *param_1,int param_2,int param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -242,7 +242,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x40]      ; 0044ef96
     PUSH EDI                            ; 0044ef9a
     CALL engine_2d.c_FUN_00402d30       ; 0044ef9b
-        ;   XREF to: 00402d30 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00402d30()
+        ;   XREF to: 00402d30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402d30(int left_x, int right_x, int y, char * text)
     ADD ESP,0x10                        ; 0044efa0
     ADD ESP,0x1c                        ; 0044efa3
     POP EBP                             ; 0044efa6

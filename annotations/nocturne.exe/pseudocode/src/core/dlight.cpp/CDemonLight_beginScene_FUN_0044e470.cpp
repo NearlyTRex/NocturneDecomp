@@ -22,7 +22,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
     core_main_c_FUN_004c8440("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;
-  core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(this_ptr,skip_clear_buffers);
+  core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(&this_ptr->base,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (DAT_005ae704,0,0,this_ptr->shadow_map_width + -1,this_ptr->shadow_map_height + -1);
   (this_ptr->base).viewport_rect.y_min = this_ptr->shadow_map_width + -1;

@@ -16,7 +16,7 @@ uint engine_special_cpp_FUN_00530e60(void)
   CExternalRenderer CStack_3b98;
   CExternalRenderer CStack_1dd0;
   
-  _DAT_02dc9e08 = (HMODULE)wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);
+  _DAT_02dc9e08 = wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);
   if (_DAT_02dc9e08 == (HMODULE)0x0) {
     INT_02dc9d60 = (int)_DAT_02dc9e08;
     return 0;

@@ -72,7 +72,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 00427b30 | DAT_005b80f0
     PUSH EDX                            ; 00427b36
     CALL core_fire.cpp_FUN_0048c0d0     ; 00427b37
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048c0d0()
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 00427b3c
     PUSH 0x0                            ; 00427b3f
     MOV ECX,dword ptr [ESP + 0x4c]      ; 00427b41

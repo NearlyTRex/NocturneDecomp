@@ -1,69 +1,77 @@
 // Name: sound_sndmain.cpp_formatSfxOptionsToString_FUN_00526410
 // Address: 00526410
 // Address Range: [[00526410, 00526596]]
-// Convention: unknown
-// Signature: void sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(undefined1 *param_1,int param_2,undefined4 *param_3,byte param_4)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(byte *param_1,int param_2,uint *param_3,byte param_4)
+void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 
 {
   int iVar1;
   
-  if (param_2 == 0) {
-    *param_1 = 0;
+  if (prefix_string == (char *)0x0) {
+    *output_buffer = '\0';
   }
   else {
-    iVar1 = _sprintf(param_1,"%s",param_2);
-    param_1 = param_1 + iVar1;
+    iVar1 = _sprintf(output_buffer,"%s",prefix_string);
+    output_buffer = output_buffer + iVar1;
   }
-  if ((param_4 & 1) != 0) {
-    iVar1 = _sprintf(param_1," channel=%d%s",*param_3);
-    param_1 = param_1 + iVar1;
+  if ((format_flags & 1) != 0) {
+    iVar1 = _sprintf(output_buffer," channel=%d%s",options->channel_index);
+    output_buffer = output_buffer + iVar1;
   }
-  if ((param_4 & 2) != 0) {
-    if (param_3[8] == 0) {
-      iVar1 = _sprintf(param_1," pos=%lg,%lg,%lg",param_3[1],param_3[2],param_3[3],param_3[4]
-                         ,param_3[5],param_3[6]);
-      param_1 = param_1 + iVar1;
+  if ((format_flags & 2) != 0) {
+    if (options->position_format == 0) {
+      iVar1 = _sprintf(output_buffer," pos=%lg,%lg,%lg",*(uint *)&(options->position).x
+                         ,*(uint *)((int)&(options->position).x + 4),
+                         *(uint *)&(options->position).y,
+                         *(uint *)((int)&(options->position).y + 4),
+                         *(uint *)&(options->position).z,
+                         *(uint *)((int)&(options->position).z + 4));
+      output_buffer = output_buffer + iVar1;
     }
-    if (param_3[8] == 1) {
-      iVar1 = _sprintf(param_1," posPtrFloat=%p",param_3[7]);
-      param_1 = param_1 + iVar1;
+    if (options->position_format == 1) {
+      iVar1 = _sprintf(output_buffer," posPtrFloat=%p",options->position_source_ptr);
+      output_buffer = output_buffer + iVar1;
     }
-    if (param_3[8] == 2) {
-      iVar1 = _sprintf(param_1," posPtrDouble=%p",param_3[7]);
-      param_1 = param_1 + iVar1;
-    }
-  }
-  if ((param_4 & 4) != 0) {
-    if (param_3[0x10] == 0) {
-      iVar1 = _sprintf(param_1," vel=%lg,%lg,%lg",param_3[9],param_3[10],param_3[0xb],
-                         param_3[0xc],param_3[0xd],param_3[0xe]);
-      param_1 = param_1 + iVar1;
-    }
-    if (param_3[0x10] == 1) {
-      iVar1 = _sprintf(param_1," velPtrFloat=%p",param_3[0xf]);
-      param_1 = param_1 + iVar1;
-    }
-    if (param_3[0x10] == 2) {
-      iVar1 = _sprintf(param_1," velPtrDouble=%p",param_3[0xf]);
-      param_1 = param_1 + iVar1;
+    if (options->position_format == 2) {
+      iVar1 = _sprintf(output_buffer," posPtrDouble=%p",options->position_source_ptr);
+      output_buffer = output_buffer + iVar1;
     }
   }
-  if ((param_4 & 8) != 0) {
-    iVar1 = _sprintf(param_1," vol=%g",(double)(float)param_3[0x11]);
-    param_1 = param_1 + iVar1;
+  if ((format_flags & 4) != 0) {
+    if (options->velocity_format == 0) {
+      iVar1 = _sprintf(output_buffer," vel=%lg,%lg,%lg",*(uint *)&(options->velocity).x
+                         ,*(uint *)((int)&(options->velocity).x + 4),
+                         *(uint *)&(options->velocity).y,
+                         *(uint *)((int)&(options->velocity).y + 4),
+                         *(uint *)&(options->velocity).z,
+                         *(uint *)((int)&(options->velocity).z + 4));
+      output_buffer = output_buffer + iVar1;
+    }
+    if (options->velocity_format == 1) {
+      iVar1 = _sprintf(output_buffer," velPtrFloat=%p",options->velocity_source_ptr);
+      output_buffer = output_buffer + iVar1;
+    }
+    if (options->velocity_format == 2) {
+      iVar1 = _sprintf(output_buffer," velPtrDouble=%p",options->velocity_source_ptr);
+      output_buffer = output_buffer + iVar1;
+    }
   }
-  if ((param_4 & 0x10) != 0) {
-    iVar1 = _sprintf(param_1," freq=%g",(double)(float)param_3[0x12])
-    ;
-    param_1 = param_1 + iVar1;
+  if ((format_flags & 8) != 0) {
+    iVar1 = _sprintf(output_buffer," vol=%g",(double)options->current_volume);
+    output_buffer = output_buffer + iVar1;
   }
-  if ((param_4 & 0x20) == 0) {
+  if ((format_flags & 0x10) != 0) {
+    iVar1 = _sprintf(output_buffer," freq=%g",(double)options->base_frequency);
+    output_buffer = output_buffer + iVar1;
+  }
+  if ((format_flags & 0x20) == 0) {
     return;
   }
-  _sprintf(param_1," delay=%lg",param_3[0x13],param_3[0x14]);
+  _sprintf(output_buffer," delay=%lg",*(uint *)&options->delay_remaining,
+             *(uint *)((int)&options->delay_remaining + 4));
   return;
 }

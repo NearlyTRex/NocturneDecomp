@@ -2,15 +2,15 @@
 // Address: 004f5d90
 // Address Range: [[004f5d90, 004f5f52]]
 // Convention: unknown
-// Signature: CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(undefined4 param_1)
+// Signature: CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(uint param_1)
+CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(CDemonActor *param_1)
 
 {
   CCourse *pCVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   CCourse *pCVar4;
   CCourseFrame **ppCVar5;
@@ -24,12 +24,12 @@ CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(uint param_1)
   CCourseFrame **ppCVar6;
   
   bVar11 = 0;
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
+  pCVar2 = core_actor_cpp_FUN_00409d30(param_1);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_course_cpp_CCourse_ctor_FUN_0043b5d0
                      ((CCourse *)(pCVar3[1].part_visibility_flags + 0xf));
-  pCVar4[-0x25].len = (int)&PTR_core_platfrm_cpp_FUN_004f5f60_005a1384;
+  pCVar4[-0x25].len = (int)&g_CPlatformVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)&pCVar4[-0x25].frames,"slider1.kfm");
   *(byte *)&pCVar4[5].loop = 0;

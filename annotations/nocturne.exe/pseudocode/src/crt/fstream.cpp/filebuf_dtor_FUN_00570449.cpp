@@ -12,8 +12,7 @@ filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_00570449(filebuf *this
   void *ptr;
   
   if ((flags & 4) == 0) {
-    this_ptr->__vtable =
-         (filebuf_vtable *)&PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4b0c;
+    this_ptr->__vtable = &g_FilebufVTable;
     if (this_ptr->__file_handle != -1) {
       if ((this_ptr->_streambuf).__put_ptr != (this_ptr->_streambuf).__put_base) {
         crt_fstream_cpp_filebuf_sync_FUN_005723ae(this_ptr);

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_005797f9
-;   undefined1* PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_0059aad4 = 0041e430
+;   CDemonActor_vtable g_CBoxActorVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0041e301
     PUSH EBX                            ; 0041e305
     CALL core_actor.cpp_FUN_00409d30    ; 0041e306
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041e30b
     ADD EAX,0x150                       ; 0041e30e
     PUSH EAX                            ; 0041e313
@@ -42,7 +42,7 @@ section .text
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 0041e322
         ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     LEA EBX,[EAX + 0xfffffc74]          ; 0041e327
-    MOV dword ptr [EBX + 0x14c],0x59aad4 ; 0041e32d | PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_0059aad4
+    MOV dword ptr [EBX + 0x14c],0x59aad4 ; 0041e32d | g_CBoxActorVTable
     MOV dword ptr [EBX + 0x388],0x0     ; 0041e337
     MOV dword ptr [EBX + 0x304],0x41a00000 ; 0041e341
     LEA EAX,[EBX + 0x2f8]               ; 0041e34b

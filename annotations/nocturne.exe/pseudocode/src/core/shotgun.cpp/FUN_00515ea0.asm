@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shotgun_cpp_FUN_00515ea0(CWeapon *param_1)
+; undefined4 core_shotgun_cpp_FUN_00515ea0(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x8c]:1  local_8c
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00515f34
     PUSH 0x0                            ; 00515f39
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00515f3b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x118],EAX     ; 00515f40
     FLD float ptr [ESP + 0x118]         ; 00515f47
     ADD ESP,0x8                         ; 00515f4e
@@ -105,7 +105,7 @@ section .text
     PUSH 0x0                            ; 00515f58
     FSTP float ptr [ESP + 0xe8]         ; 00515f5a
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00515f61
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x118],EAX     ; 00515f66
     FLD float ptr [ESP + 0x118]         ; 00515f6d
     ADD ESP,0x8                         ; 00515f74
@@ -128,7 +128,7 @@ section .text
     PUSH EAX                            ; 00515fb5
     PUSH EBX                            ; 00515fb6
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00515fb7
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 00515fbc
     LEA EAX,[ESP + 0xcc]                ; 00515fbe
     ADD ESP,0xc                         ; 00515fc5
@@ -217,7 +217,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00516117 | DAT_005be368
     PUSH EDX                            ; 0051611d | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0051611e
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x11c],EAX     ; 00516123
     FLD float ptr [ESP + 0x11c]         ; 0051612a
     ADD ESP,0xc                         ; 00516131
@@ -555,7 +555,7 @@ section .text
     PUSH ECX                            ; 0051656c
         ;   Label: LAB_0051656c
     CALL core_glass.cpp_FUN_004aded0    ; 0051656d
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00516572
     TEST EAX,EAX                        ; 00516575
     JZ 0x0051614b                       ; 00516577

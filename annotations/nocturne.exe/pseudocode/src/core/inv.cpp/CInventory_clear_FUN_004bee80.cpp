@@ -27,7 +27,7 @@ void __cdecl core_inv_cpp_CInventory_clear_FUN_004bee80(CInventory *this_ptr)
   if (this_ptr_00 == (CAmmo *)0x0) {
     return;
   }
-  (*((this_ptr_00->base).vtable._ub)->onAreaDeleted)(&this_ptr_00->base,2);
+  (*((this_ptr_00->base).vtable._ub)->dtor)(&this_ptr_00->base,2);
   this_ptr->ammo_ptr = (CAmmo *)0x0;
   return;
 }

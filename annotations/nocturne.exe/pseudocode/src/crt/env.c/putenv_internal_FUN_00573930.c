@@ -22,12 +22,12 @@ int __cdecl putenv_internal(char *envstr)
   LPCSTR pCVar8;
   char *pcVar9;
   byte bVar10;
-  int iVar11;
+  uint uVar11;
   LPCSTR pCStack_18;
   
   bVar10 = 0;
-  iVar11 = 2;
-  pcVar1 = (char *)char_in_set(envstr,0x3d,1,2);
+  uVar11 = 1;
+  pcVar1 = char_in_set(envstr,L'=');
   if (pcVar1 == (char *)0x0) {
     iVar2 = -1;
   }
@@ -53,7 +53,7 @@ int __cdecl putenv_internal(char *envstr)
       pCVar8 = pCVar8 + (uint)bVar10 * -2 + 1;
     }
     lpName[uVar3] = '\0';
-    uVar3 = FUN_00574000(pcVar1 + 1);
+    uVar3 = FUN_00574000(pcVar1 + 1,uVar11);
     if (uVar3 == 0) {
       pCStack_18 = (LPCSTR)0x0;
     }
@@ -95,8 +95,8 @@ int __cdecl putenv_internal(char *envstr)
         convertWindowsErrorToErrno(5);
         return -1;
       }
-      iVar11 = FUN_00574030(pvVar5,envstr,(iVar2 + 1) * iVar11);
-      if (iVar11 == -1) {
+      iVar2 = FUN_00574030(pvVar5,envstr,(iVar2 + 1) * 2);
+      if (iVar2 == -1) {
         FUN_005638d0(pvVar5);
         return -1;
       }

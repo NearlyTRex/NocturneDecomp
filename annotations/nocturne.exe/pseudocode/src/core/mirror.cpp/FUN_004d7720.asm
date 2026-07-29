@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2)
+; int __cdecl core_mirror_cpp_FUN_004d7720(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490 at 0050e4ac

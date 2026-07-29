@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
 
 {
@@ -22,20 +24,15 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
   CPathMap *path_map;
   float fVar9;
   SDamageInfo *damage_info;
-  CVector3f *in_stack_ffffff40;
   float fVar10;
-  float in_stack_ffffff4c;
-  float in_stack_ffffff50;
-  float in_stack_ffffff54;
+  SDamageInfo local_c0;
   CVector3f local_84;
   CVector3f local_78;
   CVector3f local_6c;
   float local_60;
   float local_5c;
   float local_58;
-  uint local_54;
-  uint local_50;
-  float local_4c;
+  CVector3f local_54;
   float local_48;
   float local_44;
   float local_40;
@@ -43,9 +40,9 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
   CVector3f local_30;
   float local_1c;
   float local_18;
-  uint local_14;
+  float local_14;
   
-  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  iVar3 = core_charactr_cpp_FUN_004259f0(&param_1->base,param_2);
   if (iVar3 == 0) {
     return;
   }
@@ -67,14 +64,13 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&this_ptr->motion_controller);
   iVar3 = pSVar4->state_index;
-  iVar5 = core_charactr_cpp_FUN_00428c00(param_1,param_2);
+  iVar5 = core_charactr_cpp_FUN_00428c00(&param_1->base,param_2);
   if (iVar5 == 0) {
     switch(iVar3) {
     case 0:
       iVar3 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
       if (iVar3 == 0) {
-        (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
-                  (&param_1->base,(int)param_2,in_stack_ffffff40);
+        (*(((param_1->base).base.vtable._ue)->_ue).updateVictim)(param_1,param_2);
         if (param_1->victim != (CCharacter *)0x0) {
           iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
                             (0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));
@@ -93,8 +89,7 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
       }
       break;
     case 1:
-      (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
-                (&param_1->base,(int)param_2,in_stack_ffffff40);
+      (*(((param_1->base).base.vtable._ue)->_ue).updateVictim)(param_1,param_2);
       fVar9 = 4.5f;
       if (param_1->victim == (CCharacter *)0x0) {
         iVar3 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
@@ -110,17 +105,19 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
              (param_1->base).model.accumulated_root_motion.z;
         (param_1->base).model.accumulated_root_motion.x =
              (param_1->base).model.accumulated_root_motion.y;
-        local_54 = 0;
-        local_50 = 0;
+        local_54.x = 0.0;
+        local_54.y = 0.0;
         fVar10 = 0.17453292;
-        local_4c = fVar9;
-        pCVar7 = (CVector3f *)0x3f000000;
+        local_54.z = fVar9;
+        pCVar7 = &local_54;
+        fVar9 = 0.5;
         path_map = (*((param_1->victim->base).vtable._ub)->getPathMap)(&param_1->victim->base);
         iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
                           (&param_1->base,&(param_1->victim->base).location.position,path_map,pCVar7
-                           ,fVar10,in_stack_ffffff4c);
+                           ,fVar9,fVar10);
         if (iVar3 < 0) {
-          engine_console_cpp_CConsole_printf_FUN_0043ac60();
+          engine_console_cpp_CConsole_printf_FUN_0043ac60
+                    (PTR_DAT_005ad350,"%s gave up chase - I'm confused\n",param_1);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&this_ptr->motion_controller,0,1);
         }
@@ -132,15 +129,17 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
       }
       break;
     case 2:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff40);
-      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40e00000,0x41700000);
-      damage_info = (SDamageInfo *)&stack0xffffff40;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_c0);
+      local_c0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
+      local_c0.attacker = (CDemonActor *)param_1;
+      local_c0.wielder = (CDemonActor *)param_1;
+      damage_info = &local_c0;
       fVar9 = 0.7;
+      local_14 = local_c0.damage_amount;
       pCVar7 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_3c,(CVector3f *)&DAT_02dd1184,
-                          (CMatrix3x4f *)
-                          (param_1->base).model.bone_transform.bone_world_matrices
-                          [*(int *)(param_1[1].base.base.actor_name + 4)].m);
+                          (param_1->base).model.bone_transform.bone_world_matrices +
+                          *(int *)(param_1[1].base.base.actor_name + 4));
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)param_1,&local_30,pCVar7);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(param_1,pCVar7,fVar9,damage_info);
@@ -189,10 +188,8 @@ switchD_0043c2cd_caseD_3:
   if (iVar3 != 0) {
     this_ptr_00 = param_1->victim;
     if ((this_ptr_00 != (CCharacter *)0x0) &&
-       (pCVar6 = (CEnemy *)
-                 (*(((this_ptr_00->base).vtable._uc)->_uc).applyDamage)
-                           (this_ptr_00,(int)in_stack_ffffff50,in_stack_ffffff54), pCVar6 == param_1
-       )) {
+       (pCVar6 = (CEnemy *)(*(((this_ptr_00->base).vtable._uc)->_uc).getGrabber)(this_ptr_00),
+       pCVar6 == param_1)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->victim->base);
     }
     (param_1->base).velocity.y = (param_1->base).velocity.y - param_2 * (float)32;
@@ -218,6 +215,6 @@ switchD_0043c2cd_caseD_3:
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(&param_1->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(&(param_1->base).model);
-  core_charactr_cpp_FUN_0042a150();
+  core_charactr_cpp_FUN_0042a150(&param_1->base,param_2);
   return;
 }

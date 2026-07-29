@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CDemonActor *param_1)
+; void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xe8]:4  local_e8
@@ -124,7 +124,7 @@ section .text
     MOV dword ptr [EBP + 0x72],ECX      ; 005547b7
     MOV dword ptr [EBP + 0x76],ECX      ; 005547ba
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 005547bd
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005547c2
     MOV EDI,dword ptr [0x005be368]      ; 005547c5 | DAT_005be368
     PUSH EDI                            ; 005547cb | DAT_01e57284
@@ -152,7 +152,7 @@ section .text
     PUSH EAX                            ; 00554800
     MOV EDI,0x1                         ; 00554801
     CALL core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0 ; 00554806
-        ;   XREF to: 0048b6b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0()
+        ;   XREF to: 0048b6b0 (UNCONDITIONAL_CALL)  ; SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo * this_ptr)
     MOV dword ptr [EBP + 0x2],EDI       ; 0055480b
     MOV EAX,dword ptr [EBX + 0x2ec]     ; 0055480e
     MOV dword ptr [EBP + 0x6],EAX       ; 00554814
@@ -226,7 +226,7 @@ section .text
     MOV dword ptr [EBP + 0x12],EBX      ; 005548df
     MOV dword ptr [EBP + -0x42],EBX     ; 005548e2
     CALL core_fire.cpp_FUN_0048b6f0     ; 005548e5
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 005548ea
     MOV EDX,dword ptr [0x005be368]      ; 005548ed | DAT_005be368
     PUSH EDX                            ; 005548f3 | DAT_01e57284

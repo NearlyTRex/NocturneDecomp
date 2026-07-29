@@ -16,7 +16,7 @@ int FUN_00574030(wchar_t *param_1,char *param_2,int param_3)
   if (param_1 == (wchar_t *)0x0) {
     while ((iVar1 = iVar2, *param_2 != '\0' &&
            (iVar1 = mbtowc((wchar_t *)0x0,param_2,2), iVar1 != -1))) {
-      param_2 = (char *)mbtowc_next(param_2);
+      param_2 = mbtowc_next(param_2);
       iVar2 = iVar2 + 1;
     }
   }
@@ -30,7 +30,7 @@ int FUN_00574030(wchar_t *param_1,char *param_2,int param_3)
       if (iVar1 == -1) {
         return -1;
       }
-      param_2 = (char *)mbtowc_next(param_2);
+      param_2 = mbtowc_next(param_2);
       param_1 = param_1 + 1;
       iVar2 = iVar2 + 1;
     }

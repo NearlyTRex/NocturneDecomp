@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_baron_cpp_CBaronWeapon_dtor_FUN_00411610(CWeapon *param_1,byte param_2)
+; CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_00411610(CBaronWeapon *this_ptr,uint flags)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBaronWeaponTypeInfo_00599d10

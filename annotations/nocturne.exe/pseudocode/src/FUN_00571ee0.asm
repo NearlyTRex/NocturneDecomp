@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00571ee0(ulong param_1)
+; void * __watcallStack FUN_00571ee0(uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[1]:
 ;   crt_iostream.cpp_doallocate_FUN_00571dc7 at 00571dcc

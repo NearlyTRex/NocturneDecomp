@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_00568dcd
     MOV dword ptr [EBX],EAX             ; 00568dce
     CALL crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0 ; 00568dd0
-        ;   XREF to: 00568ce0 (UNCONDITIONAL_CALL)  ; undefined crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0()
+        ;   XREF to: 00568ce0 (UNCONDITIONAL_CALL)  ; HeapBlock * crt_heap.c_InsertHeapBlockInOrder_FUN_00568ce0(HeapBlock * new_block)
     MOV EDX,EAX                         ; 00568dd5
     ADD ESP,0x4                         ; 00568dd7
     MOV EAX,dword ptr [EAX]             ; 00568dda

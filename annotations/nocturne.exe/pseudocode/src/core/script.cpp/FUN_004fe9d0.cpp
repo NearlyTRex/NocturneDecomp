@@ -1,12 +1,12 @@
 // Name: core_script.cpp_FUN_004fe9d0
 // Address: 004fe9d0
 // Address Range: [[004fe9d0, 004febc6]]
-// Convention: unknown
-// Signature: void core_script_cpp_FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom)
 
 #include "nocturne.h"
 
-void core_script_cpp_FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl core_script_cpp_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom)
 
 {
   char *text;
@@ -21,36 +21,37 @@ void core_script_cpp_FUN_004fe9d0(int param_1,int param_2,int param_3,int param_
   int local_18;
   CStrList *local_14;
   
-  iVar1 = (param_5 - param_3) + 1;
+  iVar1 = (bottom - top) + 1;
   cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480
-            (&local_40,param_2,param_3,(param_4 - param_2) + 1,iVar1,(CDrawSurface *)0x0);
+            (&local_40,left,top,(right - left) + 1,iVar1,(CDrawSurface *)0x0);
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_0045b5f0(0);
   cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0(&local_40);
   cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0((CBitFont *)0x0);
-  if (*(int *)(param_1 + 0x28) < 1) {
+  if (this_ptr->xref_count < 1) {
     cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_0045b5f0(0xf9);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260
               (&local_40,"(No script loaded.)");
   }
   else {
     local_1c = cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320(&local_40);
-    local_20 = *(int *)(*(int *)(param_1 + 0x2c) + *(int *)(param_1 + 0x40) * 8) + -1;
+    local_20 = *(int *)(this_ptr->xref_entries->name + (int)(this_ptr->script_text).data_array * 8)
+               + -1;
     index = local_20 - (iVar1 / local_1c) / 2;
     if (index < 0) {
       index = 0;
     }
     y = 2;
-    local_14 = (CStrList *)(param_1 + 0x30);
+    local_14 = (CStrList *)&this_ptr->parsed_line_count;
     local_18 = iVar1 - local_1c;
     if (2 < local_18) {
       do {
         iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(local_14);
         if (iVar1 <= index) break;
         if (index == local_20) {
-          if (*(int *)(param_1 + 0x18) == 0) {
+          if (this_ptr->script_state == 0) {
             iVar1 = 0xfa;
           }
-          else if (*(int *)(param_1 + 0x18) == 1) {
+          else if (this_ptr->script_state == 1) {
             iVar1 = 0xfb;
           }
           else {

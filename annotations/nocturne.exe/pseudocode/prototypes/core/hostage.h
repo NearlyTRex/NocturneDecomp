@@ -37,11 +37,11 @@ int __cdecl CHostage::processGrabberFlee(CHostage *this_ptr,float delta_time);
 
 // Original: core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0
 // Address: 004b82d0
-void CHostage::renderBackground(char *param_1,int param_2);
+void CHostage::renderBackground(CNPC *param_1,int param_2);
 
 // Original: core_hostage.cpp_CHostage_archive_FUN_004b8320
 // Address: 004b8320
-void CHostage::archive(int param_1);
+void CHostage::archive(CNPC *param_1);
 
 // Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004b8540
 // Address: 004b8540
@@ -57,7 +57,7 @@ undefined4 CHostage::getGrabbed(int param_1,undefined4 param_2,int param_3);
 
 // Original: core_hostage.cpp_FUN_004b8600
 // Address: 004b8600
-void FUN_004b8600(int param_1,int param_2);
+void FUN_004b8600(CNPC *param_1,SDamageInfo *param_2);
 
 // Original: core_hostage.cpp_FUN_004b8700
 // Address: 004b8700
@@ -65,4 +65,4 @@ void FUN_004b8700(int param_1,int param_2);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004b8b70
 // Address: 004b8b70
-CDemonActor * CHostage::dtor(CDemonActor *param_1,byte param_2);
+CHostage * __cdecl CHostage::dtor(CHostage *this_ptr,uint flags);

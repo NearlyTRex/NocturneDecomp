@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_event_cpp_setEventError_FUN_0047a1e0(void)
+; int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   source_file
+; int              Stack[0x8]:4   source_line
+; char *           Stack[0xc]:4   error_message
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c08b60

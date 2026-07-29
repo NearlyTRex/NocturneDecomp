@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 1244,
+    "complexity_score": 698,
     "cross_reference_count": 6,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 134,
-    "suspect_count": 108,
+    "pseudocode_lines": 138,
+    "suspect_count": 54,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param",
-      "stack_ref",
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 395
+    "total_lines": 399
   },
   "cross_references": [
     {
@@ -185,9 +183,9 @@
         "0040950d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_3d.c_clipAndDrawLine2D_FUN_00409290",
-    "signature": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5)"
+    "signature": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1,SRenderVertex vertex2)"
   },
   "function_calls": [
     {
@@ -278,13 +276,10 @@
         "call_addr": "004058f6",
         "call_type": "direct",
         "caller": "engine_3d.c_drawLineStrip2D_FUN_00405870",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -292,13 +287,10 @@
         "call_addr": "00473380",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -306,13 +298,10 @@
         "call_addr": "004734c0",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -320,13 +309,10 @@
         "call_addr": "004735f7",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -334,13 +320,10 @@
         "call_addr": "00472e8e",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -348,13 +331,10 @@
         "call_addr": "00472ed9",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -362,14 +342,10 @@
         "call_addr": "00472f2e",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0",
-        "estimated_params": 27,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -377,14 +353,10 @@
         "call_addr": "00409275",
         "call_type": "direct",
         "caller": "engine_3d.c_FUN_00409210",
-        "estimated_params": 27,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -392,13 +364,10 @@
         "call_addr": "00473180",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_00473080",
-        "estimated_params": 26,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       },
@@ -406,24 +375,19 @@
         "call_addr": "00519054",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60",
-        "estimated_params": 28,
+        "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 96,
         "stack_params": 24
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 26,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 96,
+    "estimated_params": 24,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.252336448598131,
@@ -460,10 +424,10 @@
     "pcode_op_count": 1124
   },
   "stack_frame": {
-    "frame_size": 68,
+    "frame_size": 164,
     "local_size": 68,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 96,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -472,779 +436,187 @@
         "offset": -64,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 4,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 52,
+        "size": 48,
+        "type": "SRenderVertex"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "clipAndDrawLine2D_FUN_00409290.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 24,
-          "message": "Uninitialized variable: in_stack_00000044",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 28,
-          "message": "Uninitialized variable: in_stack_0000003c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 28,
-          "message": "Uninitialized variable: in_stack_00000034",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 49,
-          "message": "Uninitialized variable: in_stack_00000038",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000034",
-      "severity": "moderate",
-      "text": "int in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "int in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "int in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000044",
-      "severity": "moderate",
-      "text": "uint in_stack_00000044;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000044",
-      "severity": "moderate",
-      "text": "if (((param_5 & in_stack_00000044 & 0x80000000) == 0) ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (((param_5 & in_stack_00000044 & 0x80000000) == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000044",
-      "severity": "moderate",
-      "text": "((char)(param_5 & in_stack_00000044) == '\\0')) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "((char)(param_5 & in_stack_00000044) == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000003c < in_stack_00000034) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000034",
-      "severity": "moderate",
-      "text": "if (in_stack_0000003c < in_stack_00000034) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0x00000034",
-      "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&param_1,&stack0x00000034,local_40);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&param_1,&stack0x00000034,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "puVar4 = &stack0x00000034;",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000034",
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
-      "type": "stack_param"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000034",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0x00000034",
-      "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&param_1,&stack0x00000034,local_40)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&param_1,&stack0x00000034,local_40)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 35,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "puVar4 = &stack0x00000034;",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000003c",
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "if (in_stack_0000003c < in_stack_00000038) {",
-      "type": "stack_param"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000038",
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "if (in_stack_0000003c < in_stack_00000038) {",
-      "type": "stack_param"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0x00000034",
-      "severity": "moderate",
-      "text": "(&param_1,&stack0x00000034,local_40);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1,&stack0x00000034,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "puVar4 = &stack0x00000034;",
-      "type": "stack_ref"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0x00000034",
-      "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&param_1,&stack0x00000034,local_40);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&param_1,&stack0x00000034,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 56,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "puVar4 = &stack0x00000034;",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_3 < param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0x00000034",
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&stack0x00000034,&param_1,local_40);",
-      "type": "stack_ref"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(&stack0x00000034,&param_1,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&stack0x00000034,&param_1,local_40)",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_00431630(&stack0x00000034,&param_1,local_40)",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(SRenderVertex *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_3 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "(&stack0x00000034,&param_1,local_40);",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&stack0x00000034,&param_1,local_40);",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(SRenderVertex *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(SRenderVertex *)((int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 96,
-      "match": "&stack0x00000034",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&stack0x00000034,&param_1,local_40);",
-      "type": "stack_ref"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_00431830(&stack0x00000034,&param_1,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 <= param_3)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_2 <= param_3)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000034",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "stack_param"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_0000003c",
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(SRenderVertex *)((int)pSVar4",
       "severity": "moderate",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000034",
-      "severity": "moderate",
-      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000034",
-      "severity": "moderate",
-      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "((in_stack_00000038 <= in_stack_0000003c &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "((in_stack_00000038 <= in_stack_0000003c &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000038",
-      "severity": "moderate",
-      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": ") && ((0 < param_3 && (0 < in_stack_0000003c)))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_3",
-      "severity": "mild",
-      "text": ") && ((0 < param_3 && (0 < in_stack_0000003c)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar3 = &param_1;",
-      "type": "unnamed_param"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 119,
       "match": "DAT_006af5b4",
       "severity": "mild",
-      "text": "puVar4 = &DAT_006af5b4;",
+      "text": "piVar5 = &DAT_006af5b4;",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0x00000034",
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(SRenderVertex *)((int)pSVar3",
       "severity": "moderate",
-      "text": "puVar3 = &stack0x00000034;",
-      "type": "stack_ref"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 126,
       "match": "DAT_006af5e4",
       "severity": "mild",
-      "text": "puVar4 = &DAT_006af5e4;",
+      "text": "piVar5 = &DAT_006af5e4;",
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(SRenderVertex *)((int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 135,
       "match": "DAT_006af5c4",
       "severity": "mild",
       "text": "(DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10",
@@ -1252,7 +624,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 135,
       "match": "DAT_006af5c8",
       "severity": "mild",
       "text": "(DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10",
@@ -1260,7 +632,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 135,
       "match": "DAT_006af5f4",
       "severity": "mild",
       "text": "(DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10",
@@ -1268,71 +640,159 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 135,
       "match": "DAT_006af5f8",
       "severity": "mild",
       "text": "(DAT_006af5c4 >> 0x10,DAT_006af5c8 >> 0x10,DAT_006af5f4 >> 0x10,DAT_006af5f8 >> 0x10",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 25,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar4",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar4",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar4",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 67,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar4",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 78,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar4",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 89,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 99,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 122,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -1340,7 +800,63 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 116,
+      "line": 33,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 64,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 75,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 85,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 96,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 120,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1348,7 +864,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 123,
+      "line": 127,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1369,49 +885,6 @@
       "severity": "moderate",
       "text": "// 004094c3: MOVSD.REP ES:EDI,ESI  ; DAT_006af5e4 | DAT_006af5e8",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 10,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 26,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:26",
-      "param_delta": 26,
-      "text": "Function declares 0 params but call sites push 26 (26 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000044",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((param_5 & in_stack_00000044 & 0x80000000) == 0) ||",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000003c",
-      "line": 28,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_0000003c < in_stack_00000034) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000034",
-      "line": 28,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_0000003c < in_stack_00000034) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000038",
-      "line": 49,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_0000003c < in_stack_00000038) {",
-      "type": "static_uninitvar"
     }
   ]
 }

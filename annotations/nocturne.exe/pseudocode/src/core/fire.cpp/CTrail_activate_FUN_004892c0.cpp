@@ -1,24 +1,24 @@
 // Name: core_fire.cpp_CTrail_activate_FUN_004892c0
 // Address: 004892c0
 // Address Range: [[004892c0, 00489304]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CTrail_activate_FUN_004892c0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CTrail_activate_FUN_004892c0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 
 #include "nocturne.h"
 
-void core_fire_cpp_CTrail_activate_FUN_004892c0(uint *param_1,uint *param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+void __cdecl core_fire_cpp_CTrail_activate_FUN_004892c0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 
 {
-  if (param_1 != param_2) {
-    *param_1 = *param_2;
-    param_1[1] = param_2[1];
-    param_1[2] = param_2[2];
+  if (this_ptr != (CTrail *)position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  param_1[3] = param_3;
-  param_1[5] = param_4;
-  param_1[4] = param_5;
-  param_1[6] = param_5;
-  param_1[7] = param_4;
-  param_1[8] = param_6;
+  this_ptr->size = size;
+  this_ptr->current_alpha = alpha;
+  this_ptr->lifetime = lifetime;
+  this_ptr->initial_lifetime = lifetime;
+  this_ptr->initial_alpha = alpha;
+  this_ptr->texture_ptr = texture_ptr;
   return;
 }

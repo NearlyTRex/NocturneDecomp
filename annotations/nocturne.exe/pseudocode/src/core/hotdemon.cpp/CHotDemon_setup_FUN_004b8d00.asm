@@ -49,7 +49,7 @@ section .text
     PUSH EAX                            ; 004b8d23
         ;   Label: LAB_004b8d23
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b8d24
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004b8d29
     PUSH EDI                            ; 004b8d2c
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 004b8d2d

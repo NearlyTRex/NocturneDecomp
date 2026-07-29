@@ -43,7 +43,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(CStranger *
   CVector3f CStack_ac;
   CVector3f CStack_a0;
   CVector3f CStack_94;
-  byte auStack_88 [12];
+  CVector3f CStack_88;
   CVector3f CStack_7c;
   float fStack_70;
   float fStack_6c;
@@ -64,10 +64,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(CStranger *
   float local_14;
   
   if ((((0.0 < this_ptr->action_timer) || ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0)
-       ) || (local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                         (this_ptr,0), local_14 < (float)0.98999999999999999)) ||
-     (((local_14 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
-                                    (&(this_ptr->base).base.model,0), local_14 < 1.0 ||
+       ) || (local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+                                  ((CCharacter *)this_ptr,0), local_14 < (float)0.98999999999999999)) ||
+     (((local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                             (&(this_ptr->base).base.model.motion_controller,0), local_14 < 1.0 ||
        ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0)) ||
       ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0)))) {
     return 0;
@@ -151,9 +151,9 @@ LAB_0053b782:
             iVar5 != 4 ||
             ((core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(pCVar9,&CStack_a0,local_24),
              ABS(CStack_a0.x) <= 1.0 &&
-             (iVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                                (auStack_88,&CStack_a0),
-             ABS(*(float *)(iVar5 + 4)) <= (float)20)))))) {
+             (pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                                 (&CStack_88,&CStack_a0), ABS(pCVar7->y) <= (float)20))
+            )))) {
           CStack_4c.x = 0.0;
           CStack_4c.y = 3.0;
           CStack_4c.z = 2.0;

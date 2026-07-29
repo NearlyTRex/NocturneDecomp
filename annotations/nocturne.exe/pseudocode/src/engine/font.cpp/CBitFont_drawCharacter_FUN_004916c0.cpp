@@ -2,13 +2,13 @@
 // Address: 004916c0
 // Address Range: [[004916c0, 00492d99]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value)
 
 {
   ushort uVar1;
@@ -19,11 +19,11 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
   int iVar6;
   byte *puVar7;
   int iVar8;
-  int iVar9;
-  uint uVar10;
-  uint *puVar11;
-  ushort *puVar12;
+  uint uVar9;
+  uint *puVar10;
+  ushort *puVar11;
   uint (*color_table) [256];
+  int iVar12;
   byte *local_d4;
   int local_d0;
   int local_cc;
@@ -42,185 +42,187 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
   int local_2c;
   int local_28;
   
-  if ((param_2 < 0) || (0xff < param_2)) {
+  if ((character_code < 0) || (0xff < character_code)) {
     return 0;
   }
-  iVar2 = param_1->char_widths[param_2] + param_1->char_spacing;
-  if (param_1->char_positions[param_2] == (uchar *)0x0) {
+  iVar2 = this_ptr->char_widths[character_code] + this_ptr->char_spacing;
+  if (this_ptr->char_positions[character_code] == (uchar *)0x0) {
     return iVar2;
   }
-  if (param_6 != -1) {
+  if (color_value != -1) {
     engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0
-              (param_1,param_2,param_3 + param_1->shadow_offset_x,param_4 + param_1->shadow_offset_y
-               ,param_6,0xffffffff);
+              (this_ptr,character_code,x + this_ptr->shadow_offset_x,y + this_ptr->shadow_offset_y,
+               color_value,-1);
   }
-  local_d4 = param_1->char_positions[param_2];
-  param_4 = param_4 + param_1->char_y_offsets[param_2];
-  local_d0 = param_3 + param_1->char_widths[param_2] + -1;
-  local_cc = param_4 + -1 + param_1->char_heights[param_2];
-  local_c8 = param_1->char_bitmap_index[param_2];
-  iVar6 = param_1->bitmap_widths[local_c8];
-  if (param_1->rendering_ready == 0) {
-    if (param_3 < _DAT_01c00c58) {
+  local_d4 = this_ptr->char_positions[character_code];
+  y = y + this_ptr->char_y_offsets[character_code];
+  local_d0 = x + this_ptr->char_widths[character_code] + -1;
+  local_cc = y + -1 + this_ptr->char_heights[character_code];
+  local_c8 = this_ptr->char_bitmap_index[character_code];
+  iVar12 = this_ptr->bitmap_widths[local_c8];
+  if (this_ptr->rendering_ready == 0) {
+    if (x < _DAT_01c00c58) {
       return iVar2;
     }
-    if (param_4 < _DAT_01c00c5c) {
+    if (y < _DAT_01c00c5c) {
       return iVar2;
     }
-    if ((_DAT_01c00c60 + 1) - param_1->char_widths[param_2] < param_3) {
+    if ((_DAT_01c00c60 + 1) - this_ptr->char_widths[character_code] < x) {
       return iVar2;
     }
-    if ((_DAT_01c00c64 + 1) - param_1->char_heights[param_2] < param_4) {
+    if ((_DAT_01c00c64 + 1) - this_ptr->char_heights[character_code] < y) {
       return iVar2;
     }
   }
   else {
-    iVar8 = engine_font_cpp_clipCharacter_FUN_0048fd50
-                      ((int *)&local_d4,&param_3,&param_4,&local_d0,&local_cc,iVar6);
-    if (iVar8 != 0) {
+    iVar6 = engine_font_cpp_clipCharacter_FUN_0048fd50
+                      ((int *)&local_d4,&x,&y,&local_d0,&local_cc,iVar12);
+    if (iVar6 != 0) {
       return iVar2;
     }
   }
-  iVar8 = local_c8;
-  local_c4 = iVar6 - ((local_d0 - param_3) + 1);
-  if ((param_1->use_3d_rendering != 0) && (_DAT_01c02594 != 0)) {
+  iVar6 = local_c8;
+  local_c4 = iVar12 - ((local_d0 - x) + 1);
+  if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c02594 != 0)) {
     engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0
-              (param_1,param_2,param_3,param_4,local_d0,local_cc,param_5);
+              (this_ptr,character_code,x,y,local_d0,local_cc,color_mode);
     return iVar2;
   }
   if (DAT_005b7624 == 8) {
-    if (param_5 == -1) {
-      local_c0 = param_4;
-      if (param_4 <= local_cc) {
-        param_4 = param_4 * 4;
+    if (color_mode == -1) {
+      local_c0 = y;
+      if (y <= local_cc) {
+        iVar12 = y * 4;
         do {
-          pbVar3 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_4) + param_3);
-          for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-            if ((uint)*local_d4 != param_1->load_flags) {
+          pbVar3 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            if ((uint)*local_d4 != this_ptr->load_flags) {
               *pbVar3 = *local_d4;
             }
             pbVar3 = pbVar3 + 1;
             local_d4 = local_d4 + 1;
           }
           local_c0 = local_c0 + 1;
-          param_4 = param_4 + 4;
+          iVar12 = iVar12 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_c0 <= local_cc);
       }
     }
-    else if (param_5 == -2) {
-      local_bc = param_4;
-      if (param_4 <= local_cc) {
-        param_4 = param_4 * 4;
+    else if (color_mode == -2) {
+      local_bc = y;
+      if (y <= local_cc) {
+        iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_4) + param_3);
-          for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-            if ((uint)*local_d4 != param_1->load_flags) {
+          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = DAT_01c70f5c;
             }
             puVar7 = puVar7 + 1;
             local_d4 = local_d4 + 1;
           }
           local_bc = local_bc + 1;
-          param_4 = param_4 + 4;
+          iVar12 = iVar12 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_bc <= local_cc);
       }
     }
-    else if (param_5 == -3) {
-      local_b8 = param_4;
-      if (param_4 <= local_cc) {
-        param_4 = param_4 * 4;
+    else if (color_mode == -3) {
+      local_b8 = y;
+      if (y <= local_cc) {
+        iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_4) + param_3);
-          for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-            if ((uint)*local_d4 != param_1->load_flags) {
+          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = DAT_01c70f70;
             }
             puVar7 = puVar7 + 1;
             local_d4 = local_d4 + 1;
           }
           local_b8 = local_b8 + 1;
-          param_4 = param_4 + 4;
+          iVar12 = iVar12 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_b8 <= local_cc);
       }
     }
     else {
-      local_b4 = param_4;
-      if (param_4 <= local_cc) {
-        param_4 = param_4 * 4;
+      local_b4 = y;
+      if (y <= local_cc) {
+        iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_4) + param_3);
-          for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-            if ((uint)*local_d4 != param_1->load_flags) {
-              *puVar7 = (byte)param_5;
+          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+            if ((uint)*local_d4 != this_ptr->load_flags) {
+              *puVar7 = (byte)color_mode;
             }
             puVar7 = puVar7 + 1;
             local_d4 = local_d4 + 1;
           }
           local_b4 = local_b4 + 1;
-          param_4 = param_4 + 4;
+          iVar12 = iVar12 + 4;
           local_d4 = local_d4 + local_c4;
         } while (local_b4 <= local_cc);
       }
     }
   }
   else {
-    iVar6 = param_4 << 2;
+    iVar12 = y << 2;
     if (DAT_005b7624 == 0x10) {
-      if (param_5 == -1) {
-        if (param_1->is_initialized == 0) {
-          if (param_4 <= local_cc) {
-            iVar6 = param_4 * 4;
+      if (color_mode == -1) {
+        if (this_ptr->is_initialized == 0) {
+          if (y <= local_cc) {
+            iVar12 = y * 4;
             do {
-              puVar5 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 2);
-              for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-                if ((uint)*local_d4 != param_1->load_flags) {
-                  *puVar5 = (short)param_1->palettes_display[local_c8][*local_d4];
+              puVar5 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 2);
+              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+                if ((uint)*local_d4 != this_ptr->load_flags) {
+                  *puVar5 = (short)this_ptr->palettes_display[local_c8][*local_d4];
                 }
                 local_d4 = local_d4 + 1;
                 puVar5 = puVar5 + 1;
               }
-              iVar6 = iVar6 + 4;
+              iVar12 = iVar12 + 4;
               local_d4 = local_d4 + local_c4;
-              param_4 = param_4 + 1;
-            } while (param_4 <= local_cc);
+              y = y + 1;
+            } while (y <= local_cc);
           }
         }
         else {
-          local_b0 = param_4;
-          if (param_4 <= local_cc) {
-            local_28 = param_4 << 2;
+          local_b0 = y;
+          if (y <= local_cc) {
+            local_28 = y << 2;
             do {
-              puVar12 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_28) + param_3 * 2);
-              for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_28) + x * 2);
+              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 uVar4 = (uint)*local_d4;
-                iVar8 = DAT_005b763c *
-                        (uint)(byte)param_1->palette_data[uVar4 * 3 + local_c8 * 0x300];
-                iVar9 = iVar8 >> 0x1f;
-                iVar8 = (int)((iVar8 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
-                if (iVar8 != 0) {
-                  uVar10 = (uint)*puVar12;
-                  iVar9 = 0xff - iVar8;
-                  *puVar12 = (ushort)(((((param_1->palettes_display[local_c8][uVar4] & DAT_005bf5c0)
-                                        >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f) & 0xff) *
-                                       iVar8 + (((DAT_005bf5c0 & uVar10) >> (DAT_01c00630 & 0x1f))
-                                                << (DAT_01c00638 & 0x1f) & 0xff) * iVar9 >> 8) /
-                                      _DAT_01c00634 << (DAT_01c00630 & 0x1f)) |
-                             (ushort)(((((param_1->palettes_display[local_c8][uVar4] & DAT_005bf5b8)
-                                        >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f) & 0xff) *
-                                       iVar8 + (((DAT_005bf5b8 & uVar10) >> (DAT_01c00624 & 0x1f))
-                                                << (DAT_01c0062c & 0x1f) & 0xff) * iVar9 >> 8) /
-                                      _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-                             (ushort)(((((param_1->palettes_display[local_c8][uVar4] & DAT_005bf5c8)
-                                        >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff) *
-                                       iVar8 + iVar9 * (((DAT_005bf5c8 & uVar10) >>
-                                                        (DAT_01c0063c & 0x1f)) <<
-                                                        (DAT_01c00644 & 0x1f) & 0xff) >> 8) /
-                                      _DAT_01c00640 << (DAT_01c0063c & 0x1f));
+                iVar6 = DAT_005b763c *
+                        (uint)(byte)this_ptr->palette_data[uVar4 * 3 + local_c8 * 0x300];
+                iVar8 = iVar6 >> 0x1f;
+                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
+                if (iVar6 != 0) {
+                  uVar9 = (uint)*puVar11;
+                  iVar8 = 0xff - iVar6;
+                  *puVar11 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5c0
+                                         ) >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f) & 0xff
+                                       ) * iVar6 +
+                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
+                                     << (DAT_01c00630 & 0x1f)) |
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5b8
+                                         ) >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f) & 0xff
+                                       ) * iVar6 +
+                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
+                                     << (DAT_01c00624 & 0x1f)) |
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5c8
+                                         ) >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff
+                                       ) * iVar6 +
+                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
+                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
+                                     << (DAT_01c0063c & 0x1f));
                 }
-                puVar12 = puVar12 + 1;
+                puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_28 = local_28 + 4;
@@ -230,57 +232,57 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
           }
         }
       }
-      else if (param_5 == -2) {
-        if (param_1->is_initialized == 0) {
-          if (param_4 <= local_cc) {
-            iVar6 = param_4 * 4;
+      else if (color_mode == -2) {
+        if (this_ptr->is_initialized == 0) {
+          if (y <= local_cc) {
+            iVar12 = y * 4;
             do {
-              puVar12 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 2);
-              for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-                if ((uint)*local_d4 != param_1->load_flags) {
-                  *puVar12 = _DAT_01c70f5e;
+              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 2);
+              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+                if ((uint)*local_d4 != this_ptr->load_flags) {
+                  *puVar11 = _DAT_01c70f5e;
                 }
-                puVar12 = puVar12 + 1;
+                puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
               }
-              iVar6 = iVar6 + 4;
+              iVar12 = iVar12 + 4;
               local_d4 = local_d4 + local_c4;
-              param_4 = param_4 + 1;
-            } while (param_4 <= local_cc);
+              y = y + 1;
+            } while (y <= local_cc);
           }
         }
         else {
-          local_90 = param_4;
-          if (param_4 <= local_cc) {
-            local_2c = param_4 << 2;
+          local_90 = y;
+          if (y <= local_cc) {
+            local_2c = y << 2;
             do {
-              puVar12 = (ushort *)(param_3 * 2 + *(int *)(&DAT_01bd2fa0 + local_2c));
-              for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-                iVar8 = DAT_005b763c *
-                        (uint)(byte)param_1->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar9 = iVar8 >> 0x1f;
-                iVar8 = (int)((iVar8 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
-                if (iVar8 != 0) {
+              puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + local_2c));
+              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
+                iVar6 = DAT_005b763c *
+                        (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
+                iVar8 = iVar6 >> 0x1f;
+                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
+                if (iVar6 != 0) {
                   uVar4 = (uint)_DAT_01c70f5e;
-                  uVar10 = (uint)*puVar12;
-                  iVar9 = 0xff - iVar8;
-                  *puVar12 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 +
-                                       (((DAT_005bf5c0 & uVar10) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00634
+                  uVar9 = (uint)*puVar11;
+                  iVar8 = 0xff - iVar6;
+                  *puVar11 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
+                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
                                      << (DAT_01c00630 & 0x1f)) |
                              (ushort)(((((DAT_005bf5b8 & uVar4) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 +
-                                       (((DAT_005bf5b8 & uVar10) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00628
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
+                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
                                      << (DAT_01c00624 & 0x1f)) |
                              (ushort)(((((DAT_005bf5c8 & uVar4) >> (DAT_01c0063c & 0x1f)) <<
-                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((DAT_005bf5c8 & uVar10) >> (DAT_01c0063c & 0x1f))
-                                                << (DAT_01c00644 & 0x1f) & 0xff) >> 8) /
-                                      _DAT_01c00640 << (DAT_01c0063c & 0x1f));
+                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar6 +
+                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
+                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
+                                     << (DAT_01c0063c & 0x1f));
                 }
-                puVar12 = puVar12 + 1;
+                puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_2c = local_2c + 4;
@@ -290,56 +292,56 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
           }
         }
       }
-      else if (param_5 == -3) {
-        if (param_1->is_initialized == 0) {
-          if (param_4 <= local_cc) {
-            iVar6 = param_4 * 4;
+      else if (color_mode == -3) {
+        if (this_ptr->is_initialized == 0) {
+          if (y <= local_cc) {
+            iVar12 = y * 4;
             do {
-              puVar5 = (ushort *)(param_3 * 2 + *(int *)(&DAT_01bd2fa0 + iVar6));
-              for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-                if ((uint)*local_d4 != param_1->load_flags) {
+              puVar5 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + iVar12));
+              for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+                if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar5 = _DAT_01c70f70;
                 }
                 local_d4 = local_d4 + 1;
                 puVar5 = puVar5 + 1;
               }
-              iVar6 = iVar6 + 4;
+              iVar12 = iVar12 + 4;
               local_d4 = local_d4 + local_c4;
-              param_4 = param_4 + 1;
-            } while (param_4 <= local_cc);
+              y = y + 1;
+            } while (y <= local_cc);
           }
         }
         else {
-          local_74 = param_4;
-          if (param_4 <= local_cc) {
-            local_30 = param_4 << 2;
+          local_74 = y;
+          if (y <= local_cc) {
+            local_30 = y << 2;
             do {
-              puVar12 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_30) + param_3 * 2);
-              for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-                iVar8 = DAT_005b763c *
-                        (uint)(byte)param_1->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar9 = iVar8 >> 0x1f;
-                iVar8 = (int)((iVar8 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
-                if (iVar8 != 0) {
-                  uVar4 = (uint)*puVar12;
-                  iVar9 = 0xff - iVar8;
-                  *puVar12 = (ushort)(((((_DAT_01c70f70 & DAT_005bf5b8) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 +
+              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_30) + x * 2);
+              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
+                iVar6 = DAT_005b763c *
+                        (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
+                iVar8 = iVar6 >> 0x1f;
+                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
+                if (iVar6 != 0) {
+                  uVar4 = (uint)*puVar11;
+                  iVar8 = 0xff - iVar6;
+                  *puVar11 = (ushort)(((((_DAT_01c70f70 & DAT_005bf5b8) >> (DAT_01c00624 & 0x1f)) <<
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
                                        (((uVar4 & DAT_005bf5b8) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00628
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
                                      << (DAT_01c00624 & 0x1f)) |
                              (ushort)(((((DAT_005bf5c0 & _DAT_01c70f70) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 +
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
                                        (((uVar4 & DAT_005bf5c0) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00634
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
                                      << (DAT_01c00630 & 0x1f)) |
                              (ushort)(((((_DAT_01c70f70 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
-                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
+                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar6 +
+                                       iVar8 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
                                                 (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
                                      << (DAT_01c0063c & 0x1f));
                 }
-                puVar12 = puVar12 + 1;
+                puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_30 = local_30 + 4;
@@ -350,53 +352,53 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
         }
       }
       else {
-        uVar1 = *(ushort *)(&DAT_01bff720 + param_5 * 2);
-        if (param_1->is_initialized == 0) {
-          for (; param_4 <= local_cc; param_4 = param_4 + 1) {
-            puVar12 = (ushort *)(param_3 * 2 + *(int *)(&DAT_01bd2fa0 + iVar6));
-            for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-              if ((uint)*local_d4 != param_1->load_flags) {
-                *puVar12 = uVar1;
+        uVar1 = *(ushort *)(&DAT_01bff720 + color_mode * 2);
+        if (this_ptr->is_initialized == 0) {
+          for (; y <= local_cc; y = y + 1) {
+            puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              if ((uint)*local_d4 != this_ptr->load_flags) {
+                *puVar11 = uVar1;
               }
               local_d4 = local_d4 + 1;
-              puVar12 = puVar12 + 1;
+              puVar11 = puVar11 + 1;
             }
-            iVar6 = iVar6 + 4;
+            iVar12 = iVar12 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          local_58 = param_4;
-          if (param_4 <= local_cc) {
-            local_34 = param_4 << 2;
+          local_58 = y;
+          if (y <= local_cc) {
+            local_34 = y << 2;
             do {
-              puVar12 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_34) + param_3 * 2);
-              for (iVar6 = param_3; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
-                iVar8 = DAT_005b763c *
-                        (uint)(byte)param_1->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar9 = iVar8 >> 0x1f;
-                iVar8 = (int)((iVar8 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
-                if (iVar8 != 0) {
+              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_34) + x * 2);
+              for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
+                iVar6 = DAT_005b763c *
+                        (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
+                iVar8 = iVar6 >> 0x1f;
+                iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
+                if (iVar6 != 0) {
                   uVar4 = (uint)uVar1;
-                  uVar10 = (uint)*puVar12;
-                  iVar9 = 0xff - iVar8;
-                  *puVar12 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 +
-                                       (((DAT_005bf5c0 & uVar10) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00634
+                  uVar9 = (uint)*puVar11;
+                  iVar8 = 0xff - iVar6;
+                  *puVar11 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
+                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
+                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
                                      << (DAT_01c00630 & 0x1f)) |
                              (ushort)(((((DAT_005bf5b8 & uVar4) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 +
-                                       (((DAT_005bf5b8 & uVar10) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar9 >> 8) / _DAT_01c00628
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
+                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
+                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
                                      << (DAT_01c00624 & 0x1f)) |
-                             (ushort)((iVar8 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
+                             (ushort)((iVar6 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
                                                 (DAT_01c00644 & 0x1f) & 0xff) +
-                                       iVar9 * (((DAT_005bf5c8 & uVar10) >> (DAT_01c0063c & 0x1f))
-                                                << (DAT_01c00644 & 0x1f) & 0xff) >> 8) /
-                                      _DAT_01c00640 << (DAT_01c0063c & 0x1f));
+                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
+                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
+                                     << (DAT_01c0063c & 0x1f));
                 }
-                puVar12 = puVar12 + 1;
+                puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
               }
               local_34 = local_34 + 4;
@@ -408,125 +410,124 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_
       }
     }
     else if (DAT_005b7624 == 0x20) {
-      color_table = param_1->palettes_display + local_c8;
-      if (param_5 == -1) {
-        if (param_1->is_initialized == 0) {
-          for (; param_4 <= local_cc; param_4 = param_4 + 1) {
-            puVar11 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 4);
-            for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-              if ((uint)*local_d4 != param_1->load_flags) {
-                *puVar11 = param_1->palettes_display[local_c8][*local_d4];
+      color_table = this_ptr->palettes_display + local_c8;
+      if (color_mode == -1) {
+        if (this_ptr->is_initialized == 0) {
+          for (; y <= local_cc; y = y + 1) {
+            puVar10 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4);
+            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              if ((uint)*local_d4 != this_ptr->load_flags) {
+                *puVar10 = this_ptr->palettes_display[local_c8][*local_d4];
               }
               local_d4 = local_d4 + 1;
-              puVar11 = puVar11 + 1;
+              puVar10 = puVar10 + 1;
             }
-            iVar6 = iVar6 + 4;
+            iVar12 = iVar12 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar9 = param_4;
-          if (param_4 <= local_cc) {
+          iVar8 = y;
+          if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 4),local_d4,
-                         *color_table,(local_d0 - param_3) + 1,
-                         param_1->palettes_display[iVar8][*local_d4]);
-              iVar6 = iVar6 + 4;
-              local_d4 = local_d4 + local_c4 + (local_d0 - param_3) + 1;
-              iVar9 = iVar9 + 1;
-            } while (iVar9 <= local_cc);
-            return iVar2;
-          }
-        }
-      }
-      else if (param_5 == -2) {
-        if (param_1->is_initialized == 0) {
-          for (; param_4 <= local_cc; param_4 = param_4 + 1) {
-            puVar11 = (uint *)(param_3 * 4 + *(int *)(&DAT_01bd2fa0 + iVar6));
-            for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-              if ((uint)*local_d4 != param_1->load_flags) {
-                *puVar11 = _DAT_01c70f60;
-              }
-              local_d4 = local_d4 + 1;
-              puVar11 = puVar11 + 1;
-            }
-            iVar6 = iVar6 + 4;
-            local_d4 = local_d4 + local_c4;
-          }
-        }
-        else {
-          iVar8 = param_4;
-          if (param_4 <= local_cc) {
-            do {
-              engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(param_3 * 4 + *(int *)(&DAT_01bd2fa0 + iVar6)),local_d4,
-                         *color_table,(local_d0 - param_3) + 1,_DAT_01c70f60);
-              iVar6 = iVar6 + 4;
+                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4),local_d4,*color_table,
+                         (local_d0 - x) + 1,this_ptr->palettes_display[iVar6][*local_d4]);
+              iVar12 = iVar12 + 4;
+              local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
               iVar8 = iVar8 + 1;
-              local_d4 = local_d4 + local_c4 + (local_d0 - param_3) + 1;
             } while (iVar8 <= local_cc);
             return iVar2;
           }
         }
       }
-      else if (param_5 == -3) {
-        if (param_1->is_initialized == 0) {
-          for (; param_4 <= local_cc; param_4 = param_4 + 1) {
-            puVar11 = (uint *)(param_3 * 4 + *(int *)(&DAT_01bd2fa0 + iVar6));
-            for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-              if ((uint)*local_d4 != param_1->load_flags) {
-                *puVar11 = _DAT_01c70f70;
+      else if (color_mode == -2) {
+        if (this_ptr->is_initialized == 0) {
+          for (; y <= local_cc; y = y + 1) {
+            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              if ((uint)*local_d4 != this_ptr->load_flags) {
+                *puVar10 = _DAT_01c70f60;
               }
               local_d4 = local_d4 + 1;
-              puVar11 = puVar11 + 1;
+              puVar10 = puVar10 + 1;
             }
-            iVar6 = iVar6 + 4;
+            iVar12 = iVar12 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar8 = param_4;
-          if (param_4 <= local_cc) {
+          iVar6 = y;
+          if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 4),local_d4,
-                         *color_table,(local_d0 - param_3) + 1,_DAT_01c70f70);
-              iVar6 = iVar6 + 4;
-              iVar8 = iVar8 + 1;
-              local_d4 = local_d4 + local_c4 + (local_d0 - param_3) + 1;
-            } while (iVar8 <= local_cc);
+                        ((uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12)),local_d4,*color_table,
+                         (local_d0 - x) + 1,_DAT_01c70f60);
+              iVar12 = iVar12 + 4;
+              iVar6 = iVar6 + 1;
+              local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
+            } while (iVar6 <= local_cc);
+            return iVar2;
+          }
+        }
+      }
+      else if (color_mode == -3) {
+        if (this_ptr->is_initialized == 0) {
+          for (; y <= local_cc; y = y + 1) {
+            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              if ((uint)*local_d4 != this_ptr->load_flags) {
+                *puVar10 = _DAT_01c70f70;
+              }
+              local_d4 = local_d4 + 1;
+              puVar10 = puVar10 + 1;
+            }
+            iVar12 = iVar12 + 4;
+            local_d4 = local_d4 + local_c4;
+          }
+        }
+        else {
+          iVar6 = y;
+          if (y <= local_cc) {
+            do {
+              engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
+                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4),local_d4,*color_table,
+                         (local_d0 - x) + 1,_DAT_01c70f70);
+              iVar12 = iVar12 + 4;
+              iVar6 = iVar6 + 1;
+              local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
+            } while (iVar6 <= local_cc);
             return iVar2;
           }
         }
       }
       else {
-        uVar4 = *(uint *)(param_5 * 4 + 0x1bff920);
-        if (param_1->is_initialized == 0) {
-          for (; param_4 <= local_cc; param_4 = param_4 + 1) {
-            puVar11 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar6) + param_3 * 4);
-            for (iVar8 = param_3; iVar8 <= local_d0; iVar8 = iVar8 + 1) {
-              if ((uint)*local_d4 != param_1->load_flags) {
-                *puVar11 = uVar4;
+        uVar4 = *(uint *)(color_mode * 4 + 0x1bff920);
+        if (this_ptr->is_initialized == 0) {
+          for (; y <= local_cc; y = y + 1) {
+            puVar10 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4);
+            for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
+              if ((uint)*local_d4 != this_ptr->load_flags) {
+                *puVar10 = uVar4;
               }
               local_d4 = local_d4 + 1;
-              puVar11 = puVar11 + 1;
+              puVar10 = puVar10 + 1;
             }
-            iVar6 = iVar6 + 4;
+            iVar12 = iVar12 + 4;
             local_d4 = local_d4 + local_c4;
           }
         }
         else {
-          iVar8 = param_4;
-          if (param_4 <= local_cc) {
+          iVar6 = y;
+          if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(param_3 * 4 + *(int *)(&DAT_01bd2fa0 + iVar6)),local_d4,
-                         *color_table,(local_d0 - param_3) + 1,uVar4);
-              iVar6 = iVar6 + 4;
-              local_d4 = local_d4 + local_c4 + (local_d0 - param_3) + 1;
-              iVar8 = iVar8 + 1;
-            } while (iVar8 <= local_cc);
+                        ((uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12)),local_d4,*color_table,
+                         (local_d0 - x) + 1,uVar4);
+              iVar12 = iVar12 + 4;
+              local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
+              iVar6 = iVar6 + 1;
+            } while (iVar6 <= local_cc);
             return iVar2;
           }
         }

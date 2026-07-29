@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_FUN_00461720(CDemonRenderer *param_1,STrianglePackedIndices *param_2,int param_3,int param_4)
+; void __cdecl engine_drender_cpp_FUN_00461720(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SInputFace *     Stack[0x8]:4   face_array
+; int              Stack[0xc]:4   face_count
+; int              Stack[0x10]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -101,7 +106,7 @@ section .text
     PUSH ESI                            ; 00461785
     INC EBP                             ; 00461786
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 ; 00461787
-        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0()
+        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
     ADD EBX,0x12                        ; 0046178c
     ADD ESP,0xc                         ; 0046178f
     CMP EBP,EDI                         ; 00461792

@@ -1,61 +1,61 @@
 // Name: core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0
 // Address: 0041d9d0
 // Address Range: [[0041d9d0, 0041da9f]]
-// Convention: unknown
-// Signature: void core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(float *param_1,int param_2,float *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 
 #include "nocturne.h"
 
-void core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(float *param_1,int param_2,float *param_3)
+void __cdecl core_box_cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0(CBoundingBox3D *this_ptr,int point_count,CVector3f *points)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   int iVar2;
   
-  pfVar1 = param_1 + 3;
-  if (pfVar1 != param_3) {
-    *pfVar1 = *param_3;
-    param_1[4] = param_3[1];
-    param_1[5] = param_3[2];
+  pCVar1 = &this_ptr->max;
+  if (pCVar1 != points) {
+    pCVar1->x = points->x;
+    (this_ptr->max).y = points->y;
+    (this_ptr->max).z = points->z;
   }
-  if (param_1 != pfVar1) {
-    *param_1 = *pfVar1;
-    param_1[1] = param_1[4];
-    param_1[2] = param_1[5];
+  if (this_ptr != (CBoundingBox3D *)pCVar1) {
+    (this_ptr->min).x = pCVar1->x;
+    (this_ptr->min).y = (this_ptr->max).y;
+    (this_ptr->min).z = (this_ptr->max).z;
   }
   iVar2 = 1;
-  if (1 < param_2) {
-    param_3 = param_3 + 3;
+  if (1 < point_count) {
+    pCVar1 = points + 1;
     do {
       while( true ) {
-        if (*param_3 < *param_1) {
-          *param_1 = *param_3;
+        if (pCVar1->x < (this_ptr->min).x) {
+          (this_ptr->min).x = pCVar1->x;
         }
-        else if (param_1[3] < *param_3) {
-          param_1[3] = *param_3;
+        else if ((this_ptr->max).x < pCVar1->x) {
+          (this_ptr->max).x = pCVar1->x;
         }
-        if (param_1[1] <= param_3[1]) {
-          if (param_1[4] < param_3[1]) {
-            param_1[4] = param_3[1];
+        if ((this_ptr->min).y <= pCVar1->y) {
+          if ((this_ptr->max).y < pCVar1->y) {
+            (this_ptr->max).y = pCVar1->y;
           }
         }
         else {
-          param_1[1] = param_3[1];
+          (this_ptr->min).y = pCVar1->y;
         }
-        if (param_3[2] < param_1[2]) break;
-        if (param_3[2] <= param_1[5]) goto LAB_0041da48;
-        param_1[5] = param_3[2];
+        if (pCVar1->z < (this_ptr->min).z) break;
+        if (pCVar1->z <= (this_ptr->max).z) goto LAB_0041da48;
+        (this_ptr->max).z = pCVar1->z;
         iVar2 = iVar2 + 1;
-        param_3 = param_3 + 3;
-        if (param_2 <= iVar2) {
+        pCVar1 = pCVar1 + 1;
+        if (point_count <= iVar2) {
           return;
         }
       }
-      param_1[2] = param_3[2];
+      (this_ptr->min).z = pCVar1->z;
 LAB_0041da48:
       iVar2 = iVar2 + 1;
-      param_3 = param_3 + 3;
-    } while (iVar2 < param_2);
+      pCVar1 = pCVar1 + 1;
+    } while (iVar2 < point_count);
   }
   return;
 }

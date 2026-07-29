@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stranger_cpp_getScaleY_FUN_00540a30(void)
+; int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; *****************************************************************************
 

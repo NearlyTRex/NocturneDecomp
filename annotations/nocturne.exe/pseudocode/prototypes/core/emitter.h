@@ -61,7 +61,7 @@ CDemonActor * FUN_00479420(CDemonActor *param_1,byte param_2);
 
 // Original: core_emitter.cpp_SLaserInfo_copy_FUN_00479470
 // Address: 00479470
-void SLaserInfo::copy(undefined4 *param_1,undefined4 *param_2);
+void __cdecl SLaserInfo::copy(SLaserInfo *this_ptr,SLaserInfo *copy);
 
 // Original: core_emitter.cpp_SLaserInfo_dtor_FUN_00479520
 // Address: 00479520

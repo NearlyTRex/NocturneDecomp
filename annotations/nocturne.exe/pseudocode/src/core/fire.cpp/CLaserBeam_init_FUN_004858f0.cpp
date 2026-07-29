@@ -1,35 +1,35 @@
 // Name: core_fire.cpp_CLaserBeam_init_FUN_004858f0
 // Address: 004858f0
 // Address Range: [[004858f0, 00485990]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CLaserBeam_init_FUN_004858f0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5,undefined4 *param_6,int param_7,int param_8,int param_9,undefined4 param_10,undefined4 param_11)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CLaserBeam_init_FUN_004858f0(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle)
 
 #include "nocturne.h"
 
-void core_fire_cpp_CLaserBeam_init_FUN_004858f0(uint *param_1,uint *param_2,uint *param_3,uint param_4,uint param_5,uint *param_6,int param_7,int param_8,int param_9,uint param_10,uint param_11)
+void __cdecl core_fire_cpp_CLaserBeam_init_FUN_004858f0(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle)
 
 {
-  if (param_1 != param_2) {
-    *param_1 = *param_2;
-    param_1[1] = param_2[1];
-    param_1[2] = param_2[2];
+  if (this_ptr != (CLaserBeam *)origin) {
+    (this_ptr->origin).x = origin->x;
+    (this_ptr->origin).y = origin->y;
+    (this_ptr->origin).z = origin->z;
   }
-  if (param_1 + 3 != param_3) {
-    param_1[3] = *param_3;
-    param_1[4] = param_3[1];
-    param_1[5] = param_3[2];
+  if (&this_ptr->hit_position != hit_position) {
+    (this_ptr->hit_position).x = hit_position->x;
+    (this_ptr->hit_position).y = hit_position->y;
+    (this_ptr->hit_position).z = hit_position->z;
   }
-  param_1[6] = param_4;
-  param_1[7] = param_5;
-  if ((0.0 < (float)param_1[7]) && (param_1 + 8 != param_6)) {
-    param_1[8] = *param_6;
-    param_1[9] = param_6[1];
-    param_1[10] = param_6[2];
+  this_ptr->beam_width = beam_width;
+  this_ptr->reticle_intensity = reticle_intensity;
+  if ((0.0 < this_ptr->reticle_intensity) && (&this_ptr->reflection_normal != reflection_normal)) {
+    (this_ptr->reflection_normal).x = reflection_normal->x;
+    (this_ptr->reflection_normal).y = reflection_normal->y;
+    (this_ptr->reflection_normal).z = reflection_normal->z;
   }
-  param_1[0xb] = param_7 << 7;
-  param_1[0xc] = param_8 << 7;
-  param_1[0xd] = param_9 << 7;
-  param_1[0xe] = param_10;
-  param_1[0xf] = param_11;
+  (this_ptr->color).r = red << 7;
+  (this_ptr->color).g = green << 7;
+  (this_ptr->color).b = blue << 7;
+  this_ptr->halo_spread = halo_spread;
+  this_ptr->cone_angle = cone_angle;
   return;
 }

@@ -114,7 +114,7 @@ section .text
     MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | INT_005b96c4
     PUSH EBP                            ; 0040dc1f
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dc20
-        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
+        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004b06b0(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     MOV EAX,dword ptr [EBX + 0x114]     ; 0040dc25
     SUB EAX,0x2000                      ; 0040dc2b
     ADD ESP,0x18                        ; 0040dc30
@@ -187,7 +187,7 @@ section .text
     MOV EAX,[0x005b96c4]                ; 0040dcda | INT_005b96c4
     PUSH EAX                            ; 0040dcdf
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dce0
-        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
+        ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004b06b0(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     ADD ESP,0x18                        ; 0040dce5
     JMP 0x0040dc41                      ; 0040dce8
         ;   XREF to: 0040dc41 (UNCONDITIONAL_JUMP)  ; LAB_0040dc41

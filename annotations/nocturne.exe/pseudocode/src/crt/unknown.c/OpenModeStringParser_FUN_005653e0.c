@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_OpenModeStringParser_FUN_005653e0
 // Address: 005653e0
 // Address Range: [[005653e0, 0056551b]]
-// Convention: unknown
-// Signature: uint crt_unknown_c_OpenModeStringParser_FUN_005653e0(byte *param_1,byte *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl crt_unknown_c_OpenModeStringParser_FUN_005653e0(char *mode_string,char *output_flags)
 
 #include "nocturne.h"
 
-uint OpenModeStringParser(byte *param_1,byte *param_2)
+int __cdecl OpenModeStringParser(char *mode_string,char *output_flags)
 
 {
   byte bVar1;
@@ -20,21 +20,21 @@ uint OpenModeStringParser(byte *param_1,byte *param_2)
   bVar4 = false;
   bVar5 = false;
   bVar3 = false;
-  if (param_2 != (byte *)0x0) {
+  if (output_flags != (char *)0x0) {
     if (DAT_005c1d50 == 1) {
-      param_2[0] = 1;
-      param_2[1] = 0;
-      param_2[2] = 0;
-      param_2[3] = 0;
+      output_flags[0] = '\x01';
+      output_flags[1] = '\0';
+      output_flags[2] = '\0';
+      output_flags[3] = '\0';
     }
     else {
-      param_2[0] = 0;
-      param_2[1] = 0;
-      param_2[2] = 0;
-      param_2[3] = 0;
+      output_flags[0] = '\0';
+      output_flags[1] = '\0';
+      output_flags[2] = '\0';
+      output_flags[3] = '\0';
     }
   }
-  bVar1 = *param_1;
+  bVar1 = *mode_string;
   if (bVar1 < 0x72) {
     if (bVar1 != 0x61) {
 LAB_00565432:
@@ -50,9 +50,9 @@ LAB_00565432:
     if (bVar1 != 0x77) goto LAB_00565432;
     uVar6 = 2;
   }
-  bVar1 = param_1[1];
+  bVar1 = mode_string[1];
   while ((bVar1 != 0 && (bVar2))) {
-    bVar1 = param_1[1];
+    bVar1 = mode_string[1];
     if (bVar1 < 99) {
       if (0x2a < bVar1) {
         if (bVar1 < 0x2c) {
@@ -81,7 +81,7 @@ LAB_00565432:
       }
       else {
         bVar5 = true;
-        *param_2 = *param_2 | 1;
+        *output_flags = *output_flags | 1;
       }
     }
     else if (0x6d < bVar1) {
@@ -91,7 +91,7 @@ LAB_00565432:
         }
         else {
           bVar5 = true;
-          *param_2 = *param_2 & 0xfe;
+          *output_flags = *output_flags & 0xfe;
         }
       }
       else if (bVar1 == 0x74) {
@@ -103,8 +103,8 @@ LAB_00565432:
         }
       }
     }
-    bVar1 = param_1[2];
-    param_1 = param_1 + 1;
+    bVar1 = mode_string[2];
+    mode_string = mode_string + 1;
   }
   if ((!bVar4) && (0x00000100 == 0x200)) {
     uVar6 = uVar6 | 0x40;

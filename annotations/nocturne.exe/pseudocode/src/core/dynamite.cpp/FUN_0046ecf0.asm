@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dynamite_cpp_FUN_0046ecf0(void)
+; float core_dynamite_cpp_FUN_0046ecf0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -19,7 +19,7 @@ section .text
     PUSH 0x43fa0000                     ; 0046ecf3
     PUSH 0x43c80000                     ; 0046ecf8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0046ecfd
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0046ed02
     FLD float ptr [ESP + 0xc]           ; 0046ed06
     ADD ESP,0x8                         ; 0046ed0a

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(void)
+; void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   out_x
+; int *            Stack[0xc]:4   out_y
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd1d8c

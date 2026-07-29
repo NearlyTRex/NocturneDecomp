@@ -260,7 +260,7 @@ section .text
     PUSH EBX                            ; 0048d37b
     PUSH EDI                            ; 0048d37c
     CALL core_charactr.cpp_FUN_00427730 ; 0048d37d
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 0048d382
     CMP dword ptr [ESI + 0x284],0x0     ; 0048d385
         ;   Label: LAB_0048d385
@@ -291,7 +291,7 @@ section .text
         ;   Label: LAB_0048d3cc
     PUSH 0x3f733333                     ; 0048d3d1
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048d3d6
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xfc],EAX      ; 0048d3db
     FLD float ptr [ESP + 0xfc]          ; 0048d3e2
     ADD ESP,0x8                         ; 0048d3e9
@@ -309,7 +309,7 @@ section .text
     PUSH 0x3f800000                     ; 0048d40b
     PUSH 0x0                            ; 0048d410
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048d412
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x100],EAX     ; 0048d417
     FLD float ptr [ESP + 0x100]         ; 0048d41e
     ADD ESP,0x8                         ; 0048d425
@@ -426,7 +426,7 @@ section .text
     PUSH EDI                            ; 0048d5ae
     PUSH EBX                            ; 0048d5af
     CALL core_charactr.cpp_FUN_00427730 ; 0048d5b0
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 0048d5b5
     INC dword ptr [ESI + 0x294]         ; 0048d5b8
         ;   Label: LAB_0048d5b8

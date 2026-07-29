@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_00597b99
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a4154 = 00553f10
+;   CWeapon_full_vtable g_CWeaponVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -38,7 +38,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00553d91
     PUSH EBX                            ; 00553d95
     CALL core_actor.cpp_FUN_00409d30    ; 00553d96
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00553d9b
     ADD EAX,0x150                       ; 00553d9e
     PUSH EAX                            ; 00553da3
@@ -50,7 +50,7 @@ section .text
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 00553db2
         ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     LEA EBX,[EAX + 0xfffffd00]          ; 00553db7
-    MOV dword ptr [EBX + 0x14c],0x5a4154 ; 00553dbd | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a4154
+    MOV dword ptr [EBX + 0x14c],0x5a4154 ; 00553dbd | g_CWeaponVTable
     MOV dword ptr [EBX + 0x55c],0x40a00000 ; 00553dc7
     MOV dword ptr [EBX + 0x2f8],0x0     ; 00553dd1
     MOV dword ptr [EBX + 0x2cc],0x0     ; 00553ddb

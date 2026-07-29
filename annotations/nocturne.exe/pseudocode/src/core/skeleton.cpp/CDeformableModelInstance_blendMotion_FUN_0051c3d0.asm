@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,int param_5,code *param_6)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number ,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *callback_func)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   target_motion_index
+; float            Stack[0xc]:4   target_frame_number
+; float            Stack[0x10]:4   blend_weight
+; int              Stack[0x14]:4   bone_index
+; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   callback_func
 ; Local Variables:
 ; undefined4       Stack[-0x938]:4  local_938
 ; undefined        Stack[-0x934]:1  local_934

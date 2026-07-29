@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CLightningBolt_activate_FUN_00488b10(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_fire_cpp_CLightningBolt_activate_FUN_00488b10(CLightningBolt *this_ptr,CVector3f *start_position,float start_width,float end_width )
 ;
+; Parameters:
+; CLightningBolt * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_position
+; float            Stack[0xc]:4   start_width
+; float            Stack[0x10]:4   end_width
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420 at 0048c44b

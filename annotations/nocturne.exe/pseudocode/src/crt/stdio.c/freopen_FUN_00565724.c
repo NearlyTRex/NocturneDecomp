@@ -15,7 +15,7 @@ _FILE * __cdecl _freopen(char *filename,char *mode,_FILE *stream)
   _FILE *p_Var2;
   int iStack_14;
   
-  parsed_mode_flags = OpenModeStringParser(mode,&iStack_14);
+  parsed_mode_flags = OpenModeStringParser(mode,(char *)&iStack_14);
   p_Var2 = (_FILE *)0x0;
   if (parsed_mode_flags != 0) {
     iVar1 = stream->_handle;

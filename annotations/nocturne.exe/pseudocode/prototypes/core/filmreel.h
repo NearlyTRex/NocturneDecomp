@@ -27,17 +27,17 @@ void CFilmReel::setup(CDemonActor *param_1);
 // Address: 00481d30
 undefined4 FUN_00481d30(undefined4 param_1,CDemonActor *param_2);
 
-// Original: core_filmreel.cpp_FUN_00481d50
+// Original: core_filmreel.cpp_CFilmReel_pickup_FUN_00481d50
 // Address: 00481d50
-void FUN_00481d50(int param_1,undefined4 param_2);
+void __cdecl CFilmReel::pickup(CFilmReel *this_ptr,CDemonActor *carrier);
 
-// Original: core_filmreel.cpp_FUN_00481d60
+// Original: core_filmreel.cpp_CFilmReel_onDropped_FUN_00481d60
 // Address: 00481d60
-void FUN_00481d60(int param_1);
+void __cdecl CFilmReel::onDropped(CFilmReel *this_ptr,CVector3f *drop_position);
 
-// Original: core_filmreel.cpp_FUN_00481d70
+// Original: core_filmreel.cpp_CFilmReel_getCarrier_FUN_00481d70
 // Address: 00481d70
-undefined4 FUN_00481d70(int param_1);
+CDemonActor * __cdecl CFilmReel::getCarrier(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_FUN_00481d80
 // Address: 00481d80
@@ -51,17 +51,17 @@ int FUN_00481d90(int param_1);
 // Address: 00481e00
 void FUN_00481e00(void);
 
-// Original: core_filmreel.cpp_FUN_00481e20
+// Original: core_filmreel.cpp_CFilmReel_archive_FUN_00481e20
 // Address: 00481e20
-void FUN_00481e20(CDemonActor *param_1);
+void __cdecl CFilmReel::archive(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_00481e70
+// Original: core_filmreel.cpp_CFilmReel_getCollisionType_FUN_00481e70
 // Address: 00481e70
-bool FUN_00481e70(int param_1);
+ECollisionType __cdecl CFilmReel::getCollisionType(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_filmreel.cpp_FUN_00481e90
+// Original: core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_00481e90
 // Address: 00481e90
-undefined4 * FUN_00481e90(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_filmreel.cpp_FUN_00481ee0
 // Address: 00481ee0
@@ -81,11 +81,11 @@ void CFilmProjector::setup(CActorDestination *param_1);
 
 // Original: core_filmreel.cpp_CFilmProjector_process_FUN_00482010
 // Address: 00482010
-void CFilmProjector::process(CActorDestination *param_1,float param_2);
+void __cdecl CFilmProjector::process(CFilmProjector *this_ptr,float delta_time);
 
 // Original: core_filmreel.cpp_CFilmProjector_getBoundingBox_FUN_004821a0
 // Address: 004821a0
-void CFilmProjector::getBoundingBox(undefined4 param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CFilmProjector::getBoundingBox(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_filmreel.cpp_FUN_004821d0
 // Address: 004821d0

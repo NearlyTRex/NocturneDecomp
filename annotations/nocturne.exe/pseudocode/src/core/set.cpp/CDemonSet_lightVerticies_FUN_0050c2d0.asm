@@ -207,7 +207,7 @@ section .text
     PUSH EAX                            ; 0050c3b7
     MOV dword ptr [EBX + 0x5c5010],ECX  ; 0050c3b8 | DAT_005c5040 | DAT_005c5070
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050c3be
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 0050c3c3
     INC ESI                             ; 0050c3c6
     MOV EDX,dword ptr [EBP + 0x18]      ; 0050c3c7
@@ -353,7 +353,7 @@ section .text
     PUSH EDI                            ; 0050c553
     ADD EBX,0x30                        ; 0050c554
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050c557
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     MOV EAX,[0x01c038f4]                ; 0050c55c | DAT_01c038f4
     ADD ESP,0x14                        ; 0050c561
     MOV dword ptr [EBX + 0x5c5010],EAX  ; 0050c564 | DAT_005c5040
@@ -419,7 +419,7 @@ section .text
     ADD EDI,0x30                        ; 0050c600
     INC EBX                             ; 0050c603
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050c604
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     MOV EAX,[0x01c038f4]                ; 0050c609 | DAT_01c038f4
     ADD ESP,0x14                        ; 0050c60e
     MOV dword ptr [EDI + 0x5c5010],EAX  ; 0050c611 | DAT_005c5040
@@ -543,7 +543,7 @@ section .text
     PUSH EDI                            ; 0050c791
     ADD EBX,0x30                        ; 0050c792
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050c795
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     MOV EAX,[0x01c038f4]                ; 0050c79a | DAT_01c038f4
     ADD ESP,0x14                        ; 0050c79f
     MOV dword ptr [EBX + 0x5c5010],EAX  ; 0050c7a2 | DAT_005c5040 | DAT_005c5010
@@ -833,7 +833,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0050cb2b
     PUSH ECX                            ; 0050cb2e
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050cb2f
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
         ;   Label: LAB_0050cb2f
     ADD ESP,0x14                        ; 0050cb34
     MOV EDX,dword ptr [ESP + 0x110]     ; 0050cb37
@@ -1179,7 +1179,7 @@ section .text
     ADD ESI,0xc                         ; 0050cff1
     INC EDI                             ; 0050cff4
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 ; 0050cff5
-        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0()
+        ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 0050cffa
     MOV EAX,[0x01c038f4]                ; 0050cffd | DAT_01c038f4
     MOV EDX,dword ptr [ESP + 0x124]     ; 0050d002

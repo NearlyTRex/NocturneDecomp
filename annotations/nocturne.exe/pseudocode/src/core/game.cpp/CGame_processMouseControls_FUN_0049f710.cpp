@@ -11,25 +11,25 @@
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_ptr,SPlayerInput *player_control)
 
 {
+  int x;
+  int y;
   int iVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
   float local_40;
   float local_3c;
   
   core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(this_ptr,player_control);
   if (this_ptr->screen_clear_condition == 0) {
-    iVar1 = DAT_005b761c / 2;
-    iVar2 = DAT_005b7620 / 2;
-    iVar3 = _DAT_01bd1d8c - iVar1;
-    iVar4 = _DAT_01bd1d90 - iVar2;
-    wincore_winrun_cpp_setCursorPosition_FUN_00558d60(iVar1,iVar2);
+    x = DAT_005b761c / 2;
+    y = DAT_005b7620 / 2;
+    iVar1 = _DAT_01bd1d8c - x;
+    iVar2 = _DAT_01bd1d90 - y;
+    wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
     if (*(int *)(0x01E57284 + 0x15aabc) == _DAT_01c7841c) {
       local_3c = (float)this_ptr->x_mouse_sensitivity * (float)1.52587890625e-05 *
-                 (float)0.75 * ((float)iVar3 / (float)iVar1);
+                 (float)0.75 * ((float)iVar1 / (float)x);
       local_40 = (float)this_ptr->y_mouse_sensitivity * (float)1.52587890625e-05 *
-                 ((float)iVar4 / (float)iVar2);
+                 ((float)iVar2 / (float)y);
       if (local_3c < (float)-1) {
         local_3c = -1.0;
       }

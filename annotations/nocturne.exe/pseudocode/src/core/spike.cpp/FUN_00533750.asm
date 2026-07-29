@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_FUN_00533750(CDemonActor *param_1)
+; void __cdecl core_spike_cpp_FUN_00533750(CSpike *this_ptr)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xec]:1  local_ec
 ;
@@ -181,7 +183,7 @@ section .text
     PUSH ESI                            ; 0053394a
     FSTP float ptr [ESP + 0x1b8]        ; 0053394b
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00533952
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00533957
     LEA EAX,[ESI + 0x20]                ; 0053395a
     MOV dword ptr [ESP + 0x1bc],EDI     ; 0053395d
@@ -315,7 +317,7 @@ section .text
     PUSH EAX                            ; 00533b27
     PUSH EBX                            ; 00533b28
     CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 ; 00533b29
-        ;   XREF to: 0040a740 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740()
+        ;   XREF to: 0040a740 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, SActorRayHit * out_hit, ...)
     MOV dword ptr [ESP + 0x1dc],EAX     ; 00533b2e
     FLD float ptr [ESP + 0x1dc]         ; 00533b35
     ADD ESP,0x1c                        ; 00533b3c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_00535450(int param_1)
+; void core_stranger_cpp_FUN_00535450(CStranger *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28]      ; 00535456
     PUSH ESI                            ; 0053545a
     CALL core_hero.cpp_FUN_004b48d0     ; 0053545b
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b48d0()
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 00535460
     LEA EDI,[ESI + 0x150]               ; 00535463
     PUSH EDI                            ; 00535469
@@ -282,7 +282,7 @@ section .text
     PUSH ESI                            ; 005356f6
         ;   Label: LAB_005356f6
     CALL core_stranger.cpp_FUN_005384d0 ; 005356f7
-        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005384d0()
+        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_005384d0(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005356fc
     PUSH 0x5954b4                       ; 005356ff | = "stranger-hat.kfm"
     LEA EBX,[ESI + 0x1fb40]             ; 00535704

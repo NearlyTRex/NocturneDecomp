@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 383,
+    "complexity_score": 367,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 25,
+    "pseudocode_lines": 102,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 302
+    "total_lines": 301
   },
   "cross_references": [],
   "function": {
@@ -386,14 +385,21 @@
   "static_analysis": {
     "analyzed_file": "FUN_004e7b00.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
-          "check_id": "invalidScanfArgType_int",
+          "check_id": "wrongPrintfScanfArgNum",
           "column": 7,
+          "line": 41,
+          "message": "sscanf format string requires 1 parameter but only 0 are given.",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 20,
           "line": 42,
-          "message": "%u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.",
-          "severity": "warning"
+          "message": "Uninitialized variable: local_10",
+          "severity": "error"
         }
       ],
       "error": null
@@ -411,7 +417,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_005bdba0 + local_8);",
@@ -419,7 +425,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 29,
       "match": "DAT_005bdba0",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_005bdba0 + local_8);",
@@ -427,7 +433,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_005bdba4",
       "severity": "mild",
       "text": "*(uint *)(iVar4 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_8);",
@@ -435,7 +441,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_005bdba8",
       "severity": "mild",
       "text": "*(uint *)(iVar4 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_8);",
@@ -443,7 +449,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_005bdbac",
       "severity": "mild",
       "text": "*(uint *)(iVar4 + 0x1cd8c34) = *(uint *)(&DAT_005bdbac + local_8);",
@@ -451,7 +457,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"wrong table number %u.  File: %s\",iVar5,&DAT_01cd8b28);",
@@ -459,7 +465,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_005bdbb0",
       "severity": "mild",
       "text": "iVar3 = *(int *)(&DAT_005bdbb0 + local_8);",
@@ -467,7 +473,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "uVar7 = *(uint *)(&DAT_01cd944c + iVar4);",
@@ -475,7 +481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"MP3 Huffman tree overflow!  File: %s\",&DAT_01cd8b28);",
@@ -483,7 +489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_005bdbb4",
       "severity": "mild",
       "text": "puVar1 = *(byte **)(&DAT_005bdbb4 + local_8);",
@@ -491,7 +497,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 58,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_01cd944c + iVar4) != 0) {",
@@ -499,7 +505,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 65,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "} while (uVar7 < *(uint *)(&DAT_01cd944c + iVar4));",
@@ -507,7 +513,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(uint *)((int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);",
@@ -515,7 +521,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);",
@@ -523,7 +529,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 83,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_01cd944c + iVar3);",
@@ -531,7 +537,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 83,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar4) = *(uint *)(&DAT_01cd944c + iVar3);",
@@ -539,7 +545,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 90,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(pcVar10,iVar5,&DAT_01cd8b28);",
@@ -547,7 +553,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 101,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"decoder table read error.  File: %s\",&DAT_01cd8b28);",
@@ -555,7 +561,7 @@
     },
     {
       "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "(int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);",
@@ -563,23 +569,15 @@
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 82,
+      "line": 81,
       "match": "(int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1cd8c28 assigned to bare local `local_c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 26,
-      "match": "0x1cd8c28",
-      "severity": "moderate",
-      "text": "local_c = 0x1cd8c28;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x200; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -587,7 +585,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 2; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -600,6 +598,14 @@
       "severity": "moderate",
       "text": "// 004e7be7: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_10",
+      "line": 42,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (iVar5 != local_10) {",
+      "type": "static_uninitvar"
     }
   ]
 }

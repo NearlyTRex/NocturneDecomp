@@ -1,13 +1,13 @@
 // Name: core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0
 // Address: 0042b5c0
 // Address Range: [[0042b5c0, 0042b5ca]]
-// Convention: unknown
-// Signature: undefined4 core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(int param_1)
+// Convention: __cdecl
+// Signature: float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr)
 
 #include "nocturne.h"
 
-uint core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(int param_1)
+float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr)
 
 {
-  return *(uint *)(param_1 + 0x264);
+  return game_ptr->delta_time_float;
 }

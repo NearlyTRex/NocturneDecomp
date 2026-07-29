@@ -108,7 +108,7 @@ section .text
     PUSH EAX                            ; 0042506a
     PUSH EBX                            ; 0042506b
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0042506c
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV ECX,dword ptr [EBX + 0xdc]      ; 00425071
     ADD ESP,0xc                         ; 00425077
     TEST ECX,ECX                        ; 0042507a
@@ -273,7 +273,7 @@ section .text
     PUSH dword ptr [EBX + 0x20]         ; 004252cb
     PUSH EDX                            ; 004252ce | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 004252cf
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40()
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV dword ptr [ESP + 0xec],EAX      ; 004252d4
     FLD float ptr [ESP + 0xec]          ; 004252db
     ADD ESP,0x20                        ; 004252e2
@@ -637,7 +637,7 @@ section .text
     PUSH EAX                            ; 00425789
     PUSH EDX                            ; 0042578a
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0042578b
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 00425790
     PUSH dword ptr [ESP + 0x24]         ; 00425793
     MOV ECX,dword ptr [0x005b9284]      ; 00425797 | INT_005b9284

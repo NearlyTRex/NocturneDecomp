@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_copyPanel_FUN_004cbf30(undefined4 *param_1,undefined4 *param_2)
+; SPanel * __cdecl core_manpuz_cpp_copyPanel_FUN_004cbf30(SPanel *dest,SPanel *src)
 ;
+; Parameters:
+; SPanel *         Stack[0x4]:4   dest
+; SPanel *         Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

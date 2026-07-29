@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_0046ba20(int param_1,float *param_2,int param_3)
+; CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_0046ba20(CDemonRaytrace *this_ptr,CVector3f *output_position,int cube_index)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_position
+; int              Stack[0xc]:4   cube_index
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

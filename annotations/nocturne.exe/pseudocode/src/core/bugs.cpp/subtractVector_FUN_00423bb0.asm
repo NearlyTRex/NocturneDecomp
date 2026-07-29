@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_subtractVector_FUN_00423bb0(void)
+; CVector3f * __cdecl core_bugs_cpp_subtractVector_FUN_00423bb0(CVector3f *dest,CVector3f *src)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dest
+; CVector3f *      Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

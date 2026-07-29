@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
+; void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
 ;
 ;
 ; Referenced Globals:

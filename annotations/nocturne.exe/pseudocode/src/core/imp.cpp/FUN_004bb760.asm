@@ -11,7 +11,7 @@
 ;   TerminatedCString s_imp_dfm_00586282
 ;   float FLOAT_0059f570 = 50
 ;   float FLOAT_0059f574 = 100
-;   undefined1* PTR_core_imp.cpp_CImp_setup_FUN_004bb7d0_0059f584 = 004bb7d0
+;   CEnemy_full_vtable g_CImpVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -32,9 +32,9 @@ section .text
     MOV EBX,EAX                         ; 004bb773
     ADD EAX,0x150                       ; 004bb775
     PUSH EAX                            ; 004bb77a
-    MOV dword ptr [EAX + -0x4],0x59f584 ; 004bb77b | PTR_core_imp.cpp_CImp_setup_FUN_004bb7d0_0059f584
+    MOV dword ptr [EAX + -0x4],0x59f584 ; 004bb77b | g_CImpVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004bb782
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0059f570]          ; 004bb787 | FLOAT_0059f570
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004bb78d
     FLD float ptr [0x0059f574]          ; 004bb797 | FLOAT_0059f574

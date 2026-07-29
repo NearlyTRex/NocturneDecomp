@@ -121,11 +121,11 @@ void __cdecl CBodyPart::spawnGore(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_FUN_00417ef0
 // Address: 00417ef0
-undefined4 FUN_00417ef0(int param_1);
+int FUN_00417ef0(CDemonActor *param_1);
 
 // Original: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10
 // Address: 00417f10
-void CBodyPart::fillAttackDamageInfo(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void __cdecl CBodyPart::fillAttackDamageInfo(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
 // Original: core_bodypart.cpp_scaleVector_FUN_00417f60
 // Address: 00417f60
@@ -145,7 +145,7 @@ void FUN_00417fec(void);
 
 // Original: core_bodypart.cpp_boundingBoxExtent_FUN_00418010
 // Address: 00418010
-float * boundingBoxExtent(float *param_1,float *param_2);
+CBoundingBox3D * __cdecl boundingBoxExtent(CBoundingBox3D *src,CBoundingBox3D *dst);
 
 // Original: core_bodypart.cpp_FUN_0041803d
 // Address: 0041803d
@@ -153,15 +153,15 @@ float * FUN_0041803d(float *param_1);
 
 // Original: core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0
 // Address: 004180a0
-int * SBodyPartFire::ctor(int param_1);
+SBodyPartFire * __cdecl SBodyPartFire::ctor(SBodyPartFire *this_ptr);
 
 // Original: core_bodypart.cpp_SBodyPartFire_dtor_FUN_004180c0
 // Address: 004180c0
-CDemonActor ** SBodyPartFire::dtor(int param_1);
+SBodyPartFire * __cdecl SBodyPartFire::dtor(SBodyPartFire *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_SBodyPartModel_ctor_FUN_004180e0
 // Address: 004180e0
-char * SBodyPartModel::ctor(int param_1);
+SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_SBodyPartModel_dtor_FUN_00418100
 // Address: 00418100

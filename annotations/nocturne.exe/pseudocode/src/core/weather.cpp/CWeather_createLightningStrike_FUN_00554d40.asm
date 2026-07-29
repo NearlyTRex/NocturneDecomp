@@ -76,7 +76,7 @@ section .text
     PUSH 0x41a00000                     ; 00554d51
     PUSH 0x41200000                     ; 00554d56
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00554d5b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8c],EAX      ; 00554d60
     FLD float ptr [ESP + 0x8c]          ; 00554d67
     ADD ESP,0x8                         ; 00554d6e
@@ -84,7 +84,7 @@ section .text
     PUSH 0x40000000                     ; 00554d74
     FSTP float ptr [EBX + 0x20]         ; 00554d79
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00554d7c
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8c],EAX      ; 00554d81
     FLD float ptr [ESP + 0x8c]          ; 00554d88
     ADD ESP,0x8                         ; 00554d8f
@@ -176,7 +176,7 @@ section .text
     MOV dword ptr [ESP + 0x38],ECX      ; 00554e9b
     MOV dword ptr [ESP + 0x3c],ECX      ; 00554e9f
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00554ea3
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x8]                 ; 00554ea8
     FLD float ptr [EAX]                 ; 00554eab
     FADD float ptr [EDX]                ; 00554ead

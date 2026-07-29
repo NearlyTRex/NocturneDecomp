@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input)
 ;
+; Parameters:
+; CMatrix3x3f *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output
+; CVector3f *      Stack[0xc]:4   input
 ;
 ; XREF[49]:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 at 0040a25a

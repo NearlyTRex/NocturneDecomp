@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004fee30(CScript *param_1)
+; void __cdecl core_script_cpp_FUN_004fee30(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -73,7 +75,7 @@ section .text
     ADD ESP,0x8                         ; 004fee74
     PUSH EAX                            ; 004fee77
     CALL core_script.cpp_trimLine_FUN_004fdf60 ; 004fee78
-        ;   XREF to: 004fdf60 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_trimLine_FUN_004fdf60()
+        ;   XREF to: 004fdf60 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimLine_FUN_004fdf60(char * input_line, char * output_buffer)
     MOV AH,byte ptr [0x01e55c18]        ; 004fee7d | DAT_01e55c18
     ADD ESP,0x8                         ; 004fee83
     TEST AH,AH                          ; 004fee86

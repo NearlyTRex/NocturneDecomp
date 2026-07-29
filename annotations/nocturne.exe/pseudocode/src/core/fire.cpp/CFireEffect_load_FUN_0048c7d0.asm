@@ -52,7 +52,7 @@ section .text
     PUSH EDI                            ; 0048c819
     MOV EBX,0x1c625f8                   ; 0048c81a
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0048c81f
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     LEA ESI,[EBX + 0x8c0]               ; 0048c824
     ADD ESP,0xc                         ; 0048c82a
     PUSH EDI                            ; 0048c82d

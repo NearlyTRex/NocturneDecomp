@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 004f59f5
     PUSH EBX                            ; 004f59f6
     CALL cockpit_pkbitmap.cpp_FUN_004f5110 ; 004f59f7
-        ;   XREF to: 004f5110 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f5110()
+        ;   XREF to: 004f5110 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_FUN_004f5110(CPackedBitmapSet * bitmap_set_ptr, char * pbg_filename, int apply_palette_flag, int frames_per_bitmap, ...)
     ADD ESP,0x18                        ; 004f59fc
     PUSH EDI                            ; 004f59ff
     PUSH EBX                            ; 004f5a00

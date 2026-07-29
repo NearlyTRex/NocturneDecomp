@@ -1,12 +1,12 @@
 // Name: engine_2d.c_FUN_00403630
 // Address: 00403630
 // Address Range: [[00403630, 00403754]]
-// Convention: unknown
-// Signature: void engine_2d_c_FUN_00403630(char *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_FUN_00403630(char *filename)
 
 #include "nocturne.h"
 
-void engine_2d_c_FUN_00403630(char *param_1)
+void __cdecl engine_2d_c_FUN_00403630(char *filename)
 
 {
   char cVar1;
@@ -17,12 +17,12 @@ void engine_2d_c_FUN_00403630(char *param_1)
   
   pcVar4 = local_5c;
   do {
-    cVar1 = *param_1;
+    cVar1 = *filename;
     *pcVar4 = cVar1;
     pcVar3 = local_5c;
     if (cVar1 == '\0') break;
-    cVar1 = param_1[1];
-    param_1 = param_1 + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
     pcVar3 = local_5c;

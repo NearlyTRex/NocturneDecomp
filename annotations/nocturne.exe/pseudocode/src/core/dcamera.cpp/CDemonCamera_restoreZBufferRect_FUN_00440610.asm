@@ -86,7 +86,7 @@ section .text
     PUSH EDX                            ; 004406c5
     PUSH ECX                            ; 004406c6
     CALL core_dstrender.cpp_memcpyMMX_FUN_00465341 ; 004406c7
-        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_memcpyMMX_FUN_00465341()
+        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
     ADD ESP,0xc                         ; 004406cc
     MOV EAX,dword ptr [ESP]             ; 004406cf
     INC EBP                             ; 004406d2

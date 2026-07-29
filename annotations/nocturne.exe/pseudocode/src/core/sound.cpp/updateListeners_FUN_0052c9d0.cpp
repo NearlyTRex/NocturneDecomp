@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
@@ -15,25 +14,23 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
   float fVar1;
   float fVar2;
   int iVar3;
-  uint *puVar4;
-  uint *puVar5;
+  float *pfVar4;
+  float *pfVar5;
   byte bVar6;
   float afStackY_10cc [965];
   float local_160;
+  CMatrix3x3f local_15c;
+  float local_134 [10];
+  float local_10c [10];
   uint local_e4;
-  float local_dc;
-  uint local_d8;
-  uint local_d4;
-  uint local_d0;
+  float fStack_e0;
+  int local_dc;
+  CVector3f local_d8;
   float local_cc;
   float local_c8;
   float local_c4;
-  float local_c0;
-  float local_bc;
-  float local_b8;
-  uint local_b4;
-  uint local_b0;
-  uint local_ac;
+  CVector3f local_c0;
+  CVector3f local_b4;
   float local_a8;
   float local_a4;
   float local_a0;
@@ -46,21 +43,17 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
   float local_84;
   float local_80;
   float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
+  CVector3f local_78;
   float local_6c;
   float local_68;
   float local_64;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
+  CVector3f local_60;
   int local_54;
   float afStack_50 [4];
   float local_40;
   uint local_3c;
-  float afStack_38 [4];
-  float local_28;
+  float afStack_38 [2];
+  CVector3f local_30;
   int local_1c;
   int local_18;
   float local_14;
@@ -70,7 +63,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
     afStack_50[2] = _DAT_01fb860c;
     afStack_50[3] = _DAT_01fb8610;
     local_40 = _DAT_01fb8614;
-    if (&stack0xffffff34 != afStack_50 + 2) {
+    if (&local_cc != afStack_50 + 2) {
       local_cc = _DAT_01fb860c;
       local_c8 = _DAT_01fb8610;
       local_c4 = _DAT_01fb8614;
@@ -82,59 +75,60 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
         (float)0.0001) {
       return;
     }
-    puVar4 = (uint *)&DAT_01fb8618;
-    puVar5 = (uint *)&stack0xfffffef4;
+    pfVar4 = (float *)&DAT_01fb8618;
+    pfVar5 = local_10c;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar5 = puVar5 + 1;
+      *pfVar5 = *pfVar4;
+      pfVar4 = pfVar4 + 1;
+      pfVar5 = pfVar5 + 1;
     }
     iVar3 = 10;
-    puVar5 = (uint *)&stack0xfffffef4;
-    puVar4 = (uint *)&stack0xfffffea4;
+    pfVar5 = local_10c;
+    pfVar4 = (float *)&local_15c;
   }
   else {
     local_a8 = _DAT_01c74744;
     local_a4 = _DAT_01c74748;
     local_a0 = _DAT_01c7474c;
-    if (&stack0xffffff34 != &stack0xffffff58) {
+    if (&local_cc != &local_a8) {
       local_cc = _DAT_01c74744;
       local_c8 = _DAT_01c74748;
       local_c4 = _DAT_01c7474c;
     }
-    puVar4 = (uint *)&DAT_01c74750;
-    puVar5 = (uint *)&stack0xfffffecc;
+    pfVar4 = (float *)&DAT_01c74750;
+    pfVar5 = local_134;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar5 = puVar5 + 1;
+      *pfVar5 = *pfVar4;
+      pfVar4 = pfVar4 + 1;
+      pfVar5 = pfVar5 + 1;
     }
     iVar3 = 10;
-    puVar4 = (uint *)&stack0xfffffea4;
-    puVar5 = (uint *)&stack0xfffffecc;
+    pfVar4 = (float *)&local_15c;
+    pfVar5 = local_134;
   }
   for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar4 = puVar4 + 1;
+    *pfVar4 = *pfVar5;
+    pfVar5 = pfVar5 + 1;
+    pfVar4 = pfVar4 + 1;
   }
   sound_sndmain_cpp_set3DListenerPos_FUN_00527610
             ((double)local_cc,(double)local_c8,(double)local_c4);
-  local_d8 = 0x3f800000;
-  local_d4 = 0;
-  local_d0 = 0;
-  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40();
-  local_5c = 0x3f800000;
-  local_60 = 0;
-  local_58 = 0;
-  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40();
-  local_b4 = 0;
-  local_b0 = 0;
-  local_ac = 0x3f800000;
-  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40();
+  local_d8.x = 1.0;
+  local_d8.y = 0.0;
+  local_d8.z = 0.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_15c,&local_30,&local_d8);
+  local_60.y = 1.0;
+  local_60.x = 0.0;
+  local_60.z = 0.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_15c,&local_c0,&local_60);
+  local_b4.x = 0.0;
+  local_b4.y = 0.0;
+  local_b4.z = 1.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_15c,&local_78,&local_b4);
   sound_sndmain_cpp_set3DListenerOrient_FUN_00527690
-            ((double)afStack_38[2],(double)afStack_38[3],(double)local_28,(double)local_c0,
-             (double)local_bc,(double)local_b8,(double)local_78,(double)local_74,(double)local_70);
+            ((double)local_30.x,(double)local_30.y,(double)local_30.z,(double)local_c0.x,
+             (double)local_c0.y,(double)local_c0.z,(double)local_78.x,(double)local_78.y,
+             (double)local_78.z);
   _DAT_02dc9468 = 0.0;
   if (*(int *)(0x01C775EC + 0x240) == 0) {
     iVar3 = _strnicmp
@@ -147,18 +141,16 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
         do {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0();
           local_e4 = local_3c;
-          *(float *)((int)&stack0xffffff20 + (uint)bVar6 * 0xfffffffe * 4) =
-               afStack_38[(uint)bVar6 * -2];
-          (&stack0xffffff24)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+          (&fStack_e0)[(uint)bVar6 * -2] = afStack_38[(uint)bVar6 * -2];
+          (&fStack_e0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                afStack_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           local_160 = 0.0;
-          if ((int)local_dc < 0x7fffffff) {
-            local_dc = (float)((int)local_dc + -0x300);
-            if ((int)local_dc < 1) {
-              local_dc = 1.4013e-45;
+          if (local_dc < 0x7fffffff) {
+            local_dc = local_dc + -0x300;
+            if (local_dc < 1) {
+              local_dc = 1;
             }
-            core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
-                      (0x1fb8508,&stack0xffffff1c);
+            core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(0x1fb8508,&local_e4);
             local_90 = local_54;
             (&local_8c)[(uint)bVar6 * -2] = afStack_50[(uint)bVar6 * -2];
             (&local_8c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_fire_cpp_safeAcos_FUN_00482630(float param_1)
+; float __cdecl core_fire_cpp_safeAcos_FUN_00482630(float value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   value
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00581064 = -1

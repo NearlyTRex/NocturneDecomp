@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flies_cpp_FUN_0048eef0(undefined4 param_1)
+; int core_flies_cpp_FUN_0048eef0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -13,7 +13,7 @@
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b065b
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34 = 0048efb0
+;   CDemonActor_vtable g_CFliesVTable
 ;   WatcomTypeInfo g_SFlyTypeInfo_0059db10
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0048eef3
     PUSH EDX                            ; 0048eef7
     CALL core_actor.cpp_FUN_00409d30    ; 0048eef8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048eefd
     PUSH 0x59db10                       ; 0048ef00 | g_SFlyTypeInfo_0059db10
     PUSH 0xc8                           ; 0048ef05
@@ -39,7 +39,7 @@ section .text
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffea0]          ; 0048ef15
     MOV ECX,0x40a00000                  ; 0048ef1b
-    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34
+    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | g_CFliesVTable
     ADD ESP,0xc                         ; 0048ef2a
     MOV dword ptr [EDX + 0x15c],0x14    ; 0048ef2d
     MOV EAX,ESP                         ; 0048ef37

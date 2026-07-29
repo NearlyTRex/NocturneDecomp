@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_FUN_004ac9b0(CDemonActor *param_1,int param_2)
+; void core_glass_cpp_FUN_004ac9b0(CGlass *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -110,7 +110,7 @@ section .text
     PUSH ECX                            ; 004aca9e | DAT_01e57284
     XOR EDI,EDI                         ; 004aca9f
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 004acaa1
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EBX,dword ptr [EBP + 0xb30]     ; 004acaa6
     ADD ESP,0xc                         ; 004acaac
     TEST EBX,EBX                        ; 004acaaf
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 004acb1b (CONDITIONAL_JUMP)  ; LAB_004acb1b
     PUSH EBP                            ; 004acb49
     CALL core_glass.cpp_FUN_004ac7c0    ; 004acb4a
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ac7c0()
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 004acb4f
     ADD ESP,0x18                        ; 004acb52
     POP EBP                             ; 004acb55

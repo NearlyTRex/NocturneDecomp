@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_iostream_cpp_ostream_ctor_FUN_0056b4a9(char *param_1,byte param_2)
+; _ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_0056b4a9(_ostream *this_ptr,uint c1)
 ;
+; Parameters:
+; _ostream *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   c1
 ;
 ; XREF[3]:
 ;   crt_fstream.cpp_ofstream_ctor_FUN_0056511e at 0056514c

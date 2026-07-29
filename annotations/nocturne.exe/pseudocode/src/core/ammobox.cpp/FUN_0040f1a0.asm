@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_FUN_0040f1a0(int param_1,CInventory *param_2)
+; void __cdecl core_ammobox_cpp_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
+; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_00498790 at 004987bd
@@ -95,7 +98,7 @@ section .text
     PUSH EAX                            ; 0040f23e
     PUSH EBX                            ; 0040f23f
     CALL core_ammo.cpp_FUN_0040ef60     ; 0040f240
-        ;   XREF to: 0040ef60 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_FUN_0040ef60()
+        ;   XREF to: 0040ef60 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040ef60(CAmmo * this_ptr, int ammo_count)
     MOV EAX,dword ptr [EBP + 0x310]     ; 0040f245
     ADD ESP,0x8                         ; 0040f24b
     MOV dword ptr [EBX + 0x310],EAX     ; 0040f24e

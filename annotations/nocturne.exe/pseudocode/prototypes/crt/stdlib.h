@@ -5,7 +5,7 @@
 
 // Original: crt_stdlib.c__qsort_FUN_00563db8
 // Address: 00563db8
-void __cdecl ::qsort(undefined4 *param_1,uint param_2,uint param_3,QSORT_COMPARATOR param_4);
+void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_rand_FUN_0056488c
 // Address: 0056488c
@@ -33,11 +33,11 @@ char * __cdecl itoa(int value,char *buffer,int base);
 
 // Original: crt_stdlib.c_i64toa_FUN_0056f3e0
 // Address: 0056f3e0
-char * i64toa(ulonglong *param_1,char *param_2,int param_3);
+char * __cdecl i64toa(longlong *value,char *buffer,int base);
 
 // Original: crt_stdlib.c_utoa_FUN_0056f4f0
 // Address: 0056f4f0
-char * utoa(uint param_1,char *param_2,uint param_3);
+char * __cdecl utoa(uint value,char *buffer,int base);
 
 // Original: crt_stdlib.c_strtol_internal_FUN_00573720
 // Address: 00573720
@@ -45,7 +45,7 @@ long __cdecl strtol::internal(char *str,char **endptr,int base,int is_signed);
 
 // Original: crt_stdlib.c_strtol_FUN_005738ac
 // Address: 005738ac
-void strtol(char *param_1,char **param_2,int param_3);
+long __cdecl strtol(char *str,char **endptr,int base);
 
 // Original: crt_stdlib.c_charToDigit_FUN_005738c8
 // Address: 005738c8

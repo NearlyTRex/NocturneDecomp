@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CDemonActor *param_1,byte param_2)
+; CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CWayPoint *this_ptr,uint flags)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CWayPointTypeInfo_005a4110

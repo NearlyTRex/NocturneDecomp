@@ -22,7 +22,7 @@ section .text
         ;   Label: LAB_0043d130
     PUSH EAX                            ; 0043d135
     CALL core_flame.cpp_FUN_0048d5d0    ; 0043d136
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048d5d0()
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_FUN_0048d5d0(CFlame * this_ptr)
     MOV EAX,0x1                         ; 0043d13b
     ADD ESP,0x4                         ; 0043d140
     RET                                 ; 0043d143

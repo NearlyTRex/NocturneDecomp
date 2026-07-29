@@ -1,16 +1,16 @@
 // Name: core_wateract.cpp_CWaterActor_getCollisionType_FUN_005520a0
 // Address: 005520a0
 // Address Range: [[005520a0, 005520b0]]
-// Convention: unknown
-// Signature: undefined4 core_wateract_cpp_CWaterActor_getCollisionType_FUN_005520a0(undefined4 param_1,int *param_2)
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005520a0(CWaterActor *this_ptr,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-uint core_wateract_cpp_CWaterActor_getCollisionType_FUN_005520a0(uint param_1,int *param_2)
+ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005520a0(CWaterActor *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if (*param_2 == 3) {
-    return 3;
+  if ((collision_info->ray_query).ray_type == 3) {
+    return COLLISION_TYPE_CUSTOM;
   }
-  return 0;
+  return COLLISION_TYPE_NONE;
 }

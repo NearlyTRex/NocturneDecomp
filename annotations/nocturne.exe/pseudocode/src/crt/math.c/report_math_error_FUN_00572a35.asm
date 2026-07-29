@@ -44,7 +44,7 @@ section .text
     MOV ECX,dword ptr [EBX]             ; 00572a52
     PUSH ECX                            ; 00572a54
     CALL crt_math.c_print_error_message_FUN_005729e8 ; 00572a55
-        ;   XREF to: 005729e8 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_print_error_message_FUN_005729e8()
+        ;   XREF to: 005729e8 (UNCONDITIONAL_CALL)  ; void crt_math.c_print_error_message_FUN_005729e8(int errorType, char * errorData)
     MOV ESI,dword ptr [EBX]             ; 00572a5a
     ADD ESP,0x8                         ; 00572a5c
     CMP ESI,0x1                         ; 00572a5f

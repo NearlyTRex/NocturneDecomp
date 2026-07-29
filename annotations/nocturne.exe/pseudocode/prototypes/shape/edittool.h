@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: shape_edittool.cpp_plotPixelWithClipping_FUN_0046efa0
 // Address: 0046efa0
-void plotPixelWithClipping(void);
+void __cdecl plotPixelWithClipping(int x_coord,int y_coord,int use_clipping);
 
 // Original: shape_edittool.cpp_FUN_0046f000
 // Address: 0046f000
@@ -17,7 +17,7 @@ void FUN_0046f000(void);
 
 // Original: shape_edittool.cpp_extractTabDelimitedField_FUN_0046f060
 // Address: 0046f060
-char * extractTabDelimitedField(void);
+char * __cdecl extractTabDelimitedField(char *source_str,char *dest_buffer);
 
 // Original: shape_edittool.cpp_CInputString_init_FUN_0046f0a0
 // Address: 0046f0a0
@@ -137,7 +137,7 @@ int __cdecl CEditorTools::promptForValidFloat(CEditorTools *this_ptr,char *promp
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530
 // Address: 00471530
-undefined4 CEditorTools::promptForValidVector(CEditorTools *param_1,char *param_2,float *param_3,byte param_4);
+int __cdecl CEditorTools::promptForValidVector(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600
 // Address: 00471600
@@ -201,7 +201,7 @@ void FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,float *param_4
 
 // Original: shape_edittool.cpp_draw3DInterpolatedLine_FUN_00473080
 // Address: 00473080
-void draw3DInterpolatedLine(float *param_1,float *param_2);
+void __cdecl draw3DInterpolatedLine(CVector3f *start_point,CVector3f *end_point);
 
 // Original: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
 // Address: 00473190
@@ -209,7 +209,7 @@ void __cdecl CEditorTools::draw3DWireframeCube(CEditorTools *this_ptr,CVector3f 
 
 // Original: shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650
 // Address: 00473650
-void CEditorTools::drawCenteredWireframeCube(void);
+void __cdecl CEditorTools::drawCenteredWireframeCube(CEditorTools *this_ptr,CVector3f *dimensions,int color_value);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
 // Address: 004736d0
@@ -221,7 +221,7 @@ void __cdecl CEditorTools::drawPixelLine(CEditorTools *this_ptr,int start_x,int 
 
 // Original: shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004739e0
 // Address: 004739e0
-void CEditorTools::draw3DProjectedLine(void);
+void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60
 // Address: 00473a60
@@ -237,7 +237,7 @@ CStrList * __cdecl CStrList::dtor(CStrList *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CStrList_copy_FUN_00473bd0
 // Address: 00473bd0
-CStrList * CStrList::copy(CStrList *param_1,CStrList *param_2);
+CStrList * __cdecl CStrList::copy(CStrList *this_ptr,CStrList *other);
 
 // Original: shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00
 // Address: 00473c00
@@ -253,7 +253,7 @@ void __cdecl CStrList::add(CStrList *this_ptr,char *string_data);
 
 // Original: shape_edittool.cpp_CStrList_appendRange_FUN_00473cd0
 // Address: 00473cd0
-void CStrList::appendRange(void);
+void __cdecl CStrList::appendRange(CStrList *this_ptr,CStrList *source_list);
 
 // Original: shape_edittool.cpp_CStrList_insert_FUN_00473cf0
 // Address: 00473cf0
@@ -269,7 +269,7 @@ void __cdecl CStrList::insertRange(CStrList *this_ptr,int insertion_index,CStrLi
 
 // Original: shape_edittool.cpp_CStrList_removeAt_FUN_00473ef0
 // Address: 00473ef0
-void CStrList::removeAt(void);
+void __cdecl CStrList::removeAt(CStrList *this_ptr,int index);
 
 // Original: shape_edittool.cpp_CStrList_remove_FUN_00473f10
 // Address: 00473f10
@@ -301,7 +301,7 @@ int __cdecl CStrList::findString(CStrList *this_ptr,char *search_string);
 
 // Original: shape_edittool.cpp_CStrList_findByFirstField_FUN_00474180
 // Address: 00474180
-int CStrList::findByFirstField(CStrList *param_1,char *param_2);
+int __cdecl CStrList::findByFirstField(CStrList *this_ptr,char *search_field);
 
 // Original: shape_edittool.cpp_CStrList_setStringAt_FUN_00474230
 // Address: 00474230
@@ -353,7 +353,7 @@ undefined4 CPickList::handleInput(CPickList *param_1);
 
 // Original: shape_edittool.cpp_FUN_00475230
 // Address: 00475230
-undefined4 FUN_00475230(CPickList *param_1);
+int __cdecl FUN_00475230(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_FUN_00475470
 // Address: 00475470
@@ -361,7 +361,7 @@ void FUN_00475470(CStrList *param_1,char *param_2,uint param_3);
 
 // Original: shape_edittool.cpp_FUN_004759d0
 // Address: 004759d0
-void FUN_004759d0(CPickList *param_1);
+void __cdecl FUN_004759d0(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0
 // Address: 00475db0
@@ -413,7 +413,7 @@ CEdScrollBar * __cdecl CEdScrollBar::ctor(CEdScrollBar *this_ptr);
 
 // Original: shape_edittool.cpp_FUN_00476490
 // Address: 00476490
-CEdScrollBar * FUN_00476490(CEdScrollBar *param_1);
+CEdScrollBar * __cdecl FUN_00476490(CEdScrollBar *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0
 // Address: 004764b0
@@ -433,7 +433,7 @@ void __cdecl CEdScrollBar::computeThumb(CEdScrollBar *this_ptr);
 
 // Original: shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920
 // Address: 00476920
-void CEdScrollBar::handleInput(CEdScrollBar *param_1);
+void __cdecl CEdScrollBar::handleInput(CEdScrollBar *this_ptr);
 
 // Original: shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0
 // Address: 00476ce0
@@ -457,7 +457,7 @@ void FUN_00476e90(int param_1);
 
 // Original: shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0
 // Address: 00476eb0
-void CEdButton::calculateAndSetBounds(void);
+void __cdecl CEdButton::calculateAndSetBounds(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text);
 
 // Original: shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00476ef0
 // Address: 00476ef0
@@ -481,11 +481,11 @@ int __cdecl calculateButtonHeight(char *button_text);
 
 // Original: shape_edittool.cpp_CEdCheck_ctor_FUN_00477190
 // Address: 00477190
-void CEdCheck::ctor(void);
+CEdCheck * __cdecl CEdCheck::ctor(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_FUN_004771d0
 // Address: 004771d0
-undefined4 FUN_004771d0(void);
+CEdCheck * FUN_004771d0(void);
 
 // Original: shape_edittool.cpp_FUN_004771f0
 // Address: 004771f0
@@ -493,7 +493,7 @@ void FUN_004771f0(void);
 
 // Original: shape_edittool.cpp_FUN_004772e0
 // Address: 004772e0
-void FUN_004772e0(int param_1);
+void __cdecl FUN_004772e0(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300
 // Address: 00477300
@@ -501,7 +501,7 @@ int __cdecl CEdCheck::calculateScaledWidth(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_00477340
 // Address: 00477340
-int CEdCheck::calculateBaseWidth(int param_1);
+int __cdecl CEdCheck::calculateBaseWidth(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_00477370
 // Address: 00477370
@@ -509,11 +509,11 @@ int __cdecl CEdCheck::calculateSpacing(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_render_FUN_00477390
 // Address: 00477390
-void CEdCheck::render(CEdCheck *param_1);
+void __cdecl CEdCheck::render(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_handleInput_FUN_004774b0
 // Address: 004774b0
-undefined4 CEdCheck::handleInput(void);
+int __cdecl CEdCheck::handleInput(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_wildcardStringMatch_FUN_004775b0
 // Address: 004775b0
@@ -525,7 +525,7 @@ int __cdecl CStrList::getItemCount(CStrList *this_ptr);
 
 // Original: shape_edittool.cpp_getFontMaxCharHeight_FUN_00477670
 // Address: 00477670
-undefined4 getFontMaxCharHeight(void);
+int __cdecl getFontMaxCharHeight(CBitFont *font_ptr);
 
 // Original: shape_edittool.cpp_FUN_0047767b
 // Address: 0047767b

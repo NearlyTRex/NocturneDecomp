@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcube_cpp_CDemonCubeTriangle_init_FUN_00449120(void)
+; void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00449120(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
 ;
+; Parameters:
+; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   vertex0
+; CVector3f *      Stack[0xc]:4   vertex1
+; CVector3f *      Stack[0x10]:4   vertex2
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_00448fb0

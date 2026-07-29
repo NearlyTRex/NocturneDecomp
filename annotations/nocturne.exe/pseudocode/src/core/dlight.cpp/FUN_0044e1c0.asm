@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_FUN_0044e1c0(undefined4 param_1)
+; void core_dlight_cpp_FUN_0044e1c0(CDemonLight *param_1)
 ;
 ;
 ; XREF[2]:
@@ -20,7 +20,7 @@ section .text
         ;   Label: core_dlight.cpp_FUN_0044e1c0
     PUSH EDX                            ; 0044e1c4
     CALL core_dlight.cpp_FUN_0044e2c0   ; 0044e1c5
-        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044e2c0()
+        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0044e2c0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0044e1ca
     PUSH 0x1                            ; 0044e1cd
     MOV ECX,dword ptr [ESP + 0x8]       ; 0044e1cf

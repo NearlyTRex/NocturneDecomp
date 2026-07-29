@@ -115,7 +115,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 004a77e0
     PUSH EAX                            ; 004a77e4
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004a77e5
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 004a77ea
     LEA EAX,[ESP + 0x1c]                ; 004a77ec
     ADD ESP,0x8                         ; 004a77f0
@@ -135,7 +135,7 @@ section .text
     SUB ESP,0x4                         ; 004a7818
     FSTP float ptr [ESP]                ; 004a781b
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004a781e
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x30],EAX      ; 004a7823
     FLD float ptr [ESP + 0x30]          ; 004a7827
     ADD ESP,0x4                         ; 004a782b

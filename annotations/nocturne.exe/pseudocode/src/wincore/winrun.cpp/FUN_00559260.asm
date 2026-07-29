@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 wincore_winrun_cpp_FUN_00559260(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __stdcall wincore_winrun_cpp_FUN_00559260(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 ;
+; Parameters:
+; HINSTANCE        Stack[0x4]:4   hInstance
+; HINSTANCE        Stack[0x8]:4   hPrevInstance
+; LPSTR            Stack[0xc]:4   lpCmdLine
+; int              Stack[0x10]:4   nCmdShow
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -295,12 +300,12 @@ section .text
     PUSH EBP                            ; 005594d8
     MOV [0x02de20ac],EAX                ; 005594d9 | DAT_02de20ac
     CALL core_main.c_FUN_004c85f0       ; 005594de
-        ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c85f0()
+        ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; void core_main.c_FUN_004c85f0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005594e3
     CALL core_main.c_enterMainGameMenu_FUN_004c85e0 ; 005594e6
         ;   XREF to: 004c85e0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004c85e0()
     CALL core_main.c_FUN_004c90e0       ; 005594eb
-        ;   XREF to: 004c90e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c90e0()
+        ;   XREF to: 004c90e0 (UNCONDITIONAL_CALL)  ; void core_main.c_FUN_004c90e0()
     XOR EAX,EAX                         ; 005594f0
     ADD ESP,0x48                        ; 005594f2
     POP EBP                             ; 005594f5

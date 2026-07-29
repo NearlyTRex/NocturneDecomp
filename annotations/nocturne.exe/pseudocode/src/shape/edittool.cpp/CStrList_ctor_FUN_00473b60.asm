@@ -12,7 +12,7 @@
 ;   shape_edittool.cpp_FUN_00474c90 at 00474c95
 ;
 ; Referenced Globals:
-;   undefined1* PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74 = 00473b80
+;   CStrList_vtable g_CStrListVTable
 ;
 ; *****************************************************************************
 
@@ -23,6 +23,6 @@ section .text
     MOV dword ptr [EAX],0x0             ; 00473b64
     MOV dword ptr [EAX + 0x8],0x0       ; 00473b6a
     MOV dword ptr [EAX + 0x4],0x0       ; 00473b71
-    MOV dword ptr [EAX + 0xc],0x59ca74  ; 00473b78 | PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74
+    MOV dword ptr [EAX + 0xc],0x59ca74  ; 00473b78 | g_CStrListVTable
     RET                                 ; 00473b7f
 

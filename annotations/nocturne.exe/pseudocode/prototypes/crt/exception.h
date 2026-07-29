@@ -13,7 +13,7 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo);
 
 // Original: crt_exception.c_ExceptionHandler_FUN_0056ed08
 // Address: 0056ed08
-undefined4 ExceptionHandler(PEXCEPTION_RECORD param_1,undefined4 param_2,PCONTEXT param_3);
+EXCEPTION_DISPOSITION __cdecl ExceptionHandler(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext);
 
 // Original: crt_exception.c_installExceptionHandler_FUN_0056eed8
 // Address: 0056eed8

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_0042cde0(undefined4 *param_1,byte *param_2,int param_3)
+; void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_0042cde0(void *output_buffer,void *indexed_input_buffer,int pixel_count)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   output_buffer
+; void *           Stack[0x8]:4   indexed_input_buffer
+; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7638

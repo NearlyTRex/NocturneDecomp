@@ -71,15 +71,16 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(CStranger
   }
   pCVar11 = &(this_ptr->base).base.model;
   local_30 = (CDeformableModelInstance *)
-             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(pCVar11,0x28);
-  local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(pCVar11,0x29)
-  ;
+             core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       (&pCVar11->motion_controller,0x28);
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       (&pCVar11->motion_controller,0x29);
   local_30 = (CDeformableModelInstance *)(local_18 + (float)local_30);
-  local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(pCVar11,0x24)
-  ;
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       (&pCVar11->motion_controller,0x24);
   local_30 = (CDeformableModelInstance *)(local_18 + (float)local_30);
-  local_18 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(pCVar11,0x22)
-  ;
+  local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       (&pCVar11->motion_controller,0x22);
   local_f8 = (1.0 - (local_18 + (float)local_30)) * local_f8;
   if (local_f8 < 0.0) {
     local_f8 = 0.0;
@@ -125,8 +126,8 @@ LAB_00539cea:
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar11);
   local_20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                        (&pCVar3->motion_list,pcVar14,iVar15);
-  local_24 = (float)core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                              (pCVar11,local_20,(this_ptr->base).base.layer_action_t);
+  local_24 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
+                       (&pCVar11->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
   local_18 = local_24;
   if ((((this_ptr->base).base.layer_action_index == 9) &&
       (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->can_grab_weapon != 0)) {
@@ -136,9 +137,9 @@ LAB_00539cea:
     iVar15 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                        (&pCVar3->motion_list,pcVar14,iVar15);
     local_20 = iVar15;
-    local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-    local_18 = (float)core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
-                                (pCVar11,iVar15,local_18);
+    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
+    local_18 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
+                         (&pCVar11->motion_controller,iVar15,local_18);
   }
   local_24 = local_18;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
@@ -184,8 +185,8 @@ LAB_00539cea:
     if (0.0 < fVar1) {
       local_100 = ((fVar1 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
     }
-    local_18 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                (this_ptr,3);
+    local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+                         ((CCharacter *)this_ptr,3);
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
       pcVar16 = core_stranger_cpp_FUN_00534e90;
@@ -227,8 +228,8 @@ LAB_00539cea:
   iVar15 = (this_ptr->base).base.layer_action_index;
   if ((((iVar15 == 3) || (iVar15 == 4)) || ((iVar15 == 9 || ((iVar15 == 6 || (iVar15 == 7)))))) ||
      (iVar15 == 8)) {
-    local_18 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                (this_ptr,3);
+    local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+                         ((CCharacter *)this_ptr,3);
     local_38 = (1.0 - local_18) * local_f8;
     core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0
               ((this_ptr->right_arm_aim).target_pitch,&local_80);

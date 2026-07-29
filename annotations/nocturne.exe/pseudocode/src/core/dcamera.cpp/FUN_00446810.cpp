@@ -1,24 +1,25 @@
 // Name: core_dcamera.cpp_FUN_00446810
 // Address: 00446810
 // Address Range: [[00446810, 00446e94]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_FUN_00446810(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_FUN_00446810(int param_1)
+void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
 
 {
   _FILE *file_handle;
-  int iVar1;
-  uint uVar2;
-  int iVar3;
-  char cVar4;
-  byte *puVar5;
-  int *piVar6;
+  uint uVar1;
+  int iVar2;
+  char cVar3;
+  byte *puVar4;
+  int *piVar5;
+  int iVar6;
   CDemonCamera *unaff_EDI;
+  CVector3i *end_pos;
   int iVar7;
   double dVar8;
   double dVar9;
@@ -33,8 +34,7 @@ void core_dcamera_cpp_FUN_00446810(int param_1)
   byte auStack_104 [12];
   char local_f8 [88];
   byte auStack_a0 [56];
-  byte auStack_68 [8];
-  int iStack_60;
+  CVector3i CStack_68;
   int local_58;
   int local_54;
   int local_50;
@@ -55,12 +55,12 @@ void core_dcamera_cpp_FUN_00446810(int param_1)
   _DAT_012b022c = 1;
   _DAT_0140d778 = 0;
   _DAT_0140d77c = 0;
-  core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(0x140d784);
+  core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20((SFogGrid *)0x140d784);
   _DAT_0140d780 = 0x10;
   if ((_DAT_0140e790 == 0 && _DAT_0140e794 == 0) && _DAT_0140e798 == 0) {
     _DAT_0140d780 = 1;
   }
-  _sprintf(local_274,"%s.fog",param_1);
+  _sprintf(local_274,"%s.fog",this_ptr);
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_274,"rb");
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);
@@ -79,14 +79,15 @@ void core_dcamera_cpp_FUN_00446810(int param_1)
     local_50 = 0x00444645;
     crt_fstream_cpp_ostream_write_FUN_00565a13((_ostream *)(auStack_13c + 0xc),&local_50,3);
     dVar9 = 256;
-    dVar8 = round((double)*(float *)(param_1 + 0x104) * 256);
-    iStack_60 = (int)ROUND(dVar8);
-    dVar8 = round((double)*(float *)(param_1 + 0x108) * dVar9);
-    iStack_60 = (int)ROUND(dVar8);
+    dVar8 = round
+                      ((double)*(float *)(this_ptr->camera_name + 0xc4) * 256);
+    CStack_68.z = (int)ROUND(dVar8);
+    dVar8 = round((double)*(float *)(this_ptr->camera_name + 200) * dVar9);
+    CStack_68.z = (int)ROUND(dVar8);
     iVar11 = 0x10000;
     iVar10 = 0x4469b4;
-    dVar9 = round(dVar9 * (double)*(float *)(param_1 + 0x10c));
-    iStack_60 = (int)ROUND(dVar9);
+    dVar9 = round(dVar9 * (double)*(float *)(this_ptr->camera_name + 0xcc));
+    CStack_68.z = (int)ROUND(dVar9);
     support_codec_cpp_CLZWCompress_ctor_FUN_00439830((CLZWCompress *)(auStack_a0 + 4),iVar10,iVar11)
     ;
     support_codec_cpp_CLZWCompress_init_FUN_00439880((CLZWCompress *)auStack_a0);
@@ -102,28 +103,28 @@ void core_dcamera_cpp_FUN_00446810(int param_1)
           local_48 = 0xf00;
           local_3c = 0x500;
           do {
-            iVar11 = local_48 + 0x7f7378;
-            puVar5 = &DAT_012ceb78 + local_40;
-            piVar6 = (int *)(local_3c + 0xac2af8);
+            end_pos = (CVector3i *)(local_48 + 0x7f7378);
+            puVar4 = &DAT_012ceb78 + local_40;
+            piVar5 = (int *)(local_3c + 0xac2af8);
             iVar10 = 1;
             if (1 < unaff_EDI->display_width) {
               do {
-                if (*piVar6 == 0x7fffffff) {
-                  *puVar5 = 0xff;
+                if (*piVar5 == 0x7fffffff) {
+                  *puVar4 = 0xff;
                 }
                 else {
-                  iVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80
-                                    (0x140d784,auStack_68,iVar11,*piVar6);
-                  uVar2 = (uint)(iVar1 * 0xff) >> 0xe;
-                  if (0xff < uVar2) {
-                    uVar2 = 0xff;
+                  uVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80
+                                    ((SFogGrid *)0x140d784,&CStack_68,end_pos,*piVar5);
+                  uVar1 = uVar1 * 0xff >> 0xe;
+                  if (0xff < uVar1) {
+                    uVar1 = 0xff;
                   }
-                  *puVar5 = (char)uVar2;
+                  *puVar4 = (char)uVar1;
                 }
-                iVar11 = iVar11 + 0xc;
-                puVar5 = puVar5 + 1;
+                end_pos = end_pos + 1;
+                puVar4 = puVar4 + 1;
                 iVar10 = iVar10 + 1;
-                piVar6 = piVar6 + 1;
+                piVar5 = piVar5 + 1;
               } while (iVar10 < unaff_EDI->display_width);
             }
             local_3c = local_3c + 0x500;
@@ -146,28 +147,28 @@ void core_dcamera_cpp_FUN_00446810(int param_1)
             if (0 < unaff_EDI->display_width) {
               local_1c = local_30;
               local_24 = local_30;
-              iVar1 = local_30;
+              iVar6 = local_30;
               iVar7 = local_44;
               do {
-                uVar2 = (uint)*(byte *)(iVar11 + 0x12e1778 + local_50 + local_30);
+                uVar1 = (uint)*(byte *)(iVar11 + 0x12e1778 + local_50 + local_30);
                 if (0 < local_20) {
-                  uVar2 = uVar2 - *(byte *)(iVar11 + 0x12e1778 + local_4c + local_30);
+                  uVar1 = uVar1 - *(byte *)(iVar11 + 0x12e1778 + local_4c + local_30);
                 }
-                iVar3 = ((int)uVar2 >> 2) - iVar10;
-                if (iVar3 < -0x20) {
-                  iVar3 = -0x20;
+                iVar2 = ((int)uVar1 >> 2) - iVar10;
+                if (iVar2 < -0x20) {
+                  iVar2 = -0x20;
                 }
-                else if (0x3f < iVar3) {
-                  iVar3 = 0x3f;
+                else if (0x3f < iVar2) {
+                  iVar2 = 0x3f;
                 }
-                (&DAT_012ceb78)[iVar1] = (char)iVar3;
-                iVar10 = iVar3 + iVar10;
-                cVar4 = (char)iVar10 * '\x04';
+                (&DAT_012ceb78)[iVar6] = (char)iVar2;
+                iVar10 = iVar2 + iVar10;
+                cVar3 = (char)iVar10 * '\x04';
                 if (0 < local_20) {
-                  cVar4 = cVar4 + *(char *)(iVar11 + 0x12e1778 + local_4c + local_30);
+                  cVar3 = cVar3 + *(char *)(iVar11 + 0x12e1778 + local_4c + local_30);
                 }
-                *(char *)(iVar7 + 0x12e1778) = cVar4;
-                iVar1 = iVar1 + 1;
+                *(char *)(iVar7 + 0x12e1778) = cVar3;
+                iVar6 = iVar6 + 1;
                 iVar11 = iVar11 + 1;
                 iVar7 = iVar7 + 1;
               } while (iVar11 < unaff_EDI->display_width);

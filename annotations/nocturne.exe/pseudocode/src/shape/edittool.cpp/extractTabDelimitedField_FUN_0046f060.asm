@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(void)
+; char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0046f060(char *source_str,char *dest_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   source_str
+; char *           Stack[0x8]:4   dest_buffer
 ;
 ; *****************************************************************************
 

@@ -584,7 +584,7 @@ section .text
     PUSH ESI                            ; 00423398
     PUSH EDI                            ; 00423399
     CALL core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 ; 0042339a
-        ;   XREF to: 004227b0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0()
+        ;   XREF to: 004227b0 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0(CBugs * this_ptr, SBug * bug_data, float delta_time, CVector3f * dest_vertex)
     ADD ESP,0x10                        ; 0042339f
     TEST EAX,EAX                        ; 004233a2
     JZ 0x00423324                       ; 004233a4

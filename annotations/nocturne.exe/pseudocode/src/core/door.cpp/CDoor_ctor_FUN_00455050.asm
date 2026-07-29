@@ -23,7 +23,7 @@
 ;   undefined4 s_door_locked_wav_0057d037+1
 ;   undefined4 s_door_locked_wav_0057d037+2
 ;   undefined4 s_door_locked_wav_0057d037+3
-;   undefined1* PTR_core_door.cpp_CDoor_setup_FUN_004551f0_0059c284 = 004551f0
+;   CDemonActor_vtable g_CDoorVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -42,7 +42,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00455053
     PUSH EBX                            ; 00455057
     CALL core_actor.cpp_FUN_00409d30    ; 00455058
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0045505d
     ADD EAX,0x150                       ; 00455060
     PUSH EAX                            ; 00455065
@@ -52,13 +52,13 @@ section .text
     LEA EBX,[EAX + 0x320]               ; 0045506e
     PUSH EBX                            ; 00455074
     CALL core_event.cpp_FUN_00481620    ; 00455075
-        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00481620()
+        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00481620(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 0045507a
     SUB EBX,0x470                       ; 0045507d
     PUSH 0x57d008                       ; 00455083 | = "churchd01.kfm"
     LEA EAX,[EBX + 0x150]               ; 00455088
     PUSH EAX                            ; 0045508e
-    MOV dword ptr [EBX + 0x14c],0x59c284 ; 0045508f | PTR_core_door.cpp_CDoor_setup_FUN_004551f0_0059c284
+    MOV dword ptr [EBX + 0x14c],0x59c284 ; 0045508f | g_CDoorVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00455099
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 0045509e

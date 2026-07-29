@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_bodypart_cpp_SBodyPartFire_ctor_FUN_004180a0(int param_1)
+; SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_004180a0(SBodyPartFire *this_ptr)
 ;
+; Parameters:
+; SBodyPartFire *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_ctor_FUN_0048cf60

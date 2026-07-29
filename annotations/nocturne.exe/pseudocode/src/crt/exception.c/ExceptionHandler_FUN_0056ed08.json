@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 358,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 24,
+    "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_noreturn",
       "warning_unreachable"
@@ -34,9 +33,9 @@
         "0056eed5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_exception.c_ExceptionHandler_FUN_0056ed08",
-    "signature": "undefined4 crt_exception_c_ExceptionHandler_FUN_0056ed08(PEXCEPTION_RECORD param_1,undefined4 param_2,PCONTEXT param_3)"
+    "signature": "EXCEPTION_DISPOSITION __cdecl crt_exception_c_ExceptionHandler_FUN_0056ed08(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)"
   },
   "function_calls": [
     {
@@ -102,9 +101,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -142,10 +141,10 @@
     "pcode_op_count": 689
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -161,6 +160,34 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "ExceptionRecord",
+        "offset": 4,
+        "size": 4,
+        "type": "EXCEPTION_RECORD *"
+      },
+      {
+        "is_param": true,
+        "name": "EstablisherFrame",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "ContextRecord",
+        "offset": 12,
+        "size": 4,
+        "type": "CONTEXT *"
+      },
+      {
+        "is_param": true,
+        "name": "DispatcherContext",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
       }
     ]
   },
@@ -172,78 +199,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x0056eda9) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint ExceptionHandler(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint ExceptionHandler(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint ExceptionHandler(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->ExceptionFlags & 6) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "switch(param_1->ExceptionCode) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pbVar1 = (byte *)(param_3->FloatSave).ErrorOffset;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((((param_3->FloatSave).TagWord & 0xffff) >>",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((byte)(((param_3->FloatSave).StatusWord & 0xffff) >> 0xb) & 7) * '\\x02' & 1) == 1))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (((param_3->FloatSave).StatusWord & 0x200) == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -262,19 +217,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (*DAT_005c1f6c)(iVar4,param_1->ExceptionCode);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 66,
       "match": "DAT_005c1f6c",
       "severity": "mild",
-      "text": "iVar2 = (*DAT_005c1f6c)(iVar4,param_1->ExceptionCode);",
+      "text": "iVar2 = (*DAT_005c1f6c)(iVar4,ExceptionRecord->ExceptionCode);",
       "type": "undefined_data"
     },
     {
@@ -316,38 +263,6 @@
       "severity": "mild",
       "text": "if ((iVar4 != -1) && (DAT_02de5c24 != '\\0')) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(ushort *)&(param_3->FloatSave).StatusWord =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((ushort)(param_3->FloatSave).StatusWord >> 8 & 0x7f) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14.ExceptionRecord = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_14.ContextRecord = param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Subroutine marked as non-returning",

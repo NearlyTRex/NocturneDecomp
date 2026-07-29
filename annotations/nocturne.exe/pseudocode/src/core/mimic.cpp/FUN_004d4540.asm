@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_mimic.cpp_FUN_004d4650_005a05f4 = 004d4650
+;   CEnemy_full_vtable g_CMimicVTable
 ;   WatcomTypeInfo g_CMimicTypeInfo_005a0740
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     JNZ 0x004d4621                      ; 004d454a
         ;   XREF to: 004d4621 (CONDITIONAL_JUMP)  ; LAB_004d4621
     MOV EAX,dword ptr [EBX + 0x4757c]   ; 004d4550
-    MOV dword ptr [EBX + 0x14c],0x5a05f4 ; 004d4556 | PTR_core_mimic.cpp_FUN_004d4650_005a05f4
+    MOV dword ptr [EBX + 0x14c],0x5a05f4 ; 004d4556 | g_CMimicVTable
     TEST EAX,EAX                        ; 004d4560
     JZ 0x004d4576                       ; 004d4562
         ;   XREF to: 004d4576 (CONDITIONAL_JUMP)  ; LAB_004d4576

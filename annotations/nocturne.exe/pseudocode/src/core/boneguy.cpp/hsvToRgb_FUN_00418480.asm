@@ -140,7 +140,7 @@ section .text
     SUB ESP,0x8                         ; 00418591
     FSTP double ptr [ESP]               ; 00418594
     CALL crt_math.c_floor_FUN_005648c0  ; 00418597
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0041859c
     MOV dword ptr [ESP + 0x20],EDX      ; 004185a0
     FLD double ptr [ESP + 0x1c]         ; 004185a4

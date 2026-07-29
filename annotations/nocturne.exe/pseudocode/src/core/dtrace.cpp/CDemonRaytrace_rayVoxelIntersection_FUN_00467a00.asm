@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace *param_1,float *param_2,float *param_3,float *param_4,float *param_5 )
+; float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace *this_ptr,CVector3f *ray_start,CVector3f *ray_end,CVector3f *out_intersection_point,int *out_intersection_type)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_start
+; CVector3f *      Stack[0xc]:4   ray_end
+; CVector3f *      Stack[0x10]:4   out_intersection_point
+; int *            Stack[0x14]:4   out_intersection_type
 ; Local Variables:
 ; undefined8       Stack[-0xb8]:8  local_b8
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -99,7 +105,7 @@ section .text
     SUB ESP,0x8                         ; 00467a53
     FSTP double ptr [ESP]               ; 00467a56
     CALL crt_math.c_floor_FUN_005648c0  ; 00467a59
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467a5e
     MOV dword ptr [ESP + 0x44],EDX      ; 00467a62
     FLD double ptr [ESP + 0x40]         ; 00467a66
@@ -112,7 +118,7 @@ section .text
     SUB ESP,0x8                         ; 00467a7c
     FSTP double ptr [ESP]               ; 00467a7f
     CALL crt_math.c_floor_FUN_005648c0  ; 00467a82
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467a87
     MOV dword ptr [ESP + 0x44],EDX      ; 00467a8b
     FLD double ptr [ESP + 0x40]         ; 00467a8f
@@ -125,7 +131,7 @@ section .text
     SUB ESP,0x8                         ; 00467aa5
     FSTP double ptr [ESP]               ; 00467aa8
     CALL crt_math.c_floor_FUN_005648c0  ; 00467aab
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467ab0
     MOV dword ptr [ESP + 0x44],EDX      ; 00467ab4
     FLD double ptr [ESP + 0x40]         ; 00467ab8
@@ -152,7 +158,7 @@ section .text
     SUB ESP,0x8                         ; 00467af8
     FSTP double ptr [ESP]               ; 00467afb
     CALL crt_math.c_floor_FUN_005648c0  ; 00467afe
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467b03
     MOV dword ptr [ESP + 0x44],EDX      ; 00467b07
     FLD double ptr [ESP + 0x40]         ; 00467b0b
@@ -165,7 +171,7 @@ section .text
     SUB ESP,0x8                         ; 00467b20
     FSTP double ptr [ESP]               ; 00467b23
     CALL crt_math.c_floor_FUN_005648c0  ; 00467b26
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467b2b
     MOV dword ptr [ESP + 0x44],EDX      ; 00467b2f
     FLD double ptr [ESP + 0x40]         ; 00467b33
@@ -178,7 +184,7 @@ section .text
     SUB ESP,0x8                         ; 00467b49
     FSTP double ptr [ESP]               ; 00467b4c
     CALL crt_math.c_floor_FUN_005648c0  ; 00467b4f
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 00467b54
     MOV dword ptr [ESP + 0x44],EDX      ; 00467b58
     FLD double ptr [ESP + 0x40]         ; 00467b5c
@@ -535,7 +541,7 @@ section .text
     PUSH ECX                            ; 00467fa8
     PUSH EAX                            ; 00467fa9
     CALL core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290 ; 00467faa
-        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290()
+        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(CDemonCube * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * hit_normal, ...)
     MOV dword ptr [ESP + 0xb0],EAX      ; 00467faf
     FLD float ptr [ESP + 0xb0]          ; 00467fb6
     ADD ESP,0x14                        ; 00467fbd

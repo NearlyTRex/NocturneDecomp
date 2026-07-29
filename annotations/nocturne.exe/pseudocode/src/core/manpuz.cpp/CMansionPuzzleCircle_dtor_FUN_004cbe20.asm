@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20(CDemonActor *param_1,byte param_2)
+; CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20(CMansionPuzzleCircle *this_ptr,uint flags)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMansionPuzzleCircleTypeInfo_005a0290
@@ -30,19 +33,19 @@ section .text
     ADD EBX,0x1338                      ; 004cbe2e
     PUSH EBX                            ; 004cbe34
     CALL core_manpuz.cpp_FUN_004cc060   ; 004cbe35
-        ;   XREF to: 004cc060 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004cc060()
+        ;   XREF to: 004cc060 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_FUN_004cc060(SReflector * objs, uint flags)
     ADD ESP,0x8                         ; 004cbe3a
     PUSH 0x0                            ; 004cbe3d
     SUB EAX,0x8a0                       ; 004cbe3f
     PUSH EAX                            ; 004cbe44
     CALL core_manpuz.cpp_FUN_004cc040   ; 004cbe45
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004cc040()
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_FUN_004cc040(SGem * objs, uint flags)
     ADD ESP,0x8                         ; 004cbe4a
     PUSH 0x0                            ; 004cbe4d
     SUB EAX,0x4b0                       ; 004cbe4f
     PUSH EAX                            ; 004cbe54
     CALL core_manpuz.cpp_FUN_004cc020   ; 004cbe55
-        ;   XREF to: 004cc020 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004cc020()
+        ;   XREF to: 004cc020 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_FUN_004cc020(SPanel * objs, uint flags)
     ADD ESP,0x8                         ; 004cbe5a
     PUSH 0x1                            ; 004cbe5d
     LEA EBX,[EAX + 0xfffffa18]          ; 004cbe5f

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_null_kfm_0058772c
-;   undefined1* PTR_core_ladder.cpp_FUN_004c4340_0059f954 = 004c4340
+;   CDemonActor_vtable g_CLadderVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c4291
     PUSH EBX                            ; 004c4295
     CALL core_actor.cpp_FUN_00409d30    ; 004c4296
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c429b
     ADD EAX,0x150                       ; 004c429e
     PUSH EAX                            ; 004c42a3
@@ -38,7 +38,7 @@ section .text
     PUSH 0x58772c                       ; 004c42b2 | = "null.kfm"
     LEA EAX,[EBX + 0x150]               ; 004c42b7
     PUSH EAX                            ; 004c42bd
-    MOV dword ptr [EBX + 0x14c],0x59f954 ; 004c42be | PTR_core_ladder.cpp_FUN_004c4340_0059f954
+    MOV dword ptr [EBX + 0x14c],0x59f954 ; 004c42be | g_CLadderVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c42c8
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x40000000 ; 004c42cd

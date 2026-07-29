@@ -17,7 +17,7 @@ void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *or
 
 // Original: core_box.cpp_CBox_setupN_FUN_0041a910
 // Address: 0041a910
-void CBox::setupN(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+void __cdecl CBox::setupN(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume);
 
 // Original: core_box.cpp_CBox_updateTransform_FUN_0041aaa0
 // Address: 0041aaa0
@@ -81,19 +81,19 @@ float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr)
 
 // Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
 // Address: 0041d550
-float CBoundingBox3D::doesRayIntersect(float *param_1,float *param_2,float *param_3,float *param_4);
+float __cdecl CBoundingBox3D::doesRayIntersect(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_box.cpp_CBoundingBox3D_normalize_FUN_0041d980
 // Address: 0041d980
-void CBoundingBox3D::normalize(float *param_1);
+void __cdecl CBoundingBox3D::normalize(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0
 // Address: 0041d9d0
-void CBoundingBox3D::computeFromPoints(float *param_1,int param_2,float *param_3);
+void __cdecl CBoundingBox3D::computeFromPoints(CBoundingBox3D *this_ptr,int point_count,CVector3f *points);
 
 // Original: core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0
 // Address: 0041daa0
-void CBoundingBox3D::computeFromVertices(float *param_1,int param_2,int *param_3);
+void __cdecl CBoundingBox3D::computeFromVertices(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices);
 
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0
 // Address: 0041dbc0
@@ -101,7 +101,7 @@ void __cdecl CBoundingBox3D::reset(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_isInverted_FUN_0041dbf0
 // Address: 0041dbf0
-undefined4 CBoundingBox3D::isInverted(void);
+int __cdecl CBoundingBox3D::isInverted(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20
 // Address: 0041dc20

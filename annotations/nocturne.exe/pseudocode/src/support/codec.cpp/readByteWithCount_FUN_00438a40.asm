@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint support_codec_cpp_readByteWithCount_FUN_00438a40(_istream *param_1,int *param_2)
+; int __cdecl support_codec_cpp_readByteWithCount_FUN_00438a40(_istream *istream,int *remaining_count)
 ;
+; Parameters:
+; _istream *       Stack[0x4]:4   istream
+; int *            Stack[0x8]:4   remaining_count
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;

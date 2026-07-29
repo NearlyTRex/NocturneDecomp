@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 328,
+    "complexity_score": 329,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 69,
     "suspect_count": 24,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -135,7 +135,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 253
+    "total_lines": 254
   },
   "cross_references": [
     {
@@ -428,124 +428,124 @@
       "line": 32,
       "match": "DAT_01cc9124",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "text": "(this_ptr->clip_planes,(CVector3f *)&DAT_01cc9124,_DAT_01cc9120,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_01cc92a8",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_01cc92a4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_01cc92a8",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "text": "(this_ptr->clip_planes + 1,(CVector3f *)&DAT_01cc92a8,_DAT_01cc92a4,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_01cc9124",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "text": "(CVector3f *)&DAT_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_01cc9120",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "text": "(CVector3f *)&DAT_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01cc9124",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(this_ptr->clip_planes + 2,(CVector3f *)&DAT_01cc9124,_DAT_01cc9120,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_01cc92a8",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_01cc92a4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_01cc92a8",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "text": "(this_ptr->clip_planes + 3,(CVector3f *)&DAT_01cc92a8,_DAT_01cc92a4,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_01cc9124",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "text": "(CVector3f *)&DAT_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120 &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_01cc9120",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "text": "(CVector3f *)&DAT_01cc9124,(int *)&DAT_01cc9120), 2 < _DAT_01cc9120 &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_01cc9124",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(this_ptr->clip_planes + 4,(CVector3f *)&DAT_01cc9124,_DAT_01cc9120,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_01cc92a8",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)))) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_01cc92a4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "text": "(CVector3f *)&DAT_01cc92a8,(int *)&DAT_01cc92a4), 2 < _DAT_01cc92a4)))) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_01cc92a8",
       "severity": "mild",
       "text": "local_14 = (float *)&DAT_01cc92a8;",
@@ -553,7 +553,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "piVar2 = (int *)(*DAT_005ae704 + iVar6);",
@@ -561,7 +561,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "*(uint *)(iVar6 + 0x10 + *DAT_005ae704) = 0xffffffff;",
@@ -569,7 +569,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 47,
+      "line": 48,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 66,
+      "line": 67,
       "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;",

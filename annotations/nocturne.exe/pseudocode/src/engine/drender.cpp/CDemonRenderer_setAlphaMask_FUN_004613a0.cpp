@@ -1,14 +1,14 @@
 // Name: engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0
 // Address: 004613a0
 // Address Range: [[004613a0, 004613ae]]
-// Convention: unknown
-// Signature: void engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(CDemonRenderer *this_ptr,int alpha_mask)
 
 #include "nocturne.h"
 
-void engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(int param_1,int param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_004613a0(CDemonRenderer *this_ptr,int alpha_mask)
 
 {
-  *(int *)(param_1 + 0x14) = param_2 << 0x18;
+  this_ptr->alpha_mask = alpha_mask << 0x18;
   return;
 }

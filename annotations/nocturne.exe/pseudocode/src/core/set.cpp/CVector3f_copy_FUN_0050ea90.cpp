@@ -1,34 +1,29 @@
 // Name: core_set.cpp_CVector3f_copy_FUN_0050ea90
 // Address: 0050ea90
 // Address Range: [[0050ea90, 0050ead4]]
-// Convention: unknown
-// Signature: void core_set_cpp_CVector3f_copy_FUN_0050ea90(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_set_cpp_CVector3f_copy_FUN_0050ea90(void)
+CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b)
 
 {
-  uint *in_stack_00000004;
-  uint *in_stack_00000008;
-  
-  if (in_stack_00000004 == in_stack_00000008) {
-    if (in_stack_00000004 + 3 == in_stack_00000008 + 3) {
-      return;
+  if (a == b) {
+    if (a + 1 == b + 1) {
+      return a;
     }
   }
   else {
-    *in_stack_00000004 = *in_stack_00000008;
-    in_stack_00000004[1] = in_stack_00000008[1];
-    in_stack_00000004[2] = in_stack_00000008[2];
-    if (in_stack_00000004 + 3 == in_stack_00000008 + 3) {
-      return;
+    a->x = b->x;
+    a->y = b->y;
+    a->z = b->z;
+    if (a + 1 == b + 1) {
+      return a;
     }
   }
-  in_stack_00000004[3] = in_stack_00000008[3];
-  in_stack_00000004[4] = in_stack_00000008[4];
-  in_stack_00000004[5] = in_stack_00000008[5];
-  return;
+  a[1].x = b[1].x;
+  a[1].y = b[1].y;
+  a[1].z = b[1].z;
+  return a;
 }

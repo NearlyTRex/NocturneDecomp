@@ -39,7 +39,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x20]      ; 00490bf7
     PUSH ESI                            ; 00490bfb
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00490bfc
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00490c01
     MOV EDX,dword ptr [ESP + 0x20]      ; 00490c04
     SUB EDX,EAX                         ; 00490c08

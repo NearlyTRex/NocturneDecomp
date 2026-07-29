@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 590,
+    "complexity_score": 592,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 340,
+    "pseudocode_lines": 342,
     "suspect_count": 23,
     "suspect_types": [
       "undefined_data",
@@ -135,7 +135,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1360
+    "total_lines": 1362
   },
   "cross_references": [
     {
@@ -1036,7 +1036,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 146,
+      "line": 148,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
@@ -1044,7 +1044,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 150,
       "match": "DAT_01c78424",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00476160(&DAT_01c78424);",
@@ -1052,19 +1052,11 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 151,
+      "line": 153,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_01c78424",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -1076,18 +1068,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 163,
+      "line": 160,
       "match": "DAT_01c78424",
       "severity": "mild",
-      "text": "((CPickList *)&DAT_01c78424,pcVar2,iVar3,uVar5);",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 165,
       "match": "DAT_01c78424",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);",
+      "text": "((CPickList *)&DAT_01c78424,pcVar2,iVar3,uVar5);",
       "type": "undefined_data"
     },
     {
@@ -1100,7 +1092,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 173,
+      "match": "DAT_01c78424",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 178,
       "match": "DAT_01c78424",
       "severity": "mild",
       "text": "((CPickList *)&DAT_01c78424,pcVar2,iVar3,uVar5);",
@@ -1108,7 +1108,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 216,
+      "line": 218,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (0xf0 < DAT_005b7620) {",
@@ -1116,15 +1116,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 254,
       "match": "DAT_01c78424",
       "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_FUN_00475230(&DAT_01c78424);",
+      "text": "iVar3 = shape_edittool_cpp_FUN_00475230((CPickList *)&DAT_01c78424);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 256,
+      "line": 258,
       "match": "DAT_01c78424",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00476160(&DAT_01c78424);",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 277,
+      "line": 279,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 279,
+      "line": 281,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);",
@@ -1148,7 +1148,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 312,
+      "line": 314,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 338,
+      "line": 340,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)INT_005bac64 + 8))(INT_005bac64);",
@@ -1164,7 +1164,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 341,
+      "line": 343,
       "match": "DAT_01c78424",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00476160(&DAT_01c78424);",

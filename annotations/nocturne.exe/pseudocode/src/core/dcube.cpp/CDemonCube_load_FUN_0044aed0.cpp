@@ -1,59 +1,58 @@
 // Name: core_dcube.cpp_CDemonCube_load_FUN_0044aed0
 // Address: 0044aed0
 // Address Range: [[0044aed0, 0044afcd]]
-// Convention: unknown
-// Signature: SIZE_T core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *param_1,_FILE *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-SIZE_T core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *param_1,_FILE *param_2)
+void __cdecl core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *this_ptr,_FILE *file_handle)
 
 {
-  SIZE_T SVar1;
-  int iVar2;
-  SVoxelGrid *pSVar3;
-  int iVar4;
-  SVoxelGrid *pSVar5;
-  byte bVar6;
+  int iVar1;
+  SVoxelGrid *pSVar2;
+  int iVar3;
+  SVoxelGrid *pSVar4;
+  byte bVar5;
   
-  bVar6 = 0;
-  _fread(&param_1->min_bounds,1,0xc,param_2);
-  _fread(&param_1->max_bounds,1,0xc,param_2);
-  _fread(&param_1->vertex_count,1,4,param_2);
-  _fread(&param_1->triangle_count,1,4,param_2);
-  if (param_1->triangle_count != 0) {
-    core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0(param_1);
+  bVar5 = 0;
+  _fread(&this_ptr->min_bounds,1,0xc,file_handle);
+  _fread(&this_ptr->max_bounds,1,0xc,file_handle);
+  _fread(&this_ptr->vertex_count,1,4,file_handle);
+  _fread(&this_ptr->triangle_count,1,4,file_handle);
+  if (this_ptr->triangle_count != 0) {
+    core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0(this_ptr);
   }
-  SVar1 = _fread(param_1->vertex_buffer,param_1->vertex_count,0xc,param_2);
-  iVar2 = 0;
-  if (0 < param_1->triangle_count) {
-    iVar4 = 0;
+  _fread(this_ptr->vertex_buffer,this_ptr->vertex_count,0xc,file_handle);
+  iVar1 = 0;
+  if (0 < this_ptr->triangle_count) {
+    iVar3 = 0;
     do {
-      iVar2 = iVar2 + 1;
-      SVar1 = core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0
-                        ((int)(param_1->triangle_buffer->triangle).vertices + iVar4,param_2,
-                         param_1->vertex_buffer);
-      iVar4 = iVar4 + 0x20;
-    } while (iVar2 < param_1->triangle_count);
+      iVar1 = iVar1 + 1;
+      core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0
+                ((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar3)
+                 ,file_handle,this_ptr->vertex_buffer);
+      iVar3 = iVar3 + 0x20;
+    } while (iVar1 < this_ptr->triangle_count);
   }
-  if (param_1->triangle_count != 0) {
-    SVar1 = _fread(param_1->ground_type_memory,1,param_1->triangle_count,param_2);
+  if (this_ptr->triangle_count != 0) {
+    _fread(this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
   }
-  if (param_1->triangle_count != 0) {
-    _fread(param_1->voxel_buffer1,1,0x40,param_2);
-    pSVar3 = param_1->voxel_buffer1;
-    pSVar5 = param_1->voxel_buffer2;
-    for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pSVar5->voxels[0] = *(uint *)pSVar3->voxels[0];
-      pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
-      pSVar5 = (SVoxelGrid *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
+  if (this_ptr->triangle_count != 0) {
+    _fread(this_ptr->voxel_buffer1,1,0x40,file_handle);
+    pSVar2 = this_ptr->voxel_buffer1;
+    pSVar4 = this_ptr->voxel_buffer2;
+    for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *(uint *)pSVar4->voxels[0] = *(uint *)pSVar2->voxels[0];
+      pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
+      pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
     }
-    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pSVar5->voxels[0][0] = pSVar3->voxels[0][0];
-      pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar6 * -2 + 1);
-      pSVar5 = (SVoxelGrid *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
+    for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pSVar4->voxels[0][0] = pSVar2->voxels[0][0];
+      pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -2 + 1);
+      pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);
     }
-    return 0x40;
+    return;
   }
-  return SVar1;
+  return;
 }

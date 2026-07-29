@@ -5,7 +5,7 @@
 
 // Original: crt_stdio.c_fscanf_FUN_00563350
 // Address: 00563350
-void fscanf(_FILE *param_1,char *param_2);
+int __cdecl fscanf(_FILE *file,char *format);
 
 // Original: crt_stdio.c_fclose_FUN_00563380
 // Address: 00563380
@@ -65,7 +65,7 @@ void __cdecl fflush(_FILE *stream);
 
 // Original: crt_stdio.c_sscanf_FUN_00566b5c
 // Address: 00566b5c
-void sscanf(char *param_1,char *param_2);
+int __cdecl sscanf(char *str,char *format);
 
 // Original: crt_stdio.c_fputc_FUN_00566cc0
 // Address: 00566cc0
@@ -77,7 +77,7 @@ long __cdecl ftell(_FILE *file_handle);
 
 // Original: crt_stdio.c_rename_FUN_00566f00
 // Address: 00566f00
-DWORD rename(LPCSTR param_1,LPCSTR param_2);
+int __watcallStack rename(char *old_filename,char *new_filename);
 
 // Original: crt_stdio.c___allocfp_FUN_00568560
 // Address: 00568560

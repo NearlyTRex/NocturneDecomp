@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CBloodPool_save_FUN_004af820(undefined4 *param_1,undefined4 param_2)
+; int __cdecl core_gore_cpp_CBloodPool_save_FUN_004af820(CBloodPool *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CBloodPool *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20

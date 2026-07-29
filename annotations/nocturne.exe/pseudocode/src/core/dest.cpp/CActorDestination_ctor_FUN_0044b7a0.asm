@@ -15,7 +15,7 @@
 ;   undefined4 s_one_0057be09+1
 ;   undefined4 s_ne_0057be09+2
 ;   undefined4 s_e_0057be09+3
-;   undefined1* PTR_core_dest.cpp_CActorDestination_setup_FUN_0044b810_0059be64 = 0044b810
+;   CDemonActor_vtable g_CActorDestinationVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -31,11 +31,11 @@ section .text
     PUSH EDX                            ; 0044b7a6
     MOV ESI,0x57be09                    ; 0044b7a7 | = "none"
     CALL core_actor.cpp_FUN_00409d30    ; 0044b7ac
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     MOV EDX,EAX                         ; 0044b7b1
     ADD ESP,0x4                         ; 0044b7b3
     LEA EDI,[EAX + 0x180]               ; 0044b7b6
-    MOV dword ptr [EAX + 0x14c],0x59be64 ; 0044b7bc | PTR_core_dest.cpp_CActorDestination_setup_FUN_0044b810_0059be64
+    MOV dword ptr [EAX + 0x14c],0x59be64 ; 0044b7bc | g_CActorDestinationVTable
     PUSH EDI                            ; 0044b7c6
     MOV AL,byte ptr [ESI]               ; 0044b7c7 | = "none" | s_ne_0057be09+2
         ;   Label: LAB_0044b7c7

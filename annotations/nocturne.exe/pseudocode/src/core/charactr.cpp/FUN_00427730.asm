@@ -1,12 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,int param_4,float param_5,int param_6)
+; void __cdecl core_charactr_cpp_FUN_00427730(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   fire_type
+; int              Stack[0x10]:4   flame_type
+; float            Stack[0x14]:4   flame_scale
+; int              Stack[0x18]:4   include_hero
 ;
 ; XREF[8]:
 ;   core_batcreat.cpp_FUN_00413040 at 004130bc
-;   core_batman.cpp_FUN_00414930 at 004149ac
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 004149ac
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420ca9
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004285a3
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a754

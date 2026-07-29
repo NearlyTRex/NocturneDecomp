@@ -1,12 +1,12 @@
 // Name: crt_stdlib.c_i64toa_FUN_0056f3e0
 // Address: 0056f3e0
 // Address Range: [[0056f3e0, 0056f47c]]
-// Convention: unknown
-// Signature: char * crt_stdlib_c_i64toa_FUN_0056f3e0(ulonglong *param_1,char *param_2,int param_3)
+// Convention: __cdecl
+// Signature: char * __cdecl crt_stdlib_c_i64toa_FUN_0056f3e0(longlong *value,char *buffer,int base)
 
 #include "nocturne.h"
 
-char * i64toa(ulonglong *param_1,char *param_2,int param_3)
+char * __cdecl i64toa(longlong *value,char *buffer,int base)
 
 {
   char cVar1;
@@ -21,10 +21,10 @@ char * i64toa(ulonglong *param_1,char *param_2,int param_3)
   ulonglong local_20;
   char *local_18;
   
-  local_18 = param_2;
+  local_18 = buffer;
   pcVar4 = local_53;
-  local_20 = *param_1;
-  local_28 = param_3;
+  local_20 = *value;
+  local_28 = base;
   local_24 = 0;
   do {
     do {
@@ -43,5 +43,5 @@ char * i64toa(ulonglong *param_1,char *param_2,int param_3)
     *local_18 = cVar1;
     local_18 = local_18 + 1;
   } while (cVar1 != '\0');
-  return param_2;
+  return buffer;
 }

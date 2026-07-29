@@ -1,12 +1,12 @@
 // Name: crt_time.c_parse_dst_rule_FUN_0056d774
 // Address: 0056d774
 // Address Range: [[0056d774, 0056d879]]
-// Convention: unknown
-// Signature: char * crt_time_c_parse_dst_rule_FUN_0056d774(char *param_1,int *param_2)
+// Convention: __cdecl
+// Signature: char * __cdecl crt_time_c_parse_dst_rule_FUN_0056d774(char *rule_string,dst_rule *rule)
 
 #include "nocturne.h"
 
-char * parse_dst_rule(char *param_1,int *param_2)
+char * __cdecl parse_dst_rule(char *rule_string,dst_rule *rule)
 
 {
   char *pcVar1;
@@ -17,30 +17,30 @@ char * parse_dst_rule(char *param_1,int *param_2)
   int local_c;
   
   iVar2 = -1;
-  if (*param_1 == 'J') {
+  if (*rule_string == 'J') {
     iVar2 = 1;
-    param_1 = param_1 + 1;
+    rule_string = rule_string + 1;
   }
-  if (*param_1 == 'M') {
-    param_1 = param_1 + 1;
+  if (*rule_string == 'M') {
+    rule_string = rule_string + 1;
     iVar2 = 0;
   }
-  param_2[8] = iVar2;
-  pcVar1 = parse_uint(param_1,&local_c);
+  rule[1].seconds = iVar2;
+  pcVar1 = parse_uint(rule_string,&local_c);
   if (iVar2 == 0) {
-    param_2[4] = local_c + -1;
+    rule->month = local_c + -1;
     if (*pcVar1 == '.') {
       pcVar1 = parse_uint(pcVar1 + 1,&local_c);
-      param_2[3] = local_c;
+      rule->day = local_c;
       if (*pcVar1 == '.') {
         pcVar1 = parse_uint(pcVar1 + 1,&local_c);
-        param_2[6] = local_c;
+        rule->day_of_year = local_c;
       }
     }
-    param_2[7] = 0;
+    rule->rule_type = 0;
   }
   else {
-    param_2[7] = local_c;
+    rule->rule_type = local_c;
   }
   local_10 = 2;
   local_18 = 0;
@@ -54,8 +54,8 @@ char * parse_dst_rule(char *param_1,int *param_2)
       }
     }
   }
-  *param_2 = local_18;
-  param_2[1] = local_14;
-  param_2[2] = local_10;
+  rule->seconds = local_18;
+  rule->minutes = local_14;
+  rule->hours = local_10;
   return pcVar1;
 }

@@ -53,7 +53,8 @@ void core_fire_cpp_CSpark_render_FUN_004838c0(CVector3f *param_1)
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
-  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(DAT_005ae704,&DAT_01c08d08,0);
+  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
+            (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
   local_4c = -0.4;
   local_48 = -0.4;
   local_44 = 0;
@@ -144,7 +145,7 @@ LAB_0048394f:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (DAT_005ae704,&local_58);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,&DAT_01c08d08,0);
+              (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
     local_4c = -local_20 * local_d4;
     local_44 = 0;
     local_40[0].x = (int)ROUND(local_4c * 256.0f);

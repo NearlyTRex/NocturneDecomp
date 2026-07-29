@@ -44,7 +44,7 @@ section .text
     PUSH EBX                            ; 0056d899
     MOV dword ptr [0x005c1f18],EDX      ; 0056d89a | DAT_005c1f18
     CALL crt_time.c_parse_timezone_spec_FUN_0056d658 ; 0056d8a0
-        ;   XREF to: 0056d658 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_parse_timezone_spec_FUN_0056d658()
+        ;   XREF to: 0056d658 (UNCONDITIONAL_CALL)  ; char * crt_time.c_parse_timezone_spec_FUN_0056d658(char * tz_string, char * name_buffer, int * offset_seconds)
     MOV EDX,EAX                         ; 0056d8a5
     MOV AH,byte ptr [EAX]               ; 0056d8a7
     ADD ESP,0xc                         ; 0056d8a9
@@ -66,7 +66,7 @@ section .text
     PUSH EDX                            ; 0056d8db
     MOV dword ptr [0x005c1f18],ECX      ; 0056d8dc | DAT_005c1f18
     CALL crt_time.c_parse_timezone_spec_FUN_0056d658 ; 0056d8e2
-        ;   XREF to: 0056d658 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_parse_timezone_spec_FUN_0056d658()
+        ;   XREF to: 0056d658 (UNCONDITIONAL_CALL)  ; char * crt_time.c_parse_timezone_spec_FUN_0056d658(char * tz_string, char * name_buffer, int * offset_seconds)
     ADD ESP,0xc                         ; 0056d8e7
     MOV EBX,dword ptr [0x005c1f14]      ; 0056d8ea | DAT_005c1f14
     MOV ESI,dword ptr [ESP]             ; 0056d8f0
@@ -82,7 +82,7 @@ section .text
     INC EAX                             ; 0056d90b
     PUSH EAX                            ; 0056d90c
     CALL crt_time.c_parse_dst_rule_FUN_0056d774 ; 0056d90d
-        ;   XREF to: 0056d774 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_parse_dst_rule_FUN_0056d774()
+        ;   XREF to: 0056d774 (UNCONDITIONAL_CALL)  ; char * crt_time.c_parse_dst_rule_FUN_0056d774(char * rule_string, dst_rule * rule)
     ADD ESP,0x8                         ; 0056d912
     MOV EDX,EAX                         ; 0056d915
     MOV BH,byte ptr [EDX]               ; 0056d917
@@ -95,7 +95,7 @@ section .text
     INC EDX                             ; 0056d929
     PUSH EDX                            ; 0056d92a
     CALL crt_time.c_parse_dst_rule_FUN_0056d774 ; 0056d92b
-        ;   XREF to: 0056d774 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_parse_dst_rule_FUN_0056d774()
+        ;   XREF to: 0056d774 (UNCONDITIONAL_CALL)  ; char * crt_time.c_parse_dst_rule_FUN_0056d774(char * rule_string, dst_rule * rule)
     MOV ESI,dword ptr [0x005c1f1c]      ; 0056d930 | DAT_005c1f1c
     MOV EBX,0xe10                       ; 0056d936
     MOV EDX,ESI                         ; 0056d93b

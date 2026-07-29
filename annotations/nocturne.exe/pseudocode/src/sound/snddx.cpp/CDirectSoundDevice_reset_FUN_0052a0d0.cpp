@@ -1,14 +1,14 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0
 // Address: 0052a0d0
 // Address Range: [[0052a0d0, 0052a279]]
-// Convention: unknown
-// Signature: undefined4 sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(void)
+// Convention: __cdecl
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(void)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(CDirectSoundDevice *this_ptr)
 
 {
   int *piVar1;
@@ -20,7 +20,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_reset_FUN_0052a0d0(void)
   byte auStack_4c4 [400];
   byte auStack_334 [400];
   byte auStack_1a4 [400];
-  uint local_14;
+  int local_14;
   
   local_14 = 1;
   if (_DAT_02dc921c != (int *)0x0) {

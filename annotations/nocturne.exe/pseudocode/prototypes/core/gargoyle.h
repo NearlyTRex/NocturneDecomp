@@ -55,6 +55,6 @@ int CGargoyle::getTargetPoints(int param_1,CVector3f *param_2);
 // Address: 004a88d0
 void FUN_004a88d0(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_gargoyle.cpp_FUN_004a88f0
+// Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004a88f0
 // Address: 004a88f0
-CDemonActor * FUN_004a88f0(CDemonActor *param_1,byte param_2);
+CGargoyle * __cdecl CGargoyle::dtor(CGargoyle *this_ptr,uint flags);

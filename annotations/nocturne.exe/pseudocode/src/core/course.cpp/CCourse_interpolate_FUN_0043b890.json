@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,23 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 408,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 133,
-    "suspect_count": 24,
+    "pseudocode_lines": 134,
+    "suspect_count": 21,
     "suspect_types": [
+      "bitcast_double_pair",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unknown_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 410
+    "total_lines": 411
   },
   "cross_references": [
     {
@@ -491,40 +491,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_24._4_4_ = 1.0 - local_7c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 89,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "fStack_58 = pCVar2[local_1c].pos.x * local_24._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 90,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_54 = pCVar2[local_1c].pos.y * local_24._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_50 = pCVar2[local_1c].pos.z * local_24._4_4_;",
-      "type": "unknown_field"
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_24 = __BITCAST_DOUBLE(CONCAT44(local_50,(uint)local_24));",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 105,
       "match": "(uint *)((int)pCVar3",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -532,7 +508,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 108,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff8c + (uint)bVar7 * -8) = *puVar6;",
@@ -540,7 +516,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 109,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) = *puVar4;",
@@ -548,7 +524,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
+      "line": 111,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
@@ -556,7 +532,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 117,
       "match": "(uint *)((int)out_orient",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
@@ -564,7 +540,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
+      "line": 120,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*puVar6 = *(uint *)(&stack0xffffff8c + (uint)bVar7 * -8);",
@@ -572,7 +548,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 121,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*puVar4 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -580,7 +556,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 124,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
@@ -588,7 +564,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 128,
       "match": "(uint *)((int)out_orient",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
@@ -596,7 +572,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 131,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*puVar6 = *(uint *)(&stack0xffffff8c + (uint)bVar7 * -8);",
@@ -604,7 +580,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 132,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*puVar4 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -612,7 +588,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 134,
+      "line": 135,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
@@ -620,7 +596,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 104,
+      "line": 105,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -628,7 +604,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
+      "line": 111,
       "match": "(int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
@@ -636,7 +612,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
@@ -644,7 +620,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 134,
+      "line": 135,
       "match": "(int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff90 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
@@ -660,7 +636,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 113,
+      "line": 114,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "out_pos->x = local_40.pos.x;",

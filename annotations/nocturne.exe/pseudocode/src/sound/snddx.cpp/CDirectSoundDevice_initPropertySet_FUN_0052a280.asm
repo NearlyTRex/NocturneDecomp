@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(void)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDirectSoundDevice *this_ptr)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined4       Stack[-0x18]:4  local_18

@@ -15,13 +15,13 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
   float fVar2;
   CCharacter *this_ptr_00;
   int iVar3;
-  CBoundingBox3D *pCVar4;
+  EDeathState EVar4;
+  CVector3f *pCVar5;
+  CBoundingBox3D *pCVar6;
   CVector3f local_f8 [10];
   CBoundingBox3D CStack_80;
-  byte auStack_68 [12];
-  float fStack_5c;
-  float fStack_58;
-  float fStack_54;
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f CStack_44;
   float fStack_38;
@@ -41,14 +41,16 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
   iVar3 = (*((target->vtable)._ub)->getTargetPoints)(target,local_f8);
   if ((iVar3 != 0) &&
      (((this_ptr_00 == (CCharacter *)0x0 ||
-       (iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00), iVar3 < 1))
-      && (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                    ((CDemonActor *)this_ptr,&CStack_50,&(target->location).position),
-         0.0 < CStack_50.z)))) {
+       (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
+       (int)EVar4 < 1)) &&
+      (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                 ((CDemonActor *)this_ptr,&CStack_50,&(target->location).position),
+      0.0 < CStack_50.z)))) {
     fVar2 = SQRT(CStack_50.z * CStack_50.z + CStack_50.x * CStack_50.x + CStack_50.y * CStack_50.y);
     fStack_20 = fVar2;
-    iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(auStack_68,&CStack_50);
-    fVar1 = *(float *)(iVar3 + 4);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_68,&CStack_50)
+    ;
+    fVar1 = pCVar5->y;
     if (hand_index == 0) {
       if ((float)30 < fVar2) {
         return -0x40800000;
@@ -71,22 +73,22 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDem
         return -0x40800000;
       }
     }
-    pCVar4 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+    pCVar6 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                        ((CDemonActor *)this_ptr,&CStack_80);
-    fStack_38 = (pCVar4->min).x + (pCVar4->max).x;
-    fStack_34 = (pCVar4->min).y + (pCVar4->max).y;
+    fStack_38 = (pCVar6->min).x + (pCVar6->max).x;
+    fStack_34 = (pCVar6->min).y + (pCVar6->max).y;
     fStack_2c = fStack_38 * 0.5f;
-    fStack_30 = (pCVar4->min).z + (pCVar4->max).z;
+    fStack_30 = (pCVar6->min).z + (pCVar6->max).z;
     fStack_28 = fStack_34 * 0.5f;
     fStack_24 = fStack_30 * 0.5f;
-    fStack_5c = (this_ptr->base).base.base.location.position.x + fStack_2c;
-    fStack_58 = (this_ptr->base).base.base.location.position.y + fStack_28;
-    fStack_54 = (this_ptr->base).base.base.location.position.z + fStack_24;
+    CStack_5c.x = (this_ptr->base).base.base.location.position.x + fStack_2c;
+    CStack_5c.y = (this_ptr->base).base.base.location.position.y + fStack_28;
+    CStack_5c.z = (this_ptr->base).base.base.location.position.z + fStack_24;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(target,&CStack_44,local_f8);
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,(CDemonActor *)this_ptr);
-    fStack_1c = (float)core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                                 (0x01E57284,&fStack_5c,&CStack_44);
+    fStack_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(0x01E57284,&CStack_5c,&CStack_44)
+    ;
     fStack_14 = fStack_1c;
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     if ((fStack_1c <= 1.0) &&

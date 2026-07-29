@@ -81,19 +81,19 @@ undefined4 FUN_0041f160(int param_1);
 
 // Original: core_boxactor.cpp_FUN_0041f170
 // Address: 0041f170
-void FUN_0041f170(undefined4 param_1,undefined4 param_2);
+void FUN_0041f170(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_boxactor.cpp_FUN_0041f190
 // Address: 0041f190
-void FUN_0041f190(int param_1);
+void __cdecl FUN_0041f190(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240
 // Address: 0041f240
 void CBoxActor::setPositionAndOrientation(CBoxActor *param_1,float *param_2,float *param_3);
 
-// Original: core_boxactor.cpp_FUN_0041f2d0
+// Original: core_boxactor.cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041f2d0
 // Address: 0041f2d0
-undefined4 FUN_0041f2d0(int param_1);
+int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_FUN_0041f2e0
 // Address: 0041f2e0
@@ -109,7 +109,7 @@ CLightActor * __cdecl CLightActor::ctor(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0
 // Address: 0041f3a0
-void CLightActor::setup(CBoxActor *param_1);
+void CLightActor::setup(CLightActor *param_1);
 
 // Original: core_boxactor.cpp_FUN_0041f3d0
 // Address: 0041f3d0
@@ -121,19 +121,19 @@ void CLightActor::archive(CBoxActor *param_1);
 
 // Original: core_boxactor.cpp_FUN_0041f6e0
 // Address: 0041f6e0
-void FUN_0041f6e0(int param_1);
+void __cdecl FUN_0041f6e0(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_isLightPartVisible_FUN_0041f9f0
 // Address: 0041f9f0
-bool CLightActor::isLightPartVisible(void);
+int __cdecl CLightActor::isLightPartVisible(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_dtor_FUN_0041fa10
 // Address: 0041fa10
-CDemonActor * CLightActor::dtor(CDemonActor *param_1,byte param_2);
+CLightActor * __cdecl CLightActor::dtor(CLightActor *this_ptr,uint flags);
 
 // Original: core_boxactor.cpp_CBoxActor_dtor_FUN_0041fa90
 // Address: 0041fa90
-CDemonActor * CBoxActor::dtor(CDemonActor *param_1,byte param_2);
+CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint flags);
 
 // Original: core_boxactor.cpp_FUN_0041fb00
 // Address: 0041fb00

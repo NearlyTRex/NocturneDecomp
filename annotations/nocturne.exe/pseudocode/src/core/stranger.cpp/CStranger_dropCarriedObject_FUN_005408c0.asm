@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5,CVector3f *param_6)
+; void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)
 ;
 ;
 ; Called Functions:

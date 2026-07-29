@@ -5,7 +5,7 @@
 
 // Original: core_npc.cpp_CNPC_dtor_FUN_004b68c0
 // Address: 004b68c0
-CDemonActor * CNPC::dtor(CDemonActor *param_1,byte param_2);
+CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);
 
 // Original: core_npc.cpp_staticInit_FUN_004ee8f0
 // Address: 004ee8f0
@@ -21,7 +21,7 @@ CDemonActorType * FUN_004ee940(void);
 
 // Original: core_npc.cpp_FUN_004ee950
 // Address: 004ee950
-int * FUN_004ee950(CCharacter *param_1);
+CNPC * __cdecl FUN_004ee950(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setup_FUN_004ee9e0
 // Address: 004ee9e0
@@ -33,11 +33,11 @@ void __cdecl CNPC::process(CNPC *this_ptr,float delta_time);
 
 // Original: core_npc.cpp_FUN_004eece0
 // Address: 004eece0
-void FUN_004eece0(int param_1,int param_2);
+void __cdecl FUN_004eece0(CNPC *this_ptr,int layer_flag);
 
 // Original: core_npc.cpp_FUN_004eed10
 // Address: 004eed10
-void FUN_004eed10(CCharacter *param_1);
+void __cdecl FUN_004eed10(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0
 // Address: 004eedc0
@@ -45,12 +45,12 @@ int __cdecl CNPC::setRandomMotionVariant(CNPC *this_ptr,char *motion_name);
 
 // Original: core_npc.cpp_FUN_004eeea0
 // Address: 004eeea0
-void FUN_004eeea0(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl FUN_004eeea0(CNPC *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_npc.cpp_FUN_004eef80
+// Original: core_npc.cpp_CNPC_isInvulnerable_FUN_004eef80
 // Address: 004eef80
-bool FUN_004eef80(int param_1);
+int __cdecl CNPC::isInvulnerable(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_004eefa0
+// Original: core_npc.cpp_CNPC_getPathMap_FUN_004eefa0
 // Address: 004eefa0
-int FUN_004eefa0(int param_1);
+CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);

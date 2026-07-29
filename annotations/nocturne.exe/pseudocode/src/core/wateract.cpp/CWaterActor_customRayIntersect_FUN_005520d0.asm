@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+; float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
@@ -37,7 +37,7 @@ section .text
     ADD ESP,0x8                         ; 005520fb
     PUSH EAX                            ; 005520fe
     CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 ; 005520ff
-        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550()
+        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x98],EAX      ; 00552104
     FLD float ptr [ESP + 0x98]          ; 0055210b
     ADD ESP,0x10                        ; 00552112
@@ -90,7 +90,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 0055218e
     PUSH EAX                            ; 00552192
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 00552193
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x94],EAX      ; 00552198
     FLD float ptr [ESP + 0x94]          ; 0055219f
     ADD ESP,0xc                         ; 005521a6

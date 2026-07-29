@@ -20,7 +20,7 @@
 ;   undefined4 s_ne_0057851b+2
 ;   undefined4 s_e_0057851b+3
 ;   TerminatedCString s_baronshell_kfm_00578520
-;   undefined1* PTR_core_baron.cpp_CBaron_setup_FUN_004102c0_00599ac4 = 004102c0
+;   CHero_full_vtable g_CBaronVTable
 ;   undefined4 DAT_0076436c
 ;
 ; Called Functions:
@@ -39,15 +39,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004101d3
     PUSH EDX                            ; 004101d7
     CALL core_hero.cpp_FUN_004b46d0     ; 004101d8
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004101dd
     PUSH 0x57850c                       ; 004101e0 | = "baron.dfm"
     MOV EBX,EAX                         ; 004101e5
     ADD EAX,0x150                       ; 004101e7
     PUSH EAX                            ; 004101ec
-    MOV dword ptr [EAX + -0x4],0x599ac4 ; 004101ed | PTR_core_baron.cpp_CBaron_setup_FUN_004102c0_00599ac4
+    MOV dword ptr [EAX + -0x4],0x599ac4 ; 004101ed | g_CBaronVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004101f4
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1fb04]             ; 004101f9
     MOV dword ptr [EBX + 0x1fb10],0x3f800000 ; 004101ff
     MOV dword ptr [EAX + 0x8],0x0       ; 00410209

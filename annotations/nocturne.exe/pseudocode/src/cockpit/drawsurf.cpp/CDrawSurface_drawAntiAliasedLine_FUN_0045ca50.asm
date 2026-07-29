@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x1
+; int              Stack[0xc]:4   y1
+; int              Stack[0x10]:4   x2
+; int              Stack[0x14]:4   y2
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -49,7 +55,7 @@ section .text
     PUSH 0x1                            ; 0045ca9f
     MOV ESI,EAX                         ; 0045caa1
     CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200 ; 0045caa3
-        ;   XREF to: 00430200 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200()
+        ;   XREF to: 00430200 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200(int disabled)
     MOV EDX,dword ptr [0x01b4d714]      ; 0045caa8 | DAT_01b4d714
     ADD ESP,0x4                         ; 0045caae
     MOV ECX,dword ptr [EBX + 0xc]       ; 0045cab1
@@ -72,7 +78,7 @@ section .text
     ADD ESP,0x14                        ; 0045cad9
     PUSH ESI                            ; 0045cadc
     CALL cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200 ; 0045cadd
-        ;   XREF to: 00430200 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200()
+        ;   XREF to: 00430200 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200(int disabled)
     ADD ESP,0x4                         ; 0045cae2
     MOV EAX,dword ptr [ESP]             ; 0045cae5
     MOV dword ptr [0x01c00c58],EDI      ; 0045cae8 | DAT_01c00c58

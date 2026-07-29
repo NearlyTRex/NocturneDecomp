@@ -17,7 +17,7 @@ CDemonActorType * FUN_0048ed50(void);
 
 // Original: core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60
 // Address: 0048ed60
-CWeapon * __cdecl CFlashlight::ctor(CWeapon *param_1);
+CFlashlight * __cdecl CFlashlight::ctor(CFlashlight *this_ptr);
 
 // Original: core_flashlit.cpp_FUN_0048ede0
 // Address: 0048ede0

@@ -10,15 +10,14 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *thi
 
 {
   SMRGLTextureBasic *pSVar1;
-  int iVar2;
+  CHero *pCVar2;
   CCloth *pCVar3;
   
-  iVar2 = core_hero_cpp_FUN_004b46d0(this_ptr);
-  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(iVar2 + 0x1fa44));
+  pCVar2 = core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(pCVar2[1].base.base.actor_name + 8));
   pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100
                      ((CCloth *)(pCVar3->vertices[0x300].connected_indices + 9));
-  pCVar3[-2].vertices[0x1cf].connected_indices[2] =
-       (int)&PTR_core_svetlana_cpp_CSvetlana_setup_FUN_00541a40_005a2a74;
+  pCVar3[-2].vertices[0x1cf].connected_indices[2] = (int)&g_CSvetlanaVTable;
   pSVar1 = pCVar3[-1].model.texture_list[0x123].textures;
   pSVar1[2].texture_name[4] = '\0';
   pSVar1[2].texture_name[5] = '\0';
@@ -30,7 +29,8 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *thi
   pSVar1[2].texture_name[10] = '\0';
   pSVar1[2].texture_name[0xb] = '\0';
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (pCVar3[-2].vertices[0x1cf].connected_indices + 3,"svetlana.dfm");
+            ((CDeformableModelInstance *)(pCVar3[-2].vertices[0x1cf].connected_indices + 3),
+             "svetlana.dfm");
   pCVar3->vertices[0x300].connected_indices[0xd] = 0x3f800000;
   pCVar3->vertices[0x300].connected_indices[0xc] = 0;
   pCVar3->vertices[0x300].connected_indices[0xb] = pCVar3->vertices[0x300].connected_indices[0xc];

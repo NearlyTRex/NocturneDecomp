@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_setActorXPos_FUN_0042b500(void)
+; void __cdecl core_charactr_cpp_setActorXPos_FUN_0042b500(CDemonActor *actor,float x)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
+; float            Stack[0x8]:4   x
 ;
 ; *****************************************************************************
 

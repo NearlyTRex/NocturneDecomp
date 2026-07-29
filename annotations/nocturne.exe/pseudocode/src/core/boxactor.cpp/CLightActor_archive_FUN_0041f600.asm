@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 0041f64f
     LEA ESI,[EBX + 0x668]               ; 0041f650
     CALL core_actor.cpp_archiveOrientation_FUN_0040c4f0 ; 0041f656
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040c4f0(COrientation * orient_ptr, char * property_name)
     MOV ECX,dword ptr [0x00763e88]      ; 0041f65b | DAT_00763e88
     ADD ESP,0x8                         ; 0041f661
     CMP ECX,0x1                         ; 0041f664

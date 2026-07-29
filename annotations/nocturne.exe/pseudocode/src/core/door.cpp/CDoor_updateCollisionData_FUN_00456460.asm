@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 00456485 | DAT_005be368
     PUSH EBX                            ; 0045648b | DAT_01e57284
     CALL core_setcolid.cpp_FUN_00511a10 ; 0045648c
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00511a10()
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00456491
     POP EBX                             ; 00456494
     RET                                 ; 00456495

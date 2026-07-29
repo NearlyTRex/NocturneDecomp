@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStrList * shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *param_1,CStrList *param_2)
+; CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *this_ptr,CStrList *other)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; CStrList *       Stack[0x8]:4   other
 ;
 ; Referenced Globals:
-;   undefined1* PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74 = 00473b80
+;   CStrList_vtable g_CStrListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00
@@ -18,7 +21,7 @@ section .text
         ;   Label: shape_edittool.cpp_CStrList_copy_FUN_00473bd0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00473bd1
     MOV EDX,dword ptr [ESP + 0xc]       ; 00473bd5
-    MOV dword ptr [EBX + 0xc],0x59ca74  ; 00473bd9 | PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74
+    MOV dword ptr [EBX + 0xc],0x59ca74  ; 00473bd9 | g_CStrListVTable
     PUSH EDX                            ; 00473be0
     MOV dword ptr [EBX],0x0             ; 00473be1
     PUSH EBX                            ; 00473be7

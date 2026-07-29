@@ -16,8 +16,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(CDracu
   CDraculaBride *pCVar5;
   
   pCVar3 = (CDraculaBride *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730_0059c414;
+  (pCVar3->base).base.base.vtable._ub = &g_CDraculaBrideVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).base.model,"nbride2.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;

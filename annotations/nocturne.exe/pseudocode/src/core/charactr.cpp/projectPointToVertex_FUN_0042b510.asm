@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_projectPointToVertex_FUN_0042b510(void)
+; void __cdecl core_charactr_cpp_projectPointToVertex_FUN_0042b510(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position)
 ;
+; Parameters:
+; SProjectedVertex * * Stack[0x4]:4   vertex_array
+; int              Stack[0x8]:4   vertex_index
+; CVector3f *      Stack[0xc]:4   world_position
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

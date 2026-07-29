@@ -11,7 +11,7 @@
 ;   crt_fstream.cpp_fstreambase_ctor_FUN_0056b896 at 0056b8a6
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4b0c = 0056ff82
+;   filebuf_vtable g_FilebufVTable
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_streambuf_ctor_FUN_0056fe12
@@ -27,6 +27,6 @@ section .text
         ;   XREF to: 0056fe12 (UNCONDITIONAL_CALL)  ; streambuf * crt_iostream.cpp_streambuf_ctor_FUN_0056fe12(streambuf * this_ptr)
     MOV dword ptr [EAX + 0x2c],0xffffffff ; 00570437
     ADD ESP,0x4                         ; 0057043e
-    MOV dword ptr [EAX + 0x28],0x5a4b0c ; 00570441 | PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4b0c
+    MOV dword ptr [EAX + 0x28],0x5a4b0c ; 00570441 | g_FilebufVTable
     RET                                 ; 00570448
 

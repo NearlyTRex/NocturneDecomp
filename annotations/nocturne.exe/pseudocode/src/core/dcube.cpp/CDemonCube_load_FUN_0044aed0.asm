@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SIZE_T core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *param_1,_FILE *param_2)
+; void __cdecl core_dcube_cpp_CDemonCube_load_FUN_0044aed0(CDemonCube *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CDemonCube *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_FUN_004676c0 at 004677fc
@@ -84,7 +87,7 @@ section .text
     PUSH EAX                            ; 0044af4f
     INC EBX                             ; 0044af50
     CALL core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0 ; 0044af51
-        ;   XREF to: 00448ec0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0()
+        ;   XREF to: 00448ec0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0(CDemonCubeTriangle * this_ptr, _FILE * file_handle, CVector3f * vertex_buffer_base)
     ADD EDI,0x20                        ; 0044af56
     MOV EDX,dword ptr [ESI + 0x28]      ; 0044af59
     ADD ESP,0xc                         ; 0044af5c

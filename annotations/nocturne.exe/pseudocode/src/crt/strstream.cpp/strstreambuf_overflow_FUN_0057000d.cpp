@@ -1,36 +1,43 @@
 // Name: crt_strstream.cpp_strstreambuf_overflow_FUN_0057000d
 // Address: 0057000d
 // Address Range: [[0057000d, 00570074]]
-// Convention: unknown
-// Signature: int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(strstreambuf *this_ptr,int character)
 
 #include "nocturne.h"
 
-int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)
+int __watcallStack crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(strstreambuf *this_ptr,int character)
 
 {
-  int iVar1;
-  int iVar2;
+  char **ppcVar1;
+  char *pcVar2;
+  char *pcVar3;
+  void *pvVar4;
+  int iVar5;
   
-  if ((*(byte *)(param_1 + 0x3c) & 2) == 0) {
+  pvVar4 = this_ptr[1]._streambuf.__b_lock;
+  if (((uint)pvVar4 & 2) == 0) {
     return -1;
   }
-  if ((*(byte *)(param_1 + 0x3c) & 4) == 0) {
-    iVar2 = (**(code **)(*(int *)(param_1 + 0x28) + 0x28))(param_1);
-    if (iVar2 != -1) {
-      if (param_2 != -1) {
-        **(byte **)(param_1 + 0x20) = (byte)param_2;
-        *(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + 1;
+  if (((uint)pvVar4 & 4) == 0) {
+    iVar5 = (*this_ptr->__vtable->doallocate)(&this_ptr->_streambuf);
+    if (iVar5 != -1) {
+      if (character != -1) {
+        *(this_ptr->_streambuf).__put_ptr = (char)character;
+        ppcVar1 = &(this_ptr->_streambuf).__put_ptr;
+        *ppcVar1 = *ppcVar1 + 1;
       }
       return 0;
     }
   }
   else {
-    iVar1 = *(int *)(param_1 + 0x20);
-    *(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x18);
-    *(int *)(param_1 + 0x1c) = *(int *)(param_1 + 0x1c) + 0x200;
-    iVar2 = 0;
-    *(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + (iVar1 - *(int *)(param_1 + 0x18));
+    pcVar2 = (this_ptr->_streambuf).__put_ptr;
+    pcVar3 = (this_ptr->_streambuf).__put_base;
+    (this_ptr->_streambuf).__put_ptr = pcVar3;
+    (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__put_end + 0x200;
+    iVar5 = 0;
+    (this_ptr->_streambuf).__put_ptr =
+         (this_ptr->_streambuf).__put_ptr + ((int)pcVar2 - (int)pcVar3);
   }
-  return iVar2;
+  return iVar5;
 }

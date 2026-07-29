@@ -1,14 +1,14 @@
 // Name: core_dracbrid.cpp_FUN_0045ab40
 // Address: 0045ab40
 // Address Range: [[0045ab40, 0045b011]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,undefined4 param_2,float param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float param_3)
+void __cdecl core_dracbrid_cpp_FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume)
 
 {
   int bone_index;
@@ -43,8 +43,8 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
   CVector3f local_20;
   float local_14;
   
-  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000,0x40e00000);
-  *(float *)(param_1[0x90].create_event + 0x40) = local_14;
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(1.0,7.0);
+  this_ptr->freaky_timer = local_14;
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
     puVar5 = (uint *)&DAT_01b4d280;
@@ -55,9 +55,9 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
       if (iVar2 == 0) {
         puVar5[7] = 0;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-                           ((CDeformableModelInstance *)(param_1 + 1),&local_44,bone_index);
-        pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_50,pCVar3)
-        ;
+                           (&(this_ptr->base).base.model,&local_44,bone_index);
+        pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                           ((CDemonActor *)this_ptr,&local_50,pCVar3);
         if ((CVector3f *)(puVar5 + 0xb) != pCVar3) {
           ((CVector3f *)(puVar5 + 0xb))->x = pCVar3->x;
           puVar5[0xc] = (uint)pCVar3->y;
@@ -66,14 +66,11 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
         local_2c = (float)puVar5[0xb];
         local_28 = (float)puVar5[0xc];
         local_24 = (float)puVar5[0xd];
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_2c = local_14 + local_2c;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
         local_28 = local_14 + local_28;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_6c = local_14 + local_24;
         local_74 = local_2c;
         local_70 = local_28;
@@ -86,14 +83,11 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
         local_7c = (float)puVar5[0xc];
         local_78 = (float)puVar5[0xd];
         local_24 = local_6c;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_80 = local_14 + local_80;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
         local_7c = local_14 + local_7c;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_78 = local_14 + local_78;
         local_5c = local_80;
         local_58 = local_7c;
@@ -106,14 +100,11 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
         local_64 = _DAT_01fb8610;
         local_60 = _DAT_01fb8614;
         local_54 = local_78;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_68 = local_14 + local_68;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000,0x40000000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
         local_64 = local_14 + local_64;
-        local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-        ;
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_60 = local_14 + local_60;
         local_38 = local_68;
         local_34 = local_64;
@@ -143,12 +134,12 @@ void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,uint param_2,float para
         sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0((CVector3f *)(puVar5 + 1));
         sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)(puVar5 + 4));
-        sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(param_3);
-        core_sound_cpp_FUN_0052d030(0x02DC9450,local_174,param_2);
+        sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(volume);
+        core_sound_cpp_FUN_0052d030(0x02DC9450,local_174,sound_name);
         uVar4 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_174);
         *puVar5 = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
-        puVar5[0x14] = (uint)param_1;
+        puVar5[0x14] = (uint)this_ptr;
         return;
       }
       iVar1 = iVar1 + 1;

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 727,
+    "complexity_score": 746,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 147,
-    "suspect_count": 57,
+    "pseudocode_lines": 146,
+    "suspect_count": 59,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 497
+    "total_lines": 496
   },
   "cross_references": [
     {
@@ -153,7 +153,7 @@
     ],
     "convention": "unknown",
     "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470",
-    "signature": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)"
   },
   "function_calls": [
     {
@@ -413,7 +413,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -421,7 +421,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -429,7 +429,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -437,7 +437,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -445,7 +445,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "void engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_00490470(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -461,7 +461,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);",
+      "text": "pbVar4 = param_1->bitmap_data[param_2];",
       "type": "unnamed_param"
     },
     {
@@ -469,7 +469,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);",
+      "text": "pbVar4 = param_1->bitmap_data[param_2];",
       "type": "unnamed_param"
     },
     {
@@ -477,7 +477,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = *(uint *)(param_1 + 0x3188);",
+      "text": "local_20 = param_1->load_flags;",
       "type": "unnamed_param"
     },
     {
@@ -501,7 +501,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (local_20 != *(uint *)(param_1 + 0x3188)) break;",
+      "text": "if (local_20 != param_1->load_flags) break;",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +509,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = *(uint *)(param_1 + 0x3188);",
+      "text": "local_20 = param_1->load_flags;",
       "type": "unnamed_param"
     },
     {
@@ -533,15 +533,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (local_20 == *(uint *)(param_1 + 0x3188)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(local_16c,\"No character markers found in font file (%s).\",param_2 * 0x50 + param_1 + 4);",
+      "text": "if (local_20 == param_1->load_flags) {",
       "type": "unnamed_param"
     },
     {
@@ -549,7 +541,15 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "_sprintf(local_16c,\"No character markers found in font file (%s).\",param_2 * 0x50 + param_1 + 4);",
+      "text": "_sprintf(local_16c,\"No character markers found in font file (%s).\",param_1->bitmap_files + param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_sprintf(local_16c,\"No character markers found in font file (%s).\",param_1->bitmap_files + param_2);",
       "type": "unnamed_param"
     },
     {
@@ -557,7 +557,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);",
+      "text": "pbVar4 = param_1->bitmap_data[param_2];",
       "type": "unnamed_param"
     },
     {
@@ -565,7 +565,7 @@
       "line": 51,
       "match": "param_2",
       "severity": "mild",
-      "text": "pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);",
+      "text": "pbVar4 = param_1->bitmap_data[param_2];",
       "type": "unnamed_param"
     },
     {
@@ -621,7 +621,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = param_1 + 4 + param_2 * 0x50;",
+      "text": "local_2c = param_1->bitmap_files + param_2;",
       "type": "unnamed_param"
     },
     {
@@ -629,7 +629,7 @@
       "line": 78,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_2c = param_1 + 4 + param_2 * 0x50;",
+      "text": "local_2c = param_1->bitmap_files + param_2;",
       "type": "unnamed_param"
     },
     {
@@ -637,7 +637,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = param_1 + param_2 * 4;",
+      "text": "local_3c = (int)(param_1->bitmap_files + -1) + 0x4c + param_2 * 4;",
       "type": "unnamed_param"
     },
     {
@@ -645,7 +645,7 @@
       "line": 79,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_3c = param_1 + param_2 * 4;",
+      "text": "local_3c = (int)(param_1->bitmap_files + -1) + 0x4c + param_2 * 4;",
       "type": "unnamed_param"
     },
     {
@@ -669,7 +669,7 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = iVar3 * 4 + param_1;",
+      "text": "iVar5 = (int)(param_1->bitmap_files + -1) + 0x4c + iVar3 * 4;",
       "type": "unnamed_param"
     },
     {
@@ -685,7 +685,7 @@
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x3168) < iVar1) {",
+      "text": "if (param_1->max_char_width < iVar1) {",
       "type": "unnamed_param"
     },
     {
@@ -693,7 +693,7 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x3168) = iVar1;",
+      "text": "param_1->max_char_width = iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -701,7 +701,7 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(iVar5 + 0x1d68),*(uint *)(iVar5 + 0x2568)",
+      "text": "(param_1,*(uchar **)(iVar5 + 0x1d68),*(int *)(iVar5 + 0x2568),",
       "type": "unnamed_param"
     },
     {
@@ -709,7 +709,7 @@
       "line": 109,
       "match": "param_3",
       "severity": "mild",
-      "text": ",local_24[1] - (*local_24 + 1),param_3);",
+      "text": "local_24[1] - (*local_24 + 1),param_3);",
       "type": "unnamed_param"
     },
     {
@@ -717,7 +717,7 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x316c) < iVar1) {",
+      "text": "if (param_1->max_char_height < iVar1) {",
       "type": "unnamed_param"
     },
     {
@@ -725,7 +725,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x316c) = iVar1;",
+      "text": "param_1->max_char_height = iVar1;",
       "type": "unnamed_param"
     },
     {
@@ -733,7 +733,7 @@
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x3168) < iVar1) {",
+      "text": "if (param_1->max_char_width < iVar1) {",
       "type": "unnamed_param"
     },
     {
@@ -741,28 +741,36 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x3168) = iVar1;",
+      "text": "param_1->max_char_width = iVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = iVar3 * 4 + param_1;",
+      "text": "(param_1,param_1->char_positions[iVar3],param_1->char_widths[iVar3],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1->char_positions[iVar3],param_1->char_widths[iVar3],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1->char_positions[iVar3],param_1->char_widths[iVar3],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(iVar6 + 0x1d68),*(uint *)(iVar6 + 0x2568),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
       "match": "param_3",
       "severity": "mild",
       "text": "local_30[1] - (*local_30 + 1),param_3);",
@@ -770,23 +778,31 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->char_heights[iVar3] = iVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->max_char_height < iVar5) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x316c) < iVar5) {",
+      "text": "param_1->max_char_height = iVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x316c) = iVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 138,
       "match": "param_5",
       "severity": "mild",
       "text": "if (param_5 < iVar3) {",
@@ -794,23 +810,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar5 = param_5 * 4 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_5 * 4 + param_1;",
+      "text": "iVar5 = (int)(param_1->bitmap_files + -1) + 0x4c + param_5 * 4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 139,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar5 = (int)(param_1->bitmap_files + -1) + 0x4c + param_5 * 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 141,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_5 = param_5 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 141,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 1;",
@@ -819,14 +843,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 142,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
       "match": "param_2",
       "severity": "mild",
       "text": "*(int *)(iVar5 + 0x2168) = param_2;",
@@ -834,7 +850,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 144,
       "match": "param_5",
       "severity": "mild",
       "text": "} while (param_5 < iVar3);",
@@ -842,18 +858,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3170) = *(uint *)(param_1 + 0x316c);",
+      "text": "param_1->current_line_height = param_1->max_char_height;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3170) = *(uint *)(param_1 + 0x316c);",
+      "text": "param_1->current_line_height = param_1->max_char_height;",
       "type": "unnamed_param"
     },
     {

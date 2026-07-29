@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte * crt_string_c_mbtowc_next_FUN_0056da80(byte *param_1)
+; char * __watcallStack crt_string_c_mbtowc_next_FUN_0056da80(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ;
 ; XREF[10]:
 ;   FUN_00572d90 at 00572de3

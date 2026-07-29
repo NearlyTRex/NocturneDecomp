@@ -2,13 +2,13 @@
 // Address: 00444920
 // Address Range: [[00444920, 00444c87]]
 // Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)
+// Signature: void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)
+void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
 
 {
   float fVar1;
@@ -17,7 +17,7 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
   int iVar4;
   int iVar5;
   float *pfVar6;
-  uint *puVar7;
+  char *pcVar7;
   uint *puVar8;
   byte bVar9;
   bool bVar10;
@@ -25,7 +25,6 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
   double dVar12;
   int aiStackY_1050 [1016];
   int iStack_68;
-  int iStack_64;
   int iStack_5c;
   int iStack_58;
   int local_54;
@@ -44,16 +43,15 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
   
   bVar9 = 0;
   _DAT_012b0634 = param_2;
-  puVar7 = (uint *)(param_2 + 0x110);
+  pcVar7 = (param_2->base).camera_name + 0xd0;
   puVar8 = (uint *)&DAT_012b0638;
   for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar8 = *puVar7;
-    puVar7 = puVar7 + 1;
+    *puVar8 = *(uint *)pcVar7;
+    pcVar7 = pcVar7 + 4;
     puVar8 = puVar8 + 1;
   }
   do {
     iVar5 = iVar4 + 4;
-    iStack_64 = 0x444952;
     uVar3 = rand();
     *(uint *)(iVar4 + 0x12b0234) = uVar3 & 0xff;
     iVar4 = iVar5;
@@ -68,12 +66,10 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
       iVar4 = iVar4 + 4;
     } while (iVar5 < *(int *)(param_1 + 0x154));
   }
-  iStack_64 = param_2;
   iStack_68 = 0x4449a9;
-  core_dlight_cpp_FUN_0044f0b0();
-  fVar1 = *(float *)(param_2 + 0x100) * (float)256;
+  core_dlight_cpp_FUN_0044f0b0(param_2);
+  fVar1 = *(float *)((param_2->base).camera_name + 0xc0) * (float)256;
   fVar2 = (float)3.3219280948900001;
-  iStack_64 = 0x4449cd;
   dVar11 = round((double)fVar1);
   iStack_68 = 0x4449d6;
   dVar12 = round((double)(fVar1 * 0.30103 * fVar2));
@@ -107,25 +103,24 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
                       (_DAT_012b0634,local_24);
             iStack_5c = iStack_68;
             *(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =
-                 *(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8);
+                 *(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);
             *(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
                  *(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
             if ((0 < local_54) &&
-               ((uVar3 = (uint)*(ushort *)
-                                (*(int *)(_DAT_012b0634 + 0x2f94) +
-                                ((iStack_58 >> 0x10) * *(int *)(_DAT_012b0634 + 0x1cc0) +
-                                (iStack_5c >> 0x10)) * 2), (int)uVar3 < _DAT_00b0e5fc &&
+               ((uVar3 = (uint)_DAT_012b0634->shadow_depth_buffer
+                               [(iStack_58 >> 0x10) * _DAT_012b0634->shadow_map_width +
+                                (iStack_5c >> 0x10)], (int)uVar3 < _DAT_00b0e5fc &&
                 (local_54 < (int)(uVar3 + 0x80))))) {
               *local_1c = *local_1c +
                           (char)((int)((_DAT_00b0e5fc - uVar3) *
-                                      (uint)*(byte *)(*(int *)(_DAT_012b0634 + 0x1c54) +
-                                                     ((*(uint *)(_DAT_012b0634 + 0x1c68) &
-                                                      iStack_58 >>
-                                                      (*(byte *)(_DAT_012b0634 + 0x1ccc) & 0x1f)) <<
-                                                     (*(byte *)(_DAT_012b0634 + 0x1c60) & 0x1f)) +
-                                                     (iStack_5c >>
-                                                      (*(byte *)(_DAT_012b0634 + 0x1cc8) & 0x1f) &
-                                                     *(uint *)(_DAT_012b0634 + 0x1c68)))) >>
+                                      (uint)_DAT_012b0634->precomputed_lighting_textures
+                                            [((_DAT_012b0634->texture_coord_mask &
+                                              iStack_58 >>
+                                              ((byte)_DAT_012b0634->shadow_y_shift & 0x1f)) <<
+                                             ((byte)_DAT_012b0634->texture_row_shift & 0x1f)) +
+                                             (iStack_5c >>
+                                              ((byte)_DAT_012b0634->shadow_x_shift & 0x1f) &
+                                             _DAT_012b0634->texture_coord_mask)]) >>
                                 (DAT_00b0e600 & 0x1f));
             }
           }

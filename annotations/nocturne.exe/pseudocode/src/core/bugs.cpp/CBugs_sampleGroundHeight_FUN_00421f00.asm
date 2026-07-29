@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2,float param_3)
+; float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(CBugs *this_ptr,float x,float z)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   x
+; float            Stack[0xc]:4   z
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -81,7 +85,7 @@ section .text
     PUSH dword ptr [ESI + 0x1274c]      ; 00421f91
     PUSH dword ptr [EBX + 0x1274c]      ; 00421f97
     CALL core_bugs.cpp_maxFloat_FUN_00423d60 ; 00421f9d
-        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00423d60()
+        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00423d60(float a, float b)
         ;   Label: LAB_00421f9d
     MOV dword ptr [ESP + 0x18],EAX      ; 00421fa2
     FLD float ptr [ESP + 0x18]          ; 00421fa6
@@ -115,7 +119,7 @@ section .text
     PUSH dword ptr [EDX + 0x12720]      ; 00421fe5
     PUSH dword ptr [EBX + EAX*0x1 + 0x12720] ; 00421feb
     CALL core_bugs.cpp_maxFloat_FUN_00423d60 ; 00421ff2
-        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00423d60()
+        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00423d60(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00421ff7
     FLD float ptr [ESP + 0x1c]          ; 00421ffb
     ADD ESP,0x8                         ; 00421fff
@@ -123,7 +127,7 @@ section .text
     PUSH dword ptr [EBX + EDI*0x4 + 0x12724] ; 00422009
     FSTP float ptr [ESP + 0xc]          ; 00422010
     CALL core_bugs.cpp_maxFloat_FUN_00423d60 ; 00422014
-        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00423d60()
+        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00423d60(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00422019
     FLD float ptr [ESP + 0x1c]          ; 0042201d
     ADD ESP,0x8                         ; 00422021
@@ -131,7 +135,7 @@ section .text
     FSTP float ptr [ESP]                ; 00422027
     PUSH dword ptr [ESP + 0x8]          ; 0042202a
     CALL core_bugs.cpp_maxFloat_FUN_00423d60 ; 0042202e
-        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00423d60()
+        ;   XREF to: 00423d60 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00423d60(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00422033
     FLD float ptr [ESP + 0x1c]          ; 00422037
     ADD ESP,0x8                         ; 0042203b

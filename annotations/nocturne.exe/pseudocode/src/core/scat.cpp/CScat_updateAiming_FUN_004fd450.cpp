@@ -26,14 +26,11 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float
   float fStack_90;
   float fStack_8c;
   float fStack_88;
-  float fStack_84;
-  float fStack_80;
-  float fStack_7c;
+  CVector3f CStack_84;
   CVector3f CStack_78;
   CVector3f CStack_6c;
   CVector3f CStack_60;
-  float fStack_54;
-  float fStack_50;
+  CVector3f CStack_54;
   float local_40;
   float local_3c;
   float local_38;
@@ -131,16 +128,16 @@ LAB_004fd81b:
             ((CDemonActor *)this_ptr,&CStack_9c,pCVar4);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                      (&(this_ptr->base).base.model,&CStack_a8,_DAT_01e533a0);
-  fStack_84 = CStack_9c.x - pCVar4->x;
-  fStack_80 = CStack_9c.y - pCVar4->y;
-  fStack_7c = CStack_9c.z - pCVar4->z;
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&fStack_54,&fStack_84);
-  local_13c = fStack_54;
-  local_2c = fStack_50;
+  CStack_84.x = CStack_9c.x - pCVar4->x;
+  CStack_84.y = CStack_9c.y - pCVar4->y;
+  CStack_84.z = CStack_9c.z - pCVar4->z;
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_54,&CStack_84);
+  local_13c = CStack_54.x;
+  local_2c = CStack_54.y;
 LAB_004fd4ed:
-  local_38 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_2c - this_ptr->aim_yaw);
+  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_2c - this_ptr->aim_yaw);
   local_18 = local_38;
-  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_13c - this_ptr->aim_pitch);
+  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_13c - this_ptr->aim_pitch);
   local_30 = delta_time * (float)3.1415926535000001 * (float)1.5;
   local_3c = -local_30;
   if (local_38 < local_3c) {
@@ -160,9 +157,9 @@ LAB_004fd4ed:
   this_ptr->aim_pitch = this_ptr->aim_pitch + local_34;
   this_ptr->aim_yaw = this_ptr->aim_yaw + local_38;
   if ((this_ptr->aim_target != (CDemonActor *)0x0) && (is_holstered == 0)) {
-    local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c);
+    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c);
     if (((float)0.02 <= ABS(local_18)) &&
-       (fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c),
+       (fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c),
        (float)0.02 <= ABS(fVar6))) {
       return;
     }

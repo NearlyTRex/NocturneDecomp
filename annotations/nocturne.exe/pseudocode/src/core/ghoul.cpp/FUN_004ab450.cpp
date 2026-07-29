@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
 
 {
@@ -18,14 +20,13 @@ void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
   SMotion *pSVar6;
   int iVar7;
   uint uVar8;
-  float fVar9;
   CMotionList *this_ptr_00;
-  int iVar10;
-  double dVar11;
-  int in_stack_ffffff88;
-  float in_stack_ffffff8c;
+  int iVar9;
+  double dVar10;
   float spawn_radius;
   char *motion_name;
+  char local_78 [100];
+  float local_14;
   
   sound_sndmain_cpp_killSfx_FUN_00527230(param_1->sfx_handles[0]);
   if ((param_1->dark_waypoint != (CDemonActor *)0x0) &&
@@ -50,23 +51,22 @@ void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
   core_ghoul_cpp_CGhoul_processDismemberment_FUN_004ab190(param_1,param_2);
   pCVar2 = (param_1->base).victim;
   if ((pCVar2 != (CCharacter *)0x0) &&
-     (pCVar5 = (CGhoul *)
-               (*(((pCVar2->base).vtable._uc)->_uc).applyDamage)
-                         (pCVar2,in_stack_ffffff88,in_stack_ffffff8c), pCVar5 == param_1)) {
+     (pCVar5 = (CGhoul *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2), pCVar5 == param_1
+     )) {
     pCVar2 = (param_1->base).victim;
-    (*((pCVar2->base).vtable._ub)->archive)(&pCVar2->base);
+    (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
-  iVar10 = param_1->part_indices[10];
+  iVar9 = param_1->part_indices[10];
   (param_1->base).base.hit_points = (param_1->base).base.hit_points - param_2->damage_amount;
-  if ((param_1->base).base.model.part_data.visibility_flags[iVar10] == 0) {
+  if ((param_1->base).base.model.part_data.visibility_flags[iVar9] == 0) {
     (param_1->base).base.hit_points = 0.0;
   }
   this_ptr = &(param_1->base).base.model;
   if ((param_1->base).base.hit_points <= 0.0) {
-    iVar10 = (param_1->base).special_form_flag;
+    iVar9 = (param_1->base).special_form_flag;
     (param_1->base).base.hit_points = 0.0;
-    if (iVar10 != 0) {
-      core_charactr_cpp_FUN_00427a60();
+    if (iVar9 != 0) {
+      core_charactr_cpp_FUN_00427a60((CCharacter *)param_1);
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);
       return;
     }
@@ -79,11 +79,11 @@ void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
       else {
         param_1->lives_left = param_1->lives_left + -1;
       }
-      iVar10 = 6;
+      iVar9 = 6;
       if ((param_1->base).base.damage_decal_count < 1) {
         iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
         if (iVar7 != 0) {
-          iVar10 = 7;
+          iVar9 = 7;
         }
       }
       else {
@@ -92,7 +92,7 @@ void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
         if (0 < (param_1->base).base.damage_decal_count) {
           do {
             if ((pCVar5->base).base.damage_decals[0].part_index == param_1->part_indices[9]) {
-              iVar10 = 8;
+              iVar9 = 8;
               break;
             }
             iVar7 = iVar7 + 1;
@@ -101,49 +101,49 @@ void core_ghoul_cpp_FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2)
         }
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(param_1->base).base.model.motion_controller,iVar10,1);
-      iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[2]);
-      if (iVar10 == 0) {
+                (&(param_1->base).base.model.motion_controller,iVar9,1);
+      iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[2]);
+      if (iVar9 == 0) {
         uVar8 = (*((param_1->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)param_1,"ghoul-die-!-?.wav @1.6");
         param_1->sfx_handles[2] = uVar8;
       }
-      fVar9 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(4.0,10.0);
       fVar4 = (float)65536;
       param_1->arise_timer = 0xa0000;
       pCVar3 = (param_1->base).base.base.vtable._ub;
       spawn_radius = 7.00649e-44;
-      iVar10 = 0x4ab609;
-      dVar11 = round((double)(fVar9 * fVar4));
-      param_1->spasm_timer = (int)ROUND(dVar11);
-      (*pCVar3->spawnFlies)((CDemonActor *)param_1,iVar10,spawn_radius);
+      iVar9 = 0x4ab609;
+      dVar10 = round((double)(local_14 * fVar4));
+      param_1->spasm_timer = (int)ROUND(dVar10);
+      (*pCVar3->spawnFlies)((CDemonActor *)param_1,iVar9,spawn_radius);
     }
   }
   else {
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&this_ptr->motion_controller);
-    iVar10 = pSVar6->state_index;
-    if (((iVar10 == 0) || (iVar10 == 0xb || (iVar10 == 0xc || iVar10 == 2))) ||
-       (iVar10 = core_actor_cpp_randomChance_FUN_0040dea0(0.25), iVar10 != 0)) {
+    iVar9 = pSVar6->state_index;
+    if (((iVar9 == 0) || (iVar9 == 0xb || (iVar9 == 0xc || iVar9 == 2))) ||
+       (iVar9 = core_actor_cpp_randomChance_FUN_0040dea0(0.25), iVar9 != 0)) {
       iVar7 = 1;
-      iVar10 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
+      iVar9 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                (&(param_1->base).base.model.motion_controller,(iVar10 == 0) + 3,iVar7);
+                (&(param_1->base).base.model.motion_controller,(iVar9 == 0) + 3,iVar7);
     }
     else {
-      core_actor_cpp_getRandomInt_FUN_0040de00(1,2);
-      _sprintf();
-      iVar10 = 1;
-      motion_name = &stack0xffffff88;
+      iVar9 = core_actor_cpp_getRandomInt_FUN_0040de00(1,2);
+      _sprintf(local_78,"guul flinch%d",iVar9);
+      iVar9 = 1;
+      motion_name = local_78;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
                               (&(param_1->base).base.model.motion_controller);
-      iVar10 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
-                         (this_ptr_00,motion_name,iVar10);
+      iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
+                        (this_ptr_00,motion_name,iVar9);
       param_1->flinch_blend_weight = 1.0;
-      param_1->flinch_motion_index = iVar10;
+      param_1->flinch_motion_index = iVar9;
     }
-    iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[1]);
-    if (iVar10 == 0) {
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(param_1->sfx_handles[1]);
+    if (iVar9 == 0) {
       uVar8 = (*((param_1->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)param_1,"ghoul-mad-!-?.wav");
       param_1->sfx_handles[1] = uVar8;

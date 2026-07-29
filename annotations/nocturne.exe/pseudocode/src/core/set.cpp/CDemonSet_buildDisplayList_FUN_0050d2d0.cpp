@@ -102,7 +102,8 @@ LAB_0050d39b:
     } while (iVar7 < (int)this_ptr->collidable_actors[0x6d6]);
   }
   _qsort
-            (&DAT_02080434,_DAT_02080430,8,core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0);
+            (&DAT_02080434,(SIZE_T)_DAT_02080430,8,core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0
+            );
   fVar3 = _DAT_02080430;
   iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   if (iVar7 == 0) {

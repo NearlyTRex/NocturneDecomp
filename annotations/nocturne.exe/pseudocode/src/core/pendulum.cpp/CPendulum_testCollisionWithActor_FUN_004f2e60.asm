@@ -149,7 +149,7 @@ section .text
     PUSH EAX                            ; 004f2fc3
     FSTP float ptr [ESP + 0xb4]         ; 004f2fc4
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 004f2fcb
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 004f2fd0
     LEA EAX,[ESP + 0xa0]                ; 004f2fd2
     ADD ESP,0xc                         ; 004f2fd9
@@ -247,7 +247,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xf0]      ; 004f3111
     PUSH ECX                            ; 004f3118
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004f3119
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 004f311e
     LEA EAX,[ESP + 0x7c]                ; 004f3120
     ADD ESP,0xc                         ; 004f3124

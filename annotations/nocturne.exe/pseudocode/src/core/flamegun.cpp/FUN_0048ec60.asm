@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_flamegun_cpp_FUN_0048ec60(int param_1)
+; float core_flamegun_cpp_FUN_0048ec60(int param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_0048ec81
     PUSH 0x43160000                     ; 0048ec86
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048ec8b
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0048ec90
     FLD float ptr [ESP + 0xc]           ; 0048ec94
     ADD ESP,0x8                         ; 0048ec98

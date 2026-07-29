@@ -1,12 +1,12 @@
 // Name: core_set.cpp_FUN_0050ddd0
 // Address: 0050ddd0
 // Address Range: [[0050ddd0, 0050decc]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,int param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0050ddd0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 
 #include "nocturne.h"
 
-void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,int param_3,int param_4)
+void __cdecl core_set_cpp_FUN_0050ddd0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 
 {
   SMRGLPrimitiveQuad *pSVar1;
@@ -22,11 +22,11 @@ void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,in
        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
        iVar2 == 0)) {
       core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670
-                (param_1,&param_2->base,param_3,0xffff);
+                (this_ptr,&primitive_array->base,primitive_count,0xffff);
       return;
     }
-    if ((param_1->renderable_actors[0x6e8] != (CDemonActor *)0x0) &&
-       (iVar2 = 0, pSVar1 = param_2, 0 < param_3)) {
+    if ((this_ptr->renderable_actors[0x6e8] != (CDemonActor *)0x0) &&
+       (iVar2 = 0, pSVar1 = primitive_array, 0 < primitive_count)) {
       do {
         local_38.base.count = (pSVar1->base).base.count;
         local_38.surface_normal.A = (pSVar1->base).surface_normal.A;
@@ -41,10 +41,10 @@ void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,in
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
                   (DAT_005ae704,&local_38,core_dcamera_cpp_renderFlatColorScanline_FUN_00444440);
-      } while (iVar2 < param_3);
+      } while (iVar2 < primitive_count);
     }
     engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440
-              (DAT_005ae704,param_2,param_3,param_4);
+              (DAT_005ae704,primitive_array,primitive_count,render_flags);
   }
   return;
 }

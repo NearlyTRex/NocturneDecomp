@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 373,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 26,
+    "pseudocode_lines": 74,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant",
-      "stack_param",
       "suspect_float",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 246
+    "total_lines": 237
   },
   "cross_references": [],
   "function": {
@@ -148,9 +147,9 @@
         "004f18b9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_path.cpp_renderGridQuad_FUN_004f16d0",
-    "signature": "void core_path_cpp_renderGridQuad_FUN_004f16d0(void)"
+    "signature": "void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)"
   },
   "function_calls": [
     {
@@ -223,9 +222,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -263,10 +262,10 @@
     "pcode_op_count": 875
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 104,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -338,75 +337,82 @@
         "offset": -28,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "renderGridQuad_FUN_004f16d0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 9,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 57,
+          "line": 48,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "ignoredReturnValue",
           "column": 3,
-          "line": 68,
+          "line": 59,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 38,
-          "line": 44,
-          "message": "Uninitialized variable: in_stack_00000004",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 33,
-          "line": 46,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 43,
-          "line": 49,
-          "message": "Uninitialized variable: in_stack_00000008",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 50,
-          "line": 62,
+          "line": 53,
           "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 69,
-          "message": "Uninitialized variable: in_stack_00000010",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 70,
-          "message": "Uninitialized variable: in_stack_00000014",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 71,
-          "message": "Uninitialized variable: in_stack_00000018",
           "severity": "error"
         }
       ],
@@ -424,56 +430,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 23,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -481,39 +439,15 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 35,
+      "line": 28,
       "match": "7.263381e-39",
       "severity": "mild",
       "text": "local_38 = 7.263381e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((double)((float)in_stack_00000004 * _DAT_01fba96c * _DAT_0058ce1f));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "dVar9 = round((double)((float)in_stack_0000000c * fVar2));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "dVar10 = round(dVar3 + dVar10 + (double)in_stack_00000008 * (double)fVar1)",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 38,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -521,7 +455,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 44,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "pCVar4 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "pCVar4 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "pCVar4 = DAT_005ae704;",
@@ -532,84 +482,12 @@
       "line": 59,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "pCVar4 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "iVar5 = in_stack_00000010 << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "iVar6 = in_stack_00000014 << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "iVar7 = in_stack_00000018 << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "pCVar4 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005ae704",
-      "severity": "mild",
       "text": "DAT_005ae704->vertex_buffer_ptr->r = iVar5;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr->a = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[1].a = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[2].a = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar4->vertex_buffer_ptr[3].a = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 52,
       "match": "(int)piVar12",
       "severity": "moderate",
       "text": "round((double)((float)(int)piVar12 - local_38));",
@@ -617,66 +495,18 @@
     },
     {
       "description": "Raw hex address 0x4f1761 assigned to bare local `local_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 38,
+      "line": 30,
       "match": "0x4f1761",
       "severity": "moderate",
       "text": "local_3c = 0x4f1761;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Uninitialized variable: in_stack_00000004",
-      "line": 44,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "((double)((float)in_stack_00000004 * _DAT_01fba96c * _DAT_0058ce1f));",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 46,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar9 = round((double)((float)in_stack_0000000c * fVar2));",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000008",
-      "line": 49,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar10 = round(dVar3 + dVar10 + (double)in_stack_00000008 * (double)fVar1)",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: local_2c",
-      "line": 62,
+      "line": 53,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "dVar10 = round((double)((float)(int)local_38 + local_2c));",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000010",
-      "line": 69,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar5 = in_stack_00000010 << 8;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000014",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar6 = in_stack_00000014 << 8;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000018",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar7 = in_stack_00000018 << 8;",
       "type": "static_uninitvar"
     }
   ]

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool engine_dosio_cpp_copyFileTimestamp_FUN_00456950(char *param_1,time_t param_2)
+; int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00456950(char *source_file,uint modtime)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   source_file
+; uint             Stack[0x8]:4   modtime
 ;
 ; Called Functions:
 ;   crt_io.c__utime_00600c1e_FUN_00565dc6

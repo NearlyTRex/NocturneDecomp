@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_00477340(int param_1)
+; int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_00477340(CEdCheck *this_ptr)
 ;
+; Parameters:
+; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300 at 00477306

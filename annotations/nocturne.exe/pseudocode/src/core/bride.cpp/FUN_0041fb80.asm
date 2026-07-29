@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0041fb92
         ;   Label: LAB_0041fb92
     CALL core_bride.cpp_FUN_0041fbb0    ; 0041fb93
-        ;   XREF to: 0041fbb0 (UNCONDITIONAL_CALL)  ; undefined core_bride.cpp_FUN_0041fbb0()
+        ;   XREF to: 0041fbb0 (UNCONDITIONAL_CALL)  ; CBride * core_bride.cpp_FUN_0041fbb0(CBride * this_ptr)
     ADD ESP,0x4                         ; 0041fb98
     RET                                 ; 0041fb9b
 

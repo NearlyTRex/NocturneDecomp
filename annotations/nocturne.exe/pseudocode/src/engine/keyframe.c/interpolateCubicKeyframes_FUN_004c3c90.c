@@ -1,14 +1,14 @@
 // Name: engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90
 // Address: 004c3c90
 // Address Range: [[004c3c90, 004c407e]]
-// Convention: unknown
-// Signature: SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *keyframe_model)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *param_1)
+SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *keyframe_model)
 
 {
   int iVar1;
@@ -52,12 +52,12 @@ SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SM
   int *local_28;
   int local_1c;
   
-  if (param_1->base_keyframes == (SMRGLKeyframe *)0x0) {
-    engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(param_1);
+  if (keyframe_model->base_keyframes == (SMRGLKeyframe *)0x0) {
+    engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(keyframe_model);
   }
-  uVar20 = param_1->cycle_length;
-  uVar23 = param_1->current_position >> 0x1f;
-  uVar18 = param_1->current_position ^ uVar23;
+  uVar20 = keyframe_model->cycle_length;
+  uVar23 = keyframe_model->current_position >> 0x1f;
+  uVar18 = keyframe_model->current_position ^ uVar23;
   uVar19 = uVar18 / uVar20;
   if (0x7ffe < uVar19) {
     uVar19 = 0x7fff;
@@ -67,20 +67,21 @@ SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SM
   iVar24 = (int)uVar23 >> 0x10;
   uVar23 = uVar23 & 0xffff;
   local_1c = iVar24 + 1;
-  iVar28 = (param_1->header).child_count;
-  param_1->current_position = _DAT_01bd1d84 % (int)((param_1->header).child_count * uVar20);
+  iVar28 = (keyframe_model->header).child_count;
+  keyframe_model->current_position =
+       _DAT_01bd1d84 % (int)((keyframe_model->header).child_count * uVar20);
   if (iVar28 <= local_1c) {
     local_1c = 0;
   }
   local_1c = local_1c + 1;
-  if ((param_1->header).child_count <= local_1c) {
+  if ((keyframe_model->header).child_count <= local_1c) {
     local_1c = 0;
   }
   iVar28 = iVar24 + -1;
   if (iVar28 < 0) {
-    iVar28 = (param_1->header).child_count + -1;
+    iVar28 = (keyframe_model->header).child_count + -1;
   }
-  pSVar21 = param_1->base_keyframes;
+  pSVar21 = keyframe_model->base_keyframes;
   if ((pSVar21->header).child_count != 2) {
     PTR_01cc4800 = "..\\engine\\keyframe.c";
     INT_01cc4804 = 0x16b;
@@ -98,10 +99,10 @@ SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SM
   fVar13 = fVar16 * -2.5f;
   fVar12 = (float)65536;
   fVar7 = (float)65536;
-  pSVar22 = param_1->base_keyframes + 1;
-  pSVar25 = param_1->loaded_frames[iVar24] + 1;
-  pSVar26 = param_1->loaded_frames[local_1c] + 1;
-  pSVar27 = param_1->loaded_frames[iVar28] + 1;
+  pSVar22 = keyframe_model->base_keyframes + 1;
+  pSVar25 = keyframe_model->loaded_frames[iVar24] + 1;
+  pSVar26 = keyframe_model->loaded_frames[local_1c] + 1;
+  pSVar27 = keyframe_model->loaded_frames[iVar28] + 1;
   iVar2 = (pSVar21->vertex_header).count;
   uVar35 = 0x4c3e61;
   dVar29 = round
@@ -162,7 +163,7 @@ SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SM
     INT_01cc4804 = 0x1a6;
     core_main_c_FUN_004c8440("ZBP not found!",uVar32,uVar33,uVar34,uVar35);
   }
-  pSVar21 = param_1->base_keyframes;
+  pSVar21 = keyframe_model->base_keyframes;
   texture = (SMRGLPrimitiveTriangle *)&pSVar22->vertex_header;
   do {
     uVar20 = (texture->base).base.type;
@@ -180,6 +181,6 @@ SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SM
               ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
               (uVar20 & 0xfffffffc));
   } while ((texture->base).base.type != 0);
-  engine_3d_c_FUN_00408e80(param_1->base_keyframes);
-  return param_1 + 1;
+  engine_3d_c_FUN_00408e80(keyframe_model->base_keyframes);
+  return &keyframe_model[1].header;
 }

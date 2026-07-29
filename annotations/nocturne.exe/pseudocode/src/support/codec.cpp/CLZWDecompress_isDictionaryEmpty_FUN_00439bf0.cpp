@@ -1,13 +1,13 @@
 // Name: support_codec.cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0
 // Address: 00439bf0
 // Address Range: [[00439bf0, 00439c00]]
-// Convention: unknown
-// Signature: bool support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(CLZWDecompress *this_ptr)
 
 #include "nocturne.h"
 
-bool support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(int param_1)
+int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(CLZWDecompress *this_ptr)
 
 {
-  return *(int *)(param_1 + 0x10) == 0;
+  return (uint)((this_ptr->lzw_dict).entry_count == 0);
 }

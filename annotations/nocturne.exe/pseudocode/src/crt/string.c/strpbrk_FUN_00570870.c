@@ -10,6 +10,7 @@ char * __cdecl strpbrk(char *str,char *char_set)
 
 {
   int iVar1;
+  char *pcVar2;
   
   while( true ) {
     iVar1 = mbstring_termination_check(str);
@@ -17,9 +18,9 @@ char * __cdecl strpbrk(char *str,char *char_set)
       return (char *)0x0;
     }
     iVar1 = mbtowc_peek(str);
-    iVar1 = char_in_set(char_set,iVar1);
-    if (iVar1 != 0) break;
-    str = (char *)mbtowc_next(str);
+    pcVar2 = char_in_set(char_set,(wchar_t)iVar1);
+    if (pcVar2 != (char *)0x0) break;
+    str = mbtowc_next(str);
   }
   return str;
 }

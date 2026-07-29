@@ -1,14 +1,14 @@
 // Name: core_skeleton.cpp_FUN_0051f650
 // Address: 0051f650
 // Address Range: [[0051f650, 0051f67a]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_FUN_0051f650(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_FUN_0051f650(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_skeleton_cpp_FUN_0051f650(void)
+void __cdecl core_skeleton_cpp_FUN_0051f650(void)
 
 {
   CDeformableModel *this_ptr;

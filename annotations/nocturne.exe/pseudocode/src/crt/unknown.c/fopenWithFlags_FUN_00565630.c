@@ -14,7 +14,7 @@ _FILE * __cdecl fopenWithFlags(char *filename,char *mode,int flags)
   _FILE *p_Var1;
   int local_10;
   
-  parsed_mode_flags = OpenModeStringParser(mode,&local_10);
+  parsed_mode_flags = OpenModeStringParser(mode,(char *)&local_10);
   p_Var1 = (_FILE *)0x0;
   if (parsed_mode_flags != 0) {
     file_struct = __allocfp(0);

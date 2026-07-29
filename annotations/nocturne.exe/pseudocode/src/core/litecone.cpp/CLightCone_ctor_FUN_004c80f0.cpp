@@ -2,26 +2,26 @@
 // Address: 004c80f0
 // Address Range: [[004c80f0, 004c8181]]
 // Convention: __cdecl
-// Signature: int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
+// Signature: CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(CLightCone *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
+CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(CLightCone *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CLightCone *pCVar2;
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_litecone_cpp_FUN_004c8190_0059fed4;
+  pCVar2 = (CLightCone *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CLightConeVTable;
   pcVar3 = "none";
-  *(uint *)(iVar2 + 0x150) = 0x42600000;
-  *(uint *)(iVar2 + 0x154) = 0x40c00000;
-  *(uint *)(iVar2 + 0xfc) = 1;
-  pcVar4 = (char *)(iVar2 + 0x15c);
-  *(uint *)(iVar2 + 0x158) = 1;
+  pCVar2->fov = 56.0;
+  pCVar2->falloff = 6.0;
+  (pCVar2->base).is_transparent = 1;
+  pcVar4 = pCVar2->on_event;
+  pCVar2->state = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -32,17 +32,17 @@ int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "none";
-  pcVar4 = (char *)(iVar2 + 0x1c0);
+  pcVar4 = pCVar2->off_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') {
-      return iVar2;
+      return pCVar2;
     }
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  return iVar2;
+  return pCVar2;
 }

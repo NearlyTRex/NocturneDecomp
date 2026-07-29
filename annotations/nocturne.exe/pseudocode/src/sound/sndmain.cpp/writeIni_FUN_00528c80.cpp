@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
   char *pcVar5;
   SSoundDeviceInfo local_29c;
   char local_184 [256];
-  byte local_84 [100];
+  char local_84 [100];
   int local_20;
   int local_1c;
   int local_18;

@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_platfrm_cpp_FUN_004f5f60(CPlatform *param_1)
+; void __cdecl core_platfrm_cpp_FUN_004f5f60(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_conveyor.cpp_FUN_0043b110 at 0043b172
-;   core_minecar.cpp_FUN_004d6020 at 004d6025
+;   core_minecar.cpp_CMinecar_setup_FUN_004d6020 at 004d6025
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

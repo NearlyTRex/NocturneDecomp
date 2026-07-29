@@ -61,7 +61,7 @@ void FUN_00437ab0(int param_1,int param_2,int param_3);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0
 // Address: 00437cc0
-int CCloth::saveJoinedLight(int param_1,int param_2);
+int __cdecl CCloth::saveJoinedLight(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_CCloth_render_FUN_00437db0
 // Address: 00437db0
@@ -105,7 +105,7 @@ void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *m
 
 // Original: core_cloth.cpp_CClothList_applyRotation_FUN_00438620
 // Address: 00438620
-void CClothList::applyRotation(int *param_1,undefined4 param_2);
+void __cdecl CClothList::applyRotation(CClothList *this_ptr,CVector3f *euler);
 
 // Original: core_cloth.cpp_FUN_00438660
 // Address: 00438660
@@ -121,27 +121,27 @@ void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 
 // Original: core_cloth.cpp_CCloth_applyRotation_FUN_00438780
 // Address: 00438780
-void CCloth::applyRotation(int param_1,float *param_2);
+void __cdecl CCloth::applyRotation(CCloth *this_ptr,CVector3f *euler);
 
 // Original: core_cloth.cpp_fastInvSqrt_FUN_00438880
 // Address: 00438880
-int fastInvSqrt(void);
+float __cdecl fastInvSqrt(float dist_sq);
 
 // Original: core_cloth.cpp_addVector_FUN_004388a0
 // Address: 004388a0
-void addVector(void);
+void __cdecl addVector(CVector3f *a,CVector3f *b);
 
 // Original: core_cloth.cpp_vectorLengthFast_FUN_004388d0
 // Address: 004388d0
-int vectorLengthFast(void);
+float __cdecl vectorLengthFast(CVector3f *v);
 
 // Original: core_cloth.cpp_applyLightAttenuation_FUN_00438900
 // Address: 00438900
-void applyLightAttenuation(void);
+CVector3f * __cdecl applyLightAttenuation(CVector3f *v);
 
 // Original: core_cloth.cpp_scaleVector_FUN_00438950
 // Address: 00438950
-void scaleVector(void);
+CVector3f * __cdecl scaleVector(CVector3f *out,float *scale,CVector3f *v);
 
 // Original: core_cloth.cpp_FUN_00438980
 // Address: 00438980
@@ -153,11 +153,11 @@ undefined4 FUN_00438990(undefined4 param_1);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_004389a0
 // Address: 004389a0
-int SClothVertex::ctor(int param_1);
+SClothVertex * __cdecl SClothVertex::ctor(SClothVertex *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_dtor_FUN_004389c0
 // Address: 004389c0
-float * SClothVertex::dtor(int param_1);
+SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0
 // Address: 004389e0

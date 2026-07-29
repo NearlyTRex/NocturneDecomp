@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0(int *param_1,_FILE *param_2,int param_3)
+; void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base)
 ;
+; Parameters:
+; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; CVector3f *      Stack[0xc]:4   vertex_buffer_base
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_CDemonCube_load_FUN_0044aed0 at 0044af51

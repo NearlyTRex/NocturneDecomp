@@ -11,7 +11,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0 at 0051b710
 ;
 ; Referenced Globals:
-;   void* PTR_core_motion.cpp_CMotionController_dtor_FUN_004e1150_005a0d24 = 004e1150
+;   CMotionController_vtable g_CMotionControllerVTable
 ;   WatcomTypeInfo g_CMotionControllerTypeInfo_005a0d30
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     TEST AL,0x4                         ; 004e1159
     JNZ 0x004e116c                      ; 004e115b
         ;   XREF to: 004e116c (CONDITIONAL_JUMP)  ; LAB_004e116c
-    MOV dword ptr [EBX + 0x50],0x5a0d24 ; 004e115d | PTR_core_motion.cpp_CMotionController_dtor_FUN_004e1150_005a0d24
+    MOV dword ptr [EBX + 0x50],0x5a0d24 ; 004e115d | g_CMotionControllerVTable
     TEST AL,0x2                         ; 004e1164
     JNZ 0x004e1187                      ; 004e1166
         ;   XREF to: 004e1187 (CONDITIONAL_JUMP)  ; LAB_004e1187

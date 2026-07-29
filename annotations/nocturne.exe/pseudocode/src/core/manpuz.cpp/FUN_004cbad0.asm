@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004cbae2
         ;   Label: LAB_004cbae2
     CALL core_manpuz.cpp_FUN_004cbb00   ; 004cbae3
-        ;   XREF to: 004cbb00 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004cbb00()
+        ;   XREF to: 004cbb00 (UNCONDITIONAL_CALL)  ; CMirrorHack * core_manpuz.cpp_FUN_004cbb00(CMirrorHack * this_ptr)
     ADD ESP,0x4                         ; 004cbae8
     RET                                 ; 004cbaeb
 

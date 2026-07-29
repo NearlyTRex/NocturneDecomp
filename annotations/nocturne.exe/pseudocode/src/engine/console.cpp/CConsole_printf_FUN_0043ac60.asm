@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2)
+; void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1014]:1  local_1014
@@ -75,7 +75,7 @@ section .text
     PUSH EBP                            ; 0043acc1
     INC EBX                             ; 0043acc2
     CALL engine_console.cpp_CConsole_writeChar_FUN_0043ad30 ; 0043acc3
-        ;   XREF to: 0043ad30 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_writeChar_FUN_0043ad30()
+        ;   XREF to: 0043ad30 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_writeChar_FUN_0043ad30(CConsole * this_ptr, char character)
     ADD ESP,0x8                         ; 0043acc8
     CMP EBX,ESI                         ; 0043accb
     JL 0x0043acbb                       ; 0043accd
@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_0043acd0
     PUSH EBP                            ; 0043acd2
     CALL engine_console.cpp_CConsole_writeChar_FUN_0043ad30 ; 0043acd3
-        ;   XREF to: 0043ad30 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_writeChar_FUN_0043ad30()
+        ;   XREF to: 0043ad30 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_writeChar_FUN_0043ad30(CConsole * this_ptr, char character)
     MOV EBX,dword ptr [EBP]             ; 0043acd8
     ADD ESP,0x8                         ; 0043acdb
     TEST EBX,EBX                        ; 0043acde

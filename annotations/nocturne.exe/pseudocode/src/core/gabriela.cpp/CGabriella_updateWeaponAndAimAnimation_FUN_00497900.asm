@@ -209,14 +209,14 @@ section .text
     ADD ESP,0x14                        ; 00497a1c
     PUSH EBX                            ; 00497a1f
     CALL core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_00497810 ; 00497a20
-        ;   XREF to: 00497810 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_00497810()
+        ;   XREF to: 00497810 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_00497810(CGabriella * this_ptr)
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497a25
     ADD ESP,0x4                         ; 00497a28
     FLD float ptr [EBP + 0x7a]          ; 00497a2b
     PUSH EBX                            ; 00497a2e
     FSTP float ptr [EBP + 0x42]         ; 00497a2f
     CALL core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_00497860 ; 00497a32
-        ;   XREF to: 00497860 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_00497860()
+        ;   XREF to: 00497860 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_00497860(CGabriella * this_ptr)
     FLD float ptr [EBX + 0x1fa50]       ; 00497a37
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497a3d
     FSUB float ptr [EBP + 0x42]         ; 00497a40
@@ -405,7 +405,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 00497c4b
     PUSH ESI                            ; 00497c51
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 00497c52
-        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
+        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController * this_ptr, int motion_index, float marker_position)
     ADD ESP,0xc                         ; 00497c57
     PUSH 0x51b650                       ; 00497c5a
     MOV EDI,dword ptr [0x01c713a8]      ; 00497c5f | DAT_01c713a8
@@ -419,7 +419,7 @@ section .text
     PUSH EAX                            ; 00497c7a
     PUSH ESI                            ; 00497c7b
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00497c7c
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0x1fa44]       ; 00497c81
     ADD ESP,0x18                        ; 00497c87
     FCOMP float ptr [0x0059dca8]        ; 00497c8a | FLOAT_0059dca8
@@ -489,7 +489,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 00497d59
     PUSH ESI                            ; 00497d5f
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 00497d60
-        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
+        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV EDI,dword ptr [0x01c713b0]      ; 00497d65 | DAT_01c713b0
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497d6b
     ADD ESP,0xc                         ; 00497d6e
@@ -597,7 +597,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 00497e77
     PUSH ESI                            ; 00497e7d
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 00497e7e
-        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
+        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController * this_ptr, int motion_index, float marker_position)
     ADD ESP,0xc                         ; 00497e83
     MOV EDX,dword ptr [0x01c713a8]      ; 00497e86 | DAT_01c713a8
     PUSH 0x51b650                       ; 00497e8c
@@ -611,7 +611,7 @@ section .text
     PUSH ECX                            ; 00497ea7
     PUSH ESI                            ; 00497ea8
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00497ea9
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [EBX + 0x1fa44]       ; 00497eae
     ADD ESP,0x18                        ; 00497eb4
     FCOMP float ptr [0x0059dca8]        ; 00497eb7 | FLOAT_0059dca8
@@ -669,7 +669,7 @@ section .text
     PUSH EAX                            ; 00497f53
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497f54
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00497f57
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     FLD float ptr [0x00582112]          ; 00497f5c | FLOAT_00582112
     FLD float ptr [0x01c71388]          ; 00497f62 | CVector3f_01c71388
     FMUL ST1                            ; 00497f68
@@ -769,7 +769,7 @@ section .text
     PUSH ESI                            ; 00498089
     MOV dword ptr [EBX + 0x23a0],0x2    ; 0049808a
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 00498094
-        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
+        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [EBP + 0x7a],EAX      ; 00498099
     ADD ESP,0xc                         ; 0049809c
     FLD float ptr [EBP + 0x7a]          ; 0049809f

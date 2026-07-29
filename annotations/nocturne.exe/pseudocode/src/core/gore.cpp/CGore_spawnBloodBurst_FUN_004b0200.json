@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 356,
+    "complexity_score": 337,
     "cross_reference_count": 17,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 101,
-    "suspect_count": 24,
+    "pseudocode_lines": 97,
+    "suspect_count": 23,
     "suspect_types": [
-      "raw_address_constant",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 309
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -639,42 +638,42 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 7,
-          "line": 67,
+          "line": 66,
           "message": "Return value of function atan2() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 20,
-          "line": 53,
+          "line": 52,
           "message": "Uninitialized variable: local_38",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 30,
-          "line": 74,
+          "line": 72,
           "message": "Uninitialized variable: local_44",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 91,
+          "line": 87,
           "message": "Uninitialized variable: local_74",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 92,
+          "line": 88,
           "message": "Uninitialized variable: fStack_68",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 93,
+          "line": 89,
           "message": "Uninitialized variable: fStack_5c",
           "severity": "error"
         }
@@ -686,7 +685,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 41,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_40._0_4_ = direction->x;",
@@ -694,7 +693,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 43,
+      "line": 42,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = direction->y;",
@@ -702,7 +701,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 46,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(float)local_40._0_4_ * (float)local_40._0_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(float)local_40._0_4_ * (float)local_40._0_4_ +",
@@ -711,14 +718,6 @@
     {
       "description": "Unknown/mangled field access",
       "line": 47,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(float)local_40._0_4_ * (float)local_40._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(float)local_40._4_4_ * (float)local_40._4_4_);",
@@ -726,7 +725,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 47,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(float)local_40._4_4_ * (float)local_40._4_4_);",
@@ -734,7 +733,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 50,
+      "line": 49,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = 0.0;",
@@ -742,7 +741,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 50,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_40._0_4_ = 0.0;",
@@ -750,7 +749,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 56,
+      "line": 55,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_40._0_4_ = (float)local_40._0_4_ * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_40._0_4_ = (float)local_40._0_4_ * fVar1;",
@@ -759,14 +766,6 @@
     {
       "description": "Unknown/mangled field access",
       "line": 56,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_40._0_4_ = (float)local_40._0_4_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 57,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = (float)local_40._4_4_ * fVar1;",
@@ -774,7 +773,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 56,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = (float)local_40._4_4_ * fVar1;",
@@ -782,7 +781,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 60,
       "match": "._4_4_",
       "severity": "mild",
       "text": "((float10)(float)local_40._4_4_,",
@@ -790,7 +789,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 61,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float10)(float)local_40._0_4_ * (float10)(float)local_40._0_4_ +",
@@ -798,7 +797,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 61,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float10)(float)local_40._0_4_ * (float10)(float)local_40._0_4_ +",
@@ -806,7 +805,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 63,
       "match": "._4_4_",
       "severity": "mild",
       "text": "x = (float10)(float)local_40._4_4_;",
@@ -814,7 +813,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 71,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = local_30;",
@@ -822,7 +821,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 75,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = local_20 + (float)local_40._4_4_;",
@@ -830,7 +829,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 75,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = local_20 + (float)local_40._4_4_;",
@@ -838,7 +837,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 83,
+      "line": 79,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "((CMatrix3x3f *)&stack0xffffff84,(CVector3f *)(local_40 + 4));",
@@ -846,7 +845,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 80,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = local_74;",
@@ -854,7 +853,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 88,
+      "line": 84,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_54 = (float)local_40._4_4_ * local_24;",
@@ -862,23 +861,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 88,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_40._4_4_ = local_54;",
       "type": "unknown_field"
     },
     {
-      "description": "Raw hex address 0x4b02f8 assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 66,
-      "match": "0x4b02f8",
-      "severity": "moderate",
-      "text": "uVar4 = 0x4b02f8;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Uninitialized variable: local_38",
-      "line": 53,
+      "line": 52,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = SQRT(local_38 * local_38 +",
@@ -886,7 +877,7 @@
     },
     {
       "description": "Uninitialized variable: local_44",
-      "line": 74,
+      "line": 72,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar3 = atan2((float10)local_44,x);",
@@ -894,7 +885,7 @@
     },
     {
       "description": "Uninitialized variable: local_74",
-      "line": 91,
+      "line": 87,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_40._4_4_ = local_74;",
@@ -902,7 +893,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_68",
-      "line": 92,
+      "line": 88,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_38 = fStack_68;",
@@ -910,7 +901,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_5c",
-      "line": 93,
+      "line": 89,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_34 = fStack_5c;",

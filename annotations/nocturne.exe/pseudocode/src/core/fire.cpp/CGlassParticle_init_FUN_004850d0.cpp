@@ -63,10 +63,10 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(CGlassParticle *this
   (this_ptr->uv_v_per_vertex).x = uv_v_per_vertex->x;
   (this_ptr->uv_v_per_vertex).y = uv_v_per_vertex->y;
   (this_ptr->uv_v_per_vertex).z = uv_v_per_vertex->z;
-  local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40490fdb);
+  local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,3.1415927);
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = local_10;
-  local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40c90fdb);
+  local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
   (this_ptr->euler_angles).y = local_10;
   local_5c = triangle_vertices->vertices[0].x - local_50.x;
   local_58 = triangle_vertices->vertices[0].y - local_50.y;
@@ -106,9 +106,9 @@ void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(CGlassParticle *this
   local_84 = (this_ptr->triangle_delta).vertices[2].z - (this_ptr->triangle_delta).vertices[0].z;
   local_28 = SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88) *
              (float)10;
-  local_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f490fdb,0x3fc90fdb);
+  local_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.7853982,1.5707964);
   local_10 = local_1c;
-  local_10 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x40c90fdb);
+  local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,6.2831855);
   fVar5 = (float10)fcos((float10)local_10);
   fVar6 = (float10)fcos((float10)local_1c);
   fVar7 = (float10)fsin((float10)local_10);

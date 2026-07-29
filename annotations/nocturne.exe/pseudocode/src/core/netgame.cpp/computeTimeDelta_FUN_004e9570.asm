@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_netgame_cpp_computeTimeDelta_FUN_004e9570(void)
+; float __cdecl core_netgame_cpp_computeTimeDelta_FUN_004e9570(int start_time,int end_time)
 ;
+; Parameters:
+; int              Stack[0x4]:4   start_time
+; int              Stack[0x8]:4   end_time
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

@@ -1,17 +1,17 @@
 // Name: shape_edittool.cpp_CStrList_copy_FUN_00473bd0
 // Address: 00473bd0
 // Address Range: [[00473bd0, 00473bfa]]
-// Convention: unknown
-// Signature: CStrList * shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *param_1,CStrList *param_2)
+// Convention: __cdecl
+// Signature: CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *this_ptr,CStrList *other)
 
 #include "nocturne.h"
 
-CStrList * shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *param_1,CStrList *param_2)
+CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *this_ptr,CStrList *other)
 
 {
-  param_1->vtable = (CStrList_vtable *)&PTR_shape_edittool_cpp_CStrList_dtor_FUN_00473b80_0059ca74;
-  param_1->item_count = 0;
-  param_1->data_array = (char **)0x0;
-  shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(param_1,param_2);
-  return param_1;
+  this_ptr->vtable = &g_CStrListVTable;
+  this_ptr->item_count = 0;
+  this_ptr->data_array = (char **)0x0;
+  shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(this_ptr,other);
+  return this_ptr;
 }

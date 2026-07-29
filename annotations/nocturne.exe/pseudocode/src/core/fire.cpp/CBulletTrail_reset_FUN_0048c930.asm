@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CBulletTrail_reset_FUN_0048c930(void)
+; void __cdecl core_fire_cpp_CBulletTrail_reset_FUN_0048c930(CBulletTrail *this_ptr)
 ;
+; Parameters:
+; CBulletTrail *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

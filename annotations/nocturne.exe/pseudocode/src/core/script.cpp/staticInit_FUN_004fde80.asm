@@ -24,7 +24,7 @@ section .text
     ADD ESP,0x4                         ; 004fde97
     PUSH 0x1e56da0                      ; 004fde9a
     CALL core_script.cpp_FUN_004fe490   ; 004fde9f
-        ;   XREF to: 004fe490 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004fe490()
+        ;   XREF to: 004fe490 (UNCONDITIONAL_CALL)  ; CScript * core_script.cpp_FUN_004fe490(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fdea4
     PUSH 0x5be210                       ; 004fdea7
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 004fdeac

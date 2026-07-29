@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void)
+; void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr)
 ;
+; Parameters:
+; CBloodParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x54]:4  local_54

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_bugs_cpp_crossVector_FUN_00423be0(void)
+; CVector3f * __cdecl core_bugs_cpp_crossVector_FUN_00423be0(CVector3f *a,CVector3f *result,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   result
+; CVector3f *      Stack[0xc]:4   b
 ;
 ; *****************************************************************************
 

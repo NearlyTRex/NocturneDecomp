@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 wincore_wddvmem_cpp_FUN_00552b40(void)
+; int __cdecl wincore_wddvmem_cpp_FUN_00552b40(int width,int height)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
 ;   engine_2d.c_FUN_00401010 at 00401027

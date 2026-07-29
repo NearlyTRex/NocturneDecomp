@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CBoxActor *param_1)
+; void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0041f3a1
     PUSH EBX                            ; 0041f3a5
     CALL core_boxactor.cpp_FUN_0041f6e0 ; 0041f3a6
-        ;   XREF to: 0041f6e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_0041f6e0()
+        ;   XREF to: 0041f6e0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_0041f6e0(CLightActor * this_ptr)
     ADD ESP,0x4                         ; 0041f3ab
     PUSH EBX                            ; 0041f3ae
     CALL core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 ; 0041f3af

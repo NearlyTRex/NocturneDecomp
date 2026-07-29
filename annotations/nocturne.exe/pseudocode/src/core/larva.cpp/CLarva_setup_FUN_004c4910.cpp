@@ -22,7 +22,7 @@ void core_larva_cpp_CLarva_setup_FUN_004c4910(CEnemy *param_1)
   (pCVar1->base).base.actor_name[2] = '\0';
   (pCVar1->base).base.actor_name[3] = '\0';
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
-  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41f00000);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,30.0);
   param_1->attack_cooldown = fVar2;
   return;
 }

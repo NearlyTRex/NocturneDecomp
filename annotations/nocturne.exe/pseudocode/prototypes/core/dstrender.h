@@ -61,7 +61,7 @@ void __cdecl blendLightmapSharedU32toU32NoBiasPx1MMX(uint *output_pixel,uint *te
 
 // Original: core_dstrender.cpp_memcpyMMX_FUN_00465341
 // Address: 00465341
-undefined4 memcpyMMX(uint param_1,uint param_2,uint param_3);
+void __cdecl memcpyMMX(void *dest,void *src,int byte_count);
 
 // Original: core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382
 // Address: 00465382
@@ -69,7 +69,7 @@ void __cdecl verticalBlur3TapMMXStride320(ulonglong *output_buffer,ulonglong *in
 
 // Original: core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
 // Address: 004654c5
-void spatialFilter9TapMMX(undefined4 *param_1,undefined4 *param_2,int param_3);
+void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pixel_count);
 
 // Original: core_dstrender.cpp_FUN_0046556f
 // Address: 0046556f

@@ -63,7 +63,7 @@ section .text
     ADD ESP,0x8                         ; 00572ddf
     PUSH EBX                            ; 00572de2
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00572de3
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     MOV EBX,EAX                         ; 00572de8
     ADD ESP,0x4                         ; 00572dea
     JMP 0x00572d9b                      ; 00572ded

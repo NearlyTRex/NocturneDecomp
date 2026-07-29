@@ -1,33 +1,32 @@
 // Name: core_setcolid.cpp_FUN_00511a10
 // Address: 00511a10
 // Address Range: [[00511a10, 00511a91]]
-// Convention: unknown
-// Signature: void core_setcolid_cpp_FUN_00511a10(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_setcolid_cpp_FUN_00511a10(CDemonSet *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void core_setcolid_cpp_FUN_00511a10(uint param_1,int param_2)
+void __cdecl core_setcolid_cpp_FUN_00511a10(CDemonSet *this_ptr,CDemonActor *actor)
 
 {
-  CVector3f *pCVar1;
-  byte auStack_34 [24];
-  CVector3f CStack_1c;
-  CVector3f CStack_10;
+  CBoundingBox3D *pCVar1;
+  CBoundingBox3D CStack_34;
+  CBoundingBox3D CStack_1c;
   
-  pCVar1 = (CVector3f *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_34);
+  pCVar1 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_34);
   if (&CStack_1c != pCVar1) {
-    CStack_1c.x = pCVar1->x;
-    CStack_1c.y = pCVar1->y;
-    CStack_1c.z = pCVar1->z;
+    CStack_1c.min.x = (pCVar1->min).x;
+    CStack_1c.min.y = (pCVar1->min).y;
+    CStack_1c.min.z = (pCVar1->min).z;
   }
-  if (&CStack_10 != pCVar1 + 1) {
-    CStack_10.x = pCVar1[1].x;
-    CStack_10.y = pCVar1[1].y;
-    CStack_10.z = pCVar1[1].z;
+  if (&CStack_1c.max != &pCVar1->max) {
+    CStack_1c.max.x = (pCVar1->max).x;
+    CStack_1c.max.y = (pCVar1->max).y;
+    CStack_1c.max.z = (pCVar1->max).z;
   }
   core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0
-            ((CDemonRaytrace *)&DAT_01fba938,(CVector3f *)(param_2 + 0x20),
-             (CVector3f *)(param_2 + 0x30),&CStack_1c,&CStack_10);
+            ((CDemonRaytrace *)&DAT_01fba938,&(actor->location).position,&(actor->orient).vec,
+             &CStack_1c.min,&CStack_1c.max);
   core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   return;
 }

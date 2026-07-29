@@ -227,7 +227,7 @@ section .text
     JNC 0x005731a4                      ; 0057319d
         ;   XREF to: 005731a4 (CONDITIONAL_JUMP)  ; LAB_005731a4
     CALL crt_unknown.c_stack_overflow_handler_FUN_005670e0 ; 0057319f
-        ;   XREF to: 005670e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_stack_overflow_handler_FUN_005670e0()
+        ;   XREF to: 005670e0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_stack_overflow_handler_FUN_005670e0(SIZE_T required_bytes)
     MOV ECX,dword ptr [EBP + -0x10]     ; 005731a4
         ;   Label: LAB_005731a4
     MOV EBX,0x200                       ; 005731a7

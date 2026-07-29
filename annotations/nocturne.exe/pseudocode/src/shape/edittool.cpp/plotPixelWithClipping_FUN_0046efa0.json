@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 202,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 56
+    "total_lines": 51
   },
   "cross_references": [],
   "function": {
@@ -145,9 +144,9 @@
         "0046eff2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_plotPixelWithClipping_FUN_0046efa0",
-    "signature": "void shape_edittool_cpp_plotPixelWithClipping_FUN_0046efa0(void)"
+    "signature": "void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0046efa0(int x_coord,int y_coord,int use_clipping)"
   },
   "function_calls": [
     {
@@ -198,9 +197,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -228,43 +227,34 @@
     "pcode_op_count": 137
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "plotPixelWithClipping_FUN_0046efa0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 19,
-          "message": "Uninitialized variable: in_stack_00000004",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 44,
-          "line": 19,
-          "message": "Uninitialized variable: in_stack_00000008",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 8,
-          "line": 21,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x_coord",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "use_clipping",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -276,156 +266,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 7,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
+      "text": "if (((((-1 < x_coord) && (-1 < y_coord)) && (x_coord < DAT_005b761c)) && (y_coord < DAT_005b7620))",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": ") && (in_stack_00000008 < DAT_005b7620)) &&",
-      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 7,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": ") && (in_stack_00000008 < DAT_005b7620)) &&",
+      "text": "if (((((-1 < x_coord) && (-1 < y_coord)) && (x_coord < DAT_005b761c)) && (y_coord < DAT_005b7620))",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "((in_stack_0000000c == 0 ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(((_DAT_01c00c58 <= in_stack_00000004 && (in_stack_00000004 < _DAT_01c00c60)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(((_DAT_01c00c58 <= in_stack_00000004 && (in_stack_00000004 < _DAT_01c00c60)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "((_DAT_01c00c5c <= in_stack_00000008 && (in_stack_00000008 < _DAT_01c00c64)))))))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "((_DAT_01c00c5c <= in_stack_00000008 && (in_stack_00000008 < _DAT_01c00c64)))))))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "engine_2d_c_plotPixel_FUN_00401530(in_stack_00000004,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "engine_2d_c_plotPixel_FUN_00401530(in_stack_00000004,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000004",
-      "line": 19,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000008",
-      "line": 19,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((((-1 < in_stack_00000004) && (-1 < in_stack_00000008)) && (in_stack_00000004 < DAT_005b761c)",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 21,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "((in_stack_0000000c == 0 ||",
-      "type": "static_uninitvar"
     }
   ]
 }

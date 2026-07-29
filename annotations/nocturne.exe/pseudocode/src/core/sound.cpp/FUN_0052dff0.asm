@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonSet * core_sound_cpp_FUN_0052dff0(CSound *param_1)
+; void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x148]:8  local_148
 ; undefined4       Stack[-0x140]:4  local_140
@@ -615,7 +617,7 @@ section .text
     PUSH 0xc0400000                     ; 0052e6f1
     MOV dword ptr [EAX],0x0             ; 0052e6f6
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0052e6fc
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x134],EAX     ; 0052e701
     FLD float ptr [ESP + 0x134]         ; 0052e708
     ADD ESP,0x8                         ; 0052e70f
@@ -698,7 +700,7 @@ section .text
     LEA EDI,[ESP + 0x78]                ; 0052e7f0
     MOV ESI,0x5bef88                    ; 0052e7f4 | DAT_005bef88
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0052e7f9
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x134],EAX     ; 0052e7fe
     MOV ECX,0x19                        ; 0052e805
     FLD float ptr [ESP + 0x134]         ; 0052e80a

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gore_cpp_CBloodParticle_onCollision_FUN_004ae900(CVector3f *param_1,CVector3f *param_2)
+; int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004ae900(CBloodParticle *this_ptr,CVector3f *collision_normal)
 ;
+; Parameters:
+; CBloodParticle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   collision_normal
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005850a0 = 0.900000000000000

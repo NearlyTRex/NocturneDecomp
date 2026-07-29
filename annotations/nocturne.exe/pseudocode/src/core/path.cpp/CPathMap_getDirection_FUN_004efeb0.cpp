@@ -1,35 +1,30 @@
 // Name: core_path.cpp_CPathMap_getDirection_FUN_004efeb0
 // Address: 004efeb0
 // Address Range: [[004efeb0, 004f0350]]
-// Convention: unknown
-// Signature: float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+// Convention: __cdecl
+// Signature: float __cdecl core_path_cpp_CPathMap_getDirection_FUN_004efeb0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position)
 
 #include "nocturne.h"
 
-float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+float __cdecl core_path_cpp_CPathMap_getDirection_FUN_004efeb0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position)
 
 {
-  float *pfVar1;
-  int iVar2;
-  float local_e0;
-  float local_dc;
-  float local_d8;
+  CVector3f *pCVar1;
+  CVector3f local_e0;
   uint local_d4;
   uint local_d0;
   uint local_cc;
   uint local_c8;
   uint local_c4;
   uint local_c0;
-  byte local_bc [12];
+  CVector3f local_bc;
   uint local_b0;
   uint local_ac;
   uint local_a8;
   float local_a4;
   float local_a0;
   float local_9c;
-  float local_98;
-  float local_94;
-  float local_90;
+  CVector3f local_98;
   uint local_8c;
   uint local_88;
   uint local_84;
@@ -39,7 +34,7 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
   uint local_74;
   uint local_70;
   uint local_6c;
-  byte local_68 [12];
+  CVector3f local_68;
   uint local_5c;
   uint local_58;
   uint local_54;
@@ -58,19 +53,18 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
   float local_20;
   int local_18;
   
-  local_98 = *param_1 - *param_5;
-  local_94 = param_1[1] - param_5[1];
-  local_90 = param_1[2] - param_5[2];
-  pfVar1 = (float *)core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                              (local_68,&local_98);
-  local_a4 = *pfVar1 / 100.0f;
-  local_9c = 0.01f * pfVar1[2];
+  local_98.x = (this_ptr->current_position).x - dest_position->x;
+  local_98.y = (this_ptr->current_position).y - dest_position->y;
+  local_98.z = (this_ptr->current_position).z - dest_position->z;
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_68,&local_98);
+  local_a4 = pCVar1->x / 100.0f;
+  local_9c = 0.01f * pCVar1->z;
   local_18 = 1;
   local_50 = 0.0;
   local_4c = 0.0;
   local_48 = 0.0;
-  local_a0 = -(pfVar1[1] * 0.01f);
-  switch(param_2) {
+  local_a0 = -(pCVar1->y * 0.01f);
+  switch(current_direction) {
   case 1:
     local_48 = 1.0;
     local_40 = 0;
@@ -85,7 +79,7 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
     break;
   case 3:
     local_50 = 1.0;
-    switch(param_3) {
+    switch(next_direction) {
     case 1:
       goto switchD_004eff7e_caseD_1;
     case 2:
@@ -102,7 +96,7 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
     local_cc = 0;
     local_50 = -1.0;
     local_d4 = 0xbf800000;
-    switch(param_3) {
+    switch(next_direction) {
     case 1:
       goto switchD_004eff7e_caseD_1;
     case 2:
@@ -114,7 +108,7 @@ float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_
     }
     goto switchD_004eff7e_default;
   }
-  switch(param_3) {
+  switch(next_direction) {
   case 1:
 switchD_004eff7e_caseD_1:
     local_74 = 0;
@@ -149,7 +143,7 @@ switchD_004eff7e_caseD_4:
   }
 switchD_004eff7e_default:
   if ((ABS(local_50) == 0.0) && (ABS(local_48) == 0.0)) {
-    switch(param_2) {
+    switch(current_direction) {
     case 1:
       return local_a0;
     case 2:
@@ -172,8 +166,9 @@ switchD_004eff7e_default:
       core_main_c_FUN_004c8440("CPathMap::getDirection - Should never get here either");
     }
   }
-  if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;
-  switch(param_4) {
+  if ((current_direction != prev_direction) && (prev_direction != next_direction))
+  goto switchD_004f0211_default;
+  switch(prev_direction) {
   case 1:
     local_48 = local_48 + 1.0;
     goto LAB_004f0235;
@@ -201,10 +196,10 @@ LAB_004f0235:
   }
 switchD_004f0211_default:
   local_20 = (float)local_18;
-  local_d8 = 1.0 / local_20;
-  local_e0 = local_50 * local_d8;
-  local_dc = local_4c * local_d8;
-  local_d8 = local_48 * local_d8;
-  iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_bc,&local_e0);
-  return *(float *)(iVar2 + 4) + local_a0;
+  local_e0.z = 1.0 / local_20;
+  local_e0.x = local_50 * local_e0.z;
+  local_e0.y = local_4c * local_e0.z;
+  local_e0.z = local_48 * local_e0.z;
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_bc,&local_e0);
+  return pCVar1->y + local_a0;
 }

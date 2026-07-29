@@ -99,7 +99,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EBP       ; 0046fee3
     MOV dword ptr [ESP + 0xc],EAX       ; 0046fee7 | = "Message"
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0046feeb
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0046fef0
     PUSH 0x1bca8d0                      ; 0046fef3
     MOV ECX,dword ptr [0x01bcd070]      ; 0046fef8 | DAT_01bcd070
@@ -107,7 +107,7 @@ section .text
     MOV EBX,EAX                         ; 0046feff
     MOV ESI,EAX                         ; 0046ff01
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0046ff03
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0046ff08
     MOV EBP,EAX                         ; 0046ff0b
     CMP EAX,EBX                         ; 0046ff0d

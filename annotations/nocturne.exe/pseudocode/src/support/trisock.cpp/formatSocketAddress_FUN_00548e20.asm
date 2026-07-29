@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trisock_cpp_formatSocketAddress_FUN_00548e20(void)
+; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_00548e20(char *output_buffer,SNetworkAddr *network_addr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   output_buffer
+; SNetworkAddr *   Stack[0x8]:4   network_addr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00596c63

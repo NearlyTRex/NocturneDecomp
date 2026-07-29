@@ -97,7 +97,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
       iVar3 = local_18 + 0x20;
       iVar5 = local_14 + 1;
       core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60
-                ((int)(this_ptr->triangle_buffer->triangle).vertices + local_18,
+                ((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + local_18),
                  this_ptr->vertex_buffer);
       local_18 = iVar3;
       local_14 = iVar5;

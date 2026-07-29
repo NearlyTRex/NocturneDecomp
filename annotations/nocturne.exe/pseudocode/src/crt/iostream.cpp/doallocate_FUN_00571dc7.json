@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
     "total_lines": 32
   },
@@ -25,9 +24,9 @@
         "00571df7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallStack",
     "name": "crt_iostream.cpp_doallocate_FUN_00571dc7",
-    "signature": "undefined4 crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *param_1)"
+    "signature": "int __watcallStack crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *this_ptr)"
   },
   "function_calls": [
     {
@@ -46,9 +45,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -75,44 +74,36 @@
     "pcode_op_count": 71
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *param_1)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(void *)((int)new_buffer",
       "severity": "moderate",
-      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,new_buffer,(void *)((int)new_buffer + 0x204),1);",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(this_ptr,new_buffer,(void *)((int)new_buffer + 0x204),1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,new_buffer,(void *)((int)new_buffer + 0x204),1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `new_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
       "match": "(int)new_buffer",
       "severity": "moderate",
-      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,new_buffer,(void *)((int)new_buffer + 0x204),1);",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(this_ptr,new_buffer,(void *)((int)new_buffer + 0x204),1);",
       "type": "pointer_truncation"
     }
   ],

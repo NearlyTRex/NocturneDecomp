@@ -68,7 +68,7 @@ section .text
     PUSH ECX                            ; 0051d7d7
     XOR EBX,EBX                         ; 0051d7d8
     CALL core_xform.cpp_quaternionToAxisAngle_FUN_0055d220 ; 0051d7da
-        ;   XREF to: 0055d220 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToAxisAngle_FUN_0055d220()
+        ;   XREF to: 0055d220 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToAxisAngle_FUN_0055d220(CQuaternion4f * quat_in, float * angle_out, CVector3f * axis_out)
     MOV EDI,dword ptr [ESI + 0x28558]   ; 0051d7df
     ADD ESP,0xc                         ; 0051d7e5
     TEST EDI,EDI                        ; 0051d7e8

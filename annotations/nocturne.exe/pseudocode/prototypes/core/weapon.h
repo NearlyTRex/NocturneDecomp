@@ -49,15 +49,15 @@ void FUN_00554300(int param_1,undefined4 param_2);
 
 // Original: core_weapon.cpp_FUN_00554310
 // Address: 00554310
-void FUN_00554310(CWeapon *param_1,float *param_2);
+void FUN_00554310(CCharacter *param_1,CVector3f *param_2);
 
 // Original: core_weapon.cpp_CLadder_getGroundType_FUN_005543b0
 // Address: 005543b0
-undefined4 CLadder::getGroundType(int param_1);
+EGroundType __cdecl CLadder::getGroundType(CLadder *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0
 // Address: 005543c0
-void CWeapon::updateLighting(CDemonActor *param_1);
+void CWeapon::updateLighting(CCharacter *param_1);
 
 // Original: core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560
 // Address: 00554560
@@ -65,7 +65,7 @@ void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr,int weapon_state);
 
 // Original: core_weapon.cpp_FUN_00554570
 // Address: 00554570
-void FUN_00554570(undefined4 param_1,undefined4 param_2);
+void FUN_00554570(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_weapon.cpp_FUN_00554590
 // Address: 00554590
@@ -89,7 +89,7 @@ void __cdecl CWeapon::setupPhysicsBox(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750
 // Address: 00554750
-void CWeapon::fireProjectile(CDemonActor *param_1);
+void CWeapon::fireProjectile(CCharacter *param_1);
 
 // Original: core_weapon.cpp_FUN_00554780
 // Address: 00554780

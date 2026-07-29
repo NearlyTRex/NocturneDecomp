@@ -1,22 +1,22 @@
 // Name: core_dpart.cpp_CDemonPart_ctor_FUN_00456ef0
 // Address: 00456ef0
 // Address Range: [[00456ef0, 00456f32]]
-// Convention: unknown
-// Signature: void core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(undefined1 *param_1)
+// Convention: __cdecl
+// Signature: CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(CDemonPart *this_ptr)
 
 #include "nocturne.h"
 
-void core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(byte *param_1)
+CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(CDemonPart *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x2c) = 0;
-  *(uint *)(param_1 + 0x34) = 0;
-  *(uint *)(param_1 + 0x30) = 0;
-  *(uint *)(param_1 + 0x28) = 0;
-  *(uint *)(param_1 + 0x20) = 0;
-  *(uint *)(param_1 + 0x24) = 0;
-  *(uint *)(param_1 + 0x38) = 0;
-  *(uint *)(param_1 + 900) = 0;
-  *param_1 = 0;
-  return;
+  this_ptr->vertex_positions = (CVector3i *)0x0;
+  this_ptr->face_data = (SSurfacePlane *)0x0;
+  this_ptr->vertex_normals = (CVector3i *)0x0;
+  this_ptr->vertex_group_size = 0;
+  this_ptr->vertex_count = 0;
+  this_ptr->face_count = 0;
+  this_ptr->mystery_array_size = 0;
+  this_ptr->current_vertex_group = 0;
+  this_ptr->format[0] = '\0';
+  return this_ptr;
 }

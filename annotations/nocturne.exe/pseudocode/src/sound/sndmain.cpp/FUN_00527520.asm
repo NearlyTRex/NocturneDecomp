@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint sound_sndmain_cpp_FUN_00527520(uint param_1)
+; uint __cdecl sound_sndmain_cpp_FUN_00527520(uint current_sfx_handle)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   current_sfx_handle
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d40f

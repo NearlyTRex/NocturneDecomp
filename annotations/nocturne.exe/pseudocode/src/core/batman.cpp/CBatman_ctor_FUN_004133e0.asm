@@ -17,7 +17,7 @@
 ;   undefined4 s_e_00578aa2+3
 ;   float FLOAT_0059a150 = 50
 ;   float FLOAT_0059a154 = 100
-;   undefined1* PTR_core_batman.cpp_CBatman_setup_FUN_004134a0_0059a164 = 004134a0
+;   CEnemy_full_vtable g_CBatmanVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -41,10 +41,10 @@ section .text
     ADD EAX,0x150                       ; 004133f7
     MOV ESI,0x578aa2                    ; 004133fc | = "none"
     PUSH EAX                            ; 00413401
-    MOV dword ptr [EAX + -0x4],0x59a164 ; 00413402 | PTR_core_batman.cpp_CBatman_setup_FUN_004134a0_0059a164
+    MOV dword ptr [EAX + -0x4],0x59a164 ; 00413402 | g_CBatmanVTable
     LEA EDI,[EBX + 0xbd24]              ; 00413409
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0041340f
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0059a150]          ; 00413414 | FLOAT_0059a150
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0041341a
     FLD float ptr [0x0059a154]          ; 00413424 | FLOAT_0059a154

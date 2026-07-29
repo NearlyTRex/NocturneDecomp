@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004cbcb0(undefined4 param_1,int param_2)
+; void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_004cbcb0(CMirrorHack *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CMirrorHack *    Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00588182 = -0.0100000000000000

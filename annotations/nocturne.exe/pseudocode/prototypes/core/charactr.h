@@ -29,7 +29,7 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 
 // Original: core_charactr.cpp_clampFloat_FUN_00424730
 // Address: 00424730
-float clampFloat(void);
+float __cdecl clampFloat(float value,float limit);
 
 // Original: core_charactr.cpp_FUN_00424780
 // Address: 00424780
@@ -65,7 +65,7 @@ void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_004259f0
 // Address: 004259f0
-undefined4 FUN_004259f0(CCharacter *param_1,float param_2);
+int __cdecl FUN_004259f0(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20
 // Address: 00425c20
@@ -81,7 +81,7 @@ int __cdecl CCharacter::renderOpaque(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_00426510
 // Address: 00426510
-void FUN_00426510(CCharacter *param_1);
+void __cdecl FUN_00426510(CCharacter *this_ptr,int layer_flag);
 
 // Original: core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570
 // Address: 00426570
@@ -105,7 +105,7 @@ void __cdecl CCharacter::renderBurn(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_004270e0
 // Address: 004270e0
-void FUN_004270e0(int param_1);
+void __cdecl FUN_004270e0(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260
 // Address: 00427260
@@ -121,7 +121,7 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_00427730
 // Address: 00427730
-void FUN_00427730(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,int param_4,float param_5,int param_6);
+void __cdecl FUN_00427730(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
 
 // Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0
 // Address: 004277f0
@@ -129,7 +129,7 @@ void __cdecl CCharacter::processDamageDecals(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
 // Address: 004278e0
-void CCharacter::spawnGoreAtBone(CDemonActor *param_1,int param_2,int param_3,float param_4);
+void __cdecl CCharacter::spawnGoreAtBone(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 
 // Original: core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427990
 // Address: 00427990
@@ -141,7 +141,7 @@ undefined4 * FUN_00427a20(int param_1,undefined4 *param_2);
 
 // Original: core_charactr.cpp_FUN_00427a60
 // Address: 00427a60
-void FUN_00427a60(int param_1);
+void __cdecl FUN_00427a60(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_explode_FUN_00427ab0
 // Address: 00427ab0
@@ -181,7 +181,7 @@ undefined4 FUN_004280f0(int param_1);
 
 // Original: core_charactr.cpp_FUN_00428100
 // Address: 00428100
-void FUN_00428100(int param_1,int param_2,undefined4 param_3);
+void __cdecl FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 
 // Original: core_charactr.cpp_CCharacter_attractActorToward_FUN_00428160
 // Address: 00428160
@@ -189,11 +189,11 @@ undefined4 CCharacter::attractActorToward(int param_1,CDemonActor *param_2,CVect
 
 // Original: core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260
 // Address: 00428260
-undefined4 CCharacter::checkCylinderCollisionWorld(CCharacter *param_1,CVector3f *param_2,float param_3);
+undefined4 CCharacter::checkCylinderCollisionWorld(CCharacter *param_1,CVector3f *param_2,float param_3,SDamageInfo *param_4);
 
 // Original: core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0
 // Address: 004282d0
-undefined4 CCharacter::testDamageLine(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,CDemonActor *param_4,CVector3f *param_5);
+undefined4 CCharacter::testDamageLine(CCharacter *param_1,CVector3f *param_2,CVector3f *param_3,SDamageInfo *param_4,CVector3f *param_5);
 
 // Original: core_charactr.cpp_CCharacter_processDamage_FUN_00428510
 // Address: 00428510
@@ -233,11 +233,11 @@ undefined4 FUN_00428bf0(void);
 
 // Original: core_charactr.cpp_FUN_00428c00
 // Address: 00428c00
-undefined4 FUN_00428c00(CCharacter *param_1,float param_2);
+int __cdecl FUN_00428c00(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428ee0
 // Address: 00428ee0
-void CCharacter::setWalkTimeout(int param_1,undefined4 param_2);
+void __cdecl CCharacter::setWalkTimeout(CCharacter *this_ptr,float timeout);
 
 // Original: core_charactr.cpp_FUN_00428ef0
 // Address: 00428ef0
@@ -305,7 +305,7 @@ void __cdecl CCharacter::setLookAtTarget(CCharacter *this_ptr,CDemonActor *targe
 
 // Original: core_charactr.cpp_FUN_00429f70
 // Address: 00429f70
-void FUN_00429f70(int param_1,uint *param_2);
+void FUN_00429f70(CDemonActor *param_1,uint *param_2);
 
 // Original: core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0
 // Address: 00429fe0
@@ -321,7 +321,7 @@ void CCharacter::spawnFlies(CDemonActor *param_1,int param_2,float param_3);
 
 // Original: core_charactr.cpp_FUN_0042a150
 // Address: 0042a150
-void FUN_0042a150(CCharacter *param_1,float param_2);
+void __cdecl FUN_0042a150(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0
 // Address: 0042a1e0
@@ -329,11 +329,11 @@ int __cdecl CCharacter::updateWanderToWaypoint(CCharacter *this_ptr,float delta_
 
 // Original: core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500
 // Address: 0042a500
-int CCharacter::advanceLayerAction(int param_1,float *param_2,int param_3);
+int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 
 // Original: core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a700
 // Address: 0042a700
-void CCharacter::blendLayerActionMotion(int param_1,undefined4 param_2,undefined4 param_3);
+void CCharacter::blendLayerActionMotion(int param_1,float param_2,int param_3);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760
 // Address: 0042a760
@@ -345,7 +345,7 @@ void __cdecl CCharacter::buildLayerActionTransitionCosts(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
 // Address: 0042a9d0
-float CCharacter::getLayerActionBlendWeight(int param_1,int param_2);
+float __cdecl CCharacter::getLayerActionBlendWeight(CCharacter *this_ptr,int state_index);
 
 // Original: core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50
 // Address: 0042aa50
@@ -361,7 +361,7 @@ int __cdecl CCharacter::processMotion(CCharacter *this_ptr,int bone_index);
 
 // Original: core_charactr.cpp_FUN_0042af70
 // Address: 0042af70
-undefined4 FUN_0042af70(CCharacter *param_1,float param_2);
+int __cdecl FUN_0042af70(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b490
 // Address: 0042b490
@@ -369,15 +369,15 @@ void __cdecl CCharacter::playSoundWithCooldown(CCharacter *this_ptr,char *sound_
 
 // Original: core_charactr.cpp_divideVector_FUN_0042b4d0
 // Address: 0042b4d0
-void divideVector(void);
+CVector3f * __cdecl divideVector(CVector3f *src,CVector3f *dst,float *scalar);
 
 // Original: core_charactr.cpp_setActorXPos_FUN_0042b500
 // Address: 0042b500
-void setActorXPos(void);
+void __cdecl setActorXPos(CDemonActor *actor,float x);
 
 // Original: core_charactr.cpp_projectPointToVertex_FUN_0042b510
 // Address: 0042b510
-void projectPointToVertex(void);
+void __cdecl projectPointToVertex(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position);
 
 // Original: core_charactr.cpp_FUN_0042b570
 // Address: 0042b570
@@ -389,15 +389,15 @@ undefined4 FUN_0042b5a0(void);
 
 // Original: core_charactr.cpp_getActorCreateEvent_FUN_0042b5b0
 // Address: 0042b5b0
-int getActorCreateEvent(void);
+char * __cdecl getActorCreateEvent(CDemonActor *actor);
 
 // Original: core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0
 // Address: 0042b5c0
-undefined4 getGameDeltaTime(int param_1);
+float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0
 // Address: 0042b5d0
-CDemonActor * CCharacter::dtor(CDemonActor *param_1,byte param_2);
+CDemonActor * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042b690
 // Address: 0042b690

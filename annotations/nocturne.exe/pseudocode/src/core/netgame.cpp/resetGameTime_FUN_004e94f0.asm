@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_resetGameTime_FUN_004e94f0(void)
+; void __cdecl core_netgame_cpp_resetGameTime_FUN_004e94f0(void)
 ;
 ;
 ; Referenced Globals:

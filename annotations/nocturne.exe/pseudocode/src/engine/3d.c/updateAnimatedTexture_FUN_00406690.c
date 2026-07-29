@@ -1,14 +1,14 @@
 // Name: engine_3d.c_updateAnimatedTexture_FUN_00406690
 // Address: 00406690
 // Address Range: [[00406690, 00406734]]
-// Convention: unknown
-// Signature: int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00406690(SMRGLAnimatedTexture *texture)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00406690(SMRGLAnimatedTexture *texture)
 
 {
   char cVar1;
@@ -17,16 +17,16 @@ int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
   char *pcVar4;
   SMRGLTextureBasic SStack_28;
   
-  iVar2 = *(int *)(param_1 + 0x14) + _DAT_01bd1d80;
-  *(int *)(param_1 + 0x14) = iVar2;
-  iVar2 = (iVar2 / *(int *)(param_1 + 0x10)) % *(int *)(param_1 + 8);
-  if (iVar2 != *(int *)(param_1 + 0xc)) {
-    *(uint *)(param_1 + 0x18) = 1;
-    *(int *)(param_1 + 0xc) = iVar2;
+  iVar2 = texture->accumulated_time + _DAT_01bd1d80;
+  texture->accumulated_time = iVar2;
+  iVar2 = (iVar2 / texture->frame_duration) % texture->frame_count;
+  if (iVar2 != texture->current_frame) {
+    texture->dirty_flag = 1;
+    texture->current_frame = iVar2;
   }
   SStack_28.base.count = 0;
   pcVar4 = SStack_28.texture_name;
-  pcVar3 = (char *)(*(int *)(param_1 + 0xc) * 0x20 + param_1 + 0x1c);
+  pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,9 +37,9 @@ int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&SStack_28);
-  if (*(int *)(param_1 + 0x18) == 0) {
-    return *(int *)(param_1 + 8) * 0x20 + param_1 + 0x1c;
+  if (texture->dirty_flag == 0) {
+    return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
   }
-  *(uint *)(param_1 + 0x18) = 0;
-  return *(int *)(param_1 + 8) * 0x20 + param_1 + 0x1c;
+  texture->dirty_flag = 0;
+  return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
 }

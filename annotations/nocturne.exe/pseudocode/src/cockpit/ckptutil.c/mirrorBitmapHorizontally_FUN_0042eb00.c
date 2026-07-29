@@ -1,40 +1,41 @@
 // Name: cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_0042eb00
 // Address: 0042eb00
 // Address Range: [[0042eb00, 0042eb8f]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(undefined1 *param_1,int param_2,int param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(uchar *bitmap_data,int width,int height,int bytes_per_pixel)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(byte *param_1,int param_2,int param_3,int param_4)
+void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(uchar *bitmap_data,int width,int height,int bytes_per_pixel)
 
 {
-  byte uVar1;
-  byte *puVar2;
-  byte *puVar3;
-  byte *puVar4;
-  uint uVar5;
+  uchar uVar1;
+  int iVar2;
+  uchar *puVar3;
+  uchar *puVar4;
+  uchar *puVar5;
+  uint uVar6;
   
-  param_2 = param_2 * param_4;
-  uVar5 = 0;
-  if (param_3 / 2 != 0) {
-    puVar3 = param_1 + param_3 * param_2;
+  iVar2 = width * bytes_per_pixel;
+  uVar6 = 0;
+  if (height / 2 != 0) {
+    puVar4 = bitmap_data + height * iVar2;
     do {
-      puVar3 = puVar3 + -param_2;
-      if (param_2 != 0) {
-        puVar2 = param_1;
-        puVar4 = puVar3;
+      puVar4 = puVar4 + -iVar2;
+      if (iVar2 != 0) {
+        puVar3 = bitmap_data;
+        puVar5 = puVar4;
         do {
-          uVar1 = *puVar2;
-          *puVar2 = *puVar4;
-          puVar2 = puVar2 + 1;
-          *puVar4 = uVar1;
-          puVar4 = puVar4 + 1;
-        } while (puVar2 < param_1 + param_2);
+          uVar1 = *puVar3;
+          *puVar3 = *puVar5;
+          puVar3 = puVar3 + 1;
+          *puVar5 = uVar1;
+          puVar5 = puVar5 + 1;
+        } while (puVar3 < bitmap_data + iVar2);
       }
-      uVar5 = uVar5 + 1;
-      param_1 = param_1 + param_2;
-    } while (uVar5 < (uint)(param_3 / 2));
+      uVar6 = uVar6 + 1;
+      bitmap_data = bitmap_data + iVar2;
+    } while (uVar6 < (uint)(height / 2));
   }
   return;
 }

@@ -101,7 +101,7 @@ void core_zombie_cpp_CZombie_setup_FUN_0055ec20(CEnemy *param_1)
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   (param_1->base).base.is_transparent =
        (uint)(*(int *)(param_1[1].base.base.create_event + 0xc) != 0);
-  fVar6 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
+  fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
   iVar5 = *(int *)(param_1[1].base.base.create_event + 0x54);
   param_1[1].base.base.platform_position_delta.z = fVar6;
   if ((-1 < iVar5) && ((param_1->base).collision_cylinder_top < 0.0)) {

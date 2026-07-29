@@ -2,11 +2,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/fstream.h"
 #include "system/iostream.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
 #include "types/classes/CCodec.h"
+#include "types/classes/CColonel.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CConveyor.h"
 #include "types/classes/CCourse.h"
@@ -23,18 +26,21 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/CMotionController.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CWeapon.h"
+#include "types/classes/CVector3i.h"
 #include "types/classes/CZombieCow.h"
 #include "types/structs/SBitBuffer.h"
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SEdge.h"
 #include "types/structs/SFogGrid.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SScanlineSpans.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x430000
@@ -44,34 +50,34 @@ void __cdecl cockpit_ckptutil_c_putPixel_FUN_00430140(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_FUN_004301d0(void);
 int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_004301e0(void);
 void cockpit_ckptutil_c_FUN_004301f0(void);
-void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(void);
+void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(int disabled);
 void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6);
 void cockpit_ckptutil_c_FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
-void cockpit_ckptutil_c_setEdgeData_FUN_00430590(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00430590(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
 void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
-void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(ushort *param_1,int param_2,short param_3);
-void cockpit_ckptutil_c_FUN_00431260(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
-undefined * engine_clipper_c_allocateClipVertex_FUN_004314b0(void);
-void engine_clipper_c_setNearPlaneDistance_FUN_00431500(void);
+void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(SEdge *edge_array,int edge_count,int flip_width);
+void __cdecl cockpit_ckptutil_c_FUN_00431260(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index);
+SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_004314b0(void);
+void __cdecl engine_clipper_c_setNearPlaneDistance_FUN_00431500(int distance);
 undefined4 engine_clipper_c_FUN_00431520(void);
-void engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(int *param_1,int *param_2,int *param_3);
-void engine_clipper_c_interpolateVertexRightClip_FUN_00431630(int *param_1,int *param_2,int *param_3);
-void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int *param_2,int *param_3);
-void engine_clipper_c_interpolateVertexTopClip_FUN_00431830(int *param_1,int *param_2,int *param_3);
+void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_00431630(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_00431830(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
-int engine_clipper_c_clipPolygonLeftPlane_FUN_00431a50(undefined4 *param_1,int param_2,int param_3);
-int engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(undefined4 *param_1,int param_2,int param_3);
-int engine_clipper_c_clipPolygonBottomPlane_FUN_00431cd0(int *param_1,int param_2,int param_3);
-int engine_clipper_c_clipPolygonTopPlane_FUN_00431e10(int *param_1,int param_2,int param_3);
+int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00431a50(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00431cd0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
+int __cdecl engine_clipper_c_clipPolygonTopPlane_FUN_00431e10(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 void engine_clipper_c_FUN_00431f50(void);
 void engine_clipper_c_FUN_00432057(void);
 void engine_clipper_c_FUN_004320dc(void);
-void engine_clipper_c_normalizeClippedVertices_FUN_00432150(void);
+void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void);
 undefined4 engine_clipper_c_FUN_00432210(uint param_1,int *param_2);
 undefined4 engine_clipper_c_FUN_00432b48(void);
 undefined4 engine_clipper_c_FUN_00432bd8(void);
 void engine_clipper_c_FUN_00432cd0(uint param_1,int *param_2);
-void engine_clipper_c_copyMemory_FUN_00433770(undefined4 *param_1,undefined4 *param_2,uint param_3);
+void __cdecl engine_clipper_c_copyMemory_FUN_00433770(void *dest_ptr,void *src_ptr,int byte_count);
 void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
@@ -112,7 +118,7 @@ void __cdecl core_cloth_cpp_CCloth_process_FUN_00436e50(CCloth *this_ptr,CVector
 void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void core_cloth_cpp_FUN_00437a60(int param_1);
 void core_cloth_cpp_FUN_00437ab0(int param_1,int param_2,int param_3);
-int core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(int param_1,int param_2);
+int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(CClothList *this_ptr);
 CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_00438250(CClothList *this_ptr,uint flags);
@@ -123,39 +129,39 @@ void core_cloth_cpp_CClothList_remove_FUN_00438410(int *param_1,int param_2);
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_00438550(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
-void core_cloth_cpp_CClothList_applyRotation_FUN_00438620(int *param_1,undefined4 param_2);
+void __cdecl core_cloth_cpp_CClothList_applyRotation_FUN_00438620(CClothList *this_ptr,CVector3f *euler);
 void core_cloth_cpp_FUN_00438660(int *param_1,undefined4 *param_2);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(CCloth *this_ptr,char *bone_name,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(CCloth *this_ptr,int vertex_index);
-void core_cloth_cpp_CCloth_applyRotation_FUN_00438780(int param_1,float *param_2);
-int core_cloth_cpp_fastInvSqrt_FUN_00438880(void);
-void core_cloth_cpp_addVector_FUN_004388a0(void);
-int core_cloth_cpp_vectorLengthFast_FUN_004388d0(void);
-void core_cloth_cpp_applyLightAttenuation_FUN_00438900(void);
-void core_cloth_cpp_scaleVector_FUN_00438950(void);
+void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_00438780(CCloth *this_ptr,CVector3f *euler);
+float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00438880(float dist_sq);
+void __cdecl core_cloth_cpp_addVector_FUN_004388a0(CVector3f *a,CVector3f *b);
+float __cdecl core_cloth_cpp_vectorLengthFast_FUN_004388d0(CVector3f *v);
+CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_00438900(CVector3f *v);
+CVector3f * __cdecl core_cloth_cpp_scaleVector_FUN_00438950(CVector3f *out,float *scale,CVector3f *v);
 undefined4 core_cloth_cpp_FUN_00438980(undefined4 param_1);
 undefined4 core_cloth_cpp_FUN_00438990(undefined4 param_1);
-int core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(int param_1);
-float * core_cloth_cpp_SClothVertex_dtor_FUN_004389c0(int param_1);
+SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(SClothVertex *this_ptr);
+SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_004389c0(SClothVertex *this_ptr,uint flags);
 CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor_FUN_004389e0(CVector3f *objs,uint flags);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *objs,uint flags);
 SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(SClothBone *objs,uint flags);
-uint support_codec_cpp_readByteWithCount_FUN_00438a40(_istream *param_1,int *param_2);
+int __cdecl support_codec_cpp_readByteWithCount_FUN_00438a40(_istream *istream,int *remaining_count);
 void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(SBitBuffer *bit_buffer);
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining);
 void __cdecl support_codec_cpp_writeBitsToStream_FUN_00438c40(SBitBuffer *bit_buffer,int bit_count,int bit_value,_ostream *ostream);
-void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,_ostream *param_2);
+void __cdecl support_codec_cpp_flushBitBuffer_FUN_00438d60(SBitBuffer *bit_buffer,_ostream *ostream);
 int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags);
 void support_codec_cpp_CCodec_init_FUN_00438f50(void);
 undefined4 support_codec_cpp_CCodec_finalize_FUN_00438f80(void);
-undefined4 support_codec_cpp_CCodec_process_FUN_00438f90(undefined4 param_1,_istream *param_2,int *param_3,_ostream *param_4);
-int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,undefined4 param_2,undefined4 param_3,char *param_4,int *param_5,int param_6);
+int __cdecl support_codec_cpp_CCodec_process_FUN_00438f90(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream);
+int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_00439000(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize);
 int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream);
-undefined4 support_codec_cpp_CCodec_processBuffer_FUN_00439120(int *param_1,char *param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,char *param_2,char *param_3);
-undefined4 support_codec_cpp_CCodec_finalizeBuffer_FUN_004392d0(int *param_1,char *param_2,int *param_3);
+int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_00439120(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
+int __cdecl support_codec_cpp_CCodec_processFiles_FUN_004391b0(CCodec *this_ptr,char *input_file_path,char *output_file_path);
+int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_004392d0(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(CLZWDictionary *this_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(CLZWDictionary *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CLZWDictionary_free_FUN_00439390(CLZWDictionary *this_ptr);
@@ -165,9 +171,9 @@ int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(CLZWDictionar
 int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary *this_ptr,int code,int parent_index);
 int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining);
 int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_00439630(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,char **input_buffer,int *bytes_remaining);
-void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4);
-undefined4 support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(int param_1,int param_2,_ostream *param_3);
-undefined4 support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(int param_1,int param_2,int *param_3);
+void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(CLZWDictionary *this_ptr,int code,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00439830(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 void __cdecl support_codec_cpp_CLZWCompress_init_FUN_00439880(CLZWCompress *this_ptr);
 int __cdecl support_codec_cpp_CLZWCompress_process_FUN_004398c0(CLZWCompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream);
@@ -177,29 +183,29 @@ void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_00439a30(CLZWDecompress *
 int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_00439a70(CLZWDecompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream);
 int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00439af0(CLZWDecompress *this_ptr,_ostream *ostream);
 int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
-bool support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(int param_1);
-CCodec * support_codec_cpp_CLZWDecompress_dtor_FUN_00439c10(CCodec *param_1,byte param_2);
-CCodec * support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CCodec *param_1,byte param_2);
+int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_00439bf0(CLZWDecompress *this_ptr);
+CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_00439c10(CLZWDecompress *this_ptr,uint flags);
+CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CLZWCompress *this_ptr,uint flags);
 void __cdecl core_colonel_cpp_staticInit_FUN_00439cd0(void);
 void core_colonel_cpp_FUN_00439d00(void);
 CDemonActorType * core_colonel_cpp_FUN_00439d20(void);
-int core_colonel_cpp_FUN_00439d30(undefined4 param_1);
-void core_colonel_cpp_FUN_00439da0(int param_1);
-void core_colonel_cpp_FUN_00439f50(CHero *param_1,float param_2);
-void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(int param_1,float param_2);
+CHero * core_colonel_cpp_FUN_00439d30(CHero *param_1);
+void __cdecl core_colonel_cpp_CColonel_setup_FUN_00439da0(CColonel *this_ptr);
+void core_colonel_cpp_FUN_00439f50(CColonel *param_1,float param_2);
+void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time);
 ushort core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CCharacter *param_1,float param_2);
-void core_colonel_cpp_FUN_0043a9e0(undefined4 param_1);
+void core_colonel_cpp_FUN_0043a9e0(CHero *param_1);
 void core_colonel_cpp_FUN_0043a9f0(CCharacter *param_1);
 void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(CCharacter *param_1,SDamageInfo *param_2);
-undefined4 core_colonel_cpp_FUN_0043ab20(int param_1);
-void core_colonel_cpp_FUN_0043ab30(int param_1,undefined4 param_2);
-int core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(void);
+int __cdecl core_colonel_cpp_CColonel_isWeaponDrawn_FUN_0043ab20(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_0043ab30(CColonel *this_ptr,int drawn);
+int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(CMotionController *motion_ptr);
 CHero * core_colonel_cpp_FUN_0043ab60(CHero *param_1,byte param_2);
 void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 undefined4 engine_console_cpp_FUN_0043ac50(undefined4 param_1);
-void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2);
-void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *param_1,char param_2);
+void engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *param_1,char *param_2);
+void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_0043ae00(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(CConsole *this_ptr);
@@ -207,15 +213,15 @@ void __cdecl core_conveyor_cpp_staticInit_FUN_0043aff0(void);
 void core_conveyor_cpp_FUN_0043b020(void);
 CDemonActorType * core_conveyor_cpp_FUN_0043b040(void);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(CConveyor *this_ptr);
-void core_conveyor_cpp_FUN_0043b110(int param_1);
+void core_conveyor_cpp_FUN_0043b110(CPlatform *param_1);
 void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CPlatform *param_1,float param_2);
 undefined4 core_conveyor_cpp_FUN_0043b2f0(void);
 void core_conveyor_cpp_FUN_0043b300(void);
 void core_conveyor_cpp_FUN_0043b310(CPlatform *param_1);
 undefined4 core_conveyor_cpp_FUN_0043b3b0(void);
-void core_conveyor_cpp_FUN_0043b3c0(int param_1,float *param_2);
-CDemonActor * core_conveyor_cpp_FUN_0043b420(CDemonActor *param_1,byte param_2);
-CDemonActor * core_conveyor_cpp_FUN_0043b490(CDemonActor *param_1,byte param_2);
+CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_0043b3c0(CConveyor *this_ptr,CBoundingBox3D *out_box);
+CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_0043b420(CConveyor *this_ptr,uint flags);
+CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_0043b490(CPlatform *this_ptr,uint flags);
 undefined4 * core_course_cpp_FUN_0043b500(void);
 float core_course_cpp_fmodfPositive_FUN_0043b510(float param_1,float param_2);
 void core_course_cpp_FUN_0043b5b0(void);
@@ -235,14 +241,14 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CEnemy *param_1,float param_2)
 void core_cow_cpp_FUN_0043c2e0(CEnemy *param_1);
 void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(CZombieCow *this_ptr,SDamageInfo *damage_info);
 void core_cow_cpp_CZombieCow_processDamage_FUN_0043c5e0(CZombieCow *param_1,SDamageInfo *param_2);
-undefined4 core_cow_cpp_FUN_0043c6a0(int param_1,CVector3f *param_2);
-CDemonActor * core_cow_cpp_FUN_0043c6f0(CDemonActor *param_1,byte param_2);
+int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_0043c6a0(CZombieCow *this_ptr,CVector3f *out_points_array);
+CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_0043c6f0(CZombieCow *this_ptr,uint flags);
 void __cdecl core_crate_cpp_staticInit_FUN_0043c7b0(void);
 void core_crate_cpp_FUN_0043c7e0(void);
 CDemonActorType * core_crate_cpp_FUN_0043c800(void);
-int * core_crate_cpp_FUN_0043c810(undefined4 param_1);
+int * core_crate_cpp_FUN_0043c810(CDemonActor *param_1);
 void core_crate_cpp_CCrate_setup_FUN_0043c870(CDemonActor *param_1);
-undefined4 core_crate_cpp_CCrate_canPickup_FUN_0043c940(undefined4 param_1,CDemonActor *param_2);
+int __cdecl core_crate_cpp_CCrate_canPickup_FUN_0043c940(CCrate *this_ptr,CDemonActor *picker);
 void core_crate_cpp_FUN_0043c960(int param_1,undefined4 param_2);
 void core_crate_cpp_FUN_0043c970(int param_1);
 undefined4 core_crate_cpp_FUN_0043c990(int param_1);
@@ -259,14 +265,14 @@ void __cdecl core_crossbow_cpp_staticInit_FUN_0043ceb0(void);
 void core_crossbow_cpp_FUN_0043cee0(void);
 CDemonActorType * core_crossbow_cpp_FUN_0043cf00(void);
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(CCrossbow *this_ptr);
-void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2);
+void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2);
 int core_crossbow_cpp_FUN_0043d0a0(CDemonActor *param_1);
 undefined4 core_crossbow_cpp_CCrossbow_renderTransparent_FUN_0043d120(int param_1);
 undefined4 * core_crossbow_cpp_FUN_0043d150(int param_1,undefined4 *param_2);
-undefined4 core_crossbow_cpp_FUN_0043d1c0(CWeapon *param_1);
+undefined4 core_crossbow_cpp_FUN_0043d1c0(CCharacter *param_1);
 float core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0043d810(int param_1);
-undefined4 core_crossbow_cpp_FUN_0043d840(void);
-CWeapon * core_crossbow_cpp_FUN_0043d870(CWeapon *param_1,byte param_2);
+float core_crossbow_cpp_FUN_0043d840(void);
+CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_0043d870(CCrossbow *this_ptr,uint flags);
 void __cdecl core_curtain_cpp_staticInit_FUN_0043d8e0(void);
 void core_curtain_cpp_FUN_0043d930(void);
 CDemonActorType * core_curtain_cpp_FUN_0043d950(void);
@@ -276,23 +282,23 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(CCurtai
 void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *this_ptr,SCurtainVertex *vertex);
 void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2);
-int core_curtain_cpp_FUN_0043f330(CDemonActor *param_1);
-undefined4 core_curtain_cpp_FUN_0043f610(int param_1);
-undefined4 core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(int param_1);
+int __cdecl core_curtain_cpp_FUN_0043f330(CCurtain *this_ptr);
+int core_curtain_cpp_FUN_0043f610(CCurtain *param_1);
+int core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *param_1);
 undefined4 core_curtain_cpp_FUN_0043f640(void);
 void core_curtain_cpp_FUN_0043f650(int param_1,float *param_2);
 void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(CDemonActor *param_1);
-undefined4 core_curtain_cpp_FUN_0043f8d0(int param_1);
+int __cdecl core_curtain_cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_0043f8d0(CCurtain *this_ptr);
 CDemonActor * core_curtain_cpp_FUN_0043f8e0(CDemonActor *param_1,byte param_2);
 undefined4 core_curtain_cpp_FUN_0043f950(undefined4 param_1);
 undefined4 core_curtain_cpp_FUN_0043f960(undefined4 param_1);
 undefined4 core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(undefined4 param_1);
-void core_curtain_cpp_FUN_0043f980(void *param_1);
+SCurtainVertex * __cdecl core_curtain_cpp_FUN_0043f980(SCurtainVertex *objs,uint flags);
 CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f *objs,uint flags);
 void __cdecl core_dcamera_cpp_staticInit_FUN_0043f9c0(void);
-void core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(int param_1);
+void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid *fog);
 void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043fa50(SFogGrid *fog);
-uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,int *param_3,int param_4);
+uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length);
 void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(SFogGrid *fog_ptr,int time_major,int time_minor);
 CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(CDemonCamera *this_ptr);
 CDemonCamera * core_dcamera_cpp_FUN_0043ff30(CDemonCamera *param_1);

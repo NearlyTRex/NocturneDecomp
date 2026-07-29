@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_ghoul_cpp_CGhoul_dtor_FUN_004aba30(CDemonActor *param_1,byte param_2)
+; CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004aba30(CGhoul *this_ptr,uint flags)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGhoulTypeInfo_0059e370

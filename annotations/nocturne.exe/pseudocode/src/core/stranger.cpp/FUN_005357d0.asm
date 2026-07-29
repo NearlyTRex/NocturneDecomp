@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
+; void core_stranger_cpp_FUN_005357d0(CStranger *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -31,7 +31,7 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 005357d8
     PUSH EBX                            ; 005357dc
     CALL core_charactr.cpp_FUN_004259f0 ; 005357dd
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005357e2
     TEST EAX,EAX                        ; 005357e5
     JNZ 0x0053585b                      ; 005357e7
@@ -52,23 +52,23 @@ section .text
     PUSH dword ptr [ESP + 0x4]          ; 0053580e
     PUSH EBX                            ; 00535812
     CALL core_stranger.cpp_FUN_00535900 ; 00535813
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_00535900()
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535818
     PUSH dword ptr [ESP + 0x4]          ; 0053581b
     PUSH EBX                            ; 0053581f
     CALL core_stranger.cpp_FUN_00535900 ; 00535820
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_00535900()
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535825
     PUSH dword ptr [ESP + 0x4]          ; 00535828
     PUSH EBX                            ; 0053582c
     CALL core_stranger.cpp_FUN_00535900 ; 0053582d
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_00535900()
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535832
     PUSH dword ptr [ESP + 0x4]          ; 00535835
     PUSH EBX                            ; 00535839
         ;   Label: LAB_00535839
     CALL core_stranger.cpp_FUN_00535900 ; 0053583a
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_00535900()
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0053583f
     MOV ECX,dword ptr [0x005b9354]      ; 00535842 | DAT_005b9354
     PUSH dword ptr [ESP + 0x8]          ; 00535848

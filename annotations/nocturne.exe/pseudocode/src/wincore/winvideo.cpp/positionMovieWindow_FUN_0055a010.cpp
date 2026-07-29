@@ -1,14 +1,14 @@
 // Name: wincore_winvideo.cpp_positionMovieWindow_FUN_0055a010
 // Address: 0055a010
 // Address Range: [[0055a010, 0055a1bb]]
-// Convention: unknown
-// Signature: void wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND param_1)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_window)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND param_1)
+void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_window)
 
 {
   byte *pbVar1;
@@ -22,7 +22,7 @@ void wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND param_1)
   if (_DAT_02de3124 == 0) {
     return;
   }
-  GetClientRect(param_1,&local_24);
+  GetClientRect((HWND)parent_window,&local_24);
   mciSendStringA("where mov source",(LPSTR)&local_a4,0x80,(HWND)0x0);
   SetRectEmpty(&local_14);
   pbVar3 = &local_a4;

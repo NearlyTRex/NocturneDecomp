@@ -9,12 +9,12 @@
 void core_icepick_cpp_FUN_004b9cf0(void)
 
 {
-  int iVar1;
+  CIcePick *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1fa6c);
-  if (iVar1 == 0) {
+  this_ptr = (CIcePick *)FUN_0056497c(0x1fa6c);
+  if (this_ptr == (CIcePick *)0x0) {
     return;
   }
-  core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(iVar1);
+  core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(this_ptr);
   return;
 }

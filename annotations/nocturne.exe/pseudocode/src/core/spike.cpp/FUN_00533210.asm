@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_FUN_00533210(int param_1,float param_2)
+; void core_spike_cpp_FUN_00533210(CSpike *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
@@ -118,7 +118,7 @@ section .text
     PUSH EAX                            ; 0053331e
     PUSH EBX                            ; 0053331f
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00533320
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x2d8]               ; 00533325
     FLD float ptr [EDX]                 ; 0053332b
     FADD float ptr [EAX]                ; 0053332d
@@ -227,7 +227,7 @@ section .text
         ;   Label: LAB_00533464
     PUSH 0x3f400000                     ; 00533469
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0053346e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00533473
     FLD float ptr [ESP + 0x44]          ; 00533477
     FMUL float ptr [EBX + 0x54c]        ; 0053347b
@@ -273,7 +273,7 @@ section .text
     PUSH EBX                            ; 00533516
         ;   Label: LAB_00533516
     CALL core_spike.cpp_FUN_00533750    ; 00533517
-        ;   XREF to: 00533750 (UNCONDITIONAL_CALL)  ; undefined core_spike.cpp_FUN_00533750()
+        ;   XREF to: 00533750 (UNCONDITIONAL_CALL)  ; void core_spike.cpp_FUN_00533750(CSpike * this_ptr)
     ADD ESP,0x4                         ; 0053351c
     ADD ESP,0x40                        ; 0053351f
     POP EBP                             ; 00533522

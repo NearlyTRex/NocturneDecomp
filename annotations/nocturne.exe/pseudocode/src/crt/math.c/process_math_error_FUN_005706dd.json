@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 476,
+    "complexity_score": 291,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 38,
+    "suspect_count": 20,
     "suspect_types": [
       "bitcast_double_pair",
-      "param_count_too_few",
+      "pointer_cast",
       "unaffected_reg",
       "undefined_data",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
     "total_lines": 189
   },
@@ -41,10 +40,10 @@
         "005707da"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "crt_math.c_process_math_error_FUN_005706dd",
-    "signature": "double crt_math_c_process_math_error_FUN_005706dd(uint param_1,undefined4 *param_2,undefined4 *param_3)"
+    "signature": "double __cdecl crt_math_c_process_math_error_FUN_005706dd(int errorFlags,double *value1,double *value2)"
   },
   "function_calls": [
     {
@@ -80,13 +79,10 @@
         "call_addr": "0056bd96",
         "call_type": "direct",
         "caller": "crt_math.c_math_domain_error_FUN_0056bd22",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -94,23 +90,19 @@
         "call_addr": "005706b9",
         "call_type": "direct",
         "caller": "crt_math.c_set_math_errno_FUN_005706aa",
-        "estimated_params": 6,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.488888888888889,
@@ -141,10 +133,10 @@
     "pcode_op_count": 314
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 76,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -230,34 +222,31 @@
         "offset": -12,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "errorFlags",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "value1",
+        "offset": 8,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": true,
+        "name": "value2",
+        "offset": 12,
+        "size": 4,
+        "type": "double *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "double process_math_error(uint param_1,uint *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "double process_math_error(uint param_1,uint *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "double process_math_error(uint param_1,uint *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Unaffected register variable",
       "line": 7,
@@ -271,112 +260,48 @@
       "line": 11,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_3c.inputValue1._0_4_ = *param_2;",
+      "text": "local_3c.inputValue1._0_4_ = *(uint *)value1;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c.inputValue1._0_4_ = *param_2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(uint *)((int)value1",
+      "severity": "moderate",
+      "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 12,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_3c.inputValue1._4_4_ = param_2[1];",
+      "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c.inputValue1._4_4_ = param_2[1];",
-      "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 13,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_3c.inputValue2._0_4_ = *param_3;",
+      "text": "local_3c.inputValue2._0_4_ = *(uint *)value2;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_3c.inputValue2._0_4_ = *param_3;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)value2",
+      "severity": "moderate",
+      "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_3c.inputValue2._4_4_ = param_3[1];",
+      "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_3c.inputValue2._4_4_ = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x40) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x80) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x100) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x800) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x200) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x400) != 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
@@ -427,44 +352,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_3c.errorData = (char *)(&DAT_005c206c)[param_1 & 0x1f];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_005c206c",
       "severity": "mild",
-      "text": "local_3c.errorData = (char *)(&DAT_005c206c)[param_1 & 0x1f];",
+      "text": "local_3c.errorData = (char *)(&DAT_005c206c)[errorFlags & 0x1f];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x1000) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x2000) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x4000) == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -475,28 +368,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 & 0x8000) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 50,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar2 = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar1 = *param_3;",
-      "type": "unnamed_param"
+      "match": "(uint *)((int)value2",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)value2 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
@@ -529,17 +406,6 @@
       "severity": "moderate",
       "text": "local_3c.errorType = unaff_EBX;",
       "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

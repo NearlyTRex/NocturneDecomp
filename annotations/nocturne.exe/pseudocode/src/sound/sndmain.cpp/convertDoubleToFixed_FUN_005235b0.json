@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 117,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 8,
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
     "suspect_types": [
       "bitcast_double_pair",
-      "stack_param",
+      "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 56
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -145,9 +145,9 @@
         "0052360e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005235b0",
-    "signature": "void sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(void)"
+    "signature": "void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(double input,int *out_integer_part,int *out_fractional_part)"
   },
   "function_calls": [
     {
@@ -173,9 +173,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 16,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -208,10 +208,10 @@
     "pcode_op_count": 147
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -227,32 +227,29 @@
         "offset": 0,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "out_integer_part",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "out_fractional_part",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "convertDoubleToFixed_FUN_005235b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 28,
-          "message": "Uninitialized variable: in_stack_00000008",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 4,
-          "line": 31,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -264,76 +261,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "dVar1 = (__BITCAST_DOUBLE(CONCAT44(in_stack_00000004,unaff_retaddr)) -",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 13,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar1 = (__BITCAST_DOUBLE(CONCAT44(input._0_4_,unaff_retaddr)) -",
+      "type": "unknown_field"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 19,
+      "line": 13,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "dVar1 = (__BITCAST_DOUBLE(CONCAT44(in_stack_00000004,unaff_retaddr)) -",
+      "text": "dVar1 = (__BITCAST_DOUBLE(CONCAT44(input._0_4_,unaff_retaddr)) -",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = uStack_10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = local_14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000008",
-      "line": 28,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*in_stack_00000008 = uStack_10;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 31,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*in_stack_0000000c = local_14;",
-      "type": "static_uninitvar"
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*input._4_4_ = (int)(longlong)ROUND(dVar2);",
+      "type": "unknown_field"
     }
   ]
 }

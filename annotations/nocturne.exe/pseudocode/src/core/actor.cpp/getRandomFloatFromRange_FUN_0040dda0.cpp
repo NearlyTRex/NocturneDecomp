@@ -1,12 +1,12 @@
 // Name: core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 // Address: 0040dda0
 // Address Range: [[0040dda0, 0040ddff]]
-// Convention: unknown
-// Signature: float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)
+// Convention: __cdecl
+// Signature: float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value)
 
 #include "nocturne.h"
 
-float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)
+float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value)
 
 {
   float fVar1;
@@ -21,5 +21,5 @@ float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float pa
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040dd30();
     fVar1 = (float)(int)uVar2 * 5.960465e-08f;
   }
-  return fVar1 * (param_2 - param_1) + param_1;
+  return fVar1 * (max_value - min_value) + min_value;
 }

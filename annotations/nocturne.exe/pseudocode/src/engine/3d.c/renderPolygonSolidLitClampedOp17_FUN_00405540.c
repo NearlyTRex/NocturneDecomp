@@ -1,14 +1,14 @@
 // Name: engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00405540
 // Address: 00405540
 // Address Range: [[00405540, 0040573e]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimitive *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimitive *param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimitive *prim)
 
 {
   SMRGLHeaderBasic *pSVar1;
@@ -19,8 +19,8 @@ int engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimiti
   int iVar6;
   int iVar7;
   
-  pSVar4 = param_1 + 1;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
+  pSVar4 = prim + 1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar2 == 0) goto LAB_0040571f;
   if (DAT_006b027c == 0) {
     if (_DAT_01c03948 == 0) {
@@ -48,7 +48,7 @@ LAB_00405670:
     if (DAT_005b7624 != 0x20) goto LAB_00405670;
     _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
   }
-  engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
+  engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
   _DAT_01c039a0 = 0x13;
   if (DAT_005b763c < 0xff) {
     _DAT_01c039a0 = 0x33;
@@ -56,7 +56,7 @@ LAB_00405670:
   iVar7 = 0;
   iVar6 = 0;
   _DAT_01c039a4 = 0;
-  for (iVar2 = 0; iVar2 < (param_1->base).count * 3; iVar2 = iVar2 + 3) {
+  for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
     *(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;
     iVar3 = (pSVar4->base).count;
     iVar5 = (pSVar4->surface_normal).A.i;
@@ -97,5 +97,5 @@ LAB_00405670:
   }
   engine_clipper_c_FUN_00432cd0(iVar7,&DAT_006b029c);
 LAB_0040571f:
-  return (int)&param_1[1].base + (param_1->base).count * 0xc;
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(byte *param_1,char *param_2,char *param_3)
+; void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code,char *class_name,char *message)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   cheat_code
+; char *           Stack[0x8]:4   class_name
+; char *           Stack[0xc]:4   message
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

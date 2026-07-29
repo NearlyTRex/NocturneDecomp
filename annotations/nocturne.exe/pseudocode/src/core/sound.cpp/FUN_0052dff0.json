@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,26 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 499,
+    "complexity_score": 366,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 62,
-    "max_suspect_severity": "severe",
-    "pseudocode_lines": 269,
-    "suspect_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 261,
+    "suspect_count": 8,
     "suspect_types": [
-      "extra_output",
-      "nan_function_artifact",
-      "param_count_too_few",
-      "raw_address_constant",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 909
+    "total_lines": 901
   },
   "cross_references": [
     {
@@ -159,10 +154,10 @@
         "0052e84a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_sound.cpp_FUN_0052dff0",
-    "signature": "CDemonSet * core_sound_cpp_FUN_0052dff0(CSound *param_1)"
+    "signature": "void __cdecl core_sound_cpp_FUN_0052dff0(CSound *this_ptr)"
   },
   "function_calls": [
     {
@@ -677,21 +672,19 @@
         "call_addr": "0049d5e9",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.40748031496063,
@@ -744,10 +737,10 @@
     "pcode_op_count": 2747
   },
   "stack_frame": {
-    "frame_size": 332,
+    "frame_size": 336,
     "local_size": 332,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -959,6 +952,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
       }
     ]
   },
@@ -989,112 +989,40 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonSet * core_sound_cpp_FUN_0052dff0(CSound *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "CDemonSet *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_sound_cpp_CSound_killSound_FUN_0052ebb0(param_1,_DAT_02dc9454);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(param_1,_DAT_02dc9454);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_sound_cpp_CSound_killSound_FUN_0052ebb0(param_1,_DAT_02dc9458);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(param_1,_DAT_02dc9458);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 179,
       "match": "DAT_02dc9ca4",
       "severity": "mild",
-      "text": "pCVar7 = (CVector3f *)&DAT_02dc9ca4;",
+      "text": "pCVar6 = (CVector3f *)&DAT_02dc9ca4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 201,
+      "line": 198,
       "match": "DAT_02dc9cac",
       "severity": "mild",
-      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar10))) {",
+      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {",
       "type": "undefined_data"
     },
     {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 212,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "(uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
-      "type": "nan_function_artifact"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 211,
       "match": "DAT_005bef88",
       "severity": "mild",
-      "text": "puVar9 = &DAT_005bef88;",
+      "text": "puVar8 = &DAT_005bef88;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 254,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 268,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 117,
-      "match": "0x1e57284",
-      "severity": "moderate",
-      "text": "pCVar6 = 0x01E57284;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 241,
+      "line": 234,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1102,30 +1030,19 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 220,
+      "line": 214,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar7) + offsetof(subfield)` equals the real array stride. Replace `pCVar7->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 208,
-      "match": "pCVar7 = (T *)&pCVar7[N].SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar6) + offsetof(subfield)` equals the real array stride. Replace `pCVar6->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 205,
+      "match": "pCVar6 = (T *)&pCVar6[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)&pCVar7[1].y;",
+      "text": "pCVar6 = (CVector3f *)&pCVar6[1].y;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

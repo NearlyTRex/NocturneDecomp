@@ -1,13 +1,13 @@
 // Name: core_weapon.cpp_CLadder_getGroundType_FUN_005543b0
 // Address: 005543b0
 // Address Range: [[005543b0, 005543ba]]
-// Convention: unknown
-// Signature: undefined4 core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(int param_1)
+// Convention: __cdecl
+// Signature: EGroundType __cdecl core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(CLadder *this_ptr)
 
 #include "nocturne.h"
 
-uint core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(int param_1)
+EGroundType __cdecl core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(CLadder *this_ptr)
 
 {
-  return *(uint *)(param_1 + 0x2fc);
+  return *(EGroundType *)(this_ptr[1].base.actor_name + 4);
 }

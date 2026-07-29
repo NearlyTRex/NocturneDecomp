@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_CPathMap_reset_FUN_004f1e10(int param_1)
+; void __cdecl core_path_cpp_CPathMap_reset_FUN_004f1e10(CPathMap *this_ptr)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_path.cpp_CPathMap_ctor_FUN_004efd50 at 004efd73

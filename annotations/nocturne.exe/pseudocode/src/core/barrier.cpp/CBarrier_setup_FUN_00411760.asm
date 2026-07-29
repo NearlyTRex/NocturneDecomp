@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_setup_FUN_00411760(CDemonActor *param_1)
+; void __cdecl core_barrier_cpp_CBarrier_setup_FUN_00411760(CBarrier *this_ptr)
 ;
+; Parameters:
+; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005baf90

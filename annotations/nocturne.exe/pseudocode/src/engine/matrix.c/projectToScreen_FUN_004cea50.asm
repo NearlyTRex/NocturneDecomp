@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_matrix_c_projectToScreen_FUN_004cea50(int param_1)
+; int __cdecl engine_matrix_c_projectToScreen_FUN_004cea50(int input_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   input_value
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7648

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 435,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 35,
+    "pseudocode_lines": 52,
+    "suspect_count": 6,
     "suspect_types": [
-      "bitcast_double_pair",
       "carry_arith_idiom",
-      "param_count_too_few",
       "unknown_field",
-      "unnamed_param",
       "warning_deadcode_restart"
     ],
-    "total_lines": 170
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -155,10 +152,10 @@
         "0052388a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750",
-    "signature": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)"
+    "signature": "double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)"
   },
   "function_calls": [
     {
@@ -187,23 +184,19 @@
         "call_addr": "005253b7",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10",
-        "estimated_params": 11,
+        "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 32,
         "stack_params": 8
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 11,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.568627450980392,
@@ -243,10 +236,10 @@
     "pcode_op_count": 568
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 96,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -318,6 +311,48 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sample_data",
+        "offset": 4,
+        "size": 4,
+        "type": "short *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_buffers",
+        "offset": 8,
+        "size": 4,
+        "type": "SStereoBuffers *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_gains",
+        "offset": 12,
+        "size": 4,
+        "type": "SStereoGains *"
+      },
+      {
+        "is_param": true,
+        "name": "resample_position",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "resample_delta",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "samples_to_process",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -331,91 +366,11 @@
       "type": "warning_deadcode_restart"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "if (0 < param_8) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 24,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 25,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "iVar10 = local_34._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -428,14 +383,6 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar8 = local_34._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 33,
       "match": "._0_4_",
       "severity": "mild",
@@ -444,166 +391,19 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "iVar7 = local_34._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 37,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "((__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (double)(longlong)local_34) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "((__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (double)(longlong)local_34) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 37,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "((__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (double)(longlong)local_34) *",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar3 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar4 = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar6 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sVar2 = *(short *)(param_1 + iVar10 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "bVar11 = CARRY4(uVar8,local_34._0_4_);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 48,
-      "match": "CARRY4(uVar8,local_34._0_4_)",
+      "line": 46,
+      "match": "CARRY4(uVar8,(uint)",
       "severity": "moderate",
-      "text": "bVar11 = CARRY4(uVar8,local_34._0_4_);",
+      "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar8 = uVar8 + local_34._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)*(short *)(param_1 + 2 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "} while (iVar9 < param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 56,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 11,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:11",
-      "param_delta": 11,
-      "text": "Function declares 0 params but call sites push 11 (11 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -53,13 +53,11 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
     pCVar6 = &this_ptr->boxes[0].orient;
     local_1c = this_ptr;
     do {
-      local_38.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-      ;
+      local_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
       local_14 = local_38.x;
-      local_38.y = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41200000);
+      local_38.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,10.0);
       local_14 = local_38.y;
-      local_38.z = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
-      ;
+      local_38.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
       local_14 = local_38.z;
       body_part = core_bodypart_cpp_createBodyPart_FUN_00415b30
                             (local_28,local_2c,&local_38,(CDemonActor *)this_ptr,1,1,2);

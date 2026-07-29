@@ -35,7 +35,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
   int local_28;
   int *local_24;
   int local_20;
-  int local_1c;
+  char *local_1c;
   int local_18;
   uint local_14;
   
@@ -45,16 +45,16 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(C
     local_18 = _DAT_01cd6320;
     iVar8 = 0;
     iVar6 = 0;
-    local_1c = 0x1cd8c28;
+    local_1c = (char *)0x1cd8c28;
     do {
-      iVar7 = local_1c;
+      pcVar13 = local_1c;
       _sprintf(local_1c,"%d",iVar6);
       *(uint *)(&DAT_01cd944c + iVar8) = *(uint *)(&DAT_005bdba0 + local_18);
       *(uint *)(iVar8 + 0x1cd8c2c) = *(uint *)(&DAT_005bdba4 + local_18);
       *(uint *)(iVar8 + 0x1cd8c30) = *(uint *)(&DAT_005bdba8 + local_18);
       *(uint *)(iVar8 + 0x1cd8c34) = *(uint *)(&DAT_005bdbac + local_18);
       *(int *)(iVar8 + 0x1cd8c38) = (1 << (*(byte *)(iVar8 + 0x1cd8c34) & 0x1f)) + -1;
-      sscanf(iVar7,"%u",&local_38);
+      sscanf(pcVar13,"%u");
       if (iVar6 != local_38) {
         PTR_01cc4800 = "..\\sound\\mp3.cpp";
         INT_01cc4804 = 0xd6b;

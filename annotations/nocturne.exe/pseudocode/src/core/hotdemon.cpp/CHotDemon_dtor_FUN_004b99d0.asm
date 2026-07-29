@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_hotdemon_cpp_CHotDemon_dtor_FUN_004b99d0(CDemonActor *param_1,byte param_2)
+; CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004b99d0(CHotDemon *this_ptr,uint flags)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CHotDemonTypeInfo_0059f220

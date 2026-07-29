@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SCoronaLightEntry * core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(SCoronaLightEntry *param_1,SCoronaLightEntry *param_2,int param_3)
+; void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonGlobe *    Stack[0x8]:4   globe
+; int              Stack[0xc]:4   force_render
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
 ; undefined4       Stack[-0x88]:4  local_88

@@ -29,19 +29,19 @@ CDemonActorType * FUN_005350b0(void);
 
 // Original: core_stranger.cpp_FUN_005350c0
 // Address: 005350c0
-CCharacter * FUN_005350c0(undefined4 param_1);
+CStranger * __cdecl FUN_005350c0(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_00535450
 // Address: 00535450
-void FUN_00535450(int param_1);
+void FUN_00535450(CStranger *param_1);
 
 // Original: core_stranger.cpp_FUN_005357d0
 // Address: 005357d0
-void FUN_005357d0(int param_1,float param_2);
+void FUN_005357d0(CStranger *param_1,float param_2);
 
 // Original: core_stranger.cpp_FUN_00535900
 // Address: 00535900
-void FUN_00535900(CStranger *param_1,float param_2);
+void __cdecl FUN_00535900(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0
 // Address: 00537cd0
@@ -57,11 +57,11 @@ float * FUN_00538440(int param_1,float *param_2);
 
 // Original: core_stranger.cpp_FUN_005384d0
 // Address: 005384d0
-void FUN_005384d0(CStranger *param_1);
+void __cdecl FUN_005384d0(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_005396d0
 // Address: 005396d0
-void FUN_005396d0(int param_1,SPose *param_2);
+void __cdecl FUN_005396d0(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0
 // Address: 005397b0
@@ -69,7 +69,7 @@ void __cdecl CStranger::updateTurnBlending(CStranger *this_ptr,float delta_time)
 
 // Original: core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00539ac0
 // Address: 00539ac0
-void CStranger::setPositionAndOrientation(CCharacter *param_1,CVector3f *param_2,int param_3);
+void __cdecl CStranger::setPositionAndOrientation(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
 // Original: core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10
 // Address: 00539b10
@@ -85,7 +85,7 @@ void __cdecl CStranger::updateWeaponPosition(CStranger *this_ptr,int hand_index)
 
 // Original: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
 // Address: 0053a760
-float * CStranger::computeWeaponAttachXForm(int param_1,CDemonActor *param_2,float param_3);
+float * CStranger::computeWeaponAttachXForm(CCharacter *param_1,CDemonActor *param_2,float param_3);
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630
 // Address: 0053b630
@@ -109,11 +109,11 @@ int __cdecl CStranger::tryDescendLadder(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_0053c800
 // Address: 0053c800
-undefined4 FUN_0053c800(CDemonActor *param_1);
+int __cdecl FUN_0053c800(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_archive_FUN_0053cf90
 // Address: 0053cf90
-void CStranger::archive(int param_1);
+void CStranger::archive(CHero *param_1);
 
 // Original: core_stranger.cpp_FUN_0053d100
 // Address: 0053d100
@@ -125,11 +125,11 @@ undefined4 CStranger::renderTransparent(CCharacter *param_1);
 
 // Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_0053d700
 // Address: 0053d700
-void adjustAimAngleForOffset(void);
+void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
 // Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0053d790
 // Address: 0053d790
-float * calculateAimAnglesWithOffset(float *param_1,float *param_2,float *param_3);
+CVector3f * __cdecl calculateAimAnglesWithOffset(CVector3f *out_angles,CVector3f *direction,float *offset_pair);
 
 // Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910
 // Address: 0053d910
@@ -157,11 +157,11 @@ CVector3f * __cdecl CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *
 
 // Original: core_stranger.cpp_FUN_0053f310
 // Address: 0053f310
-void FUN_0053f310(CStranger *param_1,float param_2);
+void __cdecl FUN_0053f310(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_FUN_0053fc60
 // Address: 0053fc60
-void FUN_0053fc60(CStranger *param_1);
+void __cdecl FUN_0053fc60(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_tryThrowDynamite_FUN_0053ff50
 // Address: 0053ff50
@@ -169,11 +169,11 @@ int __cdecl CStranger::tryThrowDynamite(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_FUN_0053ffe0
 // Address: 0053ffe0
-void FUN_0053ffe0(CStranger *param_1);
+void __cdecl FUN_0053ffe0(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_FUN_005402f0
 // Address: 005402f0
-void FUN_005402f0(int param_1);
+void __cdecl FUN_005402f0(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660
 // Address: 00540660
@@ -193,19 +193,19 @@ int CStranger::getGrabbed(CHero *param_1,CDemonActor *param_2,int param_3);
 
 // Original: core_stranger.cpp_FUN_00540820
 // Address: 00540820
-void FUN_00540820(int param_1);
+void FUN_00540820(CHero *param_1);
 
 // Original: core_stranger.cpp_CStranger_getDeathState_FUN_00540890
 // Address: 00540890
-EDeathState CStranger::getDeathState(CCharacter *param_1);
+EDeathState __cdecl CStranger::getDeathState(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_dropCarriedObject_FUN_005408c0
 // Address: 005408c0
-void CStranger::dropCarriedObject(CCharacter *param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5,CVector3f *param_6);
+void CStranger::dropCarriedObject(CEnemy *param_1,int param_2,CVector3f *param_3);
 
 // Original: core_stranger.cpp_CStranger_drop_FUN_00540920
 // Address: 00540920
-void CStranger::drop(int param_1,int param_2,undefined4 param_3);
+void CStranger::drop(CEnemy *param_1,CPlatform *param_2,CVector3f *param_3);
 
 // Original: core_stranger.cpp_FUN_00540970
 // Address: 00540970
@@ -221,7 +221,7 @@ float FUN_005409c0(float *param_1,float *param_2);
 
 // Original: core_stranger.cpp_setMatrixTranslation_FUN_005409f0
 // Address: 005409f0
-void setMatrixTranslation(void);
+void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 
 // Original: core_stranger.cpp_FUN_00540a10
 // Address: 00540a10
@@ -233,7 +233,7 @@ undefined4 FUN_00540a20(void);
 
 // Original: core_stranger.cpp_getScaleY_FUN_00540a30
 // Address: 00540a30
-undefined4 getScaleY(void);
+int __cdecl getScaleY(CDemonActor *actor);
 
 // Original: core_stranger.cpp_FUN_00540a40
 // Address: 00540a40
@@ -245,4 +245,4 @@ int FUN_00540a70(void);
 
 // Original: core_stranger.cpp_CStranger_dtor_FUN_00540a90
 // Address: 00540a90
-CHero * CStranger::dtor(CHero *param_1,byte param_2);
+CStranger * __cdecl CStranger::dtor(CStranger *this_ptr,uint flags);

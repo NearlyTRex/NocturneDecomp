@@ -9,12 +9,12 @@
 void core_bride_cpp_FUN_0041fb80(void)
 
 {
-  int iVar1;
+  CBride *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd54);
-  if (iVar1 == 0) {
+  this_ptr = (CBride *)FUN_0056497c(0xbd54);
+  if (this_ptr == (CBride *)0x0) {
     return;
   }
-  core_bride_cpp_FUN_0041fbb0(iVar1);
+  core_bride_cpp_FUN_0041fbb0(this_ptr);
   return;
 }

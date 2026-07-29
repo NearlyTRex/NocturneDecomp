@@ -1,14 +1,14 @@
 // Name: core_path.cpp_CPathMap_previewPathfinding_FUN_004f1500
 // Address: 004f1500
 // Address Range: [[004f1500, 004f15f0]]
-// Convention: unknown
-// Signature: void core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(CPathMap *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
+void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(CPathMap *this_ptr)
 
 {
   int x;

@@ -97,7 +97,7 @@ section .text
     LEA EAX,[EBX + EDI*0x1]             ; 004d9700
     PUSH EAX                            ; 004d9703
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004d9704
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 004d9709
     CMP EAX,0x1                         ; 004d970c
     JNZ 0x004d96bb                      ; 004d970f

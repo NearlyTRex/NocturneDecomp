@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(int param_1)
+; SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(SClothVertex *this_ptr)
 ;
+; Parameters:
+; SClothVertex *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

@@ -1,36 +1,36 @@
 // Name: crt_fstream.cpp_filebuf_seekoff_FUN_00572338
 // Address: 00572338
 // Address Range: [[00572338, 005723ad]]
-// Convention: unknown
-// Signature: int crt_fstream_cpp_filebuf_seekoff_FUN_00572338(int param_1,long param_2,uint param_3)
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_00572338(filebuf *this_ptr,long offset,int direction,int mode)
 
 #include "nocturne.h"
 
-int crt_fstream_cpp_filebuf_seekoff_FUN_00572338(int param_1,long param_2,uint param_3)
+int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_00572338(filebuf *this_ptr,long offset,int direction,int mode)
 
 {
   int iVar1;
   
-  iVar1 = *(int *)(param_1 + 0x2c);
+  iVar1 = this_ptr->__file_handle;
   if (iVar1 != -1) {
-    if (((*(int *)(param_1 + 0x20) != *(int *)(param_1 + 0x18)) ||
-        (*(int *)(param_1 + 0x10) != *(int *)(param_1 + 0x14))) &&
-       (iVar1 = (**(code **)(*(int *)(param_1 + 0x28) + 0x20))(param_1), iVar1 == -1)) {
+    if ((((this_ptr->_streambuf).__put_ptr != (this_ptr->_streambuf).__put_base) ||
+        ((this_ptr->_streambuf).__get_end != (this_ptr->_streambuf).__get_ptr)) &&
+       (iVar1 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf), iVar1 == -1)) {
       return -1;
     }
-    if (param_3 == 0) {
+    if (direction == 0) {
       iVar1 = 0;
     }
-    else if (param_3 < 2) {
+    else if ((uint)direction < 2) {
       iVar1 = 1;
     }
     else {
-      if (param_3 != 2) {
+      if (direction != 2) {
         return -1;
       }
       iVar1 = 2;
     }
-    iVar1 = lseek(*(int *)(param_1 + 0x2c),param_2,iVar1);
+    iVar1 = lseek(this_ptr->__file_handle,offset,iVar1);
   }
   return iVar1;
 }

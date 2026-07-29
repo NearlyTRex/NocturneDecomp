@@ -1,13 +1,13 @@
 // Name: core_vessel.cpp_FUN_0054fc40
 // Address: 0054fc40
 // Address Range: [[0054fc40, 0054fc50]]
-// Convention: unknown
-// Signature: undefined4 core_vessel_cpp_FUN_0054fc40(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_vessel_cpp_FUN_0054fc40(CCryptVessel *actor)
 
 #include "nocturne.h"
 
-uint core_vessel_cpp_FUN_0054fc40(int param_1)
+int __cdecl core_vessel_cpp_FUN_0054fc40(CCryptVessel *actor)
 
 {
-  return *(uint *)(*(int *)(param_1 + 0x3a0) + 0x17c);
+  return actor->start_loc->triggered;
 }

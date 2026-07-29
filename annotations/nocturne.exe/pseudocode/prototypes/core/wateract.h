@@ -33,7 +33,7 @@ void FUN_005519c0(int param_1);
 
 // Original: core_wateract.cpp_CWaterActor_process_FUN_00551a80
 // Address: 00551a80
-void CWaterActor::process(float param_1,float param_2);
+void __cdecl CWaterActor::process(CWaterActor *this_ptr,float delta_time);
 
 // Original: core_wateract.cpp_FUN_00551c00
 // Address: 00551c00
@@ -49,7 +49,7 @@ void CWaterActor::archive(CDemonActor *param_1);
 
 // Original: core_wateract.cpp_CWaterActor_getCollisionType_FUN_005520a0
 // Address: 005520a0
-undefined4 CWaterActor::getCollisionType(undefined4 param_1,int *param_2);
+ECollisionType __cdecl CWaterActor::getCollisionType(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_wateract.cpp_FUN_005520c0
 // Address: 005520c0
@@ -57,15 +57,15 @@ undefined4 FUN_005520c0(void);
 
 // Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005520d0
 // Address: 005520d0
-float CWaterActor::customRayIntersect(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+float CWaterActor::customRayIntersect(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4);
 
 // Original: core_wateract.cpp_CWaterActor_onLaserHit_FUN_005522a0
 // Address: 005522a0
-void CWaterActor::onLaserHit(undefined4 param_1,int param_2);
+void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_wateract.cpp_FUN_005522d0
+// Original: core_wateract.cpp_CWaterActor_dtor_FUN_005522d0
 // Address: 005522d0
-CDemonActor * FUN_005522d0(CDemonActor *param_1,byte param_2);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_FUN_00552340
 // Address: 00552340

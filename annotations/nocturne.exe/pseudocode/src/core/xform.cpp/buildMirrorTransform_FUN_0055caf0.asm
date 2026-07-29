@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(float *param_1,float param_2)
+; void core_xform_cpp_buildMirrorTransform_FUN_0055caf0(CVector3f *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1a4]:1  local_1a4
@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 0055cb56
     FSTP float ptr [ESP + 0x190]        ; 0055cb57
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0055cb5e
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0055cb63
     PUSH EAX                            ; 0055cb66
     LEA EAX,[ESP + 0x184]               ; 0055cb67

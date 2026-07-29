@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(void)
+; float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   basis
+; float *          Stack[0x8]:4   cp0
+; float *          Stack[0xc]:4   cp1
+; float *          Stack[0x10]:4   cp2
+; float *          Stack[0x14]:4   cp3
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

@@ -572,7 +572,7 @@ section .text
     MOV EAX,[0x005ae700]                ; 0046a289 | DAT_005ae700
     PUSH EAX                            ; 0046a28e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0046a28f
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV EDX,dword ptr [EBX]             ; 0046a294
     ADD ESP,0x10                        ; 0046a296
     CMP EDX,0x4                         ; 0046a299
@@ -643,7 +643,7 @@ section .text
     PUSH EBX                            ; 0046a363
     INC ESI                             ; 0046a364
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a365
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x68]      ; 0046a36a
     ADD ESP,0x14                        ; 0046a36d
     CMP ESI,EDX                         ; 0046a370
@@ -664,7 +664,7 @@ section .text
     PUSH EBX                            ; 0046a392
     DEC ESI                             ; 0046a393
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a394
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x5c]      ; 0046a399
     ADD ESP,0x14                        ; 0046a39c
     CMP ESI,ECX                         ; 0046a39f
@@ -703,7 +703,7 @@ section .text
     PUSH EBX                            ; 0046a405
     INC ESI                             ; 0046a406
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a407
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x68]      ; 0046a40c
     ADD ESP,0x14                        ; 0046a40f
     CMP ESI,ECX                         ; 0046a412
@@ -724,7 +724,7 @@ section .text
     PUSH EBX                            ; 0046a434
     DEC ESI                             ; 0046a435
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a436
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x5c]      ; 0046a43b
     ADD ESP,0x14                        ; 0046a43e
     CMP ESI,EDX                         ; 0046a441
@@ -790,7 +790,7 @@ section .text
     PUSH EBX                            ; 0046a4fb
     INC ESI                             ; 0046a4fc
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a4fd
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x68]      ; 0046a502
     ADD ESP,0x14                        ; 0046a505
     CMP ESI,EDX                         ; 0046a508
@@ -811,7 +811,7 @@ section .text
     PUSH EBX                            ; 0046a52a
     DEC ESI                             ; 0046a52b
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a52c
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x5c]      ; 0046a531
     ADD ESP,0x14                        ; 0046a534
     CMP ESI,ECX                         ; 0046a537
@@ -850,7 +850,7 @@ section .text
     PUSH EBX                            ; 0046a59d
     INC ESI                             ; 0046a59e
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a59f
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x68]      ; 0046a5a4
     ADD ESP,0x14                        ; 0046a5a7
     CMP ESI,ECX                         ; 0046a5aa
@@ -871,7 +871,7 @@ section .text
     PUSH EBX                            ; 0046a5cc
     DEC ESI                             ; 0046a5cd
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a5ce
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x5c]      ; 0046a5d3
     ADD ESP,0x14                        ; 0046a5d6
     CMP ESI,EDX                         ; 0046a5d9
@@ -977,7 +977,7 @@ section .text
     PUSH EBX                            ; 0046a6f3
     INC ESI                             ; 0046a6f4
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a6f5
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x68]      ; 0046a6fa
     ADD ESP,0x14                        ; 0046a6fd
     CMP ESI,EDX                         ; 0046a700
@@ -998,7 +998,7 @@ section .text
     PUSH EBX                            ; 0046a722
     DEC ESI                             ; 0046a723
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a724
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x5c]      ; 0046a729
     ADD ESP,0x14                        ; 0046a72c
     CMP ESI,ECX                         ; 0046a72f
@@ -1037,7 +1037,7 @@ section .text
     PUSH EBX                            ; 0046a795
     INC ESI                             ; 0046a796
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a797
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x68]      ; 0046a79c
     ADD ESP,0x14                        ; 0046a79f
     CMP ESI,ECX                         ; 0046a7a2
@@ -1058,7 +1058,7 @@ section .text
     PUSH EBX                            ; 0046a7c4
     DEC ESI                             ; 0046a7c5
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a7c6
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x5c]      ; 0046a7cb
     ADD ESP,0x14                        ; 0046a7ce
     CMP ESI,EDX                         ; 0046a7d1
@@ -1131,7 +1131,7 @@ section .text
     PUSH EBX                            ; 0046a8a4
     INC ESI                             ; 0046a8a5
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a8a6
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x68]      ; 0046a8ab
     ADD ESP,0x14                        ; 0046a8ae
     CMP ESI,ECX                         ; 0046a8b1
@@ -1152,7 +1152,7 @@ section .text
     PUSH EBX                            ; 0046a8d3
     DEC ESI                             ; 0046a8d4
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a8d5
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x5c]      ; 0046a8da
     ADD ESP,0x14                        ; 0046a8dd
     CMP ESI,EDX                         ; 0046a8e0
@@ -1200,7 +1200,7 @@ section .text
     PUSH EBX                            ; 0046a952
     INC ESI                             ; 0046a953
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a954
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x68]      ; 0046a959
     ADD ESP,0x14                        ; 0046a95c
     CMP ESI,EDX                         ; 0046a95f
@@ -1221,7 +1221,7 @@ section .text
     PUSH EBX                            ; 0046a981
     DEC ESI                             ; 0046a982
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046a983
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x5c]      ; 0046a988
     ADD ESP,0x14                        ; 0046a98b
     CMP ESI,ECX                         ; 0046a98e
@@ -1273,7 +1273,7 @@ section .text
     PUSH EBX                            ; 0046aa24
     INC ESI                             ; 0046aa25
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046aa26
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x64]      ; 0046aa2b
     ADD ESP,0x14                        ; 0046aa2e
     CMP ESI,ECX                         ; 0046aa31
@@ -1294,7 +1294,7 @@ section .text
     PUSH EBX                            ; 0046aa53
     DEC ESI                             ; 0046aa54
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046aa55
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x58]      ; 0046aa5a
     ADD ESP,0x14                        ; 0046aa5d
     CMP ESI,EDX                         ; 0046aa60
@@ -1333,7 +1333,7 @@ section .text
     PUSH EBX                            ; 0046aac3
     INC ESI                             ; 0046aac4
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046aac5
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x64]      ; 0046aaca
     ADD ESP,0x14                        ; 0046aacd
     CMP ESI,EDX                         ; 0046aad0
@@ -1354,7 +1354,7 @@ section .text
     PUSH EBX                            ; 0046aaf2
     DEC ESI                             ; 0046aaf3
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046aaf4
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x58]      ; 0046aaf9
     ADD ESP,0x14                        ; 0046aafc
     CMP ESI,ECX                         ; 0046aaff
@@ -1427,7 +1427,7 @@ section .text
     PUSH EBX                            ; 0046abd2
     INC ESI                             ; 0046abd3
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046abd4
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x64]      ; 0046abd9
     ADD ESP,0x14                        ; 0046abdc
     CMP ESI,ECX                         ; 0046abdf
@@ -1448,7 +1448,7 @@ section .text
     PUSH EBX                            ; 0046ac01
     DEC ESI                             ; 0046ac02
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046ac03
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x58]      ; 0046ac08
     ADD ESP,0x14                        ; 0046ac0b
     CMP ESI,EDX                         ; 0046ac0e
@@ -1496,7 +1496,7 @@ section .text
     PUSH EBX                            ; 0046ac7d
     INC ESI                             ; 0046ac7e
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046ac7f
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV EDX,dword ptr [EBX + 0x64]      ; 0046ac84
     ADD ESP,0x14                        ; 0046ac87
     CMP ESI,EDX                         ; 0046ac8a
@@ -1517,7 +1517,7 @@ section .text
     PUSH EBX                            ; 0046acac
     DEC ESI                             ; 0046acad
     CALL core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 ; 0046acae
-        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390()
+        ;   XREF to: 00469390 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z, ...)
     MOV ECX,dword ptr [EBX + 0x58]      ; 0046acb3
     ADD ESP,0x14                        ; 0046acb6
     CMP ESI,ECX                         ; 0046acb9

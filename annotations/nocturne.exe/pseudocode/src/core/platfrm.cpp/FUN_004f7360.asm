@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_platfrm_cpp_FUN_004f7360(CDemonActor *param_1,int param_2)
+; int __cdecl core_platfrm_cpp_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ;
@@ -64,14 +67,14 @@ section .text
         ;   XREF to: 004f7376 (CONDITIONAL_JUMP)  ; LAB_004f7376
     PUSH dword ptr [EBX + 0x30]         ; 004f73a9
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004f73ac
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x7c],EAX      ; 004f73b1
     FLD float ptr [ESP + 0x7c]          ; 004f73b5
     ADD ESP,0x4                         ; 004f73b9
     PUSH dword ptr [EBX + 0x38]         ; 004f73bc
     FSTP float ptr [EBX + 0x30]         ; 004f73bf
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004f73c2
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     FLD float ptr [EBX + 0x30]          ; 004f73c7
     MOV dword ptr [ESP + 0x7c],EAX      ; 004f73ca
     FABS                                ; 004f73ce
@@ -193,7 +196,7 @@ section .text
     ADD ESP,0x4                         ; 004f7515
     PUSH EAX                            ; 004f7518
     CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 ; 004f7519
-        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990()
+        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0x8c],EAX      ; 004f751e
     FLD float ptr [ESP + 0x8c]          ; 004f7525
     ADD ESP,0x14                        ; 004f752c

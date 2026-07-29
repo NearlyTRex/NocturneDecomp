@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(int param_1)
+; void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_baron.cpp_CBaronWeapon_fire_FUN_00411400 at 00411406

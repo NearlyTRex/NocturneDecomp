@@ -1,14 +1,14 @@
 // Name: engine_2d.c_FUN_004012a0
 // Address: 004012a0
 // Address Range: [[004012a0, 004012c5]]
-// Convention: unknown
-// Signature: void engine_2d_c_FUN_004012a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_FUN_004012a0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_2d_c_FUN_004012a0(void)
+void __cdecl engine_2d_c_FUN_004012a0(void)
 
 {
   if (DAT_006afa38 != 0) {

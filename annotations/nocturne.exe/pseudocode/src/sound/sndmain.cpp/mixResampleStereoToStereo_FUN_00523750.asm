@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)
+; double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 ;
+; Parameters:
+; short *          Stack[0x4]:4   sample_data
+; SStereoBuffers * Stack[0x8]:4   channel_buffers
+; SStereoGains *   Stack[0xc]:4   channel_gains
+; double           Stack[0x10]:8   resample_position
+; double           Stack[0x18]:8   resample_delta
+; int              Stack[0x20]:4   samples_to_process
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -58,7 +65,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x20]      ; 0052377c
     PUSH EBX                            ; 0052377f
     CALL crt_math.c_floor_FUN_005648c0  ; 00523780
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [EBP + -0x24],EAX     ; 00523785
     MOV dword ptr [EBP + -0x20],EDX     ; 00523788
     ADD ESP,0x8                         ; 0052378b
@@ -85,7 +92,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x28]      ; 005237c8
     PUSH EAX                            ; 005237cb
     CALL crt_math.c_floor_FUN_005648c0  ; 005237cc
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [EBP + -0x24],EAX     ; 005237d1
     MOV dword ptr [EBP + -0x20],EDX     ; 005237d4
     ADD ESP,0x8                         ; 005237d7

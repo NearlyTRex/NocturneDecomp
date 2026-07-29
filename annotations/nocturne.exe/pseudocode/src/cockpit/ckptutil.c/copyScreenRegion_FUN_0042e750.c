@@ -1,38 +1,39 @@
 // Name: cockpit_ckptutil.c_copyScreenRegion_FUN_0042e750
 // Address: 0042e750
 // Address Range: [[0042e750, 0042e7ae]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(uint *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6)
+void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint *puVar3;
+  int iVar1;
+  uint uVar2;
+  int iVar3;
   uint *puVar4;
+  uint *puVar5;
   
-  if (0 < param_6) {
-    param_6 = param_4 + param_6;
+  if (0 < height) {
+    iVar1 = start_row + height;
     do {
-      iVar2 = DAT_005b761c * param_4;
-      param_4 = param_4 + 1;
-      puVar3 = (uint *)(iVar2 + param_3 + param_2);
-      puVar4 = param_1;
-      for (uVar1 = param_5 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-        *puVar4 = *puVar3;
-        puVar3 = puVar3 + 1;
+      iVar3 = DAT_005b761c * start_row;
+      start_row = start_row + 1;
+      puVar4 = (uint *)(iVar3 + src_y + src_x);
+      puVar5 = dest_buffer;
+      for (uVar2 = (uint)bytes_per_row >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
+        *puVar5 = *puVar4;
         puVar4 = puVar4 + 1;
+        puVar5 = puVar5 + 1;
       }
-      for (uVar1 = param_5 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-        *(byte *)puVar4 = *(byte *)puVar3;
-        puVar3 = (uint *)((int)puVar3 + 1);
+      for (uVar2 = bytes_per_row & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
+        *(byte *)puVar5 = *(byte *)puVar4;
         puVar4 = (uint *)((int)puVar4 + 1);
+        puVar5 = (uint *)((int)puVar5 + 1);
       }
-      param_1 = (uint *)((int)param_1 + param_5);
-    } while (param_4 < param_6);
+      dest_buffer = (void *)((int)dest_buffer + bytes_per_row);
+    } while (start_row < iVar1);
   }
   return;
 }

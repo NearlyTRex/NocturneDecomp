@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(int param_1)
+; int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(CTentacle *this_ptr)
 ;
+; Parameters:
+; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wait_005965f0
@@ -40,7 +42,7 @@ section .text
         ;   Label: LAB_0054474d
     PUSH EDX                            ; 00544750
     CALL core_actor.cpp_FUN_0040d830    ; 00544751
-        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d830()
+        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d830(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00544756
     POP EBP                             ; 00544759
     RET                                 ; 0054475a

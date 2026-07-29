@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_applyColorPalette_FUN_0042d200(void)
+; void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_0042d200(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; void *           Stack[0x8]:4   bitmap_buffer
+; int              Stack[0xc]:4   bitmap_size
+; int              Stack[0x10]:4   palette_index
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_0042d370

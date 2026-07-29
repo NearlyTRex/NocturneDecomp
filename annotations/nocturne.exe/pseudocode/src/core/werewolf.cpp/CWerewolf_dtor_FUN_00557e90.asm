@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_werewolf_cpp_CWerewolf_dtor_FUN_00557e90(CDemonActor *param_1,byte param_2)
+; CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_00557e90(CWerewolf *this_ptr,uint flags)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CWerewolfTypeInfo_005a4460

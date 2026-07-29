@@ -11,11 +11,11 @@
 ; XREF[46]:
 ;   core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00413250 at 00413274
 ;   core_batcreat.cpp_FUN_00413040 at 00413094
+;   core_batman.cpp_CBatman_getTargetPoints_FUN_00414b40 at 00414b67
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414984
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413b09
-;   core_batman.cpp_FUN_00414930 at 00414984
-;   core_batman.cpp_FUN_00414b40 at 00414b67
 ;   core_beast.cpp_FUN_004151e0 at 004151f9
-;   core_biggs.cpp_FUN_004159c0 at 004159d9
+;   core_biggs.cpp_CBiggs_getTargetPoints_FUN_004159c0 at 004159d9
 ;   core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_00419fc0 at 00419ff3
 ;   core_bride.cpp_CBride_getTargetPoints_FUN_00420e20 at 00420e55
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420c83

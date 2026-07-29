@@ -66,7 +66,7 @@ section .text
     FCHS                                ; 0048e293
     FSTP float ptr [ESP]                ; 0048e295
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048e298
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0048e29d
     FLD float ptr [ESP + 0x1c]          ; 0048e2a1
     FADD float ptr [EBX + 0x278]        ; 0048e2a5

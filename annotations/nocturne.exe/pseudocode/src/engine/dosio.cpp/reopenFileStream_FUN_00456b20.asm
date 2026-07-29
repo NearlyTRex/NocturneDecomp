@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *param_1,char *param_2,uint param_3,_FILE *param_4)
+; void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory_path
+; char *           Stack[0x8]:4   filename
+; uint             Stack[0xc]:4   mode_flags
+; ifstream *       Stack[0x10]:4   file_stream
 ; Local Variables:
 ; undefined        Stack[-0x220]:1  local_220
 ; undefined        Stack[-0x120]:1  local_120
@@ -41,7 +46,7 @@ section .text
     ADD EAX,EBX                         ; 00456b47
     PUSH EAX                            ; 00456b49
     CALL crt_unknown.c_ios_clear_FUN_00565e94 ; 00456b4a
-        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_ios_clear_FUN_00565e94()
+        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ios_clear_FUN_00565e94(ios * this_ptr, uint state_flags)
     ADD ESP,0x8                         ; 00456b4f
     MOV EDX,dword ptr [ESP + 0x228]     ; 00456b52
     PUSH EDX                            ; 00456b59

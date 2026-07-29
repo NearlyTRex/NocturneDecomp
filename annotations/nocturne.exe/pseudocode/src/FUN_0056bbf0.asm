@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0056bbf0(LPCSTR param_1)
+; int __watcallStack FUN_0056bbf0(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
 ;   crt_stdio.c_remove_FUN_005657c0 at 005657c5

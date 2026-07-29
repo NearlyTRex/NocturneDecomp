@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 0056b280 (CONDITIONAL_JUMP)  ; LAB_0056b280
     PUSH EBX                            ; 0056b25d
     CALL crt_string.c_mbstrncpy_core_FUN_0056fd26 ; 0056b25e
-        ;   XREF to: 0056fd26 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbstrncpy_core_FUN_0056fd26()
+        ;   XREF to: 0056fd26 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbstrncpy_core_FUN_0056fd26(char * dest, char * src, int count)
     MOV EAX,dword ptr [EBX]             ; 0056b263
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b265
     ADD EAX,EBX                         ; 0056b268

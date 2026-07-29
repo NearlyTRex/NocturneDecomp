@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,undefined4 param_3,CDemonActor *param_4)
+; void core_melee_cpp_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     PUSH ECX                            ; 004ceff6
     PUSH EBX                            ; 004ceff7
     CALL core_actor.cpp_FUN_0040bce0    ; 004ceff8
-        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040bce0()
+        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040bce0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 004ceffd
     MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | g_CCharacterActorType_00765a60.name_hash
     PUSH EDI                            ; 004cf006
@@ -55,7 +55,7 @@ section .text
     PUSH 0x14                           ; 004cf024
     PUSH EBX                            ; 004cf026
     CALL core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090 ; 004cf027
-        ;   XREF to: 004cf090 (UNCONDITIONAL_CALL)  ; undefined core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090()
+        ;   XREF to: 004cf090 (UNCONDITIONAL_CALL)  ; void core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(CMelee * this_ptr, int blood_spurt_count, int blood_gore_type)
     ADD ESP,0xc                         ; 004cf02c
     CMP dword ptr [ESP + 0x18],0x1      ; 004cf02f
     JNZ 0x004cf04f                      ; 004cf034

@@ -1,8 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CLaserBeam_init_FUN_004858f0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5,undefined4 *param_6,int param_7,int param_8,int param_9,undefined4 param_10,undefined4 param_11)
+; void __cdecl core_fire_cpp_CLaserBeam_init_FUN_004858f0(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle)
 ;
+; Parameters:
+; CLaserBeam *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   origin
+; CVector3f *      Stack[0xc]:4   hit_position
+; float            Stack[0x10]:4   beam_width
+; float            Stack[0x14]:4   reticle_intensity
+; CVector3f *      Stack[0x18]:4   reflection_normal
+; int              Stack[0x1c]:4   red
+; int              Stack[0x20]:4   green
+; int              Stack[0x24]:4   blue
+; float            Stack[0x28]:4   halo_spread
+; float            Stack[0x2c]:4   cone_angle
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 at 0048b427

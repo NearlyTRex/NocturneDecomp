@@ -1,12 +1,12 @@
 // Name: core_melee.cpp_CMelee_fire_FUN_004ceed0
 // Address: 004ceed0
 // Address Range: [[004ceed0, 004ceef8]]
-// Convention: unknown
-// Signature: undefined4 core_melee_cpp_CMelee_fire_FUN_004ceed0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_melee_cpp_CMelee_fire_FUN_004ceed0(CMelee *this_ptr)
 
 #include "nocturne.h"
 
-uint core_melee_cpp_CMelee_fire_FUN_004ceed0(void)
+int __cdecl core_melee_cpp_CMelee_fire_FUN_004ceed0(CMelee *this_ptr)
 
 {
   PTR_01cc4800 = "..\\core\\melee.cpp";

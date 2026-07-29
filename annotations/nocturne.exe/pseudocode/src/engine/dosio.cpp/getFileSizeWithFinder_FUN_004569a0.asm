@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_dosio_cpp_getFileSizeWithFinder_FUN_004569a0(void)
+; int __cdecl engine_dosio_cpp_getFileSizeWithFinder_FUN_004569a0(char *directory,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x32c]:1  local_32c
 ; undefined        Stack[-0x118]:1  local_118

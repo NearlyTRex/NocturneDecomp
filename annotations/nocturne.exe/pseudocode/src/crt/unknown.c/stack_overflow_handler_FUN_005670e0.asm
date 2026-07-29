@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_stack_overflow_handler_FUN_005670e0(void)
+; void __watcallStack crt_unknown_c_stack_overflow_handler_FUN_005670e0(SIZE_T required_bytes)
 ;
+; Parameters:
+; SIZE_T           Stack[0x4]:4   required_bytes
 ;
 ; XREF[2]:
 ;   crt_io.c_write_FUN_0057301c at 0057319f

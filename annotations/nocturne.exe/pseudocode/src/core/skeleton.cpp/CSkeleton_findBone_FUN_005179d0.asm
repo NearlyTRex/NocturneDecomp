@@ -18,7 +18,7 @@
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042ac66
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004242fd
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_004363e0 at 00436426
-;   core_colonel.cpp_FUN_00439da0 at 00439dc8
+;   core_colonel.cpp_CColonel_setup_FUN_00439da0 at 00439dc8
 ;   ... and 29 more
 ;
 ; Referenced Globals:

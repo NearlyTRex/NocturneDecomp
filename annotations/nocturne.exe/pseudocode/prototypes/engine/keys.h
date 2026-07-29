@@ -9,11 +9,11 @@ void __cdecl staticInit(void);
 
 // Original: engine_keys.cpp_CKeys_getKeyState_FUN_004c4180
 // Address: 004c4180
-undefined1 CKeys::getKeyState(undefined4 param_1,int param_2);
+int __cdecl CKeys::getKeyState(CKeys *this_ptr,EInputCodeType key_code);
 
 // Original: engine_keys.cpp_CKeys_getAndClearKeyState_FUN_004c4190
 // Address: 004c4190
-undefined1 CKeys::getAndClearKeyState(undefined4 param_1,int param_2);
+int __cdecl CKeys::getAndClearKeyState(CKeys *this_ptr,EInputCodeType key_code);
 
 // Original: engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0
 // Address: 004c41b0
@@ -33,7 +33,7 @@ void __cdecl CKeys::setKeyAsPressed(CKeys *this_ptr,EInputCodeType key_code);
 
 // Original: engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200
 // Address: 004c4200
-void CKeys::clearKeyPressState(undefined4 param_1,int param_2);
+void __cdecl CKeys::clearKeyPressState(CKeys *this_ptr,EInputCodeType key_code);
 
 // Original: engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210
 // Address: 004c4210

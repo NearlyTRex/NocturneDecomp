@@ -14,7 +14,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   float fVar1;
   float fVar2;
   CEventList *this_ptr_00;
-  float *pfVar3;
+  CVector3f *pCVar3;
   int iVar4;
   float local_98;
   CMatrix3x3f local_94;
@@ -24,7 +24,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   float local_58;
   CVector3f local_54;
   CVector3f local_48;
-  byte local_3c [12];
+  CVector3f local_3c;
   CVector3f local_30;
   float local_24;
   float local_20;
@@ -32,10 +32,9 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   float local_18;
   float local_14;
   
-  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41a00000);
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,20.0);
   this_ptr->lightning_countdown = local_14;
-  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                              (0x40000000,this_ptr->max_flash_interval);
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(2.0,this_ptr->max_flash_interval);
   this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
   this_ptr->sub_flash_interval = local_14;
@@ -62,11 +61,10 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   local_6c.z = local_18;
   local_6c.x = 0.0;
   local_6c.y = 0.0;
-  pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                              (&local_94,local_3c,&local_6c);
-  local_48.x = *pfVar3 + (this_ptr->direction).x;
-  local_48.y = pfVar3[1] + (this_ptr->direction).y;
-  local_48.z = pfVar3[2] + (this_ptr->direction).z;
+  pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_94,&local_3c,&local_6c);
+  local_48.x = pCVar3->x + (this_ptr->direction).x;
+  local_48.y = pCVar3->y + (this_ptr->direction).y;
+  local_48.z = pCVar3->z + (this_ptr->direction).z;
   if (&local_6c != &local_48) {
     local_6c.x = local_48.x;
     local_6c.y = local_48.y;

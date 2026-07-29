@@ -25,19 +25,19 @@ void FUN_005495f0(CWeapon *param_1);
 
 // Original: core_turret.cpp_FUN_005496d0
 // Address: 005496d0
-int FUN_005496d0(CDemonActor *param_1);
+int FUN_005496d0(CTurret *param_1);
 
 // Original: core_turret.cpp_CTurret_process_FUN_005497f0
 // Address: 005497f0
-void CTurret::process(CTurret *param_1,float param_2);
+void __cdecl CTurret::process(CTurret *this_ptr,float delta_time);
 
 // Original: core_turret.cpp_FUN_00549cd0
 // Address: 00549cd0
-CBoundingBox3D * FUN_00549cd0(int param_1,CBoundingBox3D *param_2);
+CBoundingBox3D * FUN_00549cd0(CTurret *param_1,CBoundingBox3D *param_2);
 
 // Original: core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0
 // Address: 00549ef0
-float CTurret::getCurFrame(int param_1,int param_2);
+float __cdecl CTurret::getCurFrame(CTurret *this_ptr,int model_index);
 
 // Original: core_turret.cpp_CTurret_archive_FUN_0054a000
 // Address: 0054a000
@@ -61,7 +61,7 @@ undefined4 FUN_0054a870(int param_1,undefined4 param_2);
 
 // Original: core_turret.cpp_CTurret_updateInteraction_FUN_0054a890
 // Address: 0054a890
-undefined4 CTurret::updateInteraction(CDemonActor *param_1,float *param_2,int param_3);
+undefined4 CTurret::updateInteraction(CCharacter *param_1,float *param_2,int param_3);
 
 // Original: core_turret.cpp_FUN_0054a900
 // Address: 0054a900
@@ -73,7 +73,7 @@ void __cdecl CTurret::updatePatrol(CTurret *this_ptr,float delta_time);
 
 // Original: core_turret.cpp_FUN_0054aab0
 // Address: 0054aab0
-undefined4 FUN_0054aab0(void);
+float FUN_0054aab0(void);
 
 // Original: core_turret.cpp_FUN_0054aae0
 // Address: 0054aae0
@@ -81,11 +81,11 @@ undefined4 * FUN_0054aae0(int param_1,undefined4 *param_2);
 
 // Original: core_turret.cpp_CTurret_fire_FUN_0054ab10
 // Address: 0054ab10
-undefined4 CTurret::fire(CDemonActor *param_1);
+undefined4 CTurret::fire(CCharacter *param_1);
 
 // Original: core_turret.cpp_CTurret_canPickup_FUN_0054b030
 // Address: 0054b030
-int CTurret::canPickup(CWeapon *param_1,CDemonActor *param_2);
+int __cdecl CTurret::canPickup(CTurret *this_ptr,CDemonActor *picker);
 
 // Original: core_turret.cpp_FUN_0054b060
 // Address: 0054b060

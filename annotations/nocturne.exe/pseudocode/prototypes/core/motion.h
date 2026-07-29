@@ -17,7 +17,7 @@ void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_save_FUN_004e0d20
 // Address: 004e0d20
-void CMotionList::save(int *param_1,undefined4 param_2);
+void __cdecl CMotionList::save(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
 // Address: 004e1010
@@ -69,7 +69,7 @@ void __cdecl CMotionController::startTransition(CMotionController *this_ptr,SMot
 
 // Original: core_motion.cpp_CMotionController_findPatchToFrame_FUN_004e1830
 // Address: 004e1830
-undefined4 CMotionController::findPatchToFrame(void);
+int __cdecl CMotionController::findPatchToFrame(CMotionController *this_ptr);
 
 // Original: core_motion.cpp_CMotionController_setMotionList_FUN_004e1860
 // Address: 004e1860
@@ -85,7 +85,7 @@ char * __cdecl CMotionController::getCurrentStateName(CMotionController *this_pt
 
 // Original: core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
 // Address: 004e18d0
-float CMotionController::getStateBlendWeight(int *param_1,int param_2);
+float __cdecl CMotionController::getStateBlendWeight(CMotionController *this_ptr,int desired_state_index);
 
 // Original: core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960
 // Address: 004e1960
@@ -117,7 +117,7 @@ float __cdecl CMotionController::frameToMarkerPosition(CMotionController *this_p
 
 // Original: core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
 // Address: 004e1f50
-float CMotionController::markerPositionToFrame(int *param_1,int param_2,float param_3);
+float __cdecl CMotionController::markerPositionToFrame(CMotionController *this_ptr,int motion_index,float marker_position);
 
 // Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
 // Address: 004e2070

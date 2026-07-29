@@ -17,7 +17,7 @@ CDemonActorType * FUN_0040f950(void);
 
 // Original: core_armour.cpp_FUN_0040f960
 // Address: 0040f960
-CEnemy * FUN_0040f960(CEnemy *param_1);
+CArmour * __cdecl FUN_0040f960(CArmour *this_ptr);
 
 // Original: core_armour.cpp_FUN_0040fa00
 // Address: 0040fa00
@@ -43,13 +43,13 @@ undefined4 FUN_0040fc00(void);
 // Address: 0040fc10
 void FUN_0040fc10(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_armour.cpp_FUN_0040fc30
+// Original: core_armour.cpp_CArmour_dtor_FUN_0040fc30
 // Address: 0040fc30
-CDemonActor * FUN_0040fc30(CDemonActor *param_1,byte param_2);
+CArmour * __cdecl CArmour::dtor(CArmour *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CEnemy_dtor_FUN_0040fcf0
 // Address: 0040fcf0
-CDemonActor * CEnemy::dtor(CDemonActor *param_1,byte param_2);
+CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
 // Original: core_armour.cpp_FUN_0040fdb0
 // Address: 0040fdb0
@@ -57,7 +57,7 @@ undefined4 FUN_0040fdb0(undefined4 param_1);
 
 // Original: core_armour.cpp_CFlame_dtor_FUN_0040fdc0
 // Address: 0040fdc0
-CDemonActor * CFlame::dtor(CDemonActor *param_1,byte param_2);
+CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10
 // Address: 0040fe10

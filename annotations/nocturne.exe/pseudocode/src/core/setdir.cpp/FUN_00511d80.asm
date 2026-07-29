@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,int param_3,int param_4,C3DSCamera *param_5 ,float param_6)
+; float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
@@ -539,7 +539,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0051231f | DAT_005ae704
     PUSH EDI                            ; 00512325 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 00512326
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0051232b
     INC EBX                             ; 0051232e
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0051232f
@@ -654,7 +654,7 @@ section .text
     MOV ESI,0xb                         ; 00512482
     MOV EDI,0xf                         ; 00512487
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 0051248c
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0xd                         ; 00512491
     ADD ESP,0x8                         ; 00512496
     MOV EDX,dword ptr [0x005ae704]      ; 00512499 | DAT_005ae704
@@ -668,7 +668,7 @@ section .text
     MOV ESI,0xd                         ; 005124b5
     MOV EDI,0xc                         ; 005124ba
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 005124bf
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV ECX,0x8                         ; 005124c4
     ADD ESP,0x8                         ; 005124c9
     LEA EAX,[ESP + 0x4]                 ; 005124cc
@@ -682,7 +682,7 @@ section .text
     MOV EBX,0xf                         ; 005124e7
     MOV ESI,0xb                         ; 005124ec
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 005124f1
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EDX,0xa                         ; 005124f6
     MOV ECX,0xe                         ; 005124fb
     LEA EAX,[ESP + 0xc]                 ; 00512500
@@ -696,7 +696,7 @@ section .text
     MOV dword ptr [ESP + 0x30],ESI      ; 0051251b
     MOV EBX,0x9                         ; 0051251f
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 00512524
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0x8                         ; 00512529
     ADD ESP,0x8                         ; 0051252e
     MOV EDX,0xa                         ; 00512531
@@ -710,7 +710,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDX      ; 0051254f
     MOV dword ptr [ESP + 0x30],EBX      ; 00512553
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 00512557
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0xd                         ; 0051255c
     ADD ESP,0x8                         ; 00512561
     MOV EDX,0xf                         ; 00512564
@@ -724,7 +724,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EDX      ; 00512582
     MOV dword ptr [ESP + 0x30],ECX      ; 00512586
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 0051258a
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0051258f
     JMP 0x005121a8                      ; 00512592
         ;   XREF to: 005121a8 (UNCONDITIONAL_JUMP)  ; LAB_005121a8

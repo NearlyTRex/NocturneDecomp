@@ -19,7 +19,7 @@
 ;   undefined4 s_one_00580fdc+1
 ;   undefined4 s_ne_00580fdc+2
 ;   undefined4 s_e_00580fdc+3
-;   undefined1* PTR_core_filmreel.cpp_CFilmProjector_setup_FUN_00481fd0_0059d064 = 00481fd0
+;   CDemonActor_vtable g_CFilmProjectorVTable
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0
@@ -49,7 +49,7 @@ section .text
     LEA EAX,[EBX + 0x1ec]               ; 00481f39
     PUSH EAX                            ; 00481f3f
     MOV ESI,0x580fd2                    ; 00481f40 | = "CFilmReel"
-    MOV dword ptr [EBX + 0x14c],0x59d064 ; 00481f45 | PTR_core_filmreel.cpp_CFilmProjector_setup_FUN_00481fd0_0059d064
+    MOV dword ptr [EBX + 0x14c],0x59d064 ; 00481f45 | g_CFilmProjectorVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00481f4f
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00481f54

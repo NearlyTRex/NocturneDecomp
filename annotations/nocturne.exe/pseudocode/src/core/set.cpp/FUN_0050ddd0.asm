@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,int param_3,int param_4)
+; void __cdecl core_set_cpp_FUN_0050ddd0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; SMRGLPrimitiveQuad * Stack[0x8]:4   primitive_array
+; int              Stack[0xc]:4   primitive_count
+; int              Stack[0x10]:4   render_flags
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ; undefined4       Stack[-0x34]:4  local_34

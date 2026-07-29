@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winvideo_cpp_openMovie_FUN_0055a210(HWND param_1,undefined4 param_2)
+; void __cdecl wincore_winvideo_cpp_openMovie_FUN_0055a210(HWND parent_window,char *movie_filename)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   parent_window
+; char *           Stack[0x8]:4   movie_filename
 ; Local Variables:
 ; undefined        Stack[-0x1b4]:1  local_1b4
 ; undefined        Stack[-0xb0]:1  local_b0

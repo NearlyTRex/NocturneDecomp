@@ -14,14 +14,12 @@ int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *of
   int local_14;
   
   local_14 = -1;
-  sscanf
-            (buffer + *offset," { %f, %f, %f }%n",out_position,&out_position->y,&out_position->z,
-             &local_14);
+  sscanf(buffer + *offset," { %f, %f, %f }%n");
   if (6 < local_14) {
     *offset = *offset + local_14;
     return 1;
   }
-  sscanf(buffer + *offset," %[^ ,(){}]%n",local_78,&local_14);
+  sscanf(buffer + *offset," %[^ ,(){}]%n");
   if (local_14 < 0) {
     _sprintf(&DAT_01c08b60,"Error parsing vector location");
     return -1;

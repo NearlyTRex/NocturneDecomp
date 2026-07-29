@@ -1,21 +1,14 @@
 // Name: core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_004d1290
 // Address: 004d1290
 // Address Range: [[004d1290, 004d12ae]]
-// Convention: unknown
-// Signature: void core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_center,int y_bottom,int y_top)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(void)
+void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_center,int y_bottom,int y_top)
 
 {
-  int in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  
-  core_menu_cpp_renderAudioSpectrumBar_FUN_004cf2b0
-            (in_stack_00000004,in_stack_0000000c,(in_stack_0000000c - in_stack_00000008) + 1);
+  core_menu_cpp_renderAudioSpectrumBar_FUN_004cf2b0(x_center,y_top,(y_top - y_bottom) + 1);
   return;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(int param_1,float *param_2,int param_3)
+; int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(CCharacter *this_ptr,float *remaining_time,int target_bone_index)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float *          Stack[0x8]:4   remaining_time
+; int              Stack[0xc]:4   target_bone_index
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -79,7 +79,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004cf481
     PUSH EBX                            ; 004cf485
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf486
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cf48b
     PUSH 0x58                           ; 004cf48e
     PUSH EBX                            ; 004cf490
@@ -100,7 +100,7 @@ section .text
     PUSH 0x1cc5780                      ; 004cf4c0
     MOV EBX,0x7                         ; 004cf4c5
     CALL core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170 ; 004cf4ca
-        ;   XREF to: 004df170 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170()
+        ;   XREF to: 004df170 (UNCONDITIONAL_CALL)  ; int core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon * this_ptr)
     MOV dword ptr [ESP + 0xc],EBX       ; 004cf4cf
     ADD ESP,0x4                         ; 004cf4d3
     TEST EAX,EAX                        ; 004cf4d6
@@ -196,7 +196,7 @@ section .text
     MOV EDX,dword ptr [0x014b9904]      ; 004cf5be | DAT_014b9904
     PUSH EDX                            ; 004cf5c4
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf5c5
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cf5ca
     PUSH 0x58847b                       ; 004cf5cd | = "Nocturne (c) 1999 Terminal Reality In..."
     MOV ECX,dword ptr [0x014b9904]      ; 004cf5d2 | DAT_014b9904
@@ -384,7 +384,7 @@ section .text
     MOV EDI,dword ptr [0x014b9904]      ; 004cf789 | DAT_014b9904
     PUSH EDI                            ; 004cf78f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf790
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cf795
     PUSH 0x5884b4                       ; 004cf798 | = "Nocturne 1999 Terminal Reality Inc.  ..."
     MOV EBP,dword ptr [0x014b9904]      ; 004cf79d | DAT_014b9904

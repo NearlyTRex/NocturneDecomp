@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_CStrList_findByFirstField_FUN_00474180(CStrList *param_1,char *param_2)
+; int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_00474180(CStrList *this_ptr,char *search_field)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   search_field
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_netgame_cpp_matchPacketHeader_FUN_004edc50(void)
+; int __cdecl core_netgame_cpp_matchPacketHeader_FUN_004edc50(SNetPacketHeader *a,SNetPacketHeader *b)
 ;
+; Parameters:
+; SNetPacketHeader * Stack[0x4]:4   a
+; SNetPacketHeader * Stack[0x8]:4   b
 ;
 ; *****************************************************************************
 

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 822,
-    "complexity_score": 1110,
+    "complexity_score": 1058,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 190,
-    "suspect_count": 90,
+    "pseudocode_lines": 188,
+    "suspect_count": 85,
     "suspect_types": [
       "raw_address_constant",
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1012
+    "total_lines": 1010
   },
   "cross_references": [],
   "function": {
@@ -146,9 +146,9 @@
         "0045ecd0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370",
-    "signature": "void cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(void)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font)"
   },
   "function_calls": [
     {
@@ -486,9 +486,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -520,10 +520,10 @@
     "pcode_op_count": 2985
   },
   "stack_frame": {
-    "frame_size": 200,
+    "frame_size": 204,
     "local_size": 200,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -546,6 +546,13 @@
         "offset": -100,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "test_font",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
       }
     ]
   },
@@ -557,15 +564,15 @@
         {
           "check_id": "uninitvar",
           "column": 30,
-          "line": 172,
-          "message": "Uninitialized variable: in_stack_000000e0",
+          "line": 169,
+          "message": "Uninitialized variable: in_stack_0000011c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 61,
-          "line": 190,
-          "message": "Uninitialized variable: in_stack_000000ec",
+          "line": 187,
+          "message": "Uninitialized variable: in_stack_00000128",
           "severity": "error"
         }
       ],
@@ -577,62 +584,54 @@
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_00000004",
+      "match": "in_stack_000000e8",
       "severity": "moderate",
-      "text": "CBitFont *in_stack_00000004;",
+      "text": "int in_stack_000000e8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_000000f0",
+      "severity": "moderate",
+      "text": "int in_stack_000000f0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000100",
+      "severity": "moderate",
+      "text": "int in_stack_00000100;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
-      "match": "in_stack_000000ac",
+      "match": "in_stack_0000011c",
       "severity": "moderate",
-      "text": "int in_stack_000000ac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_000000b4",
-      "severity": "moderate",
-      "text": "int in_stack_000000b4;",
+      "text": "int in_stack_0000011c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_000000c4",
+      "match": "in_stack_00000128",
       "severity": "moderate",
-      "text": "int in_stack_000000c4;",
+      "text": "int in_stack_00000128;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "in_stack_000000e0",
+      "match": "in_stack_0000015c",
       "severity": "moderate",
-      "text": "int in_stack_000000e0;",
+      "text": "int in_stack_0000015c;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Undefined global data reference",
       "line": 18,
-      "match": "in_stack_000000ec",
-      "severity": "moderate",
-      "text": "int in_stack_000000ec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000120",
-      "severity": "moderate",
-      "text": "int in_stack_00000120;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "if ((0x27f < DAT_005b761c) && (0x1df < DAT_005b7620)) {",
@@ -640,47 +639,71 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 18,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if ((0x27f < DAT_005b761c) && (0x1df < DAT_005b7620)) {",
       "type": "undefined_data"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffff9c,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 20,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "((CDrawSurface *)&local_64,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,",
+      "text": "((CDrawSurface *)&stack0xffffff9c,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 20,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "((CDrawSurface *)&local_64,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,",
+      "text": "((CDrawSurface *)&stack0xffffff9c,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,",
       "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff5c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffff5c,0xc,8,0x15,0xb,(CDrawSurface *)&stack0xffffff9c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffff5c,0xc,8,0x15,0xb,(CDrawSurface *)&stack0xffffff9c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffff3c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffff3c,0xbe,0x5f,0x14,10,(CDrawSurface *)&stack0xffffff9c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffff3c,0xbe,0x5f,0x14,10,(CDrawSurface *)&stack0xffffff9c);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 27,
-      "match": "&stack0xffffff5c",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffff5c,0xc,8,0x15,0xb,(CDrawSurface *)&local_64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffff3c",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffff3c,0xbe,0x5f,0x14,10,(CDrawSurface *)&local_64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0xffffffa8)",
@@ -688,7 +711,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 31,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "((CDrawSurface *)&stack0xffffffa8);",
@@ -696,255 +719,247 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 33,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(&stack0xffffffa8,0,0,200);",
+      "text": "((CDrawSurface *)&stack0xffffffa8,0,0,200,100);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffa8",
+      "line": 35,
+      "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffa8,100,0x32,100);",
+      "text": "((CDrawSurface *)&stack0xffffffbc,100,0x32,100);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffb8",
+      "line": 37,
+      "match": "&stack0xffffffcc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffb8,100,0x32,0x32);",
+      "text": "((CDrawSurface *)&stack0xffffffcc,100,0x32,0x32);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xffffffc8",
+      "line": 39,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0,0,0x32);",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0,0,0x32);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffffc8",
+      "line": 41,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,200,0,0x32);",
+      "text": "((CDrawSurface *)&stack0xffffffdc,200,0,0x32);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffffc8",
+      "line": 43,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0,100,0x32);",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0,100,0x32);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffffc8",
+      "line": 45,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,200,100,0x32);",
+      "text": "((CDrawSurface *)&stack0xffffffdc,200,100,0x32);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffffc8",
+      "line": 49,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,5,2,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,5,2,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xffffffc8",
+      "line": 51,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,-5,0x11,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,-5,0x11,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0xffffffc8",
+      "line": 53,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0xb9,0x11,\"Hello\\nworld\\n...\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0xb9,0x11,\"Hello\\nworld\\n...\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffffc8",
+      "line": 55,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,100,0x11,\"+\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,100,0x11,\"+\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xffffffc8",
+      "line": 57,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0x5c,0x6c,0x20,\"+\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0x5c,0x6c,0x20,\"+\");",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Direct stack address reference",
       "line": 61,
-      "match": "in_stack_00000004",
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004->rendering_ready = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,5,0x2a,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,5,0x2a,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xffffffc8",
+      "line": 63,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,-5,0x39,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,-5,0x39,\"Hello\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0xb9,0x39,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 68,
-      "match": "&stack0xffffffc8",
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0xb9,0x39,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004->rendering_ready = 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 71,
-      "match": "&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,-5,0x48,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,-5,0x48,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffffc8",
+      "line": 70,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0xb9,0x48,\"Hello\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0xb9,0x48,\"Hello\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xffffffc8",
+      "line": 72,
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,100,0x48,\"+\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,100,0x48,\"+\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 74,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffffdc,0x5c,0x6c,0x57,\"+\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 77,
-      "match": "&stack0xffffffc8",
+      "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,0x5c,0x6c,0x57,\"+\");",
+      "text": "((CDrawSurface *)&stack0xffffffdc,100,0x14);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xffffffc8",
+      "line": 79,
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc8,100,0x14);",
+      "text": "((CDrawSurface *)&stack0xffffffe8,100,0x23);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
-      "match": "&stack0xffffffd4",
+      "line": 81,
+      "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffd4,100,0x23);",
+      "text": "((CDrawSurface *)&stack0xfffffff4,100,0x4f);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffffe0",
+      "line": 83,
+      "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffe0,100,0x4f);",
+      "text": "((CDrawSurface *)&stack0x00000000,100,0x5e);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 86,
+      "line": 85,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0xffffffd8)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 89,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffffd8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 91,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0xffffffd8,-0x15,-0xb,0x29,0x15);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 93,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffec,100,0x5e);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0xffffffc4)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 92,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc4);",
+      "text": "((CDrawSurface *)&stack0xffffffec,10,5,6);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 95,
-      "match": "&stack0xffffffc4",
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc4,10,5,6);",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0xffffffe8)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
-      "match": "&stack0xffffffc0",
+      "line": 99,
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0xffffffc0)",
+      "text": "((CDrawSurface *)&stack0xffffffe8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
-      "match": "&stack0xffffffc0",
+      "line": 101,
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0xffffffc0);",
+      "text": "((CDrawSurface *)&stack0xffffffe8,0,0,0x13,9);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 102,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar2 = DAT_005b7620 / 2 + 0x66;",
@@ -952,159 +967,135 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 103,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar3 = DAT_005b7620 - iVar2;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = in_stack_00000004->current_line_height;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0x00000040",
+      "line": 106,
+      "match": "&stack0x0000007c",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000040,DAT_005b761c / 2,iVar2,0xc9,iVar3,",
+      "text": "((CDrawSurface *)&stack0x0000007c,DAT_005b761c / 2,iVar2,0xc9,iVar3,",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 106,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "((CDrawSurface *)&stack0x00000040,DAT_005b761c / 2,iVar2,0xc9,iVar3,",
+      "text": "((CDrawSurface *)&stack0x0000007c,DAT_005b761c / 2,iVar2,0xc9,iVar3,",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0x0000004c",
+      "line": 109,
+      "match": "&stack0x00000088",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x0000004c)",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x00000088)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
-      "match": "&stack0x0000004c",
+      "line": 113,
+      "match": "&stack0x00000088",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x0000004c);",
+      "text": "((CDrawSurface *)&stack0x00000088);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_00000004",
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0x00000088",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0(in_stack_00000004);",
-      "type": "stack_param"
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000088,1,1);",
+      "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 119,
-      "match": "in_stack_00000004",
+      "description": "Direct stack address reference",
+      "line": 129,
+      "match": "&stack0x00000094",
       "severity": "moderate",
-      "text": "in_stack_00000004->rendering_ready = 1;",
-      "type": "stack_param"
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000094,199,1)",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 131,
-      "match": "&stack0x0000004c",
+      "match": "&stack0x000000a0",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x0000004c,1,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0x00000058",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000058,199,1)",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x000000a0,100,1)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 134,
-      "match": "&stack0x00000064",
+      "match": "&stack0x000000ac",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000064,100,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 137,
-      "match": "&stack0x00000070",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000070,100,iVar1 + 1);",
+      "text": "((CDrawSurface *)&stack0x000000ac,100,iVar1 + 1);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
-      "match": "in_stack_000000b4",
+      "line": 136,
+      "match": "in_stack_000000f0",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x0000007c,100,in_stack_000000b4);",
+      "text": "((CDrawSurface *)&stack0x000000b8,100,in_stack_000000f0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 139,
-      "match": "&stack0x0000007c",
+      "line": 136,
+      "match": "&stack0x000000b8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x0000007c,100,in_stack_000000b4);",
+      "text": "((CDrawSurface *)&stack0x000000b8,100,in_stack_000000f0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
-      "match": "in_stack_000000ac",
+      "line": 138,
+      "match": "in_stack_000000e8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000088,100,in_stack_000000ac);",
+      "text": "((CDrawSurface *)&stack0x000000c4,100,in_stack_000000e8);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 141,
-      "match": "&stack0x00000088",
+      "line": 138,
+      "match": "&stack0x000000c4",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000088,100,in_stack_000000ac);",
+      "text": "((CDrawSurface *)&stack0x000000c4,100,in_stack_000000e8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_000000c4",
+      "line": 140,
+      "match": "in_stack_00000100",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000094,100,in_stack_000000c4);",
+      "text": "((CDrawSurface *)&stack0x000000d0,100,in_stack_00000100);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 143,
-      "match": "&stack0x00000094",
+      "line": 140,
+      "match": "&stack0x000000d0",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000094,100,in_stack_000000c4);",
+      "text": "((CDrawSurface *)&stack0x000000d0,100,in_stack_00000100);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0x000000a0",
+      "line": 142,
+      "match": "&stack0x000000dc",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000a0,100,iVar3 - iVar1);",
+      "text": "((CDrawSurface *)&stack0x000000dc,100,iVar3 - iVar1);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 143,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar2 = DAT_005b7620 / 2 + 0x66;",
@@ -1112,7 +1103,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 144,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar3 = DAT_005b7620 - iVar2;",
@@ -1120,194 +1111,170 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 149,
-      "match": "&stack0x0000006c",
+      "line": 146,
+      "match": "&stack0x000000a8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x0000006c,DAT_005b761c / 2 + -0xca,iVar2,0xc9,iVar3,",
+      "text": "((CDrawSurface *)&stack0x000000a8,DAT_005b761c / 2 + -0xca,iVar2,0xc9,iVar3,",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 146,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "((CDrawSurface *)&stack0x0000006c,DAT_005b761c / 2 + -0xca,iVar2,0xc9,iVar3,",
+      "text": "((CDrawSurface *)&stack0x000000a8,DAT_005b761c / 2 + -0xca,iVar2,0xc9,iVar3,",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0x00000078",
+      "line": 149,
+      "match": "&stack0x000000b4",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x00000078)",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x000000b4)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 156,
-      "match": "&stack0x00000078",
+      "line": 153,
+      "match": "&stack0x000000b4",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x00000078);",
+      "text": "((CDrawSurface *)&stack0x000000b4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_00000004",
+      "line": 162,
+      "match": "in_stack_0000011c",
       "severity": "moderate",
-      "text": "in_stack_00000004->rendering_ready = 1;",
+      "text": "iStack00000120 = iVar3 - in_stack_0000011c;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 165,
-      "match": "in_stack_000000e0",
+      "description": "Direct stack address reference",
+      "line": 168,
+      "match": "&stack0x000000b4",
       "severity": "moderate",
-      "text": "iStack000000e4 = iVar3 - in_stack_000000e0;",
-      "type": "stack_param"
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x000000b4,1,1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 169,
+      "match": "&stack0x000000c0",
+      "severity": "moderate",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x000000c0,199,1)",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 171,
-      "match": "&stack0x00000078",
+      "match": "&stack0x000000cc",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000078,1,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 172,
-      "match": "&stack0x00000084",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000084,199,1)",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x000000cc,100,1)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 174,
-      "match": "&stack0x00000090",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0((CDrawSurface *)&stack0x00000090,100,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 177,
-      "match": "&stack0x0000009c",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x0000009c,100,iVar1 + 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 179,
-      "match": "in_stack_00000120",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000a8,100,in_stack_00000120);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 179,
-      "match": "&stack0x000000a8",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000a8,100,in_stack_00000120);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 181,
-      "match": "in_stack_00000120",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000b4,100,in_stack_00000120);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 181,
-      "match": "&stack0x000000b4",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000b4,100,in_stack_00000120);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 183,
-      "match": "in_stack_000000ec",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,iVar3 - in_stack_000000ec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 183,
-      "match": "&stack0x000000c0",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,iVar3 - in_stack_000000ec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 185,
-      "match": "&stack0x000000cc",
-      "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000cc,100,iVar3 - iVar1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 190,
       "match": "&stack0x000000d8",
       "severity": "moderate",
-      "text": "((CDrawSurface *)&stack0x000000d8);",
+      "text": "((CDrawSurface *)&stack0x000000d8,100,iVar1 + 1);",
       "type": "stack_ref"
     },
     {
-      "description": "Raw hex address 0x45e6de assigned to bare local `local_64`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_64` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 96,
-      "match": "0x45e6de",
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_0000015c",
       "severity": "moderate",
-      "text": "local_64 = 0x45e6de;",
-      "type": "raw_address_constant"
+      "text": "((CDrawSurface *)&stack0x000000e4,100,in_stack_0000015c);",
+      "type": "stack_param"
     },
     {
-      "description": "Raw hex address 0x45e773 assigned to bare local `local_64`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_64` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 107,
-      "match": "0x45e773",
+      "description": "Direct stack address reference",
+      "line": 176,
+      "match": "&stack0x000000e4",
       "severity": "moderate",
-      "text": "local_64 = 0x45e773;",
-      "type": "raw_address_constant"
+      "text": "((CDrawSurface *)&stack0x000000e4,100,in_stack_0000015c);",
+      "type": "stack_ref"
     },
     {
-      "description": "Raw hex address 0x45ecb6 assigned to bare local `iStack00000088`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack00000088` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 186,
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_0000015c",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x000000f0,100,in_stack_0000015c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 178,
+      "match": "&stack0x000000f0",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x000000f0,100,in_stack_0000015c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 180,
+      "match": "in_stack_00000128",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x000000fc,100,iVar3 - in_stack_00000128);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 180,
+      "match": "&stack0x000000fc",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x000000fc,100,iVar3 - in_stack_00000128);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 182,
+      "match": "&stack0x00000108",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x00000108,100,iVar3 - iVar1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 187,
+      "match": "&stack0x00000114",
+      "severity": "moderate",
+      "text": "((CDrawSurface *)&stack0x00000114);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Raw hex address 0x45ecb6 assigned to bare local `iStack000000c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack000000c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 183,
       "match": "0x45ecb6",
       "severity": "moderate",
-      "text": "iStack00000088 = 0x45ecb6;",
+      "text": "iStack000000c4 = 0x45ecb6;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x45ecc3 assigned to bare local `iStack00000088`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack00000088` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 188,
+      "description": "Raw hex address 0x45ecc3 assigned to bare local `iStack000000c4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack000000c4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 185,
       "match": "0x45ecc3",
       "severity": "moderate",
-      "text": "iStack00000088 = 0x45ecc3;",
+      "text": "iStack000000c4 = 0x45ecc3;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Uninitialized variable: in_stack_000000e0",
-      "line": 172,
+      "description": "Uninitialized variable: in_stack_0000011c",
+      "line": 169,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iStack000000e4 = iVar3 - in_stack_000000e0;",
+      "text": "iStack00000120 = iVar3 - in_stack_0000011c;",
       "type": "static_uninitvar"
     },
     {
-      "description": "Uninitialized variable: in_stack_000000ec",
-      "line": 190,
+      "description": "Uninitialized variable: in_stack_00000128",
+      "line": 187,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,iVar3 - in_stack_000000ec);",
+      "text": "((CDrawSurface *)&stack0x000000fc,100,iVar3 - in_stack_00000128);",
       "type": "static_uninitvar"
     }
   ]

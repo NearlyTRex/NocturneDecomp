@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_matrix_c_interpolatedSin_FUN_004cca60(uint param_1)
+; int __cdecl engine_matrix_c_interpolatedSin_FUN_004cca60(int angle)
 ;
+; Parameters:
+; int              Stack[0x4]:4   angle
 ;
 ; XREF[6]:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0c0c

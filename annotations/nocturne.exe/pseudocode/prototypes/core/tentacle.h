@@ -45,12 +45,12 @@ undefined4 FUN_005445c0(int param_1,int param_2);
 
 // Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720
 // Address: 00544720
-undefined4 CTentacle::shouldIgnoreForTargeting(int param_1);
+int __cdecl CTentacle::shouldIgnoreForTargeting(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760
 // Address: 00544760
 void CTentacle::computeGripBoneMatrix(int param_1);
 
-// Original: core_tentacle.cpp_FUN_00544850
+// Original: core_tentacle.cpp_CTentacle_dtor_FUN_00544850
 // Address: 00544850
-CDemonActor * FUN_00544850(CDemonActor *param_1,byte param_2);
+CTentacle * __cdecl CTentacle::dtor(CTentacle *this_ptr,uint flags);

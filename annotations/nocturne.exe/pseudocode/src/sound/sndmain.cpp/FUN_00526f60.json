@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 187,
+    "complexity_score": 222,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 14,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -276,7 +277,7 @@
       "line": 23,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x24) = in_stack_00000008;",
+      "text": "*(uint *)&(this_ptr->options).velocity.x = in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -284,7 +285,7 @@
       "line": 24,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x28) = in_stack_0000000c;",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.x + 4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -292,7 +293,7 @@
       "line": 25,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x2c) = in_stack_00000010;",
+      "text": "*(uint *)&(this_ptr->options).velocity.y = in_stack_00000010;",
       "type": "stack_param"
     },
     {
@@ -300,7 +301,7 @@
       "line": 26,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x30) = in_stack_00000014;",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.y + 4) = in_stack_00000014;",
       "type": "stack_param"
     },
     {
@@ -308,7 +309,7 @@
       "line": 27,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x34) = in_stack_00000018;",
+      "text": "*(uint *)&(this_ptr->options).velocity.z = in_stack_00000018;",
       "type": "stack_param"
     },
     {
@@ -316,7 +317,7 @@
       "line": 29,
       "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "*(uint *)(iVar1 + 0x38) = in_stack_0000001c;",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_0000001c;",
       "type": "stack_param"
     },
     {
@@ -324,8 +325,32 @@
       "line": 32,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,iVar1,4);",
+      "text": "uVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,4);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.x + 4) = in_stack_0000000c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.y + 4) = in_stack_00000014;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_0000001c;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
+; int __cdecl core_fire_cpp_CShell_onCollision_FUN_00489850(CShell *this_ptr,CVector3f *collision_normal)
 ;
+; Parameters:
+; CShell *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   collision_normal
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -52,7 +55,7 @@ section .text
         ;   Label: LAB_00489883
     PUSH 0xc0c90fdb                     ; 00489888
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0048988d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + -0x4],EAX      ; 00489892
     ADD ESP,0x8                         ; 00489895
     FLD float ptr [EBP + -0x4]          ; 00489898
@@ -61,7 +64,7 @@ section .text
     PUSH 0xc0490fdb                     ; 004898a3
     FSTP float ptr [EDI + 0x44]         ; 004898a8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004898ab
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBP + -0x4],EAX      ; 004898b0
     FLD float ptr [EBP + -0x4]          ; 004898b3
     FMUL float ptr [EBP + -0x8]         ; 004898b6

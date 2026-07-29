@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 209,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 67,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unresolved_funcptr"
+      "undefined_data"
     ],
-    "total_lines": 237
+    "total_lines": 235
   },
   "cross_references": [
     {
@@ -340,28 +339,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 6,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar2;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x10) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar2 = (code *)cockpit_ckptutil_c_FUN_0042d130();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
@@ -384,7 +367,7 @@
       "line": 32,
       "match": "(ushort *)(*piVar4 + (int)this_ptr",
       "severity": "moderate",
-      "text": "puVar10 = (ushort *)(*piVar4 + (int)this_ptr->packed_data);",
+      "text": "puVar8 = (ushort *)(*piVar4 + (int)this_ptr->packed_data);",
       "type": "pointer_cast"
     },
     {
@@ -392,15 +375,15 @@
       "line": 33,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "iVar8 = iVar1 + *(int *)(&DAT_01bd2fa0 + local_24);",
+      "text": "iVar7 = iVar1 + *(int *)(&DAT_01bd2fa0 + local_24);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(ushort *)((int)puVar7",
+      "match": "(ushort *)((int)src_buffer",
       "severity": "moderate",
-      "text": "puVar7 = (ushort *)((int)puVar7 + (clip_left - uVar6));",
+      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar6));",
       "type": "pointer_cast"
     },
     {
@@ -412,27 +395,43 @@
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(void *)((int)dest_buffer",
+      "severity": "moderate",
+      "text": "dest_buffer = (void *)((int)dest_buffer + uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 41,
-      "match": "(int)puVar7",
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar10 = (ushort *)((uVar9 + 3 & 0xfffffffc) + (int)puVar7);",
+      "text": "puVar8 = (ushort *)((count + 3 & 0xfffffffc) + (int)src_buffer);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 44,
-      "match": "(int)puVar7",
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "puVar7 = (ushort *)((int)puVar7 + (clip_left - uVar6));",
+      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar6));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
-      "match": "(int)puVar7",
+      "description": "Pointer value `dest_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)dest_buffer",
       "severity": "moderate",
-      "text": "puVar10 = (ushort *)((uVar9 + 3 & 0xfffffffc) + (int)puVar7);",
+      "text": "dest_buffer = (void *)((int)dest_buffer + uVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)src_buffer",
+      "severity": "moderate",
+      "text": "puVar8 = (ushort *)((count + 3 & 0xfffffffc) + (int)src_buffer);",
       "type": "pointer_truncation"
     }
   ]

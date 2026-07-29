@@ -91,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 00568723
     PUSH EAX                            ; 0056872a
     CALL crt_stdio.c_rename_FUN_00566f00 ; 0056872b
-        ;   XREF to: 00566f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_rename_FUN_00566f00()
+        ;   XREF to: 00566f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_rename_FUN_00566f00(char * old_filename, char * new_filename)
     ADD ESP,0x8                         ; 00568730
     TEST EAX,EAX                        ; 00568733
     JNZ 0x00568791                      ; 00568735

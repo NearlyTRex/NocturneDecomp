@@ -13,7 +13,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
   CDemonActor *this_ptr_00;
   uint uVar2;
   CBoxActor *this_ptr_01;
-  int iVar3;
+  CVector3f *pCVar3;
   int iVar4;
   CBoundingBox3D local_80;
   float fStack_68;
@@ -25,7 +25,7 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
   uint uStack_40;
   float fStack_3c;
   CVector3f CStack_38;
-  byte auStack_2c [12];
+  CVector3f CStack_2c;
   float fStack_20;
   float fStack_1c;
   float fStack_18;
@@ -62,10 +62,9 @@ int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
           if (((CStack_38.z - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=
                 (float)1.2) && (1.0 <= (double)CStack_38.y)) &&
              ((double)CStack_38.y <= 5)) {
-            iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                              (auStack_2c,&CStack_38);
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                         (*(uint *)(iVar3 + 4));
+            pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                               (&CStack_2c,&CStack_38);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(pCVar3->y);
             if (ABS(fStack_14) <= (float)0.61086523818055505) {
               this_ptr->pushed_object = this_ptr_01;
               break;

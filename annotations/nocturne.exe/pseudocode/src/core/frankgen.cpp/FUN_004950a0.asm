@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *param_1)
+; CVector3f * __cdecl core_frankgen_cpp_FUN_004950a0(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ; undefined4       Stack[-0x2c]:4  local_2c

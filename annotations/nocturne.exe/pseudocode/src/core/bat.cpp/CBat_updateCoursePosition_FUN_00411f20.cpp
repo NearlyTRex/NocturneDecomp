@@ -16,11 +16,11 @@ void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(CBat *this_ptr)
   local_20 = this_ptr->param;
   fVar1 = (float)(this_ptr->course).len;
   if (0.0 <= local_20) {
-    dVar2 = (double)floor((double)(local_20 / fVar1));
+    dVar2 = floor((double)(local_20 / fVar1));
     local_20 = local_20 - (float)dVar2 * fVar1;
   }
   else {
-    dVar2 = (double)floor((double)(-local_20 / fVar1));
+    dVar2 = floor((double)(-local_20 / fVar1));
     local_20 = (float)dVar2 * fVar1 + local_20;
     if (local_20 < 0.0) {
       local_20 = local_20 + fVar1;

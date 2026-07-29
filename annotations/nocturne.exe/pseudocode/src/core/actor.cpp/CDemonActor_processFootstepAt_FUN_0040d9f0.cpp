@@ -32,12 +32,12 @@ int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param
     return 0;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
-  local_1c = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                              (0x01E57284,&local_34,0);
+  local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
+                       (0x01E57284,&local_34,0.0);
   ground_type = *(EGroundType *)(0x01E57284->lights[199].filter_names[0x13] + 8);
   local_8 = local_1c;
-  local_18 = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                              (0x01E57284,&param_1->location,0);
+  local_18 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
+                       (0x01E57284,&(param_1->location).position,0.0);
   local_8 = local_18;
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   if (local_1c < local_18 + (float)-1) {

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 274,
+    "complexity_score": 254,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 20,
+    "pseudocode_lines": 54,
+    "suspect_count": 19,
     "suspect_types": [
-      "bitcast_double_pair",
-      "unknown_field",
+      "bit_int_float_compare",
       "unnamed_param"
     ],
-    "total_lines": 206
+    "total_lines": 201
   },
   "cross_references": [],
   "function": {
@@ -148,7 +147,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_frankgen.cpp_FUN_00494e80",
-    "signature": "int core_frankgen_cpp_FUN_00494e80(CDemonActor *param_1)"
+    "signature": "int core_frankgen_cpp_FUN_00494e80(CFrankenstienMachine *param_1)"
   },
   "function_calls": [
     {
@@ -336,7 +335,15 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_frankgen_cpp_FUN_00494e80(CDemonActor *param_1)",
+      "text": "int core_frankgen_cpp_FUN_00494e80(CFrankenstienMachine *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
       "type": "unnamed_param"
     },
     {
@@ -344,7 +351,15 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1[1].actor_name + 4) = *(uint *)(pCVar3[1].actor_name + 4);",
+      "text": "core_frankgen_cpp_FUN_004950a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -352,23 +367,31 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
+      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);",
+      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_34);",
+      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
       "type": "unnamed_param"
     },
     {
@@ -376,7 +399,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&param_1[1].location.area_id,",
+      "text": "if ((param_1->body_model).model_name[0] != '\\0') {",
       "type": "unnamed_param"
     },
     {
@@ -384,87 +407,39 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].location.position.z,-1);",
+      "text": "fVar1 = param_1->master_frame;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(char *)&param_1[2].standing_platform != '\\0') {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1[1].actor_name + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 34,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 34,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_38 = *(float *)(param_1[1].actor_name + 4) + -1800.0f;",
+      "text": "fStack_38 = param_1->master_frame + -1800.0f;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._4_4_",
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
       "severity": "mild",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 38,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 42,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "uStack_1c = __BITCAST_DOUBLE(CONCAT44(uStack_1c._4_4_,(uint)uStack_1c));",
-      "type": "bitcast_double_pair"
+      "text": "fVar1 = (param_1->master_frame + -2000.0f) * (float)3;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = (*(float *)(param_1[1].actor_name + 4) + -2000.0f) * (float)3;",
+      "text": "(&param_1->body_model,fStack_38,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -472,24 +447,40 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&param_1[2].health,fStack_38,-1);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
+      "line": 27,
+      "match": "(int)fVar1 < 0x4400c000",
+      "severity": "moderate",
+      "text": "if ((int)fVar1 < 0x4400c000) {",
+      "type": "bit_int_float_compare"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
-      "type": "unnamed_param"
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
+      "line": 30,
+      "match": "(int)fVar1 < 0x44e10000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44e10000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ed8000 is the IEEE 754 bit pattern of 1900f. Rewrite in a .keep as a plain float compare against 1900f.",
+      "line": 33,
+      "match": "(int)fVar1 < 0x44ed8000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44ed8000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44fa0000 is the IEEE 754 bit pattern of 2000f. Rewrite in a .keep as a plain float compare against 2000f.",
+      "line": 36,
+      "match": "(int)fVar1 < 0x44fa0000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44fa0000) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "vtable_info": {

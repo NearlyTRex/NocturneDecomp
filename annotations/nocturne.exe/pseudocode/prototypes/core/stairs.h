@@ -17,7 +17,7 @@ CDemonActorType * FUN_005347a0(void);
 
 // Original: core_stairs.cpp_FUN_005347b0
 // Address: 005347b0
-int FUN_005347b0(undefined4 param_1);
+int FUN_005347b0(CDemonActor *param_1);
 
 // Original: core_stairs.cpp_FUN_00534820
 // Address: 00534820
@@ -41,11 +41,11 @@ void FUN_005348c0(CDemonActor *param_1);
 
 // Original: core_stairs.cpp_CStairs_getCollisionType_FUN_00534940
 // Address: 00534940
-undefined4 CStairs::getCollisionType(undefined4 param_1,int *param_2);
+ECollisionType __cdecl CStairs::getCollisionType(CStairs *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_stairs.cpp_CStairs_customRayIntersect_FUN_00534960
 // Address: 00534960
-float CStairs::customRayIntersect(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+float __cdecl CStairs::customRayIntersect(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30
 // Address: 00534a30
@@ -65,7 +65,7 @@ void __cdecl CStairs::buildCollision(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CFlies_dtor_FUN_00534c10
 // Address: 00534c10
-CDemonActor * CFlies::dtor(CDemonActor *param_1,byte param_2);
+CFlies * __cdecl CFlies::dtor(CFlies *this_ptr,uint flags);
 
 // Original: core_stairs.cpp_SFly_arrdtor_FUN_00534c80
 // Address: 00534c80

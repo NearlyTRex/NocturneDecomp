@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 218,
+    "complexity_score": 210,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 19,
+    "pseudocode_lines": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 63
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_turret.cpp_CTurret_updateInteraction_FUN_0054a890",
-    "signature": "undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)"
+    "signature": "undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -205,7 +205,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)",
+      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -213,7 +213,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)",
+      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -221,20 +221,20 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)",
+      "text": "uint core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 5,
+      "line": 6,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "int *unaff_EDI;",
+      "text": "CDemonActor *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(int *)(param_3 + 0x10) == 0) {",
@@ -242,42 +242,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (&param_1->orient != (UOrientationVector *)param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&param_1->orient != (UOrientationVector *)param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->orient).vec.x = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.x = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.y = param_2[1];",
+      "text": "pUVar1 = &(param_1->base).orient;",
       "type": "unnamed_param"
     },
     {
@@ -285,15 +253,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1->orient).vec.y = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->orient).vec.z = param_2[2];",
+      "text": "if (pUVar1 != (UOrientationVector *)param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -301,7 +261,23 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1->orient).vec.z = param_2[2];",
+      "text": "(pUVar1->vec).x = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).orient.vec.y = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1->base).orient.vec.y = param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -309,12 +285,28 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
+      "text": "(param_1->base).orient.vec.z = param_2[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1->base).orient.vec.z = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(int *)(param_3 + 0xc) != 0) {",
@@ -322,31 +314,31 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 17,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(*((param_1->vtable)._ub)->showEditorHelp)(param_1,unaff_EDI);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->showEditorHelp)(param_1,unaff_EDI);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,unaff_EDI);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->showEditorHelp)(param_1,unaff_EDI);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,unaff_EDI);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x10) = 0;",

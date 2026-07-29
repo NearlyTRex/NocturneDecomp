@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_normalizeVector_FUN_00423c20(void)
+; void __cdecl core_bugs_cpp_normalizeVector_FUN_00423c20(CVector3f *dest)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dest
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

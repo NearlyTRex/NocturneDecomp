@@ -1,15 +1,15 @@
 // Name: sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
 // Address: 00528e60
 // Address Range: [[00528e60, 005293e5]]
-// Convention: unknown
-// Signature: float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float param_2,float param_3)
+// Convention: __cdecl
+// Signature: float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int channel,float freq_start_hz,float freq_end_hz)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005293b7) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float param_2,float param_3)
+float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int channel,float freq_start_hz,float freq_end_hz)
 
 {
   float fVar1;
@@ -41,7 +41,6 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
   float10 fVar27;
   float10 fVar28;
   double dVar29;
-  uint uVar30;
   uint local_8c;
   uint uStack_88;
   uint local_84;
@@ -53,7 +52,7 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
   int local_2c;
   int local_1c;
   
-  iVar17 = param_1 * 4;
+  iVar17 = channel * 4;
   if ((((*(int *)(iVar17 + 0x2dc8360) == 0) || (*(int *)(iVar17 + 0x2dc8384) == 0)) ||
       (*(int *)(iVar17 + 0x2dc83a4) == 0)) || (_DAT_02dc8330 < 1)) {
     return 0.0;
@@ -144,17 +143,15 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
       } while (local_30 <= iVar11);
     }
     iVar17 = sound_sndmain_cpp_getMixBufferCount_FUN_00528620();
-    *(int *)(param_1 * 4 + 0x2dbd350) = iVar17;
+    *(int *)(channel * 4 + 0x2dbd350) = iVar17;
   }
   iVar11 = _DAT_02dc8330 / 2;
   iVar17 = iVar11 + 1;
-  dVar29 = (double)floor
-                             ((double)((param_2 * (float)iVar17) / (float)DAT_005bea6c));
+  dVar29 = floor
+                     ((double)((freq_start_hz * (float)iVar17) / (float)DAT_005bea6c));
   fVar6 = (float)DAT_005bea6c;
-  uVar30 = 0x52927b;
   round(dVar29);
-  dVar29 = (double)floor((double)((param_3 * (float)iVar17) / fVar6),uVar30)
-  ;
+  dVar29 = floor((double)((freq_end_hz * (float)iVar17) / fVar6));
   dVar29 = round(dVar29);
   local_44 = (int)ROUND(dVar29);
   if ((local_40 < iVar17) && (0 < local_44)) {
@@ -171,8 +168,8 @@ float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float para
     iVar11 = 0;
     fVar6 = 0.0;
     if (0 < iVar9) {
-      pfVar16 = (float *)(*(int *)(param_1 * 4 + 0x2dc83a4) + local_40 * 4);
-      pfVar13 = (float *)(*(int *)(param_1 * 4 + 0x2dc8384) + local_40 * 4);
+      pfVar16 = (float *)(*(int *)(channel * 4 + 0x2dc83a4) + local_40 * 4);
+      pfVar13 = (float *)(*(int *)(channel * 4 + 0x2dc8384) + local_40 * 4);
       do {
         fVar1 = *pfVar13;
         fVar2 = *pfVar16;

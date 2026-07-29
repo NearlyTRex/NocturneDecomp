@@ -21,7 +21,7 @@ int __cdecl isAnyHeroWithinCylinder(CVector3f *point,float horizontal_radius,flo
 
 // Original: core_hero.cpp_FUN_004b46d0
 // Address: 004b46d0
-CDemonActor * FUN_004b46d0(CCharacter *param_1);
+CHero * __cdecl FUN_004b46d0(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_dtor_FUN_004b4800
 // Address: 004b4800
@@ -29,7 +29,7 @@ CHero * __cdecl CHero::dtor(CHero *this_ptr,uint flags);
 
 // Original: core_hero.cpp_FUN_004b48d0
 // Address: 004b48d0
-void FUN_004b48d0(CCharacter *param_1);
+void __cdecl FUN_004b48d0(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004b4910
 // Address: 004b4910
@@ -37,15 +37,15 @@ int CHero::testCylinderCollision(CDemonActor *param_1,SCollisionReturnInfo *para
 
 // Original: core_hero.cpp_FUN_004b4950
 // Address: 004b4950
-undefined4 FUN_004b4950(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+int FUN_004b4950(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4);
 
 // Original: core_hero.cpp_FUN_004b49a0
 // Address: 004b49a0
-void FUN_004b49a0(CCharacter *param_1);
+void __cdecl FUN_004b49a0(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004b4c00
+// Original: core_hero.cpp_CHero_getPathMap_FUN_004b4c00
 // Address: 004b4c00
-int FUN_004b4c00(int param_1);
+CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004b4c10
 // Address: 004b4c10
@@ -69,7 +69,7 @@ int __cdecl CHero::getGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type
 
 // Original: core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50
 // Address: 004b4d50
-void CHero::releaseFromGrab(CCharacter *param_1);
+void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0
 // Address: 004b4dd0
@@ -85,7 +85,7 @@ int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004b5110
 // Address: 004b5110
-int FUN_004b5110(CDemonActor *param_1);
+int __cdecl FUN_004b5110(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270
 // Address: 004b5270
@@ -121,7 +121,7 @@ int __cdecl CHero::findItemUseTarget(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004b5b00
 // Address: 004b5b00
-int FUN_004b5b00(CHero *param_1);
+int __cdecl FUN_004b5b00(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004b5b70
 // Address: 004b5b70
@@ -153,7 +153,7 @@ void CHero::kill(CCharacter *param_1,int param_2,CVector3f *param_3,float param_
 
 // Original: core_hero.cpp_CHero_reset_FUN_004b5ec0
 // Address: 004b5ec0
-void CHero::reset(int param_1);
+void __cdecl CHero::reset(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004b5f60
 // Address: 004b5f60
@@ -169,16 +169,16 @@ CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004b5fc0
 // Address: 004b5fc0
-CDemonActor * CHeroPlaceholder::dtor(CDemonActor *param_1,byte param_2);
+CHeroPlaceholder * __cdecl CHeroPlaceholder::dtor(CHeroPlaceholder *this_ptr,uint flags);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004b6020
 // Address: 004b6020
-void CHeroPlaceholder::getBoundingBox(undefined4 param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080
 // Address: 004b6080
 CHero * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 
-// Original: core_hero.cpp_FUN_004b61f0
+// Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004b61f0
 // Address: 004b61f0
-void FUN_004b61f0(CDemonActor *param_1);
+void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);

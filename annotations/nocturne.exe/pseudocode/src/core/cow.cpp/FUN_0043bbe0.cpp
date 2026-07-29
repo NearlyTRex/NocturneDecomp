@@ -15,8 +15,7 @@ CEnemy * core_cow_cpp_FUN_0043bbe0(CEnemy *param_1)
   CEnemy *pCVar4;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  (pCVar4->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_cow_cpp_CZombieCow_setup_FUN_0043bc50_0059b8a4;
+  (pCVar4->base).base.vtable._ub = &g_CZombieCowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar4->base).model,"cow.dfm");
   fVar2 = 50.0f;

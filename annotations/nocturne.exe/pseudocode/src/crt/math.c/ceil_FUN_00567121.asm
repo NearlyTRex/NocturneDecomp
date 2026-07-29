@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double crt_math_c_ceil_FUN_00567121(double param_1)
+; double __crtmath crt_math_c_ceil_FUN_00567121(double value)
 ;
+; Parameters:
+; double           Stack[0x4]:8   value
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ; undefined8       Stack[-0xc]:8  local_c
@@ -28,7 +30,7 @@ section .text
     FCHS                                ; 0056712d
     FSTP double ptr [ESP]               ; 0056712f
     CALL crt_math.c_floor_FUN_005648c0  ; 00567132
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [EBP + -0x8],EAX      ; 00567137
     MOV dword ptr [EBP + -0x4],EDX      ; 0056713a
     ADD ESP,0x8                         ; 0056713d

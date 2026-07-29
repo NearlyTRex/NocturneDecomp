@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c80(CPackedBitmapSet *param_1,int param_2)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c80(CPackedBitmapSet *this_ptr,int bitmap_index)
 ;
+; Parameters:
+; CPackedBitmapSet * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bitmap_index
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80

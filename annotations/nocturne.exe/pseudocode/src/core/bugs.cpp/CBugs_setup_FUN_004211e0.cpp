@@ -11,15 +11,15 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
 {
   float fVar1;
   float fVar2;
+  float min_value;
   float fVar3;
   float fVar4;
-  float fVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  CVector3f *pCVar8;
-  SBug *pSVar9;
-  char *pcVar10;
-  CVector3f *pCVar11;
+  CVector3f *pCVar7;
+  SBug *pSVar8;
+  char *pcVar9;
+  CVector3f *pCVar10;
   CVector3f *local_2c;
   int local_28;
   CKeyFramedModelInstance *local_20;
@@ -30,63 +30,63 @@ void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
   (param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(&param_1->base);
   param_1->model_count = 4;
-  iVar7 = 0;
+  iVar6 = 0;
   if (0 < param_1->model_count) {
-    pcVar10 = param_1->models[0].model_name;
+    pcVar9 = param_1->models[0].model_name;
     do {
-      if (*pcVar10 == '\0') {
-        iVar6 = param_1->model_count + -1;
-        param_1->model_count = iVar6;
-        if (iVar7 < iVar6) {
-          local_20 = param_1->models + iVar7;
-          local_1c = param_1->models[iVar7 + 1].model_name;
-          iVar6 = iVar7;
+      if (*pcVar9 == '\0') {
+        iVar5 = param_1->model_count + -1;
+        param_1->model_count = iVar5;
+        if (iVar6 < iVar5) {
+          local_20 = param_1->models + iVar6;
+          local_1c = param_1->models[iVar6 + 1].model_name;
+          iVar5 = iVar6;
           do {
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(local_20,local_1c);
-            iVar6 = iVar6 + 1;
+            iVar5 = iVar5 + 1;
             local_20 = local_20 + 1;
             local_1c = local_1c + 0x17c;
-          } while (iVar6 < param_1->model_count);
+          } while (iVar5 < param_1->model_count);
         }
       }
       else {
-        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar7);
-        pcVar10 = pcVar10 + 0x17c;
-        iVar7 = iVar7 + 1;
+        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar6);
+        pcVar9 = pcVar9 + 0x17c;
+        iVar6 = iVar6 + 1;
       }
-    } while (iVar7 < param_1->model_count);
+    } while (iVar6 < param_1->model_count);
   }
   local_28 = 0;
   if (0 < param_1->count) {
     fVar1 = 0.5f * 12.0f;
     fVar2 = 0.5f * -12.0f;
-    pCVar11 = &param_1->bugs[0].dest_position;
-    pCVar8 = &param_1->bugs[0].orientation;
+    pCVar10 = &param_1->bugs[0].dest_position;
+    pCVar7 = &param_1->bugs[0].orientation;
     local_2c = &param_1->bugs[0].position;
     do {
-      pSVar9 = param_1->bugs + local_28;
-      pSVar9->state = 0;
-      iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);
-      fVar5 = fVar1 * (float)0.5;
-      fVar3 = fVar2 * (float)0.5;
-      pSVar9->model_index = iVar7;
-      fVar4 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar3,fVar5);
-      (pSVar9->position).y = 0.0;
-      (pSVar9->position).x = fVar4;
-      fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar3,fVar5);
-      (pSVar9->position).z = fVar5;
-      pCVar8->z = 0.0;
-      pCVar8->y = pCVar8->z;
-      pCVar8->x = pCVar8->y;
-      fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-      (pSVar9->orientation).y = fVar5;
-      if (pCVar11 != local_2c) {
-        pCVar11->x = pCVar8[-1].x;
-        pCVar11->y = pCVar8[-1].y;
-        pCVar11->z = pCVar8[-1].z;
+      pSVar8 = param_1->bugs + local_28;
+      pSVar8->state = 0;
+      iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);
+      fVar4 = fVar1 * (float)0.5;
+      min_value = fVar2 * (float)0.5;
+      pSVar8->model_index = iVar6;
+      fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(min_value,fVar4);
+      (pSVar8->position).y = 0.0;
+      (pSVar8->position).x = fVar3;
+      fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(min_value,fVar4);
+      (pSVar8->position).z = fVar4;
+      pCVar7->z = 0.0;
+      pCVar7->y = pCVar7->z;
+      pCVar7->x = pCVar7->y;
+      fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-3.1415927,3.1415927);
+      (pSVar8->orientation).y = fVar4;
+      if (pCVar10 != local_2c) {
+        pCVar10->x = pCVar7[-1].x;
+        pCVar10->y = pCVar7[-1].y;
+        pCVar10->z = pCVar7[-1].z;
       }
-      pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);
-      pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);
+      pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);
       local_2c = (CVector3f *)((int)(local_2c + 5) + 4);
       local_28 = local_28 + 1;
     } while (local_28 < param_1->count);

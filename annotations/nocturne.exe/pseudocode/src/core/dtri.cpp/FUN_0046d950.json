@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -342,7 +342,7 @@
       "line": 16,
       "match": "DAT_01bc9af8",
       "severity": "mild",
-      "text": "pfVar6 = (float *)&DAT_01bc9af8;",
+      "text": "point1_ptr = (CVector3f *)&DAT_01bc9af8;",
       "type": "undefined_data"
     },
     {
@@ -350,7 +350,7 @@
       "line": 22,
       "match": "DAT_01bc9af8",
       "severity": "mild",
-      "text": "pfVar1 = (float *)(&DAT_01bc9af8 + uVar3 * 0xc);",
+      "text": "point2_ptr = (CVector3f *)(&DAT_01bc9af8 + uVar2 * 0xc);",
       "type": "undefined_data"
     },
     {
@@ -358,7 +358,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "bVar2 = param_1 < *pfVar6;",
+      "text": "bVar1 = param_1 < point1_ptr->x;",
       "type": "unnamed_param"
     },
     {
@@ -366,7 +366,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 < *pfVar1) {",
+      "text": "if (param_1 < point2_ptr->x) {",
       "type": "unnamed_param"
     },
     {
@@ -374,7 +374,7 @@
       "line": 30,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_01bc9bbc + iVar4) != pfVar6) {",
+      "text": "if ((CVector3f *)(&DAT_01bc9bbc + iVar3) != point1_ptr) {",
       "type": "undefined_data"
     },
     {
@@ -382,7 +382,7 @@
       "line": 31,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bbc + iVar4) = *pfVar6;",
+      "text": "((CVector3f *)(&DAT_01bc9bbc + iVar3))->x = point1_ptr->x;",
       "type": "undefined_data"
     },
     {
@@ -390,7 +390,7 @@
       "line": 32,
       "match": "DAT_01bc9bc0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bc0 + iVar4) = pfVar6[1];",
+      "text": "*(float *)(&DAT_01bc9bc0 + iVar3) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -398,7 +398,7 @@
       "line": 33,
       "match": "DAT_01bc9bc4",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bc4 + iVar4) = pfVar6[2];",
+      "text": "*(float *)(&DAT_01bc9bc4 + iVar3) = point1_ptr->z;",
       "type": "undefined_data"
     },
     {
@@ -406,7 +406,7 @@
       "line": 38,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "(pfVar1,pfVar6,&DAT_01bc9bbc + _DAT_01bc9bb8 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "(point2_ptr,point1_ptr,(CVector3f *)(&DAT_01bc9bbc + _DAT_01bc9bb8 * 0xc),1.0,0.0,",
       "type": "undefined_data"
     },
     {
@@ -414,7 +414,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "(double)-param_1);",
+      "text": "0.0,(double)-param_1);",
       "type": "unnamed_param"
     },
     {
@@ -422,7 +422,7 @@
       "line": 43,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_01bc9bbc + iVar4) != pfVar6) {",
+      "text": "if ((CVector3f *)(&DAT_01bc9bbc + iVar3) != point1_ptr) {",
       "type": "undefined_data"
     },
     {
@@ -430,7 +430,7 @@
       "line": 44,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bbc + iVar4) = *pfVar6;",
+      "text": "((CVector3f *)(&DAT_01bc9bbc + iVar3))->x = point1_ptr->x;",
       "type": "undefined_data"
     },
     {
@@ -438,7 +438,7 @@
       "line": 45,
       "match": "DAT_01bc9bc0",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bc0 + iVar4) = pfVar6[1];",
+      "text": "*(float *)(&DAT_01bc9bc0 + iVar3) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -446,7 +446,7 @@
       "line": 46,
       "match": "DAT_01bc9bc4",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01bc9bc4 + iVar4) = pfVar6[2];",
+      "text": "*(float *)(&DAT_01bc9bc4 + iVar3) = point1_ptr->z;",
       "type": "undefined_data"
     },
     {
@@ -454,7 +454,7 @@
       "line": 50,
       "match": "DAT_01bc9bbc",
       "severity": "mild",
-      "text": "(pfVar6,pfVar1,&DAT_01bc9bbc + _DAT_01bc9bb8 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "(point1_ptr,point2_ptr,(CVector3f *)(&DAT_01bc9bbc + _DAT_01bc9bb8 * 0xc),1.0,0.0,",
       "type": "undefined_data"
     },
     {
@@ -462,7 +462,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "(double)-param_1);",
+      "text": "0.0,(double)-param_1);",
       "type": "unnamed_param"
     }
   ]

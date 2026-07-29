@@ -19,9 +19,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   uint local_50;
   CVector3i local_4c;
   CVector3i local_40;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34;
   CVector3i local_28;
   CVector3i local_1c;
   
@@ -94,9 +92,9 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
     local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
     local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
     local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
-    local_4c.x = (int)ROUND(local_34 * 65536.0f);
-    local_4c.y = (int)ROUND(local_30 * 65536.0f);
-    local_4c.z = (int)ROUND(local_2c * 65536.0f);
+    local_4c.x = (int)ROUND(local_34.x * 65536.0f);
+    local_4c.y = (int)ROUND(local_34.y * 65536.0f);
+    local_4c.z = (int)ROUND(local_34.z * 65536.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(0x01E57284,&local_64,&local_4c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0

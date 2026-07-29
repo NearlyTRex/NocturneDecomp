@@ -61,7 +61,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
               (0x01E57284,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     iVar3 = 0;
-    core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(&DAT_01c20148);
+    core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0((CBulletHole *)&DAT_01c20148);
     if (0 < _DAT_01c20140) {
       iVar1 = 0;
       do {

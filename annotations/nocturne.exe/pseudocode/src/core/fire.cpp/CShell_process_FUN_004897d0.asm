@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CShell_process_FUN_004897d0(CParticle *param_1)
+; void __cdecl core_fire_cpp_CShell_process_FUN_004897d0(CShell *this_ptr)
 ;
+; Parameters:
+; CShell *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

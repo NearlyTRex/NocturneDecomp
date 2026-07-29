@@ -23,9 +23,9 @@ CTrash * __cdecl CTrash::ctor(CTrash *this_ptr);
 // Address: 00546ce0
 void CTrash::setup(CDemonActor *param_1);
 
-// Original: core_trash.cpp_FUN_00546da0
+// Original: core_trash.cpp_CTrash_archive_FUN_00546da0
 // Address: 00546da0
-void FUN_00546da0(CDemonActor *param_1);
+void __cdecl CTrash::archive(CTrash *this_ptr);
 
 // Original: core_trash.cpp_FUN_00546e10
 // Address: 00546e10
@@ -37,7 +37,7 @@ int FUN_00547670(CDemonActor *param_1);
 
 // Original: core_trash.cpp_CTrash_getBoundingBox_FUN_00547730
 // Address: 00547730
-float * CTrash::getBoundingBox(int param_1,float *param_2);
+float * CTrash::getBoundingBox(CDemonActor *param_1,float *param_2);
 
 // Original: core_trash.cpp_FUN_005477f0
 // Address: 005477f0

@@ -11,41 +11,42 @@ int __cdecl support_trisock_cpp_receiveSocketData_FUN_00549010(_SOCKET *socket_h
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  SOCKADDR_IN *pSVar3;
   byte bVar4;
-  _SOCKET _Stack_44;
-  char *pcStack_40;
-  _SOCKET _Stack_3c;
-  char *pcStack_38;
-  byte *puStack_34;
-  SNetworkAddr *pSStack_30;
+  byte auStack_44 [12];
+  uint uStack_38;
+  ulonglong uStack_34;
   byte local_2c [24];
   uint local_14;
   
   bVar4 = 0;
-  puStack_34 = local_2c;
+  uStack_34._0_4_ = local_2c;
   if (source_addr == (SNetworkAddr *)0x0) {
-    pSStack_30 = source_addr;
-    puStack_34 = (byte *)length;
-    pcStack_38 = buffer;
-    _Stack_3c = *socket_handle;
-    pcStack_40 = (char *)0x549036;
+    uStack_34._4_4_ = source_addr;
+    uStack_34._0_4_ = (byte *)length;
+    uStack_38 = buffer;
+    auStack_44._8_4_ = *socket_handle;
+    auStack_44._4_4_ = 0x549036;
     iVar2 = Ordinal_16();
   }
   else {
-    pSStack_30 = (SNetworkAddr *)&local_14;
-    pcStack_38 = (char *)0x0;
-    _Stack_3c = length;
+    uStack_34._4_4_ = (SNetworkAddr *)&local_14;
+    uStack_38._0_1_ = '\0';
+    uStack_38._1_1_ = '\0';
+    uStack_38._2_1_ = '\0';
+    uStack_38._3_1_ = '\0';
+    auStack_44._8_4_ = length;
     local_14 = 0x10;
-    pcStack_40 = buffer;
-    _Stack_44 = *socket_handle;
+    auStack_44._4_4_ = buffer;
+    auStack_44._0_4_ = *socket_handle;
     iVar2 = Ordinal_17();
     if (0 < iVar2) {
-      puVar3 = (uint *)support_trisock_cpp_convertSockAddr_FUN_00548d50(&puStack_34,&_Stack_44);
-      source_addr->ip_address = *puVar3;
-      uVar1 = puVar3[(uint)bVar4 * -2 + 1];
+      pSVar3 = support_trisock_cpp_convertSockAddr_FUN_00548d50
+                         ((SNetworkAddr *)&uStack_34,(SOCKADDR *)auStack_44);
+      source_addr->ip_address = *(uint *)pSVar3;
+      uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);
       source_addr[-(uint)bVar4].port = (short)uVar1;
-      source_addr[-(uint)bVar4].other = (short)(uVar1 >> 0x10);
+      source_addr[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);
       return iVar2;
     }
   }

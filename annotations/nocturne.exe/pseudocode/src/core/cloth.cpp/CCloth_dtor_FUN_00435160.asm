@@ -13,7 +13,7 @@
 ;   core_cloth.cpp_CClothList_reset_FUN_00438320 at 0043833e
 ;   core_gabriela.cpp_CGabriella_dtor_FUN_0049a170 at 0049a185
 ;   core_mimic.cpp_FUN_004d4540 at 004d4599
-;   core_svetlana.cpp_FUN_00543050 at 00543065
+;   core_svetlana.cpp_CSvetlana_dtor_FUN_00543050 at 00543065
 ;   core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 at 0054e399
 ;
 ; Called Functions:

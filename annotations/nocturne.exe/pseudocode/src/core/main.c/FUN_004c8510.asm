@@ -91,7 +91,7 @@ section .text
     MOV EDI,dword ptr [0x005b9354]      ; 004c8590 | DAT_005b9354
     PUSH EDI                            ; 004c8596 | DAT_01c775ec
     CALL core_game.cpp_FUN_004a4b50     ; 004c8597
-        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a4b50()
+        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4b50(CGame * this_ptr, int select_mode)
     ADD ESP,0x8                         ; 004c859c
     JMP 0x004c857b                      ; 004c859f
         ;   XREF to: 004c857b (UNCONDITIONAL_JUMP)  ; LAB_004c857b

@@ -128,12 +128,12 @@ section .text
     MOV EAX,[0x005be368]                ; 004d939e | DAT_005be368
     PUSH EAX                            ; 004d93a3 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ad20      ; 004d93a4
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ad20()
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d93a9
     MOV EDX,dword ptr [0x005be368]      ; 004d93ac | DAT_005be368
     PUSH EDX                            ; 004d93b2 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_initScene_FUN_005084c0 ; 004d93b3
-        ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_initScene_FUN_005084c0()
+        ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet * this_ptr)
     MOV EBX,dword ptr [0x005be220]      ; 004d93b8 | DAT_005be220
     ADD ESP,0x4                         ; 004d93be
     MOV dword ptr [EBX + 0x10],0x2      ; 004d93c1 | DAT_01e56db0

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   unused_param
+; int              Stack[0xc]:4   start_x
+; int              Stack[0x10]:4   start_y
+; int              Stack[0x14]:4   end_x
+; int              Stack[0x18]:4   end_y
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -48,7 +55,7 @@ section .text
     POP EBX                             ; 0042e406
     RET                                 ; 0042e407
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e408
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d130()
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
         ;   Label: LAB_0042e408
     MOV ECX,dword ptr [0x005b7624]      ; 0042e40d | DAT_005b7624
     MOV dword ptr [ESP + 0x8],EAX       ; 0042e413

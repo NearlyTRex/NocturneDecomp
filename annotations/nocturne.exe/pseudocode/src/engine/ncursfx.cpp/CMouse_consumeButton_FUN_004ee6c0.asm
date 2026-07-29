@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(void)
+; int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   button_mask
+; int              Stack[0xc]:4   use_skull_effect
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd1d94

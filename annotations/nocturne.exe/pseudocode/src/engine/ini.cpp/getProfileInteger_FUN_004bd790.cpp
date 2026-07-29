@@ -1,26 +1,26 @@
 // Name: engine_ini.cpp_getProfileInteger_FUN_004bd790
 // Address: 004bd790
 // Address Range: [[004bd790, 004bd82c]]
-// Convention: unknown
-// Signature: void engine_ini_cpp_getProfileInteger_FUN_004bd790(char *param_1,char *param_2,undefined4 param_3,char *param_4)
+// Convention: __cdecl
+// Signature: int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *key,int default_value,char *filename)
 
 #include "nocturne.h"
 
-void engine_ini_cpp_getProfileInteger_FUN_004bd790(char *param_1,char *param_2,uint param_3,char *param_4)
+int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *key,int default_value,char *filename)
 
 {
   int iVar1;
   char local_20c [256];
   char local_10c [256];
   
-  _sprintf(local_10c,"%d",param_3);
+  _sprintf(local_10c,"%d",default_value);
   iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0
-                    ((CIni *)0x1cae378,param_1,param_2,local_10c,local_20c,0xff,param_4);
+                    ((CIni *)0x1cae378,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {
     PTR_01cc4800 = "..\\engine\\ini.cpp";
     INT_01cc4804 = 0x22b;
     core_main_c_FUN_004c8440("Bad ini read!");
   }
-  atoi(local_20c);
-  return;
+  iVar1 = atoi(local_20c);
+  return iVar1;
 }

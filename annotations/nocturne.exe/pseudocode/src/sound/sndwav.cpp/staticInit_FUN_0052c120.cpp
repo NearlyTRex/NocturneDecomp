@@ -11,6 +11,6 @@
 void __cdecl sound_sndwav_cpp_staticInit_FUN_0052c120(void)
 
 {
-  _DAT_02dc9440 = &PTR_sound_sndwav_cpp_CWavOutDevice_close_FUN_0052c290_005a2264;
+  _DAT_02dc9440 = &g_CWavOutDeviceVTable;
   return;
 }

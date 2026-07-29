@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 135,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 9,
+    "pseudocode_lines": 27,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 82
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -68,9 +68,9 @@
   "globals": [
     {
       "addr": "005a4884",
-      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884",
-      "type": "undefined1*",
-      "value": "0056ff82"
+      "name": "g_StrstreambufVTable",
+      "type": "strstreambuf_vtable",
+      "value": null
     },
     {
       "addr": "005a48b0",
@@ -211,58 +211,50 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "buffer_ptr[-1].",
+      "line": 18,
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "puVar3 = &buffer_ptr[-1].__flags;",
+      "text": "psVar3 = &this_ptr_00[-1].__minbuf_size;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)puVar3",
+      "line": 21,
+      "match": "(int *)((int)psVar3",
       "severity": "moderate",
-      "text": "*(int *)((int)puVar3 + *(int *)(*puVar3 + 4) + -4) = *(int *)(*puVar3 + 4);",
+      "text": "*(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(streambuf *)((int)puVar3",
+      "line": 28,
+      "match": "(streambuf *)((int)psVar3",
       "severity": "moderate",
-      "text": "((streambuf *)((int)puVar3 + *(int *)(*puVar3 + 4)),(char *)buffer_ptr);",
+      "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
-      "match": "(int)puVar3",
+      "description": "Pointer value `psVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)psVar3",
       "severity": "moderate",
-      "text": "*(int *)((int)puVar3 + *(int *)(*puVar3 + 4) + -4) = *(int *)(*puVar3 + 4);",
+      "text": "*(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&buffer_ptr->__flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)&buffer_ptr->__flags",
+      "description": "Pointer value `psVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)psVar3",
       "severity": "moderate",
-      "text": "*(byte ***)((int)&buffer_ptr->__flags + *(int *)(uVar1 + 4)) = &PTR_FUN_005a48c4;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
-      "match": "(int)puVar3",
-      "severity": "moderate",
-      "text": "((streambuf *)((int)puVar3 + *(int *)(*puVar3 + 4)),(char *)buffer_ptr);",
+      "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 24,
+      "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(byte ***)((int)&buffer_ptr->__flags + *(int *)(uVar1 + 4)) = &PTR_FUN_005a48c4;",
+      "text": "*(byte ***)((int)&(this_ptr_00->_streambuf).__flags + *(int *)(iVar1 + 4)) =",
       "type": "pointer_cast"
     }
   ]

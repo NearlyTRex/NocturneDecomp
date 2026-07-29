@@ -1,30 +1,30 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0
 // Address: 0051dbc0
 // Address Range: [[0051dbc0, 0051dc2b]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *this_ptr,int render_flags,int skip_texture_capture)
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *param_1,int param_2,int param_3)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *this_ptr,int render_flags,int skip_texture_capture)
 
 {
-  CDeformableModel *this_ptr;
+  CDeformableModel *this_ptr_00;
   int lod_index;
   SPartInstanceData *part_visibility_flags;
   int *texture_set_indices;
   
-  if (param_1->cached_skinned_lod_index < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0xd23;
     core_main_c_FUN_004c8440("CDeformableModelInstance::renderPolygons called but LOD is not set!");
   }
-  texture_set_indices = (param_1->part_data).texture_set_indices;
-  part_visibility_flags = &param_1->part_data;
-  lod_index = param_1->cached_skinned_lod_index;
-  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1);
+  texture_set_indices = (this_ptr->part_data).texture_set_indices;
+  part_visibility_flags = &this_ptr->part_data;
+  lod_index = this_ptr->cached_skinned_lod_index;
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
   core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510
-            (this_ptr,lod_index,part_visibility_flags->visibility_flags,texture_set_indices,param_2,
-             param_3);
+            (this_ptr_00,lod_index,part_visibility_flags->visibility_flags,texture_set_indices,
+             render_flags,skip_texture_capture);
   return;
 }

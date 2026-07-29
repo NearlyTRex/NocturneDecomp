@@ -32,7 +32,7 @@ void core_werewolf_cpp_CWerewolf_setup_FUN_00555b40(CEnemy *param_1)
   *(int *)(param_1[1].base.base.actor_name + 0x14) = iVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   (param_1->base).base.is_transparent = *(int *)(param_1[1].base.base.actor_name + 0x18);
-  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
   iVar2 = *(int *)param_1[1].base.base.actor_name;
   param_1[1].base.base.orient_matrix.m[0].z = fVar3;
   if (iVar2 == 0) {
@@ -43,7 +43,7 @@ void core_werewolf_cpp_CWerewolf_setup_FUN_00555b40(CEnemy *param_1)
   (pCVar1->base).actor_name[0x1d] = '\0';
   (pCVar1->base).actor_name[0x1e] = '\0';
   (pCVar1->base).actor_name[0x1f] = '\0';
-  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41f00000);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,30.0);
   param_1[1].base.base.location.position.y = 0.0;
   param_1[1].base.base.location.position.z = 0.0;
   param_1[1].base.base.location.position.x = fVar3;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_setCursorPosition_FUN_00558d60(int param_1,int param_2)
+; void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_00558d60(int x,int y)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processMouseControls_FUN_0049f710 at 0049f77b

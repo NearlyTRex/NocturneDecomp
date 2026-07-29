@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_0051f760(undefined4 param_1)
+; void __cdecl core_skeleton_cpp_FUN_0051f760(char *output_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   output_buffer
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d37c

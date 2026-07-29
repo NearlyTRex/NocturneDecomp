@@ -1,27 +1,27 @@
 // Name: core_stranger.cpp_FUN_005350c0
 // Address: 005350c0
 // Address Range: [[005350c0, 0053544d]]
-// Convention: unknown
-// Signature: CCharacter * core_stranger_cpp_FUN_005350c0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CStranger * __cdecl core_stranger_cpp_FUN_005350c0(CStranger *this_ptr)
 
 #include "nocturne.h"
 
-CCharacter * core_stranger_cpp_FUN_005350c0(uint param_1)
+CStranger * __cdecl core_stranger_cpp_FUN_005350c0(CStranger *this_ptr)
 
 {
-  CCharacter *this_ptr;
+  CStranger *this_ptr_00;
   uint uVar1;
   uint uVar2;
   uint uVar3;
   float fVar4;
-  int iVar5;
+  CHero *pCVar5;
   CKeyFramedModelInstance *pCVar6;
   
-  iVar5 = core_hero_cpp_FUN_004b46d0(param_1);
+  pCVar5 = core_hero_cpp_FUN_004b46d0(&this_ptr->base);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar5 + 0x1fb40));
-  this_ptr = (CCharacter *)(pCVar6[-0x156].part_visibility_flags + 0x1a);
-  pCVar6[-0x155].part_visibility_flags[0xe] = (int)&PTR_core_stranger_cpp_FUN_00535450_005a2744;
+                     ((CKeyFramedModelInstance *)&pCVar5[1].base.base.process_disabled);
+  this_ptr_00 = (CStranger *)(pCVar6[-0x156].part_visibility_flags + 0x1a);
+  pCVar6[-0x155].part_visibility_flags[0xe] = (int)&g_CStrangerVTable;
   pCVar6[-0xffffffff00000001].model_name[0] = '\0';
   pCVar6[-0xffffffff00000001].model_name[1] = '\0';
   pCVar6[-0xffffffff00000001].model_name[2] = '\0';
@@ -128,7 +128,8 @@ CCharacter * core_stranger_cpp_FUN_005350c0(uint param_1)
   *(uint *)(pCVar6[-1].model_name + 0x40) = uVar2;
   *(uint *)(pCVar6[-1].model_name + 0x38) = uVar3;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (pCVar6[-0x155].part_visibility_flags + 0xf,"stranger.dfm");
+            ((CDeformableModelInstance *)(pCVar6[-0x155].part_visibility_flags + 0xf),
+             "stranger.dfm");
   pCVar6[-0xffffffff0000013a].model_name[0xe4] = '\0';
   pCVar6[-0xffffffff0000013a].model_name[0xe5] = '\0';
   pCVar6[-0xffffffff0000013a].model_name[0xe6] = '\0';
@@ -183,41 +184,41 @@ CCharacter * core_stranger_cpp_FUN_005350c0(uint param_1)
             ((CKeyFramedModelInstance *)(*(int *)(pCVar6[-2].model_name + 0x10) + 0x150),
              "gat.kfm");
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0,1,"draw_stand2holsters",0);
+            ((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,1,2,"draw_holsters2aimPistols",0);
+            ((CCharacter *)this_ptr_00,1,2,"draw_holsters2aimPistols",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0,3,"draw_stand2coatPocket",0);
+            ((CCharacter *)this_ptr_00,0,3,"draw_stand2coatPocket",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,3,4,"draw_coatPocket2aimShotgun",0);
+            ((CCharacter *)this_ptr_00,3,4,"draw_coatPocket2aimShotgun",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,3,5,"draw_coatPocket2aimFlameThrower",0);
+            ((CCharacter *)this_ptr_00,3,5,"draw_coatPocket2aimFlameThrower",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,1,3,"draw_holsters2CoatPocket",0);
+            ((CCharacter *)this_ptr_00,1,3,"draw_holsters2CoatPocket",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0,6,"draw_stand2TossAim",1);
+            ((CCharacter *)this_ptr_00,0,6,"draw_stand2TossAim",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,6,0,"draw_tossAim2Stand",1);
+            ((CCharacter *)this_ptr_00,6,0,"draw_tossAim2Stand",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0xb,4,"draw_shotGunRecoil",1);
+            ((CCharacter *)this_ptr_00,0xb,4,"draw_shotGunRecoil",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,3,7,"draw_coatPocket2aimTommy",0);
+            ((CCharacter *)this_ptr_00,3,7,"draw_coatPocket2aimTommy",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,7,7,"draw_tommyRecoil",0);
+            ((CCharacter *)this_ptr_00,7,7,"draw_tommyRecoil",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0,8,"draw_stand2spearhold",0);
+            ((CCharacter *)this_ptr_00,0,8,"draw_stand2spearhold",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0xc,8,"draw_spearStab",1);
+            ((CCharacter *)this_ptr_00,0xc,8,"draw_spearStab",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,0xc,8,"draw_spearOverheadswing",1);
-  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(this_ptr,9,9,"draw_holdCrate",0)
-  ;
+            ((CCharacter *)this_ptr_00,0xc,8,"draw_spearOverheadswing",1);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,3,10,"draw_coatPocket2GasMask",0);
+            ((CCharacter *)this_ptr_00,9,9,"draw_holdCrate",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
-            (this_ptr,10,0,"draw_gasMask2Stand",0);
+            ((CCharacter *)this_ptr_00,3,10,"draw_coatPocket2GasMask",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760
+            ((CCharacter *)this_ptr_00,10,0,"draw_gasMask2Stand",0);
   core_cloth_cpp_CClothList_add_FUN_00438390
             ((CClothList *)(pCVar6[-0x13a].model_name + 0xec),"strcoat.cth");
   pCVar6[1].part_visibility_flags[6] = 0;
-  return this_ptr;
+  return this_ptr_00;
 }

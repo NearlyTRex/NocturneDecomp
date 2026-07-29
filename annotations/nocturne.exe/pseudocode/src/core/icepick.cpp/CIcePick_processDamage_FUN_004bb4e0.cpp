@@ -40,7 +40,7 @@ void core_icepick_cpp_CIcePick_processDamage_FUN_004bb4e0(CCharacter *param_1,SD
         param_1->grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&this_ptr->motion_controller,8,1);
-        (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);
+        (*(((param_1->base).vtable._uc)->_uc).dropCarriedObject)(param_1,1,(CVector3f *)0x0);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
                   ((CGore *)INT_005b96c4,&param_1->base,0x32,50.0,(CVector3f *)0x0);
         sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1[2].flames[0x1d].on_event + 0x10));

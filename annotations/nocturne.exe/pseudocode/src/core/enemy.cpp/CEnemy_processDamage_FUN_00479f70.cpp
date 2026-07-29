@@ -10,11 +10,8 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(CEnemy *this_ptr,S
 
 {
   CCharacter *pCVar1;
-  float unaff_EBX;
-  int unaff_EBP;
-  CVector3f *unaff_ESI;
   
-  (*(((this_ptr->base).base.vtable._uc)->_uc).kill)(&this_ptr->base,unaff_EBP,unaff_ESI,unaff_EBX);
+  (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510(&this_ptr->base,damage_info);
   if (0.0 < damage_info->damage_amount) {
     pCVar1 = (CCharacter *)

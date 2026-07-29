@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_clipper_c_copyMemory_FUN_00433770(undefined4 *param_1,undefined4 *param_2,uint param_3)
+; void __cdecl engine_clipper_c_copyMemory_FUN_00433770(void *dest_ptr,void *src_ptr,int byte_count)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest_ptr
+; void *           Stack[0x8]:4   src_ptr
+; int              Stack[0xc]:4   byte_count
 ;
 ; *****************************************************************************
 

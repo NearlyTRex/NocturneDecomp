@@ -1,14 +1,14 @@
 // Name: core_setcolid.cpp_FUN_005117f0
 // Address: 005117f0
 // Address Range: [[005117f0, 005117fe]]
-// Convention: unknown
-// Signature: void core_setcolid_cpp_FUN_005117f0(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_setcolid_cpp_FUN_005117f0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-void core_setcolid_cpp_FUN_005117f0(int param_1)
+void __cdecl core_setcolid_cpp_FUN_005117f0(CDemonSet *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x15f2b0) = 1;
+  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[2].x = 1.4013e-45;
   return;
 }

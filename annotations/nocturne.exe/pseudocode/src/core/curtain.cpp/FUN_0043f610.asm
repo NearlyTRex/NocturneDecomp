@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_curtain_cpp_FUN_0043f610(int param_1)
+; int core_curtain_cpp_FUN_0043f610(CCurtain *param_1)
 ;
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     PUSH EAX                            ; 0043f623
         ;   Label: LAB_0043f623
     CALL core_curtain.cpp_FUN_0043f330  ; 0043f624
-        ;   XREF to: 0043f330 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_FUN_0043f330()
+        ;   XREF to: 0043f330 (UNCONDITIONAL_CALL)  ; int core_curtain.cpp_FUN_0043f330(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 0043f629
     RET                                 ; 0043f62c
 

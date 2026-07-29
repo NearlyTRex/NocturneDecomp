@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * engine_3d_c_oldFunction8_FUN_004063c0(undefined4 *param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction8_FUN_004063c0(SMRGLHeaderExtended *primitive)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   primitive
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ;

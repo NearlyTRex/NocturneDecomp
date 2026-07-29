@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_0057406c
     DEC EBP                             ; 0057406d
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0057406e
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD EDI,0x2                         ; 00574073
     INC ESI                             ; 00574076
     ADD ESP,0x4                         ; 00574077
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 005740a5 (CONDITIONAL_JUMP)  ; LAB_005740a5
     PUSH EBX                            ; 00574095
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00574096
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     INC ESI                             ; 0057409b
     ADD ESP,0x4                         ; 0057409c
     MOV EBX,EAX                         ; 0057409f

@@ -1,17 +1,17 @@
 // Name: engine_2d.c_FUN_00401bd0
 // Address: 00401bd0
 // Address Range: [[00401bd0, 00401c34]]
-// Convention: unknown
-// Signature: void engine_2d_c_FUN_00401bd0(char *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_FUN_00401bd0(char *filename)
 
 #include "nocturne.h"
 
-void engine_2d_c_FUN_00401bd0(char *param_1)
+void __cdecl engine_2d_c_FUN_00401bd0(char *filename)
 
 {
   _FILE *file;
   
-  file = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\2d.c";
     INT_01cc4804 = 0x2c1;

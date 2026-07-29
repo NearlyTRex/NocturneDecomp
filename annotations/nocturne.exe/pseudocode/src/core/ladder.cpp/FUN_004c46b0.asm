@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_FUN_004c46b0(int param_1)
+; void __cdecl core_ladder_cpp_FUN_004c46b0(CLadder *this_ptr)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xe4]:1  local_e4
 ; undefined        Stack[-0xb4]:1  local_b4
@@ -52,7 +54,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c46db
     PUSH EAX                            ; 004c46df
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 004c46e0
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x2d8]     ; 004c46e5
     ADD ESP,0xc                         ; 004c46eb
     LEA EDX,[EAX + 0x30]                ; 004c46ee

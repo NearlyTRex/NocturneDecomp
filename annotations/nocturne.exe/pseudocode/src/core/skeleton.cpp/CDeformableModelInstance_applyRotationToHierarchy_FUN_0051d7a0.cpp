@@ -26,7 +26,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   uint auStack_64 [4];
   uint local_54 [4];
   uint uStack_44;
-  byte local_34 [12];
+  CVector3f local_34;
   float local_28;
   CSkeleton *local_24;
   CDeformableModelInstance *local_20;
@@ -37,7 +37,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   iVar2 = 0;
   local_24 = pCVar1;
-  core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(rotation_quat,&local_28,local_34);
+  core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(rotation_quat,&local_28,&local_34);
   if (0 < pCVar1->bone_count) {
     local_1c = (this_ptr->bone_transform).pose_data.bone_rotations;
     local_20 = this_ptr;
@@ -48,7 +48,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
         fStack_18 = (*blend_callback)(iVar2,bone_index,blend_weight,hierarchy_distance,this_ptr);
         fStack_e8 = fStack_18 * local_28;
         if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {
-          core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(fStack_e8,local_34);
+          core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(fStack_e8,&local_34);
           auStack_64[0] = uStack_44;
           auStack_80[(uint)bVar7 * -2 + 8] = auStack_80[(uint)bVar7 * -2 + 0x10];
           auStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 9] =
@@ -73,7 +73,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   if (-1 < bone_index) {
     return;
   }
-  core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(local_28 * blend_weight,local_34);
+  core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(local_28 * blend_weight,&local_34);
   local_54[0] = auStack_80[3];
   auStack_80[(uint)bVar7 * -2 + 0xc] = auStack_80[(uint)bVar7 * -2 + 4];
   auStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =

@@ -1,14 +1,14 @@
 // Name: core_boneguy.cpp_FUN_00418630
 // Address: 00418630
 // Address Range: [[00418630, 004187f8]]
-// Convention: unknown
-// Signature: int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
+// Convention: __cdecl
+// Signature: CBoneGuy * __cdecl core_boneguy_cpp_FUN_00418630(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
+CBoneGuy * __cdecl core_boneguy_cpp_FUN_00418630(CBoneGuy *this_ptr)
 
 {
   char cVar1;
@@ -24,13 +24,12 @@ int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
   CColor3f local_14;
   float local_8;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
   dest = __arrinit
                    (pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo_0059aa00);
-  *(byte ***)((int)dest + -0xbc58) = &PTR_core_boneguy_cpp_CBoneGuy_setup_FUN_00418800_0059a8b4
-  ;
+  *(CBoneGuy_full_vtable **)((int)dest + -0xbc58) = &g_CBoneGuyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            ((int)dest + -0xbc54,"boneguy.dfm");
+            ((CDeformableModelInstance *)((int)dest + -0xbc54),"boneguy.dfm");
   *(uint *)((int)dest + -0x8fd0) = 0x3f19999a;
   *(uint *)((int)dest + -0x8fcc) = 0x3f666666;
   pcVar6 = "boneguydie";
@@ -60,11 +59,11 @@ int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
   *(uint *)((int)dest + -0x74) = 0;
   *(uint *)((int)dest + -0x8c) = 0x40c00000;
   *(int *)((int)dest + -0x80) = iVar5;
-  local_14.r = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x437f0000);
+  local_14.r = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,255.0);
   local_8 = local_14.r;
-  local_14.g = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x42200000);
+  local_14.g = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,40.0);
   local_8 = local_14.g;
-  local_14.b = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x42d40000,0x43800000);
+  local_14.b = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(106.0,256.0);
   local_8 = local_14.b;
   core_boneguy_cpp_hsvToRgb_FUN_00418480(&local_20,&local_14);
   fVar2 = _DAT_0057919e;
@@ -74,5 +73,5 @@ int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
   *(int *)((int)dest + -0xbc98) = (int)ROUND(dVar8);
   dVar8 = round((double)(fVar2 * local_20.r));
   *(int *)((int)dest + -0xbc94) = (int)ROUND(dVar8);
-  return (int)dest + -0xbda4;
+  return (CBoneGuy *)((int)dest + -0xbda4);
 }

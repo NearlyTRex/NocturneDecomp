@@ -57,11 +57,11 @@ void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(CCourse *this_ptr,
   else {
     fVar1 = (float)this_ptr->len;
     if (0.0 <= time) {
-      local_24 = (double)floor((double)(time / fVar1));
+      local_24 = floor((double)(time / fVar1));
       local_7c = time - (float)local_24 * fVar1;
     }
     else {
-      local_24 = (double)floor((double)(-time / fVar1));
+      local_24 = floor((double)(-time / fVar1));
       local_7c = (float)local_24 * fVar1 + time;
       if (local_7c < 0.0) {
         local_7c = local_7c + fVar1;
@@ -91,11 +91,12 @@ LAB_0043b8ca:
     local_4c = (pCVar2->pos).x * local_7c;
     local_48 = (pCVar2->pos).y * local_7c;
     local_44 = local_7c * (pCVar2->pos).z;
-    local_24._4_4_ = 1.0 - local_7c;
+    local_50 = 1.0 - local_7c;
     pCVar2 = this_ptr->frames;
-    fStack_58 = pCVar2[local_1c].pos.x * local_24._4_4_;
-    local_54 = pCVar2[local_1c].pos.y * local_24._4_4_;
-    local_50 = pCVar2[local_1c].pos.z * local_24._4_4_;
+    local_24 = __BITCAST_DOUBLE(CONCAT44(local_50,(uint)local_24));
+    fStack_58 = pCVar2[local_1c].pos.x * local_50;
+    local_54 = pCVar2[local_1c].pos.y * local_50;
+    local_50 = pCVar2[local_1c].pos.z * local_50;
     local_40.orient.w = fStack_58 + local_4c;
     local_40.orient.x = local_54 + local_48;
     local_40.orient.y = local_50 + local_44;

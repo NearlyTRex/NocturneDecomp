@@ -15,7 +15,7 @@
 ;   undefined4 s_rue_005859ff+1
 ;   undefined4 s_ue_005859ff+2
 ;   undefined4 s_e_005859ff+3
-;   undefined1* PTR_core_hostage.cpp_CHostage_setup_FUN_004b6b20_0059ef44 = 004b6b20
+;   CCharacter_full_vtable g_CHostageVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_FUN_004ee950
@@ -32,15 +32,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004b69f3
     PUSH EDX                            ; 004b69f7
     CALL core_npc.cpp_FUN_004ee950      ; 004b69f8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b69fd
     PUSH 0x5859f3                       ; 004b6a00 | = "hickdad.dfm"
     MOV EBX,EAX                         ; 004b6a05
     LEA EDI,[EAX + 0x150]               ; 004b6a07
     PUSH EDI                            ; 004b6a0d
-    MOV dword ptr [EAX + 0x14c],0x59ef44 ; 004b6a0e | PTR_core_hostage.cpp_CHostage_setup_FUN_004b6b20_0059ef44
+    MOV dword ptr [EAX + 0x14c],0x59ef44 ; 004b6a0e | g_CHostageVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b6a18
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x1f91c],0x0   ; 004b6a1d
     MOV dword ptr [EBX + 0x1f924],0x0   ; 004b6a27
     MOV ESI,0x5859ff                    ; 004b6a31 | = "true"

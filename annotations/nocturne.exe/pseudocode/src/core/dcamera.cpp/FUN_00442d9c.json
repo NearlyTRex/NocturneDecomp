@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -274,7 +274,7 @@
       "line": 14,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "float *in_stack_00000028;",
+      "text": "CMatrix3x3f *in_stack_00000028;",
       "type": "stack_param"
     },
     {
@@ -567,26 +567,26 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "text": "(in_stack_00000028,(CVector3f *)&stack0x0000000c,(CVector3f *)&stack0x00000000)",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 36,
       "match": "&stack0x0000000c",
       "severity": "moderate",
-      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "text": "(in_stack_00000028,(CVector3f *)&stack0x0000000c,(CVector3f *)&stack0x00000000)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 36,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "text": "(in_stack_00000028,(CVector3f *)&stack0x0000000c,(CVector3f *)&stack0x00000000)",
       "type": "stack_ref"
     },
     {
@@ -594,7 +594,7 @@
       "line": 38,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "pfVar3 = in_stack_00000028;",
+      "text": "pCVar3 = in_stack_00000028;",
       "type": "stack_param"
     },
     {
@@ -602,7 +602,7 @@
       "line": 39,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "if ((uint *)(unaff_EBP + 0x104) != puVar4) {",
+      "text": "if ((CVector3f *)(unaff_EBP + 0x104) != pCVar4) {",
       "type": "unaffected_reg"
     },
     {
@@ -610,7 +610,7 @@
       "line": 40,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "*(uint *)(unaff_EBP + 0x104) = *puVar4;",
+      "text": "((CVector3f *)(unaff_EBP + 0x104))->x = pCVar4->x;",
       "type": "unaffected_reg"
     },
     {
@@ -618,7 +618,7 @@
       "line": 41,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "*(uint *)(unaff_EBP + 0x108) = puVar4[1];",
+      "text": "*(float *)(unaff_EBP + 0x108) = pCVar4->y;",
       "type": "unaffected_reg"
     },
     {
@@ -626,7 +626,7 @@
       "line": 42,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "*(uint *)(unaff_EBP + 0x10c) = puVar4[2];",
+      "text": "*(float *)(unaff_EBP + 0x10c) = pCVar4->z;",
       "type": "unaffected_reg"
     },
     {
@@ -690,7 +690,7 @@
       "line": 49,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028[6] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].x +",
       "type": "stack_param"
     },
     {
@@ -698,7 +698,7 @@
       "line": 49,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028[6] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].x +",
       "type": "unaffected_reg"
     },
     {
@@ -706,7 +706,7 @@
       "line": 50,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * *in_stack_00000028 +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * in_stack_00000028->m[0].x +",
       "type": "stack_param"
     },
     {
@@ -714,7 +714,7 @@
       "line": 50,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * *in_stack_00000028 +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * in_stack_00000028->m[0].x +",
       "type": "unaffected_reg"
     },
     {
@@ -722,7 +722,7 @@
       "line": 51,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028[3]));",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].x));",
       "type": "stack_param"
     },
     {
@@ -730,7 +730,7 @@
       "line": 51,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028[3]));",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].x));",
       "type": "unaffected_reg"
     },
     {
@@ -754,7 +754,7 @@
       "line": 55,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * pfVar3[7] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * pCVar3->m[2].y +",
       "type": "unaffected_reg"
     },
     {
@@ -762,7 +762,7 @@
       "line": 56,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * pfVar3[4] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * pCVar3->m[1].y +",
       "type": "unaffected_reg"
     },
     {
@@ -786,7 +786,7 @@
       "line": 61,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * pfVar3[8] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * pCVar3->m[2].z +",
       "type": "unaffected_reg"
     },
     {
@@ -794,7 +794,7 @@
       "line": 62,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * pfVar3[5] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * pCVar3->m[1].z +",
       "type": "unaffected_reg"
     },
     {
@@ -818,7 +818,7 @@
       "line": 67,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[6] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pCVar3->m[2].x +",
       "type": "unaffected_reg"
     },
     {
@@ -826,7 +826,7 @@
       "line": 68,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14b0) * *pfVar3 +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b0) * pCVar3->m[0].x +",
       "type": "unaffected_reg"
     },
     {
@@ -850,7 +850,7 @@
       "line": 73,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[7] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pCVar3->m[2].y +",
       "type": "unaffected_reg"
     },
     {
@@ -858,7 +858,7 @@
       "line": 74,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * pfVar3[4] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * pCVar3->m[1].y +",
       "type": "unaffected_reg"
     },
     {
@@ -882,7 +882,7 @@
       "line": 79,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[8] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * pCVar3->m[2].z +",
       "type": "unaffected_reg"
     },
     {
@@ -890,7 +890,7 @@
       "line": 80,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * pfVar3[5] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * pCVar3->m[1].z +",
       "type": "unaffected_reg"
     },
     {
@@ -914,7 +914,7 @@
       "line": 85,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[6] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pCVar3->m[2].x +",
       "type": "unaffected_reg"
     },
     {
@@ -922,7 +922,7 @@
       "line": 86,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14bc) * *pfVar3 +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14bc) * pCVar3->m[0].x +",
       "type": "unaffected_reg"
     },
     {
@@ -946,7 +946,7 @@
       "line": 91,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[7] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pCVar3->m[2].y +",
       "type": "unaffected_reg"
     },
     {
@@ -954,7 +954,7 @@
       "line": 92,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * pfVar3[4] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * pCVar3->m[1].y +",
       "type": "unaffected_reg"
     },
     {
@@ -970,7 +970,7 @@
       "line": 96,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[8] +",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * pCVar3->m[2].z +",
       "type": "unaffected_reg"
     },
     {
@@ -978,7 +978,7 @@
       "line": 97,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * pfVar3[5] +",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * pCVar3->m[1].z +",
       "type": "unaffected_reg"
     },
     {

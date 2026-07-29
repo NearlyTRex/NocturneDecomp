@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(int param_1,CVector3f *param_2,CVector3f *param_3)
+; CVector3f * __cdecl core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector)
 ;
+; Parameters:
+; CMirrorReflection * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_buffer
+; CVector3f *      Stack[0xc]:4   input_vector
 ;
 ; XREF[2]:
 ;   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0 at 004d7c8b

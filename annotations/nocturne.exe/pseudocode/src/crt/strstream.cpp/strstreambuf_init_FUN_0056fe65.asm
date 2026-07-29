@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(streambuf *param_1,char *param_2,int param_3,char *param_4)
+; void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   buffer_ptr
+; int              Stack[0xc]:4   buffer_size
+; char *           Stack[0x10]:4   put_start
 ;
 ; XREF[2]:
 ;   crt_strstream.cpp_strstreambase_ctor_FUN_0056b405 at 0056b43a

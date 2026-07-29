@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_renderVolumetricLightScanline_FUN_004442a0(int param_1,int param_2,int param_3)
+; void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_004442a0(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 ;
+; Parameters:
+; int              Stack[0x4]:4   scanline_y
+; SSoftwareEdge *  Stack[0x8]:4   right
+; SSoftwareEdge *  Stack[0xc]:4   left
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

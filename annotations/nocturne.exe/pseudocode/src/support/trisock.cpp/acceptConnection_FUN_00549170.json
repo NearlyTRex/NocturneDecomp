@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 123,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "pseudocode_lines": 28,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg"
+      "pointer_cast",
+      "pointer_truncation",
+      "unaffected_reg",
+      "unknown_field"
     ],
-    "total_lines": 82
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -144,9 +146,9 @@
         "005491d8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trisock.cpp_acceptConnection_FUN_00549170",
-    "signature": "undefined4 support_trisock_cpp_acceptConnection_FUN_00549170(void)"
+    "signature": "int __cdecl support_trisock_cpp_acceptConnection_FUN_00549170(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket)"
   },
   "function_calls": [
     {
@@ -165,9 +167,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -198,10 +200,10 @@
     "pcode_op_count": 182
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 48,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -217,33 +219,40 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "listen_socket",
+        "offset": 4,
+        "size": 4,
+        "type": "_SOCKET *"
+      },
+      {
+        "is_param": true,
+        "name": "client_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "new_socket",
+        "offset": 12,
+        "size": 4,
+        "type": "_SOCKET *"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "acceptConnection_FUN_00549170.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 16,
-          "line": 31,
-          "message": "Uninitialized variable: in_stack_00000004",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 4,
-          "line": 33,
+          "line": 27,
           "message": "Uninitialized variable: unaff_EDI",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 37,
-          "message": "Uninitialized variable: in_stack_0000000c",
           "severity": "error"
         }
       ],
@@ -254,90 +263,66 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_2c._4_4_ = local_20;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 16,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_2c._8_4_ = &local_8;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uStack_2c = *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_2c._0_4_ = *listen_socket;",
+      "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 26,
+      "line": 20,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "*unaff_EDI = iVar1;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(_SOCKET *)((int)pSVar2",
       "severity": "moderate",
-      "text": "if (in_stack_0000000c == (uint *)0x0) {",
-      "type": "stack_param"
+      "text": "new_socket[(uint)bVar3 * -2 + 1] = *(_SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)pSVar2",
       "severity": "moderate",
-      "text": "*in_stack_0000000c = *puVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[(uint)bVar3 * -2 + 1] = puVar2[(uint)bVar3 * -2 + 1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000004",
-      "line": 31,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "uStack_2c = *in_stack_00000004;",
-      "type": "static_uninitvar"
+      "text": "new_socket[(uint)bVar3 * -2 + 1] = *(_SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 33,
+      "line": 27,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_EDI = iVar1;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 37,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_0000000c == (uint *)0x0) {",
       "type": "static_uninitvar"
     }
   ]

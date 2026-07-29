@@ -1,12 +1,12 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510
 // Address: 0051e510
 // Address Range: [[0051e510, 0051e582]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(CDeformableModelInstance *param_1,float param_2,float param_3,float param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(CDeformableModelInstance *param_1,float param_2,float param_3,float param_4)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 {
   float fVar1;
@@ -15,11 +15,14 @@ void core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0
   CVector3f local_c;
   
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590
-                     (param_1,&local_c,param_2,param_3);
+                     (this_ptr,&local_c,start_frame,end_frame);
   fVar1 = pCVar3->y;
   fVar2 = pCVar3->z;
-  (param_1->accumulated_root_motion).x = (param_1->accumulated_root_motion).x + pCVar3->x * param_4;
-  (param_1->accumulated_root_motion).y = (param_1->accumulated_root_motion).y + fVar1 * param_4;
-  (param_1->accumulated_root_motion).z = (param_1->accumulated_root_motion).z + param_4 * fVar2;
+  (this_ptr->accumulated_root_motion).x =
+       (this_ptr->accumulated_root_motion).x + pCVar3->x * scale_factor;
+  (this_ptr->accumulated_root_motion).y =
+       (this_ptr->accumulated_root_motion).y + fVar1 * scale_factor;
+  (this_ptr->accumulated_root_motion).z =
+       (this_ptr->accumulated_root_motion).z + scale_factor * fVar2;
   return;
 }

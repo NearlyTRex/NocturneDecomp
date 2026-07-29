@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(int *param_1)
+; int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5bf0(CPackedBitmapSet *this_ptr)
 ;
+; Parameters:
+; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0
@@ -32,7 +34,7 @@ section .text
     PUSH EAX                            ; 004f5c14
     INC EBX                             ; 004f5c15
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0 ; 004f5c16
-        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0()
+        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0(CPackedBitmap * this_ptr)
     ADD ESI,0x24                        ; 004f5c1b
     ADD ESP,0x4                         ; 004f5c1e
     MOV ECX,dword ptr [EBP]             ; 004f5c21

@@ -13,7 +13,6 @@ filebuf * __cdecl crt_fstream_cpp_filebuf_ctor_FUN_0057042d(filebuf *this_ptr)
   
   pfVar1 = (filebuf *)crt_iostream_cpp_streambuf_ctor_FUN_0056fe12(&this_ptr->_streambuf);
   pfVar1->__file_handle = -1;
-  pfVar1->__vtable =
-       (filebuf_vtable *)&PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4b0c;
+  pfVar1->__vtable = &g_FilebufVTable;
   return pfVar1;
 }

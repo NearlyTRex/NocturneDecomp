@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0051d5e0(CDeformableModelInstance *param_1,float *param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0051d5e0(CDeformableModelInstance *this_ptr,CVector3f *offset_vector)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   offset_vector
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

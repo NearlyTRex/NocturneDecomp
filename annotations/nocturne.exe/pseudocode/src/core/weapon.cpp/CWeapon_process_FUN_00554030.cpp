@@ -14,8 +14,6 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,floa
   UOrientationVector *pUVar1;
   CVector3f *pCVar2;
   float fVar3;
-  float unaff_EBX;
-  int unaff_ESI;
   
   if ((0.0 < this_ptr->fire_cooldown_timer) &&
      (fVar3 = this_ptr->fire_cooldown_timer - delta_time, this_ptr->fire_cooldown_timer = fVar3,
@@ -44,7 +42,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,floa
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
       (*(int *)(0x01C775EC + 0x244) != 0)) && (this_ptr->can_attach_light != 0)) {
-    (*(((this_ptr->base).vtable._uc)->_uc).applyDamage)((CCharacter *)this_ptr,unaff_ESI,unaff_EBX);
+    (*(((this_ptr->base).vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
     if (0.0 < _DAT_01c775e8) {
       core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,(CDemonLight *)&DAT_01c74640)
       ;

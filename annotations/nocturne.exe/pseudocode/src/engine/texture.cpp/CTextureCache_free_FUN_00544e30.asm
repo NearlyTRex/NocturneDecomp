@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_texture_cpp_CTextureCache_free_FUN_00544e30(void)
+; int __cdecl engine_texture_cpp_CTextureCache_free_FUN_00544e30(CTextureCache *this_ptr)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60

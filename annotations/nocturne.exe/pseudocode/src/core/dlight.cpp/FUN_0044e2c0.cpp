@@ -1,28 +1,28 @@
 // Name: core_dlight.cpp_FUN_0044e2c0
 // Address: 0044e2c0
 // Address Range: [[0044e2c0, 0044e33f]]
-// Convention: unknown
-// Signature: void core_dlight_cpp_FUN_0044e2c0(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_dlight_cpp_FUN_0044e2c0(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 
-void core_dlight_cpp_FUN_0044e2c0(int param_1)
+void __cdecl core_dlight_cpp_FUN_0044e2c0(CDemonLight *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x2f94) != 0) {
-    FUN_005638d0(*(uint *)(param_1 + 0x2f98));
-    *(uint *)(param_1 + 0x2f94) = 0;
-    *(uint *)(param_1 + 0x2f98) = 0;
+  if (this_ptr->shadow_depth_buffer != (ushort *)0x0) {
+    FUN_005638d0(this_ptr->shadow_buffer_raw);
+    this_ptr->shadow_depth_buffer = (ushort *)0x0;
+    this_ptr->shadow_buffer_raw = (void *)0x0;
   }
-  core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(param_1);
-  if (*(int *)(param_1 + 0x2fa0) != 0) {
-    FUN_005638d0(*(int *)(param_1 + 0x2fa0));
-    *(uint *)(param_1 + 0x2fa0) = 0;
+  core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(this_ptr);
+  if (this_ptr->lightmap_visibility_bits != (uchar *)0x0) {
+    FUN_005638d0(this_ptr->lightmap_visibility_bits);
+    this_ptr->lightmap_visibility_bits = (uchar *)0x0;
   }
-  if (*(int *)(param_1 + 0x1c6c) == 0) {
+  if (this_ptr->filter_buffer == (uchar *)0x0) {
     return;
   }
-  FUN_005638d0(*(int *)(param_1 + 0x1c6c));
-  *(uint *)(param_1 + 0x1c6c) = 0;
+  FUN_005638d0(this_ptr->filter_buffer);
+  this_ptr->filter_buffer = (uchar *)0x0;
   return;
 }

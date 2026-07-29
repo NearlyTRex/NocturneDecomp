@@ -148,7 +148,7 @@ section .text
     ADD ESI,0x4                         ; 0050acf9
     INC EBX                             ; 0050acfc
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 0050acfd
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
     MOV EAX,[0x01fb9b54]                ; 0050ad02 | DAT_01fb9b54
     ADD ESP,0x4                         ; 0050ad07
     CMP EBX,EAX                         ; 0050ad0a

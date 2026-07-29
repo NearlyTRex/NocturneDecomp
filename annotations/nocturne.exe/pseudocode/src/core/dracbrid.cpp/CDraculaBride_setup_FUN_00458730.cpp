@@ -17,40 +17,39 @@ void core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CEnemy *param_1)
   CSkeleton *this_ptr;
   CDeformableModel *this_ptr_00;
   float fVar4;
-  uint uVar5;
-  char *pcVar6;
+  char *pcVar5;
   
-  pcVar6 = (param_1->base).model.model_name;
+  pcVar5 = (param_1->base).model.model_name;
   pCVar1 = &(param_1->base).model;
   if (*(int *)(0x01C775EC + 0x18) == 0) {
-    iVar3 = _stricmp(pcVar6,"nbride2.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride2.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"nbride2x.dfm");
     }
-    iVar3 = _stricmp(pcVar6,"nbride3.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride3.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
                 (&(param_1->base).model,"nbride3x.dfm");
     }
-    iVar3 = _stricmp(pcVar6,"nbride4.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride4.dfm");
     if (iVar3 != 0) goto LAB_004587c5;
-    pcVar6 = "nbride4x.dfm";
+    pcVar5 = "nbride4x.dfm";
   }
   else {
-    iVar3 = _stricmp(pcVar6,"nbride2x.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride2x.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"nbride2.dfm");
     }
-    iVar3 = _stricmp(pcVar6,"nbride3x.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride3x.dfm");
     if (iVar3 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
                 (&(param_1->base).model,"nbride3.dfm");
     }
-    iVar3 = _stricmp(pcVar6,"nbride4x.dfm");
+    iVar3 = _stricmp(pcVar5,"nbride4x.dfm");
     if (iVar3 != 0) goto LAB_004587c5;
-    pcVar6 = "nbride4.dfm";
+    pcVar5 = "nbride4.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,pcVar6);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,pcVar5);
 LAB_004587c5:
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   pCVar1 = &(param_1->base).model;
@@ -104,9 +103,9 @@ LAB_004587c5:
   (pCVar2->base).create_event[0x31] = '\0';
   (pCVar2->base).create_event[0x32] = '\0';
   (pCVar2->base).create_event[0x33] = '\0';
-  uVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
-  *(uint *)(param_1[1].base.base.create_event + 0x1c) = uVar5;
-  uVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40000000,0x41a00000);
-  *(uint *)(param_1[1].base.base.create_event + 0x20) = uVar5;
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,10.0);
+  *(float *)(param_1[1].base.base.create_event + 0x1c) = fVar4;
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(2.0,20.0);
+  *(float *)(param_1[1].base.base.create_event + 0x20) = fVar4;
   return;
 }

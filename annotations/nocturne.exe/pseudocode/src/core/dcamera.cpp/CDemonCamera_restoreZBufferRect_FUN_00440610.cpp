@@ -27,7 +27,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(CDemo
       local_14 = iVar1 * 4;
       do {
         core_dstrender_cpp_memcpyMMX_FUN_00465341
-                  (rect_ptr->x_min * 4 + *(int *)(&DAT_01bd4260 + local_14),
+                  ((void *)(rect_ptr->x_min * 4 + *(int *)(&DAT_01bd4260 + local_14)),
                    (void *)((int)this_ptr->zbuffer_aligned +
                            (((iVar1 - this_ptr->framebuffer_height) *
                              *(int *)(this_ptr->camera_name + 0xfc) + rect_ptr->x_min) -

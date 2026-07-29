@@ -1,32 +1,34 @@
 // Name: crt_strstream.cpp_strstreambuf_underflow_FUN_00570075
 // Address: 00570075
 // Address Range: [[00570075, 005700bf]]
-// Convention: unknown
-// Signature: uint crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(int param_1)
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(strstreambuf *this_ptr)
 
 #include "nocturne.h"
 
-uint crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(int param_1)
+int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(strstreambuf *this_ptr)
 
 {
-  uint uVar1;
+  char *pcVar1;
+  char *pcVar2;
   
-  if ((*(byte *)(param_1 + 0x3c) & 4) == 0) {
-    uVar1 = *(uint *)(param_1 + 0x20);
-    if (uVar1 <= *(uint *)(param_1 + 0x10)) {
-      return 0xffffffff;
+  if (((uint)this_ptr[1]._streambuf.__b_lock & 4) == 0) {
+    pcVar1 = (this_ptr->_streambuf).__put_ptr;
+    if (pcVar1 <= (this_ptr->_streambuf).__get_end) {
+      return -1;
     }
-    if (*(int *)(param_1 + 0x14) == 0) {
-      *(uint *)(param_1 + 0x10) = uVar1;
-      *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0x18);
-      *(uint *)(param_1 + 0x14) = *(uint *)(param_1 + 0x18);
+    if ((this_ptr->_streambuf).__get_ptr == (char *)0x0) {
+      pcVar2 = (this_ptr->_streambuf).__put_base;
+      (this_ptr->_streambuf).__get_end = pcVar1;
+      (this_ptr->_streambuf).__get_base = pcVar2;
+      (this_ptr->_streambuf).__get_ptr = pcVar2;
     }
     else {
-      *(uint *)(param_1 + 0x10) = uVar1;
+      (this_ptr->_streambuf).__get_end = pcVar1;
     }
   }
   else {
-    *(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + 0x200;
+    (this_ptr->_streambuf).__get_end = (this_ptr->_streambuf).__get_end + 0x200;
   }
-  return (uint)**(byte **)(param_1 + 0x14);
+  return (uint)(byte)*(this_ptr->_streambuf).__get_ptr;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
+; void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

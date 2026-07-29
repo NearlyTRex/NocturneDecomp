@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 54,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_truncation"
     ],
-    "total_lines": 94
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -59,9 +59,9 @@
   "globals": [
     {
       "addr": "005a4884",
-      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884",
-      "type": "undefined1*",
-      "value": "0056ff82"
+      "name": "g_StrstreambufVTable",
+      "type": "strstreambuf_vtable",
+      "value": null
     },
     {
       "addr": "005a4af0",
@@ -143,7 +143,7 @@
   "suspects": [
     {
       "description": "Pointer value `pvVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 12,
+      "line": 11,
       "match": "(uint)pvVar1",
       "severity": "moderate",
       "text": "if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&",
@@ -151,7 +151,7 @@
     },
     {
       "description": "Pointer value `pvVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 12,
+      "line": 11,
       "match": "(uint)pvVar1",
       "severity": "moderate",
       "text": "if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&",

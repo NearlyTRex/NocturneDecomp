@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_FUN_004aded0(int param_1)
+; int __cdecl core_glass_cpp_FUN_004aded0(CGlass *this_ptr)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_actor.cpp_FUN_0040b300 at 0040b787

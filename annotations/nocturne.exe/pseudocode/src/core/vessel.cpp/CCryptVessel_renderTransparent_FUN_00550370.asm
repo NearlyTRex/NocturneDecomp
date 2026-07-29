@@ -172,7 +172,7 @@ section .text
         ;   Label: LAB_005504ca
     PUSH EAX                            ; 005504d0
     CALL core_flame.cpp_FUN_0048d5d0    ; 005504d1
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048d5d0()
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_FUN_0048d5d0(CFlame * this_ptr)
     ADD ESP,0x4                         ; 005504d6
     JMP 0x00550396                      ; 005504d9
         ;   XREF to: 00550396 (UNCONDITIONAL_JUMP)  ; LAB_00550396

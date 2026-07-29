@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hiram_cpp_FUN_004b6610(undefined4 param_1)
+; CNPC * core_hiram_cpp_FUN_004b6610(CNPC *param_1)
 ;
 ;
 ; XREF[1]:
@@ -13,7 +13,7 @@
 ;   undefined4 s_illHiram_005859d5+1
 ;   undefined4 s_llHiram_005859d5+2
 ;   undefined4 s_lHiram_005859d5+3
-;   undefined1* PTR_core_hiram.cpp_FUN_004b6750_0059eda4 = 004b6750
+;   CCharacter_full_vtable g_CHiramVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_FUN_004ee950
@@ -30,15 +30,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004b6613
     PUSH EDX                            ; 004b6617
     CALL core_npc.cpp_FUN_004ee950      ; 004b6618
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b661d
     PUSH 0x5859cb                       ; 004b6620 | = "hiram.dfm"
     MOV EBX,EAX                         ; 004b6625
     LEA EDI,[EAX + 0x150]               ; 004b6627
     PUSH EDI                            ; 004b662d
-    MOV dword ptr [EAX + 0x14c],0x59eda4 ; 004b662e | PTR_core_hiram.cpp_FUN_004b6750_0059eda4
+    MOV dword ptr [EAX + 0x14c],0x59eda4 ; 004b662e | g_CHiramVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b6638
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004b663d
     MOV ESI,0x5859d5                    ; 004b6640 | = "killHiram"
     LEA EDI,[EBX + 0x1f570]             ; 004b6645

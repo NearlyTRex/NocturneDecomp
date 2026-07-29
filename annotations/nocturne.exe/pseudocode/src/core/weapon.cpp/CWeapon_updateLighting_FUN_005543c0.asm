@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CDemonActor *param_1)
+; void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:

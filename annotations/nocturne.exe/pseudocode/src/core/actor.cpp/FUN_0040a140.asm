@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_FUN_0040a140(CDemonActor *param_1,undefined4 param_2,char *param_3)
+; float core_actor_cpp_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -50,7 +50,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0040a16e | DAT_005be368
     PUSH EDI                            ; 0040a174 | DAT_01e57284
     CALL core_setcolid.cpp_FUN_005117f0 ; 0040a175
-        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005117f0()
+        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_005117f0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040a17a
     LEA EAX,[ESI + 0x20]                ; 0040a17d
     PUSH dword ptr [ESP + 0x20]         ; 0040a180
@@ -58,7 +58,7 @@ section .text
     MOV EBP,dword ptr [0x005be368]      ; 0040a185 | DAT_005be368
     PUSH EBP                            ; 0040a18b | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040a18c
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x10],EAX      ; 0040a191
     FLD float ptr [ESP + 0x10]          ; 0040a195
     ADD ESP,0xc                         ; 0040a199

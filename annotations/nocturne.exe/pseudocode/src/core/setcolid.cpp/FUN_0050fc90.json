@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 385,
+    "complexity_score": 354,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 34,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 29,
     "suspect_types": [
-      "unnamed_param",
-      "unrolled_memcpy"
+      "unnamed_param"
     ],
-    "total_lines": 138
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -146,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_setcolid.cpp_FUN_0050fc90",
-    "signature": "undefined4 core_setcolid_cpp_FUN_0050fc90(int param_1)"
+    "signature": "float core_setcolid_cpp_FUN_0050fc90(CDemonSet *param_1)"
   },
   "function_calls": [
     {
@@ -210,133 +209,44 @@
     "return_addr_offset": 0,
     "variables": []
   },
+  "static_analysis": {
+    "analyzed_file": "FUN_0050fc90.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 9,
+          "line": 31,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 8,
+          "line": 32,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 10,
+          "line": 59,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_setcolid_cpp_FUN_0050fc90(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x15f2dc) < *(float *)(param_1 + 0x15f2e0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x15f2dc) < *(float *)(param_1 + 0x15f2e0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x14cd40) != (uint *)(param_1 + 0x15f2e4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x14cd40) != (uint *)(param_1 + 0x15f2e4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd40) = *(uint *)(param_1 + 0x15f2e4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd40) = *(uint *)(param_1 + 0x15f2e4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd44) = *(uint *)(param_1 + 0x15f2e8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd44) = *(uint *)(param_1 + 0x15f2e8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd48) = *(uint *)(param_1 + 0x15f2ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd48) = *(uint *)(param_1 + 0x15f2ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1 + 0x14cd28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd4c) = *(uint *)(param_1 + 0x15f2f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14cd4c) = *(uint *)(param_1 + 0x15f2f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(param_1 + 0x15f2dc),pfVar1,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(param_1 + 0x15f2dc),pfVar1,",
+      "text": "float core_setcolid_cpp_FUN_0050fc90(CDemonSet *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -344,15 +254,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float *)(param_1 + 0x14cd34),*(uint *)(param_1 + 0x15f2e0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float *)(param_1 + 0x14cd34),*(uint *)(param_1 + 0x15f2e0));",
+      "text": "if (param_1->vdir_boxes[0xec].rotation_matrix.m[0].x <",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +262,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x15f2dc) = uVar3;",
+      "text": "param_1->vdir_boxes[0xec].rotation_matrix.m[0].y) {",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +270,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x15f2dc) <= 1.0) {",
+      "text": "pcVar1 = param_1->lights[199].filter_names[0x12] + 0x24;",
       "type": "unnamed_param"
     },
     {
@@ -376,23 +278,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(param_1 + 0x15f2dc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((float *)(param_1 + 0x14cd50) != afStack_30) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x14cd50) =",
+      "text": "pfVar2 = &param_1->vdir_boxes[0xec].rotation_matrix.m[0].z;",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +286,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*pfVar1 + (*(float *)(param_1 + 0x14cd34) - *pfVar1) * *pfVar2;",
+      "text": "*(float *)param_1->lights[199].filter_names[0x13] =",
       "type": "unnamed_param"
     },
     {
@@ -408,7 +294,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x14cd54) =",
+      "text": "param_1->vdir_boxes[0xec].rotation_matrix.m[1].x;",
       "type": "unnamed_param"
     },
     {
@@ -416,7 +302,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x14cd2c) +",
+      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 4) =",
       "type": "unnamed_param"
     },
     {
@@ -424,23 +310,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x14cd38) - *(float *)(param_1 + 0x14cd2c)) * *pfVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x14cd38) - *(float *)(param_1 + 0x14cd2c)) * *pfVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x14cd58) =",
+      "text": "param_1->vdir_boxes[0xec].rotation_matrix.m[1].y;",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +318,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x14cd30) +",
+      "text": "ray_target = (CVector3f *)(param_1->lights[199].filter_names[0x12] + 0x18);",
       "type": "unnamed_param"
     },
     {
@@ -456,15 +326,23 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x14cd3c) - *(float *)(param_1 + 0x14cd30)) * *pfVar2;",
+      "text": "fVar11 = param_1->vdir_boxes[0xec].rotation_matrix.m[0].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x14cd3c) - *(float *)(param_1 + 0x14cd30)) * *pfVar2;",
+      "text": "ray_origin = (CVector3f *)(param_1->lights[199].filter_names[0x12] + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar10 = param_1->vdir_boxes[0xec].rotation_matrix.m[0].x;",
       "type": "unnamed_param"
     },
     {
@@ -472,16 +350,152 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "return *(uint *)(param_1 + 0x15f2dc);",
+      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 8) =",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 12,
-      "match": "raw-offset struct copy",
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->vdir_boxes[0xec].rotation_matrix.m[1].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,fVar10,ray_origin,ray_target,fVar11);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->vdir_boxes[0xec].rotation_matrix.m[0].x = fVar11;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->vdir_boxes[0xec].rotation_matrix.m[0].x <= 1.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar11 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar10 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = &param_1->vdir_boxes[0xec].rotation_matrix;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar8 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar9 = *(float *)(param_1->lights[199].filter_names[0x12] + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar1 = param_1->lights[199].filter_names[0x13] + 0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 0x10) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1->lights[199].filter_names[0x13] + 0x14) = fVar9 + (fVar4 - fVar5) * fVar7",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1->vdir_boxes[0xec].rotation_matrix.m[0].x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 31,
+      "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x14cd40) = *(uint *)(param_1 + 0x15f2e4);",
-      "type": "unrolled_memcpy"
+      "text": "if ((float *)pcVar1 != pfVar2) {",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 32,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)pcVar1 = *pfVar2;",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 59,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)pcVar1 = ray_origin->x + (ray_target->x - ray_origin->x) * pCVar3->m[0].x;",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0052eac0(void)
+; uint __cdecl core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0052eac0(CSound *this_ptr,CDemonActor *actor,char *sound_name,float delay)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; char *           Stack[0xc]:4   sound_name
+; float            Stack[0x10]:4   delay
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c
 ;

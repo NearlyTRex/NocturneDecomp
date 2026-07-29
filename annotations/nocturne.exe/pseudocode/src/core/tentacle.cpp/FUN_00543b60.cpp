@@ -14,8 +14,7 @@ CEnemy * core_tentacle_cpp_FUN_00543b60(CEnemy *param_1)
   CEnemy *pCVar3;
   
   pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  (pCVar3->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_tentacle_cpp_CTentacle_setup_FUN_00543bc0_005a3104;
+  (pCVar3->base).base.vtable._ub = &g_CTentacleVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).model,"tentacle.dfm");
   (pCVar3->base).ai_detection_range_min = 50.0;

@@ -1,27 +1,27 @@
 // Name: core_charactr.cpp_FUN_00428100
 // Address: 00428100
 // Address Range: [[00428100, 00428154]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_FUN_00428100(int param_1,int param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_FUN_00428100(int param_1,int param_2,uint param_3)
+void __cdecl core_charactr_cpp_FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 
 {
-  int iVar1;
+  SCarryHand *pSVar1;
   
-  iVar1 = param_1 + 0x24a4;
+  pSVar1 = this_ptr->carry_hands;
   do {
-    while (param_2 == *(int *)(iVar1 + 8)) {
-      (**(code **)(*(int *)(*(int *)(iVar1 + 8) + 0x14c) + 0x84))(param_2,param_3);
-      *(uint *)(iVar1 + 8) = 0;
-      iVar1 = iVar1 + 0x44;
-      if (iVar1 == param_1 + 0x252c) {
+    while (carrier == pSVar1->carry_actor) {
+      (*((pSVar1->carry_actor->vtable)._ub)->onDropped)(carrier,drop_position);
+      pSVar1->carry_actor = (CDemonActor *)0x0;
+      pSVar1 = pSVar1 + 1;
+      if (pSVar1 == (SCarryHand *)this_ptr->talk_to_me_event) {
         return;
       }
     }
-    iVar1 = iVar1 + 0x44;
-  } while (iVar1 != param_1 + 0x252c);
+    pSVar1 = pSVar1 + 1;
+  } while (pSVar1 != (SCarryHand *)this_ptr->talk_to_me_event);
   return;
 }

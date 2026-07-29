@@ -2,20 +2,32 @@
 // Address: 005438d0
 // Address Range: [[005438d0, 0054390f]]
 // Convention: unknown
-// Signature: void core_teleport_cpp_FUN_005438d0(undefined4 param_1)
+// Signature: void core_teleport_cpp_FUN_005438d0(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-void core_teleport_cpp_FUN_005438d0(uint param_1)
+void core_teleport_cpp_FUN_005438d0(CDemonActor *param_1)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005a2fc4;
-  *(uint *)(iVar1 + 0x150) = 0x40a00000;
-  *(uint *)(iVar1 + 0x154) = 0x41100000;
-  *(uint *)(iVar1 + 0x158) = 0x40a00000;
-  *(uint *)(iVar1 + 0x15c) = 0;
+  pCVar1 = core_actor_cpp_FUN_00409d30(param_1);
+  (pCVar1->vtable)._ub = &g_CTeleportVTable;
+  pCVar1[1].actor_name[0] = '\0';
+  pCVar1[1].actor_name[1] = '\0';
+  pCVar1[1].actor_name[2] = -0x60;
+  pCVar1[1].actor_name[3] = '@';
+  pCVar1[1].actor_name[4] = '\0';
+  pCVar1[1].actor_name[5] = '\0';
+  pCVar1[1].actor_name[6] = '\x10';
+  pCVar1[1].actor_name[7] = 'A';
+  pCVar1[1].actor_name[8] = '\0';
+  pCVar1[1].actor_name[9] = '\0';
+  pCVar1[1].actor_name[10] = -0x60;
+  pCVar1[1].actor_name[0xb] = '@';
+  pCVar1[1].actor_name[0xc] = '\0';
+  pCVar1[1].actor_name[0xd] = '\0';
+  pCVar1[1].actor_name[0xe] = '\0';
+  pCVar1[1].actor_name[0xf] = '\0';
   return;
 }

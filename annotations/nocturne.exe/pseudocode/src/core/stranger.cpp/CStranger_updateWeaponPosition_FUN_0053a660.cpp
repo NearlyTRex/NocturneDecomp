@@ -22,7 +22,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStra
   uint local_114 [12];
   CMatrix3x4f local_e4;
   uint local_b4 [12];
-  byte local_84 [48];
+  CMatrix3x4f local_84;
   float local_54 [12];
   CVector3f local_24;
   CVector3f local_18;
@@ -42,8 +42,9 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStra
       puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (local_84,&(this_ptr->base).base.base.location,&(this_ptr->base).base.base.orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_b4,local_84);
+              (&local_84,&(this_ptr->base).base.base.location.position,
+               &(this_ptr->base).base.base.orient.vec);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_b4,&local_84);
     pfVar5 = local_54;
     pCVar7 = &local_e4;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

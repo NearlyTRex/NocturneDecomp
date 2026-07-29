@@ -35,7 +35,7 @@ section .text
     PUSH EDX                            ; 0046af87 | DAT_01b4d738
     XOR ESI,ESI                         ; 0046af88
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0046af8a
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV ECX,dword ptr [0x01b7b744]      ; 0046af8f | DAT_01b7b744
     ADD ESP,0x10                        ; 0046af95
     TEST ECX,ECX                        ; 0046af98

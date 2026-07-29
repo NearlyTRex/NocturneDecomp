@@ -1,13 +1,13 @@
 // Name: sound_sndwav.cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870
 // Address: 0052c870
 // Address Range: [[0052c870, 0052c888]]
-// Convention: unknown
-// Signature: undefined8 sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870(void)
+// Convention: __cdecl
+// Signature: double __cdecl sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870(CWavOutDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-ulonglong sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870(void)
+double __cdecl sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0052c870(CWavOutDevice *this_ptr,CSfxSlot *slot)
 
 {
-  return 0xbff0000000000000;
+  return -1.0;
 }

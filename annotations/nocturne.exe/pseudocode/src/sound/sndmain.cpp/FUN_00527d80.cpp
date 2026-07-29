@@ -1,12 +1,12 @@
 // Name: sound_sndmain.cpp_FUN_00527d80
 // Address: 00527d80
 // Address Range: [[00527d80, 00527e0f]]
-// Convention: unknown
-// Signature: void sound_sndmain_cpp_FUN_00527d80(void)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_00527d80(void)
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_FUN_00527d80(void)
+void __cdecl sound_sndmain_cpp_FUN_00527d80(void)
 
 {
   int channel_index;

@@ -174,14 +174,14 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 004db821
     PUSH EAX                            ; 004db825
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004db826
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004db82b
     FLD float ptr [ESP + 0x60]          ; 004db82e
     FSUB float ptr [EBX + 0x34]         ; 004db832
     SUB ESP,0x4                         ; 004db835
     FSTP float ptr [ESP]                ; 004db838
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004db83b
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x74],EAX      ; 004db840
     FLD float ptr [ESP + 0x74]          ; 004db844
     ADD ESP,0x4                         ; 004db848
@@ -277,7 +277,7 @@ section .text
     PUSH EAX                            ; 004db941
         ;   Label: LAB_004db941
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 004db942
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004db947
     PUSH dword ptr [ESP + 0x5c]         ; 004db94a
     LEA ESI,[ESP + 0x2c]                ; 004db94e

@@ -21,7 +21,7 @@ CFrankenstienMachine * __cdecl CFrankenstienMachine::ctor(CFrankenstienMachine *
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0
 // Address: 004946c0
-void CFrankenstienMachine::setup(CDemonActor *param_1);
+void CFrankenstienMachine::setup(CFrankenstienMachine *param_1);
 
 // Original: core_frankgen.cpp_FUN_004948f0
 // Address: 004948f0
@@ -41,7 +41,7 @@ void __cdecl CFrankenstienMachine::playSfxAtFrame(CFrankenstienMachine *this_ptr
 
 // Original: core_frankgen.cpp_FUN_00494e80
 // Address: 00494e80
-int FUN_00494e80(CDemonActor *param_1);
+int FUN_00494e80(CFrankenstienMachine *param_1);
 
 // Original: core_frankgen.cpp_FUN_00495000
 // Address: 00495000
@@ -49,7 +49,7 @@ undefined4 * FUN_00495000(int param_1,undefined4 *param_2);
 
 // Original: core_frankgen.cpp_FUN_004950a0
 // Address: 004950a0
-void FUN_004950a0(CFrankenstienMachine *param_1);
+CVector3f * __cdecl FUN_004950a0(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_findLeader_FUN_00495240
 // Address: 00495240
@@ -75,6 +75,6 @@ undefined4 FUN_00495410(void);
 // Address: 00495420
 undefined4 FUN_00495420(void);
 
-// Original: core_frankgen.cpp_FUN_00495430
+// Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_00495430
 // Address: 00495430
-CDemonActor * FUN_00495430(CDemonActor *param_1,byte param_2);
+CFrankenstienMachine * __cdecl CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint flags);

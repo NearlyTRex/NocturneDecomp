@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 684,
+    "complexity_score": 672,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 434,
+    "pseudocode_lines": 422,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +135,7 @@
       "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1269
+    "total_lines": 1257
   },
   "cross_references": [
     {
@@ -1112,42 +1112,14 @@
   "static_analysis": {
     "analyzed_file": "CCloth_step_FUN_00436e80.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 5,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
           "column": 20,
-          "line": 148,
+          "line": 136,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 259,
-          "message": "Uninitialized variable: local_158",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 261,
-          "message": "Uninitialized variable: local_154",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 49,
-          "line": 340,
-          "message": "Uninitialized variable: local_140",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 49,
-          "line": 341,
-          "message": "Uninitialized variable: local_13c",
-          "severity": "error"
         }
       ],
       "error": null
@@ -1165,7 +1137,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 178,
       "match": "(float *)((int)local_20",
       "severity": "moderate",
       "text": "pfVar9 = (float *)((int)local_20 + local_64);",
@@ -1173,7 +1145,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 304,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr->vertices[0x300].secondary_velocity.x + local_58) * 0x47);",
@@ -1181,7 +1153,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 382,
+      "line": 370,
       "match": "(int *)(iVar10 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x) * 0x47))->locked",
@@ -1189,7 +1161,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 387,
+      "line": 375,
       "match": "(int *)(iVar10 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x)",
@@ -1197,7 +1169,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 402,
+      "line": 390,
       "match": "(int *)(iVar10 + (int)this_ptr",
       "severity": "moderate",
       "text": "iVar7 = *(int *)(iVar10 + (int)this_ptr->vertices[0x300].secondary_velocity.x) * 0x11c;",
@@ -1205,7 +1177,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 403,
+      "line": 391,
       "match": "(int *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x32c) != 0) {",
@@ -1213,7 +1185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 404,
+      "line": 392,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);",
@@ -1221,7 +1193,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
+      "line": 394,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c) =",
@@ -1229,15 +1201,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 395,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
-      "text": "*pfVar4 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);",
+      "text": "*pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 408,
+      "line": 396,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0) =",
@@ -1245,15 +1217,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 409,
+      "line": 397,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
-      "text": "*pfVar4 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);",
+      "text": "*pfVar2 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 411,
+      "line": 399,
       "match": "(int *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "if (*(int *)((int)(this_ptr->model).texture_list + iVar7 + 0x330) != 0) {",
@@ -1261,7 +1233,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 412,
+      "line": 400,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)(this_ptr->model).texture_list + iVar7 + 0x298);",
@@ -1269,7 +1241,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 414,
+      "line": 402,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c) =",
@@ -1277,7 +1249,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 415,
+      "line": 403,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*pfVar9 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x29c);",
@@ -1285,7 +1257,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 416,
+      "line": 404,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0) =",
@@ -1293,7 +1265,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 417,
+      "line": 405,
       "match": "(float *)((int)(this_ptr->model).texture_list",
       "severity": "moderate",
       "text": "*pfVar9 * *(float *)((int)(this_ptr->model).texture_list + iVar7 + 0x2a0);",
@@ -1301,7 +1273,7 @@
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 190,
+      "line": 178,
       "match": "(int)local_20",
       "severity": "moderate",
       "text": "pfVar9 = (float *)((int)local_20 + local_64);",
@@ -1309,7 +1281,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 428,
+      "line": 416,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar10);",
@@ -1317,7 +1289,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_48->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 159,
+      "line": 147,
       "match": "local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_48 = (CCloth *)((local_48->model).model_filename + 4);",
@@ -1325,7 +1297,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_84` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_84->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 198,
+      "line": 186,
       "match": "local_84 = (T *)&(local_84->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_84 = (CCloth *)&(local_84->model).env_map_opac_list;",
@@ -1333,7 +1305,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 293,
+      "line": 281,
       "match": "pCVar12 = (T *)&(pCVar12->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar12 = (CCloth *)&(pCVar12->model).env_map_opac_list;",
@@ -1341,43 +1313,11 @@
     },
     {
       "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 148,
+      "line": 136,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "pfVar9 = (float *)(piVar13 + 0x44);",
       "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_158",
-      "line": 259,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_b0 = local_158 * local_100;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_154",
-      "line": 261,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_ac = local_154 * local_100;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_140",
-      "line": 340,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(vertex->force).y = (vertex->force).y + local_140;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_13c",
-      "line": 341,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(vertex->force).z = (vertex->force).z + local_13c;",
-      "type": "static_uninitvar"
     }
   ]
 }

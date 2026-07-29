@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(CFireEffect *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   toss_type
+; CVector3f *      Stack[0xc]:4   position
+; UOrientationVector * Stack[0x10]:4   orientation
+; CVector3f *      Stack[0x14]:4   velocity
+; float            Stack[0x18]:4   fuse_time
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0 at 0048c2d5
@@ -36,7 +43,7 @@ section .text
     ADD EAX,0x1c5d824                   ; 0048c338
     PUSH EAX                            ; 0048c33d
     CALL core_fire.cpp_CToss_create_FUN_004873b0 ; 0048c33e
-        ;   XREF to: 004873b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CToss_create_FUN_004873b0()
+        ;   XREF to: 004873b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_create_FUN_004873b0(CToss * this_ptr, int toss_type, CVector3f * position, UOrientationVector * orientation, ...)
     MOV EBP,dword ptr [0x01c5d820]      ; 0048c343 | DAT_01c5d820
     INC EBP                             ; 0048c349
     ADD ESP,0x18                        ; 0048c34a

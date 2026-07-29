@@ -1,14 +1,16 @@
 // Name: core_manpuz.cpp_FUN_004cc060
 // Address: 004cc060
 // Address Range: [[004cc060, 004cc074]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_FUN_004cc060(void *param_1)
+// Convention: __cdecl
+// Signature: SReflector * __cdecl core_manpuz_cpp_FUN_004cc060(SReflector *objs,uint flags)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_FUN_004cc060(void *param_1)
+SReflector * __cdecl core_manpuz_cpp_FUN_004cc060(SReflector *objs,uint flags)
 
 {
-  __arrfini(param_1,2,&g_SReflectorTypeInfo_005a0250);
-  return;
+  SReflector *pSVar1;
+  
+  pSVar1 = (SReflector *)__arrfini(objs,2,&g_SReflectorTypeInfo_005a0250);
+  return pSVar1;
 }

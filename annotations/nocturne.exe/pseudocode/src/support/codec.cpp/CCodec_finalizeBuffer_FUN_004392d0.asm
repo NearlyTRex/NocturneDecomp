@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CCodec_finalizeBuffer_FUN_004392d0(int *param_1,char *param_2,int *param_3)
+; int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_004392d0(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   buffer_ptr
+; int *            Stack[0xc]:4   buffer_size_ptr
 ; Local Variables:
 ; undefined        Stack[-0x8c]:1  local_8c
 ; undefined        Stack[-0x44]:1  local_44

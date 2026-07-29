@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_00526120(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_FUN_00526120(float base_frequency)
 ;
+; Parameters:
+; float            Stack[0x4]:4   base_frequency
 ;
 ; XREF[2]:
 ;   core_lightgun.cpp_FUN_004c79a0 at 004c7c29

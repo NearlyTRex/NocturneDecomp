@@ -1,19 +1,16 @@
 // Name: support_trisock.cpp_listenSocket_FUN_00549150
 // Address: 00549150
 // Address Range: [[00549150, 00549168]]
-// Convention: unknown
-// Signature: bool support_trisock_cpp_listenSocket_FUN_00549150(void)
+// Convention: __cdecl
+// Signature: int __cdecl support_trisock_cpp_listenSocket_FUN_00549150(_SOCKET *socket_handle)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-bool support_trisock_cpp_listenSocket_FUN_00549150(void)
+int __cdecl support_trisock_cpp_listenSocket_FUN_00549150(_SOCKET *socket_handle)
 
 {
   int iVar1;
-  uint *in_stack_00000004;
   
-  iVar1 = Ordinal_13(*in_stack_00000004,1);
-  return iVar1 == 0;
+  iVar1 = Ordinal_13(*socket_handle,1);
+  return (uint)(iVar1 == 0);
 }

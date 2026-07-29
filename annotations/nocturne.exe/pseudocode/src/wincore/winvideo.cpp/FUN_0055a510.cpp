@@ -1,14 +1,14 @@
 // Name: wincore_winvideo.cpp_FUN_0055a510
 // Address: 0055a510
 // Address Range: [[0055a510, 0055a8af]]
-// Convention: unknown
-// Signature: undefined4 wincore_winvideo_cpp_FUN_0055a510(undefined4 param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: int __cdecl wincore_winvideo_cpp_FUN_0055a510(char *directory_path,char *movie_filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint wincore_winvideo_cpp_FUN_0055a510(uint param_1,uint param_2)
+int __cdecl wincore_winvideo_cpp_FUN_0055a510(char *directory_path,char *movie_filename)
 
 {
   byte *pbVar1;
@@ -28,7 +28,7 @@ uint wincore_winvideo_cpp_FUN_0055a510(uint param_1,uint param_2)
   tagRECT local_24;
   tagRECT local_14;
   
-  _sprintf(local_74,"%s\\%s",param_1,param_2);
+  _sprintf(local_74,"%s\\%s",directory_path,movie_filename);
   file_handle = _fopen(local_74,"rb");
   if (file_handle == (_FILE *)0x0) {
     return 0;

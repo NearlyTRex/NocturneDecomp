@@ -25,7 +25,7 @@ section .text
         ;   Label: crt_stdio.c_remove_FUN_005657c0
     PUSH EDX                            ; 005657c4
     CALL FUN_0056bbf0                   ; 005657c5
-        ;   XREF to: 0056bbf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056bbf0()
+        ;   XREF to: 0056bbf0 (UNCONDITIONAL_CALL)  ; int FUN_0056bbf0(char * filename)
     ADD ESP,0x4                         ; 005657ca
     RET                                 ; 005657cd
 

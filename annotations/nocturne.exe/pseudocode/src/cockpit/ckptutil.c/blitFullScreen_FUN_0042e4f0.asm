@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitFullScreen_FUN_0042e4f0(void *param_1,void *param_2)
+; void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042e4f0(void *sprite_data,void *span_data)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

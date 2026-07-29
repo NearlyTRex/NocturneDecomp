@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 217,
+    "complexity_score": 53,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 46
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -45,9 +43,9 @@
         "0056b6cf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_iostream.cpp_istream_ctor_FUN_0056b67d",
-    "signature": "void crt_iostream_cpp_istream_ctor_FUN_0056b67d(void **param_1,byte param_2)"
+    "signature": "_istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_0056b67d(_istream *this_ptr,uint c1)"
   },
   "function_calls": [
     {
@@ -114,10 +112,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.478260869565218,
@@ -146,157 +144,44 @@
     "pcode_op_count": 103
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "_istream *"
+      },
+      {
+        "is_param": true,
+        "name": "c1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void crt_iostream_cpp_istream_ctor_FUN_0056b67d(void **param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void crt_iostream_cpp_istream_ctor_FUN_0056b67d(void **param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 1) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = &DAT_005a49b8;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_005a49b8",
       "severity": "mild",
-      "text": "*param_1 = &DAT_005a49b8;",
+      "text": "(this_ptr->_istream_core).layout_info = (WatcomInheritanceLayout *)&DAT_005a49b8;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "piVar2[-1].",
+      "line": 12,
+      "match": "piVar3[-1].",
       "severity": "mild",
-      "text": "param_1 = &piVar2[-1].__xalloc_list;",
+      "text": "this_ptr = (_istream *)&piVar3[-1].__xalloc_list;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = &piVar2[-1].__xalloc_list;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(int *)((int)param_1 + *(int *)((int)*param_1 + 4) + -4) = *(int *)((int)*param_1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)((int)param_1 + *(int *)((int)*param_1 + 4) + -4) = *(int *)((int)*param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)((int)param_1 + *(int *)((int)*param_1 + 4) + -4) = *(int *)((int)*param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)((int)param_1 + *(int *)((int)*param_1 + 4) + -4) = *(int *)((int)*param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = &PTR_crt_iostream_cpp_istream_dtor_FUN_0056b6e8_005a49c4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte ***)(*(int *)((int)*param_1 + 4) + 0x28 + (int)param_1) = &PTR_FUN_005a49cc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte ***)(*(int *)((int)*param_1 + 4) + 0x28 + (int)param_1) = &PTR_FUN_005a49cc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = (void *)0x0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar1 = (byte *)(*(int *)((int)*param_1 + 4) + 0xc + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar1 = (byte *)(*(int *)((int)*param_1 + 4) + 0xc + (int)param_1);",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight *param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -218,7 +220,7 @@ section .text
     ADD ESI,0x4                         ; 0044eb48
     INC EDI                             ; 0044eb4b
     CALL core_dstrender.cpp_memcpyMMX_FUN_00465341 ; 0044eb4c
-        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_memcpyMMX_FUN_00465341()
+        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
     MOV EAX,[0x01abacb4]                ; 0044eb51 | DAT_01abacb4
     ADD ESP,0xc                         ; 0044eb56
     CMP EDI,EAX                         ; 0044eb59

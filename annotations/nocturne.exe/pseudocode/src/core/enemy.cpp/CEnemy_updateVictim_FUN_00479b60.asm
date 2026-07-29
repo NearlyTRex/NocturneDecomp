@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *param_1,float param_2)
+; void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,float delta_time)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -140,7 +143,7 @@ section .text
     PUSH 0x3f000000                     ; 00479c73
     MOV dword ptr [EDI + 0xbc98],0x0    ; 00479c78
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00479c82
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     FLD float ptr [EDI + 0xbcac]        ; 00479c87
     FMUL ST0                            ; 00479c8d
     MOV dword ptr [ESP + 0x4c],EAX      ; 00479c8f

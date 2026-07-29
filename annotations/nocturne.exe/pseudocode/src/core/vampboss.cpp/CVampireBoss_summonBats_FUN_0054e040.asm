@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 0054e09b (CONDITIONAL_JUMP)  ; LAB_0054e09b
     PUSH EAX                            ; 0054e092
     CALL core_tvbat.cpp_FUN_0054bfc0    ; 0054e093
-        ;   XREF to: 0054bfc0 (UNCONDITIONAL_CALL)  ; undefined core_tvbat.cpp_FUN_0054bfc0()
+        ;   XREF to: 0054bfc0 (UNCONDITIONAL_CALL)  ; void core_tvbat.cpp_FUN_0054bfc0(CTVBat * this_ptr)
     ADD ESP,0x4                         ; 0054e098
     INC EBX                             ; 0054e09b
         ;   Label: LAB_0054e09b

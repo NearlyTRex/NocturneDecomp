@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(CCharacter *param_1,CDemonActor *param_2)
+; int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(CZombie *this_ptr,CDemonActor *grabber)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTentacle_0059899e

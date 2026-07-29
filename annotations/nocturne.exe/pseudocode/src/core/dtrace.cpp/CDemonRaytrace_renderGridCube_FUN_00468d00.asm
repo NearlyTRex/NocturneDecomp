@@ -359,7 +359,7 @@ section .text
     MOV EBP,0x4                         ; 0046911d
     MOV dword ptr [ESP + 0x2c],ESI      ; 00469122
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 00469126
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     MOV EAX,0x2                         ; 0046912b
     MOV EDX,0x3                         ; 00469130
     ADD ESP,0x8                         ; 00469135
@@ -374,7 +374,7 @@ section .text
     MOV dword ptr [ESP + 0x20],EBX      ; 00469153
     MOV EBX,0x1                         ; 00469157
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 0046915c
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     MOV EAX,0x7                         ; 00469161
     MOV EDX,0x3                         ; 00469166
     MOV ESI,0x2                         ; 0046916b
@@ -390,7 +390,7 @@ section .text
     MOV EDI,0x6                         ; 0046918d
     MOV EBP,0x5                         ; 00469192
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 00469197
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0046919c
     MOV EAX,ESP                         ; 0046919f
     MOV dword ptr [ESP + 0x3c],EBX      ; 004691a1
@@ -402,7 +402,7 @@ section .text
     MOV dword ptr [ESP + 0x20],EBP      ; 004691b4
     MOV ESI,0x7                         ; 004691b8
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 004691bd
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     MOV EDX,0x4                         ; 004691c2
     ADD ESP,0x8                         ; 004691c7
     MOV EAX,ESP                         ; 004691ca
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [ESP + 0x38],EBP      ; 004691dc
     MOV dword ptr [ESP + 0x20],ESI      ; 004691e0
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 004691e4
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     MOV EAX,0x2                         ; 004691e9
     ADD ESP,0x8                         ; 004691ee
     MOV EBP,0x3                         ; 004691f1
@@ -428,7 +428,7 @@ section .text
     MOV dword ptr [ESP + 0x44],EBP      ; 0046920a
     MOV dword ptr [ESP + 0x20],ECX      ; 0046920e
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 00469212
-        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0()
+        ;   XREF to: 0045eee0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00469217
     PUSH 0x0                            ; 0046921a
     MOV ESI,dword ptr [0x005ae704]      ; 0046921c | DAT_005ae704

@@ -33,7 +33,7 @@ void FUN_00462300(CDemonActor *param_1,float param_2);
 
 // Original: core_drip.cpp_FUN_00462710
 // Address: 00462710
-void FUN_00462710(int param_1);
+void __cdecl FUN_00462710(CDrip *this_ptr);
 
 // Original: core_drip.cpp_FUN_00462720
 // Address: 00462720
@@ -49,4 +49,4 @@ undefined4 FUN_00462880(void);
 
 // Original: core_drip.cpp_CDrip_dtor_FUN_00462890
 // Address: 00462890
-CDemonActor * CDrip::dtor(CDemonActor *param_1,byte param_2);
+CDrip * __cdecl CDrip::dtor(CDrip *this_ptr,uint flags);

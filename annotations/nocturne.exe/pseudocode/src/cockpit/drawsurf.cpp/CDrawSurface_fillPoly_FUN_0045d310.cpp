@@ -1,14 +1,14 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310
 // Address: 0045d310
 // Address Range: [[0045d310, 0045d6cd]]
-// Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param_1,int param_2,int *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param_1,int param_2,int *param_3)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
 {
   uint uVar1;
@@ -30,7 +30,7 @@ void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param
   int aiStack_d8 [39];
   uint local_3c;
   int aiStack_38 [4];
-  int *local_28;
+  SPoint2i *local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -38,18 +38,18 @@ void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param
   int local_14;
   
   bVar14 = 0;
-  if (2 < param_2) {
-    iVar8 = param_2 + -1;
+  if (2 < vertex_count) {
+    iVar8 = vertex_count + -1;
     local_24 = 0;
     local_20 = 0;
-    if (0 < param_2) {
-      local_28 = param_3;
+    if (0 < vertex_count) {
+      local_28 = vertices;
       piVar9 = (int *)&DAT_01b4d490;
       do {
-        iVar7 = param_3[iVar8 * 2] + param_1->x;
-        iVar3 = *local_28 + param_1->x;
-        iVar8 = param_3[iVar8 * 2 + 1] + param_1->y;
-        iVar5 = local_28[1] + param_1->y;
+        iVar7 = vertices[iVar8].x + this_ptr->x;
+        iVar3 = local_28->x + this_ptr->x;
+        iVar8 = vertices[iVar8].y + this_ptr->y;
+        iVar5 = local_28->y + this_ptr->y;
         aiStack_38[3] = iVar3;
         piVar12 = piVar9;
         if (iVar8 != iVar5) {
@@ -60,7 +60,7 @@ void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param
             iVar7 = iVar3;
             iVar8 = iVar5;
           }
-          if ((param_1->clip_top <= iVar6) && (iVar8 <= param_1->clip_bottom)) {
+          if ((this_ptr->clip_top <= iVar6) && (iVar8 <= this_ptr->clip_bottom)) {
             if (0x27 < local_20) {
               PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
               INT_01cc4804 = 0x578;
@@ -75,20 +75,20 @@ void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param
                                0x20 | (longlong)(aiStack_38[3] - iVar7) * 0x10000 & 0xffffffffU) /
                              (longlong)(iVar6 - iVar8));
             piVar12 = piVar9 + 4;
-            if (*piVar9 < param_1->clip_top) {
-              piVar9[2] = piVar9[2] + (param_1->clip_top - *piVar9) * piVar9[3];
-              *piVar9 = param_1->clip_top;
+            if (*piVar9 < this_ptr->clip_top) {
+              piVar9[2] = piVar9[2] + (this_ptr->clip_top - *piVar9) * piVar9[3];
+              *piVar9 = this_ptr->clip_top;
             }
-            if (param_1->clip_bottom < piVar9[1]) {
-              piVar9[1] = param_1->clip_bottom;
+            if (this_ptr->clip_bottom < piVar9[1]) {
+              piVar9[1] = this_ptr->clip_bottom;
             }
           }
         }
         iVar8 = local_24;
         local_24 = local_24 + 1;
-        local_28 = local_28 + 2;
+        local_28 = local_28 + 1;
         piVar9 = piVar12;
-      } while (local_24 < param_2);
+      } while (local_24 < vertex_count);
     }
     iVar8 = local_20;
     if (1 < local_20) {
@@ -162,11 +162,11 @@ void cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_0045d310(CDrawSurface *param
                 iVar6 = iVar3 + -8;
                 iVar3 = iVar3 + 8;
                 cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730
-                          (param_1,(*(int *)(&DAT_01b4d498 +
-                                            *(int *)((int)aiStack_d8 + iVar6) * 0x10) >> 0x10) -
-                                   param_1->x,local_14 - param_1->y,
+                          (this_ptr,(*(int *)(&DAT_01b4d498 +
+                                             *(int *)((int)aiStack_d8 + iVar6) * 0x10) >> 0x10) -
+                                    this_ptr->x,local_14 - this_ptr->y,
                            (*(int *)(&DAT_01b4d498 + *(int *)((int)aiStack_d8 + iVar5) * 0x10) >>
-                           0x10) - param_1->x);
+                           0x10) - this_ptr->x);
               } while (iVar3 < iVar7 * 4);
             }
             iVar3 = 0;

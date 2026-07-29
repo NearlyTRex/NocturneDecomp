@@ -1,14 +1,14 @@
 // Name: core_sound.cpp_FUN_00527e10
 // Address: 0052dd80
 // Address Range: [[0052dd80, 0052dd84]]
-// Convention: unknown
-// Signature: void core_sound_cpp_FUN_00527e10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sound_cpp_FUN_00527e10(CSound *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_sound_cpp_FUN_00527e10(void)
+void __cdecl core_sound_cpp_FUN_00527e10(CSound *this_ptr)
 
 {
   if (0 < _DAT_02dbd34c) {

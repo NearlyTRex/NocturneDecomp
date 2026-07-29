@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_drawStringMasked_FUN_00402660(byte *param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_drawStringMasked_FUN_00402660(char *text,int x_pos,int y_pos)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacterMasked_FUN_00401f30

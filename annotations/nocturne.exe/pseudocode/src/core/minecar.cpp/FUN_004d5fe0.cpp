@@ -16,6 +16,6 @@ void core_minecar_cpp_FUN_004d5fe0(void)
     return;
   }
   iVar1 = core_platfrm_cpp_FUN_004f5d90(iVar1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_minecar_cpp_FUN_004d6020_005a0784;
+  *(CDemonActor_vtable **)(iVar1 + 0x14c) = &g_CMinecarVTable;
   return;
 }

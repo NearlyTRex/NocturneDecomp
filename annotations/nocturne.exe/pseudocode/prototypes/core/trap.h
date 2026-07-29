@@ -17,11 +17,11 @@ CDemonActorType * FUN_00546810(void);
 
 // Original: core_trap.cpp_FUN_00546820
 // Address: 00546820
-int * FUN_00546820(undefined4 param_1);
+int * FUN_00546820(CDemonActor *param_1);
 
-// Original: core_trap.cpp_FUN_00546870
+// Original: core_trap.cpp_CTrap_setup_FUN_00546870
 // Address: 00546870
-void FUN_00546870(CDemonActor *param_1);
+void __cdecl CTrap::setup(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_canPickup_FUN_005468a0
 // Address: 005468a0
@@ -51,13 +51,13 @@ void CTrap::process(CDemonActor *param_1);
 // Address: 00546ab0
 int FUN_00546ab0(int param_1);
 
-// Original: core_trap.cpp_FUN_00546b50
+// Original: core_trap.cpp_CTrap_archive_FUN_00546b50
 // Address: 00546b50
-void FUN_00546b50(CDemonActor *param_1);
+void __cdecl CTrap::archive(CTrap *this_ptr);
 
-// Original: core_trap.cpp_FUN_00546b90
+// Original: core_trap.cpp_CTrap_getBoundingBox_FUN_00546b90
 // Address: 00546b90
-undefined4 * FUN_00546b90(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CTrap::getBoundingBox(CTrap *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trap.cpp_FUN_00546be0
 // Address: 00546be0

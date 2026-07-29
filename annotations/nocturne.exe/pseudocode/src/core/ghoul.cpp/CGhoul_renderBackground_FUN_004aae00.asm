@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(int param_1,undefined4 param_2)
+; void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(CEnemy *param_1,int param_2)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 004aae1c
     PUSH EAX                            ; 004aae1d
     CALL core_enemy.cpp_FUN_0047a000    ; 004aae1e
-        ;   XREF to: 0047a000 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0047a000()
+        ;   XREF to: 0047a000 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_0047a000(CEnemy * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004aae23
     POP EBX                             ; 004aae26
     RET                                 ; 004aae27

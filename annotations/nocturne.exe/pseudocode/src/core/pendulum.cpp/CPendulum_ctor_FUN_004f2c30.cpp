@@ -10,17 +10,16 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(CPendulum *thi
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   CKeyFramedModelInstance *pCVar4;
   int *piVar5;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                          ((CKeyFramedModelInstance *)(iVar2 + 0x150));
-  this_ptr_00[-1].model_ptr =
-       (CKeyFramedModel *)&PTR_core_pendulum_cpp_CPendulum_setup_FUN_004f2d40_005a1244;
+                          ((CKeyFramedModelInstance *)(pCVar2 + 1));
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CPendulumVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(this_ptr_00,"pend.kfm")
   ;
   pcVar3 = "true";

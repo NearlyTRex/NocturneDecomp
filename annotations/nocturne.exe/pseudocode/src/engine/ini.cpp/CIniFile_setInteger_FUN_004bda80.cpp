@@ -1,17 +1,17 @@
 // Name: engine_ini.cpp_CIniFile_setInteger_FUN_004bda80
 // Address: 004bda80
 // Address Range: [[004bda80, 004bdab4]]
-// Convention: unknown
-// Signature: void engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *param_1,char *param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *this_ptr,char *key,int value)
 
 #include "nocturne.h"
 
-void engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *param_1,char *param_2,uint param_3)
+void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *this_ptr,char *key,int value)
 
 {
   char local_68 [100];
   
-  _sprintf(local_68,"%d",param_3);
-  engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(param_1,param_2,local_68);
+  _sprintf(local_68,"%d",value);
+  engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(this_ptr,key,local_68);
   return;
 }

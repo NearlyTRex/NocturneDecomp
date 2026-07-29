@@ -1,14 +1,14 @@
 // Name: core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0
 // Address: 0041daa0
 // Address Range: [[0041daa0, 0041dbb7]]
-// Convention: unknown
-// Signature: void core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(float *param_1,int param_2,int *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(float *param_1,int param_2,int *param_3)
+void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 {
   int iVar1;
@@ -23,42 +23,42 @@ void core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0(float *param_1
   int local_1c;
   
   iVar5 = 1;
-  iVar6 = *param_3;
-  iVar4 = param_3[1];
-  local_20 = param_3[2];
+  iVar6 = vertices->x;
+  iVar4 = vertices->y;
+  local_20 = vertices->z;
   local_28 = iVar6;
   local_24 = iVar4;
   local_1c = local_20;
-  if (1 < param_2) {
+  if (1 < vertex_count) {
     do {
-      iVar1 = param_3[3];
+      iVar1 = vertices[1].x;
       iVar3 = iVar1;
       if ((local_28 <= iVar1) && (iVar3 = local_28, iVar6 < iVar1)) {
         iVar6 = iVar1;
       }
       local_28 = iVar3;
-      iVar1 = param_3[4];
+      iVar1 = vertices[1].y;
       iVar3 = iVar1;
       if ((local_24 <= iVar1) && (iVar3 = local_24, iVar4 < iVar1)) {
         iVar4 = iVar1;
       }
       local_24 = iVar3;
-      iVar1 = param_3[5];
+      iVar1 = vertices[1].z;
       iVar3 = iVar1;
       if ((local_20 <= iVar1) && (iVar3 = local_20, iVar4 < iVar1)) {
         local_1c = iVar1;
       }
       local_20 = iVar3;
       iVar5 = iVar5 + 1;
-      param_3 = param_3 + 3;
-    } while (iVar5 < param_2);
+      vertices = vertices + 1;
+    } while (iVar5 < vertex_count);
   }
   fVar2 = (float)_DAT_005797d5;
-  *param_1 = (float)local_28 * fVar2;
-  param_1[1] = (float)local_24 * fVar2;
-  param_1[3] = (float)iVar6 * fVar2;
-  param_1[4] = (float)iVar4 * fVar2;
-  param_1[2] = (float)local_20 * fVar2;
-  param_1[5] = (float)local_1c * fVar2;
+  (this_ptr->min).x = (float)local_28 * fVar2;
+  (this_ptr->min).y = (float)local_24 * fVar2;
+  (this_ptr->max).x = (float)iVar6 * fVar2;
+  (this_ptr->max).y = (float)iVar4 * fVar2;
+  (this_ptr->min).z = (float)local_20 * fVar2;
+  (this_ptr->max).z = (float)local_1c * fVar2;
   return;
 }

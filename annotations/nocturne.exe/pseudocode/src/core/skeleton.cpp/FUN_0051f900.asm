@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_0051f900(void *param_1)
+; CBoundingBox3D * __cdecl core_skeleton_cpp_FUN_0051f900(CBoundingBox3D *objs,uint flags)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80 at 00517c97

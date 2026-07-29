@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_dynamite_cpp_FUN_0046eda0(int param_1)
+; int __cdecl core_dynamite_cpp_FUN_0046eda0(CDynamite *this_ptr)
 ;
+; Parameters:
+; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660 at 005406a3

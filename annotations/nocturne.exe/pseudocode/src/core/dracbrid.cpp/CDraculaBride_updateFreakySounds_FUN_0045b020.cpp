@@ -79,11 +79,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
           local_68 = _DAT_01fb860c;
           local_64 = *local_24;
           local_60 = *local_28;
-          local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
           local_68 = local_18 + local_68;
-          local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0000000);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
           local_64 = local_18 + local_64;
-          local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
           local_44.x = local_68;
           local_60 = local_18 + local_60;
           local_44.y = *local_30;

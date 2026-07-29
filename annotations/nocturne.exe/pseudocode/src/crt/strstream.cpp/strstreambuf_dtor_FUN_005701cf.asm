@@ -11,7 +11,7 @@
 ;   crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad at 0056b5de
 ;
 ; Referenced Globals:
-;   undefined1* PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884 = 0056ff82
+;   strstreambuf_vtable g_StrstreambufVTable
 ;   WatcomTypeInfo g_strstreambufTypeInfo_005a4af0
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     JNZ 0x0057021f                      ; 005701d9
         ;   XREF to: 0057021f (CONDITIONAL_JUMP)  ; LAB_0057021f
     MOV DL,byte ptr [EBX + 0x3c]        ; 005701db
-    MOV dword ptr [EBX + 0x28],0x5a4884 ; 005701de | PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884
+    MOV dword ptr [EBX + 0x28],0x5a4884 ; 005701de | g_StrstreambufVTable
     TEST DL,0x2                         ; 005701e5
     JZ 0x00570205                       ; 005701e8
         ;   XREF to: 00570205 (CONDITIONAL_JUMP)  ; LAB_00570205

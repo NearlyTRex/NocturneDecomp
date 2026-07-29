@@ -24,7 +24,7 @@ section .text
     MOV EDX,dword ptr [0x02dd0f84]      ; 005458d1 | DAT_02dd0f84
     PUSH EDX                            ; 005458d7
     CALL engine_texture.cpp_FUN_00544e50 ; 005458d8
-        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00544e50()
+        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_00544e50(CTextureCache * this_ptr)
     MOV ECX,dword ptr [0x02dd0f84]      ; 005458dd | DAT_02dd0f84
     ADD ESP,0x4                         ; 005458e3
     TEST ECX,ECX                        ; 005458e6

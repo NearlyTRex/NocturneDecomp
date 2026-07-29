@@ -1,36 +1,28 @@
 // Name: core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_0051e7d0
 // Address: 0051e7d0
 // Address Range: [[0051e7d0, 0051e85a]]
-// Convention: unknown
-// Signature: CVector3f * core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(void)
+// Convention: __cdecl
+// Signature: CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CVector3f * core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(void)
+CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame)
 
 {
   float fVar1;
   CMotionList *pCVar2;
-  CDeformableModelInstance *in_stack_00000004;
-  CVector3f *in_stack_00000008;
-  int in_stack_0000000c;
-  float in_stack_00000010;
-  float in_stack_00000014;
   
-  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                     (&in_stack_00000004->motion_controller);
-  if (in_stack_00000010 < 0.0) {
-    in_stack_00000010 = 0.0;
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(motion_controller);
+  if (start_frame < 0.0) {
+    start_frame = 0.0;
   }
-  fVar1 = (float)pCVar2->motions[in_stack_0000000c].frame_count;
-  if (fVar1 < in_stack_00000014) {
-    in_stack_00000014 = fVar1;
+  fVar1 = (float)pCVar2->motions[motion_index].frame_count;
+  if (fVar1 < end_frame) {
+    end_frame = fVar1;
   }
-  fVar1 = (float)pCVar2->motions[in_stack_0000000c].frame_start;
+  fVar1 = (float)pCVar2->motions[motion_index].frame_start;
   core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590
-            (in_stack_00000004,in_stack_00000008,in_stack_00000010 + fVar1,in_stack_00000014 + fVar1
-            );
-  return in_stack_00000008;
+            ((CDeformableModelInstance *)motion_controller,(CVector3f *)deformable_model,
+             start_frame + fVar1,end_frame + fVar1);
+  return deformable_model;
 }

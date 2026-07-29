@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060(int param_1)
+; void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060(CDemonGlobe *this_ptr)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48

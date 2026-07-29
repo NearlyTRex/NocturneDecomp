@@ -15,8 +15,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect 
     return;
   }
   core_fire_cpp_CLaserBeam_init_FUN_004858f0
-            (_DAT_01c5c700 * 0x40 + 0x1c5c704,origin,hit_position,beam_width,0,0,red,green,blue,
-             0.02f,cone_angle);
+            ((CLaserBeam *)(_DAT_01c5c700 * 0x40 + 0x1c5c704),origin,hit_position,beam_width,0.0,
+             (CVector3f *)0x0,red,green,blue,0.02f,cone_angle);
   _DAT_01c5c700 = _DAT_01c5c700 + 1;
   return;
 }

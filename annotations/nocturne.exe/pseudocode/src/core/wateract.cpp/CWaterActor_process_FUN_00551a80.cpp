@@ -1,69 +1,68 @@
 // Name: core_wateract.cpp_CWaterActor_process_FUN_00551a80
 // Address: 00551a80
 // Address Range: [[00551a80, 00551bf6]]
-// Convention: unknown
-// Signature: void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float param_2)
+void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *this_ptr,float delta_time)
 
 {
   float fVar1;
-  CEventList *this_ptr;
+  CEventList *this_ptr_00;
   int iVar2;
   int iVar3;
   double dVar4;
   
-  iVar2 = *(int *)((int)param_1 + 0x2b224);
+  iVar2 = this_ptr->texture_anim_accum;
   dVar4 = round
-                    ((double)(param_2 * (float)65536 * (float)8));
+                    ((double)(delta_time * (float)65536 * (float)8));
   iVar2 = iVar2 + (int)ROUND(dVar4);
-  *(int *)((int)param_1 + 0x2b224) = iVar2;
+  this_ptr->texture_anim_accum = iVar2;
   if (0x10000 < iVar2) {
-    iVar3 = *(int *)((int)param_1 + 0x2b220) + 1;
-    *(int *)((int)param_1 + 0x2b224) = iVar2 + -0x10000;
-    *(int *)((int)param_1 + 0x2b220) = iVar3;
+    iVar3 = this_ptr->texture_frame + 1;
+    this_ptr->texture_anim_accum = iVar2 + -0x10000;
+    this_ptr->texture_frame = iVar3;
     if (0xf < iVar3) {
-      *(uint *)((int)param_1 + 0x2b220) = 0;
+      this_ptr->texture_frame = 0;
     }
   }
-  this_ptr = 0x01C03A10;
-  *(float *)((int)param_1 + 0x7f94) = 1.0 / param_1;
-  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (this_ptr,(char *)((int)param_1 + 0x1ac));
+  this_ptr_00 = 0x01C03A10;
+  this_ptr->inv_delta_time = 1.0 / (float)this_ptr;
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(this_ptr_00,this_ptr->move_event)
+  ;
   if (iVar2 != 0) {
-    *(uint *)((int)param_1 + 0x278) = 1;
+    this_ptr->state = 1;
   }
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,(char *)((int)param_1 + 0x210));
+                    (0x01C03A10,this_ptr->move_down_event);
   if (iVar2 != 0) {
-    *(uint *)((int)param_1 + 0x278) = 3;
+    this_ptr->state = 3;
   }
-  switch(*(uint *)((int)param_1 + 0x278)) {
+  switch(this_ptr->state) {
   case 1:
-    fVar1 = param_1 / *(float *)((int)param_1 + 0x164) + *(float *)((int)param_1 + 0x274);
-    *(float *)((int)param_1 + 0x274) = fVar1;
+    fVar1 = (float)this_ptr / this_ptr->time_to_move + this_ptr->param;
+    this_ptr->param = fVar1;
     if (fVar1 <= 1.0) break;
-    *(uint *)((int)param_1 + 0x278) = 2;
+    this_ptr->state = 2;
   case 2:
-    *(uint *)((int)param_1 + 0x274) = 0x3f800000;
+    this_ptr->param = 1.0;
     break;
   case 3:
-    fVar1 = *(float *)((int)param_1 + 0x274) - param_1 / *(float *)((int)param_1 + 0x168);
-    *(float *)((int)param_1 + 0x274) = fVar1;
+    fVar1 = this_ptr->param - (float)this_ptr / this_ptr->time_to_move_down;
+    this_ptr->param = fVar1;
     if (0.0 <= fVar1) break;
-    *(uint *)((int)param_1 + 0x278) = 0;
+    this_ptr->state = 0;
   case 0:
-    *(uint *)((int)param_1 + 0x274) = 0;
+    this_ptr->param = 0.0;
     break;
   default:
     PTR_01cc4800 = "..\\core\\wateract.cpp";
     INT_01cc4804 = 0x1a5;
     core_main_c_FUN_004c8440("CWaterActor::process - Bad state");
   }
-  *(float *)((int)param_1 + 0x24) =
-       *(float *)((int)param_1 + 0x160) * *(float *)((int)param_1 + 0x274) +
-       *(float *)((int)param_1 + 0x2b228);
+  (this_ptr->base).location.position.y = this_ptr->height_delta * this_ptr->param + this_ptr->base_y
+  ;
   return;
 }

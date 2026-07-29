@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004cc040(void *param_1)
+; SGem * __cdecl core_manpuz_cpp_FUN_004cc040(SGem *objs,uint flags)
 ;
+; Parameters:
+; SGem *           Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20 at 004cbe45

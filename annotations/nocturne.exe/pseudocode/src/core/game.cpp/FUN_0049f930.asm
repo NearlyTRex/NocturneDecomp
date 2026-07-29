@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_0049f930(CGame *param_1)
+; void __cdecl core_game_cpp_FUN_0049f930(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de0a
@@ -651,7 +653,7 @@ section .text
         ;   Label: LAB_0049ff88
     PUSH EBX                            ; 0049ff89
     CALL core_game.cpp_FUN_004a3b90     ; 0049ff8a
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a3b90()
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3b90(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 0049ff8f
     JMP 0x0049fb5a                      ; 0049ff92
         ;   XREF to: 0049fb5a (UNCONDITIONAL_JUMP)  ; LAB_0049fb5a
@@ -659,7 +661,7 @@ section .text
         ;   Label: LAB_0049ff97
     PUSH EBX                            ; 0049ff98
     CALL core_game.cpp_FUN_004a3b90     ; 0049ff99
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a3b90()
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3b90(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 0049ff9e
     JMP 0x0049fb7b                      ; 0049ffa1
         ;   XREF to: 0049fb7b (UNCONDITIONAL_JUMP)  ; LAB_0049fb7b
@@ -667,7 +669,7 @@ section .text
         ;   Label: LAB_0049ffa6
     PUSH EBX                            ; 0049ffab
     CALL core_game.cpp_FUN_004a3b90     ; 0049ffac
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a3b90()
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3b90(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 0049ffb1
     PUSH 0x40000000                     ; 0049ffb4
     PUSH 0x582a7d                       ; 0049ffb9 | = "Quick Save"

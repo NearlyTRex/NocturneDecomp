@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -174,7 +174,7 @@
     {
       "addr": "0040f7d0",
       "from_addr": "0040f7fe",
-      "name": "core_anvil.cpp_FUN_0040f7d0",
+      "name": "core_anvil.cpp_CAnvil_archive_FUN_0040f7d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -300,7 +300,7 @@
     {
       "addr": "00481e20",
       "from_addr": "00481e5b",
-      "name": "core_filmreel.cpp_FUN_00481e20",
+      "name": "core_filmreel.cpp_CFilmReel_archive_FUN_00481e20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -312,7 +312,7 @@
     {
       "addr": "0048e830",
       "from_addr": "0048e886",
-      "name": "core_flamecan.cpp_FUN_0048e830",
+      "name": "core_flamecan.cpp_CFlameCan_archive_FUN_0048e830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -342,7 +342,7 @@
     {
       "addr": "004b9b50",
       "from_addr": "004b9b6c",
-      "name": "core_hpriest.cpp_FUN_004b9b50",
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004b9b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -620,7 +620,7 @@
       {
         "call_addr": "0040f7fe",
         "call_type": "direct",
-        "caller": "core_anvil.cpp_FUN_0040f7d0",
+        "caller": "core_anvil.cpp_CAnvil_archive_FUN_0040f7d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -778,7 +778,7 @@
       "line": 24,
       "match": "DAT_00763e84",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%[^\\\"]\",string_buffer);",
+      "text": "iVar1 = _fscanf(DAT_00763e84,\"%[^\\\"]\");",
       "type": "undefined_data"
     },
     {

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00591036
 ;   undefined4 DAT_005a1aec
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1af4 = 00553f10
+;   CWeapon_full_vtable g_CShotgunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -31,7 +31,7 @@ section .text
     MOV EBX,EAX                         ; 00515d33
     ADD EAX,0x150                       ; 00515d35
     PUSH EAX                            ; 00515d3a
-    MOV dword ptr [EAX + -0x4],0x5a1af4 ; 00515d3b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1af4
+    MOV dword ptr [EAX + -0x4],0x5a1af4 ; 00515d3b | g_CShotgunVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00515d42
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x570],0x41200000 ; 00515d47

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 352,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
-    "suspect_count": 29,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_truncation",
-      "stack_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 175
@@ -145,9 +143,9 @@
         "004ee8a5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_ncursfx.cpp_CMouse_render_FUN_004ee740",
-    "signature": "void engine_ncursfx_cpp_CMouse_render_FUN_004ee740(void)"
+    "signature": "void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_004ee740(CMouse *this_ptr)"
   },
   "function_calls": [
     {
@@ -185,9 +183,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -225,50 +223,20 @@
     "pcode_op_count": 975
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "CMouse_render_FUN_004ee740.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 46,
-          "line": 20,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 48,
-          "line": 28,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 48,
-          "line": 39,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 19,
-          "message": "Uninitialized variable: in_stack_00000004",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMouse *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -278,262 +246,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CAlphaBitmap *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004[0x1e].opa == (char *)0x1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "this_ptr = in_stack_00000004 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "this_ptr = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004[0x1e].opa == (char *)0x2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "this_ptr = in_stack_00000004 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004[0x1e].opa != (char *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004[0x1e].opa != (char *)0x2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(in_stack_00000004 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004[0x1e].raw = in_stack_00000004[0x1e].raw + _DAT_01bd1d80 * 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004[0x1e].raw = in_stack_00000004[0x1e].raw + _DAT_01bd1d80 * 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004[0x1e].opa == (char *)0x2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (iVar1 * 0x10000 <= (int)in_stack_00000004[0x1e].raw) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004[0x1e].opa = (char *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004[0x1e].raw = (char *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Pointer value `in_stack_00000004[0x1e].raw` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
-      "match": "(int)in_stack_00000004[0x1e].raw",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 15,
-      "match": "(int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `in_stack_00000004[0x1e].raw` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
-      "match": "(int)in_stack_00000004[0x1e].raw",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
-      "match": "(int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `in_stack_00000004[0x1e].raw` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(int)in_stack_00000004[0x1e].raw",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
-      "match": "(int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "severity": "moderate",
-      "text": "((int)(in_stack_00000004[0x1e].raw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0)))",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `in_stack_00000004[0x1e].raw` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
-      "match": "(int)in_stack_00000004[0x1e].raw",
-      "severity": "moderate",
-      "text": "if (iVar1 * 0x10000 <= (int)in_stack_00000004[0x1e].raw) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 20,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 28,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 39,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = (int)in_stack_00000004[0x1e].raw >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000004",
-      "line": 19,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_00000004[0x1e].opa == (char *)0x1) {",
-      "type": "static_uninitvar"
     }
   ]
 }

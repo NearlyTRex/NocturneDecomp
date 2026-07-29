@@ -123,7 +123,7 @@ section .text
     PUSH EBX                            ; 004238a7
     PUSH EBP                            ; 004238a8
     CALL core_bugs.cpp_FUN_004219f0     ; 004238a9
-        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004219f0()
+        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004219f0(CBugs * this_ptr, int tri_count, SInputFace * triangles)
     ADD ESP,0xc                         ; 004238ae
     MOV EDI,dword ptr [EBP + 0x12998]   ; 004238b1
     PUSH EDI                            ; 004238b7

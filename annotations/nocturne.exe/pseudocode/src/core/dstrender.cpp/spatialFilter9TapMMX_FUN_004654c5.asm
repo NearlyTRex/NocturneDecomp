@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(undefined4 *param_1,undefined4 *param_2,int param_3)
+; void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(uint *output_buffer,uint *input_buffer,int pixel_count)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   output_buffer
+; uint *           Stack[0x8]:4   input_buffer
+; int              Stack[0xc]:4   pixel_count
 ;
 ; *****************************************************************************
 

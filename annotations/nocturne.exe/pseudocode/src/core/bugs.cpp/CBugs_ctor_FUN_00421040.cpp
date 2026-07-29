@@ -22,8 +22,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr)
   this_ptr_00 = (CKeyFramedModelInstance *)__arrinit
                           ((void *)((int)pvVar3 + 0x6404),4,
                            &g_CKeyFramedModelInstanceTypeInfo_0059b030);
-  this_ptr_00[-0xc2].part_visibility_flags[5] =
-       (int)&PTR_core_bugs_cpp_CBugs_setup_FUN_004211e0_0059aec4;
+  this_ptr_00[-0xc2].part_visibility_flags[5] = (int)&g_CBugsVTable;
   this_ptr_00[-0xffffffff00000044].model_name[0x6c] = '\0';
   this_ptr_00[-0xffffffff00000044].model_name[0x6d] = '\0';
   this_ptr_00[-0xffffffff00000044].model_name[0x6e] = '\0';
@@ -41,7 +40,8 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (this_ptr_00 + 2,"mroach.kfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (this_ptr_00[-0xc2].part_visibility_flags + 6,"guul.dfm");
+            ((CDeformableModelInstance *)(this_ptr_00[-0xc2].part_visibility_flags + 6),
+             "guul.dfm");
   this_ptr_00[5].model_name[0x4c] = '\0';
   this_ptr_00[5].model_name[0x4d] = '\0';
   this_ptr_00[5].model_name[0x4e] = '\0';

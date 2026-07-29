@@ -1,22 +1,17 @@
 // Name: core_game.cpp_pollKeyStateOnChange_FUN_0049ecc0
 // Address: 0049ecc0
 // Address Range: [[0049ecc0, 0049ece1]]
-// Convention: unknown
-// Signature: void core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(int key_index,int *output_state)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(void)
+void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(int key_index,int *output_state)
 
 {
-  int in_stack_00000004;
-  uint *in_stack_00000008;
-  
-  if ((&DAT_01c781c0)[in_stack_00000004] == (&DAT_01c02598)[in_stack_00000004]) {
+  if ((&DAT_01c781c0)[key_index] == (&DAT_01c02598)[key_index]) {
     return;
   }
-  *in_stack_00000008 = (uint)(byte)(&DAT_01c02598)[in_stack_00000004];
+  *output_state = (uint)(byte)(&DAT_01c02598)[key_index];
   return;
 }

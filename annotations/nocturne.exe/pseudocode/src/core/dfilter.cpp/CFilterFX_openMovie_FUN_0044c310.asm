@@ -91,7 +91,7 @@ section .text
     PUSH 0x57c0bb                       ; 0044c38a | = "%d\n"
     PUSH EDI                            ; 0044c38f
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0044c390
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0044c395
     PUSH EDI                            ; 0044c398
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0044c399

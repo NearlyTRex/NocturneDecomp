@@ -16,10 +16,10 @@
 ;   core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 at 004dda30
 ;   core_scat.cpp_CScat_dtor_FUN_004fde30 at 004fde3f
 ;   core_stranger.cpp_CStranger_dtor_FUN_00540a90 at 00540a9f
-;   core_svetlana.cpp_FUN_00543050 at 00543086
+;   core_svetlana.cpp_CSvetlana_dtor_FUN_00543050 at 00543086
 ;
 ; Referenced Globals:
-;   void* PTR_core_hero.cpp_FUN_004b48d0_0059eb34 = 004b48d0
+;   CHero_full_vtable g_CHeroVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
@@ -38,7 +38,7 @@ section .text
     PUSH EBX                            ; 004b4800
         ;   Label: core_hero.cpp_CHero_dtor_FUN_004b4800
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b4801
-    MOV dword ptr [EDX + 0x14c],0x59eb34 ; 004b4805 | PTR_core_hero.cpp_FUN_004b48d0_0059eb34
+    MOV dword ptr [EDX + 0x14c],0x59eb34 ; 004b4805 | g_CHeroVTable
     XOR EAX,EAX                         ; 004b480f
     CMP EDX,dword ptr [EAX + 0x1cae0d8] ; 004b4811
         ;   Label: LAB_004b4811
@@ -53,7 +53,7 @@ section .text
     ADD EDX,0x1f5a0                     ; 004b4827
     PUSH EDX                            ; 004b482d
     CALL core_inv.cpp_FUN_004bee60      ; 004b482e
-        ;   XREF to: 004bee60 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004bee60()
+        ;   XREF to: 004bee60 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_FUN_004bee60(CInventory * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b4833
     PUSH 0x0                            ; 004b4836
     SUB EAX,0x138e0                     ; 004b4838

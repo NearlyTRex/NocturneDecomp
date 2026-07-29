@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(void)
+; int __cdecl engine_font_cpp_CBitFont_getLineSpacing_FUN_00493390(CBitFont *this_ptr,char character)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char             Stack[0x8]:1   character
 ;
 ; *****************************************************************************
 

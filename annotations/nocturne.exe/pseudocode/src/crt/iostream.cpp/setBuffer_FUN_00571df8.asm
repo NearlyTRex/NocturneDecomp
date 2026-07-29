@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00571e33
     PUSH EDX                            ; 00571e36
     CALL FUN_00571ef0                   ; 00571e37
-        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; undefined FUN_00571ef0()
+        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void FUN_00571ef0(void * buffer)
     ADD ESP,0x4                         ; 00571e3c
     JMP 0x00571e03                      ; 00571e3f
         ;   XREF to: 00571e03 (UNCONDITIONAL_JUMP)  ; LAB_00571e03

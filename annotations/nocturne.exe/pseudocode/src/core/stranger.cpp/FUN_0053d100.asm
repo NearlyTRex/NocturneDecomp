@@ -101,7 +101,7 @@ section .text
         ;   Label: LAB_0053d139
     PUSH EBX                            ; 0053d13b
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053d13c
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053d141
     ADD ESP,0x8                         ; 0053d144
     FLD float ptr [EBP + 0x7a]          ; 0053d147
@@ -168,7 +168,7 @@ section .text
     PUSH EAX                            ; 0053d1e8
     PUSH EBX                            ; 0053d1e9
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0053d1ea
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0053d1ef
     LEA EAX,[EBP + 0x12]                ; 0053d1f2
     PUSH EAX                            ; 0053d1f5
@@ -176,7 +176,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0053d1f7 | DAT_005be368
     PUSH EDX                            ; 0053d1fd | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0 ; 0053d1fe
-        ;   XREF to: 0050fdd0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0()
+        ;   XREF to: 0050fdd0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * direction)
     FLDZ                                ; 0053d203
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053d205
     ADD ESP,0xc                         ; 0053d208
@@ -248,7 +248,7 @@ section .text
         ;   Label: LAB_0053d2db
     PUSH EBX                            ; 0053d2dc
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053d2dd
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053d2e2
     ADD ESP,0x8                         ; 0053d2e5
     FLD float ptr [EBP + 0x7a]          ; 0053d2e8
@@ -345,7 +345,7 @@ section .text
     MOV dword ptr [EBP + 0x2a],ECX      ; 0053d412
     MOV dword ptr [EBP + 0x2e],ESI      ; 0053d415
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053d418
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x02dc9f50]      ; 0053d41d | DAT_02dc9f50
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053d423
     SUB EAX,ESI                         ; 0053d42a
@@ -456,7 +456,7 @@ section .text
     MOV dword ptr [EBP + -0xe],EDX      ; 0053d534
     MOV dword ptr [EBP + -0xa],ECX      ; 0053d537
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053d53a
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x02dc9f50]      ; 0053d53f | DAT_02dc9f50
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053d545
     SUB EAX,ESI                         ; 0053d54c
@@ -563,7 +563,7 @@ section .text
     MOV dword ptr [EBP + 0x3a],EDX      ; 0053d669
     MOV dword ptr [EBP + 0x3e],ECX      ; 0053d66c
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0053d66f
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     MOV ESI,dword ptr [0x02dc9f88]      ; 0053d674 | DAT_02dc9f88
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053d67a
     SUB EAX,ESI                         ; 0053d681

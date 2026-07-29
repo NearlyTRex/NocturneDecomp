@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
+; void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004bd910(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; char *           Stack[0xc]:4   output_buffer
+; int              Stack[0x10]:4   buffer_size
 ;
 ; XREF[4]:
 ;   core_inivar.cpp_FUN_004bdb80 at 004bdc5b

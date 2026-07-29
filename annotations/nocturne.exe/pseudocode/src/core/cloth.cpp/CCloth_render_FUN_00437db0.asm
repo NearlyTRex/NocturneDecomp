@@ -69,7 +69,7 @@ section .text
     MOV ESI,dword ptr [0x005be368]      ; 00437dcd | DAT_005be368
     PUSH ESI                            ; 00437dd3 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 00437dd4
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 00437dd9
     PUSH 0x1                            ; 00437ddc
     MOV EDI,dword ptr [0x005ae704]      ; 00437dde | DAT_005ae704
@@ -178,7 +178,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 00437f1a | DAT_005be368
     PUSH EBX                            ; 00437f20 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00437f21
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_00437f21
     ADD ESP,0x10                        ; 00437f26
     MOV EAX,dword ptr [EBP + 0x110]     ; 00437f29
@@ -226,7 +226,7 @@ section .text
         ;   Label: LAB_00437fa3
     PUSH EBX                            ; 00437fa9 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00437faa
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_00437faa
     ADD ESP,0x10                        ; 00437faf
     PUSH 0x0                            ; 00437fb2
@@ -350,7 +350,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 004380f1 | DAT_005be368
     PUSH EDI                            ; 004380f7 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 004380f8
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
         ;   Label: LAB_004380f8
     ADD ESP,0x10                        ; 004380fd
     MOV EAX,dword ptr [EBP + 0x110]     ; 00438100

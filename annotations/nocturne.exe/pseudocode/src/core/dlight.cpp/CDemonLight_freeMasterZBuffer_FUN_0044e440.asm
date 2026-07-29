@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dlight.cpp_FUN_0044e2c0 at 0044e2d1

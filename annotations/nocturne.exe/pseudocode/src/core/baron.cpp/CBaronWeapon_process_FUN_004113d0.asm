@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaronWeapon_process_FUN_004113d0(CWeapon *param_1,float param_2)
+; void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_004113d0(CBaronWeapon *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530
@@ -16,7 +19,7 @@ section .text
         ;   Label: core_baron.cpp_CBaronWeapon_process_FUN_004113d0
     PUSH EDX                            ; 004113d4
     CALL core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 ; 004113d5
-        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530()
+        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon * this_ptr)
     ADD ESP,0x4                         ; 004113da
     MOV ECX,dword ptr [ESP + 0x4]       ; 004113dd
     PUSH dword ptr [ESP + 0x8]          ; 004113e1

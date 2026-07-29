@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180
 // Address: 00443180
 // Address Range: [[00443180, 0044324e]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(void)
+void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CDemonCamera *this_ptr)
 
 {
   int iVar1;

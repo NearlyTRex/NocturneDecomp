@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220(int param_1,undefined4 param_2,undefined4 param_3)
+; CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor *this_ptr,CVector3f *output_vector,CVector3f *input_vector)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_vector
+; CVector3f *      Stack[0xc]:4   input_vector
 ;
 ; XREF[18]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a83a
@@ -34,7 +38,7 @@ section .text
     ADD EAX,0x3c                        ; 0040a22f
     PUSH EAX                            ; 0040a232
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 0040a233
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040a238
     MOV EAX,EBX                         ; 0040a23b
     POP EBX                             ; 0040a23d

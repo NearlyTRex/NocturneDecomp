@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(CDemonRenderer *param_1,STrianglePackedIndices *param_2,int param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(CDemonRenderer *this_ptr,SInputFace *face,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SInputFace *     Stack[0x8]:4   face
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 at 00461e74

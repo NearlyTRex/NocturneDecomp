@@ -1,12 +1,12 @@
 // Name: core_dtri.cpp_buildClipTriangleFan_FUN_0046e960
 // Address: 0046e960
 // Address Range: [[0046e960, 0046e9c0]]
-// Convention: unknown
-// Signature: undefined4 core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int param_1)
+// Convention: __cdecl
+// Signature: CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int flags)
 
 #include "nocturne.h"
 
-uint core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int param_1)
+CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int flags)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ uint core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int param_1)
   CVector3f *vertex2;
   CVector3f *vertex3;
   
-  iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0046e950(param_1);
+  iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0046e950(flags);
   iVar2 = 0;
   if (0 < iVar1) {
     this_ptr = (CDemonTriangle *)0x1bc9ec8;
@@ -30,5 +30,5 @@ uint core_dtri_cpp_buildClipTriangleFan_FUN_0046e960(int param_1)
       vertex3 = vertex3 + 1;
     } while (iVar2 < iVar1);
   }
-  return 0x1bc9ec8;
+  return (CDemonTriangle *)0x1bc9ec8;
 }

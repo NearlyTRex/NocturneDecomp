@@ -90,15 +90,15 @@ section .text
     MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | DAT_005bed68
     PUSH EDI                            ; 004c84b0
     CALL core_sound.cpp_FUN_00527e10    ; 004c84b1
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_00527e10()
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c84b6
     CALL engine_2d.c_FUN_004012a0       ; 004c84b9
-        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004012a0()
+        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004012a0()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     PUSH 0x1cc3700                      ; 004c84c3
     CALL wincore_winrun.cpp_FUN_00559500 ; 004c84c8
-        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559500()
+        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00559500(char * message)
     ADD ESP,0x4                         ; 004c84cd
     ADD ESP,0x4                         ; 004c84d0
     POP EDI                             ; 004c84d3

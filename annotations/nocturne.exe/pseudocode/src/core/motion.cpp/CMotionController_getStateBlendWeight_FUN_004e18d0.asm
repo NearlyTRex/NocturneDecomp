@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(int *param_1,int param_2)
+; float __cdecl core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController *this_ptr,int desired_state_index)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   desired_state_index
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10

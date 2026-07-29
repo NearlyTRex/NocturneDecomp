@@ -1,18 +1,18 @@
 // Name: core_bugs.cpp_swapIntegers_FUN_00423d40
 // Address: 00423d40
 // Address Range: [[00423d40, 00423d54]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_swapIntegers_FUN_00423d40(undefined4 *param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: int * __cdecl core_bugs_cpp_swapIntegers_FUN_00423d40(int *a,int *b)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_swapIntegers_FUN_00423d40(uint *param_1,uint *param_2)
+int * __cdecl core_bugs_cpp_swapIntegers_FUN_00423d40(int *a,int *b)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  uVar1 = *param_1;
-  *param_1 = *param_2;
-  *param_2 = uVar1;
-  return;
+  iVar1 = *a;
+  *a = *b;
+  *b = iVar1;
+  return b;
 }

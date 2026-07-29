@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(int param_1,int param_2)
+; int __watcallStack crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(strstreambuf *this_ptr,int character)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   character
 ;
 ; *****************************************************************************
 

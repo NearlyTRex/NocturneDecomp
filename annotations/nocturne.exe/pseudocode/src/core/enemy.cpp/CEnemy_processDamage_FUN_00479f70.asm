@@ -10,7 +10,7 @@
 ; XREF[24]:
 ;   core_armour.cpp_FUN_0040fbc0 at 0040fbef
 ;   core_batcreat.cpp_FUN_00413040 at 00413157
-;   core_batman.cpp_FUN_00414930 at 00414a47
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414a47
 ;   core_beast.cpp_FUN_004151b0 at 004151c1
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041596a
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f89

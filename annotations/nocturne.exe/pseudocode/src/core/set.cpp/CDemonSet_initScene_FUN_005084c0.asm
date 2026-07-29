@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *param_1)
+; void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -88,7 +90,7 @@ section .text
     PUSH 0x1fb8508                      ; 00508524
     MOV EDI,ESI                         ; 00508529
     CALL core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0 ; 0050852b
-        ;   XREF to: 004474e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0()
+        ;   XREF to: 004474e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera * this_ptr, SFog * fog_config)
     LEA EAX,[EBX + 0x15a86c]            ; 00508530
     MOV EBP,dword ptr [ESI]             ; 00508536
     ADD ESI,0xc                         ; 00508538
@@ -211,7 +213,7 @@ section .text
     MOV dword ptr [0x01fba480],ECX      ; 0050868b | DAT_01fba480
     MOV dword ptr [EBX + 0x15aac4],ECX  ; 00508691
     CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0 ; 00508697
-        ;   XREF to: 005141f0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0()
+        ;   XREF to: 005141f0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 0050869c
     ADD ESP,0x4                         ; 0050869e
     TEST EAX,EAX                        ; 005086a1

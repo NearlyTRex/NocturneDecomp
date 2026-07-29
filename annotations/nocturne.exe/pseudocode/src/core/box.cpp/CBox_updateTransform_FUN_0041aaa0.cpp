@@ -20,10 +20,10 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(CBox *this_ptr,CVect
   float fVar9;
   float fVar10;
   float fVar11;
-  float *pfVar12;
+  CVector3f *pCVar12;
   CVector3f *pCVar13;
   int iVar14;
-  byte local_2c [12];
+  CVector3f local_2c;
   float local_20;
   float local_1c;
   float local_18;
@@ -82,11 +82,11 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(CBox *this_ptr,CVect
     local_14 = this_ptr->scrape_points;
     pCVar13 = &this_ptr->scrape_points[0].transformed_position;
     do {
-      pfVar12 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                   (&this_ptr->rotation_matrix,local_2c,local_14 + iVar14);
-      local_20 = (this_ptr->position).x + *pfVar12;
-      local_1c = (this_ptr->position).y + pfVar12[1];
-      local_18 = (this_ptr->position).z + pfVar12[2];
+      pCVar12 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                          (&this_ptr->rotation_matrix,&local_2c,&local_14[iVar14].local_position);
+      local_20 = (this_ptr->position).x + pCVar12->x;
+      local_1c = (this_ptr->position).y + pCVar12->y;
+      local_18 = (this_ptr->position).z + pCVar12->z;
       if (pCVar13 != (CVector3f *)&local_20) {
         pCVar13->x = local_20;
         pCVar13->y = local_1c;

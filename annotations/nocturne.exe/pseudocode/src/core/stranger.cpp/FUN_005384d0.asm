@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_005384d0(CStranger *param_1)
+; void __cdecl core_stranger_cpp_FUN_005384d0(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1f54]:4  local_1f54
 ; undefined8       Stack[-0x1f50]:8  local_1f50
@@ -180,7 +182,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 005384e4
     PUSH EAX                            ; 005384ea
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 005384eb
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x1f40],EAX    ; 005384f0
     MOV EDX,0x3e19999a                  ; 005384f7
     FLD float ptr [ESP + 0x1f40]        ; 005384fc
@@ -230,7 +232,7 @@ section .text
     PUSH EAX                            ; 0053857c
     PUSH EBX                            ; 0053857d
     CALL core_stranger.cpp_FUN_005396d0 ; 0053857e
-        ;   XREF to: 005396d0 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_FUN_005396d0()
+        ;   XREF to: 005396d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_005396d0(CStranger * this_ptr, SPose * out_pose)
     ADD ESP,0x8                         ; 00538583
     XOR EAX,EAX                         ; 00538586
     PUSH 0x51b650                       ; 00538588
@@ -294,7 +296,7 @@ section .text
     PUSH EAX                            ; 0053866c
     FSTP float ptr [ESP + 0x1dd0]       ; 0053866d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00538674
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00538679
     MOV EAX,dword ptr [EDI + 0x8]       ; 0053867c
     MOV dword ptr [ESP + 0x50],EAX      ; 0053867f
@@ -519,7 +521,7 @@ section .text
     LEA EAX,[ESP + 0x1e0c]              ; 00538978
     PUSH EAX                            ; 0053897f
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00538980
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00538985
     MOV EAX,dword ptr [ESI + 0x8]       ; 00538988
     MOV dword ptr [ESP + 0x54],EAX      ; 0053898b
@@ -677,7 +679,7 @@ section .text
     PUSH EAX                            ; 00538bd3
     FSTP float ptr [ESP + 0x1ef0]       ; 00538bd4
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00538bdb
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00538be0
     MOV EAX,dword ptr [EDI + 0x8]       ; 00538be3
     MOV dword ptr [ESP + 0x68],EAX      ; 00538be6
@@ -822,7 +824,7 @@ section .text
     PUSH EAX                            ; 00538dd2
     LEA ESI,[EBX + 0x1fa20]             ; 00538dd3
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00538dd9
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 00538dde
     FADD float ptr [EAX]                ; 00538de0
     ADD ESP,0xc                         ; 00538de2
@@ -869,7 +871,7 @@ section .text
     PUSH EAX                            ; 00538e8e
     FSTP float ptr [ESP + 0x1e6c]       ; 00538e8f
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00538e96
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00538e9b
     MOV EAX,dword ptr [ESI + 0x8]       ; 00538e9e
     MOV dword ptr [ESP + 0x40],EAX      ; 00538ea1
@@ -1470,7 +1472,7 @@ section .text
     PUSH ESI                            ; 00539679
     MOV EDI,EAX                         ; 0053967a
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 0053967c
-        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
+        ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(CMotionController * this_ptr, int motion_index, float marker_position)
     MOV dword ptr [ESP + 0x1f44],EAX    ; 00539681
     FLD float ptr [ESP + 0x1f44]        ; 00539688
     ADD ESP,0xc                         ; 0053968f
@@ -1483,7 +1485,7 @@ section .text
     PUSH EDI                            ; 005396b1
     PUSH ESI                            ; 005396b2
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 005396b3
-        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
+        ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 005396b8
     MOV ESP,EBP                         ; 005396bb
     POP EBP                             ; 005396bd

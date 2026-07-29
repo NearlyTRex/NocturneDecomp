@@ -14,8 +14,7 @@ CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_00462940(CDrone *this_ptr)
   CDrone *pCVar3;
   
   pCVar3 = (CDrone *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_drone_cpp_CDrone_setup_FUN_004629b0_0059c714;
+  (pCVar3->base).base.base.vtable._ub = &g_CDroneVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).base.model,"drone.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.75;

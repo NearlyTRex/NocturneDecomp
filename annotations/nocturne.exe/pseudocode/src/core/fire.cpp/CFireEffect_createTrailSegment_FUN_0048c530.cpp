@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_0048c530(CFireEffe
 
 {
   core_fire_cpp_CTrail_activate_FUN_004892c0
-            (_DAT_01c676c8 * 0x24 + 0x1c676cc,position,size,alpha,lifetime,texture_ptr);
+            ((CTrail *)(_DAT_01c676c8 * 0x24 + 0x1c676cc),position,size,alpha,lifetime,texture_ptr);
   _DAT_01c676c8 = _DAT_01c676c8 + 1;
   if (_DAT_01c676c8 < 100) {
     return;

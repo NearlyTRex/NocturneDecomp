@@ -16,7 +16,7 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
   float *pfVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  byte local_120 [48];
+  CMatrix3x4f local_120;
   CMatrix3x4f local_f0;
   float local_c0 [12];
   float local_90;
@@ -27,9 +27,7 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
   float local_7c;
   CVector3f local_78;
   CVector3f local_6c;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
+  CVector3f local_60;
   float local_54;
   float local_50;
   float local_4c;
@@ -45,11 +43,11 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
   iVar1 = param_2 * 0x44 + param_1;
   iVar3 = *(int *)(iVar1 + 0x24ac);
   iVar1 = *(int *)(iVar1 + 0x24a4);
-  local_58 = 0x40224dd3;
-  local_60 = 0xbf456042;
-  local_5c = 0xc0224dd3;
+  local_60.z = 2.536;
+  local_60.x = -0.771;
+  local_60.y = -2.536;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_120,&DAT_02dd1184,&local_60);
+            (&local_120,(CVector3f *)&DAT_02dd1184,&local_60);
   (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_90);
   core_actor_cpp_CVector_ctor_FUN_0040e160(&local_54);
   local_54 = local_90 + local_84;
@@ -74,7 +72,7 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
     local_18.y = pCVar2->y;
     local_18.z = pCVar2->z;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_120,param_1 + 0xfd0 + iVar1 * 0x30);
   pfVar4 = local_c0;
   pCVar5 = &local_f0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

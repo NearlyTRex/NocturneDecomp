@@ -1,14 +1,14 @@
 // Name: core_game.cpp_FUN_004a4b50
 // Address: 004a4b50
 // Address Range: [[004a4b50, 004a573a]]
-// Convention: unknown
-// Signature: void core_game_cpp_FUN_004a4b50(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_FUN_004a4b50(CGame *this_ptr,int select_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_game_cpp_FUN_004a4b50(int param_1,int param_2)
+void __cdecl core_game_cpp_FUN_004a4b50(CGame *this_ptr,int select_mode)
 
 {
   char cVar1;
@@ -39,11 +39,11 @@ void core_game_cpp_FUN_004a4b50(int param_1,int param_2)
     _fclose(p_Var2);
   }
   local_14 = (uint)(p_Var2 == (_FILE *)0x0);
-  *(uint *)(param_1 + 0x24c) = 0;
-  *(uint *)(param_1 + 0x254) = 0;
-  *(uint *)(param_1 + 0x248) = 0;
-  *(uint *)(param_1 + 0x250) = 0;
-  *(uint *)(param_1 + 0x234) = 0;
+  this_ptr->damageable_enemy_count = 0;
+  this_ptr->total_kill_count = 0;
+  this_ptr->total_game_time = 0.0;
+  this_ptr->total_play_time = 0.0;
+  this_ptr->is_loading = 0;
   local_1c[0] = DAT_01bcd070;
   local_1c[1] = (char)DAT_01bcd070_1;
   local_1c[2] = DAT_01bcd070_1._1_1_;
@@ -53,9 +53,9 @@ void core_game_cpp_FUN_004a4b50(int param_1,int param_2)
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
   }
-  bVar8 = param_2 == 1;
+  bVar8 = select_mode == 1;
   if (local_14 != 0) {
-    param_2 = 1;
+    select_mode = 1;
   }
   local_18 = 0;
   engine_ini_cpp_CIniFile_ctor_FUN_004bd860
@@ -139,16 +139,16 @@ void core_game_cpp_FUN_004a4b50(int param_1,int param_2)
         return;
       }
       if ((iVar3 == 0) && (local_2c == 0x331)) {
-        param_2 = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 1) && (local_28 == 0x3cc)) {
-        param_2 = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 2) && (local_24 == 0x3ac)) {
-        param_2 = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 3) && (local_20 == 0xd6)) {
-        param_2 = 1;
+        select_mode = 1;
 LAB_004a50dc:
         shape_edittool_cpp_FUN_00476160(local_2b4);
         if (iVar3 == 0) {
@@ -336,7 +336,7 @@ LAB_004a50dc:
         }
       }
       else {
-        if (param_2 != 0) goto LAB_004a50dc;
+        if (select_mode != 0) goto LAB_004a50dc;
         iVar6 = 0;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)local_2b4,0);
@@ -394,9 +394,9 @@ LAB_004a50dc:
   if (iVar3 != 0) {
     core_mission_cpp_CDemonMission_startMission_FUN_004d9780(0x01CC9450);
     core_mission_cpp_CDemonMission_run_FUN_004d9440(0x01CC9450);
-    if (*(int *)(param_1 + 0x9c4) != 0) {
-      *(uint *)(param_1 + 0x9c4) = 0;
-      core_game_cpp_FUN_004a4170(param_1,param_1 + 0x9c8,1);
+    if (this_ptr->need_chapter_reload != 0) {
+      this_ptr->need_chapter_reload = 0;
+      core_game_cpp_FUN_004a4170(this_ptr,this_ptr->chapter_reload_filename,1);
     }
   }
   DAT_01bcd070 = local_1c[0];

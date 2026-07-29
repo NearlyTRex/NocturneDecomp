@@ -20,8 +20,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(CFil
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pcVar3 = "CFilmReel";
-  *(byte ***)(this_ptr_00[-1].model_name + 100) =
-       &PTR_core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0_0059d064;
+  *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 100) = &g_CFilmProjectorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (this_ptr_00,"filmreel.kfm");
   pcVar4 = this_ptr_00[-1].model_name + 0x6c;

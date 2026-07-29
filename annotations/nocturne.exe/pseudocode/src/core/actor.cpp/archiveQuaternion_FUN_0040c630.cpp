@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(CQuaternion4f *quat_p
   int iVar1;
   
   if (DAT_00763e88 == 1) {
-    iVar1 = _fscanf(DAT_00763e84,"%f,%f,%f,%f",quat_ptr,&quat_ptr->x,&quat_ptr->y);
+    iVar1 = _fscanf(DAT_00763e84,"%f,%f,%f,%f");
     if (iVar1 != 4) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("Quaternion",property_type)
       ;

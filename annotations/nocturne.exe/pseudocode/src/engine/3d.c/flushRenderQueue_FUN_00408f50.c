@@ -1,14 +1,14 @@
 // Name: engine_3d.c_flushRenderQueue_FUN_00408f50
 // Address: 00408f50
 // Address Range: [[00408f50, 00408fb9]]
-// Convention: unknown
-// Signature: void engine_3d_c_flushRenderQueue_FUN_00408f50(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_3d_c_flushRenderQueue_FUN_00408f50(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_3d_c_flushRenderQueue_FUN_00408f50(void)
+void __cdecl engine_3d_c_flushRenderQueue_FUN_00408f50(void)
 
 {
   uint *puVar1;

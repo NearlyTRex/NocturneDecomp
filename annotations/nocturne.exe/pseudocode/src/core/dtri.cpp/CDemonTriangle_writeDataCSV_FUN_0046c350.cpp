@@ -1,16 +1,18 @@
 // Name: core_dtri.cpp_CDemonTriangle_writeDataCSV_FUN_0046c350
 // Address: 0046c350
 // Address Range: [[0046c350, 0046c3b6]]
-// Convention: unknown
-// Signature: void core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0046c350(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0046c350(CDemonTriangle *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0046c350(void)
+void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0046c350(CDemonTriangle *this_ptr,_FILE *file_handle)
 
 {
-  _fprintf();
+  _fprintf(file_handle,"%f,%f,%f,%f,%f,%f,%f,%f,%f\n",(double)(this_ptr->vertex1).x,
+             (double)(this_ptr->vertex1).y,(double)(this_ptr->vertex1).z,
+             (double)(this_ptr->vertex2).x,(double)(this_ptr->vertex2).y,
+             (double)(this_ptr->vertex2).z,(double)(this_ptr->vertex3).x,
+             (double)(this_ptr->vertex3).y,(double)(this_ptr->vertex3).z);
   return;
 }

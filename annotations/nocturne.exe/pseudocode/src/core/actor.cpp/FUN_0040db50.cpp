@@ -42,7 +42,7 @@ uint core_actor_cpp_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGround
     if (param_1->blood_effect_timer < 1) {
       if (param_3 == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-                  (INT_005b96c4,param_2,&param_1->orient,3,0x4000,0);
+                  ((CGore *)INT_005b96c4,param_2,&param_1->orient,3,0x4000,0);
       }
       goto LAB_0040dc41;
     }
@@ -51,7 +51,7 @@ uint core_actor_cpp_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGround
     param_1->blood_effect_timer = 0xffff;
   }
   core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-            (INT_005b96c4,param_2,&param_1->orient,0xb,param_1->blood_effect_timer,
+            ((CGore *)INT_005b96c4,param_2,&param_1->orient,0xb,param_1->blood_effect_timer,
              param_1->blood_effect_color);
   iVar4 = param_1->blood_effect_timer + -0x2000;
   param_1->blood_effect_timer = iVar4;

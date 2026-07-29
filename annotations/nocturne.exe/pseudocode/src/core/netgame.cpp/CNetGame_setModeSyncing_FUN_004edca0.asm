@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_CNetGame_setModeSyncing_FUN_004edca0(undefined4 *param_1)
+; void __cdecl core_netgame_cpp_CNetGame_setModeSyncing_FUN_004edca0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

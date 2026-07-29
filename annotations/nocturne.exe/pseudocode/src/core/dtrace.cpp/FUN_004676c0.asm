@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 004677fa
     INC ESI                             ; 004677fb
     CALL core_dcube.cpp_CDemonCube_load_FUN_0044aed0 ; 004677fc
-        ;   XREF to: 0044aed0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCube_load_FUN_0044aed0()
+        ;   XREF to: 0044aed0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_load_FUN_0044aed0(CDemonCube * this_ptr, _FILE * file_handle)
     ADD EDI,0x34                        ; 00467801
     ADD ESP,0x8                         ; 00467804
     JMP 0x004677e3                      ; 00467807

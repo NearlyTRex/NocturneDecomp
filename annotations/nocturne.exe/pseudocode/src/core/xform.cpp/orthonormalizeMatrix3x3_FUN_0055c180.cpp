@@ -1,14 +1,14 @@
 // Name: core_xform.cpp_orthonormalizeMatrix3x3_FUN_0055c180
 // Address: 0055c180
 // Address Range: [[0055c180, 0055c6c0]]
-// Convention: unknown
-// Signature: void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(CMatrix3x3f *matrix,int preserve_scale)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int param_2)
+void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(CMatrix3x3f *matrix,int preserve_scale)
 
 {
   float fVar1;
@@ -43,15 +43,15 @@ void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int para
   double local_88;
   double local_80;
   
-  fVar1 = *param_1;
-  fVar2 = param_1[1];
-  fVar3 = param_1[2];
-  fVar4 = param_1[4];
-  fVar5 = param_1[5];
-  fVar6 = param_1[6];
-  fVar7 = param_1[8];
-  fVar8 = param_1[9];
-  fVar9 = param_1[10];
+  fVar1 = matrix->m[0].x;
+  fVar2 = matrix->m[0].y;
+  fVar3 = matrix->m[0].z;
+  fVar4 = matrix->m[1].y;
+  fVar5 = matrix->m[1].z;
+  fVar6 = matrix->m[2].x;
+  fVar7 = matrix->m[2].z;
+  fVar8 = matrix[1].m[0].x;
+  fVar9 = matrix[1].m[0].y;
   local_b0 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   local_80 = (double)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);
   local_88 = (double)SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar7 * fVar7);
@@ -104,7 +104,7 @@ void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int para
   local_a8 = local_e0 * local_d0 - local_c8 * local_d8;
   local_a0 = local_c8 * local_c0 - local_b8 * local_d0;
   local_98 = local_b8 * local_d8 - local_c0 * local_e0;
-  if (param_2 != 0) {
+  if (preserve_scale != 0) {
     local_a8 = local_a8 * local_b0;
     local_a0 = local_a0 * local_b0;
     local_98 = local_98 * local_b0;
@@ -115,14 +115,14 @@ void core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(float *param_1,int para
     local_d8 = local_d8 * local_88;
     local_d0 = local_d0 * local_88;
   }
-  param_1[1] = (float)local_a0;
-  param_1[2] = (float)local_98;
-  param_1[4] = (float)local_b8;
-  param_1[5] = (float)local_e0;
-  param_1[6] = (float)local_c8;
-  param_1[8] = (float)local_c0;
-  param_1[9] = (float)local_d8;
-  param_1[10] = (float)local_d0;
-  *param_1 = (float)local_a8;
+  matrix->m[0].y = (float)local_a0;
+  matrix->m[0].z = (float)local_98;
+  matrix->m[1].y = (float)local_b8;
+  matrix->m[1].z = (float)local_e0;
+  matrix->m[2].x = (float)local_c8;
+  matrix->m[2].z = (float)local_c0;
+  matrix[1].m[0].x = (float)local_d8;
+  matrix[1].m[0].y = (float)local_d0;
+  matrix->m[0].x = (float)local_a8;
   return;
 }

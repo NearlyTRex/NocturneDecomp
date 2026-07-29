@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CStrList_removeAt_FUN_00473ef0(void)
+; void __cdecl shape_edittool_cpp_CStrList_removeAt_FUN_00473ef0(CStrList *this_ptr,int index)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; *****************************************************************************
 

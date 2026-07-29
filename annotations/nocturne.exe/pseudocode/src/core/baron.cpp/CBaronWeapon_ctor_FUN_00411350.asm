@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CWeapon *param_1)
+; CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_baron.cpp_FUN_00411320 at 00411333
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_baron.cpp_CBaronWeapon_setup_FUN_004113b0_00599c14 = 004113b0
+;   CWeapon_full_vtable g_CBaronWeaponVTable
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_ctor_FUN_00553d90
@@ -22,7 +24,7 @@ section .text
     PUSH EDX                            ; 00411354
     CALL core_weapon.cpp_CWeapon_ctor_FUN_00553d90 ; 00411355
         ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_00553d90(CWeapon * this_ptr)
-    MOV dword ptr [EAX + 0x14c],0x599c14 ; 0041135a | PTR_core_baron.cpp_CBaronWeapon_setup_FUN_004113b0_00599c14
+    MOV dword ptr [EAX + 0x14c],0x599c14 ; 0041135a | g_CBaronWeaponVTable
     MOV dword ptr [EAX + 0x2d8],0x8     ; 00411364
     MOV dword ptr [EAX + 0x2dc],0x0     ; 0041136e
     MOV dword ptr [EAX + 0x2e0],0x43480000 ; 00411378

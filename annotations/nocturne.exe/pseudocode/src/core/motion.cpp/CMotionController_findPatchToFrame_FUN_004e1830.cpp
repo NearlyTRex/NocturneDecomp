@@ -1,12 +1,12 @@
 // Name: core_motion.cpp_CMotionController_findPatchToFrame_FUN_004e1830
 // Address: 004e1830
 // Address Range: [[004e1830, 004e1855]]
-// Convention: unknown
-// Signature: undefined4 core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(CMotionController *this_ptr)
 
 #include "nocturne.h"
 
-uint core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(void)
+int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(CMotionController *this_ptr)
 
 {
   PTR_01cc4800 = "..\\core\\motion.cpp";

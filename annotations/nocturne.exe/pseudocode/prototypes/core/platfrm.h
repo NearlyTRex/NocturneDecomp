@@ -17,11 +17,11 @@ CDemonActorType * FUN_004f5d80(void);
 
 // Original: core_platfrm.cpp_FUN_004f5d90
 // Address: 004f5d90
-CCourseFrame ** FUN_004f5d90(undefined4 param_1);
+CCourseFrame ** FUN_004f5d90(CDemonActor *param_1);
 
 // Original: core_platfrm.cpp_FUN_004f5f60
 // Address: 004f5f60
-void FUN_004f5f60(CPlatform *param_1);
+void __cdecl FUN_004f5f60(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0
 // Address: 004f5ff0
@@ -29,7 +29,7 @@ void __cdecl CPlatform::evaluatePosition(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_FUN_004f6170
 // Address: 004f6170
-void FUN_004f6170(CPlatform *param_1,float param_2);
+void __cdecl FUN_004f6170(CPlatform *this_ptr,float delta_time);
 
 // Original: core_platfrm.cpp_CPlatform_startMovement_FUN_004f6bd0
 // Address: 004f6bd0
@@ -53,7 +53,7 @@ void __cdecl CPlatform::archive(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_FUN_004f7360
 // Address: 004f7360
-undefined4 FUN_004f7360(CDemonActor *param_1,int param_2);
+int __cdecl FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
 
 // Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560
 // Address: 004f7560

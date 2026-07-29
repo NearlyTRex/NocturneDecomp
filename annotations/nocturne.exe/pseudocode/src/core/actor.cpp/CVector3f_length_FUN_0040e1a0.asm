@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_CVector3f_length_FUN_0040e1a0(float *param_1)
+; float __cdecl core_actor_cpp_CVector3f_length_FUN_0040e1a0(CVector3f *this_ptr)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void)
+; int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void)
 ;
 ;
 ; Referenced Globals:

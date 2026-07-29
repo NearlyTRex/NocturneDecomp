@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double crt_math_c_modf_FUN_00566fb6(undefined4 param_1,double *param_2)
+; double __crtmath crt_math_c_modf_FUN_00566fb6(double value,double *integer_part)
 ;
+; Parameters:
+; double           Stack[0x4]:8   value
+; double *         Stack[0xc]:4   integer_part
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;

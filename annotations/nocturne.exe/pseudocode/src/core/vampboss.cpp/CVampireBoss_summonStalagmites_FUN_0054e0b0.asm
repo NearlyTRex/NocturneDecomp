@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 0054e121 (CONDITIONAL_JUMP)  ; LAB_0054e121
     PUSH EBX                            ; 0054e118
     CALL core_drip.cpp_FUN_00462710     ; 0054e119
-        ;   XREF to: 00462710 (UNCONDITIONAL_CALL)  ; undefined core_drip.cpp_FUN_00462710()
+        ;   XREF to: 00462710 (UNCONDITIONAL_CALL)  ; void core_drip.cpp_FUN_00462710(CDrip * this_ptr)
     ADD ESP,0x4                         ; 0054e11e
     INC ESI                             ; 0054e121
         ;   Label: LAB_0054e121

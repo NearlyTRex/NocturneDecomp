@@ -1,22 +1,19 @@
 // Name: engine_matrix.c_vectorLength3DToInt_FUN_004cdf70
 // Address: 004cdf70
 // Address Range: [[004cdf70, 004cdf9b]]
-// Convention: unknown
-// Signature: int engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(void)
+// Convention: __cdecl
+// Signature: int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(CVector3i *vector_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-int engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(void)
+int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(CVector3i *vector_ptr)
 
 {
   double dVar1;
-  int *in_stack_00000004;
   
   dVar1 = round
-                    (SQRT((double)in_stack_00000004[2] * (double)in_stack_00000004[2] +
-                          (double)in_stack_00000004[1] * (double)in_stack_00000004[1] +
-                          (double)*in_stack_00000004 * (double)*in_stack_00000004));
+                    (SQRT((double)vector_ptr->z * (double)vector_ptr->z +
+                          (double)vector_ptr->y * (double)vector_ptr->y +
+                          (double)vector_ptr->x * (double)vector_ptr->x));
   return (int)ROUND(dVar1);
 }

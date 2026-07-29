@@ -22,7 +22,8 @@ void engine_drender_cpp_FUN_004574e0(int param_1)
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,0);
   iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-            (0x01E57284,iVar1,*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c));
+            (0x01E57284,iVar1,
+             (CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));
   if (DAT_005ae704->advanced_culling_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
   }

@@ -1,18 +1,16 @@
 // Name: core_dcube.cpp_CVector3f_arrdtor_FUN_0044b640
 // Address: 0044b640
 // Address Range: [[0044b640, 0044b654]]
-// Convention: unknown
-// Signature: void core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(CVector3f *objs,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(void)
+CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(CVector3f *objs,uint flags)
 
 {
-  void *in_stack_00000004;
+  CVector3f *pCVar1;
   
-  __arrfini(in_stack_00000004,0x10,&g_CVectorTypeInfo_005993b0);
-  return;
+  pCVar1 = (CVector3f *)__arrfini(objs,0x10,&g_CVectorTypeInfo_005993b0);
+  return pCVar1;
 }

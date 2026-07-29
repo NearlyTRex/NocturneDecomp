@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_prim_c_setupAdvancedSoftwareEdge_FUN_004fa800(int param_1,int param_2)
+; void __cdecl engine_prim_c_setupAdvancedSoftwareEdge_FUN_004fa800(SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   start_vertex
+; SRenderVertex *  Stack[0x8]:4   end_vertex
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

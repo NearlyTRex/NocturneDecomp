@@ -135,7 +135,7 @@ LAB_0044089a:
           iVar7 = iVar7 + 4;
           iVar8 = iVar8 + 1;
           core_dstrender_cpp_memcpyMMX_FUN_00465341
-                    (*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4,
+                    ((void *)(*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4),
                      (void *)((int)this_ptr->zbuffer_aligned +
                              ((((int)local_18 - this_ptr->framebuffer_height) *
                                *(int *)(this_ptr->camera_name + 0xfc) + *piVar2) -

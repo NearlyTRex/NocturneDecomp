@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_event_cpp_CEventList_findCounter_FUN_00480900(int param_1,char *param_2)
+; int __cdecl core_event_cpp_CEventList_findCounter_FUN_00480900(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_getCounterValue_FUN_004807e0 at 004807ea

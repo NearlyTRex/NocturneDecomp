@@ -24,7 +24,7 @@ CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_00418480(CColor3f *out_rgb,CCol
   fVar5 = in_hsv->b;
   if (0.0 < fVar1) {
     fVar4 = in_hsv->r * (float)0.023529411764705899;
-    dVar6 = (double)floor((double)fVar4);
+    dVar6 = floor((double)fVar4);
     dVar6 = round(dVar6);
     fVar2 = (1.0 - local_34) * fVar4;
     fVar1 = fVar1 - (float)(int)ROUND(dVar6);

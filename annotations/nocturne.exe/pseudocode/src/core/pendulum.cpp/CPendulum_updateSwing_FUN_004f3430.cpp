@@ -15,7 +15,6 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  double dVar7;
   float local_60;
   float local_5c;
   float local_58;
@@ -29,14 +28,14 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
   double local_1c;
   
   local_24 = (double)this_ptr->param;
-  local_1c = (double)floor(local_24);
+  local_1c = floor(local_24);
   local_48 = (float)((float10)local_24 - (float10)local_1c);
   this_ptr->param = delta_time / this_ptr->period + this_ptr->param;
   if ((this_ptr->one_shot != 0) && (1.0 < this_ptr->param)) {
     this_ptr->param = this_ptr->param + 0.5f;
   }
-  dVar7 = (double)floor((double)this_ptr->param);
-  fVar3 = (float10)this_ptr->param - (float10)dVar7;
+  local_1c = floor((double)this_ptr->param);
+  fVar3 = (float10)this_ptr->param - (float10)local_1c;
   this_ptr->param = (float)fVar3;
   fVar4 = (float10)fsin(fVar3 * (float10)2 * (float10)3.1415926535000001);
   fVar5 = (float10)this_ptr->decay_timer + (float10)delta_time;
@@ -47,7 +46,6 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *thi
   fVar5 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
   fVar3 = (float10)fscale(fVar5 + fVar3,fVar6);
   (this_ptr->base).orient.vec.z = (float)(fVar3 * fVar4 * (float10)this_ptr->max_angle);
-  local_1c = dVar7;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                      (&this_ptr->base,&local_30,&this_ptr->swing_tip_local);

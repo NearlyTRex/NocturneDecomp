@@ -9,12 +9,11 @@
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_ptr,SClothVertex *vertex)
 
 {
-  CVector3f *pCVar1;
-  int *piVar2;
-  float *pfVar3;
-  int iVar4;
-  float *pfVar5;
-  SClothVertex *pSVar6;
+  int *piVar1;
+  CVector3f *pCVar2;
+  int iVar3;
+  float *pfVar4;
+  SClothVertex *pSVar5;
   float local_130;
   float local_12c;
   float local_128;
@@ -24,7 +23,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
   float local_118;
   float local_114;
   float local_110;
-  byte local_10c [12];
+  CVector3f local_10c;
   float local_100;
   float local_fc;
   float local_f8;
@@ -49,15 +48,11 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
   float local_ac;
   float local_a8;
   float local_a4;
-  float local_a0;
-  float local_9c;
-  float local_98;
+  CVector3f local_a0;
   float local_94;
   float local_90;
   float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
+  CVector3f local_88;
   float local_7c;
   float local_78;
   float local_74;
@@ -87,18 +82,18 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
     (vertex->position).y = this_ptr->vertices[0x300].secondary_velocity.z;
     vertex->floor_collision = 1;
   }
-  iVar4 = 0;
+  iVar3 = 0;
   if (0 < vertex->connected_count) {
     local_34 = this_ptr->vertices + 0x2d5;
-    pCVar1 = &vertex->secondary_velocity;
-    pfVar5 = &this_ptr->vertices[0x300].secondary_velocity.y;
+    pCVar2 = &vertex->secondary_velocity;
+    pfVar4 = &this_ptr->vertices[0x300].secondary_velocity.y;
     local_3c = &(this_ptr->model).texture_list[8].textures[2].base.count;
-    pSVar6 = vertex;
+    pSVar5 = vertex;
     do {
-      piVar2 = local_3c + pSVar6->connected_indices[0] * 0x47;
-      local_130 = (vertex->position).x - (float)*piVar2;
-      local_12c = (vertex->position).y - (float)piVar2[1];
-      local_128 = (vertex->position).z - (float)piVar2[2];
+      piVar1 = local_3c + pSVar5->connected_indices[0] * 0x47;
+      local_130 = (vertex->position).x - (float)*piVar1;
+      local_12c = (vertex->position).y - (float)piVar1[1];
+      local_128 = (vertex->position).z - (float)piVar1[2];
       if (&local_7c != &local_130) {
         local_7c = local_130;
         local_78 = local_12c;
@@ -106,7 +101,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
       local_24 = (float)(((int)local_5c >> 1) + (int)CVector3f_01c70708.y);
-      local_1c = pSVar6->rest_lengths[0];
+      local_1c = pSVar5->rest_lengths[0];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
         local_e8 = local_7c * local_2c;
@@ -119,10 +114,10 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
         (vertex->position).x = (vertex->position).x - local_dc;
         (vertex->position).y = (vertex->position).y - local_d8;
         (vertex->position).z = (vertex->position).z - local_d4;
-        local_100 = local_dc * *pfVar5;
-        local_fc = local_d8 * *pfVar5;
-        local_f8 = local_d4 * *pfVar5;
-        pCVar1->x = pCVar1->x - local_100;
+        local_100 = local_dc * *pfVar4;
+        local_fc = local_d8 * *pfVar4;
+        local_f8 = local_d4 * *pfVar4;
+        pCVar2->x = pCVar2->x - local_100;
         (vertex->secondary_velocity).y = (vertex->secondary_velocity).y - local_fc;
         (vertex->secondary_velocity).z = (vertex->secondary_velocity).z - local_f8;
       }
@@ -141,18 +136,18 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
         (vertex->position).x = (vertex->position).x + local_f4;
         (vertex->position).y = (vertex->position).y + local_f0;
         (vertex->position).z = (vertex->position).z + local_ec;
-        local_c4 = local_f4 * *pfVar5;
-        local_c0 = local_f0 * *pfVar5;
-        local_bc = local_ec * *pfVar5;
-        pCVar1->x = pCVar1->x + local_c4;
+        local_c4 = local_f4 * *pfVar4;
+        local_c0 = local_f0 * *pfVar4;
+        local_bc = local_ec * *pfVar4;
+        pCVar2->x = pCVar2->x + local_c4;
         (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_c0;
         (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_bc;
       }
-      iVar4 = iVar4 + 1;
-      pSVar6 = (SClothVertex *)&(pSVar6->position).y;
+      iVar3 = iVar3 + 1;
+      pSVar5 = (SClothVertex *)&(pSVar5->position).y;
       local_40 = (byte *)&local_130;
       local_18 = local_24;
-    } while (iVar4 < vertex->connected_count);
+    } while (iVar3 < vertex->connected_count);
   }
   local_20 = 0;
   if (0 < (int)this_ptr->vertices[0x2d5].secondary_velocity.y) {
@@ -160,8 +155,8 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
     local_38 = &this_ptr->vertices[0x2d5].secondary_velocity.z;
     local_14 = &this_ptr->vertices[0x2d5].prev_position;
     do {
-      iVar4 = local_20;
-      pfVar5 = local_38;
+      iVar3 = local_20;
+      pfVar4 = local_38;
       local_70 = (vertex->position).x - local_14->x;
       local_6c = (vertex->position).y - local_14->y;
       local_68 = (vertex->position).z - local_14->z;
@@ -188,26 +183,27 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_pt
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
           local_44 = (float)((int)CVector3f_01c70708.z - ((int)local_48 >> 1));
-          local_88 = local_38[local_20 * 0x2b + 5] * (float)1.05 * local_ac * local_44;
-          local_84 = (float)1.05 * local_38[local_20 * 0x2b + 6] * local_a8 * local_44;
-          local_80 = local_a4;
-          pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                      (local_38 + local_20 * 0x2b + 0x1e,local_10c,&local_88);
-          local_a0 = pfVar5[iVar4 * 0x2b + 0x28] + *pfVar3;
-          local_9c = pfVar5[iVar4 * 0x2b + 0x29] + pfVar3[1];
-          local_98 = pfVar5[iVar4 * 0x2b + 0x2a] + pfVar3[2];
+          local_88.x = local_38[local_20 * 0x2b + 5] * (float)1.05 * local_ac * local_44;
+          local_88.y = (float)1.05 * local_38[local_20 * 0x2b + 6] * local_a8 * local_44;
+          local_88.z = local_a4;
+          pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                             ((CMatrix3x3f *)(local_38 + local_20 * 0x2b + 0x1e),&local_10c,
+                              &local_88);
+          local_a0.x = pfVar4[iVar3 * 0x2b + 0x28] + pCVar2->x;
+          local_a0.y = pfVar4[iVar3 * 0x2b + 0x29] + pCVar2->y;
+          local_a0.z = pfVar4[iVar3 * 0x2b + 0x2a] + pCVar2->z;
           if (&local_88 != &local_a0) {
-            local_88 = local_a0;
-            local_84 = local_9c;
-            local_80 = local_98;
+            local_88.x = local_a0.x;
+            local_88.y = local_a0.y;
+            local_88.z = local_a0.z;
           }
-          local_d0 = local_88 - (vertex->position).x;
-          local_cc = local_84 - (vertex->position).y;
-          local_c8 = local_80 - (vertex->position).z;
+          local_d0 = local_88.x - (vertex->position).x;
+          local_cc = local_88.y - (vertex->position).y;
+          local_c8 = local_88.z - (vertex->position).z;
           if (vertex != (SClothVertex *)&local_88) {
-            (vertex->position).x = local_88;
-            (vertex->position).y = local_84;
-            (vertex->position).z = local_80;
+            (vertex->position).x = local_88.x;
+            (vertex->position).y = local_88.y;
+            (vertex->position).z = local_88.z;
           }
           local_124 = local_d0 * *local_30;
           local_120 = local_cc * *local_30;

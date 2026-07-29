@@ -72,7 +72,7 @@ section .text
     MOV ESI,dword ptr [0x005be368]      ; 00457538 | DAT_005be368
     PUSH ESI                            ; 0045753e | DAT_01e57284
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0045753f
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,[0x005ae704]                ; 00457544 | DAT_005ae704
     MOV EDX,dword ptr [EAX + 0x18]      ; 00457549 | DAT_01b4d750
     ADD ESP,0xc                         ; 0045754c

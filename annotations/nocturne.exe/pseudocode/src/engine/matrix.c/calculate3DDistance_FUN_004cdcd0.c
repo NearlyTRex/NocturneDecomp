@@ -1,19 +1,19 @@
 // Name: engine_matrix.c_calculate3DDistance_FUN_004cdcd0
 // Address: 004cdcd0
 // Address Range: [[004cdcd0, 004cdd29]]
-// Convention: unknown
-// Signature: int engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+// Convention: __cdecl
+// Signature: int __cdecl engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int x1,int y1,int z1,int x2,int y2,int z2)
 
 #include "nocturne.h"
 
-int engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+int __cdecl engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int x1,int y1,int z1,int x2,int y2,int z2)
 
 {
   double dVar1;
   
   dVar1 = round
-                    (SQRT((double)(param_3 - param_6) * (double)(param_3 - param_6) +
-                          (double)(param_2 - param_5) * (double)(param_2 - param_5) +
-                          (double)(param_1 - param_4) * (double)(param_1 - param_4)));
+                    (SQRT((double)(z1 - z2) * (double)(z1 - z2) +
+                          (double)(y1 - y2) * (double)(y1 - y2) +
+                          (double)(x1 - x2) * (double)(x1 - x2)));
   return (int)ROUND(dVar1);
 }

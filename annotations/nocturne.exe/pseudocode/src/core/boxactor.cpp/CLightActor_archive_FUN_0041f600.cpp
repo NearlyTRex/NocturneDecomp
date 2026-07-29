@@ -16,7 +16,8 @@ void core_boxactor_cpp_CLightActor_archive_FUN_0041f600(CBoxActor *param_1)
   if (*(int *)param_1[1].base.actor_name == 0) {
     core_actor_cpp_archiveVector_FUN_0040c450
               ((CVector3f *)&param_1[8].sfx_handle,"bLightPos");
-    core_actor_cpp_archiveOrientation_FUN_0040c4f0(&param_1[8].rpm.z,"lightOrient");
+    core_actor_cpp_archiveOrientation_FUN_0040c4f0
+              ((COrientation *)&param_1[8].rpm.z,"lightOrient");
     if (DAT_00763e88 == 1) {
       core_actor_cpp_archiveFloat_FUN_0040c880(&local_c,"lightFov");
       param_1[1].base.previous_transform_state.orientation.vec.z = local_c;

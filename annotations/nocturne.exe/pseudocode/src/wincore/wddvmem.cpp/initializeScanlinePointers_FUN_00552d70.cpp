@@ -1,14 +1,12 @@
 // Name: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00552d70
 // Address: 00552d70
 // Address Range: [[00552d70, 00552df1]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
+void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
 
 {
   int iVar1;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_copyVectorToPair_FUN_00423cc0(void)
+; CVector3i * __cdecl core_bugs_cpp_copyVectorToPair_FUN_00423cc0(CVector3i *dest,CVector3i *src)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   dest
+; CVector3i *      Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

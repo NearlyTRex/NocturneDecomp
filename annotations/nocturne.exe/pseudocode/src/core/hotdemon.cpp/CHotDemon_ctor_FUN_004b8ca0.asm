@@ -14,7 +14,7 @@
 ;   TerminatedCString s_hotdemon_dfm_00585df7
 ;   float FLOAT_0059f0c0 = 50
 ;   float FLOAT_0059f0c4 = 100
-;   undefined1* PTR_core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00_0059f0d4 = 004b8d00
+;   CEnemy_full_vtable g_CHotDemonVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -35,9 +35,9 @@ section .text
     MOV EBX,EAX                         ; 004b8cb3
     ADD EAX,0x150                       ; 004b8cb5
     PUSH EAX                            ; 004b8cba
-    MOV dword ptr [EAX + -0x4],0x59f0d4 ; 004b8cbb | PTR_core_hotdemon.cpp_CHotDemon_setup_FUN_004b8d00_0059f0d4
+    MOV dword ptr [EAX + -0x4],0x59f0d4 ; 004b8cbb | g_CHotDemonVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b8cc2
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0059f0c0]          ; 004b8cc7 | FLOAT_0059f0c0
     FLD float ptr [0x0059f0c4]          ; 004b8ccd | FLOAT_0059f0c4
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004b8cd3

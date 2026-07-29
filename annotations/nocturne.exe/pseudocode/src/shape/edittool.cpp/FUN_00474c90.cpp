@@ -15,7 +15,7 @@ CEdScrollBar * shape_edittool_cpp_FUN_00474c90(CStrList *param_1)
   pCVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60(param_1);
   pCVar2 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_00476450
                      ((CEdScrollBar *)&pCVar1[0x13].data_array);
-  pCVar2[-6].scroll_increment = (int)&PTR_shape_edittool_cpp_CPickList_dtor_FUN_00474cf0_0059ca94;
+  pCVar2[-6].scroll_increment = (int)&g_CPickListVTable;
   pCVar2[-6].orientation = 0;
   *(byte *)&pCVar2[-6].bounds_left = 0;
   pCVar2[1].scroll_position = 0;

@@ -63,7 +63,7 @@ section .text
     PUSH 0x57d510                       ; 0045876b | = "nbride2.dfm"
     PUSH ESI                            ; 00458770
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00458771
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00458776
     PUSH 0x57d51c                       ; 00458779 | = "nbride3x.dfm"
         ;   Label: LAB_00458779
@@ -78,7 +78,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00458790
     PUSH EAX                            ; 00458796
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00458797
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0045879c
     PUSH 0x57d535                       ; 0045879f | = "nbride4x.dfm"
         ;   Label: LAB_0045879f
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_004587b6
     PUSH EAX                            ; 004587bc
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004587bd
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004587c2
     PUSH EBX                            ; 004587c5
         ;   Label: LAB_004587c5
@@ -237,7 +237,7 @@ section .text
     PUSH 0x40a00000                     ; 0045895f
     MOV dword ptr [EBX + 0xbdcc],0x0    ; 00458964
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045896e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00458973
     FLD float ptr [ESP + 0x8]           ; 00458977
     ADD ESP,0x8                         ; 0045897b
@@ -245,7 +245,7 @@ section .text
     PUSH 0x40000000                     ; 00458983
     FSTP float ptr [EBX + 0xbdb8]       ; 00458988
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045898e
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00458993
     MOV EAX,dword ptr [ESP + 0x8]       ; 00458997
     MOV dword ptr [EBX + 0xbdbc],EAX    ; 0045899b
@@ -266,7 +266,7 @@ section .text
     PUSH 0x57d4c4                       ; 004589bd | = "nbride2x.dfm"
     PUSH ESI                            ; 004589c2
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004589c3
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004589c8
     PUSH 0x57d4d1                       ; 004589cb | = "nbride3.dfm"
         ;   Label: LAB_004589cb
@@ -281,7 +281,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004589e2
     PUSH EAX                            ; 004589e8
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004589e9
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004589ee
     PUSH 0x57d4ea                       ; 004589f1 | = "nbride4.dfm"
         ;   Label: LAB_004589f1

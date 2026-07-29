@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050eb20(void *param_1)
+; C3DSLight * __cdecl core_set_cpp_FUN_0050eb20(C3DSLight *objs,uint flags)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_dtor_FUN_00506e50 at 00506e87

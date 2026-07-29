@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_0051dc30(void)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_0051dc30(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591c2c

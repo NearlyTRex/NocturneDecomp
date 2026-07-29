@@ -14,34 +14,27 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
 {
   CDemonActor *this_ptr_00;
   EAimMode EVar1;
-  CWeapon *this_ptr_01;
   float fVar2;
   double dVar3;
   uint uVar4;
   EAimMode *pEVar5;
-  CDeformableModelInstance *this_ptr_02;
+  CDeformableModelInstance *this_ptr_01;
   CVector3f *pCVar6;
-  CCharacter *this_ptr_03;
-  int iVar7;
-  int iVar8;
-  float fVar9;
+  CCharacter *pCVar7;
+  EDeathState EVar8;
+  int iVar9;
+  int iVar10;
+  float fVar11;
   float fStack_1a8;
   CVector3f aCStack_1a0 [10];
   CMatrix3x3f CStack_128;
   CVector3f CStack_100;
-  float fStack_f4;
-  float fStack_f0;
+  CVector3f aCStack_f4 [2];
   CVector3f CStack_dc;
-  float fStack_d0;
-  float fStack_cc;
-  float fStack_c8;
+  CVector3f CStack_d0;
   CVector3f CStack_c4;
-  float fStack_b8;
-  float fStack_b4;
-  float fStack_b0;
-  uint uStack_ac;
-  uint uStack_a8;
-  uint uStack_a4;
+  CVector3f CStack_b8;
+  CVector3f CStack_ac;
   CVector3f CStack_a0;
   CVector3f CStack_94;
   CVector3f CStack_88;
@@ -95,12 +88,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
     local_30 = -1.3089969;
     local_2c = 0.5235988;
-    iVar7 = _DAT_02dc9f84;
-    iVar8 = _DAT_02dc9f5c;
+    iVar9 = _DAT_02dc9f84;
+    iVar10 = _DAT_02dc9f5c;
   }
   else {
-    iVar7 = _DAT_02dc9f88;
-    iVar8 = _DAT_02dc9f60;
+    iVar9 = _DAT_02dc9f88;
+    iVar10 = _DAT_02dc9f60;
     if (local_48 == 0) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;
@@ -110,11 +103,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
       local_30 = -0.5235988;
     }
   }
-  fVar9 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
-          (float)2 * delta_time + local_24->aim_pitch;
+  fVar11 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
+           (float)2 * delta_time + local_24->aim_pitch;
   local_24->aim_yaw = 0.0;
-  local_24->aim_pitch = fVar9;
-  if (fVar9 < -1.047198f) {
+  local_24->aim_pitch = fVar11;
+  if (fVar11 < -1.047198f) {
     local_24->aim_pitch = -1.047198f;
   }
   if (1.22173f < local_24->aim_pitch) {
@@ -139,22 +132,21 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     local_24->target_yaw = 0.0;
   }
   else {
-    this_ptr_01 = this_ptr->weapon;
+    pCVar7 = (CCharacter *)this_ptr->weapon;
     EStack_7c = EVar1;
     EStack_78 = EVar1;
     EStack_74 = EVar1;
-    if ((this_ptr_01 != (CWeapon *)0x0) &&
-       (pEVar5 = (EAimMode *)
-                 (*((this_ptr_01->base).vtable._ub)->initializeInEditor)(&this_ptr_01->base),
+    if ((pCVar7 != (CCharacter *)0x0) &&
+       (pEVar5 = (EAimMode *)(*(((pCVar7->base).vtable._uc)->_uc).canWalk)(pCVar7),
        &EStack_7c != pEVar5)) {
       EStack_7c = *pEVar5;
       EStack_78 = pEVar5[1];
       EStack_74 = pEVar5[2];
     }
-    this_ptr_02 = &(this_ptr->base).base.model;
+    this_ptr_01 = &(this_ptr->base).base.model;
     if (local_48 == 0) {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-                         (this_ptr_02,&CStack_a0,iVar8);
+                         (this_ptr_01,&CStack_a0,iVar10);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
         CStack_100.y = pCVar6->y;
@@ -163,7 +155,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
     else {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-                         (this_ptr_02,&CStack_c4,iVar7);
+                         (this_ptr_01,&CStack_c4,iVar9);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
         CStack_100.y = pCVar6->y;
@@ -176,72 +168,74 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     aCStack_70[0].z = 0.0;
     aCStack_70[0].y = local_24->aim_yaw;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&CStack_128,aCStack_70);
-    uStack_ac = 0;
-    uStack_a8 = 0;
-    uStack_a4 = 0x3f800000;
-    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&CStack_128,&fStack_d0,&uStack_ac);
+    CStack_ac.x = 0.0;
+    CStack_ac.y = 0.0;
+    CStack_ac.z = 1.0;
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&CStack_128,&CStack_d0,&CStack_ac);
     fStack_20 = 1e+30;
     iStack_3c = 0;
     for (iStack_40 = 0; iStack_40 < (int)0x01E57284->enemies[0x6d6]; iStack_40 = iStack_40 + 1) {
-      this_ptr_03 = (CCharacter *)
-                    core_actor_cpp_castToClassHash_FUN_0040d890
-                              (*(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c),
-                               g_CCharacterActorType_00765a60.name_hash);
-      if ((this_ptr_03 == (CCharacter *)0x0) ||
-         ((iVar7 = (*(((this_ptr_03->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_03),
-          iVar7 == 0 &&
-          (iVar7 = (*((this_ptr_03->base).vtable._ub)->shouldIgnoreForTargeting)
-                             ((CDemonActor *)this_ptr_03), iVar7 == 0)))) {
+      pCVar7 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040d890
+                         (*(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c),
+                          g_CCharacterActorType_00765a60.name_hash);
+      if ((pCVar7 == (CCharacter *)0x0) ||
+         ((EVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7),
+          EVar8 == DEATH_STATE_ALIVE &&
+          (iVar9 = (*((pCVar7->base).vtable._ub)->shouldIgnoreForTargeting)((CDemonActor *)pCVar7),
+          iVar9 == 0)))) {
         pCStack_1c = *(CDemonActor **)((int)0x01E57284->enemies + iStack_3c + 0x1b5c);
         __arrinit(aCStack_1a0,10,&g_CVectorTypeInfo_005993b0);
         iStack_28 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)(pCStack_1c,aCStack_1a0);
-        if ((0 < iStack_28) && (iVar7 = 0, 0 < iStack_28)) {
+        if ((0 < iStack_28) && (iVar9 = 0, 0 < iStack_28)) {
           pCVar6 = aCStack_1a0;
           do {
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(pCStack_1c,&CStack_88,pCVar6);
             core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                       ((CDemonActor *)this_ptr,&CStack_dc,&CStack_88);
-            fStack_b8 = CStack_dc.x - CStack_100.x;
-            fStack_b4 = CStack_dc.y - CStack_100.y;
-            fStack_b0 = CStack_dc.z - CStack_100.z;
-            if ((0.0 < (double)fStack_b0) && ((double)fStack_b0 <= 30)) {
+            CStack_b8.x = CStack_dc.x - CStack_100.x;
+            CStack_b8.y = CStack_dc.y - CStack_100.y;
+            CStack_b8.z = CStack_dc.z - CStack_100.z;
+            if ((0.0 < (double)CStack_b8.z) && ((double)CStack_b8.z <= 30)) {
               core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                        (&fStack_f4,&fStack_b8);
+                        (aCStack_f4,&CStack_b8);
               fStack_1a8 = 0.5235988;
-              if (fStack_b0 < (float)10) {
+              if (CStack_b8.z < (float)10) {
                 fStack_1a8 = 1.5707964;
               }
-              if (((ABS(fStack_f4) <= fStack_1a8) && (local_30 <= fStack_f0)) &&
-                 (fStack_f0 <= local_2c)) {
-                fVar9 = SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4);
-                fVar2 = 1.0 / fVar9;
-                fStack_b4 = fStack_b4 * fVar2;
-                fStack_b8 = fStack_b8 * fVar2;
-                fStack_b0 = fStack_b0 * fVar2;
-                fVar9 = fVar9 * (float)0.033333333333333298 +
-                        ((float)2 -
-                        (fStack_b0 * fStack_c8 + fStack_b8 * fStack_d0 + fStack_b4 * fStack_cc));
-                if (fVar9 < fStack_20) {
+              if (((ABS(aCStack_f4[0].x) <= fStack_1a8) && (local_30 <= aCStack_f4[0].y)) &&
+                 (aCStack_f4[0].y <= local_2c)) {
+                fVar11 = SQRT(CStack_b8.z * CStack_b8.z +
+                              CStack_b8.x * CStack_b8.x + CStack_b8.y * CStack_b8.y);
+                fVar2 = 1.0 / fVar11;
+                CStack_b8.y = CStack_b8.y * fVar2;
+                CStack_b8.x = CStack_b8.x * fVar2;
+                CStack_b8.z = CStack_b8.z * fVar2;
+                fVar11 = fVar11 * (float)0.033333333333333298 +
+                         ((float)2 -
+                         (CStack_b8.z * CStack_d0.z +
+                         CStack_b8.x * CStack_d0.x + CStack_b8.y * CStack_d0.y));
+                if (fVar11 < fStack_20) {
                   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
                   core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(0x01E57284,2);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                             (0x01E57284,(CDemonActor *)this_ptr);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCStack_1c);
-                  iVar8 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                                    (0x01E57284,&CStack_94,&CStack_88);
+                  iVar10 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
+                                     (0x01E57284,&CStack_94,&CStack_88);
                   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-                  if (iVar8 == 0) {
-                    fStack_38 = fStack_f0;
-                    fStack_34 = fStack_f4;
+                  if (iVar10 == 0) {
+                    fStack_38 = aCStack_f4[0].y;
+                    fStack_34 = aCStack_f4[0].x;
                     local_24->aim_lock_state = 1;
-                    fStack_20 = fVar9;
+                    fStack_20 = fVar11;
                   }
                 }
               }
             }
-            iVar7 = iVar7 + 1;
+            iVar9 = iVar9 + 1;
             pCVar6 = pCVar6 + 1;
-          } while (iVar7 < iStack_28);
+          } while (iVar9 < iStack_28);
         }
       }
       iStack_3c = iStack_3c + 4;
@@ -252,11 +246,9 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     dVar3 = 0.5;
   }
   fStack_44 = delta_time * (float)3.1415926535000001 * (float)dVar3;
-  fStack_4c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               (fStack_38 - local_24->target_yaw);
+  fStack_4c = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fStack_38 - local_24->target_yaw);
   fStack_18 = fStack_4c;
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               (fStack_34 - local_24->target_pitch);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fStack_34 - local_24->target_pitch);
   fStack_54 = -fStack_44;
   if (fStack_4c < fStack_54) {
     fStack_4c = fStack_54;
@@ -272,11 +264,10 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
   if (fStack_44 < fStack_50) {
     fStack_50 = fStack_44;
   }
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                               (local_24->target_yaw + fStack_4c);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_24->target_yaw + fStack_4c);
   local_24->target_yaw = fStack_18;
-  fVar9 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_24->target_pitch + fStack_50);
-  local_24->target_pitch = fVar9;
+  fVar11 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_24->target_pitch + fStack_50);
+  local_24->target_pitch = fVar11;
   local_24->kickback_factor = 1.0;
   if (((local_24->aim_lock_state == 1) &&
       (ABS(local_24->target_yaw - fStack_38) < (float)0.01)) &&

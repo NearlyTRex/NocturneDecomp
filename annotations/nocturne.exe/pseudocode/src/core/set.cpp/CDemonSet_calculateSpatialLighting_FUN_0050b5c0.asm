@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *param_1,undefined4 param_2,int param_3)
+; int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_position
+; CVector3i *      Stack[0xc]:4   surface_normal
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined        Stack[-0x3c]:1  local_3c
@@ -140,7 +144,7 @@ section .text
     ADD ESI,0x4                         ; 0050b69b
     INC EDI                             ; 0050b69e
     CALL core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0 ; 0050b69f
-        ;   XREF to: 0044d2d0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0()
+        ;   XREF to: 0044d2d0 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
     MOV ECX,dword ptr [0x01fff090]      ; 0050b6a4 | DAT_01fff090
     ADD ESP,0xc                         ; 0050b6aa
     ADD EBX,EAX                         ; 0050b6ad

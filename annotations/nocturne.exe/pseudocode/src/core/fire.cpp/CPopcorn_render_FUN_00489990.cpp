@@ -15,7 +15,7 @@ void core_fire_cpp_CPopcorn_render_FUN_00489990(CVector3f *param_1)
   int iVar1;
   byte bVar2;
   int aiStackY_1048 [996];
-  uint uVar3;
+  CVector3i *rotation;
   SMRGLHeaderPrimitive local_a0;
   uint local_88;
   uint local_84;
@@ -23,14 +23,13 @@ void core_fire_cpp_CPopcorn_render_FUN_00489990(CVector3f *param_1)
   uint local_7c;
   CVector3i local_78;
   CVector3i local_6c;
-  uint local_60;
-  int aiStack_5c [2];
+  CVector3i local_60;
   CVector3i local_54;
   uint local_48;
   uint local_44;
   uint local_40;
   CVector3i local_3c;
-  uint local_30;
+  int local_30;
   int aiStack_2c [2];
   CVector3i local_24;
   CVector3i local_18;
@@ -47,12 +46,13 @@ void core_fire_cpp_CPopcorn_render_FUN_00489990(CVector3f *param_1)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
   engine_drender_cpp_FUN_00460d90(DAT_005ae704);
-  uVar3 = 0;
-  local_60 = local_30;
-  aiStack_5c[(uint)bVar2 * -2] = aiStack_2c[(uint)bVar2 * -2];
-  aiStack_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+  rotation = (CVector3i *)0x0;
+  local_60.x = local_30;
+  *(int *)((int)&local_60 + (uint)bVar2 * -8 + 4) = aiStack_2c[(uint)bVar2 * -2];
+  *(int *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(DAT_005ae704,&local_60,uVar3);
+  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
+            (DAT_005ae704,&local_60,rotation);
   local_48 = 0xbe000000;
   local_44 = 0xbe000000;
   local_40 = 0;

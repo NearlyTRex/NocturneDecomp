@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(CWeapon *param_1)
+; CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(CTommyGun *this_ptr)
 ;
+; Parameters:
+; CTommyGun *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_tommygun.cpp_FUN_00545b60 at 00545b73
@@ -11,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_tommygun_kfm_0059688b
 ;   undefined4 DAT_005a32dc
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a32e4 = 00553f10
+;   CWeapon_full_vtable g_CTommyGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -32,7 +34,7 @@ section .text
     MOV EBX,EAX                         ; 00545ba3
     ADD EAX,0x150                       ; 00545ba5
     PUSH EAX                            ; 00545baa
-    MOV dword ptr [EAX + -0x4],0x5a32e4 ; 00545bab | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a32e4
+    MOV dword ptr [EAX + -0x4],0x5a32e4 ; 00545bab | g_CTommyGunVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00545bb2
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 00545bb7

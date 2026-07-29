@@ -11,7 +11,7 @@
 void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
+  CCharacter *this_ptr_00;
   CFlameCan *this_ptr_01;
   float fVar1;
   float fVar2;
@@ -26,18 +26,17 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
   if (0 < _DAT_01c09e08) {
     local_20 = 0;
     do {
-      this_ptr_00 = *(CDemonActor **)(&DAT_01c09e0c + local_20);
-      if (((this_ptr->flame_type == 2) || (*(int *)(this_ptr_00[0x1d].actor_name + 0xc) != 0)) &&
-         (fVar1 = (this_ptr_00->location).position.x - (this_ptr->position).x,
-         fVar3 = (this_ptr_00->location).position.y - (this_ptr->position).y,
-         fVar2 = (this_ptr_00->location).position.z - (this_ptr->position).z,
+      this_ptr_00 = *(CCharacter **)(&DAT_01c09e0c + local_20);
+      if (((this_ptr->flame_type == 2) || (this_ptr_00->show_in_editor != 0)) &&
+         (fVar1 = (this_ptr_00->base).location.position.x - (this_ptr->position).x,
+         fVar3 = (this_ptr_00->base).location.position.y - (this_ptr->position).y,
+         fVar2 = (this_ptr_00->base).location.position.z - (this_ptr->position).z,
          fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= 5.4526381103294656e-315._0_4_)) {
-        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-                  ((CDeformableModelInstance *)(this_ptr_00 + 1));
+        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(&this_ptr_00->model);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                  (this_ptr_00,local_40,&this_ptr->position);
+                  (&this_ptr_00->base,local_40,&this_ptr->position);
         core_charactr_cpp_FUN_00427730
-                  (this_ptr_00,local_40,0,0,0x3f800000,this_ptr->flame_type == 2);
+                  (this_ptr_00,local_40,0,0,1.0,(uint)(this_ptr->flame_type == 2));
       }
       local_20 = local_20 + 4;
       iVar4 = iVar4 + 1;

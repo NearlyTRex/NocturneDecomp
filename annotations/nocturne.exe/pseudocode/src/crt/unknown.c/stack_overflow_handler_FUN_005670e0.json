@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 59,
+    "complexity_score": 33,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
       "stack_ref"
     ],
-    "total_lines": 25
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -37,9 +36,9 @@
         "005670ec"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallStack",
     "name": "crt_unknown.c_stack_overflow_handler_FUN_005670e0",
-    "signature": "undefined4 crt_unknown_c_stack_overflow_handler_FUN_005670e0(void)"
+    "signature": "void __watcallStack crt_unknown_c_stack_overflow_handler_FUN_005670e0(SIZE_T required_bytes)"
   },
   "function_calls": [
     {
@@ -70,37 +69,29 @@
     "pcode_op_count": 13
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "required_bytes",
+        "offset": 4,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "uint extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 14,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "*(int *)(&stack0xfffffff4 + iVar3) = iVar3;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
     }
   ]
 }

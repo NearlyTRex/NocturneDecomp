@@ -26,17 +26,17 @@ void engine_font_cpp_FUN_00490210(CBitFont *param_1,char *param_2)
     return;
   }
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%s\n",local_22c);
+  _fscanf(stream,"%s\n");
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%d,%d\n",&local_2c,&local_28);
+  _fscanf(stream,"%d,%d\n");
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%d,%d\n",&local_24,&local_20);
+  _fscanf(stream,"%d,%d\n");
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%d\n",&local_1c);
+  _fscanf(stream,"%d\n");
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%d\n",&local_18);
+  _fscanf(stream,"%d\n");
   _fgets(local_12c,0xff,stream);
-  _fscanf(stream,"%d,%d\n",&local_14,&local_10);
+  _fscanf(stream,"%d,%d\n");
   _fclose(stream);
   if ((local_24 == 0x20) && (local_20 == 0xff)) {
     engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40(param_1,local_22c,local_2c,local_28,local_1c)

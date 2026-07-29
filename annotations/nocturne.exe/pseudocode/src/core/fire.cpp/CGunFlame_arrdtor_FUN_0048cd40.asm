@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(void)
+; CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(CGunFlame *objs,uint flags)
 ;
+; Parameters:
+; CGunFlame *      Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGunFlameTypeInfo_0059d4a0

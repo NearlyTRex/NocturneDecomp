@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 253,
+    "complexity_score": 248,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 48,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 234
+    "total_lines": 229
   },
   "cross_references": [
     {
@@ -392,23 +392,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CTurret_aimAtTarget_FUN_0054a640.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 32,
-          "line": 35,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
@@ -436,71 +419,71 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_24 = *param_2 - (param_1->location).position.x;",
+      "text": "local_24.x = *param_2 - (param_1->location).position.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = *param_2 - (param_1->location).position.x;",
+      "text": "local_24.x = *param_2 - (param_1->location).position.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = param_2[1] - (param_1->location).position.y;",
+      "text": "local_24.y = param_2[1] - (param_1->location).position.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = param_2[1] - (param_1->location).position.y;",
+      "text": "local_24.y = param_2[1] - (param_1->location).position.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_1c = param_2[2] - (param_1->location).position.z;",
+      "text": "local_24.z = param_2[2] - (param_1->location).position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = param_2[2] - (param_1->location).position.z;",
+      "text": "local_24.z = param_2[2] - (param_1->location).position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_2c - (param_1->orient).vec.y);",
+      "text": "local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.y - (param_1->orient).vec.y);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_30 - (param_1->orient).vec.x);",
+      "text": "local_c = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_30.x - (param_1->orient).vec.x);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 27,
       "match": "param_3",
       "severity": "mild",
       "text": "local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;",
@@ -508,7 +491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;",
@@ -516,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.y = (param_1->orient).vec.y + local_34;",
@@ -524,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.y = (param_1->orient).vec.y + local_34;",
@@ -532,7 +515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.x = (param_1->orient).vec.x + local_38;",
@@ -540,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.x = (param_1->orient).vec.x + local_38;",
@@ -548,7 +531,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
@@ -564,14 +547,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 35,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(local_2c - (param_1->orient).vec.y);",
-      "type": "static_uninitvar"
     }
   ]
 }

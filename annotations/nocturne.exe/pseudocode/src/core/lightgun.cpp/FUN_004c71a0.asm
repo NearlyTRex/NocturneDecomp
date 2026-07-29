@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_lightgun_cpp_FUN_004c71a0(CLightGun *param_1)
+; undefined4 core_lightgun_cpp_FUN_004c71a0(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
@@ -101,7 +101,7 @@ section .text
     MOV dword ptr [ESP + 0xc0],EBX      ; 004c7238
     MOV dword ptr [ESP + 0xc4],EBX      ; 004c723f
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004c7246
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004c724b
     FLD float ptr [ESP + 0x78]          ; 004c724e
     FLD float ptr [ESP + 0x7c]          ; 004c7252
@@ -160,7 +160,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004c734b | DAT_005be368
     PUSH ECX                            ; 004c7351 | DAT_01e57284
     CALL core_setcolid.cpp_FUN_00511740 ; 004c7352
-        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00511740()
+        ;   XREF to: 00511740 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511740(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004c7357
     PUSH EDI                            ; 004c735a
     MOV ESI,dword ptr [0x005be368]      ; 004c735b | DAT_005be368
@@ -187,7 +187,7 @@ section .text
     MOV ESI,dword ptr [0x005be368]      ; 004c7399 | DAT_005be368
     PUSH ESI                            ; 004c739f | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004c73a0
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x118],EAX     ; 004c73a5
     FLD float ptr [ESP + 0x118]         ; 004c73ac
     ADD ESP,0xc                         ; 004c73b3
@@ -332,7 +332,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004c7584 | DAT_005be368
     PUSH EDX                            ; 004c758a | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 004c758b
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV EAX,[0x005be368]                ; 004c7590 | DAT_005be368
     MOV ECX,dword ptr [EAX + 0x14cd5c]  ; 004c7595 | DAT_01fa3fe0
     ADD ESP,0xc                         ; 004c759b

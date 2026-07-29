@@ -1,108 +1,116 @@
 // Name: core_scat.cpp_FUN_004fcd90
 // Address: 004fcd90
 // Address Range: [[004fcd90, 004fcfe5]]
-// Convention: unknown
-// Signature: void core_scat_cpp_FUN_004fcd90(CCharacter *param_1,float param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_scat_cpp_FUN_004fcd90(CScat *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void core_scat_cpp_FUN_004fcd90(CCharacter *param_1,float param_2)
+void __cdecl core_scat_cpp_FUN_004fcd90(CScat *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  int iVar2;
-  CFlame *pCVar3;
-  SMotion *pSVar4;
-  uint uVar5;
-  uint uVar6;
-  float fVar7;
-  float fVar8;
-  int local_14;
+  CDeformableModelInstance *pCVar1;
+  CCharacter *pCVar2;
+  SMotion *pSVar3;
+  CVector3f *damage_direction;
+  CVector3f *pCVar4;
+  CCharacter *this_ptr_00;
+  CMotionController *unaff_EDI;
+  CCharacter *pCVar5;
+  CMotionController *this_ptr_01;
+  CVector3f *pCVar6;
+  int iVar7;
   
-  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     (&(param_1->model).motion_controller);
-  if ((pSVar4->state_index != 0xc) &&
-     (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(param_1->model).motion_controller), pSVar4->state_index != 0xd)) {
-    fVar7 = param_1[2].flames[0x1d].base.orient_matrix.m[1].x;
-    if (*(int *)(param_1[2].flames[0x1d].on_event + 4) == 0) {
-      fVar7 = 0.0;
+  pCVar1 = &(this_ptr->base).base.model;
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                     (&pCVar1->motion_controller);
+  if ((pSVar3->state_index != 0xc) &&
+     (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                         (&pCVar1->motion_controller), pSVar3->state_index != 0xd)) {
+    this_ptr_00 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
+    if (this_ptr->guns_drawn == 0) {
+      this_ptr_00 = (CCharacter *)0x0;
     }
-    fVar8 = *(float *)(param_1[2].flames[0x1d].on_event + 0x18);
-    if (((fVar8 != 0.0) && (fVar7 != fVar8)) && (*(int *)((int)fVar8 + 0x2d8) == 8)) {
-      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                         (&(param_1->model).motion_controller);
-      if (pSVar4->state_index == 0) {
-        pCVar3 = param_1[2].flames;
-        pCVar3[0x1d].on_event[0x18] = '\0';
-        pCVar3[0x1d].on_event[0x19] = '\0';
-        pCVar3[0x1d].on_event[0x1a] = '\0';
-        pCVar3[0x1d].on_event[0x1b] = '\0';
+    pCVar5 = (CCharacter *)this_ptr->weapon_actor;
+    if (((pCVar5 != (CCharacter *)0x0) && (this_ptr_00 != pCVar5)) &&
+       ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+      pCVar1 = &(this_ptr->base).base.model;
+      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                         (&pCVar1->motion_controller);
+      if (pSVar3->state_index == 0) {
+        this_ptr->weapon_actor = (CWeapon *)0x0;
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                  (&(param_1->model).motion_controller,0,1);
+                  (&pCVar1->motion_controller,0,1);
       }
     }
-    local_14 = 0;
-    while (0.0 < param_2) {
-      fVar8 = *(float *)(param_1[2].flames[0x1d].on_event + 0x18);
-      if (fVar7 == fVar8) {
-        if (fVar8 != 0.0) {
-          switch(*(uint *)((int)fVar8 + 0x2d8)) {
+    this_ptr_01 = &(this_ptr->base).base.model.motion_controller;
+    iVar7 = 0;
+    while (0.0 < delta_time) {
+      pCVar5 = (CCharacter *)this_ptr->weapon_actor;
+      if (this_ptr_00 == pCVar5) {
+        if (pCVar5 != (CCharacter *)0x0) {
+          switch((pCVar5->model).transformed_vertices[0x19].y) {
           default:
-            fVar8 = 2.8026e-45;
+            pCVar5 = (CCharacter *)0x2;
             break;
-          case 8:
-            fVar8 = 0.0;
+          case 1.12104e-44:
+            pCVar5 = (CCharacter *)0x0;
           }
         }
       }
-      else if (fVar8 == 0.0) {
-        if ((fVar7 != 0.0) && (*(int *)((int)fVar7 + 0x2d8) != 8)) {
+      else if (pCVar5 == (CCharacter *)0x0) {
+        if ((this_ptr_00 != (CCharacter *)0x0) &&
+           ((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {
 LAB_004fcf93:
-          fVar8 = 1.4013e-45;
+          pCVar5 = (CCharacter *)0x1;
         }
       }
       else {
-        if (*(int *)((int)fVar8 + 0x2d8) != 8) goto LAB_004fcf93;
-        fVar8 = 0.0;
+        if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_004fcf93;
+        pCVar5 = (CCharacter *)0x0;
       }
-      uVar5 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(param_1,&param_2,fVar8);
-      core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                (&(param_1->model).motion_controller);
-      if (-1 < (int)uVar5) {
-        fVar1 = *(float *)(param_1[2].flames[0x1d].on_event + 0x18);
-        if (fVar7 != fVar1) {
-          if ((fVar1 != 0.0) && ((*(int *)((int)fVar1 + 0x2d8) != 8) == uVar5)) {
-            iVar2 = *(int *)(param_1[2].flames[0x1d].on_event + 0x18);
-            (**(code **)(*(int *)(iVar2 + 0x14c) + 0xd4))(iVar2,1);
-            pCVar3 = param_1[2].flames;
-            pCVar3[0x1d].on_event[0x18] = '\0';
-            pCVar3[0x1d].on_event[0x19] = '\0';
-            pCVar3[0x1d].on_event[0x1a] = '\0';
-            pCVar3[0x1d].on_event[0x1b] = '\0';
+      damage_direction =
+           (CVector3f *)
+           core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500
+                     ((CCharacter *)this_ptr,&delta_time,(int)pCVar5);
+      pCVar6 = damage_direction;
+      core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(this_ptr_01);
+      if (-1 < (int)damage_direction) {
+        pCVar2 = (CCharacter *)this_ptr->weapon_actor;
+        if (this_ptr_00 != pCVar2) {
+          if ((pCVar2 != (CCharacter *)0x0) &&
+             ((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==
+              pCVar6)) {
+            (*(((((CCharacter *)this_ptr->weapon_actor)->base).vtable._uc)->_uc).kill)
+                      ((CCharacter *)this_ptr->weapon_actor,1,damage_direction,(float)this_ptr_01);
+            this_ptr->weapon_actor = (CWeapon *)0x0;
           }
-          if (*(int *)(param_1[2].flames[0x1d].on_event + 4) != 0) {
-            if ((fVar7 == 0.0) || (*(int *)((int)fVar7 + 0x2d8) == 8)) {
-              uVar6 = 0;
+          if (this_ptr->guns_drawn != 0) {
+            if ((this_ptr_00 == (CCharacter *)0x0) ||
+               ((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+              pCVar4 = (CVector3f *)0x0;
             }
             else {
-              uVar6 = 1;
+              pCVar4 = (CVector3f *)0x1;
             }
-            if (((uVar6 == uVar5) &&
-                (*(float *)(param_1[2].flames[0x1d].on_event + 0x18) = fVar7, fVar7 != 0.0)) &&
-               ((**(code **)(*(int *)((int)fVar7 + 0x14c) + 0xd4))(fVar7,2),
-               *(int *)(*(int *)(param_1[2].flames[0x1d].on_event + 0x18) + 0x2d8) == 8)) {
-              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                        (&(param_1->model).motion_controller,6,1);
+            if (((pCVar4 == pCVar6) &&
+                (this_ptr->weapon_actor = (CWeapon *)this_ptr_00, this_ptr_00 != (CCharacter *)0x0))
+               && ((*(((this_ptr_00->base).vtable._uc)->_uc).kill)
+                             (this_ptr_00,2,damage_direction,(float)this_ptr_01),
+                  this_ptr->weapon_actor->weapon_type == 8)) {
+              iVar7 = 1;
+              this_ptr_01 = unaff_EDI;
+              core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(unaff_EDI,6,1);
             }
           }
         }
-        core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(param_1,(int)fVar8);
+        core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50
+                  ((CCharacter *)this_ptr,(int)pCVar5);
       }
-      local_14 = local_14 + 1;
-      if (1 < local_14) {
+      iVar7 = iVar7 + 1;
+      if (1 < iVar7) {
         return;
       }
     }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_skipWhitespaceIndexed_FUN_0047a280(void)
+; int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_0047a280(char *expression,int *parse_position)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   expression
+; int *            Stack[0x8]:4   parse_position
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c168c

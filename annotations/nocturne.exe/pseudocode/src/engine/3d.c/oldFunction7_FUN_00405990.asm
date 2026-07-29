@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_3d_c_oldFunction7_FUN_00405990(void)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction7_FUN_00405990(SMRGLHeaderExtended *primitive)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   primitive
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_00577504

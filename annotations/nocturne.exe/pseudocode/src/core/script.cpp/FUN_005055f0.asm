@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_005055f0(CScript *param_1,_FILE *param_2)
+; void __cdecl core_script_cpp_FUN_005055f0(CScript *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

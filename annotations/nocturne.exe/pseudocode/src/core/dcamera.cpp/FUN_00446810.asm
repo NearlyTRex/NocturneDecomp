@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_FUN_00446810(int param_1)
+; void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x274]:1  local_274
 ; undefined        Stack[-0x174]:1  local_174
@@ -88,7 +90,7 @@ section .text
     MOV dword ptr [0x0140d778],ECX      ; 00446830 | DAT_0140d778
     MOV dword ptr [0x0140d77c],ECX      ; 00446836 | DAT_0140d77c
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20 ; 0044683c
-        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20()
+        ;   XREF to: 0043fa20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid * fog)
     MOV EAX,[0x0140e790]                ; 00446841 | DAT_0140e790
     MOV EDI,dword ptr [0x0140e794]      ; 00446846 | DAT_0140e794
     MOV EBP,dword ptr [0x0140e798]      ; 0044684c | DAT_0140e798
@@ -257,7 +259,7 @@ section .text
     PUSH EAX                            ; 00446aaf
     PUSH 0x140d784                      ; 00446ab0
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80 ; 00446ab5
-        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80()
+        ;   XREF to: 0043fc80 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     IMUL EAX,EAX,0xff                   ; 00446aba
     SHR EAX,0xe                         ; 00446ac0
     ADD ESP,0x10                        ; 00446ac3

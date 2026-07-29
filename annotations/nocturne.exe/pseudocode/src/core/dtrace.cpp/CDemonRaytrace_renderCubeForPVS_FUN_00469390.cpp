@@ -1,14 +1,14 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390
 // Address: 00469390
 // Address Range: [[00469390, 00469cd6]]
-// Convention: unknown
-// Signature: void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *param_1,float param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *param_1,float param_2,int param_3,int param_4,int param_5)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 {
   CDemonRenderer *pCVar1;
@@ -38,86 +38,85 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace
   int local_14;
   
   _DAT_01b7b734 = _DAT_01b7b734 + 1;
-  if ((((((param_1->grid_bounds_min).x <= (int)param_2) && ((param_1->grid_bounds_min).y <= param_3)
-        ) && ((param_1->grid_bounds_min).z <= param_4)) &&
-      (((int)param_2 <= (param_1->grid_bounds_max).x && (param_3 <= (param_1->grid_bounds_max).y))))
-     && (param_4 <= (param_1->grid_bounds_max).z)) {
-    local_34 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
-                         (param_1,(int)param_2,param_3,param_4);
+  if ((((((this_ptr->grid_bounds_min).x <= grid_x) && ((this_ptr->grid_bounds_min).y <= grid_y)) &&
+       ((this_ptr->grid_bounds_min).z <= grid_z)) &&
+      ((grid_x <= (this_ptr->grid_bounds_max).x && (grid_y <= (this_ptr->grid_bounds_max).y)))) &&
+     (grid_z <= (this_ptr->grid_bounds_max).z)) {
+    local_34 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(this_ptr,grid_x,grid_y,grid_z);
     if ((local_34 != (CDemonCube *)0x0) && (local_34->voxel_buffer1 != (SVoxelGrid *)0x0)) {
-      local_28 = (float)(int)param_2;
-      local_18 = param_3;
-      local_14 = param_4;
-      local_20 = (float)param_3;
-      local_30 = (float)param_4;
+      local_28 = (float)grid_x;
+      local_18 = grid_y;
+      local_14 = grid_z;
+      local_20 = (float)grid_y;
+      local_30 = (float)grid_z;
       _DAT_01b7b738 = _DAT_01b7b738 + 1;
-      local_64.x = (float)(int)ROUND((local_28 * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_64.x = (float)(int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                                      _DAT_0059c8a0);
-      local_64.y = (float)(int)ROUND((local_20 * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_64.y = (float)(int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                                      _DAT_0059c8a0);
-      local_64.z = (float)(int)ROUND((local_30 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_64.z = (float)(int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                                      _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);
-      local_14 = (int)param_2 + 1;
+      local_14 = grid_x + 1;
       local_2c = (float)local_14;
-      local_7c.x = (int)ROUND((local_2c * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_7c.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_7c.y = (int)ROUND((local_20 * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_7c.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_7c.z = (int)ROUND((local_30 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_7c.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[1].projected_vertex,&local_7c);
-      local_14 = param_4 + 1;
+      local_14 = grid_z + 1;
       local_24 = (float)local_14;
-      local_40.x = (int)ROUND((local_2c * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_40.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_40.y = (int)ROUND((local_20 * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_40.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_40.z = (int)ROUND((local_24 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_40.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[2].projected_vertex,&local_40);
-      local_58.x = (int)ROUND((local_28 * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_58.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_58.y = (int)ROUND((local_20 * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_58.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_58.z = (int)ROUND((local_24 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_58.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[3].projected_vertex,&local_58);
-      local_14 = param_3 + 1;
+      local_14 = grid_y + 1;
       local_1c = (float)local_14;
-      local_a0.x = (int)ROUND((local_28 * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_a0.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_a0.y = (int)ROUND((local_1c * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_a0.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_a0.z = (int)ROUND((local_30 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_a0.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[4].projected_vertex,&local_a0);
-      local_94.x = (int)ROUND((local_2c * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_94.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_94.y = (int)ROUND((local_1c * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_94.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_94.z = (int)ROUND((local_30 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_94.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[5].projected_vertex,&local_94);
-      local_70.x = (int)ROUND((local_2c * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_70.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_70.y = (int)ROUND((local_1c * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_70.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_70.z = (int)ROUND((local_24 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_70.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[6].projected_vertex,&local_70);
-      local_88.x = (int)ROUND((local_28 * (param_1->cell_size).x + (param_1->bbox_min).x) *
+      local_88.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               _DAT_0059c8a0);
-      local_88.y = (int)ROUND((local_1c * (param_1->cell_size).y + (param_1->bbox_min).y) *
+      local_88.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               _DAT_0059c8a0);
-      local_88.z = (int)ROUND((local_24 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+      local_88.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               _DAT_0059c8a0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&DAT_005ae700->vertex_buffer_ptr[7].projected_vertex,&local_88);
@@ -126,39 +125,39 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace
               DAT_005c5114 & DAT_005c5144 & DAT_005c5174;
       if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
         _DAT_01b7b73c = _DAT_01b7b73c + 1;
-        if (1 < param_5) {
-          local_14 = param_4;
+        if (1 < render_mode) {
+          local_14 = grid_z;
           pSVar4 = (SMRGLHeaderPrimitive *)0x469a74;
           round
-                    ((double)(((float)param_4 * (param_1->cell_size).z + (param_1->bbox_min).z) *
+                    ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                              (float)-256));
           iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                             (pCVar1,pSVar4);
           pCVar1 = 0x01B4D738;
           if (iVar3 == 0) {
-            local_18 = param_4 + 1;
+            local_18 = grid_z + 1;
             pSVar4 = (SMRGLHeaderPrimitive *)0x469ae8;
             round
-                      ((double)(((float)local_18 * (param_1->cell_size).z + (param_1->bbox_min).z) *
-                               (float)256));
+                      ((double)(((float)local_18 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z)
+                               * (float)256));
             iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                               (pCVar1,pSVar4);
             pCVar1 = 0x01B4D738;
             if (iVar3 == 0) {
-              local_1c = param_2;
+              local_1c = (float)grid_x;
               pSVar4 = (SMRGLHeaderPrimitive *)0x469b55;
               round
-                        ((double)(((float)(int)param_2 * (param_1->cell_size).x +
-                                  (param_1->bbox_min).x) * (float)-256));
+                        ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
+                                 * (float)-256));
               iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                 (pCVar1,pSVar4);
               pCVar1 = 0x01B4D738;
               if (iVar3 == 0) {
-                local_20 = (float)((int)param_2 + 1);
+                local_20 = (float)(grid_x + 1);
                 pSVar4 = (SMRGLHeaderPrimitive *)0x469bc1;
                 round
-                          ((double)(((float)(int)local_20 * (param_1->cell_size).x +
-                                    (param_1->bbox_min).x) * (float)256));
+                          ((double)(((float)(int)local_20 * (this_ptr->cell_size).x +
+                                    (this_ptr->bbox_min).x) * (float)256));
                 iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                   (pCVar1,pSVar4);
                 pCVar1 = 0x01B4D738;
@@ -166,8 +165,8 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace
                   local_24 = (float)(unaff_EBX + 1);
                   pSVar4 = (SMRGLHeaderPrimitive *)0x469c40;
                   round
-                            ((double)(((float)(int)local_24 * (param_1->cell_size).y +
-                                      (param_1->bbox_min).y) * (float)256));
+                            ((double)(((float)(int)local_24 * (this_ptr->cell_size).y +
+                                      (this_ptr->bbox_min).y) * (float)256));
                   iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                     (pCVar1,pSVar4);
                   pCVar1 = 0x01B4D738;
@@ -175,8 +174,8 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace
                     pSVar4 = (SMRGLHeaderPrimitive *)0x469cb3;
                     local_28 = unaff_ESI;
                     round
-                              ((double)(((float)(int)unaff_ESI * (param_1->cell_size).y +
-                                        (param_1->bbox_min).y) * (float)-256));
+                              ((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +
+                                        (this_ptr->bbox_min).y) * (float)-256));
                     iVar3 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                       (pCVar1,pSVar4);
                     if (iVar3 == 0) {
@@ -188,14 +187,14 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace
             }
           }
         }
-        local_64.x = (float)(int)param_2 * (param_1->cell_size).x + (param_1->bbox_min).x;
-        local_2c = (float)param_4;
-        local_64.y = (float)unaff_EDI * (param_1->cell_size).y + (param_1->bbox_min).y;
+        local_64.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
+        local_2c = (float)grid_z;
+        local_64.y = (float)unaff_EDI * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
         _DAT_01b7b740 = _DAT_01b7b740 + 1;
-        local_64.z = (float)param_4 * (param_1->cell_size).z + (param_1->bbox_min).z;
+        local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,&local_64);
-        core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(local_4c,param_1->rendering_mode);
+        core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
         iVar3 = _DAT_01b7b744;

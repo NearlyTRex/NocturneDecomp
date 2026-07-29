@@ -1,12 +1,12 @@
 // Name: engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
 // Address: 00431730
 // Address Range: [[00431730, 00431821]]
-// Convention: unknown
-// Signature: void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int *param_2,int *param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 #include "nocturne.h"
 
-void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int *param_2,int *param_3)
+void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 
 {
   longlong lVar1;
@@ -14,40 +14,47 @@ void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int 
   int iVar3;
   int iVar4;
   
-  iVar4 = (param_2[1] + param_1[2]) - (param_1[1] + param_2[2]);
-  uVar2 = param_1[2] - param_1[1];
+  iVar3 = (v1->projected_vertex).transformed_z;
+  iVar4 = ((v2->projected_vertex).transformed_y + iVar3) -
+          ((v1->projected_vertex).transformed_y + (v2->projected_vertex).transformed_z);
+  uVar2 = iVar3 - (v1->projected_vertex).transformed_y;
   if ((int)uVar2 < iVar4) {
     if (-iVar4 < (int)uVar2) {
-      iVar4 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
     }
     else {
-      iVar4 = -0x80000000;
+      iVar3 = -0x80000000;
     }
   }
   else {
-    iVar4 = 0x7fffffff;
+    iVar3 = 0x7fffffff;
   }
-  lVar1 = (longlong)(param_2[2] - param_1[2]) * (longlong)iVar4;
+  lVar1 = (longlong)((v2->projected_vertex).transformed_z - (v1->projected_vertex).transformed_z) *
+          (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[2];
-  param_3[2] = iVar3;
-  param_3[1] = iVar3;
-  lVar1 = (longlong)(*param_2 - *param_1) * (longlong)iVar4;
+  iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+          (v1->projected_vertex).transformed_z;
+  (output->projected_vertex).transformed_z = iVar4;
+  (output->projected_vertex).transformed_y = iVar4;
+  lVar1 = (longlong)((v2->projected_vertex).transformed_x - (v1->projected_vertex).transformed_x) *
+          (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  *param_3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + *param_1;
-  lVar1 = (longlong)(param_2[8] - param_1[8]) * (longlong)iVar4;
+  (output->projected_vertex).transformed_x =
+       (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+       (v1->projected_vertex).transformed_x;
+  lVar1 = (longlong)(v2->r - v1->r) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  param_3[8] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[8];
-  lVar1 = (longlong)(param_2[0xb] - param_1[0xb]) * (longlong)iVar4;
+  output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  lVar1 = (longlong)(v2->a - v1->a) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  param_3[0xb] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[0xb];
-  lVar1 = (longlong)(param_2[6] - param_1[6]) * (longlong)iVar4;
+  output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
+  lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  param_3[6] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[6];
-  lVar1 = (longlong)(param_2[7] - param_1[7]) * (longlong)iVar4;
+  output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  lVar1 = (longlong)(v2->v - v1->v) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  iVar4 = param_1[7];
-  param_3[4] = -1;
-  param_3[7] = iVar4 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+  iVar3 = v1->v;
+  (output->projected_vertex).screen_x = -1;
+  output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
   return;
 }

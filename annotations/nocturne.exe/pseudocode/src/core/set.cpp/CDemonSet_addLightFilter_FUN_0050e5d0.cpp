@@ -1,15 +1,15 @@
 // Name: core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0
 // Address: 0050e5d0
 // Address Range: [[0050e5d0, 0050e65e]]
-// Convention: unknown
-// Signature: void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_2,undefined4 *param_3,undefined4 *param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light)
 
 #include "nocturne.h"
 
-void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_2,uint *param_3,uint *param_4)
+void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light)
 
 {
-  int *piVar1;
+  C3DSLight *pCVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -17,24 +17,24 @@ void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_
   
   iVar3 = 0;
   iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x19644)) {
+  if (0 < (int)this_ptr->cameras[0xf7].position.y) {
     iVar4 = 0;
     do {
-      piVar1 = (int *)(param_1 + 0x19648 + iVar4);
-      *param_3 = piVar1;
-      if (*piVar1 == 0) {
-        iVar2 = _stricmp((char *)(piVar1 + 1),param_2);
+      pCVar1 = (C3DSLight *)((int)this_ptr->cameras[0xf7].rotation_matrix.m + iVar4 + -0x10);
+      *out_light = pCVar1;
+      if (pCVar1->light_type == 0) {
+        iVar2 = _stricmp(pCVar1->name,light_name);
         if (iVar2 == 0) {
-          *param_4 = *(uint *)(&DAT_01fb99d4 + iVar5 * 4);
+          *out_master_light = *(CDemonLight **)(&DAT_01fb99d4 + iVar5 * 4);
           return;
         }
         iVar5 = iVar5 + 1;
       }
       iVar3 = iVar3 + 1;
       iVar4 = iVar4 + 0x1898;
-    } while (iVar3 < *(int *)(param_1 + 0x19644));
+    } while (iVar3 < (int)this_ptr->cameras[0xf7].position.y);
   }
-  *param_3 = 0;
-  *param_4 = 0;
+  *out_light = (C3DSLight *)0x0;
+  *out_master_light = (CDemonLight *)0x0;
   return;
 }

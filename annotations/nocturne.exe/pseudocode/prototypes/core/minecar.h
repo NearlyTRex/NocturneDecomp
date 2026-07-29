@@ -15,18 +15,18 @@ void FUN_004d5fe0(void);
 // Address: 004d6010
 CDemonActorType * FUN_004d6010(void);
 
-// Original: core_minecar.cpp_FUN_004d6020
+// Original: core_minecar.cpp_CMinecar_setup_FUN_004d6020
 // Address: 004d6020
-void FUN_004d6020(int param_1);
+void __cdecl CMinecar::setup(CMineCar *this_ptr);
 
 // Original: core_minecar.cpp_FUN_004d6040
 // Address: 004d6040
-void FUN_004d6040(int param_1,float param_2);
+void FUN_004d6040(CPlatform *param_1,float param_2);
 
 // Original: core_minecar.cpp_FUN_004d60b0
 // Address: 004d60b0
 void FUN_004d60b0(undefined4 param_1);
 
-// Original: core_minecar.cpp_FUN_004d60d0
+// Original: core_minecar.cpp_CMineCar_dtor_FUN_004d60d0
 // Address: 004d60d0
-CDemonActor * FUN_004d60d0(CDemonActor *param_1,byte param_2);
+CMineCar * __cdecl CMineCar::dtor(CMineCar *this_ptr,uint flags);

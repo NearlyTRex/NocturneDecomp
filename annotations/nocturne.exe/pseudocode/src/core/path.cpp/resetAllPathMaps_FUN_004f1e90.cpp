@@ -27,7 +27,7 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_004f1e90(void)
       puVar1 = (uint *)(iVar2 + 0x1e312fc);
       iVar2 = iVar2 + 4;
       iVar3 = iVar3 + 1;
-      core_path_cpp_CPathMap_reset_FUN_004f1e10(*puVar1);
+      core_path_cpp_CPathMap_reset_FUN_004f1e10((CPathMap *)*puVar1);
     } while (iVar3 < _DAT_01e312f8);
   }
   return;

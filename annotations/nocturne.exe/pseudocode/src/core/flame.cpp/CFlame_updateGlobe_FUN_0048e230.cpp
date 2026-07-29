@@ -20,8 +20,8 @@ void core_flame_cpp_CFlame_updateGlobe_FUN_0048e230(int param_1)
   local_28.z = *(float *)(param_1 + 0x28);
   local_28.y = *(float *)(param_1 + 0x154) * (float)0.5 + *(float *)(param_1 + 0x24);
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90((CDemonGlobe *)(param_1 + 0x160),&local_28);
-  local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                              (-*(float *)(param_1 + 0x27c),*(uint *)(param_1 + 0x27c));
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                       (-*(float *)(param_1 + 0x27c),*(float *)(param_1 + 0x27c));
   dVar3 = round
                     ((double)((local_14 + *(float *)(param_1 + 0x278)) * (float)65535));
   iStack_18 = (int)ROUND(dVar3);

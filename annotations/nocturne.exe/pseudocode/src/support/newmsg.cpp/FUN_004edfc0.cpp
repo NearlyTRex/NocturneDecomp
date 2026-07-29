@@ -39,16 +39,16 @@ int support_newmsg_cpp_FUN_004edfc0(char *param_1)
       lVar4 = _ftell(file_handle);
       local_18 = iVar3 + lVar4;
       _fgets(local_31c,0xff,file_handle);
-      _fscanf(file_handle,"%d\n",&local_1c);
+      _fscanf(file_handle,"%d\n");
       _fgets(local_31c,0xff,file_handle);
-      _fscanf(file_handle,"%d\n",&DAT_01d16810);
+      _fscanf(file_handle,"%d\n");
       if (local_1c != 0) {
         PTR_01cc4800 = "..\\support\\newmsg.cpp";
         INT_01cc4804 = 0x52;
         core_main_c_FUN_004c8440("Unknown message file version");
       }
       _fgets(local_31c,0xff,file_handle);
-      _fscanf(file_handle,"\"%[^\"]\"\n",&DAT_005bdf50);
+      _fscanf(file_handle,"\"%[^\"]\"\n");
       do {
         _fscanf(file_handle," ");
         lVar4 = _ftell(file_handle);
@@ -92,7 +92,7 @@ int support_newmsg_cpp_FUN_004edfc0(char *param_1)
           _DAT_01d16814 = 1;
           return _DAT_01d16818 + -1;
         }
-        iVar5 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
+        iVar5 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n");
         if (iVar5 != 2) {
           PTR_01cc4800 = "..\\support\\newmsg.cpp";
           INT_01cc4804 = 99;

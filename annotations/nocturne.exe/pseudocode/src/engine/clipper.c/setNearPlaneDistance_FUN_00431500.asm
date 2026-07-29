@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_clipper_c_setNearPlaneDistance_FUN_00431500(void)
+; void __cdecl engine_clipper_c_setNearPlaneDistance_FUN_00431500(int distance)
 ;
+; Parameters:
+; int              Stack[0x4]:4   distance
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad284

@@ -1,14 +1,16 @@
 // Name: FUN_00571ee0
 // Address: 00571ee0
 // Address Range: [[00571ee0, 00571eed]]
-// Convention: unknown
-// Signature: void FUN_00571ee0(ulong param_1)
+// Convention: __watcallStack
+// Signature: void * __watcallStack FUN_00571ee0(uint size)
 
 #include "nocturne.h"
 
-void FUN_00571ee0(ulong param_1)
+void * __watcallStack FUN_00571ee0(uint size)
 
 {
-  malloc(param_1);
-  return;
+  void *pvVar1;
+  
+  pvVar1 = malloc(size);
+  return pvVar1;
 }

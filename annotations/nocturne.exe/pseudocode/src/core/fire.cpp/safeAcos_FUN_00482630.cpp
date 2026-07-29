@@ -1,23 +1,23 @@
 // Name: core_fire.cpp_safeAcos_FUN_00482630
 // Address: 00482630
 // Address Range: [[00482630, 0048267f]]
-// Convention: unknown
-// Signature: float core_fire_cpp_safeAcos_FUN_00482630(float param_1)
+// Convention: __cdecl
+// Signature: float __cdecl core_fire_cpp_safeAcos_FUN_00482630(float value)
 
 #include "nocturne.h"
 
-float core_fire_cpp_safeAcos_FUN_00482630(float param_1)
+float __cdecl core_fire_cpp_safeAcos_FUN_00482630(float value)
 
 {
   double dVar1;
   uint uStack_8;
   
-  if (param_1 <= (float)-1) {
+  if (value <= (float)-1) {
     uStack_8 = 3.1415927;
   }
   else {
-    if ((double)param_1 < 1.0) {
-      dVar1 = acos((double)param_1);
+    if ((double)value < 1.0) {
+      dVar1 = acos((double)value);
       return (float)dVar1;
     }
     uStack_8 = 0.0;

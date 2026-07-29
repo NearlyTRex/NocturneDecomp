@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CDemonActor *param_1)
+; int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CIcePick *this_ptr)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x2c]:4  local_2c

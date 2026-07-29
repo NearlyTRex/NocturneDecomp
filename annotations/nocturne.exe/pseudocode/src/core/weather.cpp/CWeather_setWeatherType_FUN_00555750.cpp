@@ -18,13 +18,12 @@ void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *thi
   else {
     this_ptr->particle_speed = 5.0;
   }
-  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41a00000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,20.0);
   this_ptr->lightning_active = 0;
   this_ptr->max_flash_interval = 10.0;
   this_ptr->flash_timer = 0.0;
   this_ptr->lightning_countdown = fVar1;
-  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                           (0x40000000,this_ptr->max_flash_interval);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(2.0,this_ptr->max_flash_interval);
   this_ptr->sub_flash_interval = fVar1;
   return;
 }

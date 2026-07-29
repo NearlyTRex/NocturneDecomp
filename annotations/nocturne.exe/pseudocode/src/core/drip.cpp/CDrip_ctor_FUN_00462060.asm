@@ -15,7 +15,7 @@
 ;   undefined4 s_rock_x_wav_0057dde9+1
 ;   undefined4 s_rock_x_wav_0057dde9+2
 ;   undefined4 s_rock_x_wav_0057dde9+3
-;   undefined1* PTR_core_drip.cpp_CDrip_setup_FUN_00462140_0059c5e4 = 00462140
+;   CDemonActor_vtable g_CDripVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -33,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00462063
     PUSH EBX                            ; 00462067
     CALL core_actor.cpp_FUN_00409d30    ; 00462068
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0046206d
     ADD EAX,0x150                       ; 00462070
     PUSH EAX                            ; 00462075
@@ -44,7 +44,7 @@ section .text
     PUSH 0x57ddde                       ; 00462084 | = "stalag.kfm"
     LEA EAX,[EBX + 0x150]               ; 00462089
     PUSH EAX                            ; 0046208f
-    MOV dword ptr [EBX + 0x14c],0x59c5e4 ; 00462090 | PTR_core_drip.cpp_CDrip_setup_FUN_00462140_0059c5e4
+    MOV dword ptr [EBX + 0x14c],0x59c5e4 ; 00462090 | g_CDripVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0046209a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x2     ; 0046209f

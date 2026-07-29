@@ -10,15 +10,15 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(CAmmo *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   CKeyFramedModelInstance *pCVar4;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                          ((CKeyFramedModelInstance *)(iVar2 + 0x150));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_ammo_cpp_FUN_0040ec00_00599454;
+                          ((CKeyFramedModelInstance *)(pCVar2 + 1));
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (this_ptr_00,"bullet.kfm");
   pcVar3 = "CGun";

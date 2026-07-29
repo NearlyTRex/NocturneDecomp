@@ -276,7 +276,7 @@ section .text
     SUB ESP,0x8                         ; 00524f4b
     FSTP double ptr [ESP]               ; 00524f4e
     CALL crt_math.c_floor_FUN_005648c0  ; 00524f51
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x54],EAX      ; 00524f56
     MOV dword ptr [ESP + 0x58],EDX      ; 00524f5a
     FLD double ptr [ESP + 0x54]         ; 00524f5e
@@ -304,7 +304,7 @@ section .text
     SUB ESP,0x8                         ; 00524fa7
     FSTP double ptr [ESP]               ; 00524faa
     CALL crt_math.c_floor_FUN_005648c0  ; 00524fad
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x54],EAX      ; 00524fb2
     MOV dword ptr [ESP + 0x58],EDX      ; 00524fb6
     FLD double ptr [ESP + 0x54]         ; 00524fba
@@ -335,7 +335,7 @@ section .text
     SUB ESP,0x8                         ; 00524ffb
     FSTP double ptr [ESP]               ; 00524ffe
     CALL crt_math.c_floor_FUN_005648c0  ; 00525001
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x54],EAX      ; 00525006
     MOV dword ptr [ESP + 0x58],EDX      ; 0052500a
     FLD double ptr [ESP + 0x54]         ; 0052500e
@@ -632,7 +632,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x120]     ; 005253b0
     PUSH EBX                            ; 005253b6
     CALL sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750 ; 005253b7
-        ;   XREF to: 00523750 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750()
+        ;   XREF to: 00523750 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, ...)
     MOV dword ptr [ESP + 0x6c],EAX      ; 005253bc
     MOV dword ptr [ESP + 0x70],EDX      ; 005253c0
     FLD double ptr [ESP + 0x6c]         ; 005253c4
@@ -708,7 +708,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x120]     ; 0052548a
     PUSH EBX                            ; 00525490
     CALL sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610 ; 00525491
-        ;   XREF to: 00523610 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610()
+        ;   XREF to: 00523610 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, ...)
     MOV dword ptr [ESP + 0x6c],EAX      ; 00525496
     MOV dword ptr [ESP + 0x70],EDX      ; 0052549a
     FLD double ptr [ESP + 0x6c]         ; 0052549e

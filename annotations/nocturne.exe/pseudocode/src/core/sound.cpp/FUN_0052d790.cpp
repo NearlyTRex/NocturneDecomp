@@ -135,7 +135,7 @@ uint core_sound_cpp_FUN_0052d790(void)
   uVar5 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |
                         (ushort)(_DAT_02dc9d50 == 0.0) << 0xe);
   if ((0.0 >= _DAT_02dc9d50) && (pCStack_1c != (CVector3f *)0x0)) {
-    _DAT_02dc9d50 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000);
+    _DAT_02dc9d50 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(1.0,5.0);
     fStack_20 = 20.0;
     fVar13 = 1.0;
     puVar8 = &DAT_005bef88;
@@ -175,7 +175,7 @@ uint core_sound_cpp_FUN_0052d790(void)
       goto LAB_0052da35;
     }
     pCStack_1c->x = 0.0;
-    fStack_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0400000);
+    fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-3.0,2.0);
     fVar12 = fStack_14 * fStack_20 + _DAT_02dc9464;
     pCStack_1c->y = 0.0;
     pCStack_1c->z = fVar12;

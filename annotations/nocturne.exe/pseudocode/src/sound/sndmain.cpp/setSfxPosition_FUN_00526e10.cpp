@@ -11,23 +11,23 @@
 int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00526e10(uint sfx_handle,double pos_x,double pos_y,double pos_z)
 
 {
+  CSfxSlot *this_ptr;
   int iVar1;
-  int iVar2;
   
-  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
-  if (iVar1 == 0) {
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(uint *)(iVar1 + 0x1c) = 0;
-  *(uint *)(iVar1 + 0x20) = 0;
-  *(double *)(iVar1 + 4) = pos_x;
-  *(double *)(iVar1 + 0xc) = pos_y;
-  iVar2 = 1;
-  *(double *)(iVar1 + 0x14) = pos_z;
-  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(iVar1,0);
-  if ((*(int *)(iVar1 + 0x6c) != 0) && (_DAT_02dc8318 != (int *)0x0)) {
-    iVar2 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,iVar1,2);
+  (this_ptr->options).position_source_ptr = (void *)0x0;
+  (this_ptr->options).position_format = 0;
+  (this_ptr->options).position.x = pos_x;
+  (this_ptr->options).position.y = pos_y;
+  iVar1 = 1;
+  (this_ptr->options).position.z = pos_z;
+  sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(this_ptr,0.0);
+  if (((this_ptr->options).dead != 0) && (_DAT_02dc8318 != (int *)0x0)) {
+    iVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,2);
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();
-  return iVar2;
+  return iVar1;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_FUN_004b4950(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; int core_hero_cpp_FUN_004b4950(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4)
 ;
 ;
 ; Referenced Globals:
@@ -40,7 +40,7 @@ section .text
     PUSH EBP                            ; 004b4983
     PUSH EDX                            ; 004b4984
     CALL core_actor.cpp_FUN_0040a420    ; 004b4985
-        ;   XREF to: 0040a420 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040a420()
+        ;   XREF to: 0040a420 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040a420(CDemonActor * this_ptr, CVector3f * line_start, CVector3f * line_end, CVector3f * out_intersection_point)
     ADD ESP,0x10                        ; 004b498a
     POP ESI                             ; 004b498d
     POP EDI                             ; 004b498e

@@ -387,7 +387,7 @@ section .text
         ;   XREF to: 00509504 (CONDITIONAL_JUMP)  ; LAB_00509504
     PUSH EBX                            ; 005094e9
     CALL core_glass.cpp_FUN_004aded0    ; 005094ea
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; int core_glass.cpp_FUN_004aded0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 005094ef
     TEST EAX,EAX                        ; 005094f2
     JZ 0x00509504                       ; 005094f4

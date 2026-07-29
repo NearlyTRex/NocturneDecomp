@@ -17,4 +17,4 @@ void __cdecl saveScreenRaw32(char *filename);
 
 // Original: engine_pcx.c_FUN_004f2990
 // Address: 004f2990
-void FUN_004f2990(char *param_1);
+void __cdecl FUN_004f2990(char *filename);

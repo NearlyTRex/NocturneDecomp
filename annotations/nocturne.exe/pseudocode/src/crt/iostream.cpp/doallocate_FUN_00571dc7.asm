@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *param_1)
+; int __watcallStack crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *this_ptr)
 ;
+; Parameters:
+; streambuf *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_setBuffer_FUN_00571df8
@@ -15,7 +17,7 @@ section .text
     PUSH 0x204                          ; 00571dc7
         ;   Label: crt_iostream.cpp_doallocate_FUN_00571dc7
     CALL FUN_00571ee0                   ; 00571dcc
-        ;   XREF to: 00571ee0 (UNCONDITIONAL_CALL)  ; undefined FUN_00571ee0()
+        ;   XREF to: 00571ee0 (UNCONDITIONAL_CALL)  ; void * FUN_00571ee0(uint size)
     ADD ESP,0x4                         ; 00571dd1
     TEST EAX,EAX                        ; 00571dd4
     JNZ 0x00571dde                      ; 00571dd6

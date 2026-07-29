@@ -268,7 +268,7 @@ section .text
     JNZ 0x005539be                      ; 00553b46
         ;   XREF to: 005539be (CONDITIONAL_JUMP)  ; LAB_005539be
     CALL wincore_wddvmem.cpp_FUN_00553ba0 ; 00553b4c
-        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553ba0()
+        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00553ba0()
     XOR ESI,ESI                         ; 00553b51
     MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b59

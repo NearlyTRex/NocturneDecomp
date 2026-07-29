@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [EBP + 0x26],ECX      ; 00419505
     MOV dword ptr [EBP + 0x2a],EDX      ; 00419508
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0041950b
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00419510
     LEA EAX,[EBP + -0xa]                ; 00419513
     PUSH EAX                            ; 00419516

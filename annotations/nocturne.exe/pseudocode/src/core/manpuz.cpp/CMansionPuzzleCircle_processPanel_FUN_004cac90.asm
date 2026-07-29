@@ -76,7 +76,7 @@ section .text
     PUSH ECX                            ; 004cacfd
     PUSH ESI                            ; 004cacfe
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0 ; 004cacff
-        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0()
+        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 004cad04
     SHL EAX,0x2                         ; 004cad06
     SUB EAX,EDX                         ; 004cad09

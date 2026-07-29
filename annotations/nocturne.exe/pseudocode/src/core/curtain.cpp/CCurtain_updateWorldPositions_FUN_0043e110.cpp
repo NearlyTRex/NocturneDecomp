@@ -9,11 +9,11 @@
 void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(CCurtain *this_ptr)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  SCurtainVertex *pSVar4;
-  byte local_30 [12];
+  CVector3f *input;
+  CVector3f local_30;
   float local_24;
   float local_20;
   float local_1c;
@@ -26,21 +26,20 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(CCurtai
     local_14 = &(this_ptr->base).orient_matrix;
     pCVar2 = &this_ptr->vertices[0].world_position;
     do {
-      pSVar4 = local_18 + iVar3;
-      pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                  (local_14,local_30,pSVar4);
-      local_24 = *pfVar1 + (this_ptr->base).location.position.x;
-      local_20 = pfVar1[1] + (this_ptr->base).location.position.y;
-      local_1c = pfVar1[2] + (this_ptr->base).location.position.z;
+      input = &local_18[iVar3].local_position;
+      pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(local_14,&local_30,input);
+      local_24 = pCVar1->x + (this_ptr->base).location.position.x;
+      local_20 = pCVar1->y + (this_ptr->base).location.position.y;
+      local_1c = pCVar1->z + (this_ptr->base).location.position.z;
       if (pCVar2 != (CVector3f *)&local_24) {
         pCVar2->x = local_24;
         pCVar2->y = local_20;
         pCVar2->z = local_1c;
       }
-      if (&pSVar4->last_world_position != &pSVar4->world_position) {
-        (pSVar4->last_world_position).x = (pSVar4->world_position).x;
-        (pSVar4->last_world_position).y = (pSVar4->world_position).y;
-        (pSVar4->last_world_position).z = (pSVar4->world_position).z;
+      if (&input[4].z != &input[2].z) {
+        input[4].z = input[2].z;
+        input[5].x = input[3].x;
+        input[5].y = input[3].y;
       }
       iVar3 = iVar3 + 1;
       pCVar2 = (CVector3f *)((int)(pCVar2 + 9) + 8);

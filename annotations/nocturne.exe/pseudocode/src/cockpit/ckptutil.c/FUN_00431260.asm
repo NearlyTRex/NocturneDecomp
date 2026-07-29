@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_FUN_00431260(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6)
+; void __cdecl cockpit_ckptutil_c_FUN_00431260(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   bitmap_buffer
+; char *           Stack[0x8]:4   filename
+; SScanlineSpans * Stack[0xc]:4   span_output
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
+; int              Stack[0x18]:4   transparent_color_index
 ; Local Variables:
 ; undefined        Stack[-0x130]:1  local_130
 ; undefined4       Stack[-0x30]:4  local_30

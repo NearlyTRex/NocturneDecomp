@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_model_c_initializeMRGLModel_FUN_004dd760(void)
+; void __cdecl engine_model_c_initializeMRGLModel_FUN_004dd760(SMRGLHeaderExtended *mrgl)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; Called Functions:
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0

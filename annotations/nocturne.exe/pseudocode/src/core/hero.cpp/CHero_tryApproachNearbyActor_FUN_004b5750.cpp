@@ -16,11 +16,11 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(CHero *this_
   int iVar3;
   CVector3f *pCVar4;
   SInteractionInfo SStack_80;
-  float local_60 [3];
+  CVector3f local_60;
   CVector3f CStack_54;
   CVector3f CStack_48;
   CVector3f local_3c;
-  byte local_30 [16];
+  CVector3f local_30;
   int local_20;
   int local_1c;
   float local_14;
@@ -34,17 +34,18 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(CHero *this_
     local_1c = 0;
     for (local_20 = 0; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1) {
       this_ptr_00 = *(CHero **)(0x01E57284 + local_1c + 0x14cd70);
-      local_60[0] = (this_ptr_00->base).base.location.position.x - (input_world_point->position).x;
-      local_60[2] = (this_ptr_00->base).base.location.position.z -
-                    (this_ptr->base).base.location.position.z;
+      local_60.x = (this_ptr_00->base).base.location.position.x - (input_world_point->position).x;
+      local_60.z = (this_ptr_00->base).base.location.position.z -
+                   (this_ptr->base).base.location.position.z;
       if (((ABS((this_ptr_00->base).base.location.position.y -
                 (this_ptr->base).base.location.position.y) <= (float)10) &&
-          (local_60[1] = 0.0,
-          SQRT(local_60[2] * local_60[2] + local_60[0] * local_60[0]) <= (float)10)) &&
+          (local_60.y = 0.0,
+          SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&
          (this_ptr_00 != this_ptr)) {
-        iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_30,local_60);
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (*(float *)(iVar3 + 4) - (this_ptr->base).base.orient.vec.y);
+        pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                           (&local_30,&local_60);
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
+                             (pCVar4->y - (this_ptr->base).base.orient.vec.y);
         if (((ABS(local_14) <= (float)1.04719755116667) &&
             (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                                 ((CDemonActor *)this_ptr_00,&local_3c,&input_world_point->position),

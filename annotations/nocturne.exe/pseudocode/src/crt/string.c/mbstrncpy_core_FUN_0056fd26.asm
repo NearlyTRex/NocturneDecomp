@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _FILE * crt_string_c_mbstrncpy_core_FUN_0056fd26(_FILE *param_1)
+; char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0056fd26(char *dest,char *src,int count)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest
+; char *           Stack[0x8]:4   src
+; int              Stack[0xc]:4   count
 ;
 ; XREF[1]:
 ;   crt_stdio.c_stream_setup_FUN_0056b227 at 0056b25e

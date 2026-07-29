@@ -57,7 +57,7 @@ void sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(int param_1,uint 
       *(double *)(param_1 + 0x60) = dVar2;
     }
     else {
-      dVar3 = (double)floor(*(double *)(param_1 + 0x60) / dVar2);
+      dVar3 = floor(*(double *)(param_1 + 0x60) / dVar2);
       *(double *)(param_1 + 0x60) = *(double *)(param_1 + 0x60) - dVar3 * dVar2;
     }
   }

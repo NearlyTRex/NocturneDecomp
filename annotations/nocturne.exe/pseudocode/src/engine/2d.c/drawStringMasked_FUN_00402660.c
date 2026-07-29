@@ -1,39 +1,40 @@
 // Name: engine_2d.c_drawStringMasked_FUN_00402660
 // Address: 00402660
 // Address Range: [[00402660, 004026ab]]
-// Convention: unknown
-// Signature: void engine_2d_c_drawStringMasked_FUN_00402660(byte *param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_drawStringMasked_FUN_00402660(char *text,int x_pos,int y_pos)
 
 #include "nocturne.h"
 
-void engine_2d_c_drawStringMasked_FUN_00402660(byte *param_1,int param_2,int param_3)
+void __cdecl engine_2d_c_drawStringMasked_FUN_00402660(char *text,int x_pos,int y_pos)
 
 {
-  byte bVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  byte *pbVar5;
+  char cVar1;
+  byte bVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  char *pcVar6;
   
-  uVar3 = 0xffffffff;
-  pbVar5 = param_1;
+  uVar4 = 0xffffffff;
+  pcVar6 = text;
   do {
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    bVar1 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
-  } while (bVar1 != 0);
-  iVar4 = 0;
-  if (0 < (int)(~uVar3 - 1)) {
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+  } while (cVar1 != '\0');
+  iVar5 = 0;
+  if (0 < (int)(~uVar4 - 1)) {
     do {
-      bVar1 = *param_1;
-      if ((0x1f < bVar1) && (bVar1 < 0x100)) {
-        iVar2 = engine_2d_c_drawCharacterMasked_FUN_00401f30((uint)bVar1,param_2,param_3);
-        param_2 = param_2 + iVar2;
+      bVar2 = *text;
+      if ((0x1f < bVar2) && (bVar2 < 0x100)) {
+        iVar3 = engine_2d_c_drawCharacterMasked_FUN_00401f30((uint)bVar2,x_pos,y_pos);
+        x_pos = x_pos + iVar3;
       }
-      iVar4 = iVar4 + 1;
-      param_1 = param_1 + 1;
-    } while (iVar4 < (int)(~uVar3 - 1));
+      iVar5 = iVar5 + 1;
+      text = text + 1;
+    } while (iVar5 < (int)(~uVar4 - 1));
   }
   return;
 }

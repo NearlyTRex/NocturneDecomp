@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double crt_math_c_floor_FUN_005648c0(undefined4 param_1,undefined4 param_2)
+; double __crtmath crt_math_c_floor_FUN_005648c0(double input_value)
 ;
+; Parameters:
+; double           Stack[0x4]:8   input_value
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined8       Stack[-0x10]:8  local_10
@@ -43,7 +45,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8]       ; 005648cf
     PUSH EBX                            ; 005648d2
     CALL crt_math.c_modf_FUN_00566fb6   ; 005648d3
-        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_modf_FUN_00566fb6()
+        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00566fb6(double value, double * integer_part)
     MOV dword ptr [EBP + -0xc],EAX      ; 005648d8
     MOV dword ptr [EBP + -0x8],EDX      ; 005648db
     ADD ESP,0xc                         ; 005648de

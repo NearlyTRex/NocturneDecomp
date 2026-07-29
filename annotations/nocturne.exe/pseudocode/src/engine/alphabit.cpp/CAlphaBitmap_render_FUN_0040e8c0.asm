@@ -54,7 +54,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0040e8db
     MOV dword ptr [ESP + 0x14],EAX      ; 0040e8df
     CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0 ; 0040e8e3
-        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0()
+        ;   XREF to: 0040eab0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap * this_ptr)
     MOV EDX,dword ptr [EBP + 0xc]       ; 0040e8e8
     SUB EBX,ESI                         ; 0040e8eb
     IMUL ESI,EDX                        ; 0040e8ed

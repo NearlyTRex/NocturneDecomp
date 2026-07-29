@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_gabriela_cpp_FUN_00498de0(CDemonActor *param_1,CDemonActor *param_2,int param_3)
+; float __cdecl core_gabriela_cpp_FUN_00498de0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target_actor
+; int              Stack[0xc]:4   use_wider_fov
 ; Local Variables:
 ; undefined        Stack[-0xf8]:1  local_f8
 ;
@@ -123,7 +127,7 @@ section .text
     LEA EAX,[ESP + 0xac]                ; 00498ebf
     PUSH EAX                            ; 00498ec6
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 00498ec7
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00498ecc
     MOV EAX,dword ptr [EAX + 0x4]       ; 00498ecf
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00498ed2
@@ -240,7 +244,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0049903d | DAT_005be368
     PUSH ECX                            ; 00499043 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 00499044
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x108],EAX     ; 00499049
     FLD float ptr [ESP + 0x108]         ; 00499050
     ADD ESP,0xc                         ; 00499057

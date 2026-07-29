@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(void)
+; void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text)
 ;
+; Parameters:
+; CEdButton *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
+; char *           Stack[0x10]:4   button_text
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00477100

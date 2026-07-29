@@ -14,8 +14,7 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf(strstrea
   
   if ((flags & 4) == 0) {
     pvVar1 = this_ptr[1]._streambuf.__b_lock;
-    this_ptr->__vtable =
-         (strstreambuf_vtable *)&PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884;
+    this_ptr->__vtable = &g_StrstreambufVTable;
     if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&
        (ptr = (this_ptr->_streambuf).__reserve_base, ptr != (char *)0x0)) {
       if (this_ptr->__free_fn == (void *)0x0) {

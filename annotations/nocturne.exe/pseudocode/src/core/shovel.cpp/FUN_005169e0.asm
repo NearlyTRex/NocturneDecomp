@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 005169f2
         ;   Label: LAB_005169f2
     CALL core_shovel.cpp_CShovel_ctor_FUN_00516a10 ; 005169f3
-        ;   XREF to: 00516a10 (UNCONDITIONAL_CALL)  ; undefined core_shovel.cpp_CShovel_ctor_FUN_00516a10()
+        ;   XREF to: 00516a10 (UNCONDITIONAL_CALL)  ; CShovel * core_shovel.cpp_CShovel_ctor_FUN_00516a10(CShovel * this_ptr)
     ADD ESP,0x4                         ; 005169f8
     RET                                 ; 005169fb
 

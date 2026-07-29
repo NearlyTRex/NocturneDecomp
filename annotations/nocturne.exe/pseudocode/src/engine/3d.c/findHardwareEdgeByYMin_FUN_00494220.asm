@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * engine_3d_c_findHardwareEdgeByYMin_FUN_00494220(int param_1,int *param_2)
+; SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_00494220(int y_min,SHardwareEdge *exclude_edge)
 ;
+; Parameters:
+; int              Stack[0x4]:4   y_min
+; SHardwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c70f78

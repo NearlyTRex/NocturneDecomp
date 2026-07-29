@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winvideo_cpp_toggleMoviePlayback_FUN_0055a4a0(HWND param_1,uint param_2)
+; void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_0055a4a0(HWND notify_window,int play_state)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   notify_window
+; int              Stack[0x8]:4   play_state
 ;
 ; Referenced Globals:
 ;   void* PTR_mciSendStringA_005753e0 = 00175816

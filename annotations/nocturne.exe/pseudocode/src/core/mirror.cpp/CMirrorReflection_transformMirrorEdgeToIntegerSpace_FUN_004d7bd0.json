@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 289,
+    "complexity_score": 301,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 19,
+    "pseudocode_lines": 61,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
-      "self_copy_guard",
       "stack_alignment_array",
       "unaffected_reg",
       "unnamed_param",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 213
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -157,7 +157,7 @@
     ],
     "convention": "unknown",
     "name": "core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0",
-    "signature": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(undefined4 param_1,int *param_2,int *param_3)"
+    "signature": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)"
   },
   "function_calls": [
     {
@@ -378,7 +378,7 @@
         {
           "check_id": "uninitvar",
           "column": 4,
-          "line": 75,
+          "line": 67,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -401,7 +401,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(uint param_1,int *param_2,int *param_3)",
+      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +409,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(uint param_1,int *param_2,int *param_3)",
+      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +417,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(uint param_1,int *param_2,int *param_3)",
+      "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -438,79 +438,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_24 = (float)*param_2 * 0.00390625f;",
+      "text": "local_24.x = (float)*param_2 * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = (float)param_2[1] * 0.00390625f;",
+      "text": "local_24.y = (float)param_2[1] * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_1c = (float)param_2[2] * 0.00390625f;",
+      "text": "local_24.z = (float)param_2[2] * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 24,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_54 = (float)*param_3 * _DAT_005a088c;",
+      "text": "local_54.x = (float)*param_3 * _DAT_005a088c;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 25,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_50 = (float)param_3[1] * _DAT_005a088c;",
+      "text": "local_54.y = (float)param_3[1] * _DAT_005a088c;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 26,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_4c = (float)param_3[2] * _DAT_005a088c;",
+      "text": "local_54.z = (float)param_3[2] * _DAT_005a088c;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,local_48,&local_24);",
+      "text": "(param_1,&local_48,&local_24);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,local_18,&local_54);",
+      "text": "(param_1,&local_18,&local_54);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 68,
+      "line": 60,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(local_54 * 65536.0f);",
+      "text": "*unaff_ESI = (int)ROUND(local_54.x * 65536.0f);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 69,
+      "line": 61,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = local_38[(uint)bVar2 * -2];",
@@ -518,19 +518,35 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 70,
+      "line": 62,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_54 != &local_60)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 38,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 31,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&local_54 != &local_60) {",
-      "type": "self_copy_guard"
+      "text": "local_54.x = local_60.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 38,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_24.x = pCVar1->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 45,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_54.x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "call_site_count": 1,
@@ -545,10 +561,10 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 75,
+      "line": 67,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*unaff_ESI = (int)ROUND(local_54 * 65536.0f);",
+      "text": "*unaff_ESI = (int)ROUND(local_54.x * 65536.0f);",
       "type": "static_uninitvar"
     }
   ]

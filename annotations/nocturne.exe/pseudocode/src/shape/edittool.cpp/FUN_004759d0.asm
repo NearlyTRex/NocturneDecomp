@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_004759d0(CPickList *param_1)
+; void __cdecl shape_edittool_cpp_FUN_004759d0(CPickList *this_ptr)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x15c]:1  local_15c
 ; undefined4       Stack[-0x30]:4  local_30

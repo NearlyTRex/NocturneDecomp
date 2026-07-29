@@ -9,12 +9,12 @@
 void core_tbplayer_cpp_FUN_00543370(void)
 
 {
-  int iVar1;
+  CDrummer *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1f578);
-  if (iVar1 == 0) {
+  this_ptr = (CDrummer *)FUN_0056497c(0x1f578);
+  if (this_ptr == (CDrummer *)0x0) {
     return;
   }
-  core_tbplayer_cpp_FUN_005433a0(iVar1);
+  core_tbplayer_cpp_FUN_005433a0(this_ptr);
   return;
 }

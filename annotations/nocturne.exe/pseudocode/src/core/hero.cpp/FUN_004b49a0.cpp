@@ -1,60 +1,57 @@
 // Name: core_hero.cpp_FUN_004b49a0
 // Address: 004b49a0
 // Address Range: [[004b49a0, 004b4bf9]]
-// Convention: unknown
-// Signature: void core_hero_cpp_FUN_004b49a0(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_hero_cpp_FUN_004b49a0(CHero *this_ptr)
 
 #include "nocturne.h"
 
-void core_hero_cpp_FUN_004b49a0(CCharacter *param_1)
+void __cdecl core_hero_cpp_FUN_004b49a0(CHero *this_ptr)
 
 {
   CDeformableModelInstance *model_ptr;
-  CInventory *this_ptr;
   int iVar1;
   char local_d4 [100];
   char local_70 [100];
   int local_c;
   
-  model_ptr = &param_1->model;
+  model_ptr = &(this_ptr->base).model;
   if (INT_005ba940 < 4) {
-    core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&param_1->base);
+    core_actor_cpp_CDemonActor_archive_FUN_0040d2d0((CDemonActor *)this_ptr);
     if (1 < INT_005ba940) {
       core_actor_cpp_archiveMotionState_FUN_0040cb00
                 (&model_ptr->motion_controller,"motion state");
     }
     if (2 < INT_005ba940) {
-      core_actor_cpp_archivePartStatus_FUN_0040cbf0(&param_1->model,"partStatus");
-      core_actor_cpp_archiveActor_FUN_0040c980(&param_1->grabbed_by,"grabbedBy");
-      core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->hit_points,"hitPoints");
+      core_actor_cpp_archivePartStatus_FUN_0040cbf0(&(this_ptr->base).model,"partStatus");
+      core_actor_cpp_archiveActor_FUN_0040c980(&(this_ptr->base).grabbed_by,"grabbedBy");
+      core_actor_cpp_archiveFloat_FUN_0040c880(&(this_ptr->base).hit_points,"hitPoints");
     }
   }
   else {
-    core_charactr_cpp_CCharacter_archive_FUN_004244b0(param_1);
+    core_charactr_cpp_CCharacter_archive_FUN_004244b0(&this_ptr->base);
     core_actor_cpp_archiveMotionState_FUN_0040cb00
               (&model_ptr->motion_controller,"motion state");
     core_actor_cpp_archivePartStatus_FUN_0040cbf0(model_ptr,"partStatus");
     if (INT_005ba940 < 8) {
-      core_actor_cpp_archiveActor_FUN_0040c980(&param_1->grabbed_by,"grabbedBy");
-      param_1->grabbed_type = 0;
+      core_actor_cpp_archiveActor_FUN_0040c980(&(this_ptr->base).grabbed_by,"grabbedBy");
+      (this_ptr->base).grabbed_type = 0;
     }
     if (4 < INT_005ba940) {
       core_actor_cpp_archiveInteger_FUN_0040c900
-                ((int *)(param_1[1].base.actor_name + 4),"controlType");
+                ((int *)&this_ptr->control_type,"controlType");
     }
     if (6 < INT_005ba940) {
       core_actor_cpp_archiveActor_FUN_0040c980
-                ((CDemonActor **)&param_1[2].flames[0x1d].globe.corona_mode,
-                 "objectToPickUp");
+                (&this_ptr->object_to_pick_up,"objectToPickUp");
       core_actor_cpp_archiveActor_FUN_0040c980
-                ((CDemonActor **)&param_1[2].flames[0x1d].globe.intensity,"doorToOpen");
+                ((CDemonActor **)&this_ptr->door_to_open,"doorToOpen");
       core_actor_cpp_archiveActor_FUN_0040c980
-                ((CDemonActor **)&param_1[2].flames[0x1d].globe.position.y,"leverToPull");
+                ((CDemonActor **)&this_ptr->lever_to_pull,"leverToPull");
       core_actor_cpp_archiveActor_FUN_0040c980
-                ((CDemonActor **)&param_1[2].flames[0x1d].globe.position.z,"ladderToClimb")
-      ;
+                ((CDemonActor **)&this_ptr->ladder_to_climb,"ladderToClimb");
       core_actor_cpp_archiveActor_FUN_0040c980
-                ((CDemonActor **)&param_1[2].flames[0x1d].globe.position,"pushedObject");
+                ((CDemonActor **)&this_ptr->pushed_object,"pushedObject");
     }
     if (INT_005ba940 == 10) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_c,"keys");
@@ -68,20 +65,18 @@ void core_hero_cpp_FUN_004b49a0(CCharacter *param_1)
       } while (iVar1 < 0x20);
     }
     if (8 < INT_005ba940) {
-      core_actor_cpp_archiveInteger_FUN_0040c900
-                ((int *)param_1[2].flames[0x1d].on_event,"AITask");
+      core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ai_task,"AITask");
     }
     if (0xb < INT_005ba940) {
       core_actor_cpp_archiveInteger_FUN_0040c900
-                ((int *)&param_1[2].flames[0x1d].globe.radius_squared,"isWearingGasMask");
+                (&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (5 < INT_005ba940) {
-      this_ptr = (CInventory *)(param_1[2].flames[0x1b].off_event + 0x3c);
       if (DAT_00763e88 != 1) {
-        core_inv_cpp_CInventory_save_FUN_004c0fa0(this_ptr,DAT_00763e84);
+        core_inv_cpp_CInventory_save_FUN_004c0fa0(&this_ptr->inventory,DAT_00763e84);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004c1190(this_ptr,DAT_00763e84);
+      core_inv_cpp_CInventory_load_FUN_004c1190(&this_ptr->inventory,DAT_00763e84);
       return;
     }
   }

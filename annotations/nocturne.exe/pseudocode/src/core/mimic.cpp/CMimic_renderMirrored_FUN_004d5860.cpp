@@ -19,17 +19,13 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
   CMatrix3x4f *pCVar3;
   byte bVar4;
   float local_f4 [12];
-  byte local_c4 [48];
+  CMatrix3x4f local_c4;
   CMatrix3x4f local_94;
   CBoundingBox3D local_64;
   CVector3f local_4c;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
+  CVector3f local_40;
   CVector3f local_34;
-  uint local_28;
-  uint local_24;
-  uint local_20;
+  CVector3f local_28;
   int local_1c;
   int local_18;
   CDemonActor *local_14;
@@ -58,17 +54,18 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                              (*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
                               g_CStrangerActorType_02dc9fac.name_hash);
         if (local_14 != (CDemonActor *)0x0) {
-          local_28 = 0;
-          local_20 = 0;
-          local_3c = 0x3f38263b;
-          local_40 = 0;
-          local_24 = 0x40490fdb;
-          local_38 = 0x3e3d70a4;
+          local_28.x = 0.0;
+          local_28.z = 0.0;
+          local_40.y = 0.71933335;
+          local_40.x = 0.0;
+          local_28.y = 3.1415927;
+          local_40.z = 0.185;
           core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                    (local_c4,&local_40,&local_28);
+                    (&local_c4,&local_40,&local_28);
           core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
-                    (local_c4,(this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                              _DAT_01cc9094);
+                    (&local_c4,
+                     (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_01cc9094)
+          ;
           pfVar2 = local_f4;
           pCVar3 = &local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

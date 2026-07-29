@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pcx_c_FUN_004f2990(char *param_1)
+; void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
 ; undefined1       Stack[-0x87]:1  local_87

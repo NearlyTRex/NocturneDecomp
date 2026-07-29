@@ -1,12 +1,12 @@
 // Name: engine_ncursfx.cpp_FUN_004ee680
 // Address: 004ee680
 // Address Range: [[004ee680, 004ee680]]
-// Convention: unknown
-// Signature: void engine_ncursfx_cpp_FUN_004ee680(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_ncursfx_cpp_FUN_004ee680(CMouse *this_ptr)
 
 #include "nocturne.h"
 
-void engine_ncursfx_cpp_FUN_004ee680(void)
+void __cdecl engine_ncursfx_cpp_FUN_004ee680(CMouse *this_ptr)
 
 {
   return;

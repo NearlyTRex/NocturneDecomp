@@ -268,7 +268,7 @@ section .text
     PUSH 0x586da5                       ; 004bf247 | = "%d,%d\n"
     PUSH EAX                            ; 004bf24c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004bf24d
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004bf252
     PUSH EBX                            ; 004bf255
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004bf256

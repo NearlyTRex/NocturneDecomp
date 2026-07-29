@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer *param_1,int param_2,int param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   primitive
+; int              Stack[0xc]:4   render_flags
 ; Local Variables:
 ; undefined2       Stack[-0x18]:2  local_18
 ; undefined2       Stack[-0x16]:2  local_16

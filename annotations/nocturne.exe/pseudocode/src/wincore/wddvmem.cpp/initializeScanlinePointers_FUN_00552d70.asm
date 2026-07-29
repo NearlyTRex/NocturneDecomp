@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
+; void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

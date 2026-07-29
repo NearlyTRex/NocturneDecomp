@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0
 // Address: 005528e0
 // Address Range: [[005528e0, 0055298b]]
-// Convention: unknown
-// Signature: undefined4 wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
+int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
 
 {
   int iVar1;

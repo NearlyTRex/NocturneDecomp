@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_convertVector_FUN_00423c90(void)
+; CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00423c90(CVector3f *dest,CVector3i *src)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dest
+; CVector3i *      Stack[0x8]:4   src
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059ae98

@@ -35,10 +35,10 @@ void FUN_004630e0(CEnemy *param_1);
 // Address: 00463150
 void CDrone::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
-// Original: core_drone.cpp_FUN_004632c0
+// Original: core_drone.cpp_CDrone_getTargetPoints_FUN_004632c0
 // Address: 004632c0
-undefined4 FUN_004632c0(int param_1,CVector3f *param_2);
+int __cdecl CDrone::getTargetPoints(CDrone *this_ptr,CVector3f *out_points_array);
 
-// Original: core_drone.cpp_FUN_00463310
+// Original: core_drone.cpp_CDrone_dtor_FUN_00463310
 // Address: 00463310
-CDemonActor * FUN_00463310(CDemonActor *param_1,byte param_2);
+CDrone * __cdecl CDrone::dtor(CDrone *this_ptr,uint flags);

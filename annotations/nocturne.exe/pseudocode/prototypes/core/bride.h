@@ -17,7 +17,7 @@ CDemonActorType * FUN_0041fba0(void);
 
 // Original: core_bride.cpp_FUN_0041fbb0
 // Address: 0041fbb0
-CEnemy * FUN_0041fbb0(CEnemy *param_1);
+CBride * __cdecl FUN_0041fbb0(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_setup_FUN_0041fc20
 // Address: 0041fc20
@@ -49,4 +49,4 @@ CVector3f * FUN_00420eb0(int param_1,CVector3f *param_2);
 
 // Original: core_bride.cpp_CBride_dtor_FUN_00420f20
 // Address: 00420f20
-CDemonActor * CBride::dtor(CDemonActor *param_1,byte param_2);
+CBride * __cdecl CBride::dtor(CBride *this_ptr,uint flags);

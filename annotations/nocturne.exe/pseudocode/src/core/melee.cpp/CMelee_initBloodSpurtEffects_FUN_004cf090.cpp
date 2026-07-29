@@ -2,16 +2,16 @@
 // Address: 004cf090
 // Address Range: [[004cf090, 004cf0be]]
 // Convention: __cdecl
-// Signature: void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(int param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)
 
 #include "nocturne.h"
 
-void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(int param_1,uint param_2,uint param_3)
+void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)
 
 {
-  *(uint *)(param_1 + 0x590) = 0x3f800000;
-  *(uint *)(param_1 + 0x584) = param_3;
-  *(uint *)(param_1 + 0x58c) = *(uint *)(param_1 + 0x590);
-  *(uint *)(param_1 + 0x588) = param_2;
+  this_ptr->blood_spurt_interval = 1.0;
+  this_ptr->blood_gore_type = blood_gore_type;
+  this_ptr->blood_spurt_timer = this_ptr->blood_spurt_interval;
+  this_ptr->blood_spurt_count = blood_spurt_count;
   return;
 }

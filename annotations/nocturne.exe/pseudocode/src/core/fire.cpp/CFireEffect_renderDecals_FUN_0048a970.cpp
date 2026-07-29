@@ -16,7 +16,7 @@ void core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(uint param_1,int param_
   int iVar2;
   int iVar3;
   
-  core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(&DAT_01c20148);
+  core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0((CBulletHole *)&DAT_01c20148);
   if (param_2 == 0) {
     iVar2 = 0;
     if (0 < _DAT_01c20140) {

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 400,
-    "complexity_score": 191,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
-    "suspect_count": 4,
+    "pseudocode_lines": 128,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_constant",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 536
+    "total_lines": 528
   },
   "cross_references": [
     {
@@ -388,33 +387,19 @@
   "static_analysis": {
     "analyzed_file": "CStranger_aimLeftPistol_FUN_0053e320.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 31,
-          "line": 63,
-          "message": "Uninitialized variable: fStack_80",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 64,
-          "message": "Uninitialized variable: fStack_7c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 23,
-          "line": 135,
+          "column": 21,
+          "line": 127,
           "message": "Uninitialized variable: fStack_28",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 138,
+          "line": 130,
           "message": "Uninitialized variable: fStack_30",
           "severity": "error"
         }
@@ -433,56 +418,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Raw hex address 0x53e744 assigned to bare local `uVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 93,
-      "match": "0x53e744",
-      "severity": "moderate",
-      "text": "uVar3 = 0x53e744;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x53e7ea assigned to bare local `uVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 108,
-      "match": "0x53e7ea",
-      "severity": "moderate",
-      "text": "uVar3 = 0x53e7ea;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 75,
+      "line": 69,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_90.x = CStack_b4.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: fStack_80",
-      "line": 63,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "CStack_90.y = CStack_a8.y + fStack_80;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_7c",
-      "line": 64,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "CStack_90.z = CStack_a8.z + fStack_7c;",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: fStack_28",
-      "line": 135,
+      "line": 127,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "if (afStack_54[0] < fStack_28) {",
+      "text": "if (CStack_54.x < fStack_28) {",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_30",
-      "line": 138,
+      "line": 130,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (fStack_30 < fStack_1c) {",

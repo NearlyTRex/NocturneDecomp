@@ -1,14 +1,16 @@
 // Name: core_set.cpp_FUN_0050eb00
 // Address: 0050eb00
 // Address Range: [[0050eb00, 0050eb17]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050eb00(void *param_1)
+// Convention: __cdecl
+// Signature: C3DSCamera * __cdecl core_set_cpp_FUN_0050eb00(C3DSCamera *objs,uint flags)
 
 #include "nocturne.h"
 
-void core_set_cpp_FUN_0050eb00(void *param_1)
+C3DSCamera * __cdecl core_set_cpp_FUN_0050eb00(C3DSCamera *objs,uint flags)
 
 {
-  __arrfini(param_1,0xfa,&g_C3DSCameraTypeInfo_005a1970);
-  return;
+  C3DSCamera *pCVar1;
+  
+  pCVar1 = (C3DSCamera *)__arrfini(objs,0xfa,&g_C3DSCameraTypeInfo_005a1970);
+  return pCVar1;
 }

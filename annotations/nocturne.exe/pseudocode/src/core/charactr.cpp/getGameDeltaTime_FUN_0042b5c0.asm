@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(int param_1)
+; float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   game_ptr
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe5f6

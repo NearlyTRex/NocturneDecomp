@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 99,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 15,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 78
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -259,7 +259,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 8,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "(&DAT_005c502c)[this_ptr->vertex_indices[1] * 0xc] = 0xf80000;",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 9,
       "match": "DAT_005c5030",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005c5030 + this_ptr->vertex_indices[1] * 0x30) = 0xf80000;",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "(&DAT_005c502c)[this_ptr->vertex_indices[0] * 0xc] = 0x80000;",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_005c5030",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005c5030 + this_ptr->vertex_indices[0] * 0x30) = 0xf80000;",
@@ -291,7 +291,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "(&DAT_005c502c)[this_ptr->vertex_indices[3] * 0xc] = 0x80000;",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005c5030",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005c5030 + this_ptr->vertex_indices[3] * 0x30) = 0x80000;",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "(&DAT_005c502c)[this_ptr->vertex_indices[2] * 0xc] = 0xf80000;",
@@ -315,7 +315,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005c5030",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005c5030 + this_ptr->vertex_indices[2] * 0x30) = 0x80000;",

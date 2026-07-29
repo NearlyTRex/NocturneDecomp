@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_pendulum_cpp_didPhaseCross_FUN_004f3340(void)
+; int __cdecl core_pendulum_cpp_didPhaseCross_FUN_004f3340(float threshold,float old_phase,float new_phase)
 ;
+; Parameters:
+; float            Stack[0x4]:4   threshold
+; float            Stack[0x8]:4   old_phase
+; float            Stack[0xc]:4   new_phase
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058d020

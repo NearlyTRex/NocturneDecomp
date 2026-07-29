@@ -41,7 +41,7 @@ void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
       src_00 = str;
     }
     else {
-      pcVar3 = (char *)mbtowc_next(str);
+      pcVar3 = mbtowc_next(str);
       if ((iVar2 == 0x5c) || (iVar2 == 0x2f)) {
         src_00 = (char *)0x0;
         src = pcVar3;

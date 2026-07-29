@@ -780,7 +780,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
         pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
       if (pCVar5 != (CDemonActor *)0x0) {
-        (*((pCVar5->vtable)._ub)->onAreaDeleted)(pCVar5,2);
+        (*((pCVar5->vtable)._ub)->dtor)(pCVar5,2);
       }
     }
     iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CWeapon");

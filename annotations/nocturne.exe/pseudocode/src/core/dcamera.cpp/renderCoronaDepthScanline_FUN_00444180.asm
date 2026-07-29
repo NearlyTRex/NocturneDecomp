@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180(int param_1,int param_2,int param_3)
+; void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 ;
+; Parameters:
+; int              Stack[0x4]:4   scanline_y
+; SSoftwareEdge *  Stack[0x8]:4   right
+; SSoftwareEdge *  Stack[0xc]:4   left
 ;
 ; XREF[2]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044cfe2

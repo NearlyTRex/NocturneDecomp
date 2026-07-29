@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_00585402
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059e744 = 00553f10
+;   CWeapon_full_vtable CWeapon_full_vtable_0059e744
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -30,7 +30,7 @@ section .text
     MOV EBX,EAX                         ; 004b2773
     ADD EAX,0x150                       ; 004b2775
     PUSH EAX                            ; 004b277a
-    MOV dword ptr [EAX + -0x4],0x59e744 ; 004b277b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059e744
+    MOV dword ptr [EAX + -0x4],0x59e744 ; 004b277b | CWeapon_full_vtable_0059e744
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004b2782
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 004b2787

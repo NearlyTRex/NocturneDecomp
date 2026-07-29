@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_light_cpp_setLightingMultipliers_FUN_004c6a50(void)
+; void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004c6a50(int diffuse_multiplier,int specular_multiplier)
 ;
+; Parameters:
+; int              Stack[0x4]:4   diffuse_multiplier
+; int              Stack[0x8]:4   specular_multiplier
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bacd8

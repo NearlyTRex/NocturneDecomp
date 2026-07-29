@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004c4190(undefined4 param_1,int param_2)
+; int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004c4190(CKeys *this_ptr,EInputCodeType key_code)
 ;
+; Parameters:
+; CKeys *          Stack[0x4]:4   this_ptr
+; EInputCodeType   Stack[0x8]:4   key_code
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c02598

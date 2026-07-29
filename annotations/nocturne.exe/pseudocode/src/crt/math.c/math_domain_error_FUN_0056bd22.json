@@ -2,17 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 149,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_param"
+      "bitcast_double_pair",
+      "sub84_truncation",
+      "unknown_field"
     ],
-    "total_lines": 121
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -30,10 +32,10 @@
         "0056bdc7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "crt_math.c_math_domain_error_FUN_0056bd22",
-    "signature": "undefined8 crt_math_c_math_domain_error_FUN_0056bd22(double param_1,double param_2,byte param_3)"
+    "signature": "double __cdecl crt_math_c_math_domain_error_FUN_0056bd22(double x,double y,uchar error_type)"
   },
   "function_calls": [
     {
@@ -80,10 +82,10 @@
     "pcode_op_count": 318
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 45,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 17,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -120,97 +122,70 @@
         "offset": -8,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "error_type",
+        "offset": 20,
+        "size": 1,
+        "type": "uchar"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "ulonglong math_domain_error(double param_1,double param_2,byte param_3)",
-      "type": "unnamed_param"
+      "text": "local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "ulonglong math_domain_error(double param_1,double param_2,byte param_3)",
-      "type": "unnamed_param"
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 43,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "type": "sub84_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "ulonglong math_domain_error(double param_1,double param_2,byte param_3)",
-      "type": "unnamed_param"
+      "text": "local_10._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "if (param_3 < 2) {",
-      "type": "unnamed_param"
+      "text": "local_14 = local_10._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 <= param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 <= 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = process_math_error(uVar1,&param_1,&param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar2 = process_math_error(uVar1,&param_1,&param_2);",
-      "type": "unnamed_param"
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 48,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_10 = __BITCAST_DOUBLE(CONCAT44(local_14,local_18));",
+      "type": "bitcast_double_pair"
     }
   ]
 }

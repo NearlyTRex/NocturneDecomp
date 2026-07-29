@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 004ada99
     FSTP float ptr [ESP + 0xbc]         ; 004ada9a
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adaa1
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004adaa6
     FLD float ptr [EDX]                 ; 004adaa9
     FADD float ptr [EAX]                ; 004adaab
@@ -154,7 +154,7 @@ section .text
     PUSH EAX                            ; 004adb1b
     FSTP float ptr [ESP + 0xc0]         ; 004adb1c
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adb23
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004adb28
     FLD float ptr [EDX]                 ; 004adb2b
     FADD float ptr [EAX]                ; 004adb2d
@@ -186,7 +186,7 @@ section .text
     LEA EAX,[EBX + 0x3c]                ; 004adb83
     PUSH EAX                            ; 004adb86
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adb87
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004adb8c
     FLD float ptr [EDX]                 ; 004adb8f
     FADD float ptr [EAX]                ; 004adb91
@@ -219,7 +219,7 @@ section .text
     LEA EAX,[EBX + 0x3c]                ; 004adbfd
     PUSH EAX                            ; 004adc00
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004adc01
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004adc06
     FLD float ptr [EDX]                 ; 004adc09
     FADD float ptr [EAX]                ; 004adc0b

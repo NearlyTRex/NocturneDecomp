@@ -140,7 +140,7 @@ section .text
         ;   Label: LAB_004d987d
     PUSH ECX                            ; 004d9883 | DAT_01e56da0
     CALL core_script.cpp_FUN_004feff0   ; 004d9884
-        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004feff0()
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004feff0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d9889
     MOV EBX,dword ptr [0x005be220]      ; 004d988c | DAT_005be220
     PUSH EBX                            ; 004d9892 | DAT_01e56da0

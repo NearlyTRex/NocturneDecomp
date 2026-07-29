@@ -39,22 +39,22 @@ int FUN_0048e6d0(int param_1);
 // Address: 0048e760
 undefined4 CFlameCan::renderTransparent(int param_1);
 
-// Original: core_flamecan.cpp_FUN_0048e790
+// Original: core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_0048e790
 // Address: 0048e790
-undefined4 FUN_0048e790(int param_1,float *param_2);
+int __cdecl CFlameCan::getTargetPoints(CFlameCan *this_ptr,CVector3f *out_points_array);
 
-// Original: core_flamecan.cpp_FUN_0048e830
+// Original: core_flamecan.cpp_CFlameCan_archive_FUN_0048e830
 // Address: 0048e830
-void FUN_0048e830(CDemonActor *param_1);
+void __cdecl CFlameCan::archive(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_FUN_0048e890
 // Address: 0048e890
 undefined4 FUN_0048e890(void);
 
-// Original: core_flamecan.cpp_FUN_0048e8a0
+// Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_0048e8a0
 // Address: 0048e8a0
-undefined4 * FUN_0048e8a0(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_flamecan.cpp_FUN_0048e8f0
+// Original: core_flamecan.cpp_CFlameCan_dtor_FUN_0048e8f0
 // Address: 0048e8f0
-CDemonActor * FUN_0048e8f0(CDemonActor *param_1,byte param_2);
+CFlameCan * __cdecl CFlameCan::dtor(CFlameCan *this_ptr,uint flags);

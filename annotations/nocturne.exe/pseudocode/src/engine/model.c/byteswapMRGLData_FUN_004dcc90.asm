@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *param_1,int param_2)
+; void __cdecl engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *mrgl_data,int data_size)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
+; int              Stack[0x8]:4   data_size
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004dcb84 = 004dccbd

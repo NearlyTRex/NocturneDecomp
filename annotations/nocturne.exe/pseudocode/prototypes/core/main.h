@@ -21,20 +21,20 @@ int __cdecl enterMainGameMenu(void);
 
 // Original: core_main.c_FUN_004c85f0
 // Address: 004c85f0
-void FUN_004c85f0(void);
+void __cdecl FUN_004c85f0(int argc,char **argv);
 
 // Original: core_main.c_drawCenteredText_FUN_004c8dc0
 // Address: 004c8dc0
-void drawCenteredText(char *param_1,undefined4 param_2,int param_3,int param_4);
+void __cdecl drawCenteredText(char *text,int x,int y,int color_mode);
 
 // Original: core_main.c_waitWithSkip_FUN_004c8e10
 // Address: 004c8e10
-void waitWithSkip(int param_1);
+void __cdecl waitWithSkip(int duration_ms);
 
 // Original: core_main.c_showPromoScreen_FUN_004c8eb0
 // Address: 004c8eb0
-void showPromoScreen(void);
+void __cdecl showPromoScreen(void);
 
 // Original: core_main.c_FUN_004c90e0
 // Address: 004c90e0
-void FUN_004c90e0(void);
+void __cdecl FUN_004c90e0(void);

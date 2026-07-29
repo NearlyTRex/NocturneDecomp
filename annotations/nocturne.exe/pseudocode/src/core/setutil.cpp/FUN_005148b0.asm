@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setutil_cpp_FUN_005148b0(char *param_1,CDemonCamera *param_2)
+; void __cdecl core_setutil_cpp_FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
+; CDemonCamera *   Stack[0x8]:4   camera
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508030

@@ -17,9 +17,8 @@ void engine_2d_c_FUN_00401010(void)
   _FILE *p_Var4;
   ulong size;
   uint *puVar5;
-  uint *puVar6;
-  int iVar7;
-  uint uVar8;
+  int iVar6;
+  uint uVar7;
   
   iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);
   if (iVar3 == 0) {
@@ -44,10 +43,9 @@ void engine_2d_c_FUN_00401010(void)
   }
   puVar5 = &DAT_006afabc;
   do {
-    puVar6 = puVar5 + 1;
-    _fscanf(p_Var4,"%d\n",puVar5);
-    puVar5 = puVar6;
-  } while (puVar6 != (uint *)0x6afc3c);
+    puVar5 = puVar5 + 1;
+    _fscanf(p_Var4,"%d\n");
+  } while (puVar5 != (uint *)0x6afc3c);
   _fclose(p_Var4);
   size = engine_dosio_cpp_getFileSize_FUN_004568c0("startup","font.bin");
   DAT_006afa38 = malloc(size);
@@ -66,22 +64,22 @@ void engine_2d_c_FUN_00401010(void)
   _fread(DAT_006afa38,size,1,p_Var4);
   _fclose(p_Var4);
   iVar3 = 0x80;
-  iVar7 = 0;
+  iVar6 = 0;
   do {
     iVar1 = *(int *)(&DAT_006afa3c + iVar3);
-    *(int *)(iVar3 + 0x6afe3c) = iVar7 + (int)DAT_006afa38;
+    *(int *)(iVar3 + 0x6afe3c) = iVar6 + (int)DAT_006afa38;
     iVar3 = iVar3 + 4;
-    iVar7 = iVar7 + iVar1 * 0x17;
+    iVar6 = iVar6 + iVar1 * 0x17;
   } while (iVar3 != 0x200);
-  uVar8 = 1;
+  uVar7 = 1;
   _DAT_01c00c80 = 0xffffffff;
   iVar3 = 4;
   do {
-    uVar2 = (ulonglong)uVar8;
-    uVar8 = uVar8 + 1;
+    uVar2 = (ulonglong)uVar7;
+    uVar7 = uVar7 + 1;
     *(int *)(&DAT_01c00c80 + iVar3) = (int)(0xffffffff / uVar2);
     iVar3 = iVar3 + 4;
-  } while (uVar8 < 0x640);
+  } while (uVar7 < 0x640);
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("art","default.act","rb");
   if (p_Var4 == (_FILE *)0x0) {

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_tommygun_cpp_CTommyGun_dtor_FUN_00546770(CWeapon *param_1,byte param_2)
+; CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_00546770(CTommyGun *this_ptr,uint flags)
 ;
+; Parameters:
+; CTommyGun *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTommyGunTypeInfo_005a33e0

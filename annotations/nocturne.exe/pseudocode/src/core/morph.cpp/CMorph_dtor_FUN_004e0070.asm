@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_biggs.cpp_FUN_00415a30 at 00415a49
+;   core_biggs.cpp_CBiggs_dtor_FUN_00415a30 at 00415a49
 ;   core_mimic.cpp_FUN_004d4540 at 004d4589
 ;   core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 at 004dda0f
 ;   core_passngr.cpp_FUN_004ef5c0 at 004ef603

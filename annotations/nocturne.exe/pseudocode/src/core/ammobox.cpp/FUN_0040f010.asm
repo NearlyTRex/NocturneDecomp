@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0040f022
         ;   Label: LAB_0040f022
     CALL core_ammobox.cpp_FUN_0040f040  ; 0040f023
-        ;   XREF to: 0040f040 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_FUN_0040f040()
+        ;   XREF to: 0040f040 (UNCONDITIONAL_CALL)  ; CAmmoBox * core_ammobox.cpp_FUN_0040f040(CAmmoBox * this_ptr)
     ADD ESP,0x4                         ; 0040f028
     RET                                 ; 0040f02b
 

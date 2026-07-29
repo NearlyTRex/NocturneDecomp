@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror *param_1,int param_2)
+; void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0 at 0050e01d
@@ -65,7 +68,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004d77d5 | DAT_005ae704
     PUSH ECX                            ; 004d77db | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 004d77dc
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004d77e1
     RET                                 ; 004d77e4
 

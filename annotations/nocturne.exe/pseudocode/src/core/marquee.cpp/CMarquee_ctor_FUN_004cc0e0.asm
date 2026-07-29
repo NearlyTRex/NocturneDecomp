@@ -14,7 +14,7 @@
 ;   undefined4 s_menu1_pth_00588193+1
 ;   undefined4 s_menu1_pth_00588193+2
 ;   undefined4 s_menu1_pth_00588193+3
-;   undefined1* PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4 = 004cc2e0
+;   CDemonActor_vtable g_CMarqueeVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cc0e2
     PUSH EDX                            ; 004cc0e6
     CALL core_actor.cpp_FUN_00409d30    ; 004cc0e7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cc0ec
     ADD EAX,0x19c                       ; 004cc0ef
     PUSH EAX                            ; 004cc0f4
@@ -39,7 +39,7 @@ section .text
     LEA EDX,[EAX + 0xfffffe64]          ; 004cc0fa
     MOV ESI,0x588193                    ; 004cc100 | = "menu1.pth"
     ADD ESP,0x4                         ; 004cc105
-    MOV dword ptr [EDX + 0x14c],0x5a02d4 ; 004cc108 | PTR_core_marquee.cpp_CMarquee_setup_FUN_004cc2e0_005a02d4
+    MOV dword ptr [EDX + 0x14c],0x5a02d4 ; 004cc108 | g_CMarqueeVTable
     LEA EDI,[EDX + 0x150]               ; 004cc112
     MOV dword ptr [EDX + 0x170],0x41200000 ; 004cc118
     PUSH EDI                            ; 004cc122

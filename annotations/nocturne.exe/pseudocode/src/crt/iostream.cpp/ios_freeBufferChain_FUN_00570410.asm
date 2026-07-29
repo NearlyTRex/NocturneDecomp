@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_0057041e
     MOV EBX,dword ptr [EAX]             ; 0057041f
     CALL FUN_00571ef0                   ; 00570421
-        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; undefined FUN_00571ef0()
+        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void FUN_00571ef0(void * buffer)
     ADD ESP,0x4                         ; 00570426
     MOV EAX,EBX                         ; 00570429
     JMP 0x00570418                      ; 0057042b

@@ -9,34 +9,31 @@
 void core_wateract_cpp_FUN_005519c0(int param_1)
 
 {
-  uint *puVar1;
+  CVector3f *pCVar1;
   float *pfVar2;
-  uint *puVar3;
+  CVector3f *pCVar3;
   int iVar4;
-  float local_30;
-  float local_2c;
-  float local_28;
-  byte local_24 [12];
-  int local_18;
+  CVector3f local_30;
+  CVector3f local_24;
+  CMatrix3x3f *local_18;
   int local_14;
   
   iVar4 = 0;
   if (0 < *(int *)(param_1 + 0x290)) {
     local_14 = param_1 + 0x294;
-    local_18 = param_1 + 0x3c;
+    local_18 = (CMatrix3x3f *)(param_1 + 0x3c);
     pfVar2 = (float *)(param_1 + 0x2a0);
     do {
-      local_30 = *pfVar2 - *(float *)(param_1 + 0x20);
-      puVar3 = (uint *)(iVar4 * 0x20 + local_14);
-      local_2c = pfVar2[1] - *(float *)(param_1 + 0x24);
-      local_28 = pfVar2[2] - *(float *)(param_1 + 0x28);
-      puVar1 = (uint *)
-               core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                         (local_18,local_24,&local_30);
-      if (puVar3 != puVar1) {
-        *puVar3 = *puVar1;
-        puVar3[1] = puVar1[1];
-        puVar3[2] = puVar1[2];
+      local_30.x = *pfVar2 - *(float *)(param_1 + 0x20);
+      pCVar3 = (CVector3f *)(iVar4 * 0x20 + local_14);
+      local_30.y = pfVar2[1] - *(float *)(param_1 + 0x24);
+      local_30.z = pfVar2[2] - *(float *)(param_1 + 0x28);
+      pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                         (local_18,&local_24,&local_30);
+      if (pCVar3 != pCVar1) {
+        pCVar3->x = pCVar1->x;
+        pCVar3->y = pCVar1->y;
+        pCVar3->z = pCVar1->z;
       }
       iVar4 = iVar4 + 1;
       pfVar2 = pfVar2 + 8;

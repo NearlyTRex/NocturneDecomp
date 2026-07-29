@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5)
+; float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   min_t
+; CVector3f *      Stack[0xc]:4   ray_origin
+; CVector3f *      Stack[0x10]:4   ray_target
+; float            Stack[0x14]:4   max_t
 ; Local Variables:
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; undefined4       Stack[-0xc8]:4  local_c8
@@ -259,7 +265,7 @@ section .text
     PUSH EBX                            ; 0051025c
     PUSH ESI                            ; 0051025d
     CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 ; 0051025e
-        ;   XREF to: 0040a740 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740()
+        ;   XREF to: 0040a740 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, SActorRayHit * out_hit, ...)
     MOV dword ptr [ESP + 0xd8],EAX      ; 00510263
     FLD float ptr [ESP + 0xd8]          ; 0051026a
     ADD ESP,0x1c                        ; 00510271

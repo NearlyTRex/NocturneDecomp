@@ -43,7 +43,7 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
          (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }
-    pcVar4 = (char *)mbtowc_next(filename);
+    pcVar4 = mbtowc_next(filename);
     pcVar2 = filename;
     if (*pcVar4 == ':') {
       pcVar2 = filename + 2;
@@ -53,7 +53,7 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_00566570(local_124);
+      FUN_00566570((char *)local_124);
       memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }
@@ -65,7 +65,7 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
       }
       FindClose(hFindFile);
     }
-    pcVar2 = (char *)mbtowc_next(filename);
+    pcVar2 = mbtowc_next(filename);
     if (*pcVar2 == ':') {
       local_124[0] = *filename;
     }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(char *param_1,int param_2)
+; void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CNPC *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -46,7 +46,7 @@ section .text
     PUSH ECX                            ; 004b8313
     PUSH EBX                            ; 004b8314
     CALL core_npc.cpp_FUN_004eece0      ; 004b8315
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eece0()
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eece0(CNPC * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004b831a
     POP EBX                             ; 004b831d
     RET                                 ; 004b831e

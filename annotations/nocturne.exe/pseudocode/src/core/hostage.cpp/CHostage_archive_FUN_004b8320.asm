@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)
+; void core_hostage_cpp_CHostage_archive_FUN_004b8320(CNPC *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -44,7 +44,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004b8322
     PUSH EBX                            ; 004b8326
     CALL core_npc.cpp_FUN_004eed10      ; 004b8327
-        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eed10()
+        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eed10(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b832c
     PUSH 0x585cbd                       ; 004b832f | = "followState"
     LEA ESI,[EBX + 0x1f91c]             ; 004b8334
@@ -200,7 +200,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004b84f0
     PUSH ESI                            ; 004b84f6
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004b84f7
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004b84fc
     PUSH 0x585ced                       ; 004b84ff | = "motion state"
     PUSH ESI                            ; 004b8504

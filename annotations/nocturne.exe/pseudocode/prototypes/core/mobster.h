@@ -41,7 +41,7 @@ void __cdecl CMobster::dismountVehicle(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_FUN_004da790
 // Address: 004da790
-void FUN_004da790(CPathMap *param_1,float param_2);
+void FUN_004da790(CMobster *param_1,float param_2);
 
 // Original: core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
 // Address: 004db6f0
@@ -67,9 +67,9 @@ void __cdecl CMobster::startFiringAttack(CMobster *this_ptr);
 // Address: 004dc180
 void CMobster::archive(CEnemy *param_1);
 
-// Original: core_mobster.cpp_FUN_004dc2b0
+// Original: core_mobster.cpp_CMobster_reset_FUN_004dc2b0
 // Address: 004dc2b0
-undefined4 FUN_004dc2b0(void);
+undefined4 CMobster::reset(void);
 
 // Original: core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0
 // Address: 004dc2d0
@@ -93,4 +93,4 @@ void __cdecl CMobster::playTaunt(CMobster *this_ptr,int taunt_category);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_004dcac0
 // Address: 004dcac0
-CDemonActor * CMobster::dtor(CDemonActor *param_1,byte param_2);
+CMobster * __cdecl CMobster::dtor(CMobster *this_ptr,uint flags);

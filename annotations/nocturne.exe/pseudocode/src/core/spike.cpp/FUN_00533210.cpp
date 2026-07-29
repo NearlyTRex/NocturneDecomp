@@ -2,132 +2,131 @@
 // Address: 00533210
 // Address Range: [[00533210, 00533526]]
 // Convention: unknown
-// Signature: void core_spike_cpp_FUN_00533210(int param_1,float param_2)
+// Signature: void core_spike_cpp_FUN_00533210(CSpike *param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_spike_cpp_FUN_00533210(int param_1,float param_2)
+void core_spike_cpp_FUN_00533210(CSpike *param_1,float param_2)
 
 {
-  float *pfVar1;
+  CLocation *pCVar1;
   float fVar2;
-  int iVar3;
-  float *pfVar4;
-  float fVar5;
-  uint local_50;
-  uint local_4c;
-  float local_48;
+  float fVar3;
+  int iVar4;
+  CVector3f *pCVar5;
+  float fVar6;
+  CVector3f local_50;
   float local_44;
   float local_40;
   float local_3c;
   float local_38;
   float local_34;
   float local_30;
-  byte local_2c [24];
+  CVector3f local_2c [2];
   float local_14;
   
-  if ((*(int *)(param_1 + 0x2cc) == 0) || (*(int *)(param_1 + 0x2cc) == 1)) {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,(char *)(param_1 + 0x2e8));
-    if (iVar3 != 0) {
-      *(uint *)(param_1 + 0x2d4) = 1;
+  if ((param_1->spike_type == 0) || (param_1->spike_type == 1)) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,param_1->start_event);
+    if (iVar4 != 0) {
+      param_1->are_we_active = 1;
     }
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,(char *)(param_1 + 0x34c));
-    if (iVar3 == 0) goto LAB_005333e2;
-    *(uint *)(param_1 + 0x2d4) = 0;
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,param_1->stop_event);
+    if (iVar4 == 0) goto LAB_005333e2;
+    param_1->are_we_active = 0;
 LAB_00533279:
-    if (*(int *)(param_1 + 0x2d0) == 0) {
+    if (param_1->spike_state == 0) {
       return;
     }
-    if (*(int *)(param_1 + 0x2d0) == 2) {
-      *(uint *)(param_1 + 0x2d0) = 3;
+    if (param_1->spike_state == 2) {
+      param_1->spike_state = 3;
     }
   }
   else {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,(char *)(param_1 + 0x3b0));
-    if (iVar3 != 0) {
-      *(uint *)(param_1 + 0x2d4) = 1;
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,param_1->extend_event);
+    if (iVar4 != 0) {
+      param_1->are_we_active = 1;
     }
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,(char *)(param_1 + 0x414));
-    if (iVar3 == 0) {
+    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,param_1->retract_event);
+    if (iVar4 == 0) {
 LAB_005333e2:
-      if (*(int *)(param_1 + 0x2d4) == 0) goto LAB_00533279;
+      if (param_1->are_we_active == 0) goto LAB_00533279;
     }
     else {
-      *(uint *)(param_1 + 0x2d4) = 1;
+      param_1->are_we_active = 1;
     }
   }
-  fVar5 = *(float *)(param_1 + 0x480) - param_2;
-  *(float *)(param_1 + 0x480) = fVar5;
-  if (0.0 < fVar5) {
+  fVar6 = param_1->wait_timer - param_2;
+  param_1->wait_timer = fVar6;
+  if (0.0 < fVar6) {
     return;
   }
-  iVar3 = *(int *)(param_1 + 0x2d0);
-  *(uint *)(param_1 + 0x480) = 0;
-  if (iVar3 == 0) {
-    *(uint *)(param_1 + 0x2d0) = 1;
-    *(uint *)(param_1 + 0x554) = 0;
+  iVar4 = param_1->spike_state;
+  param_1->wait_timer = 0.0;
+  if (iVar4 == 0) {
+    param_1->spike_state = 1;
+    param_1->param = 0.0;
     goto LAB_005332db;
   }
-  if (iVar3 == 1) {
-    fVar5 = param_2 / *(float *)(param_1 + 0x478) + *(float *)(param_1 + 0x554);
-    *(float *)(param_1 + 0x554) = fVar5;
-    if (fVar5 <= 1.0) goto LAB_005332db;
-    *(uint *)(param_1 + 0x2d0) = 2;
-    *(uint *)(param_1 + 0x554) = 0x3f800000;
-    if (*(int *)(param_1 + 0x2cc) == 2) {
+  if (iVar4 == 1) {
+    fVar6 = param_2 / param_1->extend_time + param_1->param;
+    param_1->param = fVar6;
+    if (fVar6 <= 1.0) goto LAB_005332db;
+    param_1->spike_state = 2;
+    param_1->param = 1.0;
+    if (param_1->spike_type == 2) {
 LAB_00533455:
-      *(uint *)(param_1 + 0x2d4) = 0;
+      param_1->are_we_active = 0;
       goto LAB_005332db;
     }
-    if (*(int *)(param_1 + 0x2cc) != 1) {
-      *(uint *)(param_1 + 0x480) = *(uint *)(param_1 + 0x54c);
+    if (param_1->spike_type != 1) {
+      param_1->wait_timer = param_1->period;
       goto LAB_005332db;
     }
   }
   else {
-    if (iVar3 == 2) {
-      *(uint *)(param_1 + 0x554) = 0x3f800000;
-      *(uint *)(param_1 + 0x2d0) = 3;
+    if (iVar4 == 2) {
+      param_1->param = 1.0;
+      param_1->spike_state = 3;
       goto LAB_005332db;
     }
-    if ((iVar3 != 3) ||
-       (fVar5 = *(float *)(param_1 + 0x554) - param_2 / *(float *)(param_1 + 0x47c),
-       *(float *)(param_1 + 0x554) = fVar5, 0.0 <= fVar5)) goto LAB_005332db;
-    *(uint *)(param_1 + 0x2d0) = 0;
-    *(uint *)(param_1 + 0x554) = 0;
-    if (*(int *)(param_1 + 0x2cc) == 2) goto LAB_00533455;
-    if (*(int *)(param_1 + 0x2cc) != 1) {
-      *(uint *)(param_1 + 0x480) = *(uint *)(param_1 + 0x54c);
+    if ((iVar4 != 3) ||
+       (fVar6 = param_1->param - param_2 / param_1->retract_time, param_1->param = fVar6,
+       0.0 <= fVar6)) goto LAB_005332db;
+    param_1->spike_state = 0;
+    param_1->param = 0.0;
+    if (param_1->spike_type == 2) goto LAB_00533455;
+    if (param_1->spike_type != 1) {
+      param_1->wait_timer = param_1->period;
       goto LAB_005332db;
     }
   }
-  fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f400000,0x3fa00000);
-  *(float *)(param_1 + 0x480) = fVar5 * *(float *)(param_1 + 0x54c);
+  fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.75,1.25);
+  param_1->wait_timer = fVar6 * param_1->period;
 LAB_005332db:
-  pfVar1 = (float *)(param_1 + 0x20);
-  local_38 = *pfVar1;
-  local_34 = *(float *)(param_1 + 0x24);
-  local_30 = *(float *)(param_1 + 0x28);
-  local_48 = *(float *)(param_1 + 0x2e4) * *(float *)(param_1 + 0x554);
-  local_50 = 0;
-  local_4c = 0;
-  local_14 = local_48;
-  pfVar4 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                              (param_1,local_2c,&local_50);
-  local_44 = *(float *)(param_1 + 0x2d8) + *pfVar4;
-  local_40 = *(float *)(param_1 + 0x2dc) + pfVar4[1];
-  local_3c = *(float *)(param_1 + 0x2e0) + pfVar4[2];
-  *pfVar1 = local_44;
-  *(float *)(param_1 + 0x24) = local_40;
-  *(float *)(param_1 + 0x28) = local_3c;
-  fVar2 = local_34 - *(float *)(param_1 + 0x24);
-  fVar5 = local_30 - *(float *)(param_1 + 0x28);
-  if (fVar5 * fVar5 + fVar2 * fVar2 + (local_38 - *pfVar1) * (local_38 - *pfVar1) <=
-      (float)1.0000000000000001e-05) {
+  pCVar1 = &(param_1->base).location;
+  local_38 = (pCVar1->position).x;
+  local_34 = (param_1->base).location.position.y;
+  local_30 = (param_1->base).location.position.z;
+  local_50.z = param_1->extend_distance * param_1->param;
+  local_50.x = 0.0;
+  local_50.y = 0.0;
+  local_14 = local_50.z;
+  pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                     (&param_1->base,local_2c,&local_50);
+  local_44 = (param_1->base_position).x + pCVar5->x;
+  local_40 = (param_1->base_position).y + pCVar5->y;
+  local_3c = (param_1->base_position).z + pCVar5->z;
+  (pCVar1->position).x = local_44;
+  (param_1->base).location.position.y = local_40;
+  (param_1->base).location.position.z = local_3c;
+  fVar6 = local_38 - (pCVar1->position).x;
+  fVar3 = local_34 - (param_1->base).location.position.y;
+  fVar2 = local_30 - (param_1->base).location.position.z;
+  if (fVar2 * fVar2 + fVar3 * fVar3 + fVar6 * fVar6 <= (float)1.0000000000000001e-05) {
     return;
   }
   core_spike_cpp_FUN_00533750(param_1);

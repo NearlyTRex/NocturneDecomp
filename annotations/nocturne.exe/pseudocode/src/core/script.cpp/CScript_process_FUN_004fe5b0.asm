@@ -63,7 +63,7 @@ section .text
     PUSH EAX                            ; 004fe5f3 | DAT_01c775ec
     XOR ESI,ESI                         ; 004fe5f4
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe5f6
-        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0()
+        ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x8],EAX       ; 004fe5fb
     XOR EDX,EDX                         ; 004fe5ff
     FLD float ptr [ESP + 0x8]           ; 004fe601

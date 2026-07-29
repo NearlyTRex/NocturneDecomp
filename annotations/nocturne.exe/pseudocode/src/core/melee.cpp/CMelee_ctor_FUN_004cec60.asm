@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * __cdecl core_melee_cpp_CMelee_ctor_FUN_004cec60(CWeapon *param_1)
+; CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004cec60(CMelee *this_ptr)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_melee.cpp_FUN_004cec30 at 004cec43
@@ -21,7 +23,7 @@
 ;   undefined4 s_shvl_s_wav_00588384+1
 ;   undefined4 s_shvl_s_wav_00588384+2
 ;   undefined4 s_shvl_s_wav_00588384+3
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a03f4 = 00553f10
+;   CWeapon_full_vtable g_CMeleeVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -44,7 +46,7 @@ section .text
     MOV EBX,EAX                         ; 004cec75
     LEA EDI,[EAX + 0x150]               ; 004cec77
     PUSH EDI                            ; 004cec7d
-    MOV dword ptr [EAX + 0x14c],0x5a03f4 ; 004cec7e | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a03f4
+    MOV dword ptr [EAX + 0x14c],0x5a03f4 ; 004cec7e | g_CMeleeVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004cec88
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d8],0x7     ; 004cec8d

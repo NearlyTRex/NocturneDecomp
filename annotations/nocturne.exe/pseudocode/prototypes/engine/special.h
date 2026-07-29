@@ -13,11 +13,11 @@ void __cdecl clearZBufferNative(void);
 
 // Original: engine_special.cpp_clearScreenRegion_FUN_0052ef37
 // Address: 0052ef37
-undefined4 clearScreenRegion(int param_1);
+void __cdecl clearScreenRegion(int color);
 
 // Original: engine_special.cpp_fillDepthRegion_FUN_0052efc2
 // Address: 0052efc2
-undefined4 fillDepthRegion(int param_1,int param_2,uint param_3,uint param_4);
+void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
 // Original: engine_special.cpp_FUN_0052f031
 // Address: 0052f031
@@ -49,7 +49,7 @@ void __edi_esi_ebx renderScanline(SSoftwareEdge *left,SSoftwareEdge *right,int s
 
 // Original: engine_special.cpp_renderScanlineSwapped_FUN_00530716
 // Address: 00530716
-undefined8 renderScanlineSwapped(void);
+void __cdecl renderScanlineSwapped(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 
 // Original: engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 // Address: 0053075c

@@ -42,7 +42,7 @@ section .text
     ADD EBX,0x4                         ; 004385c2
     INC ESI                             ; 004385c5
     CALL core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0 ; 004385c6
-        ;   XREF to: 00437cc0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0()
+        ;   XREF to: 00437cc0 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0(CCloth * this_ptr, CDeformableModelInstance * model_ptr)
     MOV EAX,dword ptr [EDI]             ; 004385cb
     ADD ESP,0x8                         ; 004385cd
     CMP ESI,EAX                         ; 004385d0

@@ -217,7 +217,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0044b191 | DAT_005ae704
     PUSH EDI                            ; 0044b197 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0044b198
-        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20()
+        ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     ADD ESP,0x10                        ; 0044b19d
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b1a0
         ;   Label: LAB_0044b1a0
@@ -232,7 +232,7 @@ section .text
     ADD EBX,0x20                        ; 0044b1b6
     INC ESI                             ; 0044b1b9
     CALL core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60 ; 0044b1ba
-        ;   XREF to: 0044ab60 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60()
+        ;   XREF to: 0044ab60 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60(CVector3f * * triangle_vertex_pointers, CVector3f * vertex_buffer)
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044b1bf
     MOV dword ptr [EBP + -0x8],EBX      ; 0044b1c2
     MOV dword ptr [EBP + -0x4],ESI      ; 0044b1c5

@@ -11,13 +11,13 @@
 void engine_texture_cpp_FUN_005458a0(void)
 
 {
-  int iVar1;
+  CTextureCache *this_ptr;
   
-  iVar1 = FUN_0056497c(0xd300c);
-  if (iVar1 == 0) {
-    _DAT_02dd0f84 = iVar1;
+  this_ptr = (CTextureCache *)FUN_0056497c(0xd300c);
+  if (this_ptr == (CTextureCache *)0x0) {
+    _DAT_02dd0f84 = this_ptr;
     return;
   }
-  _DAT_02dd0f84 = engine_texture_cpp_FUN_00544de0(iVar1,0x400);
+  _DAT_02dd0f84 = engine_texture_cpp_FUN_00544de0(this_ptr,0x400);
   return;
 }

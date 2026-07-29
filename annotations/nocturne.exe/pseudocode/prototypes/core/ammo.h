@@ -49,7 +49,7 @@ void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 
 // Original: core_ammo.cpp_FUN_0040ef60
 // Address: 0040ef60
-void FUN_0040ef60(int param_1,undefined4 param_2);
+void __cdecl FUN_0040ef60(CAmmo *this_ptr,int ammo_count);
 
 // Original: core_ammo.cpp_FUN_0040ef70
 // Address: 0040ef70
@@ -57,4 +57,4 @@ undefined4 FUN_0040ef70(undefined4 param_1,CDemonActor *param_2);
 
 // Original: core_ammo.cpp_CAmmo_dtor_FUN_0040ef90
 // Address: 0040ef90
-CDemonActor * CAmmo::dtor(CDemonActor *param_1,byte param_2);
+CAmmo * __cdecl CAmmo::dtor(CAmmo *this_ptr,uint flags);

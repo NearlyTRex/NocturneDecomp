@@ -1,14 +1,14 @@
 // Name: engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00406740
 // Address: 00406740
 // Address Range: [[00406740, 00406833]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive
   int iVar4;
   int iVar5;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar2 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
@@ -35,11 +35,11 @@ int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive
     }
     _DAT_01c039a0 = 1;
     _DAT_01c039a4 = 0;
-    engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
+    engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
     iVar5 = 0;
     iVar2 = 0;
-    pSVar3 = param_1 + 1;
-    for (iVar4 = 0; iVar4 < (param_1->base).count * 3; iVar4 = iVar4 + 3) {
+    pSVar3 = prim + 1;
+    for (iVar4 = 0; iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)&DAT_006b029c + iVar2) = iVar1;
       (&DAT_005c502c)[iVar1 * 0xc] = (pSVar3->base).count;
@@ -50,5 +50,5 @@ int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive
     }
     engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);
   }
-  return (int)&param_1[1].base + (param_1->base).count * 0xc;
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

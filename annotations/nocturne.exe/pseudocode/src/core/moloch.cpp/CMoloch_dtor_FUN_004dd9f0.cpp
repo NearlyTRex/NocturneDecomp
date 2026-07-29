@@ -19,8 +19,7 @@ CHero * core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CHero *param_1,byte param_2)
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  (param_1->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_moloch_cpp_CMoloch_setup_FUN_004dda70_005a0ac4;
+  (param_1->base).base.vtable._ub = &g_CMolochVTable._ub;
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070((CMorph *)&param_1[1].base.model.bounding_box,0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)

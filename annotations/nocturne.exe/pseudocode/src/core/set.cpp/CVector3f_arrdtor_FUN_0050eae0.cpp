@@ -1,18 +1,16 @@
 // Name: core_set.cpp_CVector3f_arrdtor_FUN_0050eae0
 // Address: 0050eae0
 // Address Range: [[0050eae0, 0050eaf7]]
-// Convention: unknown
-// Signature: void core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(CVector3f *objs,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(void)
+CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(CVector3f *objs,uint flags)
 
 {
-  void *in_stack_00000004;
+  CVector3f *pCVar1;
   
-  __arrfini(in_stack_00000004,4000,&g_CVectorTypeInfo_005993b0);
-  return;
+  pCVar1 = (CVector3f *)__arrfini(objs,4000,&g_CVectorTypeInfo_005993b0);
+  return pCVar1;
 }

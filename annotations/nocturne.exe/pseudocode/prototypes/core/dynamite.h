@@ -17,7 +17,7 @@ CDemonActorType * FUN_0046ebc0(void);
 
 // Original: core_dynamite.cpp_CDynamite_ctor_FUN_0046ebd0
 // Address: 0046ebd0
-CWeapon * __cdecl CDynamite::ctor(CWeapon *param_1);
+CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0046ec80
 // Address: 0046ec80
@@ -25,7 +25,7 @@ undefined4 FUN_0046ec80(CWeapon *param_1);
 
 // Original: core_dynamite.cpp_FUN_0046ecf0
 // Address: 0046ecf0
-undefined4 FUN_0046ecf0(void);
+float FUN_0046ecf0(void);
 
 // Original: core_dynamite.cpp_FUN_0046ed20
 // Address: 0046ed20
@@ -33,15 +33,15 @@ void FUN_0046ed20(void);
 
 // Original: core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30
 // Address: 0046ed30
-void __cdecl CDynamite::lightFuse(int param_1);
+void __cdecl CDynamite::lightFuse(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0046ed80
 // Address: 0046ed80
-undefined4 FUN_0046ed80(int param_1);
+int __cdecl FUN_0046ed80(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0046eda0
 // Address: 0046eda0
-bool FUN_0046eda0(int param_1);
+int __cdecl FUN_0046eda0(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0046edc0
 // Address: 0046edc0
@@ -49,4 +49,4 @@ void CDynamite::process(CWeapon *param_1,float param_2);
 
 // Original: core_dynamite.cpp_CDynamite_dtor_FUN_0046ef30
 // Address: 0046ef30
-CWeapon * CDynamite::dtor(CWeapon *param_1,byte param_2);
+CDynamite * __cdecl CDynamite::dtor(CDynamite *this_ptr,uint flags);

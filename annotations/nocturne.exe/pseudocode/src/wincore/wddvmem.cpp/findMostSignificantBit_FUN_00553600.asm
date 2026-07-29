@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int wincore_wddvmem_cpp_findMostSignificantBit_FUN_00553600(void)
+; int __cdecl wincore_wddvmem_cpp_findMostSignificantBit_FUN_00553600(uint value)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   value
 ;
 ; *****************************************************************************
 

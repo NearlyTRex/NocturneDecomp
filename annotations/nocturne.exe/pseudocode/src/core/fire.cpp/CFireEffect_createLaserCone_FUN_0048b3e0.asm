@@ -14,9 +14,9 @@
 ; float            Stack[0x20]:4   cone_angle
 ;
 ; XREF[3]:
-;   core_elephant.cpp_FUN_00478120 at 00478294
+;   core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120 at 00478294
 ;   core_lightgun.cpp_FUN_004c7ca0 at 004c7e30
-;   core_shotgun.cpp_FUN_00516770 at 005168e4
+;   core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770 at 005168e4
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059d210 = 0.02000000
@@ -61,7 +61,7 @@ section .text
     ADD EAX,0x1c5c704                   ; 0048b421
     PUSH EAX                            ; 0048b426
     CALL core_fire.cpp_CLaserBeam_init_FUN_004858f0 ; 0048b427
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLaserBeam_init_FUN_004858f0()
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_init_FUN_004858f0(CLaserBeam * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     MOV EAX,[0x01c5c700]                ; 0048b42c | DAT_01c5c700
     INC EAX                             ; 0048b431
     ADD ESP,0x2c                        ; 0048b432

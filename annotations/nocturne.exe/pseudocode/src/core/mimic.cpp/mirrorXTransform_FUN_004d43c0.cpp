@@ -1,14 +1,14 @@
 // Name: core_mimic.cpp_mirrorXTransform_FUN_004d43c0
 // Address: 004d43c0
 // Address Range: [[004d43c0, 004d4411]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
+void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
 
 {
   engine_matrix_c_matrixPush_FUN_004cdac0();

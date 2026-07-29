@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 FUN_00569928(byte *param_1,uint *param_2,int param_3)
+; undefined8 FUN_00569928(byte *param_1,int *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -549,7 +549,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00569d53
     PUSH EAX                            ; 00569d57
     CALL crt_stdlib.c_i64toa_FUN_0056f3e0 ; 00569d58
-        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_i64toa_FUN_0056f3e0()
+        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c_i64toa_FUN_0056f3e0(longlong * value, char * buffer, int base)
     MOV CL,byte ptr [EBX + 0x15]        ; 00569d5d
     ADD ESP,0xc                         ; 00569d60
     CMP CL,0x58                         ; 00569d63
@@ -580,7 +580,7 @@ section .text
     PUSH EAX                            ; 00569d8f
     PUSH ECX                            ; 00569d90
     CALL crt_stdlib.c_utoa_FUN_0056f4f0 ; 00569d91
-        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_utoa_FUN_0056f4f0()
+        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c_utoa_FUN_0056f4f0(uint value, char * buffer, int base)
     MOV DH,byte ptr [EBX + 0x15]        ; 00569d96
     ADD ESP,0xc                         ; 00569d99
     CMP DH,0x58                         ; 00569d9c

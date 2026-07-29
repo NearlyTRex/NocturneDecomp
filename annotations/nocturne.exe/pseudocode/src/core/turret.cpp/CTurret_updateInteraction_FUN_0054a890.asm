@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)
+; undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CCharacter *param_1,float *param_2,int param_3)
 ;
 ;
 ; Called Functions:

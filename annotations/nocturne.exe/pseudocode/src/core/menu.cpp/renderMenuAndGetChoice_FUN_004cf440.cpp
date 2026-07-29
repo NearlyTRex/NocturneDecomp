@@ -37,7 +37,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
       iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0x58);
       local_24 = 0xf8;
       if (local_20 == *selected_index_ptr) {
-        iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(0x1cc5780);
+        iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170((CMoon *)0x1cc5780);
         local_24 = 7;
         if (iVar2 == 0) {
           local_24 = 0xff;

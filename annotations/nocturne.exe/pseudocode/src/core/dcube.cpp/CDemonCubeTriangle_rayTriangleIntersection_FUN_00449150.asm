@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(undefined4 *param_1,float *param_2,float *param_3)
+; float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)
 ;
+; Parameters:
+; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44

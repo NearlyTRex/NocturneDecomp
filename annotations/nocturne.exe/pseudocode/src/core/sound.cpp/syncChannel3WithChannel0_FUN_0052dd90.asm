@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
+; void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

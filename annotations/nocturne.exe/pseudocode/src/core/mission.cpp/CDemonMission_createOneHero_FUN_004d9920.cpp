@@ -52,8 +52,8 @@ LAB_004d999a:
         (existing_actor->base).location.area_id = (this_ptr_00->base).location.area_id;
         core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
                   (&(existing_actor->model).motion_controller,0,0.0);
-        (*(((existing_actor->base).vtable._uc)->_uc).canBeAttracted)
-                  (existing_actor,(CVector3f *)0x0);
+        (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
+                  (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
                 (0x01CC9450,(CDemonActor *)local_14);

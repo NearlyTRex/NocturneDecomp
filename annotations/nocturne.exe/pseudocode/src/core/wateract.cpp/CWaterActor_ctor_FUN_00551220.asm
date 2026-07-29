@@ -18,7 +18,7 @@
 ;   undefined4 s_one_005975d0+1
 ;   undefined4 s_ne_005975d0+2
 ;   undefined4 s_e_005975d0+3
-;   undefined1* PTR_core_wateract.cpp_CWaterActor_setup_FUN_00551370_005a3ef4 = 00551370
+;   CDemonActor_vtable g_CWaterActorVTable
 ;   WatcomTypeInfo g_SWaterVertexTypeInfo_005a3fd0
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00551222
     PUSH EDX                            ; 00551226
     CALL core_actor.cpp_FUN_00409d30    ; 00551227
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0055122c
     PUSH 0x5a3fd0                       ; 0055122f | g_SWaterVertexTypeInfo_005a3fd0
     PUSH 0x3e8                          ; 00551234
@@ -44,7 +44,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0055123f
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd6c]          ; 00551244
-    MOV dword ptr [EDX + 0x14c],0x5a3ef4 ; 0055124a | PTR_core_wateract.cpp_CWaterActor_setup_FUN_00551370_005a3ef4
+    MOV dword ptr [EDX + 0x14c],0x5a3ef4 ; 0055124a | g_CWaterActorVTable
     MOV dword ptr [EDX + 0x150],0x40800000 ; 00551254
     MOV dword ptr [EDX + 0x154],0x3dcccccd ; 0055125e
     MOV dword ptr [EDX + 0x158],0x40800000 ; 00551268

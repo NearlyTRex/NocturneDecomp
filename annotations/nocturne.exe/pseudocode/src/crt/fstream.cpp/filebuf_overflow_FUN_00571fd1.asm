@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_fstream_cpp_filebuf_overflow_FUN_00571fd1(int param_1,int param_2)
+; int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_00571fd1(filebuf *this_ptr,int character)
 ;
+; Parameters:
+; filebuf *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   character
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;

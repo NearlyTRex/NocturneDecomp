@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_queuePush_FUN_004efc50(void)
+; void __cdecl core_path_cpp_queuePush_FUN_004efc50(int grid_x,int cost,int grid_z,char direction)
 ;
+; Parameters:
+; int              Stack[0x4]:4   grid_x
+; int              Stack[0x8]:4   cost
+; int              Stack[0xc]:4   grid_z
+; char             Stack[0x10]:1   direction
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e3162c

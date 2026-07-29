@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CGlassParticle_render_FUN_004853c0(CVector3f *param_1)
+; void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004853c0(CGlassParticle *this_ptr)
 ;
+; Parameters:
+; CGlassParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x60]:4  local_60

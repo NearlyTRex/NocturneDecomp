@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CWeapon *param_1,byte param_2)
+; CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0046ef30(CDynamite *this_ptr,uint flags)
 ;
+; Parameters:
+; CDynamite *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDynamiteTypeInfo_0059ca20

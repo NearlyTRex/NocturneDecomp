@@ -2,11 +2,11 @@
 // Address: 00549cd0
 // Address Range: [[00549cd0, 00549ed2]]
 // Convention: unknown
-// Signature: CBoundingBox3D * core_turret_cpp_FUN_00549cd0(int param_1,CBoundingBox3D *param_2)
+// Signature: CBoundingBox3D * core_turret_cpp_FUN_00549cd0(CTurret *param_1,CBoundingBox3D *param_2)
 
 #include "nocturne.h"
 
-CBoundingBox3D * core_turret_cpp_FUN_00549cd0(int param_1,CBoundingBox3D *param_2)
+CBoundingBox3D * core_turret_cpp_FUN_00549cd0(CTurret *param_1,CBoundingBox3D *param_2)
 
 {
   CKeyFramedModelInstance *this_ptr;
@@ -15,30 +15,29 @@ CBoundingBox3D * core_turret_cpp_FUN_00549cd0(int param_1,CBoundingBox3D *param_
   CVector3f *pCVar3;
   int iVar4;
   uint corner_index;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
-  double dVar8;
+  float *pfVar5;
+  byte bVar6;
+  double dVar7;
   CMatrix3x4f *matrix;
-  byte auStack_104 [48];
-  uint auStack_d4 [12];
-  uint auStack_a4 [12];
-  byte auStack_74 [44];
-  CBoundingBox3D CStack_48;
+  CMatrix3x4f CStack_d8;
+  float afStack_a4 [12];
+  byte auStack_74 [48];
+  float fStack_44;
+  float local_40;
+  float local_3c;
+  float local_38;
+  float local_34;
   CVector3f local_30;
   CVector3f CStack_24;
   CKeyFramedModelInstance *pCStack_14;
   float local_10;
   float local_c;
   
-  bVar7 = 0;
-  auStack_104._0_4_ = 0.0;
-  local_c = (float)core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1);
-  auStack_104._0_4_ = 7.770517e-39;
-  dVar8 = round((double)local_c);
-  local_10 = (float)(int)ROUND(dVar8);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  bVar6 = 0;
+  local_c = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,0);
+  dVar7 = round((double)local_c);
+  local_10 = (float)(int)ROUND(dVar7);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&(param_1->base).model);
   pfVar2 = (float *)((int)local_10 * 0x18 + pCVar1->texture_list[7].textures[2].base.count);
   (param_2->min).x = *pfVar2;
   (param_2->min).y = pfVar2[1];
@@ -46,39 +45,41 @@ CBoundingBox3D * core_turret_cpp_FUN_00549cd0(int param_1,CBoundingBox3D *param_
   (param_2->max).x = pfVar2[3];
   (param_2->max).y = pfVar2[4];
   (param_2->max).z = pfVar2[5];
-  pCStack_14 = (CKeyFramedModelInstance *)(param_1 + 0x57c);
+  pCStack_14 = &param_1->model;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(pCStack_14);
   if (pCVar1->poly_count < 1) {
     return param_2;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (auStack_74,&DAT_02dd1184,param_1 + 0x570);
+            ((CMatrix3x4f *)auStack_74,(CVector3f *)&DAT_02dd1184,&(param_1->home_orient).vec);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
-            ((CMatrix3x4f *)auStack_104,(CVector3f *)&DAT_02dd1184,(CVector3f *)(param_1 + 0x30));
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_74,auStack_104);
-  puVar5 = auStack_a4;
-  puVar6 = auStack_d4;
+            ((CMatrix3x4f *)&stack0xfffffefc,(CVector3f *)&DAT_02dd1184,
+             &(param_1->base).base.orient.vec);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_74,&stack0xfffffefc);
+  pfVar2 = afStack_a4;
+  pfVar5 = &CStack_d8.m[0].x;
   for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *pfVar5 = *pfVar2;
+    pfVar2 = pfVar2 + (uint)bVar6 * -2 + 1;
+    pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
   }
-  local_10 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,1);
+  local_10 = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(param_1,1);
   this_ptr = pCStack_14;
-  dVar8 = round((double)local_10);
-  pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar8);
+  dVar7 = round((double)local_10);
+  pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
   pfVar2 = (float *)(pCVar1->texture_list[7].textures[2].base.count + (int)pCStack_14 * 0x18);
-  CStack_48.min.x = *pfVar2;
-  CStack_48.min.y = pfVar2[1];
-  CStack_48.min.z = pfVar2[2];
-  CStack_48.max.x = pfVar2[3];
-  CStack_48.max.y = pfVar2[4];
-  CStack_48.max.z = pfVar2[5];
+  auStack_74._44_4_ = *pfVar2;
+  fStack_44 = pfVar2[1];
+  local_40 = pfVar2[2];
+  local_3c = pfVar2[3];
+  local_38 = pfVar2[4];
+  local_34 = pfVar2[5];
   corner_index = 0;
   do {
-    matrix = (CMatrix3x4f *)(auStack_104 + 0x2c);
-    pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&CStack_48,&CStack_24,corner_index);
+    matrix = &CStack_d8;
+    pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70
+                       ((CBoundingBox3D *)(auStack_74 + 0x2c),&CStack_24,corner_index);
     pCVar3 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_30,pCVar3,matrix);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,pCVar3);

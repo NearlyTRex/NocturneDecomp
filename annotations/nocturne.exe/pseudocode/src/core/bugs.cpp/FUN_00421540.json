@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,23 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 326,
+    "complexity_score": 322,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 57,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "self_copy_guard",
       "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 207
+    "total_lines": 203
   },
   "cross_references": [],
   "function": {
@@ -305,7 +305,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[0x1b].create_event + 0x1c) == 0) {",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 20,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
@@ -321,7 +321,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
@@ -329,7 +329,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_44);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_44);",
@@ -338,14 +346,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < (int)param_1[0x90].location.position.z) {",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "pEStack_10 = &param_1[0xdc].lifecycle_state;",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "piStack_c = &param_1[0x90].location.area_id;",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = param_1[0x90].orient_matrix.m;",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
@@ -385,7 +385,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 35,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(CVector3f *)&pCVar1->y,rotation);",
@@ -393,31 +393,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_20 = (param_1->location).position.x + rotation->x;",
+      "text": "CStack_20.x = (param_1->location).position.x + rotation->x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_1c = (param_1->location).position.y + rotation->y;",
+      "text": "CStack_20.y = (param_1->location).position.y + rotation->y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_18 = (param_1->location).position.z + rotation->z;",
+      "text": "CStack_20.z = (param_1->location).position.z + rotation->z;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 45,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
@@ -425,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar2 < (int)param_1[0x90].location.position.z);",
@@ -433,7 +433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
@@ -441,23 +441,23 @@
     },
     {
       "description": "Pointer value `&param_1[0x90].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
+      "line": 31,
       "match": "(int)&param_1[0x90].orient",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_2c != &fStack_20)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 43,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 40,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&fStack_2c != &fStack_20) {",
-      "type": "self_copy_guard"
+      "text": "CStack_2c.x = CStack_20.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
+      "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)((int)&param_1[0x90].orient + 4);",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `rotation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*rotation) + offsetof(subfield)` equals the real array stride. Replace `rotation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 55,
+      "line": 51,
       "match": "rotation = (T *)&rotation[N].SUBFIELD",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)&rotation[5].y;",

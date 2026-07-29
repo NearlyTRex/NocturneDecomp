@@ -23,7 +23,7 @@
 ;   undefined4 s_ameMePlease_0058cbef+1
 ;   undefined4 s_meMePlease_0058cbef+2
 ;   undefined4 s_eMePlease_0058cbef+3
-;   undefined1* PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074 = 004ef6d0
+;   CCharacter_full_vtable g_CPassengerVTable
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_ctor_FUN_004e0050
@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004ef4e3
     PUSH EBX                            ; 004ef4e7
     CALL core_npc.cpp_FUN_004ee950      ; 004ef4e8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004ef4ed
     ADD EAX,0x1f67c                     ; 004ef4f0
     PUSH EAX                            ; 004ef4f5
@@ -51,7 +51,7 @@ section .text
     LEA EBX,[EAX + 0xfffe0984]          ; 004ef500
     ADD ESP,0x4                         ; 004ef506
     LEA EDI,[EBX + 0x1f5d4]             ; 004ef509
-    MOV dword ptr [EBX + 0x14c],0x5a1074 ; 004ef50f | PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074
+    MOV dword ptr [EBX + 0x14c],0x5a1074 ; 004ef50f | g_CPassengerVTable
     PUSH EDI                            ; 004ef519
     MOV AL,byte ptr [ESI]               ; 004ef51a | = "wolfbrn.dfm" | s_wolfbrn_dfm_0058cbd0+2
         ;   Label: LAB_004ef51a
@@ -92,7 +92,7 @@ section .text
     MOV ESI,0x58cbef                    ; 004ef564 | = "nameMePlease"
     MOV dword ptr [EBX + 0x1f678],0x0   ; 004ef569
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004ef573
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004ef578
     LEA EDI,[EBX + 0x1f5f4]             ; 004ef57b
     MOV dword ptr [EBX + 0x202ac],0x3f800000 ; 004ef581

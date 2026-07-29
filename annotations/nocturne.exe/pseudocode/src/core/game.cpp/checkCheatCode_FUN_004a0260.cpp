@@ -1,39 +1,40 @@
 // Name: core_game.cpp_checkCheatCode_FUN_004a0260
 // Address: 004a0260
 // Address Range: [[004a0260, 004a02d2]]
-// Convention: unknown
-// Signature: undefined4 core_game_cpp_checkCheatCode_FUN_004a0260(byte *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string)
 
 #include "nocturne.h"
 
-uint core_game_cpp_checkCheatCode_FUN_004a0260(byte *param_1)
+int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string)
 
 {
-  byte bVar1;
-  uint uVar2;
+  char cVar1;
+  byte bVar2;
   uint uVar3;
-  int iVar4;
+  uint uVar4;
   int iVar5;
-  byte *pbVar6;
+  int iVar6;
+  char *pcVar7;
   
-  uVar3 = 0xffffffff;
-  pbVar6 = param_1;
+  uVar4 = 0xffffffff;
+  pcVar7 = cheat_string;
   do {
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    bVar1 = *pbVar6;
-    pbVar6 = pbVar6 + 1;
-  } while (bVar1 != 0);
-  iVar5 = 0;
-  for (iVar4 = ~uVar3 - 1; 0 < iVar4; iVar4 = iVar4 + -1) {
-    bVar1 = *(byte *)(iVar4 + 0x1c78aef);
-    uVar2 = toupper((uint)*param_1);
-    if (bVar1 == uVar2) {
-      iVar5 = iVar5 + 1;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
+  } while (cVar1 != '\0');
+  iVar6 = 0;
+  for (iVar5 = ~uVar4 - 1; 0 < iVar5; iVar5 = iVar5 + -1) {
+    bVar2 = *(byte *)(iVar5 + 0x1c78aef);
+    uVar3 = toupper((uint)(byte)*cheat_string);
+    if (bVar2 == uVar3) {
+      iVar6 = iVar6 + 1;
     }
-    param_1 = param_1 + 1;
+    cheat_string = cheat_string + 1;
   }
-  if (iVar5 == ~uVar3 - 1) {
+  if (iVar6 == ~uVar4 - 1) {
     DAT_01c78af0 = 0;
     return 1;
   }

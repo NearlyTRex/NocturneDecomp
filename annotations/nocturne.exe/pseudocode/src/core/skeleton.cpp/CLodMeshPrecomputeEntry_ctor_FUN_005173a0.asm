@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(undefined4 param_1)
+; CLodMeshPrecomputeEntry * __cdecl core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(CLodMeshPrecomputeEntry *this_ptr)
 ;
+; Parameters:
+; CLodMeshPrecomputeEntry * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_FUN_005174e0

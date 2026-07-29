@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_bat_cpp_CStairs_dtor_FUN_00412000(CDemonActor *param_1,byte param_2)
+; CStairs * __cdecl core_bat_cpp_CStairs_dtor_FUN_00412000(CStairs *this_ptr,uint flags)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBatTypeInfo_00599f70

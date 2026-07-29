@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
+; float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x78]:8  local_78
@@ -177,7 +177,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0051a5da
     PUSH EAX                            ; 0051a5de
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 0051a5df
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x70],EAX      ; 0051a5e4
     FLD float ptr [ESP + 0x70]          ; 0051a5e8
     ADD ESP,0xc                         ; 0051a5ec

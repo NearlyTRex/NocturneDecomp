@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_transformWorldToScreen_FUN_0048c8d0(void)
+; void __cdecl core_fire_cpp_transformWorldToScreen_FUN_0048c8d0(CVector3i *input,SProjectedVertex *output,CVector3f *world_position)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input
+; SProjectedVertex * Stack[0x8]:4   output
+; CVector3f *      Stack[0xc]:4   world_position
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

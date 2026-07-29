@@ -45,6 +45,7 @@ if THIS_DIR not in sys.path:
     sys.path.insert(0, THIS_DIR)
 
 import sibling_match as sm
+import apply_sibling_annotations as asa
 
 REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
 
@@ -65,16 +66,24 @@ def base_type_name(text):
 
 
 def wanted_types(mapping_path, source_program, min_confidence):
-    """Base type names every transferable prototype needs, in mapping order."""
+    """Base type names every transferable prototype needs, in mapping order.
+
+    The eligibility test is imported from apply_sibling_annotations rather than
+    repeated here. It was repeated once, and the copy went stale the moment the
+    signature gate widened: this tool went on reporting "nothing to import"
+    while 37 prototypes were being dropped for 14 unknown types.
+    """
     with open(mapping_path) as fh:
         mapping = json.load(fh)
     src = sm.Image(source_program)
 
     names, seen = [], set()
     for p in mapping.get("pairs", []):
-        if p.get("sig_verdict") != "agree":
+        if p.get("ambiguous"):
             continue
-        if p.get("confidence", 0) < min_confidence:
+        if not asa.signature_supported(p.get("shape_agreement", "unshaped"),
+                                       p.get("sig_verdict", "unverifiable"),
+                                       p.get("confidence", 0), min_confidence):
             continue
         rec = src.by_addr.get(p["a"])
         if not rec:

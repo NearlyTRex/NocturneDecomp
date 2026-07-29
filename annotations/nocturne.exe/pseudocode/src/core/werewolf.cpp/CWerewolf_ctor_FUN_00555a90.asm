@@ -14,7 +14,7 @@
 ;   float FLOAT_005a42f0 = 50
 ;   float FLOAT_005a42f4 = 100
 ;   float FLOAT_005a42f8 = 10
-;   undefined1* PTR_core_werewolf.cpp_CWerewolf_setup_FUN_00555b40_005a4314 = 00555b40
+;   CEnemy_full_vtable g_CWerewolfVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -35,9 +35,9 @@ section .text
     MOV EBX,EAX                         ; 00555aa3
     ADD EAX,0x150                       ; 00555aa5
     PUSH EAX                            ; 00555aaa
-    MOV dword ptr [EAX + -0x4],0x5a4314 ; 00555aab | PTR_core_werewolf.cpp_CWerewolf_setup_FUN_00555b40_005a4314
+    MOV dword ptr [EAX + -0x4],0x5a4314 ; 00555aab | g_CWerewolfVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00555ab2
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x3f800000 ; 00555ab7
     MOV dword ptr [EBX + 0x2dd8],0x40000000 ; 00555ac1
     MOV dword ptr [EBX + 0xbd24],0x0    ; 00555acb

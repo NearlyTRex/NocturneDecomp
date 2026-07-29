@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_trimLineAndRemoveComments_FUN_00521d80(void)
+; void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_00521d80(char *line)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   line
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005922e5

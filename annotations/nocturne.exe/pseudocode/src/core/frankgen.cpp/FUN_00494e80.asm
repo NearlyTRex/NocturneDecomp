@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_frankgen_cpp_FUN_00494e80(CDemonActor *param_1)
+; int core_frankgen_cpp_FUN_00494e80(CFrankenstienMachine *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 00494ea5
     FSTP float ptr [EBX + 0x154]        ; 00494ea6
     CALL core_frankgen.cpp_FUN_004950a0 ; 00494eac
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_FUN_004950a0(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 00494eb1
     PUSH EBX                            ; 00494eb4
         ;   Label: LAB_00494eb4
@@ -156,7 +156,7 @@ section .text
     SUB ESP,0x8                         ; 00494fa9
     FSTP double ptr [ESP]               ; 00494fac
     CALL crt_math.c_floor_FUN_005648c0  ; 00494faf
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x24],EAX      ; 00494fb4
     MOV dword ptr [ESP + 0x28],EDX      ; 00494fb8
     FLD double ptr [ESP + 0x24]         ; 00494fbc

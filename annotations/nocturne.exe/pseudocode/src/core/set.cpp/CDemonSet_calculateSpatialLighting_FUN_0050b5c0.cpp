@@ -1,15 +1,15 @@
 // Name: core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
 // Address: 0050b5c0
 // Address Range: [[0050b5c0, 0050b7e4]]
-// Convention: unknown
-// Signature: int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *param_1,uint param_2,int param_3)
+int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
 {
   int iVar1;
@@ -49,7 +49,7 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       position = (CVector3f *)&DAT_01fff54c;
     }
     core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0
-              (param_1,position,orientation,aabb_min,aabb_max,rotation_matrix);
+              (this_ptr,position,orientation,aabb_min,aabb_max,rotation_matrix);
     _DAT_01fff548 = 0;
   }
   iVar3 = 0;
@@ -61,7 +61,7 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (0x1fb8508,param_2,*puVar7,param_3);
+                        (0x1fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01fff07c);
   }
@@ -73,7 +73,7 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (0x1fb8508,param_2,*puVar7,param_3);
+                        (0x1fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01ffeef8);
   }
@@ -85,24 +85,25 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0
-                        (*puVar7,param_2,param_3);
+                        ((CDemonGlobe *)*puVar7,world_position,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01fff090);
   }
   local_18 = 0;
-  if (0 < (int)param_1->renderable_actors[0x6f7]) {
-    local_14 = param_1;
+  if (0 < (int)this_ptr->renderable_actors[0x6f7]) {
+    local_14 = this_ptr;
     do {
       core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30
-                (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,param_2);
+                (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,world_position);
       local_48 = local_3c;
       *(uint *)((int)&stack0xffffffbc + (uint)bVar5 * 0xfffffffe * 4) =
            *(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8);
       *(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
            *(uint *)(&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      if (param_3 != 0) {
+      if (surface_normal != (CVector3i *)0x0) {
         core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0
-                  (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,param_2,param_3);
+                  (local_14->renderable_actors[0x6f8][1].create_event + 0x1c,world_position,
+                   surface_normal);
         local_24 = local_30;
         *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * 0xfffffffe * 4) =
              *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);
@@ -113,7 +114,7 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       if (0 < _DAT_01fba2d8) {
         iVar4 = 0;
         do {
-          if (param_3 == 0) {
+          if (surface_normal == (CVector3i *)0x0) {
             uVar6 = *(uint *)(iVar4 + 0x1fba2dc);
             puVar7 = (uint *)0x0;
           }
@@ -130,7 +131,7 @@ int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *para
       }
       local_14 = (CDemonSet *)local_14->cameras;
       local_18 = local_18 + 1;
-    } while (local_18 < (int)param_1->renderable_actors[0x6f7]);
+    } while (local_18 < (int)this_ptr->renderable_actors[0x6f7]);
   }
   return iVar2;
 }

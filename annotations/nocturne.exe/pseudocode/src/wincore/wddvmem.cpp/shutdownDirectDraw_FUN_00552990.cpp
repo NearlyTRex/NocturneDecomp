@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_shutdownDirectDraw_FUN_00552990
 // Address: 00552990
 // Address Range: [[00552990, 00552a14]]
-// Convention: unknown
-// Signature: undefined4 wincore_wddvmem_cpp_shutdownDirectDraw_FUN_00552990(void)
+// Convention: __cdecl
+// Signature: int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_00552990(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint wincore_wddvmem_cpp_shutdownDirectDraw_FUN_00552990(void)
+int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_00552990(void)
 
 {
   if (_DAT_02ddf55c != (int *)0x0) {

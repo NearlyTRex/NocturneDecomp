@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,24 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 607,
+    "complexity_score": 581,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 50,
+    "pseudocode_lines": 66,
+    "suspect_count": 48,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "suspect_float",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memset",
       "unrolled_strcpy"
     ],
-    "total_lines": 165
+    "total_lines": 164
   },
   "cross_references": [
     {
@@ -439,9 +438,9 @@
         "00409e99"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_FUN_00409d30",
-    "signature": "UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)"
+    "signature": "CDemonActor * __cdecl core_actor_cpp_FUN_00409d30(CDemonActor *this_ptr)"
   },
   "function_calls": [
     {
@@ -506,9 +505,9 @@
     },
     {
       "addr": "005992d4",
-      "name": "PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4",
-      "type": "undefined1*",
-      "value": "00409fc0"
+      "name": "g_CDemonActorVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "0078a123",
@@ -524,12 +523,10 @@
         "call_addr": "0040eb78",
         "call_type": "direct",
         "caller": "core_ammo.cpp_CAmmo_ctor_FUN_0040eb70",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -537,12 +534,10 @@
         "call_addr": "004a8a16",
         "call_type": "direct",
         "caller": "core_gasmask.cpp_FUN_004a8a10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -550,12 +545,10 @@
         "call_addr": "004b5f95",
         "call_type": "direct",
         "caller": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -563,12 +556,10 @@
         "call_addr": "00415d25",
         "call_type": "direct",
         "caller": "core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -576,12 +567,10 @@
         "call_addr": "0048eef8",
         "call_type": "direct",
         "caller": "core_flies.cpp_FUN_0048eef0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -589,12 +578,10 @@
         "call_addr": "0040f048",
         "call_type": "direct",
         "caller": "core_ammobox.cpp_FUN_0040f040",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -602,12 +589,10 @@
         "call_addr": "0040f568",
         "call_type": "direct",
         "caller": "core_anvil.cpp_FUN_0040f560",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -615,12 +600,10 @@
         "call_addr": "00423f48",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_ctor_FUN_00423f40",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -628,12 +611,10 @@
         "call_addr": "0048cf69",
         "call_type": "direct",
         "caller": "core_flame.cpp_CFlame_ctor_FUN_0048cf60",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -641,21 +622,19 @@
         "call_addr": "0040fed6",
         "call_type": "direct",
         "caller": "core_backgnd.cpp_FUN_0040fed0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.4942528735632186,
@@ -682,33 +661,25 @@
     "pcode_op_count": 304
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActorTransformState *)(param_1 + 0x128));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 17,
       "match": "pCVar2[-10].",
       "severity": "mild",
       "text": "pCVar2[-10].dirty_flags = 0;",
@@ -716,7 +687,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 18,
+      "match": "pCVar2[-10].",
+      "severity": "mild",
+      "text": "pCVar2[-10].orientation.vec.z = (float)pCVar2[-10].dirty_flags;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
       "match": "pCVar2[-10].",
       "severity": "mild",
       "text": "pCVar2[-10].orientation.vec.z = (float)pCVar2[-10].dirty_flags;",
@@ -727,12 +706,12 @@
       "line": 19,
       "match": "pCVar2[-10].",
       "severity": "mild",
-      "text": "pCVar2[-10].orientation.vec.z = (float)pCVar2[-10].dirty_flags;",
+      "text": "pCVar2[-10].orientation.vec.y = pCVar2[-10].orientation.vec.z;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 19,
       "match": "pCVar2[-10].",
       "severity": "mild",
       "text": "pCVar2[-10].orientation.vec.y = pCVar2[-10].orientation.vec.z;",
@@ -741,14 +720,6 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
-      "match": "pCVar2[-10].",
-      "severity": "mild",
-      "text": "pCVar2[-10].orientation.vec.y = pCVar2[-10].orientation.vec.z;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 21,
       "match": "pCVar2[-9].",
       "severity": "mild",
       "text": "pCVar2[-9].position.x = 0.0;",
@@ -756,7 +727,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 22,
       "match": "pCVar2[-9].",
       "severity": "mild",
       "text": "pCVar2[-9].orientation.vec.x = 0.0;",
@@ -764,7 +735,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
+      "match": "pCVar2[-9].",
+      "severity": "mild",
+      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.vec.x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
       "match": "pCVar2[-9].",
       "severity": "mild",
       "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.vec.x;",
@@ -775,12 +754,12 @@
       "line": 24,
       "match": "pCVar2[-9].",
       "severity": "mild",
-      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.vec.x;",
+      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 24,
       "match": "pCVar2[-9].",
       "severity": "mild",
       "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;",
@@ -788,15 +767,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
-      "match": "pCVar2[-9].",
-      "severity": "mild",
-      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 26,
       "match": "pCVar2[-7].",
       "severity": "mild",
       "text": "pcVar4 = (char *)((int)&pCVar2[-7].orientation + 8);",
@@ -804,7 +775,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 27,
       "match": "pCVar2[-7].",
       "severity": "mild",
       "text": "pCVar2[-7].orientation.vec.y = 1.0;",
@@ -812,7 +783,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 37,
       "match": "pCVar2[-7].",
       "severity": "mild",
       "text": "pCVar2[-7].orientation.vec.x = 0.0;",
@@ -820,7 +791,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
+      "line": 38,
       "match": "pCVar2[-3].",
       "severity": "mild",
       "text": "pCVar2[-3].position.z = 0.0;",
@@ -828,7 +799,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 39,
       "match": "pCVar2[-3].",
       "severity": "mild",
       "text": "pCVar2[-3].orientation.vec.z = 0.0;",
@@ -836,7 +807,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 40,
+      "match": "pCVar2[-3].",
+      "severity": "mild",
+      "text": "pCVar2[-3].orientation.vec.y = pCVar2[-3].orientation.vec.z;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
       "match": "pCVar2[-3].",
       "severity": "mild",
       "text": "pCVar2[-3].orientation.vec.y = pCVar2[-3].orientation.vec.z;",
@@ -847,12 +826,12 @@
       "line": 41,
       "match": "pCVar2[-3].",
       "severity": "mild",
-      "text": "pCVar2[-3].orientation.vec.y = pCVar2[-3].orientation.vec.z;",
+      "text": "pCVar2[-3].orientation.vec.x = pCVar2[-3].orientation.vec.y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 42,
+      "line": 41,
       "match": "pCVar2[-3].",
       "severity": "mild",
       "text": "pCVar2[-3].orientation.vec.x = pCVar2[-3].orientation.vec.y;",
@@ -861,14 +840,6 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 42,
-      "match": "pCVar2[-3].",
-      "severity": "mild",
-      "text": "pCVar2[-3].orientation.vec.x = pCVar2[-3].orientation.vec.y;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 43,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].position.y = 0.0;",
@@ -876,7 +847,15 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 44,
+      "line": 43,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 43,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;",
@@ -885,14 +864,6 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 44,
-      "match": "pCVar2[-2].",
-      "severity": "mild",
-      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 45,
       "match": "pCVar2[-3].",
       "severity": "mild",
       "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;",
@@ -900,7 +871,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 45,
+      "line": 44,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;",
@@ -908,7 +879,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 46,
+      "line": 45,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].dirty_flags = 0x10000;",
@@ -916,7 +887,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 47,
+      "line": 46,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].position.x = 9.18355e-41;",
@@ -924,7 +895,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 47,
+      "line": 46,
       "match": "9.18355e-41",
       "severity": "mild",
       "text": "pCVar2[-1].position.x = 9.18355e-41;",
@@ -932,7 +903,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 48,
+      "line": 47,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].position.y = 9.18355e-41;",
@@ -940,7 +911,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 48,
+      "line": 47,
       "match": "9.18355e-41",
       "severity": "mild",
       "text": "pCVar2[-1].position.y = 9.18355e-41;",
@@ -948,7 +919,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 49,
+      "line": 48,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].position.z = 1.4013e-45;",
@@ -956,7 +927,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 49,
+      "line": 48,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "pCVar2[-2].position.z = 1.4013e-45;",
@@ -964,7 +935,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 50,
+      "line": 49,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].orientation.vec.x = 0.0;",
@@ -972,7 +943,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 51,
+      "line": 50,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].position.z = 0.0;",
@@ -980,7 +951,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 52,
+      "line": 51,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].orientation.vec.y = 0.0;",
@@ -988,7 +959,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 53,
+      "line": 52,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].orientation.vec.z = 0.0;",
@@ -996,7 +967,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 55,
+      "line": 54,
       "match": "pCVar2[-7].",
       "severity": "mild",
       "text": "pCVar2[-7].position.x = 1.4013e-43;",
@@ -1004,7 +975,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 55,
+      "line": 54,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "pCVar2[-7].position.x = 1.4013e-43;",
@@ -1012,7 +983,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 56,
+      "line": 55,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pcVar4 = (char *)((int)&pCVar2[-1].orientation + 4);",
@@ -1020,7 +991,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 57,
+      "line": 56,
       "match": "pCVar2[-7].",
       "severity": "mild",
       "text": "pCVar2[-7].position.y = (float)&DAT_0078a123;",
@@ -1028,7 +999,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "pCVar2[-7].position.y = (float)&DAT_0078a123;",
@@ -1036,7 +1007,7 @@
     },
     {
       "description": "Pointer value `&pCVar2[-7].orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "(int)&pCVar2[-7].orientation",
       "severity": "moderate",
       "text": "pcVar4 = (char *)((int)&pCVar2[-7].orientation + 8);",
@@ -1044,7 +1015,7 @@
     },
     {
       "description": "Pointer value `&pCVar2[-1].orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "(int)&pCVar2[-1].orientation",
       "severity": "moderate",
       "text": "pcVar4 = (char *)((int)&pCVar2[-1].orientation + 4);",
@@ -1052,7 +1023,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1060,7 +1031,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 58,
+      "line": 57,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1068,7 +1039,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCVar2[-3].orientation.vec.z = 0.0;",
@@ -1076,7 +1047,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pcVar4 = (char *)((int)&pCVar2[-7].orientation + 8);",
@@ -1084,7 +1055,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pcVar4 = (char *)((int)&pCVar2[-1].orientation + 4);",

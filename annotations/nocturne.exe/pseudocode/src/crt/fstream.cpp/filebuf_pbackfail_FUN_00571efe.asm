@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_fstream_cpp_filebuf_pbackfail_FUN_00571efe(int param_1,uint param_2)
+; int __watcallStack crt_fstream_cpp_filebuf_pbackfail_FUN_00571efe(filebuf *this_ptr,int character)
 ;
+; Parameters:
+; filebuf *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   character
 ;
 ; Called Functions:
 ;   crt_stdio.c_lseek_FUN_005689c0

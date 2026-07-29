@@ -11,7 +11,7 @@ void core_bugs_cpp_FUN_00421480(CBugs *param_1,float param_2)
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  iVar1 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
   if (iVar1 != 0) {
     if ((param_1->allow_chase == 0) &&
        (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30

@@ -13,7 +13,7 @@ void FUN_004484a0(void);
 
 // Original: core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
 // Address: 004484c0
-void clipEdgeToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dcube.cpp_FUN_00448660
 // Address: 00448660
@@ -41,11 +41,11 @@ void FUN_00448d60(float param_1);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0
 // Address: 00448ec0
-void CDemonCubeTriangle::readFromFile(int *param_1,_FILE *param_2,int param_3);
+void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00448f40
 // Address: 00448f40
-void CDemonCubeTriangle::writeToFile(int *param_1,_FILE *param_2,int param_3);
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_00448fb0
 // Address: 00448fb0
@@ -53,11 +53,11 @@ void __cdecl CDemonCubeTriangle::calculateNormalAndPlane(CDemonCubeTriangle *thi
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_init_FUN_00449120
 // Address: 00449120
-void CDemonCubeTriangle::init(void);
+void __cdecl CDemonCubeTriangle::init(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00449150
 // Address: 00449150
-float CDemonCubeTriangle::rayTriangleIntersection(undefined4 *param_1,float *param_2,float *param_3);
+float __cdecl CDemonCubeTriangle::rayTriangleIntersection(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
 // Original: core_dcube.cpp_intersectXZCylinder_FUN_004493a0
 // Address: 004493a0
@@ -85,11 +85,11 @@ undefined4 FUN_0044a150(undefined4 *param_1,float *param_2,float *param_3);
 
 // Original: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60
 // Address: 0044ab60
-void buildAndRenderTrianglePrimitive(int *param_1,int param_2);
+void __cdecl buildAndRenderTrianglePrimitive(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer);
 
 // Original: core_dcube.cpp_CDemonCube_ctor_FUN_0044abd0
 // Address: 0044abd0
-void CDemonCube::ctor(undefined4 *param_1);
+CDemonCube * __cdecl CDemonCube::ctor(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_dtor_FUN_0044ac10
 // Address: 0044ac10
@@ -113,7 +113,7 @@ void FUN_0044ae80(void);
 
 // Original: core_dcube.cpp_CDemonCube_load_FUN_0044aed0
 // Address: 0044aed0
-SIZE_T CDemonCube::load(CDemonCube *param_1,_FILE *param_2);
+void __cdecl CDemonCube::load(CDemonCube *this_ptr,_FILE *file_handle);
 
 // Original: core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
 // Address: 0044aff0
@@ -121,7 +121,7 @@ void __cdecl CDemonCube::rotateVertices(CDemonCube *this_ptr,uint rendering_mode
 
 // Original: core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
 // Address: 0044b290
-float CDemonCube::rayIntersectTriangles(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
+float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 
 // Original: core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
 // Address: 0044b430
@@ -133,7 +133,7 @@ int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector
 
 // Original: core_dcube.cpp_CVector3f_arrdtor_FUN_0044b640
 // Address: 0044b640
-void CVector3f::arrdtor(void);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
 // Original: core_dcube.cpp_FUN_0044b660
 // Address: 0044b660

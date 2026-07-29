@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_mimic.cpp_mirrorXTransform_FUN_004d43c0
 // Address: 004d43c0
-void mirrorXTransform(void);
+void __cdecl mirrorXTransform(void);
 
 // Original: core_mimic.cpp_FUN_004d4420
 // Address: 004d4420
@@ -37,11 +37,11 @@ void FUN_004d49f0(CMimic *param_1,float param_2);
 
 // Original: core_mimic.cpp_FUN_004d4ba0
 // Address: 004d4ba0
-void FUN_004d4ba0(int param_1);
+void __cdecl FUN_004d4ba0(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_FUN_004d4f30
 // Address: 004d4f30
-void FUN_004d4f30(CMimic *param_1,float param_2);
+void __cdecl FUN_004d4f30(CMimic *this_ptr,float delta_time);
 
 // Original: core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
 // Address: 004d5770
@@ -53,11 +53,11 @@ int __cdecl CMimic::renderMirrored(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderOpaque_FUN_004d5ae0
 // Address: 004d5ae0
-int CMimic::renderOpaque(CMimic *param_1);
+int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderTransparent_FUN_004d5b00
 // Address: 004d5b00
-int CMimic::renderTransparent(CMimic *param_1);
+int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_FUN_004d5b10
 // Address: 004d5b10

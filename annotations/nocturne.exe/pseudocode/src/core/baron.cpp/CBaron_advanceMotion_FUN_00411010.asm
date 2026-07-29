@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_advanceMotion_FUN_00411010(int param_1,float param_2)
+; void core_baron_cpp_CBaron_advanceMotion_FUN_00411010(CBaron *param_1,float param_2)
 ;
 ;
 ; XREF[1]:
@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 00411045
         ;   Label: LAB_00411045
     CALL core_baron.cpp_FUN_00410cc0    ; 00411046
-        ;   XREF to: 00410cc0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00410cc0()
+        ;   XREF to: 00410cc0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_FUN_00410cc0(CBaron * this_ptr)
     ADD ESP,0x4                         ; 0041104b
     JMP 0x00411033                      ; 0041104e
         ;   XREF to: 00411033 (UNCONDITIONAL_JUMP)  ; LAB_00411033

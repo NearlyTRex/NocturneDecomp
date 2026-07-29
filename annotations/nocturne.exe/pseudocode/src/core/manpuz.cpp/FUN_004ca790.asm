@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004ca790(int param_1,int param_2)
+; void __cdecl core_manpuz_cpp_FUN_004ca790(CMansionPuzzleCircle *this_ptr,int gem_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   gem_index
 ; Local Variables:
 ; undefined4       Stack[-0xa4]:4  local_a4
 ; undefined4       Stack[-0x90]:4  local_90

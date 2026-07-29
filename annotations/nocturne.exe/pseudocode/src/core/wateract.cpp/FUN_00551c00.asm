@@ -139,7 +139,7 @@ section .text
     PUSH EBP                            ; 00551d12 | DAT_01e57284
     XOR EBX,EBX                         ; 00551d13
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 00551d15
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,dword ptr [ESI + 0x290]     ; 00551d1a
     ADD ESP,0xc                         ; 00551d20
     TEST EAX,EAX                        ; 00551d23
@@ -198,7 +198,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00551dce | DAT_005be368
     PUSH EDX                            ; 00551dd4 | DAT_01e57284
     CALL core_set.cpp_FUN_0050ddd0      ; 00551dd5
-        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050ddd0()
+        ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00551dda
     LEA EAX,[EAX]                       ; 00551ddd
     PUSH 0x0                            ; 00551de0

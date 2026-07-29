@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0052ab30(undefined4 param_1,double param_2)
+; void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0052ab30(CDirectSoundDevice *this_ptr,double distance_in_feet)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   distance_in_feet
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

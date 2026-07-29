@@ -15,7 +15,7 @@
 ;   undefined4 s_ovie3_00580f99+1
 ;   undefined4 s_vie3_00580f99+2
 ;   undefined4 s_ie3_00580f99+3
-;   undefined1* PTR_core_filmreel.cpp_CFilmReel_setup_FUN_00481ca0_0059cf84 = 00481ca0
+;   CDemonActor_vtable g_CFilmReelVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -33,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00481c33
     PUSH EBX                            ; 00481c37
     CALL core_actor.cpp_FUN_00409d30    ; 00481c38
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00481c3d
     ADD EAX,0x150                       ; 00481c40
     PUSH EAX                            ; 00481c45
@@ -44,7 +44,7 @@ section .text
     PUSH 0x580f8c                       ; 00481c54 | = "filmreel.kfm"
     LEA EAX,[EBX + 0x150]               ; 00481c59
     PUSH EAX                            ; 00481c5f
-    MOV dword ptr [EBX + 0x14c],0x59cf84 ; 00481c60 | PTR_core_filmreel.cpp_CFilmReel_setup_FUN_00481ca0_0059cf84
+    MOV dword ptr [EBX + 0x14c],0x59cf84 ; 00481c60 | g_CFilmReelVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00481c6a
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00481c6f

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * crt_time_c_parse_dst_rule_FUN_0056d774(char *param_1,int *param_2)
+; char * __cdecl crt_time_c_parse_dst_rule_FUN_0056d774(char *rule_string,dst_rule *rule)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   rule_string
+; dst_rule *       Stack[0x8]:4   rule
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

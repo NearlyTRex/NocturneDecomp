@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_FUN_0054fc40(int param_1)
+; int __cdecl core_vessel_cpp_FUN_0054fc40(CCryptVessel *actor)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   actor
 ;
 ; XREF[1]:
 ;   core_vessel.cpp_CCryptVessel_process_FUN_0054fc60 at 0054fd04

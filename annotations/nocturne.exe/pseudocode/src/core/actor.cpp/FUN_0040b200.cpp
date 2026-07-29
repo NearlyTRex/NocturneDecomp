@@ -1,26 +1,26 @@
 // Name: core_actor.cpp_FUN_0040b200
 // Address: 0040b200
 // Address Range: [[0040b200, 0040b2fe]]
-// Convention: unknown
-// Signature: uint core_actor_cpp_FUN_0040b200(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_actor_cpp_FUN_0040b200(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 
-uint core_actor_cpp_FUN_0040b200(int param_1)
+int __cdecl core_actor_cpp_FUN_0040b200(CDemonActor *this_ptr)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *pfVar4;
+  CBoundingBox3D *pCVar4;
   uint uVar5;
-  byte local_30 [40];
+  CBoundingBox3D local_30;
   
-  pfVar4 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_30);
-  fVar1 = pfVar4[3] - *pfVar4;
+  pCVar4 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_30);
+  fVar1 = (pCVar4->max).x - (pCVar4->min).x;
   uVar5 = 0;
-  fVar2 = pfVar4[4] - pfVar4[1];
-  fVar3 = pfVar4[5] - pfVar4[2];
+  fVar2 = (pCVar4->max).y - (pCVar4->min).y;
+  fVar3 = (pCVar4->max).z - (pCVar4->min).z;
   if ((((fVar1 < 1.0) && (fVar2 < 1.0)) && ((float)2 < fVar3)) &&
      (((fVar3 < (float)6 && (fVar1 < fVar3)) && (fVar2 < fVar3)))) {
     uVar5 = 2;

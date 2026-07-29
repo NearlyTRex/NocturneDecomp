@@ -5,15 +5,15 @@
 
 // Original: engine_texture.cpp_FUN_00544de0
 // Address: 00544de0
-undefined4 * FUN_00544de0(undefined4 *param_1,undefined4 param_2);
+CTextureCache * __cdecl FUN_00544de0(CTextureCache *this_ptr,int max_texture_count);
 
 // Original: engine_texture.cpp_CTextureCache_free_FUN_00544e30
 // Address: 00544e30
-undefined4 CTextureCache::free(void);
+int __cdecl CTextureCache::free(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_FUN_00544e50
 // Address: 00544e50
-void FUN_00544e50(CTextureCache *param_1);
+void __cdecl FUN_00544e50(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60
 // Address: 00544e60
@@ -33,7 +33,7 @@ void CTextureCache::setupTexture(int param_1,int param_2);
 
 // Original: engine_texture.cpp_FUN_00545700
 // Address: 00545700
-void FUN_00545700(int param_1);
+void __cdecl FUN_00545700(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_00545810
 // Address: 00545810
@@ -53,15 +53,15 @@ SMRGLHeaderExtended * __cdecl ensureTextureLoaded(SMRGLTextureBasic *texture);
 
 // Original: engine_texture.cpp_loadTextureAndGetData_FUN_005459d0
 // Address: 005459d0
-SMRGLTextureBasic * loadTextureAndGetData(SMRGLTextureBasic *param_1);
+SMRGLHeaderExtended * __cdecl loadTextureAndGetData(SMRGLTextureBasic *texture_info);
 
 // Original: engine_texture.cpp_FUN_005459f0
 // Address: 005459f0
-void FUN_005459f0(void);
+void __cdecl FUN_005459f0(void);
 
 // Original: engine_texture.cpp_updateTextureWithPalette_FUN_00545a10
 // Address: 00545a10
-void updateTextureWithPalette(void);
+void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture);
 
 // Original: engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40
 // Address: 00545a40
@@ -73,7 +73,7 @@ void __cdecl getTextureCacheStats(char *output_buffer);
 
 // Original: engine_texture.cpp_renderTextureAtlas_FUN_00545aa0
 // Address: 00545aa0
-void renderTextureAtlas(void);
+void __cdecl renderTextureAtlas(void);
 
 // Original: engine_texture.cpp_getCurrentTexture_FUN_00545ad0
 // Address: 00545ad0

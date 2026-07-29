@@ -433,7 +433,7 @@ section .text
     ADD EAX,EDI                         ; 0047e326
     PUSH EAX                            ; 0047e328
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047e329
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x18                        ; 0047e32e
     CMP dword ptr [ESP + 0x9d0],0x3     ; 0047e331
     JL 0x0047e3a2                       ; 0047e339
@@ -643,7 +643,7 @@ section .text
     PUSH EAX                            ; 0047e512
     MOV dword ptr [ESI],ECX             ; 0047e513
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047e515
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047e51a
     CMP EAX,0x1                         ; 0047e51d
     JNZ 0x0047e686                      ; 0047e520
@@ -657,7 +657,7 @@ section .text
     LEA EAX,[ESP + 0x754]               ; 0047e53c
     PUSH EAX                            ; 0047e543
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047e544
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047e549
     CMP EAX,0x1                         ; 0047e54c
     JNZ 0x0047e6a2                      ; 0047e54f
@@ -864,7 +864,7 @@ section .text
     ADD EAX,EDX                         ; 0047e761
     PUSH EAX                            ; 0047e763
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047e764
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047e769
     CMP dword ptr [ESP + 0xa24],0x3     ; 0047e76c
     JL 0x0047e7dd                       ; 0047e774
@@ -1000,7 +1000,7 @@ section .text
     ADD EAX,EBX                         ; 0047e8b5
     PUSH EAX                            ; 0047e8b7
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047e8b8
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047e8bd
     CMP dword ptr [ESP + 0x9d8],0x3     ; 0047e8c0
     JL 0x0047e96d                       ; 0047e8c8
@@ -1157,7 +1157,7 @@ section .text
     ADD EAX,EBX                         ; 0047ea47
     PUSH EAX                            ; 0047ea49
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047ea4a
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x14                        ; 0047ea4f
     CMP dword ptr [ESP + 0x9e4],0x5     ; 0047ea52
     JL 0x0047eac3                       ; 0047ea5a
@@ -1352,7 +1352,7 @@ section .text
     ADD EAX,EBX                         ; 0047ec39
     PUSH EAX                            ; 0047ec3b
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047ec3c
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047ec41
     CMP dword ptr [ESP + 0x9ec],0x3     ; 0047ec44
     JL 0x0047ece8                       ; 0047ec4c
@@ -1516,7 +1516,7 @@ section .text
     ADD EAX,EBX                         ; 0047edbc
     PUSH EAX                            ; 0047edbe
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047edbf
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047edc4
     CMP dword ptr [ESP + 0x9f4],0x3     ; 0047edc7
     JL 0x0047ee38                       ; 0047edcf
@@ -1650,7 +1650,7 @@ section .text
     ADD EAX,EDX                         ; 0047ef1a
     PUSH EAX                            ; 0047ef1c
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047ef1d
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047ef22
     CMP dword ptr [ESP + 0x9fc],0x3     ; 0047ef25
     JL 0x0047ef92                       ; 0047ef2d
@@ -1734,7 +1734,7 @@ section .text
     ADD EAX,EDI                         ; 0047f006
     PUSH EAX                            ; 0047f008
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f009
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047f00e
     CMP dword ptr [ESP + 0xa00],0x3     ; 0047f011
     JL 0x0047f05b                       ; 0047f019
@@ -1821,7 +1821,7 @@ section .text
     ADD EAX,EDI                         ; 0047f0f4
     PUSH EAX                            ; 0047f0f6
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f0f7
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047f0fc
     MOV EAX,dword ptr [ESP + 0xa04]     ; 0047f0ff
     CMP EAX,0x2                         ; 0047f106
@@ -1884,7 +1884,7 @@ section .text
     ADD EAX,EDX                         ; 0047f18e
     PUSH EAX                            ; 0047f190
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f191
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047f196
     MOV ECX,dword ptr [ESP + 0xa08]     ; 0047f199
     CMP ECX,0x1                         ; 0047f1a0
@@ -1949,7 +1949,7 @@ section .text
     ADD EAX,EDX                         ; 0047f220
     PUSH EAX                            ; 0047f222
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f223
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047f228
     MOV ECX,dword ptr [ESP + 0xa08]     ; 0047f22b
     CMP ECX,0x1                         ; 0047f232
@@ -1983,7 +1983,7 @@ section .text
     ADD EAX,ECX                         ; 0047f287
     PUSH EAX                            ; 0047f289
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f28a
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047f28f
     MOV EAX,dword ptr [ESP + 0xa08]     ; 0047f292
     CMP EAX,0x3                         ; 0047f299
@@ -2098,7 +2098,7 @@ section .text
     ADD EAX,ECX                         ; 0047f3b8
     PUSH EAX                            ; 0047f3ba
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f3bb
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x14                        ; 0047f3c0
     CMP dword ptr [ESP + 0xa20],0x3     ; 0047f3c3
     JL 0x0047f434                       ; 0047f3cb
@@ -2290,7 +2290,7 @@ section .text
     ADD EAX,EDI                         ; 0047f59f
     PUSH EAX                            ; 0047f5a1
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f5a2
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x14                        ; 0047f5a7
     CMP dword ptr [ESP + 0xa30],0x5     ; 0047f5aa
     JL 0x0047f61b                       ; 0047f5b2
@@ -2499,7 +2499,7 @@ section .text
     ADD EAX,EDX                         ; 0047f78e
     PUSH EAX                            ; 0047f790
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f791
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047f796
     MOV ECX,dword ptr [ESP + 0xa30]     ; 0047f799
     CMP ECX,0x2                         ; 0047f7a0
@@ -2620,7 +2620,7 @@ section .text
     PUSH EAX                            ; 0047f88b
     MOV dword ptr [ESP + 0x98c],EBX     ; 0047f88c
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0047f893
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0047f898
     FABS                                ; 0047f89b
     ADD ESP,0x8                         ; 0047f89d
@@ -2661,7 +2661,7 @@ section .text
     ADD EAX,EDX                         ; 0047f90b
     PUSH EAX                            ; 0047f90d
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047f90e
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047f913
     CMP dword ptr [ESP + 0xa3c],0x3     ; 0047f916
     JL 0x0047f980                       ; 0047f91e
@@ -2675,7 +2675,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 0047f938 | DAT_005be368
     PUSH EBX                            ; 0047f93e | DAT_01e57284
     CALL core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0 ; 0047f93f
-        ;   XREF to: 0050e5d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0()
+        ;   XREF to: 0050e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0(CDemonSet * this_ptr, char * light_name, C3DSLight * * out_light, CDemonLight * * out_master_light)
     ADD ESP,0x10                        ; 0047f944
     CMP dword ptr [ESP + 0xa44],0x0     ; 0047f947
     JZ 0x0047f9b0                       ; 0047f94f
@@ -2772,7 +2772,7 @@ section .text
     ADD EAX,EDX                         ; 0047fa35
     PUSH EAX                            ; 0047fa37
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047fa38
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047fa3d
     MOV ECX,dword ptr [ESP + 0xa4c]     ; 0047fa40
     CMP ECX,0x2                         ; 0047fa47
@@ -2837,7 +2837,7 @@ section .text
     ADD EAX,EBX                         ; 0047fae3
     PUSH EAX                            ; 0047fae5
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047fae6
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047faeb
     CMP dword ptr [ESP + 0xa50],0x3     ; 0047faee
     JL 0x0047fb5f                       ; 0047faf6
@@ -2926,7 +2926,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0047fbac
     PUSH EDX                            ; 0047fbaf
     CALL core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0 ; 0047fbb0
-        ;   XREF to: 00480bf0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0()
+        ;   XREF to: 00480bf0 (UNCONDITIONAL_CALL)  ; uint core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 0047fbb5
     TEST EAX,EAX                        ; 0047fbb8
     JZ 0x0047fbc7                       ; 0047fbba
@@ -2960,7 +2960,7 @@ section .text
     ADD EAX,EDX                         ; 0047fc19
     PUSH EAX                            ; 0047fc1b
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047fc1c
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047fc21
     CMP dword ptr [ESP + 0xa58],0x3     ; 0047fc24
     JL 0x0047fc70                       ; 0047fc2c
@@ -3060,7 +3060,7 @@ section .text
     ADD EAX,EBX                         ; 0047fd07
     PUSH EAX                            ; 0047fd09
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047fd0a
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047fd0f
     CMP dword ptr [ESP + 0x9b0],0x3     ; 0047fd12
     JL 0x0047fdbd                       ; 0047fd1a
@@ -3197,7 +3197,7 @@ section .text
     ADD EAX,EDX                         ; 0047fea4
     PUSH EAX                            ; 0047fea6
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047fea7
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047feac
     CMP dword ptr [ESP + 0x9b8],0x3     ; 0047feaf
     JL 0x0047feff                       ; 0047feb7
@@ -3281,7 +3281,7 @@ section .text
     ADD EAX,EDX                         ; 0047ff85
     PUSH EAX                            ; 0047ff87
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047ff88
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047ff8d
     CMP dword ptr [ESP + 0xa70],0x3     ; 0047ff90
     JL 0x0047ffde                       ; 0047ff98
@@ -3364,7 +3364,7 @@ section .text
     ADD EAX,EDX                         ; 00480075
     PUSH EAX                            ; 00480077
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00480078
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0048007d
     CMP dword ptr [ESP + 0xa74],0x3     ; 00480080
     JL 0x004800b2                       ; 00480088
@@ -3428,7 +3428,7 @@ section .text
     ADD EAX,ECX                         ; 00480125
     PUSH EAX                            ; 00480127
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00480128
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0048012d
     CMP dword ptr [ESP + 0xa78],0x3     ; 00480130
     JL 0x00480179                       ; 00480138

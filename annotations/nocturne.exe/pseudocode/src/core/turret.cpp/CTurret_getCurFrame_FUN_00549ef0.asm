@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(int param_1,int param_2)
+; float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret *this_ptr,int model_index)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18

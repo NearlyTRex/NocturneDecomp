@@ -147,7 +147,7 @@ section .text
     PUSH EAX                            ; 004cb377
     MOV dword ptr [EBP + 0x6a],EAX      ; 004cb378
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004cb37b
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EDI + 0xc]                 ; 004cb380
     FLD float ptr [EDX]                 ; 004cb383
     FADD float ptr [EAX]                ; 004cb385
@@ -192,7 +192,7 @@ section .text
     FSTP float ptr [EBP + 0x2a]         ; 004cb3fb
     FSTP float ptr [EBP + 0x2e]         ; 004cb3fe
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004cb401
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004cb406
     LEA EAX,[EBP + 0x56]                ; 004cb409
     PUSH EAX                            ; 004cb40c
@@ -200,7 +200,7 @@ section .text
     PUSH EAX                            ; 004cb410
     PUSH EBX                            ; 004cb411
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004cb412
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004cb417
     MOV EDX,dword ptr [0x005be368]      ; 004cb41a | DAT_005be368
     PUSH EDX                            ; 004cb420 | DAT_01e57284
@@ -211,7 +211,7 @@ section .text
     PUSH EAX                            ; 004cb42f
     MOV EDI,0x3da3d70a                  ; 004cb430
     CALL core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0 ; 004cb435
-        ;   XREF to: 0048b6b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0()
+        ;   XREF to: 0048b6b0 (UNCONDITIONAL_CALL)  ; SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo * this_ptr)
     MOV ECX,0x2                         ; 004cb43a
     MOV dword ptr [EBP + 0xffffff76],EDI ; 004cb43f
     MOV dword ptr [EBP + 0xffffff7a],ECX ; 004cb445
@@ -277,7 +277,7 @@ section .text
     MOV EAX,[0x005b80f0]                ; 004cb50d | DAT_005b80f0
     PUSH EAX                            ; 004cb512
     CALL core_fire.cpp_FUN_0048b6f0     ; 004cb513
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 004cb518
     MOV EDX,dword ptr [0x005be368]      ; 004cb51b | DAT_005be368
     PUSH EDX                            ; 004cb521 | DAT_01e57284

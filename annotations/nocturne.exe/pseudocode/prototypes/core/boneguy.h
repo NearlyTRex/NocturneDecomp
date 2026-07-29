@@ -33,7 +33,7 @@ CColor3f * __cdecl hsvToRgb(CColor3f *out_rgb,CColor3f *in_hsv);
 
 // Original: core_boneguy.cpp_FUN_00418630
 // Address: 00418630
-int FUN_00418630(CEnemy *param_1);
+CBoneGuy * __cdecl FUN_00418630(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_setup_FUN_00418800
 // Address: 00418800
@@ -49,11 +49,11 @@ void FUN_004194b0(int param_1,int param_2);
 
 // Original: core_boneguy.cpp_FUN_004196b0
 // Address: 004196b0
-undefined4 FUN_004196b0(CCharacter *param_1,float param_2);
+int __cdecl FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
 // Address: 00419bf0
-void CBoneGuy::renderOpaque(CCharacter *param_1);
+void __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_00419c20
 // Address: 00419c20
@@ -63,9 +63,9 @@ int FUN_00419c20(CCharacter *param_1);
 // Address: 00419ce0
 void FUN_00419ce0(CEnemy *param_1);
 
-// Original: core_boneguy.cpp_FUN_00419f30
+// Original: core_boneguy.cpp_CBoneGuy_reset_FUN_00419f30
 // Address: 00419f30
-undefined4 FUN_00419f30(void);
+undefined4 CBoneGuy::reset(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40
 // Address: 00419f40
@@ -83,13 +83,13 @@ void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
 // Address: 0041a310
 void __cdecl CBoneGuy::beginRecombine(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041a3e0
+// Original: core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_0041a3e0
 // Address: 0041a3e0
-ECollisionType FUN_0041a3e0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CBoneGuy::getCollisionType(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400
 // Address: 0041a400
-CDemonActor * CBoneGuy::dtor(CDemonActor *param_1,byte param_2);
+CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_FUN_0041a4d0
 // Address: 0041a4d0

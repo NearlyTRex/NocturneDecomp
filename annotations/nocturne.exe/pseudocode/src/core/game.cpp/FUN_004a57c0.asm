@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004a57c0(CGame *param_1)
+; void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x630]:1  local_630
 ; undefined        Stack[-0x130]:1  local_130

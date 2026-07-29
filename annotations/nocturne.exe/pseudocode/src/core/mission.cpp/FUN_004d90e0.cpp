@@ -1,17 +1,17 @@
 // Name: core_mission.cpp_FUN_004d90e0
 // Address: 004d90e0
 // Address Range: [[004d90e0, 004d910b]]
-// Convention: unknown
-// Signature: void core_mission_cpp_FUN_004d90e0(int param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_mission_cpp_FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target)
 
 #include "nocturne.h"
 
-void core_mission_cpp_FUN_004d90e0(int param_1,uint *param_2)
+void __cdecl core_mission_cpp_FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target)
 
 {
-  *(uint *)(param_1 + 0x51c) = *param_2;
-  *(uint *)(param_1 + 0x520) = param_2[1];
-  *(uint *)(param_1 + 0x524) = param_2[2];
-  *(uint *)(param_1 + 0x528) = param_2[3];
+  *(float *)(this_ptr->set_names[3] + 0xd4) = (teleport_target->position).x;
+  *(float *)(this_ptr->set_names[3] + 0xd8) = (teleport_target->position).y;
+  *(float *)(this_ptr->set_names[3] + 0xdc) = (teleport_target->position).z;
+  *(int *)(this_ptr->set_names[3] + 0xe0) = teleport_target->area_id;
   return;
 }

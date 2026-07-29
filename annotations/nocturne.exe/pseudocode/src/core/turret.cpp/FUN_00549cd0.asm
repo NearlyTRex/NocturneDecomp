@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * core_turret_cpp_FUN_00549cd0(int param_1,CBoundingBox3D *param_2)
+; CBoundingBox3D * core_turret_cpp_FUN_00549cd0(CTurret *param_1,CBoundingBox3D *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
@@ -46,7 +46,7 @@ section .text
     PUSH 0x0                            ; 00549ce6
     PUSH EBX                            ; 00549ce8
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0 ; 00549ce9
-        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0()
+        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0xfc],EAX      ; 00549cee
     FLD float ptr [ESP + 0xfc]          ; 00549cf5
     LEA EAX,[EBX + 0x150]               ; 00549cfc
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0xa0]                ; 00549d9f
     PUSH EAX                            ; 00549da6
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 00549da7
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00549dac
     LEA EAX,[EBX + 0x30]                ; 00549daf
     PUSH EAX                            ; 00549db2
@@ -131,7 +131,7 @@ section .text
     PUSH EBX                            ; 00549ded
     MOVSD.REP ES:EDI,ESI                ; 00549dee
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0 ; 00549df0
-        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0()
+        ;   XREF to: 00549ef0 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0x104],EAX     ; 00549df5
     FLD float ptr [ESP + 0x104]         ; 00549dfc
     ADD ESP,0x8                         ; 00549e03

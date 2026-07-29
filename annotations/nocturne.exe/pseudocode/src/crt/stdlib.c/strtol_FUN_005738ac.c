@@ -1,14 +1,16 @@
 // Name: crt_stdlib.c_strtol_FUN_005738ac
 // Address: 005738ac
 // Address Range: [[005738ac, 005738c7]]
-// Convention: unknown
-// Signature: void crt_stdlib_c_strtol_FUN_005738ac(char *param_1,char **param_2,int param_3)
+// Convention: __cdecl
+// Signature: long __cdecl crt_stdlib_c_strtol_FUN_005738ac(char *str,char **endptr,int base)
 
 #include "nocturne.h"
 
-void strtol(char *param_1,char **param_2,int param_3)
+long __cdecl strtol(char *str,char **endptr,int base)
 
 {
-  strtol_internal(param_1,param_2,param_3,1);
-  return;
+  long lVar1;
+  
+  lVar1 = strtol_internal(str,endptr,base,1);
+  return lVar1;
 }

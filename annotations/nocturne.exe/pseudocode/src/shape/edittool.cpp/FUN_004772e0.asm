@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_004772e0(int param_1)
+; void __cdecl shape_edittool_cpp_FUN_004772e0(CEdCheck *this_ptr)
 ;
+; Parameters:
+; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_FUN_004771d0 at 004771d6

@@ -1,56 +1,56 @@
 // Name: cockpit_ckptutil.c_flipEdgeArrayHorizontally_FUN_004310f0
 // Address: 004310f0
 // Address Range: [[004310f0, 00431250]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(ushort *param_1,int param_2,short param_3)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(SEdge *edge_array,int edge_count,int flip_width)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(ushort *param_1,int param_2,short param_3)
+void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(SEdge *edge_array,int edge_count,int flip_width)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  int iVar3;
+  short sVar1;
+  int iVar2;
+  ushort uVar3;
   ushort uVar4;
   ushort uVar5;
   
-  iVar3 = 0;
-  if (0 < param_2) {
+  iVar2 = 0;
+  if (0 < edge_count) {
     do {
       while( true ) {
-        uVar1 = param_1[1];
-        uVar4 = (param_3 - param_1[2]) - 1;
-        uVar5 = (short)(param_1[3] * 2) >> 1;
-        uVar2 = (param_3 - *param_1) - 1;
-        if ((short)*param_1 <= (short)param_1[2]) break;
-        *param_1 = 0;
-        param_1[1] = 0;
-        *param_1 = uVar1;
-        param_1[1] = uVar2;
-        uVar1 = param_1[3];
-        param_1[2] = 0;
-        param_1[2] = uVar5;
-        param_1[3] = uVar1 & 0x8000;
-        param_1[3] = uVar1 & 0x8000 | uVar4 & 0x7fff;
-        iVar3 = iVar3 + 1;
-        param_1 = param_1 + 4;
-        if (param_2 <= iVar3) {
+        sVar1 = edge_array->y0;
+        uVar3 = ((short)flip_width - edge_array->x1) - 1;
+        uVar4 = (short)(edge_array->y1 * 2) >> 1;
+        uVar5 = ((short)flip_width - edge_array->x0) - 1;
+        if (edge_array->x0 <= edge_array->x1) break;
+        edge_array->x0 = 0;
+        edge_array->y0 = 0;
+        edge_array->x0 = sVar1;
+        edge_array->y0 = uVar5;
+        edge_array->x1 = 0;
+        uVar5 = edge_array->y1 & 0x8000;
+        edge_array->x1 = uVar4;
+        edge_array->y1 = uVar5;
+        edge_array->y1 = uVar5 | uVar3 & 0x7fff;
+        iVar2 = iVar2 + 1;
+        edge_array = edge_array + 1;
+        if (edge_count <= iVar2) {
           return;
         }
       }
-      *param_1 = 0;
-      param_1[1] = 0;
-      *param_1 = *param_1 | uVar5;
-      param_1[1] = uVar4;
-      uVar4 = param_1[3];
-      param_1[2] = 0;
-      param_1[2] = uVar1;
-      param_1[3] = uVar4 & 0x8000;
-      param_1[3] = uVar4 & 0x8000 | uVar2 & 0x7fff;
-      iVar3 = iVar3 + 1;
-      param_1 = param_1 + 4;
-    } while (iVar3 < param_2);
+      edge_array->x0 = 0;
+      edge_array->y0 = 0;
+      edge_array->x0 = edge_array->x0 | uVar4;
+      edge_array->y0 = uVar3;
+      edge_array->x1 = 0;
+      uVar3 = edge_array->y1 & 0x8000;
+      edge_array->x1 = sVar1;
+      edge_array->y1 = uVar3;
+      edge_array->y1 = uVar3 | uVar5 & 0x7fff;
+      iVar2 = iVar2 + 1;
+      edge_array = edge_array + 1;
+    } while (iVar2 < edge_count);
   }
   return;
 }

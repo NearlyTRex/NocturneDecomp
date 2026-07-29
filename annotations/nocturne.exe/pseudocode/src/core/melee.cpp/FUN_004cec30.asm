@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004cec42
         ;   Label: LAB_004cec42
     CALL core_melee.cpp_CMelee_ctor_FUN_004cec60 ; 004cec43
-        ;   XREF to: 004cec60 (UNCONDITIONAL_CALL)  ; undefined core_melee.cpp_CMelee_ctor_FUN_004cec60()
+        ;   XREF to: 004cec60 (UNCONDITIONAL_CALL)  ; CMelee * core_melee.cpp_CMelee_ctor_FUN_004cec60(CMelee * this_ptr)
     ADD ESP,0x4                         ; 004cec48
     RET                                 ; 004cec4b
 

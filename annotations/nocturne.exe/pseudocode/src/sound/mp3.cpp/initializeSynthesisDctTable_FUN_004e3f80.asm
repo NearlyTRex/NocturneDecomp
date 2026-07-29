@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *param_1)
+; void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *output_dct_table)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   output_dct_table
 ; Local Variables:
 ; undefined8       Stack[-0x44]:8  local_44
 ; undefined8       Stack[-0x38]:8  local_38
@@ -70,7 +72,7 @@ section .text
     SUB ESP,0x8                         ; 004e3feb
     FSTP double ptr [ESP]               ; 004e3fee
     CALL crt_math.c_modf_FUN_00566fb6   ; 004e3ff1
-        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_modf_FUN_00566fb6()
+        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00566fb6(double value, double * integer_part)
     ADD ESP,0xc                         ; 004e3ff6
     FLD double ptr [ESP]                ; 004e3ff9
     FSTP float ptr [EBX]                ; 004e3ffc
@@ -111,7 +113,7 @@ section .text
     SUB ESP,0x8                         ; 004e4055
     FSTP double ptr [ESP]               ; 004e4058
     CALL crt_math.c_modf_FUN_00566fb6   ; 004e405b
-        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_modf_FUN_00566fb6()
+        ;   XREF to: 00566fb6 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00566fb6(double value, double * integer_part)
     ADD ESP,0xc                         ; 004e4060
     FLD double ptr [ESP + 0x8]          ; 004e4063
     JMP 0x004e3ffc                      ; 004e4067

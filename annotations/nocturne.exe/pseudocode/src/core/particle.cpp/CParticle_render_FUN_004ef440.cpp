@@ -1,12 +1,12 @@
 // Name: core_particle.cpp_CParticle_render_FUN_004ef440
 // Address: 004ef440
 // Address Range: [[004ef440, 004ef463]]
-// Convention: unknown
-// Signature: void core_particle_cpp_CParticle_render_FUN_004ef440(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_particle_cpp_CParticle_render_FUN_004ef440(CParticle *this_ptr)
 
 #include "nocturne.h"
 
-void core_particle_cpp_CParticle_render_FUN_004ef440(void)
+void __cdecl core_particle_cpp_CParticle_render_FUN_004ef440(CParticle *this_ptr)
 
 {
   PTR_01cc4800 = "..\\core\\particle.cpp";

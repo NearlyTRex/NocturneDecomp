@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 00574023 (CONDITIONAL_JUMP)  ; LAB_00574023
     PUSH EBX                            ; 00574015
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00574016
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     INC ESI                             ; 0057401b
     ADD ESP,0x4                         ; 0057401c
     MOV EBX,EAX                         ; 0057401f

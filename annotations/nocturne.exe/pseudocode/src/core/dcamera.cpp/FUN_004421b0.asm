@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_FUN_004421b0(int param_1)
+; void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined        Stack[-0x7c]:1  local_7c
@@ -247,7 +249,7 @@ section .text
     PUSH EAX                            ; 004423fb
     FSTP float ptr [EAX + 0x100]        ; 004423fc
     CALL core_dcamera.cpp_FUN_00446810  ; 00442402
-        ;   XREF to: 00446810 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00446810()
+        ;   XREF to: 00446810 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00446810(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00442407
     MOV EAX,EBX                         ; 0044240a
     MOV dword ptr [0x00b0e604],ESI      ; 0044240c | DAT_00b0e604

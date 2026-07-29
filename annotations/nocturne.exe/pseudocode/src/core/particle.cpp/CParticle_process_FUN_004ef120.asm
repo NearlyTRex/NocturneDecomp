@@ -142,7 +142,7 @@ section .text
     PUSH ESI                            ; 004ef21c
     PUSH 0x1fba938                      ; 004ef21d | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 004ef222
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0xb0],EAX      ; 004ef227
     FLD float ptr [ESP + 0xb0]          ; 004ef22e
     ADD ESP,0x14                        ; 004ef235

@@ -1,34 +1,26 @@
 // Name: support_trisock.cpp_extractIPOctets_FUN_00548cd0
 // Address: 00548cd0
 // Address Range: [[00548cd0, 00548d1b]]
-// Convention: unknown
-// Signature: void support_trisock_cpp_extractIPOctets_FUN_00548cd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl support_trisock_cpp_extractIPOctets_FUN_00548cd0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void support_trisock_cpp_extractIPOctets_FUN_00548cd0(void)
+void __cdecl support_trisock_cpp_extractIPOctets_FUN_00548cd0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr)
 
 {
-  byte *in_stack_00000004;
-  uint *in_stack_00000008;
-  uint *in_stack_0000000c;
-  uint *in_stack_00000010;
-  uint *in_stack_00000014;
-  
-  if (in_stack_00000008 != (uint *)0x0) {
-    *in_stack_00000008 = (uint)*in_stack_00000004;
+  if (octet1_ptr != (uint *)0x0) {
+    *octet1_ptr = (uint)*ip_bytes;
   }
-  if (in_stack_0000000c != (uint *)0x0) {
-    *in_stack_0000000c = (uint)in_stack_00000004[1];
+  if (octet2_ptr != (uint *)0x0) {
+    *octet2_ptr = (uint)ip_bytes[1];
   }
-  if (in_stack_00000010 != (uint *)0x0) {
-    *in_stack_00000010 = (uint)in_stack_00000004[2];
+  if (octet3_ptr != (uint *)0x0) {
+    *octet3_ptr = (uint)ip_bytes[2];
   }
-  if (in_stack_00000014 == (uint *)0x0) {
+  if (octet4_ptr == (uint *)0x0) {
     return;
   }
-  *in_stack_00000014 = (uint)in_stack_00000004[3];
+  *octet4_ptr = (uint)ip_bytes[3];
   return;
 }

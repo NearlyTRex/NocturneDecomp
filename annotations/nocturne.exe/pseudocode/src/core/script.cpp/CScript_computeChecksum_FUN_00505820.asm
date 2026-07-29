@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 00505850
     INC EBX                             ; 00505851
     CALL core_actor.cpp_crc32ProcessByte_FUN_0040dfc0 ; 00505852
-        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessByte_FUN_0040dfc0()
+        ;   XREF to: 0040dfc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040dfc0(uint * crc_state, byte input_byte)
     MOV DL,byte ptr [EBX]               ; 00505857
     ADD ESP,0x8                         ; 00505859
     TEST DL,DL                          ; 0050585c

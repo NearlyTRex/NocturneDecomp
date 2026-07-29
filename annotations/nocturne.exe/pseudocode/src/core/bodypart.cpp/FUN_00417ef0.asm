@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_FUN_00417ef0(int param_1)
+; int core_bodypart_cpp_FUN_00417ef0(CDemonActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     PUSH EAX                            ; 00417f00
         ;   Label: LAB_00417f00
     CALL core_actor.cpp_FUN_0040b200    ; 00417f01
-        ;   XREF to: 0040b200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b200()
+        ;   XREF to: 0040b200 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040b200(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00417f06
     RET                                 ; 00417f09
 

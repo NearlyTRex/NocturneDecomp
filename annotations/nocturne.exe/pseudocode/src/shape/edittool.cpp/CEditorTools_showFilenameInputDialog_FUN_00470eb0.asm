@@ -244,7 +244,7 @@ section .text
     MOV ESI,dword ptr [0x01bcd070]      ; 004710b4 | DAT_01bcd070
     PUSH ESI                            ; 004710ba
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004710bb
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDI,dword ptr [0x01bcd9bc]      ; 004710c0 | DAT_01bcd9bc
     MOV ECX,EAX                         ; 004710c6
     MOV EAX,[0x01c00c5c]                ; 004710c8 | DAT_01c00c5c

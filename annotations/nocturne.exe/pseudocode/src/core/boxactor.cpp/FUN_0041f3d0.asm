@@ -99,7 +99,7 @@ section .text
     PUSH 0x3e19999a                     ; 0041f46f
     PUSH 0x0                            ; 0041f474
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0041f476
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xe0],EAX      ; 0041f47b
     MOV EAX,dword ptr [ESP + 0xe0]      ; 0041f482
     MOV dword ptr [EBX + 0x362c],EAX    ; 0041f489
@@ -175,7 +175,7 @@ section .text
     LEA EAX,[ESP + 0xa0]                ; 0041f559
     PUSH EAX                            ; 0041f560
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0041f561
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0041f566
     LEA EAX,[EBX + 0x30]                ; 0041f569
     PUSH EAX                            ; 0041f56c
@@ -183,7 +183,7 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 0041f572
     PUSH EAX                            ; 0041f576
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0041f577
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0041f57c
     LEA EAX,[ESP + 0x38]                ; 0041f57f
     PUSH EAX                            ; 0041f583

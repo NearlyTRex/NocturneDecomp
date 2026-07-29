@@ -1,12 +1,12 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0
 // Address: 0052b7e0
 // Address Range: [[0052b7e0, 0052b87e]]
-// Convention: unknown
-// Signature: undefined4 sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(undefined4 param_1,int param_2)
+// Convention: __cdecl
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 #include "nocturne.h"
 
-uint sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(uint param_1,int param_2)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(uint param_1,i
   byte bStack_c;
   byte local_4 [4];
   
-  iVar1 = *(int *)(param_2 + 0x6c);
+  iVar1 = (slot->options).dead;
   if ((((0 < iVar1) && (iVar1 < 0x1f)) && (*(int *)(iVar1 * 4 + 0x2dc92a8) != 0)) &&
      (*(int *)(iVar1 * 4 + 0x2dc9324) != 0)) {
     puStack_198 = local_4;

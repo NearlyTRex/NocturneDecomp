@@ -10,8 +10,8 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
 
 {
   int iVar1;
-  uint *puVar2;
-  byte local_18 [12];
+  CVector3f *pCVar2;
+  CVector3f local_18;
   int iStack_c;
   
   if ((*(int *)(param_1 + 0x2cc) == 1) && (*(int *)(param_1 + 0x5a4) == 0)) {
@@ -29,13 +29,13 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
         *(uint *)(param_1 + 0x3c4) = *(uint *)(param_1 + 0x348);
         *(uint *)(param_1 + 0x3c8) = *(uint *)(param_1 + 0x34c);
       }
-      puVar2 = (uint *)
-               core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                         (param_1 + 0x368,local_18,param_1 + 0x39c);
-      if ((uint *)(param_1 + 0x390) != puVar2) {
-        *(uint *)(param_1 + 0x390) = *puVar2;
-        *(uint *)(param_1 + 0x394) = puVar2[1];
-        *(uint *)(param_1 + 0x398) = puVar2[2];
+      pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                         ((CMatrix3x3f *)(param_1 + 0x368),&local_18,(CVector3f *)(param_1 + 0x39c))
+      ;
+      if ((CVector3f *)(param_1 + 0x390) != pCVar2) {
+        ((CVector3f *)(param_1 + 0x390))->x = pCVar2->x;
+        *(float *)(param_1 + 0x394) = pCVar2->y;
+        *(float *)(param_1 + 0x398) = pCVar2->z;
       }
     }
   }

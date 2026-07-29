@@ -1,23 +1,13 @@
 // Name: core_spline.cpp_evaluateSplineScalar_FUN_00533e70
 // Address: 00533e70
 // Address Range: [[00533e70, 00533ea9]]
-// Convention: unknown
-// Signature: float core_spline_cpp_evaluateSplineScalar_FUN_00533e70(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00533e70(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-float core_spline_cpp_evaluateSplineScalar_FUN_00533e70(void)
+float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00533e70(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  float *in_stack_00000010;
-  float *in_stack_00000014;
-  
-  return *in_stack_00000014 * in_stack_00000004[3] +
-         *in_stack_00000010 * in_stack_00000004[2] +
-         *in_stack_00000008 * *in_stack_00000004 + *in_stack_0000000c * in_stack_00000004[1];
+  return *cp3 * basis[3] + *cp2 * basis[2] + *cp0 * *basis + *cp1 * basis[1];
 }

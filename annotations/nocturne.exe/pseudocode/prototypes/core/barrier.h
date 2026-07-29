@@ -17,11 +17,11 @@ CDemonActorType * FUN_00411700(void);
 
 // Original: core_barrier.cpp_CBarrier_ctor_FUN_00411710
 // Address: 00411710
-void __cdecl CBarrier::ctor(undefined4 param_1);
+CBarrier * __cdecl CBarrier::ctor(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_setup_FUN_00411760
 // Address: 00411760
-void CBarrier::setup(CDemonActor *param_1);
+void __cdecl CBarrier::setup(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_FUN_00411790
 // Address: 00411790
@@ -41,7 +41,7 @@ undefined4 CBarrier::getCollisionType(int param_1,int *param_2);
 
 // Original: core_barrier.cpp_CBarrier_updateCollisionData_FUN_004118a0
 // Address: 004118a0
-void CBarrier::updateCollisionData(int param_1);
+void CBarrier::updateCollisionData(CDemonActor *param_1);
 
 // Original: core_barrier.cpp_FUN_004118c0
 // Address: 004118c0

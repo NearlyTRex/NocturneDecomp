@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 296,
+    "complexity_score": 292,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 82,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 320
+    "total_lines": 321
   },
   "cross_references": [
     {
@@ -336,28 +335,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar2;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(void *)((int)sprite_data",
       "severity": "moderate",
       "text": "sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar2 = (code *)cockpit_ckptutil_c_FUN_0042d130();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
@@ -401,7 +384,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 44,
+      "match": "(void *)((int)sprite_data",
+      "severity": "moderate",
+      "text": "(*pCVar2)((void *)((iVar4 + iStack_18) - src_x),(void *)((int)sprite_data + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
       "match": "(void *)((int)sprite_data",
       "severity": "moderate",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "iStack_1c = *(int *)(&DAT_01bd2fa0 + iVar5) + screen_x * 2;",
@@ -417,7 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 63,
       "match": "(int *)((int)span_data",
       "severity": "moderate",
       "text": "while (piVar3 = (int *)((int)span_data + iStack_2c), iVar9 < *piVar3) {",
@@ -425,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(int *)((int)piVar3",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 65,
       "match": "(int *)((int)piVar3",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",
@@ -441,7 +432,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 73,
+      "match": "(void *)((int)sprite_data",
+      "severity": "moderate",
+      "text": "(void *)((int)sprite_data + iVar4),(iVar6 - iVar4) + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
       "match": "(void *)((int)sprite_data",
       "severity": "moderate",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
@@ -465,7 +464,7 @@
     },
     {
       "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "(int)piVar3",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
@@ -473,7 +472,7 @@
     },
     {
       "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "(int)piVar3",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",

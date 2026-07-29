@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightgun_cpp_FUN_004c7ca0(CDemonActor *param_1)
+; void core_lightgun_cpp_FUN_004c7ca0(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [ESP + 0x48],ECX      ; 004c7d16
     MOV dword ptr [ESP + 0x4c],ECX      ; 004c7d1a
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004c7d1e
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004c7d23
     LEA EAX,[ESP + 0x48]                ; 004c7d26
     FLD float ptr [ESP + 0x54]          ; 004c7d2a

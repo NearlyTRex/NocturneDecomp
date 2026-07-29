@@ -167,7 +167,7 @@ section .text
     SUB EBX,EAX                         ; 004c5ad9
     PUSH EBX                            ; 004c5adb
     CALL engine_matrix.c_interpolatedSin_FUN_004cca60 ; 004c5adc
-        ;   XREF to: 004cca60 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_interpolatedSin_FUN_004cca60()
+        ;   XREF to: 004cca60 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004cca60(int angle)
     ADD ESP,0x4                         ; 004c5ae1
     MOV EDX,EAX                         ; 004c5ae4
     MOV EAX,0x9088                      ; 004c5ae6
@@ -179,7 +179,7 @@ section .text
     PUSH EBX                            ; 004c5b02
     MOV dword ptr [EAX + 0x15aa8c],EDX  ; 004c5b03 | DAT_01fb1d10
     CALL engine_matrix.c_interpolatedCos_FUN_004ccaa0 ; 004c5b09
-        ;   XREF to: 004ccaa0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_interpolatedCos_FUN_004ccaa0()
+        ;   XREF to: 004ccaa0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004ccaa0(int angle)
     ADD ESP,0x4                         ; 004c5b0e
     MOV EDX,EAX                         ; 004c5b11
     MOV EAX,0x9088                      ; 004c5b13
@@ -410,7 +410,7 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 004c5e12 | DAT_005ae704
     PUSH EBP                            ; 004c5e18 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 004c5e19
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
     ADD ESP,0x4                         ; 004c5e1e
     MOV EAX,[0x005be368]                ; 004c5e21 | DAT_005be368
         ;   Label: LAB_004c5e21
@@ -494,7 +494,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x80]      ; 004c5f0b
     PUSH EAX                            ; 004c5f12
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c5f13
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c5f18
     SAR EDX,0x1f                        ; 004c5f1a
     SUB EAX,EDX                         ; 004c5f1d

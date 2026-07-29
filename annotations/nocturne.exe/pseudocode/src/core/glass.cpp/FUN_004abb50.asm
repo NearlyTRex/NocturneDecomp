@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_glass_cpp_FUN_004abb50(undefined4 param_1)
+; CGlass * __cdecl core_glass_cpp_FUN_004abb50(CGlass *this_ptr)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_glass.cpp_FUN_004abb20 at 004abb33
@@ -21,7 +23,7 @@
 ;   undefined4 s_s_7YEARS_RAW_00584ed1+2
 ;   undefined4 s_s_7YEARS_RAW_00584ed1+3
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined1* PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4 = 004abc90
+;   CDemonActor_vtable g_CGlassVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -38,7 +40,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004abb52
     PUSH EDX                            ; 004abb56
     CALL core_actor.cpp_FUN_00409d30    ; 004abb57
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004abb5c
     ADD EAX,0x1e4                       ; 004abb5f
     PUSH EAX                            ; 004abb64
@@ -52,7 +54,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004abb7a
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffc7c]          ; 004abb7f
-    MOV dword ptr [EDX + 0x14c],0x59e3b4 ; 004abb85 | PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4
+    MOV dword ptr [EDX + 0x14c],0x59e3b4 ; 004abb85 | g_CGlassVTable
     MOV ESI,0x584ebf                    ; 004abb8f | = "HEADLITE.RAW"
     MOV dword ptr [EDX + 0x150],0x40800000 ; 004abb94
     ADD ESP,0xc                         ; 004abb9e

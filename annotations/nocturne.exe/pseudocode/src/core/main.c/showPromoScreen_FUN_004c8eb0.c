@@ -1,14 +1,14 @@
 // Name: core_main.c_showPromoScreen_FUN_004c8eb0
 // Address: 004c8eb0
 // Address Range: [[004c8eb0, 004c90d9]]
-// Convention: unknown
-// Signature: void core_main_c_showPromoScreen_FUN_004c8eb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_main_c_showPromoScreen_FUN_004c8eb0(void)
+void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void)
 
 {
   int iVar1;

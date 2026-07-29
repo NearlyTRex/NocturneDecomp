@@ -9,12 +9,12 @@
 void core_flashlit_cpp_FUN_0048ed30(void)
 
 {
-  int iVar1;
+  CFlashlight *this_ptr;
   
-  iVar1 = FUN_0056497c(0x570);
-  if (iVar1 == 0) {
+  this_ptr = (CFlashlight *)FUN_0056497c(0x570);
+  if (this_ptr == (CFlashlight *)0x0) {
     return;
   }
-  core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(iVar1);
+  core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(this_ptr);
   return;
 }

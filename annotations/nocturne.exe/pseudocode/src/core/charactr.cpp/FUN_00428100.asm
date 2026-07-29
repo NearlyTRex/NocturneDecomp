@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00428100(int param_1,int param_2,undefined4 param_3)
+; void __cdecl core_charactr_cpp_FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   carrier
+; CVector3f *      Stack[0xc]:4   drop_position
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_drop_FUN_00540920 at 0054093d

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_manpuz_cpp_FUN_004c9430(undefined4 param_1)
+; CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_004c9430(CMansionPuzzleCircle *this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_FUN_004c9400 at 004c9413
@@ -15,7 +17,7 @@
 ;   undefined4 s_headlite_raw_00587f1a+1
 ;   undefined4 s_headlite_raw_00587f1a+2
 ;   undefined4 s_headlite_raw_00587f1a+3
-;   undefined1* PTR_core_manpuz.cpp_FUN_004c9580_005a0054 = 004c9580
+;   CDemonActor_vtable g_CMansionPuzzleCircleVTable
 ;   WatcomTypeInfo g_SPanelTypeInfo_005a0210
 ;   WatcomTypeInfo g_SGemTypeInfo_005a0230
 ;   WatcomTypeInfo g_SReflectorTypeInfo_005a0250
@@ -38,7 +40,7 @@ section .text
     PUSH ESI                            ; 004c9436
     PUSH EBX                            ; 004c9437
     CALL core_actor.cpp_FUN_00409d30    ; 004c9438
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c943d
     ADD EAX,0x150                       ; 004c9440
     PUSH EAX                            ; 004c9445
@@ -80,7 +82,7 @@ section .text
     PUSH 0x587ef3                       ; 004c94af | = "doorpuzz.kfm"
     LEA EAX,[EBX + 0x150]               ; 004c94b4
     PUSH EAX                            ; 004c94ba
-    MOV dword ptr [EBX + 0x14c],0x5a0054 ; 004c94bb | PTR_core_manpuz.cpp_FUN_004c9580_005a0054
+    MOV dword ptr [EBX + 0x14c],0x5a0054 ; 004c94bb | g_CMansionPuzzleCircleVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94c5
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c94ca
@@ -136,7 +138,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004c9560
     MOV dword ptr [EAX],EDX             ; 004c9563
     CALL core_manpuz.cpp_FUN_004ca410   ; 004c9565
-        ;   XREF to: 004ca410 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004ca410()
+        ;   XREF to: 004ca410 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004ca410(CMansionPuzzleCircle * this_ptr)
     ADD ESP,0x4                         ; 004c956a
     MOV EAX,EBX                         ; 004c956d
     POP EBX                             ; 004c956f

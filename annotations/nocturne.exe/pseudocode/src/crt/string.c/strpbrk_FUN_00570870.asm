@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 00570890
     PUSH ESI                            ; 00570891
     CALL crt_string.c_char_in_set_FUN_00572a90 ; 00570892
-        ;   XREF to: 00572a90 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_char_in_set_FUN_00572a90()
+        ;   XREF to: 00572a90 (UNCONDITIONAL_CALL)  ; char * crt_string.c_char_in_set_FUN_00572a90(char * charset, wchar_t wc)
     ADD ESP,0x8                         ; 00570897
     TEST EAX,EAX                        ; 0057089a
     JZ 0x005708a3                       ; 0057089c
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 005708a3
         ;   Label: LAB_005708a3
     CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005708a4
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbtowc_next_FUN_0056da80(char * str)
     ADD ESP,0x4                         ; 005708a9
     MOV EBX,EAX                         ; 005708ac
     JMP 0x0057087a                      ; 005708ae

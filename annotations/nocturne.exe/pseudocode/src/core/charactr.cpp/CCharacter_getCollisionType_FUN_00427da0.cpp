@@ -10,10 +10,11 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da
 
 {
   int iVar1;
+  EDeathState EVar2;
   
   if ((collision_info->ray_query).ray_type != 2) {
-    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr);
-    if (iVar1 < 2) {
+    EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if ((int)EVar2 < 2) {
       iVar1 = (collision_info->ray_query).ray_type;
       if ((iVar1 != 1) && (iVar1 != 3)) {
         collision_info->cylinder_top_y = this_ptr->collision_cylinder_top * this_ptr->size_scale;

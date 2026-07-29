@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CGlassParticle_dtor_FUN_0048cb30(int param_1)
+; CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_0048cb30(CGlassParticle *this_ptr,uint flags)
 ;
+; Parameters:
+; CGlassParticle * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0

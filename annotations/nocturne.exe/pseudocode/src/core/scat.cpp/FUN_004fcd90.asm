@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_FUN_004fcd90(CCharacter *param_1,float param_2)
+; void __cdecl core_scat_cpp_FUN_004fcd90(CScat *this_ptr,float delta_time)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -105,7 +108,7 @@ section .text
     PUSH EAX                            ; 004fce3f
     PUSH EBX                            ; 004fce40
     CALL core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500 ; 004fce41
-        ;   XREF to: 0042a500 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500()
+        ;   XREF to: 0042a500 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a500(CCharacter * this_ptr, float * remaining_time, int target_bone_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004fce46
     ADD ESP,0xc                         ; 004fce4a
     MOV dword ptr [ESP + 0x8],EAX       ; 004fce4d

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_FUN_004eed10(CCharacter *param_1)
+; void __cdecl core_npc_cpp_FUN_004eed10(CNPC *this_ptr)
 ;
+; Parameters:
+; CNPC *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_hiram.cpp_FUN_004b68b0 at 004b68b5
 ;   core_hostage.cpp_CHostage_archive_FUN_004b8320 at 004b8327
-;   core_hpriest.cpp_FUN_004b9b50 at 004b9b55
+;   core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004b9b50 at 004b9b55
 ;   core_passngr.cpp_CPassenger_archive_FUN_004efb30 at 004efb37
 ;
 ; Referenced Globals:
@@ -49,7 +51,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004eed38
     PUSH ESI                            ; 004eed3e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004eed3f
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004eed44
     PUSH 0x58cb47                       ; 004eed47 | = "motion state"
     PUSH ESI                            ; 004eed4c

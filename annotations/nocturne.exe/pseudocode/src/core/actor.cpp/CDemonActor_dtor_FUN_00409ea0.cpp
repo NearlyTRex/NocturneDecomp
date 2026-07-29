@@ -17,8 +17,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *
     return this_ptr;
   }
   this_ptr->validation_magic = 0x495fd67;
-  (this_ptr->vtable)._ub =
-       (CDemonActor_vtable *)&PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_005992d4;
+  (this_ptr->vtable)._ub = &g_CDemonActorVTable;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

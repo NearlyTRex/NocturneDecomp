@@ -341,7 +341,7 @@ section .text
     PUSH 0x3                            ; 00537fd1
     PUSH ESI                            ; 00537fd3
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 00537fd4
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xac],EAX      ; 00537fd9
     FLD float ptr [ESP + 0xac]          ; 00537fe0
     ADD ESP,0x8                         ; 00537fe7
@@ -353,7 +353,7 @@ section .text
     PUSH 0x1                            ; 00537ff9
     PUSH ESI                            ; 00537ffb
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 00537ffc
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xac],EAX      ; 00538001
     FLD float ptr [ESP + 0xac]          ; 00538008
     ADD ESP,0x8                         ; 0053800f
@@ -407,7 +407,7 @@ section .text
         ;   Label: LAB_00538094
     PUSH ESI                            ; 00538096
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 00538097
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0xac],EAX      ; 0053809c
     FLD float ptr [ESP + 0xac]          ; 005380a3
     ADD ESP,0x8                         ; 005380aa
@@ -461,7 +461,7 @@ section .text
     PUSH 0x41700000                     ; 00538133
     PUSH 0x41200000                     ; 00538138
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0053813d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xac],EAX      ; 00538142
     FLD float ptr [ESP + 0xac]          ; 00538149
     ADD ESP,0x8                         ; 00538150

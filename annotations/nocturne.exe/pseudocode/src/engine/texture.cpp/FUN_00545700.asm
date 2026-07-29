@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_FUN_00545700(int param_1)
+; void __cdecl engine_texture_cpp_FUN_00545700(CTextureCache *this_ptr)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; undefined4       Stack[-0xc8]:4  local_c8

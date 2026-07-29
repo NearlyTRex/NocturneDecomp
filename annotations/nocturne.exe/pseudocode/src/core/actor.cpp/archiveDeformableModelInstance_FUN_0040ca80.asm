@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined1       Stack[-0xcf]:1  local_cf
@@ -50,7 +53,7 @@ section .text
     PUSH ESI                            ; 0040caaf
     PUSH EDI                            ; 0040cab0
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0040cab1
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0040cab6
     ADD ESP,0xc8                        ; 0040cab9
     POP EDI                             ; 0040cabf

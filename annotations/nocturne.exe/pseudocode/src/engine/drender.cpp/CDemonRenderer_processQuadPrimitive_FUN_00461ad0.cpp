@@ -1,12 +1,12 @@
 // Name: engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0
 // Address: 00461ad0
 // Address Range: [[00461ad0, 00461bcc]]
-// Convention: unknown
-// Signature: void engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer *param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags)
 
 #include "nocturne.h"
 
-void engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer *param_1,int param_2,int param_3)
+void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags)
 
 {
   int iVar1;
@@ -18,29 +18,30 @@ void engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonR
   ushort local_16;
   ushort local_14;
   
-  if ((param_1->plane_culling_enabled != 0) &&
-     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_2 + 8)), iVar1 == 0)) {
+  if ((this_ptr->plane_culling_enabled != 0) &&
+     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&quad_primitive->surface_normal), iVar1 == 0))
+  {
     return;
   }
-  local_24.vertex_index_0 = *(ushort *)(param_2 + 0x18);
-  local_24.vertex_index_1 = *(ushort *)(param_2 + 0x24);
-  local_24.vertex_index_2 = *(ushort *)(param_2 + 0x30);
-  local_1e = (ushort)((uint)*(uint *)(param_2 + 0x1c) >> 8);
-  local_1c = (ushort)((uint)*(uint *)(param_2 + 0x28) >> 8);
-  local_1a = (ushort)((uint)*(uint *)(param_2 + 0x34) >> 8);
-  local_18 = (ushort)((uint)*(uint *)(param_2 + 0x20) >> 8);
-  local_16 = (ushort)((uint)*(uint *)(param_2 + 0x2c) >> 8);
-  local_14 = (ushort)((uint)*(uint *)(param_2 + 0x38) >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(param_1,&local_24,param_3);
-  if (*(int *)(param_2 + 4) < 4) {
+  local_24.vertex_index_0 = (ushort)quad_primitive[1].base.type;
+  local_24.vertex_index_1 = *(ushort *)&quad_primitive[1].surface_normal.B;
+  local_24.vertex_index_2 = (ushort)quad_primitive[2].base.type;
+  local_1e = (ushort)((uint)quad_primitive[1].base.count >> 8);
+  local_1c = (ushort)((uint)quad_primitive[1].surface_normal.C.i >> 8);
+  local_1a = (ushort)((uint)quad_primitive[2].base.count >> 8);
+  local_18 = (ushort)((uint)quad_primitive[1].surface_normal.A.i >> 8);
+  local_16 = (ushort)((uint)quad_primitive[1].surface_normal.D.i >> 8);
+  local_14 = (ushort)((uint)quad_primitive[2].surface_normal.A.i >> 8);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(this_ptr,&local_24,render_flags);
+  if ((quad_primitive->base).count < 4) {
     return;
   }
-  local_24.vertex_index_1 = *(ushort *)(param_2 + 0x30);
-  local_24.vertex_index_2 = *(ushort *)(param_2 + 0x3c);
-  local_1c = (ushort)((uint)*(uint *)(param_2 + 0x34) >> 8);
-  local_1a = (ushort)((uint)*(uint *)(param_2 + 0x40) >> 8);
-  local_16 = (ushort)((uint)*(uint *)(param_2 + 0x38) >> 8);
-  local_14 = (ushort)((uint)*(uint *)(param_2 + 0x44) >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(param_1,&local_24,param_3);
+  local_24.vertex_index_1 = (ushort)quad_primitive[2].base.type;
+  local_24.vertex_index_2 = *(ushort *)&quad_primitive[2].surface_normal.B;
+  local_1c = (ushort)((uint)quad_primitive[2].base.count >> 8);
+  local_1a = (ushort)((uint)quad_primitive[2].surface_normal.C.i >> 8);
+  local_16 = (ushort)((uint)quad_primitive[2].surface_normal.A.i >> 8);
+  local_14 = (ushort)((uint)quad_primitive[2].surface_normal.D.i >> 8);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(this_ptr,&local_24,render_flags);
   return;
 }

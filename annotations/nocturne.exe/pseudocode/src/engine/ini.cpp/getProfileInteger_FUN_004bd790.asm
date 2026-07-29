@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_getProfileInteger_FUN_004bd790(char *param_1,char *param_2,undefined4 param_3,char *param_4)
+; int __cdecl engine_ini_cpp_getProfileInteger_FUN_004bd790(char *section,char *key,int default_value,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   section
+; char *           Stack[0x8]:4   key
+; int              Stack[0xc]:4   default_value
+; char *           Stack[0x10]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x20c]:1  local_20c
 ; undefined        Stack[-0x10c]:1  local_10c

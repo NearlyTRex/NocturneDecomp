@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *param_1,uint param_2)
+; void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_ptr,int screen_height)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   screen_height
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ; undefined4       Stack[-0x14]:4  local_14
@@ -71,7 +74,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00493419
     PUSH EAX                            ; 0049341c
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 ; 0049341d
-        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0()
+        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     MOV EAX,dword ptr [EBP + 0x14]      ; 00493422
     MOV EAX,dword ptr [EAX + 0x3168]    ; 00493425
     ADD ESI,EAX                         ; 0049342b
@@ -105,7 +108,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00493468
     PUSH EAX                            ; 0049346b
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 ; 0049346c
-        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0()
+        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     MOV EDX,dword ptr [EBP + 0x14]      ; 00493471
     ADD ESI,EAX                         ; 00493474
     MOV EAX,dword ptr [EBP + 0x14]      ; 00493476

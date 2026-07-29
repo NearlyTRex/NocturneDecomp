@@ -1,28 +1,29 @@
 // Name: cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_0042f190
 // Address: 0042f190
 // Address Range: [[0042f190, 0042f254]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(int param_1,short *param_2,int param_3,int param_4,int param_5,int param_6)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(int param_1,short *param_2,int param_3,int param_4,int param_5,int param_6)
+void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width)
 
 {
   int iVar1;
   int iVar2;
   
-  if ((param_1 != 0) && (iVar2 = 0, 0 < param_3)) {
+  if ((color_buffer != (uchar *)0x0) && (iVar2 = 0, 0 < edge_count)) {
     do {
-      iVar1 = (int)((short)(param_2[3] * 2) >> 1);
+      iVar1 = (int)((short)(edge_array->y1 * 2) >> 1);
       cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330
-                (*param_2 + param_4,param_2[1] + param_5,param_2[2] + param_4,iVar1 + param_5,
-                 (uint)*(byte *)((int)*param_2 + param_6 * param_2[1] + param_1),
-                 *(uchar *)(param_6 * iVar1 + param_1 + (int)param_2[2]),
-                 (uint)((ushort)param_2[3] >> 0xf));
+                (edge_array->x0 + offset_x,edge_array->y0 + offset_y,edge_array->x1 + offset_x,
+                 iVar1 + offset_y,
+                 (uint)color_buffer[(int)edge_array->x0 + buffer_width * edge_array->y0],
+                 color_buffer[(int)edge_array->x1 + buffer_width * iVar1],
+                 (uint)((ushort)edge_array->y1 >> 0xf));
       iVar2 = iVar2 + 1;
-      param_2 = param_2 + 4;
-    } while (iVar2 < param_3);
+      edge_array = edge_array + 1;
+    } while (iVar2 < edge_count);
   }
   return;
 }

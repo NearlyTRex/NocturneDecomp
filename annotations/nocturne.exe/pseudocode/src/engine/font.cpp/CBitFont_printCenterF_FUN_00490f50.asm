@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_printCenterF_FUN_00490f50(CBitFont *param_1,int param_2,int param_3,int param_4,char *param_5)
+; void __cdecl engine_font_cpp_CBitFont_printCenterF_FUN_00490f50(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   color_mode
+; int              Stack[0x10]:4   color_value
+; char *           Stack[0x14]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

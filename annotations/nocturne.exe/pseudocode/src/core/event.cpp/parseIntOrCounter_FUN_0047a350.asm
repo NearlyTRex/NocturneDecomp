@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_event_cpp_parseIntOrCounter_FUN_0047a350(void)
+; int __cdecl core_event_cpp_parseIntOrCounter_FUN_0047a350(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -26,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0047a35b
     PUSH EDX                            ; 0047a35f
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047a360
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0047a365
     CMP EAX,0x1                         ; 0047a368
     JNZ 0x0047a374                      ; 0047a36b

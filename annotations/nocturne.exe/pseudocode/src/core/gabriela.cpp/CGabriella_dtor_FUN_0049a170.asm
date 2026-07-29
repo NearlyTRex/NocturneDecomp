@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_gabriela_cpp_CGabriella_dtor_FUN_0049a170(CHero *param_1,byte param_2)
+; CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_0049a170(CGabriella *this_ptr,uint flags)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGabriellaTypeInfo_0059de40

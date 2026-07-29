@@ -1,12 +1,12 @@
 // Name: engine_clipper.c_normalizeClippedVertices_FUN_00432150
 // Address: 00432150
 // Address Range: [[00432150, 004321bb]]
-// Convention: unknown
-// Signature: void engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
 
 #include "nocturne.h"
 
-void engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
+void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
 
 {
   int iVar1;

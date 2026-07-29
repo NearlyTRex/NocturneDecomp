@@ -137,7 +137,7 @@ section .text
     PUSH EAX                            ; 0048f1a2
     PUSH EDI                            ; 0048f1a3
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0048f1a4
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     FLD float ptr [0x00581707]          ; 0048f1a9 | FLOAT_00581707
     FLD float ptr [EAX]                 ; 0048f1af
     FMUL ST1                            ; 0048f1b1
@@ -258,7 +258,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0048f30f
     PUSH EAX                            ; 0048f313
     CALL crt_math.c_floor_FUN_005648c0  ; 0048f314
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x40],EAX      ; 0048f319
     MOV dword ptr [ESP + 0x44],EDX      ; 0048f31d
     FLD double ptr [ESP + 0x40]         ; 0048f321

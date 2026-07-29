@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650(void)
+; void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650(CEditorTools *this_ptr,CVector3f *dimensions,int color_value)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   dimensions
+; int              Stack[0xc]:4   color_value
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

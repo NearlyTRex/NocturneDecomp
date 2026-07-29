@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_chain_cpp_fastSqrt_FUN_0042cd20(void)
+; float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value)
 ;
+; Parameters:
+; float            Stack[0x4]:4   value
 ;
 ; Referenced Globals:
 ;   undefined4 CVector3f_01c70708.y

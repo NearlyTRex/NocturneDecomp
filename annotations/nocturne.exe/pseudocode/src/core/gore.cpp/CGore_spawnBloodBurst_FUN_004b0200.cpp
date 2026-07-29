@@ -13,7 +13,6 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore *this_ptr,CV
   int iVar2;
   float10 x;
   float10 fVar3;
-  uint uVar4;
   float local_74;
   float fStack_68;
   float fStack_5c;
@@ -70,7 +69,6 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore *this_ptr,CV
                       (float10)local_38 * (float10)local_38));
       x = (float10)(float)local_40._4_4_;
       local_24 = 0.0;
-      uVar4 = 0x4b02f8;
       fVar3 = atan2((float10)local_44,x);
       iVar2 = 0;
       local_30 = (float)-x;
@@ -80,18 +78,16 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore *this_ptr,CV
           local_40._4_4_ = local_30;
           local_38 = local_2c;
           local_34 = (float)local_28;
-          local_20 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                      (0xbf490fdb,0x3f490fdb,uVar4);
+          local_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.7853982,0.7853982);
           local_40._4_4_ = local_20 + (float)local_40._4_4_;
-          local_20 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                      (0xbf490fdb,0x3f490fdb);
+          local_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.7853982,0.7853982);
           local_38 = local_20 + local_38;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
                     ((CMatrix3x3f *)&stack0xffffff84,(CVector3f *)(local_40 + 4));
           local_40._4_4_ = local_74;
           local_38 = fStack_68;
           local_34 = fStack_5c;
-          core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbf000000,0x3f000000);
+          core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.5,0.5);
           local_54 = (float)local_40._4_4_ * local_24;
           fStack_50 = local_38 * local_24;
           local_4c = local_34 * local_24;

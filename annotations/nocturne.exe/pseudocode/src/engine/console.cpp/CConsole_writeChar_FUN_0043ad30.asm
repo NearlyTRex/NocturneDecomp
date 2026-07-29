@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *param_1,char param_2)
+; void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character)
 ;
+; Parameters:
+; CConsole *       Stack[0x4]:4   this_ptr
+; char             Stack[0x8]:1   character
 ;
 ; XREF[1]:
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60 at 0043acc3

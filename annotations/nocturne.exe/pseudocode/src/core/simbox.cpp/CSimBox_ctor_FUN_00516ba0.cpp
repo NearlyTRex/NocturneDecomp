@@ -10,18 +10,17 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(CSimBox *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   CBox *pCVar4;
   char *pcVar5;
   float *pfVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar3[1].model_name + 0xc));
-  pCVar4[-1].linear_velocity_local.z =
-       (float)&PTR_core_simbox_cpp_CSimBox_setup_FUN_00516c60_005a1d74;
+  pCVar4[-1].linear_velocity_local.z = (float)&g_CSimBoxVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)&pCVar4[-1].linear_velocity_temp,"question.kfm");
   pcVar5 = "none";

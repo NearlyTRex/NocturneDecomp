@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)
+; CVector3f * __cdecl core_dcamera_cpp_FUN_00447f20(CDemonCamera *this_ptr,CVector3f *output_bounds)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_bounds
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508092
@@ -198,7 +201,7 @@ section .text
     PUSH EDX                            ; 0044816f
     FSTP float ptr [ESP + 0xa4]         ; 00448170
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 00448177
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0044817c
     LEA EAX,[ESP + 0x9c]                ; 0044817f
     PUSH EAX                            ; 00448186

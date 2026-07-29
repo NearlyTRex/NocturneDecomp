@@ -1,19 +1,19 @@
 // Name: core_morph.cpp_CMorphModel_ctor_FUN_004df240
 // Address: 004df240
 // Address Range: [[004df240, 004df26d]]
-// Convention: unknown
-// Signature: void core_morph_cpp_CMorphModel_ctor_FUN_004df240(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr)
 
 #include "nocturne.h"
 
-void core_morph_cpp_CMorphModel_ctor_FUN_004df240(uint *param_1)
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr)
 
 {
-  param_1[0x16] = 0;
-  param_1[0x17] = 0;
-  param_1[0x18] = 0;
-  param_1[0x19] = 0;
-  *param_1 = 0;
-  param_1[0x15] = 0;
-  return;
+  this_ptr->points = (SMorphPoint *)0x0;
+  this_ptr->num_faces = 0;
+  this_ptr->faces = (SMRGLPrimitiveTriangle *)0x0;
+  this_ptr->num_textures = 0;
+  this_ptr->part_count = 0;
+  this_ptr->num_points = 0;
+  return this_ptr;
 }

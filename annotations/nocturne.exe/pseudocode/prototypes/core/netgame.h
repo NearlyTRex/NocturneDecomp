@@ -9,19 +9,19 @@ void __cdecl staticInit(void);
 
 // Original: core_netgame.cpp_resetGameTime_FUN_004e94f0
 // Address: 004e94f0
-void resetGameTime(void);
+void __cdecl resetGameTime(void);
 
 // Original: core_netgame.cpp_updateGameTime_FUN_004e9520
 // Address: 004e9520
-void updateGameTime(void);
+void __cdecl updateGameTime(void);
 
 // Original: core_netgame.cpp_computeTimeDelta_FUN_004e9570
 // Address: 004e9570
-float computeTimeDelta(void);
+float __cdecl computeTimeDelta(int start_time,int end_time);
 
 // Original: core_netgame.cpp_getElapsedSeconds_FUN_004e95d0
 // Address: 004e95d0
-float getElapsedSeconds(int param_1);
+float __cdecl getElapsedSeconds(uint timestamp);
 
 // Original: core_netgame.cpp_FUN_004e9630
 // Address: 004e9630
@@ -29,19 +29,19 @@ void FUN_004e9630(void);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_004e9640
 // Address: 004e9640
-void removeChatOut(int param_1);
+void __cdecl removeChatOut(int index);
 
 // Original: core_netgame.cpp_findSimFrame_FUN_004e96e0
 // Address: 004e96e0
-int findSimFrame(void);
+int __cdecl findSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_004e9730
 // Address: 004e9730
-int * allocSimFrame(int param_1);
+SSimFrame * __cdecl allocSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_purgeOldSimFrames_FUN_004e97e0
 // Address: 004e97e0
-void purgeOldSimFrames(int param_1);
+void __cdecl purgeOldSimFrames(int min_sequence);
 
 // Original: core_netgame.cpp_CNetGame_ctor_FUN_004e9860
 // Address: 004e9860
@@ -49,7 +49,7 @@ CNetGame * __cdecl CNetGame::ctor(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_dtor_FUN_004e98f0
 // Address: 004e98f0
-_SOCKET * CNetGame::dtor(int param_1);
+CNetGame * __cdecl CNetGame::dtor(CNetGame *this_ptr,uint flags);
 
 // Original: core_netgame.cpp_CNetGame_init_FUN_004e9910
 // Address: 004e9910
@@ -61,7 +61,7 @@ void __cdecl CNetGame::shutdown(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0
 // Address: 004e99f0
-undefined4 CNetGame::initializeNetworkToHost(CNetGame *param_1);
+int __cdecl CNetGame::initializeNetworkToHost(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90
 // Address: 004e9a90
@@ -153,7 +153,7 @@ void __cdecl CNetGame::processServerFrame(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720
 // Address: 004ed720
-void CNetGame::processClientFrame(CNetGame *param_1);
+void __cdecl CNetGame::processClientFrame(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980
 // Address: 004ed980
@@ -173,55 +173,55 @@ void __cdecl CNetGame::sendSimFrameAck(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_matchPacketSize_FUN_004edc30
 // Address: 004edc30
-bool matchPacketSize(void);
+int __cdecl matchPacketSize(SNetPacketHeader *a,SNetPacketHeader *b);
 
 // Original: core_netgame.cpp_matchPacketHeader_FUN_004edc50
 // Address: 004edc50
-undefined4 matchPacketHeader(void);
+int __cdecl matchPacketHeader(SNetPacketHeader *a,SNetPacketHeader *b);
 
 // Original: core_netgame.cpp_initNetPacket_FUN_004edc80
 // Address: 004edc80
-void initNetPacket(void);
+void __cdecl initNetPacket(SNetPacketHeader *packet,int packet_size,uchar packet_type);
 
 // Original: core_netgame.cpp_CNetGame_setModeSyncing_FUN_004edca0
 // Address: 004edca0
-void CNetGame::setModeSyncing(undefined4 *param_1);
+void __cdecl CNetGame::setModeSyncing(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setModePlaying_FUN_004edcb0
 // Address: 004edcb0
-void CNetGame::setModePlaying(void);
+void __cdecl CNetGame::setModePlaying(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode5_FUN_004edcc0
 // Address: 004edcc0
-void CNetGame::setMode5(void);
+void __cdecl CNetGame::setMode5(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode6_FUN_004edcd0
 // Address: 004edcd0
-void CNetGame::setMode6(void);
+void __cdecl CNetGame::setMode6(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode7_FUN_004edce0
 // Address: 004edce0
-void CNetGame::setMode7(void);
+void __cdecl CNetGame::setMode7(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode9_FUN_004edcf0
 // Address: 004edcf0
-void CNetGame::setMode9(void);
+void __cdecl CNetGame::setMode9(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode10_FUN_004edd00
 // Address: 004edd00
-void CNetGame::setMode10(void);
+void __cdecl CNetGame::setMode10(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode12_FUN_004edd10
 // Address: 004edd10
-void CNetGame::setMode12(void);
+void __cdecl CNetGame::setMode12(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_setMode13_FUN_004edd20
 // Address: 004edd20
-void CNetGame::setMode13(void);
+void __cdecl CNetGame::setMode13(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30
 // Address: 004edd30
-void CNetGame::swapPlayerData(undefined4 *param_1,undefined4 *param_2);
+void __cdecl CNetGame::swapPlayerData(CNetGame *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_004ede30
 // Address: 004ede30
@@ -241,15 +241,15 @@ undefined4 SNetPlayer::ctor(undefined4 param_1);
 
 // Original: core_netgame.cpp_SNetPlayer_copy_FUN_004ede70
 // Address: 004ede70
-void SNetPlayer::copy(undefined4 *param_1,undefined4 *param_2);
+void __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_copyPlayerInput_FUN_004edf30
 // Address: 004edf30
-void copyPlayerInput(void);
+void __cdecl copyPlayerInput(SPlayerInput *dest,SPlayerInput *src);
 
 // Original: core_netgame.cpp_copyNetAddr_FUN_004edf80
 // Address: 004edf80
-void copyNetAddr(void);
+void __cdecl copyNetAddr(SNetworkAddr *dest,SNetworkAddr *src);
 
 // Original: core_netgame.cpp_assignInt1_FUN_004edfa0
 // Address: 004edfa0
@@ -257,4 +257,4 @@ int * __cdecl assignInt1(int *dest,int *src);
 
 // Original: core_netgame.cpp_FUN_004edfb0
 // Address: 004edfb0
-undefined4 * FUN_004edfb0(undefined4 *param_1,undefined4 *param_2);
+int * __cdecl FUN_004edfb0(int *dest,int *src);

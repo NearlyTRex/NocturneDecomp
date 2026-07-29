@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CSpark_process_FUN_004836e0(CParticle *param_1)
+; void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
 ;
+; Parameters:
+; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

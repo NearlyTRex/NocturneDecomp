@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(void)
+; void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(double input,int *out_integer_part,int *out_fractional_part)
 ;
 ; Parameters:
 ; undefined8       Stack[0x0]:8   local_res0
+; double           Stack[0x4]:8   input
+; int *            Stack[0xc]:4   out_integer_part
+; int *            Stack[0x10]:4   out_fractional_part
 ; Local Variables:
 ; undefined1[16]   Stack[-0x14]:16  local_14
 ;
@@ -27,7 +30,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 005235b9
     PUSH ECX                            ; 005235bd
     CALL crt_math.c_floor_FUN_005648c0  ; 005235be
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005235c3
     MOV dword ptr [ESP + 0xc],EDX       ; 005235c7
     XOR EBX,EBX                         ; 005235cb

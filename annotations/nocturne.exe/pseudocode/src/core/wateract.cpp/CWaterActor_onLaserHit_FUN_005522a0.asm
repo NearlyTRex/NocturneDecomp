@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_CWaterActor_onLaserHit_FUN_005522a0(undefined4 param_1,int param_2)
+; void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005522a0(CWaterActor *this_ptr,SLaserInfo *laser_info)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040ab10

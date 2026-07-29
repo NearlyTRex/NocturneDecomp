@@ -1,14 +1,14 @@
 // Name: core_game.cpp_setupMovieRecording_FUN_0049a240
 // Address: 0049a240
 // Address Range: [[0049a240, 0049a31c]]
-// Convention: unknown
-// Signature: void core_game_cpp_setupMovieRecording_FUN_0049a240(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_setupMovieRecording_FUN_0049a240(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_game_cpp_setupMovieRecording_FUN_0049a240(void)
+void __cdecl core_game_cpp_setupMovieRecording_FUN_0049a240(void)
 
 {
   int iVar1;

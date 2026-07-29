@@ -1,12 +1,14 @@
 // Name: core_bugs.cpp_FUN_00421b80
 // Address: 00421b80
 // Address Range: [[00421b80, 00421ef1]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_FUN_00421b80(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_FUN_00421b80(CBugs *this_ptr)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_FUN_00421b80(int param_1)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_bugs_cpp_FUN_00421b80(CBugs *this_ptr)
 
 {
   float fVar1;
@@ -22,11 +24,9 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
   byte bVar10;
   double dVar11;
   float fVar12;
-  uint uVar13;
-  float local_54;
-  float local_50;
-  float local_4c;
-  byte local_44 [8];
+  CVector3f local_54;
+  uint local_44;
+  int local_40;
   int iStack_3c;
   int local_38;
   int local_34;
@@ -43,30 +43,32 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
   
   bVar10 = 0;
   local_c = 1.0 / 0.5f;
-  local_54 = *(float *)(param_1 + 0x19838) + *(float *)(param_1 + 0x19844);
-  local_50 = *(float *)(param_1 + 0x1983c) + *(float *)(param_1 + 0x19848);
-  fVar2 = local_50 * 0.5f;
-  fVar1 = *(float *)(param_1 + 0x28);
-  join_0x00000008_0x00000000_ =
-       (double)floor
-                         ((double)((*(float *)(param_1 + 0x20) +
-                                   (*(float *)(param_1 + 0x19834) + *(float *)(param_1 + 0x19840)) *
-                                   0.5f) * local_c));
+  local_54.x = (this_ptr->bounds).min.y + (this_ptr->bounds).max.y;
+  local_54.y = (this_ptr->bounds).min.z + (this_ptr->bounds).max.z;
+  fVar2 = local_54.y * 0.5f;
+  fVar1 = (this_ptr->base).base.base.location.position.z;
+  dVar11 = floor
+                     ((double)(((this_ptr->base).base.base.location.position.x +
+                               ((this_ptr->bounds).min.x + (this_ptr->bounds).max.x) *
+                               0.5f) * local_c));
+  local_40 = SUB84(__BITCAST_UINT64(dVar11),0);
+  iStack_3c = (int)((ulonglong)dVar11 >> 0x20);
   fVar1 = (fVar1 + fVar2) * local_c;
-  uVar13 = 0x421c4a;
-  dVar11 = round(join_0x00000008_0x00000000_);
+  dVar11 = round(dVar11);
   local_38 = (int)ROUND(dVar11);
-  dVar11 = (double)floor((double)fVar1,uVar13);
+  dVar11 = floor((double)fVar1);
+  local_44 = SUB84(__BITCAST_UINT64(dVar11),0);
+  local_40 = (int)((ulonglong)dVar11 >> 0x20);
   local_10 = local_38;
-  fVar1 = (float)local_38 * 0.5f;
-  local_44 = (byte  [8])dVar11;
+  fVar2 = (float)local_38 * 0.5f;
   dVar11 = round(dVar11);
   local_18 = (int)ROUND(dVar11);
-  fVar12 = (float)local_18 * 0.5f;
-  fVar2 = 0.5f * 5.4034218993573707e-315._0_4_ * (float)0.5;
-  *(float *)(param_1 + 0x19854) = (fVar1 - *(float *)(param_1 + 0x20)) - fVar2;
-  *(float *)(param_1 + 0x19858) = (fVar12 - *(float *)(param_1 + 0x28)) - fVar2;
-  if ((iStack_3c != *(int *)(param_1 + 0x1984c)) || (local_18 != *(int *)(param_1 + 0x19850))) {
+  fVar3 = (float)local_18 * 0.5f;
+  fVar12 = 0.5f * 5.4034218993573707e-315._0_4_ * (float)0.5;
+  fVar1 = (this_ptr->base).base.base.location.position.z;
+  this_ptr->grid_origin_x = (fVar2 - (this_ptr->base).base.base.location.position.x) - fVar12;
+  this_ptr->grid_origin_z = (fVar3 - fVar1) - fVar12;
+  if ((iStack_3c != this_ptr->grid_cell_x) || (local_18 != this_ptr->grid_cell_z)) {
     local_20 = *(int *)(unaff_EBX + 0x1984c) - iStack_3c;
     local_24 = *(int *)(unaff_EBX + 0x19850) - local_18;
     local_2c = local_20 + 0xb;
@@ -83,7 +85,7 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
       puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
       puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
     }
-    local_50 = *(float *)(unaff_EBX + 0x24);
+    local_54.y = *(float *)(unaff_EBX + 0x24);
     fVar2 = *(float *)(unaff_EBX + 0x28);
     fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x19854);
     fVar1 = *(float *)(unaff_EBX + 0x19858);
@@ -93,17 +95,17 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
     local_30 = unaff_EBX;
     do {
       iVar5 = 0;
-      local_54 = (float)local_1c * 0.5f + fVar12;
+      local_54.x = (float)local_1c * 0.5f + fVar12;
       iVar6 = local_34 - local_38;
       iVar4 = local_30;
       iVar9 = local_30;
       do {
-        local_4c = (float)iVar5 * 0.5f + fVar2 + fVar1;
+        local_54.z = (float)iVar5 * 0.5f + fVar2 + fVar1;
         if ((((local_1c < local_20) || (local_2c < local_1c)) || (iVar5 < local_24)) ||
            (local_28 < iVar5)) {
           local_14 = iVar5;
-          fVar3 = (float)core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
-                                   (&DAT_01fba938,&local_54,local_44 + 4,0);
+          fVar3 = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
+                            ((CDemonRaytrace *)&DAT_01fba938,&local_54,&local_40,(CVector3f *)0x0);
           *(float *)(iVar9 + 0x12720) = fVar3 - *(float *)(unaff_EBX + 0x24);
         }
         else {

@@ -14,8 +14,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(CLightGun *thi
   CLightGun *pCVar3;
   
   pCVar3 = (CLightGun *)core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
-  (pCVar3->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059fd94;
+  (pCVar3->base).base.vtable._ub = &g_CLightGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&(pCVar3->base).model,"cre.kfm");
   pCVar3->sfx_handle = 0;

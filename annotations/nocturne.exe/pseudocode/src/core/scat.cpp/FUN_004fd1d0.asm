@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_FUN_004fd1d0(int param_1,int param_2)
+; void __cdecl core_scat_cpp_FUN_004fd1d0(CScat *this_ptr,int hand_index)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined4       Stack[-0x160]:4  local_160
 ; undefined        Stack[-0x15c]:1  local_15c

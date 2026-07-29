@@ -41,7 +41,7 @@ section .text
     ADD ESI,0xc                         ; 00404753
     INC EBX                             ; 00404756
     CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90 ; 00404757
-        ;   XREF to: 004c6d90 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90()
+        ;   XREF to: 004c6d90 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90(int vertex_index, CVector3i * vertex_position)
     MOV EBP,dword ptr [EDI + 0x8]       ; 0040475c
     ADD ESP,0x8                         ; 0040475f
     CMP EBX,EBP                         ; 00404762

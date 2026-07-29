@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 304,
+    "complexity_score": 276,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 27,
+    "pseudocode_lines": 26,
+    "suspect_count": 24,
     "suspect_types": [
+      "suspect_float",
       "unnamed_param"
     ],
-    "total_lines": 97
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -145,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_crossbow.cpp_CCrossbow_process_FUN_0043cfd0",
-    "signature": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2)"
+    "signature": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -237,7 +238,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2)",
+      "text": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -245,7 +246,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2)",
+      "text": "void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CCharacter *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -253,7 +254,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +262,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_00554030((CWeapon *)param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -269,7 +270,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = (CVector3f *)(*((param_1->base).vtable._ub)->initializeInEditor)(&param_1->base);",
+      "text": "pCVar1 = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -277,7 +278,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = (CVector3f *)(*((param_1->base).vtable._ub)->initializeInEditor)(&param_1->base);",
+      "text": "pCVar1 = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -293,7 +294,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.location.position.y = pCVar1->x;",
+      "text": "(param_1->model).transformed_vertices[0x53].z = pCVar1->x;",
       "type": "unnamed_param"
     },
     {
@@ -301,7 +302,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.location.position.z = pCVar1->y;",
+      "text": "(param_1->model).transformed_vertices[0x54].x = pCVar1->y;",
       "type": "unnamed_param"
     },
     {
@@ -309,31 +310,23 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.location.area_id = (int)pCVar1->z;",
+      "text": "(param_1->model).transformed_vertices[0x54].y = pCVar1->z;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 15,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "if (((((param_1->model).transformed_vertices[0x18].y != 2.8026e-45) ||",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((param_1->weapon_state != 2) || (param_1->ammo_count < 1)) || (param_1->ammo_type != 5)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((param_1->weapon_state != 2) || (param_1->ammo_count < 1)) || (param_1->ammo_type != 5)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((param_1->weapon_state != 2) || (param_1->ammo_count < 1)) || (param_1->ammo_type != 5)) ||",
+      "text": "if (((((param_1->model).transformed_vertices[0x18].y != 2.8026e-45) ||",
       "type": "unnamed_param"
     },
     {
@@ -341,15 +334,23 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0.0 < param_1->fire_cooldown_timer)) {",
+      "text": "((int)(param_1->model).transformed_vertices[0x4f].y < 1)) ||",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 17,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "((param_1->model).transformed_vertices[0x4f].z != 7.00649e-45)) ||",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_flame_cpp_FUN_0048df10(param_1[1].base.actor_name + 4);",
+      "text": "((param_1->model).transformed_vertices[0x4f].z != 7.00649e-45)) ||",
       "type": "unnamed_param"
     },
     {
@@ -357,7 +358,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[0] = '\\0';",
+      "text": "(0.0 < (param_1->model).transformed_vertices[0x1c].x)) {",
       "type": "unnamed_param"
     },
     {
@@ -365,7 +366,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[1] = '\\0';",
+      "text": "core_flame_cpp_FUN_0048df10((CFlame *)((param_1->model).transformed_vertices + 0x51));",
       "type": "unnamed_param"
     },
     {
@@ -373,31 +374,23 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[2] = '\\0';",
+      "text": "(param_1->model).transformed_vertices[0x50].z = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 23,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[3] = '\\0';",
-      "type": "unnamed_param"
+      "text": "(param_1->model).transformed_vertices[0x50].z = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[0] = '\\x01';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1].base.actor_name[1] = '\\0';",
+      "text": "(param_1->model).transformed_vertices[0x50].z = 1.4013e-45;",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +398,15 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[2] = '\\0';",
+      "text": "((CFlame *)((param_1->model).transformed_vertices + 0x51),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CFlame *)((param_1->model).transformed_vertices + 0x51),param_2);",
       "type": "unnamed_param"
     },
     {
@@ -413,39 +414,15 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.actor_name[3] = '\\0';",
+      "text": "(param_1->base).is_transparent = (int)(param_1->model).transformed_vertices[0x50].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(param_1[1].base.actor_name + 4),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(param_1[1].base.actor_name + 4),param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).is_transparent = *(int *)param_1[1].base.actor_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->base).is_transparent = *(int *)param_1[1].base.actor_name;",
+      "text": "(param_1->base).is_transparent = (int)(param_1->model).transformed_vertices[0x50].z;",
       "type": "unnamed_param"
     }
   ],

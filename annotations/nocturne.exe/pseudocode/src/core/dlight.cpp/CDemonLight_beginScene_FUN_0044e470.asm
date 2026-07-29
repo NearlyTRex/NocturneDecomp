@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 0044e48a
     MOV dword ptr [EBX + 0x11e4],0x1    ; 0044e48b
     CALL core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240 ; 0044e495
-        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240()
+        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240(CDemonCamera * this_ptr, int skip_clear_buffers)
     MOV EAX,dword ptr [EBX + 0x1cc4]    ; 0044e49a
     ADD ESP,0x8                         ; 0044e4a0
     DEC EAX                             ; 0044e4a3

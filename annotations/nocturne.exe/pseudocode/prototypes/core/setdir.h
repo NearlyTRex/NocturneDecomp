@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_setdir.cpp_FUN_00511d80
 // Address: 00511d80
-float FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,int param_3,int param_4,C3DSCamera *param_5 ,float param_6);
+float FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6);
 
 // Original: core_setdir.cpp_FUN_005125a0
 // Address: 005125a0
@@ -57,7 +57,7 @@ int __cdecl testOBBIntersection(SVDBox *obb_a,SVDBox *obb_b);
 
 // Original: core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
 // Address: 005141f0
-undefined8 CDemonSet::buildVdirBoxGroups(CDemonSet *param_1);
+int __cdecl CDemonSet::buildVdirBoxGroups(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300
 // Address: 00514300

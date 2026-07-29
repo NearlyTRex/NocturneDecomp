@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_FUN_0054bfc0(int param_1)
+; void __cdecl core_tvbat_cpp_FUN_0054bfc0(CTVBat *this_ptr)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_summonBats_FUN_0054e040 at 0054e093

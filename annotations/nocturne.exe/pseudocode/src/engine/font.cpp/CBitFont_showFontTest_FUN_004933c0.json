@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 571,
+    "complexity_score": 186,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 45,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -146,10 +145,10 @@
         "00493751"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_font.cpp_CBitFont_showFontTest_FUN_004933c0",
-    "signature": "void engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *param_1,uint param_2)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_ptr,int screen_height)"
   },
   "function_calls": [
     {
@@ -300,9 +299,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -335,10 +334,10 @@
     "pcode_op_count": 1398
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -354,6 +353,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "screen_height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -367,340 +380,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = param_1->max_char_height + param_1->line_spacing;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = param_1->max_char_height + param_1->line_spacing;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(param_1,iVar5,iVar3,iVar2,1,0xffffffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = iVar3 + param_1->max_char_width;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + iVar3 + param_1->max_char_width)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + iVar3 + param_1->max_char_width)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + iVar3 + param_1->max_char_width)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,iVar5,iVar3,iVar2,1,0xffffffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + param_1->max_char_width + iVar3)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + param_1->max_char_width + iVar3)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 < (uint)(param_1->char_spacing + param_1->max_char_width + iVar3)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(0,iVar2,param_2 - 1,param_1->max_char_height * 3 + iVar2 + 8,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0,iVar2,param_2 - 1,param_1->max_char_height * 3 + iVar2 + 8,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,\"one\",10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&DAT_00581999,iVar3 + 10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_00581999",
       "severity": "mild",
-      "text": "(param_1,&DAT_00581999,iVar3 + 10,iVar2,6,-1);",
+      "text": "(this_ptr,&DAT_00581999,iVar3 + 10,iVar2,6,-1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,\"two\",iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_0058199f,iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_0058199f",
       "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_0058199f,iVar5,iVar2,6,-1);",
+      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_0058199f,iVar5,iVar2,6,-1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,\"three\",iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_005819a7,iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 58,
       "match": "DAT_005819a7",
       "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_005819a7,iVar5,iVar2,6,-1);",
+      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819a7,iVar5,iVar2,6,-1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,\"four\",iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_005819ae,iVar5,iVar2,6,-1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 62,
       "match": "DAT_005819ae",
       "severity": "mild",
-      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,&DAT_005819ae,iVar5,iVar2,6,-1);",
+      "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819ae,iVar5,iVar2,6,-1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"(01234)+5-6/7*8=9.0  8<>+-=*8\",iVar5 + iVar3,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"#023  $0.23  a@t  5.0%  2^1  \",10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"{0A,1B} ~1 O<<I I|O &x;\",iVar3 + 10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"No?!  \\\"Hi\\\"  'A'  ({[0A]})  G_V  \",10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"2:00pm  21,000  isn't  Uh,..\",iVar3 + 10,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"One newline:\\nTwo newlines:\\n\\nThree newlines:\\n\\n\\nStop.\",0x1c2,iVar2,6,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xf8,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xf9,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xfa,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xfb,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xfc,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xfd,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xfe,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,local_30,0x82,iVar2,0xff,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,\"Here is a newline:\\nNext line!!\\nAnd again!!\",0x82,iVar2 + iVar3,0xff,0);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

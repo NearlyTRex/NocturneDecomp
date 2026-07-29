@@ -1,14 +1,14 @@
 // Name: core_main.c_FUN_004c90e0
 // Address: 004c90e0
 // Address Range: [[004c90e0, 004c93a8]]
-// Convention: unknown
-// Signature: void core_main_c_FUN_004c90e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_FUN_004c90e0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_main_c_FUN_004c90e0(void)
+void __cdecl core_main_c_FUN_004c90e0(void)
 
 {
   _FILE *file_handle;
@@ -76,9 +76,9 @@ void core_main_c_FUN_004c90e0(void)
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(0x01CEA280);
   xxx_unk_c_FUN_004940d0();
-  engine_ncursfx_cpp_FUN_004ee680();
+  engine_ncursfx_cpp_FUN_004ee680(0x01D465C0);
   core_mission_cpp_FUN_004d7e90();
-  core_sound_cpp_FUN_00527e10();
+  core_sound_cpp_FUN_00527e10(0x02DC9450);
   core_dmodel_cpp_FUN_00454460();
   core_skeleton_cpp_FUN_0051f650();
   core_skeleton_cpp_freeAllSkeletons_FUN_0051f730();

@@ -37,7 +37,7 @@ void FUN_00558be0(void);
 
 // Original: wincore_winrun.cpp_plotClippedPixel_FUN_00558c00
 // Address: 00558c00
-void plotClippedPixel(void);
+void __cdecl plotClippedPixel(int x_coord,int y_coord);
 
 // Original: wincore_winrun.cpp_FUN_00558c40
 // Address: 00558c40
@@ -49,11 +49,11 @@ void __cdecl clearMouseClicks(void);
 
 // Original: wincore_winrun.cpp_setCursorPosition_FUN_00558d60
 // Address: 00558d60
-void setCursorPosition(int param_1,int param_2);
+void __cdecl setCursorPosition(int x,int y);
 
 // Original: wincore_winrun.cpp_FUN_00558d90
 // Address: 00558d90
-LRESULT FUN_00558d90(HWND param_1,uint param_2,HWND param_3,uint param_4);
+LRESULT __stdcall FUN_00558d90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 
 // Original: wincore_winrun.cpp_processWindowMessages_FUN_005591c0
 // Address: 005591c0
@@ -61,11 +61,11 @@ void __cdecl processWindowMessages(void);
 
 // Original: wincore_winrun.cpp_FUN_00559260
 // Address: 00559260
-undefined4 FUN_00559260(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __stdcall FUN_00559260(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
 // Original: wincore_winrun.cpp_FUN_00559500
 // Address: 00559500
-void FUN_00559500(undefined4 param_1);
+void __cdecl FUN_00559500(char *message);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_00559560
 // Address: 00559560
@@ -101,7 +101,7 @@ void __cdecl sleep(double seconds);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_00559d20
 // Address: 00559d20
-void getRegistryStringValue(void);
+void __cdecl getRegistryStringValue(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 
 // Original: wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0
 // Address: 00559da0
@@ -113,7 +113,7 @@ void __cdecl initJoystick(void);
 
 // Original: wincore_winrun.cpp_FUN_00559e90
 // Address: 00559e90
-void FUN_00559e90(void);
+void __cdecl FUN_00559e90(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00559eb0
 // Address: 00559eb0

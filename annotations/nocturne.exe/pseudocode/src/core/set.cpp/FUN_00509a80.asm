@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_00509a80(CDemonSet *param_1,int param_2)
+; void __cdecl core_set_cpp_FUN_00509a80(CDemonSet *this_ptr,int skip_prerender)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   skip_prerender
 ; Local Variables:
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x60]:4  local_60
@@ -131,7 +134,7 @@ section .text
     PUSH 0x1fb8508                      ; 00509b22
     MOV dword ptr [0x01ffb074],ESI      ; 00509b27 | DAT_01ffb074
     CALL core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90 ; 00509b2d
-        ;   XREF to: 00444f90 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90()
+        ;   XREF to: 00444f90 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCamera * this_ptr)
     MOV EDI,dword ptr [0x01fb9b54]      ; 00509b32 | DAT_01fb9b54
     ADD ESP,0x4                         ; 00509b38
     TEST EDI,EDI                        ; 00509b3b
@@ -188,7 +191,7 @@ section .text
     PUSH ESI                            ; 00509bbb
     PUSH EBX                            ; 00509bbc
     CALL core_set.cpp_FUN_0050e080      ; 00509bbd
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00509bc2
     MOV EDX,dword ptr [EDI + 0x1fba2dc] ; 00509bc5
     PUSH EDX                            ; 00509bcb
@@ -232,7 +235,7 @@ section .text
     PUSH 0x1fb8508                      ; 00509c2d
     XOR ESI,ESI                         ; 00509c32
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 ; 00509c34
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750()
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     MOV ECX,dword ptr [EBX + 0x15a8cc]  ; 00509c39
     ADD ESP,0xc                         ; 00509c3f
     TEST ECX,ECX                        ; 00509c42
@@ -244,14 +247,14 @@ section .text
     PUSH ESI                            ; 00509c4b
     PUSH EBX                            ; 00509c4c
     CALL core_set.cpp_FUN_0050e080      ; 00509c4d
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00509c52
     PUSH 0x1                            ; 00509c55
     MOV EAX,dword ptr [EDI + 0x1fba2f0] ; 00509c57
     PUSH EAX                            ; 00509c5d
     PUSH 0x1fb8508                      ; 00509c5e
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 ; 00509c63
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750()
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     ADD ESP,0xc                         ; 00509c68
     PUSH EBX                            ; 00509c6b
     INC ESI                             ; 00509c6c
@@ -292,7 +295,7 @@ section .text
     PUSH EDI                            ; 00509cc5
     PUSH 0x1fb8508                      ; 00509cc6
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 ; 00509ccb
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750()
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     MOV EAX,[0x01fba7a4]                ; 00509cd0 | DAT_01fba7a4
     MOV dword ptr [EAX*0x4 + 0x1fba7a8],EDI ; 00509cd5 | DAT_01fba7a8
     LEA EDI,[EAX + 0x1]                 ; 00509cdc
@@ -362,7 +365,7 @@ section .text
     PUSH ESI                            ; 00509d80
     PUSH EBX                            ; 00509d81
     CALL core_set.cpp_FUN_0050e080      ; 00509d82
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00509d87
     MOV EDX,dword ptr [0x005b96c4]      ; 00509d8a | INT_005b96c4
     PUSH EDX                            ; 00509d90
@@ -420,7 +423,7 @@ section .text
     PUSH ESI                            ; 00509e05
     PUSH EBX                            ; 00509e06
     CALL core_set.cpp_FUN_0050e080      ; 00509e07
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00509e0c
     MOV EDI,dword ptr [0x005b80f0]      ; 00509e0f | DAT_005b80f0
     PUSH EDI                            ; 00509e15
@@ -585,7 +588,7 @@ section .text
     ADD ESI,0x4                         ; 00509faf
     INC EDI                             ; 00509fb2
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 00509fb3
-        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970()
+        ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
     MOV ECX,dword ptr [0x01fb9b54]      ; 00509fb8 | DAT_01fb9b54
     ADD ESP,0x4                         ; 00509fbe
     CMP EDI,ECX                         ; 00509fc1
@@ -735,13 +738,13 @@ section .text
     PUSH EAX                            ; 0050a121
     PUSH EBX                            ; 0050a122
     CALL core_set.cpp_FUN_0050e080      ; 0050a123
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0050a128
     PUSH 0x1                            ; 0050a12b
     PUSH EDI                            ; 0050a12d
     PUSH 0x1fb8508                      ; 0050a12e
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 ; 0050a133
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750()
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     ADD ESP,0xc                         ; 0050a138
     PUSH EBX                            ; 0050a13b
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 0050a13c
@@ -780,7 +783,7 @@ section .text
     PUSH ESI                            ; 0050a192
     PUSH EBX                            ; 0050a193
     CALL core_set.cpp_FUN_0050e080      ; 0050a194
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0050a199
     PUSH EDI                            ; 0050a19c
     CALL core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 ; 0050a19d
@@ -828,7 +831,7 @@ section .text
     PUSH ESI                            ; 0050a208
     PUSH EBX                            ; 0050a209
     CALL core_set.cpp_FUN_0050e080      ; 0050a20a
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0050a20f
     PUSH EDI                            ; 0050a212
     CALL core_dlight.cpp_FUN_0044f9b0   ; 0050a213

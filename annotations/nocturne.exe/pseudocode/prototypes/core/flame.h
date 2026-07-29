@@ -21,7 +21,7 @@ CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_setup_FUN_0048d050
 // Address: 0048d050
-void CFlame::setup(CDemonActor *param_1);
+void __cdecl CFlame::setup(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_process_FUN_0048d0c0
 // Address: 0048d0c0
@@ -29,11 +29,11 @@ void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 
 // Original: core_flame.cpp_FUN_0048d5d0
 // Address: 0048d5d0
-float FUN_0048d5d0(CDemonActor *param_1);
+int __cdecl FUN_0048d5d0(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_0048df10
 // Address: 0048df10
-void FUN_0048df10(int param_1);
+void __cdecl FUN_0048df10(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_0048df20
 // Address: 0048df20

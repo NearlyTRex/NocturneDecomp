@@ -12,8 +12,8 @@ void engine_3d_c_FUN_00409510(int param_1,int param_2)
   int iVar1;
   uint *puVar2;
   uint *puVar3;
-  uint auStack_c8 [12];
-  uint auStack_98 [12];
+  SRenderVertex in_stack_ffffff38;
+  SRenderVertex in_stack_ffffff68;
   uint local_68 [12];
   uint local_38 [12];
   
@@ -32,19 +32,19 @@ void engine_3d_c_FUN_00409510(int param_1,int param_2)
     puVar3 = puVar3 + 1;
   }
   puVar2 = local_38;
-  puVar3 = auStack_98;
+  puVar3 = (uint *)&stack0xffffff68;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
   puVar2 = local_68;
-  puVar3 = auStack_c8;
+  puVar3 = (uint *)&stack0xffffff38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
-  engine_3d_c_clipAndDrawLine3D_FUN_00409590();
+  engine_3d_c_clipAndDrawLine3D_FUN_00409590(in_stack_ffffff38,in_stack_ffffff68);
   return;
 }

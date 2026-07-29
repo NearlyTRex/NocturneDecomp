@@ -1,31 +1,28 @@
 // Name: core_event.cpp_setEventError_FUN_0047a1e0
 // Address: 0047a1e0
 // Address Range: [[0047a1e0, 0047a20c]]
-// Convention: unknown
-// Signature: undefined4 core_event_cpp_setEventError_FUN_0047a1e0(void)
+// Convention: __cdecl
+// Signature: int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-uint core_event_cpp_setEventError_FUN_0047a1e0(void)
+int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message)
 
 {
   char cVar1;
   char *pcVar2;
-  char *in_stack_0000000c;
   
   pcVar2 = &DAT_01c08b60;
   do {
-    cVar1 = *in_stack_0000000c;
+    cVar1 = *error_message;
     *pcVar2 = cVar1;
     if (cVar1 == '\0') {
-      return 0xffffffff;
+      return -1;
     }
-    cVar1 = in_stack_0000000c[1];
-    in_stack_0000000c = in_stack_0000000c + 2;
+    cVar1 = error_message[1];
+    error_message = error_message + 2;
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  return 0xffffffff;
+  return -1;
 }

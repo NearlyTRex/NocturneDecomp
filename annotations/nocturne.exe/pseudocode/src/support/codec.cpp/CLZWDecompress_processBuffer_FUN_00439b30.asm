@@ -49,7 +49,7 @@ section .text
     LEA ESI,[EBX + 0x4]                 ; 00439b5d
     PUSH ESI                            ; 00439b60
     CALL support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0 ; 00439b61
-        ;   XREF to: 004397d0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0()
+        ;   XREF to: 004397d0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0(CLZWDictionary * this_ptr, int code, char * * buffer_ptr_ptr)
     MOV EDX,dword ptr [EBX + 0x28]      ; 00439b66
     ADD ESP,0xc                         ; 00439b69
     TEST EDX,EDX                        ; 00439b6c

@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 0042a078
     PUSH EBX                            ; 0042a079
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0042a07a
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0042a07f
     LEA EAX,[EBX + 0x2414]              ; 0042a082
     PUSH EAX                            ; 0042a088
@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 0042a08d
     PUSH EBX                            ; 0042a08e
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0042a08f
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     LEA EAX,[EBX + 0x30]                ; 0042a094
     ADD ESP,0xc                         ; 0042a097
     CMP EAX,ESI                         ; 0042a09a
@@ -69,7 +69,7 @@ section .text
     PUSH EAX                            ; 0042a0c0
     PUSH EBX                            ; 0042a0c1
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0042a0c2
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     LEA EDX,[EBX + 0x23a4]              ; 0042a0c7
     ADD ESP,0xc                         ; 0042a0cd
     CMP EDX,EAX                         ; 0042a0d0
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 0042a0ed
     PUSH EBX                            ; 0042a0ee
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0042a0ef
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD EBX,0x2414                      ; 0042a0f4
     ADD ESP,0xc                         ; 0042a0fa
     CMP EBX,EAX                         ; 0042a0fd

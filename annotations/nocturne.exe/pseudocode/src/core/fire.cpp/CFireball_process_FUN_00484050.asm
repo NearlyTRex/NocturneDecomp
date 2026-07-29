@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CFireball_process_FUN_00484050(CParticle *param_1)
+; void __cdecl core_fire_cpp_CFireball_process_FUN_00484050(CFireball *this_ptr)
 ;
+; Parameters:
+; CFireball *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x18]:4  local_18

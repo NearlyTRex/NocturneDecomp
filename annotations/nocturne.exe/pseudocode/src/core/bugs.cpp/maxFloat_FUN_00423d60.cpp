@@ -1,16 +1,16 @@
 // Name: core_bugs.cpp_maxFloat_FUN_00423d60
 // Address: 00423d60
 // Address Range: [[00423d60, 00423d8b]]
-// Convention: unknown
-// Signature: float core_bugs_cpp_maxFloat_FUN_00423d60(float param_1,float param_2)
+// Convention: __cdecl
+// Signature: float __cdecl core_bugs_cpp_maxFloat_FUN_00423d60(float a,float b)
 
 #include "nocturne.h"
 
-float core_bugs_cpp_maxFloat_FUN_00423d60(float param_1,float param_2)
+float __cdecl core_bugs_cpp_maxFloat_FUN_00423d60(float a,float b)
 
 {
-  if (param_2 < param_1) {
-    return param_1;
+  if (b < a) {
+    return a;
   }
-  return param_2;
+  return b;
 }

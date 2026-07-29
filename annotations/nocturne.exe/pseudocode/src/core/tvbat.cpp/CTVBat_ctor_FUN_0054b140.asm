@@ -16,7 +16,7 @@
 ;   TerminatedCString s_bat_kfm_00596ed4
 ;   float FLOAT_00596edd = 10
 ;   float FLOAT_00596ee1 = 2
-;   undefined1* PTR_core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0_005a38f4 = 0054b2a0
+;   CEnemy_full_vtable g_CTVBatVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -42,13 +42,13 @@ section .text
         ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xffff42d8]          ; 0054b15c
     ADD ESP,0x4                         ; 0054b162
-    MOV dword ptr [EBX + 0x14c],0x5a38f4 ; 0054b165 | PTR_core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0_005a38f4
+    MOV dword ptr [EBX + 0x14c],0x5a38f4 ; 0054b165 | g_CTVBatVTable
     PUSH 0x3f8ccccd                     ; 0054b16f
     MOV dword ptr [EBX + 0xbd24],0x0    ; 0054b174
     PUSH 0x3f666666                     ; 0054b17e
     MOV dword ptr [EBX + 0xbea8],0x0    ; 0054b183
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054b18d
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0054b192
     FLD float ptr [ESP + 0xc]           ; 0054b196
     ADD ESP,0x8                         ; 0054b19a
@@ -64,7 +64,7 @@ section .text
     PUSH 0x3f666666                     ; 0054b1c6
     MOV dword ptr [EBX + 0xbeb8],0x41700000 ; 0054b1cb
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054b1d5
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0054b1da
     FLD float ptr [ESP + 0xc]           ; 0054b1de
     ADD ESP,0x8                         ; 0054b1e2
@@ -73,7 +73,7 @@ section .text
     PUSH 0x3f666666                     ; 0054b1f0
     FSTP float ptr [EBX + 0xbec4]       ; 0054b1f5
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054b1fb
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0054b200
     FLD float ptr [ESP + 0xc]           ; 0054b204
     ADD ESP,0x8                         ; 0054b208
@@ -84,7 +84,7 @@ section .text
     PUSH 0x0                            ; 0054b21e
     MOV dword ptr [EBX + 0xbec0],EAX    ; 0054b220
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054b226
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [EBX + 0xbecc],0x0    ; 0054b22b
     MOV dword ptr [EBX + 0xbed0],0x0    ; 0054b235
     MOV dword ptr [EBX + 0xbee0],0x0    ; 0054b23f

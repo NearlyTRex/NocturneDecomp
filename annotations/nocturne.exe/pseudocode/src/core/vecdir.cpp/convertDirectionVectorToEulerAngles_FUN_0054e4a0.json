@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 288,
+    "complexity_score": 159,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 24,
+    "pseudocode_lines": 29,
+    "suspect_count": 12,
     "suspect_types": [
       "bitcast_double_pair",
-      "extra_output",
-      "param_count_too_few",
-      "unnamed_param"
+      "extra_output"
     ],
-    "total_lines": 94
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -591,10 +589,10 @@
         "0054e538"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0",
-    "signature": "float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(float *param_1,float *param_2)"
+    "signature": "CVector3f * __cdecl core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f *out_euler_angles,CVector3f *in_direction_vector)"
   },
   "function_calls": [
     {
@@ -611,13 +609,10 @@
         "call_addr": "0047f893",
         "call_type": "direct",
         "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -625,12 +620,10 @@
         "call_addr": "0050405a",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_004ff2c0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -638,13 +631,10 @@
         "call_addr": "004857c1",
         "call_type": "direct",
         "caller": "core_fire.cpp_CBulletTrail_render_FUN_004856c0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -652,12 +642,10 @@
         "call_addr": "00485aec",
         "call_type": "direct",
         "caller": "core_fire.cpp_CLaserBeam_render_FUN_00485a90",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -665,12 +653,10 @@
         "call_addr": "0048699b",
         "call_type": "direct",
         "caller": "core_fire.cpp_CLaserBeam_render_FUN_00485a90",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -678,13 +664,10 @@
         "call_addr": "004128b6",
         "call_type": "direct",
         "caller": "core_batcreat.cpp_CBatCreature_process_FUN_00412480",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -692,12 +675,10 @@
         "call_addr": "00412994",
         "call_type": "direct",
         "caller": "core_batcreat.cpp_CBatCreature_process_FUN_00412480",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -705,14 +686,10 @@
         "call_addr": "00424836",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -720,12 +697,10 @@
         "call_addr": "00424872",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -733,21 +708,19 @@
         "call_addr": "00424af6",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.267857142857143,
@@ -787,10 +760,10 @@
     "pcode_op_count": 295
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -799,6 +772,20 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "out_euler_angles",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "in_direction_vector",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -827,21 +814,21 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 31,
+          "line": 32,
           "message": "Uninitialized variable: extraout_ECX",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 31,
-          "line": 33,
+          "line": 34,
           "message": "Uninitialized variable: extraout_EDX",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 4,
-          "line": 36,
+          "column": 3,
+          "line": 37,
           "message": "Uninitialized variable: extraout_ECX_00",
           "severity": "error"
         }
@@ -851,22 +838,6 @@
     "file_variant": "raw"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
@@ -880,7 +851,7 @@
       "line": 6,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "float *extraout_ECX_00;",
+      "text": "CVector3f *extraout_ECX_00;",
       "type": "extra_output"
     },
     {
@@ -892,88 +863,16 @@
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((ABS(*param_2) == 0.0) && (ABS(param_2[2]) == 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((ABS(*param_2) == 0.0) && (ABS(param_2[2]) == 0.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0.0 < param_2[1]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
       "line": 20,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "*param_1 = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
+      "text": "out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = atan2((float10)*param_2,(float10)param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = atan2((float10)*param_2,(float10)param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 25,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "*(float *)(extraout_ECX + 4) = (float)fVar1;",
@@ -981,7 +880,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
+      "line": 27,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "((float10)extraout_EDX[1],",
@@ -989,15 +888,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 28,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
@@ -1008,12 +899,12 @@
       "line": 28,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));",
+      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 29,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));",
@@ -1022,9 +913,9 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
-      "match": "extraout_ECX_00",
+      "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "*extraout_ECX_00 = (float)-fVar1;",
+      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));",
       "type": "extra_output"
     },
     {
@@ -1032,23 +923,20 @@
       "line": 30,
       "match": "extraout_ECX_00",
       "severity": "moderate",
+      "text": "extraout_ECX_00->x = (float)-fVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
       "text": "return extraout_ECX_00;",
       "type": "extra_output"
     },
     {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    },
-    {
       "description": "Uninitialized variable: extraout_ECX",
-      "line": 31,
+      "line": 32,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*(float *)(extraout_ECX + 4) = (float)fVar1;",
@@ -1056,7 +944,7 @@
     },
     {
       "description": "Uninitialized variable: extraout_EDX",
-      "line": 33,
+      "line": 34,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "((float10)extraout_EDX[1],",
@@ -1064,10 +952,10 @@
     },
     {
       "description": "Uninitialized variable: extraout_ECX_00",
-      "line": 36,
+      "line": 37,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*extraout_ECX_00 = (float)-fVar1;",
+      "text": "extraout_ECX_00->x = (float)-fVar1;",
       "type": "static_uninitvar"
     }
   ]

@@ -1,23 +1,23 @@
 // Name: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
 // Address: 00405c90
 // Address Range: [[00405c90, 00405e01]]
-// Convention: unknown
-// Signature: int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *primitive)
 
 {
   int iVar1;
   SMRGLHeaderPrimitive *pSVar2;
   int *piVar3;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&primitive->surface_normal);
   if (iVar1 == 0) goto LAB_00405cb0;
-  engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
+  engine_3d_c_calculatePolygonLighting_FUN_00404710(primitive);
   if (_DAT_01c038f4 == 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) goto LAB_00405d06;
@@ -47,8 +47,8 @@ LAB_00405d98:
   piVar3 = &DAT_006b029c;
   _DAT_01c039a4 = 1;
   _DAT_01c039a0 = 0xd9;
-  pSVar2 = param_1 + 1;
-  for (iVar1 = 0; iVar1 < (param_1->base).count * 3; iVar1 = iVar1 + 3) {
+  pSVar2 = primitive + 1;
+  for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
     *piVar3 = (pSVar2->base).type + DAT_006b0264;
     (&DAT_005c502c)[((pSVar2->base).type + DAT_006b0264) * 0xc] = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
@@ -56,7 +56,7 @@ LAB_00405d98:
          (pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_FUN_00432cd0((param_1->base).count,&DAT_006b029c);
+  engine_clipper_c_FUN_00432cd0((primitive->base).count,&DAT_006b029c);
 LAB_00405cb0:
-  return (int)&param_1[1].base + (param_1->base).count * 0xc;
+  return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

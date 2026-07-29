@@ -10,20 +10,20 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVess
 
 {
   char cVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   CKeyFramedModelInstance *pCVar3;
   CFlame *pCVar4;
   char *pcVar5;
   char *pcVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar3[1].model_name + 0x78));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));
   pcVar5 = "none";
-  *(byte ***)(pCVar3[-4].model_name + 0x68) = &PTR_core_vessel_cpp_FUN_0054fa80_005a3d84;
+  *(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x68) = &g_CCryptVesselVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)(pCVar3[-4].model_name + 0x6c),"vsslbase.kfm");
   pCVar3[-0xffffffff00000003].model_name[0x6c] = '\0';

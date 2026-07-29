@@ -189,7 +189,7 @@ section .text
     PUSH ESI                            ; 00490ac8
     PUSH EBX                            ; 00490ac9
     CALL engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 ; 00490aca
-        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0()
+        ;   XREF to: 004916c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont * this_ptr, int character_code, int x, int y, ...)
     ADD ESP,0x18                        ; 00490acf
     ADD EBP,EAX                         ; 00490ad2
     JMP 0x00490a9e                      ; 00490ad4

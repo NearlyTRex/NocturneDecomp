@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_inv_cpp_getItemModel_FUN_004beb40(CDemonActor *param_1)
+; CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004beb40(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0c72

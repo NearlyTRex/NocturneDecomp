@@ -16,26 +16,22 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *t
   float fVar3;
   int iVar4;
   int iVar5;
-  float *pfVar6;
+  CVector3f *pCVar6;
   int iVar7;
   int iVar8;
   float local_b8;
   float local_b4;
   float local_b0;
-  float local_ac;
-  float local_a8;
-  float local_a4;
-  byte local_a0 [24];
+  CVector3f local_ac;
+  CVector3f local_a0 [2];
   float local_88;
   float local_84;
   float local_80;
   int local_7c;
   int local_78;
   int local_74;
-  float local_64;
-  float local_60;
-  float local_5c;
-  byte local_58 [44];
+  CVector3f local_64;
+  CVector3f local_58 [3];
   int local_2c;
   int local_28;
   int local_24;
@@ -139,22 +135,22 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *t
       local_2c = 0;
       do {
         iVar8 = *(int *)(&DAT_01fba9a8 + local_2c);
-        local_64 = *(float *)(iVar8 + 0x104) - position->x;
-        local_60 = *(float *)(iVar8 + 0x108) - position->y;
-        local_5c = *(float *)(iVar8 + 0x10c) - position->z;
-        pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                                    (rotation_matrix,local_a0,&local_64);
-        if (&local_64 != pfVar6) {
-          local_64 = *pfVar6;
-          local_60 = pfVar6[1];
-          local_5c = pfVar6[2];
+        local_64.x = *(float *)(iVar8 + 0x104) - position->x;
+        local_64.y = *(float *)(iVar8 + 0x108) - position->y;
+        local_64.z = *(float *)(iVar8 + 0x10c) - position->z;
+        pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                           (rotation_matrix,local_a0,&local_64);
+        if (&local_64 != pCVar6) {
+          local_64.x = pCVar6->x;
+          local_64.y = pCVar6->y;
+          local_64.z = pCVar6->z;
         }
-        if ((((aabb_min->x <= local_64 + *(float *)(iVar8 + 0x11d4)) &&
-             (aabb_min->y <= local_60 + *(float *)(iVar8 + 0x11d4))) &&
-            (aabb_min->z <= local_5c + *(float *)(iVar8 + 0x11d4))) &&
-           (((local_64 - *(float *)(iVar8 + 0x11d4) <= aabb_max->x &&
-             (local_60 - *(float *)(iVar8 + 0x11d4) <= aabb_max->y)) &&
-            (local_5c - *(float *)(iVar8 + 0x11d4) <= aabb_max->z)))) {
+        if ((((aabb_min->x <= local_64.x + *(float *)(iVar8 + 0x11d4)) &&
+             (aabb_min->y <= local_64.y + *(float *)(iVar8 + 0x11d4))) &&
+            (aabb_min->z <= local_64.z + *(float *)(iVar8 + 0x11d4))) &&
+           (((local_64.x - *(float *)(iVar8 + 0x11d4) <= aabb_max->x &&
+             (local_64.y - *(float *)(iVar8 + 0x11d4) <= aabb_max->y)) &&
+            (local_64.z - *(float *)(iVar8 + 0x11d4) <= aabb_max->z)))) {
           *(int *)(&DAT_01fff228 + _DAT_01fff224 * 4) = iVar8;
           _DAT_01fff224 = _DAT_01fff224 + 1;
         }
@@ -198,11 +194,11 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *t
       } while (local_18 < _DAT_01fba7a4);
     }
     if (0 < _DAT_01fff224) {
-      local_ac = aabb_max->x - aabb_min->x;
-      local_a8 = aabb_max->y - aabb_min->y;
-      local_a4 = aabb_max->z - aabb_min->z;
-      pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                  (rotation_matrix,local_58,&local_ac);
+      local_ac.x = aabb_max->x - aabb_min->x;
+      local_ac.y = aabb_max->y - aabb_min->y;
+      local_ac.z = aabb_max->z - aabb_min->z;
+      pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                         (rotation_matrix,local_58,&local_ac);
       iVar8 = 0;
       local_80 = 0.0;
       local_84 = 0.0;
@@ -221,9 +217,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *t
             iVar8 = iVar8 + 1;
           }
           else {
-            fVar3 = *(float *)(iVar4 + 0x104) - (position->x + *pfVar6);
-            fVar1 = *(float *)(iVar4 + 0x108) - (position->y + pfVar6[1]);
-            fVar2 = *(float *)(iVar4 + 0x10c) - (position->z + pfVar6[2]);
+            fVar3 = *(float *)(iVar4 + 0x104) - (position->x + pCVar6->x);
+            fVar1 = *(float *)(iVar4 + 0x108) - (position->y + pCVar6->y);
+            fVar2 = *(float *)(iVar4 + 0x10c) - (position->z + pCVar6->z);
             fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
             if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
               fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + (int)CVector3f_01c70708.y) *

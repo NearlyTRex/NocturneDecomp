@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050ad20(int param_1)
+; void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfea
@@ -63,7 +65,7 @@ section .text
     PUSH EBX                            ; 0050ad6f
         ;   Label: LAB_0050ad6f
     CALL core_setutil.cpp_FUN_00515410  ; 0050ad70
-        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00515410()
+        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_00515410(C3DSLight * this_ptr)
     INC ESI                             ; 0050ad75
     ADD ESP,0x4                         ; 0050ad76
     MOV ECX,dword ptr [EDI + 0x19644]   ; 0050ad79

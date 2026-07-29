@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_clearScreenRegion_FUN_0052ef37(int param_1)
+; void __cdecl engine_special_cpp_clearScreenRegion_FUN_0052ef37(int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   color
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

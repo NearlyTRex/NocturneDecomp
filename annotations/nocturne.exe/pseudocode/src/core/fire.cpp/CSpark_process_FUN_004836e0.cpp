@@ -1,41 +1,42 @@
 // Name: core_fire.cpp_CSpark_process_FUN_004836e0
 // Address: 004836e0
 // Address Range: [[004836e0, 00483796]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CSpark_process_FUN_004836e0(CParticle *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_CSpark_process_FUN_004836e0(CParticle *param_1)
+void __cdecl core_fire_cpp_CSpark_process_FUN_004836e0(CSpark *this_ptr)
 
 {
+  float delta_time;
   longlong lVar1;
-  float fVar2;
+  int iVar2;
   
-  if (param_1[1].position.z == 0.0) {
-    param_1[1].position.z = 1.4013e-45;
+  if (this_ptr->first_update_flag == 0) {
+    this_ptr->first_update_flag = 1;
   }
   else {
-    lVar1 = (longlong)_DAT_01bd1d80 * (longlong)(int)param_1[1].velocity.y;
-    lVar1 = (longlong)(int)param_1[1].position.y *
+    lVar1 = (longlong)_DAT_01bd1d80 * (longlong)this_ptr->fade_rate;
+    lVar1 = (longlong)this_ptr->intensity_target *
             (longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    fVar2 = (float)((int)param_1[1].position.x -
-                   ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10));
-    param_1[1].position.x = fVar2;
-    if ((int)fVar2 < 0) {
-      param_1->lifetime_remaining = 0.0;
-      param_1[1].position.x = 0.0;
+    iVar2 = this_ptr->intensity_current -
+            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    this_ptr->intensity_current = iVar2;
+    if (iVar2 < 0) {
+      (this_ptr->base).lifetime_remaining = 0.0;
+      this_ptr->intensity_current = 0;
     }
   }
-  fVar2 = 0x01C775EC->delta_time_float;
-  lVar1 = (longlong)(int)param_1[1].velocity.y * (longlong)_DAT_01bd1d80;
+  delta_time = 0x01C775EC->delta_time_float;
+  lVar1 = (longlong)this_ptr->fade_rate * (longlong)_DAT_01bd1d80;
   core_game_cpp_CGame_slamDT_FUN_004a5f00
             (0x01C775EC,
              (float)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
              (float)1.52587890625e-05);
-  core_particle_cpp_CParticle_process_FUN_004ef120(param_1);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,fVar2);
+  core_particle_cpp_CParticle_process_FUN_004ef120(&this_ptr->base);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,delta_time);
   return;
 }

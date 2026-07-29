@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * FUN_0056f480(uint *param_1,undefined1 *param_2,int param_3)
+; char * FUN_0056f480(uint *param_1,char *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0056f4d7
     PUSH EAX                            ; 0056f4db
     CALL crt_stdlib.c_i64toa_FUN_0056f3e0 ; 0056f4dc
-        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_i64toa_FUN_0056f3e0()
+        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c_i64toa_FUN_0056f3e0(longlong * value, char * buffer, int base)
     ADD ESP,0xc                         ; 0056f4e1
     MOV EAX,EBX                         ; 0056f4e4
     ADD ESP,0x8                         ; 0056f4e6

@@ -9,13 +9,11 @@
 CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 
 {
-  float local_10;
-  float local_c;
-  float local_8;
+  CVector3f local_10;
   
-  local_10 = input_world_point->x - (this_ptr->location).position.x;
-  local_c = input_world_point->y - (this_ptr->location).position.y;
-  local_8 = input_world_point->z - (this_ptr->location).position.z;
+  local_10.x = input_world_point->x - (this_ptr->location).position.x;
+  local_10.y = input_world_point->y - (this_ptr->location).position.y;
+  local_10.z = input_world_point->z - (this_ptr->location).position.z;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
             (&this_ptr->orient_matrix,output_local_point,&local_10);
   return output_local_point;

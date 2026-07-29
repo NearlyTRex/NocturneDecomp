@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
+; void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
 ;
 ;
 ; Referenced Globals:

@@ -13,7 +13,7 @@
 ;   core_game.cpp_FUN_004a4170 at 004a44b1
 ;
 ; Referenced Globals:
-;   undefined1* PTR_support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10_0059b444 = 00439c10
+;   CCodec_vtable g_CLZWDecompressVTable
 ;
 ; Called Functions:
 ;   support_codec.cpp_CCodec_ctor_FUN_00438f20
@@ -36,7 +36,7 @@ section .text
     ADD ESP,0x4                         ; 00439a06
     SUB EAX,0x4                         ; 00439a09
     MOV EDX,dword ptr [ESP + 0x8]       ; 00439a0c
-    MOV dword ptr [EAX],0x59b444        ; 00439a10 | PTR_support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10_0059b444
+    MOV dword ptr [EAX],0x59b444        ; 00439a10 | g_CLZWDecompressVTable
     MOV dword ptr [EAX + 0x20],EDX      ; 00439a16
     MOV EDX,dword ptr [ESP + 0xc]       ; 00439a19
     MOV dword ptr [EAX + 0x24],EDX      ; 00439a1d

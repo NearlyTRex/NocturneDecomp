@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)
+; void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,CDemonLight *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_004449a0
     PUSH EDI                            ; 004449a3
     CALL core_dlight.cpp_FUN_0044f0b0   ; 004449a4
-        ;   XREF to: 0044f0b0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044f0b0()
+        ;   XREF to: 0044f0b0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0044f0b0(CDemonLight * this_ptr)
     FLD float ptr [EDI + 0x100]         ; 004449a9
     FMUL double ptr [0x0057b973]        ; 004449af | DOUBLE_0057b973
     ADD ESP,0x4                         ; 004449b5

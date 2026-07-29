@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(void)
+; void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_0049ecc0(int key_index,int *output_state)
 ;
+; Parameters:
+; int              Stack[0x4]:4   key_index
+; int *            Stack[0x8]:4   output_state
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c02598

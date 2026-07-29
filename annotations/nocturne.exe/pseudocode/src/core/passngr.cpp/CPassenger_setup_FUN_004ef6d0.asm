@@ -152,7 +152,7 @@ section .text
     ADD EAX,0x150                       ; 004ef816
     PUSH EAX                            ; 004ef81b
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004ef81c
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV EAX,dword ptr [EBX + 0x1f678]   ; 004ef821
     FLD float ptr [EBX + 0x202ac]       ; 004ef827
     ADD ESP,0x8                         ; 004ef82d

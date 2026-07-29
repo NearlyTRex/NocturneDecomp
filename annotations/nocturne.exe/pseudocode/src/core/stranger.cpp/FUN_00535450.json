@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 354,
+    "complexity_score": 378,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 48,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
-    "suspect_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 26,
     "suspect_types": [
       "unnamed_param",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 377
+    "total_lines": 376
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_stranger.cpp_FUN_00535450",
-    "signature": "void core_stranger_cpp_FUN_00535450(int param_1)"
+    "signature": "void core_stranger_cpp_FUN_00535450(CStranger *param_1)"
   },
   "function_calls": [
     {
@@ -569,7 +570,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_stranger_cpp_FUN_00535450(int param_1)",
+      "text": "void core_stranger_cpp_FUN_00535450(CStranger *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -577,7 +578,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_hero_cpp_FUN_004b48d0(param_1);",
+      "text": "core_hero_cpp_FUN_004b48d0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -585,7 +586,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x150);",
+      "text": "this_ptr = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
@@ -593,7 +594,7 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x24a4) = _DAT_02dc9f84;",
+      "text": "(param_1->base).base.carry_hands[0].bone_index = _DAT_02dc9f84;",
       "type": "unnamed_param"
     },
     {
@@ -601,7 +602,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x24e8) = _DAT_02dc9f88;",
+      "text": "(param_1->base).base.carry_hands[1].bone_index = _DAT_02dc9f88;",
       "type": "unnamed_param"
     },
     {
@@ -609,7 +610,7 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((CVector3f *)(param_1 + 0x1fb24) != pCVar2) {",
+      "text": "if (&param_1->ref_r_hand_bone_pos != pCVar2) {",
       "type": "unnamed_param"
     },
     {
@@ -617,7 +618,7 @@
       "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CVector3f *)(param_1 + 0x1fb24))->x = pCVar2->x;",
+      "text": "(param_1->ref_r_hand_bone_pos).x = pCVar2->x;",
       "type": "unnamed_param"
     },
     {
@@ -625,7 +626,7 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1fb28) = pCVar2->y;",
+      "text": "(param_1->ref_r_hand_bone_pos).y = pCVar2->y;",
       "type": "unnamed_param"
     },
     {
@@ -633,7 +634,7 @@
       "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1fb2c) = pCVar2->z;",
+      "text": "(param_1->ref_r_hand_bone_pos).z = pCVar2->z;",
       "type": "unnamed_param"
     },
     {
@@ -641,7 +642,7 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_24,_DAT_02dc9f60);",
+      "text": "(&(param_1->base).base.model,&local_24,_DAT_02dc9f60);",
       "type": "unnamed_param"
     },
     {
@@ -649,7 +650,7 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((CVector3f *)(param_1 + 0x1fb30) != pCVar2) {",
+      "text": "if (&param_1->ref_r_upperarm_bone_pos != pCVar2) {",
       "type": "unnamed_param"
     },
     {
@@ -657,7 +658,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CVector3f *)(param_1 + 0x1fb30))->x = pCVar2->x;",
+      "text": "(param_1->ref_r_upperarm_bone_pos).x = pCVar2->x;",
       "type": "unnamed_param"
     },
     {
@@ -665,7 +666,7 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1fb34) = pCVar2->y;",
+      "text": "(param_1->ref_r_upperarm_bone_pos).y = pCVar2->y;",
       "type": "unnamed_param"
     },
     {
@@ -673,7 +674,7 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1fb38) = pCVar2->z;",
+      "text": "(param_1->ref_r_upperarm_bone_pos).z = pCVar2->z;",
       "type": "unnamed_param"
     },
     {
@@ -689,7 +690,7 @@
       "line": 93,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fb3c) = 0;",
+      "text": "param_1->grab_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -697,7 +698,7 @@
       "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fccc) = 0;",
+      "text": "param_1->ladder_blend_time = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -705,7 +706,15 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x1fb40),\"stranger-hat.kfm\");",
+      "text": "(&param_1->model,\"stranger-hat.kfm\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&param_1->model);",
       "type": "unnamed_param"
     },
     {
@@ -713,7 +722,7 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)(param_1 + 0x1fb40));",
+      "text": "param_1->fall_velocity_snapshot = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -721,7 +730,7 @@
       "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fcd4) = 0;",
+      "text": "param_1->goggle_sfx_handles[0] = 0;",
       "type": "unnamed_param"
     },
     {
@@ -729,24 +738,32 @@
       "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fab0) = 0;",
+      "text": "param_1->goggle_sfx_handles[1] = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1fab4) = 0;",
+      "text": "(&(param_1->base).base.model);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150));",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 81,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(param_1->ref_r_hand_bone_pos).x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 88,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(param_1->ref_r_upperarm_bone_pos).x = pCVar2->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

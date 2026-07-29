@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5)
+; float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
+; CVector3f *      Stack[0xc]:4   ray_origin
+; CVector3f *      Stack[0x10]:4   ray_direction
+; CVector3f *      Stack[0x14]:4   output_normal
 ; Local Variables:
 ; undefined8       Stack[-0xf0]:8  local_f0
 ; undefined8       Stack[-0xe8]:8  local_e8
@@ -95,7 +101,7 @@ section .text
     ADD EAX,EBX                         ; 004539da
     PUSH EAX                            ; 004539dc
     CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 ; 004539dd
-        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550()
+        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0xe8],EAX      ; 004539e2
     FLD float ptr [ESP + 0xe8]          ; 004539e9
     ADD ESP,0x10                        ; 004539f0
@@ -215,7 +221,7 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 00453ba6
     PUSH EAX                            ; 00453baa
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 00453bab
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0xe4],EAX      ; 00453bb0
     FLD float ptr [ESP + 0xe4]          ; 00453bb7
     ADD ESP,0xc                         ; 00453bbe
@@ -315,7 +321,7 @@ section .text
     ADD EBX,0x370                       ; 00453cd8
     PUSH EBX                            ; 00453cde
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 00453cdf
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00453ce4
     MOV EAX,dword ptr [EBP + 0x20]      ; 00453ce7
     PUSH EAX                            ; 00453cea
@@ -323,7 +329,7 @@ section .text
     PUSH EAX                            ; 00453cf2
     PUSH EBX                            ; 00453cf3
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0 ; 00453cf4
-        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0()
+        ;   XREF to: 0044daa0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00453cf9
     MOV EAX,dword ptr [EBP + 0x14]      ; 00453cfc
     MOV EDX,dword ptr [EAX + 0x354]     ; 00453cff
@@ -352,7 +358,7 @@ section .text
     PUSH EAX                            ; 00453d49
     PUSH EBX                            ; 00453d4a
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 00453d4b
-        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0046c620()
+        ;   XREF to: 0046c620 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0xe4],EAX      ; 00453d50
     FLD float ptr [ESP + 0xe4]          ; 00453d57
     ADD ESP,0xc                         ; 00453d5e
@@ -410,7 +416,7 @@ section .text
     PUSH ECX                            ; 00453de1
     FSTP float ptr [ESP + 0x78]         ; 00453de2
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00453de6
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00453deb
     CMP ESI,EAX                         ; 00453dee
     JZ 0x00453d71                       ; 00453df0

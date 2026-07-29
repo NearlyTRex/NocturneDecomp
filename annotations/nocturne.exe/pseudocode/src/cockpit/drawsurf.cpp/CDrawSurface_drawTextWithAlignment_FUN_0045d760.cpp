@@ -81,16 +81,14 @@ LAB_0045d977:
     engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(_DAT_01b4d718,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER:
-    engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0
-              (_DAT_01b4d718,left_x,y_00,0xfffffffd,0xffffffff,text);
+    engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(_DAT_01b4d718,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_VCENTER:
     y_00 = y_00 - _DAT_01b4d718->current_line_height / 2;
     goto LAB_0045d82a;
   case TEXT_ALIGN_CENTER_BOTH:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0
-              (_DAT_01b4d718,left_x,y_00 - _DAT_01b4d718->current_line_height / 2,0xfffffffd,
-               0xffffffff,text);
+              (_DAT_01b4d718,left_x,y_00 - _DAT_01b4d718->current_line_height / 2,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_BOUNDS:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0

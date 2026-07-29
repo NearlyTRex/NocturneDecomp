@@ -1,19 +1,20 @@
 // Name: core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0
 // Address: 0048c3c0
 // Address Range: [[0048c3c0, 0048c418]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_count,int flame_type)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(uint param_1,uint param_2,uint param_3,int param_4,uint param_5)
+void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_count,int flame_type)
 
 {
-  for (; 0 < param_4; param_4 = param_4 + -1) {
+  for (; 0 < flame_count; flame_count = flame_count + -1) {
     core_fire_cpp_CGunFlame_activate_FUN_00488280
-              (&DAT_01c62ebc + _DAT_01c62eb8 * 0x24,param_2,param_3,param_5);
+              ((CGunFlame *)(&DAT_01c62ebc + _DAT_01c62eb8 * 0x24),position,euler_angles,flame_type)
+    ;
     _DAT_01c62eb8 = _DAT_01c62eb8 + 1;
     if (499 < _DAT_01c62eb8) {
       _DAT_01c62eb8 = 0;

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 63,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 26
   },
   "cross_references": [],
@@ -23,9 +21,9 @@
         "00574816"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallStack",
     "name": "crt_iostream.cpp_streambuf_sync_FUN_005747f6",
-    "signature": "undefined4 crt_iostream_cpp_streambuf_sync_FUN_005747f6(int param_1)"
+    "signature": "int __watcallStack crt_iostream_cpp_streambuf_sync_FUN_005747f6(streambuf *streambuf_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -33,9 +31,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -60,55 +58,22 @@
     "pcode_op_count": 54
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "streambuf_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint crt_iostream_cpp_streambuf_sync_FUN_005747f6(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(uint *)(param_1 + 0x10) <= *(uint *)(param_1 + 0x14)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(uint *)(param_1 + 0x10) <= *(uint *)(param_1 + 0x14)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x20) <= *(uint *)(param_1 + 0x18))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x20) <= *(uint *)(param_1 + 0x18))) {",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

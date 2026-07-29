@@ -1,18 +1,16 @@
 // Name: core_fire.cpp_CGunFlame_arrdtor_FUN_0048cd40
 // Address: 0048cd40
 // Address Range: [[0048cd40, 0048cd57]]
-// Convention: unknown
-// Signature: void core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(void)
+// Convention: __cdecl
+// Signature: CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(CGunFlame *objs,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(void)
+CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(CGunFlame *objs,uint flags)
 
 {
-  void *in_stack_00000004;
+  CGunFlame *pCVar1;
   
-  __arrfini(in_stack_00000004,500,&g_CGunFlameTypeInfo_0059d4a0);
-  return;
+  pCVar1 = (CGunFlame *)__arrfini(objs,500,&g_CGunFlameTypeInfo_0059d4a0);
+  return pCVar1;
 }

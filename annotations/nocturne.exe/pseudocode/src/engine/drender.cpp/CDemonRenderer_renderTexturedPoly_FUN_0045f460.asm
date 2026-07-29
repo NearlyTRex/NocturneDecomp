@@ -112,7 +112,7 @@ section .text
     PUSH EBP                            ; 0045f515
     PUSH EBX                            ; 0045f516
     CALL engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0 ; 0045f517
-        ;   XREF to: 00461ad0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0()
+        ;   XREF to: 00461ad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * quad_primitive, int render_flags)
     ADD ESP,0xc                         ; 0045f51c
     ADD ESP,0x4                         ; 0045f51f
     POP EBP                             ; 0045f522

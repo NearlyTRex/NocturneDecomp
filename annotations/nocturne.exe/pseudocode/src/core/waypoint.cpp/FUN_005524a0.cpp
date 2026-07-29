@@ -9,12 +9,12 @@
 void core_waypoint_cpp_FUN_005524a0(void)
 
 {
-  int iVar1;
+  CWayPoint *this_ptr;
   
-  iVar1 = FUN_0056497c(0x550);
-  if (iVar1 == 0) {
+  this_ptr = (CWayPoint *)FUN_0056497c(0x550);
+  if (this_ptr == (CWayPoint *)0x0) {
     return;
   }
-  core_waypoint_cpp_FUN_005524d0(iVar1);
+  core_waypoint_cpp_FUN_005524d0(this_ptr);
   return;
 }

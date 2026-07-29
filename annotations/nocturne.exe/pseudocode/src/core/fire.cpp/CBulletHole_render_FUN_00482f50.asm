@@ -282,7 +282,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x10]      ; 004831ed
     PUSH EDX                            ; 004831f0
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004831f1
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004831f6
     LEA EBX,[ESP + 0xc]                 ; 004831f9
     MOV EAX,ESI                         ; 004831fd

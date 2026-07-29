@@ -272,7 +272,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00483b25 | DAT_005ae704
     PUSH ECX                            ; 00483b2b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 00483b2c
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 00483b31
     XOR EBX,EBX                         ; 00483b34
     FLD float ptr [ESP + 0xb8]          ; 00483b36
@@ -466,7 +466,7 @@ section .text
     PUSH EDI                            ; 00483e18 | DAT_01b4d738
     LEA EBX,[ESP + 0x80]                ; 00483e19
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 00483e20
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     MOV EAX,0xbecccccd                  ; 00483e25
     MOV EDX,dword ptr [0x005ae704]      ; 00483e2a | DAT_005ae704
     ADD ESP,0xc                         ; 00483e30

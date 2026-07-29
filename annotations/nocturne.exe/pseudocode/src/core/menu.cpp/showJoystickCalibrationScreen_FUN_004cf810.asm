@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_menu_cpp_showJoystickCalibrationScreen_FUN_004cf810(char *param_1)
+; void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_004cf810(char *instruction_text,char *message_text)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   instruction_text
+; char *           Stack[0x8]:4   message_text
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ;
@@ -35,7 +38,7 @@ section .text
     MOV ECX,dword ptr [0x014b98f8]      ; 004cf822 | DAT_014b98f8
     PUSH ECX                            ; 004cf828
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004cf829
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004cf82e
     SAR EDX,0x1f                        ; 004cf830
     SUB EAX,EDX                         ; 004cf833

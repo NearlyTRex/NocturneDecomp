@@ -14,7 +14,7 @@
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0 at 0040c845
 ;   core_ammo.cpp_FUN_0040ecf0 at 0040ed1e
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f3be
-;   core_anvil.cpp_FUN_0040f7d0 at 0040f7fe
+;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7fe
 ;   core_armour.cpp_FUN_0040fb60 at 0040fbb1
 ;   core_baron.cpp_CBaron_archive_FUN_00411080 at 004110a7
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 0041183b
@@ -91,7 +91,7 @@ section .text
     MOV ECX,dword ptr [0x00763e84]      ; 0040c748 | DAT_00763e84
     PUSH ECX                            ; 0040c74e
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0040c74f
-        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040c754
     CMP EAX,0x1                         ; 0040c757
     JZ 0x0040c76a                       ; 0040c75a

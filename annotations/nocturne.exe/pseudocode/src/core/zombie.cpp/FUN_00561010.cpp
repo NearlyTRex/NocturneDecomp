@@ -1,15 +1,15 @@
 // Name: core_zombie.cpp_FUN_00561010
 // Address: 00561010
 // Address Range: [[00561010, 005617d2]]
-// Convention: unknown
-// Signature: undefined4 core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_zombie_cpp_FUN_00561010(CZombie *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
+int __cdecl core_zombie_cpp_FUN_00561010(CZombie *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
@@ -54,33 +54,33 @@ uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
   int local_18;
   float local_14;
   
-  if (param_1->part_indices[4] < 0) {
+  if (this_ptr->part_indices[4] < 0) {
     return 0;
   }
-  fVar3 = param_1->pickup_scan_timer - param_2;
-  param_1->pickup_scan_timer = fVar3;
+  fVar3 = this_ptr->pickup_scan_timer - delta_time;
+  this_ptr->pickup_scan_timer = fVar3;
   if (0.0 < fVar3) {
-    param_1->pickup_seed = param_1->pickup_seed + 1;
-    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
-    param_1->pickup_scan_timer = local_14;
+    this_ptr->pickup_seed = this_ptr->pickup_seed + 1;
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,10.0);
+    this_ptr->pickup_scan_timer = local_14;
   }
-  if ((param_1->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
+  if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if ((param_1->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
+  if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (0.0 < param_1->pickup_approach_progress) {
-    param_2 = param_1->pickup_approach_progress - param_2;
-    param_1->pickup_approach_progress = param_2;
-    if (0.0 <= param_2) {
+  if (0.0 < this_ptr->pickup_approach_progress) {
+    fVar3 = this_ptr->pickup_approach_progress - delta_time;
+    this_ptr->pickup_approach_progress = fVar3;
+    if (0.0 <= fVar3) {
       return 0;
     }
-    param_1->pickup_approach_progress = 0.0;
+    this_ptr->pickup_approach_progress = 0.0;
     return 0;
   }
-  pCVar6 = param_1->pickup_target;
-  pCVar1 = &(param_1->base).base.base.location;
+  pCVar6 = this_ptr->pickup_target;
+  pCVar1 = &(this_ptr->base).base.base.location;
   if (pCVar6 == (CDemonActor *)0x0) {
     local_24 = 0;
     local_20 = 0;
@@ -91,7 +91,7 @@ uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
       pCVar5 = (*((pCVar6->vtable)._ub)->getCarrier)(pCVar6);
       iVar11 = iVar10;
       if ((pCVar5 == (CDemonActor *)0x0) &&
-         (iVar8 = (*((pCVar6->vtable)._ub)->canPickup)(pCVar6,(CDemonActor *)param_1), iVar8 == 3))
+         (iVar8 = (*((pCVar6->vtable)._ub)->canPickup)(pCVar6,(CDemonActor *)this_ptr), iVar8 == 3))
       {
         pCVar9 = (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_110);
         CStack_5c.x = (pCVar9->max).x - (pCVar9->min).x;
@@ -99,10 +99,10 @@ uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
         CStack_5c.z = (pCVar9->max).z - (pCVar9->min).z;
         iStack_28 = core_zombie_cpp_classifyObjectShape_FUN_0055e940(&CStack_5c);
         if (((iStack_28 != 0) &&
-            (iVar8 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(param_1,iStack_28),
+            (iVar8 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(this_ptr,iStack_28),
             iVar8 != 0)) &&
            ((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar6,"CBodyPart"), iVar8 == 0
-            || ((pCVar6->direction_hint & 3U) == (param_1->pickup_seed & 3U))))) {
+            || ((pCVar6->direction_hint & 3U) == (this_ptr->pickup_seed & 3U))))) {
           fStack_8c = (pCVar6->location).position.x - (local_1c->position).x;
           fStack_88 = (pCVar6->location).position.y - (local_1c->position).y;
           fStack_88 = fStack_88 * fStack_88;
@@ -110,7 +110,7 @@ uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
           fStack_88 = fStack_88 * fStack_88;
           fVar3 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
           if (((float)5 <= fVar3) &&
-             (fVar3 <= param_1->pickup_range_factor * 15.0f)) {
+             (fVar3 <= this_ptr->pickup_range_factor * 15.0f)) {
             *(int *)((int)aiStack_138 + iVar10) = iStack_28;
             iVar11 = iVar10 + 4;
             local_24 = local_24 + 1;
@@ -126,46 +126,48 @@ uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
       return 0;
     }
     iVar10 = core_actor_cpp_getRandomInt_FUN_0040de00(0,local_24 + -1);
-    param_1->pickup_target = (CDemonActor *)auStack_160[iVar10];
+    this_ptr->pickup_target = (CDemonActor *)auStack_160[iVar10];
     iVar10 = aiStack_138[iVar10];
-    param_1->pickup_approach_progress = -40.0;
-    param_1->object_shape_class = iVar10;
-    param_1->pickup_seed = param_1->pickup_seed + 1;
+    this_ptr->pickup_approach_progress = -40.0;
+    this_ptr->object_shape_class = iVar10;
+    this_ptr->pickup_seed = this_ptr->pickup_seed + 1;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,param_1->pickup_target);
+              (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",this_ptr,this_ptr->pickup_target
+              );
     return 1;
   }
   pCVar6 = (*((pCVar6->vtable)._ub)->getCarrier)(pCVar6);
   if (pCVar6 != (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",param_1,param_1->pickup_target);
-    param_1->pickup_target = (CDemonActor *)0x0;
-    param_1->pickup_approach_progress = 0.0;
-    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
+              (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",this_ptr,this_ptr->pickup_target
+              );
+    this_ptr->pickup_target = (CDemonActor *)0x0;
+    this_ptr->pickup_approach_progress = 0.0;
+    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(this_ptr);
     return 0;
   }
-  fVar3 = (pCVar1->position).x - (param_1->pickup_target->location).position.x;
-  fVar4 = (param_1->base).base.base.location.position.z -
-          (param_1->pickup_target->location).position.z;
+  fVar3 = (pCVar1->position).x - (this_ptr->pickup_target->location).position.x;
+  fVar4 = (this_ptr->base).base.base.location.position.z -
+          (this_ptr->pickup_target->location).position.z;
   fStack_168 = (float)5 - SQRT(fVar4 * fVar4 + fVar3 * fVar3) * (float)0.33333333333333298
   ;
   if (fStack_168 < 1.0) {
     fStack_168 = 1.0;
   }
   iVar11 = -1;
-  param_1->pickup_approach_progress = param_2 * fStack_168 + param_1->pickup_approach_progress;
+  this_ptr->pickup_approach_progress = delta_time * fStack_168 + this_ptr->pickup_approach_progress;
   iVar10 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0
-                     (param_1,param_1->object_shape_class);
-  if ((((-1 < iVar10) && (param_1->pickup_approach_progress < 0.0)) &&
-      (iVar8 = (*((param_1->pickup_target->vtable)._ub)->canPickup)
-                         (param_1->pickup_target,(CDemonActor *)param_1), iVar8 == 3)) &&
+                     (this_ptr,this_ptr->object_shape_class);
+  if ((((-1 < iVar10) && (this_ptr->pickup_approach_progress < 0.0)) &&
+      (iVar8 = (*((this_ptr->pickup_target->vtable)._ub)->canPickup)
+                         (this_ptr->pickup_target,(CDemonActor *)this_ptr), iVar8 == 3)) &&
      (iVar8 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880
-                        (param_1,param_1->object_shape_class), iVar8 != 0)) {
-    uVar2 = param_1->object_shape_class;
+                        (this_ptr,this_ptr->object_shape_class), iVar8 != 0)) {
+    uVar2 = this_ptr->object_shape_class;
     if (uVar2 < 2) {
       if (uVar2 == 1) {
 LAB_00561230:
-        pCVar6 = param_1->pickup_target;
+        pCVar6 = this_ptr->pickup_target;
         (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_e0);
         fStack_2c = 0.5;
         pfVar13 = &fStack_2c;
@@ -182,7 +184,7 @@ LAB_00561230:
       }
       else {
 LAB_005614f8:
-        pCVar6 = param_1->pickup_target;
+        pCVar6 = this_ptr->pickup_target;
         if ((CLocation *)&CStack_a4 != &pCVar6->location) {
           CStack_a4.x = (pCVar6->location).position.x;
           CStack_a4.y = (pCVar6->location).position.y;
@@ -195,7 +197,7 @@ LAB_005614f8:
         if (uVar2 != 3) goto LAB_005614f8;
         goto LAB_00561230;
       }
-      pCVar6 = param_1->pickup_target;
+      pCVar6 = this_ptr->pickup_target;
       (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_f8);
       pfVar13 = &fStack_30;
       pCVar12 = &CStack_bc;
@@ -234,22 +236,23 @@ LAB_005614f8:
       }
     }
     iVar11 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
-                       ((CCharacter *)param_1,&CStack_a4,(CPathMap *)0x0,&CStack_c8,0.0,0.0);
+                       ((CCharacter *)this_ptr,&CStack_a4,(CPathMap *)0x0,&CStack_c8,0.0,0.0);
   }
   if (iVar11 < 0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",param_1,param_1->pickup_target);
-    param_1->pickup_target = (CDemonActor *)0x0;
-    param_1->pickup_approach_progress = 20.0;
-    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
+              (PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",this_ptr,this_ptr->pickup_target
+              );
+    this_ptr->pickup_target = (CDemonActor *)0x0;
+    this_ptr->pickup_approach_progress = 20.0;
+    core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(this_ptr);
     return 0;
   }
   if (iVar11 < 1) {
     return 1;
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,param_1->pickup_target);
-  uVar2 = param_1->object_shape_class;
+            (PTR_DAT_005ad350,"%s beginning to pickup %s\n",this_ptr,this_ptr->pickup_target);
+  uVar2 = this_ptr->object_shape_class;
   if (uVar2 < 2) {
     if (uVar2 != 1) {
 LAB_005615c6:
@@ -269,6 +272,6 @@ LAB_005615c6:
   iVar10 = 10;
 LAB_00561571:
   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-            (&(param_1->base).base.model.motion_controller,iVar10,1);
+            (&(this_ptr->base).base.model.motion_controller,iVar10,1);
   return 1;
 }

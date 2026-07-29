@@ -77,7 +77,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0040d9a4 | DAT_005be368
     PUSH ECX                            ; 0040d9aa | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040d9ab
-        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80()
+        ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0040d9b0
     MOV EDI,dword ptr [0x005be368]      ; 0040d9b3 | DAT_005be368
     PUSH EDI                            ; 0040d9b9 | DAT_01e57284

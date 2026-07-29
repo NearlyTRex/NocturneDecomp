@@ -11,9 +11,6 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(CCourse *this_ptr,char *f
 {
   _FILE *file;
   int iVar1;
-  int iVar2;
-  int iVar3;
-  byte auStack_18 [4];
   int local_14;
   
   core_course_cpp_CCourse_free_FUN_0043b7c0(this_ptr);
@@ -27,12 +24,12 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(CCourse *this_ptr,char *f
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(file,"%d\n",auStack_18);
+  _fscanf(file,"%d\n");
   do {
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(file,"%d,%d\n",&local_14,&this_ptr->loop);
+  _fscanf(file,"%d,%d\n");
   core_course_cpp_CCourse_allocMemory_FUN_0043b610(this_ptr,local_14);
   do {
     iVar1 = _fgetc(file);
@@ -40,13 +37,9 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(CCourse *this_ptr,char *f
   } while (iVar1 != 10);
   iVar1 = 0;
   if (0 < this_ptr->len) {
-    iVar3 = 0;
     do {
-      iVar2 = (int)&(this_ptr->frames->pos).x + iVar3;
       iVar1 = iVar1 + 1;
-      iVar3 = iVar3 + 0x1c;
-      _fscanf(file,"%f,%f,%f, %f,%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8,iVar2 + 0xc,iVar2 + 0x10,
-                 iVar2 + 0x14,iVar2 + 0x18);
+      _fscanf(file,"%f,%f,%f, %f,%f,%f,%f\n");
     } while (iVar1 < this_ptr->len);
   }
   _fclose(file);

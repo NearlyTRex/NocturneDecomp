@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 189,
+    "complexity_score": 188,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 13,
     "suspect_types": [
       "negative_offset",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 147
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -209,9 +209,9 @@
   "globals": [
     {
       "addr": "005a1074",
-      "name": "PTR_core_passngr.cpp_CPassenger_setup_FUN_004ef6d0_005a1074",
-      "type": "undefined1*",
-      "value": "004ef6d0"
+      "name": "g_CPassengerVTable",
+      "type": "CCharacter_full_vtable",
+      "value": null
     },
     {
       "addr": "005a11b0",
@@ -316,12 +316,12 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->vtable)._ub =",
+      "text": "(param_1->vtable)._ub = &g_CPassengerVTable._ub;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(uVar1 + 0x14c) + 200))(uVar1,2);",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = core_morph_cpp_CMorph_dtor_FUN_004e0070((CMorph *)param_1[0x17e].footstep_sound_code,0);",
@@ -337,7 +337,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 32,
+      "line": 31,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CFlame *)(pCVar3[-1].height_cache_tags[0xc] + 0x39),0);",
@@ -345,7 +345,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
+      "line": 33,
       "match": "pCVar4[-2].",
       "severity": "mild",
       "text": "((SFire *)(pCVar4[-2].base.create_event + 0x10),0);",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 40,
       "match": "pCVar8[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 9),1);",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 & 2) != 0) {",

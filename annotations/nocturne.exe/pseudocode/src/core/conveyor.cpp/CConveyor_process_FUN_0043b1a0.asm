@@ -103,7 +103,7 @@ section .text
     PUSH EAX                            ; 0043b256
     PUSH ESI                            ; 0043b257
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0043b258
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0043b25d
     FLD float ptr [ESP + 0x38]          ; 0043b260
     FLD float ptr [ESP]                 ; 0043b264

@@ -1,28 +1,28 @@
 // Name: cockpit_ckptutil.c_setEdgeData_FUN_00430590
 // Address: 00430590
 // Address Range: [[00430590, 0043062a]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_setEdgeData_FUN_00430590(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00430590(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
 
 #include "nocturne.h"
 
-void cockpit_ckptutil_c_setEdgeData_FUN_00430590(int param_1,int param_2,ushort param_3,ushort param_4,ushort param_5,ushort param_6,byte param_7)
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00430590(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit)
 
 {
-  ushort uVar1;
-  ushort *puVar2;
+  SEdge *pSVar1;
+  ushort uVar2;
   
-  puVar2 = (ushort *)(param_2 * 8 + param_1);
-  *puVar2 = 0;
-  puVar2[1] = 0;
-  uVar1 = puVar2[3];
-  *puVar2 = param_3;
-  puVar2[2] = 0;
-  puVar2[1] = param_4;
-  puVar2[3] = uVar1 & 0x8000;
-  puVar2[3] = uVar1 & 0x8000 | param_6 & 0x7fff;
-  *(byte *)((int)puVar2 + 7) = *(byte *)((int)puVar2 + 7) & 0x7f;
-  puVar2[2] = param_5;
-  puVar2[3] = puVar2[3] | (ushort)param_7 << 0xf;
+  pSVar1 = edge_array + edge_index;
+  pSVar1->x0 = 0;
+  pSVar1->y0 = 0;
+  uVar2 = pSVar1->y1 & 0x8000;
+  pSVar1->x0 = (short)x1;
+  pSVar1->x1 = 0;
+  pSVar1->y0 = (short)y1;
+  pSVar1->y1 = uVar2;
+  pSVar1->y1 = uVar2 | (ushort)y2 & 0x7fff;
+  *(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;
+  pSVar1->x1 = (short)x2;
+  pSVar1->y1 = pSVar1->y1 | (ushort)((flag_bit & 1U) << 0xf);
   return;
 }

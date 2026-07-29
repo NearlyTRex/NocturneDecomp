@@ -135,7 +135,7 @@ section .text
     LEA EAX,[ESP + 0x74]                ; 00422456
     PUSH EAX                            ; 0042245a
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 0042245b
-        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0()
+        ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00422460
     LEA EAX,[EBX + 0x30]                ; 00422463
     PUSH EAX                            ; 00422466
@@ -321,7 +321,7 @@ section .text
     LEA EAX,[ESP + 0xd4]                ; 0042269e
     PUSH EAX                            ; 004226a5
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004226a6
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004226ab
     MOV EAX,dword ptr [ESI]             ; 004226ae
     MOV dword ptr [ESP + 0x148],EAX     ; 004226b0
@@ -362,7 +362,7 @@ section .text
     PUSH EBX                            ; 00422745
         ;   Label: LAB_00422745
     CALL core_bugs.cpp_FUN_00421b80     ; 00422746
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 0042274b
     JMP 0x004223c4                      ; 0042274e
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4
@@ -383,7 +383,7 @@ section .text
         ;   XREF to: 004225f7 (CONDITIONAL_JUMP)  ; LAB_004225f7
     PUSH EBX                            ; 00422783
     CALL core_bugs.cpp_FUN_00421b80     ; 00422784
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 00422789
     JMP 0x004223c4                      ; 0042278c
         ;   XREF to: 004223c4 (UNCONDITIONAL_JUMP)  ; LAB_004223c4

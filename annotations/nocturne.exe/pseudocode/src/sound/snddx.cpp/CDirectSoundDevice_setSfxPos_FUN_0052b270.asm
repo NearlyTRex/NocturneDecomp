@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(undefined4 param_1,int *param_2,byte param_3)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(CDirectSoundDevice *this_ptr,CSfxSlot *slot,int update_flags)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; CSfxSlot *       Stack[0x8]:4   slot
+; int              Stack[0xc]:4   update_flags
 ; Local Variables:
 ; undefined4       Stack[-0xcd0]:4  local_cd0
 ; undefined4       Stack[-0xccc]:4  local_ccc
@@ -373,7 +377,7 @@ section .text
     SUB ESP,0x8                         ; 0052b60e
     FSTP double ptr [ESP]               ; 0052b611
     CALL crt_math.c_floor_FUN_005648c0  ; 0052b614
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0xc94],EAX     ; 0052b619
     MOV dword ptr [ESP + 0xc98],EDX     ; 0052b620
     FLD double ptr [ESP + 0xc94]        ; 0052b627

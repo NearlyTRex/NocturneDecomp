@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)
 ;
 ;
 ; XREF[4]:
@@ -74,7 +74,7 @@ section .text
     PUSH EBX                            ; 004e7e4d
     PUSH EDI                            ; 004e7e4e
     CALL sound_mp3.cpp_FUN_004e7ed0     ; 004e7e4f
-        ;   XREF to: 004e7ed0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_FUN_004e7ed0()
+        ;   XREF to: 004e7ed0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_FUN_004e7ed0(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
     ADD ESP,0xc                         ; 004e7e54
     TEST EAX,EAX                        ; 004e7e57
     JZ 0x004e7ea3                       ; 004e7e59

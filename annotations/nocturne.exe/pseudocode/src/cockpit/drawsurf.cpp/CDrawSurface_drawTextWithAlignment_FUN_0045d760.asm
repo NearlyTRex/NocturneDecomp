@@ -174,7 +174,7 @@ section .text
     MOV ESI,dword ptr [0x01b4d718]      ; 0045d887 | DAT_01b4d718
     PUSH ESI                            ; 0045d88d
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 0045d88e
-        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     JMP 0x0045d830                      ; 0045d893
         ;   XREF to: 0045d830 (UNCONDITIONAL_JUMP)  ; LAB_0045d830
     MOV EBP,dword ptr [0x01b4d718]      ; 0045d895 | DAT_01b4d718
@@ -207,7 +207,7 @@ section .text
     PUSH ESI                            ; 0045d8d5
     PUSH EBP                            ; 0045d8d6
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 0045d8d7
-        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     JMP 0x0045d830                      ; 0045d8dc
         ;   XREF to: 0045d830 (UNCONDITIONAL_JUMP)  ; LAB_0045d830
     PUSH EDI                            ; 0045d8e1

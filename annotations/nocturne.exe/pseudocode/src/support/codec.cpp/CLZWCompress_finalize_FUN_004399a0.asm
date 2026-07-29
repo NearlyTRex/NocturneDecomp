@@ -33,7 +33,7 @@ section .text
     ADD EBX,0x18                        ; 004399b2
     PUSH EBX                            ; 004399b5
     CALL support_codec.cpp_flushBitBuffer_FUN_00438d60 ; 004399b6
-        ;   XREF to: 00438d60 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_flushBitBuffer_FUN_00438d60()
+        ;   XREF to: 00438d60 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_flushBitBuffer_FUN_00438d60(SBitBuffer * bit_buffer, _ostream * ostream)
     MOV EAX,0x1                         ; 004399bb
     ADD ESP,0x8                         ; 004399c0
     POP EDI                             ; 004399c3
@@ -48,7 +48,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 004399d0
     PUSH EAX                            ; 004399d3
     CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0 ; 004399d4
-        ;   XREF to: 004396d0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0()
+        ;   XREF to: 004396d0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, _ostream * ostream)
     ADD ESP,0x10                        ; 004399d9
     MOV dword ptr [EBX + 0x30],0xffffffff ; 004399dc
     JMP 0x004399ad                      ; 004399e3

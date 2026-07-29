@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_showPromoScreen_FUN_004c8eb0(void)
+; void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -87,7 +87,7 @@ section .text
     MOV ECX,dword ptr [0x014b98f8]      ; 004c8f31 | DAT_014b98f8
     PUSH ECX                            ; 004c8f37
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8f38
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c8f3d
     SAR EDX,0x1f                        ; 004c8f3f
     SUB EAX,EDX                         ; 004c8f42
@@ -111,7 +111,7 @@ section .text
     MOV ESI,dword ptr [0x014b98f8]      ; 004c8f7a | DAT_014b98f8
     PUSH ESI                            ; 004c8f80
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8f81
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c8f86
     SAR EDX,0x1f                        ; 004c8f88
     SUB EAX,EDX                         ; 004c8f8b
@@ -188,7 +188,7 @@ section .text
     PUSH EDX                            ; 004c9049
     MOV EBX,EAX                         ; 004c904a
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c904c
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c9051
     SAR EDX,0x1f                        ; 004c9053
     SUB EAX,EDX                         ; 004c9056

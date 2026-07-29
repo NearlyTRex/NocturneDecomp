@@ -14,7 +14,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
   int iVar3;
   BOOL BVar4;
   DWORD DVar5;
-  DWORD local_24;
+  SIZE_T in_stack_ffffffdc;
+  DWORD nNumberOfBytesToWrite;
   DWORD local_20;
   DWORD local_1c;
   HANDLE local_18;
@@ -47,23 +48,24 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
       if ((local_14 & 0x40) == 0) {
         local_20 = GetStackUsage();
         if (local_20 < 0xb0) {
-          stack_overflow_handler();
+          stack_overflow_handler(in_stack_ffffffdc);
         }
         DVar2 = 0x200;
         if (local_20 < 0x230) {
           DVar2 = 0x80;
         }
         local_20 = 0;
-        local_24 = 0;
+        nNumberOfBytesToWrite = 0;
         local_1c = 0;
         if (count != 0) {
           do {
             if (*(char *)((int)buffer + local_20) == '\n') {
-              *(byte *)((int)&local_24 + local_24) = 0xd;
-              local_24 = local_24 + 1;
-              if (DVar2 == local_24) {
+              (&stack0xffffffdc)[nNumberOfBytesToWrite] = 0xd;
+              nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
+              if (DVar2 == nNumberOfBytesToWrite) {
                 if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
-                  BVar4 = WriteFile(local_18,&local_24,DVar2,&local_24,(LPOVERLAPPED)0x0);
+                  BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
+                                    (LPOVERLAPPED)0x0);
                   if (BVar4 == 0) {
                     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
                     DVar5 = __set_errno();
@@ -71,23 +73,24 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                   }
                 }
                 else {
-                  local_24 = (*DAT_005c1d80)(iVar3,&local_24,DVar2);
+                  nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);
                 }
-                if (DVar2 != local_24) {
+                if (DVar2 != nNumberOfBytesToWrite) {
                   setErrno(0xc);
                   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-                  return local_1c + local_24;
+                  return local_1c + nNumberOfBytesToWrite;
                 }
                 local_1c = local_20;
-                local_24 = 0;
+                nNumberOfBytesToWrite = 0;
               }
             }
-            *(byte *)((int)&local_24 + local_24) = *(byte *)((int)buffer + local_20);
+            (&stack0xffffffdc)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + local_20);
             local_20 = local_20 + 1;
-            local_24 = local_24 + 1;
-            if (DVar2 == local_24) {
+            nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
+            if (DVar2 == nNumberOfBytesToWrite) {
               if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
-                BVar4 = WriteFile(local_18,&local_24,DVar2,&local_24,(LPOVERLAPPED)0x0);
+                BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
+                                  (LPOVERLAPPED)0x0);
                 if (BVar4 == 0) {
                   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
                   DVar5 = __set_errno();
@@ -95,21 +98,22 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                 }
               }
               else {
-                local_24 = (*DAT_005c1d80)(iVar3,&local_24,DVar2);
+                nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);
               }
-              if (DVar2 != local_24) {
+              if (DVar2 != nNumberOfBytesToWrite) {
                 setErrno(0xc);
                 (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-                return local_1c + local_24;
+                return local_1c + nNumberOfBytesToWrite;
               }
               local_1c = local_20;
-              local_24 = 0;
+              nNumberOfBytesToWrite = 0;
             }
           } while (local_20 < count);
         }
-        if (local_24 != 0) {
+        if (nNumberOfBytesToWrite != 0) {
           if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {
-            BVar4 = WriteFile(local_18,&local_24,local_24,&local_20,(LPOVERLAPPED)0x0);
+            BVar4 = WriteFile(local_18,&stack0xffffffdc,nNumberOfBytesToWrite,&local_20,
+                              (LPOVERLAPPED)0x0);
             if (BVar4 == 0) {
               (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
               DVar5 = __set_errno();
@@ -117,9 +121,9 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
             }
           }
           else {
-            local_20 = (*DAT_005c1d80)(iVar3,&local_24,local_24);
+            local_20 = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);
           }
-          if (local_20 != local_24) {
+          if (local_20 != nNumberOfBytesToWrite) {
             setErrno(0xc);
             (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
             return local_1c + local_20;

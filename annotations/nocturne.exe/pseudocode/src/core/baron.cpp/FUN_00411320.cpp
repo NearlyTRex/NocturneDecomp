@@ -9,12 +9,12 @@
 void core_baron_cpp_FUN_00411320(void)
 
 {
-  int iVar1;
+  CBaronWeapon *this_ptr;
   
-  iVar1 = FUN_0056497c(0x574);
-  if (iVar1 == 0) {
+  this_ptr = (CBaronWeapon *)FUN_0056497c(0x574);
+  if (this_ptr == (CBaronWeapon *)0x0) {
     return;
   }
-  core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(iVar1);
+  core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(this_ptr);
   return;
 }

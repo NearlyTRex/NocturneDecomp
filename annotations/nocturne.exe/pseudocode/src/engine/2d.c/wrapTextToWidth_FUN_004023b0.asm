@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_wrapTextToWidth_FUN_004023b0(char *param_1,int param_2,char *param_3)
+; void __cdecl engine_2d_c_wrapTextToWidth_FUN_004023b0(char *input_text,int max_width,char *output_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   input_text
+; int              Stack[0x8]:4   max_width
+; char *           Stack[0xc]:4   output_buffer
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

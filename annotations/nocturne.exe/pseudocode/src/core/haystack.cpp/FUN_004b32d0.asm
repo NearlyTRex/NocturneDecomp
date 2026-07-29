@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_FUN_004b32d0(CHero *param_1,float param_2)
+; void core_haystack_cpp_FUN_004b32d0(CHaystack *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x90]:4  local_90
@@ -70,7 +70,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004b32df
     PUSH EBX                            ; 004b32e2
     CALL core_charactr.cpp_FUN_004259f0 ; 004b32e3
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004259f0()
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b32e8
     TEST EAX,EAX                        ; 004b32eb
     JZ 0x004b3578                       ; 004b32ed
@@ -110,12 +110,12 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004b3368
     MOV dword ptr [EAX],EDX             ; 004b336b
     CALL core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00 ; 004b336d
-        ;   XREF to: 004b3e00 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00()
+        ;   XREF to: 004b3e00 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00(CHaystack * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b3372
     PUSH dword ptr [EBP + 0x18]         ; 004b3375
     PUSH EBX                            ; 004b3378
     CALL core_charactr.cpp_FUN_00428c00 ; 004b3379
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428c00()
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     MOV ESI,EAX                         ; 004b337e
     ADD ESP,0x8                         ; 004b3380
     LEA EAX,[EBX + 0x150]               ; 004b3383
@@ -158,11 +158,11 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 004b33e2
     PUSH EAX                            ; 004b33e6
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004b33e7
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004b33ec
     PUSH dword ptr [EAX + 0x4]          ; 004b33ef
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 004b33f2
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x7c],EAX      ; 004b33f7
     FLD float ptr [ESP + 0x7c]          ; 004b33fb
     ADD ESP,0x4                         ; 004b33ff
@@ -304,7 +304,7 @@ section .text
         ;   Label: LAB_004b356c
     PUSH EBX                            ; 004b356f
     CALL core_charactr.cpp_FUN_0042a150 ; 004b3570
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a150()
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b3575
     MOV ESP,EBP                         ; 004b3578
         ;   Label: caseD_9
@@ -317,7 +317,7 @@ section .text
         ;   Label: LAB_004b357f
     PUSH EBX                            ; 004b3582
     CALL core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 ; 004b3583
-        ;   XREF to: 004b3880 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_CHaystack_updateAI_FUN_004b3880()
+        ;   XREF to: 004b3880 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_updateAI_FUN_004b3880(CHaystack * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b3588
     JMP 0x004b3300                      ; 004b358b
         ;   XREF to: 004b3300 (UNCONDITIONAL_JUMP)  ; LAB_004b3300
@@ -449,7 +449,7 @@ section .text
         ;   XREF to: 004b3666 (CONDITIONAL_JUMP)  ; LAB_004b3666
     PUSH EBX                            ; 004b36e2
     CALL core_hero.cpp_FUN_004b5110     ; 004b36e3
-        ;   XREF to: 004b5110 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b5110()
+        ;   XREF to: 004b5110 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004b5110(CHero * this_ptr)
     ADD ESP,0x4                         ; 004b36e8
     MOV dword ptr [ESP + 0x74],EAX      ; 004b36eb
     TEST EAX,EAX                        ; 004b36ef

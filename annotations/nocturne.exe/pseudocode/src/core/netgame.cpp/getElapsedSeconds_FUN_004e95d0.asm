@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_netgame_cpp_getElapsedSeconds_FUN_004e95d0(int param_1)
+; float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_004e95d0(uint timestamp)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   timestamp
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058ba12 = 0.0000152587890625

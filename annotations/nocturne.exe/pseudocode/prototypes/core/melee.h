@@ -17,7 +17,7 @@ CDemonActorType * FUN_004cec50(void);
 
 // Original: core_melee.cpp_CMelee_ctor_FUN_004cec60
 // Address: 004cec60
-CWeapon * __cdecl CMelee::ctor(CWeapon *param_1);
+CMelee * __cdecl CMelee::ctor(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_archive_FUN_004cedb0
 // Address: 004cedb0
@@ -25,11 +25,11 @@ void CMelee::archive(CWeapon *param_1);
 
 // Original: core_melee.cpp_CMelee_fire_FUN_004ceed0
 // Address: 004ceed0
-undefined4 CMelee::fire(void);
+int __cdecl CMelee::fire(CMelee *this_ptr);
 
 // Original: core_melee.cpp_FUN_004cef00
 // Address: 004cef00
-undefined4 FUN_004cef00(int param_1);
+float FUN_004cef00(int param_1);
 
 // Original: core_melee.cpp_FUN_004cef30
 // Address: 004cef30
@@ -49,15 +49,15 @@ void FUN_004cef80(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
 
 // Original: core_melee.cpp_FUN_004cefe0
 // Address: 004cefe0
-void FUN_004cefe0(int param_1,int param_2,undefined4 param_3,CDemonActor *param_4);
+void FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
 
 // Original: core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
 // Address: 004cf090
-void __cdecl CMelee::initBloodSpurtEffects(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CMelee::initBloodSpurtEffects(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
 
 // Original: core_melee.cpp_CMelee_process_FUN_004cf0c0
 // Address: 004cf0c0
-void CMelee::process(CWeapon *param_1,float param_2);
+void CMelee::process(CCharacter *param_1,float param_2);
 
 // Original: core_melee.cpp_CMelee_setWeaponState_FUN_004cf180
 // Address: 004cf180

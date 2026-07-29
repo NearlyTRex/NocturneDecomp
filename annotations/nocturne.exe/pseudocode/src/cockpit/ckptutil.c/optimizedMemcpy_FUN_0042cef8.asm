@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 cockpit_ckptutil_c_optimizedMemcpy_FUN_0042cef8(undefined4 *param_1,undefined4 *param_2,uint param_3)
+; void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_0042cef8(void *dest_buffer,void *src_buffer,int byte_count)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest_buffer
+; void *           Stack[0x8]:4   src_buffer
+; int              Stack[0xc]:4   byte_count
 ;
 ; *****************************************************************************
 

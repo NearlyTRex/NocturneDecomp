@@ -18,7 +18,7 @@
 ;   core_gore.cpp_FUN_004b0a50 at 004b0a57
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_005a1034 = 004ef040
+;   CParticle_vtable g_CParticleVTable
 ;
 ; *****************************************************************************
 
@@ -26,6 +26,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004ef030
         ;   Label: core_particle.cpp_CParticle_dtor_FUN_004ef030
-    MOV dword ptr [EAX + 0x34],0x5a1034 ; 004ef034 | PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_005a1034
+    MOV dword ptr [EAX + 0x34],0x5a1034 ; 004ef034 | g_CParticleVTable
     RET                                 ; 004ef03b
 

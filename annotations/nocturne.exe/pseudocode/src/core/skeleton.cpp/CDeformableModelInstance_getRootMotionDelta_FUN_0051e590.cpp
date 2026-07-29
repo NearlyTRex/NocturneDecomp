@@ -25,7 +25,6 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   CSkeleton *pCVar12;
   int iVar13;
   double dVar14;
-  uint uVar15;
   float local_38;
   float local_34;
   float local_30;
@@ -38,10 +37,9 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
     return output_buffer;
   }
   pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
-  dVar14 = (double)floor((double)start_frame);
-  uVar15 = 0x51e5fc;
+  dVar14 = floor((double)start_frame);
   round(dVar14);
-  dVar14 = (double)ceil((double)start_frame,uVar15);
+  dVar14 = ceil((double)start_frame);
   dVar14 = round(dVar14);
   iVar1 = (int)ROUND(dVar14);
   local_38 = 0.0;

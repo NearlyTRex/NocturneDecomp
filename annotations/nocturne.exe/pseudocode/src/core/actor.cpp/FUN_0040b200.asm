@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_actor_cpp_FUN_0040b200(int param_1)
+; int __cdecl core_actor_cpp_FUN_0040b200(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ;

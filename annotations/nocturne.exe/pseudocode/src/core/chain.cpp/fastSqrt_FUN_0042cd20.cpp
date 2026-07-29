@@ -1,17 +1,13 @@
 // Name: core_chain.cpp_fastSqrt_FUN_0042cd20
 // Address: 0042cd20
 // Address Range: [[0042cd20, 0042cd2e]]
-// Convention: unknown
-// Signature: int core_chain_cpp_fastSqrt_FUN_0042cd20(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-int core_chain_cpp_fastSqrt_FUN_0042cd20(void)
+float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value)
 
 {
-  int in_stack_00000004;
-  
-  return (in_stack_00000004 >> 1) + (int)CVector3f_01c70708.y;
+  return (float)(((int)value >> 1) + (int)CVector3f_01c70708.y);
 }

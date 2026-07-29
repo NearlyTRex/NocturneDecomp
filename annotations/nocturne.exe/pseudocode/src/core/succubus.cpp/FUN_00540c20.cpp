@@ -20,18 +20,19 @@ void core_succubus_cpp_FUN_00540c20(CEnemy *param_1)
   CMorph *this_ptr_01;
   CEnemy *pCVar2;
   CSkeleton *this_ptr_02;
-  char *pcVar3;
+  char *model_name;
   
   pCVar1 = &(param_1->base).model;
   if (*(int *)(0x01C775EC + 0x18) == 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"succubusx.dfm");
-    pcVar3 = "hotdemonx.dfm";
+    model_name = "hotdemonx.dfm";
   }
   else {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"succubus.dfm");
-    pcVar3 = "hotdemon.dfm";
+    model_name = "hotdemon.dfm";
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(param_1 + 1,pcVar3);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            ((CDeformableModelInstance *)(param_1 + 1),model_name);
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   pCVar1 = &(param_1->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(pCVar1);

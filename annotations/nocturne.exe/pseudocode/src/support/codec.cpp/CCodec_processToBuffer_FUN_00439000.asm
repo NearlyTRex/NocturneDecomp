@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,undefined4 param_2,undefined4 param_3,char *param_4,int *param_5,int param_6)
+; int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_00439000(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x8]:4   ifstream
+; int *            Stack[0xc]:4   byte_count
+; char *           Stack[0x10]:4   output_buffer
+; int *            Stack[0x14]:4   output_size
+; int              Stack[0x18]:4   enable_finalize
 ; Local Variables:
 ; undefined        Stack[-0x90]:1  local_90
 ; undefined        Stack[-0x48]:1  local_48

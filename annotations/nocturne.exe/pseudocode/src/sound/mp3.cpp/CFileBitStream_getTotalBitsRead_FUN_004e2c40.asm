@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40(void)
+; int __cdecl sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40(CFileBitStream *this_ptr)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

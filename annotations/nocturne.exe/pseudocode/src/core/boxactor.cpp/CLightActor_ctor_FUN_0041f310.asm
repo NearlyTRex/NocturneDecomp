@@ -10,7 +10,7 @@
 ;   core_boxactor.cpp_FUN_0041f2e0 at 0041f2f3
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0_0059abb4 = 0041f3a0
+;   CDemonActor_vtable g_CLightActorVTable
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300
@@ -33,7 +33,7 @@ section .text
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_0044e110 ; 0041f32d
         ;   XREF to: 0044e110 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     SUB EAX,0x668                       ; 0041f332
-    MOV dword ptr [EAX + 0x14c],0x59abb4 ; 0041f337 | PTR_core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0_0059abb4
+    MOV dword ptr [EAX + 0x14c],0x59abb4 ; 0041f337 | g_CLightActorVTable
     LEA EDX,[EAX + 0x3614]              ; 0041f341
     MOV dword ptr [EAX + 0x231c],0x1    ; 0041f347
     MOV dword ptr [EDX + 0x8],0x0       ; 0041f351

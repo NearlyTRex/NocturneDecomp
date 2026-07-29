@@ -1,25 +1,25 @@
 // Name: engine_pod.cpp_crc32UpdateBuffer_FUN_004f7890
 // Address: 004f7890
 // Address Range: [[004f7890, 004f78c3]]
-// Convention: unknown
-// Signature: uint engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *param_1,uint param_2,uint param_3)
+// Convention: __cdecl
+// Signature: uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *data_buffer,uint byte_count,uint initial_crc)
 
 #include "nocturne.h"
 
-uint engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *param_1,uint param_2,uint param_3)
+uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *data_buffer,uint byte_count,uint initial_crc)
 
 {
   uchar data_byte;
   uint uVar1;
   
   uVar1 = 0;
-  if (param_2 != 0) {
+  if (byte_count != 0) {
     do {
-      data_byte = *param_1;
-      param_1 = param_1 + 1;
+      data_byte = *data_buffer;
+      data_buffer = data_buffer + 1;
       uVar1 = uVar1 + 1;
-      param_3 = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(param_3,data_byte);
-    } while (uVar1 < param_2);
+      initial_crc = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(initial_crc,data_byte);
+    } while (uVar1 < byte_count);
   }
-  return param_3;
+  return initial_crc;
 }

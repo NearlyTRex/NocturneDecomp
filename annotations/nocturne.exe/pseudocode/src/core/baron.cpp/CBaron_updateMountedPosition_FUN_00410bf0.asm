@@ -65,7 +65,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1fb14]   ; 00410c2f
     PUSH EDX                            ; 00410c35
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 00410c36
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,dword ptr [EBX + 0x1fb14]   ; 00410c3b
     FLD float ptr [EDX + 0x20]          ; 00410c41
     FADD float ptr [EAX]                ; 00410c44

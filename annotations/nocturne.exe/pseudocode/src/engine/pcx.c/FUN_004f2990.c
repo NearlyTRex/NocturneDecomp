@@ -1,12 +1,12 @@
 // Name: engine_pcx.c_FUN_004f2990
 // Address: 004f2990
 // Address Range: [[004f2990, 004f2bcc]]
-// Convention: unknown
-// Signature: void engine_pcx_c_FUN_004f2990(char *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
 
 #include "nocturne.h"
 
-void engine_pcx_c_FUN_004f2990(char *param_1)
+void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
 
 {
   byte bVar1;
@@ -28,11 +28,11 @@ void engine_pcx_c_FUN_004f2990(char *param_1)
   short local_40;
   
   if (DAT_005b7624 == 0x10) {
-    engine_pcx_c_saveScreenRaw16_FUN_004f2620(param_1);
+    engine_pcx_c_saveScreenRaw16_FUN_004f2620(filename);
     return;
   }
   if (DAT_005b7624 == 0x20) {
-    engine_pcx_c_saveScreenRaw32_FUN_004f27e0(param_1);
+    engine_pcx_c_saveScreenRaw32_FUN_004f27e0(filename);
     return;
   }
   memset(&local_88,0,0x80);
@@ -53,7 +53,7 @@ void engine_pcx_c_FUN_004f2990(char *param_1)
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  file = _fopen(param_1,"wb");
+  file = _fopen(filename,"wb");
   if (file == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\pcx.c";
     INT_01cc4804 = 0xee;

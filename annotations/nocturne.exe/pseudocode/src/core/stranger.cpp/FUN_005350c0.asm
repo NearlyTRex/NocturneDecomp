@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCharacter * core_stranger_cpp_FUN_005350c0(undefined4 param_1)
+; CStranger * __cdecl core_stranger_cpp_FUN_005350c0(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_00535090 at 005350a3
@@ -44,14 +46,14 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 005350c4
     PUSH EBX                            ; 005350c7
     CALL core_hero.cpp_FUN_004b46d0     ; 005350c8
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 005350cd
     ADD EAX,0x1fb40                     ; 005350d0
     PUSH EAX                            ; 005350d5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 005350d6
         ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xfffe04c0]          ; 005350db
-    MOV dword ptr [EBX + 0x14c],0x5a2744 ; 005350e1 | PTR_core_stranger.cpp_FUN_00535450_005a2744
+    MOV dword ptr [EBX + 0x14c],0x5a2744 ; 005350e1 | g_CStrangerVTable
     MOV dword ptr [EBX + 0x1fa3c],0x0   ; 005350eb
     MOV dword ptr [EBX + 0x1fa40],0x0   ; 005350f5
     MOV dword ptr [EBX + 0x1fa44],0x0   ; 005350ff
@@ -93,7 +95,7 @@ section .text
     FSTP float ptr [EBX + 0x1fa7c]      ; 0053521e
     FSTP float ptr [EBX + 0x1fa74]      ; 00535224
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0053522a
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2a84],0x0    ; 0053522f
     MOV dword ptr [EBX + 0x1fa94],0x0   ; 00535239
     MOV dword ptr [EBX + 0x1fab8],0x0   ; 00535243

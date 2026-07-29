@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_FUN_004eece0(int param_1,int param_2)
+; void __cdecl core_npc_cpp_FUN_004eece0(CNPC *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CNPC *           Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0 at 004b8315
@@ -28,7 +31,7 @@ section .text
         ;   Label: LAB_004eecff
     PUSH EAX                            ; 004eed00
     CALL core_charactr.cpp_FUN_00426510 ; 004eed01
-        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00426510()
+        ;   XREF to: 00426510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00426510(CCharacter * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004eed06
     RET                                 ; 004eed09
         ;   Label: LAB_004eed09

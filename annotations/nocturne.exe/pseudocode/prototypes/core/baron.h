@@ -21,7 +21,7 @@ CBaron * __cdecl CBaron::ctor(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_setup_FUN_004102c0
 // Address: 004102c0
-void CBaron::setup(int param_1);
+void CBaron::setup(CHero *param_1);
 
 // Original: core_baron.cpp_FUN_00410490
 // Address: 00410490
@@ -41,15 +41,15 @@ void __cdecl CBaron::updateMountedPosition(CBaron *this_ptr,float delta_time);
 
 // Original: core_baron.cpp_FUN_00410cc0
 // Address: 00410cc0
-void FUN_00410cc0(CDemonActor *param_1);
+void __cdecl FUN_00410cc0(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_advanceMotion_FUN_00411010
 // Address: 00411010
-void CBaron::advanceMotion(int param_1,float param_2);
+void CBaron::advanceMotion(CBaron *param_1,float param_2);
 
 // Original: core_baron.cpp_CBaron_archive_FUN_00411080
 // Address: 00411080
-void CBaron::archive(int param_1);
+void CBaron::archive(CHero *param_1);
 
 // Original: core_baron.cpp_FUN_004110e0
 // Address: 004110e0
@@ -61,7 +61,7 @@ int FUN_004110f0(CDemonActor *param_1);
 
 // Original: core_baron.cpp_CBaron_processDamage_FUN_004112f0
 // Address: 004112f0
-void CBaron::processDamage(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl CBaron::processDamage(CBaron *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_baron.cpp_FUN_00411310
 // Address: 00411310
@@ -77,15 +77,15 @@ CDemonActorType * FUN_00411340(void);
 
 // Original: core_baron.cpp_CBaronWeapon_ctor_FUN_00411350
 // Address: 00411350
-void __cdecl CBaronWeapon::ctor(CWeapon *param_1);
+CBaronWeapon * __cdecl CBaronWeapon::ctor(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setup_FUN_004113b0
 // Address: 004113b0
-void CBaronWeapon::setup(CWeapon *param_1);
+void __cdecl CBaronWeapon::setup(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_process_FUN_004113d0
 // Address: 004113d0
-void CBaronWeapon::process(CWeapon *param_1,float param_2);
+void __cdecl CBaronWeapon::process(CBaronWeapon *this_ptr,float delta_time);
 
 // Original: core_baron.cpp_FUN_004113f0
 // Address: 004113f0
@@ -93,11 +93,11 @@ void FUN_004113f0(CWeapon *param_1);
 
 // Original: core_baron.cpp_CBaronWeapon_fire_FUN_00411400
 // Address: 00411400
-undefined4 CBaronWeapon::fire(int param_1);
+undefined4 CBaronWeapon::fire(CBaronWeapon *param_1);
 
 // Original: core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00411440
 // Address: 00411440
-longlong CBaronWeapon::isReadyToFire(int param_1);
+longlong CBaronWeapon::isReadyToFire(CBaronWeapon *param_1);
 
 // Original: core_baron.cpp_FUN_00411470
 // Address: 00411470
@@ -105,11 +105,11 @@ void FUN_00411470(void);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0
 // Address: 004114a0
-void CBaronWeapon::setWeaponState(CWeapon *param_1,int param_2);
+void __cdecl CBaronWeapon::setWeaponState(CBaronWeapon *this_ptr,int weapon_state);
 
 // Original: core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530
 // Address: 00411530
-void __cdecl CBaronWeapon::findOrCreateBaron(int param_1);
+void __cdecl CBaronWeapon::findOrCreateBaron(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_FUN_00411600
 // Address: 00411600
@@ -117,8 +117,8 @@ undefined4 FUN_00411600(void);
 
 // Original: core_baron.cpp_CBaronWeapon_dtor_FUN_00411610
 // Address: 00411610
-CWeapon * CBaronWeapon::dtor(CWeapon *param_1,byte param_2);
+CBaronWeapon * __cdecl CBaronWeapon::dtor(CBaronWeapon *this_ptr,uint flags);
 
 // Original: core_baron.cpp_CBaron_dtor_FUN_00411660
 // Address: 00411660
-CHero * CBaron::dtor(CHero *param_1,byte param_2);
+CBaron * __cdecl CBaron::dtor(CBaron *this_ptr,uint flags);

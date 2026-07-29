@@ -43,7 +43,7 @@ section .text
     ADD EAX,0x1c67510                   ; 0048c445
     PUSH EAX                            ; 0048c44a
     CALL core_fire.cpp_CLightningBolt_activate_FUN_00488b10 ; 0048c44b
-        ;   XREF to: 00488b10 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLightningBolt_activate_FUN_00488b10()
+        ;   XREF to: 00488b10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activate_FUN_00488b10(CLightningBolt * this_ptr, CVector3f * start_position, float start_width, float end_width)
     MOV ECX,dword ptr [0x01c6750c]      ; 0048c450 | DAT_01c6750c
     INC ECX                             ; 0048c456
     ADD ESP,0x10                        ; 0048c457

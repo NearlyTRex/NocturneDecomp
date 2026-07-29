@@ -57,7 +57,7 @@ void core_dtrace_cpp_FUN_004676c0(CDemonRaytrace *param_1,_FILE *param_2)
         iVar1 < (param_1->grid_coord).x * (param_1->grid_coord).y * (param_1->grid_coord).z;
         iVar1 = iVar1 + 1) {
       core_dcube_cpp_CDemonCube_load_FUN_0044aed0
-                ((int)&param_1->cube_data->voxel_buffer1 + iVar2,param_2);
+                ((CDemonCube *)((int)&param_1->cube_data->voxel_buffer1 + iVar2),param_2);
       iVar2 = iVar2 + 0x34;
     }
   }

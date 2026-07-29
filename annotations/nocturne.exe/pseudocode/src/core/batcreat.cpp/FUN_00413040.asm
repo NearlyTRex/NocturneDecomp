@@ -82,7 +82,7 @@ section .text
     PUSH EAX                            ; 004130ba
     PUSH ESI                            ; 004130bb
     CALL core_charactr.cpp_FUN_00427730 ; 004130bc
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00427730()
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004130c1
     PUSH EDI                            ; 004130c4
         ;   Label: LAB_004130c4

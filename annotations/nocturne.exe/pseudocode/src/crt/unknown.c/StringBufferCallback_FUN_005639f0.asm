@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_StringBufferCallback_FUN_005639f0(int *param_1,undefined1 param_2)
+; void __cdecl crt_unknown_c_StringBufferCallback_FUN_005639f0(StringOutputContext *context,char character)
 ;
+; Parameters:
+; StringOutputContext * Stack[0x4]:4   context
+; char             Stack[0x8]:1   character
 ;
 ; XREF[1]:
 ;   crt_stdio.c_vsprintf_FUN_00563a08 at 00563a09

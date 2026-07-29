@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 004291a1
     PUSH ECX                            ; 004291a2
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004291a3
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 004291a8
     LEA EAX,[ESP + 0x18]                ; 004291aa
     ADD ESP,0xc                         ; 004291ae

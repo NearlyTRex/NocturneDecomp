@@ -102,7 +102,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 00475511 | DAT_01bcd070
     PUSH EAX                            ; 00475516
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00475517
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,dword ptr [EDI + 0x7c]      ; 0047551c
     ADD ESP,0x8                         ; 0047551f
     CMP EAX,EDX                         ; 00475522

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(undefined4 param_1,float *param_2,float *param_3)
+; float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_pos
+; CVector3f *      Stack[0xc]:4   direction
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined4       Stack[-0x80]:4  local_80
@@ -143,7 +147,7 @@ section .text
     PUSH ESI                            ; 0050fee8
     FSTP float ptr [ESP + 0x74]         ; 0050fee9
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 ; 0050feed
-        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00()
+        ;   XREF to: 0050fb00 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x7c],EAX      ; 0050fef2
     FLD float ptr [ESP + 0x7c]          ; 0050fef6
     ADD ESP,0xc                         ; 0050fefa

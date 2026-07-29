@@ -74,7 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCh
     pCVar4 = this_ptr;
     do {
       if (part_index == pCVar4->carry_hands[0].secondary_bone_index) {
-        (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+        (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,iVar3,(CVector3f *)0x0);
       }
       iVar3 = iVar3 + 1;
       pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;

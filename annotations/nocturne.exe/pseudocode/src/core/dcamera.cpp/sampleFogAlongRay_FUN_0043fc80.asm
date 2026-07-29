@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(int param_1,int *param_2,int *param_3,int param_4)
+; uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0043fc80(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog_ptr
+; CVector3i *      Stack[0x8]:4   start_pos
+; CVector3i *      Stack[0xc]:4   end_pos
+; int              Stack[0x10]:4   ray_length
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

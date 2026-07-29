@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_strstream_cpp_strstreambuf_setbuf_FUN_005700c0(int param_1,undefined4 param_2,int param_3)
+; strstreambuf * __watcallStack crt_strstream_cpp_strstreambuf_setbuf_FUN_005700c0(strstreambuf *this_ptr,char *ignored_buffer,int allocation_size)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   ignored_buffer
+; int              Stack[0xc]:4   allocation_size
 ;
 ; *****************************************************************************
 

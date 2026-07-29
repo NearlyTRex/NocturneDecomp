@@ -37,4 +37,4 @@ int FUN_004efa60(CCharacter *param_1);
 
 // Original: core_passngr.cpp_CPassenger_archive_FUN_004efb30
 // Address: 004efb30
-void CPassenger::archive(int param_1);
+void CPassenger::archive(CNPC *param_1);

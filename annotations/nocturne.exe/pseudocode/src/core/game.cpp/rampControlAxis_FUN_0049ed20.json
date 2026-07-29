@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 290,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 25,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 92
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -144,9 +143,9 @@
         "0049edb4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_rampControlAxis_FUN_0049ed20",
-    "signature": "void core_game_cpp_rampControlAxis_FUN_0049ed20(void)"
+    "signature": "void __cdecl core_game_cpp_rampControlAxis_FUN_0049ed20(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)"
   },
   "function_calls": [],
   "globals": [
@@ -173,9 +172,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -216,10 +215,10 @@
     "pcode_op_count": 386
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 28,
     "local_size": 8,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -228,339 +227,60 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "negative_key",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "positive_key",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "axis_value",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "ramp_time",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_value",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "rampControlAxis_FUN_0049ed20.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 8,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 23,
-          "line": 22,
-          "message": "Uninitialized variable: in_stack_00000004",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 23,
-          "message": "Uninitialized variable: in_stack_00000008",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 60,
-          "line": 23,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 80,
-          "line": 23,
-          "message": "Uninitialized variable: in_stack_00000014",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 75,
-          "line": 24,
-          "message": "Uninitialized variable: in_stack_00000010",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 19,
-          "line": 32,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 72,
-          "line": 34,
-          "message": "Uninitialized variable: in_stack_00000010",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 14,
-          "line": 31,
-          "message": "Uninitialized variable: in_stack_00000014",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_01c02598",
+      "severity": "mild",
+      "text": "if ((&DAT_01c02598)[negative_key] == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "float *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "float in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "float in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((&DAT_01c02598)[in_stack_00000004] == '\\0') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "if ((&DAT_01c02598)[in_stack_00000004] == '\\0') {",
+      "text": "if ((((&DAT_01c02598)[positive_key] != '\\0') && (*axis_value < max_value)) &&",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c02598",
-      "severity": "mild",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "&& (fVar1 = (*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "&& (fVar1 = (*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "fVar1 = -in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((fVar1 < *in_stack_0000000c) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(fVar2 = *in_stack_0000000c -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "(*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = fVar2, fVar2 < fVar1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = fVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000004",
-      "line": 22,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((&DAT_01c02598)[in_stack_00000004] == '\\0') {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000008",
-      "line": 23,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 23,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000014",
-      "line": 23,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((&DAT_01c02598)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000010",
-      "line": 24,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "&& (fVar1 = (*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010 +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if ((fVar1 < *in_stack_0000000c) &&",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000010",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010,",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000014",
-      "line": 31,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "fVar1 = -in_stack_00000014;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

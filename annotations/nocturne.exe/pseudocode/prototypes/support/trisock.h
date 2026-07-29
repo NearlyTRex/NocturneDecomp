@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: support_trisock.cpp_copyIPAddress_FUN_00548ae0
 // Address: 00548ae0
-undefined4 * copyIPAddress(undefined4 *param_1,undefined4 *param_2);
+uint * __cdecl copyIPAddress(uint *dest_ip,uint *src_ip);
 
 // Original: support_trisock.cpp_parseIPAddress_FUN_00548af0
 // Address: 00548af0
@@ -33,7 +33,7 @@ int __cdecl buildIPAddress(uint8_t *dest_ip,int octet1,int octet2,int octet3,int
 
 // Original: support_trisock.cpp_extractIPOctets_FUN_00548cd0
 // Address: 00548cd0
-void extractIPOctets(void);
+void __cdecl extractIPOctets(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr);
 
 // Original: support_trisock.cpp_getIPAddress_FUN_00548d20
 // Address: 00548d20
@@ -45,7 +45,7 @@ void __cdecl createNetworkAddr(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_00548d50
 // Address: 00548d50
-undefined4 * convertSockAddr(undefined4 *param_1,short *param_2);
+SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
 // Address: 00548dc0
@@ -53,15 +53,15 @@ void buildSockaddrIn(SNetworkAddr *param_1);
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_00548e20
 // Address: 00548e20
-void formatSocketAddress(void);
+void __cdecl formatSocketAddress(char *output_buffer,SNetworkAddr *network_addr);
 
 // Original: support_trisock.cpp_shouldNeverBeCalled1_FUN_00548e70
 // Address: 00548e70
-undefined4 shouldNeverBeCalled1(void);
+int __cdecl shouldNeverBeCalled1(int unknown1,int unknown2);
 
 // Original: support_trisock.cpp_shouldNeverBeCalled2_FUN_00548ea0
 // Address: 00548ea0
-undefined4 shouldNeverBeCalled2(void);
+int __cdecl shouldNeverBeCalled2(int unknown1,int unknown2);
 
 // Original: support_trisock.cpp_invalidateSocket_FUN_00548ed0
 // Address: 00548ed0
@@ -73,7 +73,7 @@ _SOCKET * __cdecl bindSocketWrapper(_SOCKET *socket_handle,int flags);
 
 // Original: support_trisock.cpp_createSocket_FUN_00548f00
 // Address: 00548f00
-bool createSocket(void);
+int __cdecl createSocket(_SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_createUDPSocket_FUN_00548f30
 // Address: 00548f30
@@ -89,7 +89,7 @@ int __cdecl bindSocket(_SOCKET *socket_handle,uint16_t port);
 
 // Original: support_trisock.cpp_connectSocket_FUN_00548fc0
 // Address: 00548fc0
-bool connectSocket(void);
+int __cdecl connectSocket(_SOCKET *socket_handle,SNetworkAddr *dest_addr);
 
 // Original: support_trisock.cpp_receiveSocketData_FUN_00549010
 // Address: 00549010
@@ -105,11 +105,11 @@ int __cdecl bindAndInvalidateSocket(_SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_listenSocket_FUN_00549150
 // Address: 00549150
-bool listenSocket(void);
+int __cdecl listenSocket(_SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_acceptConnection_FUN_00549170
 // Address: 00549170
-undefined4 acceptConnection(void);
+int __cdecl acceptConnection(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket);
 
 // Original: support_trisock.cpp_getSocketName_FUN_005491e0
 // Address: 005491e0

@@ -11,7 +11,7 @@
 ;   core_podmain.cpp_staticInit_FUN_004f9280 at 004f9285
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484 = 004f8840
+;   CPod_vtable g_CPodVTable
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   Label: engine_pod.cpp_CPod_ctor_FUN_004f8810
     MOV dword ptr [ECX],0x0             ; 004f8814
     MOV EAX,ECX                         ; 004f881a
-    MOV dword ptr [ECX + 0x194],0x5a1484 ; 004f881c | PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484
+    MOV dword ptr [ECX + 0x194],0x5a1484 ; 004f881c | g_CPodVTable
     LEA EDX,[ECX + 0x190]               ; 004f8826
     ADD EAX,0x4                         ; 004f882c
         ;   Label: LAB_004f882c

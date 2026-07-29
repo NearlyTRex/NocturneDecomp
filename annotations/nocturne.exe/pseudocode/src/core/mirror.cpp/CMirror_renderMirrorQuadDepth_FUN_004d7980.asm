@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [ESP + 0x44],ECX      ; 004d7b06
     MOV dword ptr [ESP + 0x2c],EBP      ; 004d7b0a
     CALL engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90 ; 004d7b0e
-        ;   XREF to: 0045ef90 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90()
+        ;   XREF to: 0045ef90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     MOV ESI,dword ptr [0x005ae704]      ; 004d7b13 | DAT_005ae704
     ADD ESP,0x8                         ; 004d7b19
     ADD ESP,0x78                        ; 004d7b1c

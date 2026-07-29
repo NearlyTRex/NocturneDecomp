@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_cloth_cpp_SClothVertex_dtor_FUN_004389c0(int param_1)
+; SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_004389c0(SClothVertex *this_ptr,uint flags)
 ;
+; Parameters:
+; SClothVertex *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0

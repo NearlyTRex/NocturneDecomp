@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+; float __cdecl core_path_cpp_CPathMap_getDirection_FUN_004efeb0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   current_direction
+; int              Stack[0xc]:4   next_direction
+; int              Stack[0x10]:4   prev_direction
+; CVector3f *      Stack[0x14]:4   dest_position
 ; Local Variables:
 ; undefined4       Stack[-0xf8]:4  local_f8
 ; undefined4       Stack[-0xf4]:4  local_f4
@@ -113,7 +119,7 @@ section .text
     PUSH EAX                            ; 004efeef
     FSTP float ptr [ESP + 0x70]         ; 004efef0
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004efef4
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX]                 ; 004efef9
     FDIV float ptr [0x0058cd47]         ; 004efefb | FLOAT_0058cd47
     ADD ESP,0x8                         ; 004eff01
@@ -389,7 +395,7 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 004f0289
     FSTP float ptr [ESP + 0x28]         ; 004f028d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 004f0291
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004f0296
     FLD float ptr [EAX + 0x4]           ; 004f0299
     FADD float ptr [ESP + 0x58]         ; 004f029c

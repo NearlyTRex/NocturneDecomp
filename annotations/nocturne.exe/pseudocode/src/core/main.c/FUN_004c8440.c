@@ -38,7 +38,7 @@ LAB_004c84a6:
         core_sound_cpp_FUN_00527e10(0x02DC9450);
         engine_2d_c_FUN_004012a0();
         wincore_winrun_cpp_endPeriod_FUN_00558a20();
-        wincore_winrun_cpp_FUN_00559500(0x1cc3700);
+        wincore_winrun_cpp_FUN_00559500((char *)0x1cc3700);
         return;
       }
       do {

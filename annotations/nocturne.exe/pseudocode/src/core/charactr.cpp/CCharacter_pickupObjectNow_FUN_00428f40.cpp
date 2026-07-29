@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacte
     core_main_c_FUN_004c8440("CCharacter::pickupObjectNow - invalid hand index");
   }
   if (object != (CDemonActor *)0x0) {
-    (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,hand_index,(CVector3f *)0x0);
     pSVar1 = this_ptr->carry_hands + hand_index;
     if ((pSVar1->secondary_bone_index < 0) ||
        ((this_ptr->model).part_data.visibility_flags[pSVar1->secondary_bone_index] != 0)) {

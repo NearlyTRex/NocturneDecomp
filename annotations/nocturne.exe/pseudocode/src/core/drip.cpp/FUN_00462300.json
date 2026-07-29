@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 775,
+    "complexity_score": 771,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 116,
     "suspect_count": 63,
     "suspect_types": [
       "pointer_cast",
@@ -136,7 +136,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 417
+    "total_lines": 413
   },
   "cross_references": [],
   "function": {
@@ -585,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_60.x = CStack_60.x + (param_1->location).position.x;",
@@ -593,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_60.y = CStack_60.y + (param_1->location).position.y;",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "CStack_60.z = fStack_14 + (param_1->location).position.z;",
@@ -609,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01C08D04,&(param_1->location).position,aCStack_3c,model_ptr);",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.y = param_1[2].orient_matrix.m[2].x;",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.y = param_1[2].orient_matrix.m[2].x;",
@@ -633,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.x =",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_14 * param_1[2].orient_matrix.m[0].y + param_1[2].orient_matrix.m[1].z;",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_14 * param_1[2].orient_matrix.m[0].y + param_1[2].orient_matrix.m[1].z;",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.z =",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_14 * param_1[2].orient_matrix.m[0].y + param_1[2].orient_matrix.m[2].y;",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_14 * param_1[2].orient_matrix.m[0].y + param_1[2].orient_matrix.m[2].y;",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].health = 0;",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].runtime_state = param_1[2].health;",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].runtime_state = param_1[2].health;",
@@ -705,7 +705,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].orient_matrix.m[2].z = (float)param_1[2].runtime_state;",
@@ -713,7 +713,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].orient_matrix.m[2].z = (float)param_1[2].runtime_state;",
@@ -721,7 +721,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1[2].orient.vec.z,param_1[2].orient_matrix.m[0].x);",
@@ -729,7 +729,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1[2].orient.vec.z,param_1[2].orient_matrix.m[0].x);",
@@ -737,7 +737,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].orient.vec.y = fStack_14;",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "pCStack_20 = &param_1->location;",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "SStack_b4.damage_amount = (float)param_1[2].validation_magic;",
@@ -761,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "SStack_b4.attacker = param_1;",
@@ -769,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
       "text": "SStack_b4.wielder = param_1;",
@@ -777,7 +777,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
+      "line": 109,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0xf8))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",
@@ -785,7 +785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((param_1[2].orient.vec.x != 0.0) &&",
@@ -793,7 +793,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = param_1[2].orient.vec.y - param_2, param_1[2].orient.vec.y = param_2,",
@@ -801,7 +801,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2 = param_1[2].orient.vec.y - param_2, param_1[2].orient.vec.y = param_2,",
@@ -809,7 +809,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = param_1[2].orient.vec.y - param_2, param_1[2].orient.vec.y = param_2,",
@@ -817,7 +817,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2 = param_1[2].orient.vec.y - param_2, param_1[2].orient.vec.y = param_2,",
@@ -825,7 +825,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = param_1[2].orient.vec.y - param_2, param_1[2].orient.vec.y = param_2,",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 114,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 < 0.0)) {",
@@ -841,7 +841,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2].orient.vec.y = 0.0;",

@@ -1,13 +1,13 @@
 // Name: core_dynamite.cpp_FUN_0046eda0
 // Address: 0046eda0
 // Address Range: [[0046eda0, 0046edb6]]
-// Convention: unknown
-// Signature: bool core_dynamite_cpp_FUN_0046eda0(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_dynamite_cpp_FUN_0046eda0(CDynamite *this_ptr)
 
 #include "nocturne.h"
 
-bool core_dynamite_cpp_FUN_0046eda0(int param_1)
+int __cdecl core_dynamite_cpp_FUN_0046eda0(CDynamite *this_ptr)
 
 {
-  return (*(uint *)(param_1 + 0x570) & 0x7fffffff) == 0;
+  return (uint)(ABS(this_ptr->fuse_timer) == 0.0);
 }

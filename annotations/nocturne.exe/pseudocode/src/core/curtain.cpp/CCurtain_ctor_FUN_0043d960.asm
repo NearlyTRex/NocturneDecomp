@@ -18,7 +18,7 @@
 ;   undefined4 s_one_0057b4d2+1
 ;   undefined4 s_ne_0057b4d2+2
 ;   undefined4 s_e_0057b4d2+3
-;   undefined1* PTR_core_curtain.cpp_FUN_0043dad0_0059bc94 = 0043dad0
+;   CDemonActor_vtable g_CCurtainVTable
 ;   WatcomTypeInfo g_SCurtainVertexTypeInfo_0059bd90
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043d962
     PUSH EDX                            ; 0043d966
     CALL core_actor.cpp_FUN_00409d30    ; 0043d967
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043d96c
     PUSH 0x59bd90                       ; 0043d96f | g_SCurtainVertexTypeInfo_0059bd90
     PUSH 0x3e8                          ; 0043d974
@@ -44,7 +44,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0043d97f
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffe00]          ; 0043d984
-    MOV dword ptr [EDX + 0x14c],0x59bc94 ; 0043d98a | PTR_core_curtain.cpp_FUN_0043dad0_0059bc94
+    MOV dword ptr [EDX + 0x14c],0x59bc94 ; 0043d98a | g_CCurtainVTable
     MOV ESI,0x57b4c7                    ; 0043d994 | = "SGLASS.RAW"
     MOV dword ptr [EDX + 0x150],0x40800000 ; 0043d999
     ADD ESP,0xc                         ; 0043d9a3

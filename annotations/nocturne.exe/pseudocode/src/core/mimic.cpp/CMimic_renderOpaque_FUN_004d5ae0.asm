@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_mimic_cpp_CMimic_renderOpaque_FUN_004d5ae0(CMimic *param_1)
+; int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_004d5ae0(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860

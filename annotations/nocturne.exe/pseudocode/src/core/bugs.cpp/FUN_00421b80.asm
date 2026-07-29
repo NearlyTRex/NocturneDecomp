@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_FUN_00421b80(int param_1)
+; void __cdecl core_bugs_cpp_FUN_00421b80(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x84]:8  local_84
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -106,7 +108,7 @@ section .text
     SUB ESP,0x8                         ; 00421c21
     FSTP double ptr [ESP]               ; 00421c24
     CALL crt_math.c_floor_FUN_005648c0  ; 00421c27
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00421c2c
     MOV dword ptr [ESP + 0x48],EDX      ; 00421c30
     FLD double ptr [ESP + 0x44]         ; 00421c34
@@ -120,7 +122,7 @@ section .text
     SUB ESP,0x8                         ; 00421c4e
     FSTP double ptr [ESP]               ; 00421c51
     CALL crt_math.c_floor_FUN_005648c0  ; 00421c54
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00421c59
     MOV dword ptr [ESP + 0x48],EDX      ; 00421c5d
     FLD double ptr [ESP + 0x44]         ; 00421c61
@@ -304,7 +306,7 @@ section .text
     PUSH EAX                            ; 00421ec1
     PUSH 0x1fba938                      ; 00421ec2 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580 ; 00421ec7
-        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580()
+        ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0x88],EAX      ; 00421ecc
     FLD float ptr [ESP + 0x88]          ; 00421ed3
     ADD ESP,0x10                        ; 00421eda

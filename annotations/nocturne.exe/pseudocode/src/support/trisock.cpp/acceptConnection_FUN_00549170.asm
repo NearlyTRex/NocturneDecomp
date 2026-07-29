@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_trisock_cpp_acceptConnection_FUN_00549170(void)
+; int __cdecl support_trisock_cpp_acceptConnection_FUN_00549170(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   listen_socket
+; SNetworkAddr *   Stack[0x8]:4   client_addr
+; _SOCKET *        Stack[0xc]:4   new_socket
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ; undefined4       Stack[-0x8]:4  local_8
@@ -54,7 +58,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 005491bd
     PUSH EAX                            ; 005491c1
     CALL support_trisock.cpp_convertSockAddr_FUN_00548d50 ; 005491c2
-        ;   XREF to: 00548d50 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_convertSockAddr_FUN_00548d50()
+        ;   XREF to: 00548d50 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_00548d50(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     MOV ESI,EAX                         ; 005491c7
     ADD ESP,0x8                         ; 005491c9
     MOVSD ES:EDI,ESI                    ; 005491cc

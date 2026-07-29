@@ -2,21 +2,22 @@
 // Address: 004fbcc0
 // Address Range: [[004fbcc0, 004fbe7c]]
 // Convention: unknown
-// Signature: void core_scat_cpp_CScat_setup_FUN_004fbcc0(int param_1)
+// Signature: void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_scat_cpp_CScat_setup_FUN_004fbcc0(int param_1)
+void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1)
 
 {
+  CHero *pCVar1;
   CSkeleton *this_ptr;
-  int iVar1;
+  int iVar2;
   
   core_hero_cpp_FUN_004b48d0(param_1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-                       ((CDeformableModelInstance *)(param_1 + 0x150));
+                       (&(param_1->base).model);
   _DAT_01e53388 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 head",1);
   _DAT_01e5338c =
@@ -53,8 +54,12 @@ void core_scat_cpp_CScat_setup_FUN_004fbcc0(int param_1)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine",1);
   _DAT_01e533c8 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine1",1);
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine1",1);
-  *(uint *)(param_1 + 0x1fa3c) = 0;
-  *(int *)(param_1 + 0x25bc) = iVar1;
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine1",1);
+  pCVar1 = param_1 + 1;
+  (pCVar1->base).base.actor_name[0] = '\0';
+  (pCVar1->base).base.actor_name[1] = '\0';
+  (pCVar1->base).base.actor_name[2] = '\0';
+  (pCVar1->base).base.actor_name[3] = '\0';
+  (param_1->base).gesture_branch_root = iVar2;
   return;
 }

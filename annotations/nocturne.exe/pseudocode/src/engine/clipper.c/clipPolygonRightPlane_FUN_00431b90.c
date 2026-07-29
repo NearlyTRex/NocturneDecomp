@@ -1,38 +1,41 @@
 // Name: engine_clipper.c_clipPolygonRightPlane_FUN_00431b90
 // Address: 00431b90
 // Address Range: [[00431b90, 00431cbb]]
-// Convention: unknown
-// Signature: int engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(undefined4 *param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 #include "nocturne.h"
 
-int engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(uint *param_1,int param_2,int param_3)
+int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 {
-  int *piVar1;
-  byte bVar2;
+  SRenderVertex *v2;
+  byte bVar1;
+  int iVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  SRenderVertex *v1;
   int local_18;
-  uint *local_14;
+  SRenderVertex **local_14;
   
-  iVar4 = 0;
+  iVar3 = 0;
   local_18 = 0;
-  if (0 < param_3) {
-    local_14 = param_1;
-    piVar5 = (int *)param_1[param_3 + -1];
+  if (0 < vertex_count) {
+    local_14 = input_vertices;
+    iVar4 = iVar3;
+    v1 = input_vertices[vertex_count + -1];
     do {
-      iVar3 = DAT_00767b38;
-      piVar1 = (int *)*local_14;
-      bVar2 = *piVar5 <= -piVar5[2];
-      if (*piVar1 <= -piVar1[2]) {
-        bVar2 = bVar2 | 2;
+      iVar2 = DAT_00767b38;
+      v2 = *local_14;
+      bVar1 = (v1->projected_vertex).transformed_x <= -(v1->projected_vertex).transformed_z;
+      if ((v2->projected_vertex).transformed_x <= -(v2->projected_vertex).transformed_z) {
+        bVar1 = bVar1 | 2;
       }
-      switch(bVar2) {
+      iVar3 = iVar4;
+      switch(bVar1) {
       case 0:
-        iVar4 = iVar4 + 1;
-        *(int **)(param_2 + -4 + iVar4 * 4) = piVar5;
+        iVar3 = iVar4 + 1;
+        output_vertices[iVar4] = v1;
         break;
       case 1:
         if (0xb < DAT_00767b38) {
@@ -40,31 +43,32 @@ int engine_clipper_c_clipPolygonRightPlane_FUN_00431b90(uint *param_1,int param_
           INT_01cc4804 = 0x5e;
           core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
-        iVar3 = DAT_00767b38 * 0x30;
-        iVar4 = iVar4 + 1;
+        iVar2 = DAT_00767b38 * 0x30;
+        iVar3 = iVar4 + 1;
         DAT_00767b38 = DAT_00767b38 + 1;
-        *(byte **)(param_2 + -4 + iVar4 * 4) = &DAT_007678f8 + iVar3;
+        output_vertices[iVar4] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
         engine_clipper_c_interpolateVertexRightClip_FUN_00431630
-                  (piVar1,piVar5,&DAT_007678f8 + iVar3);
+                  (v2,v1,(SRenderVertex *)(&DAT_007678f8 + iVar2));
         break;
       case 2:
-        *(int **)(param_2 + -4 + (iVar4 + 1) * 4) = piVar5;
-        if (0xb < iVar3) {
+        output_vertices[iVar4] = v1;
+        if (0xb < iVar2) {
           PTR_01cc4800 = "..\\engine\\clipper.c";
           INT_01cc4804 = 0x5e;
           core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
-        iVar3 = DAT_00767b38 * 0x30;
-        iVar4 = iVar4 + 2;
+        iVar2 = DAT_00767b38 * 0x30;
+        iVar3 = iVar4 + 2;
         DAT_00767b38 = DAT_00767b38 + 1;
-        *(byte **)(param_2 + -4 + iVar4 * 4) = &DAT_007678f8 + iVar3;
+        output_vertices[iVar4 + 1] = (SRenderVertex *)(&DAT_007678f8 + iVar2);
         engine_clipper_c_interpolateVertexRightClip_FUN_00431630
-                  (piVar5,piVar1,&DAT_007678f8 + iVar3);
+                  (v1,v2,(SRenderVertex *)(&DAT_007678f8 + iVar2));
       }
       local_14 = local_14 + 1;
       local_18 = local_18 + 1;
-      piVar5 = piVar1;
-    } while (local_18 < param_3);
+      iVar4 = iVar3;
+      v1 = v2;
+    } while (local_18 < vertex_count);
   }
-  return iVar4;
+  return iVar3;
 }

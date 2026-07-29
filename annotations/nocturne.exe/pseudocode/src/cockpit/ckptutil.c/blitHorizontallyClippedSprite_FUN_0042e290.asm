@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+; void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; int              Stack[0x8]:4   start_x
+; int              Stack[0xc]:4   dest_y
+; int              Stack[0x10]:4   end_x
+; int              Stack[0x14]:4   max_height
+; int              Stack[0x18]:4   unused_param
+; int              Stack[0x1c]:4   src_y_offset
+; int              Stack[0x20]:4   src_stride
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -55,7 +64,7 @@ section .text
     POP EBX                             ; 0042e2d6
     RET                                 ; 0042e2d7
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e2d8
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d130()
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
         ;   Label: LAB_0042e2d8
     MOV ECX,dword ptr [ESP + 0x34]      ; 0042e2dd
     MOV EBP,EAX                         ; 0042e2e1

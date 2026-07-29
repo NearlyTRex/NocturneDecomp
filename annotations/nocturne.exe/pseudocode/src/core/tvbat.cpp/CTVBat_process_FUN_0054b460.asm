@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_CTVBat_process_FUN_0054b460(CDemonActor *param_1,float param_2)
+; void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x178]:8  local_178
 ; undefined4       Stack[-0x170]:4  local_170
@@ -455,7 +458,7 @@ section .text
     SUB ESP,0x4                         ; 0054b96d
     FSTP float ptr [ESP]                ; 0054b970
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 0054b973
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x164],EAX     ; 0054b978
     FLD float ptr [ESP + 0x164]         ; 0054b97f
     ADD ESP,0x4                         ; 0054b986
@@ -470,7 +473,7 @@ section .text
     FSTP float ptr [EBX + 0x34]         ; 0054b9ab
     FSTP float ptr [ESP]                ; 0054b9ae
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 0054b9b1
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x164],EAX     ; 0054b9b6
     FLD float ptr [ESP + 0x164]         ; 0054b9bd
     ADD ESP,0x4                         ; 0054b9c4
@@ -648,7 +651,7 @@ section .text
     PUSH 0x1fba938                      ; 0054bc4f | DAT_01fba938
     FSTP float ptr [EBX + 0x38]         ; 0054bc54
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0054bc57
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x174],EAX     ; 0054bc5c
     FLD float ptr [ESP + 0x174]         ; 0054bc63
     ADD ESP,0x14                        ; 0054bc6a
@@ -875,7 +878,7 @@ section .text
         ;   Label: LAB_0054bf86
     PUSH dword ptr [EBX + 0xbf48]       ; 0054bf8c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054bf92
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x168],EAX     ; 0054bf97
     MOV EAX,dword ptr [ESP + 0x168]     ; 0054bf9e
     MOV dword ptr [EBX + 0xbf54],EAX    ; 0054bfa5

@@ -10,7 +10,7 @@ int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(C
 
 {
   CCharacter *this_ptr_00;
-  int iVar1;
+  EDeathState EVar1;
   CDemonActor *actor_ptr;
   int iVar2;
   
@@ -24,8 +24,8 @@ int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(C
                           core_actor_cpp_castToClassHash_FUN_0040d890
                                     (actor_ptr,g_CEnemyActorType_01bcdebc.name_hash),
            this_ptr_00 != (CCharacter *)0x0 &&
-           (iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00),
-           iVar1 != 0))) {
+           (EVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
+           EVar1 != DEATH_STATE_ALIVE))) {
       iVar2 = iVar2 + 1;
       actor_ptr = actor_ptr->next_actor;
       if (actor_ptr == (CDemonActor *)0x0) {

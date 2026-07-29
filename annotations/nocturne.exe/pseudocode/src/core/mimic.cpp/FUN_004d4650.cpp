@@ -24,7 +24,7 @@ void core_mimic_cpp_FUN_004d4650(CEnemy *param_1)
   byte bVar8;
   uint auStackY_1010 [1014];
   uint class_name_hash;
-  char *pcVar9;
+  char *model_name;
   uint uStack_28;
   uint uStack_1c;
   
@@ -36,12 +36,12 @@ void core_mimic_cpp_FUN_004d4650(CEnemy *param_1)
   }
   iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   if (iVar6 == 0) {
-    pcVar9 = "stranger.dfm";
+    model_name = "stranger.dfm";
   }
   else {
-    pcVar9 = (char *)(iVar6 + 0x23b0);
+    model_name = (char *)(iVar6 + 0x23b0);
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,pcVar9);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,model_name);
   pCVar1 = &(param_1->base).model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(pCVar1);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar1);

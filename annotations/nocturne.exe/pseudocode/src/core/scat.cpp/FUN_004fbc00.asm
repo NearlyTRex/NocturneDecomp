@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCharacter * core_scat_cpp_FUN_004fbc00(undefined4 param_1)
+; CScat * __cdecl core_scat_cpp_FUN_004fbc00(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_scat.cpp_FUN_004fbbd0 at 004fbbe3
@@ -11,7 +13,7 @@
 ;   TerminatedCString s_scat_dfm_0058dd12
 ;   TerminatedCString s_draw_stand2coatPocket_0058dd1b
 ;   TerminatedCString s_draw_coatPocket2aimPisto_0058dd31
-;   undefined1* PTR_core_scat.cpp_CScat_setup_FUN_004fbcc0_005a1554 = 004fbcc0
+;   CHero_full_vtable g_CScatVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760
@@ -28,16 +30,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004fbc01
     PUSH EDX                            ; 004fbc05
     CALL core_hero.cpp_FUN_004b46d0     ; 004fbc06
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004fbc0b
     MOV EBX,EAX                         ; 004fbc0e
     ADD EAX,0x150                       ; 004fbc10
     PUSH 0x58dd12                       ; 004fbc15 | = "scat.dfm"
-    MOV dword ptr [EAX + -0x4],0x5a1554 ; 004fbc1a | PTR_core_scat.cpp_CScat_setup_FUN_004fbcc0_005a1554
+    MOV dword ptr [EAX + -0x4],0x5a1554 ; 004fbc1a | g_CScatVTable
     PUSH EAX                            ; 004fbc21
     MOV dword ptr [EAX + 0x1f8ec],0x0   ; 004fbc22
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004fbc2c
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1fa40]             ; 004fbc31
     MOV dword ptr [EBX + 0x1fa4c],0x3f800000 ; 004fbc37
     ADD ESP,0x8                         ; 004fbc41
@@ -48,7 +50,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004fbc52
     MOV dword ptr [EAX],EDX             ; 004fbc55
     CALL core_scat.cpp_FUN_004fbe80     ; 004fbc57
-        ;   XREF to: 004fbe80 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_004fbe80()
+        ;   XREF to: 004fbe80 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_004fbe80(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fbc5c
     MOV dword ptr [EBX + 0x1fa50],0x0   ; 004fbc5f
     PUSH 0x0                            ; 004fbc69

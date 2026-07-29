@@ -9,27 +9,29 @@
 strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart)
 
 {
-  uint uVar1;
-  streambuf *buffer_ptr;
+  int iVar1;
+  strstreambuf *this_ptr_00;
   ios *piVar2;
-  uint *puVar3;
+  short *psVar3;
   
   if ((ctor_flags & 1U) == 0) {
     (this_ptr->_strstreambase_core).layout_info = (WatcomVirtualBaseDescriptor *)&DAT_005a48b0;
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)&(this_ptr->_ios).__tied_stream);
     this_ptr = (strstreambase *)&piVar2[-2].__error_state;
   }
-  buffer_ptr = crt_iostream_cpp_streambuf_ctor_FUN_0056fe12
-                         (&(this_ptr->_strstreambase_core)._strstreambuf._streambuf);
-  puVar3 = &buffer_ptr[-1].__flags;
-  buffer_ptr[1].__b_lock = &PTR_crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884;
-  crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(buffer_ptr,buffer,size,pstart);
-  *(int *)((int)puVar3 + *(int *)(*puVar3 + 4) + -4) = *(int *)(*puVar3 + 4);
-  uVar1 = *puVar3;
-  buffer_ptr[1].__put_base = (char *)&PTR_crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc
-  ;
-  *(byte ***)((int)&buffer_ptr->__flags + *(int *)(uVar1 + 4)) = &PTR_FUN_005a48c4;
+  this_ptr_00 = (strstreambuf *)
+                crt_iostream_cpp_streambuf_ctor_FUN_0056fe12
+                          (&(this_ptr->_strstreambase_core)._strstreambuf._streambuf);
+  psVar3 = &this_ptr_00[-1].__minbuf_size;
+  this_ptr_00->__vtable = &g_StrstreambufVTable;
+  crt_strstream_cpp_strstreambuf_init_FUN_0056fe65(this_ptr_00,buffer,size,pstart);
+  *(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);
+  iVar1 = *(int *)psVar3;
+  this_ptr_00[1]._streambuf.__reserve_base =
+       (char *)&PTR_crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc;
+  *(byte ***)((int)&(this_ptr_00->_streambuf).__flags + *(int *)(iVar1 + 4)) =
+       &PTR_FUN_005a48c4;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a
-            ((streambuf *)((int)puVar3 + *(int *)(*puVar3 + 4)),(char *)buffer_ptr);
-  return (strstreambase *)puVar3;
+            ((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);
+  return (strstreambase *)psVar3;
 }

@@ -286,7 +286,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00522063
     PUSH EAX                            ; 00522067
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00522068
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0052206d
     CMP EAX,0x1                         ; 00522070
     JNZ 0x00522142                      ; 00522073
@@ -352,7 +352,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0052214f
     PUSH EAX                            ; 00522153
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00522154
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 00522159
     CMP EAX,0x1                         ; 0052215c
     JNZ 0x0052220f                      ; 0052215f
@@ -410,7 +410,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0052221c
     PUSH EAX                            ; 00522220
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00522221
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 00522226
     CMP EAX,0x1                         ; 00522229
     JZ 0x00521f7d                       ; 0052222c
@@ -421,7 +421,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0052223c
     PUSH EAX                            ; 00522240
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00522241
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 00522246
     CMP EAX,0x1                         ; 00522249
     JNZ 0x00522345                      ; 0052224c
@@ -502,7 +502,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00522352
     PUSH EAX                            ; 00522356
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00522357
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 0052235c
     CMP EAX,0x1                         ; 0052235f
     JNZ 0x005223ff                      ; 00522362

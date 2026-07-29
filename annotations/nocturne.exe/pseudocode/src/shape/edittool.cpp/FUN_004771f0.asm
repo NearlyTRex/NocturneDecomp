@@ -101,7 +101,7 @@ section .text
     PUSH EBP                            ; 00477295
     ADD EDI,EAX                         ; 00477296
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00477298
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD EDI,EAX                         ; 0047729d
     ADD ESP,0x8                         ; 0047729f
     MOV dword ptr [EBX + 0x18],EDI      ; 004772a2

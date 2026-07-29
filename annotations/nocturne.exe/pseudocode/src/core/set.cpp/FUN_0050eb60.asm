@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050eb60(void *param_1)
+; SVDBox * __cdecl core_set_cpp_FUN_0050eb60(SVDBox *objs,uint flags)
 ;
+; Parameters:
+; SVDBox *         Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_dtor_FUN_00506e50 at 00506e67

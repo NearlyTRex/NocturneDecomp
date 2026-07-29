@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_00490c20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void engine_font_cpp_FUN_00490c20(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -36,7 +36,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x30]      ; 00490c4a
     PUSH EBP                            ; 00490c4e
     CALL engine_font.cpp_FUN_00490c70   ; 00490c4f
-        ;   XREF to: 00490c70 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_00490c70()
+        ;   XREF to: 00490c70 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_FUN_00490c70(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x1c                        ; 00490c54
     XOR EDX,EDX                         ; 00490c57
     MOV dword ptr [ESP],EDX             ; 00490c59

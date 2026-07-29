@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -228,7 +228,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_eulerToQuaternion_FUN_0055d610",
-    "signature": "void core_xform_cpp_eulerToQuaternion_FUN_0055d610(undefined4 param_1)"
+    "signature": "void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)"
   },
   "function_calls": [
     {
@@ -463,13 +463,20 @@
   "static_analysis": {
     "analyzed_file": "eulerToQuaternion_FUN_0055d610.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 12,
+          "column": 22,
           "line": 27,
           "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 13,
+          "line": 29,
+          "message": "Uninitialized variable: afStack_24",
           "severity": "error"
         }
       ],
@@ -483,7 +490,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_xform_cpp_eulerToQuaternion_FUN_0055d610(uint param_1)",
+      "text": "void core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -497,17 +504,17 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
-      "match": "auStackY_1804",
+      "match": "afStackY_1804",
       "severity": "moderate",
-      "text": "uint auStackY_1804 [1512];",
+      "text": "float afStackY_1804 [1512];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_58,auStack_24 + 3,param_1)",
+      "text": "core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_58,&local_18,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -515,7 +522,7 @@
       "line": 20,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "puVar1 = unaff_ESI + (uint)bVar2 * -2 + 1;",
+      "text": "pfVar1 = (float *)(unaff_ESI + (uint)bVar2 * -2 + 1);",
       "type": "unaffected_reg"
     },
     {
@@ -542,8 +549,16 @@
       "line": 27,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "puVar1 = unaff_ESI + (uint)bVar2 * -2 + 1;",
+      "text": "pfVar1 = (float *)(unaff_ESI + (uint)bVar2 * -2 + 1);",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: afStack_24",
+      "line": 29,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*pfVar1 = afStack_24[(uint)bVar2 * -2];",
+      "type": "static_legacy_uninitvar"
     }
   ]
 }

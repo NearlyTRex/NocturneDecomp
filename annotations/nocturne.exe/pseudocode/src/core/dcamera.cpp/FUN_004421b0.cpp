@@ -1,15 +1,15 @@
 // Name: core_dcamera.cpp_FUN_004421b0
 // Address: 004421b0
 // Address Range: [[004421b0, 004425cf]]
-// Convention: unknown
-// Signature: void core_dcamera_cpp_FUN_004421b0(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dcamera_cpp_FUN_004421b0(int param_1)
+void __cdecl core_dcamera_cpp_FUN_004421b0(CDemonCamera *this_ptr)
 
 {
   float fVar1;
@@ -46,23 +46,22 @@ void core_dcamera_cpp_FUN_004421b0(int param_1)
   bVar11 = 0;
   local_38 = 1;
   local_80 = 0;
-  if (1 < *(int *)(param_1 + 0x154)) {
+  if (1 < this_ptr->display_height) {
     local_40 = 0x500;
     local_3c = 0xf00;
     do {
       local_28 = 1;
       puVar4 = (uint *)(*(int *)(&DAT_01bd2fa0 +
-                                (local_38 * *(int *)(param_1 + 0x14c) + *(int *)(param_1 + 0x148)) *
-                                4) + *(int *)(param_1 + 0x144) * 4);
-      if (1 < *(int *)(param_1 + 0x150)) {
+                                (local_38 * this_ptr->scale_factor + this_ptr->framebuffer_height) *
+                                4) + this_ptr->framebuffer_width * 4);
+      if (1 < this_ptr->display_width) {
         local_34 = local_3c + 0xc;
         local_2c = local_40 + 4;
         local_24 = local_34;
         do {
-          puVar4 = puVar4 + *(int *)(param_1 + 0x14c);
+          puVar4 = puVar4 + this_ptr->scale_factor;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                    (param_1,local_28 * *(int *)(param_1 + 0x14c),
-                     local_38 * *(int *)(param_1 + 0x14c));
+                    (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor);
           local_7c = local_64;
           *(uint *)((int)&stack0xffffff88 + (uint)bVar11 * 0xfffffffe * 4) =
                *(uint *)(&stack0xffffffa0 + (uint)bVar11 * -8);
@@ -72,7 +71,7 @@ void core_dcamera_cpp_FUN_004421b0(int param_1)
             local_80 = local_74;
           }
           core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
-                    (param_1,&stack0xffffff84);
+                    (this_ptr,&stack0xffffff84);
           local_4c = local_70;
           *(uint *)(&stack0xffffffb8 + (uint)bVar11 * -8) =
                *(uint *)(&stack0xffffff94 + (uint)bVar11 * -8);
@@ -85,7 +84,7 @@ void core_dcamera_cpp_FUN_004421b0(int param_1)
                *(uint *)(&stack0xffffff98 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
           if (*puVar4 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910
-                      (param_1,&stack0xffffff84,*puVar4 >> 0x18);
+                      (this_ptr,&stack0xffffff84,*puVar4 >> 0x18);
             local_4c = local_58;
             *(uint *)(&stack0xffffffb8 + (uint)bVar11 * -8) =
                  *(uint *)(&stack0xffffffac + (uint)bVar11 * -8);
@@ -110,28 +109,28 @@ void core_dcamera_cpp_FUN_004421b0(int param_1)
           *(float *)(local_24 + 0x9bb180) = (float)(short)(char)uVar3 * fVar1;
           local_28 = local_28 + 1;
           local_24 = iVar5;
-        } while (local_28 < *(int *)(param_1 + 0x150));
+        } while (local_28 < this_ptr->display_width);
       }
       local_3c = local_3c + 0xf00;
       local_40 = local_40 + 0x500;
       local_38 = local_38 + 1;
-    } while (local_38 < *(int *)(param_1 + 0x154));
+    } while (local_38 < this_ptr->display_height);
   }
   local_18 = local_80;
-  *(float *)(param_1 + 0x100) = (float)local_80 * (float)0.00390625;
-  core_dcamera_cpp_FUN_00446810(param_1);
+  *(float *)(this_ptr->camera_name + 0xc0) = (float)local_80 * (float)0.00390625;
+  core_dcamera_cpp_FUN_00446810(this_ptr);
   _DAT_00b0e604 = 0;
   _DAT_01216608 = 0;
   _DAT_012b0664 = 0;
-  if (0x1df < *(int *)(param_1 + 0x140)) {
-    for (local_1c = *(uint *)(param_1 + 0x14c); uVar10 = *(uint *)(param_1 + 0x14c),
-        (int)local_1c < (int)(*(int *)(param_1 + 0x140) - uVar10); local_1c = local_1c + 1) {
+  if (0x1df < (int)this_ptr->max_distance) {
+    for (local_1c = this_ptr->scale_factor; uVar10 = this_ptr->scale_factor,
+        (int)local_1c < (int)((int)this_ptr->max_distance - uVar10); local_1c = local_1c + 1) {
       local_30 = uVar10 * 4;
-      for (; (int)uVar10 < *(int *)(param_1 + 0x13c) + *(int *)(param_1 + 0x14c) * -2;
+      for (; (int)uVar10 < *(int *)(this_ptr->camera_name + 0xfc) + this_ptr->scale_factor * -2;
           uVar10 = uVar10 + 1) {
         if ((_DAT_012b0664 < 10000) && (((uVar10 & 1) != 0 || ((local_1c & 1) != 0)))) {
-          iVar5 = *(int *)(*(int *)(&DAT_01bd4260 + (local_1c + *(int *)(param_1 + 0x148)) * 4) +
-                           local_30 + *(int *)(param_1 + 0x144) * 4);
+          iVar5 = *(int *)(*(int *)(&DAT_01bd4260 + (local_1c + this_ptr->framebuffer_height) * 4) +
+                           local_30 + this_ptr->framebuffer_width * 4);
           iVar8 = 0x7fffffff;
           if (iVar5 == 0) {
             iVar5 = 0x7fffffff;

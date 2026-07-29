@@ -19,8 +19,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_0055eac0(CZombie *this_ptr)
   
   pCVar3 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
   pcVar7 = "true";
-  (pCVar3->base).base.base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_zombie_cpp_CZombie_setup_FUN_0055ec20_005a4554;
+  (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).base.model,"zombie1.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;
@@ -41,7 +40,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_0055eac0(CZombie *this_ptr)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  fVar4 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3e99999a,0x3f800000);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.3,1.0);
   pCVar3->grave_actor = (CDemonActor *)0x0;
   pCVar3->pickup_range_factor = fVar4;
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(0,0xff);

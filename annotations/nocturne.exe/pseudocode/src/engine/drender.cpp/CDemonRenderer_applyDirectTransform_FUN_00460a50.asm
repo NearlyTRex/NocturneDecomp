@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(undefined4 param_1,int *param_2,int *param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   position
+; CVector3i *      Stack[0xc]:4   rotation
 ;
 ; XREF[8]:
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 004843e7

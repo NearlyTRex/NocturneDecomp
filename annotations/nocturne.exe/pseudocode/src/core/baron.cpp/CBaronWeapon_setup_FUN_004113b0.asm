@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaronWeapon_setup_FUN_004113b0(CWeapon *param_1)
+; void __cdecl core_baron_cpp_CBaronWeapon_setup_FUN_004113b0(CBaronWeapon *this_ptr)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_baron_dfm_005786c8

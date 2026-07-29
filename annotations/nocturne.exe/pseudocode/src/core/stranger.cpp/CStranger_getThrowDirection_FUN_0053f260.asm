@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0x40],ESI      ; 0053f2ae
     MOV dword ptr [ESP + 0x44],ESI      ; 0053f2b2
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0053f2b6
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0053f2bb
     MOV EAX,EBX                         ; 0053f2be
     ADD ESP,0x40                        ; 0053f2c0

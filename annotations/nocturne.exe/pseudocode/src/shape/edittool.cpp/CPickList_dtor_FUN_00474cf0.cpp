@@ -9,7 +9,7 @@
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(CPickList *this_ptr,uint flags)
 
 {
-  int iVar1;
+  CEdScrollBar *pCVar1;
   CPickList *pCVar2;
   void *ptr;
   
@@ -18,12 +18,10 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(CPickList *th
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  (this_ptr->base).vtable =
-       (CStrList_vtable *)&PTR_shape_edittool_cpp_CPickList_dtor_FUN_00474cf0_0059ca94;
+  (this_ptr->base).vtable = &g_CPickListVTable._us;
   shape_edittool_cpp_FUN_00476160(this_ptr);
-  iVar1 = shape_edittool_cpp_FUN_00476490(this_ptr->search_text_buffer + 0x2c,0);
-  pCVar2 = (CPickList *)
-           shape_edittool_cpp_CStrList_dtor_FUN_00473b80((CStrList *)(iVar1 + -0x138),1);
+  pCVar1 = shape_edittool_cpp_FUN_00476490((CEdScrollBar *)(this_ptr->search_text_buffer + 0x2c),0);
+  pCVar2 = (CPickList *)shape_edittool_cpp_CStrList_dtor_FUN_00473b80((CStrList *)(pCVar1 + -6),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

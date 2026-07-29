@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *param_1,char *param_2,float *param_3,byte param_4)
+; int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   editor_tools
+; char *           Stack[0x8]:4   prompt_text
+; CVector3f *      Stack[0xc]:4   result_ptr
+; int              Stack[0x10]:4   show_current_value
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_g_g_g_0057e7fa
@@ -79,7 +84,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004715ae
     PUSH EAX                            ; 004715b2
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004715b3
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x14                        ; 004715b8
     CMP EAX,0x3                         ; 004715bb
     JNZ 0x004715e8                      ; 004715be

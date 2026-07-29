@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 005524b2
         ;   Label: LAB_005524b2
     CALL core_waypoint.cpp_FUN_005524d0 ; 005524b3
-        ;   XREF to: 005524d0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005524d0()
+        ;   XREF to: 005524d0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_FUN_005524d0(CWayPoint * this_ptr)
     ADD ESP,0x4                         ; 005524b8
     RET                                 ; 005524bb
 

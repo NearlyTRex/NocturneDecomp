@@ -74,6 +74,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(C
     }
     return;
   }
-  engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(this_ptr,poly,render_flags);
+  engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0
+            (this_ptr,&poly->base,render_flags);
   return;
 }

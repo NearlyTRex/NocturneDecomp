@@ -29,7 +29,7 @@ void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2)
   local_18 = (byte *)0x0;
   local_14 = "Warning";
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,"Warning");
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,0x1bca0d0);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,(char *)0x1bca0d0);
   if (iVar1 < iVar2) {
     iVar1 = iVar2;
   }

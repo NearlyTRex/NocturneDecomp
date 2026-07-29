@@ -11,7 +11,7 @@
 uint core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   CVector3f *input_local_point;
   CVector3f CStack_20;
   CVector3f CStack_14;
@@ -19,8 +19,8 @@ uint core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1
   if (param_2 == 0) {
     return 0;
   }
-  iVar1 = (*(((param_1->base).vtable._uc)->_uc).releaseFromGrab)(param_1);
-  if (iVar1 != 0) {
+  EVar1 = (*(((param_1->base).vtable._uc)->_uc).getDeathState)(param_1);
+  if (EVar1 != DEATH_STATE_ALIVE) {
     (**(code **)(*(int *)(param_2 + 0x14c) + 0xe8))(param_2);
     return 1;
   }

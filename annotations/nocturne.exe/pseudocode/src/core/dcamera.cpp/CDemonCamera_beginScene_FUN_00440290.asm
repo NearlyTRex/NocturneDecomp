@@ -153,7 +153,7 @@ section .text
         ;   Label: LAB_004403d5
     PUSH ESI                            ; 004403d6
     CALL core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240 ; 004403d7
-        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240()
+        ;   XREF to: 00440240 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240(CDemonCamera * this_ptr, int skip_clear_buffers)
     MOV EAX,dword ptr [ESI + 0x140]     ; 004403dc
     ADD ESP,0x8                         ; 004403e2
     DEC EAX                             ; 004403e5

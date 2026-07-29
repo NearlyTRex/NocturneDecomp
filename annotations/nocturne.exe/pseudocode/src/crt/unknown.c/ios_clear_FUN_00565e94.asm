@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_unknown_c_ios_clear_FUN_00565e94(FileEmbeddedData *param_1,uint param_2)
+; uint __cdecl crt_unknown_c_ios_clear_FUN_00565e94(ios *this_ptr,uint state_flags)
 ;
+; Parameters:
+; ios *            Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   state_flags
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_openFile_FUN_00565eb5 at 00565f0d

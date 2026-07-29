@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 310,
+    "complexity_score": 308,
     "cross_reference_count": 10,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 140,
+    "pseudocode_lines": 138,
     "suspect_count": 15,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 396
+    "total_lines": 394
   },
   "cross_references": [
     {
@@ -641,7 +641,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 112,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&this_ptr->glass_texture);",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 113,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (DAT_005b762c == 0x40) {",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `local_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 116,
+      "line": 114,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "local_8c = 0xf80000;",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `local_94`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_94` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 119,
+      "line": 117,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "local_94 = 0xf80000;",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `local_90`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_90` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 121,
+      "line": 119,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "local_90 = 0xf80000;",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `local_80`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_80` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 122,
+      "line": 120,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "local_80 = 0xf80000;",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Raw hex address 0xfe0000 assigned to bare local `local_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 126,
+      "line": 124,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "local_8c = 0xfe0000;",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Raw hex address 0xfe0000 assigned to bare local `local_94`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_94` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 129,
+      "line": 127,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "local_94 = 0xfe0000;",
@@ -705,7 +705,7 @@
     },
     {
       "description": "Raw hex address 0xfe0000 assigned to bare local `local_90`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_90` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 131,
+      "line": 129,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "local_90 = 0xfe0000;",
@@ -713,7 +713,7 @@
     },
     {
       "description": "Raw hex address 0xfe0000 assigned to bare local `local_80`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_80` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 132,
+      "line": 130,
       "match": "0xfe0000",
       "severity": "moderate",
       "text": "local_80 = 0xfe0000;",
@@ -721,7 +721,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -729,7 +729,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_cc != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 75,
+      "line": 73,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_cc != &local_40) {",
@@ -737,7 +737,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 86,
+      "line": 84,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_c0 != &local_58) {",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_b4 != &local_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_b4 != &local_34) {",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a8 != &local_28)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 108,
+      "line": 106,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_a8 != &local_28) {",

@@ -49,11 +49,11 @@ void FUN_00481b0c(void);
 
 // Original: crt_unknown.c_getc_helper_FUN_00563290
 // Address: 00563290
-int getc::helper(int param_1);
+int __cdecl getc::helper(scanf_state_t *state);
 
 // Original: crt_unknown.c_ungetc_helper_FUN_005632b0
 // Address: 005632b0
-void ungetc::helper(int param_1,int param_2);
+int __watcallStack ungetc::helper(int character,scanf_state_t *state);
 
 // Original: crt_unknown.c_vfscanf_FUN_005632c8
 // Address: 005632c8
@@ -89,7 +89,7 @@ void __cdecl ValidateHeapIntegrity(void *ptr);
 
 // Original: crt_unknown.c_StringBufferCallback_FUN_005639f0
 // Address: 005639f0
-void StringBufferCallback(int *param_1,undefined1 param_2);
+void __cdecl StringBufferCallback(StringOutputContext *context,char character);
 
 // Original: crt_unknown.c_FUN_00563ce0
 // Address: 00563ce0
@@ -181,7 +181,7 @@ void FUN_005651b2(int param_1,uint param_2);
 
 // Original: crt_unknown.c_OpenModeStringParser_FUN_005653e0
 // Address: 005653e0
-uint OpenModeStringParser(byte *param_1,byte *param_2);
+int __cdecl OpenModeStringParser(char *mode_string,char *output_flags);
 
 // Original: crt_unknown.c_OpenFileAndInitialize_FUN_0056551c
 // Address: 0056551c
@@ -213,7 +213,7 @@ void FUN_00565c50(int param_1,int param_2);
 
 // Original: crt_unknown.c_ios_clear_FUN_00565e94
 // Address: 00565e94
-uint ios::clear(FileEmbeddedData *param_1,uint param_2);
+uint __cdecl ios::clear(ios *this_ptr,uint state_flags);
 
 // Original: crt_unknown.c___arrinit_dispatch_FUN_005661c2
 // Address: 005661c2
@@ -237,7 +237,7 @@ void __watcallStack strncpy::safe(char *dest,char *src,int length,int maxlen);
 
 // Original: crt_unknown.c_FUN_00566570
 // Address: 00566570
-int FUN_00566570(LPCSTR param_1);
+int __cdecl FUN_00566570(char *path);
 
 // Original: crt_unknown.c_localtime_r_FUN_00566590
 // Address: 00566590
@@ -249,11 +249,11 @@ void __cdecl formatTwoDigits(char *buffer,int value);
 
 // Original: crt_unknown.c_string_getc_FUN_00566af0
 // Address: 00566af0
-uint string::getc(int param_1);
+int __cdecl string::getc(scanf_state_t *state);
 
 // Original: crt_unknown.c_string_ungetc_FUN_00566b18
 // Address: 00566b18
-void string::ungetc(undefined4 param_1,int param_2);
+int __cdecl string::ungetc(int ch,scanf_state_t *state);
 
 // Original: crt_unknown.c_vsscanf_FUN_00566b20
 // Address: 00566b20
@@ -297,7 +297,7 @@ undefined4 FUN_005670c1(void);
 
 // Original: crt_unknown.c_stack_overflow_handler_FUN_005670e0
 // Address: 005670e0
-undefined4 stack::overflow_handler(void);
+void __watcallStack stack::overflow_handler(SIZE_T required_bytes);
 
 // Original: crt_unknown.c_ProbeStackSpace_FUN_005670ed
 // Address: 005670ed

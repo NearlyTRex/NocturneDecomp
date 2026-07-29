@@ -151,7 +151,7 @@ section .text
     MOV ECX,dword ptr [0x007f7370]      ; 004f6ed4 | DAT_007f7370
     PUSH ECX                            ; 004f6eda
     CALL core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0 ; 004f6edb
-        ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0()
+        ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera * this_ptr, CVector3i * world_position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 004f6ee0
     PUSH -0x1                           ; 004f6ee3
     MOV [0x014b7190],EAX                ; 004f6ee5 | DAT_014b7190

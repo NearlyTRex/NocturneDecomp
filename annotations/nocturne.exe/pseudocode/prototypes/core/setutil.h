@@ -29,7 +29,7 @@ void __cdecl C3DSCamera::loadPVS(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_FUN_005148b0
 // Address: 005148b0
-void FUN_005148b0(char *param_1,CDemonCamera *param_2);
+void __cdecl FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera);
 
 // Original: core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00514980
 // Address: 00514980
@@ -53,7 +53,7 @@ undefined4 C3DSLight::apply(int param_1,CDemonLight *param_2);
 
 // Original: core_setutil.cpp_FUN_00515410
 // Address: 00515410
-void FUN_00515410(void);
+void __cdecl FUN_00515410(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_process_FUN_00515420
 // Address: 00515420
@@ -77,15 +77,15 @@ void __cdecl C3DSLight::reset(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_generateSphereVertex_FUN_00515890
 // Address: 00515890
-void generateSphereVertex(void);
+void __cdecl generateSphereVertex(int longitude_index,int latitude_index,int vertex_buffer_index,float radius);
 
 // Original: core_setutil.cpp_calculateVertexIndex_FUN_00515980
 // Address: 00515980
-int calculateVertexIndex(void);
+int __cdecl calculateVertexIndex(int row_index,int column_index);
 
 // Original: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0
 // Address: 005159a0
-void C3DSLight::renderVolumetricSphere(void);
+void __cdecl C3DSLight::renderVolumetricSphere(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_FUN_00515c40
 // Address: 00515c40

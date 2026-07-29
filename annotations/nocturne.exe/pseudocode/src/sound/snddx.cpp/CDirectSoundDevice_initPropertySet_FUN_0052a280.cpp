@@ -1,14 +1,14 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280
 // Address: 0052a280
 // Address Range: [[0052a280, 0052a440]]
-// Convention: unknown
-// Signature: void sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(void)
+// Convention: __cdecl
+// Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(void)
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(CDirectSoundDevice *this_ptr)
 
 {
   uint error_code;

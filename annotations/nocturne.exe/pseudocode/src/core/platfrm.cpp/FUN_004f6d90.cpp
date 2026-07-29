@@ -14,9 +14,7 @@ void core_platfrm_cpp_FUN_004f6d90(CDemonActor *param_1,int param_2)
   int iVar1;
   CBoundingBox3D *this_ptr;
   CBoundingBox3D local_2c;
-  int iStack_14;
-  int iStack_10;
-  int iStack_c;
+  CVector3i CStack_14;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar1 != 0) {
@@ -73,12 +71,12 @@ void core_platfrm_cpp_FUN_004f6d90(CDemonActor *param_1,int param_2)
       return;
     }
     *(uint *)(0x01E57284 + 0x15a890) = 1;
-    iStack_14 = (int)ROUND((param_1->location).position.x * _DAT_005a1360);
-    iStack_10 = (int)ROUND((param_1->location).position.y * _DAT_005a1360);
-    iStack_c = (int)ROUND((param_1->location).position.z * _DAT_005a1360);
+    CStack_14.x = (int)ROUND((param_1->location).position.x * _DAT_005a1360);
+    CStack_14.y = (int)ROUND((param_1->location).position.y * _DAT_005a1360);
+    CStack_14.z = (int)ROUND((param_1->location).position.z * _DAT_005a1360);
     _DAT_014b7190 =
          core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
-                   (_DAT_007f7370,&iStack_14,0);
+                   (_DAT_007f7370,&CStack_14,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               ((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);
     *(uint *)(0x01E57284 + 0x15a890) = 0;

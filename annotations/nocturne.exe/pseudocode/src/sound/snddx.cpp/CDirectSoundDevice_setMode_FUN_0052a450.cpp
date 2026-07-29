@@ -1,14 +1,14 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450
 // Address: 0052a450
 // Address Range: [[0052a450, 0052a961]]
-// Convention: unknown
-// Signature: undefined4 sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(undefined4 *param_1,int param_2,ushort param_3,int param_4,uint *param_5)
+// Convention: __cdecl
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(uint *param_1,int param_2,ushort param_3,int param_4,uint *param_5)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
 
 {
   uint uVar1;
@@ -49,12 +49,12 @@ uint sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(uint *param_1,int p
   if (_DAT_02dc9218 != (int *)0x0) {
     memset(&local_48,0,0x12);
     local_48 = 1;
-    local_46 = param_3;
-    local_44 = param_4;
-    local_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) - (uint)((param_2 >> 0x1f) << 2 < 0)
-                            ) >> 3) * param_3;
-    local_40 = param_4 * (uint)local_3c;
-    local_3a = (ushort)param_2;
+    local_46 = (ushort)channels;
+    local_44 = sample_rate;
+    local_3c = (short)((int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
+                            (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3) * local_46;
+    local_40 = sample_rate * (uint)local_3c;
+    local_3a = (ushort)bits_per_sample;
     uVar1 = (**(code **)(*_DAT_02dc9218 + 0x38))(_DAT_02dc9218,&local_48);
     if (uVar1 == 0) {
       uVar1 = (**(code **)(*_DAT_02dc9218 + 0x14))(_DAT_02dc9218,&local_48,0x12,0);
@@ -111,7 +111,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(uint *param_1,int p
           (**(code **)(*_DAT_02dc9224 + 0x10))(_DAT_02dc9224,&DAT_005bed20,0,0,0,&uStack_28,4);
         }
         if (_DAT_02dc9220 != 0) {
-          *param_1 = 0;
+          (this_ptr->base).vtable = (CSoundDeviceFull_vtable *)0x0;
           return 1;
         }
         _DAT_02dc923c = 8;
@@ -136,7 +136,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(uint *param_1,int p
         }
         uVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_84,&DAT_02dc921c,0);
         if (uVar1 == 0) {
-          *param_5 = _DAT_02dc9234;
+          *out_samples_per_block = _DAT_02dc9234;
           return 1;
         }
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);

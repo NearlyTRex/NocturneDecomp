@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402760(int param_1,int param_2,char *param_3)
+; void __cdecl engine_2d_c_FUN_00402760(int x,int y,char *text)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; char *           Stack[0xc]:4   text
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d403

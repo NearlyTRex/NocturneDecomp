@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 756,
+    "complexity_score": 277,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 126,
-    "suspect_count": 60,
+    "pseudocode_lines": 147,
+    "suspect_count": 10,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_truncation",
       "raw_address_constant",
+      "stack_param",
       "stack_ref",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 469
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -161,10 +161,10 @@
         "0040ab0a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740",
-    "signature": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)"
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)"
   },
   "function_calls": [
     {
@@ -319,13 +319,10 @@
         "call_addr": "0051025e",
         "call_type": "direct",
         "caller": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0",
-        "estimated_params": 9,
+        "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 28,
         "stack_params": 7
       },
@@ -333,22 +330,19 @@
         "call_addr": "00533b29",
         "call_type": "direct",
         "caller": "core_spike.cpp_FUN_00533750",
-        "estimated_params": 9,
+        "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 28,
         "stack_params": 7
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 9,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.658450704225352,
@@ -388,10 +382,10 @@
     "pcode_op_count": 1323
   },
   "stack_frame": {
-    "frame_size": 180,
+    "frame_size": 208,
     "local_size": 180,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -519,6 +513,55 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_hit",
+        "offset": 16,
+        "size": 4,
+        "type": "SActorRayHit *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 20,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "bbox_type",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "ray_bbox",
+        "offset": 28,
+        "size": 4,
+        "type": "CBoundingBox3D *"
       }
     ]
   },
@@ -549,448 +592,48 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "ulonglong in_stack_ffffff48;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "(this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,uint *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(param_1,&local_9c,param_5,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(param_1,&local_9c,param_5,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(param_1,&local_9c,param_5,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "if (param_7 == (CBoundingBox3D *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&local_6c != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.min.x = (param_2->min).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.min.y = (param_2->min).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.min.z = (param_2->min).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((CBoundingBox3D *)&local_6c.max != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.max.x = (param_2->min).x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.max.y = (param_2->min).y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_6c.max.z = (param_2->min).z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_48.x = (param_2->min).x + *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_48.x = (param_2->min).x + *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_48.y = (param_2->min).y + param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_48.y = (param_2->min).y + param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_48.z = (param_2->min).z + param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_48.z = (param_2->min).z + param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "iVar1 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(param_7,&local_9c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_3c,&param_2->min);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_3c,&param_2->min);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 < 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_84);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_84);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 < 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_a0 = (float)core_actor_cpp_rayCylinderIntersect_FUN_00409860(param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 65,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_a0 = (*((param_1->vtable)._ub)->customRayIntersect)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_3c,&local_54,local_30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4] = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[5] = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[6] = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[3] = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pCVar5 = param_5->deformable_model;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5->keyframed_model != (CKeyFramedModelInstance *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_5->keyframed_model);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[3] = _DAT_0268ced8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4] = _DAT_0268cee8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[5] = _DAT_0268ceec;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_5->deformable_model)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[6] = uVar4;",
-      "type": "unnamed_param"
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 136,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != (byte *)0x268cf0c) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4 != puVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*param_4 = *puVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[1] = puVar2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[2] = puVar2[2];",
-      "type": "unnamed_param"
+      "description": "Pointer value `frame_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)frame_index",
+      "severity": "moderate",
+      "text": "(this_ptr_01,(int)frame_index,ray_origin_00,pCVar3,output_normal);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x1e57284 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 94,
       "match": "0x1e57284",
       "severity": "moderate",
       "text": "iVar1 = 0x01E57284;",
@@ -998,30 +641,27 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 28,
+      "line": 36,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_6c.min.x = (param_2->min).x;",
+      "text": "local_6c.min.x = ray_origin->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 33,
+      "line": 41,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_6c.max.x = (param_2->min).x;",
+      "text": "local_6c.max.x = ray_origin->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 9,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:9",
-      "param_delta": 9,
-      "text": "Function declares 0 params but call sites push 9 (9 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 146,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(out_hit->normal).x = (pSVar2->normal).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

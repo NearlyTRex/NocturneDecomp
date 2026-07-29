@@ -55,7 +55,7 @@ section .text
     ADD EAX,ECX                         ; 0047a4fa
     PUSH EAX                            ; 0047a4fc
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047a4fd
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x18                        ; 0047a502
     MOV EDI,dword ptr [ESP + 0x64]      ; 0047a505
     CMP EDI,0x7                         ; 0047a509
@@ -83,7 +83,7 @@ section .text
     ADD EAX,EBP                         ; 0047a53b
     PUSH EAX                            ; 0047a53d
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 0047a53e
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x10                        ; 0047a543
     CMP dword ptr [ESP + 0x64],0x0      ; 0047a546
     JL 0x0047a59e                       ; 0047a54b

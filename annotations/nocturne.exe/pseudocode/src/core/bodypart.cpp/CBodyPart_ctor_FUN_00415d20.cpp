@@ -9,18 +9,18 @@
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   void *pvVar2;
   CBox *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pvVar2 = __arrinit
-                     ((void *)(iVar1 + 0x288),3,&g_SBodyPartModelTypeInfo_0059a820);
+                     ((void *)((int)&pCVar1[1].previous_transform_state.orientation + 4),3,
+                      &g_SBodyPartModelTypeInfo_0059a820);
   pvVar2 = __arrinit
                      ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo_0059a840);
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)((int)pvVar2 + 0x56c));
-  pCVar3[-5].linear_velocity_local.y =
-       (float)&PTR_core_bodypart_cpp_CBodyPart_setup_FUN_00416500_0059a744;
+  pCVar3[-5].linear_velocity_local.y = (float)&g_CBodyPartVTable;
   pCVar3[1].position.y = 0.0;
   pCVar3[-5].angular_velocity.x = 0.0;
   pCVar3[-5].angular_velocity.y = 0.0;

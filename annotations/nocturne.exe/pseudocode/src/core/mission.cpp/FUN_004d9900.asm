@@ -18,12 +18,12 @@
 section .text
 
     CALL engine_texture.cpp_FUN_005459f0 ; 004d9900
-        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
+        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005459f0()
         ;   Label: core_mission.cpp_FUN_004d9900
     CALL core_dmodel.cpp_FUN_00454460   ; 004d9905
-        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00454460()
+        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00454460()
     CALL core_skeleton.cpp_FUN_0051f650 ; 004d990a
-        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f650()
+        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f650()
     JMP 0x0051f730                      ; 004d990f
         ;   XREF to: 0051f730 (UNCONDITIONAL_CALL)
 

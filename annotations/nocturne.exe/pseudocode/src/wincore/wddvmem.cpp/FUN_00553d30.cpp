@@ -1,14 +1,16 @@
 // Name: wincore_wddvmem.cpp_FUN_00553d30
 // Address: 00553d30
 // Address Range: [[00553d30, 00553d3c]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_FUN_00553d30(LPCSTR param_1)
+// Convention: __cdecl
+// Signature: HMODULE __cdecl wincore_wddvmem_cpp_FUN_00553d30(LPCSTR lpLibFileName)
 
 #include "nocturne.h"
 
-void wincore_wddvmem_cpp_FUN_00553d30(LPCSTR param_1)
+HMODULE __cdecl wincore_wddvmem_cpp_FUN_00553d30(LPCSTR lpLibFileName)
 
 {
-  LoadLibraryA(param_1);
-  return;
+  HMODULE pHVar1;
+  
+  pHVar1 = LoadLibraryA(lpLibFileName);
+  return pHVar1;
 }

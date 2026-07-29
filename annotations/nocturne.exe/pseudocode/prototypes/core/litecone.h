@@ -17,7 +17,7 @@ CDemonActorType * FUN_004c80e0(void);
 
 // Original: core_litecone.cpp_CLightCone_ctor_FUN_004c80f0
 // Address: 004c80f0
-int __cdecl CLightCone::ctor(undefined4 param_1);
+CLightCone * __cdecl CLightCone::ctor(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_FUN_004c8190
 // Address: 004c8190

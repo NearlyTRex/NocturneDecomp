@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile *param_1,char *param_2,float param_3)
+; void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile *this_ptr,char *key,float value)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; float            Stack[0xc]:4   value
 ; Local Variables:
 ; undefined8       Stack[-0x6c]:8  local_6c
 ; undefined        Stack[-0x64]:1  local_64

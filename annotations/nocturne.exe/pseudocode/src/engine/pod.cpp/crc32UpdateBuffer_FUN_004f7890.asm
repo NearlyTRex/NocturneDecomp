@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *param_1,uint param_2,uint param_3)
+; uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *data_buffer,uint byte_count,uint initial_crc)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   data_buffer
+; uint             Stack[0x8]:4   byte_count
+; uint             Stack[0xc]:4   initial_crc
 ;
 ; Called Functions:
 ;   engine_pod.cpp_crc32UpdateByte_FUN_004f77d0

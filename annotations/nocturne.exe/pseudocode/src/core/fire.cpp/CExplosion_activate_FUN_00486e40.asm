@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CExplosion_activate_FUN_00486e40(float *param_1,float *param_2,float param_3,float param_4)
+; void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 ;
+; Parameters:
+; CExplosion *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   scale
+; float            Stack[0x10]:4   gore_multiplier
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -77,7 +82,7 @@ section .text
         ;   Label: LAB_00486ead
     PUSH 0x3f490fdb                     ; 00486eb2
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00486eb7
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00486ebc
     FLD float ptr [ESP + 0x44]          ; 00486ec0
     ADD ESP,0x8                         ; 00486ec4
@@ -85,7 +90,7 @@ section .text
     PUSH 0x0                            ; 00486ecc
     FSTP float ptr [ESP + 0x30]         ; 00486ece
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00486ed2
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00486ed7
     FLD float ptr [ESP + 0x44]          ; 00486edb
     ADD ESP,0x8                         ; 00486edf

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_FUN_004de680(int param_1)
+; void core_moloch_cpp_FUN_004de680(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004de681
     PUSH EBX                            ; 004de685
     CALL core_hero.cpp_FUN_004b49a0     ; 004de686
-        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b49a0()
+        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b49a0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004de68b
     PUSH 0x58a83a                       ; 004de68e | = "humanToDemonCond"
     LEA EAX,[EBX + 0x21cfc]             ; 004de693

@@ -12,10 +12,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_004f5
   CPackedBitmap *pCVar1;
   
   cockpit_pkbitmap_cpp_FUN_004f5320(this_ptr);
-  pCVar1 = (CPackedBitmap *)
-           cockpit_pkbitmap_cpp_FUN_004f5110
-                     (this_ptr,pbg_filename,apply_palette_flag,frames_per_bitmap,skip_data_load,
-                      0xffffffff);
+  pCVar1 = cockpit_pkbitmap_cpp_FUN_004f5110
+                     (this_ptr,pbg_filename,apply_palette_flag,frames_per_bitmap,skip_data_load,-1);
   this_ptr->bitmap_array = pCVar1;
   cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_004f5c40(this_ptr,pbg_filename);
   cockpit_pkbitmap_cpp_FUN_004f52c0(this_ptr);

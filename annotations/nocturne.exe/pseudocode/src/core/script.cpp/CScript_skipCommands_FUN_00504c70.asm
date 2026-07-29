@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_script_cpp_CScript_skipCommands_FUN_00504c70(int param_1,int param_2,int param_3)
+; int __cdecl core_script_cpp_CScript_skipCommands_FUN_00504c70(CScript *this_ptr,int direction,int count)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   direction
+; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -142,7 +146,7 @@ section .text
     PUSH EBX                            ; 00504d32
     PUSH EBP                            ; 00504d33
     CALL core_script.cpp_CScript_skipCommands_FUN_00504c70 ; 00504d34
-        ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_skipCommands_FUN_00504c70()
+        ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_00504c70(CScript * this_ptr, int direction, int count)
     MOV EBX,EAX                         ; 00504d39
     ADD ESP,0xc                         ; 00504d3b
     JMP 0x00504ca0                      ; 00504d3e
@@ -153,7 +157,7 @@ section .text
     PUSH EBX                            ; 00504d46
     PUSH EBP                            ; 00504d47
     CALL core_script.cpp_CScript_skipCommands_FUN_00504c70 ; 00504d48
-        ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_skipCommands_FUN_00504c70()
+        ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_skipCommands_FUN_00504c70(CScript * this_ptr, int direction, int count)
     ADD ESP,0xc                         ; 00504d4d
     MOV EBX,EAX                         ; 00504d50
     JMP 0x00504ca0                      ; 00504d52

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 267,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 5,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 63,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "warning_overlapping_globals",
       "warning_spacebase"
     ],
-    "total_lines": 133
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -36,10 +36,10 @@
         "0056dfbf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__watcallRegister",
     "is_ebp_frame": true,
     "name": "crt_startup.cpp_WinMainBootstrap_FUN_0056df10",
-    "signature": "void crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)"
+    "signature": "void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)"
   },
   "function_calls": [
     {
@@ -215,87 +215,87 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1 + 4) = 0;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(byte **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(byte **)((int)aiStack_1c + iVar1) = local_10 + iVar1;",
+      "text": "*(byte **)((int)aiStack_1c + iVar4) = local_10 + iVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(void **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "text": "(*(void **)((int)aiStack_1c + iVar4),*(int *)((int)aiStack_1c + iVar4 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "text": "(*(void **)((int)aiStack_1c + iVar4),*(int *)((int)aiStack_1c + iVar4 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 30,
       "match": "&stack0x000000e0",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x000000e0 + iVar1) = 0x000000F4;",
+      "text": "*(int *)(&stack0x000000e0 + iVar4) = 0x000000F4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(byte **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(byte **)((int)aiStack_1c + iVar1 + 4) = local_10;",
+      "text": "*(byte **)((int)aiStack_1c + iVar4 + 4) = local_10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1) = 0x56df56;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4) = 0x56df56;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_005c1cf0",
       "severity": "mild",
-      "text": "uVar6 = DAT_005c1cf0 + 3U & 0xfffffffc;",
+      "text": "uVar5 = DAT_005c1cf0 + 3U & 0xfffffffc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1 + 4) = 0x56df74;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4 + 4) = 0x56df74;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_005c1cf0",
       "severity": "mild",
-      "text": "iVar2 = -(DAT_005c1cf0 + 3U & 0xfffffffc);",
+      "text": "iVar1 = -(DAT_005c1cf0 + 3U & 0xfffffffc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_005c1cf0",
       "severity": "mild",
       "text": "_DAT_005c1cf4 = _DAT_005c1cf4 + DAT_005c1cf0;",
@@ -303,23 +303,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "*(uint *)(puVar7 + -8) = DAT_005c1ccc;",
+      "text": "*(uint *)(puVar6 + -8) = DAT_005c1ccc;",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&uStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)&uStack_20",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_20 + iVar1) = 0x56df3e;",
+      "text": "*(uint *)((int)&uStack_20 + iVar4) = 0x56df3e;",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x56df21 assigned to bare local `uStack_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 19,
       "match": "0x56df21",
       "severity": "moderate",
       "text": "uStack_14 = 0x56df21;",
@@ -327,10 +327,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_20 + iVar1) = 0x56df3e;",
+      "text": "*(uint *)((int)&uStack_20 + iVar4) = 0x56df3e;",
       "type": "pointer_cast"
     }
   ]

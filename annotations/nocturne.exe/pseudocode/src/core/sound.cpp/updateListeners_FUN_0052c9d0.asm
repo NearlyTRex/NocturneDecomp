@@ -190,7 +190,7 @@ section .text
     MOV dword ptr [ESP + 0xa8],EBX      ; 0052cb36
     MOV dword ptr [ESP + 0xac],EBX      ; 0052cb3d
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0052cb44
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     MOV EAX,0x3f800000                  ; 0052cb49
     ADD ESP,0xc                         ; 0052cb4e
     MOV dword ptr [ESP + 0x114],EAX     ; 0052cb51
@@ -203,7 +203,7 @@ section .text
     MOV dword ptr [ESP + 0x11c],EBX     ; 0052cb6d
     MOV dword ptr [ESP + 0x124],EBX     ; 0052cb74
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0052cb7b
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0052cb80
     LEA EAX,[ESP + 0xbc]                ; 0052cb83
     PUSH EAX                            ; 0052cb8a
@@ -216,7 +216,7 @@ section .text
     MOV dword ptr [ESP + 0xcc],EBX      ; 0052cba4
     MOV dword ptr [ESP + 0xd0],ESI      ; 0052cbab
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0052cbb2
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0052cbb7
     FLD float ptr [ESP + 0x100]         ; 0052cbba
     SUB ESP,0x8                         ; 0052cbc1

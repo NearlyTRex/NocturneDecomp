@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_004fcb7b
     PUSH EBX                            ; 004fcb7c
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 004fcb7d
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xc],EAX       ; 004fcb82
     FLD float ptr [ESP + 0xc]           ; 004fcb86
     ADD ESP,0x8                         ; 004fcb8a

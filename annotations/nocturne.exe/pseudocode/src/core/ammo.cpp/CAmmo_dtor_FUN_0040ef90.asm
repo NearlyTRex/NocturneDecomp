@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_ammo_cpp_CAmmo_dtor_FUN_0040ef90(CDemonActor *param_1,byte param_2)
+; CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040ef90(CAmmo *this_ptr,uint flags)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CAmmoTypeInfo_00599530

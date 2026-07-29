@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_ungetc_helper_FUN_005632b0(int param_1,int param_2)
+; int __watcallStack crt_unknown_c_ungetc_helper_FUN_005632b0(int character,scanf_state_t *state)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; scanf_state_t *  Stack[0x8]:4   state
 ;
 ; XREF[1]:
 ;   crt_unknown.c_vfscanf_FUN_005632c8 at 00563315

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(int param_1,short *param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   color_buffer
+; SEdge *          Stack[0x8]:4   edge_array
+; int              Stack[0xc]:4   edge_count
+; int              Stack[0x10]:4   offset_x
+; int              Stack[0x14]:4   offset_y
+; int              Stack[0x18]:4   buffer_width
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

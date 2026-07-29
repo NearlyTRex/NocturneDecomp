@@ -1,12 +1,12 @@
 // Name: engine_2d.c_FUN_00401990
 // Address: 00401990
 // Address Range: [[00401990, 00401bc5]]
-// Convention: unknown
-// Signature: void engine_2d_c_FUN_00401990(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_FUN_00401990(char *filename)
 
 #include "nocturne.h"
 
-void engine_2d_c_FUN_00401990(void)
+void __cdecl engine_2d_c_FUN_00401990(char *filename)
 
 {
   byte bVar1;

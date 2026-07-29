@@ -2,11 +2,11 @@
 // Address: 005357d0
 // Address Range: [[005357d0, 0053589f]]
 // Convention: unknown
-// Signature: void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
+// Signature: void core_stranger_cpp_FUN_005357d0(CStranger *param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
+void core_stranger_cpp_FUN_005357d0(CStranger *param_1,float param_2)
 
 {
   float delta_time;
@@ -14,13 +14,13 @@ void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
   int iVar2;
   SMotion *pSVar3;
   
-  iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)param_1,param_2);
   if (iVar2 == 0) {
     return;
   }
   delta_time = 0x01C775EC->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                     ((CMotionController *)(param_1 + 0x150));
+                     (&(param_1->base).base.model.motion_controller);
   bVar1 = false;
   switch(pSVar3->state_index) {
   case 7:
@@ -44,7 +44,7 @@ void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
   case 0x1b:
     bVar1 = true;
   }
-  if ((*(int *)(param_1 + 0x1faa0) == 7) || (bVar1)) {
+  if ((param_1->action_pending == 7) || (bVar1)) {
     param_2 = param_2 * (float)0.25;
     core_stranger_cpp_FUN_00535900(param_1,param_2);
     core_stranger_cpp_FUN_00535900(param_1,param_2);

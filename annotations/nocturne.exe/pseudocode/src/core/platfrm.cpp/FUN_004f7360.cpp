@@ -1,47 +1,45 @@
 // Name: core_platfrm.cpp_FUN_004f7360
 // Address: 004f7360
 // Address Range: [[004f7360, 004f7558]]
-// Convention: unknown
-// Signature: undefined4 core_platfrm_cpp_FUN_004f7360(CDemonActor *param_1,int param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_platfrm_cpp_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-uint core_platfrm_cpp_FUN_004f7360(CDemonActor *param_1,int param_2)
+int __cdecl core_platfrm_cpp_FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
+  ECollisionType EVar1;
   CKeyFramedModel *pCVar2;
   float fVar3;
-  uint uVar4;
-  float *pfVar5;
-  uint *puVar6;
-  byte *puVar7;
+  int frame_index;
+  CVector3f *ray_origin;
+  CVector3f *ray_direction;
+  CVector3f *output_normal;
   SCollisionInfo local_88;
   CBoundingBox3D CStack_60;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  byte auStack_3c [12];
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
+  CVector3f CStack_48;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
   CVector3f CStack_24;
   float fStack_18;
   
-  if (param_2 != 0) {
+  if (actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&local_88);
     local_88.ray_query.ray_type = 0;
-    iVar1 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x34))(param_2,&local_88);
-    if (iVar1 == 2) {
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00((param_1->orient).vec.x);
-      (param_1->orient).vec.x = fStack_18;
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00((param_1->orient).vec.z);
-      (param_1->orient).vec.z = fStack_18;
-      if ((ABS((param_1->orient).vec.x) <= (float)0.01) &&
-         (ABS((param_1->orient).vec.z) <= (float)0.01)) {
-        (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&CStack_60);
+    EVar1 = (*((actor->vtable)._ub)->getCollisionType)(actor,&local_88);
+    if (EVar1 == COLLISION_TYPE_CYLINDER) {
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00((this_ptr->base).orient.vec.x);
+      fVar3 = (this_ptr->base).orient.vec.z;
+      (this_ptr->base).orient.vec.x = fStack_18;
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fVar3);
+      fVar3 = (this_ptr->base).orient.vec.x;
+      (this_ptr->base).orient.vec.z = fStack_18;
+      if ((ABS(fVar3) <= (float)0.01) &&
+         (ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {
+        (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_60);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                  (param_1,&CStack_24,(CVector3f *)(param_2 + 0x20));
+                  (&this_ptr->base,&CStack_24,&(actor->location).position);
         if (((CStack_60.min.x <= CStack_24.x + local_88.cylinder_radius) &&
             (((CStack_24.x - local_88.cylinder_radius <= CStack_60.max.x &&
               (CStack_60.min.z <= CStack_24.z + local_88.cylinder_radius)) &&
@@ -49,22 +47,22 @@ uint core_platfrm_cpp_FUN_004f7360(CDemonActor *param_1,int param_2)
            ((CStack_60.min.y <= CStack_24.y + local_88.cylinder_top_y &&
             (CStack_24.y + local_88.cylinder_bottom_y <= CStack_60.max.y)))) {
           pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                             ((CKeyFramedModelInstance *)(param_1 + 1));
+                             (&this_ptr->model);
           if (*(int *)(pCVar2->texture_list[7].textures[2].texture_name + 4) != 0) {
-            fStack_48 = CStack_24.x;
-            fStack_40 = CStack_24.z;
-            puVar7 = auStack_3c;
-            uStack_30 = 0;
-            puVar6 = &uStack_30;
-            uStack_2c = 0x3f800000;
-            pfVar5 = &fStack_48;
-            uStack_28 = 0;
-            uVar4 = 0;
-            fStack_44 = local_88.cylinder_top_y + -1.0f + CStack_24.y;
+            CStack_48.x = CStack_24.x;
+            CStack_48.z = CStack_24.z;
+            output_normal = &CStack_3c;
+            CStack_30.x = 0.0;
+            ray_direction = &CStack_30;
+            CStack_30.y = 1.0;
+            ray_origin = &CStack_48;
+            CStack_30.z = 0.0;
+            frame_index = 0;
+            CStack_48.y = local_88.cylinder_top_y + -1.0f + CStack_24.y;
             pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                               ((CKeyFramedModelInstance *)(param_1 + 1));
-            fVar3 = (float)core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990
-                                     (pCVar2,uVar4,pfVar5,puVar6,puVar7);
+                               (&this_ptr->model);
+            fVar3 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990
+                              (pCVar2,frame_index,ray_origin,ray_direction,output_normal);
             if (fVar3 < 0.0) {
               return 0;
             }

@@ -28,7 +28,7 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040c6d0(char *string_buffer,char 
   }
   else {
     _ungetc(iVar1,DAT_00763e84);
-    iVar1 = _fscanf(DAT_00763e84,"%[^\"]",string_buffer);
+    iVar1 = _fscanf(DAT_00763e84,"%[^\"]");
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("String",property_type);
     }

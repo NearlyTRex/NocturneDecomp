@@ -14,8 +14,7 @@ CEnemy * core_imp_cpp_FUN_004bb760(CEnemy *param_1)
   CEnemy *pCVar3;
   
   pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  (pCVar3->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_imp_cpp_CImp_setup_FUN_004bb7d0_0059f584;
+  (pCVar3->base).base.vtable._ub = &g_CImpVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar3->base).model,"imp.dfm");
   fVar1 = 50.0f;

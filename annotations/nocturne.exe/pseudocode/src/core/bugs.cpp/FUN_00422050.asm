@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_FUN_00422050(CBugs *param_1,float param_2)
+; void __cdecl core_bugs_cpp_FUN_00422050(CBugs *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_FUN_00421480 at 004214c0
@@ -85,7 +88,7 @@ section .text
     PUSH EBX                            ; 004220ee
         ;   Label: LAB_004220ee
     CALL core_bugs.cpp_FUN_00421b80     ; 004220ef
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 004220f4
     MOV ESI,dword ptr [EBX + 0xbca4]    ; 004220f7
     PUSH ESI                            ; 004220fd
@@ -111,7 +114,7 @@ section .text
     PUSH EBX                            ; 0042212e
     INC ESI                             ; 0042212f
     CALL core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 ; 00422130
-        ;   XREF to: 004227b0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0()
+        ;   XREF to: 004227b0 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0(CBugs * this_ptr, SBug * bug_data, float delta_time, CVector3f * dest_vertex)
     ADD EDI,0x40                        ; 00422135
     MOV EDX,dword ptr [EBX + 0xbd28]    ; 00422138
     ADD ESP,0x10                        ; 0042213e
@@ -194,7 +197,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDX      ; 00422208
     MOV dword ptr [ESP + 0x38],EDX      ; 0042220c
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00422210
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00422215
     MOV EAX,dword ptr [ESI]             ; 00422218
     LEA EDI,[ESI + 0x4]                 ; 0042221a
@@ -306,7 +309,7 @@ section .text
     PUSH EBX                            ; 00422348
         ;   Label: LAB_00422348
     CALL core_bugs.cpp_FUN_00421b80     ; 00422349
-        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00421b80()
+        ;   XREF to: 00421b80 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_00421b80(CBugs * this_ptr)
     ADD ESP,0x4                         ; 0042234e
     JMP 0x00422116                      ; 00422351
         ;   XREF to: 00422116 (UNCONDITIONAL_JUMP)  ; LAB_00422116

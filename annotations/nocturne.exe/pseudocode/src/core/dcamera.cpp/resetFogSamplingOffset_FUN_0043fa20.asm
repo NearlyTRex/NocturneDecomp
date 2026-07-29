@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(int param_1)
+; void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid *fog)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_FUN_00446810 at 0044683c

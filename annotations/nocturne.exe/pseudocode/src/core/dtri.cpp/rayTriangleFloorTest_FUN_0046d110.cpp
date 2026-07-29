@@ -22,9 +22,7 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle *tria
   float fVar9;
   CVector3f local_7c;
   CVector3f local_70;
-  float local_64;
-  float local_60;
-  float local_5c;
+  CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
@@ -118,20 +116,20 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle *tria
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = search_radius / fVar9;
-          local_64 = (triangle->normal).x * fVar9 + position->x;
-          local_5c = fVar9 * (triangle->normal).z + position->z;
-          local_60 = position->y;
-          fVar9 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                                   (triangle,&local_64,&DAT_01bc995c);
+          local_64.x = (triangle->normal).x * fVar9 + position->x;
+          local_64.z = fVar9 * (triangle->normal).z + position->z;
+          local_64.y = position->y;
+          fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
+                            (triangle,&local_64,(CVector3f *)&DAT_01bc995c);
           if ((0.0 <= fVar9) &&
-             (local_60 = fVar9 * _DAT_01bc9960 + local_60, *out_height < local_60)) {
-            *out_height = local_60;
+             (local_64.y = fVar9 * _DAT_01bc9960 + local_64.y, *out_height < local_64.y)) {
+            *out_height = local_64.y;
             return 1;
           }
         }
         else if (uVar8 == 0) {
-          fVar9 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                                   (triangle,position,&DAT_01bc995c);
+          fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
+                            (triangle,position,(CVector3f *)&DAT_01bc995c);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_4c.y;

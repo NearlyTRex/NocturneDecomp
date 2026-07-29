@@ -85,7 +85,7 @@ section .text
     PUSH ECX                            ; 0050dfad | DAT_01b4d738
     INC ESI                             ; 0050dfae
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 0050dfaf
-        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60()
+        ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD EBX,0x28                        ; 0050dfb4
     ADD ESP,0x8                         ; 0050dfb7
     CMP ESI,EDI                         ; 0050dfba

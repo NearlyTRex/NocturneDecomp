@@ -71,7 +71,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 0046f633 | DAT_01bcd070
     PUSH EAX                            ; 0046f638
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0046f639
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0046f63e
     POP EDI                             ; 0046f641
     ADD ESP,0x4                         ; 0046f642
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 0046f65b
     MOV byte ptr [EBX],0x0              ; 0046f65f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0046f662
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0046f667
     MOV DL,byte ptr [ESP + 0x8]         ; 0046f66a
     MOV byte ptr [EBX],DL               ; 0046f66e

@@ -9,15 +9,15 @@
 CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(CWeapon *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   CKeyFramedModelInstance *pCVar2;
   CBox *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
-                     ((CKeyFramedModelInstance *)(iVar1 + 0x150));
+                     ((CKeyFramedModelInstance *)(pCVar1 + 1));
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar2[1].part_visibility_flags + 0xd));
-  pCVar3[-1].extents.x = (float)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_005a4154;
+  pCVar3[-1].extents.x = (float)&g_CWeaponVTable;
   pCVar3[1].position.y = 5.0;
   pCVar3[-1].scrape_points[7].raytrace_normal.z = 0.0;
   pCVar3[-1].scrape_points[7].local_position.y = 0.0;

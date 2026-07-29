@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaron_archive_FUN_00411080(int param_1)
+; void core_baron_cpp_CBaron_archive_FUN_00411080(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00411081
     PUSH EBX                            ; 00411085
     CALL core_hero.cpp_FUN_004b49a0     ; 00411086
-        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b49a0()
+        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b49a0(CHero * this_ptr)
     MOV EDX,dword ptr [0x005acf3c]      ; 0041108b | g_INT_005acf3c
     ADD ESP,0x4                         ; 00411091
     CMP EDX,0x2                         ; 00411094

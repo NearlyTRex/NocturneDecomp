@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *param_1,void *param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+; void __cdecl cockpit_ckptutil_c_blitSolidSprite_FUN_0042e4b0(void *sprite_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height ,int src_y_param)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   sprite_data
+; int              Stack[0x8]:4   screen_x
+; int              Stack[0xc]:4   screen_y
+; int              Stack[0x10]:4   src_x
+; int              Stack[0x14]:4   src_y
+; int              Stack[0x18]:4   width
+; int              Stack[0x1c]:4   height
+; int              Stack[0x20]:4   src_y_param
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042d900

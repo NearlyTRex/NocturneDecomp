@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int param_1,float param_2,float param_3)
+; float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60(int channel,float freq_start_hz,float freq_end_hz)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel
+; float            Stack[0x8]:4   freq_start_hz
+; float            Stack[0xc]:4   freq_end_hz
 ; Local Variables:
 ; undefined8       Stack[-0xd0]:8  local_d0
 ; undefined8       Stack[-0xc8]:8  local_c8
@@ -355,7 +359,7 @@ section .text
     SUB ESP,0x8                         ; 0052923f
     FSTP double ptr [ESP]               ; 00529242
     CALL crt_math.c_floor_FUN_005648c0  ; 00529245
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x84],EAX      ; 0052924a
     MOV dword ptr [ESP + 0x88],EDX      ; 00529251
     FLD double ptr [ESP + 0x84]         ; 00529258
@@ -371,7 +375,7 @@ section .text
     SUB ESP,0x8                         ; 00529282
     FSTP double ptr [ESP]               ; 00529285
     CALL crt_math.c_floor_FUN_005648c0  ; 00529288
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x84],EAX      ; 0052928d
     MOV dword ptr [ESP + 0x88],EDX      ; 00529294
     FLD double ptr [ESP + 0x84]         ; 0052929b

@@ -9,12 +9,12 @@
 void core_glass_cpp_FUN_004abb20(void)
 
 {
-  int iVar1;
+  CGlass *this_ptr;
   
-  iVar1 = FUN_0056497c(0xb38);
-  if (iVar1 == 0) {
+  this_ptr = (CGlass *)FUN_0056497c(0xb38);
+  if (this_ptr == (CGlass *)0x0) {
     return;
   }
-  core_glass_cpp_FUN_004abb50(iVar1);
+  core_glass_cpp_FUN_004abb50(this_ptr);
   return;
 }

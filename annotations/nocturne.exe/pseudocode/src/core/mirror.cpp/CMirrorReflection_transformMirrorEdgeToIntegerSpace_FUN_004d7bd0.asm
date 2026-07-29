@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(undefined4 param_1,int *param_2,int *param_3)
+; void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
@@ -99,7 +99,7 @@ section .text
     PUSH EAX                            ; 004d7c89
     PUSH ESI                            ; 004d7c8a
     CALL core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480 ; 004d7c8b
-        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480()
+        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(CMirrorReflection * this_ptr, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 004d7c90
     LEA EAX,[ESP + 0x48]                ; 004d7c92
     ADD ESP,0xc                         ; 004d7c96
@@ -119,7 +119,7 @@ section .text
     PUSH EAX                            ; 004d7cba
     PUSH ESI                            ; 004d7cbb
     CALL core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480 ; 004d7cbc
-        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480()
+        ;   XREF to: 004d7480 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(CMirrorReflection * this_ptr, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 004d7cc1
     LEA EAX,[ESP + 0x18]                ; 004d7cc3
     ADD ESP,0xc                         ; 004d7cc7

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEnemy * core_armour_cpp_FUN_0040f960(CEnemy *param_1)
+; CArmour * __cdecl core_armour_cpp_FUN_0040f960(CArmour *this_ptr)
 ;
+; Parameters:
+; CArmour *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_armour.cpp_FUN_0040f930 at 0040f943
@@ -15,7 +17,7 @@
 ;   undefined4 s_e_00578465+3
 ;   float FLOAT_005997a8 = 50
 ;   float FLOAT_005997ac = 100
-;   undefined1* PTR_core_armour.cpp_FUN_0040fa00_005997b4 = 0040fa00
+;   CEnemy_full_vtable g_CArmourVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -39,9 +41,9 @@ section .text
     LEA EDI,[EAX + 0x150]               ; 0040f977
     PUSH EDI                            ; 0040f97d
     MOV ESI,0x578465                    ; 0040f97e | = "none"
-    MOV dword ptr [EAX + 0x14c],0x5997b4 ; 0040f983 | PTR_core_armour.cpp_FUN_0040fa00_005997b4
+    MOV dword ptr [EAX + 0x14c],0x5997b4 ; 0040f983 | g_CArmourVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0040f98d
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005997a8]          ; 0040f992 | FLOAT_005997a8
     FLD float ptr [0x005997ac]          ; 0040f998 | FLOAT_005997ac
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0040f99e

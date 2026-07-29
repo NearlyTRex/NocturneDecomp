@@ -2,27 +2,27 @@
 // Address: 004b9d20
 // Address Range: [[004b9d20, 004b9da1]]
 // Convention: __cdecl
-// Signature: int __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
+// Signature: CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(CIcePick *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(uint param_1)
+CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(CIcePick *this_ptr)
 
 {
-  int iVar1;
+  CIcePick *pCVar1;
   
-  iVar1 = core_hero_cpp_FUN_004b46d0(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_icepick_cpp_CIcePick_setup_FUN_004b9db0_0059f3e4;
-  *(uint *)(iVar1 + 0x1fa3c) = 0;
-  *(uint *)(iVar1 + 0x1fa40) = 0;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar1 + 0x150,"icepick.dfm")
-  ;
-  *(uint *)(iVar1 + 0x1fa58) = 0x3f800000;
-  *(uint *)(iVar1 + 0x1fa54) = 0;
-  *(uint *)(iVar1 + 0x1fa50) = *(uint *)(iVar1 + 0x1fa54);
-  *(uint *)(iVar1 + 0x1fa4c) = *(uint *)(iVar1 + 0x1fa50);
-  *(uint *)(iVar1 + 0x1fa5c) = 0;
-  *(uint *)(iVar1 + 0x1fa60) = 0;
-  *(uint *)(iVar1 + 0x2434) = 0x43960000;
-  return iVar1;
+  pCVar1 = (CIcePick *)core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CIcePickVTable._ub;
+  pCVar1->guns_drawn = 0;
+  pCVar1->attack_count = 0;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (&(pCVar1->base).base.model,"icepick.dfm");
+  pCVar1->head_look_blend_weight = 1.0;
+  (pCVar1->head_look_euler).z = 0.0;
+  (pCVar1->head_look_euler).y = (pCVar1->head_look_euler).z;
+  (pCVar1->head_look_euler).x = (pCVar1->head_look_euler).y;
+  pCVar1->is_armed = 0;
+  pCVar1->pending_pickup_target = (CDemonActor *)0x0;
+  (pCVar1->base).base.hit_points = 300.0;
+  return pCVar1;
 }

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl core_script_cpp_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   left
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   right
+; int              Stack[0x14]:4   bottom
 ; Local Variables:
 ; undefined        Stack[-0xa4]:1  local_a4
 ; undefined        Stack[-0x40]:1  local_40

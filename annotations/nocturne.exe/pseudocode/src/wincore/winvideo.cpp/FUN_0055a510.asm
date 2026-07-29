@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 wincore_winvideo_cpp_FUN_0055a510(undefined4 param_1,undefined4 param_2)
+; int __cdecl wincore_winvideo_cpp_FUN_0055a510(char *directory_path,char *movie_filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory_path
+; char *           Stack[0x8]:4   movie_filename
 ; Local Variables:
 ; undefined        Stack[-0x1f8]:1  local_1f8
 ; undefined        Stack[-0xf4]:1  local_f4

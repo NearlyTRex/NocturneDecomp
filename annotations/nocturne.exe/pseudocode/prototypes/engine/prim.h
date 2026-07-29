@@ -17,11 +17,11 @@ void __cdecl setCullingMode(int culling_mode);
 
 // Original: engine_prim.c_setupBasicSoftwareEdge_FUN_004f9460
 // Address: 004f9460
-void setupBasicSoftwareEdge(int param_1,int param_2);
+void __cdecl setupBasicSoftwareEdge(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 
 // Original: engine_prim.c_setupSoftwareEdgeWithZMode_FUN_004f9620
 // Address: 004f9620
-void setupSoftwareEdgeWithZMode(int param_1,int param_2);
+void __cdecl setupSoftwareEdgeWithZMode(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 
 // Original: engine_prim.c_findEdgeInBuffer_FUN_004f9830
 // Address: 004f9830
@@ -61,19 +61,19 @@ int __cdecl getTriangleWindingFromPackedIndices(STrianglePackedIndices *triangle
 
 // Original: engine_prim.c_FUN_004f9dd0
 // Address: 004f9dd0
-void FUN_004f9dd0(SRenderVertex *param_1,int param_2);
+void __cdecl FUN_004f9dd0(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_FUN_004fa2e0
 // Address: 004fa2e0
-void FUN_004fa2e0(int *param_1,int param_2);
+void __cdecl FUN_004fa2e0(int *vertex_indices,int vertex_count);
 
 // Original: engine_prim.c_setupAdvancedSoftwareEdge_FUN_004fa800
 // Address: 004fa800
-void setupAdvancedSoftwareEdge(int param_1,int param_2);
+void __cdecl setupAdvancedSoftwareEdge(SRenderVertex *start_vertex,SRenderVertex *end_vertex);
 
 // Original: engine_prim.c_setupColoredSoftwareEdge_FUN_004faa20
 // Address: 004faa20
-void setupColoredSoftwareEdge(int param_1,int param_2);
+void __cdecl setupColoredSoftwareEdge(SRenderVertex *vertex0,SRenderVertex *vertex1);
 
 // Original: engine_prim.c_FUN_004faca0
 // Address: 004faca0

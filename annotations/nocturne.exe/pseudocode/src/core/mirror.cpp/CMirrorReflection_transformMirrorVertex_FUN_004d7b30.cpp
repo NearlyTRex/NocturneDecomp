@@ -2,44 +2,40 @@
 // Address: 004d7b30
 // Address Range: [[004d7b30, 004d7bce]]
 // Convention: unknown
-// Signature: void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(undefined4 param_1,int *param_2)
+// Signature: void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)
 
 #include "nocturne.h"
 
-void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint param_1,int *param_2)
+void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   int *unaff_ESI;
   byte bVar2;
   int aiStackY_100c [1009];
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
+  CVector3f local_3c;
+  CVector3f local_30;
   int local_24;
   int local_20 [2];
-  byte local_18 [12];
+  CVector3f local_18;
   
   bVar2 = 0;
-  local_3c = (float)*param_2 * 0.00390625f;
-  local_38 = (float)param_2[1] * 0.00390625f;
-  local_34 = (float)param_2[2] * 0.00390625f;
-  pfVar1 = (float *)core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480
-                              (param_1,local_18,&local_3c);
-  if (&local_30 != pfVar1) {
-    local_30 = *pfVar1;
-    local_2c = pfVar1[1];
-    local_28 = pfVar1[2];
+  local_3c.x = (float)*param_2 * 0.00390625f;
+  local_3c.y = (float)param_2[1] * 0.00390625f;
+  local_3c.z = (float)param_2[2] * 0.00390625f;
+  pCVar1 = core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480
+                     (param_1,&local_18,&local_3c);
+  if (&local_30 != pCVar1) {
+    local_30.x = pCVar1->x;
+    local_30.y = pCVar1->y;
+    local_30.z = pCVar1->z;
   }
-  local_24 = (int)ROUND(local_30 * 256.0f);
-  local_20[0] = (int)ROUND(local_2c * 256.0f);
-  local_20[1] = (int)ROUND(local_28 * 256.0f);
-  *unaff_ESI = (int)ROUND(local_30 * 256.0f);
+  local_24 = (int)ROUND(local_30.x * 256.0f);
+  local_20[0] = (int)ROUND(local_30.y * 256.0f);
+  local_20[1] = (int)ROUND(local_30.z * 256.0f);
+  *unaff_ESI = (int)ROUND(local_30.x * 256.0f);
   unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       *(int *)(local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + -4);
+       local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   return;
 }

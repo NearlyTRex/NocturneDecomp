@@ -2,44 +2,31 @@
 // Address: 0046ebd0
 // Address Range: [[0046ebd0, 0046ec79]]
 // Convention: __cdecl
-// Signature: CWeapon * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CWeapon *param_1)
+// Signature: CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CDynamite *this_ptr)
 
 #include "nocturne.h"
 
-CWeapon * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CWeapon *param_1)
+CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CDynamite *this_ptr)
 
 {
-  CWeapon *pCVar1;
-  CWeapon *pCVar2;
+  CDynamite *pCVar1;
   
-  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  (pCVar2->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059c924;
+  pCVar1 = (CDynamite *)core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (&pCVar2->model,"dynamitestick.kfm");
-  pCVar2->weight = 1.0;
-  pCVar1 = pCVar2 + 1;
-  (pCVar1->base).actor_name[0xc] = '\0';
-  (pCVar1->base).actor_name[0xd] = '\0';
-  (pCVar1->base).actor_name[0xe] = '\0';
-  (pCVar1->base).actor_name[0xf] = '\0';
-  *(uint *)(pCVar2[1].base.actor_name + 8) = *(uint *)(pCVar2[1].base.actor_name + 0xc);
-  *(uint *)(pCVar2[1].base.actor_name + 4) = *(uint *)(pCVar2[1].base.actor_name + 8);
-  pCVar2[1].base.actor_name[0] = '\0';
-  pCVar2[1].base.actor_name[1] = '\0';
-  pCVar2[1].base.actor_name[2] = -0x80;
-  pCVar2[1].base.actor_name[3] = -0x41;
-  pCVar2->is_spread_weapon = 0;
-  pCVar2->fire_mode = 0;
-  pCVar2->weapon_type = 3;
-  pCVar2->can_penetrate = 0;
-  pCVar2->bolt_velocity = 200.0;
-  pCVar2->fire_cooldown = 0;
-  pCVar2->can_attach_light = 0;
-  pCVar1 = pCVar2 + 1;
-  (pCVar1->base).actor_name[0x10] = '\0';
-  (pCVar1->base).actor_name[0x11] = '\0';
-  (pCVar1->base).actor_name[0x12] = '\0';
-  (pCVar1->base).actor_name[0x13] = '\0';
-  return pCVar2;
+            (&(pCVar1->base).model,"dynamitestick.kfm");
+  (pCVar1->base).weight = 1.0;
+  (pCVar1->toss_velocity).z = 0.0;
+  (pCVar1->toss_velocity).y = (pCVar1->toss_velocity).z;
+  (pCVar1->toss_velocity).x = (pCVar1->toss_velocity).y;
+  pCVar1->fuse_timer = -1.0;
+  (pCVar1->base).is_spread_weapon = 0;
+  (pCVar1->base).fire_mode = 0;
+  (pCVar1->base).weapon_type = 3;
+  (pCVar1->base).can_penetrate = 0;
+  (pCVar1->base).bolt_velocity = 200.0;
+  (pCVar1->base).fire_cooldown = 0;
+  (pCVar1->base).can_attach_light = 0;
+  pCVar1->sfx_handle = 0;
+  return pCVar1;
 }

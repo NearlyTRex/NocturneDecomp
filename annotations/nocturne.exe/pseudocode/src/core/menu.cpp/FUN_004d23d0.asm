@@ -112,7 +112,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d246d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d2472
-        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
+        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2477
     MOV dword ptr [ESP + 0x10],EBP      ; 004d247c
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d2480
@@ -296,13 +296,13 @@ section .text
     MOV ESI,dword ptr [0x005b9354]      ; 004d2638 | DAT_005b9354
     PUSH ESI                            ; 004d263e | DAT_01c775ec
     CALL core_game.cpp_FUN_004a4b50     ; 004d263f
-        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a4b50()
+        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4b50(CGame * this_ptr, int select_mode)
         ;   Label: LAB_004d263f
     ADD ESP,0x8                         ; 004d2644
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d2647
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d264c
-        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
+        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2651
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d2656
         ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)
@@ -489,12 +489,12 @@ section .text
     MOV EDI,dword ptr [0x005b9354]      ; 004d280e | DAT_005b9354
     PUSH EDI                            ; 004d2814 | DAT_01c775ec
     CALL core_game.cpp_FUN_004a4170     ; 004d2815
-        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a4170()
+        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004d281a
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d281d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d2822
-        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
+        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2827
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d282c
         ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)

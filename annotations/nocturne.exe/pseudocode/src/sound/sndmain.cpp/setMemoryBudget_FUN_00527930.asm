@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_setMemoryBudget_FUN_00527930(void)
+; void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_00527930(int min_bytes,int max_bytes)
 ;
+; Parameters:
+; int              Stack[0x4]:4   min_bytes
+; int              Stack[0x8]:4   max_bytes
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bea90

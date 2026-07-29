@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_setutil_cpp_calculateVertexIndex_FUN_00515980(void)
+; int __cdecl core_setutil_cpp_calculateVertexIndex_FUN_00515980(int row_index,int column_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   row_index
+; int              Stack[0x8]:4   column_index
 ;
 ; *****************************************************************************
 

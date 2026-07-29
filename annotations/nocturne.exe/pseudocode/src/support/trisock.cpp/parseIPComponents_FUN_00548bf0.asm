@@ -36,7 +36,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 00548c0d
     PUSH EDX                            ; 00548c11
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00548c12
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0x18                        ; 00548c17
     CMP EAX,0x4                         ; 00548c1a
     JZ 0x00548c26                       ; 00548c1d

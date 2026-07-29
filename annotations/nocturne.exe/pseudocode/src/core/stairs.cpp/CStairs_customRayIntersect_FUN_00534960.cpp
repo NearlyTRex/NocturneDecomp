@@ -1,38 +1,37 @@
 // Name: core_stairs.cpp_CStairs_customRayIntersect_FUN_00534960
 // Address: 00534960
 // Address Range: [[00534960, 00534a29]]
-// Convention: unknown
-// Signature: float core_stairs_cpp_CStairs_customRayIntersect_FUN_00534960(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+// Convention: __cdecl
+// Signature: float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_00534960(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 #include "nocturne.h"
 
-float core_stairs_cpp_CStairs_customRayIntersect_FUN_00534960(int param_1,uint param_2,uint param_3,float *param_4)
+float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_00534960(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
+  CDemonTriangle *triangle;
   int iVar1;
-  int iVar2;
-  float local_24;
-  float local_20;
-  float local_1c;
+  CVector3f local_24;
   float local_18;
   float local_14;
   
   local_18 = 1.01;
-  iVar1 = param_1 + 0x168;
-  for (iVar2 = 0; iVar2 < *(int *)(param_1 + 0x164) * 2; iVar2 = iVar2 + 1) {
-    local_14 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(iVar1,param_2,param_3);
+  triangle = this_ptr->collision_triangles;
+  for (iVar1 = 0; iVar1 < this_ptr->stair_count * 2; iVar1 = iVar1 + 1) {
+    local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(triangle,ray_origin,ray_direction)
+    ;
     if (((0.0 <= local_14) && (local_14 < local_18)) && (local_14 <= 1.0)) {
-      local_24 = -*(float *)(iVar1 + 0x24);
-      local_20 = -*(float *)(iVar1 + 0x28);
-      local_1c = -*(float *)(iVar1 + 0x2c);
+      local_24.x = -(triangle->normal).x;
+      local_24.y = -(triangle->normal).y;
+      local_24.z = -(triangle->normal).z;
       local_18 = local_14;
-      if (param_4 != &local_24) {
-        *param_4 = local_24;
-        param_4[1] = local_20;
-        param_4[2] = local_1c;
+      if (out_normal != &local_24) {
+        out_normal->x = local_24.x;
+        out_normal->y = local_24.y;
+        out_normal->z = local_24.z;
       }
     }
-    iVar1 = iVar1 + 0x38;
+    triangle = triangle + 1;
   }
   return local_18;
 }

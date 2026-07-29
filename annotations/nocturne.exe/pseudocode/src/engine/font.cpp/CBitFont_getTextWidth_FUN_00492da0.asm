@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont *param_1,byte *param_2)
+; int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont *this_ptr,char *text)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_particle_cpp_CParticle_render_FUN_004ef440(void)
+; void __cdecl core_particle_cpp_CParticle_render_FUN_004ef440(CParticle *this_ptr)
 ;
+; Parameters:
+; CParticle *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_particle_cpp_0058cb94

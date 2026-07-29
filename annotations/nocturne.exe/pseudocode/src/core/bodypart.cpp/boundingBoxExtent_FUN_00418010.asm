@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_bodypart_cpp_boundingBoxExtent_FUN_00418010(float *param_1,float *param_2)
+; CBoundingBox3D * __cdecl core_bodypart_cpp_boundingBoxExtent_FUN_00418010(CBoundingBox3D *src,CBoundingBox3D *dst)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   src
+; CBoundingBox3D * Stack[0x8]:4   dst
 ;
 ; *****************************************************************************
 

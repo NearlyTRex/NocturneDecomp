@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(float *param_1,float *param_2)
+; void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(CVector3f *start_point,CVector3f *end_point)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   start_point
+; CVector3f *      Stack[0x8]:4   end_point
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -106,7 +109,7 @@ section .text
     MOV EDI,ESP                         ; 0047317c
     MOVSD.REP ES:EDI,ESI                ; 0047317e | DAT_005c5014 | DAT_005c5018
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00409290 ; 00473180
-        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00409290()
+        ;   XREF to: 00409290 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00409290(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00473185
     ADD ESP,0x30                        ; 00473188
     POP EDI                             ; 0047318b

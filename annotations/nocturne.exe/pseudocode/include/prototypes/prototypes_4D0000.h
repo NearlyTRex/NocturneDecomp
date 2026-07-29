@@ -12,17 +12,20 @@
 #include "types/classes/CEnemy.h"
 #include "types/classes/CHero.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CLocation.h"
 #include "types/classes/CMimic.h"
+#include "types/classes/CMineCar.h"
 #include "types/classes/CMirror.h"
 #include "types/classes/CMirrorReflection.h"
 #include "types/classes/CMobster.h"
 #include "types/classes/CMoloch.h"
 #include "types/classes/CMoon.h"
 #include "types/classes/CMorphModel.h"
-#include "types/classes/CPathMap.h"
+#include "types/classes/CPlatform.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/EInputCodeType.h"
+#include "types/structs/SCPUInfo.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -41,30 +44,30 @@
 
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void);
 void __cdecl core_menu_cpp_configureCustomKeys_FUN_004d0d20(void);
-void core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(void);
+void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_center,int y_bottom,int y_top);
 void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems);
 int __cdecl core_menu_cpp_FUN_004d23d0(void);
 void core_menu_cpp_FUN_004d2880(void);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description);
-int core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void);
+int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void);
 CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(CAlphaBitmap *objs,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_004d4390(void);
-void core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void);
+void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void);
 void core_mimic_cpp_FUN_004d4420(void);
 CDemonActorType * core_mimic_cpp_FUN_004d4440(void);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr);
 CDemonActor * core_mimic_cpp_FUN_004d4540(CDemonActor *param_1,byte param_2);
 void core_mimic_cpp_FUN_004d4650(CEnemy *param_1);
 void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2);
-void core_mimic_cpp_FUN_004d4ba0(int param_1);
-void core_mimic_cpp_FUN_004d4f30(CMimic *param_1,float param_2);
+void __cdecl core_mimic_cpp_FUN_004d4ba0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_FUN_004d4f30(CMimic *this_ptr,float delta_time);
 void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr);
-int core_mimic_cpp_CMimic_renderOpaque_FUN_004d5ae0(CMimic *param_1);
-int core_mimic_cpp_CMimic_renderTransparent_FUN_004d5b00(CMimic *param_1);
+int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_004d5ae0(CMimic *this_ptr);
+int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_004d5b00(CMimic *this_ptr);
 undefined4 core_mimic_cpp_FUN_004d5b10(void);
 void core_mimic_cpp_FUN_004d5b20(CDemonActor *param_1,int param_2);
 void core_mimic_cpp_CMimic_archive_FUN_004d5bb0(CEnemy *param_1);
@@ -74,28 +77,28 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(CMimic *this_ptr,fl
 void __cdecl core_minecar_cpp_staticInit_FUN_004d5fb0(void);
 void core_minecar_cpp_FUN_004d5fe0(void);
 CDemonActorType * core_minecar_cpp_FUN_004d6010(void);
-void core_minecar_cpp_FUN_004d6020(int param_1);
-void core_minecar_cpp_FUN_004d6040(int param_1,float param_2);
+void __cdecl core_minecar_cpp_CMinecar_setup_FUN_004d6020(CMineCar *this_ptr);
+void core_minecar_cpp_FUN_004d6040(CPlatform *param_1,float param_2);
 void core_minecar_cpp_FUN_004d60b0(undefined4 param_1);
-CDemonActor * core_minecar_cpp_FUN_004d60d0(CDemonActor *param_1,byte param_2);
+CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_004d60d0(CMineCar *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_004d6140(void);
 void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004d6170(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004d62f0(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
-void core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane *param_1,CVector3f *param_2,uint param_3,int param_4,int *param_5);
+void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004d6550(CMirror *this_ptr);
 CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_004d6570(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004d6590(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610(CMirrorReflection *this_ptr);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
-CVector3f * core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(int param_1,CVector3f *param_2,CVector3f *param_3);
+CVector3f * __cdecl core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(CMirrorReflection *this_ptr,CVector3f *output_buffer,CVector3f *input_vector);
 uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 void core_mirror_cpp_FUN_004d76e0(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
-void core_mirror_cpp_FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
-void core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror *param_1,int param_2);
-int core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(float *param_1);
+int __cdecl core_mirror_cpp_FUN_004d7720(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(CMirror *this_ptr);
-void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(undefined4 param_1,int *param_2);
-void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(undefined4 param_1,int *param_2,int *param_3);
+void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2);
+void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3);
 undefined4 core_mirror_cpp_FUN_004d7d70(undefined4 param_1);
 undefined4 core_mirror_cpp_FUN_004d7d80(undefined4 param_1);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane *objs,uint flags);
@@ -106,11 +109,11 @@ void core_mission_cpp_FUN_004d7e00(int param_1);
 void core_mission_cpp_FUN_004d7e90(undefined4 param_1);
 void core_mission_cpp_FUN_004d7ea0(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
-void core_mission_cpp_CDemonMission_save_FUN_004d7f80(undefined4 param_1,char *param_2);
+void core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *param_1,char *param_2);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(CDemonMission *this_ptr,char *actor_name);
 int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0(CDemonMission *this_ptr,int is_loading);
-void core_mission_cpp_FUN_004d8720(CDemonMission *param_1,_FILE *param_2);
+void __cdecl core_mission_cpp_FUN_004d8720(CDemonMission *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission *this_ptr,CDemonActor *actor);
@@ -122,7 +125,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMissi
 void core_mission_cpp_FUN_004d8fc0(CDemonMission *param_1);
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission *this_ptr,char *name);
-void core_mission_cpp_FUN_004d90e0(int param_1,undefined4 *param_2);
+void __cdecl core_mission_cpp_FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target);
 void core_mission_cpp_FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3);
 void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(CDemonMission *this_ptr);
@@ -143,7 +146,7 @@ undefined4 core_mission_cpp_FUN_004d9e60(undefined4 param_1);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_004d9e70(void);
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004d9f59(void);
-bool core_mmx_c_getCPUInfo_FUN_004d9f6f(uint *param_1);
+int __cdecl core_mmx_c_getCPUInfo_FUN_004d9f6f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_004d9fd0(void);
 float * core_mobster_cpp_FUN_004da000(void);
 CVector3f * core_mobster_cpp_FUN_004da070(CVector3f *param_1,CDemonActor *param_2);
@@ -153,57 +156,57 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(CMobster *this_pt
 void core_mobster_cpp_CMobster_setup_FUN_004da290(CEnemy *param_1);
 void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(CMobster *this_ptr);
-void core_mobster_cpp_FUN_004da790(CPathMap *param_1,float param_2);
+void core_mobster_cpp_FUN_004da790(CMobster *param_1,float param_2);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_ptr,float delta_time);
 void core_mobster_cpp_FUN_004dba50(void);
 void core_mobster_cpp_FUN_004dba70(int param_1,int param_2);
 int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *this_ptr);
 void core_mobster_cpp_CMobster_archive_FUN_004dc180(CEnemy *param_1);
-undefined4 core_mobster_cpp_FUN_004dc2b0(void);
+undefined4 core_mobster_cpp_CMobster_reset_FUN_004dc2b0(void);
 void __cdecl core_mobster_cpp_CMobster_processDismemberment_FUN_004dc2d0(CMobster *this_ptr,SDamageInfo *damage_info);
 void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *param_1,SDamageInfo *param_2);
 int core_mobster_cpp_FUN_004dc820(int param_1,CVector3f *param_2);
 void core_mobster_cpp_FUN_004dc920(CCharacter *param_1,SCollisionInfo *param_2);
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr,int taunt_category);
-CDemonActor * core_mobster_cpp_CMobster_dtor_FUN_004dcac0(CDemonActor *param_1,byte param_2);
-void engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *param_1,int param_2);
+CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_004dcac0(CMobster *this_ptr,uint flags);
+void __cdecl engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *filename);
 void engine_model_c_freeMRGLData_FUN_004dcee0(SMRGLHeaderExtended *param_1);
 SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_004dcf60(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header);
 void __cdecl engine_model_c_loadMRGLTextures_FUN_004dd690(SMRGLHeaderExtended *mrgl);
-void engine_model_c_initializeMRGLModel_FUN_004dd760(void);
+void __cdecl engine_model_c_initializeMRGLModel_FUN_004dd760(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_004dd790(char *filename,int model_size);
 void __cdecl core_moloch_cpp_staticInit_FUN_004dd8d0(void);
 void core_moloch_cpp_FUN_004dd900(void);
 CDemonActorType * core_moloch_cpp_FUN_004dd920(void);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_004dd930(CMoloch *this_ptr);
 CHero * core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CHero *param_1,byte param_2);
-void core_moloch_cpp_CMoloch_setup_FUN_004dda70(int param_1);
+void core_moloch_cpp_CMoloch_setup_FUN_004dda70(CHero *param_1);
 void core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *param_1,float param_2);
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,float delta_time);
 int core_moloch_cpp_FUN_004de550(CCharacter *param_1);
-void core_moloch_cpp_FUN_004de680(int param_1);
+void core_moloch_cpp_FUN_004de680(CHero *param_1);
 void __cdecl core_moloch_cpp_CMoloch_startMorph_FUN_004de700(CMoloch *this_ptr);
 void core_moloch_cpp_FUN_004de750(void);
 undefined4 core_moloch_cpp_FUN_004de760(void);
 void __cdecl core_moon_cpp_staticInit_FUN_004de770(void);
 CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_004de800(CMoon *this_ptr);
-float * core_moon_cpp_CMoon_dtor_FUN_004de830(CMoon *param_1);
+CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_004de830(CMoon *this_ptr,uint flags);
 void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta_time);
 void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *this_ptr);
-undefined4 core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(void);
+int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon *this_ptr);
 undefined4 core_moon_cpp_FUN_004df190(undefined4 param_1);
 undefined4 core_moon_cpp_FUN_004df1a0(undefined4 param_1);
 void core_moon_cpp_FUN_004df1b0(void);
 void core_moon_cpp_FUN_004df1d0(void *param_1);
 void core_moon_cpp_FUN_004df1f0(void *param_1);
-int core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int param_1,int param_2,int param_3);
-void core_morph_cpp_CMorphModel_ctor_FUN_004df240(undefined4 *param_1);
+int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr);
 CMorphModel * core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *param_1);
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(CMorphModel *this_ptr);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list);

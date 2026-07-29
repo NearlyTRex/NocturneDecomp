@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 004f46d6
     PUSH EBX                            ; 004f46d7
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700 ; 004f46d8
-        ;   XREF to: 004f4700 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700()
+        ;   XREF to: 004f4700 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700(CPackedBitmap * this_ptr, uchar * raw_bitmap_data, int row_stride)
     ADD ESP,0xc                         ; 004f46dd
     PUSH ESI                            ; 004f46e0
     CALL crt_unknown.c_FUN_005638d0     ; 004f46e1

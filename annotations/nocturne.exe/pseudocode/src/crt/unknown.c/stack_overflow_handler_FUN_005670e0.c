@@ -1,16 +1,15 @@
 // Name: crt_unknown.c_stack_overflow_handler_FUN_005670e0
 // Address: 005670e0
 // Address Range: [[005670e0, 005670ec]]
-// Convention: unknown
-// Signature: undefined4 crt_unknown_c_stack_overflow_handler_FUN_005670e0(void)
+// Convention: __watcallStack
+// Signature: void __watcallStack crt_unknown_c_stack_overflow_handler_FUN_005670e0(SIZE_T required_bytes)
 
 #include "nocturne.h"
 
-uint stack_overflow_handler(void)
+void __watcallStack stack_overflow_handler(SIZE_T required_bytes)
 
 {
   bool bVar1;
-  uint extraout_EAX;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -25,5 +24,5 @@ uint stack_overflow_handler(void)
     bVar1 = 0xfff < iVar4;
     iVar4 = iVar2;
   } while (iVar2 != 0 && bVar1);
-  return extraout_EAX;
+  return;
 }

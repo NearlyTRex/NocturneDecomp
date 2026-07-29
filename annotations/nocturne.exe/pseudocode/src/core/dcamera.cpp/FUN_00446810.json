@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 451,
+    "complexity_score": 382,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 22,
+    "pseudocode_lines": 202,
+    "suspect_count": 16,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 651
+    "total_lines": 652
   },
   "cross_references": [
     {
@@ -155,9 +153,9 @@
         "00446e94"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_dcamera.cpp_FUN_00446810",
-    "signature": "void core_dcamera_cpp_FUN_00446810(int param_1)"
+    "signature": "void __cdecl core_dcamera_cpp_FUN_00446810(CDemonCamera *this_ptr)"
   },
   "function_calls": [
     {
@@ -440,24 +438,19 @@
         "call_addr": "00442402",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_FUN_004421b0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.389189189189189,
@@ -499,10 +492,10 @@
     "pcode_op_count": 1624
   },
   "stack_frame": {
-    "frame_size": 632,
+    "frame_size": 636,
     "local_size": 632,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -693,6 +686,13 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
       }
     ]
   },
@@ -711,14 +711,14 @@
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 193,
+          "line": 194,
           "message": "Uninitialized variable: iStack_120",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 17,
-          "line": 100,
+          "line": 101,
           "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
@@ -737,14 +737,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dcamera_cpp_FUN_00446810(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 14,
       "match": "unaff_EDI",
@@ -753,40 +745,8 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_sprintf(local_274,\"%s.fog\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar8 = round((double)*(float *)(param_1 + 0x104) * 256);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar8 = round((double)*(float *)(param_1 + 0x108) * dVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar9 = round(dVar9 * (double)*(float *)(param_1 + 0x10c));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 94,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_height) {",
@@ -794,15 +754,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 100,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "puVar5 = &DAT_012ceb78 + local_40;",
+      "text": "puVar4 = &DAT_012ceb78 + local_40;",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 103,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_width) {",
@@ -810,7 +770,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 120,
+      "line": 121,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar10 < unaff_EDI->display_width);",
@@ -818,7 +778,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 126,
+      "line": 127,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_34 < unaff_EDI->display_height);",
@@ -826,7 +786,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 128,
+      "line": 129,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);",
@@ -834,7 +794,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 131,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_height) {",
@@ -842,7 +802,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 139,
+      "line": 140,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_width) {",
@@ -850,15 +810,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 157,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "(&DAT_012ceb78)[iVar1] = (char)iVar3;",
+      "text": "(&DAT_012ceb78)[iVar6] = (char)iVar2;",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 166,
+      "line": 167,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_EDI->display_width);",
@@ -866,7 +826,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 171,
+      "line": 172,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_38 < unaff_EDI->display_height);",
@@ -874,7 +834,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 176,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);",
@@ -890,22 +850,11 @@
     },
     {
       "description": "Raw hex address 0x4469b4 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 80,
+      "line": 81,
       "match": "0x4469b4",
       "severity": "moderate",
       "text": "iVar10 = 0x4469b4;",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     },
     {
       "description": "Uninitialized variable: local_114",
@@ -917,7 +866,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_120",
-      "line": 193,
+      "line": 194,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (iStack_120 != 0) {",
@@ -925,7 +874,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 100,
+      "line": 101,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (1 < unaff_EDI->display_height) {",

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 56,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 8,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 20
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -144,9 +144,9 @@
         "0040435c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_2d.c_mapTextureFrameBuffer_FUN_00404340",
-    "signature": "void engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void)"
+    "signature": "int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void)"
   },
   "function_calls": [
     {
@@ -217,26 +217,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 10,
       "match": "DAT_005b762c",
       "severity": "mild",
-      "text": "engine_2d_c_mapFrameBuffer_FUN_00404120(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
+      "text": "(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 10,
       "match": "DAT_005b762c",
       "severity": "mild",
-      "text": "engine_2d_c_mapFrameBuffer_FUN_00404120(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
+      "text": "(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 10,
       "match": "DAT_005b762c",
       "severity": "mild",
-      "text": "engine_2d_c_mapFrameBuffer_FUN_00404120(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
+      "text": "(_DAT_01c02580,DAT_005b762c,DAT_005b762c,8,DAT_005b762c);",
       "type": "undefined_data"
     }
   ]

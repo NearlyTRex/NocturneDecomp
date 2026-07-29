@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)
+; int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x80]:8  local_80
 ; undefined8       Stack[-0x78]:8  local_78

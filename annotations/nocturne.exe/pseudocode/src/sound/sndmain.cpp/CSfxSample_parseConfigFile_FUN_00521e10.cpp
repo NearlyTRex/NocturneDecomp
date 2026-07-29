@@ -108,7 +108,7 @@ joined_r0x00521ffd:
       memmove(local_46c,local_46c + 1,~uVar9 - 1);
     }
     if (local_46c[0] != '\0') {
-      iVar5 = sscanf(local_46c,"refDist =%f",local_30);
+      iVar5 = sscanf(local_46c,"refDist =%f");
       if (iVar5 == 1) {
         if (local_1c != 0) {
           PTR_01cc4800 = "..\\sound\\sndmain.cpp";
@@ -128,7 +128,7 @@ joined_r0x00521ffd:
         }
       }
       else {
-        iVar5 = sscanf(local_46c,"minDist =%f",local_28);
+        iVar5 = sscanf(local_46c,"minDist =%f");
         if (iVar5 == 1) {
           if (local_18 != 0) {
             PTR_01cc4800 = "..\\sound\\sndmain.cpp";
@@ -146,9 +146,9 @@ joined_r0x00521ffd:
           }
         }
         else {
-          iVar5 = sscanf(local_46c,"maxDist =%f",local_2c);
+          iVar5 = sscanf(local_46c,"maxDist =%f");
           if (iVar5 != 1) {
-            iVar5 = sscanf(local_46c,"maxVol =%f",&local_470);
+            iVar5 = sscanf(local_46c,"maxVol =%f");
             if (iVar5 == 1) {
               if (local_1c == 0) {
                 PTR_01cc4800 = "..\\sound\\sndmain.cpp";
@@ -172,7 +172,7 @@ joined_r0x00521ffd:
               *(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;
             }
             else {
-              iVar5 = sscanf(local_46c,"length =%d",&local_34);
+              iVar5 = sscanf(local_46c,"length =%d");
               if (iVar5 == 1) {
                 if (-1 < *(int *)(param_1 + 0x110)) {
                   PTR_01cc4800 = "..\\sound\\sndmain.cpp";

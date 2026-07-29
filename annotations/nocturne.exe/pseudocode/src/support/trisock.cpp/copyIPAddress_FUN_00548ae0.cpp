@@ -1,14 +1,14 @@
 // Name: support_trisock.cpp_copyIPAddress_FUN_00548ae0
 // Address: 00548ae0
 // Address Range: [[00548ae0, 00548aee]]
-// Convention: unknown
-// Signature: undefined4 * support_trisock_cpp_copyIPAddress_FUN_00548ae0(undefined4 *param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_00548ae0(uint *dest_ip,uint *src_ip)
 
 #include "nocturne.h"
 
-uint * support_trisock_cpp_copyIPAddress_FUN_00548ae0(uint *param_1,uint *param_2)
+uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_00548ae0(uint *dest_ip,uint *src_ip)
 
 {
-  *param_1 = *param_2;
-  return param_1;
+  *dest_ip = *src_ip;
+  return dest_ip;
 }

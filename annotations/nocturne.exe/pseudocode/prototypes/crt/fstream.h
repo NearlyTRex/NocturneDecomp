@@ -61,23 +61,23 @@ filebuf * __watcallStack filebuf::dtor(filebuf *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_filebuf_pbackfail_FUN_00571efe
 // Address: 00571efe
-uint filebuf::pbackfail(int param_1,uint param_2);
+int __watcallStack filebuf::pbackfail(filebuf *this_ptr,int character);
 
 // Original: crt_fstream.cpp_filebuf_overflow_FUN_00571fd1
 // Address: 00571fd1
-int filebuf::overflow(int param_1,int param_2);
+int __watcallStack filebuf::overflow(filebuf *this_ptr,int character);
 
 // Original: crt_fstream.cpp_filebuf_underflow_FUN_005721d7
 // Address: 005721d7
-uint filebuf::underflow(int param_1);
+int __watcallStack filebuf::underflow(filebuf *this_ptr);
 
 // Original: crt_fstream.cpp_filebuf_setbuf_FUN_005722dc
 // Address: 005722dc
-streambuf * filebuf::setbuf(streambuf *param_1,void *param_2,int param_3);
+streambuf * __watcallStack filebuf::setbuf(filebuf *this_ptr,char *buffer_ptr,int buffer_size);
 
 // Original: crt_fstream.cpp_filebuf_seekoff_FUN_00572338
 // Address: 00572338
-int filebuf::seekoff(int param_1,long param_2,uint param_3);
+int __watcallStack filebuf::seekoff(filebuf *this_ptr,long offset,int direction,int mode);
 
 // Original: crt_fstream.cpp_filebuf_sync_FUN_005723ae
 // Address: 005723ae

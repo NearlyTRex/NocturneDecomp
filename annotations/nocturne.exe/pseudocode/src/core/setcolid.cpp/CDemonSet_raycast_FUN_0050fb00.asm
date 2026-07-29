@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(int param_1,float *param_2,float *param_3)
+; float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_target
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -72,7 +76,7 @@ section .text
     PUSH ESI                            ; 0050fb4a
     PUSH 0x1fba938                      ; 0050fb4b | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0050fb50
-        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00()
+        ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x38],EAX      ; 0050fb55
     FLD float ptr [ESP + 0x38]          ; 0050fb59
     LEA EAX,[EBX + 0x14cd40]            ; 0050fb5d
@@ -105,7 +109,7 @@ section .text
     PUSH 0xbf800000                     ; 0050fbae
     PUSH EBX                            ; 0050fbb3
     CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 ; 0050fbb4
-        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0()
+        ;   XREF to: 0050ffe0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x38],EAX      ; 0050fbb9
     MOV EAX,dword ptr [ESP + 0x38]      ; 0050fbbd
     MOV dword ptr [EBX + 0x15f2dc],EAX  ; 0050fbc1

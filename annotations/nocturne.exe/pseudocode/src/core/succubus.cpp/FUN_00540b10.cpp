@@ -9,12 +9,12 @@
 void core_succubus_cpp_FUN_00540b10(void)
 
 {
-  int iVar1;
+  CSuccubus *this_ptr;
   
-  iVar1 = FUN_0056497c(0xedd0);
-  if (iVar1 == 0) {
+  this_ptr = (CSuccubus *)FUN_0056497c(0xedd0);
+  if (this_ptr == (CSuccubus *)0x0) {
     return;
   }
-  core_succubus_cpp_FUN_00540b40(iVar1);
+  core_succubus_cpp_FUN_00540b40(this_ptr);
   return;
 }

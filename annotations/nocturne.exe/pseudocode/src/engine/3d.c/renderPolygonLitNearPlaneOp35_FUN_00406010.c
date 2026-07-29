@@ -1,19 +1,19 @@
 // Name: engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00406010
 // Address: 00406010
 // Address Range: [[00406010, 004060af]]
-// Convention: unknown
-// Signature: int * engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(SMRGLHeaderPrimitive *param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int * engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(SMRGLHeaderPrimitive *param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
@@ -31,8 +31,8 @@ int * engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(SMRGLHeaderPrimitiv
     }
     _DAT_01c039a0 = 0xd1;
     _DAT_01c039a4 = 3;
-    engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
-    engine_clipper_c_FUN_00432cd0((param_1->base).count,param_1 + 1);
+    engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
+    engine_clipper_c_FUN_00432cd0((prim->base).count,prim + 1);
   }
-  return &param_1[1].base.type + (param_1->base).count;
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

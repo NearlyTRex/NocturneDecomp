@@ -16,9 +16,7 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  this_ptr->vtable =
-       (CMotionController_vtable *)&PTR_core_motion_cpp_CMotionController_dtor_FUN_004e1150_005a0d24
-  ;
+  this_ptr->vtable = &g_CMotionControllerVTable;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

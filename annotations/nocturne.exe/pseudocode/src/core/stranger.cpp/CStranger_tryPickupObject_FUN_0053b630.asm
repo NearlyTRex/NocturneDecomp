@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_0053b664
     PUSH ESI                            ; 0053b665
     CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0 ; 0053b666
-        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0()
+        ;   XREF to: 0042a9d0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x164],EAX     ; 0053b66b
     FLD float ptr [ESP + 0x164]         ; 0053b672
     ADD ESP,0x8                         ; 0053b679
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 0053b689
     PUSH EAX                            ; 0053b68f
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 0053b690
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x164],EAX     ; 0053b695
     FLD float ptr [ESP + 0x164]         ; 0053b69c
     FLD1                                ; 0053b6a3
@@ -286,7 +286,7 @@ section .text
     LEA EAX,[ESP + 0xec]                ; 0053b906
     PUSH EAX                            ; 0053b90d
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0053b90e
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0053b913
     FABS                                ; 0053b916
     ADD ESP,0x8                         ; 0053b918

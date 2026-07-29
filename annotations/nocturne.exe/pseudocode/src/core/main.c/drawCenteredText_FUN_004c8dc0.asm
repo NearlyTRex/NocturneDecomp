@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_drawCenteredText_FUN_004c8dc0(char *param_1,undefined4 param_2,int param_3,int param_4)
+; void __cdecl core_main_c_drawCenteredText_FUN_004c8dc0(char *text,int x,int y,int color_mode)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   color_mode
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_014b98f8
@@ -25,7 +30,7 @@ section .text
     MOV ECX,dword ptr [0x014b98f8]      ; 004c8dc9 | DAT_014b98f8
     PUSH ECX                            ; 004c8dcf
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 004c8dd0
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c8dd5
     SAR EDX,0x1f                        ; 004c8dd7
     SUB EAX,EDX                         ; 004c8dda

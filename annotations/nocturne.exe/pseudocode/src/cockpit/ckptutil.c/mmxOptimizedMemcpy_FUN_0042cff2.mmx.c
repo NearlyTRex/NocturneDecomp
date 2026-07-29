@@ -1,12 +1,12 @@
 // Name: cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_0042cff2
 // Address: 0042cff2
 // Address Range: [[0042cff2, 0042d0f7]]
-// Convention: unknown
-// Signature: undefined8 cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(undefined4 *param_1,undefined4 *param_2,uint param_3)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(void *dest_buffer,void *src_buffer,int byte_count)
 
 #include "nocturne.h"
 
-ulonglong cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(uint *param_1,uint *param_2,uint param_3)
+void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(void *dest_buffer,void *src_buffer,int byte_count)
 {
 __asm {
         push EAX

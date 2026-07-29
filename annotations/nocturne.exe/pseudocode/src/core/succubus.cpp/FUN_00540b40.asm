@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_succubus_cpp_FUN_00540b40(CEnemy *param_1)
+; CSuccubus * __cdecl core_succubus_cpp_FUN_00540b40(CSuccubus *this_ptr)
 ;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_succubus.cpp_FUN_00540b10 at 00540b23
@@ -16,7 +18,7 @@
 ;   undefined4 s_hdwing_cth_00596018+3
 ;   float FLOAT_005a28cc = 50
 ;   float FLOAT_005a28d0 = 100
-;   undefined1* PTR_core_succubus.cpp_FUN_00540c20_005a28e4 = 00540c20
+;   CEnemy_full_vtable g_CSuccubusVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_ctor_FUN_00438210
@@ -57,9 +59,9 @@ section .text
     PUSH 0x595ffe                       ; 00540b80 | = "succubus.dfm"
     LEA EAX,[EBX + 0x150]               ; 00540b85
     PUSH EAX                            ; 00540b8b
-    MOV dword ptr [EBX + 0x14c],0x5a28e4 ; 00540b8c | PTR_core_succubus.cpp_FUN_00540c20_005a28e4
+    MOV dword ptr [EBX + 0x14c],0x5a28e4 ; 00540b8c | g_CSuccubusVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540b96
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00540b9b
     PUSH 0x59600b                       ; 00540b9e | = "hotdemon.dfm"
     LEA EAX,[EBX + 0xbd24]              ; 00540ba3
@@ -67,7 +69,7 @@ section .text
     MOV ESI,0x596018                    ; 00540baa | = "hdwing.cth"
     LEA EDI,[EBX + 0xdfdc]              ; 00540baf
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00540bb5
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 00540bba
     FLD float ptr [0x005a28cc]          ; 00540bc4 | FLOAT_005a28cc
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 00540bca

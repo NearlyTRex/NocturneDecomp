@@ -17,4 +17,4 @@ void __cdecl detectMMXSupport(void);
 
 // Original: core_mmx.c_getCPUInfo_FUN_004d9f6f
 // Address: 004d9f6f
-bool getCPUInfo(uint *param_1);
+int __cdecl getCPUInfo(SCPUInfo *cpu_info);

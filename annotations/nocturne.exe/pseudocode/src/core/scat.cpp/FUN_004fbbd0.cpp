@@ -9,12 +9,12 @@
 void core_scat_cpp_FUN_004fbbd0(void)
 
 {
-  int iVar1;
+  CScat *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1fa68);
-  if (iVar1 == 0) {
+  this_ptr = (CScat *)FUN_0056497c(0x1fa68);
+  if (this_ptr == (CScat *)0x0) {
     return;
   }
-  core_scat_cpp_FUN_004fbc00(iVar1);
+  core_scat_cpp_FUN_004fbc00(this_ptr);
   return;
 }

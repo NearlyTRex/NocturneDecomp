@@ -236,7 +236,7 @@ section .text
     ADD ESI,0x4                         ; 00440927
     INC EBP                             ; 0044092a
     CALL core_dstrender.cpp_memcpyMMX_FUN_00465341 ; 0044092b
-        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_memcpyMMX_FUN_00465341()
+        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
     MOV EAX,[0x0140e7a4]                ; 00440930 | DAT_0140e7a4
     ADD ESP,0xc                         ; 00440935
     CMP EBP,EAX                         ; 00440938

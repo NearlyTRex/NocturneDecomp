@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_CRuleList_remove_FUN_00481770(int *param_1,int param_2)
+; void __cdecl core_event_cpp_CRuleList_remove_FUN_00481770(CRuleList *this_ptr,int index)
 ;
+; Parameters:
+; CRuleList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00580f3f

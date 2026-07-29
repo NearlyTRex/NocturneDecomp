@@ -65,7 +65,7 @@ section .text
     PUSH 0x1b748b4                      ; 00461e08
         ;   Label: LAB_00461e08
     CALL crt_stdlib.c__qsort_FUN_00563db8 ; 00461e0d
-        ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_00563db8()
+        ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_00563db8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00461e12
     MOV EAX,dword ptr [EBP + 0x10]      ; 00461e15
     MOV dword ptr [EBP + 0x1c],0x0      ; 00461e18
@@ -109,7 +109,7 @@ section .text
     ADD EBX,0x4                         ; 00461e70
     INC ESI                             ; 00461e73
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 ; 00461e74
-        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0()
+        ;   XREF to: 0045f5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
     MOV EAX,[0x01b4d7ac]                ; 00461e79 | DAT_01b4d7ac
     ADD ESP,0xc                         ; 00461e7e
     CMP ESI,EAX                         ; 00461e81

@@ -49,7 +49,7 @@ int __watcallStack mbtowc::peek(char *str);
 
 // Original: crt_string.c_mbtowc_next_FUN_0056da80
 // Address: 0056da80
-byte * mbtowc::next(byte *param_1);
+char * __watcallStack mbtowc::next(char *str);
 
 // Original: crt_string.c_mb_get_last_char_FUN_0056dab0
 // Address: 0056dab0
@@ -73,15 +73,15 @@ int __cdecl ::mbstrnicmp(char *str1,char *str2,SIZE_T count);
 
 // Original: crt_string.c_parseFloatString_FUN_0056f690
 // Address: 0056f690
-undefined4 parseFloatString(byte *param_1,undefined4 *param_2,undefined4 *param_3);
+int __cdecl parseFloatString(char *str,void *result,char **endptr);
 
 // Original: crt_string.c_strtod_main_FUN_0056f852
 // Address: 0056f852
-double strtod::main(undefined4 param_1,undefined4 param_2);
+double __cdecl strtod::main(char *str,char **endptr);
 
 // Original: crt_string.c_mbstrncpy_core_FUN_0056fd26
 // Address: 0056fd26
-_FILE * mbstrncpy::core(_FILE *param_1);
+char * __watcallStack mbstrncpy::core(char *dest,char *src,int count);
 
 // Original: crt_string.c_strpbrk_FUN_00570870
 // Address: 00570870
@@ -97,4 +97,4 @@ int __watcallStack mbstring::termination_check(char *str);
 
 // Original: crt_string.c_char_in_set_FUN_00572a90
 // Address: 00572a90
-char * char::in_set(char *param_1,int param_2);
+char * __cdecl char::in_set(char *charset,wchar_t wc);

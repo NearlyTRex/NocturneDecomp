@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_FUN_0043b110(int param_1)
+; void core_conveyor_cpp_FUN_0043b110(CPlatform *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -58,7 +58,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0043b170
     MOVSD ES:EDI,ESI                    ; 0043b171
     CALL core_platfrm.cpp_FUN_004f5f60  ; 0043b172
-        ;   XREF to: 004f5f60 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5f60()
+        ;   XREF to: 004f5f60 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_FUN_004f5f60(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0043b177
     MOV dword ptr [EBX + 0xfc],0x1      ; 0043b17a
     ADD ESP,0x10                        ; 0043b184

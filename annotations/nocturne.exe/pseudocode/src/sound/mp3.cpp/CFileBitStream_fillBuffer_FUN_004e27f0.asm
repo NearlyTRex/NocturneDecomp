@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(undefined4 *param_1)
+; void __cdecl sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(CFileBitStream *this_ptr)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005636d0

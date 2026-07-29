@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_2d_c_getInputWithPrompt_FUN_00403fb0(undefined1 *param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; int __cdecl engine_2d_c_getInputWithPrompt_FUN_00403fb0(char *buffer,int max_length,int x,int y,char *prompt)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; int              Stack[0x8]:4   max_length
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; char *           Stack[0x14]:4   prompt
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14

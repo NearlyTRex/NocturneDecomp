@@ -1,14 +1,14 @@
 // Name: core_flame.cpp_FUN_0048df10
 // Address: 0048df10
 // Address Range: [[0048df10, 0048df1e]]
-// Convention: unknown
-// Signature: void core_flame_cpp_FUN_0048df10(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_flame_cpp_FUN_0048df10(CFlame *this_ptr)
 
 #include "nocturne.h"
 
-void core_flame_cpp_FUN_0048df10(int param_1)
+void __cdecl core_flame_cpp_FUN_0048df10(CFlame *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x288) = 0;
+  this_ptr->is_visible = 0;
   return;
 }

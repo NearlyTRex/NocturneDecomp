@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4)
+; void __cdecl core_set_cpp_FUN_0050d910(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; SInputFace *     Stack[0x8]:4   face_data
+; int              Stack[0xc]:4   count
+; int              Stack[0x10]:4   alpha
 ; Local Variables:
 ; undefined4       Stack[-0x114]:4  local_114
 ; undefined4       Stack[-0x110]:4  local_110
@@ -403,7 +408,7 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 0050dd44 | DAT_005ae704
     PUSH ESI                            ; 0050dd4a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20 ; 0050dd4b
-        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20()
+        ;   XREF to: 0045ff20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x0050dca5                      ; 0050dd50
         ;   XREF to: 0050dca5 (UNCONDITIONAL_JUMP)  ; LAB_0050dca5
 

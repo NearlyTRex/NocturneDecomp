@@ -123,7 +123,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004843e0 | DAT_005ae704
     PUSH ECX                            ; 004843e6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 004843e7
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     MOV EBX,dword ptr [ESI + 0x44]      ; 004843ec
     ADD ESP,0xc                         ; 004843ef
     TEST EBX,EBX                        ; 004843f2
@@ -237,7 +237,7 @@ section .text
     MOV dword ptr [0x005c50c0],EBX      ; 0048451b | DAT_005c50c0
     LEA EBX,[ESP + 0x8c]                ; 00484521
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 00484528
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 0048452d
     MOV EDX,dword ptr [0x005ae704]      ; 00484530 | DAT_005ae704
     FLD float ptr [ESP + 0xc8]          ; 00484536
@@ -486,7 +486,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 004848b7 | DAT_005ae704
     PUSH EAX                            ; 004848bc | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 004848bd
-        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50()
+        ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 004848c2
     FLD float ptr [ESP + 0xc8]          ; 004848c5
     FCHS                                ; 004848cc

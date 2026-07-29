@@ -17,7 +17,7 @@ CDemonActorType * FUN_004b41e0(void);
 
 // Original: core_health.cpp_FUN_004b41f0
 // Address: 004b41f0
-int * FUN_004b41f0(undefined4 param_1);
+int * FUN_004b41f0(CDemonActor *param_1);
 
 // Original: core_health.cpp_FUN_004b4250
 // Address: 004b4250
@@ -31,9 +31,9 @@ void FUN_004b4270(void);
 // Address: 004b4280
 int FUN_004b4280(CDemonActor *param_1);
 
-// Original: core_health.cpp_FUN_004b42f0
+// Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004b42f0
 // Address: 004b42f0
-undefined4 * FUN_004b42f0(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_health.cpp_CHealthItem_archive_FUN_004b4340
 // Address: 004b4340
@@ -53,7 +53,7 @@ int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_FUN_004b4440
 // Address: 004b4440
-void FUN_004b4440(undefined4 param_1,undefined4 param_2);
+void FUN_004b4440(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_health.cpp_FUN_004b4460
 // Address: 004b4460

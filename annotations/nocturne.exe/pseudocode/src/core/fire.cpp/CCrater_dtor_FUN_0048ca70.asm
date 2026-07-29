@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_fire_cpp_CCrater_dtor_FUN_0048ca70(int param_1)
+; CCrater * __cdecl core_fire_cpp_CCrater_dtor_FUN_0048ca70(CCrater *this_ptr,uint flags)
 ;
+; Parameters:
+; CCrater *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0

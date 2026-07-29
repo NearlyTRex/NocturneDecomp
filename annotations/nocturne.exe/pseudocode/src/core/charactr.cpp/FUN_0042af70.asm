@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_FUN_0042af70(CCharacter *param_1,float param_2)
+; int __cdecl core_charactr_cpp_FUN_0042af70(CCharacter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x114]:4  local_114
 ; undefined        Stack[-0xbc]:1  local_bc
@@ -129,7 +132,7 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 0042b01c
     PUSH EAX                            ; 0042b020
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0042b021
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0042b026
     FABS                                ; 0042b029
     LEA EAX,[EBX + 0x20]                ; 0042b02b
@@ -150,7 +153,7 @@ section .text
     PUSH EAX                            ; 0042b064
     FSTP float ptr [ESP + 0xe4]         ; 0042b065
     CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0 ; 0042b06c
-        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
+        ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0042b071
     MOV EAX,dword ptr [EAX + 0x4]       ; 0042b074
     PUSH EBX                            ; 0042b077
@@ -225,7 +228,7 @@ section .text
     MOV dword ptr [ESP + 0x74],ECX      ; 0042b175
     MOV dword ptr [ESP + 0x78],ECX      ; 0042b179
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0042b17d
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 0042b182
     FADD float ptr [EAX]                ; 0042b184
     ADD ESP,0xc                         ; 0042b186
@@ -414,7 +417,7 @@ section .text
     MOV dword ptr [ESP + 0xec],ECX      ; 0042b3ec
     MOV dword ptr [ESP + 0xf0],ECX      ; 0042b3f3
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 0042b3fa
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 0042b3ff
     FADD float ptr [EAX]                ; 0042b401
     ADD ESP,0xc                         ; 0042b403

@@ -21,7 +21,7 @@ CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00439830(CLZWComp
   pCVar3[1].table_capacity = buffer_size;
   pCVar3[1].num_bits = num_bits;
   iVar1 = pCVar3[1].num_bits;
-  *puVar4 = (uint)&PTR_support_codec_cpp_CLZWCompress_dtor_FUN_00439c70_0059b414;
+  *puVar4 = (uint)&g_CLZWCompressVTable;
   uVar5 = -1 << ((byte)iVar1 & 0x1f);
   pCVar3[1].current_num_bits = uVar5;
   pCVar3[1].current_num_bits = ~uVar5;

@@ -342,7 +342,7 @@ section .text
         ;   Label: LAB_004d6944
     PUSH EAX                            ; 004d694b
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d694c
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     FLD float ptr [EBX]                 ; 004d6951
     ADD ESP,0x4                         ; 004d6953
     FCHS                                ; 004d6956
@@ -378,7 +378,7 @@ section .text
     MOV dword ptr [ESP + 0x22c],EDX     ; 004d6a06
     MOV dword ptr [ESP + 0x23c],EDX     ; 004d6a0d
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d6a14
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 004d6a19
     LEA EAX,[ESP + 0xec]                ; 004d6a1c
     MOV EDI,0xbf800000                  ; 004d6a23
@@ -752,7 +752,7 @@ section .text
     LEA EAX,[ESP + 0xec]                ; 004d707e
     PUSH EAX                            ; 004d7085
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d7086
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     FLD float ptr [EBX + 0x60]          ; 004d708b
     LEA EAX,[ESP + 0x210]               ; 004d708e
     ADD ESP,0x4                         ; 004d7095
@@ -766,7 +766,7 @@ section .text
     FCHS                                ; 004d70b1
     FSTP float ptr [ESP + 0x11c]        ; 004d70b3
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d70ba
-        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0()
+        ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
     FILD dword ptr [0x01c039e8]         ; 004d70bf | DAT_01c039e8
     FMUL double ptr [0x0058960a]        ; 004d70c5 | DOUBLE_0058960a
     FILD dword ptr [0x01c039ec]         ; 004d70cb | DAT_01c039ec

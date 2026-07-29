@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 306,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 216,
-    "suspect_count": 7,
+    "pseudocode_lines": 212,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
     ],
-    "total_lines": 696
+    "total_lines": 692
   },
   "cross_references": [
     {
@@ -771,42 +772,42 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 107,
+          "line": 102,
           "message": "Uninitialized variable: local_74",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 40,
-          "line": 107,
+          "line": 102,
           "message": "Uninitialized variable: local_7c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 62,
-          "line": 107,
+          "line": 102,
           "message": "Uninitialized variable: local_78",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 173,
+          "line": 168,
           "message": "Uninitialized variable: local_b0",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 174,
+          "line": 169,
           "message": "Uninitialized variable: local_b8",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 175,
+          "line": 170,
           "message": "Uninitialized variable: local_b4",
           "severity": "warning"
         }
@@ -818,7 +819,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 214,
+      "line": 210,
       "match": "(CVector3f *)((int)(local_14 + 0xe) +",
       "severity": "moderate",
       "text": "local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);",
@@ -826,15 +827,31 @@
     },
     {
       "description": "Pointer value `(local_14 + 0xe)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 214,
+      "line": 210,
       "match": "(int)(local_14 + 0xe)",
       "severity": "moderate",
       "text": "local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 189,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_88.x = local_a0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 197,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(vertex->position).x = local_88.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom dead self-copy guard: `if (&local_7c != &local_130)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 95,
+      "line": 90,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_7c != &local_130) {",
@@ -842,31 +859,23 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_b8 != &local_70)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 161,
+      "line": 156,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_b8 != &local_70) {",
       "type": "self_copy_guard"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_88 != &local_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 192,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 140,
+      "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "if (&local_88 != &local_a0) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 145,
-      "match": "pSVar6 = (T *)&(pSVar6->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar6 = (SClothVertex *)&(pSVar6->position).y;",
+      "text": "pSVar5 = (SClothVertex *)&(pSVar5->position).y;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via element-arithmetic `(int)(local_14 + N) + M`, where `N*sizeof(*local_14) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_14->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 214,
+      "line": 210,
       "match": "local_14 = (T *)((int)(local_14 + N) + M)",
       "severity": "moderate",
       "text": "local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);",
@@ -874,7 +883,7 @@
     },
     {
       "description": "Uninitialized variable: local_74",
-      "line": 107,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -882,7 +891,7 @@
     },
     {
       "description": "Uninitialized variable: local_7c",
-      "line": 107,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -890,7 +899,7 @@
     },
     {
       "description": "Uninitialized variable: local_78",
-      "line": 107,
+      "line": 102,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -898,7 +907,7 @@
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 173,
+      "line": 168,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_a4 = local_b0 * local_38[local_20 * 0x2b + 0x26] +",
@@ -906,7 +915,7 @@
     },
     {
       "description": "Uninitialized variable: local_b8",
-      "line": 174,
+      "line": 169,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_b8 * local_38[local_20 * 0x2b + 0x20] +",
@@ -914,7 +923,7 @@
     },
     {
       "description": "Uninitialized variable: local_b4",
-      "line": 175,
+      "line": 170,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_b4 * local_38[local_20 * 0x2b + 0x23];",

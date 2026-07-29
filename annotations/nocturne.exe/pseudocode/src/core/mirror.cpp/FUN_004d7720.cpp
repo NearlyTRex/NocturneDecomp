@@ -1,21 +1,22 @@
 // Name: core_mirror.cpp_FUN_004d7720
 // Address: 004d7720
 // Address Range: [[004d7720, 004d7752]]
-// Convention: unknown
-// Signature: void core_mirror_cpp_FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_mirror_cpp_FUN_004d7720(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void core_mirror_cpp_FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2)
+int __cdecl core_mirror_cpp_FUN_004d7720(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   uint uVar1;
+  int iVar2;
   
-  uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(param_1,param_2);
+  uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(this_ptr,prim);
   if (uVar1 == 0) {
-    return;
+    return 0;
   }
-  engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-            (DAT_005ae704,&(param_1->clip_primitive).base);
-  return;
+  iVar2 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
+                    (DAT_005ae704,&(this_ptr->clip_primitive).base);
+  return iVar2;
 }

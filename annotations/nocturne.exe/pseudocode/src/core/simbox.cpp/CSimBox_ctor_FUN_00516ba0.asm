@@ -15,7 +15,7 @@
 ;   undefined4 s_one_00591112+1
 ;   undefined4 s_ne_00591112+2
 ;   undefined4 s_e_00591112+3
-;   undefined1* PTR_core_simbox.cpp_CSimBox_setup_FUN_00516c60_005a1d74 = 00516c60
+;   CDemonActor_vtable g_CSimBoxVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00516ba3
     PUSH EBX                            ; 00516ba7
     CALL core_actor.cpp_FUN_00409d30    ; 00516ba8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00516bad
     ADD EAX,0x150                       ; 00516bb0
     PUSH EAX                            ; 00516bb5
@@ -50,7 +50,7 @@ section .text
     PUSH 0x591105                       ; 00516bd2 | = "question.kfm"
     LEA EAX,[EBX + 0x150]               ; 00516bd7
     PUSH EAX                            ; 00516bdd
-    MOV dword ptr [EBX + 0x14c],0x5a1d74 ; 00516bde | PTR_core_simbox.cpp_CSimBox_setup_FUN_00516c60_005a1d74
+    MOV dword ptr [EBX + 0x14c],0x5a1d74 ; 00516bde | g_CSimBoxVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00516be8
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00516bed

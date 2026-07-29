@@ -25,7 +25,7 @@ void CDraculaBride::setup(CEnemy *param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
 // Address: 00458a90
-void CDraculaBride::process(CPathMap *param_1,float param_2);
+void CDraculaBride::process(CDraculaBride *param_1,float param_2);
 
 // Original: core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70
 // Address: 00459f70
@@ -65,7 +65,7 @@ undefined4 CDraculaBride::getTargetPoints(int param_1,CVector3f *param_2);
 
 // Original: core_dracbrid.cpp_FUN_0045ab40
 // Address: 0045ab40
-void FUN_0045ab40(CDemonActor *param_1,undefined4 param_2,float param_3);
+void __cdecl FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume);
 
 // Original: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020
 // Address: 0045b020
@@ -73,11 +73,11 @@ void __cdecl CDraculaBride::updateFreakySounds(CDraculaBride *this_ptr,float del
 
 // Original: core_dracbrid.cpp_SFreaky_ctor_FUN_0045b310
 // Address: 0045b310
-int SFreaky::ctor(int param_1);
+SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 
 // Original: core_dracbrid.cpp_SFreaky_dtor_FUN_0045b330
 // Address: 0045b330
-float * SFreaky::dtor(int param_1);
+SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_FUN_0045b350
 // Address: 0045b350
@@ -89,4 +89,4 @@ CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
 // Original: core_dracbrid.cpp_SFreaky_arrdtor_FUN_0045b430
 // Address: 0045b430
-void SFreaky::arrdtor(void *param_1);
+SFreaky * __cdecl SFreaky::arrdtor(SFreaky *objs,uint flags);

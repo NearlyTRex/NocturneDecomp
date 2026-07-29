@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_ground.cpp_openFileWithExtension_FUN_004b1090
 // Address: 004b1090
-_FILE * openFileWithExtension(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * __cdecl openFileWithExtension(char *directory,char *filename,char *new_extension,char *open_mode);
 
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004b11b0
 // Address: 004b11b0
@@ -17,7 +17,7 @@ char * __cdecl getGroundTypeCode(EGroundType type);
 
 // Original: core_ground.cpp_getGroundTypeColor_FUN_004b12f0
 // Address: 004b12f0
-undefined4 getGroundTypeColor(undefined4 param_1);
+uint __cdecl getGroundTypeColor(EGroundType type);
 
 // Original: core_ground.cpp_CGround_ctor_FUN_004b1350
 // Address: 004b1350

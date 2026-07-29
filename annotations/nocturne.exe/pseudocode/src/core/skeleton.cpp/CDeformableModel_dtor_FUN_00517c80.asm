@@ -24,7 +24,7 @@ section .text
     ADD EBX,0x1c0c                      ; 00517c90
     PUSH EBX                            ; 00517c96
     CALL core_skeleton.cpp_FUN_0051f900 ; 00517c97
-        ;   XREF to: 0051f900 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f900()
+        ;   XREF to: 0051f900 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_FUN_0051f900(CBoundingBox3D * objs, uint flags)
     ADD ESP,0x8                         ; 00517c9c
     PUSH 0x0                            ; 00517c9f
     SUB EAX,0x4bc                       ; 00517ca1

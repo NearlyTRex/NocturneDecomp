@@ -39,10 +39,10 @@ void __cdecl CZombieCow::processDismemberment(CZombieCow *this_ptr,SDamageInfo *
 // Address: 0043c5e0
 void CZombieCow::processDamage(CZombieCow *param_1,SDamageInfo *param_2);
 
-// Original: core_cow.cpp_FUN_0043c6a0
+// Original: core_cow.cpp_CZombieCow_getTargetPoints_FUN_0043c6a0
 // Address: 0043c6a0
-undefined4 FUN_0043c6a0(int param_1,CVector3f *param_2);
+int __cdecl CZombieCow::getTargetPoints(CZombieCow *this_ptr,CVector3f *out_points_array);
 
-// Original: core_cow.cpp_FUN_0043c6f0
+// Original: core_cow.cpp_CZombieCow_dtor_FUN_0043c6f0
 // Address: 0043c6f0
-CDemonActor * FUN_0043c6f0(CDemonActor *param_1,byte param_2);
+CZombieCow * __cdecl CZombieCow::dtor(CZombieCow *this_ptr,uint flags);

@@ -52,7 +52,7 @@ section .text
     PUSH EBP                            ; 004530f2 | DAT_01e57284
     MOV ESI,EAX                         ; 004530f3
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 004530f5
-        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200()
+        ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,dword ptr [EBX + 0x108]     ; 004530fa
     ADD ESP,0xc                         ; 00453100
     TEST EAX,EAX                        ; 00453103

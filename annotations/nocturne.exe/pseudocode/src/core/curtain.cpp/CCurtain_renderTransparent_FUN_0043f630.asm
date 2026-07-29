@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(int param_1)
+; int core_curtain_cpp_CCurtain_renderTransparent_FUN_0043f630(CCurtain *param_1)
 ;
 ;
 ; *****************************************************************************

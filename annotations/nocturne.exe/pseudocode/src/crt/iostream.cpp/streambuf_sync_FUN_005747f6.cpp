@@ -1,17 +1,17 @@
 // Name: crt_iostream.cpp_streambuf_sync_FUN_005747f6
 // Address: 005747f6
 // Address Range: [[005747f6, 00574816]]
-// Convention: unknown
-// Signature: undefined4 crt_iostream_cpp_streambuf_sync_FUN_005747f6(int param_1)
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_iostream_cpp_streambuf_sync_FUN_005747f6(streambuf *streambuf_ptr)
 
 #include "nocturne.h"
 
-uint crt_iostream_cpp_streambuf_sync_FUN_005747f6(int param_1)
+int __watcallStack crt_iostream_cpp_streambuf_sync_FUN_005747f6(streambuf *streambuf_ptr)
 
 {
-  if ((*(uint *)(param_1 + 0x10) <= *(uint *)(param_1 + 0x14)) &&
-     (*(uint *)(param_1 + 0x20) <= *(uint *)(param_1 + 0x18))) {
+  if ((streambuf_ptr->__get_end <= streambuf_ptr->__get_ptr) &&
+     (streambuf_ptr->__put_ptr <= streambuf_ptr->__put_base)) {
     return 0;
   }
-  return 0xffffffff;
+  return -1;
 }

@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 198,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 12,
     "suspect_types": [
-      "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 51
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -146,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_stranger.cpp_CStranger_dropCarriedObject_FUN_005408c0",
-    "signature": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5,CVector3f *param_6)"
+    "signature": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)"
   },
   "function_calls": [
     {
@@ -210,7 +209,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +217,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -226,55 +225,39 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
+      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CEnemy *param_1,int param_2,CVector3f *param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,uint param_3,uint param_4,int param_5,CVector3f *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CPlatform *)(param_1->base).carry_hands[param_2].carry_actor ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((CPlatform *)(param_1->base).carry_hands[param_2].carry_actor ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].base.flames[0x1d].base.standing_platform) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->carry_hands[param_2].carry_actor ==",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_1->carry_hands[param_2].carry_actor ==",
+      "text": "pCVar1 = (param_1->base).base.vtable._ue;",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +265,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1[2].flames[0x1d].on_event + 0x5c)) {",
+      "text": "param_1[2].base.flames[0x1d].base.standing_platform = (CPlatform *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -290,55 +273,31 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = (param_1->base).vtable._uc;",
+      "text": "(*(pCVar1->_ue).updateVictim)(param_1,0.0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(*(pCVar1->_uc).dropCarriedObject)(param_1,0,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(pCVar1->_uc).dropCarriedObject)(param_1,0,unaff_ESI);",
+      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
+      "line": 13,
+      "match": "param_2",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(param_1,param_5,param_6);",
+      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_5",
+      "line": 13,
+      "match": "param_3",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(param_1,param_5,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(param_1,param_5,param_6);",
+      "text": "core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     }
   ],

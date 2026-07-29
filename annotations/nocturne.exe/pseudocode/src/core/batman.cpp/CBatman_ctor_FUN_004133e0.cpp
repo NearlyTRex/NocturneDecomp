@@ -18,8 +18,7 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_004133e0(CBatman *this_ptr)
   
   pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
   pcVar5 = "none";
-  (pCVar4->base).base.base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_batman_cpp_CBatman_setup_FUN_004134a0_0059a164;
+  (pCVar4->base).base.base.vtable._ub = &g_CBatmanVTable._ub;
   pcVar6 = pCVar4->fall_event;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar4->base).base.model,"batman.dfm");

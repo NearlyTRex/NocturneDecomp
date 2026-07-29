@@ -48,7 +48,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x78]      ; 004bdaee
     PUSH ECX                            ; 004bdaf2
     CALL engine_ini.cpp_CIniFile_getString_FUN_004bd910 ; 004bdaf3
-        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_getString_FUN_004bd910()
+        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004bd910(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     ADD ESP,0x10                        ; 004bdaf8
     MOV EBX,dword ptr [ESP + 0x74]      ; 004bdafb
     PUSH EBX                            ; 004bdaff
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bdb05
     PUSH EAX                            ; 004bdb09
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004bdb0a
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 004bdb0f
     ADD ESP,0x64                        ; 004bdb12
     POP EBX                             ; 004bdb15

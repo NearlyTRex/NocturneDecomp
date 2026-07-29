@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_queuePop_FUN_004efcd0(void)
+; void __cdecl core_path_cpp_queuePop_FUN_004efcd0(int *out_x,int *out_cost,int *out_z)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   out_x
+; int *            Stack[0x8]:4   out_cost
+; int *            Stack[0xc]:4   out_z
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc6f

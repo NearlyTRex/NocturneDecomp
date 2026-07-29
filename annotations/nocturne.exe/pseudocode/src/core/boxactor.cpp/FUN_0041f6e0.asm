@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_FUN_0041f6e0(int param_1)
+; void __cdecl core_boxactor_cpp_FUN_0041f6e0(CLightActor *this_ptr)
 ;
+; Parameters:
+; CLightActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8
 ; undefined        Stack[-0x90]:1  local_90

@@ -12,7 +12,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420(CFireEff
 
 {
   core_fire_cpp_CLightningBolt_activate_FUN_00488b10
-            (_DAT_01c6750c * 0x2c + 0x1c67510,start_position,start_width,end_width);
+            ((CLightningBolt *)(_DAT_01c6750c * 0x2c + 0x1c67510),start_position,start_width,
+             end_width);
   _DAT_01c6750c = _DAT_01c6750c + 1;
   if (_DAT_01c6750c < 10) {
     if (enable_camera_shake == 0) {

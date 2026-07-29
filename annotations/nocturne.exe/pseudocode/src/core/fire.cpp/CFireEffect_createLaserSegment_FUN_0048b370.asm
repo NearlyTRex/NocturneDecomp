@@ -62,7 +62,7 @@ section .text
     ADD EAX,0x1c5c704                   ; 0048b3b2
     PUSH EAX                            ; 0048b3b7
     CALL core_fire.cpp_CLaserBeam_init_FUN_004858f0 ; 0048b3b8
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLaserBeam_init_FUN_004858f0()
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_init_FUN_004858f0(CLaserBeam * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     MOV EDX,dword ptr [0x01c5c700]      ; 0048b3bd | DAT_01c5c700
     INC EDX                             ; 0048b3c3
     ADD ESP,0x2c                        ; 0048b3c4

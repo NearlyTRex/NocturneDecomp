@@ -1,14 +1,14 @@
 // Name: sound_mp3.cpp_initializeSynthesisDctTable_FUN_004e3f80
 // Address: 004e3f80
 // Address Range: [[004e3f80, 004e4068]]
-// Convention: unknown
-// Signature: void sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *output_dct_table)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *param_1)
+void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *output_dct_table)
 
 {
   double dVar1;
@@ -23,7 +23,7 @@ void sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *param_1)
   int local_18;
   
   local_28 = 0;
-  local_1c = param_1;
+  local_1c = output_dct_table;
   do {
     iVar3 = 1;
     pfVar2 = local_1c;

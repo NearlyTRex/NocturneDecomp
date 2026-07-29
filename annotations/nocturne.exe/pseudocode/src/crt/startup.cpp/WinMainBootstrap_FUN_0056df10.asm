@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
+; void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -93,7 +93,7 @@ section .text
     CALL dword ptr CS:[0x57552c]        ; 0056dfa5 | PTR_GetModuleHandleA_0057552c
     PUSH EAX                            ; 0056dfac
     CALL wincore_winrun.cpp_FUN_00559260 ; 0056dfad
-        ;   XREF to: 00559260 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559260()
+        ;   XREF to: 00559260 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_FUN_00559260(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
     PUSH EAX                            ; 0056dfb2
     CALL crt_startup.c_ExitApplication_FUN_0056fcd4 ; 0056dfb3
         ;   XREF to: 0056fcd4 (UNCONDITIONAL_CALL)  ; void crt_startup.c_ExitApplication_FUN_0056fcd4(int exit_code)

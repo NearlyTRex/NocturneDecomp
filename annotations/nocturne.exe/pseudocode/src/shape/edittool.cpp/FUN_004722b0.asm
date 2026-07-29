@@ -128,7 +128,7 @@ section .text
         ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403ef0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 00472380
     CALL engine_matrix.c_popViewport_FUN_004ce920 ; 00472383
-        ;   XREF to: 004ce920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_004ce920(CDemonRenderer * this_ptr)
+        ;   XREF to: 004ce920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_004ce920()
     CMP byte ptr [EBX + 0x38],0x0       ; 00472388
     JNZ 0x004723c6                      ; 0047238c
         ;   XREF to: 004723c6 (CONDITIONAL_JUMP)  ; LAB_004723c6
@@ -179,7 +179,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 00472408 | DAT_01bcd070
     PUSH EAX                            ; 0047240d
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 0047240e
-        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0()
+        ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDX,EBP                         ; 00472413
     SUB EDX,EAX                         ; 00472415
     MOV EAX,EDX                         ; 00472417

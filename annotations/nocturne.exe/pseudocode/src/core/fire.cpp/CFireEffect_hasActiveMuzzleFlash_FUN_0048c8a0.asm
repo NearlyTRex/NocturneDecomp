@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(void)
+; int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEffect *this_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_0050a260 at 0050a4dc

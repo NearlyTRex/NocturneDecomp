@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_netgame_cpp_matchPacketSize_FUN_004edc30(void)
+; int __cdecl core_netgame_cpp_matchPacketSize_FUN_004edc30(SNetPacketHeader *a,SNetPacketHeader *b)
 ;
+; Parameters:
+; SNetPacketHeader * Stack[0x4]:4   a
+; SNetPacketHeader * Stack[0x8]:4   b
 ;
 ; *****************************************************************************
 

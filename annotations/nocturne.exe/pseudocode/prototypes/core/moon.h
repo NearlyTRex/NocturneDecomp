@@ -13,7 +13,7 @@ CMoon * __cdecl CMoon::ctor(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_dtor_FUN_004de830
 // Address: 004de830
-float * CMoon::dtor(CMoon *param_1);
+CMoon * __cdecl CMoon::dtor(CMoon *this_ptr,uint flags);
 
 // Original: core_moon.cpp_CMoon_init_FUN_004de860
 // Address: 004de860
@@ -37,7 +37,7 @@ void __cdecl CMoon::renderJoystickCalibration(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170
 // Address: 004df170
-undefined4 CMoon::isAnimationFirstHalf(void);
+int __cdecl CMoon::isAnimationFirstHalf(CMoon *this_ptr);
 
 // Original: core_moon.cpp_FUN_004df190
 // Address: 004df190

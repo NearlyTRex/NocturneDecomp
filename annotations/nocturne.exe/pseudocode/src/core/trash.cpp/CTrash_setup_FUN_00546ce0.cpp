@@ -9,7 +9,7 @@
 void core_trash_cpp_CTrash_setup_FUN_00546ce0(CDemonActor *param_1)
 
 {
-  int iVar1;
+  float fVar1;
   
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
@@ -24,8 +24,8 @@ void core_trash_cpp_CTrash_setup_FUN_00546ce0(CDemonActor *param_1)
   param_1[2].orient_matrix.m[0].x = 2.0;
   param_1[2].health = 0x3f800000;
   param_1[2].validation_magic = 0x3f800000;
-  iVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40c00000,0x41a00000);
-  param_1[2].direction_hint = iVar1;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(6.0,20.0);
+  param_1[2].direction_hint = (int)fVar1;
   param_1[2].create_event[0] = '\0';
   param_1[2].create_event[1] = '\0';
   param_1[2].create_event[2] = '\0';

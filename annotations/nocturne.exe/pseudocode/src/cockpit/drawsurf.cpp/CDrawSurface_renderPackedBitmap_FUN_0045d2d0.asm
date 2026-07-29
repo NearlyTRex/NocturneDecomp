@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(int param_1,int param_2,int param_3,CPackedBitmap *param_4)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_0045d2d0(CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x_offset
+; int              Stack[0xc]:4   y_offset
+; CPackedBitmap *  Stack[0x10]:4   bitmap_ptr
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_004f4410

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
+; int __cdecl core_zombie_cpp_FUN_00561010(CZombie *this_ptr,float delta_time)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -112,7 +115,7 @@ section .text
     PUSH 0x40a00000                     ; 00561098
     MOV dword ptr [ESI + 0xbd28],ECX    ; 0056109d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 005610a3
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x15c],EAX     ; 005610a8
     MOV EAX,dword ptr [ESP + 0x15c]     ; 005610af
     MOV dword ptr [ESI + 0xbd2c],EAX    ; 005610b6

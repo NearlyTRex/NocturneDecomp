@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
   float local_160 [12];
   uint local_130 [12];
   CMatrix3x4f local_100;
-  byte local_d0 [48];
+  CMatrix3x4f local_d0;
   uint local_a0 [12];
   uint local_70 [12];
   uint local_40 [12];
@@ -35,8 +35,8 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter 
             (&local_100,&(pSVar2->carry_actor->location).position,&(pSVar2->carry_actor->orient).vec
             );
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_d0,&(this_ptr->base).location,&(this_ptr->base).orient);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_d0,&local_100);
+            (&local_d0,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_d0,&local_100);
   puVar3 = local_130;
   puVar5 = local_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

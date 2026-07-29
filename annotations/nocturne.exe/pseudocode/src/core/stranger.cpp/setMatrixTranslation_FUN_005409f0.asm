@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_setMatrixTranslation_FUN_005409f0(void)
+; void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
+; CVector3f *      Stack[0x8]:4   translation
 ;
 ; *****************************************************************************
 

@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_0054a9c2
     PUSH 0x3dcccccd                     ; 0054a9c7
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054a9cc
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x48],EAX      ; 0054a9d1
     FLD float ptr [ESP + 0x48]          ; 0054a9d5
     ADD ESP,0x8                         ; 0054a9d9
@@ -115,7 +115,7 @@ section .text
     PUSH 0x3dcccccd                     ; 0054a9fa
     FSTP float ptr [ESI + 0x844]        ; 0054a9ff
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0054aa05
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x48],EAX      ; 0054aa0a
     FLD float ptr [ESP + 0x48]          ; 0054aa0e
     ADD ESP,0x8                         ; 0054aa12

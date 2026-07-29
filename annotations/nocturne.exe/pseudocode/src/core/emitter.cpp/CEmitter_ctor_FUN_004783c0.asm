@@ -19,7 +19,7 @@
 ;   undefined4 s_ne_0057f19a+2
 ;   undefined4 s_e_0057f19a+3
 ;   TerminatedCString s_stalrock_kfm_0057f19f
-;   undefined1* PTR_core_emitter.cpp_CEmitter_setup_FUN_00478520_0059cc74 = 00478520
+;   CDemonActor_vtable g_CEmitterVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -37,14 +37,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004783c3
     PUSH EBX                            ; 004783c7
     CALL core_actor.cpp_FUN_00409d30    ; 004783c8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004783cd
     ADD EAX,0x240                       ; 004783d0
     PUSH EAX                            ; 004783d5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004783d6
         ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xfffffdc0]          ; 004783db
-    MOV dword ptr [EBX + 0x14c],0x59cc74 ; 004783e1 | PTR_core_emitter.cpp_CEmitter_setup_FUN_00478520_0059cc74
+    MOV dword ptr [EBX + 0x14c],0x59cc74 ; 004783e1 | g_CEmitterVTable
     MOV dword ptr [EBX + 0x154],0x3f800000 ; 004783eb
     MOV ESI,0x57f195                    ; 004783f5 | = "none"
     MOV dword ptr [EBX + 0x158],0x3f800000 ; 004783fa

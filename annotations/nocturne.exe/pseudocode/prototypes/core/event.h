@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_event.cpp_setEventError_FUN_0047a1e0
 // Address: 0047a1e0
-undefined4 setEventError(void);
+int __cdecl setEventError(char *source_file,int source_line,char *error_message);
 
 // Original: core_event.cpp_FUN_0047a210
 // Address: 0047a210
@@ -21,15 +21,15 @@ void FUN_0047a260(void);
 
 // Original: core_event.cpp_skipWhitespaceIndexed_FUN_0047a280
 // Address: 0047a280
-void skipWhitespaceIndexed(void);
+int * __cdecl skipWhitespaceIndexed(char *expression,int *parse_position);
 
 // Original: core_event.cpp_parseComparisonOp_FUN_0047a2b0
 // Address: 0047a2b0
-undefined4 parseComparisonOp(void);
+int __cdecl parseComparisonOp(char *str);
 
 // Original: core_event.cpp_parseIntOrCounter_FUN_0047a350
 // Address: 0047a350
-int parseIntOrCounter(void);
+int __cdecl parseIntOrCounter(char *str);
 
 // Original: core_event.cpp_resolveActorByName_FUN_0047a390
 // Address: 0047a390
@@ -149,7 +149,7 @@ int __cdecl CEventList::findTimer(CEventList *this_ptr,char *name);
 
 // Original: core_event.cpp_CEventList_findCounter_FUN_00480900
 // Address: 00480900
-int CEventList::findCounter(int param_1,char *param_2);
+int __cdecl CEventList::findCounter(CEventList *this_ptr,char *name);
 
 // Original: core_event.cpp_CEventList_setActorVariable_FUN_00480950
 // Address: 00480950
@@ -165,7 +165,7 @@ int __cdecl CEventList::findActorVariable(CEventList *this_ptr,char *name);
 
 // Original: core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0
 // Address: 00480bf0
-uint CEventList::getSfxHandle(CEventList *param_1,char *param_2);
+uint __cdecl CEventList::getSfxHandle(CEventList *this_ptr,char *name);
 
 // Original: core_event.cpp_CEventList_setSfxHandle_FUN_00480c30
 // Address: 00480c30
@@ -197,15 +197,15 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 
 // Original: core_event.cpp_FUN_00481620
 // Address: 00481620
-void FUN_00481620(undefined4 *param_1);
+void __cdecl FUN_00481620(CRuleList *this_ptr);
 
 // Original: core_event.cpp_CRuleList_insert_FUN_00481630
 // Address: 00481630
-void CRuleList::insert(int *param_1,int param_2,char *param_3,char *param_4);
+void __cdecl CRuleList::insert(CRuleList *this_ptr,int index,char *condition,char *event);
 
 // Original: core_event.cpp_CRuleList_remove_FUN_00481770
 // Address: 00481770
-void CRuleList::remove(int *param_1,int param_2);
+void __cdecl CRuleList::remove(CRuleList *this_ptr,int index);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00481840
 // Address: 00481840
@@ -217,7 +217,7 @@ int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
 
 // Original: core_event.cpp_getVectorDistance_FUN_004818e0
 // Address: 004818e0
-float getVectorDistance(void);
+float __cdecl getVectorDistance(CVector3f *a,CVector3f *b);
 
 // Original: core_event.cpp_getSelectedCameraIndex_FUN_00481920
 // Address: 00481920

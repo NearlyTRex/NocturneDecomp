@@ -37,7 +37,7 @@ void FUN_004bc7e0(int param_1,int param_2);
 
 // Original: core_imp.cpp_CImp_attractActorToward_FUN_004bc9b0
 // Address: 004bc9b0
-bool CImp::attractActorToward(undefined4 param_1,int param_2);
+int __cdecl CImp::attractActorToward(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
 // Original: core_imp.cpp_FUN_004bc9c0
 // Address: 004bc9c0
@@ -59,6 +59,6 @@ int CImp::getTargetPoints(int param_1,CVector3f *param_2);
 // Address: 004bcfb0
 void FUN_004bcfb0(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_imp.cpp_FUN_004bcfd0
+// Original: core_imp.cpp_CImp_dtor_FUN_004bcfd0
 // Address: 004bcfd0
-CDemonActor * FUN_004bcfd0(CDemonActor *param_1,byte param_2);
+CImp * __cdecl CImp::dtor(CImp *this_ptr,uint flags);

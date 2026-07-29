@@ -12,44 +12,44 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  int byte_count;
+  uint uVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
+  uint *puVar5;
   uint *puVar6;
-  uint *puVar7;
   
   _DAT_0140efa8 = _DAT_0140efa8 + -1;
   if (_DAT_0140efa8 == 0) {
     DAT_005b7624 = _DAT_0140efac;
     _DAT_01c02594 = _DAT_0140efb0;
-    puVar6 = (uint *)&DAT_0140efb4;
-    puVar7 = (uint *)&DAT_01bd2fa0;
-    for (uVar3 = DAT_005b7620 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *puVar7 = *puVar6;
+    puVar5 = (uint *)&DAT_0140efb4;
+    puVar6 = (uint *)&DAT_01bd2fa0;
+    for (uVar2 = DAT_005b7620 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
+      *puVar6 = *puVar5;
+      puVar5 = puVar5 + 1;
       puVar6 = puVar6 + 1;
-      puVar7 = puVar7 + 1;
     }
-    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(byte *)puVar7 = *(byte *)puVar6;
+    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(byte *)puVar6 = *(byte *)puVar5;
+      puVar5 = (uint *)((int)puVar5 + 1);
       puVar6 = (uint *)((int)puVar6 + 1);
-      puVar7 = (uint *)((int)puVar7 + 1);
     }
     _DAT_01c00624 = _DAT_01410274;
     _DAT_01c00630 = _DAT_01410278;
     _DAT_01c0063c = _DAT_0141027c;
     if (restore_zbuffer != 0) {
-      iVar4 = 0;
+      iVar3 = 0;
       if (0 < (int)this_ptr->max_distance) {
         do {
-          iVar5 = *(int *)(this_ptr->camera_name + 0xfc) * iVar4;
-          iVar1 = this_ptr->framebuffer_height + iVar4;
-          iVar2 = *(int *)(this_ptr->camera_name + 0xfc) * 4;
-          iVar4 = iVar4 + 1;
+          iVar4 = *(int *)(this_ptr->camera_name + 0xfc) * iVar3;
+          iVar1 = this_ptr->framebuffer_height + iVar3;
+          byte_count = *(int *)(this_ptr->camera_name + 0xfc) * 4;
+          iVar3 = iVar3 + 1;
           core_dstrender_cpp_memcpyMMX_FUN_00465341
-                    ((void *)(iVar5 * 4 + (int)this_ptr->zbuffer_aligned),
-                     *(int *)(&DAT_01bd4260 + iVar1 * 4) + iVar2,iVar2);
-        } while (iVar4 < (int)this_ptr->max_distance);
+                    ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
+                     (void *)(*(int *)(&DAT_01bd4260 + iVar1 * 4) + byte_count),byte_count);
+        } while (iVar3 < (int)this_ptr->max_distance);
       }
       if (_DAT_01c02594 != 0) {
         engine_special_cpp_masterZBuffer_FUN_00532c70(0);

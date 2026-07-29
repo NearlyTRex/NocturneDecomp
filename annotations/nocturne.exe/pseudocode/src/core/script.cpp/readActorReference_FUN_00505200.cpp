@@ -22,7 +22,7 @@ void __cdecl core_script_cpp_readActorReference_FUN_00505200(_FILE *file_handle,
     puVar4 = puVar4 + 1;
     pcVar1 = (char *)((int)pcVar1 + 4);
   }
-  _fscanf(file_handle,"\"%[^\"]\"\n",local_d0);
+  _fscanf(file_handle,"\"%[^\"]\"\n");
   iVar3 = _stricmp(local_d0,"(none)");
   if (iVar3 == 0) {
     actor_out->actor_name[0] = '\0';

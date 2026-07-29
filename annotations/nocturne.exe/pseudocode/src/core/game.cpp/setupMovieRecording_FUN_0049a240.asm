@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_setupMovieRecording_FUN_0049a240(void)
+; void __cdecl core_game_cpp_setupMovieRecording_FUN_0049a240(void)
 ;
 ;
 ; Referenced Globals:

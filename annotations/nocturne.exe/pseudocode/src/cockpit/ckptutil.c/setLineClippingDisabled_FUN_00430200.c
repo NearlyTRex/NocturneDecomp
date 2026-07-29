@@ -1,18 +1,14 @@
 // Name: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200
 // Address: 00430200
 // Address Range: [[00430200, 00430209]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(void)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(int disabled)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(void)
+void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(int disabled)
 
 {
-  uint in_stack_00000004;
-  
-  DAT_005ad280 = in_stack_00000004;
+  DAT_005ad280 = disabled;
   return;
 }

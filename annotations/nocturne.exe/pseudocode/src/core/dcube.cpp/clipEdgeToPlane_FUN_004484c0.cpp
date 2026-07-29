@@ -1,21 +1,20 @@
 // Name: core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
 // Address: 004484c0
 // Address Range: [[004484c0, 0044864e]]
-// Convention: unknown
-// Signature: void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 #include "nocturne.h"
 
-void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)
+void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 {
   double dVar1;
   float fVar2;
   int local_28;
   
-  fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +
-          (*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +
-          (param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));
+  fVar2 = (vertex2->z - vertex1->z) * (float)plane_nz +
+          (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
@@ -23,24 +22,26 @@ void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,f
     INT_01cc4804 = 0x6e;
     core_main_c_FUN_004c8440("Bad clip!");
   }
-  fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +
-           param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +
-           (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;
-  *param_3 = (*param_2 - *param_1) * fVar2 + *param_1;
-  param_3[1] = (param_2[1] - param_1[1]) * fVar2 + param_1[1];
-  param_3[2] = (param_2[2] - param_1[2]) * fVar2 + param_1[2];
-  if (((((param_5 & 0x7fffffff) != 0) || (param_4 != 0)) && ((param_7 & 0x7fffffff) == 0)) &&
-     (((param_6 == 0 && ((param_9 & 0x7fffffff) == 0)) && (param_8 == 0)))) {
-    *param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);
+  fVar2 = -(vertex1->z * (float)plane_nz +
+           vertex1->y * (float)plane_ny + (float)plane_nx * vertex1->x + (float)plane_d) / fVar2;
+  output_vertex->x = (vertex2->x - vertex1->x) * fVar2 + vertex1->x;
+  output_vertex->y = (vertex2->y - vertex1->y) * fVar2 + vertex1->y;
+  output_vertex->z = (vertex2->z - vertex1->z) * fVar2 + vertex1->z;
+  if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&
+      (((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) &&
+     (((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&
+      (plane_nz._0_4_ == 0)))) {
+    output_vertex->x = (float)(-(float10)plane_nx * (float10)plane_d);
   }
-  if ((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) &&
-     ((((param_7 & 0x7fffffff) != 0 || (param_6 != 0)) &&
-      (((param_9 & 0x7fffffff) == 0 && (param_8 == 0)))))) {
-    param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);
+  if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&
+     (((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&
+      ((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {
+    output_vertex->y = (float)(-(float10)plane_ny * (float10)plane_d);
   }
-  if ((((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) && ((param_7 & 0x7fffffff) == 0)) &&
-      (param_6 == 0)) && (((param_9 & 0x7fffffff) != 0 || (param_8 != 0)))) {
-    param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);
+  if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&
+       (((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&
+     ((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {
+    output_vertex->z = (float)(-(float10)plane_nz * (float10)plane_d);
     return;
   }
   return;

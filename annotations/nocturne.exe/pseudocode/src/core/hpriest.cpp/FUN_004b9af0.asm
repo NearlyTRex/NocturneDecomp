@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hpriest_cpp_FUN_004b9af0(undefined4 param_1)
+; CNPC * core_hpriest_cpp_FUN_004b9af0(CNPC *param_1)
 ;
 ;
 ; XREF[1]:
@@ -13,7 +13,7 @@
 ;   undefined4 s_illPriest_00585fed+1
 ;   undefined4 s_llPriest_00585fed+2
 ;   undefined4 s_lPriest_00585fed+3
-;   undefined1* PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_0059f264 = 004ee9e0
+;   CCharacter_full_vtable g_CHighPriestOfGardathVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_FUN_004ee950
@@ -30,15 +30,15 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004b9af3
     PUSH EDX                            ; 004b9af7
     CALL core_npc.cpp_FUN_004ee950      ; 004b9af8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b9afd
     PUSH 0x585fe2                       ; 004b9b00 | = "priest.dfm"
     MOV EBX,EAX                         ; 004b9b05
     LEA EDI,[EAX + 0x150]               ; 004b9b07
     PUSH EDI                            ; 004b9b0d
-    MOV dword ptr [EAX + 0x14c],0x59f264 ; 004b9b0e | PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_0059f264
+    MOV dword ptr [EAX + 0x14c],0x59f264 ; 004b9b0e | g_CHighPriestOfGardathVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b9b18
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004b9b1d
     MOV ESI,0x585fed                    ; 004b9b20 | = "killPriest"
     LEA EDI,[EBX + 0x1f570]             ; 004b9b25

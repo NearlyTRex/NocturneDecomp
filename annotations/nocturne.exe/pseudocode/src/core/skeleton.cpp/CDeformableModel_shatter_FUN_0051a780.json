@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,20 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 482,
+    "complexity_score": 493,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 28,
+    "pseudocode_lines": 178,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 573
+    "total_lines": 569
   },
   "cross_references": [
     {
@@ -614,7 +615,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 45,
       "match": "DAT_0268ced4",
       "severity": "mild",
       "text": "if ((DAT_0268ced4 & 1) == 0) {",
@@ -622,7 +623,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 46,
       "match": "DAT_0268ced4",
       "severity": "mild",
       "text": "DAT_0268ced4 = DAT_0268ced4 | 1;",
@@ -630,7 +631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 46,
       "match": "DAT_0268ced4",
       "severity": "mild",
       "text": "DAT_0268ced4 = DAT_0268ced4 | 1;",
@@ -638,7 +639,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 47,
       "match": "DAT_02684234",
       "severity": "mild",
       "text": "__arrinit(&DAT_02684234,3000,&g_CVectorTypeInfo_005993b0);",
@@ -646,143 +647,151 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 54,
       "match": "DAT_02684234",
       "severity": "mild",
-      "text": "pfVar7 = (float *)&DAT_02684234;",
+      "text": "pCVar6 = (CVector3f *)&DAT_02684234;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_02684234",
+      "severity": "mild",
+      "text": "if (pCVar6 != (CVector3f *)(&DAT_02684234 + iVar4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_02684234",
+      "severity": "mild",
+      "text": "((STriangleVertices *)(&DAT_02684234 + iVar4))->vertices[0].x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_02684238",
+      "severity": "mild",
+      "text": "pCVar6->y = *(float *)(&DAT_02684238 + iVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 103,
-      "match": "DAT_02684234",
-      "severity": "mild",
-      "text": "if (pCVar3 != (CVector3f *)(&DAT_02684234 + iVar5)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_02684234",
-      "severity": "mild",
-      "text": "((STriangleVertices *)(&DAT_02684234 + iVar5))->vertices[0].x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_02684238",
-      "severity": "mild",
-      "text": "pCVar3->y = *(float *)(&DAT_02684238 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
       "match": "DAT_0268423c",
       "severity": "mild",
-      "text": "pCVar3->z = *(float *)(&DAT_0268423c + iVar5);",
+      "text": "pCVar6->z = *(float *)(&DAT_0268423c + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 151,
+      "match": "DAT_02684234",
+      "severity": "mild",
+      "text": "if (pCVar6 != (CVector3f *)(&DAT_02684234 + iVar4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 153,
+      "match": "DAT_02684234",
+      "severity": "mild",
+      "text": "((STriangleVertices *)(&DAT_02684234 + iVar4))->vertices[0].x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 154,
+      "match": "DAT_02684238",
+      "severity": "mild",
+      "text": "pCVar6->y = *(float *)(&DAT_02684238 + iVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 155,
-      "match": "DAT_02684234",
-      "severity": "mild",
-      "text": "if (pCVar3 != (CVector3f *)(&DAT_02684234 + iVar5)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_02684234",
-      "severity": "mild",
-      "text": "((STriangleVertices *)(&DAT_02684234 + iVar5))->vertices[0].x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 158,
-      "match": "DAT_02684238",
-      "severity": "mild",
-      "text": "pCVar3->y = *(float *)(&DAT_02684238 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
       "match": "DAT_0268423c",
       "severity": "mild",
-      "text": "pCVar3->z = *(float *)(&DAT_0268423c + iVar5);",
+      "text": "pCVar6->z = *(float *)(&DAT_0268423c + iVar4);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&local_94.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
+      "line": 106,
       "match": "(int)&local_94.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94.x + iVar9) = (uint)puVar4[3];",
+      "text": "*(uint *)((int)&local_94.x + iVar8) = (uint)puVar3[3];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_88.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 110,
       "match": "(int)&local_88.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_88.x + iVar9) = (uint)*puVar1;",
+      "text": "*(uint *)((int)&local_88.x + iVar8) = (uint)*puVar1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_94.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 157,
       "match": "(int)&local_94.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94.x + iVar6) = (uint)puVar4[3] << 8;",
+      "text": "*(uint *)((int)&local_94.x + iVar5) = (uint)puVar3[3] << 8;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_88.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 166,
+      "line": 162,
       "match": "(int)&local_88.x",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;",
+      "text": "*(uint *)((int)&local_88.x + iVar5) = (uint)*puVar1 << 8;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 67,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->x = local_7c.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_94.x + iVar8) = (uint)puVar3[3];",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94.x + iVar9) = (uint)puVar4[3];",
+      "text": "*(uint *)((int)&local_88.x + iVar8) = (uint)*puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 114,
+      "line": 157,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_88.x + iVar9) = (uint)*puVar1;",
+      "text": "*(uint *)((int)&local_94.x + iVar5) = (uint)puVar3[3] << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 161,
+      "line": 162,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_94.x + iVar6) = (uint)puVar4[3] << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 166,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_88.x + iVar6) = (uint)*puVar1 << 8;",
+      "text": "*(uint *)((int)&local_88.x + iVar5) = (uint)*puVar1 << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 60,
+      "line": 57,
       "match": "(int *)(local_5c + 0x2c)",
       "severity": "moderate",
       "text": "if (0 < *(int *)(local_5c + 0x2c)) {",
@@ -790,15 +799,15 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 78,
+      "line": 74,
       "match": "(int *)(local_5c + 0x2c)",
       "severity": "moderate",
-      "text": "} while (iVar6 < *(int *)(local_5c + 0x2c));",
+      "text": "} while (iVar5 < *(int *)(local_5c + 0x2c));",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 91,
+      "line": 87,
       "match": "(int *)(local_54 + 0xc24)",
       "severity": "moderate",
       "text": "local_40 = *(int *)(local_54 + 0xc24) + local_24;",
@@ -806,23 +815,23 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 98,
+      "line": 94,
       "match": "(int *)(local_38 + 0x7c)",
       "severity": "moderate",
-      "text": "puVar4 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar8);",
+      "text": "puVar3 = (ushort *)(*(int *)(local_38 + 0x7c) + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 139,
+      "line": 135,
       "match": "(int *)(local_50 + 0xc38)",
       "severity": "moderate",
-      "text": "iVar6 = *(int *)(local_50 + 0xc38) + local_24;",
+      "text": "iVar5 = *(int *)(local_50 + 0xc38) + local_24;",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 171,
+      "line": 167,
       "match": "(int *)(local_30 + 0x90)",
       "severity": "moderate",
       "text": "local_28[*(int *)(*(int *)(local_30 + 0x90) + local_14)].textures,local_1c);",

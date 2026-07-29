@@ -86,8 +86,8 @@ LAB_00507d51:
       do {
         core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
                   ((CMirror *)(pCVar3->renderable_actors[0x6f8][1].create_event + 0x1c));
-        if (pCVar3->renderable_actors[0x6f8][1].location.position.z != 0.0) {
-          core_glass_cpp_FUN_004ac7c0(pCVar3->renderable_actors[0x6f8]);
+        if (((CGlass *)pCVar3->renderable_actors[0x6f8])->shattered != 0) {
+          core_glass_cpp_FUN_004ac7c0((CGlass *)pCVar3->renderable_actors[0x6f8]);
         }
         core_set_cpp_FUN_0050e080(this_ptr,iVar2,1);
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
@@ -103,8 +103,8 @@ LAB_00507d51:
     do {
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
                 ((CMirror *)(pCVar3->renderable_actors[0x6f8][1].create_event + 0x1c));
-      if (pCVar3->renderable_actors[0x6f8][1].location.position.z != 0.0) {
-        core_glass_cpp_FUN_004ac7c0(pCVar3->renderable_actors[0x6f8]);
+      if (((CGlass *)pCVar3->renderable_actors[0x6f8])->shattered != 0) {
+        core_glass_cpp_FUN_004ac7c0((CGlass *)pCVar3->renderable_actors[0x6f8]);
       }
       core_set_cpp_FUN_0050e080(this_ptr,iVar2,0);
       core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0

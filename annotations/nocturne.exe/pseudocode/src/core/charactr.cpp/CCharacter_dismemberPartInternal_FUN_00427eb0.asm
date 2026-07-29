@@ -87,7 +87,7 @@ section .text
     PUSH EDI                            ; 00427f0a
     PUSH EBX                            ; 00427f0b
     CALL core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0 ; 00427f0c
-        ;   XREF to: 0051e8c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0()
+        ;   XREF to: 0051e8c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(CDeformableModelInstance * this_ptr, CBodyPart * body_part, int part_index)
     XOR EAX,EAX                         ; 00427f11
     MOV dword ptr [EBP + 0x6e],EAX      ; 00427f13
     MOV EAX,dword ptr [EBP + 0x86]      ; 00427f16

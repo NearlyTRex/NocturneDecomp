@@ -14,7 +14,8 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
   CCharacter *this_ptr_00;
   char **ppcVar1;
   int iVar2;
-  int iVar3;
+  EDeathState EVar3;
+  int iVar4;
   float local_18;
   float local_14;
   
@@ -23,8 +24,8 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
     if (0x01C775EC->cutscene_skippable != 0) {
       this_ptr->script_state = 0;
     }
-    iVar3 = 0;
-    local_18 = (float)core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(0x01C775EC);
+    iVar4 = 0;
+    local_18 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(0x01C775EC);
     _DAT_01e56c24 = 0;
     local_14 = local_18;
     do {
@@ -43,8 +44,8 @@ LAB_004fe675:
         this_ptr->script_state = 2;
       }
       else if (this_ptr->script_state == 1) goto LAB_004fe675;
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < 0xc9);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 0xc9);
     if (_DAT_01e56c28 == 0) {
       shape_edittool_cpp_FUN_0046fcd0
                 (0x01BCD074,"!WARNING!  Infinite loop detected in script at line %d",
@@ -58,8 +59,8 @@ LAB_004fe623:
     }
     this_ptr_00 = (CCharacter *)this_ptr->who_is_speaking;
     if (this_ptr_00 != (CCharacter *)0x0) {
-      iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00);
-      if (0 < iVar3) {
+      EVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
+      if (0 < (int)EVar3) {
         sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->current_sfx_handle);
         return;
       }

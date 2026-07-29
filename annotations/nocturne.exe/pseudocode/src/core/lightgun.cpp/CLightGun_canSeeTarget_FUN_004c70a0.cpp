@@ -2,11 +2,11 @@
 // Address: 004c70a0
 // Address Range: [[004c70a0, 004c719e]]
 // Convention: unknown
-// Signature: undefined4 core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(undefined4 param_1,CDemonActor *param_2)
+// Signature: undefined4 core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(uint param_1,CDemonActor *param_2)
+uint core_lightgun_cpp_CLightGun_canSeeTarget_FUN_004c70a0(CVector3f *param_1,CDemonActor *param_2)
 
 {
   CDemonActor *actor_ptr;

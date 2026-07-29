@@ -1,14 +1,14 @@
 // Name: core_dfont.cpp_FUN_0044c560
 // Address: 0044c560
 // Address Range: [[0044c560, 0044cbff]]
-// Convention: unknown
-// Signature: void core_dfont_cpp_FUN_0044c560(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dfont_cpp_FUN_0044c560(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dfont_cpp_FUN_0044c560(void)
+void __cdecl core_dfont_cpp_FUN_0044c560(void)
 
 {
   CBitFont *pCVar1;

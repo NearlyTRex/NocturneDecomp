@@ -16,8 +16,8 @@ void core_bat_cpp_CBat_setup_FUN_00411ae0(CBat *param_1)
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);
   core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(param_1);
   param_1->sfx_handle = 0;
-  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                           (param_1->periodic_sound_timer_min,param_1->periodic_sound_timer_max);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                    (param_1->periodic_sound_timer_min,param_1->periodic_sound_timer_max);
   param_1->sound_timer = fVar1;
   return;
 }

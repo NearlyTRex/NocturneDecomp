@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_flamegun_cpp_FUN_0048ea60(CDemonActor *param_1)
+; undefined4 core_flamegun_cpp_FUN_0048ea60(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 0048eaac | DAT_005b80f0
     PUSH ECX                            ; 0048eab2
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0 ; 0048eab3
-        ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0()
+        ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     MOV ESI,dword ptr [EBX + 0x578]     ; 0048eab8
     ADD ESP,0x14                        ; 0048eabe
     TEST ESI,ESI                        ; 0048eac1

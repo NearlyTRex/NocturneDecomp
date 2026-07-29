@@ -1,12 +1,12 @@
 // Name: wincore_wddvmem.cpp_populateColorTable_FUN_004b6370
 // Address: 004b6370
 // Address Range: [[004b6370, 004b63ee]]
-// Convention: unknown
-// Signature: undefined8 wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
 
 #include "nocturne.h"
 
-ulonglong wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
+void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
 
 {
   int iVar1;
@@ -31,5 +31,5 @@ ulonglong wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
     *(uint *)(iVar3 + 0x1bff920) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
-  return CONCAT44(0x400,iVar1);
+  return;
 }

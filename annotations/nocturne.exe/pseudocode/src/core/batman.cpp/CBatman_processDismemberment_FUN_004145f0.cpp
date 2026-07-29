@@ -17,9 +17,7 @@ void __cdecl core_batman_cpp_CBatman_processDismemberment_FUN_004145f0(CBatman *
   int iVar3;
   CBodyPart *body_part;
   CVector3f local_34;
-  uint local_28;
-  uint local_24;
-  uint local_20;
+  CVector3f local_28;
   float local_14;
   
   if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
@@ -125,10 +123,11 @@ LAB_004147e1:
     engine_console_cpp_CConsole_printf_FUN_0043ac60(puVar2,"Shot thru the heart\n");
     iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
     if (iVar3 != 0) {
-      local_28 = 0;
-      local_24 = 0x41a00000;
-      local_20 = 0x41a00000;
-      core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,&local_34,&local_28);
+      local_28.x = 0.0;
+      local_28.y = 20.0;
+      local_28.z = 20.0;
+      core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                ((CDemonActor *)this_ptr,&local_34,&local_28);
       core_charactr_cpp_CCharacter_dismember_FUN_00427b60((CCharacter *)this_ptr,&local_34,-1.0,1);
       return;
     }

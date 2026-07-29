@@ -11,9 +11,8 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHer
 {
   CHeroPlaceholder *pCVar1;
   
-  pCVar1 = (CHeroPlaceholder *)core_actor_cpp_FUN_00409d30(this_ptr);
-  (pCVar1->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_0059ec84;
+  pCVar1 = (CHeroPlaceholder *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CHeroPlaceholderVTable;
   (pCVar1->base).is_transparent = 1;
   pCVar1->index = 0;
   return pCVar1;

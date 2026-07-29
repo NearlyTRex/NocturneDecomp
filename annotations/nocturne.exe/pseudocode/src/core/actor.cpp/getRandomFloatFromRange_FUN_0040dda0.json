@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,16 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 70,
+    "complexity_score": 15,
     "cross_reference_count": 128,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 47
   },
   "cross_references": [
@@ -358,6 +356,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004780e0",
+      "from_addr": "00478106",
+      "name": "core_elephant.cpp_CElephantGun_getDamage_FUN_004780e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00477fd0",
       "from_addr": "00478000",
       "name": "core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0",
@@ -367,12 +371,6 @@
       "addr": "00477890",
       "from_addr": "00477925",
       "name": "core_elephant.cpp_FUN_00477890",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004780e0",
-      "from_addr": "00478106",
-      "name": "core_elephant.cpp_FUN_004780e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -624,7 +622,7 @@
     {
       "addr": "004c7c60",
       "from_addr": "004c7c86",
-      "name": "core_lightgun.cpp_FUN_004c7c60",
+      "name": "core_lightgun.cpp_CLightGun_getDamage_FUN_004c7c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -688,6 +686,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00516730",
+      "from_addr": "00516756",
+      "name": "core_shotgun.cpp_CShotgun_getDamage_FUN_00516730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00516620",
       "from_addr": "0051665f",
       "name": "core_shotgun.cpp_CShotgun_onFired_FUN_00516620",
@@ -697,12 +701,6 @@
       "addr": "00515ea0",
       "from_addr": "00515f3b",
       "name": "core_shotgun.cpp_FUN_00515ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00516730",
-      "from_addr": "00516756",
-      "name": "core_shotgun.cpp_FUN_00516730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -912,9 +910,9 @@
         "0040ddff"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0",
-    "signature": "float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)"
+    "signature": "float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value)"
   },
   "function_calls": [
     {
@@ -984,10 +982,10 @@
     "pcode_op_count": 155
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 28,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1017,49 +1015,22 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "min_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_value",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return fVar1 * (param_2 - param_1) + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return fVar1 * (param_2 - param_1) + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return fVar1 * (param_2 - param_1) + param_1;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

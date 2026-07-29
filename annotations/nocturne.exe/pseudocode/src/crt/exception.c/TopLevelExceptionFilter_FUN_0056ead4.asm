@@ -55,7 +55,7 @@ section .text
     JNZ 0x0056eafd                      ; 0056eaf1
         ;   XREF to: 0056eafd (CONDITIONAL_JUMP)  ; LAB_0056eafd
     CALL FUN_005714ec                   ; 0056eaf3
-        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; undefined FUN_005714ec()
+        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE FUN_005714ec()
     CMP EAX,-0x1                        ; 0056eaf8
     JNZ 0x0056eb04                      ; 0056eafb
         ;   XREF to: 0056eb04 (CONDITIONAL_JUMP)  ; LAB_0056eb04

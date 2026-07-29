@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_004dc12c
     PUSH 0x3f000000                     ; 004dc131
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004dc136
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 004dc13b
     MOV EDX,dword ptr [EBX + 0x24ac]    ; 004dc13f
     FLD float ptr [ESP + 0x8]           ; 004dc145

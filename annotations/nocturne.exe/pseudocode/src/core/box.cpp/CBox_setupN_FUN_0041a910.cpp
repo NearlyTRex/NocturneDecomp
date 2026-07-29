@@ -1,17 +1,16 @@
 // Name: core_box.cpp_CBox_setupN_FUN_0041a910
 // Address: 0041a910
 // Address Range: [[0041a910, 0041aa97]]
-// Convention: unknown
-// Signature: void core_box_cpp_CBox_setupN_FUN_0041a910(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6)
+// Convention: __cdecl
+// Signature: void __cdecl core_box_cpp_CBox_setupN_FUN_0041a910(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume)
 
 #include "nocturne.h"
 
-void core_box_cpp_CBox_setupN_FUN_0041a910(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6)
+void __cdecl core_box_cpp_CBox_setupN_FUN_0041a910(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume)
 
 {
   int iVar1;
-  float *pfVar2;
-  SScrape *pSVar3;
+  CVector3f *pCVar2;
   float local_34;
   float local_30;
   float local_2c;
@@ -22,7 +21,7 @@ void core_box_cpp_CBox_setupN_FUN_0041a910(CBox *param_1,CVector3f *param_2,CVec
   float local_18;
   float local_14;
   
-  if (8 < param_4) {
+  if (8 < point_count) {
     PTR_01cc4800 = "..\\core\\box.cpp";
     INT_01cc4804 = 0x80;
     core_main_c_FUN_004c8440("CBox::setupN - Too many scrape points");
@@ -34,54 +33,54 @@ void core_box_cpp_CBox_setupN_FUN_0041a910(CBox *param_1,CVector3f *param_2,CVec
   local_20 = -999.0;
   local_1c = 999.0;
   iVar1 = 0;
-  pfVar2 = param_5;
-  if (0 < param_4) {
+  pCVar2 = point_array;
+  if (0 < point_count) {
     do {
-      if (*pfVar2 < local_1c) {
-        local_1c = *pfVar2;
+      if (pCVar2->x < local_1c) {
+        local_1c = pCVar2->x;
       }
-      if (pfVar2[1] < local_18) {
-        local_18 = pfVar2[1];
+      if (pCVar2->y < local_18) {
+        local_18 = pCVar2->y;
       }
-      if (pfVar2[2] < local_14) {
-        local_14 = pfVar2[2];
+      if (pCVar2->z < local_14) {
+        local_14 = pCVar2->z;
       }
-      if (local_28 < *pfVar2) {
-        local_28 = *pfVar2;
+      if (local_28 < pCVar2->x) {
+        local_28 = pCVar2->x;
       }
-      if (local_24 < pfVar2[1]) {
-        local_24 = pfVar2[1];
+      if (local_24 < pCVar2->y) {
+        local_24 = pCVar2->y;
       }
-      if (local_20 < pfVar2[2]) {
-        local_20 = pfVar2[2];
+      if (local_20 < pCVar2->z) {
+        local_20 = pCVar2->z;
       }
       iVar1 = iVar1 + 1;
-      pfVar2 = pfVar2 + 3;
-    } while (iVar1 < param_4);
+      pCVar2 = pCVar2 + 1;
+    } while (iVar1 < point_count);
   }
   local_34 = local_28 - local_1c;
   local_30 = local_24 - local_18;
   local_2c = local_20 - local_14;
-  if (&param_1->extents != (CVector3f *)&local_34) {
-    (param_1->extents).x = local_34;
-    (param_1->extents).y = local_30;
-    (param_1->extents).z = local_2c;
+  if (&this_ptr->extents != (CVector3f *)&local_34) {
+    (this_ptr->extents).x = local_34;
+    (this_ptr->extents).y = local_30;
+    (this_ptr->extents).z = local_2c;
   }
   iVar1 = 0;
-  param_1->scrape_point_count = param_4;
-  if (0 < param_4) {
-    pSVar3 = param_1->scrape_points;
+  this_ptr->scrape_point_count = point_count;
+  if (0 < point_count) {
+    pCVar2 = &this_ptr->scrape_points[0].local_position;
     do {
-      if (pSVar3 != (SScrape *)param_5) {
-        (pSVar3->local_position).x = *param_5;
-        (pSVar3->local_position).y = param_5[1];
-        (pSVar3->local_position).z = param_5[2];
+      if (pCVar2 != point_array) {
+        ((CVector3f *)&pCVar2->x)->x = point_array->x;
+        pCVar2->y = point_array->y;
+        pCVar2->z = point_array->z;
       }
-      pSVar3 = pSVar3 + 1;
+      pCVar2 = (CVector3f *)&pCVar2[4].y;
       iVar1 = iVar1 + 1;
-      param_5 = param_5 + 3;
-    } while (iVar1 < param_4);
+      point_array = point_array + 1;
+    } while (iVar1 < point_count);
   }
-  core_box_cpp_CBox_updateTransform_FUN_0041aaa0(param_1,param_2,param_3,param_6);
+  core_box_cpp_CBox_updateTransform_FUN_0041aaa0(this_ptr,position,orientation,volume);
   return;
 }

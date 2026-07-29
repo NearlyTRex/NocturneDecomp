@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_keyactor_cpp_FUN_004c36f0(undefined4 param_1,undefined4 param_2)
+; void core_keyactor_cpp_FUN_004c36f0(CDemonActor *param_1,CDemonActor *param_2)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004c36f5
     PUSH ECX                            ; 004c36f9
     CALL core_actor.cpp_FUN_0040b1a0    ; 004c36fa
-        ;   XREF to: 0040b1a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b1a0()
+        ;   XREF to: 0040b1a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b1a0(CDemonActor * this_ptr, CDemonActor * owner)
     ADD ESP,0x8                         ; 004c36ff
     RET                                 ; 004c3702
 

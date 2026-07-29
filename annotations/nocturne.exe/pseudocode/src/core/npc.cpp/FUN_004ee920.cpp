@@ -9,12 +9,12 @@
 void core_npc_cpp_FUN_004ee920(void)
 
 {
-  int iVar1;
+  CNPC *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1f570);
-  if (iVar1 == 0) {
+  this_ptr = (CNPC *)FUN_0056497c(0x1f570);
+  if (this_ptr == (CNPC *)0x0) {
     return;
   }
-  core_npc_cpp_FUN_004ee950(iVar1);
+  core_npc_cpp_FUN_004ee950(this_ptr);
   return;
 }

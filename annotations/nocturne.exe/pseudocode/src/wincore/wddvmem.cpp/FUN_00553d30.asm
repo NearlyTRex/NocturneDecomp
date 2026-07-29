@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_wddvmem_cpp_FUN_00553d30(LPCSTR param_1)
+; HMODULE __cdecl wincore_wddvmem_cpp_FUN_00553d30(LPCSTR lpLibFileName)
 ;
+; Parameters:
+; LPCSTR           Stack[0x4]:4   lpLibFileName
 ;
 ; XREF[2]:
 ;   engine_special.cpp_FUN_00530e60 at 00530e6d

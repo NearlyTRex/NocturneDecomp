@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_00497860(void)
+; float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_00497860(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497a32

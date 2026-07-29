@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540(int param_1,int param_2,int param_3)
+; int __cdecl core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_level
+; int              Stack[0xc]:4   triangle_index
 ; Local Variables:
 ; undefined4       Stack[-0x1a4]:4  local_1a4
 ; undefined4       Stack[-0x14]:4  local_14

@@ -13,7 +13,7 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
   PEXCEPTION_RECORD pEVar2;
   PCONTEXT pCVar3;
   BOOL BVar4;
-  int iVar5;
+  HANDLE pvVar5;
   uint uVar6;
   byte bVar7;
   char *pcVar8;
@@ -25,7 +25,7 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
   pEVar2 = ExceptionInfo->ExceptionRecord;
   pCVar3 = ExceptionInfo->ContextRecord;
   BVar4 = has_active_window();
-  if ((BVar4 != 0) || (iVar5 = FUN_005714ec(), iVar5 == -1)) {
+  if ((BVar4 != 0) || (pvVar5 = FUN_005714ec(), pvVar5 == (HANDLE)0xffffffff)) {
     return 0;
   }
   local_114[0] = '\0';

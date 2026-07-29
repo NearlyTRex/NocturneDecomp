@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_mimic_cpp_CMimic_renderTransparent_FUN_004d5b00(CMimic *param_1)
+; int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_004d5b00(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

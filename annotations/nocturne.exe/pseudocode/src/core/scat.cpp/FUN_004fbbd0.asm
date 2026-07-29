@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004fbbe2
         ;   Label: LAB_004fbbe2
     CALL core_scat.cpp_FUN_004fbc00     ; 004fbbe3
-        ;   XREF to: 004fbc00 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_004fbc00()
+        ;   XREF to: 004fbc00 (UNCONDITIONAL_CALL)  ; CScat * core_scat.cpp_FUN_004fbc00(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fbbe8
     RET                                 ; 004fbbeb
 

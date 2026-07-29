@@ -1,13 +1,13 @@
 // Name: core_actor.cpp_CVector3f_length_FUN_0040e1a0
 // Address: 0040e1a0
 // Address Range: [[0040e1a0, 0040e1c4]]
-// Convention: unknown
-// Signature: float core_actor_cpp_CVector3f_length_FUN_0040e1a0(float *param_1)
+// Convention: __cdecl
+// Signature: float __cdecl core_actor_cpp_CVector3f_length_FUN_0040e1a0(CVector3f *this_ptr)
 
 #include "nocturne.h"
 
-float core_actor_cpp_CVector3f_length_FUN_0040e1a0(float *param_1)
+float __cdecl core_actor_cpp_CVector3f_length_FUN_0040e1a0(CVector3f *this_ptr)
 
 {
-  return SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);
+  return SQRT(this_ptr->z * this_ptr->z + this_ptr->x * this_ptr->x + this_ptr->y * this_ptr->y);
 }

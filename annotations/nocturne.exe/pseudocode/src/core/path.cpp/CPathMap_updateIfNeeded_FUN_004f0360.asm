@@ -155,7 +155,7 @@ section .text
     PUSH EBX                            ; 004f0489
     MOV dword ptr [EBX + 0x28],EAX      ; 004f048a
     CALL core_path.cpp_CPathMap_reset_FUN_004f1e10 ; 004f048d
-        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_reset_FUN_004f1e10()
+        ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_004f1e10(CPathMap * this_ptr)
     ADD ESP,0x4                         ; 004f0492
     MOV ESP,EBP                         ; 004f0495
     POP EBP                             ; 004f0497

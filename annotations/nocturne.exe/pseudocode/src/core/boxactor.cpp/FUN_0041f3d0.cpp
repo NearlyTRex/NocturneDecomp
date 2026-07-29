@@ -21,12 +21,12 @@ void core_boxactor_cpp_FUN_0041f3d0(CBoxActor *param_1,float param_2)
   int filter_pos_x;
   int filter_pos_y;
   float local_e4 [12];
-  byte local_b4 [48];
+  CMatrix3x4f local_b4;
   CMatrix3x4f local_84;
-  byte local_54 [48];
+  CMatrix3x4f local_54;
   CVector3f local_24;
   CVector3f local_18;
-  int local_c;
+  float local_c;
   
   bVar6 = 0;
   core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(param_1,param_2);
@@ -41,8 +41,8 @@ void core_boxactor_cpp_FUN_0041f3d0(CBoxActor *param_1,float param_2)
               ((CDemonLight *)(param_1[1].base.actor_name + 4),
                (CDemonFilter *)(&DAT_0076483c + iVar3 * 0x4c),filter_index,filter_pos_x,filter_pos_y
               );
-    local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3e19999a);
-    param_1[8].pickup_type = local_c;
+    local_c = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,0.15);
+    param_1[8].pickup_type = (int)local_c;
   }
   if (*(int *)param_1[1].base.actor_name != 3) {
     if (*(int *)(param_1[5].push_sound + 4) == 0) {
@@ -57,10 +57,10 @@ void core_boxactor_cpp_FUN_0041f3d0(CBoxActor *param_1,float param_2)
       param_1[1].base.scale.z = (int)local_18.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (local_54,&DAT_02dd1184,&param_1[8].rpm.z);
+              (&local_54,(CVector3f *)&DAT_02dd1184,(CVector3f *)&param_1[8].rpm.z);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (local_b4,&DAT_02dd1184,&(param_1->base).orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_54,local_b4);
+              (&local_b4,(CVector3f *)&DAT_02dd1184,&(param_1->base).orient.vec);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_54,&local_b4);
     pfVar4 = local_e4;
     pCVar5 = &local_84;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

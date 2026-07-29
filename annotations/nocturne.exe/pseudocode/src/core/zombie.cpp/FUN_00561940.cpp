@@ -20,19 +20,13 @@ int core_zombie_cpp_FUN_00561940(CCharacter *param_1)
   CVector3f local_88;
   CVector3f local_7c;
   CVector3f local_70;
-  float local_64;
-  float local_60;
-  float local_5c;
+  CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34;
   CVector3f local_28;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
   bVar5 = 0;
   if ((param_1->was_rendered_opaque != 0) && (*(int *)param_1[1].base.footstep_sound_code != 0)) {
@@ -54,15 +48,15 @@ int core_zombie_cpp_FUN_00561940(CCharacter *param_1)
     local_58.y = 0.0;
     local_58.z = 0.0;
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_40,&local_58,&local_f4);
-    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_34,pCVar1);
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_34,pCVar1);
     local_28.x = 0.0;
     local_28.y = 0.0;
     local_28.z = 1.0;
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_4c,&local_28,&local_f4);
-    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_1c,pCVar1);
-    local_64 = local_1c - local_34;
-    local_60 = local_18 - local_30;
-    local_5c = local_14 - local_2c;
+    core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_1c,pCVar1);
+    local_64.x = local_1c.x - local_34.x;
+    local_64.y = local_1c.y - local_34.y;
+    local_64.z = local_1c.z - local_34.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_7c,&local_64);
     core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(&local_88,&local_7c,56.0,6.0);
   }

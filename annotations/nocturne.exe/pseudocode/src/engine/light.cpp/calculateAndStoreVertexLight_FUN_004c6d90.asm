@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(int param_1,int *param_2)
+; void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(int vertex_index,CVector3i *vertex_position)
 ;
+; Parameters:
+; int              Stack[0x4]:4   vertex_index
+; CVector3i *      Stack[0x8]:4   vertex_position
 ;
 ; XREF[1]:
 ;   engine_3d.c_processVertexLighting_FUN_00404730 at 00404757

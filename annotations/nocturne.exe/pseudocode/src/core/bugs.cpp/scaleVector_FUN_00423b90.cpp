@@ -1,21 +1,16 @@
 // Name: core_bugs.cpp_scaleVector_FUN_00423b90
 // Address: 00423b90
 // Address Range: [[00423b90, 00423bae]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_scaleVector_FUN_00423b90(void)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_bugs_cpp_scaleVector_FUN_00423b90(CVector3f *dest,CVector3f *src)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_bugs_cpp_scaleVector_FUN_00423b90(void)
+CVector3f * __cdecl core_bugs_cpp_scaleVector_FUN_00423b90(CVector3f *dest,CVector3f *src)
 
 {
-  float *in_stack_00000004;
-  float *in_stack_00000008;
-  
-  *in_stack_00000004 = *in_stack_00000008 * *in_stack_00000004;
-  in_stack_00000004[1] = *in_stack_00000008 * in_stack_00000004[1];
-  in_stack_00000004[2] = *in_stack_00000008 * in_stack_00000004[2];
-  return;
+  dest->x = src->x * dest->x;
+  dest->y = src->x * dest->y;
+  dest->z = src->x * dest->z;
+  return dest;
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402d30(int param_1,int param_2,int param_3,char *param_4)
+; void __cdecl engine_2d_c_FUN_00402d30(int left_x,int right_x,int y,char *text)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left_x
+; int              Stack[0x8]:4   right_x
+; int              Stack[0xc]:4   y
+; char *           Stack[0x10]:4   text
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_FUN_0044ed80 at 0044ef9b

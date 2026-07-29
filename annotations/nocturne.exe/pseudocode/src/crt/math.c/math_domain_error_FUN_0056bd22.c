@@ -1,44 +1,57 @@
 // Name: crt_math.c_math_domain_error_FUN_0056bd22
 // Address: 0056bd22
 // Address Range: [[0056bd22, 0056bdc7]]
-// Convention: unknown
-// Signature: undefined8 crt_math_c_math_domain_error_FUN_0056bd22(double param_1,double param_2,byte param_3)
+// Convention: __cdecl
+// Signature: double __cdecl crt_math_c_math_domain_error_FUN_0056bd22(double x,double y,uchar error_type)
 
 #include "nocturne.h"
 
-ulonglong math_domain_error(double param_1,double param_2,byte param_3)
+double __cdecl math_domain_error(double x,double y,uchar error_type)
 
 {
-  uint uVar1;
-  ulonglong uVar2;
+  int errorFlags;
+  double dVar1;
+  uint local_18;
+  uint local_14;
+  ulonglong local_10;
   
-  if (param_3 < 2) {
-    if (param_3 == 0) {
-      if (0.0 < param_2) {
-        return 0;
+  if (error_type < 2) {
+    if (error_type == '\0') {
+      if (0.0 < y) {
+        local_18 = 0;
+        local_14 = 0;
+        goto LAB_0056bdb0;
       }
-      if (0.0 <= param_2) {
-        uVar1 = 0x4047;
+      if (0.0 <= y) {
+        errorFlags = 0x4047;
       }
       else {
-        uVar1 = 0x8047;
+        errorFlags = 0x8047;
       }
     }
     else {
-      uVar1 = 0x2047;
+      errorFlags = 0x2047;
     }
   }
   else {
-    if (param_2 <= 0.0) {
-      return 0;
+    if (y <= 0.0) {
+      local_18 = 0;
+      local_14 = 0;
+      goto LAB_0056bdb0;
     }
-    if (param_1 <= 0.0) {
-      uVar1 = 0x1107;
+    if (x <= 0.0) {
+      errorFlags = 0x1107;
     }
     else {
-      uVar1 = 0x8107;
+      errorFlags = 0x8107;
     }
   }
-  uVar2 = process_math_error(uVar1,&param_1,&param_2);
-  return uVar2;
+  dVar1 = process_math_error(errorFlags,&x,&y);
+  local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);
+  local_18 = (uint)local_10;
+  local_10._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+  local_14 = local_10._4_4_;
+LAB_0056bdb0:
+  local_10 = __BITCAST_DOUBLE(CONCAT44(local_14,local_18));
+  return local_10;
 }

@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_00490d70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,char *param_6,va_list_t param_7)
+; int __cdecl engine_font_cpp_FUN_00490d70(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   center_x
+; int              Stack[0xc]:4   y_pos
+; int              Stack[0x10]:4   color_mode
+; int              Stack[0x14]:4   color_value
+; char *           Stack[0x18]:4   format_string
+; va_list_t        Stack[0x1c]:4   args
 ;
 ; XREF[1]:
 ;   engine_font.cpp_FUN_00490d20 at 00490d4f
@@ -43,7 +51,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1028]    ; 00490dba
     PUSH EAX                            ; 00490dc1
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0 ; 00490dc2
-        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490dc7
     ADD ESP,0x1000                      ; 00490dca
     POP EBP                             ; 00490dd0

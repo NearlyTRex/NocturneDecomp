@@ -11,6 +11,6 @@
 void __cdecl sound_snddx_cpp_staticInit_FUN_00529a80(void)
 
 {
-  _DAT_02dc93a0 = &PTR_sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90_005a2204;
+  _DAT_02dc93a0 = &g_CDirectSoundDeviceVTable;
   return;
 }

@@ -103,7 +103,7 @@ section .text
     SUB ESP,0x8                         ; 00468124
     FSTP double ptr [ESP]               ; 00468127
     CALL crt_math.c_floor_FUN_005648c0  ; 0046812a
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 0046812f
     MOV dword ptr [ESP + 0x30],EDX      ; 00468133
     FLD double ptr [ESP + 0x2c]         ; 00468137
@@ -119,7 +119,7 @@ section .text
     SUB ESP,0x8                         ; 00468155
     FSTP double ptr [ESP]               ; 00468158
     CALL crt_math.c_floor_FUN_005648c0  ; 0046815b
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00468160
     MOV dword ptr [ESP + 0x30],EDX      ; 00468164
     FLD double ptr [ESP + 0x2c]         ; 00468168
@@ -135,7 +135,7 @@ section .text
     SUB ESP,0x8                         ; 00468186
     FSTP double ptr [ESP]               ; 00468189
     CALL crt_math.c_floor_FUN_005648c0  ; 0046818c
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00468191
     MOV dword ptr [ESP + 0x30],EDX      ; 00468195
     FLD double ptr [ESP + 0x2c]         ; 00468199
@@ -409,7 +409,7 @@ section .text
     PUSH EDI                            ; 004684e5
     PUSH EAX                            ; 004684e6
     CALL core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290 ; 004684e7
-        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290()
+        ;   XREF to: 0044b290 (UNCONDITIONAL_CALL)  ; float core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(CDemonCube * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * hit_normal, ...)
     MOV dword ptr [ESP + 0xa0],EAX      ; 004684ec
     FLD float ptr [ESP + 0xa0]          ; 004684f3
     ADD ESP,0x14                        ; 004684fa

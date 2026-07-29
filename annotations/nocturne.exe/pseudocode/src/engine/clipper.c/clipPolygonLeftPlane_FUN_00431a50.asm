@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_clipper_c_clipPolygonLeftPlane_FUN_00431a50(undefined4 *param_1,int param_2,int param_3)
+; int __cdecl engine_clipper_c_clipPolygonLeftPlane_FUN_00431a50(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   input_vertices
+; SRenderVertex * * Stack[0x8]:4   output_vertices
+; int              Stack[0xc]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -111,7 +115,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431b08 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431b0d
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 00431b11
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431b16
     JMP 0x00431aa4                      ; 00431b19
         ;   XREF to: 00431aa4 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -142,7 +146,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431b60 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431b65
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_00431530 ; 00431b69
-        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_00431530()
+        ;   XREF to: 00431530 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_00431530(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431b6e
     JMP 0x00431aa4                      ; 00431b71
         ;   XREF to: 00431aa4 (UNCONDITIONAL_JUMP)  ; caseD_3

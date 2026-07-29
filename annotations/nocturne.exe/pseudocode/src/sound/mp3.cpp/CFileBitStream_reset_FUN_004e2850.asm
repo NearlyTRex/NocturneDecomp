@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(undefined4 *param_1)
+; void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(CFileBitStream *this_ptr)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   crt_stdio.c_fseek_FUN_0056582c

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_smiley_dfm_00591eed
 ;   float FLOAT_005a1f9c = 50
 ;   float FLOAT_005a1fa0 = 100
-;   undefined1* PTR_core_smiley.cpp_CSmiley_setup_FUN_0051fd90_005a1fb4 = 0051fd90
+;   CSmiley_full_vtable g_CSmileyVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -34,9 +34,9 @@ section .text
     MOV EBX,EAX                         ; 0051fd03
     ADD EAX,0x150                       ; 0051fd05
     PUSH EAX                            ; 0051fd0a
-    MOV dword ptr [EAX + -0x4],0x5a1fb4 ; 0051fd0b | PTR_core_smiley.cpp_CSmiley_setup_FUN_0051fd90_005a1fb4
+    MOV dword ptr [EAX + -0x4],0x5a1fb4 ; 0051fd0b | g_CSmileyVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0051fd12
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0xbd24],0x0    ; 0051fd17
     MOV dword ptr [EBX + 0xbd28],0x42c80000 ; 0051fd21
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0051fd2b

@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8)
+; void __cdecl core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
+; int              Stack[0xc]:4   vertex_count
+; CVector3i *      Stack[0x10]:4   vertices
+; int              Stack[0x14]:4   face_count
+; SMRGLHeaderPrimitive * Stack[0x18]:4   faces
+; SMRGLTextureLod * Stack[0x1c]:4   texture_lod
+; int *            Stack[0x20]:4   texture_index_list
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0

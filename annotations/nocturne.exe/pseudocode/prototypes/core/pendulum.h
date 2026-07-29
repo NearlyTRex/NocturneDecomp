@@ -29,7 +29,7 @@ void __cdecl CPendulum::testCollisionWithActor(CPendulum *this_ptr,CDemonActor *
 
 // Original: core_pendulum.cpp_didPhaseCross_FUN_004f3340
 // Address: 004f3340
-bool didPhaseCross(void);
+int __cdecl didPhaseCross(float threshold,float old_phase,float new_phase);
 
 // Original: core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430
 // Address: 004f3430
@@ -51,13 +51,13 @@ undefined4 * FUN_004f3c00(int param_1,undefined4 *param_2);
 // Address: 004f3c50
 void CPendulum::archive(CDemonActor *param_1);
 
-// Original: core_pendulum.cpp_FUN_004f3df0
+// Original: core_pendulum.cpp_CPendulum_getCollisionType_FUN_004f3df0
 // Address: 004f3df0
-undefined4 FUN_004f3df0(int param_1,int param_2);
+ECollisionType __cdecl CPendulum::getCollisionType(CPendulum *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_pendulum.cpp_FUN_004f3e30
+// Original: core_pendulum.cpp_CPendulum_getGroundType_FUN_004f3e30
 // Address: 004f3e30
-undefined4 FUN_004f3e30(int param_1);
+EGroundType __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_FUN_004f3e40
 // Address: 004f3e40

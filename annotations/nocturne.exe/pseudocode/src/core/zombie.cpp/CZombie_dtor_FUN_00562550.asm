@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_zombie_cpp_CZombie_dtor_FUN_00562550(CDemonActor *param_1,byte param_2)
+; CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_00562550(CZombie *this_ptr,uint flags)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CZombieTypeInfo_005a46a0

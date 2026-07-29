@@ -1,14 +1,14 @@
 // Name: sound_sndwav.cpp_CWavOutDevice_poll_FUN_0052c640
 // Address: 0052c640
 // Address Range: [[0052c640, 0052c6b8]]
-// Convention: unknown
-// Signature: undefined4 sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(void)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(void)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this_ptr,short *output_buffer,int num_samples)
 
 {
   int iVar1;

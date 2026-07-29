@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)
+; float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   actor_specifier
+; char *           Stack[0xc]:4   sound_name
+; char *           Stack[0x10]:4   dialog_text
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined8       Stack[-0x24]:8  local_24
@@ -88,7 +93,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00504a25
     PUSH ECX                            ; 00504a28
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00504a29
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 00504a2e
     CMP EAX,0x1                         ; 00504a31
     JZ 0x005049de                       ; 00504a34

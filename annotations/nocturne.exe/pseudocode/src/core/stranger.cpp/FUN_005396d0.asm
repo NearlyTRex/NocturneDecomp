@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_005396d0(int param_1,SPose *param_2)
+; void __cdecl core_stranger_cpp_FUN_005396d0(CStranger *this_ptr,SPose *out_pose)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; SPose *          Stack[0x8]:4   out_pose
 ; Local Variables:
 ; undefined4       Stack[-0x1ae0]:4  local_1ae0
 ; undefined        Stack[-0x3c]:1  local_3c

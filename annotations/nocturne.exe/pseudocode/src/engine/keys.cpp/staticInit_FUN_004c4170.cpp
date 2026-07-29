@@ -11,6 +11,6 @@
 void __cdecl engine_keys_cpp_staticInit_FUN_004c4170(void)
 
 {
-  _DAT_01cc30e4 = &PTR_engine_keys_cpp_CKeys_getKeyState_FUN_004c4180_0059f91c;
+  _DAT_01cc30e4 = &g_CKeysVTable;
   return;
 }

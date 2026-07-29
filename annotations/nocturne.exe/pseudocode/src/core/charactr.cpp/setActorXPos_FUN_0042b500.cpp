@@ -1,19 +1,14 @@
 // Name: core_charactr.cpp_setActorXPos_FUN_0042b500
 // Address: 0042b500
 // Address Range: [[0042b500, 0042b50b]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_setActorXPos_FUN_0042b500(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_setActorXPos_FUN_0042b500(CDemonActor *actor,float x)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_charactr_cpp_setActorXPos_FUN_0042b500(void)
+void __cdecl core_charactr_cpp_setActorXPos_FUN_0042b500(CDemonActor *actor,float x)
 
 {
-  int in_stack_00000004;
-  uint in_stack_00000008;
-  
-  *(uint *)(in_stack_00000004 + 0x20) = in_stack_00000008;
+  (actor->location).position.x = x;
   return;
 }

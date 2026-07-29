@@ -41,7 +41,7 @@ undefined4 FUN_0054fc30(int param_1);
 
 // Original: core_vessel.cpp_FUN_0054fc40
 // Address: 0054fc40
-undefined4 FUN_0054fc40(int param_1);
+int __cdecl FUN_0054fc40(CCryptVessel *actor);
 
 // Original: core_vessel.cpp_CCryptVessel_process_FUN_0054fc60
 // Address: 0054fc60
@@ -63,14 +63,14 @@ void FUN_005504c0(void);
 // Address: 00550540
 void CCryptVessel::archive(CDemonActor *param_1);
 
-// Original: core_vessel.cpp_FUN_00550650
+// Original: core_vessel.cpp_CCryptVessel_getCollisionType_FUN_00550650
 // Address: 00550650
-undefined4 FUN_00550650(int param_1);
+ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vessel.cpp_FUN_00550670
+// Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00550670
 // Address: 00550670
-undefined4 * FUN_00550670(int param_1,undefined4 *param_2);
+CBoundingBox3D * __cdecl CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_vessel.cpp_FUN_005506c0
+// Original: core_vessel.cpp_CCryptVessel_dtor_FUN_005506c0
 // Address: 005506c0
-CDemonActor * FUN_005506c0(CDemonActor *param_1,byte param_2);
+CCryptVessel * __cdecl CCryptVessel::dtor(CCryptVessel *this_ptr,uint flags);

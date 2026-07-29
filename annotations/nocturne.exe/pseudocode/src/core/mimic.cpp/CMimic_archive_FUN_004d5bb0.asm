@@ -46,7 +46,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004d5bd8
     PUSH ESI                            ; 004d5bde
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004d5bdf
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004d5be4
     PUSH 0x5894aa                       ; 004d5be7 | = "attackCondition"
     LEA EAX,[EBX + 0xbd88]              ; 004d5bec

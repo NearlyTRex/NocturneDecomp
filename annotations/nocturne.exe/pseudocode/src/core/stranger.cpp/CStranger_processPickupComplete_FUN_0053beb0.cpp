@@ -9,17 +9,19 @@
 void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(CStranger *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  CAmmoBox *this_ptr_00;
   
   if ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) {
     if (this_ptr->action_pending != 4) {
       shape_edittool_cpp_FUN_0046fb40
                 (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",this_ptr->action_pending,0xd49);
     }
-    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       ((this_ptr->base).object_to_pick_up,g_CAmmoBoxActorType_007641f8.name_hash);
-    if (pCVar1 != (CDemonActor *)0x0) {
-      core_ammobox_cpp_FUN_0040f1a0(pCVar1,&(this_ptr->base).inventory);
+    this_ptr_00 = (CAmmoBox *)
+                  core_actor_cpp_castToClassHash_FUN_0040d890
+                            ((this_ptr->base).object_to_pick_up,
+                             g_CAmmoBoxActorType_007641f8.name_hash);
+    if (this_ptr_00 != (CAmmoBox *)0x0) {
+      core_ammobox_cpp_FUN_0040f1a0(this_ptr_00,&(this_ptr->base).inventory);
     }
     this_ptr->action_pending = 1;
     (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;

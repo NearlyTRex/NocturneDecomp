@@ -1,30 +1,31 @@
 // Name: crt_string.c_char_in_set_FUN_00572a90
 // Address: 00572a90
 // Address Range: [[00572a90, 00572afe]]
-// Convention: unknown
-// Signature: char * crt_string_c_char_in_set_FUN_00572a90(char *param_1,int param_2)
+// Convention: __cdecl
+// Signature: char * __cdecl crt_string_c_char_in_set_FUN_00572a90(char *charset,wchar_t wc)
 
 #include "nocturne.h"
 
-char * char_in_set(char *param_1,int param_2)
+char * __cdecl char_in_set(char *charset,wchar_t wc)
 
 {
   int iVar1;
+  ushort in_stack_0000000a;
   char acStack_8 [4];
   
-  wchar_to_bytes((wchar_t)param_2,acStack_8);
+  wchar_to_bytes(wc,acStack_8);
   iVar1 = mblen(acStack_8);
   acStack_8[iVar1] = '\0';
   while( true ) {
-    iVar1 = mbstring_termination_check(param_1);
+    iVar1 = mbstring_termination_check(charset);
     if (iVar1 != 0) break;
-    iVar1 = FUN_00572e00(param_1,acStack_8);
+    iVar1 = FUN_00572e00(charset,acStack_8);
     if (iVar1 == 0) break;
-    param_1 = (char *)mbtowc_next(param_1);
+    charset = mbtowc_next(charset);
   }
-  iVar1 = mbstring_termination_check(param_1);
-  if ((iVar1 != 0) && (param_2 != 0)) {
-    param_1 = (char *)0x0;
+  iVar1 = mbstring_termination_check(charset);
+  if ((iVar1 != 0) && (_wc != 0)) {
+    charset = (char *)0x0;
   }
-  return param_1;
+  return charset;
 }

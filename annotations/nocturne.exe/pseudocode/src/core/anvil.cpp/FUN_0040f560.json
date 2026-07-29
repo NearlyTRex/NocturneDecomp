@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 116,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 79
   },
@@ -152,9 +151,9 @@
         "0040f5ea"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_anvil.cpp_FUN_0040f560",
-    "signature": "int * core_anvil_cpp_FUN_0040f560(undefined4 param_1)"
+    "signature": "CAnvil * __cdecl core_anvil_cpp_FUN_0040f560(CAnvil *this_ptr)"
   },
   "function_calls": [
     {
@@ -206,9 +205,9 @@
     },
     {
       "addr": "00599694",
-      "name": "PTR_core_anvil.cpp_FUN_0040f5f0_00599694",
-      "type": "undefined1*",
-      "value": "0040f5f0"
+      "name": "g_CAnvilVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -226,11 +225,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -257,44 +256,36 @@
     "pcode_op_count": 160
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAnvil *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * core_anvil_cpp_FUN_0040f560(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_00409d30(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
-      "match": "this_ptr[-1].",
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "this_ptr[-1].model_ptr = (CKeyFramedModel *)&PTR_core_anvil_cpp_FUN_0040f5f0_00599694;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAnvilVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 26,
-      "match": "this_ptr[-1].",
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return this_ptr[-1].part_visibility_flags + 0xb;",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 0xb);",
       "type": "negative_offset"
     },
     {
@@ -316,9 +307,9 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 33,
-      "match": "this_ptr[-1].",
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return this_ptr[-1].part_visibility_flags + 0xb;",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 0xb);",
       "type": "negative_offset"
     }
   ],

@@ -11,8 +11,8 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0(CDemonCamera *this_ptr)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  int *piVar1;
+  int *piVar2;
   int iVar3;
   byte *pbVar4;
   uint *puVar5;
@@ -84,11 +84,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
         do {
           puVar5 = (uint *)(iVar3 + 0x12b0670);
           if (uVar8 != *puVar5) goto LAB_0044729d;
-          puVar1 = (uint *)(iVar3 + 0x12b0668);
-          puVar2 = (uint *)(iVar3 + 0x12b066c);
+          piVar1 = (int *)(iVar3 + 0x12b0668);
+          piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_FUN_00447c60(this_ptr,*puVar2,*puVar5,*puVar1);
+          core_dcamera_cpp_FUN_00447c60(this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }
@@ -140,11 +140,11 @@ LAB_0044729d:
         do {
           puVar5 = (uint *)(iVar3 + 0x12b0670);
           if (uVar8 != *puVar5) goto LAB_00447422;
-          puVar1 = (uint *)(iVar3 + 0x12b0668);
-          puVar2 = (uint *)(iVar3 + 0x12b066c);
+          piVar1 = (int *)(iVar3 + 0x12b0668);
+          piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_FUN_00447bb0(this_ptr,*puVar2,*puVar5,*puVar1);
+          core_dcamera_cpp_FUN_00447bb0(this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }

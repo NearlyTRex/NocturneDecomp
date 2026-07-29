@@ -2,15 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 50,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 5,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 9
   },
@@ -30,9 +30,9 @@
         "00566b1f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_unknown.c_string_ungetc_FUN_00566b18",
-    "signature": "void crt_unknown_c_string_ungetc_FUN_00566b18(undefined4 param_1,int param_2)"
+    "signature": "int __cdecl crt_unknown_c_string_ungetc_FUN_00566b18(int ch,scanf_state_t *state)"
   },
   "function_calls": [],
   "globals": [],
@@ -40,9 +40,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -64,45 +64,36 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 8,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void string_ungetc(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void string_ungetc(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(int *)(param_2 + 8) = *(int *)(param_2 + 8) + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(int *)(param_2 + 8) = *(int *)(param_2 + 8) + -1;",
-      "type": "unnamed_param"
+      "match": "(void *)((int)state",
+      "severity": "moderate",
+      "text": "state->input_ptr = (void *)((int)state->input_ptr + -1);",
+      "type": "pointer_cast"
     }
   ]
 }

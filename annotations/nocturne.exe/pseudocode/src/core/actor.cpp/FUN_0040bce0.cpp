@@ -1,25 +1,25 @@
 // Name: core_actor.cpp_FUN_0040bce0
 // Address: 0040bce0
 // Address Range: [[0040bce0, 0040bd3b]]
-// Convention: unknown
-// Signature: void core_actor_cpp_FUN_0040bce0(int param_1,uint param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_actor_cpp_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_actor_cpp_FUN_0040bce0(int param_1,uint param_2)
+void __cdecl core_actor_cpp_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
-  if ((iVar1 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) && (param_2 != 0)) {
-    if (param_2 < 2) {
+  pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
+  if ((pCVar1 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) && (attack_flags != 0)) {
+    if ((uint)attack_flags < 2) {
       xxx_unk_c_FUN_004940d0(INT_005b9284);
       return;
     }
-    if (param_2 == 2) {
+    if (attack_flags == 2) {
       xxx_unk_c_FUN_004940d0(INT_005b9284);
       return;
     }

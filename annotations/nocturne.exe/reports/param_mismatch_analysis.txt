@@ -13,59 +13,19 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5363
+Functions with parameter estimates: 5361
 Functions with no callers: 2640
-Parameter mismatches detected: 791
-Signature accuracy rate: 71.0%
+Parameter mismatches detected: 393
+Signature accuracy rate: 85.6%
 
 Mismatches by confidence:
-  High confidence:   47 (multiple call sites agree)
-  Medium confidence: 134 (some agreement)
-  Low confidence:    610 (limited data)
+  High confidence:   18 (multiple call sites agree)
+  Medium confidence: 79 (some agreement)
+  Low confidence:    296 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
-
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
-    Declared: 0 params (0 bytes), Estimated: 8 stack slots (20 bytes) [+8]
-    Call sites: 4, Confidence: high
-    File: sound/sndmain.cpp
-    Signature: double sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(int param_1,double param_2,uint param_3,uint param_4)
-    Sample call sites:
-      sound_sndmain.cpp_CSfxSlot_see at 00525ac6: 3 reg [EAX, EBX, EDX], 5 stack (20 bytes, via add_esp)
-      sound_sndmain.cpp_CSfxSample_n at 00525dfd: 3 reg [EBX, ECX, EDX], 5 stack (20 bytes, via add_esp)
-      sound_sndmain.cpp_CSfxSample_n at 00525e58: 3 reg [EAX, EBX, EDX], 5 stack (20 bytes, via add_esp)
-
-  core_dstrender.cpp_memcpyMMX_FUN_00465341
-    Declared: 0 params (0 bytes), Estimated: 7 stack slots (12 bytes) [+7]
-    Call sites: 5, Confidence: high
-    File: core/dstrender.cpp
-    Signature: undefined4 core_dstrender_cpp_memcpyMMX_FUN_00465341(uint param_1,uint param_2,uint param_3)
-    Sample call sites:
-      core_dcamera.cpp_CDemonCamera_ at 00440d0d: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
-      core_dlight.cpp_CDemonLight_re at 0044eb4c: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
-      core_dlight.cpp_CDemonLight_bl at 0044e6df: 4 reg [EAX, EBX, ECX, EDX], 3 stack (12 bytes, via add_esp)
-
-  core_fire.cpp_FUN_0048b6f0
-    Declared: 0 params (0 bytes), Estimated: 6 stack slots (20 bytes) [+6]
-    Call sites: 3, Confidence: high
-    File: core/fire.cpp
-    Signature: void core_fire_cpp_FUN_0048b6f0(CFireEffect *param_1,CVector3f *param_2,float *param_3,SLaserInfo *param_4,int param_5)
-    Sample call sites:
-      core_weapon.cpp_CWeapon_firePr at 005548e5: 1 reg [EAX], 5 stack (20 bytes, via add_esp)
-      core_emitter.cpp_FUN_00478f80 at 004790c4: 1 reg [EAX], 5 stack (20 bytes, via add_esp)
-      core_manpuz.cpp_CMansionPuzzle at 004cb513: 1 reg [EAX], 5 stack (20 bytes, via add_esp)
-
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0
-    Declared: 0 params (0 bytes), Estimated: 6 stack slots (24 bytes) [+6]
-    Call sites: 12, Confidence: high
-    File: engine/font.cpp
-    Signature: int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
-    Sample call sites:
-      engine_font.cpp_CBitFont_drawT at 00490aca: 0 reg [], 6 stack (24 bytes, via add_esp)
-      engine_font.cpp_CBitFont_showF at 0049341d: 0 reg [], 6 stack (24 bytes, via add_esp)
-      engine_font.cpp_CBitFont_showF at 0049346c: 0 reg [], 6 stack (24 bytes, via add_esp)
 
   FUN_0056808c
     Declared: 0 params (0 bytes), Estimated: 5 stack slots (16 bytes) [+5]
@@ -77,16 +37,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       FUN_00567560 at 00567706: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
       FUN_00567560 at 0056771d: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
 
-  core_sound.cpp_FUN_0052d030
-    Declared: 0 params (0 bytes), Estimated: 5 stack slots (12 bytes) [+5]
-    Call sites: 3, Confidence: high
-    File: core/sound.cpp
-    Signature: void core_sound_cpp_FUN_0052d030(undefined4 param_1,char *param_2,char *param_3)
-    Sample call sites:
-      core_sound.cpp_playSfxInternal at 0052d522: 2 reg [EAX, EDX], 3 stack (12 bytes, via add_esp)
-      core_sound.cpp_playSfxInternal at 0052d551: 2 reg [EAX, ECX], 3 stack (12 bytes, via add_esp)
-      core_dracbrid.cpp_FUN_0045ab40 at 0045afea: 2 reg [EAX, EBX], 3 stack (12 bytes, via add_esp)
-
   FUN_005708c0
     Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
     Call sites: 3, Confidence: high
@@ -96,46 +46,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_io.c_getFileStat_FUN_0056c at 0056ca18: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
       crt_io.c_getFileStat_FUN_0056c at 0056ca56: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
       crt_io.c_getFileStat_FUN_0056c at 0056cabb: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-
-  core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (8 bytes) [+4]
-    Call sites: 3, Confidence: high
-    File: core/event.cpp
-    Signature: uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList *param_1,char *param_2)
-    Sample call sites:
-      core_event.cpp_CEventList_exec at 0047b61c: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
-      core_event.cpp_CEventList_exec at 0047c14d: 2 reg [EAX, EBX], 2 stack (8 bytes, via add_esp)
-      core_event.cpp_CEventList_eval at 0047fbb0: 2 reg [EAX, EDX], 2 stack (8 bytes, via add_esp)
-
-  crt_stdlib.c__qsort_FUN_00563db8
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (16 bytes) [+4]
-    Call sites: 4, Confidence: high
-    File: crt/stdlib.c
-    Signature: void __cdecl crt_stdlib_c__qsort_FUN_00563db8(undefined4 *param_1,uint param_2,uint param_3,QSORT_COMPARATOR param_4)
-    Sample call sites:
-      engine_drender.cpp_CDemonRende at 00461e0d: 0 reg [], 4 stack (16 bytes, via add_esp)
-      core_set.cpp_CDemonSet_buildDi at 0050d3bc: 0 reg [], 4 stack (16 bytes, via add_esp)
-      shape_edittool.cpp_CStrList_so at 00474069: 0 reg [], 4 stack (16 bytes, via push_count)
-
-  crt_stdlib.c_strtol_FUN_005738ac
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
-    Call sites: 3, Confidence: high
-    File: crt/stdlib.c
-    Signature: void crt_stdlib_c_strtol_FUN_005738ac(char *param_1,char **param_2,int param_3)
-    Sample call sites:
-      FUN_00572b70 at 00572bd8: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
-      FUN_00572b70 at 00572c23: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
-      FUN_00572b70 at 00572c6d: 1 reg [EBX], 3 stack (12 bytes, via add_esp)
-
-  engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
-    Call sites: 50, Confidence: high
-    File: engine/ini.cpp
-    Signature: void engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
-    Sample call sites:
-      core_game.cpp_FUN_004a4b50 at 004a4c6c: 2 reg [EAX, EDX], 3 stack (12 bytes, via add_esp)
-      core_game.cpp_FUN_004a4b50 at 004a4c86: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-      core_game.cpp_FUN_004a4b50 at 004a4ca0: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
 
   engine_matrix.c_normalizeVector3DFixed_FUN_004cde10
     Declared: 0 params (0 bytes), Estimated: 4 stack slots (4 bytes) [+4]
@@ -157,26 +67,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_stdio.c_fgetc_buffered_FUN at 00571c69: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
       FUN_00571cc6 at 00571cd4: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
 
-  core_actor.cpp_FUN_0040b1a0
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
-    Call sites: 4, Confidence: high
-    File: core/actor.cpp
-    Signature: void core_actor_cpp_FUN_0040b1a0(void)
-    Sample call sites:
-      core_weapon.cpp_FUN_00554570 at 0055457a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
-      core_boxactor.cpp_FUN_0041f170 at 0041f17a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
-      core_health.cpp_FUN_004b4440 at 004b444a: 1 reg [ECX], 2 stack (8 bytes, via push_count)
-
-  core_actor.cpp_archiveOrientation_FUN_0040c4f0
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
-    Call sites: 4, Confidence: high
-    File: core/actor.cpp
-    Signature: void core_actor_cpp_archiveOrientation_FUN_0040c4f0(float *param_1,char *param_2)
-    Sample call sites:
-      core_actor.cpp_CDemonActor_arc at 0040d2f2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-      core_boxactor.cpp_CLightActor_ at 0041f656: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-      core_manpuz.cpp_CMansionPuzzle at 004cb8b2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-
   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (4 bytes) [+3]
     Call sites: 3, Confidence: high
@@ -186,96 +76,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_3d.c_flushRenderQueue_F at 00408f7a: 2 reg [EBX, EDX], 1 stack (4 bytes, via add_esp)
       engine_3d.c_FUN_00408fc0 at 004090e7: 2 reg [EAX, EBX], 1 stack (4 bytes, via add_esp)
       engine_3d.c_FUN_00408fc0 at 004091f4: 2 reg [EBX, EDX], 1 stack (4 bytes, via add_esp)
-
-  engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
-    Call sites: 9, Confidence: high
-    File: engine/ini.cpp
-    Signature: void engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(int param_1,char *param_2)
-    Sample call sites:
-      engine_ini.cpp_CIniFile_ctor_F at 004bd879: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
-      core_inivar.cpp_FUN_004bdb80 at 004bdbc2: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-      core_inivar.cpp_FUN_004bdb80 at 004bddbc: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-
-  engine_keys.cpp_CKeys_clearKeyPressState_FUN_004c4200
-    Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
-    Call sites: 14, Confidence: high
-    File: engine/keys.cpp
-    Signature: void engine_keys_cpp_CKeys_clearKeyPressState_FUN_004c4200(undefined4 param_1,int param_2)
-    Sample call sites:
-      core_game.cpp_CGame_resetKeySt at 0049ea67: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
-      core_game.cpp_CGame_resetKeySt at 0049ea7b: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
-      core_game.cpp_CGame_resetKeySt at 0049ea8e: 1 reg [EAX], 2 stack (8 bytes, via add_esp)
-
-  FUN_00571ef0
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: .
-    Signature: void FUN_00571ef0(undefined4 param_1)
-    Sample call sites:
-      crt_iostream.cpp_ios_freeBuffe at 00570421: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-      crt_iostream.cpp_streambuf_des at 00571dbb: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      crt_iostream.cpp_setBuffer_FUN at 00571e37: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-
-  core_actor.cpp_FUN_00409d30
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 48, Confidence: high
-    File: core/actor.cpp
-    Signature: UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
-    Sample call sites:
-      core_ammo.cpp_CAmmo_ctor_FUN_0 at 0040eb78: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-      core_gasmask.cpp_FUN_004a8a10 at 004a8a16: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-      core_hero.cpp_CHeroPlaceholder at 004b5f95: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-
-  core_charactr.cpp_FUN_0042a150
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 37, Confidence: high
-    File: core/charactr.cpp
-    Signature: void core_charactr_cpp_FUN_0042a150(CCharacter *param_1,float param_2)
-    Sample call sites:
-      core_baron.cpp_FUN_00410490 at 0041073a: 2 reg [EBX, EDX], 2 stack (8 bytes, via add_esp)
-      core_batcreat.cpp_CBatCreature at 00412684: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_batman.cpp_CBatman_proces at 00413a32: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  core_charactr.cpp_FUN_0042af70
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 6, Confidence: high
-    File: core/charactr.cpp
-    Signature: undefined4 core_charactr_cpp_FUN_0042af70(CCharacter *param_1,float param_2)
-    Sample call sites:
-      core_hostage.cpp_FUN_004b6d80 at 004b781f: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_icepick.cpp_FUN_004baba0 at 004bb08c: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_icepick.cpp_FUN_004baba0 at 004bb232: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  core_event.cpp_FUN_00481620
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: core/event.cpp
-    Signature: void core_event_cpp_FUN_00481620(undefined4 *param_1)
-    Sample call sites:
-      core_door.cpp_CDoor_ctor_FUN_0 at 00455075: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-      core_lever.cpp_CLever_ctor_FUN at 004c6063: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-      core_door.cpp_FUN_00456690 at 00456696: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-
-  core_hero.cpp_FUN_004b46d0
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 9, Confidence: high
-    File: core/hero.cpp
-    Signature: CDemonActor * core_hero_cpp_FUN_004b46d0(CCharacter *param_1)
-    Sample call sites:
-      core_baron.cpp_CBaron_ctor_FUN at 004101d8: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      core_colonel.cpp_FUN_00439d30 at 00439d36: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      core_gabriela.cpp_CGabriella_c at 004956a8: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
-
-  core_set.cpp_FUN_0050ad20
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: core/set.cpp
-    Signature: void core_set_cpp_FUN_0050ad20(int param_1)
-    Sample call sites:
-      core_game.cpp_CGame_runGameSes at 0049dfea: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
-      core_mission.cpp_CDemonMission at 004d93a4: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
-      core_set.cpp_CDemonSet_precomp at 00508496: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
 
   core_setutil.cpp_FUN_00514430
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
@@ -287,61 +87,11 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_setutil.cpp_FUN_00514470 at 00514476: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
       core_setutil.cpp_FUN_00514410 at 00514416: 1 reg [EBX], 1 stack (4 bytes, via add_esp)
 
-  core_stranger.cpp_FUN_00535900
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 4, Confidence: high
-    File: core/stranger.cpp
-    Signature: void core_stranger_cpp_FUN_00535900(CStranger *param_1,float param_2)
-    Sample call sites:
-      core_stranger.cpp_FUN_005357d0 at 00535813: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_stranger.cpp_FUN_005357d0 at 00535820: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_stranger.cpp_FUN_005357d0 at 0053582d: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  crt_iostream.cpp_istream_ctor_FUN_0056b67d
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: crt/iostream.cpp
-    Signature: void crt_iostream_cpp_istream_ctor_FUN_0056b67d(void **param_1,byte param_2)
-    Sample call sites:
-      crt_strstream.cpp_istrstream_c at 00564f5a: 0 reg [], 2 stack (8 bytes, via add_esp)
-      crt_fstream.cpp_ifstream_ctor_ at 0056531a: 0 reg [], 2 stack (8 bytes, via add_esp)
-      crt_fstream.cpp_ifstream_ctor_ at 005650a0: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  crt_iostream.cpp_ostream_ctor_FUN_0056b4a9
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: crt/iostream.cpp
-    Signature: void crt_iostream_cpp_ostream_ctor_FUN_0056b4a9(char *param_1,byte param_2)
-    Sample call sites:
-      crt_fstream.cpp_ofstream_ctor_ at 0056514c: 0 reg [], 2 stack (8 bytes, via add_esp)
-      crt_fstream.cpp_ofstream_ctor_ at 00565386: 0 reg [], 2 stack (8 bytes, via add_esp)
-      crt_strstream.cpp_ostrstream_c at 00564ddf: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  crt_unknown.c_FUN_00566570
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 8, Confidence: high
-    File: crt/unknown.c
-    Signature: int crt_unknown_c_FUN_00566570(LPCSTR param_1)
-    Sample call sites:
-      crt_io.c_getFileStat_FUN_0056c at 0056c93f: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      crt_io.c_getFileStat_FUN_0056c at 0056c963: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
-      shape_edittool.cpp_FUN_0047073 at 00470abf: 1 reg [EAX], 1 stack (4 bytes, via add_esp)
-
-  engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 12, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)
-    Sample call sites:
-      core_setdir.cpp_FUN_005125a0 at 0051329d: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_water.cpp_CWater_render_F at 0055117b: 0 reg [], 2 stack (8 bytes, via push_count)
-      core_skeleton.cpp_CDeformableM at 00518ca1: 0 reg [], 2 stack (8 bytes, via add_esp)
-
   sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
     Call sites: 4, Confidence: high
     File: sound/mp3.cpp
-    Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)
+    Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *param_1,char *param_2)
     Sample call sites:
       sound_sndmain.cpp_startSfx_FUN at 005269f5: 0 reg [], 2 stack (8 bytes, via add_esp)
       sound_sndmain.cpp_getSfxSample at 0052280e: 0 reg [], 2 stack (8 bytes, via add_esp)
@@ -387,16 +137,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_script.cpp_makeVector_FUN at 00505886: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_boneguy.cpp_FUN_004194b0 at 00419528: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 4, Confidence: high
-    File: core/baron.cpp
-    Signature: void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(int param_1)
-    Sample call sites:
-      core_baron.cpp_CBaronWeapon_pr at 004113d5: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_baron.cpp_CBaronWeapon_fi at 00411406: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_baron.cpp_CBaronWeapon_is at 00411446: 0 reg [], 1 stack (4 bytes, via add_esp)
-
   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     Declared: 1 params (4 bytes), Estimated: 2 stack slots (8 bytes) [+1]
     Call sites: 50, Confidence: high
@@ -406,36 +146,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_glass.cpp_FUN_004ac7c0 at 004ac7ee: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_fire.cpp_CStake_render_FU at 0048364f: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_set.cpp_CDemonSet_buildMi at 0050e282: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  core_bugs.cpp_FUN_00421b80
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 4, Confidence: high
-    File: core/bugs.cpp
-    Signature: void core_bugs_cpp_FUN_00421b80(int param_1)
-    Sample call sites:
-      core_bugs.cpp_FUN_00422050 at 004220ef: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_bugs.cpp_FUN_00422050 at 00422349: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_bugs.cpp_CBugs_attackSwar at 00422746: 0 reg [], 1 stack (4 bytes, via add_esp)
-
-  core_glass.cpp_FUN_004aded0
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 9, Confidence: high
-    File: core/glass.cpp
-    Signature: void core_glass_cpp_FUN_004aded0(int param_1)
-    Sample call sites:
-      core_set.cpp_CDemonSet_process at 005094ea: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_actor.cpp_FUN_0040b300 at 0040b787: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_actor.cpp_FUN_0040b300 at 0040bbbb: 0 reg [], 1 stack (4 bytes, via add_esp)
-
-  core_hero.cpp_FUN_004b48d0
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 9, Confidence: high
-    File: core/hero.cpp
-    Signature: void core_hero_cpp_FUN_004b48d0(CCharacter *param_1)
-    Sample call sites:
-      core_baron.cpp_CBaron_setup_FU at 004102c7: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_colonel.cpp_FUN_00439da0 at 00439da7: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_gabriela.cpp_CGabriella_s at 004957c8: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -477,15 +187,15 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_actor.cpp_CDemonActor_res at 00409f67: 0 reg [], 1 stack (4 bytes, via push_count)
       core_fire.cpp_CBulletHole_rend at 004831b5: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  engine_matrix.c_interpolatedSin_FUN_004cca60
+  engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 14, Confidence: high
-    File: engine/matrix.c
-    Signature: int __cdecl engine_matrix_c_interpolatedSin_FUN_004cca60(uint param_1)
+    Call sites: 6, Confidence: high
+    File: engine/drender.cpp
+    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
     Sample call sites:
-      core_level.cpp_CLevelLoader_up at 004c5adc: 0 reg [], 1 stack (4 bytes, via add_esp)
-      engine_matrix.c_matrixPushAndT at 004cd4dc: 0 reg [], 1 stack (4 bytes, via add_esp)
-      engine_matrix.c_matrixPushAndT at 004cd4f6: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_level.cpp_CLevelLoader_up at 004c5e19: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_dlight.cpp_CDemonLight_en at 0044e7a2: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_dcamera.cpp_CDemonCamera_ at 00440ac7: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -501,14 +211,9 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  engine_3d.c_clipAndDrawLine2D_FUN_00409290         declared:0 est:26 (+26) [10 calls]
-  core_fire.cpp_CLaserBeam_init_FUN_004858f0         declared:0 est:15 (+15) [2 calls]
   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        declared:0 est:15 (+15) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00453 declared:0 est:10 (+10) [2 calls]
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0       declared:0 est:10 (+10) [2 calls]
-  core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a7 declared:0 est:9 (+9) [2 calls]
-  engine_font.cpp_CBitFont_drawTextCenter_FUN_00490c declared:0 est:9 (+9) [4 calls]
-  sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0   declared:0 est:9 (+9) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:8 (+8) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:8 (+8) [2 calls]
   crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d      declared:0 est:8 (+8) [2 calls]
@@ -516,90 +221,91 @@ MEDIUM CONFIDENCE MISMATCHES
   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2e declared:0 est:8 (+8) [2 calls]
   FUN_00567560                                       declared:0 est:7 (+7) [2 calls]
   core_actor.cpp_FUN_0040bca0                        declared:0 est:7 (+7) [2 calls]
-  core_charactr.cpp_FUN_00427730                     declared:0 est:7 (+7) [9 calls]
-  core_fire.cpp_CFireEffect_createGunFlames_FUN_0048 declared:0 est:7 (+7) [4 calls]
-  cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_ declared:0 est:6 (+6) [4 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:0 est:6 (+6) [2 calls]
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47 declared:0 est:6 (+6) [2 calls]
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma declared:0 est:6 (+6) [2 calls]
-  core_dcamera.cpp_CDemonCamera_getFogValueAtPositio declared:0 est:6 (+6) [2 calls]
   core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0 declared:0 est:6 (+6) [2 calls]
-  core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0 declared:0 est:6 (+6) [4 calls]
   core_setdir.cpp_FUN_005125a0                       declared:0 est:6 (+6) [6 calls]
   core_stranger.cpp_CStranger_computeWeaponAttachXFo declared:0 est:6 (+6) [2 calls]
-  engine_2d.c_FUN_004027f0                           declared:0 est:6 (+6) [2 calls]
-  engine_2d.c_FUN_004028b0                           declared:0 est:6 (+6) [2 calls]
   FUN_00568f70                                       declared:0 est:5 (+5) [2 calls]
   FUN_005698b0                                       declared:0 est:5 (+5) [2 calls]
   FUN_0056e890                                       declared:0 est:5 (+5) [2 calls]
   FUN_00571410                                       declared:0 est:5 (+5) [4 calls]
-  core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0 declared:0 est:5 (+5) [2 calls]
-  crt_time.c_parse_timezone_spec_FUN_0056d658        declared:0 est:5 (+5) [2 calls]
-  engine_ini.cpp_CIniFile_setInteger_FUN_004bda80    declared:0 est:5 (+5) [50 calls]
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e declared:0 est:5 (+5) [2 calls]
-  support_codec.cpp_CLZWDictionary_writeCodeSequence declared:0 est:5 (+5) [2 calls]
-  wincore_winrun.cpp_setCursorPosition_FUN_00558d60  declared:0 est:5 (+5) [7 calls]
   FUN_00567bc0                                       declared:0 est:4 (+4) [2 calls]
   FUN_0056d308                                       declared:0 est:4 (+4) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:4 (+4) [2 calls]
-  core_dracbrid.cpp_FUN_0045ab40                     declared:0 est:4 (+4) [9 calls]
   core_dtrace.cpp_CDemonRaytrace_worldPositionToGrid declared:0 est:4 (+4) [2 calls]
-  core_event.cpp_CEventList_findCounter_FUN_00480900 declared:0 est:4 (+4) [2 calls]
-  core_flame.cpp_CFlame_setup_FUN_0048d050           declared:0 est:4 (+4) [2 calls]
-  core_motion.cpp_CMotionController_markerPositionTo declared:0 est:4 (+4) [11 calls]
-  core_script.cpp_CScript_skipCommands_FUN_00504c70  declared:0 est:4 (+4) [2 calls]
   core_set.cpp_FUN_0050e550                          declared:0 est:4 (+4) [2 calls]
+  core_sound.cpp_FUN_0052ebc0                        declared:0 est:4 (+4) [2 calls]
+  core_turret.cpp_CTurret_aimAtTarget_FUN_0054a640   declared:0 est:4 (+4) [2 calls]
+  core_xform.cpp_quaternionFromAxisAngle_FUN_0055d56 declared:0 est:4 (+4) [2 calls]
+  sound_sndmain.cpp_CSfxSample_lock_FUN_00523ba0     declared:0 est:4 (+4) [4 calls]
+  FUN_0056ced8                                       declared:0 est:3 (+3) [2 calls]
+  FUN_0056f170                                       declared:0 est:3 (+3) [2 calls]
+  FUN_00572e00                                       declared:0 est:3 (+3) [2 calls]
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN declared:0 est:3 (+3) [2 calls]
+  core_gore.cpp_CGore_renderDecals_FUN_004afe80      declared:0 est:3 (+3) [2 calls]
+  core_xform.cpp_buildRotationX_FUN_0055c730         declared:0 est:3 (+3) [4 calls]
+  engine_drender.cpp_FUN_00460d10                    declared:0 est:3 (+3) [9 calls]
+  shape_edittool.cpp_FUN_00470230                    declared:0 est:3 (+3) [2 calls]
+  sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b declared:0 est:3 (+3) [17 calls]
+  FUN_0056e174                                       declared:0 est:2 (+2) [2 calls]
+  FUN_0056e56c                                       declared:0 est:2 (+2) [2 calls]
+  FUN_0056e608                                       declared:0 est:2 (+2) [2 calls]
+  FUN_0056f278                                       declared:0 est:2 (+2) [6 calls]
+  FUN_00571160                                       declared:0 est:2 (+2) [1 calls]
+  FUN_00571b2c                                       declared:0 est:2 (+2) [1 calls]
+  FUN_00571b8e                                       declared:0 est:2 (+2) [1 calls]
+  FUN_00572d90                                       declared:0 est:2 (+2) [2 calls]
+  cockpit_pkbitmap.cpp_FUN_004f3f50                  declared:0 est:2 (+2) [5 calls]
 
-  ... and 84 more
+  ... and 29 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  610 functions with low-confidence mismatches
+  296 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_004012d0                      declared:0 est:5 (+5)
     engine_2d.c_FUN_004013d0                      declared:0 est:8 (+8)
-    engine_2d.c_FUN_00401990                      declared:0 est:1 (+1)
-    engine_2d.c_FUN_00401bd0                      declared:0 est:1 (+1)
-    engine_2d.c_FUN_00402760                      declared:0 est:4 (+4)
-    engine_2d.c_FUN_00402980                      declared:0 est:7 (+7)
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_2d.c_drawTextCenteredAtColor_FUN_00402 declared:0 est:6 (+6)
-    engine_2d.c_FUN_00402d30                      declared:0 est:7 (+7)
     engine_2d.c_FUN_00402e90                      declared:0 est:1 (+1)
+    engine_2d.c_FUN_00403130                      declared:0 est:1 (+1)
+    engine_2d.c_FUN_004031a0                      declared:0 est:2 (+2)
+    engine_2d.c_FUN_00403460                      declared:0 est:1 (+1)
+    engine_2d.c_FUN_00403500                      declared:0 est:1 (+1)
+    engine_3d.c_FUN_00404680                      declared:0 est:3 (+3)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 34
+Functions where declaration has MORE params than estimated: 36
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 757
+Functions where declaration has FEWER params than estimated: 357
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 1 functions
   -4 params: 1 functions
-  -3 params: 2 functions
+  -3 params: 3 functions
   -2 params: 6 functions
-  -1 params: 23 functions
-  +1 params: 161 functions
-  +2 params: 157 functions
-  +3 params: 117 functions
-  +4 params: 91 functions
-  +5 params: 82 functions
-  +6 params: 66 functions
-  +7 params: 30 functions
-  +8 params: 22 functions
-  +9 params: 13 functions
-  +10 params: 6 functions
-  +11 params: 5 functions
-  +12 params: 1 functions
-  +13 params: 2 functions
-  +15 params: 2 functions
-  +26 params: 2 functions
+  -1 params: 24 functions
+  +1 params: 87 functions
+  +2 params: 70 functions
+  +3 params: 59 functions
+  +4 params: 45 functions
+  +5 params: 39 functions
+  +6 params: 24 functions
+  +7 params: 11 functions
+  +8 params: 15 functions
+  +9 params: 3 functions
+  +10 params: 3 functions
+  +15 params: 1 functions

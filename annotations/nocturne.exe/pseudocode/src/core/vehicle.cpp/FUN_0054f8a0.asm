@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_vehicle.cpp_FUN_0054f7f0 at 0054f815
+;   core_vehicle.cpp_CVehicle_dtor_FUN_0054f7f0 at 0054f815
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTireTypeInfo_005a3d20

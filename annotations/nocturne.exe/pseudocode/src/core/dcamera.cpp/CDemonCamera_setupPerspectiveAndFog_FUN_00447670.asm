@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(undefined4 param_1,float *param_2,undefined4 param_3)
+; void core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(CDemonCamera *param_1,float *param_2,SProjectedVertex *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -82,7 +82,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 004476cf
     PUSH EBX                            ; 004476d3
     CALL core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0 ; 004476d4
-        ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0()
+        ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera * this_ptr, CVector3i * world_position, SProjectedVertex * projected_vertex)
     MOV EDX,dword ptr [0x005ad454]      ; 004476d9 | DAT_005ad454
     MOV EDI,dword ptr [0x005b7624]      ; 004476df | DAT_005b7624
     ADD ESP,0xc                         ; 004476e5

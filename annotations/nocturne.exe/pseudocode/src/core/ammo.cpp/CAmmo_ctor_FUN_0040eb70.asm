@@ -19,7 +19,7 @@
 ;   undefined4 s_Gun_005781f6+1
 ;   undefined4 s_un_005781f6+2
 ;   undefined4 s_n_005781f6+3
-;   undefined1* PTR_core_ammo.cpp_FUN_0040ec00_00599454 = 0040ec00
+;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040eb73
     PUSH EBX                            ; 0040eb77
     CALL core_actor.cpp_FUN_00409d30    ; 0040eb78
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040eb7d
     ADD EAX,0x150                       ; 0040eb80
     PUSH EAX                            ; 0040eb85
@@ -48,7 +48,7 @@ section .text
     PUSH 0x5781eb                       ; 0040eb94 | = "bullet.kfm"
     LEA EAX,[EBX + 0x150]               ; 0040eb99
     PUSH EAX                            ; 0040eb9f
-    MOV dword ptr [EBX + 0x14c],0x599454 ; 0040eba0 | PTR_core_ammo.cpp_FUN_0040ec00_00599454
+    MOV dword ptr [EBX + 0x14c],0x599454 ; 0040eba0 | g_CAmmoVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ebaa
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ebaf

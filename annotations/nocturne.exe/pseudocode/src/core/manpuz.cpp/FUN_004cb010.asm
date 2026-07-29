@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)
+; void __cdecl core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   gem_index
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined4       Stack[-0x30]:4  local_30
@@ -295,7 +299,7 @@ section .text
     PUSH EDI                            ; 004cb285
     PUSH ESI                            ; 004cb286
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0 ; 004cb287
-        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0()
+        ;   XREF to: 004cb8e0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb28c
     PUSH EAX                            ; 004cb28f
     PUSH ESI                            ; 004cb290

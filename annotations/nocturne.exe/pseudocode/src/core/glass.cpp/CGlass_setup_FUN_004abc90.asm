@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_setup_FUN_004abc90(CDemonActor *param_1)
+; void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
 ;
+; Parameters:
+; CGlass *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
@@ -219,7 +221,7 @@ section .text
     PUSH EAX                            ; 004abe84
     FSTP float ptr [ESP + 0x60]         ; 004abe85
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004abe89
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004abe8e
     FLD float ptr [EDX]                 ; 004abe91
     FADD float ptr [EAX]                ; 004abe93
@@ -251,7 +253,7 @@ section .text
     LEA EAX,[EBX + 0x3c]                ; 004abef2
     PUSH EAX                            ; 004abef5
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004abef6
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004abefb
     FLD float ptr [EDX]                 ; 004abefe
     FADD float ptr [EAX]                ; 004abf00
@@ -284,7 +286,7 @@ section .text
     LEA EAX,[EBX + 0x3c]                ; 004abf6d
     PUSH EAX                            ; 004abf70
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004abf71
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004abf76
     FLD float ptr [EDX]                 ; 004abf79
     FADD float ptr [EAX]                ; 004abf7b
@@ -318,7 +320,7 @@ section .text
     PUSH EAX                            ; 004abfd0
     MOV byte ptr [ESP + 0x63],DL        ; 004abfd1
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 004abfd5
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EBX + 0x20]                ; 004abfda
     FLD float ptr [EDX]                 ; 004abfdd
     FADD float ptr [EAX]                ; 004abfdf

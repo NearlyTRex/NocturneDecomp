@@ -15,7 +15,7 @@
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10 at 00439c30
 ;
 ; Referenced Globals:
-;   void* PTR_support_codec.cpp_CCodec_dtor_FUN_00438f30_0059b3e4 = 00438f30
+;   CCodec_vtable g_CCodecVTable
 ;   WatcomTypeInfo g_CCodecTypeInfo_0059b470
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     TEST AL,0x4                         ; 00438f39
     JNZ 0x00438f51                      ; 00438f3b
         ;   XREF to: 00438f51 (CONDITIONAL_JUMP)  ; LAB_00438f51
-    MOV dword ptr [EBX],0x59b3e4        ; 00438f3d | PTR_support_codec.cpp_CCodec_dtor_FUN_00438f30_0059b3e4
+    MOV dword ptr [EBX],0x59b3e4        ; 00438f3d | g_CCodecVTable
     TEST AL,0x2                         ; 00438f43
     JNZ 0x00438f6c                      ; 00438f45
         ;   XREF to: 00438f6c (CONDITIONAL_JUMP)  ; LAB_00438f6c

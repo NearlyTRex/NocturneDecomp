@@ -2,21 +2,21 @@
 // Address: 0048eef0
 // Address Range: [[0048eef0, 0048efa5]]
 // Convention: unknown
-// Signature: int core_flies_cpp_FUN_0048eef0(undefined4 param_1)
+// Signature: int core_flies_cpp_FUN_0048eef0(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-int core_flies_cpp_FUN_0048eef0(uint param_1)
+int core_flies_cpp_FUN_0048eef0(CDemonActor *param_1)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   void *pvVar2;
   uint local_c [3];
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  pvVar2 = __arrinit((void *)(iVar1 + 0x160),200,&g_SFlyTypeInfo_0059db10)
-  ;
-  *(byte ***)((int)pvVar2 + -0x14) = &PTR_core_flies_cpp_CFlies_setup_FUN_0048efb0_0059da34;
+  pCVar1 = core_actor_cpp_FUN_00409d30(param_1);
+  pvVar2 = __arrinit
+                     (pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo_0059db10);
+  *(CDemonActor_vtable **)((int)pvVar2 + -0x14) = &g_CFliesVTable;
   *(uint *)((int)pvVar2 + -4) = 0x14;
   if ((uint *)((int)pvVar2 + -0x10) != local_c) {
     *(uint *)((int)pvVar2 + -0x10) = 0x40a00000;

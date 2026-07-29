@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 004f5a7a
     INC EBX                             ; 004f5a7b
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0 ; 004f5a7c
-        ;   XREF to: 004f4ac0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0()
+        ;   XREF to: 004f4ac0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(CPackedBitmap * this_ptr, int apply_palette_flag)
     ADD ESI,0x24                        ; 004f5a81
     MOV ECX,dword ptr [EDI]             ; 004f5a84
     ADD ESP,0x8                         ; 004f5a86
@@ -75,7 +75,7 @@ section .text
     ADD EAX,EBX                         ; 004f5aa5
     PUSH EAX                            ; 004f5aa7
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0 ; 004f5aa8
-        ;   XREF to: 004f4ac0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0()
+        ;   XREF to: 004f4ac0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(CPackedBitmap * this_ptr, int apply_palette_flag)
     ADD ESP,0x8                         ; 004f5aad
     POP EBP                             ; 004f5ab0
     POP EDI                             ; 004f5ab1

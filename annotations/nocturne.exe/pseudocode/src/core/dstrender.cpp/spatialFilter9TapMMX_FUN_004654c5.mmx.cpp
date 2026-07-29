@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
 // Address: 004654c5
 // Address Range: [[004654c5, 0046556e]]
-// Convention: unknown
-// Signature: void core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(undefined4 *param_1,undefined4 *param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(uint *output_buffer,uint *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(uint *param_1,uint *param_2,int param_3)
+void __cdecl core_dstrender_cpp_spatialFilter9TapMMX_FUN_004654c5(uint *output_buffer,uint *input_buffer,int pixel_count)
 {
 __asm {
         mov ESI,dword ptr [EBP + 0xc]

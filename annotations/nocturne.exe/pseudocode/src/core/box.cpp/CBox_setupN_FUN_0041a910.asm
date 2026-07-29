@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_box_cpp_CBox_setupN_FUN_0041a910(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6)
+; void __cdecl core_box_cpp_CBox_setupN_FUN_0041a910(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   orientation
+; int              Stack[0x10]:4   point_count
+; CVector3f *      Stack[0x14]:4   point_array
+; float            Stack[0x18]:4   volume
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

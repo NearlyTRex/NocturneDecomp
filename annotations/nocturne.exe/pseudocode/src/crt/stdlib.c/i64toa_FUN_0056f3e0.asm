@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * crt_stdlib_c_i64toa_FUN_0056f3e0(ulonglong *param_1,char *param_2,int param_3)
+; char * __cdecl crt_stdlib_c_i64toa_FUN_0056f3e0(longlong *value,char *buffer,int base)
 ;
+; Parameters:
+; longlong *       Stack[0x4]:4   value
+; char *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   base
 ; Local Variables:
 ; undefined1       Stack[-0x54]:1  local_54
 ; undefined        Stack[-0x53]:1  local_53

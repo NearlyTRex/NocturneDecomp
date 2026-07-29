@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_FUN_0044e2c0(int param_1)
+; void __cdecl core_dlight_cpp_FUN_0044e2c0(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dlight.cpp_CDemonLight_init_FUN_0044e1e0 at 0044e1ea
@@ -27,7 +29,7 @@ section .text
     PUSH EBX                            ; 0044e2d0
         ;   Label: LAB_0044e2d0
     CALL core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440 ; 0044e2d1
-        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440()
+        ;   XREF to: 0044e440 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440(CDemonLight * this_ptr)
     MOV ESI,dword ptr [EBX + 0x2fa0]    ; 0044e2d6
     ADD ESP,0x4                         ; 0044e2dc
     TEST ESI,ESI                        ; 0044e2df

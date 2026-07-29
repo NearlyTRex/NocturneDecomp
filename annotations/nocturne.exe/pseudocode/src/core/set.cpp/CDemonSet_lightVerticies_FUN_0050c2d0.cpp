@@ -23,35 +23,34 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
   int iVar10;
   ushort *puVar11;
   uint *puVar12;
-  byte *puVar13;
+  CVector3i *pCVar13;
   int *piVar14;
   int iVar15;
   float *pfVar16;
   byte bVar17;
   int aiStackY_1158 [1013];
+  CVector3i *world_position;
   CVector3i local_170;
   uint local_164;
   uint local_160;
   uint local_15c;
-  uint local_158;
-  int aiStack_154 [4];
-  int local_144;
+  int local_158;
+  int aiStack_154 [2];
+  CVector3i local_14c;
   uint local_140;
   uint auStack_13c [4];
   uint local_12c;
-  int local_128;
-  int local_124;
-  int local_120;
+  CVector3i local_128;
   uint local_11c;
   uint local_118;
   uint local_114;
   uint local_110;
   uint local_10c;
   uint local_108;
-  uint local_104;
+  int local_104;
   int aiStack_100 [5];
-  uint local_ec [3];
-  uint local_e0 [7];
+  CVector3i local_ec;
+  CVector3i local_e0 [2];
   float local_c4;
   float local_c0;
   float local_bc;
@@ -68,12 +67,12 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
   float local_70;
   int local_6c;
   int local_68;
-  int local_64;
+  CVector3i *local_64;
   int local_60;
   int local_5c;
   int local_58;
-  int local_54;
-  int local_50;
+  CVector3i *local_54;
+  CVector3i *local_50;
   int local_4c;
   CVector3i *local_48;
   float local_44;
@@ -113,13 +112,13 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   local_114 = *(uint *)((int)&DAT_005c501c + iVar6);
                   core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
                             (0x1fb8508,&local_11c);
-                  local_e0[0] = local_158;
-                  aiStack_100[(uint)bVar17 * -2 + 9] = aiStack_154[(uint)bVar17 * -2];
+                  local_e0[0].x = local_158;
+                  *(int *)((int)local_e0 + (uint)bVar17 * -8 + 4) = aiStack_154[(uint)bVar17 * -2];
                   iVar9 = local_34;
-                  aiStack_100[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 10] =
+                  *(int *)((int)local_e0 + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8) =
                        aiStack_154[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 1];
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
-                            (this_ptr,aiStack_100 + 8,0,local_34,0);
+                            (this_ptr,local_e0,(CVector3i *)0x0,local_34,0);
                   *(uint *)((int)&DAT_005c5040 + iVar6) = _DAT_01c038f4;
                   local_34 = iVar9 + 1;
                   iVar6 = iVar6 + 0x30;
@@ -302,11 +301,11 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
               if (this_ptr->renderable_actors[0x76b] == (CDemonActor *)0x0) {
                 if (0 < vertex_count) {
                   pfVar16 = (float *)&DAT_02045ab0;
-                  local_54 = 0x200b130;
+                  local_54 = (CVector3i *)0x200b130;
                   iVar6 = 0;
                   local_4c = 0;
                   do {
-                    iVar9 = local_54;
+                    pCVar13 = local_54;
                     local_74 = pfVar16[2] * pfVar16[2] +
                                *pfVar16 * *pfVar16 + pfVar16[1] * pfVar16[1];
                     local_70 = (float)((int)CVector3f_01c70708.z - ((int)local_74 >> 1));
@@ -314,18 +313,18 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                     *pfVar16 = *pfVar16 * fVar2;
                     pfVar16[1] = pfVar16[1] * fVar2;
                     pfVar16[2] = pfVar16[2] * fVar2;
-                    local_128 = (int)ROUND(*pfVar16);
-                    local_124 = (int)ROUND(pfVar16[1]);
-                    local_120 = (int)ROUND(pfVar16[2]);
+                    local_128.x = (int)ROUND(*pfVar16);
+                    local_128.y = (int)ROUND(pfVar16[1]);
+                    local_128.z = (int)ROUND(pfVar16[2]);
                     pfVar16 = pfVar16 + 3;
-                    iVar7 = iVar6 + 1;
+                    iVar9 = iVar6 + 1;
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
                               (this_ptr,local_54,&local_128,iVar6,0);
-                    local_54 = iVar9 + 0xc;
+                    local_54 = pCVar13 + 1;
                     *(uint *)((int)&DAT_005c5040 + local_4c) = _DAT_01c038f4;
-                    iVar6 = iVar7;
+                    iVar6 = iVar9;
                     local_4c = local_4c + 0x30;
-                  } while (iVar7 < vertex_count);
+                  } while (iVar9 < vertex_count);
                   return;
                 }
               }
@@ -334,7 +333,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                 if (0 < vertex_count) {
                   pfVar16 = (float *)&DAT_02045ab0;
                   local_60 = 0;
-                  local_50 = 0x200b130;
+                  local_50 = (CVector3i *)0x200b130;
                   do {
                     if (((1.0 <= ABS(*pfVar16)) || (1.0 <= ABS(pfVar16[1]))) ||
                        (1.0 <= ABS(pfVar16[2]))) {
@@ -345,22 +344,22 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                       *pfVar16 = *pfVar16 * fVar2;
                       pfVar16[1] = pfVar16[1] * fVar2;
                       pfVar16[2] = pfVar16[2] * fVar2;
-                      aiStack_154[2] = (int)ROUND(*pfVar16);
-                      aiStack_154[3] = (int)ROUND(pfVar16[1]);
-                      local_144 = (int)ROUND(pfVar16[2]);
-                      piVar14 = aiStack_154 + 2;
-                      iVar6 = local_50;
+                      local_14c.x = (int)ROUND(*pfVar16);
+                      local_14c.y = (int)ROUND(pfVar16[1]);
+                      local_14c.z = (int)ROUND(pfVar16[2]);
+                      pCVar13 = &local_14c;
+                      world_position = local_50;
                     }
                     else {
-                      piVar14 = (int *)0x0;
-                      iVar6 = local_30 * 0xc + 0x200b130;
+                      pCVar13 = (CVector3i *)0x0;
+                      world_position = (CVector3i *)(local_30 * 0xc + 0x200b130);
                     }
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
-                              (this_ptr,iVar6,piVar14,local_30,0);
+                              (this_ptr,world_position,pCVar13,local_30,0);
                     pfVar16 = pfVar16 + 3;
                     local_30 = local_30 + 1;
                     *(uint *)((int)&DAT_005c5040 + local_60) = _DAT_01c038f4;
-                    local_50 = local_50 + 0xc;
+                    local_50 = local_50 + 1;
                     local_60 = local_60 + 0x30;
                   } while (local_30 < vertex_count);
                 }
@@ -422,17 +421,17 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
               }
             }
             if (0 < vertex_count) {
-              puVar13 = &DAT_02045ab0;
-              local_64 = 0x200b130;
+              pCVar13 = (CVector3i *)&DAT_02045ab0;
+              local_64 = (CVector3i *)0x200b130;
               iVar6 = 0;
               iVar9 = 0;
               do {
                 iVar7 = iVar6 + 1;
                 core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
-                          (this_ptr,local_64,puVar13,iVar6,0);
+                          (this_ptr,local_64,pCVar13,iVar6,0);
                 *(uint *)((int)&DAT_005c5040 + iVar9) = _DAT_01c038f4;
-                puVar13 = puVar13 + 0xc;
-                local_64 = local_64 + 0xc;
+                pCVar13 = pCVar13 + 1;
+                local_64 = local_64 + 1;
                 iVar6 = iVar7;
                 iVar9 = iVar9 + 0x30;
               } while (iVar7 < vertex_count);
@@ -448,13 +447,13 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
             local_160 = *(uint *)((int)&DAT_005c5018 + iVar6);
             local_15c = *(uint *)((int)&DAT_005c501c + iVar6);
             core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440(0x1fb8508,&local_164);
-            local_ec[0] = local_104;
-            aiStack_100[(uint)bVar17 * -2 + 6] = aiStack_100[(uint)bVar17 * -2];
+            local_ec.x = local_104;
+            *(int *)((int)local_e0 + (uint)bVar17 * -8 + -8) = aiStack_100[(uint)bVar17 * -2];
             iVar9 = local_38;
-            aiStack_100[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 7] =
+            *(int *)((int)local_e0 + (uint)bVar17 * -8 + (uint)bVar17 * -8 + -4) =
                  aiStack_100[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 1];
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
-                      (this_ptr,aiStack_100 + 5,0,local_38,0);
+                      (this_ptr,&local_ec,(CVector3i *)0x0,local_38,0);
             *(uint *)((int)&DAT_005c5040 + iVar6) = _DAT_01c038f4;
             local_38 = iVar9 + 1;
             iVar6 = iVar6 + 0x30;
@@ -483,7 +482,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
             do {
               *(uint *)((int)&DAT_005c5040 + iVar9) = 0;
               core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
-                        (this_ptr,vertex_positions,0,iVar6,1);
+                        (this_ptr,vertex_positions,(CVector3i *)0x0,iVar6,1);
               iVar6 = iVar6 + 1;
               vertex_positions = vertex_positions + 1;
               iVar9 = iVar9 + 0x30;

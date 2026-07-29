@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(void)
+; CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   motion_controller
+; CDeformableModelInstance * Stack[0x8]:4   deformable_model
+; int              Stack[0xc]:4   motion_index
+; float            Stack[0x10]:4   start_frame
+; float            Stack[0x14]:4   end_frame
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

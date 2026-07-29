@@ -17,11 +17,11 @@ CDemonActorType * FUN_004abb40(void);
 
 // Original: core_glass.cpp_FUN_004abb50
 // Address: 004abb50
-int FUN_004abb50(undefined4 param_1);
+CGlass * __cdecl FUN_004abb50(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_setup_FUN_004abc90
 // Address: 004abc90
-void CGlass::setup(CDemonActor *param_1);
+void __cdecl CGlass::setup(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_process_FUN_004ac3f0
 // Address: 004ac3f0
@@ -37,11 +37,11 @@ int FUN_004ac600(CDemonActor *param_1);
 
 // Original: core_glass.cpp_FUN_004ac7c0
 // Address: 004ac7c0
-void FUN_004ac7c0(CDemonActor *param_1);
+void __cdecl FUN_004ac7c0(CGlass *this_ptr);
 
 // Original: core_glass.cpp_FUN_004ac9b0
 // Address: 004ac9b0
-void FUN_004ac9b0(CDemonActor *param_1,int param_2);
+void FUN_004ac9b0(CGlass *param_1,int param_2);
 
 // Original: core_glass.cpp_FUN_004acb60
 // Address: 004acb60
@@ -73,7 +73,7 @@ undefined4 FUN_004adec0(void);
 
 // Original: core_glass.cpp_FUN_004aded0
 // Address: 004aded0
-void FUN_004aded0(int param_1);
+int __cdecl FUN_004aded0(CGlass *this_ptr);
 
 // Original: core_glass.cpp_FUN_004adef0
 // Address: 004adef0

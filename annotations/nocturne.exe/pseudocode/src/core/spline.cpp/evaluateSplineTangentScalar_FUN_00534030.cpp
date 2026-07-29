@@ -1,24 +1,13 @@
 // Name: core_spline.cpp_evaluateSplineTangentScalar_FUN_00534030
 // Address: 00534030
 // Address Range: [[00534030, 0053406a]]
-// Convention: unknown
-// Signature: float core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-float core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(void)
+float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00534030(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 
 {
-  int in_stack_00000004;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  float *in_stack_00000010;
-  float *in_stack_00000014;
-  
-  return *in_stack_00000014 * *(float *)(in_stack_00000004 + 0x1c) +
-         *in_stack_00000010 * *(float *)(in_stack_00000004 + 0x18) +
-         *in_stack_0000000c * *(float *)(in_stack_00000004 + 0x14) +
-         *in_stack_00000008 * *(float *)(in_stack_00000004 + 0x10);
+  return *cp3 * basis[7] + *cp2 * basis[6] + *cp1 * basis[5] + *cp0 * basis[4];
 }

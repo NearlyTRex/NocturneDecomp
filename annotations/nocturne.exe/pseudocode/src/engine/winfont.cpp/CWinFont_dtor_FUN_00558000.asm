@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWinFont * engine_winfont_cpp_CWinFont_dtor_FUN_00558000(CWinFont *param_1,byte param_2)
+; CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_00558000(CWinFont *this_ptr,uint flags)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* PTR_engine_winfont.cpp_CWinFont_dtor_FUN_00558000_005a4484 = 00558000
+;   CFont_vtable g_CWinFontVTable
 ;   undefined4 DAT_005a44a0
 ;
 ; Called Functions:
@@ -26,7 +29,7 @@ section .text
     JNZ 0x00558035                      ; 0055800a
         ;   XREF to: 00558035 (CONDITIONAL_JUMP)  ; LAB_00558035
     PUSH EBX                            ; 0055800c
-    MOV dword ptr [EBX],0x5a4484        ; 0055800d | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_00558000_005a4484
+    MOV dword ptr [EBX],0x5a4484        ; 0055800d | g_CWinFontVTable
     CALL engine_winfont.cpp_CWinFont_reset_FUN_005586a0 ; 00558013
         ;   XREF to: 005586a0 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_005586a0(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 00558018

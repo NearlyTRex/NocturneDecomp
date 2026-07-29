@@ -65,4 +65,4 @@ void __cdecl CWerewolf::processChainConstraint(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_dtor_FUN_00557e90
 // Address: 00557e90
-CDemonActor * CWerewolf::dtor(CDemonActor *param_1,byte param_2);
+CWerewolf * __cdecl CWerewolf::dtor(CWerewolf *this_ptr,uint flags);

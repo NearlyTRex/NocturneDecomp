@@ -63,7 +63,7 @@ section .text
     ADD ESP,0xc                         ; 0042107a
     LEA EBX,[EAX + 0xfffeded0]          ; 0042107d
     PUSH 0x6400                         ; 00421083
-    MOV dword ptr [EBX + 0x14c],0x59aec4 ; 00421088 | PTR_core_bugs.cpp_CBugs_setup_FUN_004211e0_0059aec4
+    MOV dword ptr [EBX + 0x14c],0x59aec4 ; 00421088 | g_CBugsVTable
     PUSH 0x0                            ; 00421092
     LEA EAX,[EBX + 0xbd2c]              ; 00421094
     MOV dword ptr [EBX + 0xbd24],0x0    ; 0042109a
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00421102
     PUSH EAX                            ; 00421108
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00421109
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x12960],0x0   ; 0042110e
     MOV ESI,0x579c32                    ; 00421118 | = "true"
     MOV dword ptr [EBX + 0x12964],0x0   ; 0042111d

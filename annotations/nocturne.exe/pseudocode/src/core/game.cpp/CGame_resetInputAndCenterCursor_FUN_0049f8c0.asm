@@ -65,7 +65,7 @@ section .text
     PUSH EAX                            ; 0049f90f
     MOV dword ptr [0x01c78418],ECX      ; 0049f910 | DAT_01c78418
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 0049f916
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     MOV EAX,[0x005be368]                ; 0049f91b | DAT_005be368
     MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f920 | DAT_01fb1d40
     ADD ESP,0x8                         ; 0049f926

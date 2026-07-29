@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(CWinFont *param_1,LPCSTR param_2)
+; int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(CWinFont *this_ptr,char *text_string)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text_string
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ; undefined4       Stack[-0xc]:4  local_c

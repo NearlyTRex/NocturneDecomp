@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004cf090(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   blood_spurt_count
+; int              Stack[0xc]:4   blood_gore_type
 ;
 ; XREF[1]:
 ;   core_melee.cpp_FUN_004cefe0 at 004cf027

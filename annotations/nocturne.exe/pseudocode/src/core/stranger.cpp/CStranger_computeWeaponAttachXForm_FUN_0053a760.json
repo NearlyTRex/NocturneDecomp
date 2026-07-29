@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1701,
+    "complexity_score": 1659,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 616,
-    "suspect_count": 104,
+    "pseudocode_lines": 564,
+    "suspect_count": 105,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -140,7 +140,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1679
+    "total_lines": 1627
   },
   "cross_references": [
     {
@@ -167,7 +167,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760",
-    "signature": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int param_1,CDemonActor *param_2,float param_3)"
+    "signature": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)"
   },
   "function_calls": [
     {
@@ -1725,7 +1725,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int param_1,CDemonActor *param_2,float param_3)",
+      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -1733,7 +1733,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int param_1,CDemonActor *param_2,float param_3)",
+      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -1741,52 +1741,36 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int param_1,CDemonActor *param_2,float param_3)",
+      "text": "float * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CCharacter *param_1,CDemonActor *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 13,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 179,
-      "match": "(int *)(param_1 + 0x24a4 + (int)param_3",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(param_1 + 0x24a4 + (int)param_3 * 0x44);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x24a4 + (int)param_3 * 0x44);",
+      "text": "iVar6 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 131,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x24a4 + (int)param_3 * 0x44);",
+      "text": "iVar6 = param_1->carry_hands[(int)param_3].bone_index;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = param_1 + 0xfd0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,g_CWeaponActorType_02ddf970.name_hash);",
@@ -1794,95 +1778,103 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 135,
       "match": "(CDemonActor *)((int)local_180",
       "severity": "moderate",
-      "text": "fVar2 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;",
+      "text": "fVar1 = (((CDemonActor *)((int)local_180.x + 0x2a0))->orient).vec.z;",
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar7 = (param_1->model).bone_transform.bone_world_matrices + iVar6;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
-      "line": 186,
+      "line": 137,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "if (fVar2 == 1.4013e-45) {",
+      "text": "if (fVar1 == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,3,iVar6);",
+      "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,3);",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 216,
+      "line": 166,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "else if (fVar2 == 2.8026e-45) {",
+      "text": "else if (fVar1 == 2.8026e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 234,
+      "line": 183,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,3,iVar6);",
+      "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,3);",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 246,
+      "line": 195,
       "match": "5.60519e-45",
       "severity": "mild",
-      "text": "else if (fVar2 == 5.60519e-45) {",
+      "text": "else if (fVar1 == 5.60519e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 264,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,3,iVar6);",
+      "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,3);",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 276,
+      "line": 224,
       "match": "4.2039e-45",
       "severity": "mild",
-      "text": "else if (fVar2 == 4.2039e-45) {",
+      "text": "else if (fVar1 == 4.2039e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 288,
+      "line": 236,
       "match": "7.00649e-45",
       "severity": "mild",
-      "text": "else if (fVar2 == 7.00649e-45) {",
+      "text": "else if (fVar1 == 7.00649e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 300,
+      "line": 248,
       "match": "9.80909e-45",
       "severity": "mild",
-      "text": "else if (fVar2 == 9.80909e-45) {",
+      "text": "else if (fVar1 == 9.80909e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 265,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0,iVar6);",
+      "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 277,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 0.0) {",
@@ -1890,39 +1882,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 332,
+      "line": 279,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(local_75c,&CVector3f_02dc9f40,&DAT_02dd1184);",
+      "text": "(&local_75c,&CVector3f_02dc9f40,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 370,
+      "line": 317,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(local_aec,&CVector3f_02dc9f34,&DAT_02dd1184);",
+      "text": "(&local_aec,&CVector3f_02dc9f34,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 415,
+      "line": 362,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2a84) == 0xe) {",
+      "text": "if (param_1->layer_action_index == 0xe) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 364,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_d8,(CVector3f *)&DAT_02dd1184,",
       "type": "undefined_data"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 365,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).bone_transform.bone_world_matrices + _DAT_02dc9f88);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 420,
+      "line": 367,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_90,(CVector3f *)&DAT_02dd1184,",
@@ -1930,39 +1930,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 428,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_204);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 428,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_204);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 431,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 437,
+      "line": 368,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1faf0) != 0) {",
+      "text": "(param_1->model).bone_transform.bone_world_matrices + _DAT_02dc9f84);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 375,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_204);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 375,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_204);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 378,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 384,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1[2].flames[0x1d].off_event + 0x54) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 452,
+      "line": 399,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -1970,7 +1978,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 461,
+      "line": 408,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,g_CLightActorActorType_00764a9c.name_hash);",
@@ -1978,7 +1986,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 463,
+      "line": 410,
       "match": "param_2",
       "severity": "mild",
       "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_21c);",
@@ -1986,7 +1994,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 463,
+      "line": 410,
       "match": "param_2",
       "severity": "mild",
       "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,&local_21c);",
@@ -1994,7 +2002,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 478,
+      "line": 425,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0.0) {",
@@ -2002,7 +2010,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 486,
+      "line": 433,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2010,7 +2018,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 490,
+      "line": 437,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (param_3 == 1.4013e-45) {",
@@ -2018,7 +2026,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 490,
+      "line": 437,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 1.4013e-45) {",
@@ -2026,15 +2034,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 497,
+      "line": 445,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_45c,iVar1 * 0x30 + param_1 + 0xfd0);",
+      "text": "(&local_45c,(param_1->model).bone_transform.bone_world_matrices + iVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 503,
+      "line": 451,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2042,39 +2050,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 525,
+      "line": 473,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar6 = (*((param_2->vtable)._ub)->getAllowedMeleeAttackTypes)(param_2);",
+      "text": "iVar3 = (*((param_2->vtable)._ub)->getAllowedMeleeAttackTypes)(param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 525,
+      "line": 473,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar6 = (*((param_2->vtable)._ub)->getAllowedMeleeAttackTypes)(param_2);",
+      "text": "iVar3 = (*((param_2->vtable)._ub)->getAllowedMeleeAttackTypes)(param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 544,
+      "line": 491,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0,iVar1 * 0x30 + param_1 + 0xfd0);",
+      "text": "pCVar7 = (param_1->model).bone_transform.bone_world_matrices + iVar6;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 544,
+      "line": 492,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0,iVar1 * 0x30 + param_1 + 0xfd0);",
+      "text": "fVar1 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 559,
+      "line": 507,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2082,7 +2090,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 568,
+      "line": 516,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0.0) {",
@@ -2090,7 +2098,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 569,
+      "line": 517,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4.y = param_3;",
@@ -2098,7 +2106,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 570,
+      "line": 518,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4.z = param_3;",
@@ -2106,7 +2114,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 578,
+      "line": 526,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "else if (param_3 == 1.4013e-45) {",
@@ -2114,7 +2122,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 578,
+      "line": 526,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 1.4013e-45) {",
@@ -2122,15 +2130,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 594,
+      "line": 542,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&local_e4,(CMatrix3x4f *)(iVar1 * 0x30 + param_1 + 0xfd0));",
+      "text": "(&local_e4,(param_1->model).bone_transform.bone_world_matrices + iVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 609,
+      "line": 557,
       "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2138,7 +2146,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 613,
+      "line": 561,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pfVar10 = unaff_ESI;",
@@ -2146,7 +2154,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 619,
+      "line": 567,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -2154,7 +2162,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 452,
+      "line": 399,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2162,7 +2170,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 486,
+      "line": 433,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2170,7 +2178,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 503,
+      "line": 451,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2178,7 +2186,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 559,
+      "line": 507,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2186,7 +2194,7 @@
     },
     {
       "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 609,
+      "line": 557,
       "match": "(int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
@@ -2194,7 +2202,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 208,
+      "line": 158,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2202,7 +2210,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 238,
+      "line": 187,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2210,7 +2218,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 268,
+      "line": 216,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2218,7 +2226,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 322,
+      "line": 269,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2226,7 +2234,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 336,
+      "line": 283,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2234,7 +2242,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 344,
+      "line": 291,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2242,7 +2250,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 352,
+      "line": 299,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2250,7 +2258,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 360,
+      "line": 307,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2258,7 +2266,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 374,
+      "line": 321,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2266,7 +2274,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 382,
+      "line": 329,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2274,7 +2282,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 390,
+      "line": 337,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2282,7 +2290,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 398,
+      "line": 345,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2290,7 +2298,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 441,
+      "line": 388,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2298,7 +2306,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 449,
+      "line": 396,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2306,39 +2314,39 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 483,
+      "line": 430,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 500,
+      "line": 448,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 548,
+      "line": 496,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 556,
+      "line": 504,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 607,
+      "line": 555,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2346,7 +2354,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 614,
+      "line": 562,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2354,7 +2362,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 471,
+      "line": 418,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_180.x = local_150.x;",
@@ -2362,7 +2370,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 507,
+      "line": 455,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_84.x = pCVar4->x;",
@@ -2370,7 +2378,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 563,
+      "line": 511,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_84.x = pCVar4->x;",

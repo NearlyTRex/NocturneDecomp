@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CCodec_processBuffer_FUN_00439120(int *param_1,char *param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_00439120(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   input
+; int *            Stack[0xc]:4   input_length
+; char *           Stack[0x10]:4   output
+; int *            Stack[0x14]:4   output_length
+; int              Stack[0x18]:4   enable_callback
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
 ; undefined        Stack[-0x4c]:1  local_4c

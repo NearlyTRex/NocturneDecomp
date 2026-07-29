@@ -1,103 +1,97 @@
 // Name: sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000
 // Address: 004e5000
 // Address Range: [[004e5000, 004e51fa]]
-// Convention: unknown
-// Signature: void sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6)
+// Convention: __cdecl
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6)
+void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 {
-  uint *puVar1;
-  uint *puVar2;
-  int iVar3;
-  uint *puVar5;
-  int iVar6;
+  int *piVar1;
+  int *piVar2;
+  int *piVar3;
+  int *piVar4;
+  CMP3Decoder *pCVar5;
+  char *pcVar6;
   int iVar7;
   int iVar8;
-  uint *puVar9;
-  int iVar10;
-  int iVar11;
-  int iVar4;
+  int iVar9;
   
-  iVar10 = param_3 + param_5 * 0xa0 + 0x18 + param_4 * 0x48;
   iVar7 = 0;
   sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70
-            (param_1,param_2,param_3,param_4,param_5,param_6);
-  if ((*(int *)(iVar10 + 0x10) != 0) && (*(int *)(iVar10 + 0x14) == 2)) {
-    puVar9 = (uint *)(param_2 + param_5 * 0xf8);
-    if (*(int *)(iVar10 + 0x18) != 0) {
-      puVar5 = puVar9;
-      iVar10 = param_1;
+            (this_ptr,scalefactor_dest,side_info,channel,granule,frame);
+  if ((side_info->channels[granule].granules[channel].window_switching_flag != 0) &&
+     (side_info->channels[granule].granules[channel].block_type == 2)) {
+    piVar3 = scalefactor_dest + granule * 0x3e;
+    if (side_info->channels[granule].granules[channel].mixed_block_flag != 0) {
+      piVar4 = piVar3;
+      pCVar5 = this_ptr;
       do {
-        puVar2 = puVar5 + 1;
-        puVar1 = (uint *)(iVar10 + 0x7358);
-        iVar10 = iVar10 + 4;
+        piVar1 = piVar4 + 1;
+        piVar2 = pCVar5->layer3_scalefactors;
+        pCVar5 = (CMP3Decoder *)(pCVar5->filename + 4);
         iVar7 = iVar7 + 1;
-        *puVar5 = *puVar1;
-        puVar5 = puVar2;
-      } while (puVar2 != puVar9 + 8);
+        *piVar4 = *piVar2;
+        piVar4 = piVar1;
+      } while (piVar1 != piVar3 + 8);
       iVar8 = 0xa8;
-      iVar10 = param_2 + param_5 * 0xf8;
-      iVar11 = 3;
+      iVar9 = 3;
       do {
-        iVar6 = iVar7 * 4 + param_1;
-        iVar4 = iVar11 * 4 + iVar10;
+        pcVar6 = this_ptr->filename + iVar7 * 4;
+        piVar3 = scalefactor_dest + granule * 0x3e + iVar9;
         do {
-          iVar3 = iVar4 + 0x34;
-          puVar9 = (uint *)(iVar6 + 0x7358);
-          iVar6 = iVar6 + 4;
+          piVar2 = piVar3 + 0xd;
+          piVar4 = (int *)(pcVar6 + 0x7358);
+          pcVar6 = pcVar6 + 4;
           iVar7 = iVar7 + 1;
-          *(uint *)(iVar4 + 0x5c) = *puVar9;
-          iVar4 = iVar3;
-        } while (iVar3 != iVar10 + iVar8);
-        iVar11 = iVar11 + 1;
+          piVar3[0x17] = *piVar4;
+          piVar3 = piVar2;
+        } while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));
+        iVar9 = iVar9 + 1;
         iVar8 = iVar8 + 4;
-      } while (iVar11 < 0xc);
-      param_2 = param_2 + param_5 * 0xf8;
-      iVar7 = param_2 + 0x30;
+      } while (iVar9 < 0xc);
+      piVar3 = scalefactor_dest + granule * 0x3e + 0xc;
       do {
-        iVar10 = iVar7 + 0x34;
-        *(uint *)(iVar7 + 0x5c) = 0;
-        iVar7 = iVar10;
-      } while (iVar10 != param_2 + 0xcc);
+        piVar4 = piVar3 + 0xd;
+        piVar3[0x17] = 0;
+        piVar3 = piVar4;
+      } while (piVar4 != scalefactor_dest + granule * 0x3e + 0x33);
       return;
     }
-    iVar10 = 0x9c;
-    iVar8 = 0;
+    iVar8 = 0x9c;
+    iVar9 = 0;
     do {
-      iVar11 = iVar7 * 4 + param_1;
-      puVar5 = puVar9 + iVar8;
+      pcVar6 = this_ptr->filename + iVar7 * 4;
+      piVar4 = piVar3 + iVar9;
       do {
-        puVar2 = puVar5 + 0xd;
-        puVar1 = (uint *)(iVar11 + 0x7358);
-        iVar11 = iVar11 + 4;
+        piVar1 = piVar4 + 0xd;
+        piVar2 = (int *)(pcVar6 + 0x7358);
+        pcVar6 = pcVar6 + 4;
         iVar7 = iVar7 + 1;
-        puVar5[0x17] = *puVar1;
-        puVar5 = puVar2;
-      } while (puVar2 != (uint *)((int)puVar9 + iVar10));
-      iVar8 = iVar8 + 1;
-      iVar10 = iVar10 + 4;
-    } while (iVar8 < 0xc);
-    param_2 = param_2 + param_5 * 0xf8;
-    iVar7 = param_2 + 0x30;
+        piVar4[0x17] = *piVar2;
+        piVar4 = piVar1;
+      } while (piVar1 != (int *)((int)piVar3 + iVar8));
+      iVar9 = iVar9 + 1;
+      iVar8 = iVar8 + 4;
+    } while (iVar9 < 0xc);
+    piVar3 = scalefactor_dest + granule * 0x3e + 0xc;
     do {
-      iVar10 = iVar7 + 0x34;
-      *(uint *)(iVar7 + 0x5c) = 0;
-      iVar7 = iVar10;
-    } while (iVar10 != param_2 + 0xcc);
+      piVar4 = piVar3 + 0xd;
+      piVar3[0x17] = 0;
+      piVar3 = piVar4;
+    } while (piVar4 != scalefactor_dest + granule * 0x3e + 0x33);
     return;
   }
   iVar7 = 0;
-  param_2 = param_5 * 0xf8 + param_2;
   do {
-    puVar9 = (uint *)(param_1 + 0x7358);
-    puVar5 = (uint *)(param_2 + iVar7);
-    param_1 = param_1 + 4;
+    piVar3 = this_ptr->layer3_scalefactors;
+    iVar8 = iVar7 + granule * 0xf8;
+    this_ptr = (CMP3Decoder *)(this_ptr->filename + 4);
     iVar7 = iVar7 + 4;
-    *puVar5 = *puVar9;
+    *(int *)((int)scalefactor_dest + iVar8) = *piVar3;
   } while (iVar7 != 0x54);
-  *(uint *)(param_2 + 0x58) = 0;
+  scalefactor_dest[granule * 0x3e + 0x16] = 0;
   return;
 }

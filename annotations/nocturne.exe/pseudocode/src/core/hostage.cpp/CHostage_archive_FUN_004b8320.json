@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 292,
+    "complexity_score": 318,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 22,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 68,
+    "suspect_count": 24,
     "suspect_types": [
+      "primitive_walker_cast",
       "unnamed_param"
     ],
-    "total_lines": 244
+    "total_lines": 255
   },
   "cross_references": [],
   "function": {
@@ -145,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_hostage.cpp_CHostage_archive_FUN_004b8320",
-    "signature": "void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)"
+    "signature": "void core_hostage_cpp_CHostage_archive_FUN_004b8320(CNPC *param_1)"
   },
   "function_calls": [
     {
@@ -381,23 +382,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_npc_cpp_FUN_004eed10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1f91c),\"followState\");",
+      "text": "void core_hostage_cpp_CHostage_archive_FUN_004b8320(CNPC *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +390,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1f924),\"hostageState\");",
+      "text": "core_npc_cpp_FUN_004eed10(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -413,47 +398,47 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1f928),\"goalWayPoint\");",
+      "text": "((int *)(param_1[1].base.model.transformed_vertices + 0x2b),\"followState\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 11,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].base.model.transformed_vertices[0x2b].z,\"hostageState\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[1].base.model.transformed_vertices[0x2b].z,\"hostageState\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x150),\"modelName\");",
+      "text": "((CDemonActor **)(param_1[1].base.model.transformed_vertices + 0x2c),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x150),\"motion state\");",
+      "text": "model_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x150),\"partStatus\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)(param_1 + 0x1f570),\"rescueDistance\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f574),\"rescueCondition\");",
+      "text": "core_actor_cpp_archivePartStatus_FUN_0040cbf0(&(param_1->base).model,\"partStatus\");",
       "type": "unnamed_param"
     },
     {
@@ -461,47 +446,39 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CClothList *)(param_1 + 0x2a8c),\"clothList\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)(param_1 + 1),\"rescueDistance\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f5d8),\"rescueEvent\");",
+      "text": "(param_1[1].base.base.actor_name + 4,\"rescueCondition\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + 0x1f5f8),\"heroFoundMeEvent\");",
+      "text": "core_actor_cpp_archiveClothList_FUN_0040cf70(&(param_1->base).cloth_list,\"clothList\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + 0x1f65c),\"heroLeftMeEvent\");",
+      "text": "((char *)&param_1[1].base.base.validation_magic,\"rescueEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + 0x1f6c0),\"heroCameBackEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((char *)(param_1 + 0x1f788),\"goingToSitDownEvent\");",
+      "text": "(param_1[1].base.base.create_event + 0x10,\"heroFoundMeEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +486,15 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f7ec),\"sitDownEvent\");",
+      "text": "((char *)&param_1[1].base.base.platform_orientation_delta,\"heroLeftMeEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)&param_1[1].base.model,\"heroCameBackEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +502,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "((int *)(param_1 + 0x1f944),\"noShadowsWhenSaved\");",
+      "text": "((char *)&param_1[1].base.model.transformed_vertices[9].y,",
       "type": "unnamed_param"
     },
     {
@@ -525,23 +510,31 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f724),\"getEatenEvent\");",
+      "text": "((char *)&param_1[1].base.model.transformed_vertices[0x11].z,\"sitDownEvent\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 47,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].base.model.transformed_vertices[0x2e].y,",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "((char *)(param_1 + 0x2440),\"descriptiveName\");",
+      "text": "((int *)&param_1[1].base.model.transformed_vertices[0x2e].y,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1f92c),\"sitDownWayPoint\");",
+      "text": "((char *)(param_1[1].base.model.transformed_vertices + 1),\"getEatenEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -549,15 +542,31 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f850),\"damageSound\");",
+      "text": "((param_1->base).descriptive_name,\"descriptiveName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f8b4),\"dieSound\");",
+      "text": "((CDemonActor **)&param_1[1].base.model.transformed_vertices[0x2c].y,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)(param_1[1].base.model.transformed_vertices + 0x1a),\"damageSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)&param_1[1].base.model.transformed_vertices[0x22].y,\"dieSound\");",
       "type": "unnamed_param"
     }
   ],

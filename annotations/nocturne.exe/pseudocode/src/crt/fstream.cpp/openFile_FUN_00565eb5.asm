@@ -76,7 +76,7 @@ section .text
     ADD EBX,EBP                         ; 00565f0a
     PUSH EBX                            ; 00565f0c
     CALL crt_unknown.c_ios_clear_FUN_00565e94 ; 00565f0d
-        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_ios_clear_FUN_00565e94()
+        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ios_clear_FUN_00565e94(ios * this_ptr, uint state_flags)
     JMP 0x00565ef6                      ; 00565f12
         ;   XREF to: 00565ef6 (UNCONDITIONAL_JUMP)  ; LAB_00565ef6
 

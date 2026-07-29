@@ -35,7 +35,7 @@ section .text
     FST float ptr [EBX + 0x484]         ; 00494de9
     FSTP double ptr [ESP]               ; 00494def
     CALL crt_math.c_floor_FUN_005648c0  ; 00494df2
-        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_floor_FUN_005648c0()
+        ;   XREF to: 005648c0 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005648c0(double input_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00494df7
     MOV dword ptr [ESP + 0xc],EDX       ; 00494dfb
     FLD double ptr [ESP + 0x8]          ; 00494dff

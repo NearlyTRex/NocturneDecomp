@@ -1,39 +1,31 @@
 // Name: core_game.cpp_rampControlAxis_FUN_0049ed20
 // Address: 0049ed20
 // Address Range: [[0049ed20, 0049edb4]]
-// Convention: unknown
-// Signature: void core_game_cpp_rampControlAxis_FUN_0049ed20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_rampControlAxis_FUN_0049ed20(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-void core_game_cpp_rampControlAxis_FUN_0049ed20(void)
+void __cdecl core_game_cpp_rampControlAxis_FUN_0049ed20(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)
 
 {
   float fVar1;
   float fVar2;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  float *in_stack_0000000c;
-  float in_stack_00000010;
-  float in_stack_00000014;
   
-  if ((&DAT_01c02598)[in_stack_00000004] == '\0') {
-    if ((((&DAT_01c02598)[in_stack_00000008] != '\0') && (*in_stack_0000000c < in_stack_00000014))
-       && (fVar1 = (*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010 +
-                   *in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {
-      *in_stack_0000000c = in_stack_00000014;
+  if ((&DAT_01c02598)[negative_key] == '\0') {
+    if ((((&DAT_01c02598)[positive_key] != '\0') && (*axis_value < max_value)) &&
+       (fVar1 = (*(float *)(0x01C775EC + 0x264) * max_value) / ramp_time + *axis_value,
+       *axis_value = fVar1, max_value < fVar1)) {
+      *axis_value = max_value;
       return;
     }
   }
   else {
-    fVar1 = -in_stack_00000014;
-    if ((fVar1 < *in_stack_0000000c) &&
-       (fVar2 = *in_stack_0000000c -
-                (*(float *)(0x01C775EC + 0x264) * in_stack_00000014) / in_stack_00000010,
-       *in_stack_0000000c = fVar2, fVar2 < fVar1)) {
-      *in_stack_0000000c = fVar1;
+    fVar1 = -max_value;
+    if ((fVar1 < *axis_value) &&
+       (fVar2 = *axis_value - (*(float *)(0x01C775EC + 0x264) * max_value) / ramp_time,
+       *axis_value = fVar2, fVar2 < fVar1)) {
+      *axis_value = fVar1;
       return;
     }
   }

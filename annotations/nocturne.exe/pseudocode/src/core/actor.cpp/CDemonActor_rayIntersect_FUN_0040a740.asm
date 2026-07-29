@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)
+; float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   ray_origin
+; CVector3f *      Stack[0xc]:4   ray_direction
+; SActorRayHit *   Stack[0x10]:4   out_hit
+; SCollisionInfo * Stack[0x14]:4   collision_info
+; int              Stack[0x18]:4   bbox_type
+; CBoundingBox3D * Stack[0x1c]:4   ray_bbox
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined4       Stack[-0xa0]:4  local_a0
@@ -163,7 +171,7 @@ section .text
     PUSH EAX                            ; 0040a838
     PUSH EDI                            ; 0040a839
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 0040a83a
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 0040a83f
     MOV ESI,dword ptr [EBP + 0x28]      ; 0040a842
     CMP ESI,0x2                         ; 0040a845
@@ -186,7 +194,7 @@ section .text
     ADD ESP,0x8                         ; 0040a87b
     PUSH EAX                            ; 0040a87e
     CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550 ; 0040a87f
-        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550()
+        ;   XREF to: 0041d550 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0xb4],EAX      ; 0040a884
         ;   Label: LAB_0040a884
     FLD float ptr [ESP + 0xb4]          ; 0040a88b
@@ -224,7 +232,7 @@ section .text
     PUSH EAX                            ; 0040a8ff
     PUSH EDI                            ; 0040a900
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 0040a901
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0040a906
     CMP EBX,EAX                         ; 0040a909
     JZ 0x0040a91d                       ; 0040a90b
@@ -267,7 +275,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x24]      ; 0040a966
     PUSH ECX                            ; 0040a969
     CALL core_actor.cpp_rayCylinderIntersect_FUN_00409860 ; 0040a96a
-        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_rayCylinderIntersect_FUN_00409860()
+        ;   XREF to: 00409860 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_00409860(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     JMP 0x0040a884                      ; 0040a96f
         ;   XREF to: 0040a884 (UNCONDITIONAL_JUMP)  ; LAB_0040a884
     LEA EAX,[ESP + 0x88]                ; 0040a974
@@ -323,7 +331,7 @@ section .text
     ADD ESP,0x4                         ; 0040a9ff
     PUSH EAX                            ; 0040aa02
     CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 ; 0040aa03
-        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990()
+        ;   XREF to: 00453990 (UNCONDITIONAL_CALL)  ; float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0xb8],EAX      ; 0040aa08
     FLD float ptr [ESP + 0xb8]          ; 0040aa0f
     ADD ESP,0x14                        ; 0040aa16
@@ -353,7 +361,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x20]      ; 0040aa53
     PUSH ESI                            ; 0040aa56
     CALL core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0051e960 ; 0040aa57
-        ;   XREF to: 0051e960 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0051e960()
+        ;   XREF to: 0051e960 (UNCONDITIONAL_CALL)  ; float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0051e960(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0xb0],EAX      ; 0040aa5c
     FLD float ptr [ESP + 0xb0]          ; 0040aa63
     ADD ESP,0xc                         ; 0040aa6a
@@ -389,7 +397,7 @@ section .text
     ADD ESP,0x4                         ; 0040aac1
     PUSH EAX                            ; 0040aac4
     CALL core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540 ; 0040aac5
-        ;   XREF to: 0051b540 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540()
+        ;   XREF to: 0051b540 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540(CDeformableModel * this_ptr, int lod_level, int triangle_index)
     MOV dword ptr [EBX + 0x18],EAX      ; 0040aaca
     LEA EAX,[ESP + 0x94]                ; 0040aacd
     ADD ESP,0xc                         ; 0040aad4

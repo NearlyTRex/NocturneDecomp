@@ -9,7 +9,7 @@
 CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   CDeformableModelInstance *pCVar2;
   CClothList *pCVar3;
   void *pvVar4;
@@ -17,9 +17,9 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *
   uint local_c [3];
   float *pfVar6;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
-                     ((CDeformableModelInstance *)(iVar1 + 0x150));
+                     ((CDeformableModelInstance *)(pCVar1 + 1));
   pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_00438210
                      ((CClothList *)(pCVar2[1].rest_pose_data + 0x5d));
   pvVar4 = __arrinit
@@ -30,8 +30,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *
                      ((void *)((int)pvVar4 + 0x20c),0x32,&g_SFireTypeInfo_00599960);
   pvVar4 = __arrinit
                      ((void *)((int)pvVar4 + 0x4b0),0x32,&g_CFlameTypeInfo_00599940);
-  *(byte ***)((int)pvVar4 + -0x3278) =
-       &PTR_core_charactr_cpp_CCharacter_setup_FUN_00424260_0059b0a4;
+  *(CCharacter_full_vtable **)((int)pvVar4 + -0x3278) = &g_CCharacterVTable;
   *(uint *)((int)pvVar4 + -0xfc0) = 0;
   *(uint *)((int)pvVar4 + -0xf9c) = 0;
   *(uint *)((int)pvVar4 + -4000) = *(uint *)((int)pvVar4 + -0xf9c);

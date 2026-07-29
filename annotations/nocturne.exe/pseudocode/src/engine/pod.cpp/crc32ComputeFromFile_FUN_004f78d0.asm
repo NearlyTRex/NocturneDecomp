@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *param_1,SIZE_T param_2)
+; uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *file_stream,uint total_bytes)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_stream
+; uint             Stack[0x8]:4   total_bytes
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

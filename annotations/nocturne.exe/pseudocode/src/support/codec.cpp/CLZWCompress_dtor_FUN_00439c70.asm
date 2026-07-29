@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCodec * support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CCodec *param_1,byte param_2)
+; CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CLZWCompress *this_ptr,uint flags)
 ;
+; Parameters:
+; CLZWCompress *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLZWCompressTypeInfo_0059b530

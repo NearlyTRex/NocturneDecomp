@@ -116,7 +116,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
     core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(0x01E57284,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],1);
+    core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0->focus_actor,1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004a3660(this_ptr);
@@ -141,11 +141,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
           (0x01CEA280->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0)) {
-        iVar3 = core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],0x01E56DA0[4]);
+        iVar3 = core_setdir_cpp_FUN_005125a0
+                          (0x01E57284,0x01E56DA0->focus_actor,0x01E56DA0->focus_actor_changed)
+        ;
         if (iVar3 != 0) {
           core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
         }
-        0x01E56DA0[4] = 0;
+        0x01E56DA0->focus_actor_changed = 0;
       }
       core_game_cpp_CGame_processFrame_FUN_0049cc10(this_ptr);
       iVar3 = _DAT_01c78420;
@@ -228,7 +230,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
             }
             if (iVar3 == 3) {
-              core_game_cpp_FUN_004a3b90(this_ptr,0);
+              core_game_cpp_FUN_004a3b90(this_ptr,(char *)0x0);
             }
             if (iVar3 == 4) {
               pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
@@ -256,7 +258,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         _DAT_01c78420 = 0;
       }
       else {
-        iVar3 = shape_edittool_cpp_FUN_00475230(&DAT_01c78424);
+        iVar3 = shape_edittool_cpp_FUN_00475230((CPickList *)&DAT_01c78424);
         if (iVar3 != -2) {
           engine_2d_c_clearInputAndWait_FUN_00403f50();
           shape_edittool_cpp_FUN_004720c0(0x01BCD074);
@@ -297,7 +299,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
           }
         }
       }
-      if (*0x01E56DA0 != 0) {
+      if (0x01E56DA0->script_pause_flag != 0) {
         local_1c = 1;
         goto LAB_0049dec1;
       }

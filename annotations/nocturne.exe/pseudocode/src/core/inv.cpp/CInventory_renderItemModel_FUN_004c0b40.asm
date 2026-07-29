@@ -141,13 +141,13 @@ section .text
     PUSH EDX                            ; 004c0c05
     MOV dword ptr [0x01cc30a4],EDX      ; 004c0c06 | DAT_01cc30a4
     CALL engine_matrix.c_interpolatedSin_FUN_004cca60 ; 004c0c0c
-        ;   XREF to: 004cca60 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_interpolatedSin_FUN_004cca60()
+        ;   XREF to: 004cca60 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_004cca60(int angle)
     ADD ESP,0x4                         ; 004c0c11
     MOV ESI,EAX                         ; 004c0c14
     MOV EAX,[0x01cc30a4]                ; 004c0c16 | DAT_01cc30a4
     PUSH EAX                            ; 004c0c1b
     CALL engine_matrix.c_interpolatedCos_FUN_004ccaa0 ; 004c0c1c
-        ;   XREF to: 004ccaa0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_interpolatedCos_FUN_004ccaa0()
+        ;   XREF to: 004ccaa0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_004ccaa0(int angle)
     MOV EDX,0x482b                      ; 004c0c21
     ADD ESP,0x4                         ; 004c0c26
     MOV ECX,EAX                         ; 004c0c29
@@ -175,7 +175,7 @@ section .text
     ADD ESP,0x14                        ; 004c0c6e
     PUSH EBX                            ; 004c0c71
     CALL core_inv.cpp_getItemModel_FUN_004beb40 ; 004c0c72
-        ;   XREF to: 004beb40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemModel_FUN_004beb40()
+        ;   XREF to: 004beb40 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004beb40(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004c0c77
     PUSH EAX                            ; 004c0c7a
     MOV ESI,EAX                         ; 004c0c7b
@@ -433,7 +433,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 004c0f2d | DAT_005ae704
     PUSH EDI                            ; 004c0f33 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 004c0f34
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
     MOV EAX,[0x005be368]                ; 004c0f39 | DAT_005be368 | DAT_01e57284
     ADD ESP,0x4                         ; 004c0f3e
     MOV dword ptr [EAX + 0x15aa88],0x0  ; 004c0f41 | DAT_01fb1d0c

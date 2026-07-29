@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_nosfer_dfm_0059702a
 ;   TerminatedCString s_batboss_dfm_00597035
-;   undefined1* PTR_core_vampboss.cpp_FUN_0054c3e0_005a3a94 = 0054c3e0
+;   CEnemy_full_vtable g_CVampireBossVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
@@ -61,15 +61,15 @@ section .text
     PUSH 0x59702a                       ; 0054c30a | = "nosfer.dfm"
     LEA EAX,[EBX + 0x150]               ; 0054c30f
     PUSH EAX                            ; 0054c315
-    MOV dword ptr [EBX + 0x14c],0x5a3a94 ; 0054c316 | PTR_core_vampboss.cpp_FUN_0054c3e0_005a3a94
+    MOV dword ptr [EBX + 0x14c],0x5a3a94 ; 0054c316 | g_CVampireBossVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0054c320
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0054c325
     PUSH 0x597035                       ; 0054c328 | = "batboss.dfm"
     LEA EAX,[EBX + 0xbd24]              ; 0054c32d
     PUSH EAX                            ; 0054c333
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0054c334
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x40000000 ; 0054c339
     MOV dword ptr [EBX + 0x2dd8],0x40400000 ; 0054c343
     MOV dword ptr [EBX + 0x2ddc],0x42480000 ; 0054c34d

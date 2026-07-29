@@ -1,45 +1,45 @@
 // Name: core_manpuz.cpp_copyPanel_FUN_004cbf30
 // Address: 004cbf30
 // Address Range: [[004cbf30, 004cbff0]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_copyPanel_FUN_004cbf30(undefined4 *param_1,undefined4 *param_2)
+// Convention: __cdecl
+// Signature: SPanel * __cdecl core_manpuz_cpp_copyPanel_FUN_004cbf30(SPanel *dest,SPanel *src)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_copyPanel_FUN_004cbf30(uint *param_1,uint *param_2)
+SPanel * __cdecl core_manpuz_cpp_copyPanel_FUN_004cbf30(SPanel *dest,SPanel *src)
 
 {
-  *param_1 = *param_2;
-  param_1[1] = param_2[1];
-  param_1[2] = param_2[2];
-  if (param_1 + 3 != param_2 + 3) {
-    param_1[3] = param_2[3];
-    param_1[4] = param_2[4];
-    param_1[5] = param_2[5];
+  dest->exists = src->exists;
+  dest->anim_progress = src->anim_progress;
+  dest->anim_speed = src->anim_speed;
+  if (&dest->local_position != &src->local_position) {
+    (dest->local_position).x = (src->local_position).x;
+    (dest->local_position).y = (src->local_position).y;
+    (dest->local_position).z = (src->local_position).z;
   }
-  if (param_1 + 6 != param_2 + 6) {
-    param_1[6] = param_2[6];
-    param_1[7] = param_2[7];
-    param_1[8] = param_2[8];
+  if (&dest->rotation != &src->rotation) {
+    (dest->rotation).x = (src->rotation).x;
+    (dest->rotation).y = (src->rotation).y;
+    (dest->rotation).z = (src->rotation).z;
   }
-  param_1[9] = param_2[9];
-  param_1[10] = param_2[10];
-  param_1[0xb] = param_2[0xb];
-  param_1[0xc] = param_2[0xc];
-  param_1[0xd] = param_2[0xd];
-  param_1[0xe] = param_2[0xe];
-  param_1[0xf] = param_2[0xf];
-  param_1[0x10] = param_2[0x10];
-  param_1[0x11] = param_2[0x11];
-  param_1[0x12] = param_2[0x12];
-  param_1[0x13] = param_2[0x13];
-  param_1[0x14] = param_2[0x14];
-  param_1[0x15] = param_2[0x15];
-  if (param_1 + 0x16 == param_2 + 0x16) {
-    return;
+  (dest->rotation_matrix).m[0].x = (src->rotation_matrix).m[0].x;
+  (dest->rotation_matrix).m[0].y = (src->rotation_matrix).m[0].y;
+  (dest->rotation_matrix).m[0].z = (src->rotation_matrix).m[0].z;
+  (dest->rotation_matrix).m[1].x = (src->rotation_matrix).m[1].x;
+  (dest->rotation_matrix).m[1].y = (src->rotation_matrix).m[1].y;
+  (dest->rotation_matrix).m[1].z = (src->rotation_matrix).m[1].z;
+  (dest->rotation_matrix).m[2].x = (src->rotation_matrix).m[2].x;
+  (dest->rotation_matrix).m[2].y = (src->rotation_matrix).m[2].y;
+  (dest->rotation_matrix).m[2].z = (src->rotation_matrix).m[2].z;
+  dest->dead = src->dead;
+  (dest->color).r = (src->color).r;
+  (dest->color).g = (src->color).g;
+  (dest->color).b = (src->color).b;
+  if (&dest->world_position == &src->world_position) {
+    return dest;
   }
-  param_1[0x16] = param_2[0x16];
-  param_1[0x17] = param_2[0x17];
-  param_1[0x18] = param_2[0x18];
-  return;
+  (dest->world_position).x = (src->world_position).x;
+  (dest->world_position).y = (src->world_position).y;
+  (dest->world_position).z = (src->world_position).z;
+  return dest;
 }

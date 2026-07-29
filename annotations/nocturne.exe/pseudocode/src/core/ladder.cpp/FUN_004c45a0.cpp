@@ -1,21 +1,22 @@
 // Name: core_ladder.cpp_FUN_004c45a0
 // Address: 004c45a0
 // Address Range: [[004c45a0, 004c46a4]]
-// Convention: unknown
-// Signature: void core_ladder_cpp_FUN_004c45a0(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_ladder_cpp_FUN_004c45a0(CLadder *this_ptr)
 
 #include "nocturne.h"
 
-void core_ladder_cpp_FUN_004c45a0(CDemonActor *param_1)
+void __cdecl core_ladder_cpp_FUN_004c45a0(CLadder *this_ptr)
 
 {
-  CVector3f *pCVar1;
-  int iVar2;
-  float *pfVar3;
-  CMatrix3x4f *pCVar4;
-  byte bVar5;
-  byte local_dc [48];
-  byte local_ac [48];
+  UOrientationVector *pUVar1;
+  CVector3f *pCVar2;
+  int iVar3;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
+  byte bVar6;
+  CMatrix3x4f local_dc;
+  CMatrix3x4f local_ac;
   CMatrix3x4f local_7c;
   float local_4c [12];
   float local_1c;
@@ -23,35 +24,36 @@ void core_ladder_cpp_FUN_004c45a0(CDemonActor *param_1)
   float local_14;
   CVector3f local_10;
   
-  bVar5 = 0;
-  if (param_1[2].orient.vec.z == 0.0) {
+  bVar6 = 0;
+  if (this_ptr->master_actor == (CDemonActor *)0x0) {
     return;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_dc,&param_1[2].orient_matrix,param_1[2].orient_matrix.m + 1);
-  iVar2 = *(int *)((int)&param_1[2].orient + 8);
+            (&local_dc,&this_ptr->relative_position,&this_ptr->cached_euler_angles);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (local_ac,iVar2 + 0x20,iVar2 + 0x30);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_dc,local_ac);
-  pfVar3 = local_4c;
-  pCVar4 = &local_7c;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4->m[0].w = *pfVar3;
-    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+            (&local_ac,&(this_ptr->master_actor->location).position,
+             &(this_ptr->master_actor->orient).vec);
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_dc,&local_ac);
+  pfVar4 = local_4c;
+  pCVar5 = &local_7c;
+  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pCVar5->m[0].w = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
   }
   local_1c = local_7c.m[0].z;
   local_18 = local_7c.m[1].z;
   local_14 = local_7c.m[2].z;
-  (param_1->location).position.x = local_7c.m[0].z;
-  (param_1->location).position.y = local_7c.m[1].z;
-  (param_1->location).position.z = local_7c.m[2].z;
-  pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_7c,&local_10);
-  if ((CVector3f *)&param_1->orient != pCVar1) {
-    (param_1->orient).vec.x = pCVar1->x;
-    (param_1->orient).vec.y = pCVar1->y;
-    (param_1->orient).vec.z = pCVar1->z;
+  (this_ptr->base).location.position.x = local_7c.m[0].z;
+  (this_ptr->base).location.position.y = local_7c.m[1].z;
+  (this_ptr->base).location.position.z = local_7c.m[2].z;
+  pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_7c,&local_10);
+  pUVar1 = &(this_ptr->base).orient;
+  if ((CVector3f *)pUVar1 != pCVar2) {
+    (pUVar1->vec).x = pCVar2->x;
+    (this_ptr->base).orient.vec.y = pCVar2->y;
+    (this_ptr->base).orient.vec.z = pCVar2->z;
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   return;
 }

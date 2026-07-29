@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 416,
+    "complexity_score": 417,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 72,
     "suspect_count": 32,
     "suspect_types": [
       "pointer_truncation",
@@ -136,7 +136,7 @@
       "unrolled_strcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 229
+    "total_lines": 230
   },
   "cross_references": [],
   "function": {
@@ -397,15 +397,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[1].base.base.scale.x + 0x150,&param_1[1].base.base.health);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1[1].base.base.scale.x + 0x150,&param_1[1].base.base.health);",
+      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150),",
       "type": "unnamed_param"
     },
     {
@@ -413,7 +405,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1[1].base.base.scale.x + 0x2614) =",
+      "text": "(char *)&param_1[1].base.base.health);",
       "type": "unnamed_param"
     },
     {
@@ -421,7 +413,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].z;",
+      "text": "*(float *)(param_1[1].base.base.scale.x + 0x2614) =",
       "type": "unnamed_param"
     },
     {
@@ -429,12 +421,20 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar5 = param_1[1].base.base.scale.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMotionController *)(param_1[1].base.base.scale.x + 0x150));",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMotionController *)(param_1[1].base.base.scale.x + 0x150),iVar5,0.0);",
@@ -458,15 +458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
@@ -477,12 +469,20 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
       "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr_00 = &param_1[1].base.base.scale.y;",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "(CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1].base.model.bone_transform.pose_data.bone_rotations[0x53].y = 0.0;",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(param_1[1].base.base.scale.x + 0x150));",

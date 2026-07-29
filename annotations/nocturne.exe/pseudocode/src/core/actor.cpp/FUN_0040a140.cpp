@@ -2,23 +2,23 @@
 // Address: 0040a140
 // Address Range: [[0040a140, 0040a1fb]]
 // Convention: unknown
-// Signature: undefined4 core_actor_cpp_FUN_0040a140(CDemonActor *param_1,undefined4 param_2,char *param_3)
+// Signature: float core_actor_cpp_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3)
 
 #include "nocturne.h"
 
-uint core_actor_cpp_FUN_0040a140(CDemonActor *param_1,uint param_2,char *param_3)
+float core_actor_cpp_FUN_0040a140(CDemonActor *param_1,float param_2,char *param_3)
 
 {
   CDemonSet *pCVar1;
-  uint uVar2;
+  float fVar2;
   CPlatform *pCVar3;
   char *pcVar4;
   
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(0x01E57284);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
   core_setcolid_cpp_FUN_005117f0(0x01E57284);
-  uVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                    (0x01E57284,&param_1->location,param_2);
+  fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
+                    (0x01E57284,&(param_1->location).position,param_2);
   pCVar3 = (CPlatform *)
            core_actor_cpp_castToClassHash_FUN_0040d890
                      (*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),
@@ -34,5 +34,5 @@ uint core_actor_cpp_FUN_0040a140(CDemonActor *param_1,uint param_2,char *param_3
     }
   }
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(0x01E57284);
-  return uVar2;
+  return fVar2;
 }

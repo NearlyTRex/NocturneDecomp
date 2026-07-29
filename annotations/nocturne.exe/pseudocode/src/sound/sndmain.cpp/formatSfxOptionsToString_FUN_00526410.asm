@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(undefined1 *param_1,int param_2,undefined4 *param_3,byte param_4)
+; void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *output_buffer,char *prefix_string,CSfxOptions *options,uint format_flags)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   output_buffer
+; char *           Stack[0x8]:4   prefix_string
+; CSfxOptions *    Stack[0xc]:4   options
+; uint             Stack[0x10]:4   format_flags
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

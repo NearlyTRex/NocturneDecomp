@@ -9,43 +9,43 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 641
-  Functions flagged by multiple tools: 4
+  Functions with static analysis data: 518
+  Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
-    Files analyzed:      11
-    Files with findings: 11
-    Total diagnostics:   14
+    Files analyzed:      10
+    Files with findings: 10
+    Total diagnostics:   13
 
   Cppcheck (quick):
-    Files analyzed:      634
-    Files with findings: 634
-    Total diagnostics:   1788
+    Files analyzed:      510
+    Files with findings: 510
+    Total diagnostics:   1589
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  cert-flp30-c                                                6  [likely decompiler artifact]
   bugprone-integer-division                                   6  [likely decompiler artifact]
+  cert-flp30-c                                                5
   bugprone-signed-char-misuse                                 2
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                1027  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                    203
-  legacyUninitvar                                           177
+  uninitvar                                                 756  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                    200
+  legacyUninitvar                                           142
+  wrongPrintfScanfArgNum                                    132
   invalidscanf                                               76
-  invalidPointerCast                                         61
-  arrayIndexOutOfBounds                                      54
-  ignoredReturnValue                                         52
-  wrongPrintfScanfArgNum                                     35
-  objectIndex                                                32
-  pointerOutOfBounds                                         16
-  nullPointer                                                10
+  arrayIndexOutOfBounds                                      69
+  invalidPointerCast                                         60
+  ignoredReturnValue                                         58
+  objectIndex                                                33
+  pointerOutOfBounds                                         19
+  nullPointer                                                 9
   shiftNegativeLHS                                            7
-  negativeIndex                                               6
   nullPointerRedundantCheck                                   4
   identicalInnerCondition                                     4
+  negativeIndex                                               4

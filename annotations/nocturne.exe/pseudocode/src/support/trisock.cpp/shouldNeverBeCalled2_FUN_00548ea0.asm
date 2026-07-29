@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_trisock_cpp_shouldNeverBeCalled2_FUN_00548ea0(void)
+; int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_00548ea0(int unknown1,int unknown2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   unknown1
+; int              Stack[0x8]:4   unknown2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_00596c96

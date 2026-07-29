@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_count,int flame_type)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler_angles
+; int              Stack[0x10]:4   flame_count
+; int              Stack[0x14]:4   flame_type
 ;
 ; XREF[3]:
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 0045937e
@@ -42,7 +48,7 @@ section .text
     PUSH EAX                            ; 0048c3e9 | DAT_01c62ebc
     MOV dword ptr [0x01c62eb8],ESI      ; 0048c3ea | DAT_01c62eb8
     CALL core_fire.cpp_CGunFlame_activate_FUN_00488280 ; 0048c3f0
-        ;   XREF to: 00488280 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CGunFlame_activate_FUN_00488280()
+        ;   XREF to: 00488280 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_00488280(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type)
     MOV ESI,dword ptr [0x01c62eb8]      ; 0048c3f5 | DAT_01c62eb8
     INC ESI                             ; 0048c3fb
     ADD ESP,0x10                        ; 0048c3fc

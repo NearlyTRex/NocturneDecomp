@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_gore_cpp_CFootstep_dtor_FUN_004b09d0(int param_1)
+; CFootstep * __cdecl core_gore_cpp_CFootstep_dtor_FUN_004b09d0(CFootstep *this_ptr,uint flags)
 ;
+; Parameters:
+; CFootstep *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410

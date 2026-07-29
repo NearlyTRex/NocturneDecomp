@@ -14,19 +14,18 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
 {
   CLocation *pCVar1;
   UOrientationVector *pUVar2;
-  CKeyFramedModelInstance *this_ptr_00;
+  CDeformableModelInstance *this_ptr_00;
   char cVar3;
   float fVar4;
   int iVar5;
   int iVar6;
-  CLever *pCVar7;
+  CCharacter *pCVar7;
   CDemonActor *pCVar8;
   CMotionList *pCVar9;
   EWeatherType type;
   SMotion *pSVar10;
   byte *pbVar11;
-  CCharacter *this_ptr_01;
-  CLever *pCVar12;
+  CCharacter *pCVar12;
   uint uVar13;
   uint uVar14;
   SIZE_T SVar15;
@@ -36,9 +35,6 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   char *pcVar18;
   uint *puVar19;
   byte bVar20;
-  int in_stack_ffffe9c8;
-  CVector3f *in_stack_ffffe9cc;
-  float in_stack_ffffe9d0;
   char local_153d [200];
   char local_1475 [200];
   char local_13ad [200];
@@ -57,7 +53,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   char local_a4d [200];
   char local_985 [200];
   char local_8bd [201];
-  byte local_7f4 [199];
+  char local_7f4 [199];
   char local_72d [200];
   char local_665 [200];
   char local_59d [200];
@@ -72,13 +68,9 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   char local_174 [32];
   char local_154 [32];
   CVector3f local_134;
-  float local_128;
-  float local_124;
-  float local_120;
+  CVector3f local_128;
   CVector3f local_11c;
-  byte local_110 [4];
-  byte local_10c [4];
-  byte local_108 [12];
+  CVector3f local_110;
   uint local_fc;
   uint uStack_f8;
   char *local_f4;
@@ -86,8 +78,8 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   byte *local_ec;
   C3DSLight *local_e8;
   int local_e4;
-  uint local_e0;
-  uint local_dc;
+  float local_e0;
+  float local_dc;
   int local_d8;
   int local_d4;
   int local_d0;
@@ -98,13 +90,13 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   float local_bc;
   int local_b8;
   int local_b4;
-  byte local_b0 [4];
+  float local_b0;
   int local_ac;
   int local_a8;
   int local_a4;
-  byte *local_a0;
+  CVector3f *local_a0;
   float local_9c;
-  CActorPropertyList *local_98;
+  int local_98;
   int local_94;
   int local_90;
   int local_8c;
@@ -239,7 +231,8 @@ LAB_0047acd1:
       }
       pcVar17 = core_event_cpp_extractParenArg_FUN_0047a650((char **)&local_ec,local_fc4,200);
       if (pcVar17 != (char *)0x0) goto LAB_0047aec8;
-      core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(0x01E57284,local_fc4,&local_e8);
+      core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(0x01E57284,local_fc4,&local_e8,&local_44)
+      ;
       if (local_e8 == (C3DSLight *)0x0) {
         iVar5 = core_event_cpp_FUN_0047a210("SpotLight %s doesn't exist.",local_fc4);
         return iVar5;
@@ -261,17 +254,16 @@ LAB_0047acd1:
           local_ec = local_ec + 1;
         }
         local_e4 = -1;
-        sscanf(local_ec,"( %f , %n",&local_e0);
+        sscanf((char *)local_ec,"( %f , %n");
         if (local_e4 < 0) {
           iVar5 = core_event_cpp_FUN_0047a210();
           return iVar5;
         }
         local_ec = local_ec + local_e4;
         local_e4 = -1;
-        sscanf
-                  (local_ec,"%f , %f , %f %n",&local_128,&local_124,&local_120);
+        sscanf((char *)local_ec,"%f , %f , %f %n");
         if ((local_e4 < 0) &&
-           (sscanf(local_ec," %[^,)] %n",local_4d5 + 1), -1 < local_e4)) {
+           (sscanf((char *)local_ec," %[^,)] %n"), -1 < local_e4)) {
           uVar13 = 0xffffffff;
           pcVar17 = local_4d5 + 1;
           do {
@@ -294,11 +286,11 @@ LAB_0047acd1:
             memmove(local_4d5 + 1,local_4d5 + 2,SVar15);
             SVar15 = SVar15 - 1;
           }
-          pCVar7 = (CLever *)
+          pCVar7 = (CCharacter *)
                    core_event_cpp_resolveActorByName_FUN_0047a390
                              (local_4d5 + 1,g_CDemonActorActorType_00763e48.name_hash,
                               g_CDemonActorActorType_00763e48.class_name);
-          if (pCVar7 == (CLever *)0x0) {
+          if (pCVar7 == (CCharacter *)0x0) {
             return 0;
           }
           if (pCVar7 == 0x0FFFFFFF) {
@@ -307,9 +299,9 @@ LAB_0047acd1:
           else {
             pCVar1 = &(pCVar7->base).location;
             if ((CLocation *)&local_128 != pCVar1) {
-              local_128 = (pCVar1->position).x;
-              local_124 = (pCVar7->base).location.position.y;
-              local_120 = (pCVar7->base).location.position.z;
+              local_128.x = (pCVar1->position).x;
+              local_128.y = (pCVar7->base).location.position.y;
+              local_128.z = (pCVar7->base).location.position.z;
             }
           }
         }
@@ -321,10 +313,10 @@ LAB_0047acd1:
         while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
           local_ec = local_ec + 1;
         }
-        local_dc = 0x40800000;
+        local_dc = 4.0;
         if (*local_ec == 0x2c) {
           local_e4 = -1;
-          sscanf(local_ec,", %f %n",&local_dc,&local_e4);
+          sscanf((char *)local_ec,", %f %n");
           if (local_e4 < 0) {
             iVar5 = core_event_cpp_FUN_0047a210();
             return iVar5;
@@ -340,7 +332,7 @@ LAB_0047acd1:
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
-          core_fire_cpp_FUN_0048c0d0(0x01C08D04,&local_128,local_e0,0x44bb8000,local_dc);
+          core_fire_cpp_FUN_0048c0d0(0x01C08D04,&local_128,local_e0,1500.0,local_dc);
         }
       }
       else {
@@ -352,12 +344,12 @@ LAB_0047acd1:
           }
           pcVar17 = core_event_cpp_extractParenArg_FUN_0047a650((char **)&local_ec,local_1154,200);
           if (pcVar17 != (char *)0x0) goto LAB_0047aec8;
-          pCVar7 = (CLever *)
+          pCVar7 = (CCharacter *)
                    core_event_cpp_resolveActorByName_FUN_0047a390
                              (local_1154,g_CDemonActorActorType_00763e48.name_hash,
                               g_CDemonActorActorType_00763e48.class_name);
           uVar13 = g_CBoxActorActorType_00764800.name_hash;
-          if (pCVar7 == (CLever *)0x0) {
+          if (pCVar7 == (CCharacter *)0x0) {
             if (_DAT_01c08b5c != 0) {
               return 0;
             }
@@ -389,8 +381,7 @@ LAB_0047acd1:
               local_ec = local_ec + 1;
             }
             local_d0 = -1;
-            sscanf
-                      (local_ec,"( %[^ ,], %d, %d )%n",&stack0xffffe9c4,&local_d8,&local_d4);
+            sscanf((char *)local_ec,"( %[^ ,], %d, %d )%n");
             if (local_d0 < 0) {
               iVar5 = core_event_cpp_FUN_0047a210();
               return iVar5;
@@ -422,7 +413,7 @@ LAB_0047acd1:
                 local_ec = local_ec + 1;
               }
               local_c4 = -1;
-              sscanf(local_ec,"(%f, %f )%n",&local_cc,&local_c8);
+              sscanf((char *)local_ec,"(%f, %f )%n");
               if (local_c4 < 0) {
                 _sprintf(&DAT_01c08b60,"Error parsing fadeAmbientSound parms");
                 return 0;
@@ -440,8 +431,7 @@ LAB_0047acd1:
                   local_ec = local_ec + 1;
                 }
                 local_b8 = -1;
-                sscanf
-                          (local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
+                sscanf((char *)local_ec,"(%[^,], %f, %f )%n");
                 if (local_b8 < 0) {
                   _sprintf(&DAT_01c08b60,"Error parsing fadeSfx parms");
                   return 0;
@@ -470,7 +460,8 @@ LAB_0047acd1:
                   SVar15 = SVar15 - 1;
                 }
                 if (local_f0 != 0) {
-                  uVar13 = core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(this_ptr);
+                  uVar13 = core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0
+                                     (this_ptr,local_108d + 1);
                   if (local_bc <= 0.0) {
                     sound_sndmain_cpp_setSfxVolume_FUN_005270d0(uVar13,local_c0);
                   }
@@ -570,8 +561,7 @@ LAB_0047aec8:
                             local_ec = local_ec + 1;
                           }
                           local_b4 = -1;
-                          sscanf
-                                    (local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,local_b0);
+                          sscanf((char *)local_ec," ( %[^,], %[^,],%f)%n");
                           if (local_b4 < 2) {
                             iVar5 = core_event_cpp_FUN_0047a210();
                             return iVar5;
@@ -624,11 +614,11 @@ LAB_0047aec8:
                           while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
                             local_ec = local_ec + 1;
                           }
-                          pCVar7 = (CLever *)
+                          pCVar7 = (CCharacter *)
                                    core_event_cpp_resolveActorByName_FUN_0047a390
                                              (local_665 + 1,g_CCharacterActorType_00765a60.name_hash
                                               ,g_CCharacterActorType_00765a60.class_name);
-                          if (pCVar7 == (CLever *)0x0) {
+                          if (pCVar7 == (CCharacter *)0x0) {
                             return 0;
                           }
                           if (pCVar7 == 0x0FFFFFFF) {
@@ -642,7 +632,8 @@ LAB_0047aec8:
                             return iVar5;
                           }
                           if (local_f0 != 0) {
-                            (*((pCVar7->base).vtable._ub)->processInEditor)((CDemonActor *)pCVar7);
+                            (*(((pCVar7->base).vtable._uc)->_uc).applyDamage)
+                                      (pCVar7,local_ac,local_b0);
                           }
                         }
                         else {
@@ -655,7 +646,7 @@ LAB_0047aec8:
                               local_ec = local_ec + 1;
                             }
                             local_a8 = -1;
-                            sscanf(local_ec,"( %[^ )] )%n",local_121d + 1);
+                            sscanf((char *)local_ec,"( %[^ )] )%n");
                             if (local_a8 < 5) {
                               _sprintf(&DAT_01c08b60,"Error parsing incCounter arguments");
                               return 0;
@@ -700,23 +691,20 @@ LAB_0047aec8:
                               while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
                                 local_ec = local_ec + 1;
                               }
-                              local_a0 = local_110;
+                              local_a0 = &local_110;
                               local_a4 = -1;
                               local_9c = 0.0;
-                              sscanf
-                                        (local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,local_219 + 1,
-                                         local_110,local_10c,local_108,&local_9c);
+                              sscanf((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n")
+                              ;
                               local_9c = local_9c * (float)0.017453292519444399;
                               if (local_a4 < 0) {
                                 local_9c = -1.0;
-                                sscanf
-                                          (local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,local_219 + 1,
-                                           local_110,local_10c,local_108);
+                                sscanf((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n")
+                                ;
                               }
                               if (local_a4 < 0) {
-                                local_a0 = (byte *)0x0;
-                                sscanf
-                                          (local_ec," ( %[^,], %[^)])%n",local_153d + 1,local_219 + 1);
+                                local_a0 = (CVector3f *)0x0;
+                                sscanf((char *)local_ec," ( %[^,], %[^)])%n");
                               }
                               if (local_a4 < 0) {
                                 iVar5 = core_event_cpp_FUN_0047a210();
@@ -772,19 +760,19 @@ LAB_0047aec8:
                               while (((&DAT_005c168c)[(byte)(*local_ec + 1)] & 2) != 0) {
                                 local_ec = local_ec + 1;
                               }
-                              pCVar7 = (CLever *)
+                              pCVar7 = (CCharacter *)
                                        core_event_cpp_resolveActorByName_FUN_0047a390
                                                  (local_153d + 1,
                                                   g_CCharacterActorType_00765a60.name_hash,
                                                   g_CCharacterActorType_00765a60.class_name);
-                              if (pCVar7 == (CLever *)0x0) {
+                              if (pCVar7 == (CCharacter *)0x0) {
                                 return 0;
                               }
                               if (pCVar7 == 0x0FFFFFFF) {
                                 local_f0 = 0;
                               }
                               iVar5 = core_event_cpp_parseDeathType_FUN_0047a760
-                                                (local_219 + 1,(int *)&local_98);
+                                                (local_219 + 1,&local_98);
                               if (iVar5 == 0) {
                                 iVar5 = core_event_cpp_FUN_0047a210
                                                   ("Unknown death type \"%s\" in killCharacter command.",local_219 + 1)
@@ -792,8 +780,8 @@ LAB_0047aec8:
                                 return iVar5;
                               }
                               if (local_f0 != 0) {
-                                (*((pCVar7->base).vtable._ub)->getPropertyList)
-                                          ((CDemonActor *)pCVar7,local_98);
+                                (*(((pCVar7->base).vtable._uc)->_uc).kill)
+                                          (pCVar7,local_98,local_a0,local_9c);
                               }
                             }
                             else {
@@ -810,7 +798,7 @@ LAB_0047aec8:
                                   return iVar5;
                                 }
                                 local_94 = -1;
-                                sscanf(local_ec," ( %[^)])%n",local_27c);
+                                sscanf((char *)local_ec," ( %[^)])%n");
                                 if (local_94 < 2) {
                                   iVar5 = core_event_cpp_FUN_0047a210();
                                   return iVar5;
@@ -842,8 +830,7 @@ LAB_0047aec8:
                                     local_ec = local_ec + 1;
                                   }
                                   local_8c = -1;
-                                  sscanf
-                                            (local_ec,"(%[^,)]%n",local_efd + 1);
+                                  sscanf((char *)local_ec,"(%[^,)]%n");
                                   if (local_8c < 3) {
                                     _sprintf(&DAT_01c08b60,"Error parsing killSfx parms");
                                     return 0;
@@ -876,8 +863,8 @@ LAB_0047aec8:
                                   local_88 = 0.0;
                                   if (*local_ec == 0x2c) {
                                     local_8c = -1;
-                                    sscanf
-                                              (local_ec,",%f%n",&local_88);
+                                    sscanf((char *)local_ec,",%f%n")
+                                    ;
                                     if (local_8c < 3) {
                                       _sprintf(&DAT_01c08b60,"Error parsing killSfx parms");
                                       return 0;
@@ -895,7 +882,7 @@ LAB_0047aec8:
                                   }
                                   if (local_f0 != 0) {
                                     uVar13 = core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0
-                                                       (this_ptr);
+                                                       (this_ptr,local_efd + 1);
                                     if (local_88 <= 0.0) {
                                       sound_sndmain_cpp_killSfx_FUN_00527230(uVar13);
                                       core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60
@@ -920,7 +907,7 @@ LAB_0047aec8:
                                       local_ec = local_ec + 1;
                                     }
                                     local_84 = -1;
-                                    sscanf(local_ec,"( )%n");
+                                    sscanf((char *)local_ec,"( )%n");
                                     if (local_84 < 2) {
                                       _sprintf(&DAT_01c08b60,"Error parsing lightning command");
                                       return 0;
@@ -942,8 +929,8 @@ LAB_0047aec8:
                                         local_ec = local_ec + 1;
                                       }
                                       local_7c = -1;
-                                      sscanf
-                                                (local_ec,"(%[^,)]%n",local_13ad + 1);
+                                      sscanf((char *)local_ec,"(%[^,)]%n")
+                                      ;
                                       if (local_7c < 3) {
                                         _sprintf(&DAT_01c08b60,"Error parsing playSfx parms"
                                                   );
@@ -986,7 +973,7 @@ LAB_0047aec8:
                                       if (*pbVar11 == 0x2c) {
                                         local_7c = -1;
                                         sscanf
-                                                  (local_ec,",%[^)]%n",local_b15 + 1);
+                                                  ((char *)local_ec,",%[^)]%n");
                                         if (local_7c < 3) {
                                           _sprintf(&DAT_01c08b60,
                                                      "Error parsing playSfx parms");
@@ -1085,8 +1072,7 @@ LAB_0047aec8:
                                         }
                                         local_74 = -1;
                                         sscanf
-                                                  (local_ec,"(%[^,], %f)%n",local_12e5 + 1,&local_78)
-                                        ;
+                                                  ((char *)local_ec,"(%[^,], %f)%n");
                                         if (local_74 < 3) {
                                           _sprintf(&DAT_01c08b60,
                                                      "Error parsing setCameraAmbient parms");
@@ -1151,7 +1137,7 @@ LAB_0047aec8:
                                           }
                                           local_6c = -1;
                                           sscanf
-                                                    (local_ec,"( %[^,)]%n",local_ca5 + 1);
+                                                    ((char *)local_ec,"( %[^,)]%n");
                                           if (local_6c < 5) {
                                             _sprintf(&DAT_01c08b60,
                                                        "Error parsing setCounter arguments");
@@ -1187,7 +1173,7 @@ LAB_0047aec8:
                                           if (*local_ec == 0x2c) {
                                             local_6c = -1;
                                             sscanf
-                                                      (local_ec,",%d%n",&local_68);
+                                                      ((char *)local_ec,",%d%n");
                                             if (local_6c < 1) {
                                               _sprintf(&DAT_01c08b60,
                                                          "Error parsing setCounter value argument");
@@ -1224,8 +1210,7 @@ LAB_0047aec8:
                                             }
                                             local_5c = -1;
                                             sscanf
-                                                      (local_ec,"(%d, %f)%n",&local_64,&local_60
-                                                      );
+                                                      ((char *)local_ec,"(%d, %f)%n");
                                             if (local_5c < 3) {
                                               _sprintf(&DAT_01c08b60,
                                                          "Error parsing setGroupAmbient parms");
@@ -1258,15 +1243,15 @@ LAB_0047aec8:
                                               }
                                               local_58 = -1;
                                               sscanf
-                                                        (local_ec,"( %[^ ,] , %d )%n",local_7f4,&local_54
-                                                        );
+                                                        ((char *)local_ec,"( %[^ ,] , %d )%n");
                                               if (local_58 < 0) {
                                                 iVar5 = core_event_cpp_FUN_0047a210();
                                                 return iVar5;
                                               }
                                               local_ec = local_ec + local_58;
                                               core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                                                        (0x01E57284,local_7f4,&local_50);
+                                                        (0x01E57284,local_7f4,&local_50,&local_4c)
+                                              ;
                                               if (local_50 == (C3DSLight *)0x0) {
                                                 iVar5 = core_event_cpp_FUN_0047a210
                                                                   (
@@ -1306,8 +1291,7 @@ LAB_0047aec8:
                                                 }
                                                 local_48 = -1;
                                                 sscanf
-                                                          (local_ec,"(%[^,], %[^)])%n",local_d6d + 1,
-                                                           local_1475 + 1);
+                                                          ((char *)local_ec,"(%[^,], %[^)])%n");
                                                 if (local_48 < 5) {
                                                   _sprintf(&DAT_01c08b60,
                                                              "Error parsing setLeverState command parms");
@@ -1364,13 +1348,13 @@ LAB_0047aec8:
                                                             (local_1475 + 1,local_1475 + 2,SVar15);
                                                   SVar15 = SVar15 - 1;
                                                 }
-                                                pCVar7 = (CLever *)
+                                                pCVar7 = (CCharacter *)
                                                                                                                   
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_d6d + 1,
                                                              g_CLeverActorType_01cc3628.name_hash,
                                                              g_CLeverActorType_01cc3628.class_name);
-                                                if (pCVar7 == (CLever *)0x0) {
+                                                if (pCVar7 == (CCharacter *)0x0) {
                                                   return 0;
                                                 }
                                                 if ((pCVar7 == 0x0FFFFFFF) || (local_f0 == 0)) {
@@ -1393,9 +1377,9 @@ LAB_0047aec8:
                                                   }
                                                   local_fc = 0;
                                                   core_lever_cpp_CLever_setState_FUN_004c6390
-                                                            (pCVar7,(float)(double)((ulonglong)
-                                                                                    uStack_f8 <<
-                                                                                   0x20));
+                                                            ((CLever *)pCVar7,
+                                                             (float)(double)((ulonglong)uStack_f8 <<
+                                                                            0x20));
                                                 }
                                               }
                                               else {
@@ -1413,8 +1397,7 @@ LAB_0047aec8:
                                                   }
                                                   local_40 = -1;
                                                   sscanf
-                                                            (local_ec,"(%[^,], %[^)])%n",local_985 + 1,
-                                                             local_8bd + 1);
+                                                            ((char *)local_ec,"(%[^,], %[^)])%n");
                                                   if (local_40 < 5) {
                                                     _sprintf(&DAT_01c08b60,
                                                                "Error parsing setModelState command parms");
@@ -1471,7 +1454,7 @@ LAB_0047aec8:
                                                               (local_8bd + 1,local_8bd + 2,SVar15);
                                                     SVar15 = SVar15 - 1;
                                                   }
-                                                  pCVar7 = (CLever *)
+                                                  pCVar7 = (CCharacter *)
                                                                                                                       
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_985 + 1,
@@ -1479,7 +1462,7 @@ LAB_0047aec8:
                                                              name_hash,
                                                              g_CCharacterActorType_00765a60.
                                                              class_name);
-                                                  if (pCVar7 == (CLever *)0x0) {
+                                                  if (pCVar7 == (CCharacter *)0x0) {
                                                     return 0;
                                                   }
                                                   if (pCVar7 != 0x0FFFFFFF) {
@@ -1487,21 +1470,21 @@ LAB_0047aec8:
                                                     iVar5 = 0;
                                                     pCVar9 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                                                            ((CMotionController *)&pCVar7->model);
+                                                            (&(pCVar7->model).motion_controller);
                                                   iVar5 = 
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0
                                                             (pCVar9,pcVar17,iVar5);
                                                   if (iVar5 < 0) {
                                                     _sprintf(&DAT_01c08b60,
                                                                "Model %s does not have state %s",
-                                                               pCVar7[4].off_event + 0x44,
+                                                               (pCVar7->model).model_name,
                                                                local_8bd + 1);
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                                                            ((CMotionController *)&pCVar7->model,
+                                                            (&(pCVar7->model).motion_controller,
                                                              iVar5,1);
                                                   }
                                                   }
@@ -1521,8 +1504,7 @@ LAB_0047aec8:
                                                     }
                                                     local_38 = -1;
                                                     sscanf
-                                                              (local_ec,"(%[^,], %f)%n",local_a4d + 1
-                                                               ,&local_3c);
+                                                              ((char *)local_ec,"(%[^,], %f)%n");
                                                     if (local_38 < 3) {
                                                       _sprintf(&DAT_01c08b60,
                                                                  "Error parsing setTimer command parms"
@@ -1597,8 +1579,7 @@ LAB_0047aec8:
                                                       }
                                                       local_34 = -1;
                                                       sscanf
-                                                                (local_ec,"(%[^)])%n",local_e35 + 1
-                                                                );
+                                                                ((char *)local_ec,"(%[^)])%n");
                                                       if (local_34 < 3) {
                                                         _sprintf(&DAT_01c08b60,
                                                                                                                                       
@@ -1675,9 +1656,8 @@ LAB_0047aec8:
                                                       }
                                                       local_24 = -1;
                                                       sscanf
-                                                                (local_ec,"( %f, %f, %f, %f )%n",
-                                                                 &local_30,&local_2c,&local_80,
-                                                                 &local_28,&local_24);
+                                                                ((char *)local_ec,
+                                                                 "( %f, %f, %f, %f )%n");
                                                       if (local_24 < 5) {
                                                         _sprintf(&DAT_01c08b60,
                                                                                                                                       
@@ -1707,8 +1687,7 @@ LAB_0047aec8:
                                                       }
                                                       local_20 = -1;
                                                       sscanf
-                                                                (local_ec,"(%[^,], %[^)])%n",local_72d + 1
-                                                                 ,local_40d + 1);
+                                                                ((char *)local_ec,"(%[^,], %[^)])%n");
                                                       if (local_20 < 5) {
                                                         _sprintf(&DAT_01c08b60,
                                                                                                                                       
@@ -1766,7 +1745,7 @@ LAB_0047aec8:
                                                               (local_40d + 1,local_40d + 2,SVar15);
                                                     SVar15 = SVar15 - 1;
                                                   }
-                                                  pCVar7 = (CLever *)
+                                                  pCVar7 = (CCharacter *)
                                                                                                                       
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_72d + 1,
@@ -1774,7 +1753,7 @@ LAB_0047aec8:
                                                              name_hash,
                                                              g_CCharacterActorType_00765a60.
                                                              class_name);
-                                                  if (pCVar7 == (CLever *)0x0) {
+                                                  if (pCVar7 == (CCharacter *)0x0) {
                                                     return 0;
                                                   }
                                                   if (pCVar7 != 0x0FFFFFFF) {
@@ -1783,28 +1762,28 @@ LAB_0047aec8:
                                                     this_ptr_00 = &pCVar7->model;
                                                     pCVar9 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                                                            ((CMotionController *)this_ptr_00);
+                                                            (&this_ptr_00->motion_controller);
                                                   iVar5 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010
                                                             (pCVar9,pcVar17,iVar5);
                                                   if (iVar5 < 0) {
                                                     _sprintf(&DAT_01c08b60,
                                                                "Model %s does not have motion %s",
-                                                               pCVar7[4].off_event + 0x44,
+                                                               (pCVar7->model).model_name,
                                                                local_40d + 1);
                                                     return 0;
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
-                                                            ((CMotionController *)this_ptr_00,iVar5,
+                                                            (&this_ptr_00->motion_controller,iVar5,
                                                              0.0);
                                                   iVar5 = 1;
                                                   pSVar10 = 
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                                                            ((CMotionController *)this_ptr_00);
+                                                            (&this_ptr_00->motion_controller);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                                                            ((CMotionController *)this_ptr_00,
+                                                            (&this_ptr_00->motion_controller,
                                                              pSVar10->state_index,iVar5);
                                                   }
                                                   }
@@ -1834,7 +1813,7 @@ LAB_0047aec8:
                                                       }
                                                       local_ec = pbVar11;
                                                       sscanf
-                                                                (pbVar11," ( %[^ ,)]%n",local_344);
+                                                                ((char *)pbVar11," ( %[^ ,)]%n");
                                                       if (local_1c < 2) {
                                                         iVar5 = core_event_cpp_FUN_0047a210();
                                                         return iVar5;
@@ -1857,7 +1836,7 @@ LAB_0047aec8:
                                                   if (*local_ec == 0x2c) {
                                                     local_1c = -1;
                                                     sscanf
-                                                              (local_ec,",%f%n",&local_70);
+                                                              ((char *)local_ec,",%f%n");
                                                     if (local_1c < 2) {
                                                       iVar5 = core_event_cpp_FUN_0047a210();
                                                       return iVar5;
@@ -1900,8 +1879,7 @@ LAB_0047aec8:
                                                   }
                                                   local_18 = -1;
                                                   sscanf
-                                                            (local_ec,"(%[^,], %[^)])%n",local_bdd + 1,
-                                                             local_59d + 1);
+                                                            ((char *)local_ec,"(%[^,], %[^)])%n");
                                                   if (local_18 < 5) {
                                                     iVar5 = core_event_cpp_FUN_0047a210();
                                                     return iVar5;
@@ -1961,7 +1939,7 @@ LAB_0047aec8:
                                                          ) != 0) {
                                                     local_ec = local_ec + 1;
                                                   }
-                                                  pCVar7 = (CLever *)
+                                                  pCVar7 = (CCharacter *)
                                                                                                                       
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_bdd + 1,
@@ -1969,7 +1947,7 @@ LAB_0047aec8:
                                                              name_hash,
                                                              g_CDemonActorActorType_00763e48.
                                                              class_name);
-                                                  if (pCVar7 == (CLever *)0x0) {
+                                                  if (pCVar7 == (CCharacter *)0x0) {
                                                     return 0;
                                                   }
                                                   if (pCVar7 == 0x0FFFFFFF) {
@@ -1977,9 +1955,8 @@ LAB_0047aec8:
                                                   }
                                                   local_18 = -1;
                                                   sscanf
-                                                            (local_59d + 1,"%f,%f,%f,%f,%f,%f%n",
-                                                             &local_11c,&local_11c.y,&local_11c.z,
-                                                             &local_134,&local_134.z,&local_134.y);
+                                                            (local_59d + 1,"%f,%f,%f,%f,%f,%f%n")
+                                                  ;
                                                   if (local_18 < 0) {
                                                     if ((local_f0 != 0) &&
                                                        (pUVar2 = &(pCVar7->base).orient,
@@ -1989,9 +1966,7 @@ LAB_0047aec8:
                                                       local_134.z = (pCVar7->base).orient.vec.z;
                                                     }
                                                     sscanf
-                                                              (local_59d + 1,"%f,%f,%f,%f%n",
-                                                               &local_11c,&local_11c.y,&local_11c.z,
-                                                               &local_134.y);
+                                                              (local_59d + 1,"%f,%f,%f,%f%n");
                                                   }
                                                   if (local_18 < 0) {
                                                     if ((local_f0 != 0) &&
@@ -2002,12 +1977,10 @@ LAB_0047aec8:
                                                       local_134.z = (pCVar7->base).orient.vec.z;
                                                     }
                                                     sscanf
-                                                              (local_59d + 1,"%f,%f,%f%n",
-                                                               &local_11c,&local_11c.y,&local_11c.z)
-                                                    ;
+                                                              (local_59d + 1,"%f,%f,%f%n");
                                                   }
                                                   if (local_18 < 0) {
-                                                    pCVar12 = (CLever *)
+                                                    pCVar12 = (CCharacter *)
                                                                                                                             
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_59d + 1,
@@ -2015,7 +1988,7 @@ LAB_0047aec8:
                                                              name_hash,
                                                              g_CDemonActorActorType_00763e48.
                                                              class_name);
-                                                  if (pCVar12 == (CLever *)0x0) {
+                                                  if (pCVar12 == (CCharacter *)0x0) {
                                                     return 0;
                                                   }
                                                   if (pCVar12 == 0x0FFFFFFF) {
@@ -2053,24 +2026,24 @@ LAB_0047aec8:
                                                     return iVar5;
                                                   }
                                                   if (local_f0 != 0) {
-                                                    this_ptr_01 = (CCharacter *)
-                                                                                                                                    
+                                                    pCVar12 = (CCharacter *)
+                                                                                                                            
                                                   core_actor_cpp_castToClassHash_FUN_0040d890
                                                             ((CDemonActor *)pCVar7,
                                                              g_CCharacterActorType_00765a60.
                                                              name_hash);
-                                                  if (this_ptr_01 != (CCharacter *)0x0) {
-                                                    (*((this_ptr_01->base).vtable._ub)->archive)
-                                                              ((CDemonActor *)this_ptr_01);
-                                                    (*(((this_ptr_01->base).vtable._uc)->_uc).kill)
-                                                              (this_ptr_01,in_stack_ffffe9c8,
-                                                               in_stack_ffffe9cc,in_stack_ffffe9d0);
+                                                  if (pCVar12 != (CCharacter *)0x0) {
+                                                    (*(((pCVar12->base).vtable._uc)->_uc).
+                                                      releaseFromGrab)(pCVar12);
+                                                    (*(((pCVar12->base).vtable._uc)->_uc).
+                                                      releaseVictim)(pCVar12);
                                                   }
                                                   (*((pCVar7->base).vtable._ub)->
                                                     setPositionAndOrientation)
                                                             ((CDemonActor *)pCVar7,&local_11c,
                                                              &local_134);
-                                                  if (pCVar7 == *(CLever **)(0x01E56DA0 + 0xc)) {
+                                                  if (pCVar7 == *(CCharacter **)(0x01E56DA0 + 0xc)
+                                                     ) {
                                                     *(uint *)(0x01E56DA0 + 0x10) = 1;
                                                   }
                                                   }

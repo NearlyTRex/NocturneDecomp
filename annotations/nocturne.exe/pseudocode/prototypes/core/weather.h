@@ -33,7 +33,7 @@ void __cdecl CWeather::setWeatherType(CWeather *this_ptr,EWeatherType type);
 
 // Original: core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0
 // Address: 005557d0
-void CWeather::setOriginAndRotation(int *param_1,float *param_2,int *param_3);
+void __cdecl CWeather::setOriginAndRotation(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 
 // Original: core_weather.cpp_CWeather_dtor_FUN_005559d0
 // Address: 005559d0

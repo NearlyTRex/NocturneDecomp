@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_005522d0 at 005522e5
+;   core_wateract.cpp_CWaterActor_dtor_FUN_005522d0 at 005522e5
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SWaterVertexTypeInfo_005a3fd0

@@ -16,7 +16,8 @@ void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(void *stream_obj,char *filena
   if (embedded_data->stream != (_FILE *)0x0) {
     iVar1 = FUN_0056cd9b(embedded_data->stream,filename,open_mode,buffer_size);
     if (iVar1 != 0) {
-      ios_clear((int)stream_obj + *(int *)(*(int *)stream_obj + 4),0);
+      ios_clear
+                ((ios *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);
       return;
     }
     embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));

@@ -55,7 +55,7 @@ void core_vessel_cpp_FUN_0054fa80(CDemonActor *param_1)
   param_1[3].footstep_sound_code[3] = '?';
   param_1[3].dead1 = 0x3f800000;
   param_1[3].dead2 = 0x3f000000;
-  core_flame_cpp_CFlame_setup_FUN_0048d050(param_1[2].footstep_sound_code);
+  core_flame_cpp_CFlame_setup_FUN_0048d050((CFlame *)param_1[2].footstep_sound_code);
   param_1->is_transparent = 1;
   return;
 }

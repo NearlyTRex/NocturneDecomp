@@ -1,14 +1,14 @@
 // Name: sound_snddx.cpp_CDirectSoundDevice_start_FUN_00529f60
 // Address: 00529f60
 // Address Range: [[00529f60, 0052a0c1]]
-// Convention: unknown
-// Signature: undefined4 sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(CDirectSoundDevice *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(CDirectSoundDevice *this_ptr)
 
 {
   int iVar1;
@@ -63,6 +63,6 @@ uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
     sound_sndmain_cpp_FUN_00529980(puVar4);
   }
 LAB_0052a05b:
-  (**(code **)(*param_1 + 8))(param_1);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

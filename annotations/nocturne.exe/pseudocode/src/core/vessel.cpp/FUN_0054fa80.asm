@@ -101,7 +101,7 @@ section .text
     PUSH EAX                            ; 0054fb99
     MOV dword ptr [EBX + 0x514],0x3f000000 ; 0054fb9a
     CALL core_flame.cpp_CFlame_setup_FUN_0048d050 ; 0054fba4
-        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_setup_FUN_0048d050()
+        ;   XREF to: 0048d050 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_setup_FUN_0048d050(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0054fba9
     MOV dword ptr [EBX + 0xfc],0x1      ; 0054fbac
     ADD ESP,0x24                        ; 0054fbb6

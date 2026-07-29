@@ -12,8 +12,7 @@ CWeapon * core_gun_cpp_FUN_004b2760(CWeapon *param_1)
   CWeapon *pCVar1;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  (pCVar1->base).vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059e744;
+  (pCVar1->base).vtable._ub = &CWeapon_full_vtable_0059e744._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&pCVar1->model,"gat.kfm");
   pCVar1->is_spread_weapon = 0;

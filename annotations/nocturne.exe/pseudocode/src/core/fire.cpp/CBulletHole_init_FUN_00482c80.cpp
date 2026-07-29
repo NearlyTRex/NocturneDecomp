@@ -15,16 +15,14 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
   CMatrix3x4f *pCVar4;
   byte bVar5;
   float10 fVar6;
-  uint uStack_114;
-  uint uStack_110;
+  CMatrix3x4f CStack_114;
   CMatrix3x4f CStack_e4;
   CMatrix3x4f CStack_b4;
   float afStack_84 [14];
   float local_4c;
   CVector3f local_48;
   float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_30;
   CVector3f CStack_24;
   
   bVar5 = 0;
@@ -37,21 +35,21 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
   local_48.x = surface_normal->y * 0.1f;
   local_48.y = 0.1f * surface_normal->z;
   local_34 = (this_ptr->position).x + local_4c;
-  local_30 = (this_ptr->position).y + local_48.x;
-  local_2c = (this_ptr->position).z + local_48.y;
+  local_30.x = (this_ptr->position).y + local_48.x;
+  local_30.y = (this_ptr->position).z + local_48.y;
   if (this_ptr != (CBulletHole *)&local_34) {
     (this_ptr->position).x = local_34;
-    (this_ptr->position).y = local_30;
-    (this_ptr->position).z = local_2c;
+    (this_ptr->position).y = local_30.x;
+    (this_ptr->position).z = local_30.y;
   }
-  uStack_110 = 0x482d3f;
+  CStack_114.m[0].x = 6.628387e-39;
   fVar6 = atan2
                     ((float10)surface_normal->y,
                      SQRT((float10)surface_normal->x * (float10)surface_normal->x +
                           (float10)surface_normal->z * (float10)surface_normal->z));
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = (float)-fVar6;
-  uStack_114 = 0x482d56;
+  CStack_114.m[0].w = 6.628419e-39;
   fVar6 = atan2((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar6;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
@@ -60,11 +58,11 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
   this_ptr->actor_ptr = (CDemonActor *)hit_position;
   if (hit_position != (CVector3f *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (&uStack_114,this_ptr,&this_ptr->euler_angles);
+              (&CStack_114,&this_ptr->position,&this_ptr->euler_angles);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
               (&CStack_e4,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&uStack_114,&CStack_e4);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&CStack_114,&CStack_e4);
     pfVar3 = afStack_84;
     pCVar4 = &CStack_b4;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -84,12 +82,12 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,C
       (this_ptr->euler_angles).y = pCVar2->y;
       (this_ptr->euler_angles).z = pCVar2->z;
     }
-    pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                                (this_ptr->actor_ptr,&local_30,surface_normal);
-    if (&this_ptr->actor_local_space != (CVector3f *)pfVar3) {
-      (this_ptr->actor_local_space).x = *pfVar3;
-      (this_ptr->actor_local_space).y = pfVar3[1];
-      (this_ptr->actor_local_space).z = pfVar3[2];
+    pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                       (this_ptr->actor_ptr,&local_30,surface_normal);
+    if (&this_ptr->actor_local_space != pCVar2) {
+      (this_ptr->actor_local_space).x = pCVar2->x;
+      (this_ptr->actor_local_space).y = pCVar2->y;
+      (this_ptr->actor_local_space).z = pCVar2->z;
       return;
     }
   }

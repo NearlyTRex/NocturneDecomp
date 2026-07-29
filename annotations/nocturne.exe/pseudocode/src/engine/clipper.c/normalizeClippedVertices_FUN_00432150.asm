@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
+; void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void)
 ;
 ;
 ; Referenced Globals:

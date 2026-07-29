@@ -1,37 +1,41 @@
 // Name: core_glass.cpp_CGlass_setup_FUN_004abc90
 // Address: 004abc90
 // Address Range: [[004abc90, 004ac3e1]]
-// Convention: unknown
-// Signature: void core_glass_cpp_CGlass_setup_FUN_004abc90(CDemonActor *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
 
 #include "nocturne.h"
 
-void core_glass_cpp_CGlass_setup_FUN_004abc90(CDemonActor *param_1)
+void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
 
 {
   char cVar1;
-  double dVar2;
-  int iVar3;
-  float *pfVar4;
-  char *pcVar5;
-  int iVar6;
-  char *pcVar7;
-  double dVar8;
-  double dVar9;
-  float fVar10;
-  float fVar11;
+  UIntegerFloat UVar2;
+  double dVar3;
+  int iVar4;
+  CVector3f *pCVar5;
+  SMRGLPrimitiveQuad *pSVar6;
+  int iVar7;
+  char *pcVar8;
+  char *pcVar9;
+  double dVar10;
+  double dVar11;
+  float fVar12;
+  float fVar13;
   CVector3f local_cc;
   CVector3f local_c0;
-  CVector3f local_b4 [3];
+  CVector3f local_b4;
+  CVector3f local_a8;
+  CVector3f local_9c;
   CVector3f local_90;
-  float local_84;
-  uint local_80;
-  uint local_7c;
-  CVector3f local_78 [2];
-  CVector3f local_60 [2];
+  CVector3f local_84;
+  CVector3f local_78;
+  CVector3f local_6c;
+  CVector3f local_60;
+  CVector3f local_54;
   CVector3f local_48;
   CVector3f local_3c;
-  float *local_30;
+  CVector3f *local_30;
   float local_2c;
   int local_28;
   int local_24;
@@ -39,257 +43,228 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(CDemonActor *param_1)
   int local_1c;
   int local_18;
   
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));
-  if (*(int *)(param_1[1].create_event + 0x18) != 0) {
-    local_7c = 0;
-    local_80 = 0;
-    local_84 = *(float *)param_1[1].actor_name * 0.5f;
-    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (&param_1->orient_matrix);
-    local_78[0].x = (param_1->location).position.x + *pfVar4;
-    local_78[0].y = (param_1->location).position.y + pfVar4[1];
-    local_78[0].z = (param_1->location).position.z + pfVar4[2];
-    if (&local_48 != local_78) {
-      local_48.x = local_78[0].x;
-      local_48.y = local_78[0].y;
-      local_48.z = local_78[0].z;
+            (DAT_005ae704,&this_ptr->glass_texture);
+  if (this_ptr->mirror_flag != 0) {
+    local_84.z = 0.0;
+    local_84.y = 0.0;
+    local_84.x = (this_ptr->glass_size).x * 0.5f;
+    pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (&(this_ptr->base).orient_matrix,&local_a8,&local_84);
+    local_78.x = (this_ptr->base).location.position.x + pCVar5->x;
+    local_78.y = (this_ptr->base).location.position.y + pCVar5->y;
+    local_78.z = (this_ptr->base).location.position.z + pCVar5->z;
+    if (&local_48 != &local_78) {
+      local_48.x = local_78.x;
+      local_48.y = local_78.y;
+      local_48.z = local_78.z;
     }
-    local_84 = -local_84;
-    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (&param_1->orient_matrix);
-    local_3c.x = (param_1->location).position.x + *pfVar4;
-    local_3c.y = (param_1->location).position.y + pfVar4[1];
-    local_3c.z = (param_1->location).position.z + pfVar4[2];
-    if (local_60 != &local_3c) {
-      local_60[0].x = local_3c.x;
-      local_60[0].y = local_3c.y;
-      local_60[0].z = local_3c.z;
+    local_84.x = -local_84.x;
+    pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (&(this_ptr->base).orient_matrix,&local_54,&local_84);
+    local_3c.x = (this_ptr->base).location.position.x + pCVar5->x;
+    local_3c.y = (this_ptr->base).location.position.y + pCVar5->y;
+    local_3c.z = (this_ptr->base).location.position.z + pCVar5->z;
+    if (&local_60 != &local_3c) {
+      local_60.x = local_3c.x;
+      local_60.y = local_3c.y;
+      local_60.z = local_3c.z;
     }
-    local_80 = *(uint *)(param_1[1].actor_name + 4);
-    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (&param_1->orient_matrix);
-    local_cc.x = (param_1->location).position.x + *pfVar4;
-    local_cc.y = (param_1->location).position.y + pfVar4[1];
-    local_cc.z = (param_1->location).position.z + pfVar4[2];
+    local_84.y = (this_ptr->glass_size).y;
+    pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (&(this_ptr->base).orient_matrix,&local_6c,&local_84);
+    local_cc.x = (this_ptr->base).location.position.x + pCVar5->x;
+    local_cc.y = (this_ptr->base).location.position.y + pCVar5->y;
+    local_cc.z = (this_ptr->base).location.position.z + pCVar5->z;
     if (&local_c0 != &local_cc) {
       local_c0.x = local_cc.x;
       local_c0.y = local_cc.y;
       local_c0.z = local_cc.z;
     }
-    local_84 = -local_84;
-    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (&param_1->orient_matrix);
-    local_90.x = (param_1->location).position.x + *pfVar4;
-    local_90.y = (param_1->location).position.y + pfVar4[1];
-    local_90.z = (param_1->location).position.z + pfVar4[2];
-    if (local_b4 != &local_90) {
-      local_b4[0].x = local_90.x;
-      local_b4[0].y = local_90.y;
-      local_b4[0].z = local_90.z;
+    local_84.x = -local_84.x;
+    pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                       (&(this_ptr->base).orient_matrix,&local_9c,&local_84);
+    local_90.x = (this_ptr->base).location.position.x + pCVar5->x;
+    local_90.y = (this_ptr->base).location.position.y + pCVar5->y;
+    local_90.z = (this_ptr->base).location.position.z + pCVar5->z;
+    if (&local_b4 != &local_90) {
+      local_b4.x = local_90.x;
+      local_b4.y = local_90.y;
+      local_b4.z = local_90.z;
     }
     core_mirror_cpp_CMirror_setupCorners_FUN_004d6590
-              ((CMirror *)(param_1[1].create_event + 0x1c),&local_48,local_60,&local_c0,local_b4);
+              (&this_ptr->mirror,&local_48,&local_60,&local_c0,&local_b4);
   }
-  dVar8 = round
-                    ((double)(*(float *)param_1[1].actor_name * (float)0.5));
-  local_18 = (int)ROUND(dVar8);
-  *(int *)(param_1[8].create_event + 0x2c) = local_18 + 1;
+  dVar10 = round
+                     ((double)((this_ptr->glass_size).x * (float)0.5));
+  local_18 = (int)ROUND(dVar10);
+  this_ptr->grid_cols = local_18 + 1;
   if (4 < local_18 + 1) {
-    param_1[8].create_event[0x2c] = '\x04';
-    param_1[8].create_event[0x2d] = '\0';
-    param_1[8].create_event[0x2e] = '\0';
-    param_1[8].create_event[0x2f] = '\0';
+    this_ptr->grid_cols = 4;
   }
-  dVar8 = round
-                    ((double)(*(float *)(param_1[1].actor_name + 4) * (float)0.5));
-  local_1c = (int)ROUND(dVar8);
-  *(int *)(param_1[8].create_event + 0x30) = local_1c + 1;
+  dVar10 = round
+                     ((double)((this_ptr->glass_size).y * (float)0.5));
+  local_1c = (int)ROUND(dVar10);
+  this_ptr->grid_rows = local_1c + 1;
   if (4 < local_1c + 1) {
-    param_1[8].create_event[0x30] = '\x04';
-    param_1[8].create_event[0x31] = '\0';
-    param_1[8].create_event[0x32] = '\0';
-    param_1[8].create_event[0x33] = '\0';
+    this_ptr->grid_rows = 4;
   }
-  iVar3 = *(int *)(param_1[8].create_event + 0x2c) * *(int *)(param_1[8].create_event + 0x30);
-  *(int *)(param_1[8].create_event + 0x34) =
-       (*(int *)(param_1[8].create_event + 0x2c) + 1) *
-       (*(int *)(param_1[8].create_event + 0x30) + 1);
-  iVar6 = *(int *)(param_1[8].create_event + 0x34);
-  *(int *)(param_1[8].create_event + 0x38) = iVar3;
-  if ((0x19 < iVar6) || (0x10 < iVar3)) {
+  iVar4 = this_ptr->grid_cols * this_ptr->grid_rows;
+  this_ptr->broken_vertex_count = (this_ptr->grid_cols + 1) * (this_ptr->grid_rows + 1);
+  this_ptr->broken_polygon_count = iVar4;
+  if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar4)) {
     PTR_01cc4800 = "..\\core\\glass.cpp";
     INT_01cc4804 = 0x86;
     core_main_c_FUN_004c8440
-              ("CGlass::setup - Too many verticies(%d) or faces(%d)!",*(uint *)(param_1[8].create_event + 0x34),
-               *(uint *)(param_1[8].create_event + 0x38));
+              ("CGlass::setup - Too many verticies(%d) or faces(%d)!",this_ptr->broken_vertex_count,
+               this_ptr->broken_polygon_count);
   }
-  local_2c = *(float *)param_1[1].actor_name / (float)*(int *)(param_1[8].create_event + 0x2c);
-  local_3c.y = *(float *)(param_1[1].actor_name + 4) /
-               (float)*(int *)(param_1[8].create_event + 0x30);
-  iVar6 = 0;
-  fVar11 = 0.0;
-  local_30 = &param_1[2].platform_position_delta.y;
-  for (local_28 = 0; local_28 < *(int *)(param_1[8].create_event + 0x30) + 1;
-      local_28 = local_28 + 1) {
-    fVar10 = -*(float *)param_1[1].actor_name * (float)0.5;
-    pfVar4 = local_30 + iVar6 * 3;
-    pcVar7 = param_1->actor_name + iVar6 * 4;
-    for (iVar3 = 0; iVar3 < *(int *)(param_1[8].create_event + 0x2c) + 1; iVar3 = iVar3 + 1) {
-      if (pfVar4 != (float *)&stack0xffffff20) {
-        *pfVar4 = fVar10;
-        pfVar4[1] = fVar11;
-        pfVar4[2] = 0.0;
+  local_2c = (this_ptr->glass_size).x / (float)this_ptr->grid_cols;
+  local_3c.y = (this_ptr->glass_size).y / (float)this_ptr->grid_rows;
+  iVar4 = 0;
+  fVar13 = 0.0;
+  local_30 = this_ptr->broken_vertices;
+  for (local_28 = 0; local_28 < this_ptr->grid_rows + 1; local_28 = local_28 + 1) {
+    fVar12 = -(this_ptr->glass_size).x * (float)0.5;
+    pCVar5 = local_30 + iVar4;
+    pcVar9 = (this_ptr->base).actor_name + iVar4 * 4;
+    for (iVar7 = 0; iVar7 < this_ptr->grid_cols + 1; iVar7 = iVar7 + 1) {
+      if (pCVar5 != (CVector3f *)&stack0xffffff20) {
+        pCVar5->x = fVar12;
+        pCVar5->y = fVar13;
+        pCVar5->z = 0.0;
       }
-      dVar2 = 131072;
-      dVar8 = 16515072;
-      local_1c = iVar3;
-      dVar9 = round
-                        (((double)iVar3 / (double)*(int *)(param_1[8].create_event + 0x2c)) *
-                         16515072 + 131072);
-      *(int *)(pcVar7 + 0x5dc) = (int)ROUND(dVar9);
-      local_20 = *(int *)(param_1[8].create_event + 0x30) - (int)local_2c;
-      fVar10 = 6.865027e-39;
-      dVar8 = round
-                        (dVar2 + ((double)local_20 /
-                                 (double)*(int *)(param_1[8].create_event + 0x30)) * dVar8);
-      local_24 = (int)ROUND(dVar8);
-      pfVar4 = pfVar4 + 3;
-      *(int *)(pcVar7 + 0x640) = local_24;
-      iVar6 = iVar6 + 1;
-      fVar10 = fVar10 + local_3c.z;
-      pcVar7 = pcVar7 + 4;
+      dVar3 = 131072;
+      dVar10 = 16515072;
+      local_1c = iVar7;
+      dVar11 = round
+                         (((double)iVar7 / (double)this_ptr->grid_cols) * 16515072 +
+                          131072);
+      *(int *)(pcVar9 + 0x5dc) = (int)ROUND(dVar11);
+      local_20 = this_ptr->grid_rows - (int)local_2c;
+      fVar12 = 6.865027e-39;
+      dVar10 = round
+                         (dVar3 + ((double)local_20 / (double)this_ptr->grid_rows) * dVar10);
+      local_24 = (int)ROUND(dVar10);
+      pCVar5 = pCVar5 + 1;
+      *(int *)(pcVar9 + 0x640) = local_24;
+      iVar4 = iVar4 + 1;
+      fVar12 = fVar12 + local_3c.z;
+      pcVar9 = pcVar9 + 4;
     }
-    fVar11 = fVar11 + local_3c.y;
+    fVar13 = fVar13 + local_3c.y;
   }
   local_24 = 0;
   local_20 = 0;
-  if (0 < *(int *)(param_1[8].create_event + 0x30)) {
-    local_3c.z = (float)(param_1[5].actor_name + 0x14);
+  if (0 < this_ptr->grid_rows) {
+    local_3c.z = (float)this_ptr->broken_quads;
     do {
-      iVar6 = 0;
-      if (0 < *(int *)(param_1[8].create_event + 0x2c)) {
-        pfVar4 = (float *)((int)local_3c.z + local_20 * 0x48);
+      iVar4 = 0;
+      if (0 < this_ptr->grid_cols) {
+        pSVar6 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);
         do {
-          pcVar7 = (char *)(pfVar4 + 1);
-          pcVar7[0] = '\x04';
-          pcVar7[1] = '\0';
-          pcVar7[2] = '\0';
-          pcVar7[3] = '\0';
-          pfVar4[5] = 0.0;
-          fVar11 = pfVar4[5];
-          pfVar4[4] = fVar11;
-          (((CLocation *)(pfVar4 + 3))->position).x = fVar11;
-          pfVar4[2] = fVar11;
-          iVar3 = (*(int *)(param_1[8].create_event + 0x2c) + 1) * local_24 + iVar6;
-          pfVar4[6] = (float)iVar3;
-          (((UOrientationVector *)(pfVar4 + 7))->vec).x =
-               *(float *)(param_1[4].create_event + iVar3 * 4 + 0x24);
-          pfVar4[8] = (float)*(uint *)(param_1[4].footstep_sound_code + iVar3 * 4 + -0x1c);
-          pfVar4[9] = (float)(iVar3 + 1);
-          ((CMatrix3x3f *)(pfVar4 + 10))->m[0].x =
-               *(float *)(param_1[4].create_event + iVar3 * 4 + 0x28);
-          pfVar4[0xb] = *(float *)(param_1[4].footstep_sound_code + iVar3 * 4 + -0x18);
-          pfVar4[0xc] = (float)(*(int *)(param_1[8].create_event + 0x2c) + iVar3 + 2);
-          ((CVector3f *)(pfVar4 + 0xd))->x =
-               *(float *)(param_1[4].create_event +
-                         (*(int *)(param_1[8].create_event + 0x2c) + iVar3) * 4 + 0x2c);
-          pfVar4[0xe] = *(float *)(param_1[4].footstep_sound_code +
-                                  (*(int *)(param_1[8].create_event + 0x2c) + iVar3) * 4 + -0x14);
-          pfVar4[0xf] = (float)(*(int *)(param_1[8].create_event + 0x2c) + iVar3 + 1);
-          ((CVector3f *)(pfVar4 + 0x10))->x =
-               *(float *)(param_1[4].create_event +
-                         (*(int *)(param_1[8].create_event + 0x2c) + iVar3) * 4 + 0x28);
-          pfVar4[0x11] = (float)*(uint *)
-                                 (param_1[4].footstep_sound_code +
-                                 (iVar3 + *(int *)(param_1[8].create_event + 0x2c)) * 4 + -0x18);
-          iVar6 = iVar6 + 1;
+          (pSVar6->base).base.count = 4;
+          (pSVar6->base).surface_normal.D.i = 0;
+          UVar2 = (pSVar6->base).surface_normal.D;
+          (pSVar6->base).surface_normal.C = UVar2;
+          (pSVar6->base).surface_normal.B = UVar2;
+          (pSVar6->base).surface_normal.A = UVar2;
+          iVar7 = (this_ptr->grid_cols + 1) * local_24 + iVar4;
+          pSVar6->vertices[0].vertex_index = iVar7;
+          pSVar6->vertices[0].texture_u = this_ptr->texture_u[iVar7];
+          pSVar6->vertices[0].texture_v = this_ptr->texture_v[iVar7];
+          pSVar6->vertices[1].vertex_index = iVar7 + 1;
+          pSVar6->vertices[1].texture_u = this_ptr->texture_u[iVar7 + 1];
+          pSVar6->vertices[1].texture_v = this_ptr->texture_v[iVar7 + 1];
+          pSVar6->vertices[2].vertex_index = this_ptr->grid_cols + iVar7 + 2;
+          pSVar6->vertices[2].texture_u = this_ptr->texture_u[this_ptr->grid_cols + iVar7 + 2];
+          pSVar6->vertices[2].texture_v = this_ptr->texture_v[this_ptr->grid_cols + iVar7 + 2];
+          pSVar6->vertices[3].vertex_index = this_ptr->grid_cols + iVar7 + 1;
+          pSVar6->vertices[3].texture_u = this_ptr->texture_u[this_ptr->grid_cols + iVar7 + 1];
+          pSVar6->vertices[3].texture_v = this_ptr->texture_v[iVar7 + this_ptr->grid_cols + 1];
+          iVar4 = iVar4 + 1;
           local_20 = local_20 + 1;
-          pfVar4 = pfVar4 + 0x12;
-        } while (iVar6 < *(int *)(param_1[8].create_event + 0x2c));
+          pSVar6 = pSVar6 + 1;
+        } while (iVar4 < this_ptr->grid_cols);
       }
       local_24 = local_24 + 1;
-    } while (local_24 < *(int *)(param_1[8].create_event + 0x30));
+    } while (local_24 < this_ptr->grid_rows);
   }
-  param_1->is_transparent = (uint)((int)param_1[1].location.position.y < 0xfde9);
-  iVar6 = _stricmp((char *)&param_1[1].location.area_id,"none");
-  if (iVar6 == 0) {
-    *(byte *)&param_1[1].location.area_id = 0;
+  (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
+  iVar4 = _stricmp(this_ptr->break_event,"none");
+  if (iVar4 == 0) {
+    this_ptr->break_event[0] = '\0';
   }
-  iVar6 = param_1[1].location.area_id;
-  param_1->process_disabled = 0;
-  if ((char)iVar6 == '\0') {
-    param_1->process_disabled = 1;
+  cVar1 = this_ptr->break_event[0];
+  (this_ptr->base).process_disabled = 0;
+  if (cVar1 == '\0') {
+    (this_ptr->base).process_disabled = 1;
   }
-  iVar6 = *(int *)(param_1[2].create_event + 0x50);
-  param_1[8].create_event[0x3c] = '\0';
-  param_1[8].create_event[0x3d] = '\0';
-  param_1[8].create_event[0x3e] = '\0';
-  param_1[8].create_event[0x3f] = '\0';
-  if (iVar6 != 0) {
-    pcVar7 = param_1[2].create_event + 0x5c;
-    iVar6 = _strcmp(pcVar7,"7YEARS.RAW");
-    if (iVar6 == 0) {
-      iVar6 = _stricmp
-                        (param_1[1].actor_name + 0x14,"factwin.raw");
-      if (iVar6 == 0) {
-        pcVar5 = "factwinx.raw";
+  this_ptr->pending_background_render = 0;
+  if (this_ptr->background_flag != 0) {
+    pcVar9 = (this_ptr->broken_texture).texture_name;
+    iVar4 = _strcmp(pcVar9,"7YEARS.RAW");
+    if (iVar4 == 0) {
+      iVar4 = _stricmp
+                        ((this_ptr->glass_texture).texture_name,"factwin.raw");
+      if (iVar4 == 0) {
+        pcVar8 = "factwinx.raw";
         do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar8;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar6 = _stricmp
-                        (param_1[1].actor_name + 0x14,"dockwin.raw");
-      if (iVar6 == 0) {
-        pcVar5 = "dockwinx.raw";
-        pcVar7 = param_1[2].create_event + 0x5c;
+      iVar4 = _stricmp
+                        ((this_ptr->glass_texture).texture_name,"dockwin.raw");
+      if (iVar4 == 0) {
+        pcVar8 = "dockwinx.raw";
+        pcVar9 = (this_ptr->broken_texture).texture_name;
         do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar8;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar6 = _stricmp
-                        (param_1[1].actor_name + 0x14,"windo10.raw");
-      if (iVar6 == 0) {
-        pcVar5 = "windo10x.raw";
-        pcVar7 = param_1[2].create_event + 0x5c;
+      iVar4 = _stricmp
+                        ((this_ptr->glass_texture).texture_name,"windo10.raw");
+      if (iVar4 == 0) {
+        pcVar8 = "windo10x.raw";
+        pcVar9 = (this_ptr->broken_texture).texture_name;
         do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar8;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar6 = _stricmp
-                        (param_1[1].actor_name + 0x14,"windo11.raw");
-      if (iVar6 == 0) {
-        pcVar5 = "windo11x.raw";
-        pcVar7 = param_1[2].create_event + 0x5c;
+      iVar4 = _stricmp
+                        ((this_ptr->glass_texture).texture_name,"windo11.raw");
+      if (iVar4 == 0) {
+        pcVar8 = "windo11x.raw";
+        pcVar9 = (this_ptr->broken_texture).texture_name;
         do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar8;
+          *pcVar9 = cVar1;
           if (cVar1 == '\0') {
             return;
           }
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
         return;
       }

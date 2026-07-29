@@ -24,18 +24,16 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(CStake *this_ptr,CVector3f 
   CVector3f local_5c;
   CVector3f local_50;
   CVector3f local_44;
-  uint local_38;
-  uint local_34;
-  uint local_30;
+  CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
   float local_14;
   float local_10;
   
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_b4,orientation_angles);
-  local_38 = 0;
-  local_34 = 0;
-  local_30 = 0x41200000;
+  local_38.x = 0.0;
+  local_38.y = 0.0;
+  local_38.z = 10.0;
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_b4,&local_44,&local_38);
   local_14 = (surface_normal->z * local_44.z +
              surface_normal->x * local_44.x + surface_normal->y * local_44.y) * 2.0f;
@@ -77,10 +75,10 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(CStake *this_ptr,CVector3f 
   }
   core_box_cpp_CBox_setupCorners_FUN_0041a6e0
             (&this_ptr->physics_box,spawn_position,orientation_angles,&local_74,2.0);
-  local_5c.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc116cbe4,0x4116cbe4);
+  local_5c.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-9.424778,9.424778);
   local_5c.z = 0.0;
   local_10 = local_5c.x;
-  local_5c.y = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc116cbe4,0x4116cbe4);
+  local_5c.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-9.424778,9.424778);
   local_10 = local_5c.y;
   core_box_cpp_CBox_setupVelocities_FUN_0041cb40(&this_ptr->physics_box,&local_44,&local_5c);
   return;

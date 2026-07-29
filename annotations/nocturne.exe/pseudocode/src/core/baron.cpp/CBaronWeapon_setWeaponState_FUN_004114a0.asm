@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CWeapon *param_1,int param_2)
+; void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CBaronWeapon *this_ptr,int weapon_state)
 ;
+; Parameters:
+; CBaronWeapon *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   weapon_state
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_baron_cpp_005786d2
@@ -55,7 +58,7 @@ section .text
     PUSH EBX                            ; 004114f8
         ;   Label: LAB_004114f8
     CALL core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 ; 004114f9
-        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530()
+        ;   XREF to: 00411530 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon * this_ptr)
     ADD ESP,0x4                         ; 004114fe
     PUSH ESI                            ; 00411501
     MOV EDX,dword ptr [EBX + 0x570]     ; 00411502

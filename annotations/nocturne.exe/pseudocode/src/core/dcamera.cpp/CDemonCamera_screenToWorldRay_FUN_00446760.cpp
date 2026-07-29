@@ -1,15 +1,15 @@
 // Name: core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00446760
 // Address: 00446760
 // Address Range: [[00446760, 004467f4]]
-// Convention: unknown
-// Signature: float * core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(undefined4 param_1,float *param_2,undefined4 param_3,undefined4 param_4)
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float * core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(uint param_1,float *param_2,uint param_3,uint param_4)
+void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y)
 
 {
   float fVar1;
@@ -23,21 +23,21 @@ float * core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00446760(uint param_1
   uint local_1c;
   
   bVar2 = 0;
-  core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(param_1,param_3,param_4);
+  core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(this_ptr,screen_x,screen_y);
   local_1c = local_34;
   *(uint *)((int)&stack0xffffffe8 + (uint)bVar2 * 0xfffffffe * 4) =
        *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);
   *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(param_1,&stack0xffffffe4);
+  core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(this_ptr,&stack0xffffffe4);
   local_40 = local_28;
   *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
   *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   fVar1 = (float)_DAT_0057b9f3;
-  *param_2 = (float)local_40 * fVar1;
-  param_2[1] = (float)local_3c * fVar1;
-  param_2[2] = (float)local_38 * fVar1;
-  return param_2;
+  output_ray->x = (float)local_40 * fVar1;
+  output_ray->y = (float)local_3c * fVar1;
+  output_ray->z = (float)local_38 * fVar1;
+  return;
 }

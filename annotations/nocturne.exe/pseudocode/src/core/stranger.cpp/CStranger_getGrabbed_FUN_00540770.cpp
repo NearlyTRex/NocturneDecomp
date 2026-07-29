@@ -17,11 +17,13 @@ int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonAct
     if (iVar1 != 0) {
       if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y !=
           (param_1->base).carry_hands[0].carry_actor) {
-        (*(((param_1->base).base.vtable._uc)->_uc).getDeathState)(&param_1->base);
+        (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
+                  (&param_1->base,0,(CVector3f *)0x0);
       }
       if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y !=
           (param_1->base).carry_hands[1].carry_actor) {
-        (*(((param_1->base).base.vtable._uc)->_uc).getDeathState)(&param_1->base);
+        (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)
+                  (&param_1->base,1,(CVector3f *)0x0);
       }
       param_1[1].base.base.collision_disabled = 0;
     }

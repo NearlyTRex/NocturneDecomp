@@ -20,8 +20,7 @@ CDemonActor * core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CDemonActor *param_1
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  (param_1->vtable)._ub =
-       (CDemonActor_vtable *)&PTR_core_bodypart_cpp_CBodyPart_setup_FUN_00416500_0059a744;
+  (param_1->vtable)._ub = &g_CBodyPartVTable;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(param_1,0,0);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041a6c0((CBox *)&param_1[9].platform_position_delta.y,0);
   pSVar2 = core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130

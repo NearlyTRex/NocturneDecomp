@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(void)
+; void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_center,int y_bottom,int y_top)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_center
+; int              Stack[0x8]:4   y_bottom
+; int              Stack[0xc]:4   y_top
 ;
 ; Called Functions:
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_004cf2b0

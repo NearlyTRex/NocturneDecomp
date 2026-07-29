@@ -1,19 +1,17 @@
 // Name: core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0
 // Address: 004e00b0
 // Address Range: [[004e00b0, 004e0105]]
-// Convention: unknown
-// Signature: void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list)
 
 #include "nocturne.h"
 
-void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8)
+void __cdecl core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list)
 
 {
-  CMorphModel *this_ptr;
-  
-  this_ptr = (CMorphModel *)(param_1 + param_2 * 0x608);
-  core_morph_cpp_CMorphModel_free_FUN_004df290(this_ptr);
+  core_morph_cpp_CMorphModel_free_FUN_004df290(this_ptr->models + model_index);
   core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0
-            (this_ptr,param_3,param_4,param_5,param_6,0x3c,param_7,param_8);
+            (this_ptr->models + model_index,vertex_count,vertices,face_count,faces,0x3c,texture_lod,
+             texture_index_list);
   return;
 }

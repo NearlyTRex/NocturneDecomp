@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_SLaserInfo_copy_FUN_00479470(undefined4 *param_1,undefined4 *param_2)
+; void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_00479470(SLaserInfo *this_ptr,SLaserInfo *copy)
 ;
+; Parameters:
+; SLaserInfo *     Stack[0x4]:4   this_ptr
+; SLaserInfo *     Stack[0x8]:4   copy
 ;
 ; *****************************************************************************
 

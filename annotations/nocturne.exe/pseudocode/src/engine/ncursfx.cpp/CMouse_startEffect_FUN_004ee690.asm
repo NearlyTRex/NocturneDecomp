@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(void)
+; int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(CMouse *this_ptr,uint button_mask)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   button_mask
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd1d94

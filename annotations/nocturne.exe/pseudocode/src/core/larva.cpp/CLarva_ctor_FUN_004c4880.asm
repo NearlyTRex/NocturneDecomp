@@ -13,7 +13,7 @@
 ;   TerminatedCString s_worm_dfm_0058777b
 ;   float FLOAT_0059fa70 = 20
 ;   float FLOAT_0059fa74 = 100
-;   undefined1* PTR_core_larva.cpp_CLarva_setup_FUN_004c4910_0059fa84 = 004c4910
+;   CEnemy_full_vtable g_CLarvaVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -34,9 +34,9 @@ section .text
     MOV EBX,EAX                         ; 004c4893
     ADD EAX,0x150                       ; 004c4895
     PUSH EAX                            ; 004c489a
-    MOV dword ptr [EAX + -0x4],0x59fa84 ; 004c489b | PTR_core_larva.cpp_CLarva_setup_FUN_004c4910_0059fa84
+    MOV dword ptr [EAX + -0x4],0x59fa84 ; 004c489b | g_CLarvaVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004c48a2
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2dd4],0x3e800000 ; 004c48a7
     MOV dword ptr [EBX + 0x2dd8],0x3f000000 ; 004c48b1
     MOV dword ptr [EBX + 0x2608],0x1    ; 004c48bb

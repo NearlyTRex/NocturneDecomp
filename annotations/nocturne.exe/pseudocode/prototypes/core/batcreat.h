@@ -47,6 +47,6 @@ undefined4 CBatCreature::getTargetPoints(int param_1,CVector3f *param_2);
 // Address: 004132a0
 void FUN_004132a0(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_batcreat.cpp_FUN_004132c0
+// Original: core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0
 // Address: 004132c0
-CDemonActor * FUN_004132c0(CDemonActor *param_1,byte param_2);
+CDemonActor * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);

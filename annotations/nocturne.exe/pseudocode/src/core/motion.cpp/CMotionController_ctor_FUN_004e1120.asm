@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660 at 0051b665
 ;
 ; Referenced Globals:
-;   void* PTR_core_motion.cpp_CMotionController_dtor_FUN_004e1150_005a0d24 = 004e1150
+;   CMotionController_vtable g_CMotionControllerVTable
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_reset_FUN_004e1680
@@ -22,7 +22,7 @@ section .text
     PUSH EBX                            ; 004e1120
         ;   Label: core_motion.cpp_CMotionController_ctor_FUN_004e1120
     MOV EBX,dword ptr [ESP + 0x8]       ; 004e1121
-    MOV dword ptr [EBX + 0x50],0x5a0d24 ; 004e1125 | PTR_core_motion.cpp_CMotionController_dtor_FUN_004e1150_005a0d24
+    MOV dword ptr [EBX + 0x50],0x5a0d24 ; 004e1125 | g_CMotionControllerVTable
     MOV byte ptr [EBX + 0x30],0x0       ; 004e112c
     PUSH EBX                            ; 004e1130
     MOV dword ptr [EBX],0x0             ; 004e1131

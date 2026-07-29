@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)
+; int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   seek_distance
+; int              Stack[0xc]:4   seek_mode
+; int              Stack[0x10]:4   flags
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_validateBufferSeek_FUN_00571e75

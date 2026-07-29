@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00403630(char *param_1)
+; void __cdecl engine_2d_c_FUN_00403630(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c
 ; undefined1       Stack[-0x5b]:1  local_5b

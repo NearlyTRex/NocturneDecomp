@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_turret_cpp_CTurret_canPickup_FUN_0054b030(CWeapon *param_1,CDemonActor *param_2)
+; int __cdecl core_turret_cpp_CTurret_canPickup_FUN_0054b030(CTurret *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9354

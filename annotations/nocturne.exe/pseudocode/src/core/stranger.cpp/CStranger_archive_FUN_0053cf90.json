@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 184,
+    "complexity_score": 187,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 42,
     "suspect_count": 14,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 154
+    "total_lines": 157
   },
   "cross_references": [],
   "function": {
@@ -145,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_stranger.cpp_CStranger_archive_FUN_0053cf90",
-    "signature": "void core_stranger_cpp_CStranger_archive_FUN_0053cf90(int param_1)"
+    "signature": "void core_stranger_cpp_CStranger_archive_FUN_0053cf90(CHero *param_1)"
   },
   "function_calls": [
     {
@@ -298,7 +298,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_stranger_cpp_CStranger_archive_FUN_0053cf90(int param_1)",
+      "text": "void core_stranger_cpp_CStranger_archive_FUN_0053cf90(CHero *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -311,58 +311,58 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1fa08),\"objectToPickUp\");",
+      "text": "core_actor_cpp_archiveActor_FUN_0040c980(&param_1->object_to_pick_up,\"objectToPickUp\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1fa04),\"doorToOpen\");",
+      "text": "((CDemonActor **)&param_1->door_to_open,\"doorToOpen\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1fa10),\"leverToPull\");",
+      "text": "((CDemonActor **)&param_1->lever_to_pull,\"leverToPull\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1fa14),\"ladderToClimb\");",
+      "text": "((CDemonActor **)&param_1->ladder_to_climb,\"ladderToClimb\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x24ac),\"lhCarryObject\");",
+      "text": "(&(param_1->base).carry_hands[0].carry_actor,\"lhCarryObject\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x24f0),\"rhCarryObject\");",
+      "text": "(&(param_1->base).carry_hands[1].carry_actor,\"rhCarryObject\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDemonActor **)(param_1 + 0x1fa90),\"ladderToDescend\");",
+      "text": "((CDemonActor **)(param_1[1].base.base.orient_matrix.m + 2),\"ladderToDescend\"",
       "type": "unnamed_param"
     },
     {
@@ -370,39 +370,39 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1fa3c),\"gunsDrawn\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 1),\"gunsDrawn\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980((CDemonActor **)(param_1 + 0x1fa94),\"weapon\");",
+      "text": "((CDemonActor **)&param_1[1].base.base.orient_matrix.m[2].y,\"weapon\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1faa0),\"actionPending\");",
+      "text": "(&param_1[1].base.base.health,\"actionPending\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x2a84),\"layerActionIndex\");",
+      "text": "(&(param_1->base).layer_action_index,\"layerActionIndex\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)(param_1 + 0x2a88),\"layerActionT\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&(param_1->base).layer_action_t,\"layerActionT\");",
       "type": "unnamed_param"
     }
   ],

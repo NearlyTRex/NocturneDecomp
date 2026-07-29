@@ -15,7 +15,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(CCrossbow *thi
   
   pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
   pCVar3 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar2[1].base.actor_name + 4));
-  pCVar3[-2].base.scale.z = (int)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059bb54;
+  pCVar3[-2].base.scale.z = (int)&g_CCrossbowVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             ((CKeyFramedModelInstance *)&pCVar3[-2].base.blood_effect_timer,"crossbow.kfm")
   ;

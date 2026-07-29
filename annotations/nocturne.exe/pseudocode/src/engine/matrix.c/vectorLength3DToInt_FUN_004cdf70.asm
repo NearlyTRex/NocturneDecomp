@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(void)
+; int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(CVector3i *vector_ptr)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   vector_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

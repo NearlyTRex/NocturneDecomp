@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_waitWithSkip_FUN_004c8e10(int param_1)
+; void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms)
 ;
+; Parameters:
+; int              Stack[0x4]:4   duration_ms
 ;
 ; Referenced Globals:
 ;   int INT_005bac64 = 0x1cc30e4

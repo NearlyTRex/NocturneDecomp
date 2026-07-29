@@ -15,8 +15,7 @@ CEnemy * core_dog_cpp_FUN_00454660(CEnemy *param_1)
   CEnemy *pCVar4;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  (pCVar4->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_dog_cpp_CZombieDog_setup_FUN_004546d0_0059c0f4;
+  (pCVar4->base).base.vtable._ub = &g_CZombieDogVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar4->base).model,"dog.dfm");
   fVar2 = 50.0f;

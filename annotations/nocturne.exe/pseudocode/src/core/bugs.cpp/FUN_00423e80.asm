@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00423d90 at 00423da9
+;   core_bugs.cpp_CBugs_dtor_FUN_00423d90 at 00423da9
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SBugsTypeInfo_0059b010

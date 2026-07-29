@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_getRegistryStringValue_FUN_00559d20(void)
+; void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_00559d20(char *key_path,char *value_name,char *output_buffer,uint *buffer_size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   key_path
+; char *           Stack[0x8]:4   value_name
+; char *           Stack[0xc]:4   output_buffer
+; uint *           Stack[0x10]:4   buffer_size
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

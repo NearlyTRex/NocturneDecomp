@@ -13,7 +13,7 @@
 ;   TerminatedCString s_cre_kfm_005879e7
 ;   float FLOAT_0059fd5c = 8
 ;   float FLOAT_0059fd60 = 30
-;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059fd94 = 00553f10
+;   CWeapon_full_vtable g_CLightGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -34,7 +34,7 @@ section .text
     MOV EBX,EAX                         ; 004c6e43
     ADD EAX,0x150                       ; 004c6e45
     PUSH EAX                            ; 004c6e4a
-    MOV dword ptr [EAX + -0x4],0x59fd94 ; 004c6e4b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059fd94
+    MOV dword ptr [EAX + -0x4],0x59fd94 ; 004c6e4b | g_CLightGunVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c6e52
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x574],0x0     ; 004c6e57

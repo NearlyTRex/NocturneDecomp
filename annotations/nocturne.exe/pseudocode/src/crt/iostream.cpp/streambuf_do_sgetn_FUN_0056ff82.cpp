@@ -1,54 +1,54 @@
 // Name: crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82
 // Address: 0056ff82
 // Address Range: [[0056ff82, 00570006]]
-// Convention: unknown
-// Signature: int crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82(int param_1,undefined4 *param_2,uint param_3)
+// Convention: __watcallStack
+// Signature: int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 
 #include "nocturne.h"
 
-int crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82(int param_1,uint *param_2,uint param_3)
+int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82(streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read)
 
 {
   uint uVar1;
   int iVar2;
   uint uVar3;
-  uint *puVar4;
-  uint *puVar5;
+  char *pcVar4;
+  char *pcVar5;
   byte bVar6;
   int local_14;
   
   bVar6 = 0;
   local_14 = 0;
   do {
-    if ((int)param_3 < 1) {
+    if ((int)bytes_to_read < 1) {
       return local_14;
     }
-    uVar1 = *(int *)(param_1 + 0x10) - *(int *)(param_1 + 0x14);
+    uVar1 = (int)buffer->__get_end - (int)buffer->__get_ptr;
     if ((int)uVar1 < 1) {
-      iVar2 = (**(code **)(*(int *)(param_1 + 0x28) + 0x10))(param_1);
+      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))(buffer);
       if (iVar2 == -1) {
         return local_14;
       }
-      uVar1 = *(int *)(param_1 + 0x10) - *(int *)(param_1 + 0x14);
+      uVar1 = (int)buffer->__get_end - (int)buffer->__get_ptr;
     }
-    if ((int)param_3 < (int)uVar1) {
-      uVar1 = param_3;
+    if ((int)bytes_to_read < (int)uVar1) {
+      uVar1 = bytes_to_read;
     }
-    puVar4 = *(uint **)(param_1 + 0x14);
-    puVar5 = param_2;
+    pcVar4 = buffer->__get_ptr;
+    pcVar5 = output_buffer;
     for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+      *(uint *)pcVar5 = *(uint *)pcVar4;
+      pcVar4 = pcVar4 + (uint)bVar6 * -8 + 4;
+      pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
     }
     for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(byte *)puVar5 = *(byte *)puVar4;
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);
-      puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
+      *pcVar5 = *pcVar4;
+      pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+      pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
     }
-    param_3 = param_3 - uVar1;
-    param_2 = (uint *)((int)param_2 + uVar1);
+    bytes_to_read = bytes_to_read - uVar1;
+    output_buffer = (void *)((int)output_buffer + uVar1);
     local_14 = local_14 + uVar1;
-    *(uint *)(param_1 + 0x14) = *(int *)(param_1 + 0x14) + uVar1;
+    buffer->__get_ptr = buffer->__get_ptr + uVar1;
   } while( true );
 }

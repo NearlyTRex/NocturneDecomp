@@ -117,7 +117,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
             (&local_210,"autoUseHealth",0x01C775EC[0x32]);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_210,"Debug");
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
-            (&local_210,"logConsoleFlag",*(uint *)PTR_DAT_005ad350);
+            (&local_210,"logConsoleFlag",*(int *)PTR_DAT_005ad350);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
             (&local_210,"headOfHorrorCheat",0x01C775EC[0x85]);
   return;

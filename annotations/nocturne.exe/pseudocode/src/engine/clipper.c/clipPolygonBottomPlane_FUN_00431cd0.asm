@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_clipper_c_clipPolygonBottomPlane_FUN_00431cd0(int *param_1,int param_2,int param_3)
+; int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00431cd0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   input_vertices
+; SRenderVertex * * Stack[0x8]:4   output_vertices
+; int              Stack[0xc]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -111,7 +115,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431d8a | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431d8f
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00431d93
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431d98
     JMP 0x00431d26                      ; 00431d9b
         ;   XREF to: 00431d26 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -142,7 +146,7 @@ section .text
     MOV [0x00767b38],EAX                ; 00431de2 | DAT_00767b38
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 00431de7
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_00431730 ; 00431deb
-        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_00431730()
+        ;   XREF to: 00431730 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_00431730(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 00431df0
     JMP 0x00431d26                      ; 00431df3
         ;   XREF to: 00431d26 (UNCONDITIONAL_JUMP)  ; caseD_3

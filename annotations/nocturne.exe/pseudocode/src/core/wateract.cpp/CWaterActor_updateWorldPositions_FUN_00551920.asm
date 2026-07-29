@@ -52,7 +52,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00551962
     PUSH ECX                            ; 00551966
     CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40 ; 00551967
-        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40()
+        ;   XREF to: 0044da40 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [EAX]                 ; 0055196c
     FADD float ptr [EDI]                ; 0055196e
     ADD ESP,0xc                         ; 00551970

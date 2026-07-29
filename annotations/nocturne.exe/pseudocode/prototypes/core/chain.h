@@ -61,11 +61,11 @@ undefined4 FUN_0042cd10(void);
 
 // Original: core_chain.cpp_fastSqrt_FUN_0042cd20
 // Address: 0042cd20
-int fastSqrt(void);
+float __cdecl fastSqrt(float value);
 
-// Original: core_chain.cpp_FUN_0042cd30
+// Original: core_chain.cpp_CChain_dtor_FUN_0042cd30
 // Address: 0042cd30
-CDemonActor * FUN_0042cd30(CDemonActor *param_1,byte param_2);
+CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
 // Original: core_chain.cpp_FUN_0042cda0
 // Address: 0042cda0

@@ -38,8 +38,8 @@ uint core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CDemonActor *param_1,CVec
   float local_10;
   
   this_ptr = (CDeformableModelInstance *)(param_1 + 1);
-  local_10 = (float)core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(this_ptr,0xb)
-  ;
+  local_10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
+                       ((CMotionController *)this_ptr,0xb);
   if (local_10 <= 0.0) {
     return 0;
   }

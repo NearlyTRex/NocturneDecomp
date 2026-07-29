@@ -9,11 +9,11 @@ void __cdecl staticInit(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0046c300
 // Address: 0046c300
-void CDemonTriangle::readDataCSV(void);
+void __cdecl CDemonTriangle::readDataCSV(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_writeDataCSV_FUN_0046c350
 // Address: 0046c350
-void CDemonTriangle::writeDataCSV(void);
+void __cdecl CDemonTriangle::writeDataCSV(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_FUN_0046c3c0
 // Address: 0046c3c0
@@ -33,7 +33,7 @@ void __cdecl CDemonTriangle::buildCollision(CDemonTriangle *this_ptr,CVector3f *
 
 // Original: core_dtri.cpp_rayTriangleIntersection_FUN_0046c620
 // Address: 0046c620
-float rayTriangleIntersection(float *param_1,float *param_2,float *param_3);
+float __cdecl rayTriangleIntersection(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
 
 // Original: core_dtri.cpp_cylinderEdgeIntersection_FUN_0046c820
 // Address: 0046c820
@@ -61,7 +61,7 @@ void FUN_0046d4c0(void);
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
 // Address: 0046d4e0
-void clipLineToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dtri.cpp_FUN_0046d680
 // Address: 0046d680
@@ -89,7 +89,7 @@ void FUN_0046dd80(float param_1);
 
 // Original: core_dtri.cpp_clipTriangleToBounds_FUN_0046df40
 // Address: 0046df40
-undefined4 clipTriangleToBounds(undefined4 *param_1,float *param_2,float *param_3);
+int __cdecl clipTriangleToBounds(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 
 // Original: core_dtri.cpp_getClippedTriangleCount_FUN_0046e950
 // Address: 0046e950
@@ -97,7 +97,7 @@ int __cdecl getClippedTriangleCount(int flags);
 
 // Original: core_dtri.cpp_buildClipTriangleFan_FUN_0046e960
 // Address: 0046e960
-undefined4 buildClipTriangleFan(int param_1);
+CDemonTriangle * __cdecl buildClipTriangleFan(int flags);
 
 // Original: core_dtri.cpp_FUN_0046e9d0
 // Address: 0046e9d0
@@ -109,7 +109,7 @@ undefined * FUN_0046e9e0(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0
 // Address: 0046e9f0
-void CDemonTriangle::render(float *param_1);
+void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_FUN_0046eb40
 // Address: 0046eb40

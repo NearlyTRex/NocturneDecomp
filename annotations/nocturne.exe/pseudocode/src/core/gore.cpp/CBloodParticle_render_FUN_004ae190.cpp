@@ -54,7 +54,8 @@ void core_gore_cpp_CBloodParticle_render_FUN_004ae190(CVector3f *param_1)
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,param_1);
-  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(DAT_005ae704,&DAT_01c78ca8,0);
+  engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
+            (DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);
   local_ac = -0.1;
   local_a8 = -0.1;
   local_a4 = 0;
@@ -161,7 +162,7 @@ LAB_004ae466:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (DAT_005ae704,&local_dc);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,&DAT_01c78ca8,0);
+              (DAT_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);
     local_ac = local_f0 * (float)-0.10000000000000001;
     local_a4 = 0;
     local_d0.x = (int)ROUND(local_ac * 256.0f);

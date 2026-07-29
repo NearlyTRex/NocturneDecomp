@@ -35,9 +35,9 @@ undefined4 CSmiley::attractActorToward(CCharacter *param_1,int param_2);
 // Address: 00520ae0
 void CSmiley::archive(CEnemy *param_1);
 
-// Original: core_smiley.cpp_FUN_00520b40
+// Original: core_smiley.cpp_CSmiley_reset_FUN_00520b40
 // Address: 00520b40
-undefined4 FUN_00520b40(void);
+undefined4 CSmiley::reset(void);
 
 // Original: core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60
 // Address: 00520b60
@@ -55,6 +55,6 @@ undefined4 CSmiley::getTargetPoints(int param_1,CVector3f *param_2);
 // Address: 005210b0
 void FUN_005210b0(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_smiley.cpp_FUN_005210d0
+// Original: core_smiley.cpp_CSmiley_dtor_FUN_005210d0
 // Address: 005210d0
-CDemonActor * FUN_005210d0(CDemonActor *param_1,byte param_2);
+CSmiley * __cdecl CSmiley::dtor(CSmiley *this_ptr,uint flags);

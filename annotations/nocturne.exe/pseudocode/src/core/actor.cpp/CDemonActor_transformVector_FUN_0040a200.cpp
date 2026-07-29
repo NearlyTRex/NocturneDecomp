@@ -1,14 +1,14 @@
 // Name: core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 // Address: 0040a200
 // Address Range: [[0040a200, 0040a21e]]
-// Convention: unknown
-// Signature: undefined4 core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(int param_1,undefined4 param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor *this_ptr,CVector3f *output,CVector3f *input)
 
 #include "nocturne.h"
 
-uint core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(int param_1,uint param_2,uint param_3)
+CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor *this_ptr,CVector3f *output,CVector3f *input)
 
 {
-  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(param_1 + 0x3c,param_2,param_3);
-  return param_2;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&this_ptr->orient_matrix,output,input);
+  return output;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_unknown_c_OpenModeStringParser_FUN_005653e0(byte *param_1,byte *param_2)
+; int __cdecl crt_unknown_c_OpenModeStringParser_FUN_005653e0(char *mode_string,char *output_flags)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   mode_string
+; char *           Stack[0x8]:4   output_flags
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

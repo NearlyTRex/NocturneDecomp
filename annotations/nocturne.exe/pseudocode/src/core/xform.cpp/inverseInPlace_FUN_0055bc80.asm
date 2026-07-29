@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_inverseInPlace_FUN_0055bc80(void)
+; void __cdecl core_xform_cpp_inverseInPlace_FUN_0055bc80(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ;

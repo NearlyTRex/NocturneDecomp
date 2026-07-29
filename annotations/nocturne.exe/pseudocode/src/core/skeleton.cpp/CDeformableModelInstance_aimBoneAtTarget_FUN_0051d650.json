@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 418,
+    "complexity_score": 230,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 32,
+    "pseudocode_lines": 65,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_param",
       "warning_type_propagation"
     ],
-    "total_lines": 180
+    "total_lines": 177
   },
   "cross_references": [],
   "function": {
@@ -148,9 +147,9 @@
         "0051d794"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650",
-    "signature": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,undefined4 param_5,CDeformableModel_MotionBlendWeightFunc *param_6)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
   },
   "function_calls": [
     {
@@ -201,9 +200,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -242,12 +241,55 @@
     "pcode_op_count": 619
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "target_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_weight",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "base_orientation",
+        "offset": 20,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_callback",
+        "offset": 24,
+        "size": 4,
+        "type": "CDeformableModel_MotionBlendWeightFunc *"
+      }
+    ]
   },
   "static_analysis": {
     "analyzed_file": "CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650.cpp",
@@ -257,56 +299,56 @@
         {
           "check_id": "negativeIndex",
           "column": 13,
-          "line": 51,
+          "line": 48,
           "message": "Array 'auStack_88[7]' accessed at index -7, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 44,
-          "line": 57,
+          "line": 54,
           "message": "Array 'auStack_88[7]' accessed at index 8, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 18,
-          "line": 59,
+          "line": 56,
           "message": "Array 'auStack_88[7]' accessed at index 9, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 48,
-          "line": 64,
+          "line": 61,
           "message": "Array 'auStack_88[7]' accessed at index 12, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 18,
-          "line": 66,
+          "line": 63,
           "message": "Array 'auStack_88[7]' accessed at index 13, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 65,
-          "line": 72,
+          "line": 69,
           "message": "Array 'auStack_88[7]' accessed at index 16, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 23,
-          "line": 73,
+          "line": 70,
           "message": "Array 'auStack_88[7]' accessed at index 17, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 17,
-          "line": 70,
+          "line": 67,
           "message": "Uninitialized variable: fStack_4c",
           "severity": "error"
         }
@@ -325,54 +367,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650(CDeformableModelInstance *param_1,float *param_2,float param_3,int param_4,uint param_5,CDeformableModel_MotionBlendWeightFunc *param_6)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
       "match": "afStackY_1888",
@@ -381,64 +375,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 <= (float)0.001) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&CStack_14,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,&CStack_14,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_2c = *param_2 - pCVar1->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_28 = param_2[1] - pCVar1->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_24 = param_2[2] - pCVar1->z;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 36,
       "match": "&stack0xffffff54",
       "severity": "moderate",
       "text": "pfVar4 = &stack0xffffff54;",
@@ -446,55 +384,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 39,
       "match": "&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar2 * 0xfffffffe * 4) =",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_0055d130(param_5,puVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&CStack_9c,param_3,param_4,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,&CStack_9c,param_3,param_4,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,&CStack_9c,param_3,param_4,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(param_1,&CStack_9c,param_3,param_4,param_6);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer value `&CStack_3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 38,
       "match": "(int)&CStack_3c",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)&CStack_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -502,7 +400,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 39,
       "match": "(int)&stack0xffffff58",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -510,7 +408,7 @@
     },
     {
       "description": "Pointer value `&CStack_3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
+      "line": 40,
       "match": "(int)&CStack_3c",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + 4);",
@@ -518,7 +416,7 @@
     },
     {
       "description": "Pointer value `&CStack_9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 61,
       "match": "(int)&CStack_9c",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)&CStack_9c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -526,7 +424,7 @@
     },
     {
       "description": "Pointer value `&CStack_9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 65,
+      "line": 62,
       "match": "(int)&CStack_9c",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_9c + (uint)bVar2 * -8 + 4) = auStack_88[(uint)bVar2 * -2 + 0x10];",
@@ -534,7 +432,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)&CStack_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -542,7 +440,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 42,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -550,7 +448,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + 4);",
@@ -558,7 +456,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)&CStack_9c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -566,7 +464,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&CStack_9c + (uint)bVar2 * -8 + 4) = auStack_88[(uint)bVar2 * -2 + 0x10];",
@@ -574,7 +472,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 8, which is out of bounds.",
-      "line": 57,
+      "line": 54,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_88[(uint)bVar2 * -2] = auStack_88[(uint)bVar2 * -2 + 8];",
@@ -582,7 +480,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 9, which is out of bounds.",
-      "line": 59,
+      "line": 56,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_88[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 9];",
@@ -590,7 +488,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 12, which is out of bounds.",
-      "line": 64,
+      "line": 61,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_88[(uint)bVar2 * -2 + 4] = auStack_88[(uint)bVar2 * -2 + 0xc];",
@@ -598,7 +496,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 13, which is out of bounds.",
-      "line": 66,
+      "line": 63,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "auStack_88[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0xd];",
@@ -606,7 +504,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 16, which is out of bounds.",
-      "line": 72,
+      "line": 69,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "*(uint *)((int)&CStack_9c + (uint)bVar2 * -8 + 4) = auStack_88[(uint)bVar2 * -2 + 0x10];",
@@ -614,7 +512,7 @@
     },
     {
       "description": "Array 'auStack_88[7]' accessed at index 17, which is out of bounds.",
-      "line": 73,
+      "line": 70,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "*puVar3 = auStack_88[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x11];",
@@ -622,7 +520,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_4c",
-      "line": 70,
+      "line": 67,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "CStack_9c.w = fStack_4c;",

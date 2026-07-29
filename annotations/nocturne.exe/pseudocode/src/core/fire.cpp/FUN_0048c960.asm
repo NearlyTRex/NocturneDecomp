@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_0059d224 = 004ef040
+;   CParticle_vtable g_CRainDropVTable
 ;
 ; Called Functions:
 ;   core_particle.cpp_CParticle_ctor_FUN_004ef010
@@ -20,6 +20,6 @@ section .text
     CALL core_particle.cpp_CParticle_ctor_FUN_004ef010 ; 0048c965
         ;   XREF to: 004ef010 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_ctor_FUN_004ef010(CParticle * this_ptr)
     ADD ESP,0x4                         ; 0048c96a
-    MOV dword ptr [EAX + 0x34],0x59d224 ; 0048c96d | PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_0059d224
+    MOV dword ptr [EAX + 0x34],0x59d224 ; 0048c96d | g_CRainDropVTable
     RET                                 ; 0048c974
 

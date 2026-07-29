@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_CPassenger_archive_FUN_004efb30(int param_1)
+; void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -32,7 +32,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004efb32
     PUSH EBX                            ; 004efb36
     CALL core_npc.cpp_FUN_004eed10      ; 004efb37
-        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eed10()
+        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eed10(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004efb3c
     PUSH 0x58cc10                       ; 004efb3f | = "transformEvent"
     LEA ESI,[EBX + 0x1f570]             ; 004efb44
@@ -63,7 +63,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004efb90
     PUSH ESI                            ; 004efb96
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004efb97
-        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
+        ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004efb9c
     PUSH 0x58cc41                       ; 004efb9f | = "motion state"
     PUSH ESI                            ; 004efba4

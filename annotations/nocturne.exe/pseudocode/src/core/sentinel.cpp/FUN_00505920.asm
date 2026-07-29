@@ -11,7 +11,7 @@
 ;   TerminatedCString s_sentinel_dfm_0058ff27
 ;   float FLOAT_005a173c = 50
 ;   float FLOAT_005a1740 = 100
-;   undefined1* PTR_core_sentinel.cpp_CSentinel_setup_FUN_00505990_005a1754 = 00505990
+;   CEnemy_full_vtable g_CSentinelVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560
@@ -32,9 +32,9 @@ section .text
     MOV EBX,EAX                         ; 00505933
     ADD EAX,0x150                       ; 00505935
     PUSH EAX                            ; 0050593a
-    MOV dword ptr [EAX + -0x4],0x5a1754 ; 0050593b | PTR_core_sentinel.cpp_CSentinel_setup_FUN_00505990_005a1754
+    MOV dword ptr [EAX + -0x4],0x5a1754 ; 0050593b | g_CSentinelVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 00505942
-        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005a173c]          ; 00505947 | FLOAT_005a173c
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0050594d
     FLD float ptr [0x005a1740]          ; 00505957 | FLOAT_005a1740

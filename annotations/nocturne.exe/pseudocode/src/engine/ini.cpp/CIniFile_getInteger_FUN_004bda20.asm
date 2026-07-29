@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
+; void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(CIniFile *this_ptr,char *key_name,int *value_ptr)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key_name
+; int *            Stack[0xc]:4   value_ptr
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
@@ -46,7 +50,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x7c]      ; 004bda4a
     PUSH EBX                            ; 004bda4e
     CALL engine_ini.cpp_CIniFile_getString_FUN_004bd910 ; 004bda4f
-        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_getString_FUN_004bd910()
+        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004bd910(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     ADD ESP,0x10                        ; 004bda54
     MOV ESI,dword ptr [ESP + 0x78]      ; 004bda57
     PUSH ESI                            ; 004bda5b
@@ -54,7 +58,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bda61
     PUSH EAX                            ; 004bda65
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004bda66
-        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sscanf_FUN_00566b5c()
+        ;   XREF to: 00566b5c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_00566b5c(char * str, char * format)
     ADD ESP,0xc                         ; 004bda6b
     ADD ESP,0x64                        ; 004bda6e
     POP ESI                             ; 004bda71

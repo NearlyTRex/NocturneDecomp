@@ -45,7 +45,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 00573948
     MOV dword ptr [ESP + 0x8],EBX       ; 0057394c
     CALL crt_string.c_char_in_set_FUN_00572a90 ; 00573950
-        ;   XREF to: 00572a90 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_char_in_set_FUN_00572a90()
+        ;   XREF to: 00572a90 (UNCONDITIONAL_CALL)  ; char * crt_string.c_char_in_set_FUN_00572a90(char * charset, wchar_t wc)
     MOV EBP,EAX                         ; 00573955
     ADD ESP,0x8                         ; 00573957
     TEST EAX,EAX                        ; 0057395a

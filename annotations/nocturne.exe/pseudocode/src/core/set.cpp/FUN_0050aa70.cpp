@@ -1,14 +1,14 @@
 // Name: core_set.cpp_FUN_0050aa70
 // Address: 0050aa70
 // Address Range: [[0050aa70, 0050ab96]]
-// Convention: unknown
-// Signature: void core_set_cpp_FUN_0050aa70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0050aa70(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_set_cpp_FUN_0050aa70(void)
+void __cdecl core_set_cpp_FUN_0050aa70(CDemonSet *this_ptr)
 
 {
   uint *puVar1;

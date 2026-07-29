@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_font_cpp_isRectangleClipped_FUN_0048fd00(int param_1,int param_2,int param_3,int param_4)
+; int __cdecl engine_font_cpp_isRectangleClipped_FUN_0048fd00(int rect_width,int rect_height,int rect_x,int rect_y)
 ;
+; Parameters:
+; int              Stack[0x4]:4   rect_width
+; int              Stack[0x8]:4   rect_height
+; int              Stack[0xc]:4   rect_x
+; int              Stack[0x10]:4   rect_y
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c58

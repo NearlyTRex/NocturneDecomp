@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_00526150(int param_1,undefined4 param_2)
+; void __cdecl sound_sndmain_cpp_FUN_00526150(int index,void *userdata)
 ;
+; Parameters:
+; int              Stack[0x4]:4   index
+; void *           Stack[0x8]:4   userdata
 ;
 ; XREF[1]:
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d330

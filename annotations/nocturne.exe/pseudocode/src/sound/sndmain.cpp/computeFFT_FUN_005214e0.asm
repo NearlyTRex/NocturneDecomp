@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_computeFFT_FUN_005214e0(undefined4 *param_1,int param_2,int param_3,int param_4)
+; void __cdecl sound_sndmain_cpp_computeFFT_FUN_005214e0(float *input,int size,float *output_real,float *output_imag)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input
+; int              Stack[0x8]:4   size
+; float *          Stack[0xc]:4   output_real
+; float *          Stack[0x10]:4   output_imag
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined8       Stack[-0xa8]:8  local_a8

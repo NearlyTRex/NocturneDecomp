@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabriella *param_1,float param_2)
+; void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(CGabriella *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0xa0]:1  local_a0
 ; undefined4       Stack[-0x9c]:4  local_9c
@@ -198,7 +201,7 @@ section .text
     PUSH 0x2                            ; 0049755c
     PUSH ESI                            ; 0049755e
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 0049755f
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x98],EAX      ; 00497564
     FLD float ptr [ESP + 0x98]          ; 0049756b
     ADD ESP,0x8                         ; 00497572
@@ -210,7 +213,7 @@ section .text
     PUSH 0x1                            ; 00497580
     PUSH ESI                            ; 00497582
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 00497583
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x98],EAX      ; 00497588
     FLD float ptr [ESP + 0x98]          ; 0049758f
     ADD ESP,0x8                         ; 00497596
@@ -242,7 +245,7 @@ section .text
         ;   Label: LAB_004975dc
     PUSH ESI                            ; 004975de
     CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0 ; 004975df
-        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0()
+        ;   XREF to: 004e18d0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x98],EAX      ; 004975e4
     FLD float ptr [ESP + 0x98]          ; 004975eb
     ADD ESP,0x8                         ; 004975f2
@@ -301,7 +304,7 @@ section .text
     PUSH 0x41700000                     ; 00497682
     PUSH 0x41200000                     ; 00497687
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0049768c
-        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0()
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     MOV dword ptr [ESP + 0x98],EAX      ; 00497691
     FLD float ptr [ESP + 0x98]          ; 00497698
     ADD ESP,0x8                         ; 0049769f

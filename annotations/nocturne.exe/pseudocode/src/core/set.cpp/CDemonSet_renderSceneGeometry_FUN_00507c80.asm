@@ -205,14 +205,14 @@ section .text
         ;   XREF to: 00507e29 (CONDITIONAL_JUMP)  ; LAB_00507e29
     PUSH EAX                            ; 00507e20
     CALL core_glass.cpp_FUN_004ac7c0    ; 00507e21
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ac7c0()
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507e26
     PUSH 0x1                            ; 00507e29
         ;   Label: LAB_00507e29
     PUSH EDI                            ; 00507e2b
     PUSH EBX                            ; 00507e2c
     CALL core_set.cpp_FUN_0050e080      ; 00507e2d
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507e32
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
@@ -312,14 +312,14 @@ section .text
         ;   XREF to: 00507f3d (CONDITIONAL_JUMP)  ; LAB_00507f3d
     PUSH EAX                            ; 00507f34
     CALL core_glass.cpp_FUN_004ac7c0    ; 00507f35
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ac7c0()
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507f3a
     PUSH 0x0                            ; 00507f3d
         ;   Label: LAB_00507f3d
     PUSH ESI                            ; 00507f3f
     PUSH EBX                            ; 00507f40
     CALL core_set.cpp_FUN_0050e080      ; 00507f41
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507f46
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b

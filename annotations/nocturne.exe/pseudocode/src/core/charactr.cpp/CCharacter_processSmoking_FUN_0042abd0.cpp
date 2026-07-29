@@ -17,9 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
   CVector3f local_70;
   CVector3f local_64;
   CVector3f local_58;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
+  CVector3f local_4c;
   CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
@@ -34,10 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
          (fVar1 = this_ptr->smoke_emit_timer - delta_time, this_ptr->smoke_emit_timer = fVar1,
          fVar1 < 0.0)) {
         this_ptr->smoke_emit_timer = this_ptr->smoke_emit_timer + 0.2f;
-        local_48 = 0xbf000000;
-        local_4c = 0;
-        local_44 = 0x3f800000;
-        core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,&local_1c,&local_4c);
+        local_4c.y = -0.5;
+        local_4c.x = 0.0;
+        local_4c.z = 1.0;
+        core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&local_1c,&local_4c)
+        ;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                            (&this_ptr->model);
         iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(pCVar3,"Bip01 head",0);

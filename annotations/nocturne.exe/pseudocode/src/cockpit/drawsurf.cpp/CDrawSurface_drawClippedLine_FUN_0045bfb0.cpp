@@ -1,12 +1,12 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0
 // Address: 0045bfb0
 // Address Range: [[0045bfb0, 0045c043]]
-// Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
   int iVar1;
@@ -15,21 +15,20 @@ void cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface
   int in_stack_00000034;
   int in_stack_00000038;
   
-  param_2 = param_2 + param_1->x;
-  param_3 = param_3 + param_1->y;
-  param_4 = param_4 + param_1->x;
-  param_5 = param_5 + param_1->y;
+  x1 = x1 + this_ptr->x;
+  y1 = y1 + this_ptr->y;
+  x2 = x2 + this_ptr->x;
+  y2 = y2 + this_ptr->y;
   iVar1 = cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440
-                    (param_1,(int *)&stack0x00000008,(int *)&stack0x0000000c,(int *)&stack0x00000010
-                     ,&param_5,param_1->clip_left,param_1->clip_top,param_1->clip_right,
-                     param_1->clip_bottom);
+                    (this_ptr,&x1,&y1,&x2,&y2,this_ptr->clip_left,this_ptr->clip_top,
+                     this_ptr->clip_right,this_ptr->clip_bottom);
   if (iVar1 == 0) {
     return;
   }
-  param_4 = in_stack_00000038;
-  param_3 = in_stack_00000034;
-  param_2 = in_stack_00000030;
+  x2 = in_stack_00000038;
+  y1 = in_stack_00000034;
+  x1 = in_stack_00000030;
   cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0
-            (param_1,in_stack_0000002c,in_stack_00000030,in_stack_00000034,in_stack_00000038);
+            (this_ptr,in_stack_0000002c,in_stack_00000030,in_stack_00000034,in_stack_00000038);
   return;
 }

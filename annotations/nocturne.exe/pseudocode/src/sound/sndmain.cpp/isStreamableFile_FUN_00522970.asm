@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_isStreamableFile_FUN_00522970(char *param_1)
+; int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_00522970(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_00592778

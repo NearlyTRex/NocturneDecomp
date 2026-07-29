@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)
+; int * core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)
 ;
 ;
 ; Called Functions:
@@ -26,25 +26,25 @@ section .text
     ADD EBX,0x15b02c                    ; 00506e60
     PUSH EBX                            ; 00506e66
     CALL core_set.cpp_FUN_0050eb60      ; 00506e67
-        ;   XREF to: 0050eb60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050eb60()
+        ;   XREF to: 0050eb60 (UNCONDITIONAL_CALL)  ; SVDBox * core_set.cpp_FUN_0050eb60(SVDBox * objs, uint flags)
     ADD ESP,0x8                         ; 00506e6c
     PUSH 0x0                            ; 00506e6f
     SUB EAX,0x554                       ; 00506e71
     PUSH EAX                            ; 00506e76
     CALL core_set.cpp_FUN_0050eb40      ; 00506e77
-        ;   XREF to: 0050eb40 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050eb40()
+        ;   XREF to: 0050eb40 (UNCONDITIONAL_CALL)  ; SRoom * core_set.cpp_FUN_0050eb40(SRoom * objs, uint flags)
     ADD ESP,0x8                         ; 00506e7c
     PUSH 0x0                            ; 00506e7f
     SUB EAX,0x141490                    ; 00506e81
     PUSH EAX                            ; 00506e86
     CALL core_set.cpp_FUN_0050eb20      ; 00506e87
-        ;   XREF to: 0050eb20 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050eb20()
+        ;   XREF to: 0050eb20 (UNCONDITIONAL_CALL)  ; C3DSLight * core_set.cpp_FUN_0050eb20(C3DSLight * objs, uint flags)
     ADD ESP,0x8                         ; 00506e8c
     PUSH 0x0                            ; 00506e8f
     SUB EAX,0x19644                     ; 00506e91
     PUSH EAX                            ; 00506e96
     CALL core_set.cpp_FUN_0050eb00      ; 00506e97
-        ;   XREF to: 0050eb00 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050eb00()
+        ;   XREF to: 0050eb00 (UNCONDITIONAL_CALL)  ; C3DSCamera * core_set.cpp_FUN_0050eb00(C3DSCamera * objs, uint flags)
     ADD ESP,0x8                         ; 00506e9c
     SUB EAX,0x4                         ; 00506e9f
     POP EBX                             ; 00506ea2

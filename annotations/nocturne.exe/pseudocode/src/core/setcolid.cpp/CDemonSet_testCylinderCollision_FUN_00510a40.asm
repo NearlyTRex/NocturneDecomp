@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8)
+; float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   start_x
+; float            Stack[0xc]:4   start_z
+; float            Stack[0x10]:4   dir_x
+; float            Stack[0x14]:4   dir_z
+; float            Stack[0x18]:4   radius
+; float            Stack[0x1c]:4   bottom_y
+; float            Stack[0x20]:4   top_y
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
 ; undefined4       Stack[-0x14c]:4  local_14c
@@ -621,7 +630,7 @@ section .text
     PUSH EBX                            ; 0051122e
     MOV dword ptr [ESP + 0x244],ESI     ; 0051122f
     CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 ; 00511236
-        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
+        ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 0051123b
     FLD float ptr [EBP + 0x30]          ; 0051123e
     SUB ESP,0x4                         ; 00511241
@@ -664,7 +673,7 @@ section .text
     PUSH EAX                            ; 005112e1
     PUSH EBX                            ; 005112e2
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 005112e3
-        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_transformVector_FUN_0040a200()
+        ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV ESI,EAX                         ; 005112e8
     LEA EAX,[ESP + 0x16c]               ; 005112ea
     ADD ESP,0xc                         ; 005112f1

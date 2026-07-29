@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_adjustAimAngleForOffset_FUN_0053d700(void)
+; void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0053d700(float *angle,float distance,float offset)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   angle
+; float            Stack[0x8]:4   distance
+; float            Stack[0xc]:4   offset
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -71,7 +75,7 @@ section .text
         ;   Label: LAB_0053d768
     PUSH dword ptr [EBX]                ; 0053d76a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040df00 ; 0053d76c
-        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040df00()
+        ;   XREF to: 0040df00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040df00(float angle_radians)
     MOV dword ptr [ESP + 0x18],EAX      ; 0053d771
     MOV EAX,dword ptr [ESP + 0x18]      ; 0053d775
     MOV dword ptr [EBX],EAX             ; 0053d779

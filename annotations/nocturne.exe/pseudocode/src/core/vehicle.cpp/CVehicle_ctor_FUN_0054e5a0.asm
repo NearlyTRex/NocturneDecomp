@@ -20,7 +20,7 @@
 ;   undefined4 s_chicpath_pth_005972fc+2
 ;   undefined4 s_chicpath_pth_005972fc+3
 ;   WatcomTypeInfo g_CKeyFramedModelInstanceTypeInfo_0059b030
-;   undefined1* PTR_core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0_005a3c44 = 0054e7f0
+;   CDemonActor_vtable g_CVehicleVTable
 ;   WatcomTypeInfo g_CTireTypeInfo_005a3d20
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054e5a3
     PUSH EBX                            ; 0054e5a7
     CALL core_actor.cpp_FUN_00409d30    ; 0054e5a8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054e5ad
     ADD EAX,0x150                       ; 0054e5b0
     PUSH EAX                            ; 0054e5b5
@@ -71,7 +71,7 @@ section .text
     PUSH 0x5972c1                       ; 0054e5fc | = "32ford.kfm"
     LEA EAX,[EBX + 0x150]               ; 0054e601
     PUSH EAX                            ; 0054e607
-    MOV dword ptr [EBX + 0x14c],0x5a3c44 ; 0054e608 | PTR_core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0_005a3c44
+    MOV dword ptr [EBX + 0x14c],0x5a3c44 ; 0054e608 | g_CVehicleVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e612
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054e617

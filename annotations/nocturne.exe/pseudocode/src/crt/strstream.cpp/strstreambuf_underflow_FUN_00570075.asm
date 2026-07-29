@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(int param_1)
+; int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(strstreambuf *this_ptr)
 ;
+; Parameters:
+; strstreambuf *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

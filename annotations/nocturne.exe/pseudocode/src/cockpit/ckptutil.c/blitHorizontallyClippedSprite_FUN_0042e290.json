@@ -3,54 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 1,
-        "line": 209,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 211,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 90,
-        "line": 137,
-        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 99,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 101,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 101,
-        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 176,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 183,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
         "column": 60,
         "line": 218,
         "message": "unknown type name 'HMODULE'"
@@ -72,18 +24,6 @@
         "column": 20,
         "line": 471,
         "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 478,
-        "message": "unknown type name 'PEXCEPTION_RECORD'"
-      },
-      {
-        "category": "other",
-        "column": 160,
-        "line": 200,
-        "message": "unknown type name 'code'"
       },
       {
         "category": "other",
@@ -114,6 +54,66 @@
         "column": 80,
         "line": 164,
         "message": "unknown type name 'LPOVERLAPPED'"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 166,
+        "message": "unknown type name 'PLONG'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 169,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 172,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 173,
+        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 174,
+        "message": "unknown type name 'LPJOYCAPSA'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 176,
+        "message": "unknown type name 'HKEY'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 176,
+        "message": "unknown type name 'REGSAM'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 176,
+        "message": "unknown type name 'PHKEY'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 178,
+        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 181,
+        "message": "unknown type name 'WNDCLASSA'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 634,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 56,
+    "pseudocode_lines": 43,
+    "suspect_count": 10,
     "suspect_types": [
-      "concat_reconstruction",
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 174
   },
   "cross_references": [],
   "function": {
@@ -147,9 +146,9 @@
         "0042e3ca"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_0042e290",
-    "signature": "undefined8 cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)"
+    "signature": "void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param,int src_y_offset,int src_stride)"
   },
   "function_calls": [
     {
@@ -188,9 +187,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -228,10 +227,10 @@
     "pcode_op_count": 661
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 76,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -275,25 +274,64 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "unused_param",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "src_y_offset",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "src_stride",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "blitHorizontallyClippedSprite_FUN_0042e290.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 21,
-          "line": 47,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -305,452 +343,76 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "ulonglong cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(void *)((int)sprite_data",
       "severity": "moderate",
-      "text": "code *pcVar3;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar1 = (param_4 - param_2) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = (param_4 - param_2) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar3 = (code *)cockpit_ckptutil_c_FUN_0042d130();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b761c / 2 + param_3 * param_8 + param_1 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b761c / 2 + param_3 * param_8 + param_1 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b761c / 2 + param_3 * param_8 + param_1 + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b761c / 2 + param_3 * param_8 + param_1 + param_2;",
-      "type": "unnamed_param"
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + DAT_005b761c / 2 + dest_y * src_stride);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 18,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "iVar6 = DAT_005b761c / 2 + param_3 * param_8 + param_1 + param_2;",
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + DAT_005b761c / 2 + dest_y * src_stride);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "param_5 = param_5 - param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar4 = (param_3 + param_7) * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "iVar4 = (param_3 + param_7) * 4;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 21,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 8) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(int *)(&DAT_01bd2fa0 + iVar4) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = *(int *)(&DAT_01bd2fa0 + iVar4) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 22,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "param_2 = *(int *)(&DAT_01bd2fa0 + iVar4) + param_2;",
+      "text": "iVar3 = *(int *)(&DAT_01bd2fa0 + iVar3) + start_x;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_3 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*pcVar3)(param_2 - param_6,iVar6,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(*pcVar3)(param_2 - param_6,iVar6,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + param_8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "} while (param_3 < param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "} while (param_3 < param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(&DAT_01bd2fa0 + iVar4) + param_2 * 2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(void *)((int)src_buffer",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 34,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(&DAT_01bd2fa0 + iVar4) + param_2 * 2;",
+      "text": "iVar3 = *(int *)(&DAT_01bd2fa0 + iVar3) + start_x * 2;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_3 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(*pcVar3)(iVar7 + param_6 * -2,iVar6,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + param_8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "} while (param_3 < param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "} while (param_3 < param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 34,
-      "match": "CONCAT44",
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(void *)((int)src_buffer",
       "severity": "moderate",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "concat_reconstruction"
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 48,
-      "match": "CONCAT44",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "return CONCAT44(param_5,param_8);",
-      "type": "concat_reconstruction"
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 52,
-      "match": "CONCAT44",
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)src_buffer",
       "severity": "moderate",
-      "text": "return CONCAT44(iVar5,iVar4);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 47,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar2 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
     }
   ]
 }

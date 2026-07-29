@@ -15,8 +15,7 @@ CEnemy * core_sentinel_cpp_FUN_00505920(CEnemy *param_1)
   CEnemy *pCVar4;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  (pCVar4->base).base.vtable._ub =
-       (CDemonActor_vtable *)&PTR_core_sentinel_cpp_CSentinel_setup_FUN_00505990_005a1754;
+  (pCVar4->base).base.vtable._ub = &g_CSentinelVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar4->base).model,"sentinel.dfm");
   fVar2 = 50.0f;

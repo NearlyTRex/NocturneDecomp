@@ -70,7 +70,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x64]      ; 0042d957
     MOV dword ptr [ESP + 0x48],ECX      ; 0042d95b
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042d95f
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d130()
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
     MOV dword ptr [ESP + 0x30],EAX      ; 0042d964
     MOV EAX,EBP                         ; 0042d968
     SHL EAX,0x5                         ; 0042d96a

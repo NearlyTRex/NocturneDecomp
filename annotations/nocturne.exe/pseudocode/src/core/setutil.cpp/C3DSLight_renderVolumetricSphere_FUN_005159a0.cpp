@@ -1,19 +1,18 @@
 // Name: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0
 // Address: 005159a0
 // Address Range: [[005159a0, 00515c30]]
-// Convention: unknown
-// Signature: void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DSLight *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
+void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DSLight *this_ptr)
 
 {
   SRenderVertex *pSVar1;
-  CDemonRenderer *this_ptr;
+  CDemonRenderer *this_ptr_00;
   int iVar2;
   int iVar3;
   float10 fVar4;
@@ -22,7 +21,6 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
   float10 fVar7;
   float10 fVar8;
   double dVar9;
-  int in_stack_00000004;
   CVector3i local_50;
   float local_44;
   float local_40;
@@ -36,11 +34,11 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
   int local_c;
   int local_8;
   
-  if ((*(uint *)(in_stack_00000004 + 0x11d4) & 0x7fffffff) == 0) {
+  if (ABS(this_ptr->atten_end) == 0.0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,(CVector3f *)(in_stack_00000004 + 0x104));
+            (DAT_005ae704,&this_ptr->pos);
   local_c = 0;
   local_18 = 0;
   do {
@@ -51,7 +49,7 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
               (float10)_DAT_00591011;
       fVar5 = (float10)fsin(fVar4);
       fVar4 = (float10)fcos(fVar4);
-      fVar6 = (float10)*(float *)(in_stack_00000004 + 0x11d4) * (float10)_DAT_00590ff9;
+      fVar6 = (float10)this_ptr->atten_end * (float10)_DAT_00590ff9;
       fVar7 = (float10)iVar3 * (float10)_DAT_00591019 * (float10)_DAT_00591009 *
               (float10)_DAT_00591021;
       fVar8 = (float10)fcos(fVar7);
@@ -67,22 +65,19 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
                 ((SProjectedVertex *)
                  ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
                  &local_50);
-      this_ptr = DAT_005ae704;
+      this_ptr_00 = DAT_005ae704;
       *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->u + iVar2) = 0x800000;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x800000;
-      pSVar1 = this_ptr->vertex_buffer_ptr;
-      dVar9 = round
-                        ((double)(*(float *)(in_stack_00000004 + 0x11c4) * _DAT_00591029));
+      *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar2) = 0x800000;
+      pSVar1 = this_ptr_00->vertex_buffer_ptr;
+      dVar9 = round((double)((float)(this_ptr->color).r * _DAT_00591029));
       local_c = (int)ROUND(dVar9);
       *(int *)((int)&pSVar1->r + iVar2) = local_c;
-      pSVar1 = this_ptr->vertex_buffer_ptr;
-      dVar9 = round
-                        ((double)(*(float *)(in_stack_00000004 + 0x11c8) * _DAT_00591029));
+      pSVar1 = this_ptr_00->vertex_buffer_ptr;
+      dVar9 = round((double)((float)(this_ptr->color).g * _DAT_00591029));
       local_10 = (int)ROUND(dVar9);
       *(int *)((int)&pSVar1->g + iVar2) = local_10;
-      pSVar1 = this_ptr->vertex_buffer_ptr;
-      dVar9 = round
-                        ((double)(*(float *)(in_stack_00000004 + 0x11cc) * _DAT_00591029));
+      pSVar1 = this_ptr_00->vertex_buffer_ptr;
+      dVar9 = round((double)((float)(this_ptr->color).b * _DAT_00591029));
       local_14 = (int)ROUND(dVar9);
       iVar3 = iVar3 + 1;
       *(int *)((int)&pSVar1->b + iVar2) = local_14;
@@ -92,7 +87,7 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(void)
     local_24 = local_24 + 0x1e0;
   } while (local_18 < 0x11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (this_ptr,(SMRGLTextureBasic *)&DAT_005be924);
+            (this_ptr_00,(SMRGLTextureBasic *)&DAT_005be924);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0x4000);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);

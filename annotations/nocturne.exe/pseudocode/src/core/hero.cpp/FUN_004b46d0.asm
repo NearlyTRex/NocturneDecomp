@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_hero_cpp_FUN_004b46d0(CCharacter *param_1)
+; CHero * __cdecl core_hero_cpp_FUN_004b46d0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_ctor_FUN_004101d0 at 004101d8
@@ -16,7 +18,7 @@
 ;   core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 at 005419b6
 ;
 ; Referenced Globals:
-;   void* PTR_core_hero.cpp_FUN_004b48d0_0059eb34 = 004b48d0
+;   CHero_full_vtable g_CHeroVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00423f40
@@ -52,7 +54,7 @@ section .text
     MOV dword ptr [EBX + 0x1f5a4],EBX   ; 004b4704
     LEA EAX,[EBX + 0xbc94]              ; 004b470a
     PUSH EAX                            ; 004b4710
-    MOV dword ptr [EBX + 0x14c],0x59eb34 ; 004b4711 | PTR_core_hero.cpp_FUN_004b48d0_0059eb34
+    MOV dword ptr [EBX + 0x14c],0x59eb34 ; 004b4711 | g_CHeroVTable
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004b471b
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xbc8c],0x0    ; 004b4720

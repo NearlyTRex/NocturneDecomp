@@ -11,16 +11,16 @@ void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter
 {
   UOrientationVector *pUVar1;
   CVector3f *pCVar2;
-  float *pfVar3;
-  byte local_38 [12];
-  byte local_2c [12];
-  byte local_20 [12];
-  byte local_14 [12];
+  CVector3f *pCVar3;
+  CVector3f local_38;
+  CVector3f local_2c;
+  CVector3f local_20;
+  CVector3f local_14;
   
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-            (this_ptr,local_20,&(this_ptr->model).accumulated_root_motion);
+            (&this_ptr->base,&local_20,&(this_ptr->model).accumulated_root_motion);
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-            (this_ptr,local_14,&this_ptr->position_delta);
+            (&this_ptr->base,&local_14,&this_ptr->position_delta);
   pUVar1 = &(this_ptr->base).orient;
   if (pUVar1 != orientation) {
     (pUVar1->vec).x = (orientation->vec).x;
@@ -28,21 +28,21 @@ void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter
     (this_ptr->base).orient.vec.z = (orientation->vec).z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
-  pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                              (this_ptr,local_38,local_20);
-  pCVar2 = &(this_ptr->model).accumulated_root_motion;
-  if (pCVar2 != (CVector3f *)pfVar3) {
-    pCVar2->x = *pfVar3;
-    (this_ptr->model).accumulated_root_motion.y = pfVar3[1];
-    (this_ptr->model).accumulated_root_motion.z = pfVar3[2];
+  pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                     (&this_ptr->base,&local_38,&local_20);
+  pCVar3 = &(this_ptr->model).accumulated_root_motion;
+  if (pCVar3 != pCVar2) {
+    pCVar3->x = pCVar2->x;
+    (this_ptr->model).accumulated_root_motion.y = pCVar2->y;
+    (this_ptr->model).accumulated_root_motion.z = pCVar2->z;
   }
-  pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                              (this_ptr,local_2c,local_14);
-  if (&this_ptr->position_delta == (CVector3f *)pfVar3) {
+  pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                     (&this_ptr->base,&local_2c,&local_14);
+  if (&this_ptr->position_delta == pCVar3) {
     return;
   }
-  (this_ptr->position_delta).x = *pfVar3;
-  (this_ptr->position_delta).y = pfVar3[1];
-  (this_ptr->position_delta).z = pfVar3[2];
+  (this_ptr->position_delta).x = pCVar3->x;
+  (this_ptr->position_delta).y = pCVar3->y;
+  (this_ptr->position_delta).z = pCVar3->z;
   return;
 }

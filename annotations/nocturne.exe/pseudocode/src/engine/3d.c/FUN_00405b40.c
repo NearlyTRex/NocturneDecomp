@@ -52,7 +52,8 @@ SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
   if (0x00000001 != 0) {
     if (DAT_006b0278 == 0) {
       iVar5 = 0;
-      _qsort(&DAT_006b415c,DAT_006b0268,4,engine_3d_c_FUN_00405a60);
+      _qsort
+                (&DAT_006b415c,(SIZE_T)DAT_006b0268,4,engine_3d_c_FUN_00405a60);
       pSVar6 = (SMRGLTextureBasic *)0x0;
       iVar8 = 0;
       param_1 = DAT_006b0268;
@@ -70,8 +71,8 @@ SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
           _DAT_01c039e4 = puVar2[7];
           iVar8 = iVar8 + 4;
           iVar5 = iVar5 + 1;
-          param_1 = (SMRGLHeaderExtended *)
-                    engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340(*puVar2);
+          param_1 = engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340
+                              ((SMRGLHeaderPrimitive *)*puVar2);
         } while (iVar5 < (int)DAT_006b0268);
       }
     }
@@ -84,9 +85,8 @@ SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
           iVar5 = iVar5 + 4;
           DAT_006b0264 = ((uint *)*piVar1)[4];
           iVar8 = iVar8 + 1;
-          param_1 = (SMRGLHeaderExtended *)
-                    engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
-                              (*(uint *)*piVar1);
+          param_1 = engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
+                              (*(SMRGLHeaderPrimitive **)*piVar1);
         } while (iVar8 < (int)DAT_006b0268);
       }
     }

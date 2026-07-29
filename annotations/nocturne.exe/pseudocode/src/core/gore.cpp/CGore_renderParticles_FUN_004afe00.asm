@@ -70,7 +70,7 @@ section .text
     PUSH 0x1c78cec                      ; 004afe40
     MOV EBX,0x1c78cec                   ; 004afe45
     CALL core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0 ; 004afe4a
-        ;   XREF to: 004ae0a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0()
+        ;   XREF to: 004ae0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle * this_ptr)
     LEA ESI,[EBX + 0x4000]              ; 004afe4f
     ADD ESP,0x4                         ; 004afe55
     FLD float ptr [EBX + 0x18]          ; 004afe58 | DAT_01c78d04 | DAT_01c78d44

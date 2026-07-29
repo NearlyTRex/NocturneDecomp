@@ -94,7 +94,7 @@ section .text
     IDIV EBX                            ; 004cfc47
     PUSH EAX                            ; 004cfc49
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 004cfc4a
-        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setCursorPosition_FUN_00558d60()
+        ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     XOR EBX,EBX                         ; 004cfc4f
     ADD ESP,0x8                         ; 004cfc51
     MOV dword ptr [ESP + 0x8],EBX       ; 004cfc54
@@ -213,7 +213,7 @@ section .text
     MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | DAT_01bcd070
     PUSH ECX                            ; 004cfd9d
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 004cfd9e
-        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30()
+        ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x24                        ; 004cfda3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cfda6
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

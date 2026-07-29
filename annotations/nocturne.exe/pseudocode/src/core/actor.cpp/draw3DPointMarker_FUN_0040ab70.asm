@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_draw3DPointMarker_FUN_0040ab70(float *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_position,int marker_color)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   world_position
+; int              Stack[0x8]:4   marker_color
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

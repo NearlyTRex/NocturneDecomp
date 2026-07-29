@@ -18,7 +18,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   undefined1* PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94 = 00474cf0
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 00474ca2
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450 ; 00474ca3
         ;   XREF to: 00476450 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450(CEdScrollBar * this_ptr)
-    MOV dword ptr [EAX + 0xfffffed4],0x59ca94 ; 00474ca8 | PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94
+    MOV dword ptr [EAX + 0xfffffed4],0x59ca94 ; 00474ca8 | g_CPickListVTable
     MOV dword ptr [EAX + 0xfffffed8],0x0 ; 00474cb2
     MOV byte ptr [EAX + 0xfffffedc],0x0 ; 00474cbc
     MOV dword ptr [EAX + 0x34],0x0      ; 00474cc3

@@ -25,8 +25,8 @@ void CTextureList::save(int *param_1,char *param_2);
 
 // Original: core_texlist.cpp_CTextureList_captureAllTextures_FUN_00544d70
 // Address: 00544d70
-void CTextureList::captureAllTextures(int *param_1);
+void __cdecl CTextureList::captureAllTextures(CTextureList *this_ptr);
 
 // Original: core_texlist.cpp_CTextureList_captureTexture_FUN_00544db0
 // Address: 00544db0
-void CTextureList::captureTexture(int param_1,uint param_2);
+void __cdecl CTextureList::captureTexture(CTextureList *this_ptr,uint texture_index);

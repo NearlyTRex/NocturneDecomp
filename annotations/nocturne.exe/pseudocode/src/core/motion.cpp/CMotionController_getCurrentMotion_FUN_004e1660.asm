@@ -13,8 +13,8 @@
 ;   core_baron.cpp_FUN_004110f0 at 0041111c
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412516
 ;   core_batcreat.cpp_FUN_00413040 at 004131c4
+;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414ab4
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413896
-;   core_batman.cpp_FUN_00414930 at 00414ab4
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 00415530
 ;   core_boneguy.cpp_FUN_00418a00 at 00418dfc
 ;   ... and 90 more

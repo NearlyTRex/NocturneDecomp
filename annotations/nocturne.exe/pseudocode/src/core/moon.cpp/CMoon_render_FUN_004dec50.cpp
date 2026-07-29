@@ -100,7 +100,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     } while (iVar3 != 0x2d0);
   }
   0x01E57284->renderable_actors[0x766] = (CDemonActor *)0x0;
-  engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(&DAT_01ccdc50);
+  engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0((CAlphaBitmap *)&DAT_01ccdc50);
   iVar3 = _DAT_01ccdc50;
   local_30 = _DAT_01ccdebc >> 0x10;
   local_24 = _DAT_01ccdec0 >> 0x10;

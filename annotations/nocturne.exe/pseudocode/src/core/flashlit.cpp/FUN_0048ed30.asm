@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0048ed42
         ;   Label: LAB_0048ed42
     CALL core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60 ; 0048ed43
-        ;   XREF to: 0048ed60 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60()
+        ;   XREF to: 0048ed60 (UNCONDITIONAL_CALL)  ; CFlashlight * core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60(CFlashlight * this_ptr)
     ADD ESP,0x4                         ; 0048ed48
     RET                                 ; 0048ed4b
 

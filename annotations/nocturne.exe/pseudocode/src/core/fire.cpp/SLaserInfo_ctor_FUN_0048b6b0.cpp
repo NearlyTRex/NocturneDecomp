@@ -1,21 +1,21 @@
 // Name: core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0
 // Address: 0048b6b0
 // Address Range: [[0048b6b0, 0048b6ed]]
-// Convention: unknown
-// Signature: void core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo *this_ptr)
 
 #include "nocturne.h"
 
-void core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(uint *param_1)
+SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo *this_ptr)
 
 {
-  *param_1 = 0x3f800000;
-  param_1[2] = 0;
-  param_1[3] = 0xff;
-  param_1[4] = 0;
-  param_1[5] = 0;
-  param_1[6] = 0;
-  param_1[7] = 0;
-  param_1[1] = 0.02f;
-  return;
+  this_ptr->intensity = 1.0;
+  this_ptr->laser_type = 0;
+  (this_ptr->color).r = 0xff;
+  (this_ptr->color).g = 0;
+  (this_ptr->color).b = 0;
+  this_ptr->is_hero_weapon = 0;
+  this_ptr->is_damaging = 0;
+  this_ptr->beam_width = 0.02f;
+  return this_ptr;
 }

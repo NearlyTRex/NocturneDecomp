@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004cc020(void *param_1)
+; SPanel * __cdecl core_manpuz_cpp_FUN_004cc020(SPanel *objs,uint flags)
 ;
+; Parameters:
+; SPanel *         Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20 at 004cbe55

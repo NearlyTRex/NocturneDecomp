@@ -1,20 +1,18 @@
 // Name: support_trisock.cpp_connectSocket_FUN_00548fc0
 // Address: 00548fc0
 // Address Range: [[00548fc0, 00549002]]
-// Convention: unknown
-// Signature: bool support_trisock_cpp_connectSocket_FUN_00548fc0(void)
+// Convention: __cdecl
+// Signature: int __cdecl support_trisock_cpp_connectSocket_FUN_00548fc0(_SOCKET *socket_handle,SNetworkAddr *dest_addr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-bool support_trisock_cpp_connectSocket_FUN_00548fc0(void)
+int __cdecl support_trisock_cpp_connectSocket_FUN_00548fc0(_SOCKET *socket_handle,SNetworkAddr *dest_addr)
 
 {
   int iVar1;
   byte bVar2;
-  uint *in_stack_00000004;
   uint auStackY_1804 [1524];
   uint *puVar3;
   uint uVar4;
@@ -22,7 +20,7 @@ bool support_trisock_cpp_connectSocket_FUN_00548fc0(void)
   uint local_18;
   
   bVar2 = 0;
-  support_trisock_cpp_buildSockaddrIn_FUN_00548dc0();
+  support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(dest_addr);
   puVar3 = &stack0xffffffd8;
   uVar4 = 0x10;
   local_28 = local_18;
@@ -35,6 +33,6 @@ bool support_trisock_cpp_connectSocket_FUN_00548fc0(void)
        *(uint *)
         ((int)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
-  iVar1 = Ordinal_4(*in_stack_00000004,puVar3,uVar4);
-  return iVar1 == 0;
+  iVar1 = Ordinal_4(*socket_handle,puVar3,uVar4);
+  return (uint)(iVar1 == 0);
 }
