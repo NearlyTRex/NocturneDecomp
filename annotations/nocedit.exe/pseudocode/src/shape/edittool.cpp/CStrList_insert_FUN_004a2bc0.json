@@ -148,26 +148,6 @@
     },
     "pcode_op_count": 426
   },
-  "possible_indirect_callers": {
-    "method_name": "insert",
-    "param_analysis": {
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CStrList_insertSortedFileRecord_FUN_004a3360",
-          "estimated_params": 0
-        }
-      ],
-      "estimated_params": 0,
-      "param_estimates": [
-        0
-      ]
-    },
-    "possible_callers": [
-      "CStrList_insertSortedFileRecord_FUN_004a3360"
-    ],
-    "vtable_offset": 12
-  },
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

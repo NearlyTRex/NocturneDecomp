@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 549
+// Structs : 557
 
 #include "nocturne.h"
 
@@ -634,6 +634,24 @@ static_assert(__builtin_offsetof(CBoneGuy, blown_up) == 50396,
               "offsetof(CBoneGuy, blown_up) != 50396");
 static_assert(__builtin_offsetof(CBoneGuy, recombine_interpolation) == 50400,
               "offsetof(CBoneGuy, recombine_interpolation) != 50400");
+
+// ---- CBoneGuy_full_vtable (356 bytes) ----
+static_assert(sizeof(CBoneGuy_full_vtable) == 356,
+              "sizeof(CBoneGuy_full_vtable) != 356");
+static_assert(__builtin_offsetof(CBoneGuy_full_vtable, _ub) == 0,
+              "offsetof(CBoneGuy_full_vtable, _ub) != 0");
+static_assert(__builtin_offsetof(CBoneGuy_full_vtable, _uc) == 236,
+              "offsetof(CBoneGuy_full_vtable, _uc) != 236");
+static_assert(__builtin_offsetof(CBoneGuy_full_vtable, _ue) == 340,
+              "offsetof(CBoneGuy_full_vtable, _ue) != 340");
+static_assert(__builtin_offsetof(CBoneGuy_full_vtable, _ug) == 352,
+              "offsetof(CBoneGuy_full_vtable, _ug) != 352");
+
+// ---- CBoneGuy_vtable (4 bytes) ----
+static_assert(sizeof(CBoneGuy_vtable) == 4,
+              "sizeof(CBoneGuy_vtable) != 4");
+static_assert(__builtin_offsetof(CBoneGuy_vtable, reset) == 0,
+              "offsetof(CBoneGuy_vtable, reset) != 0");
 
 // ---- CBoneStructure (13604 bytes) ----
 static_assert(sizeof(CBoneStructure) == 13604,
@@ -2913,9 +2931,9 @@ static_assert(__builtin_offsetof(CEnemy, script_victim) == 48820,
 static_assert(__builtin_offsetof(CEnemy, allow_pathfind_to_new_targets) == 48824,
               "offsetof(CEnemy, allow_pathfind_to_new_targets) != 48824");
 
-// ---- CEnemy_full_vtable (356 bytes) ----
-static_assert(sizeof(CEnemy_full_vtable) == 356,
-              "sizeof(CEnemy_full_vtable) != 356");
+// ---- CEnemy_full_vtable (352 bytes) ----
+static_assert(sizeof(CEnemy_full_vtable) == 352,
+              "sizeof(CEnemy_full_vtable) != 352");
 static_assert(__builtin_offsetof(CEnemy_full_vtable, _ub) == 0,
               "offsetof(CEnemy_full_vtable, _ub) != 0");
 static_assert(__builtin_offsetof(CEnemy_full_vtable, _uc) == 236,
@@ -2923,17 +2941,15 @@ static_assert(__builtin_offsetof(CEnemy_full_vtable, _uc) == 236,
 static_assert(__builtin_offsetof(CEnemy_full_vtable, _ue) == 340,
               "offsetof(CEnemy_full_vtable, _ue) != 340");
 
-// ---- CEnemy_vtable (16 bytes) ----
-static_assert(sizeof(CEnemy_vtable) == 16,
-              "sizeof(CEnemy_vtable) != 16");
+// ---- CEnemy_vtable (12 bytes) ----
+static_assert(sizeof(CEnemy_vtable) == 12,
+              "sizeof(CEnemy_vtable) != 12");
 static_assert(__builtin_offsetof(CEnemy_vtable, getTargetPoint) == 0,
               "offsetof(CEnemy_vtable, getTargetPoint) != 0");
 static_assert(__builtin_offsetof(CEnemy_vtable, updateVictim) == 4,
               "offsetof(CEnemy_vtable, updateVictim) != 4");
 static_assert(__builtin_offsetof(CEnemy_vtable, randomize) == 8,
               "offsetof(CEnemy_vtable, randomize) != 8");
-static_assert(__builtin_offsetof(CEnemy_vtable, reset) == 12,
-              "offsetof(CEnemy_vtable, reset) != 12");
 
 // ---- CEventList (20812 bytes) ----
 static_assert(sizeof(CEventList) == 20812,
@@ -4951,6 +4967,24 @@ static_assert(__builtin_offsetof(CMobster, firing_blend) == 49036,
 static_assert(__builtin_offsetof(CMobster, firing_cooldown) == 49040,
               "offsetof(CMobster, firing_cooldown) != 49040");
 
+// ---- CMobster_full_vtable (356 bytes) ----
+static_assert(sizeof(CMobster_full_vtable) == 356,
+              "sizeof(CMobster_full_vtable) != 356");
+static_assert(__builtin_offsetof(CMobster_full_vtable, _ub) == 0,
+              "offsetof(CMobster_full_vtable, _ub) != 0");
+static_assert(__builtin_offsetof(CMobster_full_vtable, _uc) == 236,
+              "offsetof(CMobster_full_vtable, _uc) != 236");
+static_assert(__builtin_offsetof(CMobster_full_vtable, _ue) == 340,
+              "offsetof(CMobster_full_vtable, _ue) != 340");
+static_assert(__builtin_offsetof(CMobster_full_vtable, _um) == 352,
+              "offsetof(CMobster_full_vtable, _um) != 352");
+
+// ---- CMobster_vtable (4 bytes) ----
+static_assert(sizeof(CMobster_vtable) == 4,
+              "sizeof(CMobster_vtable) != 4");
+static_assert(__builtin_offsetof(CMobster_vtable, reset) == 0,
+              "offsetof(CMobster_vtable, reset) != 0");
+
 // ---- CMoloch (142232 bytes) ----
 static_assert(sizeof(CMoloch) == 142232,
               "sizeof(CMoloch) != 142232");
@@ -5586,6 +5620,20 @@ static_assert(__builtin_offsetof(CPickList, cancel_button) == 704,
               "offsetof(CPickList, cancel_button) != 704");
 static_assert(__builtin_offsetof(CPickList, selection_state) == 932,
               "offsetof(CPickList, selection_state) != 932");
+
+// ---- CPickList_full_vtable (28 bytes) ----
+static_assert(sizeof(CPickList_full_vtable) == 28,
+              "sizeof(CPickList_full_vtable) != 28");
+static_assert(__builtin_offsetof(CPickList_full_vtable, _us) == 0,
+              "offsetof(CPickList_full_vtable, _us) != 0");
+static_assert(__builtin_offsetof(CPickList_full_vtable, _up) == 24,
+              "offsetof(CPickList_full_vtable, _up) != 24");
+
+// ---- CPickList_vtable (4 bytes) ----
+static_assert(sizeof(CPickList_vtable) == 4,
+              "sizeof(CPickList_vtable) != 4");
+static_assert(__builtin_offsetof(CPickList_vtable, handleInput) == 0,
+              "offsetof(CPickList_vtable, handleInput) != 0");
 
 // ---- CPlatform (1836 bytes) ----
 static_assert(sizeof(CPlatform) == 1836,
@@ -6291,6 +6339,24 @@ static_assert(__builtin_offsetof(CSmiley, dismember_cooldown) == 48888,
 static_assert(__builtin_offsetof(CSmiley, model_variant) == 48892,
               "offsetof(CSmiley, model_variant) != 48892");
 
+// ---- CSmiley_full_vtable (356 bytes) ----
+static_assert(sizeof(CSmiley_full_vtable) == 356,
+              "sizeof(CSmiley_full_vtable) != 356");
+static_assert(__builtin_offsetof(CSmiley_full_vtable, _ub) == 0,
+              "offsetof(CSmiley_full_vtable, _ub) != 0");
+static_assert(__builtin_offsetof(CSmiley_full_vtable, _uc) == 236,
+              "offsetof(CSmiley_full_vtable, _uc) != 236");
+static_assert(__builtin_offsetof(CSmiley_full_vtable, _ue) == 340,
+              "offsetof(CSmiley_full_vtable, _ue) != 340");
+static_assert(__builtin_offsetof(CSmiley_full_vtable, _us) == 352,
+              "offsetof(CSmiley_full_vtable, _us) != 352");
+
+// ---- CSmiley_vtable (4 bytes) ----
+static_assert(sizeof(CSmiley_vtable) == 4,
+              "sizeof(CSmiley_vtable) != 4");
+static_assert(__builtin_offsetof(CSmiley_vtable, reset) == 0,
+              "offsetof(CSmiley_vtable, reset) != 0");
+
 // ---- CSmokeParticle (44 bytes) ----
 static_assert(sizeof(CSmokeParticle) == 44,
               "sizeof(CSmokeParticle) != 44");
@@ -6513,9 +6579,9 @@ static_assert(__builtin_offsetof(CStrList, data_array) == 8,
 static_assert(__builtin_offsetof(CStrList, vtable) == 12,
               "offsetof(CStrList, vtable) != 12");
 
-// ---- CStrList_vtable (28 bytes) ----
-static_assert(sizeof(CStrList_vtable) == 28,
-              "sizeof(CStrList_vtable) != 28");
+// ---- CStrList_vtable (24 bytes) ----
+static_assert(sizeof(CStrList_vtable) == 24,
+              "sizeof(CStrList_vtable) != 24");
 static_assert(__builtin_offsetof(CStrList_vtable, dtor) == 0,
               "offsetof(CStrList_vtable, dtor) != 0");
 static_assert(__builtin_offsetof(CStrList_vtable, remove) == 4,
@@ -6528,8 +6594,6 @@ static_assert(__builtin_offsetof(CStrList_vtable, swap) == 16,
               "offsetof(CStrList_vtable, swap) != 16");
 static_assert(__builtin_offsetof(CStrList_vtable, clear) == 20,
               "offsetof(CStrList_vtable, clear) != 20");
-static_assert(__builtin_offsetof(CStrList_vtable, handleInput) == 24,
-              "offsetof(CStrList_vtable, handleInput) != 24");
 
 // ---- CStranger (130672 bytes) ----
 static_assert(sizeof(CStranger) == 130672,
