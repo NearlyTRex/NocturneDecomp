@@ -16,7 +16,7 @@ CKeyFramedModel ** core_bat_cpp_FUN_00411a10(CDemonActor *param_1)
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(param_1);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(param_1);
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].location);
   this_ptr = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                        ((CKeyFramedModelInstance *)&pCVar3[1].frames);

@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_FUN_0049f930 at 0049fa9e
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a64e2
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e3fb
-;   core_game.cpp_FUN_0049f930 at 0049fa9e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

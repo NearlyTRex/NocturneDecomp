@@ -135,6 +135,7 @@
 #include "types/classes/CGore.h"
 #include "types/classes/CGrave.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CGun.h"
 #include "types/classes/CGunFlame.h"
 #include "types/classes/CHaystack.h"
 #include "types/classes/CHealthItem.h"

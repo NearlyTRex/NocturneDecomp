@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040b300 at 0040b7e8
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b7e8
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c7352
 ;
 ; *****************************************************************************

@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[128]:
-;   core_baron.cpp_FUN_00410490 at 0041074f
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041074f
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411e0a
 ;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411b35
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412762

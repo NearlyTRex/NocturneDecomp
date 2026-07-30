@@ -7,13 +7,13 @@
 // Address: 004b9cc0
 void __cdecl staticInit(void);
 
-// Original: core_icepick.cpp_FUN_004b9cf0
+// Original: core_icepick.cpp_factoryFunc_FUN_004b9cf0
 // Address: 004b9cf0
-void FUN_004b9cf0(void);
+CIcePick * __cdecl factoryFunc(void);
 
-// Original: core_icepick.cpp_FUN_004b9d10
+// Original: core_icepick.cpp_CIcePick_getActorType_FUN_004b9d10
 // Address: 004b9d10
-CDemonActorType * FUN_004b9d10(void);
+CDemonActorType * CIcePick::getActorType(void);
 
 // Original: core_icepick.cpp_CIcePick_ctor_FUN_004b9d20
 // Address: 004b9d20
@@ -23,9 +23,9 @@ CIcePick * __cdecl CIcePick::ctor(CIcePick *this_ptr);
 // Address: 004b9db0
 void CIcePick::setup(CHero *param_1);
 
-// Original: core_icepick.cpp_FUN_004b9fe0
+// Original: core_icepick.cpp_CIcePick_process_FUN_004b9fe0
 // Address: 004b9fe0
-void FUN_004b9fe0(CIcePick *param_1,float param_2);
+void CIcePick::process(CIcePick *param_1,float param_2);
 
 // Original: core_icepick.cpp_FUN_004ba740
 // Address: 004ba740
@@ -55,13 +55,13 @@ void __cdecl CIcePick::processMotionEvents(CIcePick *this_ptr,float delta_time);
 // Address: 004bb3c0
 void __cdecl CIcePick::performMeleeAttack(CIcePick *this_ptr,int bone_index);
 
-// Original: core_icepick.cpp_FUN_004bb4c0
+// Original: core_icepick.cpp_CIcePick_archive_FUN_004bb4c0
 // Address: 004bb4c0
-void FUN_004bb4c0(CHero *param_1);
+void CIcePick::archive(CHero *param_1);
 
-// Original: core_icepick.cpp_FUN_004bb4d0
+// Original: core_icepick.cpp_CIcePick_renderOpaque_FUN_004bb4d0
 // Address: 004bb4d0
-void FUN_004bb4d0(CCharacter *param_1);
+void CIcePick::renderOpaque(CCharacter *param_1);
 
 // Original: core_icepick.cpp_CIcePick_processDamage_FUN_004bb4e0
 // Address: 004bb4e0
@@ -75,6 +75,6 @@ int __cdecl CIcePick::isWeaponDrawn(CIcePick *this_ptr);
 // Address: 004bb6a0
 void __cdecl CIcePick::drawWeapon(CIcePick *this_ptr,int drawn);
 
-// Original: core_icepick.cpp_FUN_004bb6b0
+// Original: core_icepick.cpp_CIcePick_dtor_FUN_004bb6b0
 // Address: 004bb6b0
-CHero * FUN_004bb6b0(CHero *param_1,byte param_2);
+CHero * CIcePick::dtor(CHero *param_1,byte param_2);

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CMinecarVTable
+;   CDemonActor_vtable g_CMineCarVTable
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_FUN_004f5d90
@@ -20,6 +20,6 @@ section .text
     CALL core_platfrm.cpp_FUN_004f5d90  ; 004d60b5
         ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
     ADD ESP,0x4                         ; 004d60ba
-    MOV dword ptr [EAX + 0x14c],0x5a0784 ; 004d60bd | g_CMinecarVTable
+    MOV dword ptr [EAX + 0x14c],0x5a0784 ; 004d60bd | g_CMineCarVTable
     RET                                 ; 004d60c7
 

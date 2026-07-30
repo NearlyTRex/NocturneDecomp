@@ -64,7 +64,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     do {
       if (0.0 <= *(float *)(iVar3 + 0x1ccdef0)) {
         core_course_cpp_CCourse_evaluate_FUN_0043b800
-                  ((CCourse *)(*(int *)(iVar3 + 0x1ccdeec) * 0xc + 0x1ccdec8),
+                  ((CCourse *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc),
                    *(float *)(iVar3 + 0x1ccdef0),&local_44,&local_50);
         local_44.x = local_44.x + *(float *)(iVar3 + 0x1ccdef8);
         local_44.y = local_44.y + *(float *)(iVar3 + 0x1ccdefc);
@@ -78,11 +78,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
         dVar6 = round((double)*(float *)(iVar3 + 0x1ccdef4));
         local_14 = (CDemonActor *)(int)ROUND(dVar6);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-                  ((CKeyFramedModel *)0x1cce1bc,(int)local_14,(CKeyFramedModelInstance *)0x0,
+                  ((CKeyFramedModel *)&DAT_01cce1bc,(int)local_14,(CKeyFramedModelInstance *)0x0,
                    render_flags);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
         pCVar1 = 0x01E57284;
-        local_14 = *(CDemonActor **)(*(int *)(iVar3 + 0x1ccdeec) * 0xc + 0x1ccdec8);
+        local_14 = *(CDemonActor **)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc);
         local_18 = *(float *)(iVar3 + 0x1ccdef0) / (float)(int)local_14;
         local_38 = (double)local_18;
         if ((float)0.5 <= local_18) {
@@ -144,7 +144,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     local_1c = 0;
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710
-            ((CAlphaBitmap *)(local_1c * 0x14 + 0x1ccdc64),0,0,48000);
+            ((CAlphaBitmap *)(&DAT_01ccdc64 + local_1c * 0x14),0,0,48000);
   engine_3d_c_setBlendMode_FUN_004083c0(0);
   return;
 }

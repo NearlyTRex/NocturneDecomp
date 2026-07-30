@@ -18,6 +18,7 @@ void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect *this
   if (0x3f < _DAT_01c5b4fc) {
     _DAT_01c5b4fc = 0;
   }
-  core_fire_cpp_CRock_setup_FUN_00484c90((CRock *)(iVar1 + 0x1c5b500),position,velocity,model_ptr);
+  core_fire_cpp_CRock_setup_FUN_00484c90
+            ((CRock *)(&DAT_01c5b500 + iVar1),position,velocity,model_ptr);
   return;
 }

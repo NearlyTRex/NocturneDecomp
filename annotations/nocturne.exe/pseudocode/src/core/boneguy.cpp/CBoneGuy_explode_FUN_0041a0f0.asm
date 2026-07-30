@@ -20,7 +20,7 @@
 ;
 ; XREF[2]:
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f7b
-;   core_boneguy.cpp_FUN_00418a00 at 00418a58
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418a58
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_boneguy_cpp_0057950d

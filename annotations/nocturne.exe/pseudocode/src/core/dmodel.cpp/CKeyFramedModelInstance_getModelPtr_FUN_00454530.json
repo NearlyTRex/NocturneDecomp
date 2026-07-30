@@ -3,117 +3,75 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 15,
+        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
+        "category": "incompatible_types",
+        "column": 18,
+        "line": 15,
+        "message": "assigning to 'int' from incompatible type 'const char[19]'"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 17,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -142,19 +100,19 @@
     {
       "addr": "0040eca0",
       "from_addr": "0040ecaf",
-      "name": "core_ammo.cpp_FUN_0040eca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040f2b0",
-      "from_addr": "0040f302",
-      "name": "core_ammobox.cpp_FUN_0040f2b0",
+      "name": "core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040eca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040f340",
       "from_addr": "0040f34f",
-      "name": "core_ammobox.cpp_FUN_0040f340",
+      "name": "core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040f340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f2b0",
+      "from_addr": "0040f302",
+      "name": "core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040f2b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -164,15 +122,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0040fff0",
+      "from_addr": "0040ffff",
+      "name": "core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004100a0",
       "from_addr": "004100b9",
       "name": "core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004100a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040fff0",
-      "from_addr": "0040ffff",
-      "name": "core_backgnd.cpp_FUN_0040fff0",
+      "addr": "00411ea0",
+      "from_addr": "00411ec1",
+      "name": "core_bat.cpp_CBat_getBoundingBox_FUN_00411ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -182,27 +146,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00411ea0",
-      "from_addr": "00411ec1",
-      "name": "core_bat.cpp_FUN_00411ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00414f50",
       "from_addr": "00414f5f",
       "name": "core_battery.cpp_CBattery_getBoundingBox_FUN_00414f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00415430",
-      "from_addr": "00415473",
-      "name": "core_biggs.cpp_FUN_00415430",
+      "addr": "00415760",
+      "from_addr": "004157e9",
+      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00415760",
-      "from_addr": "004157e9",
-      "name": "core_biggs.cpp_FUN_00415760",
+      "addr": "00415430",
+      "from_addr": "00415473",
+      "name": "core_biggs.cpp_CBiggs_setup_FUN_00415430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041ebe0",
+      "from_addr": "0041ec01",
+      "name": "core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041ebe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -218,33 +182,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0041ea00",
+      "from_addr": "0041ea10",
+      "name": "core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041ea00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041eaf0",
+      "from_addr": "0041eb00",
+      "name": "core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041eaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0041e430",
       "from_addr": "0041e452",
       "name": "core_boxactor.cpp_CBoxActor_setup_FUN_0041e430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0041ea00",
-      "from_addr": "0041ea10",
-      "name": "core_boxactor.cpp_FUN_0041ea00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0041eaf0",
-      "from_addr": "0041eb00",
-      "name": "core_boxactor.cpp_FUN_0041eaf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0041ebe0",
-      "from_addr": "0041ec01",
-      "name": "core_boxactor.cpp_FUN_0041ebe0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0043ccc0",
       "from_addr": "0043cccf",
-      "name": "core_crate.cpp_FUN_0043ccc0",
+      "name": "core_crate.cpp_CCrate_getBoundingBox_FUN_0043ccc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,15 +218,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004561d0",
-      "from_addr": "004561da",
-      "name": "core_door.cpp_CDoor_getCollisionType_FUN_004561d0",
+      "addr": "00455e90",
+      "from_addr": "00455e9f",
+      "name": "core_door.cpp_CDoor_getBoundingBox_FUN_00455e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00455e90",
-      "from_addr": "00455e9f",
-      "name": "core_door.cpp_FUN_00455e90",
+      "addr": "004561d0",
+      "from_addr": "004561da",
+      "name": "core_door.cpp_CDoor_getCollisionType_FUN_004561d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -280,13 +238,13 @@
     {
       "addr": "00462300",
       "from_addr": "00462627",
-      "name": "core_drip.cpp_FUN_00462300",
+      "name": "core_drip.cpp_CDrip_process_FUN_00462300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00478790",
       "from_addr": "00478b76",
-      "name": "core_emitter.cpp_FUN_00478790",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00478790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -338,21 +296,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004952b0",
-      "from_addr": "004952bf",
-      "name": "core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0",
+      "addr": "004950a0",
+      "from_addr": "00495105",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00495000",
       "from_addr": "00495021",
-      "name": "core_frankgen.cpp_FUN_00495000",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004950a0",
-      "from_addr": "00495105",
-      "name": "core_frankgen.cpp_FUN_004950a0",
+      "addr": "004952b0",
+      "from_addr": "004952bf",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -388,7 +346,7 @@
     {
       "addr": "004c3600",
       "from_addr": "004c360f",
-      "name": "core_keyactor.cpp_FUN_004c3600",
+      "name": "core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004c3600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -406,7 +364,13 @@
     {
       "addr": "004c4370",
       "from_addr": "004c437f",
-      "name": "core_ladder.cpp_FUN_004c4370",
+      "name": "core_ladder.cpp_CLadder_renderOpaque_FUN_004c4370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c65ff",
+      "name": "core_lever.cpp_CLever_getBoundingBox_FUN_004c65f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -418,13 +382,13 @@
     {
       "addr": "004c6560",
       "from_addr": "004c65b2",
-      "name": "core_lever.cpp_FUN_004c6560",
+      "name": "core_lever.cpp_CLever_renderOpaque_FUN_004c6560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c65f0",
-      "from_addr": "004c65ff",
-      "name": "core_lever.cpp_FUN_004c65f0",
+      "addr": "004ca240",
+      "from_addr": "004ca255",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -440,21 +404,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c9580",
+      "from_addr": "004c95f7",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004cbc50",
       "from_addr": "004cbc5f",
       "name": "core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_004cbc50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c9580",
-      "from_addr": "004c95f7",
-      "name": "core_manpuz.cpp_FUN_004c9580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ca240",
-      "from_addr": "004ca255",
-      "name": "core_manpuz.cpp_FUN_004ca240",
+      "addr": "004f3c00",
+      "from_addr": "004f3c0f",
+      "name": "core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -470,21 +434,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f3c00",
-      "from_addr": "004f3c0f",
-      "name": "core_pendulum.cpp_FUN_004f3c00",
+      "addr": "004f6f50",
+      "from_addr": "004f6f5f",
+      "name": "core_platfrm.cpp_CPlatform_getBoundingBox_FUN_004f6f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f7560",
       "from_addr": "004f756a",
       "name": "core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f6f50",
-      "from_addr": "004f6f5f",
-      "name": "core_platfrm.cpp_FUN_004f6f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -508,13 +466,13 @@
     {
       "addr": "00516fc0",
       "from_addr": "00516fcf",
-      "name": "core_simbox.cpp_FUN_00516fc0",
+      "name": "core_simbox.cpp_CSimBox_getBoundingBox_FUN_00516fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005335a0",
       "from_addr": "005335af",
-      "name": "core_spike.cpp_FUN_005335a0",
+      "name": "core_spike.cpp_CSpike_getBoundingBox_FUN_005335a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -536,27 +494,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00549cd0",
+      "from_addr": "00549d12",
+      "name": "core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00549ef0",
       "from_addr": "00549fbf",
       "name": "core_turret.cpp_CTurret_getCurFrame_FUN_00549ef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005495f0",
-      "from_addr": "0054961a",
-      "name": "core_turret.cpp_FUN_005495f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005496d0",
       "from_addr": "0054974d",
-      "name": "core_turret.cpp_FUN_005496d0",
+      "name": "core_turret.cpp_CTurret_renderOpaque_FUN_005496d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00549cd0",
-      "from_addr": "00549d12",
-      "name": "core_turret.cpp_FUN_00549cd0",
+      "addr": "005495f0",
+      "from_addr": "0054961a",
+      "name": "core_turret.cpp_CTurret_setup_FUN_005495f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c040",
+      "from_addr": "0054c061",
+      "name": "core_tvbat.cpp_CTVBat_getBoundingBox_FUN_0054c040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -566,21 +530,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054c040",
-      "from_addr": "0054c061",
-      "name": "core_tvbat.cpp_FUN_0054c040",
+      "addr": "0054f320",
+      "from_addr": "0054f32f",
+      "name": "core_vehicle.cpp_CVehicle_getBoundingBox_FUN_0054f320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054e7f0",
       "from_addr": "0054e847",
       "name": "core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054f320",
-      "from_addr": "0054f32f",
-      "name": "core_vehicle.cpp_FUN_0054f320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -598,7 +556,7 @@
     {
       "addr": "00553fe0",
       "from_addr": "00553fef",
-      "name": "core_weapon.cpp_FUN_00553fe0",
+      "name": "core_weapon.cpp_CWeapon_getBoundingBox_FUN_00553fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -736,7 +694,7 @@
       {
         "call_addr": "0040ecaf",
         "call_type": "direct",
-        "caller": "core_ammo.cpp_FUN_0040eca0",
+        "caller": "core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040eca0",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "method": "push_count",

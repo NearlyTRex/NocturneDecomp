@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/signal.h"
 #include "system/time.h"
+#include "system/winbase.h"
 #include "system/winnt.h"
 
 // =============================================================================

@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00534cf0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2dc9ee4                   ; 00534cf0
+        ;   Label: core_stone.cpp_CTempleStone_getActorType_FUN_00534cf0
+    RET                                 ; 00534cf5
+

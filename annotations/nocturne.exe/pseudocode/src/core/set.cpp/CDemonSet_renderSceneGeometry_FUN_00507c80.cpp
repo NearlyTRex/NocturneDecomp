@@ -63,7 +63,7 @@ LAB_00507d51:
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (DAT_005ae704,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-                  ((CKeyFramedModel *)0x1fbacc8,0,(CKeyFramedModelInstance *)0x0,-1);
+                  ((CKeyFramedModel *)&DAT_01fbacc8,0,(CKeyFramedModelInstance *)0x0,-1);
       }
       if ((this_ptr->renderable_actors[0x6ee] == (CDemonActor *)0x0) &&
          (this_ptr->sorted_render_actors[0x6d6] != (CDemonActor *)0x0)) {

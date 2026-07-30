@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 0055e940
 int __cdecl classifyObjectShape(CVector3f *dimensions);
 
-// Original: core_zombie.cpp_FUN_0055ea90
+// Original: core_zombie.cpp_factoryFunc_FUN_0055ea90
 // Address: 0055ea90
-void FUN_0055ea90(void);
+CZombie * __cdecl factoryFunc(void);
 
-// Original: core_zombie.cpp_FUN_0055eab0
+// Original: core_zombie.cpp_CZombie_getActorType_FUN_0055eab0
 // Address: 0055eab0
-CDemonActorType * FUN_0055eab0(void);
+CDemonActorType * CZombie::getActorType(void);
 
 // Original: core_zombie.cpp_CZombie_ctor_FUN_0055eac0
 // Address: 0055eac0
@@ -27,13 +27,13 @@ CZombie * __cdecl CZombie::ctor(CZombie *this_ptr);
 // Address: 0055ec20
 void CZombie::setup(CEnemy *param_1);
 
-// Original: core_zombie.cpp_FUN_0055ef50
+// Original: core_zombie.cpp_CZombie_process_FUN_0055ef50
 // Address: 0055ef50
-void FUN_0055ef50(CZombie *param_1,float param_2);
+void CZombie::process(CZombie *param_1,float param_2);
 
-// Original: core_zombie.cpp_FUN_00560cd0
+// Original: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0
 // Address: 00560cd0
-void FUN_00560cd0(int param_1,int param_2);
+void CZombie::getCarryObjToBodyXForm(int param_1,int param_2);
 
 // Original: core_zombie.cpp_FUN_00561010
 // Address: 00561010
@@ -51,13 +51,13 @@ int __cdecl CZombie::canPickupWithHand(CZombie *this_ptr,int object_shape_type);
 // Address: 005618c0
 void CZombie::dropAndClearTarget(int param_1);
 
-// Original: core_zombie.cpp_FUN_00561900
+// Original: core_zombie.cpp_CZombie_renderOpaque_FUN_00561900
 // Address: 00561900
-int FUN_00561900(CCharacter *param_1);
+int CZombie::renderOpaque(CCharacter *param_1);
 
-// Original: core_zombie.cpp_FUN_00561940
+// Original: core_zombie.cpp_CZombie_renderTransparent_FUN_00561940
 // Address: 00561940
-int FUN_00561940(CCharacter *param_1);
+int CZombie::renderTransparent(CCharacter *param_1);
 
 // Original: core_zombie.cpp_CZombie_archive_FUN_00561aa0
 // Address: 00561aa0
@@ -75,9 +75,9 @@ void __cdecl CZombie::processDismemberment(CZombie *this_ptr,SDamageInfo *damage
 // Address: 00561fc0
 void CZombie::processDamage(CZombie *param_1,SDamageInfo *param_2);
 
-// Original: core_zombie.cpp_FUN_005621f0
+// Original: core_zombie.cpp_CZombie_getTargetPoints_FUN_005621f0
 // Address: 005621f0
-int FUN_005621f0(int param_1,CVector3f *param_2);
+int CZombie::getTargetPoints(int param_1,CVector3f *param_2);
 
 // Original: core_zombie.cpp_CZombie_isGrabbable_FUN_005623f0
 // Address: 005623f0

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbf20 at 004fbfa2
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fbfa2
 ;
 ; Referenced Globals:
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash

@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   swing_range
 ;
 ; XREF[2]:
-;   core_hostage.cpp_FUN_004b6d80 at 004b7034
-;   core_zombie.cpp_FUN_0055ef50 at 0055f7ba
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b7034
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055f7ba
 ;
 ; *****************************************************************************
 

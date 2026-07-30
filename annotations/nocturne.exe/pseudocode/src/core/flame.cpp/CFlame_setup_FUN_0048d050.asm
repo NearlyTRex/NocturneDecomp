@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 at 00417bc0
-;   core_vessel.cpp_FUN_0054fa80 at 0054fba4
+;   core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80 at 0054fba4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

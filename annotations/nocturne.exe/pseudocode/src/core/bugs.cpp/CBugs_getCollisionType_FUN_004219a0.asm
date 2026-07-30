@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 core_bugs_cpp_CBugs_getCollisionType_FUN_004219a0(void)
+;
+;
+; XREF[1]:
+;   core_bugs.cpp_CBugs_getDeathState_FUN_004219b0 at 004219c3
+;
+; *****************************************************************************
+
+section .text
+
+    XOR EAX,EAX                         ; 004219a0
+        ;   Label: core_bugs.cpp_CBugs_getCollisionType_FUN_004219a0
+    RET                                 ; 004219a2
+

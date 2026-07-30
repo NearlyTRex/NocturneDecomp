@@ -35,7 +35,7 @@
 ; XREF[4]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c24c
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a0747
-;   core_lightgun.cpp_FUN_004c79a0 at 004c7b7b
+;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7b7b
 ;   core_weather.cpp_CWeather_update_FUN_00554980 at 00554c53
 ;
 ; Referenced Globals:

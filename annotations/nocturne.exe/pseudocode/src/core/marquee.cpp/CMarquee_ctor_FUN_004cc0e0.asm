@@ -7,7 +7,7 @@
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_marquee.cpp_FUN_004cc0b0 at 004cc0c3
+;   core_marquee.cpp_factoryFunc_FUN_004cc0b0 at 004cc0c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_menu1_pth_00588193
@@ -17,7 +17,7 @@
 ;   CDemonActor_vtable g_CMarqueeVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     PUSH EDI                            ; 004cc0e1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cc0e2
     PUSH EDX                            ; 004cc0e6
-    CALL core_actor.cpp_FUN_00409d30    ; 004cc0e7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004cc0e7
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cc0ec
     ADD EAX,0x19c                       ; 004cc0ef
     PUSH EAX                            ; 004cc0f4

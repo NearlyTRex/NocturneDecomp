@@ -7,7 +7,7 @@
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_005511f0 at 00551203
+;   core_wateract.cpp_factoryFunc_FUN_005511f0 at 00551203
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005975cb
@@ -22,7 +22,7 @@
 ;   WatcomTypeInfo g_SWaterVertexTypeInfo_005a3fd0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH EDI                            ; 00551221
     MOV EDX,dword ptr [ESP + 0xc]       ; 00551222
     PUSH EDX                            ; 00551226
-    CALL core_actor.cpp_FUN_00409d30    ; 00551227
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00551227
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0055122c
     PUSH 0x5a3fd0                       ; 0055122f | g_SWaterVertexTypeInfo_005a3fd0
     PUSH 0x3e8                          ; 00551234

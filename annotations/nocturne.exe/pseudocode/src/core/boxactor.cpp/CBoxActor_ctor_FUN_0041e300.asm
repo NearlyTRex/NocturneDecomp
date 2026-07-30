@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f315
-;   core_boxactor.cpp_FUN_0041e2d0 at 0041e2e3
+;   core_boxactor.cpp_factoryFunc_FUN_0041e2d0 at 0041e2e3
 ;   core_stone.cpp_FUN_00534d00 at 00534d05
 ;
 ; Referenced Globals:
@@ -16,7 +16,7 @@
 ;   CDemonActor_vtable g_CBoxActorVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_box.cpp_CBox_ctor_FUN_0041a610
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -29,8 +29,8 @@ section .text
         ;   Label: core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300
     MOV EBX,dword ptr [ESP + 0x8]       ; 0041e301
     PUSH EBX                            ; 0041e305
-    CALL core_actor.cpp_FUN_00409d30    ; 0041e306
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0041e306
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041e30b
     ADD EAX,0x150                       ; 0041e30e
     PUSH EAX                            ; 0041e313

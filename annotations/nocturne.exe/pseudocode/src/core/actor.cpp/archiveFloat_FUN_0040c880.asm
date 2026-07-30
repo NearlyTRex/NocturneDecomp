@@ -11,14 +11,14 @@
 ;
 ; XREF[67]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d31d
-;   core_ammobox.cpp_FUN_0040f390 at 0040f3f7
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390 at 0040f3f7
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f812
-;   core_armour.cpp_FUN_0040fb60 at 0040fb7b
+;   core_armour.cpp_CArmour_archive_FUN_0040fb60 at 0040fb7b
 ;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411b7e
-;   core_batcreat.cpp_FUN_00412d80 at 00412d9b
+;   core_batcreat.cpp_CBatCreature_archive_FUN_00412d80 at 00412d9b
 ;   core_batman.cpp_CBatman_archive_FUN_00414510 at 0041452b
 ;   core_battery.cpp_CBattery_archive_FUN_00414ef0 at 00414f1e
-;   core_beast.cpp_FUN_00415160 at 0041517b
+;   core_beast.cpp_CBeast_archive_FUN_00415160 at 0041517b
 ;   core_biggs.cpp_CBiggs_archive_FUN_00415870 at 0041588b
 ;   ... and 57 more
 ;

@@ -7,7 +7,7 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004abb20 at 004abb33
+;   core_glass.cpp_factoryFunc_FUN_004abb20 at 004abb33
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_HEADLITE_RAW_00584ebf
@@ -26,7 +26,7 @@
 ;   CDemonActor_vtable g_CGlassVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_mirror.cpp_CMirror_ctor_FUN_004d6550
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
@@ -39,8 +39,8 @@ section .text
     PUSH EDI                            ; 004abb51
     MOV EDX,dword ptr [ESP + 0xc]       ; 004abb52
     PUSH EDX                            ; 004abb56
-    CALL core_actor.cpp_FUN_00409d30    ; 004abb57
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004abb57
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004abb5c
     ADD EAX,0x1e4                       ; 004abb5f
     PUSH EAX                            ; 004abb64

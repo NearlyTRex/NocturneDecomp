@@ -11,8 +11,8 @@ void __cdecl core_ground_cpp_staticInit_FUN_004b1060(void)
 {
   uint uStack00000004;
   
-  core_ground_cpp_CGround_ctor_FUN_004b1350((CGround *)0x1cadf80,0x100,0x100);
+  core_ground_cpp_CGround_ctor_FUN_004b1350((CGround *)&DAT_01cadf80,0x100,0x100);
   uStack00000004 = 0x4b1081;
-  _atexit((WatcomStaticDestructorNode *)0x5ba8dc);
+  _atexit(&g_WatcomStaticDestructorNode_005ba8dc);
   return;
 }

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0055ef50 at 005603c9
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 005603c9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_can_t_pick_up_s_sombod_0059878e

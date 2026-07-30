@@ -9,9 +9,9 @@
 void __cdecl core_skeleton_cpp_staticInit_FUN_00517140(void)
 
 {
-  __arrinit((void *)0x268cef4,0x40,&g_CDeformableModelTypeInfo_005a1f20);
-  _atexit((WatcomStaticDestructorNode *)0x5be980);
-  __arrinit((void *)0x2737ef8,0x28,&g_CSkeletonTypeInfo_005a1f40);
-  _atexit((WatcomStaticDestructorNode *)0x5be990);
+  __arrinit(&DAT_0268cef4,0x40,&g_CDeformableModelTypeInfo_005a1f20);
+  _atexit(&g_WatcomStaticDestructorNode_005be980);
+  __arrinit(&DAT_02737ef8,0x28,&g_CSkeletonTypeInfo_005a1f40);
+  _atexit(&g_WatcomStaticDestructorNode_005be990);
   return;
 }

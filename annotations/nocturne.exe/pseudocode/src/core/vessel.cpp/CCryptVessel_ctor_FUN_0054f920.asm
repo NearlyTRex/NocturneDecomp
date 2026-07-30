@@ -7,7 +7,7 @@
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vessel.cpp_FUN_0054f8f0 at 0054f903
+;   core_vessel.cpp_factoryFunc_FUN_0054f8f0 at 0054f903
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vsslbase_kfm_00597448
@@ -23,7 +23,7 @@
 ;   CDemonActor_vtable g_CCryptVesselVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   core_flame.cpp_CFlame_ctor_FUN_0048cf60
@@ -38,8 +38,8 @@ section .text
     PUSH EDI                            ; 0054f922
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054f923
     PUSH EBX                            ; 0054f927
-    CALL core_actor.cpp_FUN_00409d30    ; 0054f928
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0054f928
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054f92d
     ADD EAX,0x150                       ; 0054f930
     PUSH EAX                            ; 0054f935

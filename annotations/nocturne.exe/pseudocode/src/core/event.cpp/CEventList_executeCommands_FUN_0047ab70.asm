@@ -16,7 +16,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a22a8
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0 at 004b50ea
 ;   core_hostage.cpp_CHostage_getGrabbed_FUN_004b8590 at 004b85e9
-;   core_hostage.cpp_FUN_004b6d80 at 004b7767
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b7767
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c1816
 ;   ... and 7 more
 ;

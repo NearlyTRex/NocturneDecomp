@@ -7,7 +7,7 @@
 ; CBiggs *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_biggs.cpp_FUN_00415340 at 00415353
+;   core_biggs.cpp_factoryFunc_FUN_00415340 at 00415353
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_biggs_dfm_00578dcd

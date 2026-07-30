@@ -19,7 +19,7 @@
 ;   CDemonActor_vtable g_CFlameVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     SUB ESP,0x4                         ; 0048cf61
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048cf64
     PUSH EDX                            ; 0048cf68
-    CALL core_actor.cpp_FUN_00409d30    ; 0048cf69
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0048cf69
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048cf6e
     MOV dword ptr [EAX + 0x14c],0x59d584 ; 0048cf71 | g_CFlameVTable
     MOV EBX,EAX                         ; 0048cf7b

@@ -7,7 +7,7 @@
 ; CActorDestination * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dest.cpp_FUN_0044b770 at 0044b783
+;   core_dest.cpp_factoryFunc_FUN_0044b770 at 0044b783
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 at 00481f18
 ;
 ; Referenced Globals:
@@ -18,7 +18,7 @@
 ;   CDemonActor_vtable g_CActorDestinationVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0044b7a2
     PUSH EDX                            ; 0044b7a6
     MOV ESI,0x57be09                    ; 0044b7a7 | = "none"
-    CALL core_actor.cpp_FUN_00409d30    ; 0044b7ac
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0044b7ac
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     MOV EDX,EAX                         ; 0044b7b1
     ADD ESP,0x4                         ; 0044b7b3
     LEA EDI,[EAX + 0x180]               ; 0044b7b6

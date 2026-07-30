@@ -581,8 +581,8 @@ section .text
     PUSH 0x3f800000                     ; 00458fe0
     PUSH EAX                            ; 00458fe5
     PUSH EBX                            ; 00458fe6
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 00458fe7
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 00458fe7
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00458fec
     PUSH 0x3e4ccccd                     ; 00458fef
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00458ff4
@@ -595,8 +595,8 @@ section .text
     PUSH 0x3f800000                     ; 00459006
     PUSH EAX                            ; 0045900b
     PUSH EBX                            ; 0045900c
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 0045900d
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 0045900d
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00459012
     JMP 0x00458f91                      ; 00459015
         ;   XREF to: 00458f91 (UNCONDITIONAL_JUMP)  ; LAB_00458f91
@@ -1345,8 +1345,8 @@ section .text
     PUSH 0x3f800000                     ; 004598c7
     PUSH EAX                            ; 004598cc
     PUSH EBX                            ; 004598cd
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 004598ce
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 004598ce
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 004598d3
     PUSH 0x3e4ccccd                     ; 004598d6
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004598db
@@ -1359,8 +1359,8 @@ section .text
     PUSH 0x3f800000                     ; 004598ed
     PUSH EAX                            ; 004598f2
     PUSH EBX                            ; 004598f3
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 004598f4
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 004598f4
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 004598f9
     PUSH dword ptr [EBP + 0x92]         ; 004598fc
         ;   Label: LAB_004598fc
@@ -1718,8 +1718,8 @@ section .text
     PUSH 0x3f800000                     ; 00459cef
     PUSH EAX                            ; 00459cf4
     PUSH EBX                            ; 00459cf5
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 00459cf6
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 00459cf6
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00459cfb
     PUSH 0x1                            ; 00459cfe
     PUSH 0x17                           ; 00459d00
@@ -1770,8 +1770,8 @@ section .text
     PUSH 0x3f800000                     ; 00459d8f
     PUSH EAX                            ; 00459d94
     PUSH EBX                            ; 00459d95
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 00459d96
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 00459d96
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00459d9b
     PUSH 0x3e4ccccd                     ; 00459d9e
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00459da3
@@ -1784,8 +1784,8 @@ section .text
     PUSH 0x3f800000                     ; 00459db5
     PUSH EAX                            ; 00459dba
     PUSH EBX                            ; 00459dbb
-    CALL core_dracbrid.cpp_FUN_0045ab40 ; 00459dbc
-        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
+    CALL core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 ; 00459dbc
+        ;   XREF to: 0045ab40 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_0045ab40(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00459dc1
     PUSH dword ptr [EBP + 0x92]         ; 00459dc4
         ;   Label: LAB_00459dc4

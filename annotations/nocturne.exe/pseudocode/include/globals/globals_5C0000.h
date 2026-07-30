@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/stdlib.h"
+#include "system/watcom.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5C0000
@@ -22,6 +23,10 @@ extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 // TerminatedCString
 extern TerminatedCString s_d3d_dll_005c0e83;
 
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc;
+
 // int
 extern int INT_005c0ff0;
 extern int INT_005c10b0;
@@ -30,7 +35,7 @@ extern int INT_005c1160;
 extern int INT_005c1174;
 extern int INT_005c1188;
 extern int INT_005c11a0;
-extern int INT_005c11c4;
+extern int g_INT_005c11c4;
 extern int INT_005c154c;
 extern int INT_005c1578;
 extern int INT_005c1590;

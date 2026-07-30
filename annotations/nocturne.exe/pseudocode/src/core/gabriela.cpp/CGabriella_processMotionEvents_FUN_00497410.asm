@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 00495ac0
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00495ac0
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004973b4 = 00497448

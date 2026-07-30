@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   class_name_hash
 ;
 ; XREF[116]:
-;   core_actor.cpp_FUN_0040a140 at 0040a1b2
-;   core_actor.cpp_FUN_0040b300 at 0040b4f6
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140 at 0040a1b2
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b4f6
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 0041156f
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410ab1
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0 at 00410c77

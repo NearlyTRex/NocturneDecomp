@@ -982,12 +982,38 @@
         "start":"00409f00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_FUN_00409f00",
-    "ret":"undefined1",
+    "name":"core_actor.cpp_CDemonActor_returnZero_FUN_00409f00",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1053,7 +1079,7 @@
       }
     ],
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040a100",
+    "name":"core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_0040a100",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -1147,7 +1173,7 @@
       }
     ],
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040a300",
+    "name":"core_actor.cpp_CDemonActor_playAmbientSound_FUN_0040a300",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -1164,13 +1190,29 @@
         "start":"0040a380"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040a380",
-    "ret":"undefined1",
+    "name":"core_actor.cpp_CDemonActor_doNothing_FUN_0040a380",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ]
     }
   },
   {
@@ -1184,7 +1226,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040b200",
+    "name":"core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200",
     "ret":"int",
     "vars":{
       "locals":[
@@ -1245,7 +1287,7 @@
       }
     ],
     "importable":true,
-    "name":"core_actor.cpp_FUN_0040b300",
+    "name":"core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -2179,7 +2221,7 @@
       }
     ],
     "importable":true,
-    "name":"core_ammo.cpp_FUN_0040ec00",
+    "name":"core_ammo.cpp_CAmmo_setup_FUN_0040ec00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2247,7 +2289,7 @@
       }
     ],
     "importable":true,
-    "name":"core_ammobox.cpp_FUN_0040f480",
+    "name":"core_ammobox.cpp_CAmmoBox_canPickup_FUN_0040f480",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2293,7 +2335,7 @@
       }
     ],
     "importable":true,
-    "name":"core_armour.cpp_FUN_0040fa00",
+    "name":"core_armour.cpp_CArmour_setup_FUN_0040fa00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2311,7 +2353,7 @@
       }
     ],
     "importable":true,
-    "name":"core_armour.cpp_FUN_0040fc00",
+    "name":"core_armour.cpp_CArmour_getTargetPoints_FUN_0040fc00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2329,7 +2371,7 @@
       }
     ],
     "importable":true,
-    "name":"core_backgnd.cpp_FUN_0040ff80",
+    "name":"core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040ff80",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -2565,7 +2607,7 @@
       }
     ],
     "importable":true,
-    "name":"core_baron.cpp_FUN_00411600",
+    "name":"core_baron.cpp_CBaron_getCollisionType_FUN_00411600",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2583,7 +2625,7 @@
       }
     ],
     "importable":true,
-    "name":"core_barrier.cpp_FUN_00411700",
+    "name":"core_barrier.cpp_CBarrier_getActorType_FUN_00411700",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -2619,7 +2661,7 @@
       }
     ],
     "importable":true,
-    "name":"core_bat.cpp_FUN_00411a00",
+    "name":"core_bat.cpp_CBat_getActorType_FUN_00411a00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -3569,7 +3611,7 @@
       }
     ],
     "importable":true,
-    "name":"core_batcreat.cpp_FUN_00412d80",
+    "name":"core_batcreat.cpp_CBatCreature_archive_FUN_00412d80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -4697,7 +4739,7 @@
       }
     ],
     "importable":true,
-    "name":"core_bodypart.cpp_FUN_00416300",
+    "name":"core_bodypart.cpp_CBodyPart_renderBackground_FUN_00416300",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -5239,7 +5281,7 @@
       }
     ],
     "importable":true,
-    "name":"core_boneguy.cpp_FUN_00418a00",
+    "name":"core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -6661,7 +6703,7 @@
       }
     ],
     "importable":true,
-    "name":"core_boxactor.cpp_FUN_0041ea00",
+    "name":"core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041ea00",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -6697,7 +6739,7 @@
       }
     ],
     "importable":true,
-    "name":"core_boxactor.cpp_FUN_0041f300",
+    "name":"core_boxactor.cpp_CLightActor_getActorType_FUN_0041f300",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -6768,12 +6810,20 @@
         "start":"0041fb80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_bride.cpp_FUN_0041fb80",
-    "ret":"undefined1",
+    "name":"core_bride.cpp_factoryFunc_FUN_0041fb80",
+    "ret":"CBride*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -6787,7 +6837,7 @@
       }
     ],
     "importable":true,
-    "name":"core_bugs.cpp_FUN_00421480",
+    "name":"core_bugs.cpp_CBugs_process_FUN_00421480",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -8118,7 +8168,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_00428100",
+    "name":"core_charactr.cpp_CCharacter_drop_FUN_00428100",
     "ret":"void",
     "vars":{
       "params":[
@@ -12608,12 +12658,20 @@
         "start":"00439d00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_colonel.cpp_FUN_00439d00",
-    "ret":"undefined1",
+    "name":"core_colonel.cpp_factoryFunc_FUN_00439d00",
+    "ret":"CColonel*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -12697,7 +12755,7 @@
       }
     ],
     "importable":true,
-    "name":"core_conveyor.cpp_FUN_0043b300",
+    "name":"core_conveyor.cpp_CConveyor_renderBackground_FUN_0043b300",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -12895,7 +12953,7 @@
       }
     ],
     "importable":true,
-    "name":"core_crate.cpp_FUN_0043c800",
+    "name":"core_crate.cpp_CCrate_getActorType_FUN_0043c800",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -12913,7 +12971,7 @@
       }
     ],
     "importable":true,
-    "name":"core_crossbow.cpp_FUN_0043cf00",
+    "name":"core_crossbow.cpp_CCrossbow_getActorType_FUN_0043cf00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -17702,7 +17760,7 @@
       }
     ],
     "importable":true,
-    "name":"core_drip.cpp_FUN_00462300",
+    "name":"core_drip.cpp_CDrip_process_FUN_00462300",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -17818,7 +17876,7 @@
       }
     ],
     "importable":true,
-    "name":"core_drip.cpp_FUN_00462880",
+    "name":"core_drip.cpp_CDrip_getCollisionType_FUN_00462880",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -22176,7 +22234,7 @@
       }
     ],
     "importable":true,
-    "name":"core_elephant.cpp_FUN_00477700",
+    "name":"core_elephant.cpp_CElephantGun_getActorType_FUN_00477700",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -22194,7 +22252,7 @@
       }
     ],
     "importable":true,
-    "name":"core_emitter.cpp_FUN_00478f80",
+    "name":"core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -22966,7 +23024,7 @@
       }
     ],
     "importable":true,
-    "name":"core_emitter.cpp_FUN_00479380",
+    "name":"core_emitter.cpp_CEmitter_getCollisionType_FUN_00479380",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -22985,7 +23043,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_enemy.cpp_FUN_0047a000",
+    "name":"core_enemy.cpp_CEnemy_renderBackground_FUN_0047a000",
     "ret":"void",
     "vars":{
       "params":[
@@ -23443,12 +23501,20 @@
         "start":"00481c00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_filmreel.cpp_FUN_00481c00",
-    "ret":"undefined1",
+    "name":"core_filmreel.cpp_factoryFunc_FUN_00481c00",
+    "ret":"CFilmReel*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -23462,7 +23528,7 @@
       }
     ],
     "importable":true,
-    "name":"core_filmreel.cpp_FUN_00481d80",
+    "name":"core_filmreel.cpp_CFilmReel_process_FUN_00481d80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -23480,7 +23546,7 @@
       }
     ],
     "importable":true,
-    "name":"core_filmreel.cpp_FUN_00481e00",
+    "name":"core_filmreel.cpp_CFilmReel_renderBackground_FUN_00481e00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -23498,7 +23564,7 @@
       }
     ],
     "importable":true,
-    "name":"core_filmreel.cpp_FUN_00481f00",
+    "name":"core_filmreel.cpp_CFilmProjector_getActorType_FUN_00481f00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -26123,7 +26189,7 @@
       }
     ],
     "importable":true,
-    "name":"core_flashlit.cpp_FUN_0048ee00",
+    "name":"core_flashlit.cpp_CFlashlight_dtor_FUN_0048ee00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -26674,12 +26740,20 @@
         "start":"00494600"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00494600",
-    "ret":"undefined1",
+    "name":"core_frankgen.cpp_factoryFunc_FUN_00494600",
+    "ret":"CFrankenstienMachine*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -26693,7 +26767,7 @@
       }
     ],
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00494e80",
+    "name":"core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -26729,7 +26803,7 @@
       }
     ],
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00495000",
+    "name":"core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_00495000",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -26765,7 +26839,7 @@
       }
     ],
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00495400",
+    "name":"core_frankgen.cpp_CFrankenstienMachine_getCollisionType_FUN_00495400",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -28265,7 +28339,7 @@
       }
     ],
     "importable":true,
-    "name":"core_gasmask.cpp_FUN_004a8a00",
+    "name":"core_gasmask.cpp_CGasMask_getActorType_FUN_004a8a00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -28361,7 +28435,7 @@
       }
     ],
     "importable":true,
-    "name":"core_glass.cpp_FUN_004ac600",
+    "name":"core_glass.cpp_CGlass_renderTransparent_FUN_004ac600",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -29277,7 +29351,7 @@
       }
     ],
     "importable":true,
-    "name":"core_grave.cpp_FUN_004b1000",
+    "name":"core_grave.cpp_CGrave_getCollisionType_FUN_004b1000",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -30085,7 +30159,7 @@
       }
     ],
     "importable":true,
-    "name":"core_health.cpp_FUN_004b4280",
+    "name":"core_health.cpp_CHealthItem_renderOpaque_FUN_004b4280",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -30399,7 +30473,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hero.cpp_FUN_004b5f80",
+    "name":"core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004b5f80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -30477,7 +30551,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hiram.cpp_FUN_004b6600",
+    "name":"core_hiram.cpp_CHiram_getActorType_FUN_004b6600",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -30495,7 +30569,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hostage.cpp_FUN_004b6d80",
+    "name":"core_hostage.cpp_CHostage_process_FUN_004b6d80",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -31603,7 +31677,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hostage.cpp_FUN_004b8580",
+    "name":"core_hostage.cpp_CHostage_isGrabbable_FUN_004b8580",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -31621,7 +31695,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hostage.cpp_FUN_004b8600",
+    "name":"core_hostage.cpp_CHostage_processDamage_FUN_004b8600",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -31639,7 +31713,7 @@
       }
     ],
     "importable":true,
-    "name":"core_hostage.cpp_FUN_004b8700",
+    "name":"core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -33279,7 +33353,7 @@
       }
     ],
     "importable":true,
-    "name":"core_keyactor.cpp_FUN_004c3600",
+    "name":"core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004c3600",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -33441,7 +33515,7 @@
       }
     ],
     "importable":true,
-    "name":"core_ladder.cpp_FUN_004c4280",
+    "name":"core_ladder.cpp_CLadder_getActorType_FUN_004c4280",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -33586,12 +33660,20 @@
         "start":"004c6e00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_lightgun.cpp_FUN_004c6e00",
-    "ret":"undefined1",
+    "name":"core_lightgun.cpp_factoryFunc_FUN_004c6e00",
+    "ret":"CLightGun*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -33605,7 +33687,7 @@
       }
     ],
     "importable":true,
-    "name":"core_litecone.cpp_FUN_004c8200",
+    "name":"core_litecone.cpp_CLightCone_renderTransparent_FUN_004c8200",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -33641,7 +33723,7 @@
       }
     ],
     "importable":true,
-    "name":"core_litecone.cpp_FUN_004c8380",
+    "name":"core_litecone.cpp_CLightCone_dtor_FUN_004c8380",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -33658,12 +33740,20 @@
         "start":"004c9400"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_004c9400",
-    "ret":"undefined1",
+    "name":"core_manpuz.cpp_factoryFunc_FUN_004c9400",
+    "ret":"CMansionPuzzleCircle*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -33677,7 +33767,7 @@
       }
     ],
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_004c9580",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -35293,7 +35383,7 @@
       }
     ],
     "importable":true,
-    "name":"core_melee.cpp_FUN_004cef80",
+    "name":"core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_004cef80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -36693,12 +36783,20 @@
         "start":"004dd900"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_moloch.cpp_FUN_004dd900",
-    "ret":"undefined1",
+    "name":"core_moloch.cpp_factoryFunc_FUN_004dd900",
+    "ret":"CMoloch*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -36712,7 +36810,7 @@
       }
     ],
     "importable":true,
-    "name":"core_moloch.cpp_FUN_004de680",
+    "name":"core_moloch.cpp_CMoloch_archive_FUN_004de680",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -40788,12 +40886,20 @@
         "start":"004f2c00"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_pendulum.cpp_FUN_004f2c00",
-    "ret":"undefined1",
+    "name":"core_pendulum.cpp_factoryFunc_FUN_004f2c00",
+    "ret":"CPendulum*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -40807,7 +40913,7 @@
       }
     ],
     "importable":true,
-    "name":"core_pendulum.cpp_FUN_004f3c00",
+    "name":"core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -41153,7 +41259,7 @@
       }
     ],
     "importable":true,
-    "name":"core_platfrm.cpp_FUN_004f5d80",
+    "name":"core_platfrm.cpp_CPlatform_getActorType_FUN_004f5d80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -41171,7 +41277,7 @@
       }
     ],
     "importable":true,
-    "name":"core_platfrm.cpp_FUN_004f7580",
+    "name":"core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_004f7580",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -41746,7 +41852,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_scat.cpp_FUN_004fbe80",
+    "name":"core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80",
     "ret":"void",
     "vars":{
       "params":[
@@ -46565,7 +46671,7 @@
       }
     ],
     "importable":true,
-    "name":"core_shovel.cpp_FUN_00516a00",
+    "name":"core_shovel.cpp_CShovel_getActorType_FUN_00516a00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -50869,12 +50975,20 @@
         "start":"00534780"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_stairs.cpp_FUN_00534780",
-    "ret":"undefined1",
+    "name":"core_stairs.cpp_factoryFunc_FUN_00534780",
+    "ret":"CStairs*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -51624,7 +51738,7 @@
       }
     ],
     "importable":true,
-    "name":"core_stranger.cpp_FUN_0053d100",
+    "name":"core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -52335,12 +52449,20 @@
         "start":"00541980"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_svetlana.cpp_FUN_00541980",
-    "ret":"undefined1",
+    "name":"core_svetlana.cpp_factoryFunc_FUN_00541980",
+    "ret":"CSvetlana*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -52354,7 +52476,7 @@
       }
     ],
     "importable":true,
-    "name":"core_svetlana.cpp_FUN_00541d00",
+    "name":"core_svetlana.cpp_CSvetlana_process_FUN_00541d00",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -53196,7 +53318,7 @@
       }
     ],
     "importable":true,
-    "name":"core_tommygun.cpp_FUN_00545b80",
+    "name":"core_tommygun.cpp_CTommyGun_getActorType_FUN_00545b80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53250,7 +53372,7 @@
       }
     ],
     "importable":true,
-    "name":"core_trash.cpp_FUN_00546c80",
+    "name":"core_trash.cpp_CTrash_getActorType_FUN_00546c80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53268,7 +53390,7 @@
       }
     ],
     "importable":true,
-    "name":"core_trash.cpp_FUN_00547800",
+    "name":"core_trash.cpp_CTrash_dtor_FUN_00547800",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53285,12 +53407,20 @@
         "start":"00547880"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_FUN_00547880",
-    "ret":"undefined1",
+    "name":"core_trigger.cpp_factoryFunc_FUN_00547880",
+    "ret":"CTrigger*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53338,7 +53468,7 @@
       }
     ],
     "importable":true,
-    "name":"core_trigger.cpp_FUN_00548100",
+    "name":"core_trigger.cpp_CTrigger_renderTransparent_FUN_00548100",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53548,7 +53678,7 @@
       }
     ],
     "importable":true,
-    "name":"core_turret.cpp_FUN_0054a900",
+    "name":"core_turret.cpp_CTurret_stopUsing_FUN_0054a900",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53566,7 +53696,7 @@
       }
     ],
     "importable":true,
-    "name":"core_tvbat.cpp_FUN_0054b100",
+    "name":"core_tvbat.cpp_CTVBat_getActorType_FUN_0054b100",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53583,12 +53713,20 @@
         "start":"0054c280"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_vampboss.cpp_FUN_0054c280",
-    "ret":"undefined1",
+    "name":"core_vampboss.cpp_factoryFunc_FUN_0054c280",
+    "ret":"CVampireBoss*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53616,7 +53754,7 @@
       }
     ],
     "importable":true,
-    "name":"core_vehicle.cpp_FUN_0054f500",
+    "name":"core_vehicle.cpp_CVehicle_getCollisionType_FUN_0054f500",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53634,7 +53772,7 @@
       }
     ],
     "importable":true,
-    "name":"core_vehicle.cpp_FUN_0054f780",
+    "name":"core_vehicle.cpp_CVehicle_renderTransparent_FUN_0054f780",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53652,7 +53790,7 @@
       }
     ],
     "importable":true,
-    "name":"core_vessel.cpp_FUN_0054fa80",
+    "name":"core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -53670,7 +53808,7 @@
       }
     ],
     "importable":true,
-    "name":"core_vessel.cpp_FUN_0054fc00",
+    "name":"core_vessel.cpp_CCryptVessel_pickup_FUN_0054fc00",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -54454,7 +54592,7 @@
       }
     ],
     "importable":true,
-    "name":"core_wateract.cpp_FUN_00551c00",
+    "name":"core_wateract.cpp_CWaterActor_renderTransparent_FUN_00551c00",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -54750,7 +54888,7 @@
       }
     ],
     "importable":true,
-    "name":"core_weapon.cpp_FUN_00554300",
+    "name":"core_weapon.cpp_CWeapon_pickup_FUN_00554300",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -55040,7 +55178,7 @@
       }
     ],
     "importable":true,
-    "name":"core_werewolf.cpp_FUN_00555a80",
+    "name":"core_werewolf.cpp_CWerewolf_getActorType_FUN_00555a80",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -57159,7 +57297,7 @@
       }
     ],
     "importable":true,
-    "name":"core_zombie.cpp_FUN_00561900",
+    "name":"core_zombie.cpp_CZombie_renderOpaque_FUN_00561900",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{

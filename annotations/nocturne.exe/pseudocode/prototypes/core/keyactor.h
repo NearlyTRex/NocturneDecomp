@@ -7,13 +7,13 @@
 // Address: 004c3400
 void __cdecl staticInit(void);
 
-// Original: core_keyactor.cpp_FUN_004c3430
+// Original: core_keyactor.cpp_factoryFunc_FUN_004c3430
 // Address: 004c3430
-void FUN_004c3430(void);
+CKeyActor * __cdecl factoryFunc(void);
 
-// Original: core_keyactor.cpp_FUN_004c3450
+// Original: core_keyactor.cpp_CKeyActor_getActorType_FUN_004c3450
 // Address: 004c3450
-CDemonActorType * FUN_004c3450(void);
+CDemonActorType * CKeyActor::getActorType(void);
 
 // Original: core_keyactor.cpp_FUN_004c3460
 // Address: 004c3460
@@ -27,30 +27,30 @@ void __cdecl CKeyActor::setup(CKeyActor *this_ptr);
 // Address: 004c34e0
 void CKeyActor::process(int param_1,float param_2);
 
-// Original: core_keyactor.cpp_FUN_004c3590
+// Original: core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004c3590
 // Address: 004c3590
-int FUN_004c3590(CDemonActor *param_1);
+int CKeyActor::renderOpaque(CDemonActor *param_1);
 
-// Original: core_keyactor.cpp_FUN_004c3600
+// Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004c3600
 // Address: 004c3600
-undefined4 * FUN_004c3600(int param_1,undefined4 *param_2);
+undefined4 * CKeyActor::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_keyactor.cpp_CKeyActor_archive_FUN_004c3650
 // Address: 004c3650
 void CKeyActor::archive(CDemonActor *param_1);
 
-// Original: core_keyactor.cpp_FUN_004c36c0
+// Original: core_keyactor.cpp_CKeyActor_getCollisionType_FUN_004c36c0
 // Address: 004c36c0
-undefined4 FUN_004c36c0(void);
+undefined4 CKeyActor::getCollisionType(void);
 
-// Original: core_keyactor.cpp_FUN_004c36d0
+// Original: core_keyactor.cpp_CKeyActor_canPickup_FUN_004c36d0
 // Address: 004c36d0
-undefined4 FUN_004c36d0(undefined4 param_1,CDemonActor *param_2);
+undefined4 CKeyActor::canPickup(undefined4 param_1,CDemonActor *param_2);
 
-// Original: core_keyactor.cpp_FUN_004c36f0
+// Original: core_keyactor.cpp_CKeyActor_onPickup_FUN_004c36f0
 // Address: 004c36f0
-void FUN_004c36f0(CDemonActor *param_1,CDemonActor *param_2);
+void CKeyActor::onPickup(CDemonActor *param_1,CDemonActor *param_2);
 
-// Original: core_keyactor.cpp_FUN_004c3710
+// Original: core_keyactor.cpp_CKeyActor_dtor_FUN_004c3710
 // Address: 004c3710
-CDemonActor * FUN_004c3710(CDemonActor *param_1,byte param_2);
+CDemonActor * CKeyActor::dtor(CDemonActor *param_1,byte param_2);

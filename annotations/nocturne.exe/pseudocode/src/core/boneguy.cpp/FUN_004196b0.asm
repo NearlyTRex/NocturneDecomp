@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_00418a00 at 0041936a
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 0041936a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_can_t_pick_up_s_sombod_0057937e

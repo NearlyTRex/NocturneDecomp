@@ -19,7 +19,7 @@ void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CNPC *param_1,int p
       if (param_2 != 0) {
         (param_1->base).render_active = 1;
       }
-      core_npc_cpp_FUN_004eece0(param_1,param_2);
+      core_npc_cpp_CNPC_renderBackground_FUN_004eece0(param_1,param_2);
       return;
     }
   }

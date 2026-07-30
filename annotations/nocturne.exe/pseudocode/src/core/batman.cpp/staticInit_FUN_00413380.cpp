@@ -10,7 +10,8 @@ void __cdecl core_batman_cpp_staticInit_FUN_00413380(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CBatmanActorType_00764638,"CBatman",core_batman_cpp_FUN_004133b0,
-             &g_INT_005acfbc,3,&g_CEnemyActorType_01bcdebc);
+            (&g_CBatmanActorType_00764638,"CBatman",
+             core_batman_cpp_factoryFunc_FUN_004133b0,&g_INT_005acfbc,3,&g_CEnemyActorType_01bcdebc)
+  ;
   return;
 }

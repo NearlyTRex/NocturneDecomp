@@ -19,15 +19,15 @@
 ;
 ; XREF[42]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 0041758e
-;   core_boneguy.cpp_FUN_004194b0 at 00419625
-;   core_boxactor.cpp_FUN_0041f3d0 at 0041f594
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 at 00419625
+;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f594
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422489
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 004275ea
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 0042908e
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 0042800f
+;   core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 at 004294d4
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 at 00426619
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429331
-;   core_charactr.cpp_FUN_00429490 at 004294d4
 ;   ... and 32 more
 ;
 ; *****************************************************************************

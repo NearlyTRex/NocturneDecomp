@@ -12,7 +12,7 @@ void __cdecl core_netgame_cpp_staticInit_FUN_004e94a0(void)
 
 {
   core_netgame_cpp_CNetGame_ctor_FUN_004e9860((CNetGame *)&DAT_01cea280);
-  _atexit((WatcomStaticDestructorNode *)0x5bded0);
+  _atexit(&g_WatcomStaticDestructorNode_005bded0);
   __arrinit((void *)0x1cea410,400,&g_SChatHistoryTypeInfo_005a0de0);
   _DAT_01d16408 = 0x405;
   DAT_01d1640c = 0;

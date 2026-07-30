@@ -15,7 +15,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bfafb
 ;   core_inv.cpp_CInventory_initialize_FUN_004bef10 at 004bef6a
 ;   core_inv.cpp_CInventory_load_FUN_004c1190 at 004c143c
-;   core_mimic.cpp_FUN_004d4650 at 004d4851
+;   core_mimic.cpp_CMimic_setup_FUN_004d4650 at 004d4851
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d855f
 ;   ... and 2 more
 ;

@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   velocity_source_ptr
 ;
 ; XREF[4]:
-;   core_dracbrid.cpp_FUN_0045ab40 at 0045afbf
+;   core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 at 0045afbf
 ;   core_sound.cpp_FUN_0052d790 at 0052dbaa
 ;   core_sound.cpp_FUN_0052dff0 at 0052e744
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0 at 0054f7be

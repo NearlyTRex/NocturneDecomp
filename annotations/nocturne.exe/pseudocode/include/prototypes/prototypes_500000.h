@@ -50,8 +50,8 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00505820(CScript *this_
 CVector3f * __cdecl core_script_cpp_makeVector_FUN_00505880(CVector3f *out,float x,float y,float z);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(CDeformableModel *model_ptr);
 void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void);
-void core_sentinel_cpp_FUN_005058f0(void);
-CDemonActorType * core_sentinel_cpp_FUN_00505910(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void);
+CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(void);
 CEnemy * core_sentinel_cpp_FUN_00505920(CEnemy *param_1);
 void core_sentinel_cpp_CSentinel_setup_FUN_00505990(CEnemy *param_1);
 void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CEnemy *param_1,float param_2);
@@ -59,7 +59,7 @@ undefined4 core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CDemonAct
 void core_sentinel_cpp_CSentinel_archive_FUN_005067e0(CEnemy *param_1);
 void core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(CEnemy *param_1,SDamageInfo *param_2);
 undefined4 core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,CVector3f *param_2);
-void core_sentinel_cpp_FUN_00506a60(CCharacter *param_1,SCollisionInfo *param_2);
+void core_sentinel_cpp_CSentinel_getCollisionType_FUN_00506a60(CCharacter *param_1,SCollisionInfo *param_2);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00506a80(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_00506b40(void);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_00506bc0(CDemonSet *this_ptr);

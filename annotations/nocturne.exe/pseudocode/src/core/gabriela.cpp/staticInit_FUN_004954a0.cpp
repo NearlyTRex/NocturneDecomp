@@ -27,7 +27,7 @@ void __cdecl core_gabriela_cpp_staticInit_FUN_004954a0(void)
   CVector3f_01c71388.x = 2.3;
   CVector3f_01c71388.y = 4.4;
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CGabriellaActorType_01c713e8,"CGabriella",core_gabriela_cpp_FUN_00495670,
-             &INT_005b92a8,3,&g_CHeroActorType_01cae0ec);
+            (&g_CGabriellaActorType_01c713e8,"CGabriella",
+             core_gabriela_cpp_factoryFunc_FUN_00495670,&INT_005b92a8,3,&g_CHeroActorType_01cae0ec);
   return;
 }

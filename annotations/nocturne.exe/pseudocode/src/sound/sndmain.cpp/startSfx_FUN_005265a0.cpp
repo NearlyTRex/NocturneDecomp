@@ -122,7 +122,7 @@ LAB_005266dc:
       }
       iVar4 = _DAT_02dc1ed8 * 0x168;
       if ((*(int *)(iVar4 + 0x2dc2004) == 0) && (*(int *)(iVar4 + 0x2dc2008) == 0)) {
-        local_18 = (CSfxSample *)(iVar4 + 0x2dc1edc);
+        local_18 = (CSfxSample *)(&DAT_02dc1edc + iVar4);
         goto LAB_0052671f;
       }
       iVar12 = iVar12 + 1;
@@ -253,18 +253,18 @@ LAB_0052673b:
       pCVar5->channel_target_buffer_offsets[7] = -1;
       pCVar5 = (CSfxSlot *)pCVar6;
     } while (pCVar6 != (CVector3d *)(iVar3 + 0x2dbd394));
-    iVar15 = DAT_005bea40 + 1;
+    iVar15 = g_INT_005bea40 + 1;
     iVar12 = *(int *)(&DAT_02dbd3e8 + iVar3);
     *(uint *)(iVar3 + 0x2dbd470) = *(uint *)(*(int *)(&DAT_02dbd3e8 + iVar3) + 0x114);
     iVar4 = *(int *)(&DAT_02dbd3e8 + iVar3);
-    DAT_005bea40 = iVar15;
+    g_INT_005bea40 = iVar15;
     *(uint *)(iVar3 + 0x2dbd474) = *(uint *)(iVar12 + 0x118);
     *(uint *)(iVar3 + 0x2dbd478) = *(uint *)(iVar4 + 0x11c);
     if (0xfffffe < iVar15) {
-      DAT_005bea40 = 1;
+      g_INT_005bea40 = 1;
     }
-    iVar12 = DAT_005bea40;
-    *(int *)(&DAT_02dbd3e4 + iVar3) = DAT_005bea40;
+    iVar12 = g_INT_005bea40;
+    *(int *)(&DAT_02dbd3e4 + iVar3) = g_INT_005bea40;
     iVar4 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0
                       (*(uint *)(&DAT_02dbd3e8 + iVar3),0x4479c000,0x4479c000);
     if (iVar4 != 0) {

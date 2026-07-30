@@ -61,7 +61,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (0x1fb8508,world_position,*puVar7,surface_normal);
+                        (&DAT_01fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01fff07c);
   }
@@ -73,7 +73,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
       iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
       iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                        (0x1fb8508,world_position,*puVar7,surface_normal);
+                        (&DAT_01fb8508,world_position,*puVar7,surface_normal);
       iVar2 = iVar2 + iVar1;
     } while (iVar3 < _DAT_01ffeef8);
   }
@@ -123,7 +123,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonS
             uVar6 = *(uint *)(iVar4 + 0x1fba2dc);
           }
           iVar1 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-                            (0x1fb8508,&stack0xffffffb8,uVar6,puVar7);
+                            (&DAT_01fb8508,&stack0xffffffb8,uVar6,puVar7);
           iVar2 = iVar2 + iVar1;
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 4;

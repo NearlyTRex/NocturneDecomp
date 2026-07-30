@@ -13,7 +13,6 @@ CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename)
 {
   int iVar1;
   int iVar2;
-  CSkeleton *this_ptr;
   char *str1;
   
   iVar2 = 0;
@@ -22,7 +21,7 @@ CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename)
     do {
       iVar1 = _stricmp(str1,filename);
       if (iVar1 == 0) {
-        return (CSkeleton *)(iVar2 * 0x2937c + 0x2737ef8);
+        return (CSkeleton *)(&DAT_02737ef8 + iVar2 * 0x2937c);
       }
       iVar2 = iVar2 + 1;
       str1 = str1 + 0x2937c;
@@ -33,8 +32,8 @@ CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename)
     INT_01cc4804 = 0x1093;
     core_main_c_FUN_004c8440("Can't load %s because skeleton manager is full.  (Size is %d)",filename,0x28);
   }
-  this_ptr = (CSkeleton *)(_DAT_02737ef4 * 0x2937c + 0x2737ef8);
+  iVar2 = _DAT_02737ef4 * 0x2937c;
   _DAT_02737ef4 = _DAT_02737ef4 + 1;
-  core_skeleton_cpp_CSkeleton_load_FUN_00517560(this_ptr,filename);
-  return this_ptr;
+  core_skeleton_cpp_CSkeleton_load_FUN_00517560((CSkeleton *)(&DAT_02737ef8 + iVar2),filename);
+  return (CSkeleton *)(&DAT_02737ef8 + iVar2);
 }

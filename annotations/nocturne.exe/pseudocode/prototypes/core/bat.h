@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 00411940
 float FUN_00411940(float param_1,float param_2);
 
-// Original: core_bat.cpp_FUN_004119e0
+// Original: core_bat.cpp_factoryFunc_FUN_004119e0
 // Address: 004119e0
-void FUN_004119e0(void);
+CBat * __cdecl factoryFunc(void);
 
-// Original: core_bat.cpp_FUN_00411a00
+// Original: core_bat.cpp_CBat_getActorType_FUN_00411a00
 // Address: 00411a00
-CDemonActorType * FUN_00411a00(void);
+CDemonActorType * CBat::getActorType(void);
 
 // Original: core_bat.cpp_FUN_00411a10
 // Address: 00411a10
@@ -35,13 +35,13 @@ void CBat::archive(CDemonActor *param_1);
 // Address: 00411c40
 void CBat::process(CBat *param_1,float param_2);
 
-// Original: core_bat.cpp_FUN_00411e30
+// Original: core_bat.cpp_CBat_renderOpaque_FUN_00411e30
 // Address: 00411e30
-int FUN_00411e30(CDemonActor *param_1);
+int CBat::renderOpaque(CDemonActor *param_1);
 
-// Original: core_bat.cpp_FUN_00411ea0
+// Original: core_bat.cpp_CBat_getBoundingBox_FUN_00411ea0
 // Address: 00411ea0
-undefined4 * FUN_00411ea0(int param_1,undefined4 *param_2);
+undefined4 * CBat::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20
 // Address: 00411f20

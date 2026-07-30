@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01abb4b8
-;   undefined4 DAT_01abb4bc
-;   undefined4 DAT_01abb4c0
+;   CVector3f CVector3f_01abb4b8
+;   undefined4 CVector3f_01abb4b8.y
+;   undefined4 CVector3f_01abb4b8.z
 ;
 ; *****************************************************************************
 
@@ -15,8 +15,8 @@ section .text
 
     XOR EDX,EDX                         ; 0044e0f0
         ;   Label: core_dlight.cpp_staticInit_FUN_0044e0f0
-    MOV dword ptr [0x01abb4bc],EDX      ; 0044e0f2 | DAT_01abb4bc
-    MOV dword ptr [0x01abb4c0],EDX      ; 0044e0f8 | DAT_01abb4c0
-    MOV dword ptr [0x01abb4b8],EDX      ; 0044e0fe | DAT_01abb4b8
+    MOV dword ptr [0x01abb4bc],EDX      ; 0044e0f2 | CVector3f_01abb4b8.y
+    MOV dword ptr [0x01abb4c0],EDX      ; 0044e0f8 | CVector3f_01abb4b8.z
+    MOV dword ptr [0x01abb4b8],EDX      ; 0044e0fe | CVector3f_01abb4b8
     RET                                 ; 0044e104
 

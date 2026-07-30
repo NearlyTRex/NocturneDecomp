@@ -11,10 +11,10 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[9]:
-;   core_actor.cpp_FUN_0040b300 at 0040b6cb
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b6cb
 ;   core_crossbow.cpp_FUN_0043d1c0 at 0043d578
 ;   core_elephant.cpp_FUN_00477890 at 00477d52
-;   core_gun.cpp_FUN_004b27c0 at 004b2f38
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2f38
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c7751
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 0050955c
 ;   core_shotgun.cpp_FUN_00515ea0 at 005163ba

@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_batman.cpp_FUN_00414340 at 00414486
-;   core_dracbrid.cpp_FUN_0045a260 at 0045a3b5
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00414340 at 00414486
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 at 0045a3b5
 ;   core_fire.cpp_CTrail_render_FUN_00489360 at 004893d3
 ;
 ; Referenced Globals:

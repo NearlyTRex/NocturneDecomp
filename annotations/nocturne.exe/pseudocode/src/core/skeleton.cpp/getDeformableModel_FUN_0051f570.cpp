@@ -22,7 +22,7 @@ CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(cha
     do {
       iVar1 = _stricmp(str1,model_filename);
       if (iVar1 == 0) {
-        return (CDeformableModel *)(iVar2 * 0x2ac0 + 0x268cef4);
+        return (CDeformableModel *)(&DAT_0268cef4 + iVar2 * 0x2ac0);
       }
       iVar2 = iVar2 + 1;
       str1 = str1 + 0x2ac0;
@@ -33,7 +33,7 @@ CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(cha
     INT_01cc4804 = 0x1057;
     core_main_c_FUN_004c8440("Can't load %s because deformable model manager is full.  (Size is %d)",model_filename,0x40);
   }
-  this_ptr = (CDeformableModel *)(_DAT_0268cef0 * 0x2ac0 + 0x268cef4);
+  this_ptr = (CDeformableModel *)(&DAT_0268cef4 + _DAT_0268cef0 * 0x2ac0);
   _DAT_0268cef0 = _DAT_0268cef0 + 1;
   core_skeleton_cpp_CDeformableModel_load_FUN_005191f0(this_ptr,model_filename);
   core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(this_ptr);

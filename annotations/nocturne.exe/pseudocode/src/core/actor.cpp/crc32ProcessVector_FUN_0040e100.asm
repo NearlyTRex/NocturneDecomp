@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   vector
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040b0d0 at 0040b0e9
+;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_0040b0d0 at 0040b0e9
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0

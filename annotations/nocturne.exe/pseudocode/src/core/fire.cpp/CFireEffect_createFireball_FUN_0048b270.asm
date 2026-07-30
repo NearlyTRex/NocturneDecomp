@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 at 00478757
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484b8e
-;   core_larva.cpp_FUN_004c4970 at 004c4d88
+;   core_larva.cpp_CLarva_process_FUN_004c4970 at 004c4d88
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c58df8

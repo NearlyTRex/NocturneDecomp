@@ -1,12 +1,12 @@
-Scanning 280 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/pseudocode/src...
+Scanning 327 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (138 files still need ADJ)
+UNFINISHED CTORS/DTORS (145 files still need ADJ)
 ======================================================================
 
   [core/ammo.cpp]
     CAmmo_ctor_FUN_0040eb70:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CAmmo_ptr_336
 
   [core/armour.cpp]
     CArmour_dtor_FUN_0040fc30:
@@ -70,9 +70,9 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/bodypart.cpp]
     CBodyPart_ctor_FUN_00415d20:
-      _arrinit @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      CBox_ctor @ ??? (UNKNOWN)
+      _arrinit @ this+0x288 (648) -> CBodyPart_ptr_648
+      _arrinit @ this+0x748 (1864) -> CBodyPart_ptr_1864
+      CBox_ctor @ this+0xcb4 (3252) -> CBodyPart_ptr_3252
     CBodyPart_dtor_FUN_00415e40:
       CBox_dtor @ this+0xcb4 (3252) -> CBodyPart_ptr_3252
       SBodyPartFire_arrdtor @ this+0x748 (1864) -> CBodyPart_ptr_1864
@@ -102,8 +102,8 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/boxactor.cpp]
     CBoxActor_ctor_FUN_0041e300:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CBox_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CBoxActor_ptr_336
+      CBox_ctor @ this+0x38c (908) -> CBoxActor_ptr_908
     CBoxActor_dtor_FUN_0041fa90:
       CBox_dtor @ this+0x38c (908) -> CBoxActor_ptr_908
     CLightActor_ctor_FUN_0041f310:
@@ -136,18 +136,18 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/chain.cpp]
     CChain_ctor_FUN_0042b750:
-      _arrinit @ ??? (UNKNOWN)
+      _arrinit @ this+0x284 (644) -> CChain_ptr_644
     CChain_dtor_FUN_0042cd30:
       CDemonActor_dtor @ this+0x284 (644) -> CChain_ptr_644
 
   [core/charactr.cpp]
     CCharacter_ctor_FUN_00423f40:
-      CDeformableModelInstance_ctor @ ??? (UNKNOWN)
-      CClothList_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
+      CDeformableModelInstance_ctor @ this+0x150 (336) -> CCharacter_ptr_336
+      CClothList_ctor @ this+0x2a8c (10892) -> CCharacter_ptr_10892
+      _arrinit @ this+0x2c54 (11348) -> CCharacter_ptr_11348
+      _arrinit @ this+0x2d08 (11528) -> CCharacter_ptr_11528
+      _arrinit @ this+0x2f14 (12052) -> CCharacter_ptr_12052
+      _arrinit @ this+0x33c4 (13252) -> CCharacter_ptr_13252
     CCharacter_dtor_FUN_0042b5d0:
       CFlame_arrdtor @ this+0x33c4 (13252) -> CCharacter_ptr_13252
       SFire_arrdtor @ this+0x2f14 (12052) -> CCharacter_ptr_12052
@@ -191,7 +191,9 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/curtain.cpp]
     CCurtain_ctor_FUN_0043d960:
-      _arrinit @ ??? (UNKNOWN)
+      _arrinit @ this+0x200 (512) -> CCurtain_ptr_512
+    CCurtain_dtor_FUN_0043f8e0:
+      CDemonActor_dtor @ this+0x200 (512) -> CCurtain_ptr_512
 
   [core/dog.cpp]
     CZombieDog_dtor_FUN_00454f30:
@@ -204,9 +206,16 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/door.cpp]
     CDoor_ctor_FUN_00455050:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CDoor_ptr_336
 
   [core/dracbrid.cpp]
+    CDraculaBride_dtor_FUN_0045b350:
+      CFlame_arrdtor @ this+0x33c4 (13252) -> CDraculaBride_ptr_13252
+      SFire_arrdtor @ this+0x2f14 (12052) -> CDraculaBride_ptr_12052
+      CVector3f_arrdtor @ this+0x2d08 (11528) -> CDraculaBride_ptr_11528
+      CVector3f_arrdtor @ this+0x2c54 (11348) -> CDraculaBride_ptr_11348
+      CClothList_dtor @ this+0x2a8c (10892) -> CDraculaBride_ptr_10892
+      CDeformableModelInstance_dtor @ this+0x150 (336) -> CDraculaBride_ptr_336
     SFreaky_ctor_FUN_0045b310:
       _arrinit @ this+0x20 (32) -> SFreaky_ptr_32
     SFreaky_dtor_FUN_0045b330:
@@ -214,7 +223,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/drip.cpp]
     CDrip_ctor_FUN_00462060:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CDrip_ptr_336
 
   [core/drone.cpp]
     CDrone_dtor_FUN_00463310:
@@ -227,13 +236,13 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/emitter.cpp]
     CEmitter_ctor_FUN_004783c0:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x240 (576) -> CEmitter_ptr_576
 
   [core/filmreel.cpp]
     CFilmProjector_ctor_FUN_00481f10:
       CKeyFramedModelInstance_ctor @ this+0x1ec (492) -> CFilmProjector_ptr_492
     CFilmReel_ctor_FUN_00481c30:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CFilmReel_ptr_336
 
   [core/fire.cpp]
     CCrater_ctor_FUN_0048ca50:
@@ -256,12 +265,14 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/flamecan.cpp]
     CFlameCan_ctor_FUN_0048e370:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CFlame_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CFlameCan_ptr_336
+      CFlame_ctor @ this+0x338 (824) -> CFlameCan_ptr_824
     CFlameCan_dtor_FUN_0048e8f0:
       CDemonActor_dtor @ this+0x338 (824) -> CFlameCan_ptr_824
 
   [core/flies.cpp]
+    CFlies_dtor_FUN_0048fc30:
+      CDemonActor_dtor @ this+0x160 (352) -> CFlies_ptr_352
     SFly_ctor_FUN_0048fca0:
       _arrinit @ this+0x4 (4) -> SFly_ptr_4
     SFly_dtor_FUN_0048fcc0:
@@ -269,9 +280,9 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/frankgen.cpp]
     CFrankenstienMachine_ctor_FUN_00494630:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CCourse_ctor @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x17c (380) -> CFrankenstienMachine_ptr_380
+      CCourse_ctor @ this+0x2f8 (760) -> CFrankenstienMachine_ptr_760
+      CKeyFramedModelInstance_ctor @ this+0x304 (772) -> CFrankenstienMachine_ptr_772
     CFrankenstienMachine_dtor_FUN_00495430:
       CDemonTriangle_arrdtor @ this+0x2f8 (760) -> CFrankenstienMachine_ptr_760
 
@@ -299,6 +310,11 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
       CClothList_dtor @ this+0x2a8c (10892) -> CGhoul_ptr_10892
       CDeformableModelInstance_dtor @ this+0x150 (336) -> CGhoul_ptr_336
 
+  [core/glass.cpp]
+    CGlass_dtor_FUN_004adef0:
+      CVector3f_arrdtor @ this+0x384 (900) -> CGlass_ptr_900
+      CMirror_dtor @ this+0x1e4 (484) -> CGlass_ptr_484
+
   [core/gore.cpp]
     CFootstep_ctor_FUN_004b09b0:
       _arrinit @ this+0x8 (8) -> CFootstep_ptr_8
@@ -307,7 +323,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/grave.cpp]
     CGrave_ctor_FUN_004b0b40:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CGrave_ptr_336
 
   [core/hero.cpp]
     CHero_dtor_FUN_004b4800:
@@ -370,7 +386,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/ladder.cpp]
     CLadder_ctor_FUN_004c4290:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CLadder_ptr_336
 
   [core/larva.cpp]
     CLarva_dtor_FUN_004c5540:
@@ -383,7 +399,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/lever.cpp]
     CLever_ctor_FUN_004c6040:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CLever_ptr_336
 
   [core/manpuz.cpp]
     CMansionPuzzleCircle_dtor_FUN_004cbe20:
@@ -395,7 +411,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/marquee.cpp]
     CMarquee_ctor_FUN_004cc0e0:
-      CCourse_ctor @ ??? (UNKNOWN)
+      CCourse_ctor @ this+0x19c (412) -> CMarquee_ptr_412
     CMarquee_dtor_FUN_004cc960:
       CDemonTriangle_arrdtor @ this+0x19c (412) -> CMarquee_ptr_412
 
@@ -403,6 +419,15 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
     CMimic_ctor_FUN_004d4450:
       CCloth_ctor @ this+0xbdec (48620) -> CMimic_ptr_48620
       CMorph_ctor @ this+0x4694c (289100) -> CMimic_ptr_289100
+    CMimic_dtor_FUN_004d4540:
+      CMorph_dtor @ this+0x4694c (289100) -> CMimic_ptr_289100
+      CCloth_dtor @ this+0xbdec (48620) -> CMimic_ptr_48620
+      CFlame_arrdtor @ this+0x33c4 (13252) -> CMimic_ptr_13252
+      SFire_arrdtor @ this+0x2f14 (12052) -> CMimic_ptr_12052
+      CVector3f_arrdtor @ this+0x2d08 (11528) -> CMimic_ptr_11528
+      CVector3f_arrdtor @ this+0x2c54 (11348) -> CMimic_ptr_11348
+      CClothList_dtor @ this+0x2a8c (10892) -> CMimic_ptr_10892
+      CDeformableModelInstance_dtor @ this+0x150 (336) -> CMimic_ptr_336
 
   [core/minecar.cpp]
     CMineCar_dtor_FUN_004d60d0:
@@ -454,10 +479,19 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
   [core/passngr.cpp]
     CPassenger_ctor_FUN_004ef4e0:
       CMorph_ctor @ ??? (UNKNOWN)
+    CPassenger_dtor_FUN_004ef5c0:
+      CMorph_dtor @ this+0x1f67c (128636) -> CPassenger_ptr_128636
+      CPathMap_dtor @ this+0xbc8c (48268) -> CPassenger_ptr_48268
+      CFlame_arrdtor @ this+0x33c4 (13252) -> CPassenger_ptr_13252
+      SFire_arrdtor @ this+0x2f14 (12052) -> CPassenger_ptr_12052
+      CVector3f_arrdtor @ this+0x2d08 (11528) -> CPassenger_ptr_11528
+      CVector3f_arrdtor @ this+0x2c54 (11348) -> CPassenger_ptr_11348
+      CClothList_dtor @ this+0x2a8c (10892) -> CPassenger_ptr_10892
+      CDeformableModelInstance_dtor @ this+0x150 (336) -> CPassenger_ptr_336
 
   [core/pendulum.cpp]
     CPendulum_ctor_FUN_004f2c30:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CPendulum_ptr_336
 
   [core/sentinel.cpp]
     CSentinel_dtor_FUN_00506a80:
@@ -477,8 +511,8 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/simbox.cpp]
     CSimBox_ctor_FUN_00516ba0:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CBox_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CSimBox_ptr_336
+      CBox_ctor @ this+0x350 (848) -> CSimBox_ptr_848
     CSimBox_dtor_FUN_005170d0:
       CBox_dtor @ this+0x350 (848) -> CSimBox_ptr_848
 
@@ -509,11 +543,15 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/spike.cpp]
     CSpike_ctor_FUN_00533020:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CSpike_ptr_336
 
   [core/stairs.cpp]
     CFlies_dtor_FUN_00534c10:
       SFly_arrdtor @ this+0x168 (360) -> CFlies_ptr_360
+
+  [core/stone.cpp]
+    CTempleStone_dtor_FUN_00534dc0:
+      CBox_dtor @ this+0x38c (908) -> CTempleStone_ptr_908
 
   [core/succubus.cpp]
     CSuccubus_dtor_FUN_00541860:
@@ -564,7 +602,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 
   [core/trash.cpp]
     CTrash_ctor_FUN_00546c90:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CTrash_ptr_336
 
   [core/turret.cpp]
     CTurret_ctor_FUN_005494a0:
@@ -605,32 +643,32 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
     CTire_ctor_FUN_0054f870:
       CKeyFramedModelInstance_ctor @ this+0x14 (20) -> CTire_ptr_20
     CVehicle_ctor_FUN_0054e5a0:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      CCourse_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CVehicle_ptr_336
+      _arrinit @ this+0x2cc (716) -> CVehicle_ptr_716
+      _arrinit @ this+0x934 (2356) -> CVehicle_ptr_2356
+      CCourse_ctor @ this+0x1018 (4120) -> CVehicle_ptr_4120
     CVehicle_dtor_FUN_0054f7f0:
       CDemonTriangle_arrdtor @ this+0x1018 (4120) -> CVehicle_ptr_4120
       CDemonActor_dtor @ this+0x1018 (4120) -> CVehicle_ptr_4120
 
   [core/vessel.cpp]
     CCryptVessel_ctor_FUN_0054f920:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CFlame_ctor @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CCryptVessel_ptr_336
+      CFlame_ctor @ this+0x3bc (956) -> CCryptVessel_ptr_956
+      CKeyFramedModelInstance_ctor @ this+0x65c (1628) -> CCryptVessel_ptr_1628
     CCryptVessel_dtor_FUN_005506c0:
       CDemonActor_dtor @ this+0x3bc (956) -> CCryptVessel_ptr_956
 
   [core/wateract.cpp]
     CWaterActor_ctor_FUN_00551220:
-      _arrinit @ ??? (UNKNOWN)
+      _arrinit @ this+0x294 (660) -> CWaterActor_ptr_660
     CWaterActor_dtor_FUN_005522d0:
       CDemonActor_dtor @ this+0x294 (660) -> CWaterActor_ptr_660
 
   [core/weapon.cpp]
     CWeapon_ctor_FUN_00553d90:
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CBox_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ this+0x150 (336) -> CWeapon_ptr_336
+      CBox_ctor @ this+0x300 (768) -> CWeapon_ptr_768
     CWeapon_dtor_FUN_00553ea0:
       CBox_dtor @ this+0x300 (768) -> CWeapon_ptr_768
 
@@ -677,6 +715,7 @@ UNFINISHED CTORS/DTORS (138 files still need ADJ)
 ======================================================================
 NEEDED ADJ POINTER TYPES
 ======================================================================
+  CAmmo_ptr_336  (0x150)
   CArmour_ptr_336  (0x150)
   CArmour_ptr_10892  (0x2a8c)
   CArmour_ptr_11348  (0x2c54)
@@ -727,6 +766,7 @@ NEEDED ADJ POINTER TYPES
   CBoneGuy_ptr_13252  (0x33c4)
   CBoneGuy_ptr_48548  (0xbda4)
   CBox_ptr_180  (0xb4)
+  CBoxActor_ptr_336  (0x150)
   CBoxActor_ptr_908  (0x38c)
   CBride_ptr_336  (0x150)
   CBride_ptr_10892  (0x2a8c)
@@ -748,7 +788,10 @@ NEEDED ADJ POINTER TYPES
   CConveyor_ptr_776  (0x308)
   CCrater_ptr_28  (0x1c)
   CCrossbow_ptr_1396  (0x574)
+  CCryptVessel_ptr_336  (0x150)
   CCryptVessel_ptr_956  (0x3bc)
+  CCryptVessel_ptr_1628  (0x65c)
+  CCurtain_ptr_512  (0x200)
   CDeformableModel_ptr_5968  (0x1750)
   CDeformableModel_ptr_7180  (0x1c0c)
   CDeformableModelInstance_ptr_88  (0x58)
@@ -756,6 +799,14 @@ NEEDED ADJ POINTER TYPES
   CDemonSet_ptr_104008  (0x19648)
   CDemonSet_ptr_1419992  (0x15aad8)
   CDemonSet_ptr_1421356  (0x15b02c)
+  CDoor_ptr_336  (0x150)
+  CDraculaBride_ptr_336  (0x150)
+  CDraculaBride_ptr_10892  (0x2a8c)
+  CDraculaBride_ptr_11348  (0x2c54)
+  CDraculaBride_ptr_11528  (0x2d08)
+  CDraculaBride_ptr_12052  (0x2f14)
+  CDraculaBride_ptr_13252  (0x33c4)
+  CDrip_ptr_336  (0x150)
   CDrone_ptr_336  (0x150)
   CDrone_ptr_10892  (0x2a8c)
   CDrone_ptr_11348  (0x2c54)
@@ -769,6 +820,7 @@ NEEDED ADJ POINTER TYPES
   CDrummer_ptr_12052  (0x2f14)
   CDrummer_ptr_13252  (0x33c4)
   CDrummer_ptr_48268  (0xbc8c)
+  CEmitter_ptr_576  (0x240)
   CEnemy_ptr_336  (0x150)
   CEnemy_ptr_10892  (0x2a8c)
   CEnemy_ptr_11348  (0x2c54)
@@ -776,10 +828,15 @@ NEEDED ADJ POINTER TYPES
   CEnemy_ptr_12052  (0x2f14)
   CEnemy_ptr_13252  (0x33c4)
   CFilmProjector_ptr_492  (0x1ec)
+  CFilmReel_ptr_336  (0x150)
+  CFlameCan_ptr_336  (0x150)
   CFlameCan_ptr_824  (0x338)
+  CFlies_ptr_352  (0x160)
   CFlies_ptr_360  (0x168)
   CFootstep_ptr_8  (0x8)
+  CFrankenstienMachine_ptr_380  (0x17c)
   CFrankenstienMachine_ptr_760  (0x2f8)
+  CFrankenstienMachine_ptr_772  (0x304)
   CGabriella_ptr_129660  (0x1fa7c)
   CGargoyle_ptr_336  (0x150)
   CGargoyle_ptr_10892  (0x2a8c)
@@ -793,7 +850,10 @@ NEEDED ADJ POINTER TYPES
   CGhoul_ptr_11528  (0x2d08)
   CGhoul_ptr_12052  (0x2f14)
   CGhoul_ptr_13252  (0x33c4)
+  CGlass_ptr_484  (0x1e4)
+  CGlass_ptr_900  (0x384)
   CGlassParticle_ptr_120  (0x78)
+  CGrave_ptr_336  (0x150)
   CHighPriestOfGardath_ptr_336  (0x150)
   CHighPriestOfGardath_ptr_10892  (0x2a8c)
   CHighPriestOfGardath_ptr_11348  (0x2c54)
@@ -829,15 +889,23 @@ NEEDED ADJ POINTER TYPES
   CImp_ptr_13252  (0x33c4)
   CLZWCompress_ptr_4  (0x4)
   CLZWDecompress_ptr_4  (0x4)
+  CLadder_ptr_336  (0x150)
   CLarva_ptr_336  (0x150)
   CLarva_ptr_10892  (0x2a8c)
   CLarva_ptr_11348  (0x2c54)
   CLarva_ptr_11528  (0x2d08)
   CLarva_ptr_12052  (0x2f14)
   CLarva_ptr_13252  (0x33c4)
+  CLever_ptr_336  (0x150)
   CLightActor_ptr_1640  (0x668)
   CMansionPuzzleCircle_ptr_4920  (0x1338)
   CMarquee_ptr_412  (0x19c)
+  CMimic_ptr_336  (0x150)
+  CMimic_ptr_10892  (0x2a8c)
+  CMimic_ptr_11348  (0x2c54)
+  CMimic_ptr_11528  (0x2d08)
+  CMimic_ptr_12052  (0x2f14)
+  CMimic_ptr_13252  (0x33c4)
   CMimic_ptr_48620  (0xbdec)
   CMimic_ptr_289100  (0x4694c)
   CMineCar_ptr_776  (0x308)
@@ -861,6 +929,15 @@ NEEDED ADJ POINTER TYPES
   CNPC_ptr_13252  (0x33c4)
   CNPC_ptr_48268  (0xbc8c)
   CNetGame_ptr_32  (0x20)
+  CPassenger_ptr_336  (0x150)
+  CPassenger_ptr_10892  (0x2a8c)
+  CPassenger_ptr_11348  (0x2c54)
+  CPassenger_ptr_11528  (0x2d08)
+  CPassenger_ptr_12052  (0x2f14)
+  CPassenger_ptr_13252  (0x33c4)
+  CPassenger_ptr_48268  (0xbc8c)
+  CPassenger_ptr_128636  (0x1f67c)
+  CPendulum_ptr_336  (0x150)
   CPickList_ptr_312  (0x138)
   CPlatform_ptr_776  (0x308)
   CSentinel_ptr_336  (0x150)
@@ -869,6 +946,7 @@ NEEDED ADJ POINTER TYPES
   CSentinel_ptr_11528  (0x2d08)
   CSentinel_ptr_12052  (0x2f14)
   CSentinel_ptr_13252  (0x33c4)
+  CSimBox_ptr_336  (0x150)
   CSimBox_ptr_848  (0x350)
   CSmiley_ptr_336  (0x150)
   CSmiley_ptr_10892  (0x2a8c)
@@ -876,6 +954,7 @@ NEEDED ADJ POINTER TYPES
   CSmiley_ptr_11528  (0x2d08)
   CSmiley_ptr_12052  (0x2f14)
   CSmiley_ptr_13252  (0x33c4)
+  CSpike_ptr_336  (0x150)
   CStairs_ptr_368  (0x170)
   CStake_ptr_4  (0x4)
   CSuccubus_ptr_336  (0x150)
@@ -896,6 +975,7 @@ NEEDED ADJ POINTER TYPES
   CTVBat_ptr_12052  (0x2f14)
   CTVBat_ptr_13252  (0x33c4)
   CTVBat_ptr_48424  (0xbd28)
+  CTempleStone_ptr_908  (0x38c)
   CTentacle_ptr_336  (0x150)
   CTentacle_ptr_10892  (0x2a8c)
   CTentacle_ptr_11348  (0x2c54)
@@ -905,6 +985,7 @@ NEEDED ADJ POINTER TYPES
   CTire_ptr_20  (0x14)
   CToss_ptr_4  (0x4)
   CToss_ptr_384  (0x180)
+  CTrash_ptr_336  (0x150)
   CTurret_ptr_1404  (0x57c)
   CVampireBoss_ptr_336  (0x150)
   CVampireBoss_ptr_10892  (0x2a8c)
@@ -917,8 +998,12 @@ NEEDED ADJ POINTER TYPES
   CVampireBoss_ptr_297736  (0x48b08)
   CVampireBoss_ptr_538168  (0x83638)
   CVampireBoss_ptr_778604  (0xbe16c)
+  CVehicle_ptr_336  (0x150)
+  CVehicle_ptr_716  (0x2cc)
+  CVehicle_ptr_2356  (0x934)
   CVehicle_ptr_4120  (0x1018)
   CWaterActor_ptr_660  (0x294)
+  CWeapon_ptr_336  (0x150)
   CWeapon_ptr_768  (0x300)
   CWerewolf_ptr_336  (0x150)
   CWerewolf_ptr_10892  (0x2a8c)
@@ -952,17 +1037,11 @@ NEEDED ADJ POINTER TYPES
   SGem_ptr_60  (0x3c)
   SVert_ptr_16  (0x10)
 
-Total: 274 types across 83 classes
+Total: 321 types across 99 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (65 calls with unknown offset)
+MANUAL REVIEW NEEDED (23 calls with unknown offset)
 ======================================================================
-  CAmmo_ctor_FUN_0040eb70.asm: CKeyFramedModelInstance_ctor
-  CBodyPart_ctor_FUN_00415d20.asm: _arrinit
-  CBodyPart_ctor_FUN_00415d20.asm: _arrinit
-  CBodyPart_ctor_FUN_00415d20.asm: CBox_ctor
-  CBoxActor_ctor_FUN_0041e300.asm: CKeyFramedModelInstance_ctor
-  CBoxActor_ctor_FUN_0041e300.asm: CBox_ctor
   CLightActor_dtor_FUN_0041fa10.asm: CBox_dtor
   CBugs_dtor_FUN_00423d90.asm: CFlame_arrdtor
   CBugs_dtor_FUN_00423d90.asm: SFire_arrdtor
@@ -970,25 +1049,7 @@ MANUAL REVIEW NEEDED (65 calls with unknown offset)
   CBugs_dtor_FUN_00423d90.asm: CVector3f_arrdtor
   CBugs_dtor_FUN_00423d90.asm: CClothList_dtor
   CBugs_dtor_FUN_00423d90.asm: CDeformableModelInstance_dtor
-  CChain_ctor_FUN_0042b750.asm: _arrinit
-  CCharacter_ctor_FUN_00423f40.asm: CDeformableModelInstance_ctor
-  CCharacter_ctor_FUN_00423f40.asm: CClothList_ctor
-  CCharacter_ctor_FUN_00423f40.asm: _arrinit
-  CCharacter_ctor_FUN_00423f40.asm: _arrinit
-  CCharacter_ctor_FUN_00423f40.asm: _arrinit
-  CCharacter_ctor_FUN_00423f40.asm: _arrinit
-  CCurtain_ctor_FUN_0043d960.asm: _arrinit
-  CDoor_ctor_FUN_00455050.asm: CKeyFramedModelInstance_ctor
-  CDrip_ctor_FUN_00462060.asm: CKeyFramedModelInstance_ctor
-  CEmitter_ctor_FUN_004783c0.asm: CKeyFramedModelInstance_ctor
-  CFilmReel_ctor_FUN_00481c30.asm: CKeyFramedModelInstance_ctor
-  CFlameCan_ctor_FUN_0048e370.asm: CKeyFramedModelInstance_ctor
-  CFlameCan_ctor_FUN_0048e370.asm: CFlame_ctor
-  CFrankenstienMachine_ctor_FUN_00494630.asm: CKeyFramedModelInstance_ctor
-  CFrankenstienMachine_ctor_FUN_00494630.asm: CCourse_ctor
-  CFrankenstienMachine_ctor_FUN_00494630.asm: CKeyFramedModelInstance_ctor
   CGabriella_ctor_FUN_004956a0.asm: CCloth_ctor
-  CGrave_ctor_FUN_004b0b40.asm: CKeyFramedModelInstance_ctor
   CHero_dtor_FUN_004b4800.asm: CPathMap_dtor
   CHero_dtor_FUN_004b4800.asm: CFlame_arrdtor
   CHero_dtor_FUN_004b4800.asm: SFire_arrdtor
@@ -997,28 +1058,10 @@ MANUAL REVIEW NEEDED (65 calls with unknown offset)
   CHero_dtor_FUN_004b4800.asm: CClothList_dtor
   CHero_dtor_FUN_004b4800.asm: CDeformableModelInstance_dtor
   CHero_dtor_FUN_004b4800.asm: CDemonActor_dtor
-  CLadder_ctor_FUN_004c4290.asm: CKeyFramedModelInstance_ctor
-  CLever_ctor_FUN_004c6040.asm: CKeyFramedModelInstance_ctor
-  CMarquee_ctor_FUN_004cc0e0.asm: CCourse_ctor
   CMoloch_ctor_FUN_004dd930.asm: CDeformableModelInstance_ctor
   CMoloch_ctor_FUN_004dd930.asm: CMorph_ctor
   CPassenger_ctor_FUN_004ef4e0.asm: CMorph_ctor
-  CPendulum_ctor_FUN_004f2c30.asm: CKeyFramedModelInstance_ctor
-  CSimBox_ctor_FUN_00516ba0.asm: CKeyFramedModelInstance_ctor
-  CSimBox_ctor_FUN_00516ba0.asm: CBox_ctor
   CDeformableModel_dtor_FUN_00517c80.asm: CVector3f_arrdtor
-  CSpike_ctor_FUN_00533020.asm: CKeyFramedModelInstance_ctor
   CSvetlana_ctor_FUN_005419b0.asm: CCloth_ctor
   CSvetlana_ctor_FUN_005419b0.asm: CCloth_ctor
-  CTrash_ctor_FUN_00546c90.asm: CKeyFramedModelInstance_ctor
-  CVehicle_ctor_FUN_0054e5a0.asm: CKeyFramedModelInstance_ctor
-  CVehicle_ctor_FUN_0054e5a0.asm: _arrinit
-  CVehicle_ctor_FUN_0054e5a0.asm: _arrinit
-  CVehicle_ctor_FUN_0054e5a0.asm: CCourse_ctor
-  CCryptVessel_ctor_FUN_0054f920.asm: CKeyFramedModelInstance_ctor
-  CCryptVessel_ctor_FUN_0054f920.asm: CFlame_ctor
-  CCryptVessel_ctor_FUN_0054f920.asm: CKeyFramedModelInstance_ctor
-  CWaterActor_ctor_FUN_00551220.asm: _arrinit
-  CWeapon_ctor_FUN_00553d90.asm: CKeyFramedModelInstance_ctor
-  CWeapon_ctor_FUN_00553d90.asm: CBox_ctor
   CMouse_dtor_FUN_004ee560.asm: CAlphaBitmap_arrdtor

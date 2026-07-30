@@ -7,13 +7,13 @@
 // Address: 00547850
 void __cdecl staticInit(void);
 
-// Original: core_trigger.cpp_FUN_00547880
+// Original: core_trigger.cpp_factoryFunc_FUN_00547880
 // Address: 00547880
-void FUN_00547880(void);
+CTrigger * __cdecl factoryFunc(void);
 
-// Original: core_trigger.cpp_FUN_005478a0
+// Original: core_trigger.cpp_CTrigger_getActorType_FUN_005478a0
 // Address: 005478a0
-CDemonActorType * FUN_005478a0(void);
+CDemonActorType * CTrigger::getActorType(void);
 
 // Original: core_trigger.cpp_CTrigger_ctor_FUN_005478b0
 // Address: 005478b0
@@ -23,17 +23,17 @@ CTrigger * __cdecl CTrigger::ctor(CTrigger *this_ptr);
 // Address: 00547a00
 void __cdecl CTrigger::setup(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_00547b30
+// Original: core_trigger.cpp_CTrigger_process_FUN_00547b30
 // Address: 00547b30
-void FUN_00547b30(CTrigger *param_1,float param_2);
+void CTrigger::process(CTrigger *param_1,float param_2);
 
-// Original: core_trigger.cpp_FUN_00548100
+// Original: core_trigger.cpp_CTrigger_renderTransparent_FUN_00548100
 // Address: 00548100
-undefined4 FUN_00548100(void);
+undefined4 CTrigger::renderTransparent(void);
 
-// Original: core_trigger.cpp_FUN_00548110
+// Original: core_trigger.cpp_CTrigger_getBoundingBox_FUN_00548110
 // Address: 00548110
-void FUN_00548110(int param_1,float *param_2);
+void CTrigger::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_trigger.cpp_CTrigger_archive_FUN_00548170
 // Address: 00548170

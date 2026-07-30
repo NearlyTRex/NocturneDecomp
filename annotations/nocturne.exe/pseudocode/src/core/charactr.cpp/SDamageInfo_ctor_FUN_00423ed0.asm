@@ -7,15 +7,15 @@
 ; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[50]:
-;   core_actor.cpp_FUN_0040b300 at 0040b54b
-;   core_anvil.cpp_FUN_0040f610 at 0040f6f5
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b54b
+;   core_anvil.cpp_CAnvil_process_FUN_0040f610 at 0040f6f5
 ;   core_baron.cpp_FUN_00410cc0 at 00410dbb
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412750
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413ecc
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a93
-;   core_boneguy.cpp_FUN_00418a00 at 0041908c
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 0041908c
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e9bb
-;   core_bride.cpp_FUN_0041fe40 at 0042030d
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 0042030d
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 0042240d
 ;   ... and 40 more
 ;

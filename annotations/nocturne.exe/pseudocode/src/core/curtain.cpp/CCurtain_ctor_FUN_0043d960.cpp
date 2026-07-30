@@ -15,7 +15,7 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_0043d960(CCurtain *this_pt
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pvVar3 = __arrinit
                      (pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo_0059bd90);
   *(CDemonActor_vtable **)((int)pvVar3 + -0xb4) = &g_CCurtainVTable;

@@ -13,7 +13,6 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   int iVar2;
   int iVar3;
   int iVar4;
-  CPathMap *this_ptr;
   int iVar5;
   byte bVar6;
   int aiStackY_101c [1015];
@@ -25,8 +24,8 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   bVar6 = 0;
   if ((DAT_01e312f0 & 1) == 0) {
     DAT_01e312f0 = DAT_01e312f0 | 1;
-    __arrinit((void *)0x1d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
-    _atexit((WatcomStaticDestructorNode *)&DAT_005be0a8);
+    __arrinit(&DAT_01d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
+    _atexit(&g_WatcomStaticDestructorNode_005be0a8);
   }
   if (DAT_005be0b8 < 0) {
     iVar2 = 0;
@@ -69,7 +68,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   local_28.x = (location->position).x;
   local_28.y = (location->position).y;
   local_28.z = (location->position).z;
-  this_ptr = (CPathMap *)(iVar5 * 0x138dc + 0x1d468a0);
-  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(this_ptr,&local_28,1);
-  return this_ptr;
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360
+            ((CPathMap *)(&DAT_01d468a0 + iVar5 * 0x138dc),&local_28,1);
+  return (CPathMap *)(&DAT_01d468a0 + iVar5 * 0x138dc);
 }

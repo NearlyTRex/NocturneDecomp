@@ -7,7 +7,7 @@
 ; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbbd0 at 004fbbe3
+;   core_scat.cpp_factoryFunc_FUN_004fbbd0 at 004fbbe3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scat_dfm_0058dd12
@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760
 ;   core_hero.cpp_FUN_004b46d0
-;   core_scat.cpp_FUN_004fbe80
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004fbc4f
     MOV EDX,dword ptr [EAX + 0x4]       ; 004fbc52
     MOV dword ptr [EAX],EDX             ; 004fbc55
-    CALL core_scat.cpp_FUN_004fbe80     ; 004fbc57
-        ;   XREF to: 004fbe80 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_004fbe80(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80 ; 004fbc57
+        ;   XREF to: 004fbe80 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fbc5c
     MOV dword ptr [EBX + 0x1fa50],0x0   ; 004fbc5f
     PUSH 0x0                            ; 004fbc69

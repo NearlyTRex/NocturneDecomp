@@ -13,7 +13,7 @@
 ;   core_hostage.cpp_CHostage_dtor_FUN_004b8b70 at 004b8b89
 ;   core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004b9bf0 at 004b9c09
 ;   core_npc.cpp_CNPC_dtor_FUN_004b68c0 at 004b68d9
-;   core_passngr.cpp_FUN_004ef5c0 at 004ef613
+;   core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0 at 004ef613
 ;   core_tbplayer.cpp_CBassPlayer_dtor_FUN_005436f0 at 00543709
 ;   core_tbplayer.cpp_CDrummer_dtor_FUN_00543620 at 00543639
 ;

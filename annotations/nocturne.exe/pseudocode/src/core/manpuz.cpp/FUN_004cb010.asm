@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d59
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004c9cf0 at 004c9d59
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_manpuz_chargegemloop_red_00587fca

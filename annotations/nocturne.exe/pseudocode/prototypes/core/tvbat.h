@@ -7,13 +7,13 @@
 // Address: 0054b0b0
 void __cdecl staticInit(void);
 
-// Original: core_tvbat.cpp_FUN_0054b0e0
+// Original: core_tvbat.cpp_factoryFunc_FUN_0054b0e0
 // Address: 0054b0e0
-void FUN_0054b0e0(void);
+CTVBat * __cdecl factoryFunc(void);
 
-// Original: core_tvbat.cpp_FUN_0054b100
+// Original: core_tvbat.cpp_CTVBat_getActorType_FUN_0054b100
 // Address: 0054b100
-CDemonActorType * FUN_0054b100(void);
+CDemonActorType * CTVBat::getActorType(void);
 
 // Original: core_tvbat.cpp_jitterValue_FUN_0054b110
 // Address: 0054b110
@@ -39,21 +39,21 @@ void __cdecl CTVBat::process(CTVBat *this_ptr,float delta_time);
 // Address: 0054bfc0
 void __cdecl FUN_0054bfc0(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_0054bfd0
+// Original: core_tvbat.cpp_CTVBat_renderOpaque_FUN_0054bfd0
 // Address: 0054bfd0
-int FUN_0054bfd0(CDemonActor *param_1);
+int CTVBat::renderOpaque(CDemonActor *param_1);
 
-// Original: core_tvbat.cpp_FUN_0054c040
+// Original: core_tvbat.cpp_CTVBat_getBoundingBox_FUN_0054c040
 // Address: 0054c040
-undefined4 * FUN_0054c040(int param_1,undefined4 *param_2);
+undefined4 * CTVBat::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_tvbat.cpp_CTVBat_getCollisionType_FUN_0054c0c0
 // Address: 0054c0c0
 undefined4 CTVBat::getCollisionType(int param_1);
 
-// Original: core_tvbat.cpp_FUN_0054c0e0
+// Original: core_tvbat.cpp_CTVBat_getTargetPoints_FUN_0054c0e0
 // Address: 0054c0e0
-undefined4 FUN_0054c0e0(void);
+undefined4 CTVBat::getTargetPoints(void);
 
 // Original: core_tvbat.cpp_CTVBat_getDeathState_FUN_0054c0f0
 // Address: 0054c0f0

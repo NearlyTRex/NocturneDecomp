@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_sentinel.cpp_FUN_005058f0 at 00505903
+;   core_sentinel.cpp_factoryFunc_FUN_005058f0 at 00505903
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sentinel_dfm_0058ff27

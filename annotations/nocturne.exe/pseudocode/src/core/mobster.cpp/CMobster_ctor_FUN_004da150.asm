@@ -7,7 +7,7 @@
 ; CMobster *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_mobster.cpp_FUN_004da120 at 004da133
+;   core_mobster.cpp_factoryFunc_FUN_004da120 at 004da133
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f083
 ;
 ; Referenced Globals:

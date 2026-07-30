@@ -13,7 +13,7 @@ CFilterCache * __cdecl CFilterCache::ctor(CFilterCache *this_ptr);
 
 // Original: core_dfilter.cpp_FUN_0044bcb0
 // Address: 0044bcb0
-CFilterCache * FUN_0044bcb0(CFilterCache *param_1);
+CFilterCache * __cdecl FUN_0044bcb0(CFilterCache *this_ptr);
 
 // Original: core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0
 // Address: 0044bcd0

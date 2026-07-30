@@ -10,7 +10,8 @@ void __cdecl core_simbox_cpp_staticInit_FUN_00516b40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CSimBoxActorType_02671914,"CSimBox",core_simbox_cpp_FUN_00516b70,
-             &INT_005be964,3,&g_CDemonActorActorType_00763e48);
+            (&g_CSimBoxActorType_02671914,"CSimBox",
+             core_simbox_cpp_factoryFunc_FUN_00516b70,&g_INT_005be964,3,
+             &g_CDemonActorActorType_00763e48);
   return;
 }

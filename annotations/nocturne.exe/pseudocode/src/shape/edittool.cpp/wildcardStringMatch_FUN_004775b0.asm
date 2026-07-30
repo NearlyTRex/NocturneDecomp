@@ -14,7 +14,7 @@
 ;   core_sound.cpp_FUN_0052d030 at 0052d076
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 at 0052c962
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0 at 005485d5
-;   core_trigger.cpp_FUN_00547b30 at 00548046
+;   core_trigger.cpp_CTrigger_process_FUN_00547b30 at 00548046
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 at 004f8e48
 ;
 ; Called Functions:

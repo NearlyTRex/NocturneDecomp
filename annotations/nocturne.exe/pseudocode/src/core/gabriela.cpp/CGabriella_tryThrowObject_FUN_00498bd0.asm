@@ -7,7 +7,7 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 00496732
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496732
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0

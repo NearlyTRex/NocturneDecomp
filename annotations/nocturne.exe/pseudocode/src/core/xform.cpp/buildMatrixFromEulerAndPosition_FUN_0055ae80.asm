@@ -24,7 +24,7 @@
 ;   core_ladder.cpp_FUN_004c46b0 at 004c46fb
 ;   core_mimic.cpp_FUN_004d4ba0 at 004d4d3a
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0 at 004f7648
-;   core_platfrm.cpp_FUN_004f6170 at 004f6381
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6381
 ;   ... and 4 more
 ;
 ; *****************************************************************************

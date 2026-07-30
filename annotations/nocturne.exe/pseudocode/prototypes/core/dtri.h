@@ -105,7 +105,7 @@ undefined4 FUN_0046e9d0(void);
 
 // Original: core_dtri.cpp_FUN_0046e9e0
 // Address: 0046e9e0
-undefined * FUN_0046e9e0(void);
+CVector3f * FUN_0046e9e0(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0
 // Address: 0046e9f0

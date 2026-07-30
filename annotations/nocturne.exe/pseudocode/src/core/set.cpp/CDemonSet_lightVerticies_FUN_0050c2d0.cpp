@@ -111,7 +111,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   local_118 = *(uint *)((int)&DAT_005c5018 + iVar6);
                   local_114 = *(uint *)((int)&DAT_005c501c + iVar6);
                   core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
-                            (0x1fb8508,&local_11c);
+                            (&DAT_01fb8508,&local_11c);
                   local_e0[0].x = local_158;
                   *(int *)((int)local_e0 + (uint)bVar17 * -8 + 4) = aiStack_154[(uint)bVar17 * -2];
                   iVar9 = local_34;
@@ -136,7 +136,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   auStack_13c[3] = *(uint *)((int)&DAT_005c5018 + iVar9);
                   local_12c = *(uint *)((int)&DAT_005c501c + iVar9);
                   core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
-                            (0x1fb8508,auStack_13c + 2);
+                            (&DAT_01fb8508,auStack_13c + 2);
                   puVar12 = (uint *)(local_58 + 0x200b134 + (uint)bVar17 * -8);
                   *(uint *)(local_58 + 0x200b130) = local_140;
                   *puVar12 = auStack_13c[(uint)bVar17 * -2];
@@ -377,7 +377,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                   local_10c = *(uint *)((int)&DAT_005c5018 + iVar9);
                   local_108 = *(uint *)((int)&DAT_005c501c + iVar9);
                   core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
-                            (0x1fb8508,&local_110);
+                            (&DAT_01fb8508,&local_110);
                   iVar9 = iVar9 + 0x30;
                   piVar14 = (int *)(local_5c + 0x200b134 + (uint)bVar17 * -8);
                   *(int *)(local_5c + 0x200b130) = aiStack_100[2];
@@ -392,7 +392,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                 local_48 = vertex_normals;
                 do {
                   core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10
-                            ((CDemonCamera *)0x1fb8508,local_48,&local_170);
+                            ((CDemonCamera *)&DAT_01fb8508,local_48,&local_170);
                   local_48 = local_48 + 1;
                   *(int *)(&DAT_02045ab0 + iVar6 * 0xc) = local_170.x;
                   *(uint *)(&DAT_02045ab4 + (uint)bVar17 * -8 + iVar6 * 0xc) =
@@ -446,7 +446,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
             local_164 = *(uint *)((int)&DAT_005c5014 + iVar6);
             local_160 = *(uint *)((int)&DAT_005c5018 + iVar6);
             local_15c = *(uint *)((int)&DAT_005c501c + iVar6);
-            core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440(0x1fb8508,&local_164);
+            core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
+                      (&DAT_01fb8508,&local_164);
             local_ec.x = local_104;
             *(int *)((int)local_e0 + (uint)bVar17 * -8 + -8) = aiStack_100[(uint)bVar17 * -2];
             iVar9 = local_38;

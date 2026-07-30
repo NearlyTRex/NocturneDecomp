@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   velocity
 ;
 ; XREF[1]:
-;   core_emitter.cpp_FUN_00478790 at 00478c60
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478c60
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c69610

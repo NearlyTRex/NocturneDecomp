@@ -9,10 +9,10 @@
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_dtor_FUN_00411660 at 0041166f
-;   core_colonel.cpp_FUN_0043ab60 at 0043ab6f
+;   core_colonel.cpp_CColonel_dtor_FUN_0043ab60 at 0043ab6f
 ;   core_gabriela.cpp_CGabriella_dtor_FUN_0049a170 at 0049a196
-;   core_haystack.cpp_FUN_004b4140 at 004b414f
-;   core_icepick.cpp_FUN_004bb6b0 at 004bb6bf
+;   core_haystack.cpp_CHaystack_dtor_FUN_004b4140 at 004b414f
+;   core_icepick.cpp_CIcePick_dtor_FUN_004bb6b0 at 004bb6bf
 ;   core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 at 004dda30
 ;   core_scat.cpp_CScat_dtor_FUN_004fde30 at 004fde3f
 ;   core_stranger.cpp_CStranger_dtor_FUN_00540a90 at 00540a9f

@@ -3,117 +3,99 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_01fba938'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "line": 131,
+        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
-        "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
-      },
-      {
-        "category": "other",
+        "category": "incompatible_types",
         "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+        "line": 131,
+        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "category": "cast_error",
+        "column": 31,
+        "line": 197,
+        "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
       },
       {
-        "category": "other",
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 229,
+        "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
+      },
+      {
+        "category": "incompatible_types",
         "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "line": 229,
+        "message": "assigning to 'int' from incompatible type 'const char[21]'"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 231,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -147,7 +129,7 @@
     {
       "addr": "004a9270",
       "from_addr": "004a9f71",
-      "name": "core_ghoul.cpp_FUN_004a9270",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004a9270",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -159,13 +141,13 @@
     {
       "addr": "00546e10",
       "from_addr": "005473a0",
-      "name": "core_trash.cpp_FUN_00546e10",
+      "name": "core_trash.cpp_CTrash_process_FUN_00546e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ef50",
       "from_addr": "0055fef4",
-      "name": "core_zombie.cpp_FUN_0055ef50",
+      "name": "core_zombie.cpp_CZombie_process_FUN_0055ef50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -316,7 +298,7 @@
       {
         "call_addr": "004a9f71",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004a9270",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004a9270",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +320,7 @@
       {
         "call_addr": "005473a0",
         "call_type": "direct",
-        "caller": "core_trash.cpp_FUN_00546e10",
+        "caller": "core_trash.cpp_CTrash_process_FUN_00546e10",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -349,7 +331,7 @@
       {
         "call_addr": "0055fef4",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0055ef50",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_0055ef50",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_mobster.cpp_FUN_004da790 at 004db144
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004db144
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058a2e9 = 1.57079632675000

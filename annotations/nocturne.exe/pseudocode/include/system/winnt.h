@@ -2,10 +2,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/excpt.h"
 
 // =============================================================================
 // WINNT - System Header
 // =============================================================================
+
+// Typedef: ACCESS_MASK
+// Unsigned Long Integer (compiler-specific size)
+typedef DWORD ACCESS_MASK;
 
 // Enum: EXCEPTION_DISPOSITION
 enum {
@@ -16,9 +21,28 @@ enum {
 };
 typedef int EXCEPTION_DISPOSITION;
 
+// Typedef: EXCEPTION_RECORD
+typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
+
+// Typedef: LPCH
+// pointer to CHAR
+typedef CHAR* LPCH;
+
 // Typedef: LPGUID
 // pointer to _GUID
 typedef struct _GUID* LPGUID;
+
+// Typedef: PEXCEPTION_RECORD
+// pointer to EXCEPTION_RECORD
+typedef EXCEPTION_RECORD* PEXCEPTION_RECORD;
+
+// Typedef: PLONG
+// pointer to LONG
+typedef LONG* PLONG;
+
+// Typedef: PMEMORY_BASIC_INFORMATION
+// pointer to _MEMORY_BASIC_INFORMATION
+typedef struct _MEMORY_BASIC_INFORMATION* PMEMORY_BASIC_INFORMATION;
 
 // Typedef: PRTL_CRITICAL_SECTION
 // pointer to _RTL_CRITICAL_SECTION
@@ -46,19 +70,6 @@ typedef union _BIT_INTEGER32 {
 } _BIT_INTEGER32;
 #pragma pack(pop)
 
-// Structure: _EXCEPTION_RECORD
-typedef struct _EXCEPTION_RECORD {
-    DWORD ExceptionCode;
-    DWORD ExceptionFlags;
-    struct _EXCEPTION_RECORD* ExceptionRecord;
-    PVOID ExceptionAddress;
-    DWORD NumberParameters;
-    ULONG_PTR ExceptionInformation[15];
-} _EXCEPTION_RECORD;
-
-// Typedef: EXCEPTION_RECORD
-typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
-
 // Structure: _FLOATING_SAVE_AREA
 typedef struct _FLOATING_SAVE_AREA {
     DWORD ControlWord;
@@ -74,35 +85,6 @@ typedef struct _FLOATING_SAVE_AREA {
 
 // Typedef: FLOATING_SAVE_AREA
 typedef _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
-
-// Structure: _CONTEXT
-typedef struct _CONTEXT {
-    DWORD ContextFlags;
-    DWORD Dr0;
-    DWORD Dr1;
-    DWORD Dr2;
-    DWORD Dr3;
-    DWORD Dr6;
-    DWORD Dr7;
-    FLOATING_SAVE_AREA FloatSave;
-    DWORD SegGs;
-    DWORD SegFs;
-    DWORD SegEs;
-    DWORD SegDs;
-    DWORD Edi;
-    DWORD Esi;
-    DWORD Ebx;
-    DWORD Edx;
-    DWORD Ecx;
-    DWORD Eax;
-    DWORD Ebp;
-    DWORD Eip;
-    DWORD SegCs;
-    DWORD EFlags;
-    DWORD Esp;
-    DWORD SegSs;
-    BYTE ExtendedRegisters[512];
-} _CONTEXT;
 
 // Typedef: CONTEXT
 typedef _CONTEXT CONTEXT;
@@ -146,6 +128,17 @@ typedef struct _LIST_ENTRY {
 // Typedef: LIST_ENTRY
 typedef _LIST_ENTRY LIST_ENTRY;
 
+// Structure: _MEMORY_BASIC_INFORMATION
+typedef struct _MEMORY_BASIC_INFORMATION {
+    PVOID BaseAddress;
+    PVOID AllocationBase;
+    DWORD AllocationProtect;
+    SIZE_T RegionSize;
+    DWORD State;
+    DWORD Protect;
+    DWORD Type;
+} _MEMORY_BASIC_INFORMATION;
+
 // Union: _MMX_INTEGER
 #pragma pack(push, 1)
 typedef union _MMX_INTEGER {
@@ -181,10 +174,6 @@ typedef struct _RTL_CRITICAL_SECTION {
 // Typedef: CRITICAL_SECTION
 typedef _RTL_CRITICAL_SECTION CRITICAL_SECTION;
 
-// Typedef: LPCRITICAL_SECTION
-// pointer to _RTL_CRITICAL_SECTION
-typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
-
 // Structure: _floatx2
 #pragma pack(push, 1)
 typedef struct _floatx2 {
@@ -192,6 +181,28 @@ typedef struct _floatx2 {
     float _p2;
 } _floatx2;
 #pragma pack(pop)
+
+// Structure: _struct_19
+typedef struct _struct_19 {
+    DWORD LowPart;
+    LONG HighPart;
+} _struct_19;
+
+// Structure: _struct_20
+typedef struct _struct_20 {
+    DWORD LowPart;
+    LONG HighPart;
+} _struct_20;
+
+// Union: _LARGE_INTEGER
+typedef union _LARGE_INTEGER {
+    _struct_19 s;
+    _struct_20 u;
+    LONGLONG QuadPart;
+} _LARGE_INTEGER;
+
+// Typedef: LARGE_INTEGER
+typedef _LARGE_INTEGER LARGE_INTEGER;
 
 // Structure: _uintx2
 #pragma pack(push, 1)

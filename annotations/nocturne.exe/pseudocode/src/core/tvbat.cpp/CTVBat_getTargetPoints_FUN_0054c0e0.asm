@@ -1,0 +1,18 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 core_tvbat_cpp_CTVBat_getTargetPoints_FUN_0054c0e0(void)
+;
+;
+; XREF[2]:
+;   core_tvbat.cpp_CTVBat_getCollisionType_FUN_0054c0c0 at 0054c0d1
+;   core_tvbat.cpp_CTVBat_getDeathState_FUN_0054c0f0 at 0054c104
+;
+; *****************************************************************************
+
+section .text
+
+    XOR EAX,EAX                         ; 0054c0e0
+        ;   Label: core_tvbat.cpp_CTVBat_getTargetPoints_FUN_0054c0e0
+    RET                                 ; 0054c0e2
+

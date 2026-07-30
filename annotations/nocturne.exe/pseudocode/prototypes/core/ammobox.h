@@ -7,25 +7,25 @@
 // Address: 0040efe0
 void __cdecl staticInit(void);
 
-// Original: core_ammobox.cpp_FUN_0040f010
+// Original: core_ammobox.cpp_factoryFunc_FUN_0040f010
 // Address: 0040f010
-void FUN_0040f010(void);
+CAmmoBox * __cdecl factoryFunc(void);
 
-// Original: core_ammobox.cpp_FUN_0040f030
+// Original: core_ammobox.cpp_CAmmoBox_getActorType_FUN_0040f030
 // Address: 0040f030
-CDemonActorType * FUN_0040f030(void);
+CDemonActorType * CAmmoBox::getActorType(void);
 
 // Original: core_ammobox.cpp_FUN_0040f040
 // Address: 0040f040
 CAmmoBox * __cdecl FUN_0040f040(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040f0f0
+// Original: core_ammobox.cpp_CAmmoBox_setup_FUN_0040f0f0
 // Address: 0040f0f0
-void FUN_0040f0f0(CDemonActor *param_1);
+void CAmmoBox::setup(CDemonActor *param_1);
 
-// Original: core_ammobox.cpp_FUN_0040f120
+// Original: core_ammobox.cpp_CAmmoBox_process_FUN_0040f120
 // Address: 0040f120
-void FUN_0040f120(void);
+void CAmmoBox::process(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_openBox_FUN_0040f130
 // Address: 0040f130
@@ -35,26 +35,26 @@ void __cdecl CAmmoBox::openBox(CAmmoBox *this_ptr,float open_pct);
 // Address: 0040f1a0
 void __cdecl FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
 
-// Original: core_ammobox.cpp_FUN_0040f2b0
+// Original: core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040f2b0
 // Address: 0040f2b0
-int FUN_0040f2b0(CDemonActor *param_1);
+int CAmmoBox::renderOpaque(CDemonActor *param_1);
 
-// Original: core_ammobox.cpp_FUN_0040f340
+// Original: core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040f340
 // Address: 0040f340
-undefined4 * FUN_0040f340(int param_1,undefined4 *param_2);
+undefined4 * CAmmoBox::getBoundingBox(int param_1,undefined4 *param_2);
 
-// Original: core_ammobox.cpp_FUN_0040f390
+// Original: core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390
 // Address: 0040f390
-void FUN_0040f390(CDemonActor *param_1);
+void CAmmoBox::archive(CDemonActor *param_1);
 
-// Original: core_ammobox.cpp_FUN_0040f460
+// Original: core_ammobox.cpp_CAmmoBox_getCollisionType_FUN_0040f460
 // Address: 0040f460
-bool FUN_0040f460(int param_1);
+bool CAmmoBox::getCollisionType(int param_1);
 
-// Original: core_ammobox.cpp_FUN_0040f480
+// Original: core_ammobox.cpp_CAmmoBox_canPickup_FUN_0040f480
 // Address: 0040f480
-undefined4 FUN_0040f480(int param_1,CDemonActor *param_2);
+undefined4 CAmmoBox::canPickup(int param_1,CDemonActor *param_2);
 
-// Original: core_ammobox.cpp_FUN_0040f4b0
+// Original: core_ammobox.cpp_CAmmoBox_dtor_FUN_0040f4b0
 // Address: 0040f4b0
-CDemonActor * FUN_0040f4b0(CDemonActor *param_1,byte param_2);
+CDemonActor * CAmmoBox::dtor(CDemonActor *param_1,byte param_2);

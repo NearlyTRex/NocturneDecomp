@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba2e7
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba2e7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoot_0058618a

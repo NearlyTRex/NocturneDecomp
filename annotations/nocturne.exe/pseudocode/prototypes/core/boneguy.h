@@ -15,13 +15,13 @@ float * FUN_00418180(float *param_1,int param_2);
 // Address: 004181f0
 CVector3f * FUN_004181f0(CVector3f *param_1,CDemonActor *param_2);
 
-// Original: core_boneguy.cpp_FUN_004182a0
+// Original: core_boneguy.cpp_factoryFunc_FUN_004182a0
 // Address: 004182a0
-void FUN_004182a0(void);
+CBoneGuy * __cdecl factoryFunc(void);
 
-// Original: core_boneguy.cpp_FUN_004182c0
+// Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_004182c0
 // Address: 004182c0
-CDemonActorType * FUN_004182c0(void);
+CDemonActorType * CBoneGuy::getActorType(void);
 
 // Original: core_boneguy.cpp_FUN_004182cd
 // Address: 004182cd
@@ -39,13 +39,13 @@ CBoneGuy * __cdecl FUN_00418630(CBoneGuy *this_ptr);
 // Address: 00418800
 void CBoneGuy::setup(CEnemy *param_1);
 
-// Original: core_boneguy.cpp_FUN_00418a00
+// Original: core_boneguy.cpp_CBoneGuy_process_FUN_00418a00
 // Address: 00418a00
-void FUN_00418a00(CBoneGuy *param_1,float param_2);
+void CBoneGuy::process(CBoneGuy *param_1,float param_2);
 
-// Original: core_boneguy.cpp_FUN_004194b0
+// Original: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0
 // Address: 004194b0
-void FUN_004194b0(int param_1,int param_2);
+void CBoneGuy::getCarryObjToBodyXForm(int param_1,int param_2);
 
 // Original: core_boneguy.cpp_FUN_004196b0
 // Address: 004196b0
@@ -55,13 +55,13 @@ int __cdecl FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
 // Address: 00419bf0
 void __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419c20
+// Original: core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419c20
 // Address: 00419c20
-int FUN_00419c20(CCharacter *param_1);
+int CBoneGuy::renderTransparent(CCharacter *param_1);
 
-// Original: core_boneguy.cpp_FUN_00419ce0
+// Original: core_boneguy.cpp_CBoneGuy_archive_FUN_00419ce0
 // Address: 00419ce0
-void FUN_00419ce0(CEnemy *param_1);
+void CBoneGuy::archive(CEnemy *param_1);
 
 // Original: core_boneguy.cpp_CBoneGuy_reset_FUN_00419f30
 // Address: 00419f30

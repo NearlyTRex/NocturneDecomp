@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[37]:
-;   core_batcreat.cpp_FUN_00413040 at 004130f4
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 004130f4
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 004149e4
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041592d
 ;   core_boneguy.cpp_FUN_00418630 at 0041871e
 ;   core_boneguy.cpp_FUN_004196b0 at 00419b8b
-;   core_boxactor.cpp_FUN_0041f3d0 at 0041f443
+;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f443
 ;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480 at 0042365b
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 004239cb
 ;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 0042133f

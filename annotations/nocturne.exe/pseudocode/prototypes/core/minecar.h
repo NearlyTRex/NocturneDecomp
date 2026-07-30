@@ -7,21 +7,21 @@
 // Address: 004d5fb0
 void __cdecl staticInit(void);
 
-// Original: core_minecar.cpp_FUN_004d5fe0
+// Original: core_minecar.cpp_factoryFunc_FUN_004d5fe0
 // Address: 004d5fe0
-void FUN_004d5fe0(void);
+CMineCar * __cdecl factoryFunc(void);
 
-// Original: core_minecar.cpp_FUN_004d6010
+// Original: core_minecar.cpp_CMineCar_getActorType_FUN_004d6010
 // Address: 004d6010
-CDemonActorType * FUN_004d6010(void);
+CDemonActorType * CMineCar::getActorType(void);
 
 // Original: core_minecar.cpp_CMinecar_setup_FUN_004d6020
 // Address: 004d6020
 void __cdecl CMinecar::setup(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_FUN_004d6040
+// Original: core_minecar.cpp_CMineCar_process_FUN_004d6040
 // Address: 004d6040
-void FUN_004d6040(CPlatform *param_1,float param_2);
+void CMineCar::process(CPlatform *param_1,float param_2);
 
 // Original: core_minecar.cpp_FUN_004d60b0
 // Address: 004d60b0

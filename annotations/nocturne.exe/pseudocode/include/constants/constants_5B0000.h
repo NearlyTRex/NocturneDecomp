@@ -277,11 +277,8 @@ static int DAT_005BACE0 = 0x1;
 static int DAT_005BAD54 = 0x1;
 static int DAT_005BADB8 = 0x1;
 static int DAT_005BAF5C = 0x1;
-static int DAT_005BB144 = 0x1;
 static int DAT_005BE1E8 = 0x1;
 static int DAT_005BE93C = 0x1;
-static int DAT_005BE950 = 0x1;
-static int DAT_005BEA0C = 0x1;
 
 // string constants
 static string s_CFilmReel_005b803c = "$CFilmReel$$";

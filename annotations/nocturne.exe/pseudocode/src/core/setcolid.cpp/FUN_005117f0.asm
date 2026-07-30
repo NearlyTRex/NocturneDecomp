@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040a140 at 0040a175
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140 at 0040a175
 ;
 ; *****************************************************************************
 

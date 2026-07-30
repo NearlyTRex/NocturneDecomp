@@ -23,8 +23,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_platfrm.cpp_FUN_004f5f60 at 004f5f7b
-;   core_platfrm.cpp_FUN_004f6170 at 004f638d
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f638d
+;   core_platfrm.cpp_CPlatform_setup_FUN_004f5f60 at 004f5f7b
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800

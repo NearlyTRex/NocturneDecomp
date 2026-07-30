@@ -26,9 +26,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
+;   core_game.cpp_CGame_FUN_0049f930 at 0049fe76
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f6f5
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e055
-;   core_game.cpp_FUN_0049f930 at 0049fe76
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502518
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_0050e310 at 0050e324
 ;   core_set.cpp_FUN_005090f0 at 00509127

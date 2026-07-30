@@ -7,17 +7,17 @@
 // Address: 005437c0
 void __cdecl staticInit(void);
 
-// Original: core_teleport.cpp_FUN_00543810
+// Original: core_teleport.cpp_factoryFunc_FUN_00543810
 // Address: 00543810
-void FUN_00543810(void);
+CTeleportDest * __cdecl factoryFunc(void);
 
-// Original: core_teleport.cpp_FUN_00543830
+// Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00543830
 // Address: 00543830
-CDemonActorType * FUN_00543830(void);
+CDemonActorType * CTeleportDest::getActorType(void);
 
-// Original: core_teleport.cpp_FUN_00543840
+// Original: core_teleport.cpp_CTeleportDest_ctor_FUN_00543840
 // Address: 00543840
-void FUN_00543840(CDemonActor *param_1);
+CTeleportDest * __cdecl CTeleportDest::ctor(CTeleportDest *this_ptr);
 
 // Original: core_teleport.cpp_CTeleportDest_getBoundingBox_FUN_00543860
 // Address: 00543860
@@ -27,17 +27,17 @@ CBoundingBox3D * __cdecl CTeleportDest::getBoundingBox(CTeleportDest *this_ptr,C
 // Address: 00543890
 undefined4 FUN_00543890(void);
 
-// Original: core_teleport.cpp_FUN_005438a0
+// Original: core_teleport.cpp_factoryFunc_FUN_005438a0
 // Address: 005438a0
-void FUN_005438a0(void);
+CTeleport * __cdecl factoryFunc(void);
 
-// Original: core_teleport.cpp_FUN_005438c0
+// Original: core_teleport.cpp_CTeleport_getActorType_FUN_005438c0
 // Address: 005438c0
-CDemonActorType * FUN_005438c0(void);
+CDemonActorType * CTeleport::getActorType(void);
 
-// Original: core_teleport.cpp_FUN_005438d0
+// Original: core_teleport.cpp_CTeleport_ctor_FUN_005438d0
 // Address: 005438d0
-void FUN_005438d0(CDemonActor *param_1);
+CTeleport * __cdecl CTeleport::ctor(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_process_FUN_00543910
 // Address: 00543910
@@ -51,10 +51,10 @@ CBoundingBox3D * __cdecl CTeleport::getBoundingBox(CTeleport *this_ptr,CBounding
 // Address: 00543a20
 void __cdecl CTeleport::archive(CTeleport *this_ptr);
 
-// Original: core_teleport.cpp_FUN_00543a60
+// Original: core_teleport.cpp_CTeleport_dtor_FUN_00543a60
 // Address: 00543a60
-CDemonActor * FUN_00543a60(CDemonActor *param_1,byte param_2);
+CDemonActor * CTeleport::dtor(CDemonActor *param_1,byte param_2);
 
-// Original: core_teleport.cpp_FUN_00543ab0
+// Original: core_teleport.cpp_CTeleportDest_dtor_FUN_00543ab0
 // Address: 00543ab0
-CDemonActor * FUN_00543ab0(CDemonActor *param_1,byte param_2);
+CDemonActor * CTeleportDest::dtor(CDemonActor *param_1,byte param_2);

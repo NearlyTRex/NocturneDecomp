@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_00410490 at 004105ca
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 004105ca
 ;
 ; Called Functions:
 ;   core_baron.cpp_FUN_00410cc0

@@ -19,25 +19,25 @@ bool FUN_00534f90(void);
 // Address: 00534fc0
 float getCarriedObjectVerticalOffset(CDemonActor *param_1);
 
-// Original: core_stranger.cpp_FUN_00535090
+// Original: core_stranger.cpp_factoryFunc_FUN_00535090
 // Address: 00535090
-void FUN_00535090(void);
+CStranger * __cdecl factoryFunc(void);
 
-// Original: core_stranger.cpp_FUN_005350b0
+// Original: core_stranger.cpp_CStranger_getActorType_FUN_005350b0
 // Address: 005350b0
-CDemonActorType * FUN_005350b0(void);
+CDemonActorType * CStranger::getActorType(void);
 
 // Original: core_stranger.cpp_FUN_005350c0
 // Address: 005350c0
 CStranger * __cdecl FUN_005350c0(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_00535450
+// Original: core_stranger.cpp_CStranger_setup_FUN_00535450
 // Address: 00535450
-void FUN_00535450(CStranger *param_1);
+void CStranger::setup(CStranger *param_1);
 
-// Original: core_stranger.cpp_FUN_005357d0
+// Original: core_stranger.cpp_CStranger_process_FUN_005357d0
 // Address: 005357d0
-void FUN_005357d0(CStranger *param_1,float param_2);
+void CStranger::process(CStranger *param_1,float param_2);
 
 // Original: core_stranger.cpp_FUN_00535900
 // Address: 00535900
@@ -115,9 +115,9 @@ int __cdecl FUN_0053c800(CStranger *this_ptr);
 // Address: 0053cf90
 void CStranger::archive(CHero *param_1);
 
-// Original: core_stranger.cpp_FUN_0053d100
+// Original: core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100
 // Address: 0053d100
-undefined4 FUN_0053d100(CStranger *param_1);
+undefined4 CStranger::renderOpaque(CStranger *param_1);
 
 // Original: core_stranger.cpp_CStranger_renderTransparent_FUN_0053d6c0
 // Address: 0053d6c0
@@ -139,17 +139,17 @@ void __cdecl CStranger::autoAimAtThreat(CStranger *this_ptr,int hand_index,float
 // Address: 0053e320
 void __cdecl CStranger::aimLeftPistol(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0053e860
+// Original: core_stranger.cpp_CStranger_processDamage_FUN_0053e860
 // Address: 0053e860
-void FUN_0053e860(CHero *param_1,SDamageInfo *param_2);
+void CStranger::processDamage(CHero *param_1,SDamageInfo *param_2);
 
 // Original: core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0
 // Address: 0053ecc0
 void __cdecl CStranger::updateArmRecoilBlend(CStranger *this_ptr,float delta_time,int is_weapon_active);
 
-// Original: core_stranger.cpp_FUN_0053f210
+// Original: core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210
 // Address: 0053f210
-void FUN_0053f210(int param_1,int param_2);
+void CStranger::getCarryObjToBodyXForm(int param_1,int param_2);
 
 // Original: core_stranger.cpp_CStranger_getThrowDirection_FUN_0053f260
 // Address: 0053f260
@@ -179,9 +179,9 @@ void __cdecl FUN_005402f0(CStranger *this_ptr);
 // Address: 00540660
 void __cdecl CStranger::processWeaponTick(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_00540720
+// Original: core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720
 // Address: 00540720
-undefined4 FUN_00540720(int param_1);
+undefined4 CStranger::handlePureVirtualCall(int param_1);
 
 // Original: core_stranger.cpp_CStranger_drawWeapon_FUN_00540730
 // Address: 00540730
@@ -191,9 +191,9 @@ void CStranger::drawWeapon(int param_1,int param_2);
 // Address: 00540770
 int CStranger::getGrabbed(CHero *param_1,CDemonActor *param_2,int param_3);
 
-// Original: core_stranger.cpp_FUN_00540820
+// Original: core_stranger.cpp_CStranger_reset_FUN_00540820
 // Address: 00540820
-void FUN_00540820(CHero *param_1);
+void CStranger::reset(CHero *param_1);
 
 // Original: core_stranger.cpp_CStranger_getDeathState_FUN_00540890
 // Address: 00540890

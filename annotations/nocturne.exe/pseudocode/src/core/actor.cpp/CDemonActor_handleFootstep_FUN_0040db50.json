@@ -1,0 +1,664 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01fb860c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01fb8610'; did you mean 'DAT_02DE8610'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 28,
+        "message": "use of undeclared identifier '_DAT_01fb8614'; did you mean 'DAT_02DE8614'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_01fb860c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 30,
+        "message": "use of undeclared identifier '_DAT_01fb8610'; did you mean 'DAT_02DE8610'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 31,
+        "message": "use of undeclared identifier '_DAT_01fb8614'; did you mean 'DAT_02DE8614'?"
+      },
+      {
+        "category": "type_error",
+        "column": 29,
+        "line": 32,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 35,
+        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 85,
+        "message": "no matching function for call to 'core_sound_cpp_CSound_playActorSound_FUN_0052ea60'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 441,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 76,
+    "suspect_count": 34,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "suspect_float",
+      "unknown_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 248
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040db50",
+    "address_range": [
+      [
+        "0040db50",
+        "0040dd1c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50",
+    "signature": "uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b06b0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_createFootstep_FUN_004b06b0"
+    },
+    {
+      "addr": "004b0730",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730"
+    },
+    {
+      "addr": "004b11b0",
+      "is_variadic": false,
+      "name": "core_ground.cpp_getGroundTypeCode_FUN_004b11b0"
+    },
+    {
+      "addr": "00511b50",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50"
+    },
+    {
+      "addr": "0052ea60",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0052ea60"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": false,
+      "name": "xxx_unk.c_FUN_004940d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0040db24",
+      "name": "PTR_caseD_1_0040db24",
+      "type": "void*",
+      "value": "0040dc6a"
+    },
+    {
+      "addr": "00578021",
+      "name": "s_footstep_s_s_wav_f_00578021",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057803d",
+      "name": "DOUBLE_0057803d",
+      "type": "double",
+      "value": "5.87890821882528E-39"
+    },
+    {
+      "addr": "005b9284",
+      "name": "INT_005b9284",
+      "type": "int",
+      "value": "0x1c70f74"
+    },
+    {
+      "addr": "005b96c4",
+      "name": "INT_005b96c4",
+      "type": "int",
+      "value": "0x1c78c7c"
+    },
+    {
+      "addr": "005be368",
+      "name": "DAT_005be368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bed68",
+      "name": "DAT_005bed68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "DAT_01e57284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb860c",
+      "name": "DAT_01fb860c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb8610",
+      "name": "DAT_01fb8610",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb8614",
+      "name": "DAT_01fb8614",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.37956204379562,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 3,
+      "BRANCH": 4,
+      "BRANCHIND": 1,
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 178,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 49,
+      "INT_AND": 50,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 21,
+      "INT_SUB": 50,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 28,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 50
+    },
+    "pcode_op_count": 600
+  },
+  "stack_frame": {
+    "frame_size": 152,
+    "local_size": 152,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = param_2->x - _DAT_01fb860c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar3 = param_2->y - _DAT_01fb8610;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar2 = param_2->z - _DAT_01fb8614;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 25,
+      "match": "5.8789082188252795e-39",
+      "severity": "mild",
+      "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(0x01E57284,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = GROUND_TYPE_WATER;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,(int *)&param_1->blood_effect_color);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,(int *)&param_1->blood_effect_color);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->blood_effect_timer < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 == GROUND_TYPE_DIRT) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,&param_1->orient,3,0x4000,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,&param_1->orient,3,0x4000,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->blood_effect_timer = 0xffff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,&param_1->orient,0xb,param_1->blood_effect_timer,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,&param_1->orient,0xb,param_1->blood_effect_timer,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,param_2,&param_1->orient,0xb,param_1->blood_effect_timer,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->blood_effect_color);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = param_1->blood_effect_timer + -0x2000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->blood_effect_timer = iVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->blood_effect_timer = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 55,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "if (param_1 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "switch(param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "dVar7 = (double)param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(local_8c,\"footstep-%s-!-%s-?.wav @ %f\",param_1->footstep_sound_code,pcVar5,dVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar6 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60(0x02DC9450,param_1,local_8c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar6 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60(0x02DC9450,param_1,local_8c,param_2);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBassPlayer",
+        "offset": 32,
+        "vtable_addr": "005a2c04"
+      },
+      {
+        "class_name": "CTentacle",
+        "offset": 32,
+        "vtable_addr": "005a3104"
+      },
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 32,
+        "vtable_addr": "00599c14"
+      },
+      {
+        "class_name": "CBeast",
+        "offset": 32,
+        "vtable_addr": "0059a414"
+      },
+      {
+        "class_name": "CDraculaBride",
+        "offset": 32,
+        "vtable_addr": "0059c414"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 113
+  }
+}

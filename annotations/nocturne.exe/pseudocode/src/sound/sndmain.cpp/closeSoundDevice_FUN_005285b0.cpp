@@ -18,7 +18,7 @@ int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005285b0(void)
   iVar1 = sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
   iVar2 = 0;
   if (iVar1 != 0) {
-    this_ptr = (CSfxSample *)0x2dc1edc;
+    this_ptr = (CSfxSample *)&DAT_02dc1edc;
     do {
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);
       this_ptr = (CSfxSample *)&this_ptr->stream_write_position;

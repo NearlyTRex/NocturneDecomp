@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040b1b0
+;   core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     PUSH EBX                            ; 004cbce5
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cbce6
     PUSH EDX                            ; 004cbcea
-    CALL core_actor.cpp_FUN_0040b1b0    ; 004cbceb
-        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b1b0()
+    CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0 ; 004cbceb
+        ;   XREF to: 0040b1b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0()
     ADD ESP,0x8                         ; 004cbcf0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cbcf3
     MOV dword ptr [EBX],0x1             ; 004cbcf7

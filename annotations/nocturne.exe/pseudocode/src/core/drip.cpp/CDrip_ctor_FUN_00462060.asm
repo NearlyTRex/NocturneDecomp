@@ -7,7 +7,7 @@
 ; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_drip.cpp_FUN_00462030 at 00462043
+;   core_drip.cpp_factoryFunc_FUN_00462030 at 00462043
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stalag_kfm_0057ddde
@@ -18,7 +18,7 @@
 ;   CDemonActor_vtable g_CDripVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 00462062
     MOV EBX,dword ptr [ESP + 0x10]      ; 00462063
     PUSH EBX                            ; 00462067
-    CALL core_actor.cpp_FUN_00409d30    ; 00462068
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00462068
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0046206d
     ADD EAX,0x150                       ; 00462070
     PUSH EAX                            ; 00462075

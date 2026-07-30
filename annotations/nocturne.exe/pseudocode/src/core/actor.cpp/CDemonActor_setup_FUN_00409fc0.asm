@@ -7,9 +7,9 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[44]:
-;   core_ammo.cpp_FUN_0040ec00 at 0040ec17
-;   core_ammobox.cpp_FUN_0040f0f0 at 0040f105
-;   core_anvil.cpp_FUN_0040f5f0 at 0040f5f5
+;   core_ammo.cpp_CAmmo_setup_FUN_0040ec00 at 0040ec17
+;   core_ammobox.cpp_CAmmoBox_setup_FUN_0040f0f0 at 0040f105
+;   core_anvil.cpp_CAnvil_setup_FUN_0040f5f0 at 0040f5f5
 ;   core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30 at 0040ff45
 ;   core_barrier.cpp_CBarrier_setup_FUN_00411760 at 00411766
 ;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411b0e

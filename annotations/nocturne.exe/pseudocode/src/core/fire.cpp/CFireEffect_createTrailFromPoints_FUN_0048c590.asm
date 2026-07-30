@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_00410490 at 00410946
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 00410946
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00581524 = 8

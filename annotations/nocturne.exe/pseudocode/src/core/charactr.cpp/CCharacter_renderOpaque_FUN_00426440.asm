@@ -10,14 +10,14 @@
 ;
 ; XREF[12]:
 ;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0 at 00419c09
-;   core_colonel.cpp_FUN_0043a9f0 at 0043a9f5
+;   core_colonel.cpp_CColonel_renderOpaque_FUN_0043a9f0 at 0043a9f5
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_00498cc0 at 00498cca
-;   core_gargoyle.cpp_FUN_004a8260 at 004a8265
-;   core_haystack.cpp_FUN_004b3ff0 at 004b3ff5
+;   core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004a8260 at 004a8265
+;   core_haystack.cpp_CHaystack_renderOpaque_FUN_004b3ff0 at 004b3ff5
 ;   core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0 at 004b6d36
-;   core_icepick.cpp_FUN_004bb4d0 at 004bb4d5
+;   core_icepick.cpp_CIcePick_renderOpaque_FUN_004bb4d0 at 004bb4d5
 ;   core_scat.cpp_CScat_renderOpaque_FUN_004fcb20 at 004fcb29
-;   core_stranger.cpp_FUN_0053d100 at 0053d116
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d116
 ;   core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20 at 00542d54
 ;   ... and 2 more
 ;

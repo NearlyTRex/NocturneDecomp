@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_manpuz.cpp_FUN_004ca240 at 004ca2cc
+;   core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004ca240 at 004ca2cc
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510ec2
 ;
 ; Referenced Globals:

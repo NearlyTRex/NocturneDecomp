@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   y
 ;
 ; XREF[11]:
-;   core_actor.cpp_FUN_0040add0 at 0040afaa
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0 at 0040afaa
 ;   core_actor.cpp_draw3DPointMarker_FUN_0040ab70 at 0040ace8
 ;   core_setdir.cpp_FUN_005138e0 at 00513ac9
 ;   engine_2d.c_FUN_00403780 at 00403821

@@ -7,7 +7,7 @@
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ammobox.cpp_FUN_0040f010 at 0040f023
+;   core_ammobox.cpp_factoryFunc_FUN_0040f010 at 0040f023
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ammobag_kfm_0057834d
@@ -18,7 +18,7 @@
 ;   CDemonActor_vtable g_CAmmoBoxVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 0040f042
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040f043
     PUSH EBX                            ; 0040f047
-    CALL core_actor.cpp_FUN_00409d30    ; 0040f048
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0040f048
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040f04d
     ADD EAX,0x150                       ; 0040f050
     PUSH EAX                            ; 0040f055

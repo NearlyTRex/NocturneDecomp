@@ -1,0 +1,247 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 78,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004630e0",
+    "address_range": [
+      [
+        "004630e0",
+        "0046314c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_drone.cpp_CDrone_archive_FUN_004630e0",
+    "signature": "void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ca80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80"
+    },
+    {
+      "addr": "0040c880",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040c880"
+    },
+    {
+      "addr": "0040cb00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040cb00"
+    },
+    {
+      "addr": "004796c0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004796c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057df2c",
+      "name": "s_speed_0057df2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057df32",
+      "name": "s_modelName_0057df32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057df3c",
+      "name": "s_guardDistance_0057df3c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057df4a",
+      "name": "s_motion_state_0057df4a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b0660",
+      "name": "g_INT_005b0660",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.161290322580645,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 16,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_drone_cpp_CDrone_archive_FUN_004630e0(CEnemy *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,\"speed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model,\"modelName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,\"guardDistance\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model.motion_controller,\"motion state\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDrone",
+        "offset": 204,
+        "vtable_addr": "0059c714"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

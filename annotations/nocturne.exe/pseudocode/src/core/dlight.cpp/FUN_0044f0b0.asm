@@ -45,9 +45,9 @@
 ;   double DOUBLE_0057c7d6 = 256
 ;   undefined4 DAT_0059c030
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_01abb4b8
-;   undefined4 DAT_01abb4bc
-;   undefined4 DAT_01abb4c0
+;   CVector3f CVector3f_01abb4b8
+;   undefined4 CVector3f_01abb4b8.y
+;   undefined4 CVector3f_01abb4b8.z
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -155,13 +155,13 @@ section .text
         ;   XREF to: 0044f129 (CONDITIONAL_JUMP)  ; LAB_0044f129
     LEA EBX,[ESP + 0x2c]                ; 0044f1bd
     MOV EAX,0x1abb4b8                   ; 0044f1c1
-    FLD float ptr [EAX]                 ; 0044f1c6 | DAT_01abb4b8
+    FLD float ptr [EAX]                 ; 0044f1c6 | CVector3f_01abb4b8
     FMUL float ptr [0x0059c030]         ; 0044f1c8 | DAT_0059c030
     FISTP dword ptr [EBX]               ; 0044f1ce
-    FLD float ptr [EAX + 0x4]           ; 0044f1d0 | DAT_01abb4bc
+    FLD float ptr [EAX + 0x4]           ; 0044f1d0 | CVector3f_01abb4b8.y
     FMUL float ptr [0x0059c030]         ; 0044f1d3 | DAT_0059c030
     FISTP dword ptr [EBX + 0x4]         ; 0044f1d9
-    FLD float ptr [EAX + 0x8]           ; 0044f1dc | DAT_01abb4c0
+    FLD float ptr [EAX + 0x8]           ; 0044f1dc | CVector3f_01abb4b8.z
     FMUL float ptr [0x0059c030]         ; 0044f1df | DAT_0059c030
     FISTP dword ptr [EBX + 0x8]         ; 0044f1e5
     LEA EAX,[ESP + 0x2c]                ; 0044f1e8

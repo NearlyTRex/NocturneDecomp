@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_flame.cpp_FUN_0048d5d0
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     LEA EAX,[EBX + 0x338]               ; 0048e776
         ;   Label: LAB_0048e776
     PUSH EAX                            ; 0048e77c
-    CALL core_flame.cpp_FUN_0048d5d0    ; 0048e77d
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_FUN_0048d5d0(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 ; 0048e77d
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0048e782
     MOV EAX,dword ptr [EBX + 0x5d4]     ; 0048e785
     POP EBX                             ; 0048e78b

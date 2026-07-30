@@ -10,7 +10,7 @@
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d8f
 ;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680 at 004826e1
 ;   core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 at 0048383b
-;   core_flame.cpp_FUN_0048d5d0 at 0048d6bf
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048d6bf
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0 at 004ae101
 ;
 ; Called Functions:

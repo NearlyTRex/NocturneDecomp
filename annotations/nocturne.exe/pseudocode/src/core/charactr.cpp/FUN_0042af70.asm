@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[4]:
-;   core_hostage.cpp_FUN_004b6d80 at 004b781f
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b781f
 ;   core_icepick.cpp_FUN_004baba0 at 004bb08c
 ;   core_moloch.cpp_CMoloch_processAI_FUN_004de1b0 at 004de4e5
 ;   core_svetlana.cpp_FUN_005423c0 at 005428ac

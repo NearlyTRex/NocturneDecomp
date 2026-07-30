@@ -9,12 +9,12 @@
 ; undefined        Stack[-0x64]:1  local_64
 ;
 ; XREF[6]:
-;   core_colonel.cpp_FUN_00439f50 at 0043a307
-;   core_gabriela.cpp_FUN_00495a20 at 00496b48
-;   core_haystack.cpp_FUN_004b32d0 at 004b36d4
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba4f3
+;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 0043a307
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496b48
+;   core_haystack.cpp_CHaystack_process_FUN_004b32d0 at 004b36d4
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba4f3
 ;   core_stranger.cpp_FUN_0053fc60 at 0053fe24
-;   core_svetlana.cpp_FUN_00541d00 at 005421df
+;   core_svetlana.cpp_CSvetlana_process_FUN_00541d00 at 005421df
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00585827

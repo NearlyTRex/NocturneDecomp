@@ -255,6 +255,6 @@ void __cdecl copyNetAddr(SNetworkAddr *dest,SNetworkAddr *src);
 // Address: 004edfa0
 int * __cdecl assignInt1(int *dest,int *src);
 
-// Original: core_netgame.cpp_FUN_004edfb0
+// Original: core_netgame.cpp_assignInt2_FUN_004edfb0
 // Address: 004edfb0
-int * __cdecl FUN_004edfb0(int *dest,int *src);
+int * __cdecl assignInt2(int *dest,int *src);

@@ -11,7 +11,7 @@ void core_hostage_cpp_CHostage_archive_FUN_004b8320(CNPC *param_1)
 {
   CDeformableModelInstance *model_ptr;
   
-  core_npc_cpp_FUN_004eed10(param_1);
+  core_npc_cpp_CNPC_archive_FUN_004eed10(param_1);
   core_actor_cpp_archiveInteger_FUN_0040c900
             ((int *)(param_1[1].base.model.transformed_vertices + 0x2b),"followState");
   core_actor_cpp_archiveInteger_FUN_0040c900

@@ -27,8 +27,8 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
       core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(&this_ptr->moon,"moon.kfm");
     }
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650
-              ((CKeyFramedModel *)0x1cce1bc,"menubat.kfm");
-    this_ptr_00 = (CAlphaBitmap *)0x1ccdc64;
+              ((CKeyFramedModel *)&DAT_01cce1bc,"menubat.kfm");
+    this_ptr_00 = (CAlphaBitmap *)&DAT_01ccdc64;
     iVar5 = 0;
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
               ((CAlphaBitmap *)&DAT_01ccdc50,"menucld2",0x100,0x100);
@@ -39,7 +39,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar5 != 0x78);
     this_ptr->is_loaded = 1;
-    core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccdec8,"menu1.pth");
+    core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)&DAT_01ccdec8,"menu1.pth");
     core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccded4,"menu2.pth");
     core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccdee0,"menu3.pth");
   }
@@ -49,7 +49,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
     iVar2 = rand();
     *(int *)(iVar5 + 0x1ccdeec) = iVar2 % 3;
     fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                      (0.0,(float)*(int *)((iVar2 % 3) * 0xc + 0x1ccdec8));
+                      (0.0,(float)*(int *)(&DAT_01ccdec8 + (iVar2 % 3) * 0xc));
     fVar4 = (float)_DAT_01cce2bc;
     *(float *)(iVar5 + 0x1ccdef0) = -fVar3;
     fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,fVar4);

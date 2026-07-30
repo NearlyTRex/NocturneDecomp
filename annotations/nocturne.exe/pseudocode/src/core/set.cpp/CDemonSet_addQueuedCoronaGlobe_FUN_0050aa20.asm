@@ -8,7 +8,7 @@
 ; CDemonGlobe *    Stack[0x8]:4   globe
 ;
 ; XREF[1]:
-;   core_flame.cpp_FUN_0048d5d0 at 0048d688
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048d688
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_004c9420(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1cc485c                   ; 004c9420
+        ;   Label: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_004c9420
+    RET                                 ; 004c9425
+

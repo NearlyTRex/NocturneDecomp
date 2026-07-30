@@ -7,7 +7,7 @@
 ; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_conveyor.cpp_FUN_0043b020 at 0043b033
+;   core_conveyor.cpp_factoryFunc_FUN_0043b020 at 0043b033
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057b1d4

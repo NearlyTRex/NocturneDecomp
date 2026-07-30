@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040bca0
+;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 00417f23
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00417f24
     PUSH ESI                            ; 00417f28
-    CALL core_actor.cpp_FUN_0040bca0    ; 00417f29
-        ;   XREF to: 0040bca0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040bca0()
+    CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0 ; 00417f29
+        ;   XREF to: 0040bca0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0()
     ADD ESP,0x10                        ; 00417f2e
     PUSH 0x41700000                     ; 00417f31
     PUSH 0x40a00000                     ; 00417f36

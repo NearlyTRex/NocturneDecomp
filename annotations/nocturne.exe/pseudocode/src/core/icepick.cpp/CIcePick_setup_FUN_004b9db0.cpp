@@ -16,7 +16,7 @@ void core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CHero *param_1)
   int iVar3;
   CSkeleton *this_ptr;
   
-  core_hero_cpp_FUN_004b48d0(param_1);
+  core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                        (&(param_1->base).model);
   _DAT_01cae288 =

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shotgun.cpp_FUN_00515cf0 at 00515d03
+;   core_shotgun.cpp_factoryFunc_FUN_00515cf0 at 00515d03
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00591036

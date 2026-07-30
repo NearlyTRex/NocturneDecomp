@@ -52,11 +52,11 @@ int core_set_cpp_FUN_0050aba0(CDemonSet *param_1)
     *(float *)((int)&param_1->cameras[0].rotation_matrix + (int)pCVar3 * 0x1a0 + -4) = local_2c[0].z
     ;
   }
-  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290((CDemonCamera *)0x1fb8508,0);
+  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290((CDemonCamera *)&DAT_01fb8508,0);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(param_1,0x10);
   core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(param_1);
   iVar6 = 0;
-  iVar5 = core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(0x1fb8508,0);
+  iVar5 = core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&DAT_01fb8508,0);
   if (0 < _DAT_01fb9b54) {
     iVar7 = 0;
     do {

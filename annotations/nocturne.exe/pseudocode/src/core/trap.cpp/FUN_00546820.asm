@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_trap.cpp_FUN_005467f0 at 00546803
+;   core_trap.cpp_factoryFunc_FUN_005467f0 at 00546803
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_beartrap_kfm_00596903
 ;   CDemonActor_vtable g_CTrapVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_trap.cpp_FUN_00546820
     MOV EBX,dword ptr [ESP + 0x8]       ; 00546821
     PUSH EBX                            ; 00546825
-    CALL core_actor.cpp_FUN_00409d30    ; 00546826
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00546826
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054682b
     ADD EAX,0x150                       ; 0054682e
     PUSH EAX                            ; 00546833

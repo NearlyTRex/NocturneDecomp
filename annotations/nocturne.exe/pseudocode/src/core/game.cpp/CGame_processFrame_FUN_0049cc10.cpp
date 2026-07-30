@@ -119,13 +119,13 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     (**(code **)(*(int *)(iVar3 + 0x14c) + 0x60))(iVar3,&local_b0,&local_b0.orientation);
     if ((DAT_01bd1d94 & 1) != 0) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                (0x1fb8508,_DAT_01bd1d8c,_DAT_01bd1d90);
+                (&DAT_01fb8508,_DAT_01bd1d8c,_DAT_01bd1d90);
       puVar16 = auStack_90 + 5;
       local_7c = auStack_90[2];
       auStack_90[(uint)bVar11 * -2 + 6] = auStack_90[(uint)bVar11 * -2 + 3];
       auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
            auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-      core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(0x1fb8508,puVar16);
+      core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(&DAT_01fb8508,puVar16);
       local_7c = local_94;
       auStack_90[(uint)bVar11 * -2 + 6] = auStack_90[(uint)bVar11 * -2];
       auStack_90[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
@@ -260,7 +260,7 @@ LAB_0049cf70:
     _DAT_01c71e38 = 0;
   }
   else {
-    _sprintf(local_2dc,"Camera: \"%s\" Group %d",0x1fb8508,
+    _sprintf(local_2dc,"Camera: \"%s\" Group %d",&DAT_01fb8508,
                *(uint *)
                 ((int)&DAT_005be368->cameras[0].rotation_matrix +
                 (int)0x01E57284->renderable_actors[0x773] * 0x1a0 + 0x30));

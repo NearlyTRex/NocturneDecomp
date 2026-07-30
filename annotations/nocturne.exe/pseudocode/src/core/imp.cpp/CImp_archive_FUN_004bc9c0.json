@@ -1,0 +1,214 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 56,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004bc9c0",
+    "address_range": [
+      [
+        "004bc9c0",
+        "004bca07"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_imp.cpp_CImp_archive_FUN_004bc9c0",
+    "signature": "void core_imp_cpp_CImp_archive_FUN_004bc9c0(CEnemy *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ca80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80"
+    },
+    {
+      "addr": "0040c880",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040c880"
+    },
+    {
+      "addr": "0040cb00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040cb00"
+    },
+    {
+      "addr": "004796c0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004796c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058647d",
+      "name": "s_speed_0058647d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00586483",
+      "name": "s_modelName_00586483",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058648d",
+      "name": "s_motion_state_0058648d",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.043478260869565,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 13,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_imp_cpp_CImp_archive_FUN_004bc9c0(CEnemy *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,\"speed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "model_ptr = &(param_1->base).model;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CImp",
+        "offset": 204,
+        "vtable_addr": "0059f584"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

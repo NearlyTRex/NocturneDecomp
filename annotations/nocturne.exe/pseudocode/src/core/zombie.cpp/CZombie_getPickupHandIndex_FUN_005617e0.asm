@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880 at 0056188b
-;   core_zombie.cpp_FUN_0055ef50 at 0055f40d
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055f40d
 ;   core_zombie.cpp_FUN_00561010 at 005611be
 ;
 ; Referenced Globals:

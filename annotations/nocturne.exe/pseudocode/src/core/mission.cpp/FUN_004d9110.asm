@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[8]:
-;   core_boneguy.cpp_FUN_00418a00 at 00418ced
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418ced
 ;   core_crate.cpp_CCrate_explode_FUN_0043cdb0 at 0043ce46
 ;   core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0 at 0048e61f
 ;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6802

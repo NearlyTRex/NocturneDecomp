@@ -15,7 +15,7 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(CMarquee *this_pt
   char *pcVar4;
   int *piVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)&pCVar2[1].orient_matrix.m[1].y);
   pcVar4 = "menu1.pth";
   pCVar3[-7].frames = (CCourseFrame *)&g_CMarqueeVTable;

@@ -7,7 +7,7 @@
 ; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_spike.cpp_FUN_00532ff0 at 00533003
+;   core_spike.cpp_factoryFunc_FUN_00532ff0 at 00533003
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bgate_kfm_00595011
@@ -28,7 +28,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -42,8 +42,8 @@ section .text
     PUSH EDI                            ; 00533022
     MOV EBX,dword ptr [ESP + 0x10]      ; 00533023
     PUSH EBX                            ; 00533027
-    CALL core_actor.cpp_FUN_00409d30    ; 00533028
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00533028
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0053302d
     ADD EAX,0x150                       ; 00533030
     PUSH EAX                            ; 00533035

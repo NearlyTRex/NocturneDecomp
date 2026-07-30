@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
-;   core_hero.cpp_FUN_004b49a0
+;   core_hero.cpp_CHero_archive_FUN_004b49a0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   Label: core_gabriela.cpp_CGabriella_archive_FUN_00498c10
     MOV EBX,dword ptr [ESP + 0x8]       ; 00498c11
     PUSH EBX                            ; 00498c15
-    CALL core_hero.cpp_FUN_004b49a0     ; 00498c16
-        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b49a0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_archive_FUN_004b49a0 ; 00498c16
+        ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004b49a0(CHero * this_ptr)
     MOV EDX,dword ptr [0x005b92a8]      ; 00498c1b | INT_005b92a8
     ADD ESP,0x4                         ; 00498c21
     CMP EDX,0x2                         ; 00498c24

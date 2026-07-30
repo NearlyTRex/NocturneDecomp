@@ -7,13 +7,13 @@
 // Address: 00454600
 void __cdecl staticInit(void);
 
-// Original: core_dog.cpp_FUN_00454630
+// Original: core_dog.cpp_factoryFunc_FUN_00454630
 // Address: 00454630
-void FUN_00454630(void);
+CZombieDog * __cdecl factoryFunc(void);
 
-// Original: core_dog.cpp_FUN_00454650
+// Original: core_dog.cpp_CZombieDog_getActorType_FUN_00454650
 // Address: 00454650
-CDemonActorType * FUN_00454650(void);
+CDemonActorType * CZombieDog::getActorType(void);
 
 // Original: core_dog.cpp_FUN_00454660
 // Address: 00454660
@@ -27,9 +27,9 @@ void CZombieDog::setup(CEnemy *param_1);
 // Address: 00454750
 void CZombieDog::process(CEnemy *param_1,float param_2);
 
-// Original: core_dog.cpp_FUN_00454dc0
+// Original: core_dog.cpp_CZombieDog_archive_FUN_00454dc0
 // Address: 00454dc0
-void FUN_00454dc0(CEnemy *param_1);
+void CZombieDog::archive(CEnemy *param_1);
 
 // Original: core_dog.cpp_CZombieDog_processDamage_FUN_00454e30
 // Address: 00454e30

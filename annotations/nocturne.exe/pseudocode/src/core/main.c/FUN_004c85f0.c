@@ -60,8 +60,8 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   core_inivar_cpp_FUN_004bdb80();
   _DAT_02dc9d6c = 2;
   engine_pod_cpp_CPod_init_FUN_004f8af0(0x01E528D0);
-  engine_dosio_c_FUN_00456750();
-  engine_dosio_c_FUN_00456750();
+  engine_dosio_cpp_FUN_00456750();
+  engine_dosio_cpp_FUN_00456750();
   support_newmsg_cpp_FUN_004edfc0();
   core_mmx_c_detectCPUFeatures_FUN_004d9e70();
   if (_DAT_01c03948 == 0) {

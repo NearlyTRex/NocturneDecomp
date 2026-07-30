@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[16]:
-;   core_tommygun.cpp_FUN_005464a0 at 005465dd
+;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 005465dd
 ;   sound_sndmain.cpp_FUN_00527570 at 00527574
 ;   sound_sndmain.cpp_FUN_00527950 at 00527957
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527452

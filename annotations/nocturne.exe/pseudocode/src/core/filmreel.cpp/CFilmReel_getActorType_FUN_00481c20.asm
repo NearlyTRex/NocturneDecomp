@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1c08c8c                   ; 00481c20
+        ;   Label: core_filmreel.cpp_CFilmReel_getActorType_FUN_00481c20
+    RET                                 ; 00481c25
+

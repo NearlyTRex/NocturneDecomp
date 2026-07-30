@@ -54,7 +54,8 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(CSfxSampl
           iVar8 = iVar5 * 0x168;
           if (((*(int *)(iVar8 + 0x2dc2008) == 0) && (*(int *)(iVar8 + 0x2dc200c) != 0)) &&
              (*(int *)(iVar8 + 0x2dc2004) == 0)) {
-            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(iVar8 + 0x2dc1edc));
+            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60
+                      ((CSfxSample *)(&DAT_02dc1edc + iVar8));
             break;
           }
           iVar9 = iVar9 + 1;

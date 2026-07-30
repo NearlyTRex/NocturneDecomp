@@ -78,8 +78,8 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
     local_800 = SUB84(__BITCAST_UINT64(dVar1),0);
     uVar20 = (uint)((ulonglong)uVar19 >> 0x20);
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
-    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)0x1cc5780,0x01C775EC->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);
     local_2c = 0;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound : ");
     pcVar12 = &DAT_01cc6ed8;

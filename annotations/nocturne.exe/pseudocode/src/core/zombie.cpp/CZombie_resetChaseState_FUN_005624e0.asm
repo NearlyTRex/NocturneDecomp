@@ -7,7 +7,7 @@
 ; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_zombie.cpp_FUN_0055ef50 at 0055f094
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055f094
 ;   core_zombie.cpp_FUN_00561010 at 00561413
 ;
 ; Referenced Globals:

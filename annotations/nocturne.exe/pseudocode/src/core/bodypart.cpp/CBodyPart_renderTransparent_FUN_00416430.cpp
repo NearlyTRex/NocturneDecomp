@@ -27,7 +27,7 @@ uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param
     if (0 < param_1->fire_count) {
       pSVar1 = param_1->fires;
       do {
-        core_flame_cpp_FUN_0048d5d0(&pSVar1->flame);
+        core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(&pSVar1->flame);
         iVar2 = iVar2 + 1;
         pSVar1 = (SBodyPartFire *)(&pSVar1->flame + 1);
       } while (iVar2 < param_1->fire_count);

@@ -15,8 +15,8 @@
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0 at 00428b2c
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047cf36
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 0049598b
-;   core_ghoul.cpp_FUN_004ab450 at 004ab7ec
-;   core_hero.cpp_CHero_getGrabbed_FUN_004b4c70 at 004b4cad
+;   core_ghoul.cpp_CGhoul_processDamage_FUN_004ab450 at 004ab7ec
+;   core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20 at 004b4c46
 ;   ... and 17 more
 ;
 ; *****************************************************************************

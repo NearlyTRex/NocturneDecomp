@@ -24,9 +24,9 @@
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750
-;   undefined4 DAT_01b8efcc
-;   undefined4 DAT_01b8efd0
-;   undefined4 DAT_01b8efd4
+;   CVector3f[20000] CVector3f_ARRAY_01b8efcc
+;   undefined4 CVector3f_ARRAY_01b8efcc[0].y
+;   undefined4 CVector3f_ARRAY_01b8efcc[0].z
 ;   char* PTR_01cc4800
 ;   int INT_01cc4804
 ;
@@ -118,11 +118,11 @@ section .text
     JZ 0x0046ade2                       ; 0046adcc
         ;   XREF to: 0046ade2 (CONDITIONAL_JUMP)  ; LAB_0046ade2
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046adce
-    MOV dword ptr [ESI],EAX             ; 0046add2 | DAT_01b8efcc
+    MOV dword ptr [ESI],EAX             ; 0046add2 | CVector3f_ARRAY_01b8efcc
     MOV EAX,dword ptr [ESP + 0xc]       ; 0046add4
-    MOV dword ptr [ESI + 0x4],EAX       ; 0046add8 | DAT_01b8efd0
+    MOV dword ptr [ESI + 0x4],EAX       ; 0046add8 | CVector3f_ARRAY_01b8efcc[0].y
     MOV EAX,dword ptr [ESP + 0x10]      ; 0046addb
-    MOV dword ptr [ESI + 0x8],EAX       ; 0046addf | DAT_01b8efd4
+    MOV dword ptr [ESI + 0x8],EAX       ; 0046addf | CVector3f_ARRAY_01b8efcc[0].z
     MOV EDX,dword ptr [0x01b7b744]      ; 0046ade2 | DAT_01b7b744
         ;   Label: LAB_0046ade2
     ADD ESI,0xc                         ; 0046ade8

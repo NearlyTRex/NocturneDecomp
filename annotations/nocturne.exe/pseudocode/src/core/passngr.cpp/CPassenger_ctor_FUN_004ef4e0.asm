@@ -7,7 +7,7 @@
 ; CPassenger *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_passngr.cpp_FUN_004ef4b0 at 004ef4c3
+;   core_passngr.cpp_factoryFunc_FUN_004ef4b0 at 004ef4c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_0058cbd0

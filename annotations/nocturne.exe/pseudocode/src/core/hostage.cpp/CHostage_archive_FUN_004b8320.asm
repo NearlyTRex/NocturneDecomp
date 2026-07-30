@@ -32,7 +32,7 @@
 ;   core_actor.cpp_archiveMotionState_FUN_0040cb00
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
-;   core_npc.cpp_FUN_004eed10
+;   core_npc.cpp_CNPC_archive_FUN_004eed10
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH ESI                            ; 004b8321
     MOV EBX,dword ptr [ESP + 0xc]       ; 004b8322
     PUSH EBX                            ; 004b8326
-    CALL core_npc.cpp_FUN_004eed10      ; 004b8327
-        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eed10(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_archive_FUN_004eed10 ; 004b8327
+        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_archive_FUN_004eed10(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b832c
     PUSH 0x585cbd                       ; 004b832f | = "followState"
     LEA ESI,[EBX + 0x1f91c]             ; 004b8334

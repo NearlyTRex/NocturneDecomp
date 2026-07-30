@@ -8,11 +8,11 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[38]:
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140 at 0040a166
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da6b
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d999
-;   core_actor.cpp_FUN_0040a140 at 0040a166
-;   core_actor.cpp_FUN_0040b300 at 0040b7da
-;   core_boneguy.cpp_FUN_00418a00 at 00418ec2
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b7da
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418ec2
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429a8d
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 00425193
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043bf09

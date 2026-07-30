@@ -17,7 +17,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *
   uint local_c [3];
   float *pfVar6;
   
-  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660
                      ((CDeformableModelInstance *)(pCVar1 + 1));
   pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_00438210

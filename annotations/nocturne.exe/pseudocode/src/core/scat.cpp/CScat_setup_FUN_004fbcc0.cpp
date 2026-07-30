@@ -15,7 +15,7 @@ void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1)
   CSkeleton *this_ptr;
   int iVar2;
   
-  core_hero_cpp_FUN_004b48d0(param_1);
+  core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                        (&(param_1->base).model);
   _DAT_01e53388 =

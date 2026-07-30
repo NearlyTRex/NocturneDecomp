@@ -14,7 +14,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_004ca300(int param_1,fl
   float *pfVar3;
   int iVar4;
   
-  core_actor_cpp_FUN_0040ab10(param_1,param_2);
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);
   iVar4 = 0;
   pfVar2 = (float *)(param_1 + 0x1354);
   do {

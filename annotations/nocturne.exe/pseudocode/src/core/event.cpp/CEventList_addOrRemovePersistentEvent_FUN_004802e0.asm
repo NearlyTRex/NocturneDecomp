@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b6d1
-;   core_hostage.cpp_FUN_004b6d80 at 004b7ac4
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b7ac4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00580a07

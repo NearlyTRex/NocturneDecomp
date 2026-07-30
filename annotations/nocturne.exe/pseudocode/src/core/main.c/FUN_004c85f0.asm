@@ -122,12 +122,12 @@ section .text
         ;   XREF to: 004f8af0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_004f8af0(CPod * this_ptr)
     ADD ESP,0x4                         ; 004c86d7
     PUSH 0x4f9250                       ; 004c86da | LAB_004f9250
-    CALL engine_dosio.c_FUN_00456750    ; 004c86df
-        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.c_FUN_00456750()
+    CALL engine_dosio.cpp_FUN_00456750  ; 004c86df
+        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00456750()
     ADD ESP,0x4                         ; 004c86e4
     PUSH 0x456800                       ; 004c86e7
-    CALL engine_dosio.c_FUN_00456750    ; 004c86ec
-        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.c_FUN_00456750()
+    CALL engine_dosio.cpp_FUN_00456750  ; 004c86ec
+        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00456750()
     ADD ESP,0x4                         ; 004c86f1
     PUSH 0x587bc3                       ; 004c86f4 | = "msglist.txt"
     CALL support_newmsg.cpp_FUN_004edfc0 ; 004c86f9

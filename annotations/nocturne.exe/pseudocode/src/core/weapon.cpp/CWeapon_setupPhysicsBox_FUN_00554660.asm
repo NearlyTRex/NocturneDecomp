@@ -7,8 +7,8 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_weapon.cpp_CWeapon_onDropped_FUN_00554310 at 00554328
 ;   core_weapon.cpp_CWeapon_setup_FUN_00553f10 at 00553f2e
-;   core_weapon.cpp_FUN_00554310 at 00554328
 ;
 ; Referenced Globals:
 ;   float FLOAT_00597c15 = 0.5

@@ -28,7 +28,7 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_005049b0(CScript *th
     if (iVar4 != 1) {
       local_28 = (float)core_sound_cpp_FUN_0052ebc0(0x02DC9450,sound_name);
       if (local_28 < 0.0) {
-        shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)0x1e56c30,sound_name);
+        shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01e56c30,sound_name);
         uVar5 = 0xffffffff;
         pcVar6 = dialog_text;
         do {

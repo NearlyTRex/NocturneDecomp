@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_005350b0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2dc9fac                   ; 005350b0
+        ;   Label: core_stranger.cpp_CStranger_getActorType_FUN_005350b0
+    RET                                 ; 005350b5
+

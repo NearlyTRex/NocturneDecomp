@@ -14,6 +14,7 @@ int core_gore_cpp_CGore_renderDecals_FUN_004afe80(uint param_1,int param_2)
   int iVar1;
   int iVar2;
   int iVar3;
+  byte *puVar4;
   
   iVar3 = 0x01C775EC;
   if (*(int *)(0x01C775EC + 0x14) != 0) {
@@ -72,8 +73,8 @@ int core_gore_cpp_CGore_renderDecals_FUN_004afe80(uint param_1,int param_2)
       if (0 < _DAT_01c9e540) {
         iVar2 = 0;
         do {
-          if (*(int *)(iVar2 + 0x1c9e544) == 0) {
-            iVar3 = core_gore_cpp_CFootstep_render_FUN_004afa20(iVar2 + 0x1c9e544);
+          if (*(int *)(&DAT_01c9e544 + iVar2) == 0) {
+            iVar3 = core_gore_cpp_CFootstep_render_FUN_004afa20(&DAT_01c9e544 + iVar2);
           }
           iVar1 = iVar1 + 1;
           iVar2 = iVar2 + 0x40;
@@ -83,11 +84,11 @@ int core_gore_cpp_CGore_renderDecals_FUN_004afe80(uint param_1,int param_2)
     else {
       iVar1 = 0;
       if (0 < _DAT_01c9e540) {
-        iVar3 = 0x1c9e544;
+        puVar4 = &DAT_01c9e544;
         do {
-          core_gore_cpp_CFootstep_render_FUN_004afa20(iVar3);
+          core_gore_cpp_CFootstep_render_FUN_004afa20(puVar4);
           iVar1 = iVar1 + 1;
-          iVar3 = iVar3 + 0x40;
+          puVar4 = puVar4 + 0x40;
         } while (iVar1 < _DAT_01c9e540);
         return _DAT_01c9e540;
       }

@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040a350 at 0040a36a
+;   core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350 at 0040a36a
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120

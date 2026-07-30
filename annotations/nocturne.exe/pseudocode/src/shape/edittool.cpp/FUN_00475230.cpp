@@ -14,7 +14,6 @@ int __cdecl shape_edittool_cpp_FUN_00475230(CPickList *this_ptr)
   int iVar1;
   int iVar2;
   int iVar3;
-  uint in_stack_ffffffe8;
   
   shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(this_ptr);
   if (*(int *)this_ptr->search_text_buffer != 0) {
@@ -28,7 +27,7 @@ int __cdecl shape_edittool_cpp_FUN_00475230(CPickList *this_ptr)
     this_ptr->search_text_buffer[2] = '\0';
     this_ptr->search_text_buffer[3] = '\0';
   }
-  iVar1 = (*(this_ptr->base).vtable[1].dtor)(&this_ptr->base,in_stack_ffffffe8);
+  iVar1 = (*(((this_ptr->base).vtable._up)->_up).handleInput)(this_ptr);
   if (iVar1 < 0) {
     return -1;
   }

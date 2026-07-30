@@ -7,7 +7,7 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_trigger.cpp_FUN_00547880 at 00547893
+;   core_trigger.cpp_factoryFunc_FUN_00547880 at 00547893
 ;   core_waypoint.cpp_FUN_005524d0 at 005524d5
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@
 ;   CDemonActor_vtable g_CTriggerVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EDI                            ; 005478b1
     MOV EDX,dword ptr [ESP + 0xc]       ; 005478b2
     PUSH EDX                            ; 005478b6
-    CALL core_actor.cpp_FUN_00409d30    ; 005478b7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 005478b7
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     MOV dword ptr [EAX + 0x14c],0x5a3664 ; 005478bc | g_CTriggerVTable
     MOV dword ptr [EAX + 0x158],0x40a00000 ; 005478c6
     MOV dword ptr [EAX + 0x15c],0x41100000 ; 005478d0

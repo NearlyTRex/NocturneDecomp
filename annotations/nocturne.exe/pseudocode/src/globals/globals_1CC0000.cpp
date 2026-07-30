@@ -20,6 +20,10 @@ CDemonActorType g_CMineCarActorType_01cc90e4 = {};
 CDemonActorType g_CMobsterActorType_01ccdbd8 = {};
 CDemonActorType g_CMolochActorType_01ccdc14 = {};
 
+// CVector3f[32]
+CVector3f CVector3f_ARRAY_01cc9124[32] = {};
+CVector3f CVector3f_ARRAY_01cc92a8[32] = {};
+
 // int
 int INT_01cc4804 = {};
 

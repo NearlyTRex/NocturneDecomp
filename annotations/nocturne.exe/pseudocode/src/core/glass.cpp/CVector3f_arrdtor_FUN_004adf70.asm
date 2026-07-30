@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004adef0 at 004adf05
+;   core_glass.cpp_CGlass_dtor_FUN_004adef0 at 004adf05
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

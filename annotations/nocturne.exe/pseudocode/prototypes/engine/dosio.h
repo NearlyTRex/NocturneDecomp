@@ -7,7 +7,7 @@
 // Address: 00456700
 void __cdecl getRelativeFilePath(char *dest_path,char *directory,char *filename);
 
-// Original: engine_dosio.c_FUN_00456750
+// Original: engine_dosio.cpp_FUN_00456750
 // Address: 00456750
 void FUN_00456750(undefined4 param_1);
 

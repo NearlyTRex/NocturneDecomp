@@ -16,7 +16,7 @@
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8b9f
 ;   core_script.cpp_getActor_FUN_004fe180 at 004fe2a9
 ;   core_script.cpp_readActorReference_FUN_00505200 at 00505266
-;   core_trigger.cpp_FUN_00547b30 at 00547c56
+;   core_trigger.cpp_CTrigger_process_FUN_00547b30 at 00547c56
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520

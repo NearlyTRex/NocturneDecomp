@@ -7,13 +7,13 @@
 // Address: 00414ff0
 void __cdecl staticInit(void);
 
-// Original: core_beast.cpp_FUN_00415020
+// Original: core_beast.cpp_factoryFunc_FUN_00415020
 // Address: 00415020
-void FUN_00415020(void);
+CBeast * __cdecl factoryFunc(void);
 
-// Original: core_beast.cpp_FUN_00415040
+// Original: core_beast.cpp_CBeast_getActorType_FUN_00415040
 // Address: 00415040
-CDemonActorType * FUN_00415040(void);
+CDemonActorType * CBeast::getActorType(void);
 
 // Original: core_beast.cpp_FUN_00415050
 // Address: 00415050
@@ -27,21 +27,21 @@ void __cdecl CBeast::setup(CBeast *this_ptr);
 // Address: 004150d0
 void CBeast::process(CCharacter *param_1,float param_2);
 
-// Original: core_beast.cpp_FUN_00415160
+// Original: core_beast.cpp_CBeast_archive_FUN_00415160
 // Address: 00415160
-void FUN_00415160(CEnemy *param_1);
+void CBeast::archive(CEnemy *param_1);
 
-// Original: core_beast.cpp_FUN_004151b0
+// Original: core_beast.cpp_CBeast_processDamage_FUN_004151b0
 // Address: 004151b0
-void FUN_004151b0(CEnemy *param_1,SDamageInfo *param_2);
+void CBeast::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
-// Original: core_beast.cpp_FUN_004151d0
+// Original: core_beast.cpp_CBeast_getDeathState_FUN_004151d0
 // Address: 004151d0
-undefined4 FUN_004151d0(void);
+undefined4 CBeast::getDeathState(void);
 
-// Original: core_beast.cpp_FUN_004151e0
+// Original: core_beast.cpp_CBeast_getTargetPoints_FUN_004151e0
 // Address: 004151e0
-undefined4 FUN_004151e0(int param_1,CVector3f *param_2);
+undefined4 CBeast::getTargetPoints(int param_1,CVector3f *param_2);
 
 // Original: core_beast.cpp_CBeast_getCollisionType_FUN_00415230
 // Address: 00415230

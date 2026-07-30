@@ -15,13 +15,13 @@ undefined4 FUN_004fbb70(void);
 // Address: 004fbbb0
 undefined4 FUN_004fbbb0(int param_1);
 
-// Original: core_scat.cpp_FUN_004fbbd0
+// Original: core_scat.cpp_factoryFunc_FUN_004fbbd0
 // Address: 004fbbd0
-void FUN_004fbbd0(void);
+CScat * __cdecl factoryFunc(void);
 
-// Original: core_scat.cpp_FUN_004fbbf0
+// Original: core_scat.cpp_CScat_getActorType_FUN_004fbbf0
 // Address: 004fbbf0
-CDemonActorType * FUN_004fbbf0(void);
+CDemonActorType * CScat::getActorType(void);
 
 // Original: core_scat.cpp_FUN_004fbc00
 // Address: 004fbc00
@@ -31,13 +31,13 @@ CScat * __cdecl FUN_004fbc00(CScat *this_ptr);
 // Address: 004fbcc0
 void CScat::setup(CHero *param_1);
 
-// Original: core_scat.cpp_FUN_004fbe80
+// Original: core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80
 // Address: 004fbe80
-void __cdecl FUN_004fbe80(CScat *this_ptr);
+void __cdecl CScat::createDefaultWeapon(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_004fbf20
+// Original: core_scat.cpp_CScat_process_FUN_004fbf20
 // Address: 004fbf20
-void FUN_004fbf20(CScat *param_1,float param_2);
+void CScat::process(CScat *param_1,float param_2);
 
 // Original: core_scat.cpp_CScat_updateAI_FUN_004fc610
 // Address: 004fc610
@@ -47,9 +47,9 @@ void __cdecl CScat::updateAI(CScat *this_ptr,float delta_time);
 // Address: 004fca50
 void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_004fcae0
+// Original: core_scat.cpp_CScat_archive_FUN_004fcae0
 // Address: 004fcae0
-void FUN_004fcae0(CHero *param_1);
+void CScat::archive(CHero *param_1);
 
 // Original: core_scat.cpp_CScat_renderOpaque_FUN_004fcb20
 // Address: 004fcb20
@@ -59,13 +59,13 @@ undefined4 CScat::renderOpaque(CCharacter *param_1);
 // Address: 004fcbd0
 void CScat::processDamage(CScat *param_1,SDamageInfo *param_2);
 
-// Original: core_scat.cpp_FUN_004fcd20
+// Original: core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20
 // Address: 004fcd20
-undefined4 FUN_004fcd20(int param_1);
+undefined4 CScat::handlePureVirtualCall(int param_1);
 
-// Original: core_scat.cpp_FUN_004fcd30
+// Original: core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30
 // Address: 004fcd30
-void FUN_004fcd30(int param_1,undefined4 param_2);
+void CScat::handlePureVirtualCall(int param_1,undefined4 param_2);
 
 // Original: core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40
 // Address: 004fcd40

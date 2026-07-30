@@ -10,7 +10,8 @@ void __cdecl core_keyactor_cpp_staticInit_FUN_004c3400(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CKeyActorActorType_01cc30a8,"CKeyActor",core_keyactor_cpp_FUN_004c3430,
-             &INT_005bac4c,3,&g_CDemonActorActorType_00763e48);
+            (&g_CKeyActorActorType_01cc30a8,"CKeyActor",
+             core_keyactor_cpp_factoryFunc_FUN_004c3430,&INT_005bac4c,3,
+             &g_CDemonActorActorType_00763e48);
   return;
 }

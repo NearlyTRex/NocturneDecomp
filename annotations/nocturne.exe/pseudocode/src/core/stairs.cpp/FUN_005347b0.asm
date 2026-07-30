@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_stairs.cpp_FUN_00534780 at 00534793
+;   core_stairs.cpp_factoryFunc_FUN_00534780 at 00534793
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080
 ;   CDemonActor_vtable g_CStairsVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -22,8 +22,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005347b0
         ;   Label: core_stairs.cpp_FUN_005347b0
     PUSH EAX                            ; 005347b4
-    CALL core_actor.cpp_FUN_00409d30    ; 005347b5
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 005347b5
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005347ba
     PUSH 0x59c080                       ; 005347bd | g_CDemonTriangleTypeInfo_0059c080
     PUSH 0x28                           ; 005347c2

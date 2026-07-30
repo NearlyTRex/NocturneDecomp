@@ -18,7 +18,7 @@
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0 at 00417eb5
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420d1f
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00420a10 at 00420aaf
-;   core_bride.cpp_FUN_0041fe40 at 004201c7
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 004201c7
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0 at 0042783d
 ;   ... and 34 more
 ;

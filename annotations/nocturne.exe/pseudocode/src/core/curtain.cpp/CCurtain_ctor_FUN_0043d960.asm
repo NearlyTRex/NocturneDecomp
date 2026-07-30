@@ -7,7 +7,7 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_curtain.cpp_FUN_0043d930 at 0043d943
+;   core_curtain.cpp_factoryFunc_FUN_0043d930 at 0043d943
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SGLASS_RAW_0057b4c7
@@ -22,7 +22,7 @@
 ;   WatcomTypeInfo g_SCurtainVertexTypeInfo_0059bd90
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     PUSH EDI                            ; 0043d961
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043d962
     PUSH EDX                            ; 0043d966
-    CALL core_actor.cpp_FUN_00409d30    ; 0043d967
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0043d967
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043d96c
     PUSH 0x59bd90                       ; 0043d96f | g_SCurtainVertexTypeInfo_0059bd90
     PUSH 0x3e8                          ; 0043d974

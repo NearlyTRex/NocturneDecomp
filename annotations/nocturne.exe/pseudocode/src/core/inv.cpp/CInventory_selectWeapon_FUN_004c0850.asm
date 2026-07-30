@@ -16,7 +16,7 @@
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 at 004b4e46
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c02d0
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c169c
-;   core_scat.cpp_FUN_004fbe80 at 004fbed9
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80 at 004fbed9
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050338a
 ;
 ; Referenced Globals:

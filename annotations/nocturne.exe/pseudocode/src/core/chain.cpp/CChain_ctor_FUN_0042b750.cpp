@@ -15,7 +15,7 @@ CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042b750(CChain *this_ptr)
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pvVar3 = __arrinit
                      (&pCVar2[1].previous_transform_state.orientation,0x14,
                       &g_SChainVertexTypeInfo_0059b320);

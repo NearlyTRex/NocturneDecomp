@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 20,
+        "message": "use of undeclared identifier 'DAT_01c0a140'"
       },
       {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 21,
+        "message": "use of undeclared identifier 'DAT_01c20148'"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 22,
+        "message": "use of undeclared identifier 'DAT_01c23d50'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 24,
+        "message": "use of undeclared identifier 'DAT_01c49d54'"
       },
       {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 26,
+        "message": "use of undeclared identifier 'DAT_01c4e958'"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 27,
+        "message": "use of undeclared identifier 'DAT_01c4f08c'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 30,
+        "message": "use of undeclared identifier 'DAT_01c58dfc'"
       },
       {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 32,
+        "message": "use of undeclared identifier 'DAT_01c5b500'"
       },
       {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 36,
+        "message": "use of undeclared identifier 'DAT_01c5d824'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 38,
+        "message": "use of undeclared identifier 'DAT_01c625f8'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 86,
+    "complexity_score": 186,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
-    "suspect_count": 4,
+    "suspect_count": 14,
     "suspect_types": [
       "undefined_data"
     ],
@@ -226,6 +226,22 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c23d50",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c23d50,0x100,&g_CStakeTypeInfo_0059d340);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01c49d54",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c49d54,0x100,&g_CSparkTypeInfo_0059d360);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_01c4e958",
       "severity": "mild",
@@ -234,10 +250,74 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_01c4f08c",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c4f08c,0x100,&g_CGlassParticleTypeInfo_0059d3a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01c58dfc",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c58dfc,0x40,&g_CFireballTypeInfo_0059d3e0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_01c5b500",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c5b500,0x40,&g_CRockTypeInfo_0059d400);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01c5d824",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c5d824,0x14,&g_CTossTypeInfo_0059d460);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_01c625f8",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c625f8,0x14,&g_CCraterTypeInfo_0059d480);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_01c62ebc",
       "severity": "mild",
       "text": "__arrinit(&DAT_01c62ebc,500,&g_CGunFlameTypeInfo_0059d4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01c684e0",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c684e0,0x32,&g_CShellTypeInfo_0059d500);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01c69614",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c69614,0x100,&g_CPopcornTypeInfo_0059d520);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_01c6ce18",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c6ce18,0x100,&g_CRainDropTypeInfo_0059d540);",
       "type": "undefined_data"
     }
   ]

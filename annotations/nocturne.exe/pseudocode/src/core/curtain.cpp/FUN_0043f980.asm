@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_curtain.cpp_FUN_0043f8e0 at 0043f8f5
+;   core_curtain.cpp_CCurtain_dtor_FUN_0043f8e0 at 0043f8f5
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SCurtainVertexTypeInfo_0059bd90

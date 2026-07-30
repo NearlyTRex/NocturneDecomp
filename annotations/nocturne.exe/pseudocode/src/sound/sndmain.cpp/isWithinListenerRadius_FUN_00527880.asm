@@ -11,9 +11,9 @@
 ;
 ; XREF[6]:
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411dd8
-;   core_boneguy.cpp_FUN_00418a00 at 00418fd7
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418fd7
 ;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462bb9
-;   core_emitter.cpp_FUN_00478790 at 00478814
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478814
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00 at 004b3ea9
 ;   core_tvbat.cpp_CTVBat_process_FUN_0054b460 at 0054bf60
 ;

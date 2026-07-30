@@ -25,7 +25,7 @@
 ;   ... and 19 more
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004b48d0
+;   core_hero.cpp_CHero_setup_FUN_004b48d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
 ;
@@ -38,8 +38,8 @@ section .text
     PUSH ESI                            ; 00439da1
     MOV ESI,dword ptr [ESP + 0xc]       ; 00439da2
     PUSH ESI                            ; 00439da6
-    CALL core_hero.cpp_FUN_004b48d0     ; 00439da7
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setup_FUN_004b48d0 ; 00439da7
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 00439dac
     LEA EAX,[ESI + 0x150]               ; 00439daf
     PUSH EAX                            ; 00439db5

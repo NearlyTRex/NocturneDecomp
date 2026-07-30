@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 005523b0
 int __cdecl CWayPoint::isReachable(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 
-// Original: core_waypoint.cpp_FUN_005524a0
+// Original: core_waypoint.cpp_factoryFunc_FUN_005524a0
 // Address: 005524a0
-void FUN_005524a0(void);
+CWayPoint * __cdecl factoryFunc(void);
 
-// Original: core_waypoint.cpp_FUN_005524c0
+// Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_005524c0
 // Address: 005524c0
-CDemonActorType * FUN_005524c0(void);
+CDemonActorType * CWayPoint::getActorType(void);
 
 // Original: core_waypoint.cpp_FUN_005524d0
 // Address: 005524d0
@@ -27,9 +27,9 @@ CWayPoint * __cdecl FUN_005524d0(CWayPoint *this_ptr);
 // Address: 00552510
 void CWaypoint::setup(CTrigger *param_1);
 
-// Original: core_waypoint.cpp_FUN_005525d0
+// Original: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0
 // Address: 005525d0
-undefined4 FUN_005525d0(void);
+undefined4 CWayPoint::renderOpaque(void);
 
 // Original: core_waypoint.cpp_CWayPoint_archive_FUN_005525e0
 // Address: 005525e0

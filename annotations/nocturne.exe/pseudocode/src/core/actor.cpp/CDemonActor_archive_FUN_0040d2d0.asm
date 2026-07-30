@@ -9,8 +9,8 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[50]:
-;   core_ammo.cpp_FUN_0040ecf0 at 0040ecf6
-;   core_ammobox.cpp_FUN_0040f390 at 0040f396
+;   core_ammo.cpp_CAmmo_archive_FUN_0040ecf0 at 0040ecf6
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390 at 0040f396
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7d6
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 00410046
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 00411806

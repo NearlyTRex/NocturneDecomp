@@ -8,16 +8,16 @@
 ;
 ; XREF[4]:
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 at 0043b057
-;   core_minecar.cpp_FUN_004d5fe0 at 004d5ff3
 ;   core_minecar.cpp_FUN_004d60b0 at 004d60b5
-;   core_platfrm.cpp_FUN_004f5d60 at 004f5d73
+;   core_minecar.cpp_factoryFunc_FUN_004d5fe0 at 004d5ff3
+;   core_platfrm.cpp_factoryFunc_FUN_004f5d60 at 004f5d73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_slider1_kfm_0058d75f
 ;   CDemonActor_vtable g_CPlatformVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -34,8 +34,8 @@ section .text
     PUSH EDI                            ; 004f5d98
     PUSH ESI                            ; 004f5d99
     PUSH EBX                            ; 004f5d9a
-    CALL core_actor.cpp_FUN_00409d30    ; 004f5d9b
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004f5d9b
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f5da0
     ADD EAX,0x150                       ; 004f5da3
     PUSH EAX                            ; 004f5da8

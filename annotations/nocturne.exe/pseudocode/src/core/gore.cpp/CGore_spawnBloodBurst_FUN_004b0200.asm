@@ -31,7 +31,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[17]:
-;   core_actor.cpp_FUN_0040b300 at 0040b5e9
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b5e9
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427d8a
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004285f5
 ;   core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0 at 00428425
@@ -39,7 +39,7 @@
 ;   core_enemy.cpp_CEnemy_testAttackLine_FUN_00479990 at 00479a14
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0 at 00479975
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 00497745
-;   core_ghoul.cpp_FUN_004a9270 at 004a9975
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a9975
 ;   core_imp.cpp_CImp_process_FUN_004bbaf0 at 004bbd98
 ;   ... and 7 more
 ;

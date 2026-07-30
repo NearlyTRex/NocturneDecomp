@@ -12,7 +12,7 @@
 ;
 ; XREF[3]:
 ;   core_baron.cpp_FUN_00410cc0 at 00410d91
-;   core_emitter.cpp_FUN_00478790 at 00478cc6
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478cc6
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554f0a
 ;
 ; Referenced Globals:

@@ -7,13 +7,13 @@
 // Address: 00515cc0
 void __cdecl staticInit(void);
 
-// Original: core_shotgun.cpp_FUN_00515cf0
+// Original: core_shotgun.cpp_factoryFunc_FUN_00515cf0
 // Address: 00515cf0
-void FUN_00515cf0(void);
+CShotgun * __cdecl factoryFunc(void);
 
-// Original: core_shotgun.cpp_FUN_00515d10
+// Original: core_shotgun.cpp_CShotgun_getActorType_FUN_00515d10
 // Address: 00515d10
-CDemonActorType * FUN_00515d10(void);
+CDemonActorType * CShotgun::getActorType(void);
 
 // Original: core_shotgun.cpp_FUN_00515d20
 // Address: 00515d20
@@ -39,6 +39,6 @@ float __cdecl CShotgun::getDamage(CShotgun *this_ptr);
 // Address: 00516770
 void __cdecl CShotgun::fireProjectile(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_00516960
+// Original: core_shotgun.cpp_CShotgun_dtor_FUN_00516960
 // Address: 00516960
-CWeapon * FUN_00516960(CWeapon *param_1,byte param_2);
+CWeapon * CShotgun::dtor(CWeapon *param_1,byte param_2);

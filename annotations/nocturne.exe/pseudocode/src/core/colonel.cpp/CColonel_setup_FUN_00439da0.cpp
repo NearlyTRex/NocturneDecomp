@@ -13,7 +13,7 @@ void __cdecl core_colonel_cpp_CColonel_setup_FUN_00439da0(CColonel *this_ptr)
 {
   CSkeleton *this_ptr_00;
   
-  core_hero_cpp_FUN_004b48d0(&this_ptr->base);
+  core_hero_cpp_CHero_setup_FUN_004b48d0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (&(this_ptr->base).base.model);
   DAT_0077ac8c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0

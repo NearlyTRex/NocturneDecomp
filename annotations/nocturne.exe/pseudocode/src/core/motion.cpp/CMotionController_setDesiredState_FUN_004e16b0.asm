@@ -11,9 +11,9 @@
 ; XREF[98]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410b6b
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0 at 00410bd4
-;   core_baron.cpp_FUN_00410490 at 0041061c
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041061c
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 00413107
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004129cc
-;   core_batcreat.cpp_FUN_00413040 at 00413107
 ;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00413780 at 004137a0
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 004149f7
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413d66

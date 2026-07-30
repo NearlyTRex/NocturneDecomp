@@ -7,13 +7,13 @@
 // Address: 00420fe0
 void __cdecl staticInit(void);
 
-// Original: core_bugs.cpp_FUN_00421010
+// Original: core_bugs.cpp_factoryFunc_FUN_00421010
 // Address: 00421010
-void FUN_00421010(void);
+CBugs * __cdecl factoryFunc(void);
 
-// Original: core_bugs.cpp_FUN_00421030
+// Original: core_bugs.cpp_CBugs_getActorType_FUN_00421030
 // Address: 00421030
-CDemonActorType * FUN_00421030(void);
+CDemonActorType * CBugs::getActorType(void);
 
 // Original: core_bugs.cpp_CBugs_ctor_FUN_00421040
 // Address: 00421040
@@ -23,37 +23,37 @@ CBugs * __cdecl CBugs::ctor(CBugs *this_ptr);
 // Address: 004211e0
 void CBugs::setup(CBugs *param_1);
 
-// Original: core_bugs.cpp_FUN_00421480
+// Original: core_bugs.cpp_CBugs_process_FUN_00421480
 // Address: 00421480
-void FUN_00421480(CBugs *param_1,float param_2);
+void CBugs::process(CBugs *param_1,float param_2);
 
-// Original: core_bugs.cpp_FUN_00421540
+// Original: core_bugs.cpp_CBugs_renderOpaque_FUN_00421540
 // Address: 00421540
-int FUN_00421540(CDemonActor *param_1);
+int CBugs::renderOpaque(CDemonActor *param_1);
 
 // Original: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
 // Address: 004216d0
 void CBugs::renderGroundHeightGrid(int param_1);
 
-// Original: core_bugs.cpp_FUN_00421840
+// Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_00421840
 // Address: 00421840
-undefined4 * FUN_00421840(int param_1,undefined4 *param_2);
+undefined4 * CBugs::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_bugs.cpp_CBugs_archive_FUN_00421880
 // Address: 00421880
 void CBugs::archive(CEnemy *param_1);
 
-// Original: core_bugs.cpp_FUN_004219a0
+// Original: core_bugs.cpp_CBugs_getCollisionType_FUN_004219a0
 // Address: 004219a0
-undefined4 FUN_004219a0(void);
+undefined4 CBugs::getCollisionType(void);
 
 // Original: core_bugs.cpp_CBugs_getDeathState_FUN_004219b0
 // Address: 004219b0
 undefined4 CBugs::getDeathState(int param_1);
 
-// Original: core_bugs.cpp_FUN_004219d0
+// Original: core_bugs.cpp_CBugs_processDamage_FUN_004219d0
 // Address: 004219d0
-void FUN_004219d0(CEnemy *param_1,SDamageInfo *param_2);
+void CBugs::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_bugs.cpp_FUN_004219f0
 // Address: 004219f0

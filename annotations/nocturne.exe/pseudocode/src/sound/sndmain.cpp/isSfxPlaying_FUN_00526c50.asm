@@ -8,13 +8,13 @@
 ;
 ; XREF[53]:
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411dab
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 00413145
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004129db
-;   core_batcreat.cpp_FUN_00413040 at 00413145
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414a35
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413e1d
-;   core_boneguy.cpp_FUN_00418a00 at 00418fee
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418fee
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420e01
-;   core_bride.cpp_FUN_0041fe40 at 0041ff02
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 0041ff02
 ;   core_chain.cpp_CChain_process_FUN_0042bca0 at 0042c3b9
 ;   core_door.cpp_CDoor_onLocked_FUN_00456650 at 0045665c
 ;   ... and 43 more

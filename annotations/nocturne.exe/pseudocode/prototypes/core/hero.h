@@ -27,41 +27,41 @@ CHero * __cdecl FUN_004b46d0(CHero *this_ptr);
 // Address: 004b4800
 CHero * __cdecl CHero::dtor(CHero *this_ptr,uint flags);
 
-// Original: core_hero.cpp_FUN_004b48d0
+// Original: core_hero.cpp_CHero_setup_FUN_004b48d0
 // Address: 004b48d0
-void __cdecl FUN_004b48d0(CHero *this_ptr);
+void __cdecl CHero::setup(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004b4910
 // Address: 004b4910
 int CHero::testCylinderCollision(CDemonActor *param_1,SCollisionReturnInfo *param_2,float param_3);
 
-// Original: core_hero.cpp_FUN_004b4950
+// Original: core_hero.cpp_CHero_testLineIntersection_FUN_004b4950
 // Address: 004b4950
-int FUN_004b4950(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4);
+int CHero::testLineIntersection(CDemonActor *param_1,CVector3f *param_2,CVector3f *param_3,CVector3f *param_4);
 
-// Original: core_hero.cpp_FUN_004b49a0
+// Original: core_hero.cpp_CHero_archive_FUN_004b49a0
 // Address: 004b49a0
-void __cdecl FUN_004b49a0(CHero *this_ptr);
+void __cdecl CHero::archive(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_getPathMap_FUN_004b4c00
 // Address: 004b4c00
 CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004b4c10
+// Original: core_hero.cpp_CHero_isGrabbable_FUN_004b4c10
 // Address: 004b4c10
-undefined4 FUN_004b4c10(void);
+undefined4 CHero::isGrabbable(void);
 
-// Original: core_hero.cpp_FUN_004b4c20
+// Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20
 // Address: 004b4c20
-undefined4 FUN_004b4c20(int param_1,undefined4 param_2,int param_3);
+undefined4 CHero::canBeGrabbed(int param_1,undefined4 param_2,int param_3);
 
-// Original: core_hero.cpp_FUN_004b4c30
+// Original: core_hero.cpp_CHero_canWalk_FUN_004b4c30
 // Address: 004b4c30
-undefined4 FUN_004b4c30(void);
+undefined4 CHero::canWalk(void);
 
-// Original: core_hero.cpp_FUN_004b4c60
+// Original: core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004b4c60
 // Address: 004b4c60
-undefined4 FUN_004b4c60(void);
+undefined4 CHeroPlaceholder::renderTransparent(void);
 
 // Original: core_hero.cpp_CHero_getGrabbed_FUN_004b4c70
 // Address: 004b4c70
@@ -159,9 +159,9 @@ void __cdecl CHero::reset(CHero *this_ptr);
 // Address: 004b5f60
 void FUN_004b5f60(void);
 
-// Original: core_hero.cpp_FUN_004b5f80
+// Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004b5f80
 // Address: 004b5f80
-CDemonActorType * FUN_004b5f80(void);
+CDemonActorType * CHeroPlaceholder::getActorType(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
 // Address: 004b5f90

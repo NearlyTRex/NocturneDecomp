@@ -7,10 +7,10 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_actor.cpp_FUN_0040b300 at 0040b787
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b787
 ;   core_crossbow.cpp_FUN_0043d1c0 at 0043d791
 ;   core_elephant.cpp_FUN_00477890 at 00477f26
-;   core_gun.cpp_FUN_004b27c0 at 004b2ecf
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2ecf
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 005094ea
 ;   core_shotgun.cpp_FUN_00515ea0 at 0051656d
 ;   core_tommygun.cpp_FUN_00545c30 at 00546389

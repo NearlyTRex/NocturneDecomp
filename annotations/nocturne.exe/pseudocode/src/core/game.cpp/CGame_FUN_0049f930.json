@@ -1,0 +1,920 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_01c78420'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 34,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 28,
+        "line": 34,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 35,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 29,
+        "line": 35,
+        "message": "expected expression"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 37,
+        "message": "no matching function for call to 'core_setdir_cpp_FUN_005125a0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 41,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 28,
+        "line": 41,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 18,
+        "line": 42,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 24,
+        "line": 42,
+        "message": "expected expression"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 880,
+    "complexity_score": 714,
+    "cross_reference_count": 1,
+    "function_call_count": 21,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 259,
+    "suspect_count": 43,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1139
+  },
+  "cross_references": [
+    {
+      "addr": "0049da10",
+      "from_addr": "0049de0a",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049f930",
+    "address_range": [
+      [
+        "0049f930",
+        "004a025a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_CGame_FUN_0049f930",
+    "signature": "void __cdecl core_game_cpp_CGame_FUN_0049f930(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049aa30",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_0049aa30"
+    },
+    {
+      "addr": "004a6570",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_promptLoadGame_FUN_004a6570"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004a3b90"
+    },
+    {
+      "addr": "00504d60",
+      "is_variadic": false,
+      "name": "core_script.cpp_FUN_00504d60"
+    },
+    {
+      "addr": "0050e4c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0"
+    },
+    {
+      "addr": "005088f0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0"
+    },
+    {
+      "addr": "0050e400",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_0050e400"
+    },
+    {
+      "addr": "005090f0",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_005090f0"
+    },
+    {
+      "addr": "005125a0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_FUN_005125a0"
+    },
+    {
+      "addr": "0052ddf0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_init_FUN_0052ddf0"
+    },
+    {
+      "addr": "0052df90",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_shutdown_FUN_0052df90"
+    },
+    {
+      "addr": "00566e10",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_00566e10"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "00470230",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00470230"
+    },
+    {
+      "addr": "00526ca0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0"
+    },
+    {
+      "addr": "00526cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0"
+    },
+    {
+      "addr": "004ee3f0",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_decryptMessage_FUN_004ee3f0"
+    },
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": false,
+      "name": "xxx_unk.c_FUN_004940d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00582a32",
+      "name": "BYTE_ARRAY_00582a32",
+      "type": "byte[56]",
+      "value": null
+    },
+    {
+      "addr": "00582a6a",
+      "name": "s_quicksavedgame_noc_00582a6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582a7d",
+      "name": "s_Quick_Save_00582a7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582a88",
+      "name": "s_rb_00582a88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582a8b",
+      "name": "s_quicksavedgame_noc_00582a8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582a9e",
+      "name": "s_save_00582a9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582aa3",
+      "name": "s_Restore_quick_saved_game_00582aa3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582abd",
+      "name": "s_quicksavedgame_noc_00582abd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582abe",
+      "name": "s_quicksavedgame_noc_00582abd+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00582abf",
+      "name": "s_quicksavedgame_noc_00582abd+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00582ac0",
+      "name": "s_quicksavedgame_noc_00582abd+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00582ad0",
+      "name": "s_No_quicked_saved_game_to_00582ad0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582aee",
+      "name": "BYTE_ARRAY_00582aee",
+      "type": "byte[56]",
+      "value": null
+    },
+    {
+      "addr": "00582b26",
+      "name": "s_Gamma_f_00582b26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582b31",
+      "name": "s_Gamma_f_00582b31",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582b42",
+      "name": "DOUBLE_00582b42",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "00582b4a",
+      "name": "DOUBLE_00582b4a",
+      "type": "double",
+      "value": "0.0000152590218966964"
+    },
+    {
+      "addr": "005b6d50",
+      "name": "DAT_005b6d50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "DAT_005b7620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9284",
+      "name": "INT_005b9284",
+      "type": "int",
+      "value": "0x1c70f74"
+    },
+    {
+      "addr": "005bac64",
+      "name": "INT_005bac64",
+      "type": "int",
+      "value": "0x1cc30e4"
+    },
+    {
+      "addr": "005be220",
+      "name": "DAT_005be220",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005be368",
+      "name": "DAT_005be368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bed68",
+      "name": "DAT_005bed68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd1d94",
+      "name": "DAT_01bd1d94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78420",
+      "name": "DAT_01c78420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac8",
+      "name": "DAT_01c78ac8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc30e4",
+      "name": "DAT_01cc30e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd4318",
+      "name": "DAT_01cd4318",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e56dac",
+      "name": "DAT_01e56dac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e56db0",
+      "name": "DAT_01e56db0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e56db8",
+      "name": "DAT_01e56db8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "DAT_01e57284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1d3c",
+      "name": "DAT_01fb1d3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb96f0",
+      "name": "DAT_01fb96f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049de0a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.380466472303207,
+    "instruction_count": 686,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 4,
+      "BRANCH": 20,
+      "CALL": 37,
+      "CALLIND": 36,
+      "CBRANCH": 77,
+      "COPY": 618,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 5,
+      "INT_ADD": 176,
+      "INT_AND": 404,
+      "INT_CARRY": 73,
+      "INT_EQUAL": 345,
+      "INT_LEFT": 8,
+      "INT_LESS": 39,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 41,
+      "INT_SCARRY": 75,
+      "INT_SLESS": 171,
+      "INT_SUB": 260,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 126,
+      "POPCOUNT": 171,
+      "RETURN": 1,
+      "STORE": 253
+    },
+    "pcode_op_count": 3005
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049f93c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 34,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 35,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 56,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 76,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 77,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 82,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 83,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((iVar4 != 0) && (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 87,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) ||",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 88,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0 &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 89,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)))) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 101,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), uVar2 = DAT_005b7620,",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), uVar2 = DAT_005b7620,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "iVar4 != 0)) && (0x1df < (int)DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 115,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0 &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 116,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0 &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "(0x1df < (int)DAT_005b7620)))))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 120,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 121,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (((iVar4 != 0) && (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 125,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 129,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 133,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 141,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 170,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 179,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 186,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), pCVar3 = 0x01E57284,",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 201,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 204,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 208,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 214,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 225,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 237,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 238,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 243,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64), iVar4 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 244,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar4 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 246,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x1e57284 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 36,
+      "match": "0x1e57284",
+      "severity": "moderate",
+      "text": "pCVar3 = 0x01E57284;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1e56da0 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 190,
+      "match": "0x1e56da0",
+      "severity": "moderate",
+      "text": "iVar4 = 0x01E56DA0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 158,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

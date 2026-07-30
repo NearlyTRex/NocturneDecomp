@@ -8,15 +8,15 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[37]:
-;   core_armour.cpp_FUN_0040fa20 at 0040fae4
-;   core_baron.cpp_FUN_00410490 at 0041073a
+;   core_armour.cpp_CArmour_process_FUN_0040fa20 at 0040fae4
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041073a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412684
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413a32
 ;   core_beast.cpp_CBeast_process_FUN_004150d0 at 00415148
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 0041569b
-;   core_boneguy.cpp_FUN_00418a00 at 00418fa1
-;   core_bride.cpp_FUN_0041fe40 at 00420897
-;   core_colonel.cpp_FUN_00439f50 at 0043a1e1
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418fa1
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 00420897
+;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 0043a1e1
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043bfe5
 ;   ... and 27 more
 ;

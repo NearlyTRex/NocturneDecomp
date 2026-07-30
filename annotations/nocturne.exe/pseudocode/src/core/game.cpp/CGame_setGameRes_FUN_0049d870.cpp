@@ -32,7 +32,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00403760();
-  core_dcamera_cpp_CDemonCamera_init_FUN_00440010((CDemonCamera *)0x1fb8508,DAT_005b7620);
+  core_dcamera_cpp_CDemonCamera_init_FUN_00440010((CDemonCamera *)&DAT_01fb8508,DAT_005b7620);
   if (DAT_005b7620 < 0x180) {
     _DAT_01bcd070 = _DAT_014b9904;
     return;

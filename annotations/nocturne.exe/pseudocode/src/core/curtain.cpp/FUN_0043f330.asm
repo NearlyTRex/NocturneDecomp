@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[1]:
-;   core_curtain.cpp_FUN_0043f610 at 0043f624
+;   core_curtain.cpp_CCurtain_renderOpaque_FUN_0043f610 at 0043f624
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059bc70

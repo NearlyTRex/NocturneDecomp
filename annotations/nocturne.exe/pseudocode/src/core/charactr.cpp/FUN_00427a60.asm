@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004286b1
-;   core_ghoul.cpp_FUN_004ab450 at 004ab6aa
+;   core_ghoul.cpp_CGhoul_processDamage_FUN_004ab450 at 004ab6aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_glass_1_wav_2_0_0057a014

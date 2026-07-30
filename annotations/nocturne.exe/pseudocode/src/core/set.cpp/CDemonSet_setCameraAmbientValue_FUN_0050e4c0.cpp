@@ -13,6 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet
   if ((CDemonActor *)index != this_ptr->renderable_actors[0x773]) {
     return;
   }
-  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)0x1fb8508,value);
+  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)&DAT_01fb8508,value)
+  ;
   return;
 }

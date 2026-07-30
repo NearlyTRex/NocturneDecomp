@@ -11,12 +11,12 @@
 ; int              Stack[0x14]:4   alpha_value
 ;
 ; XREF[12]:
-;   core_baron.cpp_FUN_00410490 at 004107d0
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 004107d0
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413b3d
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042adc3
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 004590d1
-;   core_drip.cpp_FUN_00462300 at 0046257a
-;   core_emitter.cpp_FUN_00478790 at 00478ac2
+;   core_drip.cpp_CDrip_process_FUN_00462300 at 0046257a
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478ac2
 ;   core_fire.cpp_CCrater_process_FUN_00487a20 at 00487aa1
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0 at 0048aaf8
 ;   core_fire.cpp_CFireball_process_FUN_00484050 at 0048413f

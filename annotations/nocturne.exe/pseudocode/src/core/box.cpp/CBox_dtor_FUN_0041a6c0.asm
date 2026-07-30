@@ -14,7 +14,7 @@
 ;   core_fire.cpp_CStake_dtor_FUN_0048cc30 at 0048cc3a
 ;   core_fire.cpp_CToss_dtor_FUN_0048ca90 at 0048ca9c
 ;   core_simbox.cpp_CSimBox_dtor_FUN_005170d0 at 005170e5
-;   core_stone.cpp_FUN_00534dc0 at 00534dd5
+;   core_stone.cpp_CTempleStone_dtor_FUN_00534dc0 at 00534dd5
 ;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 at 00553ebf
 ;
 ; Called Functions:

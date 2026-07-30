@@ -23,7 +23,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbf20 at 004fc2db
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc2db
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e533c0

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_FUN_0049f930 at 0049fb07
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a0b61
-;   core_game.cpp_FUN_0049f930 at 0049fb07
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010

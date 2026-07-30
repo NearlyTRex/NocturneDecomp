@@ -23,9 +23,9 @@ void __cdecl CWeapon::setup(CWeapon *this_ptr);
 // Address: 00553f50
 int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00553fe0
+// Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_00553fe0
 // Address: 00553fe0
-undefined4 * FUN_00553fe0(int param_1,undefined4 *param_2);
+undefined4 * CWeapon::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_00554030
 // Address: 00554030
@@ -35,21 +35,21 @@ void __cdecl CWeapon::process(CWeapon *this_ptr,float delta_time);
 // Address: 00554170
 void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00554250
+// Original: core_weapon.cpp_CWeapon_getCollisionType_FUN_00554250
 // Address: 00554250
-undefined4 FUN_00554250(void);
+undefined4 CWeapon::getCollisionType(void);
 
 // Original: core_weapon.cpp_CWeapon_canPickup_FUN_00554260
 // Address: 00554260
 int __cdecl CWeapon::canPickup(CWeapon *this_ptr,CDemonActor *picker);
 
-// Original: core_weapon.cpp_FUN_00554300
+// Original: core_weapon.cpp_CWeapon_pickup_FUN_00554300
 // Address: 00554300
-void FUN_00554300(int param_1,undefined4 param_2);
+void CWeapon::pickup(int param_1,undefined4 param_2);
 
-// Original: core_weapon.cpp_FUN_00554310
+// Original: core_weapon.cpp_CWeapon_onDropped_FUN_00554310
 // Address: 00554310
-void FUN_00554310(CCharacter *param_1,CVector3f *param_2);
+void CWeapon::onDropped(CCharacter *param_1,CVector3f *param_2);
 
 // Original: core_weapon.cpp_CLadder_getGroundType_FUN_005543b0
 // Address: 005543b0
@@ -63,9 +63,9 @@ void CWeapon::updateLighting(CCharacter *param_1);
 // Address: 00554560
 void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr,int weapon_state);
 
-// Original: core_weapon.cpp_FUN_00554570
+// Original: core_weapon.cpp_CWeapon_onPickup_FUN_00554570
 // Address: 00554570
-void FUN_00554570(CDemonActor *param_1,CDemonActor *param_2);
+void CWeapon::onPickup(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_weapon.cpp_FUN_00554590
 // Address: 00554590

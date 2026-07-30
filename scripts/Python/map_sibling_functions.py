@@ -58,6 +58,11 @@ SIGNAL_CONFIDENCE = {
     "shape_strict":  0.99,
     "string":        0.97,
     "vtable":        0.90,
+    # A vtable window whose two sides hold the same number of unmatched slots,
+    # so order forces the alignment and the bracket corroborates on shape. Same
+    # reasoning as `order_multi`, scored slightly above it because the window is
+    # bounded by anchored slots of one class rather than by file position.
+    "vtable_order":  0.82,
     "callsite":      0.85,
     # A singleton bracket is forced by two independent anchors. Its one failure
     # mode is a function removed and another added inside the same bracket,
@@ -244,43 +249,263 @@ def seed_strings(ev, a_img, b_img):
 # Propagation signals
 # --------------------------------------------------------------------------
 
-def prop_vtables(ev, a_img, b_img, mapping):
-    """Align vtable pairs anchored by already-matched slots, then pair the rest.
+# Shared anchored slots required before a source table is believed to be the
+# same class as a target table. Matches map_vtable_slots.py's measured default.
+VTABLE_MIN_ANCHORS = 3
 
-    A class whose method list changed between builds mis-aligns after the
-    inserted/removed slot, so only the prefix up to the first disagreement is
-    propagated and the remainder is abandoned.
+# Widest gap the forced-order fill will align. A gap of one unmatched slot
+# between two anchors is genuinely forced -- there is one candidate and one
+# place for it. A wide gap with equal counts on both sides is a coincidence: one
+# slot added and another removed keeps the totals equal while shifting the whole
+# run, and bracket_aligns cannot see it here because the accessors that fill
+# these tables are uniformly `same_mnemonics`, which it counts as agreement.
+# Same reasoning as prop_order's `order` / `order_multi` split.
+#
+# Measured with reports/vtable_holdout_test.py at 10/20/40% holdouts of the
+# exact pairs. Every setting makes the same single error -- the setWalkTimeout
+# pair, and only once 40% of anchors are gone, which is far past real conditions
+# -- so the bound buys recall rather than correctness:
+#
+#   cap 1   100% / 100% / 96.97%   33 correct at 40%,  4638 pairs overall
+#   cap 3   100% / 100% / 98.04%   51 correct at 40%,  4649 pairs overall
+#
+# 3 therefore dominates 1 on both counts. Raise via the environment to explore;
+# unbounded is not offered as a default because a wide equal-count gap is a
+# coincidence rather than a constraint.
+VTABLE_FORCED_MAX_GAP = int(os.environ.get("NOCTURNE_VTABLE_MAX_GAP", "3"))
+
+
+def _vtable_slots(table):
+    return [(e.get("func_addr") or "").lower()
+            for e in table.get("functions", [])]
+
+
+def _dedup(seq):
+    """Order-preserving unique. A folded slot repeats one implementation.
+
+    nocturne folds 14-17 slots per actor class onto a single stub (in
+    CCharacter one function serves nine slots), so a raw slot list contains
+    duplicates. Left in, the same target appears twice in a window and every
+    shape lookup there looks ambiguous, rejecting pairs that were never in
+    doubt.
     """
-    va, vb = a_img.vtables, b_img.vtables
+    seen, out = set(), []
+    for x in seq:
+        if x not in seen:
+            seen.add(x)
+            out.append(x)
+    return out
+
+
+def _tu_verdict(a_img, b_img, x, y):
+    """True/False if both names carry a translation unit, else None.
+
+    nocturne's units were assigned by hand, and apply_sibling_annotations.py
+    preserves them rather than copying nocedit's, so unit agreement is evidence
+    the vtable alignment did not itself consult.
+
+    Unlike map_vtable_slots.py -- which ran as a post-pass over an
+    already-94%-named nocturne and could therefore *require* a unit on both
+    sides -- this runs while the mapping is still being built, and the functions
+    it exists to match are precisely the ones nocturne has not named yet. So an
+    absent unit cannot be treated as failure: this is a veto when determinable,
+    not a precondition.
+    """
+    tu_a = sm.tu_of((a_img.by_addr.get(x) or {}).get("name"))
+    tu_b = sm.tu_of((b_img.by_addr.get(y) or {}).get("name"))
+    if not tu_a or not tu_b:
+        return None
+    return tu_a == tu_b
+
+
+def _fill_vtable_gap(ev, a_img, b_img, shapes_a, shapes_b, ca, cb, detail):
+    """Pair the unmatched slots between two anchors, only where forced.
+
+    Positional filling on its own is not safe: doing it proposed
+    CCharacter::setWalkTimeout -> 00428bb0 against an existing byte-identical
+    match to 00428ee0. Slot position narrows the candidates well and chooses
+    between them badly. So a gap is filled two ways, both requiring the choice
+    to be forced rather than merely available:
+
+      vtable        the source body's shape is UNIQUE among the window's
+                    candidates -- position narrowed, shape decided.
+      vtable_order  the window holds the same number of unmatched slots on both
+                    sides, so order alone determines the alignment, and the
+                    bracket corroborates on shape as a whole.
+
+    The whole-bracket check is the lesson from the order-matching off-by-one:
+    one function added and another removed inside the same window keeps the
+    counts equal while shifting every slot, producing a run of confident,
+    uniformly wrong matches.
+
+    Only the STRICT shape tier may decide a match by uniqueness. The relaxed
+    tier -- mnemonic sequence with operands discarded -- is not discriminative
+    for the small accessors that fill these tables, where `mov eax,[ecx+N]; ret`
+    is dozens of distinct methods, and being the only such body left in a window
+    says nothing about which method it is. Measured on held-out exact pairs
+    (reports/vtable_holdout_test.py) it reproduced the failure
+    map_vtable_slots.py documents as unsafe, proposing
+    CCharacter::setWalkTimeout -> 00428bb0 over the byte-identical 00428ee0.
+
+    Translation-unit agreement does NOT rescue it, which is the reason the tier
+    is gone rather than gated harder. The unit is blind to the case that
+    actually occurs: source, wrong target and true target were all in
+    core_charactr.cpp. Worse, on CLadder::getGroundType it inverted the answer --
+    nocturne files the true target 005543b0 under core_weapon.cpp while the
+    wrong 004c47c0 sits in core_ladder.cpp, so requiring agreement rejected the
+    correct pair and kept the incorrect one. It is one of the 40 known SKIP_TU
+    disagreements, and it is evidence that unit agreement bounds cross-file
+    error only -- not the within-file confusion this pass has to survive.
+
+    Relaxed shape still contributes, but as corroboration over a whole bracket
+    (via bracket_aligns) rather than as a per-slot decision.
+    """
+    n = 0
+    taken_a, taken_b = set(), set()
+
+    idx = defaultdict(set)
+    for y in cb:
+        sh = shapes_b.get(y)
+        if sh is not None:
+            idx[sh.strict].add(y)
+    for x in ca:
+        sh = shapes_a.get(x)
+        if sh is None:
+            continue
+        hit = idx.get(sh.strict)
+        if not hit or len(hit) != 1:
+            continue
+        y = next(iter(hit))
+        if y in taken_b or _tu_verdict(a_img, b_img, x, y) is False:
+            continue
+        ev.add(x, y, "vtable", f"{detail} strict")
+        taken_a.add(x)
+        taken_b.add(y)
+        n += 1
+
+    rest_a = [x for x in ca if x not in taken_a]
+    rest_b = [y for y in cb if y not in taken_b]
+    if (rest_a and len(rest_a) == len(rest_b)
+            and len(rest_a) <= VTABLE_FORCED_MAX_GAP
+            and bracket_aligns(shapes_a, shapes_b, rest_a, rest_b)):
+        for x, y in zip(rest_a, rest_b):
+            # Order forces the alignment only if the window really is the same
+            # region of the same class in both builds; the unit is the one check
+            # of that which the alignment did not itself produce.
+            if _tu_verdict(a_img, b_img, x, y) is not True:
+                continue
+            ev.add(x, y, "vtable_order", f"{detail} forced")
+            n += 1
+    return n
+
+
+def prop_vtables(ev, a_img, b_img, mapping, use_lcs=True):
+    """Align sibling vtables by LCS over anchored slots, then fill the gaps.
+
+    The previous rule required the two tables to have the SAME SLOT COUNT and
+    then zipped them positionally. The actor hierarchy is exactly where that
+    fails: nocedit's tables run 59/67/85/88/89 slots against nocturne's
+    52/60/82, because the editor build inserts a contiguous block of 7 virtual
+    methods (onAreaDeleted, onActorDeleted, processInEditor, getPropertyList,
+    initializeInEditor, showEditorHelp, addFilesToExtract). The same-count
+    filter discarded 103 of 400 tables outright and a further 74 fell under the
+    two-anchor bar -- 199 tables contributing nothing, and precisely the drifted
+    ones.
+
+    So tables are paired by *shared anchored slots* rather than by count, and
+    aligned with an LCS so an insertion on either side becomes a gap instead of
+    breaking everything after it. See research/14-actor_vtable_contract for the
+    derived contract this mirrors.
+
+    `use_lcs=False` restores the old same-count positional rule for A/B.
+    """
+    if not use_lcs:
+        return _prop_vtables_by_count(ev, a_img, b_img, mapping)
+
+    shapes_a, shapes_b = sm.shapes_for(a_img), sm.shapes_for(b_img)
+
+    b_slots, b_member = {}, defaultdict(set)
+    for t in b_img.vtables:
+        addr = (t.get("addr") or "").lower()
+        slots = _vtable_slots(t)
+        b_slots[addr] = slots
+        for f in slots:
+            if f:
+                b_member[f].add(addr)
+
+    n = 0
+    for ta in a_img.vtables:
+        sa = _vtable_slots(ta)
+        if len(sa) < 2:
+            continue
+
+        # Which target table is this class? Vote with the slots already matched.
+        cand = Counter()
+        for f in sa:
+            tgt = mapping.a2b.get(f)
+            if tgt:
+                for addr in b_member.get(tgt, ()):
+                    cand[addr] += 1
+        if not cand:
+            continue
+        baddr, hits = cand.most_common(1)[0]
+        if hits < VTABLE_MIN_ANCHORS:
+            continue
+        sb = b_slots[baddr]
+
+        anchors = sm.lcs_anchors([mapping.a2b.get(x) for x in sa], sb)
+        if len(anchors) < VTABLE_MIN_ANCHORS:
+            continue
+
+        # The winning table pair, not whichever candidate the loop saw last --
+        # the previous version recorded the loop variable here.
+        detail = f"{(ta.get('addr') or '').lower()}<->{baddr}"
+
+        ext = [(-1, -1)] + anchors + [(len(sa), len(sb))]
+        for (i0, j0), (i1, j1) in zip(ext, ext[1:]):
+            ca = _dedup([sa[k] for k in range(i0 + 1, i1)
+                         if sa[k] and not mapping.has_a(sa[k])])
+            cb = _dedup([sb[k] for k in range(j0 + 1, j1)
+                         if sb[k] and not mapping.has_b(sb[k])])
+            if not ca or not cb:
+                continue
+            n += _fill_vtable_gap(ev, a_img, b_img, shapes_a, shapes_b,
+                                  ca, cb, detail)
+    return n
+
+
+def _prop_vtables_by_count(ev, a_img, b_img, mapping):
+    """The pre-LCS rule: same slot count, two anchors, positional zip.
+
+    Kept only so --no-vtable-lcs can measure what the change is worth.
+    """
     by_count_b = defaultdict(list)
-    for t in vb:
+    for t in b_img.vtables:
         by_count_b[t.get("count", 0)].append(t)
 
     n = 0
-    for ta in va:
+    for ta in a_img.vtables:
         count = ta.get("count", 0)
         if count < 2:
             continue
-        fa = [e.get("func_addr", "").lower() for e in ta.get("functions", [])]
-        best, best_hits = None, 0
+        fa = _vtable_slots(ta)
+        best, best_tb, best_hits = None, None, 0
         for tb in by_count_b.get(count, []):
-            fb = [e.get("func_addr", "").lower() for e in tb.get("functions", [])]
+            fb = _vtable_slots(tb)
             hits = sum(1 for x, y in zip(fa, fb) if mapping.a2b.get(x) == y and y)
             if hits > best_hits:
-                best, best_hits = fb, hits
-        # Two independently-anchored slots agreeing is the bar for trusting
-        # positional correspondence for the rest of the table.
+                best, best_tb, best_hits = fb, tb, hits
         if best is None or best_hits < 2:
             continue
         for x, y in zip(fa, best):
             if not x or not y:
                 continue
             if mapping.has_a(x) or mapping.has_b(y):
-                # Already decided; a disagreement means the tables diverge here.
                 if mapping.a2b.get(x) not in (None, y):
                     break
                 continue
-            ev.add(x, y, "vtable", f"{ta.get('addr', '')}<->{tb.get('addr', '')}")
+            ev.add(x, y, "vtable",
+                   f"{ta.get('addr', '')}<->{best_tb.get('addr', '')}")
             n += 1
     return n
 
@@ -445,7 +670,8 @@ def prop_callers(ev, a_img, b_img, mapping):
 # Driver
 # --------------------------------------------------------------------------
 
-def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True):
+def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True,
+                  use_vtable_lcs=True):
     ev = Evidence()
     mapping = Mapping()
     log = []
@@ -463,7 +689,7 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True):
 
     note("== propagating ==")
     for rnd in range(1, max_rounds + 1):
-        v = prop_vtables(ev, a_img, b_img, mapping)
+        v = prop_vtables(ev, a_img, b_img, mapping, use_lcs=use_vtable_lcs)
         c = prop_callsites(ev, a_img, b_img, mapping)
         k = prop_callers(ev, a_img, b_img, mapping)
         o = prop_order(ev, a_img, b_img, mapping) if use_order else 0
@@ -507,6 +733,8 @@ def main():
                     help="sample N matches in the report (default: 20)")
     ap.add_argument("--no-order", action="store_true",
                     help="disable translation-unit order matching (for A/B)")
+    ap.add_argument("--no-vtable-lcs", action="store_true",
+                    help="use the old same-slot-count vtable rule (for A/B)")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args()
 
@@ -517,7 +745,8 @@ def main():
               f"{args.b_prog}: {len(b_img.functions)} functions\n", file=sys.stderr)
 
     mapping, _, editor_only = build_mapping(a_img, b_img, verbose=not args.quiet,
-                                            use_order=not args.no_order)
+                                            use_order=not args.no_order,
+                                            use_vtable_lcs=not args.no_vtable_lcs)
 
     # ---- report ----------------------------------------------------------
     by_signal = Counter()

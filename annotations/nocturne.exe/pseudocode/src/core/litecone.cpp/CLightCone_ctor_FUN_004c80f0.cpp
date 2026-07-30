@@ -14,7 +14,7 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(CLightCone *
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CLightCone *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = (CLightCone *)core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   (pCVar2->base).vtable._ub = &g_CLightConeVTable;
   pcVar3 = "none";
   pCVar2->fov = 56.0;

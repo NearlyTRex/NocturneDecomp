@@ -40,7 +40,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_0053d100 at 0053d1fe
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d1fe
 ;
 ; Referenced Globals:
 ;   float FLOAT_00590a1d = 0.005000000

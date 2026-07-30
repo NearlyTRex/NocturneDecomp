@@ -10,8 +10,8 @@
 ;
 ; XREF[54]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 at 0040a593
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b3aa
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a901
-;   core_actor.cpp_FUN_0040b300 at 0040b3aa
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410aeb
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0 at 00410c36
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414903

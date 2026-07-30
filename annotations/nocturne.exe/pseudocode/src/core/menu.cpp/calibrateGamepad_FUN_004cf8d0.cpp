@@ -29,7 +29,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
   iVar5 = 0;
   local_14 = 0x7fffffff;
   while( true ) {
-    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)&DAT_01cc5780);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Center gamepad, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b98f8,pcVar2);
@@ -50,7 +50,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     iStack_18 = _DAT_01c038fc;
   }
   while( true ) {
-    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040((CMoon *)&DAT_01cc5780);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Move gamepad in all directions, press ENTER")
     ;
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_014b98f8,pcVar2);

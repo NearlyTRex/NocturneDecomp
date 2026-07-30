@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[52]:
-;   core_ammo.cpp_FUN_0040ec30 at 0040ec81
-;   core_ammobox.cpp_FUN_0040f2b0 at 0040f324
-;   core_anvil.cpp_FUN_0040f740 at 0040f7b0
-;   core_backgnd.cpp_FUN_0040ff80 at 0040ffc9
-;   core_baron.cpp_FUN_004110f0 at 004111d0
-;   core_bat.cpp_FUN_00411e30 at 00411e85
-;   core_battery.cpp_FUN_00414e70 at 00414ee6
-;   core_bodypart.cpp_FUN_004161a0 at 00416275
-;   core_boxactor.cpp_FUN_0041ea00 at 0041eaae
-;   core_boxactor.cpp_FUN_0041eaf0 at 0041eba4
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040ec30 at 0040ec81
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040f2b0 at 0040f324
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040f740 at 0040f7b0
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040ff80 at 0040ffc9
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 at 004111d0
+;   core_bat.cpp_CBat_renderOpaque_FUN_00411e30 at 00411e85
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00414e70 at 00414ee6
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0 at 00416275
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041ea00 at 0041eaae
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041eaf0 at 0041eba4
 ;   ... and 42 more
 ;
 ; Called Functions:

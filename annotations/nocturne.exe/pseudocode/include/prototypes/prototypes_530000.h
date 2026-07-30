@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/winuser.h"
+#include "system/windef.h"
 #include "types/classes/CBoxActor.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
@@ -14,6 +14,7 @@
 #include "types/classes/CSpotView.h"
 #include "types/classes/CStairs.h"
 #include "types/classes/CStranger.h"
+#include "types/classes/CTempleStone.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -89,17 +90,17 @@ void engine_special_cpp_FUN_00532f30(void);
 void engine_special_cpp_FUN_00532f50(char *param_1,undefined4 param_2);
 undefined1 * engine_special_cpp_FUN_00532fa0(void);
 void __cdecl core_spike_cpp_staticInit_FUN_00532fc0(void);
-void core_spike_cpp_FUN_00532ff0(void);
-CDemonActorType * core_spike_cpp_FUN_00533010(void);
+CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_00532ff0(void);
+CDemonActorType * core_spike_cpp_CSpike_getActorType_FUN_00533010(void);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00533020(CSpike *this_ptr);
 void core_spike_cpp_CSpike_setup_FUN_00533160(CDemonActor *param_1);
-void core_spike_cpp_FUN_00533210(CSpike *param_1,float param_2);
-int core_spike_cpp_FUN_00533530(CDemonActor *param_1);
-undefined4 * core_spike_cpp_FUN_005335a0(int param_1,undefined4 *param_2);
+void core_spike_cpp_CSpike_process_FUN_00533210(CSpike *param_1,float param_2);
+int core_spike_cpp_CSpike_renderOpaque_FUN_00533530(CDemonActor *param_1);
+undefined4 * core_spike_cpp_CSpike_getBoundingBox_FUN_005335a0(int param_1,undefined4 *param_2);
 void core_spike_cpp_CSpike_archive_FUN_005335f0(CDemonActor *param_1);
-undefined4 core_spike_cpp_FUN_00533740(void);
+undefined4 core_spike_cpp_CSpike_getCollisionType_FUN_00533740(void);
 void __cdecl core_spike_cpp_FUN_00533750(CSpike *this_ptr);
-CDemonActor * core_spike_cpp_FUN_00533c90(CDemonActor *param_1,byte param_2);
+CDemonActor * core_spike_cpp_CSpike_dtor_FUN_00533c90(CDemonActor *param_1,byte param_2);
 void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *out_basis,float t,float tension);
 float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00533e70(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 int __cdecl core_spline_cpp_evaluateSplintInt_FUN_00533eb0(float *basis,int v0,int v1,int v2,int v3);
@@ -114,38 +115,38 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *th
 void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00534590(CSpotView *this_ptr);
 undefined4 shape_spotview_cpp_CSpotView_dtor_FUN_00534740(undefined4 param_1);
 void __cdecl core_stairs_cpp_staticInit_FUN_00534750(void);
-void core_stairs_cpp_FUN_00534780(void);
-CDemonActorType * core_stairs_cpp_FUN_005347a0(void);
+CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_00534780(void);
+CDemonActorType * core_stairs_cpp_CStairs_getActorType_FUN_005347a0(void);
 int core_stairs_cpp_FUN_005347b0(CDemonActor *param_1);
-void core_stairs_cpp_FUN_00534820(CStairs *param_1);
-void core_stairs_cpp_FUN_00534840(void);
-undefined4 core_stairs_cpp_FUN_00534850(void);
+void core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *param_1);
+void core_stairs_cpp_CStairs_process_FUN_00534840(void);
+undefined4 core_stairs_cpp_CStairs_renderOpaque_FUN_00534850(void);
 void core_stairs_cpp_CStairs_getBoundingBox_FUN_00534860(int param_1,float *param_2);
-void core_stairs_cpp_FUN_005348c0(CDemonActor *param_1);
+void core_stairs_cpp_CStairs_archive_FUN_005348c0(CDemonActor *param_1);
 ECollisionType __cdecl core_stairs_cpp_CStairs_getCollisionType_FUN_00534940(CStairs *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_00534960(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30(int param_1,SIntersectXZCylinder *param_2);
 undefined4 core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(int param_1,CVector3f *param_2,float param_3,float *param_4);
-undefined4 core_stairs_cpp_FUN_00534ac0(int param_1);
+undefined4 core_stairs_cpp_CStairs_getGroundType_FUN_00534ac0(int param_1);
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(CStairs *this_ptr);
 CFlies * __cdecl core_stairs_cpp_CFlies_dtor_FUN_00534c10(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_stairs_cpp_SFly_arrdtor_FUN_00534c80(SFly *objs,uint flags);
 void __cdecl core_stone_cpp_staticInit_FUN_00534ca0(void);
-void core_stone_cpp_FUN_00534cd0(void);
-CDemonActorType * core_stone_cpp_FUN_00534cf0(void);
+CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_00534cd0(void);
+CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00534cf0(void);
 void core_stone_cpp_FUN_00534d00(CBoxActor *param_1);
-void core_stone_cpp_FUN_00534d30(CBoxActor *param_1);
+void core_stone_cpp_CTempleStone_archive_FUN_00534d30(CBoxActor *param_1);
 undefined4 core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,CDemonActor *param_2);
-CDemonActor * core_stone_cpp_FUN_00534dc0(CDemonActor *param_1,byte param_2);
+CDemonActor * core_stone_cpp_CTempleStone_dtor_FUN_00534dc0(CDemonActor *param_1,byte param_2);
 void __cdecl core_stranger_cpp_staticInit_FUN_00534e30(void);
 float core_stranger_cpp_FUN_00534e90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 bool core_stranger_cpp_FUN_00534f90(void);
 float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1);
-void core_stranger_cpp_FUN_00535090(void);
-CDemonActorType * core_stranger_cpp_FUN_005350b0(void);
+CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_00535090(void);
+CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_005350b0(void);
 CStranger * __cdecl core_stranger_cpp_FUN_005350c0(CStranger *this_ptr);
-void core_stranger_cpp_FUN_00535450(CStranger *param_1);
-void core_stranger_cpp_FUN_005357d0(CStranger *param_1,float param_2);
+void core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *param_1);
+void core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *param_1,float param_2);
 void __cdecl core_stranger_cpp_FUN_00535900(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStranger *this_ptr,float delta_time);
 undefined4 core_stranger_cpp_FUN_005383e0(int param_1);
@@ -165,15 +166,15 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *t
 int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_FUN_0053c800(CStranger *this_ptr);
 void core_stranger_cpp_CStranger_archive_FUN_0053cf90(CHero *param_1);
-undefined4 core_stranger_cpp_FUN_0053d100(CStranger *param_1);
+undefined4 core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *param_1);
 undefined4 core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CCharacter *param_1);
 void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0053d700(float *angle,float distance,float offset);
 CVector3f * __cdecl core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0053d790(CVector3f *out_angles,CVector3f *direction,float *offset_pair);
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger *this_ptr,int hand_index,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *this_ptr);
-void core_stranger_cpp_FUN_0053e860(CHero *param_1,SDamageInfo *param_2);
+void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2);
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStranger *this_ptr,float delta_time,int is_weapon_active);
-void core_stranger_cpp_FUN_0053f210(int param_1,int param_2);
+void core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(int param_1,int param_2);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger *this_ptr,CVector3f *out_direction);
 void __cdecl core_stranger_cpp_FUN_0053f310(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_FUN_0053fc60(CStranger *this_ptr);

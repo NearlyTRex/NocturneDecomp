@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_keyactor.cpp_FUN_004c3430 at 004c3443
+;   core_keyactor.cpp_factoryFunc_FUN_004c3430 at 004c3443
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_key1_kfm_0058757e
 ;   CDemonActor_vtable g_CKeyActorVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_keyactor.cpp_FUN_004c3460
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c3461
     PUSH EBX                            ; 004c3465
-    CALL core_actor.cpp_FUN_00409d30    ; 004c3466
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004c3466
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c346b
     ADD EAX,0x150                       ; 004c346e
     PUSH EAX                            ; 004c3473

@@ -23,7 +23,7 @@ uint core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(int param_1)
     return 0;
   }
   if (*(int *)(param_1 + 0x3ac) == 1) {
-    core_flame_cpp_FUN_0048d5d0((CFlame *)(param_1 + 0x3bc));
+    core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0((CFlame *)(param_1 + 0x3bc));
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (DAT_005ae704,(CVector3f *)(param_1 + 0x20));

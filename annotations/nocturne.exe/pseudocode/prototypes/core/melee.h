@@ -7,13 +7,13 @@
 // Address: 004cec00
 void __cdecl staticInit(void);
 
-// Original: core_melee.cpp_FUN_004cec30
+// Original: core_melee.cpp_factoryFunc_FUN_004cec30
 // Address: 004cec30
-void FUN_004cec30(void);
+CMelee * __cdecl factoryFunc(void);
 
-// Original: core_melee.cpp_FUN_004cec50
+// Original: core_melee.cpp_CMelee_getActorType_FUN_004cec50
 // Address: 004cec50
-CDemonActorType * FUN_004cec50(void);
+CDemonActorType * CMelee::getActorType(void);
 
 // Original: core_melee.cpp_CMelee_ctor_FUN_004cec60
 // Address: 004cec60
@@ -39,17 +39,17 @@ void FUN_004cef30(void);
 // Address: 004cef40
 undefined4 CMelee::canPickup(int param_1,CDemonActor *param_2);
 
-// Original: core_melee.cpp_FUN_004cef70
+// Original: core_melee.cpp_CMelee_getAllowedMeleeAttackTypes_FUN_004cef70
 // Address: 004cef70
-undefined4 FUN_004cef70(int param_1);
+undefined4 CMelee::getAllowedMeleeAttackTypes(int param_1);
 
-// Original: core_melee.cpp_FUN_004cef80
+// Original: core_melee.cpp_CMelee_fillAttackDamageInfo_FUN_004cef80
 // Address: 004cef80
-void FUN_004cef80(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void CMelee::fillAttackDamageInfo(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
 
-// Original: core_melee.cpp_FUN_004cefe0
+// Original: core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0
 // Address: 004cefe0
-void FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
+void CMelee::playAttackHitEffects(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4);
 
 // Original: core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090
 // Address: 004cf090
@@ -63,6 +63,6 @@ void CMelee::process(CCharacter *param_1,float param_2);
 // Address: 004cf180
 void CMelee::setWeaponState(CWeapon *param_1,int param_2);
 
-// Original: core_melee.cpp_FUN_004cf1a0
+// Original: core_melee.cpp_CMelee_dtor_FUN_004cf1a0
 // Address: 004cf1a0
-CWeapon * FUN_004cf1a0(CWeapon *param_1,byte param_2);
+CWeapon * CMelee::dtor(CWeapon *param_1,byte param_2);

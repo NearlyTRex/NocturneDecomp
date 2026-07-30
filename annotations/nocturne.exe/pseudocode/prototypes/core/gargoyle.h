@@ -7,13 +7,13 @@
 // Address: 004a72f0
 void __cdecl staticInit(void);
 
-// Original: core_gargoyle.cpp_FUN_004a7320
+// Original: core_gargoyle.cpp_factoryFunc_FUN_004a7320
 // Address: 004a7320
-void FUN_004a7320(void);
+CGargoyle * __cdecl factoryFunc(void);
 
-// Original: core_gargoyle.cpp_FUN_004a7340
+// Original: core_gargoyle.cpp_CGargoyle_getActorType_FUN_004a7340
 // Address: 004a7340
-CDemonActorType * FUN_004a7340(void);
+CDemonActorType * CGargoyle::getActorType(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350
 // Address: 004a7350
@@ -31,9 +31,9 @@ int __cdecl CGargoyle::shouldMove(CGargoyle *this_ptr);
 // Address: 004a7870
 void CGargoyle::process(CGargoyle *param_1,float param_2);
 
-// Original: core_gargoyle.cpp_FUN_004a8260
+// Original: core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004a8260
 // Address: 004a8260
-void FUN_004a8260(CCharacter *param_1);
+void CGargoyle::renderOpaque(CCharacter *param_1);
 
 // Original: core_gargoyle.cpp_CGargoyle_archive_FUN_004a8270
 // Address: 004a8270
@@ -51,9 +51,9 @@ void CGargoyle::processDamage(CGargoyle *param_1,SDamageInfo *param_2);
 // Address: 004a8730
 int CGargoyle::getTargetPoints(int param_1,CVector3f *param_2);
 
-// Original: core_gargoyle.cpp_FUN_004a88d0
+// Original: core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004a88d0
 // Address: 004a88d0
-void FUN_004a88d0(CCharacter *param_1,SCollisionInfo *param_2);
+void CGargoyle::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004a88f0
 // Address: 004a88f0

@@ -16,11 +16,11 @@
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437dd4
 ;   core_curtain.cpp_FUN_0043f330 at 0043f42f
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 004530f5
-;   core_glass.cpp_FUN_004ac440 at 004ac52f
-;   core_glass.cpp_FUN_004ac600 at 004ac6ee
-;   core_glass.cpp_FUN_004ac9b0 at 004acaa1
+;   core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0 at 004acaa1
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 at 004ac52f
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 at 004ac6ee
 ;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00518440 at 0051845f
-;   core_wateract.cpp_FUN_00551c00 at 00551d15
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_00551c00 at 00551d15
 ;   ... and 1 more
 ;
 ; Referenced Globals:

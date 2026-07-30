@@ -1,0 +1,199 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 131
+  },
+  "cross_references": [
+    {
+      "addr": "004b8600",
+      "from_addr": "004b8683",
+      "name": "core_hostage.cpp_CHostage_processDamage_FUN_004b8600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eeea0",
+    "address_range": [
+      [
+        "004eeea0",
+        "004eef7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_processDamage_FUN_004eeea0",
+    "signature": "void __cdecl core_npc_cpp_CNPC_processDamage_FUN_004eeea0(CNPC *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "004291f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0"
+    },
+    {
+      "addr": "00428510",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00428510"
+    },
+    {
+      "addr": "004eedc0",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058cb6f",
+      "name": "s_DIE_0058cb6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058cb73",
+      "name": "s_HURT_0058cb73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058cb78",
+      "name": "s_DAMAGE_0058cb78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058cb7f",
+      "name": "s_SHOT_0058cb7f",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.56,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 119,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 30,
+      "INT_AND": 38,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 18,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

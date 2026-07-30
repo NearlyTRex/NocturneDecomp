@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 at 004476d4
-;   core_platfrm.cpp_FUN_004f6d90 at 004f6edb
+;   core_platfrm.cpp_CPlatform_renderBackground_FUN_004f6d90 at 004f6edb
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057baf3 = 256

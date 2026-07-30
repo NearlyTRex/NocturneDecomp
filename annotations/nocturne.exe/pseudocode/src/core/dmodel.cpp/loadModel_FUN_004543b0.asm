@@ -10,7 +10,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 at 00454518
 ;   core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0 at 00478093
 ;   core_fire.cpp_loadDynamiteAssets_FUN_004876a0 at 004876a5
-;   core_gun.cpp_FUN_004b27c0 at 004b2b15
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2b15
 ;   core_shotgun.cpp_CShotgun_onFired_FUN_00516620 at 005166f2
 ;   core_tommygun.cpp_FUN_00545c30 at 00546022
 ;

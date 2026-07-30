@@ -7,31 +7,53 @@
 // WINGDI - System Header
 // =============================================================================
 
-// Typedef: HDC
-// pointer to HDC__
-typedef struct HDC__* HDC;
+// Structure: tagBITMAPINFOHEADER
+typedef struct tagBITMAPINFOHEADER {
+    DWORD biSize;
+    LONG biWidth;
+    LONG biHeight;
+    WORD biPlanes;
+    WORD biBitCount;
+    DWORD biCompression;
+    DWORD biSizeImage;
+    LONG biXPelsPerMeter;
+    LONG biYPelsPerMeter;
+    DWORD biClrUsed;
+    DWORD biClrImportant;
+} tagBITMAPINFOHEADER;
 
-// Structure: HDC__
-typedef struct HDC__ {
-    int unused;
-} HDC__;
+// Typedef: BITMAPINFOHEADER
+typedef tagBITMAPINFOHEADER BITMAPINFOHEADER;
 
-// Typedef: HGDIOBJ
-// pointer to void
-typedef void* HGDIOBJ;
+// Structure: tagLOGBRUSH
+typedef struct tagLOGBRUSH {
+    UINT lbStyle;
+    COLORREF lbColor;
+    ULONG_PTR lbHatch;
+} tagLOGBRUSH;
 
-// Typedef: HGLOBAL
-// pointer to void
-typedef HANDLE HGLOBAL;
+// Typedef: LOGBRUSH
+typedef tagLOGBRUSH LOGBRUSH;
 
-// Structure: tagRECT
-typedef struct tagRECT {
-    LONG left;
-    LONG top;
-    LONG right;
-    LONG bottom;
-} tagRECT;
+// Structure: tagRGBQUAD
+#pragma pack(push, 1)
+typedef struct tagRGBQUAD {
+    BYTE rgbBlue;
+    BYTE rgbGreen;
+    BYTE rgbRed;
+    BYTE rgbReserved;
+} tagRGBQUAD;
+#pragma pack(pop)
 
-// Typedef: RECT
-typedef tagRECT RECT;
+// Typedef: RGBQUAD
+typedef tagRGBQUAD RGBQUAD;
+
+// Structure: tagBITMAPINFO
+typedef struct tagBITMAPINFO {
+    BITMAPINFOHEADER bmiHeader;
+    RGBQUAD bmiColors[1];
+} tagBITMAPINFO;
+
+// Typedef: BITMAPINFO
+typedef tagBITMAPINFO BITMAPINFO;
 

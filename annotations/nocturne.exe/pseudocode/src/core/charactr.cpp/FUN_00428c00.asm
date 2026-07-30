@@ -10,13 +10,13 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[31]:
-;   core_armour.cpp_FUN_0040fa20 at 0040faad
-;   core_baron.cpp_FUN_00410490 at 004105e9
+;   core_armour.cpp_CArmour_process_FUN_0040fa20 at 0040faad
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 004105e9
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412528
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 004138ab
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 0041553c
-;   core_boneguy.cpp_FUN_00418a00 at 00418e11
-;   core_colonel.cpp_FUN_00439f50 at 00439ff2
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418e11
+;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 00439ff2
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043be58
 ;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 0045480f
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00458cfe

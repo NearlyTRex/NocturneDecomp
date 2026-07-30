@@ -135,7 +135,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         iVar3 = 0;
       }
       engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210((CKeys *)INT_005bac64,iVar3);
-      core_game_cpp_FUN_0049f930(this_ptr);
+      core_game_cpp_CGame_FUN_0049f930(this_ptr);
       core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(this_ptr);
       core_game_cpp_CGame_processFudge_FUN_0049b260(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);

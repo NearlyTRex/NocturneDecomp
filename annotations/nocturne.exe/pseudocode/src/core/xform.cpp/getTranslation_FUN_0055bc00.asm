@@ -14,13 +14,13 @@
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429354
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482dff
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 00498264
-;   core_manpuz.cpp_FUN_004c9580 at 004c98d1
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580 at 004c98d1
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5a21
 ;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_004f7700 at 004f77b1
 ;   core_scat.cpp_FUN_004fdd00 at 004fde0a
 ;   core_skeleton.cpp_CDeformableModel_renderBones_FUN_00519120 at 0051915c
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 00518fa8
-;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 at 0053a742
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d46c
 ;   ... and 5 more
 ;
 ; *****************************************************************************

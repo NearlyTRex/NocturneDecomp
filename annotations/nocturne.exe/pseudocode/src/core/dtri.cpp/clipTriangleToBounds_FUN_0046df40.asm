@@ -65,9 +65,9 @@ section .text
     FLD float ptr [EDX]                 ; 0046df74
     FLD float ptr [EDX + 0x8]           ; 0046df76
     MOV EAX,dword ptr [EDX + 0x4]       ; 0046df79
-    MOV [0x01bc9980],EAX                ; 0046df7c | DAT_01bc9980
-    FSTP float ptr [0x01bc9984]         ; 0046df81 | DAT_01bc9984
-    FSTP float ptr [0x01bc997c]         ; 0046df87 | DAT_01bc997c
+    MOV [0x01bc9980],EAX                ; 0046df7c | CVector3f_ARRAY_01bc9970[1].y
+    FSTP float ptr [0x01bc9984]         ; 0046df81 | CVector3f_ARRAY_01bc9970[1].z
+    FSTP float ptr [0x01bc997c]         ; 0046df87 | CVector3f_ARRAY_01bc9970[1].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 0046df8d
         ;   Label: LAB_0046df8d
     ADD EDX,0x18                        ; 0046df90
@@ -77,9 +77,9 @@ section .text
     FLD float ptr [EDX]                 ; 0046df9b
     FLD float ptr [EDX + 0x8]           ; 0046df9d
     MOV EAX,dword ptr [EDX + 0x4]       ; 0046dfa0
-    MOV [0x01bc998c],EAX                ; 0046dfa3 | DAT_01bc998c
-    FSTP float ptr [0x01bc9990]         ; 0046dfa8 | DAT_01bc9990
-    FSTP float ptr [0x01bc9988]         ; 0046dfae | DAT_01bc9988
+    MOV [0x01bc998c],EAX                ; 0046dfa3 | CVector3f_ARRAY_01bc9970[2].y
+    FSTP float ptr [0x01bc9990]         ; 0046dfa8 | CVector3f_ARRAY_01bc9970[2].z
+    FSTP float ptr [0x01bc9988]         ; 0046dfae | CVector3f_ARRAY_01bc9970[2].x
     MOV EBX,0xffffffff                  ; 0046dfb4
         ;   Label: LAB_0046dfb4
     MOV EAX,[0x01bc996c]                ; 0046dfb9 | DAT_01bc996c
@@ -90,7 +90,7 @@ section .text
     JLE 0x0046e058                      ; 0046dfc8
         ;   XREF to: 0046e058 (CONDITIONAL_JUMP)  ; LAB_0046e058
     MOV EBX,0x1bc9970                   ; 0046dfce
-    FLD float ptr [EBX]                 ; 0046dfd3 | DAT_01bc9970 | DAT_01bc997c
+    FLD float ptr [EBX]                 ; 0046dfd3 | CVector3f_ARRAY_01bc9970 | CVector3f_ARRAY_01bc9970[1].x
         ;   Label: LAB_0046dfd3
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046dfd5
     MOV ECX,EBX                         ; 0046dfd8
@@ -103,7 +103,7 @@ section .text
     MOV EDX,0x1                         ; 0046dfe3
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046dfe8
         ;   Label: LAB_0046dfe8
-    FLD float ptr [ECX + 0x4]           ; 0046dfeb | DAT_01bc9974 | DAT_01bc9980
+    FLD float ptr [ECX + 0x4]           ; 0046dfeb | CVector3f_ARRAY_01bc9970[0].y | CVector3f_ARRAY_01bc9970[1].y
     FCOMP float ptr [EAX + 0x4]         ; 0046dfee
     FNSTSW AX                           ; 0046dff1
     SAHF                                ; 0046dff3
@@ -112,7 +112,7 @@ section .text
     OR DL,0x2                           ; 0046dff6
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046dff9
         ;   Label: LAB_0046dff9
-    FLD float ptr [ECX + 0x8]           ; 0046dffc | DAT_01bc9978 | DAT_01bc9984
+    FLD float ptr [ECX + 0x8]           ; 0046dffc | CVector3f_ARRAY_01bc9970[0].z | CVector3f_ARRAY_01bc9970[1].z
     FCOMP float ptr [EAX + 0x8]         ; 0046dfff
     FNSTSW AX                           ; 0046e002
     SAHF                                ; 0046e004
@@ -121,7 +121,7 @@ section .text
     OR DL,0x4                           ; 0046e007
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046e00a
         ;   Label: LAB_0046e00a
-    FLD float ptr [ECX]                 ; 0046e00d | DAT_01bc9970
+    FLD float ptr [ECX]                 ; 0046e00d | CVector3f_ARRAY_01bc9970
     FCOMP float ptr [EAX]               ; 0046e00f
     FNSTSW AX                           ; 0046e011
     SAHF                                ; 0046e013
@@ -130,7 +130,7 @@ section .text
     OR DL,0x8                           ; 0046e016
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046e019
         ;   Label: LAB_0046e019
-    FLD float ptr [ECX + 0x4]           ; 0046e01c | DAT_01bc9974
+    FLD float ptr [ECX + 0x4]           ; 0046e01c | CVector3f_ARRAY_01bc9970[0].y
     FCOMP float ptr [EAX + 0x4]         ; 0046e01f
     FNSTSW AX                           ; 0046e022
     SAHF                                ; 0046e024
@@ -139,7 +139,7 @@ section .text
     OR DL,0x10                          ; 0046e027
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046e02a
         ;   Label: LAB_0046e02a
-    FLD float ptr [ECX + 0x8]           ; 0046e02d | DAT_01bc9978
+    FLD float ptr [ECX + 0x8]           ; 0046e02d | CVector3f_ARRAY_01bc9970[0].z
     FCOMP float ptr [EAX + 0x8]         ; 0046e030
     FNSTSW AX                           ; 0046e033
     SAHF                                ; 0046e035
@@ -171,9 +171,9 @@ section .text
     FLD float ptr [EAX]                 ; 0046e078
     FLD float ptr [EAX + 0x8]           ; 0046e07a
     MOV EDX,dword ptr [EAX + 0x4]       ; 0046e07d
-    MOV dword ptr [0x01bc9e0c],EDX      ; 0046e080 | DAT_01bc9e0c
-    FSTP float ptr [0x01bc9e10]         ; 0046e086 | DAT_01bc9e10
-    FSTP float ptr [0x01bc9e08]         ; 0046e08c | DAT_01bc9e08
+    MOV dword ptr [0x01bc9e0c],EDX      ; 0046e080 | CVector3f_ARRAY_01bc9e08[0].y
+    FSTP float ptr [0x01bc9e10]         ; 0046e086 | CVector3f_ARRAY_01bc9e08[0].z
+    FSTP float ptr [0x01bc9e08]         ; 0046e08c | CVector3f_ARRAY_01bc9e08
     MOV EDX,dword ptr [EBP + 0x14]      ; 0046e092
         ;   Label: LAB_0046e092
     ADD EDX,0xc                         ; 0046e095
@@ -183,9 +183,9 @@ section .text
     FLD float ptr [EDX]                 ; 0046e0a0
     FLD float ptr [EDX + 0x8]           ; 0046e0a2
     MOV EAX,dword ptr [EDX + 0x4]       ; 0046e0a5
-    MOV [0x01bc9e18],EAX                ; 0046e0a8 | DAT_01bc9e18
-    FSTP float ptr [0x01bc9e1c]         ; 0046e0ad | DAT_01bc9e1c
-    FSTP float ptr [0x01bc9e14]         ; 0046e0b3 | DAT_01bc9e14
+    MOV [0x01bc9e18],EAX                ; 0046e0a8 | CVector3f_ARRAY_01bc9e08[1].y
+    FSTP float ptr [0x01bc9e1c]         ; 0046e0ad | CVector3f_ARRAY_01bc9e08[1].z
+    FSTP float ptr [0x01bc9e14]         ; 0046e0b3 | CVector3f_ARRAY_01bc9e08[1].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 0046e0b9
         ;   Label: LAB_0046e0b9
     ADD EDX,0x18                        ; 0046e0bc
@@ -195,9 +195,9 @@ section .text
     FLD float ptr [EDX]                 ; 0046e0c7
     FLD float ptr [EDX + 0x8]           ; 0046e0c9
     MOV EAX,dword ptr [EDX + 0x4]       ; 0046e0cc
-    MOV [0x01bc9e24],EAX                ; 0046e0cf | DAT_01bc9e24
-    FSTP float ptr [0x01bc9e28]         ; 0046e0d4 | DAT_01bc9e28
-    FSTP float ptr [0x01bc9e20]         ; 0046e0da | DAT_01bc9e20
+    MOV [0x01bc9e24],EAX                ; 0046e0cf | CVector3f_ARRAY_01bc9e08[2].y
+    FSTP float ptr [0x01bc9e28]         ; 0046e0d4 | CVector3f_ARRAY_01bc9e08[2].z
+    FSTP float ptr [0x01bc9e20]         ; 0046e0da | CVector3f_ARRAY_01bc9e08[2].x
     MOV ECX,0x1                         ; 0046e0e0
         ;   Label: LAB_0046e0e0
     MOV EAX,ECX                         ; 0046e0e5
@@ -212,9 +212,9 @@ section .text
     FLD float ptr [EAX]                 ; 0046e0f0
     FLD float ptr [EAX + 0x8]           ; 0046e0f2
     MOV EDX,dword ptr [EAX + 0x4]       ; 0046e0f5
-    MOV dword ptr [0x01bc9974],EDX      ; 0046e0f8 | DAT_01bc9974
-    FSTP float ptr [0x01bc9978]         ; 0046e0fe | DAT_01bc9978
-    FSTP float ptr [0x01bc9970]         ; 0046e104 | DAT_01bc9970
+    MOV dword ptr [0x01bc9974],EDX      ; 0046e0f8 | CVector3f_ARRAY_01bc9970[0].y
+    FSTP float ptr [0x01bc9978]         ; 0046e0fe | CVector3f_ARRAY_01bc9970[0].z
+    FSTP float ptr [0x01bc9970]         ; 0046e104 | CVector3f_ARRAY_01bc9970
     JMP 0x0046df66                      ; 0046e10a
         ;   XREF to: 0046df66 (UNCONDITIONAL_JUMP)  ; LAB_0046df66
     MOV EDX,dword ptr [ESP + 0x10]      ; 0046e10f
@@ -246,7 +246,7 @@ section .text
     XOR ECX,EDI                         ; 0046e16b
     IMUL ECX,ECX,0xc                    ; 0046e16d
         ;   Label: LAB_0046e16d
-    FLD float ptr [ESI + 0x4]           ; 0046e170 | DAT_01bc9974 | DAT_01bc9980
+    FLD float ptr [ESI + 0x4]           ; 0046e170 | CVector3f_ARRAY_01bc9970[0].y | CVector3f_ARRAY_01bc9970[1].y
     MOV EDI,0x1bc9970                   ; 0046e173
     MOV EDX,ESI                         ; 0046e178
     ADD EDI,ECX                         ; 0046e17a
@@ -257,7 +257,7 @@ section .text
     JBE 0x0046e18c                      ; 0046e185
         ;   XREF to: 0046e18c (CONDITIONAL_JUMP)  ; LAB_0046e18c
     MOV ECX,0x1                         ; 0046e187
-    FLD float ptr [EDI + 0x4]           ; 0046e18c | DAT_01bc9974 | DAT_01bc9980 | DAT_01bc998c
+    FLD float ptr [EDI + 0x4]           ; 0046e18c | CVector3f_ARRAY_01bc9970[0].y | CVector3f_ARRAY_01bc9970[1].y | CVector3f_ARRAY_01bc9970[2].y
         ;   Label: LAB_0046e18c
     FCOMP float ptr [ESP + 0x18]        ; 0046e18f
     FNSTSW AX                           ; 0046e193
@@ -277,12 +277,12 @@ section .text
     CMP ECX,EDX                         ; 0046e1b4
     JZ 0x0046e1c8                       ; 0046e1b6
         ;   XREF to: 0046e1c8 (CONDITIONAL_JUMP)  ; LAB_0046e1c8
-    MOV EAX,dword ptr [EDX]             ; 0046e1b8 | DAT_01bc9970 | DAT_01bc997c
-    MOV dword ptr [ECX],EAX             ; 0046e1ba | DAT_01bc9a34 | DAT_01bc9d28
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e1bc | DAT_01bc9974 | DAT_01bc9980
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e1bf | DAT_01bc9a38 | DAT_01bc9d2c
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e1c2 | DAT_01bc9978 | DAT_01bc9984
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e1c5 | DAT_01bc9a3c | DAT_01bc9d30
+    MOV EAX,dword ptr [EDX]             ; 0046e1b8 | CVector3f_ARRAY_01bc9970 | CVector3f_ARRAY_01bc9970[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e1ba | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9c80[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e1bc | CVector3f_ARRAY_01bc9970[0].y | CVector3f_ARRAY_01bc9970[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e1bf | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9c80[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e1c2 | CVector3f_ARRAY_01bc9970[0].z | CVector3f_ARRAY_01bc9970[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e1c5 | CVector3f_ARRAY_01bc9a34[0].z | CVector3f_ARRAY_01bc9c80[14].z
     INC dword ptr [0x01bc9a30]          ; 0046e1c8 | DAT_01bc9a30
         ;   Label: LAB_0046e1c8
     MOV EDI,dword ptr [0x01bc996c]      ; 0046e1ce | DAT_01bc996c
@@ -314,7 +314,7 @@ section .text
     XOR ECX,EDI                         ; 0046e210
     IMUL ECX,ECX,0xc                    ; 0046e212
         ;   Label: LAB_0046e212
-    FLD float ptr [ESI + 0x4]           ; 0046e215 | DAT_01bc9a38 | DAT_01bc9a44
+    FLD float ptr [ESI + 0x4]           ; 0046e215 | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9a34[1].y
     MOV EDI,0x1bc9a34                   ; 0046e218
     MOV EDX,ESI                         ; 0046e21d
     ADD EDI,ECX                         ; 0046e21f
@@ -325,7 +325,7 @@ section .text
     JNC 0x0046e231                      ; 0046e22a
         ;   XREF to: 0046e231 (CONDITIONAL_JUMP)  ; LAB_0046e231
     MOV ECX,0x1                         ; 0046e22c
-    FLD float ptr [EDI + 0x4]           ; 0046e231 | DAT_01bc9a38 | DAT_01bc9a50 | DAT_01bc9a44
+    FLD float ptr [EDI + 0x4]           ; 0046e231 | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9a34[2].y | CVector3f_ARRAY_01bc9a34[1].y
         ;   Label: LAB_0046e231
     FCOMP float ptr [ESP + 0x8]         ; 0046e234
     FNSTSW AX                           ; 0046e238
@@ -345,12 +345,12 @@ section .text
     CMP ECX,EDX                         ; 0046e259
     JZ 0x0046e26d                       ; 0046e25b
         ;   XREF to: 0046e26d (CONDITIONAL_JUMP)  ; LAB_0046e26d
-    MOV EAX,dword ptr [EDX]             ; 0046e25d | DAT_01bc9a34 | DAT_01bc9a40
-    MOV dword ptr [ECX],EAX             ; 0046e25f | DAT_01bc9af8 | DAT_01bc9dec
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e261 | DAT_01bc9a38 | DAT_01bc9a44
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e264 | DAT_01bc9afc | DAT_01bc9df0
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e267 | DAT_01bc9a3c | DAT_01bc9a48
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e26a | DAT_01bc9b00 | DAT_01bc9df4
+    MOV EAX,dword ptr [EDX]             ; 0046e25d | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9a34[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e25f | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9d44[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e261 | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9a34[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e264 | CVector3f_ARRAY_01bc9af8[0].y | CVector3f_ARRAY_01bc9d44[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e267 | CVector3f_ARRAY_01bc9a34[0].z | CVector3f_ARRAY_01bc9a34[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e26a | CVector3f_ARRAY_01bc9af8[0].z | CVector3f_ARRAY_01bc9d44[14].z
     INC dword ptr [0x01bc9af4]          ; 0046e26d | DAT_01bc9af4
         ;   Label: LAB_0046e26d
     MOV EDX,dword ptr [0x01bc9a30]      ; 0046e273 | DAT_01bc9a30
@@ -382,7 +382,7 @@ section .text
     XOR ECX,EDI                         ; 0046e2b5
     IMUL ECX,ECX,0xc                    ; 0046e2b7
         ;   Label: LAB_0046e2b7
-    FLD float ptr [EBX]                 ; 0046e2ba | DAT_01bc9af8 | DAT_01bc9b04
+    FLD float ptr [EBX]                 ; 0046e2ba | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[1].x
     MOV EDI,0x1bc9af8                   ; 0046e2bc
     MOV EDX,EBX                         ; 0046e2c1
     ADD EDI,ECX                         ; 0046e2c3
@@ -393,7 +393,7 @@ section .text
     JBE 0x0046e2d5                      ; 0046e2ce
         ;   XREF to: 0046e2d5 (CONDITIONAL_JUMP)  ; LAB_0046e2d5
     MOV ECX,0x1                         ; 0046e2d0
-    FLD float ptr [EDI]                 ; 0046e2d5 | DAT_01bc9af8 | DAT_01bc9b10 | DAT_01bc9b04
+    FLD float ptr [EDI]                 ; 0046e2d5 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[2].x | CVector3f_ARRAY_01bc9af8[1].x
         ;   Label: LAB_0046e2d5
     FCOMP float ptr [ESP + 0x14]        ; 0046e2d7
     FNSTSW AX                           ; 0046e2db
@@ -413,12 +413,12 @@ section .text
     CMP ECX,EDX                         ; 0046e2fc
     JZ 0x0046e310                       ; 0046e2fe
         ;   XREF to: 0046e310 (CONDITIONAL_JUMP)  ; LAB_0046e310
-    MOV EAX,dword ptr [EDX]             ; 0046e300 | DAT_01bc9af8 | DAT_01bc9b04
-    MOV dword ptr [ECX],EAX             ; 0046e302 | DAT_01bc9bbc | DAT_01bc9eb0
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e304 | DAT_01bc9afc | DAT_01bc9b08
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e307 | DAT_01bc9bc0 | DAT_01bc9eb4
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e30a | DAT_01bc9b00 | DAT_01bc9b0c
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e30d | DAT_01bc9bc4 | DAT_01bc9eb8
+    MOV EAX,dword ptr [EDX]             ; 0046e300 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e302 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9e08[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e304 | CVector3f_ARRAY_01bc9af8[0].y | CVector3f_ARRAY_01bc9af8[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e307 | CVector3f_ARRAY_01bc9bbc[0].y | CVector3f_ARRAY_01bc9e08[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e30a | CVector3f_ARRAY_01bc9af8[0].z | CVector3f_ARRAY_01bc9af8[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e30d | CVector3f_ARRAY_01bc9bbc[0].z | CVector3f_ARRAY_01bc9e08[14].z
     INC dword ptr [0x01bc9bb8]          ; 0046e310 | DAT_01bc9bb8
         ;   Label: LAB_0046e310
     MOV EDX,dword ptr [0x01bc9af4]      ; 0046e316 | DAT_01bc9af4
@@ -450,7 +450,7 @@ section .text
     XOR ECX,EDI                         ; 0046e357
     IMUL ECX,ECX,0xc                    ; 0046e359
         ;   Label: LAB_0046e359
-    FLD float ptr [EBX]                 ; 0046e35c | DAT_01bc9bbc | DAT_01bc9bc8
+    FLD float ptr [EBX]                 ; 0046e35c | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
     MOV EDI,0x1bc9bbc                   ; 0046e35e
     MOV EDX,EBX                         ; 0046e363
     ADD EDI,ECX                         ; 0046e365
@@ -461,7 +461,7 @@ section .text
     JNC 0x0046e376                      ; 0046e36f
         ;   XREF to: 0046e376 (CONDITIONAL_JUMP)  ; LAB_0046e376
     MOV ECX,0x1                         ; 0046e371
-    FLD float ptr [EDI]                 ; 0046e376 | DAT_01bc9bbc | DAT_01bc9bd4 | DAT_01bc9bc8
+    FLD float ptr [EDI]                 ; 0046e376 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[2].x | CVector3f_ARRAY_01bc9bbc[1].x
         ;   Label: LAB_0046e376
     FCOMP float ptr [ESP]               ; 0046e378
     FNSTSW AX                           ; 0046e37b
@@ -481,12 +481,12 @@ section .text
     CMP ECX,EDX                         ; 0046e39c
     JZ 0x0046e3b0                       ; 0046e39e
         ;   XREF to: 0046e3b0 (CONDITIONAL_JUMP)  ; LAB_0046e3b0
-    MOV EAX,dword ptr [EDX]             ; 0046e3a0 | DAT_01bc9bbc | DAT_01bc9bc8
-    MOV dword ptr [ECX],EAX             ; 0046e3a2 | DAT_01bc9c80 | DAT_01bc9f74
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e3a4 | DAT_01bc9bc0 | DAT_01bc9bcc
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e3a7 | DAT_01bc9c84 | DAT_01bc9f78
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e3aa | DAT_01bc9bc4 | DAT_01bc9bd0
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e3ad | DAT_01bc9c88 | DAT_01bc9f7c
+    MOV EAX,dword ptr [EDX]             ; 0046e3a0 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e3a2 | CVector3f_ARRAY_01bc9c80 | DAT_01bc9f74
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e3a4 | CVector3f_ARRAY_01bc9bbc[0].y | CVector3f_ARRAY_01bc9bbc[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e3a7 | CVector3f_ARRAY_01bc9c80[0].y | DAT_01bc9f78
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e3aa | CVector3f_ARRAY_01bc9bbc[0].z | CVector3f_ARRAY_01bc9bbc[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e3ad | CVector3f_ARRAY_01bc9c80[0].z | DAT_01bc9f7c
     INC dword ptr [0x01bc9c7c]          ; 0046e3b0 | DAT_01bc9c7c
         ;   Label: LAB_0046e3b0
     MOV EDX,dword ptr [0x01bc9bb8]      ; 0046e3b6 | DAT_01bc9bb8
@@ -518,7 +518,7 @@ section .text
     XOR ECX,EDI                         ; 0046e3f9
     IMUL ECX,ECX,0xc                    ; 0046e3fb
         ;   Label: LAB_0046e3fb
-    FLD float ptr [ESI + 0x8]           ; 0046e3fe | DAT_01bc9c88 | DAT_01bc9c94
+    FLD float ptr [ESI + 0x8]           ; 0046e3fe | CVector3f_ARRAY_01bc9c80[0].z | CVector3f_ARRAY_01bc9c80[1].z
     MOV EDI,0x1bc9c80                   ; 0046e401
     MOV EDX,ESI                         ; 0046e406
     ADD EDI,ECX                         ; 0046e408
@@ -529,7 +529,7 @@ section .text
     JNC 0x0046e41a                      ; 0046e413
         ;   XREF to: 0046e41a (CONDITIONAL_JUMP)  ; LAB_0046e41a
     MOV ECX,0x1                         ; 0046e415
-    FLD float ptr [EDI + 0x8]           ; 0046e41a | DAT_01bc9c88 | DAT_01bc9ca0 | DAT_01bc9c94
+    FLD float ptr [EDI + 0x8]           ; 0046e41a | CVector3f_ARRAY_01bc9c80[0].z | CVector3f_ARRAY_01bc9c80[2].z | CVector3f_ARRAY_01bc9c80[1].z
         ;   Label: LAB_0046e41a
     FCOMP float ptr [ESP + 0xc]         ; 0046e41d
     FNSTSW AX                           ; 0046e421
@@ -549,12 +549,12 @@ section .text
     CMP ECX,EDX                         ; 0046e442
     JZ 0x0046e456                       ; 0046e444
         ;   XREF to: 0046e456 (CONDITIONAL_JUMP)  ; LAB_0046e456
-    MOV EAX,dword ptr [EDX]             ; 0046e446 | DAT_01bc9c80 | DAT_01bc9c8c
-    MOV dword ptr [ECX],EAX             ; 0046e448 | DAT_01bc9d44 | DAT_01bca038
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e44a | DAT_01bc9c84 | DAT_01bc9c90
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e44d | DAT_01bc9d48 | DAT_01bca03c
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e450 | DAT_01bc9c88 | DAT_01bc9c94
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e453 | DAT_01bc9d4c | DAT_01bca040
+    MOV EAX,dword ptr [EDX]             ; 0046e446 | CVector3f_ARRAY_01bc9c80 | CVector3f_ARRAY_01bc9c80[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e448 | CVector3f_ARRAY_01bc9d44 | DAT_01bca038
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e44a | CVector3f_ARRAY_01bc9c80[0].y | CVector3f_ARRAY_01bc9c80[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e44d | CVector3f_ARRAY_01bc9d44[0].y | DAT_01bca03c
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e450 | CVector3f_ARRAY_01bc9c80[0].z | CVector3f_ARRAY_01bc9c80[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e453 | CVector3f_ARRAY_01bc9d44[0].z | DAT_01bca040
     INC dword ptr [0x01bc9d40]          ; 0046e456 | DAT_01bc9d40
         ;   Label: LAB_0046e456
     MOV EDX,dword ptr [0x01bc9c7c]      ; 0046e45c | DAT_01bc9c7c
@@ -586,7 +586,7 @@ section .text
     XOR ECX,EDI                         ; 0046e49f
     IMUL ECX,ECX,0xc                    ; 0046e4a1
         ;   Label: LAB_0046e4a1
-    FLD float ptr [EBX + 0x8]           ; 0046e4a4 | DAT_01bc9d4c | DAT_01bc9d58
+    FLD float ptr [EBX + 0x8]           ; 0046e4a4 | CVector3f_ARRAY_01bc9d44[0].z | CVector3f_ARRAY_01bc9d44[1].z
     MOV EDI,0x1bc9d44                   ; 0046e4a7
     MOV EDX,EBX                         ; 0046e4ac
     ADD EDI,ECX                         ; 0046e4ae
@@ -597,7 +597,7 @@ section .text
     JBE 0x0046e4c0                      ; 0046e4b9
         ;   XREF to: 0046e4c0 (CONDITIONAL_JUMP)  ; LAB_0046e4c0
     MOV ECX,0x1                         ; 0046e4bb
-    FLD float ptr [EDI + 0x8]           ; 0046e4c0 | DAT_01bc9d4c | DAT_01bc9d64 | DAT_01bc9d58
+    FLD float ptr [EDI + 0x8]           ; 0046e4c0 | CVector3f_ARRAY_01bc9d44[0].z | CVector3f_ARRAY_01bc9d44[2].z | CVector3f_ARRAY_01bc9d44[1].z
         ;   Label: LAB_0046e4c0
     FCOMP float ptr [ESP + 0x4]         ; 0046e4c3
     FNSTSW AX                           ; 0046e4c7
@@ -617,11 +617,11 @@ section .text
     CMP ECX,EDX                         ; 0046e4e8
     JZ 0x0046e4fc                       ; 0046e4ea
         ;   XREF to: 0046e4fc (CONDITIONAL_JUMP)  ; LAB_0046e4fc
-    MOV EAX,dword ptr [EDX]             ; 0046e4ec | DAT_01bc9d44 | DAT_01bc9d50
+    MOV EAX,dword ptr [EDX]             ; 0046e4ec | CVector3f_ARRAY_01bc9d44 | CVector3f_ARRAY_01bc9d44[1].x
     MOV dword ptr [ECX],EAX             ; 0046e4ee | DAT_01bca0fc
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e4f0 | DAT_01bc9d48 | DAT_01bc9d54
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e4f0 | CVector3f_ARRAY_01bc9d44[0].y | CVector3f_ARRAY_01bc9d44[1].y
     MOV dword ptr [ECX + 0x4],EAX       ; 0046e4f3 | DAT_01bca100
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e4f6 | DAT_01bc9d4c | DAT_01bc9d58
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e4f6 | CVector3f_ARRAY_01bc9d44[0].z | CVector3f_ARRAY_01bc9d44[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0046e4f9 | DAT_01bca104
     INC dword ptr [0x01bc9e04]          ; 0046e4fc | DAT_01bc9e04
         ;   Label: LAB_0046e4fc
@@ -658,9 +658,9 @@ section .text
     PUSH 0x0                            ; 0046e546
     PUSH 0x0                            ; 0046e548
     ADD ECX,0x1bc9a34                   ; 0046e54a
-    PUSH ECX                            ; 0046e550 | DAT_01bc9d28
-    PUSH EDX                            ; 0046e551 | DAT_01bc9970 | DAT_01bc997c
-    PUSH EDI                            ; 0046e552 | DAT_01bc997c
+    PUSH ECX                            ; 0046e550 | CVector3f_ARRAY_01bc9c80[14].x
+    PUSH EDX                            ; 0046e551 | CVector3f_ARRAY_01bc9970 | CVector3f_ARRAY_01bc9970[1].x
+    PUSH EDI                            ; 0046e552 | CVector3f_ARRAY_01bc9970[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e553
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9a30]      ; 0046e558 | DAT_01bc9a30
@@ -675,12 +675,12 @@ section .text
     CMP ECX,EDX                         ; 0046e57a
     JZ 0x0046e58e                       ; 0046e57c
         ;   XREF to: 0046e58e (CONDITIONAL_JUMP)  ; LAB_0046e58e
-    MOV EAX,dword ptr [EDX]             ; 0046e57e | DAT_01bc997c | DAT_01bc9970
-    MOV dword ptr [ECX],EAX             ; 0046e580 | DAT_01bc9a34 | DAT_01bc9d28
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e582 | DAT_01bc9980 | DAT_01bc9974
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e585 | DAT_01bc9a38 | DAT_01bc9d2c
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e588 | DAT_01bc9984 | DAT_01bc9978
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e58b | DAT_01bc9a3c | DAT_01bc9d30
+    MOV EAX,dword ptr [EDX]             ; 0046e57e | CVector3f_ARRAY_01bc9970[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e580 | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9c80[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e582 | CVector3f_ARRAY_01bc9970[1].y | CVector3f_ARRAY_01bc9970[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e585 | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9c80[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e588 | CVector3f_ARRAY_01bc9970[1].z | CVector3f_ARRAY_01bc9970[0].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e58b | CVector3f_ARRAY_01bc9a34[0].z | CVector3f_ARRAY_01bc9c80[14].z
     MOV ECX,dword ptr [0x01bc9a30]      ; 0046e58e | DAT_01bc9a30
         ;   Label: LAB_0046e58e
     INC ECX                             ; 0046e594
@@ -698,8 +698,8 @@ section .text
     PUSH 0x0                            ; 0046e5b7
     ADD ECX,0x1bc9a34                   ; 0046e5b9
     PUSH ECX                            ; 0046e5bf
-    PUSH EDI                            ; 0046e5c0 | DAT_01bc997c
-    PUSH EDX                            ; 0046e5c1 | DAT_01bc997c | DAT_01bc9970
+    PUSH EDI                            ; 0046e5c0 | CVector3f_ARRAY_01bc9970[1].x
+    PUSH EDX                            ; 0046e5c1 | CVector3f_ARRAY_01bc9970[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e5c2
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9a30]      ; 0046e5c7 | DAT_01bc9a30
@@ -720,9 +720,9 @@ section .text
     PUSH 0x0                            ; 0046e5f8
     PUSH 0x0                            ; 0046e5fa
     ADD ECX,0x1bc9af8                   ; 0046e5fc
-    PUSH ECX                            ; 0046e602 | DAT_01bc9dec
-    PUSH EDX                            ; 0046e603 | DAT_01bc9a34 | DAT_01bc9a40
-    PUSH EDI                            ; 0046e604 | DAT_01bc9d58
+    PUSH ECX                            ; 0046e602 | CVector3f_ARRAY_01bc9d44[14].x
+    PUSH EDX                            ; 0046e603 | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9a34[1].x
+    PUSH EDI                            ; 0046e604 | CVector3f_ARRAY_01bc9d44[1].z
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e605
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9af4]      ; 0046e60a | DAT_01bc9af4
@@ -737,12 +737,12 @@ section .text
     CMP ECX,EDX                         ; 0046e62c
     JZ 0x0046e640                       ; 0046e62e
         ;   XREF to: 0046e640 (CONDITIONAL_JUMP)  ; LAB_0046e640
-    MOV EAX,dword ptr [EDX]             ; 0046e630 | DAT_01bc9a34 | DAT_01bc9a40
-    MOV dword ptr [ECX],EAX             ; 0046e632 | DAT_01bc9af8 | DAT_01bc9dec
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e634 | DAT_01bc9a38 | DAT_01bc9a44
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e637 | DAT_01bc9afc | DAT_01bc9df0
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e63a | DAT_01bc9a3c | DAT_01bc9a48
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e63d | DAT_01bc9b00 | DAT_01bc9df4
+    MOV EAX,dword ptr [EDX]             ; 0046e630 | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9a34[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e632 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9d44[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e634 | CVector3f_ARRAY_01bc9a34[0].y | CVector3f_ARRAY_01bc9a34[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e637 | CVector3f_ARRAY_01bc9af8[0].y | CVector3f_ARRAY_01bc9d44[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e63a | CVector3f_ARRAY_01bc9a34[0].z | CVector3f_ARRAY_01bc9a34[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e63d | CVector3f_ARRAY_01bc9af8[0].z | CVector3f_ARRAY_01bc9d44[14].z
     MOV ECX,dword ptr [0x01bc9af4]      ; 0046e640 | DAT_01bc9af4
         ;   Label: LAB_0046e640
     INC ECX                             ; 0046e646
@@ -759,8 +759,8 @@ section .text
     PUSH 0x0                            ; 0046e667
     ADD ECX,0x1bc9af8                   ; 0046e669
     PUSH ECX                            ; 0046e66f
-    PUSH EDI                            ; 0046e670 | DAT_01bc9d58
-    PUSH EDX                            ; 0046e671 | DAT_01bc9a34 | DAT_01bc9a40
+    PUSH EDI                            ; 0046e670 | CVector3f_ARRAY_01bc9d44[1].z
+    PUSH EDX                            ; 0046e671 | CVector3f_ARRAY_01bc9a34 | CVector3f_ARRAY_01bc9a34[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e672
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9af4]      ; 0046e677 | DAT_01bc9af4
@@ -782,9 +782,9 @@ section .text
     PUSH 0x3ff00000                     ; 0046e6a7
     PUSH 0x0                            ; 0046e6ac
     ADD ECX,0x1bc9bbc                   ; 0046e6ae
-    PUSH ECX                            ; 0046e6b4 | DAT_01bc9eb0
-    PUSH EDX                            ; 0046e6b5 | DAT_01bc9af8 | DAT_01bc9b04
-    PUSH EDI                            ; 0046e6b6 | DAT_01bc9e1c
+    PUSH ECX                            ; 0046e6b4 | CVector3f_ARRAY_01bc9e08[14].x
+    PUSH EDX                            ; 0046e6b5 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[1].x
+    PUSH EDI                            ; 0046e6b6 | CVector3f_ARRAY_01bc9e08[1].z
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e6b7
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9bb8]      ; 0046e6bc | DAT_01bc9bb8
@@ -799,12 +799,12 @@ section .text
     CMP ECX,EDX                         ; 0046e6de
     JZ 0x0046e6f2                       ; 0046e6e0
         ;   XREF to: 0046e6f2 (CONDITIONAL_JUMP)  ; LAB_0046e6f2
-    MOV EAX,dword ptr [EDX]             ; 0046e6e2 | DAT_01bc9af8 | DAT_01bc9b04
-    MOV dword ptr [ECX],EAX             ; 0046e6e4 | DAT_01bc9bbc | DAT_01bc9eb0
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e6e6 | DAT_01bc9afc | DAT_01bc9b08
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e6e9 | DAT_01bc9bc0 | DAT_01bc9eb4
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e6ec | DAT_01bc9b00 | DAT_01bc9b0c
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e6ef | DAT_01bc9bc4 | DAT_01bc9eb8
+    MOV EAX,dword ptr [EDX]             ; 0046e6e2 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e6e4 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9e08[14].x
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e6e6 | CVector3f_ARRAY_01bc9af8[0].y | CVector3f_ARRAY_01bc9af8[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e6e9 | CVector3f_ARRAY_01bc9bbc[0].y | CVector3f_ARRAY_01bc9e08[14].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e6ec | CVector3f_ARRAY_01bc9af8[0].z | CVector3f_ARRAY_01bc9af8[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e6ef | CVector3f_ARRAY_01bc9bbc[0].z | CVector3f_ARRAY_01bc9e08[14].z
     MOV ECX,dword ptr [0x01bc9bb8]      ; 0046e6f2 | DAT_01bc9bb8
         ;   Label: LAB_0046e6f2
     INC ECX                             ; 0046e6f8
@@ -822,8 +822,8 @@ section .text
     PUSH 0x0                            ; 0046e71b
     ADD ECX,0x1bc9bbc                   ; 0046e71d
     PUSH ECX                            ; 0046e723
-    PUSH EDI                            ; 0046e724 | DAT_01bc9e1c
-    PUSH EDX                            ; 0046e725 | DAT_01bc9af8 | DAT_01bc9b04
+    PUSH EDI                            ; 0046e724 | CVector3f_ARRAY_01bc9e08[1].z
+    PUSH EDX                            ; 0046e725 | CVector3f_ARRAY_01bc9af8 | CVector3f_ARRAY_01bc9af8[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e726
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9bb8]      ; 0046e72b | DAT_01bc9bb8
@@ -845,7 +845,7 @@ section .text
     PUSH 0x0                            ; 0046e75d
     ADD ECX,0x1bc9c80                   ; 0046e75f
     PUSH ECX                            ; 0046e765 | DAT_01bc9f74
-    PUSH EDX                            ; 0046e766 | DAT_01bc9bbc | DAT_01bc9bc8
+    PUSH EDX                            ; 0046e766 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
     PUSH EDI                            ; 0046e767 | DAT_01bc9ee0
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e768
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
@@ -861,12 +861,12 @@ section .text
     CMP ECX,EDX                         ; 0046e78f
     JZ 0x0046e7a3                       ; 0046e791
         ;   XREF to: 0046e7a3 (CONDITIONAL_JUMP)  ; LAB_0046e7a3
-    MOV EAX,dword ptr [EDX]             ; 0046e793 | DAT_01bc9bbc | DAT_01bc9bc8
-    MOV dword ptr [ECX],EAX             ; 0046e795 | DAT_01bc9c80 | DAT_01bc9f74
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e797 | DAT_01bc9bc0 | DAT_01bc9bcc
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e79a | DAT_01bc9c84 | DAT_01bc9f78
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e79d | DAT_01bc9bc4 | DAT_01bc9bd0
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e7a0 | DAT_01bc9c88 | DAT_01bc9f7c
+    MOV EAX,dword ptr [EDX]             ; 0046e793 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e795 | CVector3f_ARRAY_01bc9c80 | DAT_01bc9f74
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e797 | CVector3f_ARRAY_01bc9bbc[0].y | CVector3f_ARRAY_01bc9bbc[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e79a | CVector3f_ARRAY_01bc9c80[0].y | DAT_01bc9f78
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e79d | CVector3f_ARRAY_01bc9bbc[0].z | CVector3f_ARRAY_01bc9bbc[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e7a0 | CVector3f_ARRAY_01bc9c80[0].z | DAT_01bc9f7c
     MOV ECX,dword ptr [0x01bc9c7c]      ; 0046e7a3 | DAT_01bc9c7c
         ;   Label: LAB_0046e7a3
     INC ECX                             ; 0046e7a9
@@ -884,7 +884,7 @@ section .text
     ADD ECX,0x1bc9c80                   ; 0046e7cb
     PUSH ECX                            ; 0046e7d1
     PUSH EDI                            ; 0046e7d2 | DAT_01bc9ee0
-    PUSH EDX                            ; 0046e7d3 | DAT_01bc9bbc | DAT_01bc9bc8
+    PUSH EDX                            ; 0046e7d3 | CVector3f_ARRAY_01bc9bbc | CVector3f_ARRAY_01bc9bbc[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e7d4
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9c7c]      ; 0046e7d9 | DAT_01bc9c7c
@@ -906,7 +906,7 @@ section .text
     PUSH 0x0                            ; 0046e80c
     ADD ECX,0x1bc9d44                   ; 0046e80e
     PUSH ECX                            ; 0046e814 | DAT_01bca038
-    PUSH EDX                            ; 0046e815 | DAT_01bc9c80 | DAT_01bc9c8c
+    PUSH EDX                            ; 0046e815 | CVector3f_ARRAY_01bc9c80 | CVector3f_ARRAY_01bc9c80[1].x
     PUSH EDI                            ; 0046e816
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e817
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
@@ -922,12 +922,12 @@ section .text
     CMP ECX,EDX                         ; 0046e83e
     JZ 0x0046e852                       ; 0046e840
         ;   XREF to: 0046e852 (CONDITIONAL_JUMP)  ; LAB_0046e852
-    MOV EAX,dword ptr [EDX]             ; 0046e842 | DAT_01bc9c80 | DAT_01bc9c8c
-    MOV dword ptr [ECX],EAX             ; 0046e844 | DAT_01bc9d44 | DAT_01bca038
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e846 | DAT_01bc9c84 | DAT_01bc9c90
-    MOV dword ptr [ECX + 0x4],EAX       ; 0046e849 | DAT_01bc9d48 | DAT_01bca03c
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e84c | DAT_01bc9c88 | DAT_01bc9c94
-    MOV dword ptr [ECX + 0x8],EAX       ; 0046e84f | DAT_01bc9d4c | DAT_01bca040
+    MOV EAX,dword ptr [EDX]             ; 0046e842 | CVector3f_ARRAY_01bc9c80 | CVector3f_ARRAY_01bc9c80[1].x
+    MOV dword ptr [ECX],EAX             ; 0046e844 | CVector3f_ARRAY_01bc9d44 | DAT_01bca038
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e846 | CVector3f_ARRAY_01bc9c80[0].y | CVector3f_ARRAY_01bc9c80[1].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 0046e849 | CVector3f_ARRAY_01bc9d44[0].y | DAT_01bca03c
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e84c | CVector3f_ARRAY_01bc9c80[0].z | CVector3f_ARRAY_01bc9c80[1].z
+    MOV dword ptr [ECX + 0x8],EAX       ; 0046e84f | CVector3f_ARRAY_01bc9d44[0].z | DAT_01bca040
     MOV ECX,dword ptr [0x01bc9d40]      ; 0046e852 | DAT_01bc9d40
         ;   Label: LAB_0046e852
     INC ECX                             ; 0046e858
@@ -945,7 +945,7 @@ section .text
     ADD ECX,0x1bc9d44                   ; 0046e87b
     PUSH ECX                            ; 0046e881
     PUSH EDI                            ; 0046e882
-    PUSH EDX                            ; 0046e883 | DAT_01bc9c80 | DAT_01bc9c8c
+    PUSH EDX                            ; 0046e883 | CVector3f_ARRAY_01bc9c80 | CVector3f_ARRAY_01bc9c80[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e884
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9d40]      ; 0046e889 | DAT_01bc9d40
@@ -967,7 +967,7 @@ section .text
     PUSH 0x0                            ; 0046e8bc
     ADD ECX,0x1bc9e08                   ; 0046e8be
     PUSH ECX                            ; 0046e8c4 | DAT_01bca0fc
-    PUSH EDX                            ; 0046e8c5 | DAT_01bc9d44 | DAT_01bc9d50
+    PUSH EDX                            ; 0046e8c5 | CVector3f_ARRAY_01bc9d44 | CVector3f_ARRAY_01bc9d44[1].x
     PUSH EDI                            ; 0046e8c6
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e8c7
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
@@ -983,11 +983,11 @@ section .text
     CMP ECX,EDX                         ; 0046e8ee
     JZ 0x0046e902                       ; 0046e8f0
         ;   XREF to: 0046e902 (CONDITIONAL_JUMP)  ; LAB_0046e902
-    MOV EAX,dword ptr [EDX]             ; 0046e8f2 | DAT_01bc9d44 | DAT_01bc9d50
+    MOV EAX,dword ptr [EDX]             ; 0046e8f2 | CVector3f_ARRAY_01bc9d44 | CVector3f_ARRAY_01bc9d44[1].x
     MOV dword ptr [ECX],EAX             ; 0046e8f4 | DAT_01bca0fc
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e8f6 | DAT_01bc9d48 | DAT_01bc9d54
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0046e8f6 | CVector3f_ARRAY_01bc9d44[0].y | CVector3f_ARRAY_01bc9d44[1].y
     MOV dword ptr [ECX + 0x4],EAX       ; 0046e8f9 | DAT_01bca100
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e8fc | DAT_01bc9d4c | DAT_01bc9d58
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0046e8fc | CVector3f_ARRAY_01bc9d44[0].z | CVector3f_ARRAY_01bc9d44[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0046e8ff | DAT_01bca104
     MOV ECX,dword ptr [0x01bc9e04]      ; 0046e902 | DAT_01bc9e04
         ;   Label: LAB_0046e902
@@ -1006,7 +1006,7 @@ section .text
     ADD ECX,0x1bc9e08                   ; 0046e92b
     PUSH ECX                            ; 0046e931
     PUSH EDI                            ; 0046e932
-    PUSH EDX                            ; 0046e933 | DAT_01bc9d44 | DAT_01bc9d50
+    PUSH EDX                            ; 0046e933 | CVector3f_ARRAY_01bc9d44 | CVector3f_ARRAY_01bc9d44[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 ; 0046e934
         ;   XREF to: 0046d4e0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0046d4e0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x01bc9e04]      ; 0046e939 | DAT_01bc9e04

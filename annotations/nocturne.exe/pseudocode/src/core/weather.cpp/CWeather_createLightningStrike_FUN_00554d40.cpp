@@ -87,7 +87,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
       local_98 = 1.0;
     }
     core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-              ((CDemonCamera *)0x1fb8508,local_98);
+              ((CDemonCamera *)&DAT_01fb8508,local_98);
     if (play_sound == 0) {
       return;
     }

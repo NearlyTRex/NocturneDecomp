@@ -51,9 +51,9 @@ void __cdecl CEnemy::setVictim(CEnemy *this_ptr,CDemonActor *victim);
 // Address: 00479f70
 void __cdecl CEnemy::processDamage(CEnemy *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_FUN_0047a000
+// Original: core_enemy.cpp_CEnemy_renderBackground_FUN_0047a000
 // Address: 0047a000
-void __cdecl FUN_0047a000(CEnemy *this_ptr,int layer_flag);
+void __cdecl CEnemy::renderBackground(CEnemy *this_ptr,int layer_flag);
 
 // Original: core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
 // Address: 0047a030

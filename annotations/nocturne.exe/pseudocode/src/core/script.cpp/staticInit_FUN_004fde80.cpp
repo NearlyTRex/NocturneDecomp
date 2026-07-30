@@ -9,9 +9,9 @@
 void __cdecl core_script_cpp_staticInit_FUN_004fde80(void)
 
 {
-  shape_edittool_cpp_FUN_00474c90(0x1e56c30);
-  _atexit((WatcomStaticDestructorNode *)0x5be200);
+  shape_edittool_cpp_FUN_00474c90(&DAT_01e56c30);
+  _atexit(&g_WatcomStaticDestructorNode_005be200);
   core_script_cpp_FUN_004fe490((CScript *)&DAT_01e56da0);
-  _atexit((WatcomStaticDestructorNode *)0x5be210);
+  _atexit(&g_WatcomStaticDestructorNode_005be210);
   return;
 }

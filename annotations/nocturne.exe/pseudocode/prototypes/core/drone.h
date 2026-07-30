@@ -7,13 +7,13 @@
 // Address: 004628e0
 void __cdecl staticInit(void);
 
-// Original: core_drone.cpp_FUN_00462910
+// Original: core_drone.cpp_factoryFunc_FUN_00462910
 // Address: 00462910
-void FUN_00462910(void);
+CDrone * __cdecl factoryFunc(void);
 
-// Original: core_drone.cpp_FUN_00462930
+// Original: core_drone.cpp_CDrone_getActorType_FUN_00462930
 // Address: 00462930
-CDemonActorType * FUN_00462930(void);
+CDemonActorType * CDrone::getActorType(void);
 
 // Original: core_drone.cpp_CDrone_ctor_FUN_00462940
 // Address: 00462940
@@ -27,9 +27,9 @@ void CDrone::setup(CEnemy *param_1);
 // Address: 00462a60
 void CDrone::process(CEnemy *param_1,float param_2);
 
-// Original: core_drone.cpp_FUN_004630e0
+// Original: core_drone.cpp_CDrone_archive_FUN_004630e0
 // Address: 004630e0
-void FUN_004630e0(CEnemy *param_1);
+void CDrone::archive(CEnemy *param_1);
 
 // Original: core_drone.cpp_CDrone_processDamage_FUN_00463150
 // Address: 00463150

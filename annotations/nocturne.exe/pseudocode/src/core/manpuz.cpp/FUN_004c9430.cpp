@@ -16,7 +16,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_004c9430(CMansionPuzzleCircle
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(pCVar3 + 1);

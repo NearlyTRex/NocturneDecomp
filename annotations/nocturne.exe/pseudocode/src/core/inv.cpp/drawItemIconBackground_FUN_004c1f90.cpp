@@ -66,6 +66,6 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004c1f90(int x1,int y1,int 
   local_18 = y1;
   local_1c = x2;
   local_14 = y2;
-  core_dcamera_cpp_CDemonCamera_pushRect_FUN_004405d0((CDemonCamera *)0x1fb8508,x1,x2,y1,y2);
+  core_dcamera_cpp_CDemonCamera_pushRect_FUN_004405d0((CDemonCamera *)&DAT_01fb8508,x1,x2,y1,y2);
   return;
 }

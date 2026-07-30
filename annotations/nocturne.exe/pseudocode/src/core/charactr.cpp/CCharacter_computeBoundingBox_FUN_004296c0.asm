@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 0042430c
 ;   core_charactr.cpp_FUN_0042a150 at 0042a177
-;   core_mimic.cpp_FUN_004d49f0 at 004d4a7b
+;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4a7b
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40

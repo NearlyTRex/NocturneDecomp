@@ -42,6 +42,6 @@ void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
     } while (iVar4 < (int)this_ptr->cameras[0xf7].position.y);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
-  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)0x1fb8508);
+  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)&DAT_01fb8508);
   return;
 }

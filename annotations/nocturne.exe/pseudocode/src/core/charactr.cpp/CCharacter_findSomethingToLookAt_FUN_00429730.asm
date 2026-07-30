@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   disable_search
 ;
 ; XREF[1]:
-;   core_hostage.cpp_FUN_004b6d80 at 004b736b
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b736b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_0057a272

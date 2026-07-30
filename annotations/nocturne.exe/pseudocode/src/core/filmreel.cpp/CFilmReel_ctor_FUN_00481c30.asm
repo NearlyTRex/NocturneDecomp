@@ -7,7 +7,7 @@
 ; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_FUN_00481c00 at 00481c13
+;   core_filmreel.cpp_factoryFunc_FUN_00481c00 at 00481c13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_filmreel_kfm_00580f8c
@@ -18,7 +18,7 @@
 ;   CDemonActor_vtable g_CFilmReelVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 00481c32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00481c33
     PUSH EBX                            ; 00481c37
-    CALL core_actor.cpp_FUN_00409d30    ; 00481c38
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00481c38
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00481c3d
     ADD EAX,0x150                       ; 00481c40
     PUSH EAX                            ; 00481c45

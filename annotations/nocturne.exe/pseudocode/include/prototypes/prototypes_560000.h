@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/excpt.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
 #include "system/stat.h"
@@ -12,6 +13,7 @@
 #include "system/time.h"
 #include "system/utime.h"
 #include "system/watcom.h"
+#include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CCharacter.h"
@@ -27,18 +29,18 @@
 // FUNCTION PROTOTYPES - Range 0x560000
 // =============================================================================
 
-void core_zombie_cpp_FUN_00560cd0(int param_1,int param_2);
+void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int param_2);
 int __cdecl core_zombie_cpp_FUN_00561010(CZombie *this_ptr,float delta_time);
 int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie *this_ptr,int object_shape_type);
 int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie *this_ptr,int object_shape_type);
 void core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005618c0(int param_1);
-int core_zombie_cpp_FUN_00561900(CCharacter *param_1);
-int core_zombie_cpp_FUN_00561940(CCharacter *param_1);
+int core_zombie_cpp_CZombie_renderOpaque_FUN_00561900(CCharacter *param_1);
+int core_zombie_cpp_CZombie_renderTransparent_FUN_00561940(CCharacter *param_1);
 void core_zombie_cpp_CZombie_archive_FUN_00561aa0(CEnemy *param_1);
 undefined4 core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CDemonActor *param_1,CVector3f *param_2);
 void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_00561cf0(CZombie *this_ptr,SDamageInfo *damage_info);
 void core_zombie_cpp_CZombie_processDamage_FUN_00561fc0(CZombie *param_1,SDamageInfo *param_2);
-int core_zombie_cpp_FUN_005621f0(int param_1,CVector3f *param_2);
+int core_zombie_cpp_CZombie_getTargetPoints_FUN_005621f0(int param_1,CVector3f *param_2);
 int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(CZombie *this_ptr,CDemonActor *grabber);
 int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_00562430(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
 undefined4 core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(int param_1,undefined4 param_2,int param_3);

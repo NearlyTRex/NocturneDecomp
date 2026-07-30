@@ -8,13 +8,13 @@
 ; int              Stack[0x8]:4   enable_advanced_mode
 ;
 ; XREF[7]:
-;   core_baron.cpp_FUN_004110f0 at 00411244
-;   core_batman.cpp_FUN_00414340 at 00414497
-;   core_boneguy.cpp_FUN_00419c20 at 00419c71
-;   core_dracbrid.cpp_FUN_0045a260 at 0045a3c6
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 at 00411244
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00414340 at 00414497
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419c20 at 00419c71
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 at 0045a3c6
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0ee8
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dfeb4
-;   core_vessel.cpp_FUN_00550210 at 0055030a
+;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00550210 at 0055030a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d7ac

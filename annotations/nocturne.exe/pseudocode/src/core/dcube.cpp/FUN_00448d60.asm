@@ -12,11 +12,11 @@
 ;   undefined1* PTR_caseD_1_00448d48 = 00448e14
 ;   undefined1* PTR_caseD_3_00448d50 = 00448df9
 ;   undefined4 DAT_014b8860
-;   undefined4 DAT_014b8864
-;   undefined4 DAT_014b8868
-;   undefined4 DAT_014b886c
-;   undefined4 DAT_014b8878
-;   undefined4 DAT_014b8884
+;   CVector3f[16] CVector3f_ARRAY_014b8864
+;   undefined4 CVector3f_ARRAY_014b8864[0].y
+;   undefined4 CVector3f_ARRAY_014b8864[0].z
+;   undefined4 CVector3f_ARRAY_014b8864[1].z
+;   undefined4 CVector3f_ARRAY_014b8864[2].z
 ;   undefined4 DAT_014b8924
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     IMUL ECX,ECX,0xc                    ; 00448d9b
         ;   Label: LAB_00448d9b
     MOV EAX,0x14b8864                   ; 00448d9e
-    FLD float ptr [ESI + 0x8]           ; 00448da3 | DAT_014b886c | DAT_014b8878
+    FLD float ptr [ESI + 0x8]           ; 00448da3 | CVector3f_ARRAY_014b8864[0].z | CVector3f_ARRAY_014b8864[1].z
     ADD EAX,ECX                         ; 00448da6
     MOV EDX,ESI                         ; 00448da8
     MOV dword ptr [ESP + 0x4],EAX       ; 00448daa
@@ -66,7 +66,7 @@ section .text
     MOV ECX,0x1                         ; 00448db8
     MOV EAX,dword ptr [ESP + 0x4]       ; 00448dbd
         ;   Label: LAB_00448dbd
-    FLD float ptr [EAX + 0x8]           ; 00448dc1 | DAT_014b886c | DAT_014b8884
+    FLD float ptr [EAX + 0x8]           ; 00448dc1 | CVector3f_ARRAY_014b8864[0].z | CVector3f_ARRAY_014b8864[2].z
     FCOMP float ptr [ESP]               ; 00448dc4
     FNSTSW AX                           ; 00448dc7
     SAHF                                ; 00448dc9
@@ -85,11 +85,11 @@ section .text
     CMP ECX,EDX                         ; 00448de4
     JZ 0x00448df8                       ; 00448de6
         ;   XREF to: 00448df8 (CONDITIONAL_JUMP)  ; LAB_00448df8
-    MOV EAX,dword ptr [EDX]             ; 00448de8 | DAT_014b8864
+    MOV EAX,dword ptr [EDX]             ; 00448de8 | CVector3f_ARRAY_014b8864
     MOV dword ptr [ECX],EAX             ; 00448dea
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00448dec | DAT_014b8868
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00448dec | CVector3f_ARRAY_014b8864[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 00448def
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00448df2 | DAT_014b886c
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00448df2 | CVector3f_ARRAY_014b8864[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 00448df5
     INC EBX                             ; 00448df8
         ;   Label: LAB_00448df8
@@ -121,7 +121,7 @@ section .text
     PUSH 0x0                            ; 00448e2d
     ADD ECX,0x14b8928                   ; 00448e2f
     PUSH ECX                            ; 00448e35
-    PUSH EDX                            ; 00448e36 | DAT_014b8864
+    PUSH EDX                            ; 00448e36 | CVector3f_ARRAY_014b8864
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00448e37
     PUSH EAX                            ; 00448e3b
     MOV dword ptr [0x014b8924],EBX      ; 00448e3c | DAT_014b8924
@@ -137,11 +137,11 @@ section .text
     CMP ECX,EDX                         ; 00448e5b
     JZ 0x00448e6f                       ; 00448e5d
         ;   XREF to: 00448e6f (CONDITIONAL_JUMP)  ; LAB_00448e6f
-    MOV EAX,dword ptr [EDX]             ; 00448e5f | DAT_014b8864
+    MOV EAX,dword ptr [EDX]             ; 00448e5f | CVector3f_ARRAY_014b8864
     MOV dword ptr [ECX],EAX             ; 00448e61
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00448e63 | DAT_014b8868
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00448e63 | CVector3f_ARRAY_014b8864[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 00448e66
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00448e69 | DAT_014b886c
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00448e69 | CVector3f_ARRAY_014b8864[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 00448e6c
     INC EBX                             ; 00448e6f
         ;   Label: LAB_00448e6f
@@ -159,7 +159,7 @@ section .text
     PUSH ECX                            ; 00448e91
     MOV ECX,dword ptr [ESP + 0x28]      ; 00448e92
     PUSH ECX                            ; 00448e96
-    PUSH EDX                            ; 00448e97 | DAT_014b8864
+    PUSH EDX                            ; 00448e97 | CVector3f_ARRAY_014b8864
     MOV dword ptr [0x014b8924],EBX      ; 00448e98 | DAT_014b8924
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448e9e
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)

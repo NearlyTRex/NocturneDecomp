@@ -7,7 +7,7 @@
 ; CBaron *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_004101a0 at 004101b3
+;   core_baron.cpp_factoryFunc_FUN_004101a0 at 004101b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_baron_dfm_0057850c

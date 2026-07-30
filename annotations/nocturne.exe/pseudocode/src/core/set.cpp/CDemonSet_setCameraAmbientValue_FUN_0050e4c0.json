@@ -3,117 +3,63 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "category": "undeclared_identifier",
+        "column": 82,
+        "line": 16,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       }
     ],
     "success": false,
@@ -122,18 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 39,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation"
+      "pointer_truncation",
+      "undefined_data"
     ],
-    "total_lines": 32
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -145,7 +92,7 @@
     {
       "addr": "0049f930",
       "from_addr": "004a023a",
-      "name": "core_game.cpp_FUN_0049f930",
+      "name": "core_game.cpp_CGame_FUN_0049f930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -181,7 +128,7 @@
       {
         "call_addr": "004a023a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049f930",
+        "caller": "core_game.cpp_CGame_FUN_0049f930",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -278,6 +225,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)&DAT_01fb8508,value)",
+      "type": "undefined_data"
+    },
     {
       "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 5,

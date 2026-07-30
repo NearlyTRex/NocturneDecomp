@@ -3,117 +3,57 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
     "success": false,
@@ -136,19 +76,19 @@
     {
       "addr": "0040b300",
       "from_addr": "0040b533",
-      "name": "core_actor.cpp_FUN_0040b300",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040ef70",
       "from_addr": "0040ef7a",
-      "name": "core_ammo.cpp_FUN_0040ef70",
+      "name": "core_ammo.cpp_CAmmo_canPickup_FUN_0040ef70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040f480",
       "from_addr": "0040f49a",
-      "name": "core_ammobox.cpp_FUN_0040f480",
+      "name": "core_ammobox.cpp_CAmmoBox_canPickup_FUN_0040f480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -166,7 +106,7 @@
     {
       "addr": "00414e10",
       "from_addr": "00414e1a",
-      "name": "core_battery.cpp_FUN_00414e10",
+      "name": "core_battery.cpp_CBattery_canPickup_FUN_00414e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -232,7 +172,7 @@
     {
       "addr": "00481d30",
       "from_addr": "00481d3a",
-      "name": "core_filmreel.cpp_FUN_00481d30",
+      "name": "core_filmreel.cpp_CFilmReel_canPickup_FUN_00481d30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -262,7 +202,7 @@
     {
       "addr": "004b43d0",
       "from_addr": "004b43da",
-      "name": "core_health.cpp_FUN_004b43d0",
+      "name": "core_health.cpp_CHealthItem_canPickup_FUN_004b43d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -280,7 +220,7 @@
     {
       "addr": "004b8700",
       "from_addr": "004b8868",
-      "name": "core_hostage.cpp_FUN_004b8700",
+      "name": "core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -334,7 +274,7 @@
     {
       "addr": "004c36d0",
       "from_addr": "004c36da",
-      "name": "core_keyactor.cpp_FUN_004c36d0",
+      "name": "core_keyactor.cpp_CKeyActor_canPickup_FUN_004c36d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -398,15 +338,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053b630",
-      "from_addr": "0053b870",
-      "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630",
+      "addr": "0053e860",
+      "from_addr": "0053e8ca",
+      "name": "core_stranger.cpp_CStranger_processDamage_FUN_0053e860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053e860",
-      "from_addr": "0053e8ca",
-      "name": "core_stranger.cpp_FUN_0053e860",
+      "addr": "0053b630",
+      "from_addr": "0053b870",
+      "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -430,7 +370,7 @@
     {
       "addr": "00547b30",
       "from_addr": "0054802f",
-      "name": "core_trigger.cpp_FUN_00547b30",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_00547b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {

@@ -9,7 +9,7 @@
 void core_baron_cpp_CBaron_archive_FUN_00411080(CHero *param_1)
 
 {
-  core_hero_cpp_FUN_004b49a0(param_1);
+  core_hero_cpp_CHero_archive_FUN_004b49a0(param_1);
   if (g_INT_005acf3c < 2) {
     return;
   }

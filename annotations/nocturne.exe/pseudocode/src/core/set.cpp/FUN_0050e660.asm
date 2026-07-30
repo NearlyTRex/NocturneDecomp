@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[6]:
-;   core_drip.cpp_FUN_00462300 at 00462498
+;   core_drip.cpp_CDrip_process_FUN_00462300 at 00462498
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d354
 ;   core_fire.cpp_CExplosion_activate_FUN_00486e40 at 00486e86
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0 at 0048c51a

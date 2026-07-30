@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d98a2
-;   core_platfrm.cpp_FUN_004f6170 at 004f6301
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6301
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500c26
 ;
 ; *****************************************************************************

@@ -8,14 +8,14 @@
 ;
 ; XREF[79]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a9fa
-;   core_ammo.cpp_FUN_0040eca0 at 0040ecaf
-;   core_ammobox.cpp_FUN_0040f2b0 at 0040f302
-;   core_ammobox.cpp_FUN_0040f340 at 0040f34f
+;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040eca0 at 0040ecaf
+;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040f340 at 0040f34f
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040f2b0 at 0040f302
 ;   core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040f860 at 0040f86f
+;   core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040fff0 at 0040ffff
 ;   core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004100a0 at 004100b9
-;   core_backgnd.cpp_FUN_0040fff0 at 0040ffff
+;   core_bat.cpp_CBat_getBoundingBox_FUN_00411ea0 at 00411ec1
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411d28
-;   core_bat.cpp_FUN_00411ea0 at 00411ec1
 ;   core_battery.cpp_CBattery_getBoundingBox_FUN_00414f50 at 00414f5f
 ;   ... and 69 more
 ;

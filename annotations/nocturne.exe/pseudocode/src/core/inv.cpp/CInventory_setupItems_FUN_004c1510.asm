@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004b48d0 at 004b48fe
+;   core_hero.cpp_CHero_setup_FUN_004b48d0 at 004b48fe
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inv_cpp_00587310

@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00435240
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0
-;   core_hero.cpp_FUN_004b48d0
+;   core_hero.cpp_CHero_setup_FUN_004b48d0
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00519b30
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -58,8 +58,8 @@ section .text
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00541a6d
     PUSH ESI                            ; 00541a70
-    CALL core_hero.cpp_FUN_004b48d0     ; 00541a71
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setup_FUN_004b48d0 ; 00541a71
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 00541a76
     LEA EDI,[ESI + 0x150]               ; 00541a79
     PUSH EDI                            ; 00541a7f

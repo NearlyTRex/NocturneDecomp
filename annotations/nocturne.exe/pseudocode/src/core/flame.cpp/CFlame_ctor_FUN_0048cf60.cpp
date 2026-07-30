@@ -12,7 +12,7 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(CFlame *this_ptr)
   CFlame *pCVar1;
   float fVar2;
   
-  pCVar1 = (CFlame *)core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar1 = (CFlame *)core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CFlameVTable;
   (pCVar1->flame_size).x = 1.0;
   (pCVar1->flame_size).y = 2.0;

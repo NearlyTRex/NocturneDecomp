@@ -10,7 +10,8 @@ void __cdecl core_marquee_cpp_staticInit_FUN_004cc080(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CMarqueeActorType_01cc48d4,"CMarquee",core_marquee_cpp_FUN_004cc0b0,
-             &INT_005badb8,1,&g_CDemonActorActorType_00763e48);
+            (&g_CMarqueeActorType_01cc48d4,"CMarquee",
+             core_marquee_cpp_factoryFunc_FUN_004cc0b0,&INT_005badb8,1,
+             &g_CDemonActorActorType_00763e48);
   return;
 }

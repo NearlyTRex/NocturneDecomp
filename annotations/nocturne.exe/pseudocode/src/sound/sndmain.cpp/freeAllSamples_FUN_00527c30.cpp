@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_freeAllSamples_FUN_00527c30(void)
   CSfxSample *this_ptr;
   
   sound_sndmain_cpp_lockSound_FUN_00528800();
-  this_ptr = (CSfxSample *)0x2dc1edc;
+  this_ptr = (CSfxSample *)&DAT_02dc1edc;
   sound_sndmain_cpp_killAllSfx_FUN_005272b0();
   do {
     sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);

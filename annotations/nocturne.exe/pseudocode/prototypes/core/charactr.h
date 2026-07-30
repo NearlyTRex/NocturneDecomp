@@ -79,9 +79,9 @@ void __cdecl CCharacter::renderCollision(CCharacter *this_ptr);
 // Address: 00426440
 int __cdecl CCharacter::renderOpaque(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00426510
+// Original: core_charactr.cpp_CCharacter_renderBackground_FUN_00426510
 // Address: 00426510
-void __cdecl FUN_00426510(CCharacter *this_ptr,int layer_flag);
+void __cdecl CCharacter::renderBackground(CCharacter *this_ptr,int layer_flag);
 
 // Original: core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570
 // Address: 00426570
@@ -135,9 +135,9 @@ void __cdecl CCharacter::spawnGoreAtBone(CCharacter *this_ptr,int part_index,int
 // Address: 00427990
 void __cdecl CCharacter::spawnBloodAtBone(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 
-// Original: core_charactr.cpp_FUN_00427a20
+// Original: core_charactr.cpp_CCharacter_getBoundingBox_FUN_00427a20
 // Address: 00427a20
-undefined4 * FUN_00427a20(int param_1,undefined4 *param_2);
+undefined4 * CCharacter::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_charactr.cpp_FUN_00427a60
 // Address: 00427a60
@@ -175,13 +175,13 @@ void __cdecl CCharacter::releaseFromGrab(CCharacter *this_ptr);
 // Address: 004280e0
 void FUN_004280e0(void);
 
-// Original: core_charactr.cpp_FUN_004280f0
+// Original: core_charactr.cpp_CCharacter_getGrabber_FUN_004280f0
 // Address: 004280f0
-undefined4 FUN_004280f0(int param_1);
+undefined4 CCharacter::getGrabber(int param_1);
 
-// Original: core_charactr.cpp_FUN_00428100
+// Original: core_charactr.cpp_CCharacter_drop_FUN_00428100
 // Address: 00428100
-void __cdecl FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+void __cdecl CCharacter::drop(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 
 // Original: core_charactr.cpp_CCharacter_attractActorToward_FUN_00428160
 // Address: 00428160
@@ -219,17 +219,17 @@ void __cdecl CCharacter::setWalkTarget(CCharacter *this_ptr,CDemonActor *target,
 // Address: 00428b60
 void CCharacter::setWalkTargetImmediate(int param_1,undefined4 param_2);
 
-// Original: core_charactr.cpp_FUN_00428bb0
+// Original: core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0
 // Address: 00428bb0
-void FUN_00428bb0(int param_1,undefined4 param_2);
+void CCharacter::setWalkTimeout(int param_1,undefined4 param_2);
 
 // Original: core_charactr.cpp_CCharacter_isWalkComplete_FUN_00428bc0
 // Address: 00428bc0
 undefined4 CCharacter::isWalkComplete(int param_1);
 
-// Original: core_charactr.cpp_FUN_00428bf0
+// Original: core_charactr.cpp_CCharacter_canWalk_FUN_00428bf0
 // Address: 00428bf0
-undefined4 FUN_00428bf0(void);
+undefined4 CCharacter::canWalk(void);
 
 // Original: core_charactr.cpp_FUN_00428c00
 // Address: 00428c00
@@ -239,13 +239,13 @@ int __cdecl FUN_00428c00(CCharacter *this_ptr,float delta_time);
 // Address: 00428ee0
 void __cdecl CCharacter::setWalkTimeout(CCharacter *this_ptr,float timeout);
 
-// Original: core_charactr.cpp_FUN_00428ef0
+// Original: core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ef0
 // Address: 00428ef0
-void FUN_00428ef0(int param_1);
+void CCharacter::clearDoorTarget(int param_1);
 
-// Original: core_charactr.cpp_FUN_00428f20
+// Original: core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428f20
 // Address: 00428f20
-bool FUN_00428f20(int param_1);
+bool CCharacter::hasDoorTarget(int param_1);
 
 // Original: core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
 // Address: 00428f40
@@ -267,9 +267,9 @@ void __cdecl CCharacter::dropAllCarriedObjects(CCharacter *this_ptr);
 // Address: 00429220
 void __cdecl CCharacter::updateCarriedObjects(CCharacter *this_ptr,float delta_time);
 
-// Original: core_charactr.cpp_FUN_00429490
+// Original: core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490
 // Address: 00429490
-void FUN_00429490(int param_1,int param_2);
+void CCharacter::getCarryObjToBodyXForm(int param_1,int param_2);
 
 // Original: core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0
 // Address: 004294f0
@@ -303,9 +303,9 @@ void __cdecl CCharacter::applyLookAt(CCharacter *this_ptr);
 // Address: 00429f60
 void __cdecl CCharacter::setLookAtTarget(CCharacter *this_ptr,CDemonActor *target);
 
-// Original: core_charactr.cpp_FUN_00429f70
+// Original: core_charactr.cpp_CCharacter_calculateChecksum_FUN_00429f70
 // Address: 00429f70
-void FUN_00429f70(CDemonActor *param_1,uint *param_2);
+void CCharacter::calculateChecksum(CDemonActor *param_1,uint *param_2);
 
 // Original: core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0
 // Address: 00429fe0

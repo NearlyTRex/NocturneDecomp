@@ -20,8 +20,8 @@
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 0042943c
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053a9ee
+;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0 at 00544601
 ;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760 at 005447b2
-;   core_tentacle.cpp_FUN_005445c0 at 00544601
 ;
 ; Called Functions:
 ;   core_xform.cpp_matrixToQuaternion_FUN_0055cf10

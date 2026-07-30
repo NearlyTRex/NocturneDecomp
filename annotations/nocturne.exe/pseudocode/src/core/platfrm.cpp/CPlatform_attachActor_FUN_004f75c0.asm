@@ -12,7 +12,7 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[2]:
-;   core_platfrm.cpp_FUN_004f5f60 at 004f5fda
+;   core_platfrm.cpp_CPlatform_setup_FUN_004f5f60 at 004f5fda
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500b22
 ;
 ; Referenced Globals:

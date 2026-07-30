@@ -16,7 +16,7 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr)
   char *pcVar4;
   int *piVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   core_event_cpp_FUN_00481620((CRuleList *)(this_ptr_00[2].part_visibility_flags + 10));

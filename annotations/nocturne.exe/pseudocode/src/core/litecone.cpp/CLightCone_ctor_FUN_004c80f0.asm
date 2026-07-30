@@ -7,7 +7,7 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_litecone.cpp_FUN_004c80c0 at 004c80d3
+;   core_litecone.cpp_factoryFunc_FUN_004c80c0 at 004c80d3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00587ad0
@@ -21,7 +21,7 @@
 ;   CDemonActor_vtable g_CLightConeVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 004c80f1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c80f2
     PUSH EDX                            ; 004c80f6
-    CALL core_actor.cpp_FUN_00409d30    ; 004c80f7
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004c80f7
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     MOV dword ptr [EAX + 0x14c],0x59fed4 ; 004c80fc | g_CLightConeVTable
     MOV ESI,0x587ad0                    ; 004c8106 | = "none"
     MOV dword ptr [EAX + 0x150],0x42600000 ; 004c810b

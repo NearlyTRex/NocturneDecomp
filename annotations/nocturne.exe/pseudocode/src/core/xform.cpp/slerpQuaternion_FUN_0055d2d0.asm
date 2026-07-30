@@ -20,7 +20,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[15]:
-;   core_boneguy.cpp_FUN_00418a00 at 00418bb6
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418bb6
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60 at 00429f09
 ;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043b9d5
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497bba

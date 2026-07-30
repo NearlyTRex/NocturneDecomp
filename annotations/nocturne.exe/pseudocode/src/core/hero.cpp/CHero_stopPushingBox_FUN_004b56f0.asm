@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_FUN_00495a20 at 00496bf5
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496bf5
 ;   core_stranger.cpp_FUN_00535900 at 00536ed3
 ;
 ; Referenced Globals:

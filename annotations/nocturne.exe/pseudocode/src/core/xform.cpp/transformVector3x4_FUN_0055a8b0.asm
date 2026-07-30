@@ -9,14 +9,14 @@
 ; CMatrix3x4f *    Stack[0xc]:4   matrix
 ;
 ; XREF[52]:
-;   core_baron.cpp_FUN_00410490 at 0041087b
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041087b
 ;   core_baron.cpp_FUN_00410cc0 at 00410f4a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004127ac
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413f2e
-;   core_boneguy.cpp_FUN_00418a00 at 004190ee
-;   core_boneguy.cpp_FUN_004194b0 at 004195dc
-;   core_bride.cpp_FUN_0041fe40 at 0042036f
-;   core_bride.cpp_FUN_00420eb0 at 00420f02
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 at 004195dc
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 004190ee
+;   core_bride.cpp_CBride_getTargetPoint_FUN_00420eb0 at 00420f02
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 0042036f
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422e5e
 ;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 at 0042b8c8
 ;   ... and 42 more

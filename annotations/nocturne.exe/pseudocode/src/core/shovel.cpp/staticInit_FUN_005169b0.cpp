@@ -10,7 +10,8 @@ void __cdecl core_shovel_cpp_staticInit_FUN_005169b0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CShovelActorType_026718d8,"CShovel",core_shovel_cpp_FUN_005169e0,
-             &INT_005be950,1,&g_CWeaponActorType_02ddf970);
+            (&g_CShovelActorType_026718d8,"CShovel",
+             core_shovel_cpp_factoryFunc_FUN_005169e0,&g_INT_005be950,1,&g_CWeaponActorType_02ddf970
+            );
   return;
 }

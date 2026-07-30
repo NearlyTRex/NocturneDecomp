@@ -18,7 +18,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems
   local_10 = 0;
   if (initialize_systems != 0) {
     core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
-    core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_init_FUN_004de860((CMoon *)&DAT_01cc5780);
   }
   iVar4 = 0x1cc7900;
   core_game_cpp_CGame_saveClockTime_FUN_0049a890(0x01C775EC);
@@ -30,8 +30,8 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems
   } while (iVar2 != 0x10);
   do {
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
-    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)0x1cc5780,0x01C775EC->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Graphic options");
     _sprintf(0x1cc7900,pcVar3);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound options");
@@ -66,7 +66,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems
     iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
   } while (iVar2 == 0);
   if (initialize_systems != 0) {
-    core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_free_FUN_004dea60((CMoon *)&DAT_01cc5780);
     core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
     core_inivar_cpp_writeIniData_FUN_004be2d0();
     return;

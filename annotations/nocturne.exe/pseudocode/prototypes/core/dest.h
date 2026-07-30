@@ -7,13 +7,13 @@
 // Address: 0044b740
 void __cdecl staticInit(void);
 
-// Original: core_dest.cpp_FUN_0044b770
+// Original: core_dest.cpp_factoryFunc_FUN_0044b770
 // Address: 0044b770
-void FUN_0044b770(void);
+CActorDestination * __cdecl factoryFunc(void);
 
-// Original: core_dest.cpp_FUN_0044b790
+// Original: core_dest.cpp_CActorDestination_getActorType_FUN_0044b790
 // Address: 0044b790
-CDemonActorType * FUN_0044b790(void);
+CDemonActorType * CActorDestination::getActorType(void);
 
 // Original: core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0
 // Address: 0044b7a0
@@ -43,6 +43,6 @@ int __cdecl CActorDestination::acceptsActor(CActorDestination *this_ptr,CDemonAc
 // Address: 0044bb10
 void __cdecl CActorDestination::archive(CActorDestination *this_ptr);
 
-// Original: core_dest.cpp_FUN_0044bbd0
+// Original: core_dest.cpp_CActorDestination_dtor_FUN_0044bbd0
 // Address: 0044bbd0
-CDemonActor * FUN_0044bbd0(CDemonActor *param_1,byte param_2);
+CDemonActor * CActorDestination::dtor(CDemonActor *param_1,byte param_2);

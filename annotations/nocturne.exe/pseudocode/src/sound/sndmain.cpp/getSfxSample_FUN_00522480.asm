@@ -119,7 +119,7 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90 ; 0052251c
         ;   XREF to: 004e7d90 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00522521
-    PUSH 0x5bea30                       ; 00522524 | DAT_005bea30
+    PUSH 0x5bea30                       ; 00522524 | g_WatcomStaticDestructorNode_005bea30
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 00522529
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0052252e

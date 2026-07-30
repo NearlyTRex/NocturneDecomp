@@ -33,7 +33,7 @@ CSfxSample * sound_sndmain_cpp_FUN_005229f0(int param_1,char *param_2)
     }
     iVar3 = _DAT_02dc1ed8 * 0x168;
     if ((*(int *)(iVar3 + 0x2dc2004) == 0) && (*(int *)(iVar3 + 0x2dc2008) == 0)) {
-      local_14 = (CSfxSample *)(iVar3 + 0x2dc1edc);
+      local_14 = (CSfxSample *)(&DAT_02dc1edc + iVar3);
       goto LAB_00522a32;
     }
     iVar7 = iVar7 + 1;

@@ -25,7 +25,7 @@ int FUN_00521bf0(void);
 
 // Original: sound_sndmain.cpp_FUN_00521c50
 // Address: 00521c50
-int FUN_00521c50(void);
+undefined * FUN_00521c50(void);
 
 // Original: sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0
 // Address: 00521ca0

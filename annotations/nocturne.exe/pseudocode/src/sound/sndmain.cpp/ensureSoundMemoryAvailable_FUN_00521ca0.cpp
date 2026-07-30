@@ -21,7 +21,7 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int reques
   do {
     if (*(int *)(iVar2 + 0x2dc1ffc) != 0) {
       iVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                        ((CSfxSample *)(iVar2 + 0x2dc1edc));
+                        ((CSfxSample *)(&DAT_02dc1edc + iVar2));
       iVar4 = iVar4 + iVar3 * *(int *)(iVar2 + 0x2dc2014);
     }
     iVar2 = iVar2 + 0x168;
@@ -42,9 +42,9 @@ LAB_00521cc3:
       if ((((*(int *)(iVar1 + 0x2dc1ffc) != 0) && (0 < *(int *)(iVar1 + 0x2dc2014))) &&
           (*(int *)(iVar1 + 0x2dc2008) == 0)) && (*(int *)(iVar1 + 0x2dc2004) == 0)) {
         iVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                          ((CSfxSample *)(iVar1 + 0x2dc1edc));
+                          ((CSfxSample *)(&DAT_02dc1edc + iVar1));
         iVar4 = iVar4 - iVar2 * *(int *)(iVar1 + 0x2dc2014);
-        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(iVar1 + 0x2dc1edc));
+        sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(&DAT_02dc1edc + iVar1));
         if (0x3f < iVar3) {
           return 0;
         }

@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CC0000
@@ -23,6 +24,10 @@ extern CDemonActorType g_CMimicActorType_01cc9058;
 extern CDemonActorType g_CMineCarActorType_01cc90e4;
 extern CDemonActorType g_CMobsterActorType_01ccdbd8;
 extern CDemonActorType g_CMolochActorType_01ccdc14;
+
+// CVector3f[32]
+extern CVector3f CVector3f_ARRAY_01cc9124[32];
+extern CVector3f CVector3f_ARRAY_01cc92a8[32];
 
 // int
 extern int INT_01cc4804;

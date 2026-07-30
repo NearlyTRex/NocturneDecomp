@@ -7,13 +7,13 @@
 // Address: 00414d20
 void __cdecl staticInit(void);
 
-// Original: core_battery.cpp_FUN_00414d50
+// Original: core_battery.cpp_factoryFunc_FUN_00414d50
 // Address: 00414d50
-void FUN_00414d50(void);
+CBattery * __cdecl factoryFunc(void);
 
-// Original: core_battery.cpp_FUN_00414d70
+// Original: core_battery.cpp_CBattery_getActorType_FUN_00414d70
 // Address: 00414d70
-CDemonActorType * FUN_00414d70(void);
+CDemonActorType * CBattery::getActorType(void);
 
 // Original: core_battery.cpp_FUN_00414d80
 // Address: 00414d80
@@ -23,9 +23,9 @@ int * FUN_00414d80(CDemonActor *param_1);
 // Address: 00414de0
 void __cdecl CBattery::setup(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00414e10
+// Original: core_battery.cpp_CBattery_canPickup_FUN_00414e10
 // Address: 00414e10
-undefined4 FUN_00414e10(undefined4 param_1,CDemonActor *param_2);
+undefined4 CBattery::canPickup(undefined4 param_1,CDemonActor *param_2);
 
 // Original: core_battery.cpp_CBattery_pickup_FUN_00414e30
 // Address: 00414e30
@@ -39,26 +39,26 @@ void __cdecl CBattery::onDropped(CBattery *this_ptr,CVector3f *drop_position);
 // Address: 00414e50
 CDemonActor * __cdecl CBattery::getCarrier(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_00414e60
+// Original: core_battery.cpp_CBattery_process_FUN_00414e60
 // Address: 00414e60
-void FUN_00414e60(void);
+void CBattery::process(void);
 
-// Original: core_battery.cpp_FUN_00414e70
+// Original: core_battery.cpp_CBattery_renderOpaque_FUN_00414e70
 // Address: 00414e70
-int FUN_00414e70(int param_1);
+int CBattery::renderOpaque(int param_1);
 
 // Original: core_battery.cpp_CBattery_archive_FUN_00414ef0
 // Address: 00414ef0
 void CBattery::archive(CDemonActor *param_1);
 
-// Original: core_battery.cpp_FUN_00414f40
+// Original: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40
 // Address: 00414f40
-undefined4 FUN_00414f40(void);
+undefined4 CBattery::getCollisionType(void);
 
 // Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00414f50
 // Address: 00414f50
 CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_battery.cpp_FUN_00414fa0
+// Original: core_battery.cpp_CBattery_dtor_FUN_00414fa0
 // Address: 00414fa0
-CDemonActor * FUN_00414fa0(CDemonActor *param_1,byte param_2);
+CDemonActor * CBattery::dtor(CDemonActor *param_1,byte param_2);

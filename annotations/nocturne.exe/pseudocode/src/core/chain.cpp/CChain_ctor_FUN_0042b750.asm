@@ -7,7 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_0042b720 at 0042b733
+;   core_chain.cpp_factoryFunc_FUN_0042b720 at 0042b733
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHAINLINK_RAW_0057a55d
@@ -26,7 +26,7 @@
 ;   WatcomTypeInfo g_SChainVertexTypeInfo_0059b320
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EDI                            ; 0042b751
     MOV EDX,dword ptr [ESP + 0xc]       ; 0042b752
     PUSH EDX                            ; 0042b756
-    CALL core_actor.cpp_FUN_00409d30    ; 0042b757
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0042b757
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042b75c
     PUSH 0x59b320                       ; 0042b75f | g_SChainVertexTypeInfo_0059b320
     PUSH 0x14                           ; 0042b764

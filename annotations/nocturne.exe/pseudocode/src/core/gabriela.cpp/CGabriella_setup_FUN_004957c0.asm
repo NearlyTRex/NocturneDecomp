@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00435240
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0
-;   core_hero.cpp_FUN_004b48d0
+;   core_hero.cpp_CHero_setup_FUN_004b48d0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -43,8 +43,8 @@ section .text
     PUSH EDI                            ; 004957c2
     MOV ESI,dword ptr [ESP + 0x10]      ; 004957c3
     PUSH ESI                            ; 004957c7
-    CALL core_hero.cpp_FUN_004b48d0     ; 004957c8
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setup_FUN_004b48d0 ; 004957c8
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004957cd
     PUSH 0x581e62                       ; 004957d0 | = "gabriela.dfm"
     LEA EDI,[ESI + 0x150]               ; 004957d5

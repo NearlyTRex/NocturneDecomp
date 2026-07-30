@@ -7,7 +7,7 @@
 ; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_moloch.cpp_FUN_004dd900 at 004dd913
+;   core_moloch.cpp_factoryFunc_FUN_004dd900 at 004dd913
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_moloch_h_dfm_0058a712

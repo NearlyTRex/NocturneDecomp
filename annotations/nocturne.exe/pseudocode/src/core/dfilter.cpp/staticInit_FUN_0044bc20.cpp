@@ -10,12 +10,12 @@ void __cdecl core_dfilter_cpp_staticInit_FUN_0044bc20(void)
 
 {
   __arrinit(&DAT_014b8a58,8,&g_CDemonFilterTypeInfo_0059ac90);
-  _atexit((WatcomStaticDestructorNode *)0x5ad4dc);
-  __arrinit((void *)0x14b8cb8,4,&g_CDemonFilterTypeInfo_0059ac90);
-  _atexit((WatcomStaticDestructorNode *)0x5ad4ec);
-  core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0((CFilterCache *)0x14b8de8);
-  _atexit((WatcomStaticDestructorNode *)0x5ad4fc);
-  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0((CFilterFx *)0x14b98ec);
-  _atexit((WatcomStaticDestructorNode *)0x5ad50c);
+  _atexit(&g_WatcomStaticDestructorNode_005ad4dc);
+  __arrinit(&DAT_014b8cb8,4,&g_CDemonFilterTypeInfo_0059ac90);
+  _atexit(&g_WatcomStaticDestructorNode_005ad4ec);
+  core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0((CFilterCache *)&DAT_014b8de8);
+  _atexit(&g_WatcomStaticDestructorNode_005ad4fc);
+  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0((CFilterFx *)&DAT_014b98ec);
+  _atexit(&g_WatcomStaticDestructorNode_005ad50c);
   return;
 }

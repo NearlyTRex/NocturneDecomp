@@ -18,7 +18,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(CDemonRa
   iVar1 = 0;
   engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(0x01B4D738,0xff,0xff,0xff);
   if (0 < _DAT_01b7b744) {
-    world_position = (CVector3f *)&DAT_01b8efcc;
+    world_position = CVector3f_ARRAY_01b8efcc;
     iVar2 = 0;
     do {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00

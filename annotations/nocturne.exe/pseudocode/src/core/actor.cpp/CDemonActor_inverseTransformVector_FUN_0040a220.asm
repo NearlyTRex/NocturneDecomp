@@ -18,7 +18,7 @@
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482e5a
 ;   core_fire.cpp_FUN_0048b6f0 at 0048b947
 ;   core_flies.cpp_CFlies_process_FUN_0048f090 at 0048f1a4
-;   core_gabriela.cpp_FUN_00495a20 at 00496141
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496141
 ;   ... and 8 more
 ;
 ; Called Functions:

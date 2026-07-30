@@ -20,7 +20,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore *this_pt
       _DAT_01c78ce8 = 0;
     }
     core_gore_cpp_CBloodParticle_setup_FUN_004ae070
-              ((CBloodParticle *)(iVar1 + 0x1c78cec),position,velocity,blood_type);
+              ((CBloodParticle *)(&DAT_01c78cec + iVar1),position,velocity,blood_type);
   }
   return;
 }

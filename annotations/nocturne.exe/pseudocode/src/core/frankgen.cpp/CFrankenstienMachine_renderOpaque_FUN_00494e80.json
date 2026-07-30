@@ -1,0 +1,437 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 147,
+    "complexity_score": 254,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 19,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "unnamed_param"
+    ],
+    "total_lines": 201
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00494e80",
+    "address_range": [
+      [
+        "00494e80",
+        "00494ff6"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80",
+    "signature": "int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409f60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60"
+    },
+    {
+      "addr": "00409f20",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20"
+    },
+    {
+      "addr": "0041ceb0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0"
+    },
+    {
+      "addr": "004544d0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0"
+    },
+    {
+      "addr": "004950a0",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0"
+    },
+    {
+      "addr": "00495240",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_findLeader_FUN_00495240"
+    },
+    {
+      "addr": "005648c0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005648c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00581d2c",
+      "name": "FLOAT_00581d2c",
+      "type": "float",
+      "value": "-2000"
+    },
+    {
+      "addr": "00581d30",
+      "name": "DOUBLE_00581d30",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "00581d38",
+      "name": "FLOAT_00581d38",
+      "type": "float",
+      "value": "0.005000000"
+    },
+    {
+      "addr": "00581d40",
+      "name": "DOUBLE_00581d40",
+      "type": "double",
+      "value": "200"
+    },
+    {
+      "addr": "00581d48",
+      "name": "FLOAT_00581d48",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "00581d4c",
+      "name": "FLOAT_00581d4c",
+      "type": "float",
+      "value": "200"
+    },
+    {
+      "addr": "00581d50",
+      "name": "FLOAT_00581d50",
+      "type": "float",
+      "value": "99"
+    },
+    {
+      "addr": "00581d54",
+      "name": "FLOAT_00581d54",
+      "type": "float",
+      "value": "-1800"
+    },
+    {
+      "addr": "005baf90",
+      "name": "DAT_005baf90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9454",
+      "name": "DAT_01cc9454",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.060344827586207,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 4,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 206,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 37,
+      "INT_AND": 48,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 20,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 587
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00494e89",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80(CFrankenstienMachine *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = *(float *)(pCVar2[1].actor_name + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_34);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->bed_model,param_1->part_frame,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->body_model).model_name[0] != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = param_1->master_frame;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_38 = param_1->master_frame + -1800.0f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (param_1->master_frame + -2000.0f) * (float)3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->body_model,fStack_38,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
+      "line": 27,
+      "match": "(int)fVar1 < 0x4400c000",
+      "severity": "moderate",
+      "text": "if ((int)fVar1 < 0x4400c000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
+      "line": 30,
+      "match": "(int)fVar1 < 0x44e10000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44e10000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ed8000 is the IEEE 754 bit pattern of 1900f. Rewrite in a .keep as a plain float compare against 1900f.",
+      "line": 33,
+      "match": "(int)fVar1 < 0x44ed8000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44ed8000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44fa0000 is the IEEE 754 bit pattern of 2000f. Rewrite in a .keep as a plain float compare against 2000f.",
+      "line": 36,
+      "match": "(int)fVar1 < 0x44fa0000",
+      "severity": "moderate",
+      "text": "else if ((int)fVar1 < 0x44fa0000) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFrankenstienMachine",
+        "offset": 8,
+        "vtable_addr": "0059db84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

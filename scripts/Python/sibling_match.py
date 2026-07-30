@@ -498,6 +498,44 @@ def index_by(shapes, tier):
 
 
 # --------------------------------------------------------------------------
+# Slot alignment
+# --------------------------------------------------------------------------
+
+def lcs_anchors(seq_a_mapped, seq_b):
+    """Longest common subsequence over anchored slots -> [(i, j), ...].
+
+    `seq_a_mapped[i]` is the target function that source slot `i` is already
+    known to correspond to, or None. Insertions on either side become gaps
+    rather than breaking the alignment, which is the whole point: the actor
+    vtables differ by a contiguous block of 7 editor-only methods, so a
+    same-index comparison mis-aligns everything after the block while an LCS
+    simply reports a gap there.
+
+    Shared by map_vtable_slots.py and map_sibling_functions.py's prop_vtables so
+    the two cannot drift apart on the alignment itself.
+    """
+    n, m = len(seq_a_mapped), len(seq_b)
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
+    for i in range(n - 1, -1, -1):
+        row, nxt = dp[i], dp[i + 1]
+        ai = seq_a_mapped[i]
+        for j in range(m - 1, -1, -1):
+            row[j] = (nxt[j + 1] + 1 if ai and ai == seq_b[j]
+                      else max(nxt[j], row[j + 1]))
+    out, i, j = [], 0, 0
+    while i < n and j < m:
+        if seq_a_mapped[i] and seq_a_mapped[i] == seq_b[j]:
+            out.append((i, j))
+            i += 1
+            j += 1
+        elif dp[i + 1][j] >= dp[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+    return out
+
+
+# --------------------------------------------------------------------------
 # Line pins
 # --------------------------------------------------------------------------
 

@@ -14,7 +14,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 004960e4
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 004960e4
 ;
 ; Referenced Globals:
 ;   float FLOAT_005820f2 = 0.5

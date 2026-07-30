@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   out_blood_type
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040db50 at 0040dbea
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50 at 0040dbea
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005851c8 = 0.5

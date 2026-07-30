@@ -59,8 +59,8 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
   do {
     pcVar9 = local_120;
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(0x01C775EC);
-    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)0x1cc5780,0x01C775EC->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)0x1cc5780);
+    core_moon_cpp_CMoon_update_FUN_004deae0((CMoon *)&DAT_01cc5780,0x01C775EC->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_004dec50((CMoon *)&DAT_01cc5780);
     pCVar3 = 0x01C775EC;
     if ((0 < _DAT_01cc64a8) && (INT_02dc9d60 != 0)) {
       if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&

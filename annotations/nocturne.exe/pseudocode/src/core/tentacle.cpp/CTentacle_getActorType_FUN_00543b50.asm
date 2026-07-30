@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_tentacle_cpp_CTentacle_getActorType_FUN_00543b50(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2dca1e0                   ; 00543b50
+        ;   Label: core_tentacle.cpp_CTentacle_getActorType_FUN_00543b50
+    RET                                 ; 00543b55
+

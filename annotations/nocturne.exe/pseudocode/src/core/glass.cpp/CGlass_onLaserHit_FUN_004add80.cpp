@@ -22,7 +22,7 @@ void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
   uint local_20;
   uint local_1c;
   
-  core_actor_cpp_FUN_0040ab10(param_1,param_2);
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(param_1,param_2);
   if (*(int *)(param_1 + 0x1e0) == 0) {
     *(float *)(param_2 + 0x48) = 1.0 - (float)*(int *)(param_1 + 0x174) * (float)1.5259021896696401e-05;
     return;

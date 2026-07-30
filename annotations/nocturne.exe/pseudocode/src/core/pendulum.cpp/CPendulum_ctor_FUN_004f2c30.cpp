@@ -16,7 +16,7 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(CPendulum *thi
   CKeyFramedModelInstance *pCVar4;
   int *piVar5;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CPendulumVTable;

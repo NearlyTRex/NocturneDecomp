@@ -15,7 +15,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004783c0(CEmitter *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);
   *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &g_CEmitterVTable;

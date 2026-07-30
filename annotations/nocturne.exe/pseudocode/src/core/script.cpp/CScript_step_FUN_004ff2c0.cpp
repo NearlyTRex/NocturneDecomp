@@ -683,7 +683,7 @@ LAB_00500e2e:
                                         _sprintf(local_226c,"[Can't find %s in database]",
                                                    local_570);
                                         shape_edittool_cpp_CStrList_add_FUN_00473cb0
-                                                  ((CStrList *)0x1e56c30,local_226c);
+                                                  ((CStrList *)&DAT_01e56c30,local_226c);
                                       }
                                       else {
                                         pSVar4 = this_ptr->dialog_entries;
@@ -743,7 +743,7 @@ LAB_00500e2e:
                                           _sprintf(local_2654,"[Can't find %s in database]",
                                                      local_444);
                                           shape_edittool_cpp_CStrList_add_FUN_00473cb0
-                                                    ((CStrList *)0x1e56c30,local_2654);
+                                                    ((CStrList *)&DAT_01e56c30,local_2654);
                                         }
                                         else {
                                           pSVar4 = this_ptr->dialog_entries;
@@ -1130,7 +1130,7 @@ LAB_00501802:
                                                     core_game_cpp_CGame_beginFadeIn_FUN_004a37e0
                                                               (0x01C775EC);
                                                     (this_ptr->script_text).vtable =
-                                                         (CStrList_vtable *)0x3f800000;
+                                                         (UStrListVTable)0x3f800000;
                                                   }
                                                   }
                                                   }
@@ -1161,7 +1161,7 @@ LAB_00501802:
                                                     core_game_cpp_CGame_beginFadeOut_FUN_004a3820
                                                               (pCVar5);
                                                     (this_ptr->script_text).vtable =
-                                                         (CStrList_vtable *)0x3f800000;
+                                                         (UStrListVTable)0x3f800000;
                                                   }
                                                   }
                                                   }
@@ -1830,7 +1830,7 @@ joined_r0x00500ad6:
                                                       (*(((pCVar15->base).vtable._uc)->_uc).
                                                         setDoorTarget)(pCVar15,door_target);
                                                       (this_ptr->script_text).vtable =
-                                                           (CStrList_vtable *)0x3f800000;
+                                                           (UStrListVTable)0x3f800000;
                                                     }
                                                   }
                                                   }
@@ -3277,7 +3277,7 @@ LAB_004ff384:
   if (local_120 == 1.4013e-45) {
     this_ptr->next_cmd = -0x40800000;
     uVar17 = _DAT_01e56418;
-    (this_ptr->script_text).vtable = (CStrList_vtable *)0xbf800000;
+    (this_ptr->script_text).vtable._us = (CStrList_vtable *)0xbf800000;
     if ((uVar17 == 0) && (this_ptr->xref_count <= (int)(this_ptr->script_text).data_array)) {
       _sprintf(&DAT_01e56420,"Overrun past the end of the script.");
       return -1;

@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_hostage.cpp_FUN_004b6d80 at 004b7697
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b7697
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00585caa = 1.5

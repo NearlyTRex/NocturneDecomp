@@ -48,9 +48,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_litecone.cpp_FUN_004c8200 at 004c8278
-;   core_vehicle.cpp_FUN_0054f510 at 0054f717
-;   core_zombie.cpp_FUN_00561940 at 00561a69
+;   core_litecone.cpp_CLightCone_renderTransparent_FUN_004c8200 at 004c8278
+;   core_vehicle.cpp_CVehicle_renderOpaque_FUN_0054f510 at 0054f717
+;   core_zombie.cpp_CZombie_renderTransparent_FUN_00561940 at 00561a69
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c916 = 0.125

@@ -242,7 +242,7 @@ LAB_00458f79:
       }
       if (pCVar16 == 0x01E57284->characters[0x6d6]) {
         _sprintf(local_430,"bride-%d?.wav",param_1->freaky_voice_number);
-        core_dracbrid_cpp_FUN_0045ab40(param_1,local_430,1.0);
+        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_430,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(param_1->base).base.model.motion_controller,0x17,1);
         (*((param_1->base).base.base.vtable._ub)->playSound)
@@ -345,10 +345,10 @@ LAB_00458f79:
   case 9:
     if (param_1->freaky_timer <= 0.0) {
       _sprintf(local_3cc,"bride-%d?.wav",param_1->freaky_voice_number);
-      core_dracbrid_cpp_FUN_0045ab40(param_1,local_3cc,1.0);
+      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_3cc,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0045ab40(param_1,local_3cc,1.0);
+        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_3cc,1.0);
       }
     }
     (*(((param_1->base).base.base.vtable._ue)->_ue).updateVictim)(&param_1->base,param_2);
@@ -434,10 +434,10 @@ LAB_00459978:
   case 0xe:
     if (param_1->freaky_timer <= 0.0) {
       _sprintf(local_368,"bride-%d?.wav",param_1->freaky_voice_number);
-      core_dracbrid_cpp_FUN_0045ab40(param_1,local_368,1.0);
+      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_368,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0045ab40(param_1,local_368,1.0);
+        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_368,1.0);
       }
     }
     (*(((param_1->base).base.base.vtable._ue)->_ue).updateVictim)(&param_1->base,param_2);
@@ -576,10 +576,10 @@ LAB_00459978:
   case 0x17:
     if (param_1->freaky_timer <= 0.0) {
       _sprintf(local_494,"bride-%d?.wav",param_1->freaky_voice_number);
-      core_dracbrid_cpp_FUN_0045ab40(param_1,local_494,1.0);
+      core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_494,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_FUN_0045ab40(param_1,local_494,1.0);
+        core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(param_1,local_494,1.0);
       }
     }
     switch(param_1->mist_state) {

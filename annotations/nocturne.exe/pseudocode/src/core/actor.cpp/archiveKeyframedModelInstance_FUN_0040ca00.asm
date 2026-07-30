@@ -11,15 +11,15 @@
 ; undefined1       Stack[-0xcf]:1  local_cf
 ;
 ; XREF[29]:
-;   core_ammo.cpp_FUN_0040ecf0 at 0040ed0a
-;   core_ammobox.cpp_FUN_0040f390 at 0040f3aa
+;   core_ammo.cpp_CAmmo_archive_FUN_0040ecf0 at 0040ed0a
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390 at 0040f3aa
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7ea
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 0041005a
 ;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411bce
 ;   core_battery.cpp_CBattery_archive_FUN_00414ef0 at 00414f0a
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ec84
 ;   core_bugs.cpp_CBugs_archive_FUN_00421880 at 00421909
-;   core_crate.cpp_FUN_0043cc50 at 0043cc6a
+;   core_crate.cpp_CCrate_archive_FUN_0043cc50 at 0043cc6a
 ;   core_door.cpp_CDoor_archive_FUN_00455ee0 at 00455efb
 ;   ... and 19 more
 ;

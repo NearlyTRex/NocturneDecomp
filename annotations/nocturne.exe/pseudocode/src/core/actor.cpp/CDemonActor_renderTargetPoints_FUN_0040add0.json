@@ -1,0 +1,516 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 26,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 26,
+        "line": 26,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 31,
+        "message": "use of undeclared identifier 'DAT_01bff320'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 32,
+        "message": "use of undeclared identifier '_DAT_005992b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_005992b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 44,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_005992b0'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 36,
+        "message": "indirection requires pointer operand ('int' invalid)"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 37,
+        "message": "indirection requires pointer operand ('int' invalid)"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_01c00c70'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 280,
+    "complexity_score": 340,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 80,
+    "suspect_count": 24,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 360
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040add0",
+    "address_range": [
+      [
+        "0040add0",
+        "0040b08e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0",
+    "signature": "void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    },
+    {
+      "addr": "00401530",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixel_FUN_00401530"
+    },
+    {
+      "addr": "0053075c",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005992b0",
+      "name": "DAT_005992b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005993b0",
+      "name": "g_CVectorTypeInfo_005993b0",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005ae700",
+      "name": "DAT_005ae700",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b761c",
+      "name": "DAT_005b761c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "DAT_005b7620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bff320",
+      "name": "DAT_01bff320",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c70",
+      "name": "DAT_01c00c70",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.06,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 9,
+      "CALL": 11,
+      "CALLIND": 1,
+      "CBRANCH": 39,
+      "COPY": 195,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 54,
+      "INT_AND": 166,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 136,
+      "INT_LESS": 20,
+      "INT_NOTEQUAL": 34,
+      "INT_OR": 8,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 62,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 63,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 62,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 46,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 1012
+  },
+  "stack_frame": {
+    "frame_size": 160,
+    "local_size": 160,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040ae12",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 19,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_01bff320",
+      "severity": "mild",
+      "text": "uStack_14 = (uint)DAT_01bff320;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < DAT_005b761c)) && (iVar5 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < DAT_005b761c)) && (iVar5 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005b761c && (iVar5 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005b761c && (iVar5 < DAT_005b7620)))) {",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBassPlayer",
+        "offset": 80,
+        "vtable_addr": "005a2c04"
+      },
+      {
+        "class_name": "CTentacle",
+        "offset": 80,
+        "vtable_addr": "005a3104"
+      },
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 80,
+        "vtable_addr": "00599c14"
+      },
+      {
+        "class_name": "CBeast",
+        "offset": 80,
+        "vtable_addr": "0059a414"
+      },
+      {
+        "class_name": "CDraculaBride",
+        "offset": 80,
+        "vtable_addr": "0059c414"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 113
+  }
+}

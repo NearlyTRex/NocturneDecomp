@@ -7,7 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9400 at 004c9413
+;   core_manpuz.cpp_factoryFunc_FUN_004c9400 at 004c9413
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_doorpuzz_kfm_00587ef3
@@ -23,7 +23,7 @@
 ;   WatcomTypeInfo g_SReflectorTypeInfo_005a0250
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;   core_manpuz.cpp_FUN_004ca410
@@ -39,8 +39,8 @@ section .text
     PUSH EDI                            ; 004c9435
     PUSH ESI                            ; 004c9436
     PUSH EBX                            ; 004c9437
-    CALL core_actor.cpp_FUN_00409d30    ; 004c9438
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 004c9438
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c943d
     ADD EAX,0x150                       ; 004c9440
     PUSH EAX                            ; 004c9445

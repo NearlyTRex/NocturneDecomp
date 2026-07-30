@@ -9,7 +9,7 @@
 ;
 ; XREF[19]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd56
-;   core_chain.cpp_FUN_0042c4c0 at 0042c55b
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c55b
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437de5
 ;   core_curtain.cpp_FUN_0043f330 at 0043f440
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b03b

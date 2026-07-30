@@ -20,7 +20,7 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect *
     _DAT_01c58df8 = 0;
   }
   (*(code *)**(uint **)(&DAT_01c58e30 + iVar2))
-            ((CVector3f *)(iVar2 + 0x1c58dfc),position,velocity);
+            ((CVector3f *)(&DAT_01c58dfc + iVar2),position,velocity);
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0xc000,0xffff);
   *(int *)(iVar2 + 0x1c58e34) = iVar1;
   if (lighting_active == 0) {
@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect *
   *(uint *)(iVar2 + 0x1c58e3c) = 0;
   *(uint *)(iVar2 + 0x1c58e54) = sfx_handle;
   sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0
-            (sfx_handle,(CVector3f *)(iVar2 + 0x1c58dfc));
+            (sfx_handle,(CVector3f *)(&DAT_01c58dfc + iVar2));
   sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_00526ff0
             (*(uint *)(iVar2 + 0x1c58e54),(CVector3f *)(iVar2 + 0x1c58e08));
   return;

@@ -64,7 +64,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_004d49f0 at 004d4a72
+;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4a72
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gh_alrt_1_4_wav_00589414

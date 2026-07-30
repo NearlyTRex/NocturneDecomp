@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425ca5
-;   core_succubus.cpp_FUN_00541640 at 005416d0
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 at 005416d0
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0

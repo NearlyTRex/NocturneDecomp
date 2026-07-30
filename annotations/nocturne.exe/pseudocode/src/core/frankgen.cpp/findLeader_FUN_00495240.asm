@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 at 00494967
-;   core_frankgen.cpp_FUN_00494e80 at 00494e9a
+;   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_00494e80 at 00494e9a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581d72

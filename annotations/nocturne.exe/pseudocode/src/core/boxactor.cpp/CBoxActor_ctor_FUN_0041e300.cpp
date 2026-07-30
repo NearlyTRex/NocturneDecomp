@@ -13,7 +13,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor *thi
   CKeyFramedModelInstance *pCVar2;
   CBox *pCVar3;
   
-  pCVar1 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar1 + 1));
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar2[1].model_name + 0x48));

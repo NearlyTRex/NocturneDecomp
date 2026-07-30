@@ -13,8 +13,8 @@ CScript * __cdecl core_script_cpp_FUN_004fe490(CScript *this_ptr)
   
   pCVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60((CStrList *)&this_ptr->parsed_line_count);
   pCVar1[-1].data_array = (char **)0x0;
-  pCVar1[-1].vtable = (CStrList_vtable *)0x0;
-  pCVar1[-2].vtable = (CStrList_vtable *)0x0;
+  pCVar1[-1].vtable._us = (CStrList_vtable *)0x0;
+  pCVar1[-2].vtable._us = (CStrList_vtable *)0x0;
   pCVar1[-1].item_count = 0;
   pCVar1[-1].capacity = 0;
   return (CScript *)(pCVar1 + -3);

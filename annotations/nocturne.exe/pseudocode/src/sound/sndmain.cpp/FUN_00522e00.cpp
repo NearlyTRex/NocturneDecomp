@@ -31,7 +31,8 @@ int sound_sndmain_cpp_FUN_00522e00(uint param_1,uint param_2,uint param_3,uint p
         iVar2 = iVar1 * 0x168;
         if (((*(int *)(iVar2 + 0x2dc2008) == 0) && (*(int *)(iVar2 + 0x2dc200c) != 0)) &&
            (*(int *)(iVar2 + 0x2dc2004) == 0)) {
-          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60((CSfxSample *)(iVar2 + 0x2dc1edc));
+          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60
+                    ((CSfxSample *)(&DAT_02dc1edc + iVar2));
           break;
         }
         iVar3 = iVar3 + 1;

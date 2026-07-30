@@ -20,7 +20,7 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveMotionState_FUN_0040cb00
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
-;   core_npc.cpp_FUN_004eed10
+;   core_npc.cpp_CNPC_archive_FUN_004eed10
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ESI                            ; 004efb31
     MOV EBX,dword ptr [ESP + 0xc]       ; 004efb32
     PUSH EBX                            ; 004efb36
-    CALL core_npc.cpp_FUN_004eed10      ; 004efb37
-        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eed10(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_archive_FUN_004eed10 ; 004efb37
+        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_archive_FUN_004eed10(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004efb3c
     PUSH 0x58cc10                       ; 004efb3f | = "transformEvent"
     LEA ESI,[EBX + 0x1f570]             ; 004efb44

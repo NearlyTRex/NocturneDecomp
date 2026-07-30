@@ -31,7 +31,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_004d49f0 at 004d4b04
+;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4b04
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0e8

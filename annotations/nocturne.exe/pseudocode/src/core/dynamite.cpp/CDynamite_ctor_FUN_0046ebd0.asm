@@ -7,7 +7,7 @@
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dynamite.cpp_FUN_0046eba0 at 0046ebb3
+;   core_dynamite.cpp_factoryFunc_FUN_0046eba0 at 0046ebb3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_0057e4d0

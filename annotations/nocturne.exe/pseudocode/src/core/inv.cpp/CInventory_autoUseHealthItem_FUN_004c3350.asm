@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_0053e860 at 0053e937
+;   core_stranger.cpp_CStranger_processDamage_FUN_0053e860 at 0053e937
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Auto_use_selected_health_0058752f

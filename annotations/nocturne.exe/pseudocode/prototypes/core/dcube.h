@@ -81,7 +81,7 @@ uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *c
 
 // Original: core_dcube.cpp_FUN_0044a150
 // Address: 0044a150
-undefined4 FUN_0044a150(undefined4 *param_1,float *param_2,float *param_3);
+undefined4 FUN_0044a150(int *param_1,float *param_2,float *param_3);
 
 // Original: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60
 // Address: 0044ab60

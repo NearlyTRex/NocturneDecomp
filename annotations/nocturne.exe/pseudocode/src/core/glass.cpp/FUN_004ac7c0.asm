@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[2]:
-;   core_glass.cpp_FUN_004ac9b0 at 004acb4a
+;   core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0 at 004acb4a
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507e21
 ;
 ; Referenced Globals:

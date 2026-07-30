@@ -13,8 +13,8 @@ void core_simbox_cpp_CSimBox_archive_FUN_00517010(CDemonActor *param_1)
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00
             ((CKeyFramedModelInstance *)(param_1 + 1),"modelName");
   core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].orient,"weight");
-  if (INT_005be964 < 2) {
-    if (INT_005be964 < 3) {
+  if (g_INT_005be964 < 2) {
+    if (g_INT_005be964 < 3) {
       return;
     }
   }
@@ -25,7 +25,7 @@ void core_simbox_cpp_CSimBox_archive_FUN_00517010(CDemonActor *param_1)
               ((CVector3f *)(param_1[2].create_event + 0x2c),"initRotVel");
     core_actor_cpp_archiveString_FUN_0040c6d0
               ((char *)((int)&param_1[2].orient + 4),"triggerEvent");
-    if (INT_005be964 < 3) {
+    if (g_INT_005be964 < 3) {
       return;
     }
   }

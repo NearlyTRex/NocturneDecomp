@@ -20,9 +20,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
   int iVar7;
   ulonglong uVar8;
   uint uVar9;
-  float *pfVar10;
+  CVector3f *pCVar10;
   int iVar11;
-  float local_20 [6];
+  CVector3f local_20 [2];
   
   _DAT_01b7b748 = 0;
   if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {
@@ -34,7 +34,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
     }
     iVar11 = 0;
     if (0 < _DAT_01b7b744) {
-      pfVar10 = (float *)&DAT_01b8efcc;
+      pCVar10 = CVector3f_ARRAY_01b8efcc;
       do {
         iVar5 = *visible_cube_indices;
         *(CDemonCube **)(iVar11 * 4 + 0x1b7b74c) = this_ptr->cube_data + iVar5;
@@ -46,15 +46,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *
         fVar2 = (this_ptr->bbox_min).y;
         fVar3 = (this_ptr->cell_size).z;
         fVar4 = (this_ptr->bbox_min).z;
-        if (pfVar10 != local_20) {
-          *pfVar10 = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) /
-                                 (longlong)(this_ptr->grid_coord).y) * (this_ptr->cell_size).x +
-                     (this_ptr->bbox_min).x;
-          pfVar10[1] = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) %
+        if (pCVar10 != local_20) {
+          pCVar10->x = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) /
+                                   (longlong)(this_ptr->grid_coord).y) * (this_ptr->cell_size).x +
+                       (this_ptr->bbox_min).x;
+          pCVar10->y = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) %
                                    (longlong)iVar7) * fVar1 + fVar2;
-          pfVar10[2] = (float)(iVar5 % iVar6) * fVar3 + fVar4;
+          pCVar10->z = (float)(iVar5 % iVar6) * fVar3 + fVar4;
         }
-        pfVar10 = pfVar10 + 3;
+        pCVar10 = pCVar10 + 1;
         iVar11 = iVar11 + 1;
         visible_cube_indices = visible_cube_indices + 1;
       } while (iVar11 < _DAT_01b7b744);

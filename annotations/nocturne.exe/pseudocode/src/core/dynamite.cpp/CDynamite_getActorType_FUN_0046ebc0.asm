@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_dynamite_cpp_CDynamite_getActorType_FUN_0046ebc0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1bca088                   ; 0046ebc0
+        ;   Label: core_dynamite.cpp_CDynamite_getActorType_FUN_0046ebc0
+    RET                                 ; 0046ebc5
+

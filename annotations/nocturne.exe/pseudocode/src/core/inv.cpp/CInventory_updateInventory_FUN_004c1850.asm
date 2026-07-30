@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[3]:
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba22f
-;   core_scat.cpp_FUN_004fbf20 at 004fc13f
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba22f
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc13f
 ;   core_stranger.cpp_FUN_00535900 at 005364ac
 ;
 ; Referenced Globals:

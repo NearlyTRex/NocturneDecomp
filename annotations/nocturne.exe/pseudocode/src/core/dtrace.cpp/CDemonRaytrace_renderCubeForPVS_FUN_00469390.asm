@@ -527,11 +527,11 @@ section .text
     JZ 0x004699d3                       ; 004699b4
         ;   XREF to: 004699d3 (CONDITIONAL_JUMP)  ; LAB_004699d3
     MOV EAX,dword ptr [ESP + 0x88]      ; 004699b6
-    MOV dword ptr [ESI],EAX             ; 004699bd | DAT_01b8efcc
+    MOV dword ptr [ESI],EAX             ; 004699bd | CVector3f_ARRAY_01b8efcc
     MOV EAX,dword ptr [ESP + 0x8c]      ; 004699bf
-    MOV dword ptr [ESI + 0x4],EAX       ; 004699c6 | DAT_01b8efd0
+    MOV dword ptr [ESI + 0x4],EAX       ; 004699c6 | CVector3f_ARRAY_01b8efcc[0].y
     MOV EAX,dword ptr [ESP + 0x90]      ; 004699c9
-    MOV dword ptr [ESI + 0x8],EAX       ; 004699d0 | DAT_01b8efd4
+    MOV dword ptr [ESI + 0x8],EAX       ; 004699d0 | CVector3f_ARRAY_01b8efcc[0].z
     MOV ECX,dword ptr [0x01b7b744]      ; 004699d3 | DAT_01b7b744
         ;   Label: LAB_004699d3
     INC ECX                             ; 004699d9

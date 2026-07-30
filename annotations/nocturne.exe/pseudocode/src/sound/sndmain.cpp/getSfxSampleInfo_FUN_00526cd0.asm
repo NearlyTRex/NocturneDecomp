@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e3e
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d3ed
-;   core_tommygun.cpp_FUN_005464a0 at 00546648
+;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 00546648
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0

@@ -9,7 +9,7 @@
 ; undefined        Stack[-0xec]:1  local_ec
 ;
 ; XREF[1]:
-;   core_spike.cpp_FUN_00533210 at 00533517
+;   core_spike.cpp_CSpike_process_FUN_00533210 at 00533517
 ;
 ; Referenced Globals:
 ;   float FLOAT_005950ee = -0.1000000

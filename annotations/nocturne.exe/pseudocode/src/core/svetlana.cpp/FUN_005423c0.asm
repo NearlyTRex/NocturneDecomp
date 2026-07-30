@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_svetlana.cpp_FUN_00541d00 at 005420b4
+;   core_svetlana.cpp_CSvetlana_process_FUN_00541d00 at 005420b4
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005963c1 = 6

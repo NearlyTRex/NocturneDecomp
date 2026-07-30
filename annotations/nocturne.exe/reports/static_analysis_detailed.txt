@@ -40,7 +40,7 @@ bugprone-integer-division (6)
 cert-flp30-c (5)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_FUN_0040b300                        line 99
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 99
     File: core/actor.cpp
     loop induction expression should not have floating-point type
 
@@ -428,7 +428,7 @@ uninitvar (756)
     File: cockpit/pkbmpset.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_actor.cpp_FUN_0040b300                        line 82
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 82
     File: core/actor.cpp
     Uninitialized variable: fStack_b8
 
@@ -528,6 +528,30 @@ uninitvar (756)
     File: core/boneguy.cpp
     Uninitialized variable: local_48
 
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 53
+    File: core/boneguy.cpp
+    Uninitialized variable: local_84
+
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 54
+    File: core/boneguy.cpp
+    Uninitialized variable: local_8c
+
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 54
+    File: core/boneguy.cpp
+    Uninitialized variable: local_80
+
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 55
+    File: core/boneguy.cpp
+    Uninitialized variable: local_88
+
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 55
+    File: core/boneguy.cpp
+    Uninitialized variable: local_7c
+
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 92
+    File: core/boneguy.cpp
+    Uninitialized variable: unaff_ESI
+
   core_boneguy.cpp_FUN_00418180                      line 23
     File: core/boneguy.cpp
     Uninitialized variable: fStack_24
@@ -547,30 +571,6 @@ uninitvar (756)
   core_boneguy.cpp_FUN_004182cd                      line 66
     File: core/boneguy.cpp
     Uninitialized variable: unaff_retaddr
-
-  core_boneguy.cpp_FUN_004194b0                      line 53
-    File: core/boneguy.cpp
-    Uninitialized variable: local_84
-
-  core_boneguy.cpp_FUN_004194b0                      line 54
-    File: core/boneguy.cpp
-    Uninitialized variable: local_8c
-
-  core_boneguy.cpp_FUN_004194b0                      line 54
-    File: core/boneguy.cpp
-    Uninitialized variable: local_80
-
-  core_boneguy.cpp_FUN_004194b0                      line 55
-    File: core/boneguy.cpp
-    Uninitialized variable: local_88
-
-  core_boneguy.cpp_FUN_004194b0                      line 55
-    File: core/boneguy.cpp
-    Uninitialized variable: local_7c
-
-  core_boneguy.cpp_FUN_004194b0                      line 92
-    File: core/boneguy.cpp
-    Uninitialized variable: unaff_ESI
 
   core_boneguy.cpp_hsvToRgb_FUN_00418480             line 29
     File: core/boneguy.cpp
@@ -648,6 +648,10 @@ uninitvar (756)
     File: core/charactr.cpp
     Uninitialized variable: local_18
 
+  core_charactr.cpp_CCharacter_getCarryObjToBodyXFor line 24
+    File: core/charactr.cpp
+    Uninitialized variable: unaff_ESI
+
   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0 line 95
     File: core/charactr.cpp
     Uninitialized variable: local_78
@@ -667,10 +671,6 @@ uninitvar (756)
   core_charactr.cpp_FUN_00424780                     line 20
     File: core/charactr.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_charactr.cpp_FUN_00429490                     line 24
-    File: core/charactr.cpp
-    Uninitialized variable: unaff_ESI
 
   core_charactr.cpp_FUN_0042b570                     line 19
     File: core/charactr.cpp
@@ -776,7 +776,7 @@ uninitvar (756)
     File: core/cloth.cpp
     Uninitialized variable: local_7c
 
-  core_conveyor.cpp_FUN_0043b110                     line 37
+  core_conveyor.cpp_CConveyor_setup_FUN_0043b110     line 37
     File: core/conveyor.cpp
     Uninitialized variable: local_1c
 
@@ -787,6 +787,42 @@ uninitvar (756)
   core_course.cpp_FUN_0043b500                       line 17
     File: core/course.cpp
     Uninitialized variable: in_stack_00000008
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 58
+    File: core/curtain.cpp
+    Uninitialized variable: iStack_7c
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 70
+    File: core/curtain.cpp
+    Uninitialized variable: local_30
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 71
+    File: core/curtain.cpp
+    Uninitialized variable: local_20
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 71
+    File: core/curtain.cpp
+    Uninitialized variable: local_70
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 72
+    File: core/curtain.cpp
+    Uninitialized variable: unaff_EBP
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 76
+    File: core/curtain.cpp
+    Uninitialized variable: local_2c
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 93
+    File: core/curtain.cpp
+    Uninitialized variable: local_40
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 96
+    File: core/curtain.cpp
+    Uninitialized variable: local_44
+
+  core_curtain.cpp_CCurtain_setup_FUN_0043dad0       line 121
+    File: core/curtain.cpp
+    Uninitialized variable: local_14
 
   core_curtain.cpp_CCurtain_solveConstraints_FUN_004 line 155
     File: core/curtain.cpp
@@ -799,42 +835,6 @@ uninitvar (756)
   core_curtain.cpp_CCurtain_solveConstraints_FUN_004 line 155
     File: core/curtain.cpp
     Uninitialized variable: local_dc
-
-  core_curtain.cpp_FUN_0043dad0                      line 58
-    File: core/curtain.cpp
-    Uninitialized variable: iStack_7c
-
-  core_curtain.cpp_FUN_0043dad0                      line 70
-    File: core/curtain.cpp
-    Uninitialized variable: local_30
-
-  core_curtain.cpp_FUN_0043dad0                      line 71
-    File: core/curtain.cpp
-    Uninitialized variable: local_20
-
-  core_curtain.cpp_FUN_0043dad0                      line 71
-    File: core/curtain.cpp
-    Uninitialized variable: local_70
-
-  core_curtain.cpp_FUN_0043dad0                      line 72
-    File: core/curtain.cpp
-    Uninitialized variable: unaff_EBP
-
-  core_curtain.cpp_FUN_0043dad0                      line 76
-    File: core/curtain.cpp
-    Uninitialized variable: local_2c
-
-  core_curtain.cpp_FUN_0043dad0                      line 93
-    File: core/curtain.cpp
-    Uninitialized variable: local_40
-
-  core_curtain.cpp_FUN_0043dad0                      line 96
-    File: core/curtain.cpp
-    Uninitialized variable: local_44
-
-  core_curtain.cpp_FUN_0043dad0                      line 121
-    File: core/curtain.cpp
-    Uninitialized variable: local_14
 
   core_dcamera.cpp_CDemonCamera_computeLightExtentBo line 44
     File: core/dcamera.cpp
@@ -1616,15 +1616,15 @@ uninitvar (756)
     File: core/fire.cpp
     Uninitialized variable: in_EAX
 
-  core_flame.cpp_FUN_0048d5d0                        line 75
+  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 75
     File: core/flame.cpp
     Uninitialized variable: iStack_30
 
-  core_flies.cpp_FUN_0048f490                        line 109
+  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 109
     File: core/flies.cpp
     Uninitialized variable: fStack_40
 
-  core_flies.cpp_FUN_0048f490                        line 110
+  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 110
     File: core/flies.cpp
     Uninitialized variable: fStack_3c
 
@@ -1684,11 +1684,11 @@ uninitvar (756)
     File: core/game.cpp
     Uninitialized variable: local_74
 
-  core_ghoul.cpp_FUN_004a9270                        line 167
+  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 167
     File: core/ghoul.cpp
     Uninitialized variable: local_1c0
 
-  core_ghoul.cpp_FUN_004a9270                        line 170
+  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 170
     File: core/ghoul.cpp
     Uninitialized variable: local_1c4
 
@@ -1732,7 +1732,7 @@ uninitvar (756)
     File: core/ground.cpp
     Uninitialized variable: *pcVar6
 
-  core_hostage.cpp_FUN_004b8700                      line 117
+  core_hostage.cpp_CHostage_getCarryObjToBodyXForm_F line 117
     File: core/hostage.cpp
     Uninitialized variable: unaff_ESI
 
@@ -1740,13 +1740,13 @@ uninitvar (756)
     File: core/icepick.cpp
     Uninitialized variable: unaff_ESI
 
+  core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc line 67
+    File: core/imp.cpp
+    Uninitialized variable: unaff_ESI
+
   core_imp.cpp_FUN_004bc7c0                          line 19
     File: core/imp.cpp
     Uninitialized variable: in_stack_00000004
-
-  core_imp.cpp_FUN_004bc7e0                          line 67
-    File: core/imp.cpp
-    Uninitialized variable: unaff_ESI
 
   core_inv.cpp_CInventory_load_FUN_004c1190          line 102
     File: core/inv.cpp
@@ -1880,6 +1880,10 @@ uninitvar (756)
     File: core/mobster.cpp
     Uninitialized variable: local_70
 
+  core_mobster.cpp_CMobster_getCarryObjToBodyXForm_F line 95
+    File: core/mobster.cpp
+    Uninitialized variable: unaff_ESI
+
   core_mobster.cpp_FUN_004da000                      line 24
     File: core/mobster.cpp
     Uninitialized variable: in_stack_00000008
@@ -1911,10 +1915,6 @@ uninitvar (756)
   core_mobster.cpp_FUN_004dba50                      line 19
     File: core/mobster.cpp
     Uninitialized variable: in_stack_00000004
-
-  core_mobster.cpp_FUN_004dba70                      line 95
-    File: core/mobster.cpp
-    Uninitialized variable: unaff_ESI
 
   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_ line 43
     File: core/moon.cpp
@@ -1972,7 +1972,7 @@ uninitvar (756)
     File: core/path.cpp
     Uninitialized variable: local_1c
 
-  core_path.cpp_getOrCreatePathMap_FUN_004f1c90      line 43
+  core_path.cpp_getOrCreatePathMap_FUN_004f1c90      line 42
     File: core/path.cpp
     Uninitialized variable: local_34
 
@@ -2036,7 +2036,7 @@ uninitvar (756)
     File: core/set.cpp
     Uninitialized variable: local_158
 
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 line 450
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 line 451
     File: core/set.cpp
     Uninitialized variable: local_104
 
@@ -2268,11 +2268,11 @@ uninitvar (756)
     File: core/sound.cpp
     Uninitialized variable: local_dc
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 154
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 155
     File: core/sound.cpp
     Uninitialized variable: local_54
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 160
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 161
     File: core/sound.cpp
     Uninitialized variable: local_88
 
@@ -2287,6 +2287,10 @@ uninitvar (756)
   core_stranger.cpp_CStranger_applyArmAimRotation_FU line 183
     File: core/stranger.cpp
     Uninitialized variable: local_7c
+
+  core_stranger.cpp_CStranger_getCarryObjToBodyXForm line 23
+    File: core/stranger.cpp
+    Uninitialized variable: unaff_ESI
 
   core_stranger.cpp_CStranger_processMotionEvents_FU line 207
     File: core/stranger.cpp
@@ -2319,10 +2323,6 @@ uninitvar (756)
   core_stranger.cpp_FUN_005396d0                     line 45
     File: core/stranger.cpp
     Uninitialized variable: local_2c
-
-  core_stranger.cpp_FUN_0053f210                     line 23
-    File: core/stranger.cpp
-    Uninitialized variable: unaff_ESI
 
   core_stranger.cpp_FUN_0053f310                     line 61
     File: core/stranger.cpp
@@ -2372,17 +2372,21 @@ uninitvar (756)
     File: core/stranger.cpp
     Uninitialized variable: local_24
 
+  core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXFo line 47
+    File: core/tbplayer.cpp
+    Uninitialized variable: unaff_ESI
+
   core_tbplayer.cpp_FUN_005431f0                     line 19
     File: core/tbplayer.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_tbplayer.cpp_FUN_00543210                     line 47
-    File: core/tbplayer.cpp
-    Uninitialized variable: unaff_ESI
-
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_ line 48
     File: core/tentacle.cpp
     Uninitialized variable: unaff_ESI
+
+  core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd line 72
+    File: core/turret.cpp
+    Uninitialized variable: *pfVar2
 
   core_turret.cpp_CTurret_updatePatrol_FUN_0054a920  line 44
     File: core/turret.cpp
@@ -2416,10 +2420,6 @@ uninitvar (756)
     File: core/turret.cpp
     Uninitialized variable: fStack_b8
 
-  core_turret.cpp_FUN_00549cd0                       line 72
-    File: core/turret.cpp
-    Uninitialized variable: *pfVar2
-
   core_tvbat.cpp_CTVBat_process_FUN_0054b460         line 145
     File: core/tvbat.cpp
     Uninitialized variable: local_80
@@ -2436,13 +2436,13 @@ uninitvar (756)
     File: core/tvbat.cpp
     Uninitialized variable: local_54
 
+  core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXF line 45
+    File: core/vampboss.cpp
+    Uninitialized variable: unaff_ESI
+
   core_vampboss.cpp_FUN_0054c5f0                     line 20
     File: core/vampboss.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_vampboss.cpp_FUN_0054d8a0                     line 45
-    File: core/vampboss.cpp
-    Uninitialized variable: unaff_ESI
 
   core_vecdir.cpp_convertDirectionVectorToEulerAngle line 32
     File: core/vecdir.cpp
@@ -2596,27 +2596,27 @@ uninitvar (756)
     File: core/xform.cpp
     Uninitialized variable: unaff_ESI
 
-  core_zombie.cpp_FUN_00560cd0                       line 94
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 94
     File: core/zombie.cpp
     Uninitialized variable: local_d0
 
-  core_zombie.cpp_FUN_00560cd0                       line 95
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 95
     File: core/zombie.cpp
     Uninitialized variable: local_d8
 
-  core_zombie.cpp_FUN_00560cd0                       line 95
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 95
     File: core/zombie.cpp
     Uninitialized variable: local_cc
 
-  core_zombie.cpp_FUN_00560cd0                       line 96
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 96
     File: core/zombie.cpp
     Uninitialized variable: local_d4
 
-  core_zombie.cpp_FUN_00560cd0                       line 96
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 96
     File: core/zombie.cpp
     Uninitialized variable: local_c8
 
-  core_zombie.cpp_FUN_00560cd0                       line 145
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 145
     File: core/zombie.cpp
     Uninitialized variable: unaff_ESI
 
@@ -3432,19 +3432,19 @@ shiftTooManyBitsSigned (200)
     File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_FUN_00478790                      line 97
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 97
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_FUN_00478790                      line 98
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 98
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_FUN_00478790                      line 181
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 181
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_FUN_00478790                      line 182
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 182
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3464,15 +3464,11 @@ shiftTooManyBitsSigned (200)
     File: core/flame.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 56
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 57
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 59
+  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 58
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3480,11 +3476,11 @@ shiftTooManyBitsSigned (200)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_CGame_renderOverlay_FUN_0049ab50     line 102
+  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 61
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 52
+  core_game.cpp_CGame_renderOverlay_FUN_0049ab50     line 102
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3492,11 +3488,15 @@ shiftTooManyBitsSigned (200)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 55
+  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 54
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 56
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 57
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3972,11 +3972,11 @@ legacyUninitvar (142)
     File: core/bodypart.cpp
     Uninitialized variable: local_84
 
-  core_boneguy.cpp_FUN_00418a00                      line 132
+  core_boneguy.cpp_CBoneGuy_process_FUN_00418a00     line 132
     File: core/boneguy.cpp
     Uninitialized variable: local_11c
 
-  core_boneguy.cpp_FUN_00418a00                      line 134
+  core_boneguy.cpp_CBoneGuy_process_FUN_00418a00     line 134
     File: core/boneguy.cpp
     Uninitialized variable: afStack_118[(uint)bVar15*-2]
 
@@ -4132,11 +4132,11 @@ legacyUninitvar (142)
     File: core/fire.cpp
     Uninitialized variable: aiStack_2c
 
-  core_flame.cpp_FUN_0048d5d0                        line 76
+  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 76
     File: core/flame.cpp
     Uninitialized variable: aiStack_2c
 
-  core_flame.cpp_FUN_0048d5d0                        line 184
+  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 184
     File: core/flame.cpp
     Uninitialized variable: fStack_18
 
@@ -4148,7 +4148,7 @@ legacyUninitvar (142)
     File: core/gabriela.cpp
     Uninitialized variable: afStack_f0
 
-  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 50
+  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 51
     File: core/game.cpp
     Uninitialized variable: aiStack_2c
 
@@ -4156,7 +4156,7 @@ legacyUninitvar (142)
     File: core/game.cpp
     Uninitialized variable: local_38
 
-  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 46
+  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 47
     File: core/game.cpp
     Uninitialized variable: aiStack_2c
 
@@ -4240,7 +4240,7 @@ legacyUninitvar (142)
     File: core/set.cpp
     Uninitialized variable: aiStack_100[2]
 
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 line 451
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 line 452
     File: core/set.cpp
     Uninitialized variable: aiStack_100[(uint)bVar17*-2]
 
@@ -5684,7 +5684,7 @@ invalidPointerCast (60)
     File: core/dcamera.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_flies.cpp_FUN_0048f490                        line 96
+  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 96
     File: core/flies.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -5696,23 +5696,23 @@ invalidPointerCast (60)
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_manpuz.cpp_FUN_004c9580                       line 154
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004 line 154
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_manpuz.cpp_FUN_004c9580                       line 156
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004 line 156
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_manpuz.cpp_FUN_004c9580                       line 168
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004 line 168
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_manpuz.cpp_FUN_004c9580                       line 202
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004 line 202
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_manpuz.cpp_FUN_004c9580                       line 203
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004 line 203
     File: core/manpuz.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -6208,11 +6208,11 @@ objectIndex (33)
     File: core/sound.cpp
     The address of local variable 'fStack_e0' might be accessed at non-zero index.
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 155
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 156
     File: core/sound.cpp
     The address of local variable 'local_8c' might be accessed at non-zero index.
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 156
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 157
     File: core/sound.cpp
     The address of local variable 'local_8c' might be accessed at non-zero index.
 
@@ -6228,15 +6228,15 @@ pointerOutOfBounds (19)
     File: .
     Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.
 
-  core_actor.cpp_FUN_0040b300                        line 264
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 264
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
 
-  core_actor.cpp_FUN_0040b300                        line 266
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 266
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
 
-  core_actor.cpp_FUN_0040b300                        line 308
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 308
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.
 

@@ -13,8 +13,8 @@
 ;
 ; XREF[3]:
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0 at 00479731
-;   core_hero.cpp_FUN_004b49a0 at 004b4a33
-;   core_npc.cpp_FUN_004eed10 at 004eed20
+;   core_hero.cpp_CHero_archive_FUN_004b49a0 at 004b4a33
+;   core_npc.cpp_CNPC_archive_FUN_004eed10 at 004eed20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hitPoints_00579e21

@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[56]:
-;   core_actor.cpp_FUN_0040b300 at 0040b533
-;   core_ammo.cpp_FUN_0040ef70 at 0040ef7a
-;   core_ammobox.cpp_FUN_0040f480 at 0040f49a
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b533
+;   core_ammo.cpp_CAmmo_canPickup_FUN_0040ef70 at 0040ef7a
+;   core_ammobox.cpp_CAmmoBox_canPickup_FUN_0040f480 at 0040f49a
 ;   core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860 at 0041188f
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00414056
-;   core_battery.cpp_FUN_00414e10 at 00414e1a
+;   core_battery.cpp_CBattery_canPickup_FUN_00414e10 at 00414e1a
 ;   core_boneguy.cpp_FUN_004196b0 at 00419ac0
 ;   core_boxactor.cpp_CBoxActor_canPickup_FUN_0041f0b0 at 0041f0d2
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 004299fa

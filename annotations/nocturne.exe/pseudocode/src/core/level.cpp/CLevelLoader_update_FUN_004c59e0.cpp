@@ -144,7 +144,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
               (DAT_005ae704,&local_88,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-              ((CKeyFramedModel *)0x1cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
+              ((CKeyFramedModel *)&DAT_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
     }

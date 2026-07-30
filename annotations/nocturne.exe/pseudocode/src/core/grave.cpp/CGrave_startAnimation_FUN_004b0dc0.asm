@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_grave.cpp_CGrave_process_FUN_004b0bf0 at 004b0c45
-;   core_tentacle.cpp_FUN_00543c50 at 00543d5d
-;   core_zombie.cpp_FUN_0055ef50 at 005600ad
+;   core_tentacle.cpp_CTentacle_process_FUN_00543c50 at 00543d5d
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 005600ad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368

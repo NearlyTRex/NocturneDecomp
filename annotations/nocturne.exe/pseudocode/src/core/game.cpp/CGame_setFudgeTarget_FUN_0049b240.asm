@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   fudge_step
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9cf0 at 004c9df3
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004c9cf0 at 004c9df3
 ;
 ; *****************************************************************************
 

@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   alpha_color_value
 ;
 ; XREF[28]:
-;   core_baron.cpp_FUN_004110f0 at 00411185
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 at 00411185
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6950
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6dc7
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049ac25

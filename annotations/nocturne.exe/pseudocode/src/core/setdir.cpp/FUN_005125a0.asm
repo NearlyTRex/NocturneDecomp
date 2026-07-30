@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0xb4]:4  local_b4
 ;
 ; XREF[5]:
+;   core_game.cpp_CGame_FUN_0049f930 at 0049fdfd
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f3b2
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a64fc
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd2b
-;   core_game.cpp_FUN_0049f930 at 0049fdfd
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005024e5
 ;
 ; Referenced Globals:

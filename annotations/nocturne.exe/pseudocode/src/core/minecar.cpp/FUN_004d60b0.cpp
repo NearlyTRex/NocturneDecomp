@@ -12,6 +12,6 @@ void core_minecar_cpp_FUN_004d60b0(uint param_1)
   int iVar1;
   
   iVar1 = core_platfrm_cpp_FUN_004f5d90(param_1);
-  *(CDemonActor_vtable **)(iVar1 + 0x14c) = &g_CMinecarVTable;
+  *(CDemonActor_vtable **)(iVar1 + 0x14c) = &g_CMineCarVTable;
   return;
 }

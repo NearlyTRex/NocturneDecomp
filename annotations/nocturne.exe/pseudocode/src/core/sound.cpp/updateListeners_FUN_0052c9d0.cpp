@@ -150,7 +150,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             if (local_dc < 1) {
               local_dc = 1;
             }
-            core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0(0x1fb8508,&local_e4);
+            core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
+                      (&DAT_01fb8508,&local_e4);
             local_90 = local_54;
             (&local_8c)[(uint)bVar6 * -2] = afStack_50[(uint)bVar6 * -2];
             (&local_8c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

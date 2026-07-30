@@ -42,7 +42,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9be0 at 004c9c7b
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0 at 004c9c7b
 ;
 ; Referenced Globals:
 ;   float FLOAT_00587f62 = 256

@@ -16,7 +16,7 @@ CGlass * __cdecl core_glass_cpp_FUN_004abb50(CGlass *this_ptr)
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004d6550((CMirror *)(pCVar2[1].create_event + 0x1c));
   pvVar4 = __arrinit
                      (&pCVar3[1].reflection.reflection_matrix.m[1].y,0x19,

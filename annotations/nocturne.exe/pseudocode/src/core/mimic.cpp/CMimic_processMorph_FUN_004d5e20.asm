@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00 at 004d5db9
-;   core_mimic.cpp_FUN_004d49f0 at 004d4ab5
+;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4ab5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_00589588

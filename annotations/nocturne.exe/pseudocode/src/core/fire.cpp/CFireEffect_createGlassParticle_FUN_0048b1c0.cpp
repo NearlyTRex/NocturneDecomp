@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEff
     _DAT_01c4f088 = 0;
   }
   core_fire_cpp_CGlassParticle_init_FUN_004850d0
-            ((CGlassParticle *)(iVar1 + 0x1c4f08c),triangle_vertices,uv_u_per_vertex,uv_v_per_vertex
-             ,texture,lifetime);
+            ((CGlassParticle *)(&DAT_01c4f08c + iVar1),triangle_vertices,uv_u_per_vertex,
+             uv_v_per_vertex,texture,lifetime);
   return;
 }

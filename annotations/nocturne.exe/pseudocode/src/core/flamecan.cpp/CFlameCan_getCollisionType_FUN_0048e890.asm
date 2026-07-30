@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 core_flamecan_cpp_CFlameCan_getCollisionType_FUN_0048e890(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1                         ; 0048e890
+        ;   Label: core_flamecan.cpp_CFlameCan_getCollisionType_FUN_0048e890
+    RET                                 ; 0048e895
+

@@ -44,12 +44,12 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
           this_ptr->flash_timer = 0.0;
         }
         core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                  ((CDemonCamera *)0x1fb8508,local_18);
+                  ((CDemonCamera *)&DAT_01fb8508,local_18);
         goto LAB_005549ac;
       }
     }
     core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-              ((CDemonCamera *)0x1fb8508,this_ptr->base_ambient);
+              ((CDemonCamera *)&DAT_01fb8508,this_ptr->base_ambient);
     this_ptr->lightning_active = 0;
     this_ptr->flash_timer = 0.0;
   }
@@ -121,7 +121,7 @@ LAB_005549ac:
                                (0.01,local_2c * (float)0.59999999999999998);
           this_ptr->flash_timer = local_14;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                    ((CDemonCamera *)0x1fb8508,local_2c);
+                    ((CDemonCamera *)&DAT_01fb8508,local_2c);
         }
       }
     }

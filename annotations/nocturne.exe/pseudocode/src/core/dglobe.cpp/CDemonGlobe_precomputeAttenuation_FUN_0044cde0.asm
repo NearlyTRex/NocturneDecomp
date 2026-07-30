@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[7]:
-;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4dd
-;   core_emitter.cpp_FUN_00478790 at 00478902
+;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f4dd
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478902
 ;   core_fire.cpp_CFireball_process_FUN_00484050 at 004840ea
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_00484e10 at 00484e3c
 ;   core_flame.cpp_CFlame_updateGlobe_FUN_0048e230 at 0048e2fa

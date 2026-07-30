@@ -7,13 +7,13 @@
 // Address: 004f2bd0
 void __cdecl staticInit(void);
 
-// Original: core_pendulum.cpp_FUN_004f2c00
+// Original: core_pendulum.cpp_factoryFunc_FUN_004f2c00
 // Address: 004f2c00
-void FUN_004f2c00(void);
+CPendulum * __cdecl factoryFunc(void);
 
-// Original: core_pendulum.cpp_FUN_004f2c20
+// Original: core_pendulum.cpp_CPendulum_getActorType_FUN_004f2c20
 // Address: 004f2c20
-CDemonActorType * FUN_004f2c20(void);
+CDemonActorType * CPendulum::getActorType(void);
 
 // Original: core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30
 // Address: 004f2c30
@@ -39,13 +39,13 @@ void __cdecl CPendulum::updateSwing(CPendulum *this_ptr,float delta_time);
 // Address: 004f3a20
 void CPendulum::process(CPendulum *param_1,float param_2);
 
-// Original: core_pendulum.cpp_FUN_004f3b90
+// Original: core_pendulum.cpp_CPendulum_renderOpaque_FUN_004f3b90
 // Address: 004f3b90
-int FUN_004f3b90(CDemonActor *param_1);
+int CPendulum::renderOpaque(CDemonActor *param_1);
 
-// Original: core_pendulum.cpp_FUN_004f3c00
+// Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_004f3c00
 // Address: 004f3c00
-undefined4 * FUN_004f3c00(int param_1,undefined4 *param_2);
+undefined4 * CPendulum::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_pendulum.cpp_CPendulum_archive_FUN_004f3c50
 // Address: 004f3c50
@@ -59,6 +59,6 @@ ECollisionType __cdecl CPendulum::getCollisionType(CPendulum *this_ptr,SCollisio
 // Address: 004f3e30
 EGroundType __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_004f3e40
+// Original: core_pendulum.cpp_CPendulum_dtor_FUN_004f3e40
 // Address: 004f3e40
-CDemonActor * FUN_004f3e40(CDemonActor *param_1,byte param_2);
+CDemonActor * CPendulum::dtor(CDemonActor *param_1,byte param_2);

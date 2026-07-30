@@ -1,24 +1,10 @@
 #pragma once
 
-// Dependencies
+// =============================================================================
+// MISC - Miscellaneous System Types
+// =============================================================================
+// This header is reserved for system types that don't fit elsewhere.
+// Types may be moved to basetypes.h or other specific headers over time.
+
 #include "system/basetypes.h"
-
-// =============================================================================
-// MISC - System Header
-// =============================================================================
-
-// Forward declarations
-struct _EXCEPTION_POINTERS;
-
-// Function Definition: FARPROC
-typedef int FARPROC(void);
-
-// Function Definition: PHANDLER_ROUTINE
-typedef BOOL PHANDLER_ROUTINE(DWORD CtrlType);
-
-// Function Definition: PTHREAD_START_ROUTINE
-typedef DWORD PTHREAD_START_ROUTINE(LPVOID lpThreadParameter);
-
-// Function Definition: PTOP_LEVEL_EXCEPTION_FILTER
-typedef LONG PTOP_LEVEL_EXCEPTION_FILTER(struct _EXCEPTION_POINTERS* ExceptionInfo);
 

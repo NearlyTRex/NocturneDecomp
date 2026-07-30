@@ -14,10 +14,10 @@
 ; XREF[24]:
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 0041181a
 ;   core_batman.cpp_CBatman_archive_FUN_00414510 at 004145c0
-;   core_boneguy.cpp_FUN_00419ce0 at 00419e3b
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419ce0 at 00419e3b
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ecc0
 ;   core_boxactor.cpp_CLightActor_archive_FUN_0041f600 at 0041f63c
-;   core_conveyor.cpp_FUN_0043b310 at 0043b32a
+;   core_conveyor.cpp_CConveyor_archive_FUN_0043b310 at 0043b32a
 ;   core_curtain.cpp_CCurtain_archive_FUN_0043f6b0 at 0043f6cd
 ;   core_door.cpp_CDoor_archive_FUN_00455ee0 at 00455fc3
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 at 0045a68a

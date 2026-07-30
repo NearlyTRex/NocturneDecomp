@@ -18,7 +18,7 @@ void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_
   int local_18;
   int local_14;
   
-  this_ptr = (CSfxSample *)0x2dc1edc;
+  this_ptr = (CSfxSample *)&DAT_02dc1edc;
   iVar3 = 0;
   iVar4 = 0;
   local_1c = 0;
@@ -30,7 +30,7 @@ void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_
       if ((*(int *)(iVar1 + 0x2dc2008) == 0) && (*(int *)(iVar1 + 0x2dc2004) == 0)) {
         local_1c = local_1c + 1;
         iVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                          ((CSfxSample *)(iVar1 + 0x2dc1edc));
+                          ((CSfxSample *)(&DAT_02dc1edc + iVar1));
         local_14 = local_14 + iVar2 * *(int *)(iVar1 + 0x2dc2014);
       }
       else {

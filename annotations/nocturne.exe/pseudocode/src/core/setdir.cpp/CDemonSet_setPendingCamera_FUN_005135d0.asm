@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d6a5
-;   core_platfrm.cpp_FUN_004f6170 at 004f629b
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f629b
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00504316
 ;
 ; *****************************************************************************

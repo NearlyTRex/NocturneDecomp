@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   part_index
 ;
 ; XREF[3]:
-;   core_biggs.cpp_FUN_00415760 at 004157f5
-;   core_succubus.cpp_FUN_00541640 at 00541774
-;   core_vampboss.cpp_FUN_0054dac0 at 0054dbea
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 at 004157f5
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 at 00541774
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_0054dac0 at 0054dbea
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0

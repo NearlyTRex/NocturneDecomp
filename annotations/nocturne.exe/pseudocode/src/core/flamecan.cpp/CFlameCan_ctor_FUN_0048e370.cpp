@@ -16,7 +16,7 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(CFlameCan *thi
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0048cf60

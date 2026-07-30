@@ -19,9 +19,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_bride.cpp_FUN_0041fe40 at 0042095a
-;   core_ghoul.cpp_FUN_004a9270 at 004aadb5
-;   core_zombie.cpp_FUN_0055ef50 at 0055fb0b
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 0042095a
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004aadb5
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055fb0b
 ;
 ; Referenced Globals:
 ;   int INT_005b96c4 = 0x1c78c7c

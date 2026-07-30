@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-;   core_hero.cpp_FUN_004b48d0
+;   core_hero.cpp_CHero_setup_FUN_004b48d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
 ;
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004102c1
     MOV ESI,dword ptr [ESP + 0xc]       ; 004102c2
     PUSH ESI                            ; 004102c6
-    CALL core_hero.cpp_FUN_004b48d0     ; 004102c7
-        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004b48d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setup_FUN_004b48d0 ; 004102c7
+        ;   XREF to: 004b48d0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004b48d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004102cc
     LEA EAX,[ESI + 0x150]               ; 004102cf
     PUSH EAX                            ; 004102d5

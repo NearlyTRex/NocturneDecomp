@@ -7,13 +7,13 @@
 // Address: 005169b0
 void __cdecl staticInit(void);
 
-// Original: core_shovel.cpp_FUN_005169e0
+// Original: core_shovel.cpp_factoryFunc_FUN_005169e0
 // Address: 005169e0
-void FUN_005169e0(void);
+CShovel * __cdecl factoryFunc(void);
 
-// Original: core_shovel.cpp_FUN_00516a00
+// Original: core_shovel.cpp_CShovel_getActorType_FUN_00516a00
 // Address: 00516a00
-CDemonActorType * FUN_00516a00(void);
+CDemonActorType * CShovel::getActorType(void);
 
 // Original: core_shovel.cpp_CShovel_ctor_FUN_00516a10
 // Address: 00516a10
@@ -31,6 +31,6 @@ float FUN_00516ab0(void);
 // Address: 00516ae0
 void FUN_00516ae0(void);
 
-// Original: core_shovel.cpp_FUN_00516af0
+// Original: core_shovel.cpp_CShovel_dtor_FUN_00516af0
 // Address: 00516af0
-CWeapon * FUN_00516af0(CWeapon *param_1,byte param_2);
+CWeapon * CShovel::dtor(CWeapon *param_1,byte param_2);

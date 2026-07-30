@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710(CFireEffect *t
 
 {
   (*(code *)**(uint **)(&DAT_01c69648 + _DAT_01c69610 * 0x38))
-            (_DAT_01c69610 * 0x38 + 0x1c69614,position,velocity);
+            (&DAT_01c69614 + _DAT_01c69610 * 0x38,position,velocity);
   _DAT_01c69610 = _DAT_01c69610 + 1;
   if (_DAT_01c69610 < 0x100) {
     return;

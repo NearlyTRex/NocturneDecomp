@@ -14,7 +14,7 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 at 004948d0
 ;   core_marquee.cpp_CMarquee_setup_FUN_004cc2e0 at 004cc2fc
 ;   core_moon.cpp_CMoon_init_FUN_004de860 at 004dea12
-;   core_platfrm.cpp_FUN_004f5f60 at 004f5fbd
+;   core_platfrm.cpp_CPlatform_setup_FUN_004f5f60 at 004f5fbd
 ;   core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0 at 0054eaa7
 ;
 ; Referenced Globals:

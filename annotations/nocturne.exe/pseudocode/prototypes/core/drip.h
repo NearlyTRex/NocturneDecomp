@@ -7,13 +7,13 @@
 // Address: 00461ff0
 void __cdecl staticInit(void);
 
-// Original: core_drip.cpp_FUN_00462030
+// Original: core_drip.cpp_factoryFunc_FUN_00462030
 // Address: 00462030
-void FUN_00462030(void);
+CDrip * __cdecl factoryFunc(void);
 
-// Original: core_drip.cpp_FUN_00462050
+// Original: core_drip.cpp_CDrip_getActorType_FUN_00462050
 // Address: 00462050
-CDemonActorType * FUN_00462050(void);
+CDemonActorType * CDrip::getActorType(void);
 
 // Original: core_drip.cpp_CDrip_ctor_FUN_00462060
 // Address: 00462060
@@ -27,25 +27,25 @@ void CDrip::setup(int param_1);
 // Address: 004621d0
 void CDrip::archive(CDemonActor *param_1);
 
-// Original: core_drip.cpp_FUN_00462300
+// Original: core_drip.cpp_CDrip_process_FUN_00462300
 // Address: 00462300
-void FUN_00462300(CDemonActor *param_1,float param_2);
+void CDrip::process(CDemonActor *param_1,float param_2);
 
 // Original: core_drip.cpp_FUN_00462710
 // Address: 00462710
 void __cdecl FUN_00462710(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_00462720
+// Original: core_drip.cpp_CDrip_renderOpaque_FUN_00462720
 // Address: 00462720
-int FUN_00462720(CDemonActor *param_1);
+int CDrip::renderOpaque(CDemonActor *param_1);
 
 // Original: core_drip.cpp_CDrip_getBoundingBox_FUN_004627a0
 // Address: 004627a0
 undefined4 * CDrip::getBoundingBox(int param_1,undefined4 *param_2);
 
-// Original: core_drip.cpp_FUN_00462880
+// Original: core_drip.cpp_CDrip_getCollisionType_FUN_00462880
 // Address: 00462880
-undefined4 FUN_00462880(void);
+undefined4 CDrip::getCollisionType(void);
 
 // Original: core_drip.cpp_CDrip_dtor_FUN_00462890
 // Address: 00462890

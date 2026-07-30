@@ -71,9 +71,9 @@ void __cdecl core_dlight_cpp_FUN_0044f0b0(CDemonLight *this_ptr)
     *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar4) = 0;
     iVar4 = iVar4 + 0x30;
   } while (iVar5 < 0x10);
-  local_7c.x = (int)ROUND(_DAT_01abb4b8 * _DAT_0059c030);
-  local_7c.y = (int)ROUND(_DAT_01abb4bc * _DAT_0059c030);
-  local_7c.z = (int)ROUND(_DAT_01abb4c0 * _DAT_0059c030);
+  local_7c.x = (int)ROUND(CVector3f_01abb4b8.x * _DAT_0059c030);
+  local_7c.y = (int)ROUND(CVector3f_01abb4b8.y * _DAT_0059c030);
+  local_7c.z = (int)ROUND(CVector3f_01abb4b8.z * _DAT_0059c030);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
   pCVar1 = DAT_005ae704;

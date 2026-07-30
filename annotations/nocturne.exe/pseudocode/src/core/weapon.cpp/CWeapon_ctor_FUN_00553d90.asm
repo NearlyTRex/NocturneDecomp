@@ -13,7 +13,7 @@
 ;   core_elephant.cpp_FUN_00477710 at 00477716
 ;   core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0 at 0048e9c6
 ;   core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60 at 0048ed66
-;   core_gun.cpp_FUN_004b2760 at 004b2766
+;   core_gun.cpp_CGun_ctor_FUN_004b2760 at 004b2766
 ;   core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30 at 004c6e36
 ;   core_melee.cpp_CMelee_ctor_FUN_004cec60 at 004cec68
 ;   core_shotgun.cpp_FUN_00515d20 at 00515d26
@@ -24,7 +24,7 @@
 ;   CWeapon_full_vtable g_CWeaponVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_box.cpp_CBox_ctor_FUN_0041a610
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -37,8 +37,8 @@ section .text
         ;   Label: core_weapon.cpp_CWeapon_ctor_FUN_00553d90
     MOV EBX,dword ptr [ESP + 0x8]       ; 00553d91
     PUSH EBX                            ; 00553d95
-    CALL core_actor.cpp_FUN_00409d30    ; 00553d96
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00553d96
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00553d9b
     ADD EAX,0x150                       ; 00553d9e
     PUSH EAX                            ; 00553da3

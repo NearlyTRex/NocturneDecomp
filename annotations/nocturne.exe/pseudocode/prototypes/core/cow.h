@@ -7,13 +7,13 @@
 // Address: 0043bb80
 void __cdecl staticInit(void);
 
-// Original: core_cow.cpp_FUN_0043bbb0
+// Original: core_cow.cpp_factoryFunc_FUN_0043bbb0
 // Address: 0043bbb0
-void FUN_0043bbb0(void);
+CZombieCow * __cdecl factoryFunc(void);
 
-// Original: core_cow.cpp_FUN_0043bbd0
+// Original: core_cow.cpp_CZombieCow_getActorType_FUN_0043bbd0
 // Address: 0043bbd0
-CDemonActorType * FUN_0043bbd0(void);
+CDemonActorType * CZombieCow::getActorType(void);
 
 // Original: core_cow.cpp_FUN_0043bbe0
 // Address: 0043bbe0
@@ -27,9 +27,9 @@ void CZombieCow::setup(CEnemy *param_1);
 // Address: 0043bdb0
 void CZombieCow::process(CEnemy *param_1,float param_2);
 
-// Original: core_cow.cpp_FUN_0043c2e0
+// Original: core_cow.cpp_CZombieCow_archive_FUN_0043c2e0
 // Address: 0043c2e0
-void FUN_0043c2e0(CEnemy *param_1);
+void CZombieCow::archive(CEnemy *param_1);
 
 // Original: core_cow.cpp_CZombieCow_processDismemberment_FUN_0043c360
 // Address: 0043c360

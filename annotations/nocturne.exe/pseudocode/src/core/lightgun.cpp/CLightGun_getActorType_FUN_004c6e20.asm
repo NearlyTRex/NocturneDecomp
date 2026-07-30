@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_lightgun_cpp_CLightGun_getActorType_FUN_004c6e20(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1cc3688                   ; 004c6e20
+        ;   Label: core_lightgun.cpp_CLightGun_getActorType_FUN_004c6e20
+    RET                                 ; 004c6e25
+

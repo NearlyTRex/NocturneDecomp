@@ -14,9 +14,9 @@
 ;   core_dog.cpp_CZombieDog_processDamage_FUN_00454e30 at 00454e73
 ;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454a8d
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0 at 0048d24b
-;   core_flamegun.cpp_FUN_0048eb30 at 0048ebc8
-;   core_ghoul.cpp_FUN_004a9270 at 004a95dd
-;   core_platfrm.cpp_FUN_004f6170 at 004f634e
+;   core_flamegun.cpp_CFlameThrower_process_FUN_0048eb30 at 0048ebc8
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a95dd
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f634e
 ;   core_sound.cpp_FUN_0052dff0 at 0052e0b6
 ;
 ; Called Functions:

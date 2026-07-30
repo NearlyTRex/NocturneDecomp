@@ -2,11 +2,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/misc.h"
+#include "system/winbase.h"
 #include "system/windef.h"
-#include "system/wingdi.h"
 #include "system/winnt.h"
-#include "system/winuser.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
@@ -41,9 +39,9 @@
 // FUNCTION PROTOTYPES - Range 0x550000
 // =============================================================================
 
-undefined4 core_vessel_cpp_FUN_00550210(int param_1);
+undefined4 core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(int param_1);
 undefined4 core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(int param_1);
-void core_vessel_cpp_FUN_005504c0(void);
+void core_vessel_cpp_CCryptVessel_renderBackground_FUN_005504c0(void);
 void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CDemonActor *param_1);
 ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_00550650(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_00550670(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
@@ -57,18 +55,18 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
 void __cdecl core_water_cpp_CWater_process_FUN_00550860(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int render_mode);
 void __cdecl core_wateract_cpp_staticInit_FUN_005511a0(void);
-void core_wateract_cpp_FUN_005511f0(void);
-CDemonActorType * core_wateract_cpp_FUN_00551210(void);
+CWaterActor * __cdecl core_wateract_cpp_factoryFunc_FUN_005511f0(void);
+CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_00551210(void);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_00551220(CWaterActor *this_ptr);
 void core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *param_1);
 void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_00551920(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_005519c0(int param_1);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *this_ptr,float delta_time);
-int core_wateract_cpp_FUN_00551c00(CDemonActor *param_1);
-void core_wateract_cpp_FUN_00551e40(int param_1,float *param_2);
+int core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CDemonActor *param_1);
+void core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00551e40(int param_1,float *param_2);
 void core_wateract_cpp_CWaterActor_archive_FUN_00551ea0(CDemonActor *param_1);
 ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005520a0(CWaterActor *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_wateract_cpp_FUN_005520c0(void);
+undefined4 core_wateract_cpp_CWaterActor_getGroundType_FUN_005520c0(void);
 float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005522a0(CWaterActor *this_ptr,SLaserInfo *laser_info);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005522d0(CWaterActor *this_ptr,uint flags);
@@ -77,11 +75,11 @@ undefined4 core_wateract_cpp_FUN_00552350(undefined4 param_1);
 void core_wateract_cpp_FUN_00552360(void *param_1);
 void __cdecl core_waypoint_cpp_staticInit_FUN_00552380(void);
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
-void core_waypoint_cpp_FUN_005524a0(void);
-CDemonActorType * core_waypoint_cpp_FUN_005524c0(void);
+CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005524a0(void);
+CDemonActorType * core_waypoint_cpp_CWayPoint_getActorType_FUN_005524c0(void);
 CWayPoint * __cdecl core_waypoint_cpp_FUN_005524d0(CWayPoint *this_ptr);
 void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1);
-undefined4 core_waypoint_cpp_FUN_005525d0(void);
+undefined4 core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(void);
 void core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CTrigger *param_1);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint *this_ptr,CWayPoint *start_waypoint);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CWayPoint *this_ptr,uint flags);
@@ -112,17 +110,17 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(CWeapon *this_ptr,uint flags);
 void __cdecl core_weapon_cpp_CWeapon_setup_FUN_00553f10(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_00553f50(CWeapon *this_ptr);
-undefined4 * core_weapon_cpp_FUN_00553fe0(int param_1,undefined4 *param_2);
+undefined4 * core_weapon_cpp_CWeapon_getBoundingBox_FUN_00553fe0(int param_1,undefined4 *param_2);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_00554170(CWeapon *this_ptr);
-undefined4 core_weapon_cpp_FUN_00554250(void);
+undefined4 core_weapon_cpp_CWeapon_getCollisionType_FUN_00554250(void);
 int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDemonActor *picker);
-void core_weapon_cpp_FUN_00554300(int param_1,undefined4 param_2);
-void core_weapon_cpp_FUN_00554310(CCharacter *param_1,CVector3f *param_2);
+void core_weapon_cpp_CWeapon_pickup_FUN_00554300(int param_1,undefined4 param_2);
+void core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CCharacter *param_1,CVector3f *param_2);
 EGroundType __cdecl core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(CLadder *this_ptr);
 void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CCharacter *param_1);
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560(CWeapon *this_ptr,int weapon_state);
-void core_weapon_cpp_FUN_00554570(CDemonActor *param_1,CDemonActor *param_2);
+void core_weapon_cpp_CWeapon_onPickup_FUN_00554570(CDemonActor *param_1,CDemonActor *param_2);
 undefined4 * core_weapon_cpp_FUN_00554590(int param_1,undefined4 *param_2);
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr);
 bool core_weapon_cpp_FUN_00554630(int param_1);
@@ -143,19 +141,19 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeathe
 undefined4 core_weather_cpp_CWeather_dtor_FUN_005559d0(undefined4 param_1);
 void core_weather_cpp_FUN_005559e0(void);
 void __cdecl core_werewolf_cpp_staticInit_FUN_00555a00(void);
-void core_werewolf_cpp_FUN_00555a60(void);
-CDemonActorType * core_werewolf_cpp_FUN_00555a80(void);
+CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_00555a60(void);
+CDemonActorType * core_werewolf_cpp_CWerewolf_getActorType_FUN_00555a80(void);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(CWerewolf *this_ptr);
 void core_werewolf_cpp_CWerewolf_setup_FUN_00555b40(CEnemy *param_1);
 void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *param_1,float param_2);
 void core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_00557020(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4);
 void __cdecl core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *this_ptr,CVector3f *eye_position);
-int core_werewolf_cpp_FUN_005576a0(CWerewolf *param_1);
+int core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005576a0(CWerewolf *param_1);
 void core_werewolf_cpp_CWerewolf_archive_FUN_00557800(CEnemy *param_1);
 void core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *param_1,SDamageInfo *param_2);
 undefined4 core_werewolf_cpp_CWerewolf_getDeathState_FUN_00557c30(int param_1);
-undefined4 core_werewolf_cpp_FUN_00557c70(int param_1,CVector3f *param_2);
+undefined4 core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_00557c70(int param_1,CVector3f *param_2);
 void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_00557e90(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
@@ -265,9 +263,9 @@ void core_xform_cpp_FUN_0055df90(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_0055e780(void);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_0055e940(CVector3f *dimensions);
-void core_zombie_cpp_FUN_0055ea90(void);
-CDemonActorType * core_zombie_cpp_FUN_0055eab0(void);
+CZombie * __cdecl core_zombie_cpp_factoryFunc_FUN_0055ea90(void);
+CDemonActorType * core_zombie_cpp_CZombie_getActorType_FUN_0055eab0(void);
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_0055eac0(CZombie *this_ptr);
 void core_zombie_cpp_CZombie_setup_FUN_0055ec20(CEnemy *param_1);
-void core_zombie_cpp_FUN_0055ef50(CZombie *param_1,float param_2);
+void core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *param_1,float param_2);
 

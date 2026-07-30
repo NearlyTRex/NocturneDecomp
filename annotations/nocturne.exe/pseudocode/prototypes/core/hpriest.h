@@ -7,13 +7,13 @@
 // Address: 004b9a90
 void __cdecl staticInit(void);
 
-// Original: core_hpriest.cpp_FUN_004b9ac0
+// Original: core_hpriest.cpp_factoryFunc_FUN_004b9ac0
 // Address: 004b9ac0
-void FUN_004b9ac0(void);
+CHighPriestOfGardath * __cdecl factoryFunc(void);
 
-// Original: core_hpriest.cpp_FUN_004b9ae0
+// Original: core_hpriest.cpp_CHighPriestOfGardath_getActorType_FUN_004b9ae0
 // Address: 004b9ae0
-CDemonActorType * FUN_004b9ae0(void);
+CDemonActorType * CHighPriestOfGardath::getActorType(void);
 
 // Original: core_hpriest.cpp_FUN_004b9af0
 // Address: 004b9af0

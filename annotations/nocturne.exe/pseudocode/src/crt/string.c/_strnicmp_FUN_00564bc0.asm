@@ -11,7 +11,7 @@
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 00428738
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004255e8
-;   core_emitter.cpp_FUN_00478790 at 004789e0
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 004789e0
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ae25
 ;   core_game.cpp_FUN_004a4170 at 004a45e4
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680 at 004d96af

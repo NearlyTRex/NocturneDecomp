@@ -11,7 +11,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10(CBody
 {
   float fVar1;
   
-  core_actor_cpp_FUN_0040bca0(this_ptr,attack_flags,out_damage_info,victim);
+  core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0
+            (this_ptr,attack_flags,out_damage_info,victim);
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(5.0,15.0);
   out_damage_info->dismember_prob = 0.02;
   out_damage_info->damage_amount = fVar1;

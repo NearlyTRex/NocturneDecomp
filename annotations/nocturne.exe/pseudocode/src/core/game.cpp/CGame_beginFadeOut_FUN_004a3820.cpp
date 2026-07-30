@@ -46,7 +46,8 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004a3820(CGame *this_ptr)
     iStack_54 = (int)ROUND(CStack_48.x * _DAT_0059de84);
     iStack_50 = (int)ROUND(CStack_48.y * _DAT_0059de84);
     iStack_4c = (int)ROUND(CStack_48.z * _DAT_0059de84);
-    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(0x1fb8508,&iStack_54);
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
+              (&DAT_01fb8508,&iStack_54);
     iStack_30 = aiStack_2c[2];
     aiStack_2c[(uint)bVar3 * -2] = aiStack_2c[(uint)bVar3 * -2 + 3];
     aiStack_2c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =

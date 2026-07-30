@@ -22,7 +22,7 @@
 ;   core_setdir.cpp_FUN_005125a0 at 005126a5
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051efbf
 ;   core_spike.cpp_FUN_00533750 at 0053382a
-;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110 at 0054a169
+;   core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0 at 00549e9f
 ;   ... and 1 more
 ;
 ; *****************************************************************************

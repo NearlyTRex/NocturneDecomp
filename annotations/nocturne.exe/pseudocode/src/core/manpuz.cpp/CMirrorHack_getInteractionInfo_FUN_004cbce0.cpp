@@ -11,7 +11,7 @@ void core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_004cbce0(int param_1,uin
 {
   uint uVar1;
   
-  core_actor_cpp_FUN_0040b1b0(param_1,param_2);
+  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040b1b0(param_1,param_2);
   *param_2 = 1;
   uVar1 = *(uint *)(param_1 + 0x2cc);
   param_2[4] = 0x40c90fdb;

@@ -446,10 +446,10 @@ core_sound.cpp_updateListeners_FUN_0052c9d0  [.cpp] [Cppcheck (quick)]
   Line  144: [legacyUninitvar] Uninitialized variable: afStack_38[(uint)bVar6*-2]
   Line  145: [objectIndex] The address of local variable 'fStack_e0' might be accessed at non-zero index.
   Line  148: [uninitvar] Uninitialized variable: local_dc
-  Line  154: [uninitvar] Uninitialized variable: local_54
-  Line  155: [objectIndex] The address of local variable 'local_8c' might be accessed at non-zero index.
+  Line  155: [uninitvar] Uninitialized variable: local_54
   Line  156: [objectIndex] The address of local variable 'local_8c' might be accessed at non-zero index.
-  Line  160: [uninitvar] Uninitialized variable: local_88
+  Line  157: [objectIndex] The address of local variable 'local_8c' might be accessed at non-zero index.
+  Line  161: [uninitvar] Uninitialized variable: local_88
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0  [.cpp] [Cppcheck (quick)]
@@ -561,7 +561,7 @@ engine_model.c_getMRGLBounds_FUN_004dcf60  [.cpp] [Cppcheck (quick)]
   Line  191: [uninitvar] Uninitialized variable: *puVar10
 
 ----------------------------------------------------------------------------------------------------
-core_curtain.cpp_FUN_0043dad0  [.cpp] [Cppcheck (quick)]
+core_curtain.cpp_CCurtain_setup_FUN_0043dad0  [.cpp] [Cppcheck (quick)]
   File: core/curtain.cpp  (9 diagnostics)
 
   Line   58: [uninitvar] Uninitialized variable: iStack_7c
@@ -929,7 +929,7 @@ core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730  [.cpp] [Cp
   Line  177: [uninitvar] Uninitialized variable: local_70
 
 ----------------------------------------------------------------------------------------------------
-core_boneguy.cpp_FUN_004194b0  [.cpp] [Cppcheck (quick)]
+core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0  [.cpp] [Cppcheck (quick)]
   File: core/boneguy.cpp  (6 diagnostics)
 
   Line   53: [uninitvar] Uninitialized variable: local_84
@@ -1006,7 +1006,7 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0  [.cpp] [Cppcheck (quick)]
   Line  149: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_zombie.cpp_FUN_00560cd0  [.cpp] [Cppcheck (quick)]
+core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (6 diagnostics)
 
   Line   94: [uninitvar] Uninitialized variable: local_d0
@@ -1061,7 +1061,7 @@ sound_sndmain.cpp_parseWavFile_FUN_00521830  [.cpp] [Cppcheck (quick)]
   Line   38: [uninitvar] Uninitialized variable: local_85
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040b300  [.cpp] [Clang-Tidy (quick), Cppcheck (quick)]
+core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300  [.cpp] [Clang-Tidy (quick), Cppcheck (quick)]
   File: core/actor.cpp  (5 diagnostics)
 
   Line   82: [uninitvar] Uninitialized variable: fStack_b8
@@ -1114,24 +1114,24 @@ core_enemy.cpp_CEnemy_getTargetPoints_FUN_00479820  [.cpp] [Cppcheck (quick)]
 core_game.cpp_CGame_beginFadeOut_FUN_004a3820  [.cpp] [Cppcheck (quick)]
   File: core/game.cpp  (5 diagnostics)
 
-  Line   50: [legacyUninitvar] Uninitialized variable: aiStack_2c
-  Line   56: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   51: [legacyUninitvar] Uninitialized variable: aiStack_2c
   Line   57: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   60: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   61: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_calculateIrisFadeCenter_FUN_004a3860  [.cpp] [Cppcheck (quick)]
   File: core/game.cpp  (5 diagnostics)
 
-  Line   46: [legacyUninitvar] Uninitialized variable: aiStack_2c
-  Line   52: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   47: [legacyUninitvar] Uninitialized variable: aiStack_2c
   Line   53: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   56: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   57: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_manpuz.cpp_FUN_004c9580  [.cpp] [Cppcheck (quick)]
+core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580  [.cpp] [Cppcheck (quick)]
   File: core/manpuz.cpp  (5 diagnostics)
 
   Line  154: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
@@ -1157,8 +1157,8 @@ core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0  [.cpp] [Cppcheck (quick)]
   Line  115: [uninitvar] Uninitialized variable: local_158
   Line  116: [legacyUninitvar] Uninitialized variable: aiStack_154[(uint)bVar17*-2]
   Line  383: [legacyUninitvar] Uninitialized variable: aiStack_100[2]
-  Line  450: [uninitvar] Uninitialized variable: local_104
-  Line  451: [legacyUninitvar] Uninitialized variable: aiStack_100[(uint)bVar17*-2]
+  Line  451: [uninitvar] Uninitialized variable: local_104
+  Line  452: [legacyUninitvar] Uninitialized variable: aiStack_100[(uint)bVar17*-2]
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_playSfxInternal_FUN_0052d120  [.cpp] [Cppcheck (quick)]
@@ -1366,7 +1366,7 @@ core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0  [.cpp] [Cppcheck (quick)]
   Line   42: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-core_emitter.cpp_FUN_00478790  [.cpp] [Cppcheck (quick)]
+core_emitter.cpp_CEmitter_process_FUN_00478790  [.cpp] [Cppcheck (quick)]
   File: core/emitter.cpp  (4 diagnostics)
 
   Line   97: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -1852,7 +1852,7 @@ core_fire.cpp_CSpark_setupRenderState_FUN_004837a0  [.cpp] [Cppcheck (quick)]
   Line   68: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-core_flame.cpp_FUN_0048d5d0  [.cpp] [Cppcheck (quick)]
+core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0  [.cpp] [Cppcheck (quick)]
   File: core/flame.cpp  (3 diagnostics)
 
   Line   75: [uninitvar] Uninitialized variable: iStack_30
@@ -1860,7 +1860,7 @@ core_flame.cpp_FUN_0048d5d0  [.cpp] [Cppcheck (quick)]
   Line  184: [legacyUninitvar] Uninitialized variable: fStack_18
 
 ----------------------------------------------------------------------------------------------------
-core_flies.cpp_FUN_0048f490  [.cpp] [Cppcheck (quick)]
+core_flies.cpp_CFlies_renderOpaque_FUN_0048f490  [.cpp] [Cppcheck (quick)]
   File: core/flies.cpp  (3 diagnostics)
 
   Line   96: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
@@ -2166,7 +2166,7 @@ core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320  [.cpp] [Cppcheck (quick)
   Line  108: [uninitvar] Uninitialized variable: local_4c
 
 ----------------------------------------------------------------------------------------------------
-core_boneguy.cpp_FUN_00418a00  [.cpp] [Cppcheck (quick)]
+core_boneguy.cpp_CBoneGuy_process_FUN_00418a00  [.cpp] [Cppcheck (quick)]
   File: core/boneguy.cpp  (2 diagnostics)
 
   Line  132: [legacyUninitvar] Uninitialized variable: local_11c
@@ -2418,7 +2418,7 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0  [.cpp] [Cpp
   Line  127: [arrayIndexOutOfBoundsCond] Either the condition 'uStack_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-core_ghoul.cpp_FUN_004a9270  [.cpp] [Cppcheck (quick)]
+core_ghoul.cpp_CGhoul_process_FUN_004a9270  [.cpp] [Cppcheck (quick)]
   File: core/ghoul.cpp  (2 diagnostics)
 
   Line  167: [uninitvar] Uninitialized variable: local_1c0
@@ -3059,6 +3059,12 @@ core_charactr.cpp_CCharacter_attractActorToward_FUN_00428160  [.cpp] [Cppcheck (
   Line   29: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490  [.cpp] [Cppcheck (quick)]
+  File: core/charactr.cpp  (1 diagnostics)
+
+  Line   24: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0  [.cpp] [Cppcheck (quick)]
   File: core/charactr.cpp  (1 diagnostics)
 
@@ -3075,12 +3081,6 @@ core_charactr.cpp_FUN_00424780  [.cpp] [Cppcheck (quick)]
   File: core/charactr.cpp  (1 diagnostics)
 
   Line   20: [uninitvar] Uninitialized variable: in_stack_00000008
-
-----------------------------------------------------------------------------------------------------
-core_charactr.cpp_FUN_00429490  [.cpp] [Cppcheck (quick)]
-  File: core/charactr.cpp  (1 diagnostics)
-
-  Line   24: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_FUN_0042b5a0  [.cpp] [Cppcheck (quick)]
@@ -3101,7 +3101,7 @@ core_cloth.cpp_CCloth_step_FUN_00436e80  [.cpp] [Cppcheck (quick)]
   Line  136: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-core_conveyor.cpp_FUN_0043b110  [.cpp] [Cppcheck (quick)]
+core_conveyor.cpp_CConveyor_setup_FUN_0043b110  [.cpp] [Cppcheck (quick)]
   File: core/conveyor.cpp  (1 diagnostics)
 
   Line   37: [uninitvar] Uninitialized variable: local_1c
@@ -3341,7 +3341,7 @@ core_ground.cpp_CGround_load_FUN_004b14d0  [.cpp] [Cppcheck (quick)]
   Line   47: [uninitvar] Uninitialized variable: *pcVar6
 
 ----------------------------------------------------------------------------------------------------
-core_hostage.cpp_FUN_004b8700  [.cpp] [Cppcheck (quick)]
+core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700  [.cpp] [Cppcheck (quick)]
   File: core/hostage.cpp  (1 diagnostics)
 
   Line  117: [uninitvar] Uninitialized variable: unaff_ESI
@@ -3353,16 +3353,16 @@ core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50  [.cpp] [Cppcheck 
   Line   52: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
+core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0  [.cpp] [Cppcheck (quick)]
+  File: core/imp.cpp  (1 diagnostics)
+
+  Line   67: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_imp.cpp_FUN_004bc7c0  [.cpp] [Cppcheck (quick)]
   File: core/imp.cpp  (1 diagnostics)
 
   Line   19: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
-core_imp.cpp_FUN_004bc7e0  [.cpp] [Cppcheck (quick)]
-  File: core/imp.cpp  (1 diagnostics)
-
-  Line   67: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_inv.cpp_CInventory_load_FUN_004c1190  [.cpp] [Cppcheck (quick)]
@@ -3449,16 +3449,16 @@ core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30  [.cpp] [Cp
   Line   36: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
+core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70  [.cpp] [Cppcheck (quick)]
+  File: core/mobster.cpp  (1 diagnostics)
+
+  Line   95: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_mobster.cpp_FUN_004dba50  [.cpp] [Cppcheck (quick)]
   File: core/mobster.cpp  (1 diagnostics)
 
   Line   19: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
-core_mobster.cpp_FUN_004dba70  [.cpp] [Cppcheck (quick)]
-  File: core/mobster.cpp  (1 diagnostics)
-
-  Line   95: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040  [.cpp] [Cppcheck (quick)]
@@ -3494,7 +3494,7 @@ core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360  [.cpp] [Cppcheck (quick)]
 core_path.cpp_getOrCreatePathMap_FUN_004f1c90  [.cpp] [Cppcheck (quick)]
   File: core/path.cpp  (1 diagnostics)
 
-  Line   43: [uninitvar] Uninitialized variable: local_34
+  Line   42: [uninitvar] Uninitialized variable: local_34
 
 ----------------------------------------------------------------------------------------------------
 core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430  [.cpp] [Cppcheck (quick)]
@@ -3623,6 +3623,12 @@ core_skeleton.cpp_blendBoneTransformData_FUN_0051f3f0  [.cpp] [Cppcheck (quick)]
   Line   64: [uninitvar] Uninitialized variable: local_54
 
 ----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210  [.cpp] [Cppcheck (quick)]
+  File: core/stranger.cpp  (1 diagnostics)
+
+  Line   23: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0  [.cpp] [Cppcheck (quick)]
   File: core/stranger.cpp  (1 diagnostics)
 
@@ -3639,12 +3645,6 @@ core_stranger.cpp_FUN_005396d0  [.cpp] [Cppcheck (quick)]
   File: core/stranger.cpp  (1 diagnostics)
 
   Line   45: [uninitvar] Uninitialized variable: local_2c
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_FUN_0053f210  [.cpp] [Cppcheck (quick)]
-  File: core/stranger.cpp  (1 diagnostics)
-
-  Line   23: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_stranger.cpp_FUN_00540a10  [.cpp] [Cppcheck (quick)]
@@ -3671,16 +3671,16 @@ core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0053d790  [.cpp] [Cppcheck (q
   Line   27: [uninitvar] Uninitialized variable: local_24
 
 ----------------------------------------------------------------------------------------------------
+core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210  [.cpp] [Cppcheck (quick)]
+  File: core/tbplayer.cpp  (1 diagnostics)
+
+  Line   47: [uninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_tbplayer.cpp_FUN_005431f0  [.cpp] [Cppcheck (quick)]
   File: core/tbplayer.cpp  (1 diagnostics)
 
   Line   19: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
-core_tbplayer.cpp_FUN_00543210  [.cpp] [Cppcheck (quick)]
-  File: core/tbplayer.cpp  (1 diagnostics)
-
-  Line   47: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760  [.cpp] [Cppcheck (quick)]
@@ -3695,22 +3695,22 @@ core_turret.cpp_CTurret_fire_FUN_0054ab10  [.cpp] [Cppcheck (quick)]
   Line  151: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_cc+0x18' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-core_turret.cpp_FUN_00549cd0  [.cpp] [Cppcheck (quick)]
+core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0  [.cpp] [Cppcheck (quick)]
   File: core/turret.cpp  (1 diagnostics)
 
   Line   72: [uninitvar] Uninitialized variable: *pfVar2
+
+----------------------------------------------------------------------------------------------------
+core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0  [.cpp] [Cppcheck (quick)]
+  File: core/vampboss.cpp  (1 diagnostics)
+
+  Line   45: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_vampboss.cpp_FUN_0054c5f0  [.cpp] [Cppcheck (quick)]
   File: core/vampboss.cpp  (1 diagnostics)
 
   Line   20: [uninitvar] Uninitialized variable: in_stack_00000008
-
-----------------------------------------------------------------------------------------------------
-core_vampboss.cpp_FUN_0054d8a0  [.cpp] [Cppcheck (quick)]
-  File: core/vampboss.cpp  (1 diagnostics)
-
-  Line   45: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0  [.cpp] [Cppcheck (quick)]

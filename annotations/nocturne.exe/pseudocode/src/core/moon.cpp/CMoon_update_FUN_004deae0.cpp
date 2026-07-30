@@ -32,9 +32,11 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta
     do {
       *(float *)(iVar3 + 0x1ccdef0) =
            delta_time * (float)20 + *(float *)(iVar3 + 0x1ccdef0);
-      fVar1 = (float)*(int *)(*(int *)(iVar3 + 0x1ccdeec) * 0xc + 0x1ccdec8);
-      if (fVar1 <= *(float *)(iVar3 + 0x1ccdef0)) {
-        *(float *)(iVar3 + 0x1ccdef0) = *(float *)(iVar3 + 0x1ccdef0) - fVar1;
+      if ((float)*(int *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc) <=
+          *(float *)(iVar3 + 0x1ccdef0)) {
+        *(float *)(iVar3 + 0x1ccdef0) =
+             *(float *)(iVar3 + 0x1ccdef0) -
+             (float)*(int *)(&DAT_01ccdec8 + *(int *)(iVar3 + 0x1ccdeec) * 0xc);
       }
       fVar1 = (float)_DAT_01cce2bc;
       fVar2 = delta_time * (float)30 + *(float *)(iVar3 + 0x1ccdef4);

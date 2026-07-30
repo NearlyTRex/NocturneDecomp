@@ -7,13 +7,13 @@
 // Address: 00543b00
 void __cdecl staticInit(void);
 
-// Original: core_tentacle.cpp_FUN_00543b30
+// Original: core_tentacle.cpp_factoryFunc_FUN_00543b30
 // Address: 00543b30
-void FUN_00543b30(void);
+CTentacle * __cdecl factoryFunc(void);
 
-// Original: core_tentacle.cpp_FUN_00543b50
+// Original: core_tentacle.cpp_CTentacle_getActorType_FUN_00543b50
 // Address: 00543b50
-CDemonActorType * FUN_00543b50(void);
+CDemonActorType * CTentacle::getActorType(void);
 
 // Original: core_tentacle.cpp_FUN_00543b60
 // Address: 00543b60
@@ -23,13 +23,13 @@ CEnemy * FUN_00543b60(CEnemy *param_1);
 // Address: 00543bc0
 void CTentacle::setup(CEnemy *param_1);
 
-// Original: core_tentacle.cpp_FUN_00543c50
+// Original: core_tentacle.cpp_CTentacle_process_FUN_00543c50
 // Address: 00543c50
-void FUN_00543c50(CTentacle *param_1,float param_2);
+void CTentacle::process(CTentacle *param_1,float param_2);
 
-// Original: core_tentacle.cpp_FUN_00544440
+// Original: core_tentacle.cpp_CTentacle_renderOpaque_FUN_00544440
 // Address: 00544440
-int FUN_00544440(CCharacter *param_1);
+int CTentacle::renderOpaque(CCharacter *param_1);
 
 // Original: core_tentacle.cpp_CTentacle_archive_FUN_00544470
 // Address: 00544470
@@ -39,9 +39,9 @@ void CTentacle::archive(CEnemy *param_1);
 // Address: 005444f0
 int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
-// Original: core_tentacle.cpp_FUN_005445c0
+// Original: core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0
 // Address: 005445c0
-undefined4 FUN_005445c0(int param_1,int param_2);
+undefined4 CTentacle::attractActorToward(int param_1,int param_2);
 
 // Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720
 // Address: 00544720

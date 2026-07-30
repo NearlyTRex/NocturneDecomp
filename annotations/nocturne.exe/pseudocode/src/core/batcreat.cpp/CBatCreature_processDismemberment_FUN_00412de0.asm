@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_batcreat.cpp_FUN_00413040 at 004130c6
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 004130c6
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00412dc8 = 00412e1d

@@ -7,13 +7,13 @@
 // Address: 004b3040
 void __cdecl staticInit(void);
 
-// Original: core_haystack.cpp_FUN_004b3070
+// Original: core_haystack.cpp_factoryFunc_FUN_004b3070
 // Address: 004b3070
-void FUN_004b3070(void);
+CHaystack * __cdecl factoryFunc(void);
 
-// Original: core_haystack.cpp_FUN_004b3090
+// Original: core_haystack.cpp_CHaystack_getActorType_FUN_004b3090
 // Address: 004b3090
-CDemonActorType * FUN_004b3090(void);
+CDemonActorType * CHaystack::getActorType(void);
 
 // Original: core_haystack.cpp_FUN_004b30a0
 // Address: 004b30a0
@@ -23,9 +23,9 @@ CHero * FUN_004b30a0(CHero *param_1);
 // Address: 004b3110
 void __cdecl CHaystack::setup(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004b32d0
+// Original: core_haystack.cpp_CHaystack_process_FUN_004b32d0
 // Address: 004b32d0
-void FUN_004b32d0(CHaystack *param_1,float param_2);
+void CHaystack::process(CHaystack *param_1,float param_2);
 
 // Original: core_haystack.cpp_CHaystack_updateAI_FUN_004b3880
 // Address: 004b3880
@@ -39,13 +39,13 @@ void __cdecl CHaystack::advanceMotion(CHaystack *this_ptr,float delta_time);
 // Address: 004b3f40
 void __cdecl CHaystack::checkMeleeHit(CHaystack *this_ptr,int bone_index);
 
-// Original: core_haystack.cpp_FUN_004b3fe0
+// Original: core_haystack.cpp_CHaystack_archive_FUN_004b3fe0
 // Address: 004b3fe0
-void FUN_004b3fe0(CHero *param_1);
+void CHaystack::archive(CHero *param_1);
 
-// Original: core_haystack.cpp_FUN_004b3ff0
+// Original: core_haystack.cpp_CHaystack_renderOpaque_FUN_004b3ff0
 // Address: 004b3ff0
-void FUN_004b3ff0(CCharacter *param_1);
+void CHaystack::renderOpaque(CCharacter *param_1);
 
 // Original: core_haystack.cpp_CHaystack_processDamage_FUN_004b4000
 // Address: 004b4000
@@ -59,6 +59,6 @@ int __cdecl CHaystack::isWeaponDrawn(CHaystack *this_ptr);
 // Address: 004b4130
 void __cdecl CHaystack::drawWeapon(CHaystack *this_ptr,int drawn);
 
-// Original: core_haystack.cpp_FUN_004b4140
+// Original: core_haystack.cpp_CHaystack_dtor_FUN_004b4140
 // Address: 004b4140
-CHero * FUN_004b4140(CHero *param_1,byte param_2);
+CHero * CHaystack::dtor(CHero *param_1,byte param_2);

@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 00495f5f
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00495f5f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0e8

@@ -9,10 +9,9 @@
 DWORD __cdecl __set_errno(void)
 
 {
-  DWORD windows_error;
   DWORD DVar1;
   
-  windows_error = GetLastError();
-  DVar1 = convertWindowsErrorToErrno(windows_error);
+  DVar1 = GetLastError();
+  DVar1 = convertWindowsErrorToErrno(DVar1);
   return DVar1;
 }

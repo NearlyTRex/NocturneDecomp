@@ -27,9 +27,9 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(0x014B8DE8);
   _DAT_01fba2d8 = 0;
   this_ptr->renderable_actors[0x6f7] = (CDemonActor *)0x0;
-  core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50((CDemonCamera *)0x1fb8508);
+  core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50((CDemonCamera *)&DAT_01fb8508);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0
-            ((CDemonCamera *)0x1fb8508,(SFog *)(this_ptr->renderable_actors + 0x6d6));
+            ((CDemonCamera *)&DAT_01fb8508,(SFog *)(this_ptr->renderable_actors + 0x6d6));
   this_ptr->renderable_actors[0x6df] =
        (CDemonActor *)(((SFog *)(this_ptr->renderable_actors + 0x6d6))->color_index).r;
   this_ptr->renderable_actors[0x6e0] = this_ptr->renderable_actors[0x6d7];
@@ -44,7 +44,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   this_ptr->renderable_actors[0x6e7] = this_ptr->renderable_actors[0x6de];
   iVar6 = 0;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-            ((CDemonCamera *)0x1fb8508,*(float *)(this_ptr->lights[199].filter_names[0x13] + 0x24));
+            ((CDemonCamera *)&DAT_01fb8508,
+             *(float *)(this_ptr->lights[199].filter_names[0x13] + 0x24));
   do {
     if (*(int *)(&DAT_01fb99d4 + iVar6) != 0) {
       PTR_01cc4800 = "..\\core\\set.cpp";

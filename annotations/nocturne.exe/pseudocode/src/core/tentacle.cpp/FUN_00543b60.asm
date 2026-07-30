@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_tentacle.cpp_FUN_00543b30 at 00543b43
+;   core_tentacle.cpp_factoryFunc_FUN_00543b30 at 00543b43
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tentacle_dfm_00596512

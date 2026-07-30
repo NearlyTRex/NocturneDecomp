@@ -2,10 +2,76 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/watcom.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5B0000
 // =============================================================================
+
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8050;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8060;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8070;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8080;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8090;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80a0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80b0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80c0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80d0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80e0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92c0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92d0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92e0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b9694;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96a4;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96b4;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ba8dc;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa80;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa90;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baaa0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baab0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baac0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baad0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baae0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baaf0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab00;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab10;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab20;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab30;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab40;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab50;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bac90;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad0e;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad1e;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad2e;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad3e;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005badf8;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae08;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae18;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae28;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae38;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae48;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb158;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb168;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb178;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb188;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bded0;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be050;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be0a8;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be1bc;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be200;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be210;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be328;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be338;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be348;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be358;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be980;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be990;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea20;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea30;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44;
+extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50;
 
 // int
 extern int g_INT_005b064c;
@@ -44,14 +110,18 @@ extern int INT_005bacf8;
 extern int INT_005bad50;
 extern int INT_005bade4;
 extern int INT_005baf48;
-extern int INT_005bb124;
+extern int g_INT_005bb124;
+extern int g_INT_005bb144;
 extern int INT_005be074;
 extern int INT_005be078;
 extern int INT_005be164;
 extern int INT_005be19c;
 extern int INT_005be1e4;
 extern int INT_005be310;
-extern int INT_005be964;
+extern int g_INT_005be950;
+extern int g_INT_005be964;
+extern int g_INT_005bea0c;
+extern int g_INT_005bea40;
 
 // undefined1
 extern undefined1 DAT_005b9258;
@@ -176,7 +246,6 @@ extern undefined4 DAT_005be78c;
 extern undefined4 DAT_005be7c8;
 extern undefined4 DAT_005be7cc;
 extern undefined4 DAT_005be7d0;
-extern undefined4 DAT_005bea40;
 extern undefined4 DAT_005bea60;
 extern undefined4 DAT_005bea64;
 extern undefined4 DAT_005bea68;

@@ -91,9 +91,9 @@ void __cdecl CDemonMission::loadSet(CDemonMission *this_ptr,int set_index);
 // Address: 004d90a0
 CDemonActor * __cdecl CDemonMission::findActorByName(CDemonMission *this_ptr,char *name);
 
-// Original: core_mission.cpp_FUN_004d90e0
+// Original: core_mission.cpp_CDemonMission_FUN_004d90e0
 // Address: 004d90e0
-void __cdecl FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target);
+void __cdecl CDemonMission(CDemonMission *this_ptr,CLocation *teleport_target);
 
 // Original: core_mission.cpp_FUN_004d9110
 // Address: 004d9110

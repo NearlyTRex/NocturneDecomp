@@ -49,8 +49,8 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
         *pcVar8 = '\0';
         pCVar4 = (CStrList_vtable *)
                  engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,local_144);
-        if ((int)pCVar5[7].vtable < (int)pCVar4) {
-          pCVar5[7].vtable = pCVar4;
+        if ((int)pCVar5[7].vtable._us < (int)pCVar4) {
+          pCVar5[7].vtable._us = pCVar4;
         }
         iVar10 = iVar10 + 1;
         pCVar5 = (CStrList *)&pCVar5->capacity;
@@ -69,7 +69,8 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
   }
   pCVar5 = param_1;
   for (iVar10 = 0; iVar10 < param_1[10].capacity + -1; iVar10 = iVar10 + 1) {
-    pCVar5[7].vtable = (CStrList_vtable *)((int)&(pCVar5[7].vtable)->dtor + DAT_005b761c / 0x28);
+    pCVar5[7].vtable._us =
+         (CStrList_vtable *)((int)&(pCVar5[7].vtable._us)->dtor + DAT_005b761c / 0x28);
     pCVar5 = (CStrList *)&pCVar5->capacity;
   }
   iVar9 = 0;
@@ -80,7 +81,8 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
     do {
       iVar9 = iVar9 + 1;
       iVar10 = param_1[10].capacity;
-      param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable);
+      param_1[0x12].data_array =
+           (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable._us);
       pCVar5 = (CStrList *)&pCVar5->capacity;
     } while (iVar9 < iVar10);
   }
@@ -97,49 +99,49 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
   pCVar4 = (CStrList_vtable *)
            (((int)((DAT_005b761c * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /
            (int)param_1[0x12].data_array);
-  param_1[0x12].vtable = pCVar4;
+  param_1[0x12].vtable._us = pCVar4;
   if ((int)pCVar4 < 1) {
-    param_1[0x12].vtable = (CStrList_vtable *)0x1;
+    param_1[0x12].vtable = (UStrListVTable)0x1;
   }
   pCVar4 = (CStrList_vtable *)
            ((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);
-  if ((int)pCVar4 < (int)param_1[0x12].vtable) {
-    param_1[0x12].vtable = pCVar4;
+  if ((int)pCVar4 < (int)param_1[0x12].vtable._us) {
+    param_1[0x12].vtable._us = pCVar4;
   }
   if (param_1[1].item_count != 0) {
-    param_1[0x12].vtable = (CStrList_vtable *)0x1;
+    param_1[0x12].vtable = (UStrListVTable)0x1;
   }
-  param_1[0x16].vtable = (CStrList_vtable *)0x0;
-  if (param_1[0x12].capacity * (int)param_1[0x12].vtable < param_1->item_count) {
-    if ((int)param_1[0x12].vtable < 2) {
-      param_1[0x16].vtable = (CStrList_vtable *)0x1;
+  param_1[0x16].vtable._us = (CStrList_vtable *)0x0;
+  if (param_1[0x12].capacity * (int)param_1[0x12].vtable._us < param_1->item_count) {
+    if ((int)param_1[0x12].vtable._us < 2) {
+      param_1[0x16].vtable = (UStrListVTable)0x1;
     }
     else {
-      param_1[0x16].vtable = (CStrList_vtable *)0x2;
+      param_1[0x16].vtable = (UStrListVTable)0x2;
     }
   }
-  iVar10 = (int)param_1[0x12].data_array * (int)param_1[0x12].vtable + 8;
+  iVar10 = (int)param_1[0x12].data_array * (int)param_1[0x12].vtable._us + 8;
   iVar9 = param_1[0x12].capacity * param_1[0x11].item_count + 6;
   iVar6 = shape_edittool_cpp_calculateGridWidth_FUN_00476df0();
   local_18 = iVar6;
   iVar7 = shape_edittool_cpp_calculateGridHeight_FUN_00476e10();
-  if (param_1[0x16].vtable == (CStrList_vtable *)0x1) {
+  if (param_1[0x16].vtable._us == (CStrList_vtable *)0x1) {
     iVar10 = iVar10 + iVar6;
   }
-  else if (param_1[0x16].vtable == (CStrList_vtable *)0x2) {
+  else if (param_1[0x16].vtable._us == (CStrList_vtable *)0x2) {
     iVar9 = iVar9 + iVar7;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (0x01BCD074,iVar10,iVar9,param_2,param_3);
   iVar10 = (_DAT_01c00c60 - _DAT_01c00c58) + 1;
   iVar9 = (_DAT_01c00c64 - _DAT_01c00c5c) + 1;
-  if (param_1[0x16].vtable == (CStrList_vtable *)0x1) {
+  if (param_1[0x16].vtable._us == (CStrList_vtable *)0x1) {
     iVar10 = iVar10 - local_18;
     iVar6 = (_DAT_01c00c60 - local_18) + 1;
     top_pos = _DAT_01c00c5c;
   }
   else {
-    if (param_1[0x16].vtable != (CStrList_vtable *)0x2) goto LAB_0047587b;
+    if (param_1[0x16].vtable._us != (CStrList_vtable *)0x2) goto LAB_0047587b;
     top_pos = (_DAT_01c00c64 - iVar7) + 1;
     iVar9 = iVar9 - iVar7;
     iVar6 = _DAT_01c00c58;
@@ -148,21 +150,21 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
             ((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,_DAT_01c00c60,_DAT_01c00c64);
 LAB_0047587b:
   param_1[0x12].capacity = iVar9 / param_1[0x11].item_count;
-  param_1[0x12].vtable = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);
+  param_1[0x12].vtable._us = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);
   pCVar4 = (CStrList_vtable *)
            ((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);
-  if ((int)pCVar4 < (int)param_1[0x12].vtable) {
-    param_1[0x12].vtable = pCVar4;
+  if ((int)pCVar4 < (int)param_1[0x12].vtable._us) {
+    param_1[0x12].vtable._us = pCVar4;
   }
-  if ((int)param_1[0x12].vtable < 1) {
-    param_1[0x12].vtable = (CStrList_vtable *)0x1;
+  if ((int)param_1[0x12].vtable._us < 1) {
+    param_1[0x12].vtable = (UStrListVTable)0x1;
   }
-  param_1[0x12].item_count = param_1[0x12].capacity * (int)param_1[0x12].vtable;
-  param_1[0x11].vtable = (CStrList_vtable *)0x0;
-  param_1[0x12].data_array = (char **)(iVar10 / (int)param_1[0x12].vtable);
+  param_1[0x12].item_count = param_1[0x12].capacity * (int)param_1[0x12].vtable._us;
+  param_1[0x11].vtable._us = (CStrList_vtable *)0x0;
+  param_1[0x12].data_array = (char **)(iVar10 / (int)param_1[0x12].vtable._us);
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   *(byte *)&param_1[10].data_array = 0;
   _DAT_01bcde20 = 0xffffffff;
-  param_1[0x10].vtable = (CStrList_vtable *)0x0;
+  param_1[0x10].vtable._us = (CStrList_vtable *)0x0;
   return;
 }

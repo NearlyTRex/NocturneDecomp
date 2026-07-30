@@ -408,7 +408,7 @@ LAB_005078c1:
   core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(this_ptr,local_c4);
   if (this_ptr->renderable_actors[0x6ef] != (CDemonActor *)0x0) {
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650
-              ((CKeyFramedModel *)0x1fbacc8,(char *)(this_ptr->renderable_actors + 0x6f0));
+              ((CKeyFramedModel *)&DAT_01fbacc8,(char *)(this_ptr->renderable_actors + 0x6f0));
   }
   iVar10 = 0;
   pCVar5 = this_ptr;

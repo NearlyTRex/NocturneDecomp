@@ -8,14 +8,14 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; XREF[24]:
-;   core_armour.cpp_FUN_0040fbc0 at 0040fbef
-;   core_batcreat.cpp_FUN_00413040 at 00413157
+;   core_armour.cpp_CArmour_processDamage_FUN_0040fbc0 at 0040fbef
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 00413157
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414a47
-;   core_beast.cpp_FUN_004151b0 at 004151c1
+;   core_beast.cpp_CBeast_processDamage_FUN_004151b0 at 004151c1
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041596a
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f89
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420d67
-;   core_bugs.cpp_FUN_004219d0 at 004219e1
+;   core_bugs.cpp_CBugs_processDamage_FUN_004219d0 at 004219e1
 ;   core_cow.cpp_CZombieCow_processDamage_FUN_0043c5e0 at 0043c63c
 ;   core_dog.cpp_CZombieDog_processDamage_FUN_00454e30 at 00454e85
 ;   ... and 14 more

@@ -7,13 +7,13 @@
 // Address: 004c5fe0
 void __cdecl staticInit(void);
 
-// Original: core_lever.cpp_FUN_004c6010
+// Original: core_lever.cpp_factoryFunc_FUN_004c6010
 // Address: 004c6010
-void FUN_004c6010(void);
+CLever * __cdecl factoryFunc(void);
 
-// Original: core_lever.cpp_FUN_004c6030
+// Original: core_lever.cpp_CLever_getActorType_FUN_004c6030
 // Address: 004c6030
-CDemonActorType * FUN_004c6030(void);
+CDemonActorType * CLever::getActorType(void);
 
 // Original: core_lever.cpp_CLever_ctor_FUN_004c6040
 // Address: 004c6040
@@ -35,13 +35,13 @@ void __cdecl CLever::setState(CLever *this_ptr,float new_state);
 // Address: 004c6500
 void __cdecl CLever::activate(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004c6560
+// Original: core_lever.cpp_CLever_renderOpaque_FUN_004c6560
 // Address: 004c6560
-int FUN_004c6560(CDemonActor *param_1);
+int CLever::renderOpaque(CDemonActor *param_1);
 
-// Original: core_lever.cpp_FUN_004c65f0
+// Original: core_lever.cpp_CLever_getBoundingBox_FUN_004c65f0
 // Address: 004c65f0
-undefined4 * FUN_004c65f0(int param_1,undefined4 *param_2);
+undefined4 * CLever::getBoundingBox(int param_1,undefined4 *param_2);
 
 // Original: core_lever.cpp_CLever_getHandlePosition_FUN_004c6640
 // Address: 004c6640
@@ -51,14 +51,14 @@ CVector3f * __cdecl CLever::getHandlePosition(CLever *this_ptr,CVector3f *out_po
 // Address: 004c66f0
 void CLever::archive(CDemonActor *param_1);
 
-// Original: core_lever.cpp_FUN_004c68d0
+// Original: core_lever.cpp_CLever_getCollisionType_FUN_004c68d0
 // Address: 004c68d0
-bool FUN_004c68d0(int param_1);
+bool CLever::getCollisionType(int param_1);
 
 // Original: core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f0
 // Address: 004c68f0
 int __cdecl CLever::isAccessibleFrom(CLever *this_ptr,CVector3f *world_position);
 
-// Original: core_lever.cpp_FUN_004c6970
+// Original: core_lever.cpp_CLever_dtor_FUN_004c6970
 // Address: 004c6970
-CDemonActor * FUN_004c6970(CDemonActor *param_1,byte param_2);
+CDemonActor * CLever::dtor(CDemonActor *param_1,byte param_2);

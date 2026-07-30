@@ -19,7 +19,7 @@
 ;
 ; XREF[5]:
 ;   core_elephant.cpp_FUN_00477890 at 00477fc1
-;   core_gun.cpp_FUN_004b27c0 at 004b2fa5
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2fa5
 ;   core_shotgun.cpp_FUN_00515ea0 at 00516608
 ;   core_tommygun.cpp_FUN_00545c30 at 0054645f
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054b01e

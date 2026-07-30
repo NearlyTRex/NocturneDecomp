@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00421480 at 0042152c
+;   core_bugs.cpp_CBugs_process_FUN_00421480 at 0042152c
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680

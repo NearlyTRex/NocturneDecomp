@@ -20,6 +20,6 @@ int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(CT
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = core_actor_cpp_FUN_0040d830((CDemonActor *)this_ptr);
+  iVar1 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830((CDemonActor *)this_ptr);
   return iVar1;
 }

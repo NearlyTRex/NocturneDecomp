@@ -10,13 +10,13 @@ void __cdecl core_moon_cpp_staticInit_FUN_004de770(void)
 
 {
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320((CAlphaBitmap *)&DAT_01ccdc50);
-  _atexit((WatcomStaticDestructorNode *)0x5bb158);
-  __arrinit((void *)0x1ccdc64,0x1e,&g_CAlphaBitmapTypeInfo_0059df00);
-  _atexit((WatcomStaticDestructorNode *)0x5bb168);
-  __arrinit((void *)0x1ccdec8,3,&g_CCourseTypeInfo_005a0c80);
-  _atexit((WatcomStaticDestructorNode *)0x5bb178);
+  _atexit(&g_WatcomStaticDestructorNode_005bb158);
+  __arrinit(&DAT_01ccdc64,0x1e,&g_CAlphaBitmapTypeInfo_0059df00);
+  _atexit(&g_WatcomStaticDestructorNode_005bb168);
+  __arrinit(&DAT_01ccdec8,3,&g_CCourseTypeInfo_005a0c80);
+  _atexit(&g_WatcomStaticDestructorNode_005bb178);
   __arrinit((void *)0x1ccdeec,0x1e,&g_SBatTypeInfo_005a0ca0);
-  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590((CKeyFramedModel *)0x1cce1bc);
-  _atexit((WatcomStaticDestructorNode *)0x5bb188);
+  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590((CKeyFramedModel *)&DAT_01cce1bc);
+  _atexit(&g_WatcomStaticDestructorNode_005bb188);
   return;
 }

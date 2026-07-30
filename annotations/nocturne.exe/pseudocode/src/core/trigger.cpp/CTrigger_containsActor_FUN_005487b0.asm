@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[1]:
-;   core_trigger.cpp_FUN_00547b30 at 00547ba1
+;   core_trigger.cpp_CTrigger_process_FUN_00547b30 at 00547ba1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_trigger_cpp_00596b23

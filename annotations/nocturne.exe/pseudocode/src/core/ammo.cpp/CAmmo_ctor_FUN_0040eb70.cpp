@@ -15,7 +15,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(CAmmo *this_ptr)
   char *pcVar3;
   CKeyFramedModelInstance *pCVar4;
   
-  pCVar2 = core_actor_cpp_FUN_00409d30(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
   this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;

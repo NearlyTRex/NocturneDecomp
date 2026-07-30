@@ -1543,7 +1543,7 @@ LAB_004a2165:
         if (iStack_16c == iStack_170) {
           DAT_01c78af0 = 0;
           core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30
-                    ((CDemonCamera *)0x1fb8508,0xff00ff);
+                    ((CDemonCamera *)&DAT_01fb8508,0xff00ff);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
                     (0x02DC9450,(void *)0x0,"cheat-1.wav");
         }
@@ -1578,7 +1578,7 @@ LAB_004a2165:
           DAT_01c78af0 = 0;
           *(uint *)(0x01E57284 + 0x14cd68) = 0;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                    ((CDemonCamera *)0x1fb8508,0.0);
+                    ((CDemonCamera *)&DAT_01fb8508,0.0);
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {

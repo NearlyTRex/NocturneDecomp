@@ -16,7 +16,7 @@
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489759
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482c25
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483958
-;   core_flame.cpp_FUN_0048d5d0 at 0048d905
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048d905
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae4c8
 ;   core_set.cpp_FUN_00509a80 at 00509d5b
 ;

@@ -7,13 +7,13 @@
 // Address: 0048ee90
 void __cdecl staticInit(void);
 
-// Original: core_flies.cpp_FUN_0048eec0
+// Original: core_flies.cpp_factoryFunc_FUN_0048eec0
 // Address: 0048eec0
-void FUN_0048eec0(void);
+CFlies * __cdecl factoryFunc(void);
 
-// Original: core_flies.cpp_FUN_0048eee0
+// Original: core_flies.cpp_CFlies_getActorType_FUN_0048eee0
 // Address: 0048eee0
-CDemonActorType * FUN_0048eee0(void);
+CDemonActorType * CFlies::getActorType(void);
 
 // Original: core_flies.cpp_FUN_0048eef0
 // Address: 0048eef0
@@ -35,17 +35,17 @@ void CFlies::process(CFlies *param_1,float param_2);
 // Address: 0048f3c0
 void __cdecl drawFlyPixel(int screen_x,int screen_y,int z_depth);
 
-// Original: core_flies.cpp_FUN_0048f490
+// Original: core_flies.cpp_CFlies_renderOpaque_FUN_0048f490
 // Address: 0048f490
-int FUN_0048f490(CDemonActor *param_1);
+int CFlies::renderOpaque(CDemonActor *param_1);
 
 // Original: core_flies.cpp_CFlies_getBoundingBox_FUN_0048f890
 // Address: 0048f890
 void CFlies::getBoundingBox(int param_1,float *param_2);
 
-// Original: core_flies.cpp_FUN_0048f8e0
+// Original: core_flies.cpp_CFlies_getCollisionType_FUN_0048f8e0
 // Address: 0048f8e0
-undefined4 FUN_0048f8e0(void);
+undefined4 CFlies::getCollisionType(void);
 
 // Original: core_flies.cpp_CFlies_initFly_FUN_0048f8f0
 // Address: 0048f8f0
@@ -59,9 +59,9 @@ CVector3f * __cdecl CFlies::generateRandomPoint(CFlies *this_ptr,CVector3f *out_
 // Address: 0048fbe0
 CFlies * __cdecl findFliesByFollowActor(CDemonActor *actor);
 
-// Original: core_flies.cpp_FUN_0048fc30
+// Original: core_flies.cpp_CFlies_dtor_FUN_0048fc30
 // Address: 0048fc30
-CDemonActor * FUN_0048fc30(CDemonActor *param_1,byte param_2);
+CDemonActor * CFlies::dtor(CDemonActor *param_1,byte param_2);
 
 // Original: core_flies.cpp_SFly_ctor_FUN_0048fca0
 // Address: 0048fca0

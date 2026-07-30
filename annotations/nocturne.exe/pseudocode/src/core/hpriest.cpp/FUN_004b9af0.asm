@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_hpriest.cpp_FUN_004b9ac0 at 004b9ad3
+;   core_hpriest.cpp_factoryFunc_FUN_004b9ac0 at 004b9ad3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_priest_dfm_00585fe2

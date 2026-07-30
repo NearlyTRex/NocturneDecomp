@@ -93,8 +93,8 @@ switchD_0056ed30_default:
     return ExceptionContinueExecution;
   }
 LAB_0056eeab:
-  local_14.ExceptionRecord = (PEXCEPTION_RECORD)ExceptionRecord;
-  local_14.ContextRecord = (PCONTEXT)ContextRecord;
+  local_14.ExceptionRecord = ExceptionRecord;
+  local_14.ContextRecord = ContextRecord;
   LVar3 = UnhandledExceptionFilter(&local_14);
   if (LVar3 == 0) {
     return ExceptionContinueSearch;

@@ -8,13 +8,13 @@
 ; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[35]:
-;   core_ammobox.cpp_FUN_0040f390 at 0040f43e
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390 at 0040f43e
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00416570 at 00416709
-;   core_boneguy.cpp_FUN_00419ce0 at 00419e90
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419ce0 at 00419e90
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ed1f
 ;   core_chain.cpp_CChain_archive_FUN_0042cbc0 at 0042cc02
 ;   core_charactr.cpp_CCharacter_archive_FUN_004244b0 at 00424592
-;   core_crate.cpp_FUN_0043cc50 at 0043cc8b
+;   core_crate.cpp_CCrate_archive_FUN_0043cc50 at 0043cc8b
 ;   core_dest.cpp_CActorDestination_archive_FUN_0044bb10 at 0044bb5d
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 at 0045a5ff
 ;   core_emitter.cpp_CEmitter_archive_FUN_004791a0 at 0047931a

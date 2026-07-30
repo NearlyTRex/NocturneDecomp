@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5361
 Functions with no callers: 2640
-Parameter mismatches detected: 393
-Signature accuracy rate: 85.6%
+Parameter mismatches detected: 390
+Signature accuracy rate: 85.7%
 
 Mismatches by confidence:
   High confidence:   18 (multiple call sites agree)
   Medium confidence: 79 (some agreement)
-  Low confidence:    296 (limited data)
+  Low confidence:    293 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -135,7 +135,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_script.cpp_CScript_step_F at 00501349: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_script.cpp_makeVector_FUN at 00505886: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_boneguy.cpp_FUN_004194b0 at 00419528: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_boneguy.cpp_CBoneGuy_getC at 00419528: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     Declared: 1 params (4 bytes), Estimated: 2 stack slots (8 bytes) [+1]
@@ -220,7 +220,7 @@ MEDIUM CONFIDENCE MISMATCHES
   shape_edittool.cpp_FUN_0046f7e0                    declared:0 est:8 (+8) [2 calls]
   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2e declared:0 est:8 (+8) [2 calls]
   FUN_00567560                                       declared:0 est:7 (+7) [2 calls]
-  core_actor.cpp_FUN_0040bca0                        declared:0 est:7 (+7) [2 calls]
+  core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU declared:0 est:7 (+7) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:0 est:6 (+6) [2 calls]
@@ -268,7 +268,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  296 functions with low-confidence mismatches
+  293 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_004012d0                      declared:0 est:5 (+5)
     engine_2d.c_FUN_004013d0                      declared:0 est:8 (+8)
@@ -288,7 +288,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 36
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 357
+Functions where declaration has FEWER params than estimated: 354
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -298,7 +298,7 @@ Distribution of differences (estimated - declared):
   -3 params: 3 functions
   -2 params: 6 functions
   -1 params: 24 functions
-  +1 params: 87 functions
+  +1 params: 84 functions
   +2 params: 70 functions
   +3 params: 59 functions
   +4 params: 45 functions

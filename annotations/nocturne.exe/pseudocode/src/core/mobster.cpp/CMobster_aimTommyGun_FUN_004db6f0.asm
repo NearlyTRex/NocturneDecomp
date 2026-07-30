@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_mobster.cpp_FUN_004da790 at 004dacae
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004dacae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mobster_cpp_0058a361

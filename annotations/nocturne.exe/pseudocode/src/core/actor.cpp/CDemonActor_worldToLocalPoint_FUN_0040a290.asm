@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[76]:
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b656
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a828
-;   core_actor.cpp_FUN_0040b300 at 0040b656
 ;   core_baron.cpp_FUN_00410cc0 at 00410cfd
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041efab
 ;   core_boxactor.cpp_FUN_0041f190 at 0041f1b1

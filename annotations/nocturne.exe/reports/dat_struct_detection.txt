@@ -2,24 +2,24 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 3197
+Total DAT_ globals found: 3046
 Filtered out (inside named data): 107
-Immediate constants (not real globals): 78
-Real globals remaining: 3119
-Clusters detected: 268
-DAT_ globals in clusters: 3039
+Immediate constants (not real globals): 75
+Real globals remaining: 2971
+Clusters detected: 266
+DAT_ globals in clusters: 2890
 
 Classification summary:
   unknown              87 clusters
   struct               68 clusters
-  vector_groups        64 clusters
-  array                31 clusters
+  vector_groups        63 clusters
+  array                30 clusters
   char_array           8 clusters
   struct_array         5 clusters
   byte_blob            5 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (78)
+LIKELY IMMEDIATE CONSTANTS (75)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -28,14 +28,14 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0078a123  value=0x78A123 (7905571)  refs=6
     CBoxActor_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0041e4f1 | DAT_0078a123
+    CDemonActor_ctor
+      MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | DAT_0078a123
     CEnemy_releaseVictim
       CMP ECX,0x78a123                    ; 0047a0d6 | DAT_0078a123
     CHero_releaseFromGrab
       CMP dword ptr [ESI + 0x68],0x78a123 ; 004b4d59 | DAT_0078a123
     CWeapon_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
-    FUN_00409d30
-      MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | DAT_0078a123
     FUN_0040bd90
       CMP EDI,0x78a123                    ; 0040bdde | DAT_0078a123
 
@@ -64,10 +64,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0076436c  value=0x76436C (7750508)  refs=3
     CBaron_ctor
       PUSH 0x76436c                       ; 00410295 | DAT_0076436c
+    CBaron_renderTransparent
+      PUSH 0x76436c                       ; 004111cb | DAT_0076436c
     CBaron_setup
       PUSH 0x76436c                       ; 0041045f | DAT_0076436c
-    FUN_004110f0
-      PUSH 0x76436c                       ; 004111cb | DAT_0076436c
 
   DAT_007658e4  value=0x7658E4 (7756004)  refs=3
     CCharacter_renderAttachedModels
@@ -100,7 +100,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5c3918                       ; 0052a692 | DAT_005c3918
 
   DAT_005acf40  value=0x5ACF40 (5951296)  refs=2
-    FUN_00410490
+    CBaron_process
       PUSH 0x5acf40                       ; 0041091c | DAT_005acf40
 
   DAT_0077d250  value=0x77D250 (7852624)  refs=2
@@ -256,11 +256,11 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x5b80f4                    ; 004829fe | DAT_005b80f4
 
   DAT_005b8de8  value=0x5B8DE8 (6000104)  refs=1
-    FUN_0048d5d0
+    CFlame_renderTransparent
       PUSH 0x5b8de8                       ; 0048de26 | DAT_005b8de8
 
   DAT_005b9214  value=0x5B9214 (6001172)  refs=1
-    FUN_0048f490
+    CFlies_renderOpaque
       PUSH 0x5b9214                       ; 0048f62c | DAT_005b9214
 
   DAT_005c18c8  value=0x5C18C8 (6035656)  refs=1
@@ -279,16 +279,12 @@ Consider removing the Ghidra label and leaving the raw number.
     CPathMap_renderPathMap
       PUSH 0x5be090                       ; 004f1929 | DAT_005be090
 
-  DAT_005be0a8  value=0x5BE0A8 (6021288)  refs=1
-    getOrCreatePathMap
-      PUSH 0x5be0a8                       ; 004f1da8 | DAT_005be0a8
-
   DAT_005be36c  value=0x5BE36C (6021996)  refs=1
     CDemonSet_renderSceneGeometry
       PUSH 0x5be36c                       ; 00507c8f | DAT_005be36c
 
   DAT_005c13cc  value=0x5C13CC (6034380)  refs=1
-    FUN_00551c00
+    CWaterActor_renderTransparent
       ADD EAX,0x5c13cc                    ; 00551c91 | DAT_005c13cc
 
   DAT_005c15bc  value=0x5C15BC (6034876)  refs=1
@@ -378,14 +374,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005c3908  value=0x5C3908 (6043912)  refs=1
     getDirectSoundDevice
       PUSH 0x5c3908                       ; 0052c043 | DAT_005c3908
-
-  DAT_005bea44  value=0x5BEA44 (6023748)  refs=1
-    getSampleInfo
-      PUSH 0x5bea44                       ; 00527b78 | DAT_005bea44
-
-  DAT_005bea30  value=0x5BEA30 (6023728)  refs=1
-    getSfxSample
-      PUSH 0x5bea30                       ; 00522524 | DAT_005bea30
 
   DAT_02de0860  value=0x2DE0860  refs=1
     FUN_00559500
@@ -676,7 +664,7 @@ HIGH CONFIDENCE (23 clusters)
       0x02de2a11  DAT_02de2a11  undefined4
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (89 clusters)
+MEDIUM CONFIDENCE (87 clusters)
 --------------------------------------------------------------------------------
 
   0x01cc8120 - 0x01cc8650  (133 items, 1328 bytes span)
@@ -705,32 +693,6 @@ MEDIUM CONFIDENCE (89 clusters)
       0x02dc9c90  DAT_02dc9c90  undefined4
       0x02dc9c94  DAT_02dc9c94  undefined4
       ... +122 more
-
-  0x014b8458 - 0x014b8c24  (111 items, 1996 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 30 groups of 3 consecutive ints found
-    Referenced by: 23 functions
-      0x014b8458  DAT_014b8458  undefined4
-      0x014b845c  DAT_014b845c  undefined4
-      0x014b8460  DAT_014b8460  undefined4
-      0x014b8464  DAT_014b8464  undefined4
-      0x014b8468  DAT_014b8468  undefined4
-      0x014b846c  DAT_014b846c  undefined4
-      ... +105 more
-
-  0x01bc994c - 0x01bca104  (88 items, 1976 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 23 groups of 3 consecutive ints found
-    Referenced by: 13 functions
-      0x01bc994c  DAT_01bc994c  undefined4
-      0x01bc995c  DAT_01bc995c  undefined4
-      0x01bc9960  DAT_01bc9960  undefined4 [float]
-      0x01bc9964  DAT_01bc9964  undefined4
-      0x01bc9968  DAT_01bc9968  undefined4 [byte]
-      0x01bc996c  DAT_01bc996c  undefined4
-      ... +82 more
 
   0x01c789c0 - 0x01c78d60  (84 items, 928 bytes span)
     Classification: vector_groups
@@ -827,6 +789,20 @@ MEDIUM CONFIDENCE (89 clusters)
       0x005c5020  DAT_005c5020  undefined4
       0x005c5024  DAT_005c5024  undefined4
       ... +43 more
+
+  0x014b8458 - 0x014b8c24  (47 items, 1996 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 11 groups of 3 consecutive ints found
+    Referenced by: 23 functions
+     near: CVector3f_ARRAY_014b8490 (CVector3f[16]) at -56
+      0x014b8458  DAT_014b8458  undefined4
+      0x014b845c  DAT_014b845c  undefined4
+      0x014b8460  DAT_014b8460  undefined4
+      0x014b8464  DAT_014b8464  undefined4
+      0x014b8468  DAT_014b8468  undefined4
+      0x014b846c  DAT_014b846c  undefined4
+      ... +41 more
 
   0x02dc9214 - 0x02dc947c  (41 items, 616 bytes span)
     Classification: vector_groups
@@ -1001,17 +977,18 @@ MEDIUM CONFIDENCE (89 clusters)
       0x007645b0  DAT_007645b0  undefined4
       ... +18 more
 
-  0x01cc9094 - 0x01cc9138  (24 items, 164 bytes span)
+  0x01bc994c - 0x01bca104  (24 items, 1976 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
-    Reason: 7 groups of 3 consecutive ints found
-    Referenced by: 4 functions
-      0x01cc9094  DAT_01cc9094  undefined4
-      0x01cc9098  DAT_01cc9098  undefined4
-      0x01cc909c  DAT_01cc909c  undefined4
-      0x01cc90a0  DAT_01cc90a0  undefined4
-      0x01cc90a4  DAT_01cc90a4  undefined4
-      0x01cc90a8  DAT_01cc90a8  undefined4
+    Reason: 4 groups of 3 consecutive ints found
+    Referenced by: 11 functions
+     near: CVector3f_ARRAY_01bc9970 (CVector3f[16]) at -36
+      0x01bc994c  DAT_01bc994c  undefined4
+      0x01bc995c  DAT_01bc995c  undefined4
+      0x01bc9960  DAT_01bc9960  undefined4 [float]
+      0x01bc9964  DAT_01bc9964  undefined4
+      0x01bc9968  DAT_01bc9968  undefined4 [byte]
+      0x01bc996c  DAT_01bc996c  undefined4
       ... +18 more
 
   0x01cc5118 - 0x01cc5174  (23 items, 92 bytes span)
@@ -1040,20 +1017,6 @@ MEDIUM CONFIDENCE (89 clusters)
       0x01b4d724  DAT_01b4d724  undefined4
       ... +16 more
 
-  0x005be924 - 0x005beba4  (21 items, 640 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 4 groups of 3 consecutive ints found
-    Referenced by: 37 functions
-     near: INT_005be964 (int) at -64
-      0x005be924  DAT_005be924  undefined4
-      0x005be978  DAT_005be978  undefined4
-      0x005be97c  DAT_005be97c  undefined4
-      0x005bea40  DAT_005bea40  undefined4
-      0x005bea60  DAT_005bea60  undefined4
-      0x005bea64  DAT_005bea64  undefined4
-      ... +15 more
-
   0x01e53380 - 0x01e53410  (21 items, 144 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -1066,6 +1029,20 @@ MEDIUM CONFIDENCE (89 clusters)
       0x01e53390  DAT_01e53390  undefined4
       0x01e53394  DAT_01e53394  undefined4
       ... +15 more
+
+  0x005be924 - 0x005beba4  (20 items, 640 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 4 groups of 3 consecutive ints found
+    Referenced by: 36 functions
+     near: g_INT_005be964 (int) at -64
+      0x005be924  DAT_005be924  undefined4
+      0x005be978  DAT_005be978  undefined4
+      0x005be97c  DAT_005be97c  undefined4
+      0x005bea60  DAT_005bea60  undefined4
+      0x005bea64  DAT_005bea64  undefined4
+      0x005bea68  DAT_005bea68  undefined4
+      ... +14 more
 
   0x01e4280c - 0x01e428d1  (20 items, 197 bytes span)
     Classification: vector_groups
@@ -1120,6 +1097,20 @@ MEDIUM CONFIDENCE (89 clusters)
       0x0077ac98  DAT_0077ac98  undefined4
       0x0077ac9c  DAT_0077ac9c  undefined4
       0x0077aca0  DAT_0077aca0  undefined4
+      ... +12 more
+
+  0x01cc9094 - 0x01cc9120  (18 items, 140 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 5 groups of 3 consecutive ints found
+    Referenced by: 4 functions
+     near: CVector3f_ARRAY_01cc9124 (CVector3f[32]) at -144
+      0x01cc9094  DAT_01cc9094  undefined4
+      0x01cc9098  DAT_01cc9098  undefined4
+      0x01cc909c  DAT_01cc909c  undefined4
+      0x01cc90a0  DAT_01cc90a0  undefined4
+      0x01cc90a4  DAT_01cc90a4  undefined4
+      0x01cc90a8  DAT_01cc90a8  undefined4
       ... +12 more
 
   0x02de3114 - 0x02de3178  (16 items, 100 bytes span)
@@ -1262,7 +1253,7 @@ MEDIUM CONFIDENCE (89 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
     Referenced by: 1 functions
-     near: INT_005be964 (int) at -496
+     near: g_INT_005be964 (int) at -496
       0x005be774  DAT_005be774  undefined4
       0x005be77c  DAT_005be77c  undefined4
       0x005be780  DAT_005be780  undefined4
@@ -1315,6 +1306,7 @@ MEDIUM CONFIDENCE (89 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
     Referenced by: 35 functions
+     near: CVector3f_ARRAY_01cc92a8[1].z (undefined4) at +368
       0x01cc942c  DAT_01cc942c  undefined4
       0x01cc9430  DAT_01cc9430  undefined4
       0x01cc9434  DAT_01cc9434  undefined4
@@ -1449,7 +1441,7 @@ MEDIUM CONFIDENCE (89 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
     Referenced by: 3 functions
-     near: g_INT_005ae678 (int) at -552
+     near: g_WatcomStaticDestructorNode_005ae638 (WatcomStaticDestructorNode) at -488
       0x005ae450  DAT_005ae450  undefined4 [byte]
       0x005ae488  DAT_005ae488  undefined4
       0x005ae4a4  DAT_005ae4a4  undefined4 [float]
@@ -1483,20 +1475,6 @@ MEDIUM CONFIDENCE (89 clusters)
       0x01fb1d18  DAT_01fb1d18  undefined4
       0x01fb1d1c  DAT_01fb1d1c  undefined4
       ... +3 more
-
-  0x005ae638 - 0x005ae70c  (8 items, 212 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 241 functions
-     near: g_INT_005ae678 (int) at -64
-      0x005ae638  DAT_005ae638  undefined4
-      0x005ae6f4  DAT_005ae6f4  undefined4 [float]
-      0x005ae6f8  DAT_005ae6f8  undefined4 [float]
-      0x005ae6fc  DAT_005ae6fc  undefined4
-      0x005ae700  DAT_005ae700  undefined4
-      0x005ae704  DAT_005ae704  undefined4
-      ... +2 more
 
   0x01c20140 - 0x01c2018c  (8 items, 76 bytes span)
     Classification: vector_groups
@@ -1563,17 +1541,18 @@ MEDIUM CONFIDENCE (89 clusters)
       0x02de5d80  DAT_02de5d80  undefined4
       ... +2 more
 
-  0x01cc92a4 - 0x01cc92bc  (7 items, 24 bytes span)
+  0x005ae6f4 - 0x005ae70c  (7 items, 24 bytes span)
     Classification: array
-    Likely type: int[7]
+    Likely type: float[7]
     Reason: 7 elements at stride 4
-    Referenced by: 1 functions
-      0x01cc92a4  DAT_01cc92a4  undefined4
-      0x01cc92a8  DAT_01cc92a8  undefined4 [float]
-      0x01cc92ac  DAT_01cc92ac  undefined4 [float]
-      0x01cc92b0  DAT_01cc92b0  undefined4 [float]
-      0x01cc92b4  DAT_01cc92b4  undefined4
-      0x01cc92b8  DAT_01cc92b8  undefined4
+    Referenced by: 241 functions
+     near: g_INT_005ae6c8 (int) at +44
+      0x005ae6f4  DAT_005ae6f4  undefined4 [float]
+      0x005ae6f8  DAT_005ae6f8  undefined4 [float]
+      0x005ae6fc  DAT_005ae6fc  undefined4
+      0x005ae700  DAT_005ae700  undefined4
+      0x005ae704  DAT_005ae704  undefined4
+      0x005ae708  DAT_005ae708  undefined4
       ... +1 more
 
   0x02684230 - 0x02684248  (7 items, 24 bytes span)
@@ -1624,18 +1603,6 @@ MEDIUM CONFIDENCE (89 clusters)
       0x0140e79c  DAT_0140e79c  undefined4 [float]
       0x0140e7a0  DAT_0140e7a0  undefined4 [float]
       0x0140e7a4  DAT_0140e7a4  undefined4
-
-  0x01abb4b8 - 0x01abb4cc  (6 items, 20 bytes span)
-    Classification: array
-    Likely type: int[6]
-    Reason: 6 elements at stride 4
-    Referenced by: 3 functions
-      0x01abb4b8  DAT_01abb4b8  undefined4 [float]
-      0x01abb4bc  DAT_01abb4bc  undefined4 [float]
-      0x01abb4c0  DAT_01abb4c0  undefined4 [float]
-      0x01abb4c4  DAT_01abb4c4  undefined4
-      0x01abb4c8  DAT_01abb4c8  undefined4
-      0x01abb4cc  DAT_01abb4cc  undefined4
 
   0x02045ab0 - 0x02045ac4  (6 items, 20 bytes span)
     Classification: array
@@ -2844,6 +2811,16 @@ LOW CONFIDENCE (156 clusters)
       0x0145b294  DAT_0145b294  undefined4
       0x0145b295  DAT_0145b295  undefined4
 
+  0x01abb4c4 - 0x01abb4cc  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+     near: CVector3f_01abb4b8.z (undefined4) at +4
+      0x01abb4c4  DAT_01abb4c4  undefined4
+      0x01abb4c8  DAT_01abb4c8  undefined4
+      0x01abb4cc  DAT_01abb4cc  undefined4
+
   0x01b4cd30 - 0x01b4cd7c  (3 items, 76 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -2852,15 +2829,6 @@ LOW CONFIDENCE (156 clusters)
       0x01b4cd30  DAT_01b4cd30  undefined4
       0x01b4cd34  DAT_01b4cd34  undefined4
       0x01b4cd7c  DAT_01b4cd7c  undefined4
-
-  0x01b8efcc - 0x01b8efd4  (3 items, 8 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 3 items, span=8 bytes
-    Referenced by: 3 functions
-      0x01b8efcc  DAT_01b8efcc  undefined4
-      0x01b8efd0  DAT_01b8efd0  undefined4
-      0x01b8efd4  DAT_01b8efd4  undefined4
 
   0x01bcd070 - 0x01bcd07c  (3 items, 12 bytes span)
     Classification: unknown
@@ -3449,7 +3417,7 @@ LOW CONFIDENCE (156 clusters)
       0x02dd9260  DAT_02dd9260  undefined4 [float]
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (80 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (81 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_01bd4260                    addr=01bd4260    type=undefined4      refs=34
   DAT_02dc1b74                    addr=02dc1b74    type=undefined4      refs=20
@@ -3500,8 +3468,8 @@ ISOLATED DAT_ GLOBALS (80 - not part of any cluster)
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  near: g_CEnemyVTable(-12)
   DAT_01bcfe34                    addr=01bcfe34    type=undefined4      refs=1
   DAT_0059d560                    addr=0059d560    type=undefined4      refs=1 [likely float]  near: g_CFlameVTable(-36)
-  DAT_0059d8ec                    addr=0059d8ec    type=undefined4      refs=1 [likely float]  near: g_CGunVTable(-8)
-  ... +30 more
+  DAT_0059d8ec                    addr=0059d8ec    type=undefined4      refs=1 [likely float]  near: g_CFlashlightVTable(-8)
+  ... +31 more
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (107)

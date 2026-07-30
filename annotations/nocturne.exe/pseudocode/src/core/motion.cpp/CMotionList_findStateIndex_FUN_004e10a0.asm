@@ -12,13 +12,13 @@
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0 at 0042a02e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0 at 00428b35
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047cf3f
+;   core_hero.cpp_CHero_canBeGrabbed_FUN_004b4c20 at 004b4c4f
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004b4c70 at 004b4cb6
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 at 004b4d88
-;   core_hero.cpp_FUN_004b4c20 at 004b4c4f
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 at 004e1750
 ;   core_npc.cpp_CNPC_process_FUN_004eea20 at 004eeca7
 ;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 at 004eee05
-;   core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0 at 005624fc
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055ef9b
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[9]:
-;   core_flies.cpp_FUN_0048f490 at 0048f842
+;   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 at 0048f842
 ;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 005630c7
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0 at 00562be7
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 at 00461352

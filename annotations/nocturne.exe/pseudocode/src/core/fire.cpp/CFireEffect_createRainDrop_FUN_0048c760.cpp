@@ -14,7 +14,7 @@ void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect *
   int iVar1;
   
   (*(code *)**(uint **)(&DAT_01c6ce4c + _DAT_01c6ce14 * 0x38))
-            (_DAT_01c6ce14 * 0x38 + 0x1c6ce18,position,velocity);
+            (&DAT_01c6ce18 + _DAT_01c6ce14 * 0x38,position,velocity);
   iVar1 = _DAT_01c6ce14 + 1;
   *(uint *)(&DAT_01c6ce30 + _DAT_01c6ce14 * 0x38) = 0x3e800000;
   if (0xff < iVar1) {

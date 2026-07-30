@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[21]:
-;   core_baron.cpp_FUN_00410490 at 004106ec
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 004106ec
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_00429560 at 00429601
-;   core_colonel.cpp_FUN_00439f50 at 0043a197
+;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 0043a197
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 004979d0
 ;   core_gabriela.cpp_FUN_004998c0 at 00499aaa
 ;   core_gabriela.cpp_FUN_00499b00 at 00499bbd
-;   core_ghoul.cpp_FUN_004a9270 at 004a9557
-;   core_haystack.cpp_FUN_004b32d0 at 004b3529
-;   core_hostage.cpp_FUN_004b6d80 at 004b80a0
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba29d
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a9557
+;   core_haystack.cpp_CHaystack_process_FUN_004b32d0 at 004b3529
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b80a0
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba29d
 ;   ... and 11 more
 ;
 ; *****************************************************************************

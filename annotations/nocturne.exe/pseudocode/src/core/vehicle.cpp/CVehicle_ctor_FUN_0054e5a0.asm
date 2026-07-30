@@ -7,7 +7,7 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vehicle.cpp_FUN_0054e570 at 0054e583
+;   core_vehicle.cpp_factoryFunc_FUN_0054e570 at 0054e583
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_32ford_kfm_005972c1
@@ -24,7 +24,7 @@
 ;   WatcomTypeInfo g_CTireTypeInfo_005a3d20
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
@@ -40,8 +40,8 @@ section .text
     PUSH EDI                            ; 0054e5a2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054e5a3
     PUSH EBX                            ; 0054e5a7
-    CALL core_actor.cpp_FUN_00409d30    ; 0054e5a8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0054e5a8
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054e5ad
     ADD EAX,0x150                       ; 0054e5b0
     PUSH EAX                            ; 0054e5b5

@@ -12,7 +12,7 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *d
   char *string_data;
   int index;
   
-  (*dest_ptr->vtable->clear)(dest_ptr);
+  (*((dest_ptr->vtable)._us)->clear)(dest_ptr);
   if (source_ptr->item_count < 1) {
     return dest_ptr;
   }

@@ -193,8 +193,8 @@
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
+;   core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 at 0053f236
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 at 0053a6b6
-;   core_stranger.cpp_FUN_0053f210 at 0053f236
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_0059596f

@@ -7,7 +7,7 @@
 ; CArmour *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_armour.cpp_FUN_0040f930 at 0040f943
+;   core_armour.cpp_factoryFunc_FUN_0040f930 at 0040f943
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_dfm_0057845a

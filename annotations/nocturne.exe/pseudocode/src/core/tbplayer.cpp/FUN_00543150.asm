@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_tbplayer.cpp_FUN_00543120 at 00543133
+;   core_tbplayer.cpp_factoryFunc_FUN_00543120 at 00543133
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bassplayer_dfm_00596491

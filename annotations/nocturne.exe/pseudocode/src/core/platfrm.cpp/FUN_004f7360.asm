@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x88]:4  local_88
 ;
 ; XREF[1]:
-;   core_platfrm.cpp_FUN_004f6170 at 004f6a0e
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6a0e
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058d965 = 0.0100000000000000

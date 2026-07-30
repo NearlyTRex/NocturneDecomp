@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_flies.cpp_FUN_0048fc30 at 0048fc45
+;   core_flies.cpp_CFlies_dtor_FUN_0048fc30 at 0048fc45
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SFlyTypeInfo_0059db10

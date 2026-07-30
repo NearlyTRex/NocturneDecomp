@@ -13,14 +13,14 @@
 ; XREF[19]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0 at 0042a03c
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 0049755f
-;   core_gabriela.cpp_FUN_00495a20 at 00496089
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496089
 ;   core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004aaf40 at 004aaf60
-;   core_ghoul.cpp_FUN_004a9270 at 004a92e2
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a92e2
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 at 004b4d96
-;   core_hostage.cpp_FUN_004b6d80 at 004b70cd
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b70cd
 ;   core_mimic.cpp_FUN_004d4f30 at 004d5305
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd05c
-;   core_scat.cpp_FUN_004fbf20 at 004fc1ae
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc1ae
 ;   ... and 9 more
 ;
 ; *****************************************************************************

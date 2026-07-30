@@ -13,7 +13,6 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
   DWORD DVar2;
   int iVar3;
   BOOL BVar4;
-  DWORD DVar5;
   SIZE_T in_stack_ffffffdc;
   DWORD nNumberOfBytesToWrite;
   DWORD local_20;
@@ -68,8 +67,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                                     (LPOVERLAPPED)0x0);
                   if (BVar4 == 0) {
                     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-                    DVar5 = __set_errno();
-                    return DVar5;
+                    DVar2 = __set_errno();
+                    return DVar2;
                   }
                 }
                 else {
@@ -93,8 +92,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                                   (LPOVERLAPPED)0x0);
                 if (BVar4 == 0) {
                   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-                  DVar5 = __set_errno();
-                  return DVar5;
+                  DVar2 = __set_errno();
+                  return DVar2;
                 }
               }
               else {
@@ -116,8 +115,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
                               (LPOVERLAPPED)0x0);
             if (BVar4 == 0) {
               (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-              DVar5 = __set_errno();
-              return DVar5;
+              DVar2 = __set_errno();
+              return DVar2;
             }
           }
           else {
@@ -135,8 +134,8 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
           BVar4 = WriteFile(local_18,buffer,count,&local_1c,(LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);
-            DVar5 = __set_errno();
-            return DVar5;
+            DVar2 = __set_errno();
+            return DVar2;
           }
         }
         else {

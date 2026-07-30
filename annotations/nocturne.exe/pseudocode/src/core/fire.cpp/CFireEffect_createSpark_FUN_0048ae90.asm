@@ -13,12 +13,12 @@
 ; int              Stack[0x1c]:4   fade_rate
 ;
 ; XREF[20]:
-;   core_batcreat.cpp_FUN_00413040 at 004131a7
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 004131a7
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414a97
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420db7
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a842
 ;   core_dynamite.cpp_CDynamite_process_FUN_0046edc0 at 0046ef1d
-;   core_emitter.cpp_FUN_00478790 at 004788b5
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 004788b5
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ad46
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484bb0
 ;   core_fire.cpp_CFireball_process_FUN_00484050 at 00484161

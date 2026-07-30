@@ -20,8 +20,9 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00458580(void)
   CVector3f_01b4d218.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CDraculaBrideActorType_01b4d224,"CDraculaBride",
-             core_dracbrid_cpp_FUN_00458610,&g_INT_005ae6c8,9,&g_CEnemyActorType_01bcdebc);
+             core_dracbrid_cpp_factoryFunc_FUN_00458610,&g_INT_005ae6c8,9,
+             &g_CEnemyActorType_01bcdebc);
   __arrinit(&DAT_01b4d280,6,&g_SFreakyTypeInfo_0059c560);
-  _atexit((WatcomStaticDestructorNode *)0x5ae6b8);
+  _atexit(&g_WatcomStaticDestructorNode_005ae6b8);
   return;
 }

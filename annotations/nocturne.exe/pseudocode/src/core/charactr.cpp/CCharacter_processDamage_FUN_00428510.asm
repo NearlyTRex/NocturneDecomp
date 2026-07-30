@@ -16,12 +16,12 @@
 ;   core_baron.cpp_CBaron_processDamage_FUN_004112f0 at 00411301
 ;   core_colonel.cpp_CColonel_processDamage_FUN_0043aa00 at 0043aa77
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 at 00479f8d
-;   core_gabriela.cpp_FUN_004996b0 at 00499808
+;   core_gabriela.cpp_CGabriella_processDamage_FUN_004996b0 at 00499808
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004b4000 at 004b4090
 ;   core_icepick.cpp_CIcePick_processDamage_FUN_004bb4e0 at 004bb59d
-;   core_npc.cpp_FUN_004eeea0 at 004eef1b
+;   core_npc.cpp_CNPC_processDamage_FUN_004eeea0 at 004eef1b
 ;   core_scat.cpp_CScat_processDamage_FUN_004fcbd0 at 004fcc47
-;   core_stranger.cpp_FUN_0053e860 at 0053eb97
+;   core_stranger.cpp_CStranger_processDamage_FUN_0053e860 at 0053eb97
 ;   core_svetlana.cpp_CSvetlana_processDamage_FUN_00542e90 at 00542f3b
 ;
 ; Referenced Globals:

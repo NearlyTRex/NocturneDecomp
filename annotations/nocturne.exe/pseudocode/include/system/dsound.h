@@ -6,8 +6,8 @@
 #include "system/mmsystem.h"
 #include "system/unknwn.h"
 #include "system/winbase.h"
+#include "system/windef.h"
 #include "system/winnt.h"
-#include "system/winuser.h"
 
 // =============================================================================
 // DSOUND - System Header

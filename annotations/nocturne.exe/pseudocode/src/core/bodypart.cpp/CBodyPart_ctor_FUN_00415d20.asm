@@ -7,8 +7,8 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_00415cf0 at 00415d03
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415c32
+;   core_bodypart.cpp_factoryFunc_FUN_00415cf0 at 00415d03
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBodyPartVTable
@@ -16,7 +16,7 @@
 ;   WatcomTypeInfo g_SBodyPartFireTypeInfo_0059a840
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_box.cpp_CBox_ctor_FUN_0041a610
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
@@ -27,8 +27,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00415d20
         ;   Label: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
     PUSH EAX                            ; 00415d24
-    CALL core_actor.cpp_FUN_00409d30    ; 00415d25
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00415d25
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00415d2a
     PUSH 0x59a820                       ; 00415d2d | g_SBodyPartModelTypeInfo_0059a820
     PUSH 0x3                            ; 00415d32

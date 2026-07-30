@@ -24,7 +24,7 @@
 ;
 ; XREF[2]:
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 00550ede
-;   core_wateract.cpp_FUN_00551c00 at 00551d41
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_00551c00 at 00551d41
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059064a = 255

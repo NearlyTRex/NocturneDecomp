@@ -1,0 +1,347 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 255,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 22,
+    "suspect_types": [
+      "pointer_truncation",
+      "unnamed_param"
+    ],
+    "total_lines": 104
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cefe0",
+    "address_range": [
+      [
+        "004cefe0",
+        "004cf080"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0",
+    "signature": "void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040bce0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0"
+    },
+    {
+      "addr": "004cf090",
+      "is_variadic": false,
+      "name": "core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004cf090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00765a98",
+      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.072463768115942,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 3,
+      "COPY": 71,
+      "INT_ADD": 41,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 26,
+      "LOAD": 32,
+      "POPCOUNT": 9,
+      "RETURN": 4,
+      "STORE": 25
+    },
+    "pcode_op_count": 281
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void core_melee_cpp_CMelee_playAttackHitEffects_FUN_004cefe0(CMelee *param_1,int param_2,SDamageInfo *param_3,CDemonActor *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_2,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_2,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_2,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_2,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_4,g_CCharacterActorType_00765a60.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,0x14,(int)pCVar1[0x1c].prev_actor);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->thrust_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->thrust_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->swing_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,param_1->swing_hit_character_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 == (CDemonActor *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.vtable._ub)->playSound)((CDemonActor *)param_1,param_1->hit_other_sound);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pCVar1[0x1c].prev_actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)pCVar1[0x1c].prev_actor",
+      "severity": "moderate",
+      "text": "(param_1,0x14,(int)pCVar1[0x1c].prev_actor);",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 120,
+        "vtable_addr": "005a03f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

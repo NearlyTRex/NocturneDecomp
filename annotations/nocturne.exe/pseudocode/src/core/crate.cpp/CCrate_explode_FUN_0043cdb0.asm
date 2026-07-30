@@ -7,9 +7,9 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_actor.cpp_FUN_0040b300 at 0040bc87
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040bc87
 ;   core_elephant.cpp_FUN_00477890 at 00477f75
-;   core_gun.cpp_FUN_004b27c0 at 004b2f59
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2f59
 ;   core_shotgun.cpp_FUN_00515ea0 at 005165bc
 ;   core_tommygun.cpp_FUN_00545c30 at 00546413
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afea

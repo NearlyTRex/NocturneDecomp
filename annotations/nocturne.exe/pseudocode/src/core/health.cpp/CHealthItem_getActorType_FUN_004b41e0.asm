@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_health_cpp_CHealthItem_getActorType_FUN_004b41e0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1cae098                   ; 004b41e0
+        ;   Label: core_health.cpp_CHealthItem_getActorType_FUN_004b41e0
+    RET                                 ; 004b41e5
+

@@ -7,41 +7,41 @@
 // Address: 0040f900
 void __cdecl staticInit(void);
 
-// Original: core_armour.cpp_FUN_0040f930
+// Original: core_armour.cpp_factoryFunc_FUN_0040f930
 // Address: 0040f930
-void FUN_0040f930(void);
+CArmour * __cdecl factoryFunc(void);
 
-// Original: core_armour.cpp_FUN_0040f950
+// Original: core_armour.cpp_CArmour_getActorType_FUN_0040f950
 // Address: 0040f950
-CDemonActorType * FUN_0040f950(void);
+CDemonActorType * CArmour::getActorType(void);
 
 // Original: core_armour.cpp_FUN_0040f960
 // Address: 0040f960
 CArmour * __cdecl FUN_0040f960(CArmour *this_ptr);
 
-// Original: core_armour.cpp_FUN_0040fa00
+// Original: core_armour.cpp_CArmour_setup_FUN_0040fa00
 // Address: 0040fa00
-void FUN_0040fa00(CEnemy *param_1);
+void CArmour::setup(CEnemy *param_1);
 
-// Original: core_armour.cpp_FUN_0040fa20
+// Original: core_armour.cpp_CArmour_process_FUN_0040fa20
 // Address: 0040fa20
-void FUN_0040fa20(CCharacter *param_1,float param_2);
+void CArmour::process(CCharacter *param_1,float param_2);
 
-// Original: core_armour.cpp_FUN_0040fb60
+// Original: core_armour.cpp_CArmour_archive_FUN_0040fb60
 // Address: 0040fb60
-void FUN_0040fb60(CEnemy *param_1);
+void CArmour::archive(CEnemy *param_1);
 
-// Original: core_armour.cpp_FUN_0040fbc0
+// Original: core_armour.cpp_CArmour_processDamage_FUN_0040fbc0
 // Address: 0040fbc0
-void FUN_0040fbc0(CEnemy *param_1,SDamageInfo *param_2);
+void CArmour::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
-// Original: core_armour.cpp_FUN_0040fc00
+// Original: core_armour.cpp_CArmour_getTargetPoints_FUN_0040fc00
 // Address: 0040fc00
-undefined4 FUN_0040fc00(void);
+undefined4 CArmour::getTargetPoints(void);
 
-// Original: core_armour.cpp_FUN_0040fc10
+// Original: core_armour.cpp_CArmour_getCollisionType_FUN_0040fc10
 // Address: 0040fc10
-void FUN_0040fc10(CCharacter *param_1,SCollisionInfo *param_2);
+void CArmour::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_armour.cpp_CArmour_dtor_FUN_0040fc30
 // Address: 0040fc30

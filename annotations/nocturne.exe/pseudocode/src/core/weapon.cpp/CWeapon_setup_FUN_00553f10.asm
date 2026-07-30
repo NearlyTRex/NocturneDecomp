@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaronWeapon_setup_FUN_004113b0 at 004113b5
-;   core_turret.cpp_FUN_005495f0 at 0054960b
+;   core_turret.cpp_CTurret_setup_FUN_005495f0 at 0054960b
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

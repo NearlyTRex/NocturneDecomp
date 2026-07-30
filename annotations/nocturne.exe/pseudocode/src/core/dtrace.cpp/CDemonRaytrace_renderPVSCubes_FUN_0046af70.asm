@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005ae700
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b7b744
-;   undefined4 DAT_01b8efcc
+;   CVector3f[20000] CVector3f_ARRAY_01b8efcc
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
@@ -45,7 +45,7 @@ section .text
     PUSH EBX                            ; 0046af9d
     MOV EBX,0x1b8efcc                   ; 0046af9e
     XOR EDI,EDI                         ; 0046afa3
-    PUSH EBX                            ; 0046afa5 | DAT_01b8efcc
+    PUSH EBX                            ; 0046afa5 | CVector3f_ARRAY_01b8efcc
         ;   Label: LAB_0046afa5
     MOV EBP,dword ptr [0x005ae700]      ; 0046afa6 | DAT_005ae700
     PUSH EBP                            ; 0046afac | DAT_01b4d738

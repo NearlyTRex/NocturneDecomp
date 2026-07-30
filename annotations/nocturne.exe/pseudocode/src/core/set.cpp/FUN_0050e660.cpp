@@ -10,7 +10,7 @@ void core_set_cpp_FUN_0050e660(uint param_1,float param_2,float param_3,float pa
 
 {
   core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80
-            ((CDemonCamera *)0x1fb8508,param_2,param_3,param_4,param_5);
+            ((CDemonCamera *)&DAT_01fb8508,param_2,param_3,param_4,param_5);
   xxx_unk_c_FUN_004940d0(INT_005b9284,0x3f800000,param_3 + param_4 + param_5);
   return;
 }

@@ -2,8 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/wingdi.h"
-#include "system/winuser.h"
+#include "system/windef.h"
 #include "types/classes/CFont.h"
 
 // Structure: CWinFont

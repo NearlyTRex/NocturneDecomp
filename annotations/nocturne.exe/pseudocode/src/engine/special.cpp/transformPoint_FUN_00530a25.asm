@@ -8,7 +8,7 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[16]:
-;   core_chain.cpp_FUN_0042c4c0 at 0042c630
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c630
 ;   core_fire.cpp_CCrater_render_FUN_00487af0 at 00487b60
 ;   core_fire.cpp_CLightningBolt_render_FUN_00488bf0 at 00488fb2
 ;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 004899d6

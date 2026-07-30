@@ -17,12 +17,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[15]:
-;   core_dracbrid.cpp_FUN_0045ab40 at 0045aff5
+;   core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 at 0045aff5
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0 at 00480f09
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484c06
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 at 00494e6f
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7212
-;   core_lightgun.cpp_FUN_004c79a0 at 004c7c36
+;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7c36
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 at 004cb704
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740 at 004cb7ba
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004cafe3
@@ -44,7 +44,7 @@
 ;   TerminatedCString s_sound_005927bd
 ;   TerminatedCString s_startSfx_can_t_get_sampl_0059356d
 ;   float FLOAT_005a2174 = 2
-;   undefined4 DAT_005bea40
+;   int g_INT_005bea40 = 0x1
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -243,12 +243,12 @@ section .text
     JNZ 0x0052678b                      ; 0052679a
         ;   XREF to: 0052678b (CONDITIONAL_JUMP)  ; LAB_0052678b
     MOV EAX,dword ptr [EBP + 0x74]      ; 0052679c | DAT_02dbd508
-    MOV ESI,dword ptr [0x005bea40]      ; 0052679f | DAT_005bea40
+    MOV ESI,dword ptr [0x005bea40]      ; 0052679f | g_INT_005bea40
     FLD float ptr [EAX + 0x114]         ; 005267a5
     INC ESI                             ; 005267ab
     MOV EAX,dword ptr [EBP + 0x74]      ; 005267ac | DAT_02dbd508
     FSTP float ptr [EBP + 0xfc]         ; 005267af
-    MOV dword ptr [0x005bea40],ESI      ; 005267b5 | DAT_005bea40
+    MOV dword ptr [0x005bea40],ESI      ; 005267b5 | g_INT_005bea40
     FLD float ptr [EAX + 0x118]         ; 005267bb
     MOV EAX,dword ptr [EBP + 0x74]      ; 005267c1 | DAT_02dbd508
     FSTP float ptr [EBP + 0x100]        ; 005267c4
@@ -257,12 +257,12 @@ section .text
     CMP ESI,0xffffff                    ; 005267d6
     JL 0x005267e8                       ; 005267dc
         ;   XREF to: 005267e8 (CONDITIONAL_JUMP)  ; LAB_005267e8
-    MOV dword ptr [0x005bea40],0x1      ; 005267de | DAT_005bea40
+    MOV dword ptr [0x005bea40],0x1      ; 005267de | g_INT_005bea40
     PUSH 0x4479c000                     ; 005267e8
         ;   Label: LAB_005267e8
     PUSH 0x4479c000                     ; 005267ed
     MOV EDX,dword ptr [EBP + 0x74]      ; 005267f2 | DAT_02dbd508
-    MOV ESI,dword ptr [0x005bea40]      ; 005267f5 | DAT_005bea40
+    MOV ESI,dword ptr [0x005bea40]      ; 005267f5 | g_INT_005bea40
     PUSH EDX                            ; 005267fb
     MOV dword ptr [EBP + 0x70],ESI      ; 005267fc | DAT_02dbd504
     CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 ; 005267ff

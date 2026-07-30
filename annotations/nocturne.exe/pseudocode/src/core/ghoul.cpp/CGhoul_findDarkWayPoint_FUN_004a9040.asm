@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_FUN_004a9270 at 004aa38d
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004aa38d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ghoul_cpp_00584be4

@@ -32,9 +32,9 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0
+;   core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30
 ;   core_frankgen.cpp_findLeader_FUN_00495240
-;   core_frankgen.cpp_FUN_004950a0
 ;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
     FSTP float ptr [0x01c71340]         ; 0049499d | DAT_01c71340
     PUSH ESI                            ; 004949a3
         ;   Label: LAB_004949a3
-    CALL core_frankgen.cpp_FUN_004950a0 ; 004949a4
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_FUN_004950a0(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0 ; 004949a4
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0(CFrankenstienMachine * this_ptr)
     MOV EAX,dword ptr [ESI + 0x150]     ; 004949a9
     ADD ESP,0x4                         ; 004949af
     CMP EAX,0x8                         ; 004949b2

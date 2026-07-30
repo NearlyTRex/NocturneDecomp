@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   core_flies.cpp_FUN_0048eec0 at 0048eed3
+;   core_flies.cpp_factoryFunc_FUN_0048eec0 at 0048eed3
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b065b
 ;
 ; Referenced Globals:
@@ -17,7 +17,7 @@
 ;   WatcomTypeInfo g_SFlyTypeInfo_0059db10
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
         ;   Label: core_flies.cpp_FUN_0048eef0
     MOV EDX,dword ptr [ESP + 0x10]      ; 0048eef3
     PUSH EDX                            ; 0048eef7
-    CALL core_actor.cpp_FUN_00409d30    ; 0048eef8
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0048eef8
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048eefd
     PUSH 0x59db10                       ; 0048ef00 | g_SFlyTypeInfo_0059db10
     PUSH 0xc8                           ; 0048ef05

@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_004113f0 at 004113f5
+;   core_baron.cpp_CBaronWeapon_renderOpaque_FUN_004113f0 at 004113f5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

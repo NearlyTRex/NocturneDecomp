@@ -7,13 +7,13 @@
 // Address: 0046eb60
 void __cdecl staticInit(void);
 
-// Original: core_dynamite.cpp_FUN_0046eba0
+// Original: core_dynamite.cpp_factoryFunc_FUN_0046eba0
 // Address: 0046eba0
-void FUN_0046eba0(void);
+CDynamite * __cdecl factoryFunc(void);
 
-// Original: core_dynamite.cpp_FUN_0046ebc0
+// Original: core_dynamite.cpp_CDynamite_getActorType_FUN_0046ebc0
 // Address: 0046ebc0
-CDemonActorType * FUN_0046ebc0(void);
+CDemonActorType * CDynamite::getActorType(void);
 
 // Original: core_dynamite.cpp_CDynamite_ctor_FUN_0046ebd0
 // Address: 0046ebd0

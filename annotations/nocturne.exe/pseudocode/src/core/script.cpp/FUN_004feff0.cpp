@@ -22,7 +22,7 @@ void __cdecl core_script_cpp_FUN_004feff0(CScript *this_ptr)
   bVar6 = 0;
   (this_ptr->script_text).data_array = (char **)0x0;
   *(byte *)&this_ptr->cmd_timer = 0;
-  (this_ptr->script_text).vtable = (CStrList_vtable *)0xbf800000;
+  (this_ptr->script_text).vtable._us = (CStrList_vtable *)0xbf800000;
   this_ptr->next_cmd = -0x40800000;
   this_ptr->script_pause_flag = 0;
   iVar3 = _DAT_01cae0e8;

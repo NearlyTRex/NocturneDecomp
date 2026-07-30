@@ -9,9 +9,9 @@
 ;
 ; XREF[6]:
 ;   core_biggs.cpp_CBiggs_dtor_FUN_00415a30 at 00415a49
-;   core_mimic.cpp_FUN_004d4540 at 004d4589
+;   core_mimic.cpp_CMimic_dtor_FUN_004d4540 at 004d4589
 ;   core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0 at 004dda0f
-;   core_passngr.cpp_FUN_004ef5c0 at 004ef603
+;   core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0 at 004ef603
 ;   core_succubus.cpp_CSuccubus_dtor_FUN_00541860 at 00541879
 ;   core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 at 0054e389
 ;

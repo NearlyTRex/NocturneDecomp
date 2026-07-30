@@ -17,8 +17,8 @@
 ;
 ; XREF[7]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497c52
-;   core_ghoul.cpp_FUN_004a9270 at 004a9530
-;   core_hostage.cpp_FUN_004b6d80 at 004b808a
+;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a9530
+;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b808a
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd161
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a363
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539d59

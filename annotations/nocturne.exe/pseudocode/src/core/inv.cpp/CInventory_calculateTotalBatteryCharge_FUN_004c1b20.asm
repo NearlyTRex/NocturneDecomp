@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_lightgun.cpp_FUN_004c79a0 at 004c79cf
+;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c79cf
 ;
 ; Referenced Globals:
 ;   undefined4 g_CBatteryActorType_00764674.name_hash

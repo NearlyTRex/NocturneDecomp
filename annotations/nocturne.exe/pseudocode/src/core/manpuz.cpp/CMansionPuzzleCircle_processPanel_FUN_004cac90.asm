@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   delta_time
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d17
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004c9cf0 at 004c9d17
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00587f72

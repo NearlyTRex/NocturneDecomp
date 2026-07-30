@@ -7,7 +7,7 @@
 ; SLaserInfo *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_00478f80 at 00478fe4
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_00478f80 at 00478fe4
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0 at 004cb435
 ;   core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750 at 00554806
 ;

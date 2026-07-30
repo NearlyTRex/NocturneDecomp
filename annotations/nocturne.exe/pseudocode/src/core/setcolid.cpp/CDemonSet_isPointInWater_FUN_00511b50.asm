@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040db50 at 0040dbca
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50 at 0040dbca
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042acc4
 ;
 ; Referenced Globals:

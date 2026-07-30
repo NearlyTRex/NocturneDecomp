@@ -16,7 +16,7 @@ void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
   CBloodPool *this_ptr_00;
   CBloodSplat *this_ptr_01;
   
-  puVar1 = (byte *)0x1c78cec;
+  puVar1 = &DAT_01c78cec;
   do {
     if (0.0 < *(float *)(puVar1 + 0x18)) {
       (**(code **)(*(int *)(puVar1 + 0x34) + 4))(puVar1);

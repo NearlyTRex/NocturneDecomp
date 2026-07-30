@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   vertex_count
 ;
 ; XREF[8]:
-;   core_chain.cpp_FUN_0042c4c0 at 0042c7d0
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c7d0
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50 at 0048325f
 ;   core_fire.cpp_CGlassParticle_render_FUN_004853c0 at 0048554a
 ;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 00489c61

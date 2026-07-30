@@ -7,37 +7,37 @@
 // Address: 00534750
 void __cdecl staticInit(void);
 
-// Original: core_stairs.cpp_FUN_00534780
+// Original: core_stairs.cpp_factoryFunc_FUN_00534780
 // Address: 00534780
-void FUN_00534780(void);
+CStairs * __cdecl factoryFunc(void);
 
-// Original: core_stairs.cpp_FUN_005347a0
+// Original: core_stairs.cpp_CStairs_getActorType_FUN_005347a0
 // Address: 005347a0
-CDemonActorType * FUN_005347a0(void);
+CDemonActorType * CStairs::getActorType(void);
 
 // Original: core_stairs.cpp_FUN_005347b0
 // Address: 005347b0
 int FUN_005347b0(CDemonActor *param_1);
 
-// Original: core_stairs.cpp_FUN_00534820
+// Original: core_stairs.cpp_CStairs_setup_FUN_00534820
 // Address: 00534820
-void FUN_00534820(CStairs *param_1);
+void CStairs::setup(CStairs *param_1);
 
-// Original: core_stairs.cpp_FUN_00534840
+// Original: core_stairs.cpp_CStairs_process_FUN_00534840
 // Address: 00534840
-void FUN_00534840(void);
+void CStairs::process(void);
 
-// Original: core_stairs.cpp_FUN_00534850
+// Original: core_stairs.cpp_CStairs_renderOpaque_FUN_00534850
 // Address: 00534850
-undefined4 FUN_00534850(void);
+undefined4 CStairs::renderOpaque(void);
 
 // Original: core_stairs.cpp_CStairs_getBoundingBox_FUN_00534860
 // Address: 00534860
 void CStairs::getBoundingBox(int param_1,float *param_2);
 
-// Original: core_stairs.cpp_FUN_005348c0
+// Original: core_stairs.cpp_CStairs_archive_FUN_005348c0
 // Address: 005348c0
-void FUN_005348c0(CDemonActor *param_1);
+void CStairs::archive(CDemonActor *param_1);
 
 // Original: core_stairs.cpp_CStairs_getCollisionType_FUN_00534940
 // Address: 00534940
@@ -55,9 +55,9 @@ void CStairs::customIntersectCylinderXZ(int param_1,SIntersectXZCylinder *param_
 // Address: 00534a70
 undefined4 CStairs::customGetFloorHeight(int param_1,CVector3f *param_2,float param_3,float *param_4);
 
-// Original: core_stairs.cpp_FUN_00534ac0
+// Original: core_stairs.cpp_CStairs_getGroundType_FUN_00534ac0
 // Address: 00534ac0
-undefined4 FUN_00534ac0(int param_1);
+undefined4 CStairs::getGroundType(int param_1);
 
 // Original: core_stairs.cpp_CStairs_buildCollision_FUN_00534ad0
 // Address: 00534ad0

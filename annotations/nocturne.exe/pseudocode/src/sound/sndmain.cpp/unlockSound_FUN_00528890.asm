@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[32]:
-;   core_tommygun.cpp_FUN_005464a0 at 005466e4
+;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 005466e4
 ;   sound_sndmain.cpp_FUN_00526dd0 at 00526dff
 ;   sound_sndmain.cpp_FUN_00526f00 at 00526f4f
 ;   sound_sndmain.cpp_FUN_00526f60 at 00526fe1

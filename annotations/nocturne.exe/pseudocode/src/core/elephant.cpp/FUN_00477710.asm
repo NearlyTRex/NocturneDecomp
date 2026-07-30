@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_elephant.cpp_FUN_004776e0 at 004776f3
+;   core_elephant.cpp_factoryFunc_FUN_004776e0 at 004776f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_0057f109

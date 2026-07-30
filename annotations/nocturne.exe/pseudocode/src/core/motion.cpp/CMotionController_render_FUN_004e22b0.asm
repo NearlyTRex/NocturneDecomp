@@ -20,15 +20,15 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[9]:
-;   core_baron.cpp_FUN_004110f0 at 00411280
-;   core_batman.cpp_FUN_00414340 at 00414413
-;   core_biggs.cpp_FUN_00415760 at 0041583c
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 at 00411280
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00414340 at 00414413
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 at 0041583c
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 004264d3
-;   core_dracbrid.cpp_FUN_0045a260 at 0045a333
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 at 0045a333
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5aa1
-;   core_moloch.cpp_FUN_004de550 at 004de632
-;   core_succubus.cpp_FUN_00541640 at 005416fc
-;   core_vampboss.cpp_FUN_0054dac0 at 0054db86
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550 at 004de632
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 at 005416fc
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_0054dac0 at 0054db86
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0058b4cc

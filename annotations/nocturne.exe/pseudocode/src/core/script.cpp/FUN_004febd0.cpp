@@ -96,7 +96,7 @@ LAB_004fee03:
       return 1;
     }
     pcVar6 = core_script_cpp_FUN_004fef60(param_1,&local_18);
-    shape_edittool_cpp_FUN_00476160(0x1e56c30);
+    shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);
     if (pcVar6 == (char *)0x0) goto LAB_004fee03;
     PTR_01cc4800 = "..\\core\\script.cpp";
     INT_01cc4804 = 0x372;

@@ -67,7 +67,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d43
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004c9cf0 at 004c9d43
 ;
 ; Referenced Globals:
 ;   float FLOAT_0058802a = 2

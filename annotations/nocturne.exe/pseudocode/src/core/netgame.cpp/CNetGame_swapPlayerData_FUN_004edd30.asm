@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   core_netgame.cpp_FUN_004edfb0
+;   core_netgame.cpp_assignInt2_FUN_004edfb0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004edd5c
     LEA EAX,[ESP + 0x20]                ; 004edd60
     PUSH EAX                            ; 004edd64
-    CALL core_netgame.cpp_FUN_004edfb0  ; 004edd65
-        ;   XREF to: 004edfb0 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_FUN_004edfb0(int * dest, int * src)
+    CALL core_netgame.cpp_assignInt2_FUN_004edfb0 ; 004edd65
+        ;   XREF to: 004edfb0 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_assignInt2_FUN_004edfb0(int * dest, int * src)
     ADD ESP,0x8                         ; 004edd6a
     MOV AX,word ptr [ESI + 0x4]         ; 004edd6d
     MOV word ptr [ESP + 0x20],AX        ; 004edd71

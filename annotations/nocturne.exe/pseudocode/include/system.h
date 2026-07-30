@@ -8,10 +8,12 @@
 
 #include "system/crt.h"
 #include "system/basetypes.h"
+#include "system/basetsd.h"
 #include "system/d3d.h"
 #include "system/ddraw.h"
 #include "system/dos.h"
 #include "system/dsound.h"
+#include "system/excpt.h"
 #include "system/fstream.h"
 #include "system/intrinsics.h"
 #include "system/iostream.h"
@@ -35,7 +37,9 @@
 #include "system/wincon.h"
 #include "system/windef.h"
 #include "system/wingdi.h"
+#include "system/winnls.h"
 #include "system/winnt.h"
+#include "system/winreg.h"
 #include "system/winsock.h"
 #include "system/winuser.h"
 

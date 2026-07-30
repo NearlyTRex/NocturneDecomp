@@ -31,14 +31,14 @@
 ;
 ; XREF[26]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004176db
-;   core_boxactor.cpp_FUN_0041f3d0 at 0041f5b4
+;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f5b4
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00428029
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 at 00426636
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429384
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800 at 0043b85b
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482e2b
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 at 00499fbf
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 00498277
-;   core_gabriela.cpp_FUN_00499ca0 at 00499fbf
 ;   core_ladder.cpp_FUN_004c45a0 at 004c4673
 ;   ... and 16 more
 ;

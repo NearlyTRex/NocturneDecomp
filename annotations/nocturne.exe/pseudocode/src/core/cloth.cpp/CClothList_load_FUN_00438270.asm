@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004243a7
-;   core_succubus.cpp_FUN_00540c20 at 00540c92
+;   core_succubus.cpp_CSuccubus_setup_FUN_00540c20 at 00540c92
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057aee5

@@ -18,7 +18,7 @@
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0 at 0050b999
 ;   core_set.cpp_FUN_0050a260 at 0050a4be
-;   core_trigger.cpp_FUN_00547b30 at 00547db5
+;   core_trigger.cpp_CTrigger_process_FUN_00547b30 at 00547db5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fba2d8

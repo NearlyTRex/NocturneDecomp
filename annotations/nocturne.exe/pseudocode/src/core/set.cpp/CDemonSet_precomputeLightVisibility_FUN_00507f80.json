@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 48,
+        "message": "use of undeclared identifier '_DAT_01fb99d0'"
       },
       {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 65,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
+        "category": "undeclared_identifier",
+        "column": 78,
+        "line": 66,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 67,
+        "message": "use of undeclared identifier '_DAT_01fba938'"
       },
       {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 69,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 70,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 71,
+        "message": "use of undeclared identifier 'DAT_01fb8508'"
       },
       {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
+        "category": "format_error",
+        "column": 83,
+        "line": 82,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 102,
+        "message": "use of undeclared identifier '_DAT_01fb99d0'"
       },
       {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 107,
+        "message": "use of undeclared identifier 'DAT_01fb99d4'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 368,
-    "complexity_score": 683,
+    "complexity_score": 773,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
-    "suspect_count": 48,
+    "suspect_count": 57,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -493,12 +493,52 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "(CDemonCamera *)&DAT_01fb8508);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290((CDemonCamera *)&DAT_01fb8508,0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,9999.9,0);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&DAT_01fb8508);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_FUN_004421b0((CDemonCamera *)&DAT_01fb8508);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "pCVar3 = core_dcamera_cpp_FUN_00447f20((CDemonCamera *)&DAT_01fb8508,aCStack_70);",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -565,6 +605,22 @@
       "type": "undefined_data"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "((CDemonCamera *)&DAT_01fb8508,light_source,(CRect *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "((CDemonCamera *)&DAT_01fb8508,light_source);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 116,
       "match": "param_3",
@@ -581,12 +637,28 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290((CDemonCamera *)&DAT_01fb8508,1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 134,
       "match": "(byte *)((int)pCStack_20",
       "severity": "moderate",
       "text": "*(byte *)((int)pCStack_20->cameras + (int)pCVar1 + iVar7 + 0x19768) = uVar2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 135,
+      "match": "DAT_01fb8508",
+      "severity": "mild",
+      "text": "core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&DAT_01fb8508);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

@@ -7,13 +7,13 @@
 // Address: 004b6990
 void __cdecl staticInit(void);
 
-// Original: core_hostage.cpp_FUN_004b69c0
+// Original: core_hostage.cpp_factoryFunc_FUN_004b69c0
 // Address: 004b69c0
-void FUN_004b69c0(void);
+CHostage * __cdecl factoryFunc(void);
 
-// Original: core_hostage.cpp_FUN_004b69e0
+// Original: core_hostage.cpp_CHostage_getActorType_FUN_004b69e0
 // Address: 004b69e0
-CDemonActorType * FUN_004b69e0(void);
+CDemonActorType * CHostage::getActorType(void);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004b69f0
 // Address: 004b69f0
@@ -27,9 +27,9 @@ void CHostage::setup(CNPC *param_1);
 // Address: 004b6cf0
 int CHostage::renderOpaque(CCharacter *param_1);
 
-// Original: core_hostage.cpp_FUN_004b6d80
+// Original: core_hostage.cpp_CHostage_process_FUN_004b6d80
 // Address: 004b6d80
-void FUN_004b6d80(CHostage *param_1,float param_2);
+void CHostage::process(CHostage *param_1,float param_2);
 
 // Original: core_hostage.cpp_CHostage_processGrabberFlee_FUN_004b81a0
 // Address: 004b81a0
@@ -47,21 +47,21 @@ void CHostage::archive(CNPC *param_1);
 // Address: 004b8540
 undefined4 CHostage::isGrabbable(int param_1);
 
-// Original: core_hostage.cpp_FUN_004b8580
+// Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004b8580
 // Address: 004b8580
-undefined4 FUN_004b8580(void);
+undefined4 CHostage::isGrabbable(void);
 
 // Original: core_hostage.cpp_CHostage_getGrabbed_FUN_004b8590
 // Address: 004b8590
 undefined4 CHostage::getGrabbed(int param_1,undefined4 param_2,int param_3);
 
-// Original: core_hostage.cpp_FUN_004b8600
+// Original: core_hostage.cpp_CHostage_processDamage_FUN_004b8600
 // Address: 004b8600
-void FUN_004b8600(CNPC *param_1,SDamageInfo *param_2);
+void CHostage::processDamage(CNPC *param_1,SDamageInfo *param_2);
 
-// Original: core_hostage.cpp_FUN_004b8700
+// Original: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700
 // Address: 004b8700
-void FUN_004b8700(int param_1,int param_2);
+void CHostage::getCarryObjToBodyXForm(int param_1,int param_2);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004b8b70
 // Address: 004b8b70

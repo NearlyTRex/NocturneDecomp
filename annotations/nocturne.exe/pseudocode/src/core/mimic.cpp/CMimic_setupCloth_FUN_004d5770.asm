@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_004d49f0 at 004d4b4b
+;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4b4b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_attacking_hero_00589487

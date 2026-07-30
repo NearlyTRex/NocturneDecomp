@@ -15,10 +15,10 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 at 0045ce0f
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c218
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70 at 0045ccc5
-;   core_actor.cpp_FUN_0040b300 at 0040b5be
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b5be
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de5d
-;   core_baron.cpp_FUN_004110f0 at 00411160
-;   core_bat.cpp_FUN_00411ea0 at 00411eb7
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 at 00411160
+;   core_bat.cpp_CBat_getBoundingBox_FUN_00411ea0 at 00411eb7
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004173a6
 ;   ... and 185 more
 ;

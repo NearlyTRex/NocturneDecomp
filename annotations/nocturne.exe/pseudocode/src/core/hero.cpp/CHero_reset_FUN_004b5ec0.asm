@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00540820 at 0054082c
+;   core_stranger.cpp_CStranger_reset_FUN_00540820 at 0054082c
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280

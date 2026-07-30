@@ -2,13 +2,13 @@
 // Address: 00521c50
 // Address Range: [[00521c50, 00521c94]]
 // Convention: unknown
-// Signature: int sound_sndmain_cpp_FUN_00521c50(void)
+// Signature: undefined * sound_sndmain_cpp_FUN_00521c50(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int sound_sndmain_cpp_FUN_00521c50(void)
+byte * sound_sndmain_cpp_FUN_00521c50(void)
 
 {
   int iVar1;
@@ -24,8 +24,8 @@ int sound_sndmain_cpp_FUN_00521c50(void)
     if ((*(int *)(iVar2 + 0x2dc2004) == 0) && (*(int *)(iVar2 + 0x2dc2008) == 0)) break;
     iVar1 = iVar1 + 1;
     if (0x3f < iVar1) {
-      return 0;
+      return (byte *)0x0;
     }
   }
-  return iVar2 + 0x2dc1edc;
+  return &DAT_02dc1edc + iVar2;
 }

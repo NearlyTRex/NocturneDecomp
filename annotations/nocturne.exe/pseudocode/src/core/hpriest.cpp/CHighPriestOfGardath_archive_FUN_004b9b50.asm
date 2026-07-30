@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
-;   core_npc.cpp_FUN_004eed10
+;   core_npc.cpp_CNPC_archive_FUN_004eed10
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b9b50
         ;   Label: core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004b9b50
     PUSH EDX                            ; 004b9b54
-    CALL core_npc.cpp_FUN_004eed10      ; 004b9b55
-        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_004eed10(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_archive_FUN_004eed10 ; 004b9b55
+        ;   XREF to: 004eed10 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_archive_FUN_004eed10(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b9b5a
     MOV EAX,dword ptr [ESP + 0x4]       ; 004b9b5d
     PUSH 0x585ff8                       ; 004b9b61 | = "killEvent"

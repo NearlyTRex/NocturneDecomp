@@ -15,7 +15,7 @@ void core_baron_cpp_CBaron_setup_FUN_004102c0(CHero *param_1)
   CSkeleton *this_ptr;
   int iVar2;
   
-  core_hero_cpp_FUN_004b48d0(param_1);
+  core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                        (&(param_1->base).model);
   DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 head",1)

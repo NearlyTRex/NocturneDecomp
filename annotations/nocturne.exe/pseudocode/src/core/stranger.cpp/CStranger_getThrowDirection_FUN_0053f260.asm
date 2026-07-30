@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_stranger.cpp_FUN_0053d100 at 0053d1dc
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d1dc
 ;   core_stranger.cpp_FUN_0053f310 at 0053f917
 ;
 ; Called Functions:

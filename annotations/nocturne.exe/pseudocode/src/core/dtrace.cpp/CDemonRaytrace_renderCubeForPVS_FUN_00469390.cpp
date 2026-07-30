@@ -199,11 +199,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
                   (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
         iVar3 = _DAT_01b7b744;
         *(CDemonCube **)(_DAT_01b7b744 * 4 + 0x1b7b74c) = local_4c;
-        iVar3 = iVar3 * 0xc;
-        if ((CVector3f *)(&DAT_01b8efcc + iVar3) != &local_64) {
-          ((CVector3f *)(&DAT_01b8efcc + iVar3))->x = local_64.x;
-          *(float *)(&DAT_01b8efd0 + iVar3) = local_64.y;
-          *(float *)(&DAT_01b8efd4 + iVar3) = local_64.z;
+        if (CVector3f_ARRAY_01b8efcc + iVar3 != &local_64) {
+          CVector3f_ARRAY_01b8efcc[iVar3].x = local_64.x;
+          CVector3f_ARRAY_01b8efcc[iVar3].y = local_64.y;
+          CVector3f_ARRAY_01b8efcc[iVar3].z = local_64.z;
         }
         _DAT_01b7b744 = _DAT_01b7b744 + 1;
         if (19999 < _DAT_01b7b744) {

@@ -10,7 +10,8 @@ void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CSentinelActorType_01e57248,"CSentinel",core_sentinel_cpp_FUN_005058f0,
-             &INT_005be310,2,&g_CEnemyActorType_01bcdebc);
+            (&g_CSentinelActorType_01e57248,"CSentinel",
+             core_sentinel_cpp_factoryFunc_FUN_005058f0,&INT_005be310,2,&g_CEnemyActorType_01bcdebc)
+  ;
   return;
 }

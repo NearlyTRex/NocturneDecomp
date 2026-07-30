@@ -9,15 +9,15 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[39]:
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30 at 00409da4
 ;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150 at 0040b189
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0 at 00409fd0
-;   core_actor.cpp_FUN_00409d30 at 00409da4
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004175d1
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a41
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415bb1
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e895
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240 at 0041f27a
-;   core_bride.cpp_FUN_0041fe40 at 004207c1
+;   core_bride.cpp_CBride_process_FUN_0041fe40 at 004207c1
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 00425566
 ;   ... and 29 more
 ;

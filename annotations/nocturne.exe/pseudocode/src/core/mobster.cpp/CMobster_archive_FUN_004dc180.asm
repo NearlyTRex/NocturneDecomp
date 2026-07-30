@@ -16,7 +16,7 @@
 ;   TerminatedCString s_sideOfCar_0058a42f
 ;   TerminatedCString s_holdPosFlag_0058a439
 ;   TerminatedCString s_holdPosCond_0058a445
-;   int INT_005bb124 = 0x7
+;   int g_INT_005bb124 = 0x7
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -50,7 +50,7 @@ section .text
     PUSH EAX                            ; 004dc1ad
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004dc1ae
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80(CDeformableModelInstance * model_ptr, char * property_name)
-    MOV EDX,dword ptr [0x005bb124]      ; 004dc1b3 | INT_005bb124
+    MOV EDX,dword ptr [0x005bb124]      ; 004dc1b3 | g_INT_005bb124
     ADD ESP,0x8                         ; 004dc1b9
     CMP EDX,0x4                         ; 004dc1bc
     JL 0x004dc265                       ; 004dc1bf
@@ -61,7 +61,7 @@ section .text
     PUSH EAX                            ; 004dc1d0
     CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 004dc1d1
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
-    MOV ECX,dword ptr [0x005bb124]      ; 004dc1d6 | INT_005bb124
+    MOV ECX,dword ptr [0x005bb124]      ; 004dc1d6 | g_INT_005bb124
     ADD ESP,0x8                         ; 004dc1dc
     CMP ECX,0x2                         ; 004dc1df
     JNZ 0x004dc1f8                      ; 004dc1e2
@@ -72,7 +72,7 @@ section .text
     CALL core_actor.cpp_archiveClothList_FUN_0040cf70 ; 004dc1f0
         ;   XREF to: 0040cf70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040cf70(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 004dc1f5
-    CMP dword ptr [0x005bb124],0x5      ; 004dc1f8 | INT_005bb124
+    CMP dword ptr [0x005bb124],0x5      ; 004dc1f8 | g_INT_005bb124
         ;   Label: LAB_004dc1f8
     JL 0x004dc229                       ; 004dc1ff
         ;   XREF to: 004dc229 (CONDITIONAL_JUMP)  ; LAB_004dc229
@@ -88,7 +88,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 004dc221
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004dc226
-    CMP dword ptr [0x005bb124],0x6      ; 004dc229 | INT_005bb124
+    CMP dword ptr [0x005bb124],0x6      ; 004dc229 | g_INT_005bb124
         ;   Label: LAB_004dc229
     JL 0x004dc25a                       ; 004dc230
         ;   XREF to: 004dc25a (CONDITIONAL_JUMP)  ; LAB_004dc25a
@@ -104,7 +104,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004dc252
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004dc257
-    CMP dword ptr [0x005bb124],0x7      ; 004dc25a | INT_005bb124
+    CMP dword ptr [0x005bb124],0x7      ; 004dc25a | g_INT_005bb124
         ;   Label: LAB_004dc25a
     JGE 0x004dc27e                      ; 004dc261
         ;   XREF to: 004dc27e (CONDITIONAL_JUMP)  ; LAB_004dc27e

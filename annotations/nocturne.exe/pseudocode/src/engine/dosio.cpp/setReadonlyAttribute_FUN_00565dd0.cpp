@@ -10,7 +10,6 @@ DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,
 
 {
   DWORD DVar1;
-  DWORD dwFileAttributes;
   BOOL BVar2;
   
   DVar1 = __getfileattr(filename);
@@ -18,11 +17,11 @@ DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,
     DVar1 = __set_errno();
     return DVar1;
   }
-  dwFileAttributes = DVar1 & 0xfffffffe;
+  DVar1 = DVar1 & 0xfffffffe;
   if ((file_attributes & 0x80) == 0) {
-    dwFileAttributes = dwFileAttributes | 1;
+    DVar1 = DVar1 | 1;
   }
-  BVar2 = SetFileAttributesA(filename,dwFileAttributes);
+  BVar2 = SetFileAttributesA(filename,DVar1);
   if (BVar2 == 0) {
     DVar1 = __set_errno();
     return DVar1;

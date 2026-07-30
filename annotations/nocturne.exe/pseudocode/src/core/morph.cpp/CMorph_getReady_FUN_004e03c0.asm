@@ -51,13 +51,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_biggs.cpp_FUN_00415430 at 00415488
-;   core_mimic.cpp_FUN_004d4650 at 004d49aa
+;   core_biggs.cpp_CBiggs_setup_FUN_00415430 at 00415488
+;   core_mimic.cpp_CMimic_setup_FUN_004d4650 at 004d49aa
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de145
 ;   core_moloch.cpp_CMoloch_setup_FUN_004dda70 at 004ddaf0
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef761
-;   core_succubus.cpp_FUN_00540c20 at 00540ee4
-;   core_vampboss.cpp_FUN_0054c3e0 at 0054c585
+;   core_succubus.cpp_CSuccubus_setup_FUN_00540c20 at 00540ee4
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_0054c3e0 at 0054c585
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ad78

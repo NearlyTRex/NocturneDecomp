@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_batcreat.cpp_FUN_004120d0 at 004120e3
+;   core_batcreat.cpp_factoryFunc_FUN_004120d0 at 004120e3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batcreat_dfm_0057883c

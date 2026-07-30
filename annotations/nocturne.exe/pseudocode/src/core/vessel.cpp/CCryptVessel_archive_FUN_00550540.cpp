@@ -24,13 +24,13 @@ void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(CDemonActor *param_1)
   core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].scale.z,"state");
   core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].blood_effect_timer,"timer")
   ;
-  if (1 < INT_005c11c4) {
+  if (1 < g_INT_005c11c4) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1[2].create_event + 0x24,"winEvent");
   }
-  if (2 < INT_005c11c4) {
+  if (2 < g_INT_005c11c4) {
     core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[2].scale,"eatDistance");
   }
-  if (INT_005c11c4 < 4) {
+  if (g_INT_005c11c4 < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].scale.y,"visualType");

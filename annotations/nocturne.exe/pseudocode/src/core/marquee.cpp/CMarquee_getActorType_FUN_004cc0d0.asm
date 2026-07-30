@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_marquee_cpp_CMarquee_getActorType_FUN_004cc0d0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1cc48d4                   ; 004cc0d0
+        ;   Label: core_marquee.cpp_CMarquee_getActorType_FUN_004cc0d0
+    RET                                 ; 004cc0d5
+

@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040b300 at 0040b675
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b675
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160

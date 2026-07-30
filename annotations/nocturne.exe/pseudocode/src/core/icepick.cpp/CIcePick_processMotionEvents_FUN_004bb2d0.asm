@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba083
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba083
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004bb2ac = 004bb304

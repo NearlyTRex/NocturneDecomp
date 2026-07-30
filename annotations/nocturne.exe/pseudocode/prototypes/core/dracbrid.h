@@ -7,13 +7,13 @@
 // Address: 00458580
 void __cdecl staticInit(void);
 
-// Original: core_dracbrid.cpp_FUN_00458610
+// Original: core_dracbrid.cpp_factoryFunc_FUN_00458610
 // Address: 00458610
-void FUN_00458610(void);
+CDraculaBride * __cdecl factoryFunc(void);
 
-// Original: core_dracbrid.cpp_FUN_00458630
+// Original: core_dracbrid.cpp_CDraculaBride_getActorType_FUN_00458630
 // Address: 00458630
-CDemonActorType * FUN_00458630(void);
+CDemonActorType * CDraculaBride::getActorType(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640
 // Address: 00458640
@@ -35,13 +35,13 @@ void __cdecl CDraculaBride::explode(CDraculaBride *this_ptr,CVector3f *direction
 // Address: 0045a1a0
 void __cdecl CDraculaBride::dismemberPart(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 
-// Original: core_dracbrid.cpp_FUN_0045a240
+// Original: core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_0045a240
 // Address: 0045a240
-ECollisionType FUN_0045a240(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType CDraculaBride::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
 
-// Original: core_dracbrid.cpp_FUN_0045a260
+// Original: core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260
 // Address: 0045a260
-int FUN_0045a260(CCharacter *param_1);
+int CDraculaBride::renderOpaque(CCharacter *param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450
 // Address: 0045a450
@@ -63,9 +63,9 @@ undefined4 CDraculaBride::getDeathState(int param_1);
 // Address: 0045a9e0
 undefined4 CDraculaBride::getTargetPoints(int param_1,CVector3f *param_2);
 
-// Original: core_dracbrid.cpp_FUN_0045ab40
+// Original: core_dracbrid.cpp_CDraculaBride_FUN_0045ab40
 // Address: 0045ab40
-void __cdecl FUN_0045ab40(CDraculaBride *this_ptr,char *sound_name,float volume);
+void __cdecl CDraculaBride(CDraculaBride *this_ptr,char *sound_name,float volume);
 
 // Original: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020
 // Address: 0045b020
@@ -79,9 +79,9 @@ SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 // Address: 0045b330
 SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 
-// Original: core_dracbrid.cpp_FUN_0045b350
+// Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_0045b350
 // Address: 0045b350
-CDemonActor * FUN_0045b350(CDemonActor *param_1,byte param_2);
+CDemonActor * CDraculaBride::dtor(CDemonActor *param_1,byte param_2);
 
 // Original: core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410
 // Address: 0045b410

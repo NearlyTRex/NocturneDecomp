@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_battery.cpp_FUN_00414d50 at 00414d63
+;   core_battery.cpp_factoryFunc_FUN_00414d50 at 00414d63
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00578d60
 ;   CDemonActor_vtable g_CBatteryVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d30
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 ;
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_battery.cpp_FUN_00414d80
     MOV EBX,dword ptr [ESP + 0x8]       ; 00414d81
     PUSH EBX                            ; 00414d85
-    CALL core_actor.cpp_FUN_00409d30    ; 00414d86
-        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_FUN_00409d30(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 00414d86
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00414d8b
     ADD EAX,0x150                       ; 00414d8e
     PUSH EAX                            ; 00414d93

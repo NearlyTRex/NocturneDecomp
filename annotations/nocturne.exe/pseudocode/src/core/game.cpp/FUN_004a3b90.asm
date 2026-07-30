@@ -26,8 +26,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_FUN_0049f930 at 0049ff8a
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e38b
-;   core_game.cpp_FUN_0049f930 at 0049ff8a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_save_during_ci_00583b12

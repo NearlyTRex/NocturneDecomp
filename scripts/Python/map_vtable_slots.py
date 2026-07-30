@@ -100,32 +100,9 @@ def slots_of(table):
             for e in table.get("functions", [])]
 
 
-def lcs_anchors(seq_a_mapped, seq_b):
-    """Longest common subsequence over anchored slots -> [(i, j), ...].
-
-    seq_a_mapped[i] is the nocturne function that nocedit slot i is already
-    known to correspond to, or None. Insertions on either side become gaps
-    rather than breaking the alignment, which is the whole point.
-    """
-    n, m = len(seq_a_mapped), len(seq_b)
-    dp = [[0] * (m + 1) for _ in range(n + 1)]
-    for i in range(n - 1, -1, -1):
-        row, nxt = dp[i], dp[i + 1]
-        ai = seq_a_mapped[i]
-        for j in range(m - 1, -1, -1):
-            row[j] = (nxt[j + 1] + 1 if ai and ai == seq_b[j]
-                      else max(nxt[j], row[j + 1]))
-    out, i, j = [], 0, 0
-    while i < n and j < m:
-        if seq_a_mapped[i] and seq_a_mapped[i] == seq_b[j]:
-            out.append((i, j))
-            i += 1
-            j += 1
-        elif dp[i + 1][j] >= dp[i][j + 1]:
-            i += 1
-        else:
-            j += 1
-    return out
+# The alignment itself now lives in sibling_match.py, shared with
+# map_sibling_functions.py's prop_vtables().
+lcs_anchors = sm.lcs_anchors
 
 
 def analyse(mapping_path, min_anchors, source_program, target_program):

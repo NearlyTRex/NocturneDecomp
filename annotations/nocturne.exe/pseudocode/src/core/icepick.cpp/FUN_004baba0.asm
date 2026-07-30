@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba306
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba306
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00586202 = 6

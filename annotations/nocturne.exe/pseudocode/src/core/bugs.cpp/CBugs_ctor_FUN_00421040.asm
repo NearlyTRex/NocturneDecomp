@@ -7,7 +7,7 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00421010 at 00421023
+;   core_bugs.cpp_factoryFunc_FUN_00421010 at 00421023
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_roach_kfm_00579c09

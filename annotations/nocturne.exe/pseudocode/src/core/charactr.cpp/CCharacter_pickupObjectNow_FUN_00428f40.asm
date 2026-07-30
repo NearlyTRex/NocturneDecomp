@@ -10,14 +10,14 @@
 ; float            Stack[0x10]:4   blend_time
 ;
 ; XREF[8]:
-;   core_boneguy.cpp_FUN_00418a00 at 00418dc5
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418dc5
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004b5c30 at 004b5c4e
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0 at 004bb38c
-;   core_mobster.cpp_FUN_004da790 at 004daa4e
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004daa4e
 ;   core_stranger.cpp_FUN_0053f310 at 0053f5b6
-;   core_vampboss.cpp_FUN_0054dd50 at 0054df2f
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_0054dd50 at 0054df2f
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f1c8
-;   core_zombie.cpp_FUN_0055ef50 at 0055f427
+;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 0055f427
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a14a

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_platfrm.cpp_FUN_004f6170 at 004f6bb9
+;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6bb9
 ;
 ; Called Functions:
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0

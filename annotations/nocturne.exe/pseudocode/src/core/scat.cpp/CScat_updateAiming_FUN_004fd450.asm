@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbf20 at 004fc246
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc246
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058df4e = 3.14159265350000

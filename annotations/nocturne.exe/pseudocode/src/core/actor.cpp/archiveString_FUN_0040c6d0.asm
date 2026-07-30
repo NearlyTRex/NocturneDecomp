@@ -12,10 +12,10 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 at 0040caa5
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 at 0040ca25
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0 at 0040c845
-;   core_ammo.cpp_FUN_0040ecf0 at 0040ed1e
-;   core_ammobox.cpp_FUN_0040f390 at 0040f3be
+;   core_ammo.cpp_CAmmo_archive_FUN_0040ecf0 at 0040ed1e
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040f390 at 0040f3be
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040f7d0 at 0040f7fe
-;   core_armour.cpp_FUN_0040fb60 at 0040fbb1
+;   core_armour.cpp_CArmour_archive_FUN_0040fb60 at 0040fbb1
 ;   core_baron.cpp_CBaron_archive_FUN_00411080 at 004110a7
 ;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 0041183b
 ;   ... and 44 more

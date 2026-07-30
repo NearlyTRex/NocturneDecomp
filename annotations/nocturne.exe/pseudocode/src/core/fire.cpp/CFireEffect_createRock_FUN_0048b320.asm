@@ -10,8 +10,8 @@
 ; CKeyFramedModel * Stack[0x10]:4   model_ptr
 ;
 ; XREF[3]:
-;   core_drip.cpp_FUN_00462300 at 0046263e
-;   core_emitter.cpp_FUN_00478790 at 00478b8f
+;   core_drip.cpp_CDrip_process_FUN_00462300 at 0046263e
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478b8f
 ;   core_fire.cpp_CExplosion_activate_FUN_00486e40 at 00486f74
 ;
 ; Referenced Globals:

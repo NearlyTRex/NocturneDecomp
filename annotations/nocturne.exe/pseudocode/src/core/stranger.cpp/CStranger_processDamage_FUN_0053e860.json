@@ -1,0 +1,1026 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 26,
+        "message": "member reference type 'int' is not a pointer"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 29,
+        "message": "member reference type 'int' is not a pointer"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 42,
+        "message": "incompatible integer to pointer conversion assigning to 'CGame *' from 'int'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 44,
+        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 48,
+        "message": "no matching function for call to 'engine_console_cpp_CConsole_printf_FUN_0043ac60'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 51,
+        "message": "use of undeclared identifier 'PTR_DAT_005ad350'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 62,
+        "line": 58,
+        "message": "use of undeclared identifier 'stack0xffffffcc'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 87,
+        "message": "no matching function for call to 'xxx_unk_c_FUN_004940d0'"
+      },
+      {
+        "category": "cast_error",
+        "column": 9,
+        "line": 130,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 9,
+        "line": 137,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 414,
+    "complexity_score": 861,
+    "cross_reference_count": 0,
+    "function_call_count": 16,
+    "global_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 161,
+    "suspect_count": 68,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_ref",
+      "suspect_float",
+      "unnamed_param"
+    ],
+    "total_lines": 575
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0053e860",
+    "address_range": [
+      [
+        "0053e860",
+        "0053ecba"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_CStranger_processDamage_FUN_0053e860",
+    "signature": "void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "0040dda0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0"
+    },
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040d7e0"
+    },
+    {
+      "addr": "0040dea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040dea0"
+    },
+    {
+      "addr": "00428510",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00428510"
+    },
+    {
+      "addr": "004a3a90",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004a3a90"
+    },
+    {
+      "addr": "004b0670",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670"
+    },
+    {
+      "addr": "004b5920",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_stopNearbyInteraction_FUN_004b5920"
+    },
+    {
+      "addr": "004c3350",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350"
+    },
+    {
+      "addr": "004e1660",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660"
+    },
+    {
+      "addr": "004e16b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
+    },
+    {
+      "addr": "00526c50",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00526c50"
+    },
+    {
+      "addr": "00527230",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00527230"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": false,
+      "name": "xxx_unk.c_FUN_004940d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00595d3f",
+      "name": "s_CBugs_00595d3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595d45",
+      "name": "s_Using_auto_health_00595d45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595d58",
+      "name": "s_hit_points_3_2f_00595d58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595d6b",
+      "name": "s_stranger_die_wav_00595d6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595d7e",
+      "name": "s_stranger_hit_wav_00595d7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00595d97",
+      "name": "DOUBLE_00595d97",
+      "type": "double",
+      "value": "0.0500000000000000"
+    },
+    {
+      "addr": "00595d9f",
+      "name": "DOUBLE_00595d9f",
+      "type": "double",
+      "value": "0.75"
+    },
+    {
+      "addr": "00595da7",
+      "name": "FLOAT_00595da7",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "005a26f8",
+      "name": "FLOAT_005a26f8",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "005ad350",
+      "name": "PTR_DAT_005ad350",
+      "type": "void*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "005b9284",
+      "name": "INT_005b9284",
+      "type": "int",
+      "value": "0x1c70f74"
+    },
+    {
+      "addr": "005b9354",
+      "name": "DAT_005b9354",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b96c4",
+      "name": "INT_005b96c4",
+      "type": "int",
+      "value": "0x1c78c7c"
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "DAT_0077ad0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c775ec",
+      "name": "DAT_01c775ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c776b4",
+      "name": "DAT_01c776b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c777bc",
+      "name": "DAT_01c777bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c77818",
+      "name": "DAT_01c77818",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd1008",
+      "name": "g_CTommyGunActorType_02dd0fd0.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.876876876876877,
+    "instruction_count": 333,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 11,
+      "BRANCH": 5,
+      "CALL": 19,
+      "CALLIND": 5,
+      "CBRANCH": 31,
+      "COPY": 716,
+      "FLOAT2FLOAT": 35,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 18,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 9,
+      "INT_ADD": 136,
+      "INT_AND": 160,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 109,
+      "INT_LEFT": 36,
+      "INT_LESS": 19,
+      "INT_NOTEQUAL": 46,
+      "INT_OR": 45,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 54,
+      "INT_SUB": 101,
+      "INT_XOR": 2,
+      "INT_ZEXT": 36,
+      "LOAD": 71,
+      "POPCOUNT": 54,
+      "RETURN": 2,
+      "STORE": 117
+    },
+    "pcode_op_count": 1957
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CHero *param_1,SDamageInfo *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->damage_amount = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->damage_amount = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((0.0 < param_1->invincibility_timer) && (0xb < (int)param_2->damage_type)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((0.0 < param_1->invincibility_timer) && (0xb < (int)param_2->damage_type)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->damage_amount = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->invincibility_timer = 2.0f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2->wielder,\"CBugs\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->invincibility_timer = 0.15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).hit_points = (param_1->base).hit_points - param_2->damage_amount;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).hit_points = (param_1->base).hit_points - param_2->damage_amount;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1->base).hit_points = (param_1->base).hit_points - param_2->damage_amount;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((pCVar3->auto_use_health != 0) && (0xb < (int)param_2->damage_type)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->base).hit_points <= 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).hit_points = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&param_1->inventory);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(PTR_DAT_005ad350,\"hit points: %3.2f\\n\",(double)(param_1->base).hit_points);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2->attacker != (CDemonActor *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffffcc",
+      "severity": "moderate",
+      "text": "((CDemonActor *)param_1,(CVector3f *)&stack0xffffffcc,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,(CVector3f *)&stack0xffffffcc,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "&(param_2->attacker->location).position);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_18 = param_2->damage_amount * (float)0.050000000000000003;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = &(param_1->base).model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->base).hit_points <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = (param_1->base).base.vtable._uc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).hit_points = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(pCVar1->_uc).releaseFromGrab)(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->ladder_to_climb == (CLadder *)0x0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1].base.base.orient_matrix.m[2].x == 0.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2->damage_type == DAMAGE_TYPE_DROWN) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 96,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "fVar8 = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 99,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "fVar8 = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 105,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "fVar8 = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->ladder_to_climb = (CLadder *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[2].x = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model.motion_controller,iVar4,(int)fVar8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)param_1[1].base.model.transformed_vertices[0x13].z);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2->damage_type != DAMAGE_TYPE_DROWN) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar8 = (float)(*((param_1->base).base.vtable._ub)->playSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,\"stranger_die??.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x13].z = fVar8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 120,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CGore *)INT_005b96c4,(CDemonActor *)param_1,0x32,50.0,(CVector3f *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 123,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).carry_hands[0].carry_actor) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,0,(CVector3f *)0x0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,0,(CVector3f *)0x0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->base).carry_hands[1].carry_actor ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 131,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,(CVector3f *)0x0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,(CVector3f *)0x0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 137,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2->damage_amount <= 0.0) goto LAB_0053eb7b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 138,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((param_2->damage_type != DAMAGE_TYPE_NO_FLINCH) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 139,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->ladder_to_climb == (CLadder *)0x0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 140,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1[1].base.base.orient_matrix.m[2].x == 0.0 && (param_1[1].base.base.health == 0)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 140,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1[1].base.base.orient_matrix.m[2].x == 0.0 && (param_1[1].base.base.health == 0)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 142,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2->attacker,g_CTommyGunActorType_02dd0fd0.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 152,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)param_1[1].base.model.transformed_vertices[0x13].z);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 154,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar8 = (float)(*((param_1->base).base.vtable._ub)->playSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,\"stranger_hit??.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 156,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x13].z = fVar8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (0.0 < param_2->damage_amount) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 162,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(&param_1->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 162,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_processDamage_FUN_00428510(&param_1->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x1c775ec assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 35,
+      "match": "0x1c775ec",
+      "severity": "moderate",
+      "text": "pCVar3 = 0x01C775EC;",
+      "type": "raw_address_constant"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStranger",
+        "offset": 256,
+        "vtable_addr": "005a2744"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

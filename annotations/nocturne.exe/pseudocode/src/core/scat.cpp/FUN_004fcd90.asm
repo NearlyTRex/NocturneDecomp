@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbf20 at 004fc165
+;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc165
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004fcd68 = 004fce36

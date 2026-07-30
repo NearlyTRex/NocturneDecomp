@@ -13,9 +13,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
 {
   byte *puVar1;
   uint *puVar2;
-  int iVar3;
-  byte *puVar4;
-  int iVar5;
+  byte *puVar3;
   CSmokeParticle *this_ptr_00;
   CExplosion *this_ptr_01;
   CToss *this_ptr_02;
@@ -33,11 +31,11 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
   _DAT_01c20144 = 0;
   _DAT_01c20140 = 0;
   _DAT_01c49d50 = 0;
-  puVar4 = (byte *)0x1c49d54;
+  puVar3 = &DAT_01c49d54;
   do {
-    puVar1 = puVar4 + 0x4c;
-    *(uint *)(puVar4 + 0x18) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x4c;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c4e954);
   puVar2 = (uint *)&DAT_01c4e958;
   do {
@@ -47,31 +45,31 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
   _DAT_01c23d48 = 0;
   _DAT_01c4f088 = 0;
   _DAT_01c23d4c = 0;
-  iVar5 = 0x1c4f08c;
+  puVar3 = &DAT_01c4f08c;
   do {
-    iVar3 = iVar5 + 0x9c;
-    *(uint *)(iVar5 + 0x18) = 0;
-    iVar5 = iVar3;
-  } while (iVar3 != 0x1c58c8c);
-  puVar4 = (byte *)0x1c58c90;
+    puVar1 = puVar3 + 0x9c;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
+  } while (puVar1 != (byte *)0x1c58c8c);
+  puVar3 = (byte *)0x1c58c90;
   do {
-    puVar1 = puVar4 + 0x24;
-    *(uint *)(puVar4 + 0x20) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x24;
+    *(uint *)(puVar3 + 0x20) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c58df8);
   _DAT_01c58df8 = 0;
-  puVar4 = (byte *)0x1c58dfc;
+  puVar3 = &DAT_01c58dfc;
   do {
-    puVar1 = puVar4 + 0x9c;
-    *(uint *)(puVar4 + 0x18) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x9c;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c5b4fc);
   _DAT_01c5b4fc = 0;
-  puVar4 = (byte *)0x1c5b500;
+  puVar3 = &DAT_01c5b500;
   do {
-    puVar1 = puVar4 + 0x48;
-    *(uint *)(puVar4 + 0x18) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x48;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c5c700);
   _DAT_01c5d704 = 0;
   this_ptr_01 = (CExplosion *)0x1c5d708;
@@ -79,13 +77,13 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
     core_fire_cpp_CExplosion_ctor_FUN_00486d90(this_ptr_01);
     this_ptr_01 = this_ptr_01 + 1;
   } while (this_ptr_01 != (CExplosion *)&DAT_01c5d820);
-  this_ptr_02 = (CToss *)0x1c5d824;
+  this_ptr_02 = (CToss *)&DAT_01c5d824;
   _DAT_01c5d820 = 0;
   do {
     core_fire_cpp_CToss_reset_FUN_004873a0(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
   } while (this_ptr_02 != (CToss *)&DAT_01c625f4);
-  this_ptr_03 = (CCrater *)0x1c625f8;
+  this_ptr_03 = (CCrater *)&DAT_01c625f8;
   _DAT_01c625f4 = 0;
   do {
     core_fire_cpp_CCrater_reset_FUN_004876b0(this_ptr_03);
@@ -110,25 +108,25 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
     this_ptr_06 = this_ptr_06 + 1;
   } while (this_ptr_06 != (CTrail *)&DAT_01c684dc);
   _DAT_01c684dc = 0;
-  puVar4 = (byte *)0x1c684e0;
+  puVar3 = &DAT_01c684e0;
   do {
-    puVar1 = puVar4 + 0x58;
-    *(uint *)(puVar4 + 0x18) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x58;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c69610);
   _DAT_01c69610 = 0;
-  puVar4 = (byte *)0x1c69614;
+  puVar3 = &DAT_01c69614;
   do {
-    puVar1 = puVar4 + 0x38;
-    *(uint *)(puVar4 + 0x18) = 0;
-    puVar4 = puVar1;
+    puVar1 = puVar3 + 0x38;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
   } while (puVar1 != &DAT_01c6ce14);
   _DAT_01c6ce14 = 0;
-  iVar5 = 0x1c6ce18;
+  puVar3 = &DAT_01c6ce18;
   do {
-    iVar3 = iVar5 + 0x38;
-    *(uint *)(iVar5 + 0x18) = 0;
-    iVar5 = iVar3;
-  } while ((CDemonActorType *)iVar3 != &g_CFlameActorType_01c70618);
+    puVar1 = puVar3 + 0x38;
+    *(uint *)(puVar3 + 0x18) = 0;
+    puVar3 = puVar1;
+  } while ((CDemonActorType *)puVar1 != &g_CFlameActorType_01c70618);
   return;
 }

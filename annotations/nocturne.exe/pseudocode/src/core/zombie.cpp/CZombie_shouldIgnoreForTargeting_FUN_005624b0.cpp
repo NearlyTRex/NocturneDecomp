@@ -17,6 +17,6 @@ int core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CDemonActor *p
   if (pSVar1->state_index == 0xe) {
     return 1;
   }
-  iVar2 = core_actor_cpp_FUN_0040d830(param_1);
+  iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830(param_1);
   return iVar2;
 }

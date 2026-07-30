@@ -15,7 +15,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(CFlashligh
   CWeapon *pCVar2;
   
   pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
-  (pCVar2->base).vtable._ub = &g_CGunVTable._ub;
+  (pCVar2->base).vtable._ub = &g_CFlashlightVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (&pCVar2->model,"flashlit.kfm");
   pCVar2->is_spread_weapon = 0;

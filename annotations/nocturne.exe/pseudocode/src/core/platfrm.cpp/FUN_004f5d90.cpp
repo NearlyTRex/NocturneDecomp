@@ -24,7 +24,7 @@ CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(CDemonActor *param_1)
   CCourseFrame **ppCVar6;
   
   bVar11 = 0;
-  pCVar2 = core_actor_cpp_FUN_00409d30(param_1);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(param_1);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pCVar4 = core_course_cpp_CCourse_ctor_FUN_0043b5d0

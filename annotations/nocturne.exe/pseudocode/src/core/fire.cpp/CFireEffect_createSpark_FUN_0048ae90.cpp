@@ -20,7 +20,7 @@ void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect *thi
   if (0xff < iVar2) {
     _DAT_01c49d50 = 0;
   }
-  (*(code *)**(uint **)(&DAT_01c49d88 + iVar1))(iVar1 + 0x1c49d54,position,velocity);
+  (*(code *)**(uint **)(&DAT_01c49d88 + iVar1))(&DAT_01c49d54 + iVar1,position,velocity);
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0xc000,0xffff);
   *(uint *)(iVar1 + 0x1c49d94) = 0;
   *(uint *)(iVar1 + 0x1c49d8c) =

@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_00421480 at 0042151c
+;   core_bugs.cpp_CBugs_process_FUN_00421480 at 0042151c
 ;   core_bugs.cpp_FUN_00422050 at 0042235a
 ;
 ; Referenced Globals:

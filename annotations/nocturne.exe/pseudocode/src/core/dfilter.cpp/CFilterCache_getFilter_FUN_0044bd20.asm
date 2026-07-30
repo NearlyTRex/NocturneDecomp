@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_FUN_004c79a0 at 004c7b51
+;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7b51
 ;   core_setutil.cpp_C3DSLight_addFilter_FUN_00515710 at 005157a3
 ;   core_setutil.cpp_C3DSLight_create_FUN_005151f0 at 005152d1
 ;

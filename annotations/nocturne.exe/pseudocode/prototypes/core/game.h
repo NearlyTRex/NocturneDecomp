@@ -135,9 +135,9 @@ void __cdecl CGame::processMouseControls(CGame *this_ptr,SPlayerInput *player_co
 // Address: 0049f8c0
 void __cdecl CGame::resetInputAndCenterCursor(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_0049f930
+// Original: core_game.cpp_CGame_FUN_0049f930
 // Address: 0049f930
-void __cdecl FUN_0049f930(CGame *this_ptr);
+void __cdecl CGame(CGame *this_ptr);
 
 // Original: core_game.cpp_checkCheatCode_FUN_004a0260
 // Address: 004a0260

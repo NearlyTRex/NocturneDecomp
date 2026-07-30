@@ -79,8 +79,8 @@
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e8c
 ;   core_curtain.cpp_FUN_0043f330 at 0043f4a4
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 00453127
-;   core_glass.cpp_FUN_004ac440 at 004ac583
-;   core_glass.cpp_FUN_004ac600 at 004ac73f
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 at 004ac583
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 at 004ac73f
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004dfcb0 at 004dfe70
 ;   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00518470 at 0051849d
 ;

@@ -5,9 +5,11 @@
 // =============================================================================
 
 #include "globals/globals_14B0000.h"
+#include "globals/globals_1AB0000.h"
 #include "globals/globals_1AF0000.h"
 #include "globals/globals_1B40000.h"
 #include "globals/globals_1B70000.h"
+#include "globals/globals_1B80000.h"
 #include "globals/globals_1BC0000.h"
 #include "globals/globals_1C00000.h"
 #include "globals/globals_1C70000.h"

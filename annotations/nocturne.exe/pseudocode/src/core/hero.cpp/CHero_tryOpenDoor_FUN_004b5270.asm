@@ -7,14 +7,14 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
-;   core_colonel.cpp_FUN_00439f50 at 0043a35a
+;   core_colonel.cpp_CColonel_process_FUN_00439f50 at 0043a35a
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 004977dc
-;   core_gabriela.cpp_FUN_00495a20 at 00496b85
-;   core_haystack.cpp_FUN_004b32d0 at 004b3727
-;   core_icepick.cpp_FUN_004b9fe0 at 004ba54a
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496b85
+;   core_haystack.cpp_CHaystack_process_FUN_004b32d0 at 004b3727
+;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba54a
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 00538359
 ;   core_stranger.cpp_FUN_0053fc60 at 0053fde7
-;   core_svetlana.cpp_FUN_00541d00 at 00542232
+;   core_svetlana.cpp_CSvetlana_process_FUN_00541d00 at 00542232
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_onLocked_FUN_00456650

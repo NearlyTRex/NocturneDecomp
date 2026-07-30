@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00428100
+;   core_charactr.cpp_CCharacter_drop_FUN_00428100
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00540937
     PUSH ESI                            ; 0054093b
     PUSH EBX                            ; 0054093c
-    CALL core_charactr.cpp_FUN_00428100 ; 0054093d
-        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00428100(CCharacter * this_ptr, CDemonActor * carrier, CVector3f * drop_position)
+    CALL core_charactr.cpp_CCharacter_drop_FUN_00428100 ; 0054093d
+        ;   XREF to: 00428100 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_drop_FUN_00428100(CCharacter * this_ptr, CDemonActor * carrier, CVector3f * drop_position)
     ADD ESP,0xc                         ; 00540942
     POP ESI                             ; 00540945
     POP EBX                             ; 00540946

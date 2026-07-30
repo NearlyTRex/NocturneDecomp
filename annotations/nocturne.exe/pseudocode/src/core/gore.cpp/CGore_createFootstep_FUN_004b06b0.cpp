@@ -24,7 +24,7 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004b06b0(CGore *this_ptr,CVe
     _DAT_01c9e540 = _DAT_01c9e540 + 1;
   }
   core_gore_cpp_CFootstep_init_FUN_004af8a0
-            ((CFootstep *)(iVar1 + 0x1c9e544),position,orientation,(uint)(surface_type == 0xb),alpha
-             ,blood_type);
+            ((CFootstep *)(&DAT_01c9e544 + iVar1),position,orientation,(uint)(surface_type == 0xb),
+             alpha,blood_type);
   return;
 }

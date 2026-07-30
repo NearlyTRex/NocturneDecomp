@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   delta_time
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d2d
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004c9cf0 at 004c9d2d
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a004c = 2

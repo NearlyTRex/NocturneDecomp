@@ -10,7 +10,7 @@
 ;   TerminatedCString s_wait_005965f0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040d830
+;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   crt_string.c__stricmp_FUN_00564520
 ;
@@ -41,8 +41,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x8]       ; 0054474d
         ;   Label: LAB_0054474d
     PUSH EDX                            ; 00544750
-    CALL core_actor.cpp_FUN_0040d830    ; 00544751
-        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d830(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830 ; 00544751
+        ;   XREF to: 0040d830 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00544756
     POP EBP                             ; 00544759
     RET                                 ; 0054475a

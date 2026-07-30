@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mobster.cpp_FUN_004da790 at 004daeda
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004daeda
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_cheese_c_c_d_wav_0058a4ad

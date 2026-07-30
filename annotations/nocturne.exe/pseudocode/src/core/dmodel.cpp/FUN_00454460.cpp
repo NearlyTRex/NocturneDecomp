@@ -13,7 +13,7 @@ void __cdecl core_dmodel_cpp_FUN_00454460(void)
 {
   CDemonActorType *pCVar1;
   
-  pCVar1 = (CDemonActorType *)0x1abb65c;
+  pCVar1 = (CDemonActorType *)&DAT_01abb65c;
   do {
     core_dmodel_cpp_FUN_00452f10(pCVar1);
     pCVar1 = (CDemonActorType *)(pCVar1[0xf].class_name + 0x14);

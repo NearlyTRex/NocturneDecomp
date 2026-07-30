@@ -7,13 +7,13 @@
 // Address: 004abaf0
 void __cdecl staticInit(void);
 
-// Original: core_glass.cpp_FUN_004abb20
+// Original: core_glass.cpp_factoryFunc_FUN_004abb20
 // Address: 004abb20
-void FUN_004abb20(void);
+CGlass * __cdecl factoryFunc(void);
 
-// Original: core_glass.cpp_FUN_004abb40
+// Original: core_glass.cpp_CGlass_getActorType_FUN_004abb40
 // Address: 004abb40
-CDemonActorType * FUN_004abb40(void);
+CDemonActorType * CGlass::getActorType(void);
 
 // Original: core_glass.cpp_FUN_004abb50
 // Address: 004abb50
@@ -27,25 +27,25 @@ void __cdecl CGlass::setup(CGlass *this_ptr);
 // Address: 004ac3f0
 void CGlass::process(CGlass *param_1);
 
-// Original: core_glass.cpp_FUN_004ac440
+// Original: core_glass.cpp_CGlass_renderOpaque_FUN_004ac440
 // Address: 004ac440
-int FUN_004ac440(CDemonActor *param_1);
+int CGlass::renderOpaque(CDemonActor *param_1);
 
-// Original: core_glass.cpp_FUN_004ac600
+// Original: core_glass.cpp_CGlass_renderTransparent_FUN_004ac600
 // Address: 004ac600
-int FUN_004ac600(CDemonActor *param_1);
+int CGlass::renderTransparent(CDemonActor *param_1);
 
 // Original: core_glass.cpp_FUN_004ac7c0
 // Address: 004ac7c0
 void __cdecl FUN_004ac7c0(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004ac9b0
+// Original: core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0
 // Address: 004ac9b0
-void FUN_004ac9b0(CGlass *param_1,int param_2);
+void CGlass::renderBackground(CGlass *param_1,int param_2);
 
-// Original: core_glass.cpp_FUN_004acb60
+// Original: core_glass.cpp_CGlass_getBoundingBox_FUN_004acb60
 // Address: 004acb60
-void FUN_004acb60(int param_1,float *param_2);
+void CGlass::getBoundingBox(int param_1,float *param_2);
 
 // Original: core_glass.cpp_CGlass_archive_FUN_004acbc0
 // Address: 004acbc0
@@ -67,17 +67,17 @@ void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 // Address: 004add80
 void CGlass::onLaserHit(int param_1,int param_2);
 
-// Original: core_glass.cpp_FUN_004adec0
+// Original: core_glass.cpp_CGlass_getGroundType_FUN_004adec0
 // Address: 004adec0
-undefined4 FUN_004adec0(void);
+undefined4 CGlass::getGroundType(void);
 
 // Original: core_glass.cpp_FUN_004aded0
 // Address: 004aded0
 int __cdecl FUN_004aded0(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004adef0
+// Original: core_glass.cpp_CGlass_dtor_FUN_004adef0
 // Address: 004adef0
-CDemonActor * FUN_004adef0(CDemonActor *param_1,byte param_2);
+CDemonActor * CGlass::dtor(CDemonActor *param_1,byte param_2);
 
 // Original: core_glass.cpp_CVector3f_arrdtor_FUN_004adf70
 // Address: 004adf70

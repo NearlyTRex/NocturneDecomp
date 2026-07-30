@@ -7,7 +7,7 @@
 ; EGroundType      Stack[0x4]:4   type
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040db50 at 0040dc78
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50 at 0040dc78
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ad6f
 ;
 ; Referenced Globals:

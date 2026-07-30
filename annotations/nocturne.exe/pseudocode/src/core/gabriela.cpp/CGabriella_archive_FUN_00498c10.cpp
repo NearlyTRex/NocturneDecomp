@@ -9,7 +9,7 @@
 void core_gabriela_cpp_CGabriella_archive_FUN_00498c10(CHero *param_1)
 
 {
-  core_hero_cpp_FUN_004b49a0(param_1);
+  core_hero_cpp_CHero_archive_FUN_004b49a0(param_1);
   if ((1 < INT_005b92a8) && (INT_005b92a8 < 4)) {
     core_actor_cpp_archiveActor_FUN_0040c980(&param_1->object_to_pick_up,"objectToPickUp");
     core_actor_cpp_archiveActor_FUN_0040c980

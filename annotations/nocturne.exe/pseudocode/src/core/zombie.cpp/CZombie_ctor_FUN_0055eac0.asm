@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_0055ea90 at 0055eaa3
+;   core_zombie.cpp_factoryFunc_FUN_0055ea90 at 0055eaa3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_zombie1_dfm_005983e6

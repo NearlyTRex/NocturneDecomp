@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   condition_expression
 ;
 ; XREF[49]:
-;   core_anvil.cpp_FUN_0040f610 at 0040f626
-;   core_armour.cpp_FUN_0040fa20 at 0040fafa
-;   core_baron.cpp_FUN_00410490 at 004104be
+;   core_anvil.cpp_CAnvil_process_FUN_0040f610 at 0040f626
+;   core_armour.cpp_CArmour_process_FUN_0040fa20 at 0040fafa
+;   core_baron.cpp_CBaron_process_FUN_00410490 at 004104be
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413e86
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 004156b1
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a7e
-;   core_boneguy.cpp_FUN_00418a00 at 00418a23
-;   core_bugs.cpp_FUN_00421480 at 004214d9
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00418a23
+;   core_bugs.cpp_CBugs_process_FUN_00421480 at 004214d9
 ;   core_conveyor.cpp_CConveyor_process_FUN_0043b1a0 at 0043b1b9
 ;   core_curtain.cpp_CCurtain_process_FUN_0043ebf0 at 0043ec3e
 ;   ... and 39 more

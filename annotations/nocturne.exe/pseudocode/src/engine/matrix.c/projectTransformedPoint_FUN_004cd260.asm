@@ -7,7 +7,7 @@
 ; SProjectedVertex * Stack[0x4]:4   point
 ;
 ; XREF[4]:
-;   core_flame.cpp_FUN_0048d5d0 at 0048dd8a
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048dd8a
 ;   core_setdir.cpp_FUN_00511d80 at 00511fa3
 ;   core_setdir.cpp_FUN_005125a0 at 00512f23
 ;   engine_matrix.c_projectCachedPoint_FUN_004cd240 at 004cd256

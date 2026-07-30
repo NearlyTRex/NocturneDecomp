@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00495e67
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497a20
-;   core_gabriela.cpp_FUN_00495a20 at 00495e67
 ;
 ; Referenced Globals:
 ;   undefined4 g_CLightActorActorType_00764a9c.name_hash

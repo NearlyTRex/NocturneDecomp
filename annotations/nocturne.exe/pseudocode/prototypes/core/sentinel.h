@@ -7,13 +7,13 @@
 // Address: 005058c0
 void __cdecl staticInit(void);
 
-// Original: core_sentinel.cpp_FUN_005058f0
+// Original: core_sentinel.cpp_factoryFunc_FUN_005058f0
 // Address: 005058f0
-void FUN_005058f0(void);
+CSentinel * __cdecl factoryFunc(void);
 
-// Original: core_sentinel.cpp_FUN_00505910
+// Original: core_sentinel.cpp_CSentinel_getActorType_FUN_00505910
 // Address: 00505910
-CDemonActorType * FUN_00505910(void);
+CDemonActorType * CSentinel::getActorType(void);
 
 // Original: core_sentinel.cpp_FUN_00505920
 // Address: 00505920
@@ -43,9 +43,9 @@ void CSentinel::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 // Address: 00506940
 undefined4 CSentinel::getTargetPoints(int param_1,CVector3f *param_2);
 
-// Original: core_sentinel.cpp_FUN_00506a60
+// Original: core_sentinel.cpp_CSentinel_getCollisionType_FUN_00506a60
 // Address: 00506a60
-void FUN_00506a60(CCharacter *param_1,SCollisionInfo *param_2);
+void CSentinel::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_sentinel.cpp_CSentinel_dtor_FUN_00506a80
 // Address: 00506a80

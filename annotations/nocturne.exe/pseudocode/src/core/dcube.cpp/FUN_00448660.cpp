@@ -14,55 +14,52 @@ void core_dcube_cpp_FUN_00448660(float param_1)
   byte bVar1;
   uint uVar2;
   int iVar3;
-  int iVar4;
   CVector3f *vertex1;
   
-  iVar4 = 0;
+  iVar3 = 0;
   if (0 < (int)_DAT_014b848c) {
-    vertex1 = (CVector3f *)&DAT_014b8490;
+    vertex1 = CVector3f_ARRAY_014b8490;
     do {
-      uVar2 = iVar4 + 1;
+      uVar2 = iVar3 + 1;
       if (uVar2 == _DAT_014b848c) {
         uVar2 = uVar2 ^ _DAT_014b848c;
       }
       bVar1 = param_1 < vertex1->y;
-      if (param_1 < *(float *)(&DAT_014b8494 + uVar2 * 0xc)) {
+      if (param_1 < CVector3f_ARRAY_014b8490[uVar2].y) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
-        iVar3 = _DAT_014b8550 * 0xc;
-        if ((CVector3f *)(&DAT_014b8554 + iVar3) != vertex1) {
-          ((CVector3f *)(&DAT_014b8554 + iVar3))->x = vertex1->x;
-          *(float *)(&DAT_014b8558 + iVar3) = vertex1->y;
-          *(float *)(&DAT_014b855c + iVar3) = vertex1->z;
+        if (CVector3f_ARRAY_014b8554 + _DAT_014b8550 != vertex1) {
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].x = vertex1->x;
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].y = vertex1->y;
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].z = vertex1->z;
         }
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  ((CVector3f *)(&DAT_014b8490 + uVar2 * 0xc),vertex1,
-                   (CVector3f *)(&DAT_014b8554 + _DAT_014b8550 * 0xc),0.0,1.0,0.0,(double)-param_1);
+                  (CVector3f_ARRAY_014b8490 + uVar2,vertex1,CVector3f_ARRAY_014b8554 + _DAT_014b8550
+                   ,0.0,1.0,0.0,(double)-param_1);
         break;
       case 2:
-        iVar3 = _DAT_014b8550 * 0xc;
-        if ((CVector3f *)(&DAT_014b8554 + iVar3) != vertex1) {
-          ((CVector3f *)(&DAT_014b8554 + iVar3))->x = vertex1->x;
-          *(float *)(&DAT_014b8558 + iVar3) = vertex1->y;
-          *(float *)(&DAT_014b855c + iVar3) = vertex1->z;
+        if (CVector3f_ARRAY_014b8554 + _DAT_014b8550 != vertex1) {
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].x = vertex1->x;
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].y = vertex1->y;
+          CVector3f_ARRAY_014b8554[_DAT_014b8550].z = vertex1->z;
         }
         _DAT_014b8550 = _DAT_014b8550 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004484c0
-                  (vertex1,(CVector3f *)(&DAT_014b8490 + uVar2 * 0xc),
-                   (CVector3f *)(&DAT_014b8554 + _DAT_014b8550 * 0xc),0.0,1.0,0.0,(double)-param_1);
+                  (vertex1,CVector3f_ARRAY_014b8490 + uVar2,CVector3f_ARRAY_014b8554 + _DAT_014b8550
+                   ,0.0,1.0,0.0,(double)-param_1);
         break;
       default:
         goto switchD_004486cc_caseD_3;
       }
       _DAT_014b8550 = _DAT_014b8550 + 1;
 switchD_004486cc_caseD_3:
-      iVar4 = iVar4 + 1;
+      iVar3 = iVar3 + 1;
       vertex1 = vertex1 + 1;
-    } while (iVar4 < (int)_DAT_014b848c);
+    } while (iVar3 < (int)_DAT_014b848c);
   }
   return;
 }

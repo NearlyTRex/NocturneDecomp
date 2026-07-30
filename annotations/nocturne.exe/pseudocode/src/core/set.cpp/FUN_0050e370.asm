@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00421540 at 00421641
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_00421540 at 00421641
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a18f0

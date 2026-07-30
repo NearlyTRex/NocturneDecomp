@@ -27,9 +27,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample)
   iVar4 = 0;
   do {
     if (0 < *(int *)(iVar4 + 0x2dc1fec)) {
-      iVar2 = _stricmp((char *)(iVar4 + 0x2dc1edc),(char *)out_sample);
+      iVar2 = _stricmp(&DAT_02dc1edc + iVar4,(char *)out_sample);
       if (iVar2 == 0) {
-        pcVar5 = (char *)(iVar4 + 0x2dc1edc);
+        pcVar5 = &DAT_02dc1edc + iVar4;
         for (iVar2 = 0x4a; iVar2 != 0; iVar2 = iVar2 + -1) {
           *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
           pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
@@ -63,16 +63,16 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample)
       if (iVar4 == 0) {
         if ((DAT_02dbd348 & 1) == 0) {
           DAT_02dbd348 = DAT_02dbd348 | 1;
-          sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90((CMP3Decoder *)0x2db4d18);
-          _atexit((WatcomStaticDestructorNode *)&DAT_005bea44);
+          sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90((CMP3Decoder *)&DAT_02db4d18);
+          _atexit(&g_WatcomStaticDestructorNode_005bea44);
         }
-        sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(0x2db4d18,out_sample);
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&DAT_02db4d18,out_sample);
         (out_sample->sample_info).bit_depth = 0x10;
         (out_sample->sample_info).num_channels = _DAT_02db4e1c;
         iVar4 = _DAT_02db4e18;
         (out_sample->sample_info).sample_count = -1;
         (out_sample->sample_info).sample_rate = iVar4;
-        sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260((CMP3Decoder *)0x2db4d18);
+        sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260((CMP3Decoder *)&DAT_02db4d18);
       }
       else {
         PTR_01cc4800 = "..\\sound\\sndmain.cpp";

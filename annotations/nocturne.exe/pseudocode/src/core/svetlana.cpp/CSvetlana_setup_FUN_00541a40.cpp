@@ -28,7 +28,7 @@ void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(CHero *param_1)
     model_name = "svetlana.dfm";
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(&(param_1->base).model,model_name);
-  core_hero_cpp_FUN_004b48d0(param_1);
+  core_hero_cpp_CHero_setup_FUN_004b48d0(param_1);
   this_ptr = &(param_1->base).model;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   _DAT_02dca058 =

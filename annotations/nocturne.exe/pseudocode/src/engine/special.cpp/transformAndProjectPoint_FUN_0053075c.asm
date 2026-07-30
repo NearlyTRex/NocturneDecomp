@@ -8,7 +8,7 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[66]:
-;   core_actor.cpp_FUN_0040add0 at 0040ae5d
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0 at 0040ae5d
 ;   core_actor.cpp_draw3DPointMarker_FUN_0040ab70 at 0040abae
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450 at 0041d4df
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 at 0041cfb4

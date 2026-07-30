@@ -33,7 +33,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 0049628f
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 0049628f
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00582082 = 4

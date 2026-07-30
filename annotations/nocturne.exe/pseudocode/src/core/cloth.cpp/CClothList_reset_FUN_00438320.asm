@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CClothList_dtor_FUN_00438250 at 00438256
-;   core_stranger.cpp_FUN_0053d100 at 0053d4ea
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d4ea
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160

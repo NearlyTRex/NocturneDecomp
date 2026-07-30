@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; XREF[1]:
-;   core_emitter.cpp_FUN_00478790 at 00478ba2
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478ba2
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240

@@ -52,7 +52,7 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *thi
   uStack_78 = *(uint *)(this_ptr->player_name + 8);
   local_74 = *(uint *)(this_ptr->player_name + 0xc);
   local_70 = *(uint *)(this_ptr->player_name + 0x10);
-  core_netgame_cpp_FUN_004edfb0(&local_6c,&this_ptr->player_count);
+  core_netgame_cpp_assignInt2_FUN_004edfb0(&local_6c,&this_ptr->player_count);
   local_68 = *(ushort *)this_ptr->players[0].name;
   local_64 = *(uint *)(this_ptr->players[0].name + 4);
   local_60 = *(uint *)(this_ptr->players[0].name + 8);

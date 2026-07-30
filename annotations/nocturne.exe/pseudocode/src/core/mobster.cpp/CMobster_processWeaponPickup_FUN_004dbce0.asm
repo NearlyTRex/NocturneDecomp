@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mobster.cpp_FUN_004da790 at 004db3ea
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004db3ea
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTommyGun_0058a3b9

@@ -80,7 +80,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 2
     - [stack_alignment] at 0040986b: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_0040a420
+  core_actor.cpp_CDemonActor_testLineIntersection_FUN_0040a420
     File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040a429: AND ESP,0xfffffff8
 
@@ -88,15 +88,15 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 10
     - [stack_alignment] at 0040a74c: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_0040add0
+  core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0
     File: core/actor.cpp, Suspects: 24
     - [alt_frame_pointer] at 0040ae12: MOV EDI,ESP
 
-  core_actor.cpp_FUN_0040b200
+  core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200
     File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040b207: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_0040b300
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     File: core/actor.cpp, Suspects: 102
     - [stack_alignment] at 0040b30c: AND ESP,0xfffffff8
 
@@ -125,7 +125,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040df06: AND ESP,0xfffffff8
 
-  core_armour.cpp_FUN_0040fa20
+  core_armour.cpp_CArmour_process_FUN_0040fa20
     File: core/armour.cpp, Suspects: 34
     - [stack_alignment] at 0040fa29: AND ESP,0xfffffff8
 
@@ -137,7 +137,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/baron.cpp, Suspects: 10
     - [stack_alignment] at 00411015: AND ESP,0xfffffff8
 
-  core_baron.cpp_FUN_004110f0
+  core_baron.cpp_CBaron_renderTransparent_FUN_004110f0
     File: core/baron.cpp, Suspects: 26
     - [stack_alignment] at 004110f9: AND ESP,0xfffffff8
 
@@ -153,7 +153,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bat.cpp, Suspects: 0
     - [stack_alignment] at 00411f27: AND ESP,0xfffffff8
 
-  core_batman.cpp_FUN_00414340
+  core_batman.cpp_CBatman_renderOpaque_FUN_00414340
     File: core/batman.cpp, Suspects: 29
     - [stack_alignment] at 00414349: AND ESP,0xfffffff8
 
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 21.9 suspects/function
+  With stack patterns:    avg 21.4 suspects/function
   Without stack patterns: avg 7.7 suspects/function

@@ -7,7 +7,7 @@
 ; CDemonActorTransformState * Stack[0x4]:4   transform_cache
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_00409d30 at 00409d3e
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30 at 00409d3e
 ;
 ; *****************************************************************************
 

@@ -13,7 +13,7 @@ void core_passngr_cpp_CPassenger_archive_FUN_004efb30(CNPC *param_1)
 {
   CDeformableModelInstance *model_ptr;
   
-  core_npc_cpp_FUN_004eed10(param_1);
+  core_npc_cpp_CNPC_archive_FUN_004eed10(param_1);
   core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 1),"transformEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0
             ((char *)&param_1[1].base.base.health,"wolfModelName");

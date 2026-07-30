@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005ae470
 ;   undefined4 DAT_005ae488
 ;   undefined4 DAT_005ae4b8
-;   undefined4 DAT_005ae638
+;   WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae638
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
 ;
@@ -31,7 +31,7 @@ section .text
     MOV EBX,0x5ae488                    ; 004504ee | DAT_005ae488
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004504f3
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    LEA ESI,[EBX + 0x1b0]               ; 004504f8 | DAT_005ae638
+    LEA ESI,[EBX + 0x1b0]               ; 004504f8 | g_WatcomStaticDestructorNode_005ae638
     ADD ESP,0x8                         ; 004504fe
     PUSH EBX                            ; 00450501 | DAT_005ae488 | DAT_005ae4b8
         ;   Label: LAB_00450501

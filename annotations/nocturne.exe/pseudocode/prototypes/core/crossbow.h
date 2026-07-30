@@ -7,13 +7,13 @@
 // Address: 0043ceb0
 void __cdecl staticInit(void);
 
-// Original: core_crossbow.cpp_FUN_0043cee0
+// Original: core_crossbow.cpp_factoryFunc_FUN_0043cee0
 // Address: 0043cee0
-void FUN_0043cee0(void);
+CCrossbow * __cdecl factoryFunc(void);
 
-// Original: core_crossbow.cpp_FUN_0043cf00
+// Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_0043cf00
 // Address: 0043cf00
-CDemonActorType * FUN_0043cf00(void);
+CDemonActorType * CCrossbow::getActorType(void);
 
 // Original: core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
 // Address: 0043cf10
@@ -23,9 +23,9 @@ CCrossbow * __cdecl CCrossbow::ctor(CCrossbow *this_ptr);
 // Address: 0043cfd0
 void CCrossbow::process(CCharacter *param_1,float param_2);
 
-// Original: core_crossbow.cpp_FUN_0043d0a0
+// Original: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043d0a0
 // Address: 0043d0a0
-int FUN_0043d0a0(CDemonActor *param_1);
+int CCrossbow::renderOpaque(CDemonActor *param_1);
 
 // Original: core_crossbow.cpp_CCrossbow_renderTransparent_FUN_0043d120
 // Address: 0043d120

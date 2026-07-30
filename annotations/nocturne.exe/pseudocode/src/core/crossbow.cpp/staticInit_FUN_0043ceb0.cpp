@@ -10,7 +10,8 @@ void __cdecl core_crossbow_cpp_staticInit_FUN_0043ceb0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CCrossbowActorType_0077bd7c,"CCrossbow",core_crossbow_cpp_FUN_0043cee0,
-             &g_INT_005ad3d8,1,&g_CWeaponActorType_02ddf970);
+            (&g_CCrossbowActorType_0077bd7c,"CCrossbow",
+             core_crossbow_cpp_factoryFunc_FUN_0043cee0,&g_INT_005ad3d8,1,
+             &g_CWeaponActorType_02ddf970);
   return;
 }

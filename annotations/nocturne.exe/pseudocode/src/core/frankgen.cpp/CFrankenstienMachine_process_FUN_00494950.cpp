@@ -44,7 +44,7 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMa
   if (param_1->master_frame < _DAT_01c71340) {
     _DAT_01c71340 = _DAT_01c71340 - 2300.0f;
   }
-  core_frankgen_cpp_FUN_004950a0(param_1);
+  core_frankgen_cpp_CFrankenstienMachine_FUN_004950a0(param_1);
   switch(param_1->which_part) {
   case 0:
     fVar1 = param_1->master_frame;

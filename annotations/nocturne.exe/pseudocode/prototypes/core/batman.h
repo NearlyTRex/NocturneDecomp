@@ -7,13 +7,13 @@
 // Address: 00413380
 void __cdecl staticInit(void);
 
-// Original: core_batman.cpp_FUN_004133b0
+// Original: core_batman.cpp_factoryFunc_FUN_004133b0
 // Address: 004133b0
-void FUN_004133b0(void);
+CBatman * __cdecl factoryFunc(void);
 
-// Original: core_batman.cpp_FUN_004133d0
+// Original: core_batman.cpp_CBatman_getActorType_FUN_004133d0
 // Address: 004133d0
-CDemonActorType * FUN_004133d0(void);
+CDemonActorType * CBatman::getActorType(void);
 
 // Original: core_batman.cpp_CBatman_ctor_FUN_004133e0
 // Address: 004133e0
@@ -31,9 +31,9 @@ void __cdecl CBatman::pickRandomMovementState(CBatman *this_ptr);
 // Address: 00413800
 void CBatman::process(CBatman *param_1,float param_2);
 
-// Original: core_batman.cpp_FUN_00414340
+// Original: core_batman.cpp_CBatman_renderOpaque_FUN_00414340
 // Address: 00414340
-int FUN_00414340(CCharacter *param_1);
+int CBatman::renderOpaque(CCharacter *param_1);
 
 // Original: core_batman.cpp_CBatman_archive_FUN_00414510
 // Address: 00414510

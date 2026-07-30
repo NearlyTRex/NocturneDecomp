@@ -16,6 +16,6 @@ void core_stranger_cpp_CStranger_drop_FUN_00540920(CEnemy *param_1,CPlatform *pa
     param_1[2].base.flames[0x1d].base.standing_platform = (CPlatform *)0x0;
     (*(pCVar1->_ue).updateVictim)(param_1,0.0);
   }
-  core_charactr_cpp_FUN_00428100(&param_1->base,&param_2->base,param_3);
+  core_charactr_cpp_CCharacter_drop_FUN_00428100(&param_1->base,&param_2->base,param_3);
   return;
 }

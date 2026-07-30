@@ -8,12 +8,12 @@
 ;
 ; XREF[7]:
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435dbc
-;   core_mimic.cpp_FUN_004d4650 at 004d48a8
+;   core_mimic.cpp_CMimic_setup_FUN_004d4650 at 004d48a8
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef6fa
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0 at 00519c71
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 at 0051ade4
-;   core_succubus.cpp_FUN_00540c20 at 00540e4a
-;   core_vampboss.cpp_FUN_0054c3e0 at 0054c49d
+;   core_succubus.cpp_CSuccubus_setup_FUN_00540c20 at 00540e4a
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_0054c3e0 at 0054c49d
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

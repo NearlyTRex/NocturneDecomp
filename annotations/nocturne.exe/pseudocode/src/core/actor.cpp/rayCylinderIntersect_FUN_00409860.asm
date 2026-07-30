@@ -38,7 +38,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a96a
-;   core_actor.cpp_FUN_0040a420 at 0040a49a
+;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_0040a420 at 0040a49a
 ;
 ; *****************************************************************************
 

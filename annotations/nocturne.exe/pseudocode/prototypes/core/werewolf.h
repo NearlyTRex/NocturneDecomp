@@ -7,13 +7,13 @@
 // Address: 00555a00
 void __cdecl staticInit(void);
 
-// Original: core_werewolf.cpp_FUN_00555a60
+// Original: core_werewolf.cpp_factoryFunc_FUN_00555a60
 // Address: 00555a60
-void FUN_00555a60(void);
+CWerewolf * __cdecl factoryFunc(void);
 
-// Original: core_werewolf.cpp_FUN_00555a80
+// Original: core_werewolf.cpp_CWerewolf_getActorType_FUN_00555a80
 // Address: 00555a80
-CDemonActorType * FUN_00555a80(void);
+CDemonActorType * CWerewolf::getActorType(void);
 
 // Original: core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90
 // Address: 00555a90
@@ -39,9 +39,9 @@ void __cdecl CWerewolf::playHowl(CWerewolf *this_ptr);
 // Address: 005570b0
 void __cdecl CWerewolf::renderEyeGlow(CWerewolf *this_ptr,CVector3f *eye_position);
 
-// Original: core_werewolf.cpp_FUN_005576a0
+// Original: core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005576a0
 // Address: 005576a0
-int FUN_005576a0(CWerewolf *param_1);
+int CWerewolf::renderTransparent(CWerewolf *param_1);
 
 // Original: core_werewolf.cpp_CWerewolf_archive_FUN_00557800
 // Address: 00557800
@@ -55,9 +55,9 @@ void CWerewolf::processDamage(CWerewolf *param_1,SDamageInfo *param_2);
 // Address: 00557c30
 undefined4 CWerewolf::getDeathState(int param_1);
 
-// Original: core_werewolf.cpp_FUN_00557c70
+// Original: core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_00557c70
 // Address: 00557c70
-undefined4 FUN_00557c70(int param_1,CVector3f *param_2);
+undefined4 CWerewolf::getTargetPoints(int param_1,CVector3f *param_2);
 
 // Original: core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_00557cc0
 // Address: 00557cc0

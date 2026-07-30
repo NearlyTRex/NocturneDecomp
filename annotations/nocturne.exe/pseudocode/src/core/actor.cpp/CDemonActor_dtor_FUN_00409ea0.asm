@@ -9,13 +9,13 @@
 ;
 ; XREF[92]:
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040ef9f
-;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4bf
-;   core_anvil.cpp_FUN_0040f8b0 at 0040f8bf
+;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040f4b0 at 0040f4bf
+;   core_anvil.cpp_CAnvil_dtor_FUN_0040f8b0 at 0040f8bf
 ;   core_armour.cpp_CArmour_dtor_FUN_0040fc30 at 0040fcaa
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd6a
 ;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdcf
-;   core_backgnd.cpp_FUN_004100f0 at 004100ff
-;   core_barrier.cpp_FUN_004118c0 at 004118cf
+;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_004100f0 at 004100ff
+;   core_barrier.cpp_CBarrier_dtor_FUN_004118c0 at 004118cf
 ;   core_bat.cpp_CStairs_dtor_FUN_00412000 at 00412026
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0 at 0041333a
 ;   ... and 82 more

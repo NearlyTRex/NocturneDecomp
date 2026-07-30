@@ -7,7 +7,7 @@
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_lightgun.cpp_FUN_004c6e00 at 004c6e13
+;   core_lightgun.cpp_factoryFunc_FUN_004c6e00 at 004c6e13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cre_kfm_005879e7

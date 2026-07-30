@@ -7,11 +7,11 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[31]:
-;   core_armour.cpp_FUN_0040fa00 at 0040fa17
+;   core_armour.cpp_CArmour_setup_FUN_0040fa00 at 0040fa17
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412177
 ;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134b7
 ;   core_beast.cpp_CBeast_setup_FUN_004150b0 at 004150ba
-;   core_biggs.cpp_FUN_00415430 at 00415447
+;   core_biggs.cpp_CBiggs_setup_FUN_00415430 at 00415447
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 0041880e
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fc31
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004242e4

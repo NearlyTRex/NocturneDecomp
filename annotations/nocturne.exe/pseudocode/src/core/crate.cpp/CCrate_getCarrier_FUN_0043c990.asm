@@ -1,0 +1,15 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 core_crate_cpp_CCrate_getCarrier_FUN_0043c990(int param_1)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0043c990
+        ;   Label: core_crate.cpp_CCrate_getCarrier_FUN_0043c990
+    MOV EAX,dword ptr [EAX + 0x2cc]     ; 0043c994
+    RET                                 ; 0043c99a
+

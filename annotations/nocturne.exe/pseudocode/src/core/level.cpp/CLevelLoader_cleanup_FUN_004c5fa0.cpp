@@ -15,6 +15,6 @@ void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(CLevelLoader *this
   this_ptr->enabled = 0;
   engine_console_cpp_CConsole_printf_FUN_0043ac60
             (puVar1,"gLevelIndicator: Used %d calls\n",this_ptr->current_frame);
-  core_dmodel_cpp_FUN_00452f10(0x1cc3290);
+  core_dmodel_cpp_FUN_00452f10(&DAT_01cc3290);
   return;
 }

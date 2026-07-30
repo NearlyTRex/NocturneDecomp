@@ -11,29 +11,29 @@ void __cdecl staticInit(void);
 // Address: 004d43c0
 void __cdecl mirrorXTransform(void);
 
-// Original: core_mimic.cpp_FUN_004d4420
+// Original: core_mimic.cpp_factoryFunc_FUN_004d4420
 // Address: 004d4420
-void FUN_004d4420(void);
+CMimic * __cdecl factoryFunc(void);
 
-// Original: core_mimic.cpp_FUN_004d4440
+// Original: core_mimic.cpp_CMimic_getActorType_FUN_004d4440
 // Address: 004d4440
-CDemonActorType * FUN_004d4440(void);
+CDemonActorType * CMimic::getActorType(void);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_004d4450
 // Address: 004d4450
 CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004d4540
+// Original: core_mimic.cpp_CMimic_dtor_FUN_004d4540
 // Address: 004d4540
-CDemonActor * FUN_004d4540(CDemonActor *param_1,byte param_2);
+CDemonActor * CMimic::dtor(CDemonActor *param_1,byte param_2);
 
-// Original: core_mimic.cpp_FUN_004d4650
+// Original: core_mimic.cpp_CMimic_setup_FUN_004d4650
 // Address: 004d4650
-void FUN_004d4650(CEnemy *param_1);
+void CMimic::setup(CEnemy *param_1);
 
-// Original: core_mimic.cpp_FUN_004d49f0
+// Original: core_mimic.cpp_CMimic_process_FUN_004d49f0
 // Address: 004d49f0
-void FUN_004d49f0(CMimic *param_1,float param_2);
+void CMimic::process(CMimic *param_1,float param_2);
 
 // Original: core_mimic.cpp_FUN_004d4ba0
 // Address: 004d4ba0
@@ -59,13 +59,13 @@ int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 // Address: 004d5b00
 int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004d5b10
+// Original: core_mimic.cpp_CMimic_getDeathState_FUN_004d5b10
 // Address: 004d5b10
-undefined4 FUN_004d5b10(void);
+undefined4 CMimic::getDeathState(void);
 
-// Original: core_mimic.cpp_FUN_004d5b20
+// Original: core_mimic.cpp_CMimic_renderBackground_FUN_004d5b20
 // Address: 004d5b20
-void FUN_004d5b20(CDemonActor *param_1,int param_2);
+void CMimic::renderBackground(CDemonActor *param_1,int param_2);
 
 // Original: core_mimic.cpp_CMimic_archive_FUN_004d5bb0
 // Address: 004d5bb0

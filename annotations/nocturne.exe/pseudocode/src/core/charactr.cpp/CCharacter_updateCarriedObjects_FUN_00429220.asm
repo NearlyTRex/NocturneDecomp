@@ -17,7 +17,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_FUN_0042a150 at 0042a184
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 004980ec
-;   core_mobster.cpp_FUN_004da790 at 004da7d9
+;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004da7d9
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000

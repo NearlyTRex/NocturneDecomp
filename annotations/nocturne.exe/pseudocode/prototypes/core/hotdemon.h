@@ -7,13 +7,13 @@
 // Address: 004b8c40
 void __cdecl staticInit(void);
 
-// Original: core_hotdemon.cpp_FUN_004b8c70
+// Original: core_hotdemon.cpp_factoryFunc_FUN_004b8c70
 // Address: 004b8c70
-void FUN_004b8c70(void);
+CHotDemon * __cdecl factoryFunc(void);
 
-// Original: core_hotdemon.cpp_FUN_004b8c90
+// Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004b8c90
 // Address: 004b8c90
-CDemonActorType * FUN_004b8c90(void);
+CDemonActorType * CHotDemon::getActorType(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0
 // Address: 004b8ca0
@@ -43,9 +43,9 @@ void CHotDemon::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 // Address: 004b98f0
 undefined4 CHotDemon::getTargetPoints(int param_1,CVector3f *param_2);
 
-// Original: core_hotdemon.cpp_FUN_004b99b0
+// Original: core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004b99b0
 // Address: 004b99b0
-void FUN_004b99b0(CCharacter *param_1,SCollisionInfo *param_2);
+void CHotDemon::getCollisionType(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004b99d0
 // Address: 004b99d0

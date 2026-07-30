@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[7]:
-;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4a2
-;   core_emitter.cpp_FUN_00478790 at 004788c5
+;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f4a2
+;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 004788c5
 ;   core_fire.cpp_CFireball_process_FUN_00484050 at 004840b9
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_00484e10 at 00484e23
 ;   core_flame.cpp_CFlame_updateGlobe_FUN_0048e230 at 0048e27c

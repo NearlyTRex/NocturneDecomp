@@ -17,7 +17,7 @@ char * __cdecl core_script_cpp_FUN_004fef60(CScript *this_ptr,int *error_line_ou
   
   _DAT_01e56418 = 1;
   core_script_cpp_FUN_004feff0(this_ptr);
-  shape_edittool_cpp_FUN_00476160(0x1e56c30);
+  shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);
   if ((int)(this_ptr->script_text).data_array < this_ptr->xref_count) {
     do {
       ppcVar2 = (this_ptr->script_text).data_array;

@@ -34,7 +34,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00495a20 at 00496173
+;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496173
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_0058212a

@@ -7,7 +7,7 @@
 ; CNPC *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_hiram.cpp_FUN_004b6750 at 004b6755
+;   core_hiram.cpp_CHiram_setup_FUN_004b6750 at 004b6755
 ;   core_hostage.cpp_CHostage_setup_FUN_004b6b20 at 004b6cbc
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef6d8
 ;   core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180 at 00543187

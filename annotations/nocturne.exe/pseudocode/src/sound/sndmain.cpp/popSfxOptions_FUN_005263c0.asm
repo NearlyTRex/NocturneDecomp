@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[28]:
-;   core_boneguy.cpp_FUN_00418a00 at 00419040
+;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 00419040
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e840
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426d53
-;   core_dracbrid.cpp_FUN_0045ab40 at 0045afff
+;   core_dracbrid.cpp_CDraculaBride_FUN_0045ab40 at 0045afff
 ;   core_drone.cpp_CDrone_process_FUN_00462a60 at 004630bd
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c517
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0 at 00480f14

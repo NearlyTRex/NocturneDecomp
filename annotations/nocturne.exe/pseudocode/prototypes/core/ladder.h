@@ -7,29 +7,29 @@
 // Address: 004c4230
 void __cdecl staticInit(void);
 
-// Original: core_ladder.cpp_FUN_004c4260
+// Original: core_ladder.cpp_factoryFunc_FUN_004c4260
 // Address: 004c4260
-void FUN_004c4260(void);
+CLadder * __cdecl factoryFunc(void);
 
-// Original: core_ladder.cpp_FUN_004c4280
+// Original: core_ladder.cpp_CLadder_getActorType_FUN_004c4280
 // Address: 004c4280
-CDemonActorType * FUN_004c4280(void);
+CDemonActorType * CLadder::getActorType(void);
 
 // Original: core_ladder.cpp_CLadder_ctor_FUN_004c4290
 // Address: 004c4290
 CLadder * __cdecl CLadder::ctor(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004c4340
+// Original: core_ladder.cpp_CLadder_setup_FUN_004c4340
 // Address: 004c4340
-void FUN_004c4340(CDemonActor *param_1);
+void CLadder::setup(CDemonActor *param_1);
 
-// Original: core_ladder.cpp_FUN_004c4360
+// Original: core_ladder.cpp_CLadder_process_FUN_004c4360
 // Address: 004c4360
-void FUN_004c4360(CLadder *param_1);
+void CLadder::process(CLadder *param_1);
 
-// Original: core_ladder.cpp_FUN_004c4370
+// Original: core_ladder.cpp_CLadder_renderOpaque_FUN_004c4370
 // Address: 004c4370
-int FUN_004c4370(CDemonActor *param_1);
+int CLadder::renderOpaque(CDemonActor *param_1);
 
 // Original: core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0
 // Address: 004c43f0
@@ -51,10 +51,10 @@ void __cdecl FUN_004c45a0(CLadder *this_ptr);
 // Address: 004c46b0
 void __cdecl FUN_004c46b0(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004c47c0
+// Original: core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0
 // Address: 004c47c0
-undefined4 FUN_004c47c0(int param_1);
+undefined4 CLadder::getGroundType(int param_1);
 
-// Original: core_ladder.cpp_FUN_004c47d0
+// Original: core_ladder.cpp_CLadder_dtor_FUN_004c47d0
 // Address: 004c47d0
-CDemonActor * FUN_004c47d0(CDemonActor *param_1,byte param_2);
+CDemonActor * CLadder::dtor(CDemonActor *param_1,byte param_2);

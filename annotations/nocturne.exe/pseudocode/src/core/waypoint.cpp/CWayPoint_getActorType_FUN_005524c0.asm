@@ -1,0 +1,14 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_waypoint_cpp_CWayPoint_getActorType_FUN_005524c0(void)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2ddf514                   ; 005524c0
+        ;   Label: core_waypoint.cpp_CWayPoint_getActorType_FUN_005524c0
+    RET                                 ; 005524c5
+

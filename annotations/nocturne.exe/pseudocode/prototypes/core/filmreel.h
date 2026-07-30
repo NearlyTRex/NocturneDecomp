@@ -7,13 +7,13 @@
 // Address: 00481bb0
 void __cdecl staticInit(void);
 
-// Original: core_filmreel.cpp_FUN_00481c00
+// Original: core_filmreel.cpp_factoryFunc_FUN_00481c00
 // Address: 00481c00
-void FUN_00481c00(void);
+CFilmReel * __cdecl factoryFunc(void);
 
-// Original: core_filmreel.cpp_FUN_00481c20
+// Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00481c20
 // Address: 00481c20
-CDemonActorType * FUN_00481c20(void);
+CDemonActorType * CFilmReel::getActorType(void);
 
 // Original: core_filmreel.cpp_CFilmReel_ctor_FUN_00481c30
 // Address: 00481c30
@@ -23,9 +23,9 @@ CFilmReel * __cdecl CFilmReel::ctor(CFilmReel *this_ptr);
 // Address: 00481ca0
 void CFilmReel::setup(CDemonActor *param_1);
 
-// Original: core_filmreel.cpp_FUN_00481d30
+// Original: core_filmreel.cpp_CFilmReel_canPickup_FUN_00481d30
 // Address: 00481d30
-undefined4 FUN_00481d30(undefined4 param_1,CDemonActor *param_2);
+undefined4 CFilmReel::canPickup(undefined4 param_1,CDemonActor *param_2);
 
 // Original: core_filmreel.cpp_CFilmReel_pickup_FUN_00481d50
 // Address: 00481d50
@@ -39,17 +39,17 @@ void __cdecl CFilmReel::onDropped(CFilmReel *this_ptr,CVector3f *drop_position);
 // Address: 00481d70
 CDemonActor * __cdecl CFilmReel::getCarrier(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_00481d80
+// Original: core_filmreel.cpp_CFilmReel_process_FUN_00481d80
 // Address: 00481d80
-void FUN_00481d80(void);
+void CFilmReel::process(void);
 
-// Original: core_filmreel.cpp_FUN_00481d90
+// Original: core_filmreel.cpp_CFilmReel_renderOpaque_FUN_00481d90
 // Address: 00481d90
-int FUN_00481d90(int param_1);
+int CFilmReel::renderOpaque(int param_1);
 
-// Original: core_filmreel.cpp_FUN_00481e00
+// Original: core_filmreel.cpp_CFilmReel_renderBackground_FUN_00481e00
 // Address: 00481e00
-void FUN_00481e00(void);
+void CFilmReel::renderBackground(void);
 
 // Original: core_filmreel.cpp_CFilmReel_archive_FUN_00481e20
 // Address: 00481e20
@@ -63,13 +63,13 @@ ECollisionType __cdecl CFilmReel::getCollisionType(CFilmReel *this_ptr,SCollisio
 // Address: 00481e90
 CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_filmreel.cpp_FUN_00481ee0
+// Original: core_filmreel.cpp_factoryFunc_FUN_00481ee0
 // Address: 00481ee0
-void FUN_00481ee0(void);
+CFilmProjector * __cdecl factoryFunc(void);
 
-// Original: core_filmreel.cpp_FUN_00481f00
+// Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_00481f00
 // Address: 00481f00
-CDemonActorType * FUN_00481f00(void);
+CDemonActorType * CFilmProjector::getActorType(void);
 
 // Original: core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10
 // Address: 00481f10
@@ -87,18 +87,18 @@ void __cdecl CFilmProjector::process(CFilmProjector *this_ptr,float delta_time);
 // Address: 004821a0
 CBoundingBox3D * __cdecl CFilmProjector::getBoundingBox(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_filmreel.cpp_FUN_004821d0
+// Original: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004821d0
 // Address: 004821d0
-int FUN_004821d0(CDemonActor *param_1);
+int CFilmProjector::renderOpaque(CDemonActor *param_1);
 
 // Original: core_filmreel.cpp_CFilmProjector_archive_FUN_004822c0
 // Address: 004822c0
 void CFilmProjector::archive(CActorDestination *param_1);
 
-// Original: core_filmreel.cpp_FUN_00482310
+// Original: core_filmreel.cpp_CFilmReel_dtor_FUN_00482310
 // Address: 00482310
-CDemonActor * FUN_00482310(CDemonActor *param_1,byte param_2);
+CDemonActor * CFilmReel::dtor(CDemonActor *param_1,byte param_2);
 
-// Original: core_filmreel.cpp_FUN_00482360
+// Original: core_filmreel.cpp_CFilmProjector_dtor_FUN_00482360
 // Address: 00482360
-CDemonActor * FUN_00482360(CDemonActor *param_1,byte param_2);
+CDemonActor * CFilmProjector::dtor(CDemonActor *param_1,byte param_2);

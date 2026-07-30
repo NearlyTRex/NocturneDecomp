@@ -8,13 +8,13 @@
 ; int              Stack[0x8]:4   ray_type
 ;
 ; XREF[14]:
-;   core_actor.cpp_FUN_0040b300 at 0040b7ca
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b7ca
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429aad
 ;   core_crossbow.cpp_FUN_0043d1c0 at 0043d321
 ;   core_elephant.cpp_FUN_00477890 at 00477a93
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00497199
 ;   core_gabriela.cpp_FUN_00498de0 at 00499015
-;   core_gun.cpp_FUN_004b27c0 at 004b2944
+;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2944
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c7343
 ;   core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 at 004fdc55
 ;   core_shotgun.cpp_FUN_00515ea0 at 005160d8

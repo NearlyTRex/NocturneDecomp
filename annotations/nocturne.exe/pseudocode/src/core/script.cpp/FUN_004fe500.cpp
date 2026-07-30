@@ -16,6 +16,6 @@ void core_script_cpp_FUN_004fe500(CScript *param_1)
     param_1->dialog_entries = (SDialogEntry *)0x0;
   }
   param_1->dialog_entry_count = 0;
-  shape_edittool_cpp_FUN_00476160(0x1e56c30);
+  shape_edittool_cpp_FUN_00476160(&DAT_01e56c30);
   return;
 }

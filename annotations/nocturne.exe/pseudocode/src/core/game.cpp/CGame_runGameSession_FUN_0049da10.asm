@@ -42,6 +42,7 @@
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004a3820
 ;   core_game.cpp_CGame_clearOverlay_FUN_0049aa90
 ;   core_game.cpp_CGame_fadeIn_FUN_004a3a50
+;   core_game.cpp_CGame_FUN_0049f930
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10
@@ -50,7 +51,6 @@
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -333,8 +333,8 @@ section .text
     ADD ESP,0x8                         ; 0049de03
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049de06
     PUSH EAX                            ; 0049de09
-    CALL core_game.cpp_FUN_0049f930     ; 0049de0a
-        ;   XREF to: 0049f930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_0049f930(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_0049f930 ; 0049de0a
+        ;   XREF to: 0049f930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_0049f930(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049de0f
     MOV EDX,dword ptr [EBP + 0x14]      ; 0049de12
     PUSH EDX                            ; 0049de15

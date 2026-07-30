@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_0049f930 at 0049fa81
+;   core_game.cpp_CGame_FUN_0049f930 at 0049fa81
 ;   core_menu.cpp_FUN_004d23d0 at 004d26ad
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1393
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e8ce

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_FUN_004ab450 at 004ab48e
+;   core_ghoul.cpp_CGhoul_processDamage_FUN_004ab450 at 004ab48e
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004ab174 = 004ab1cd

@@ -3,117 +3,57 @@
     "errors": [
       {
         "category": "other",
-        "column": 60,
-        "line": 218,
-        "message": "unknown type name 'HMODULE'"
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 258,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 267,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 471,
-        "message": "unknown type name 'HMODULE'"
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 45,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 161,
-        "message": "unknown type name 'SYSTEMTIME'"
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 161,
-        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
-      },
-      {
-        "category": "other",
-        "column": 80,
-        "line": 164,
-        "message": "unknown type name 'LPOVERLAPPED'"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 166,
-        "message": "unknown type name 'PLONG'"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 169,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 172,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 173,
-        "message": "unknown type name 'LPRECT'; did you mean 'RECT'?"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 174,
-        "message": "unknown type name 'LPJOYCAPSA'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "unknown type name 'HKEY'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 176,
-        "message": "unknown type name 'REGSAM'"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 176,
-        "message": "unknown type name 'PHKEY'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 178,
-        "message": "unknown type name 'LPSECURITY_ATTRIBUTES'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 181,
-        "message": "unknown type name 'WNDCLASSA'"
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
     "success": false,
@@ -142,7 +82,7 @@
     {
       "addr": "00413040",
       "from_addr": "00413094",
-      "name": "core_batcreat.cpp_FUN_00413040",
+      "name": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -166,7 +106,7 @@
     {
       "addr": "004151e0",
       "from_addr": "004151f9",
-      "name": "core_beast.cpp_FUN_004151e0",
+      "name": "core_beast.cpp_CBeast_getTargetPoints_FUN_004151e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -214,7 +154,7 @@
     {
       "addr": "00439f50",
       "from_addr": "0043a121",
-      "name": "core_colonel.cpp_FUN_00439f50",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00439f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -227,6 +167,12 @@
       "addr": "00454ee0",
       "from_addr": "00454eff",
       "name": "core_dog.cpp_CZombieDog_getTargetPoints_FUN_00454ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ab40",
+      "from_addr": "0045abc5",
+      "name": "core_dracbrid.cpp_CDraculaBride_FUN_0045ab40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -248,12 +194,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ab40",
-      "from_addr": "0045abc5",
-      "name": "core_dracbrid.cpp_FUN_0045ab40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004632c0",
       "from_addr": "004632d9",
       "name": "core_drone.cpp_CDrone_getTargetPoints_FUN_004632c0",
@@ -262,7 +202,7 @@
     {
       "addr": "00495a20",
       "from_addr": "00496396",
-      "name": "core_gabriela.cpp_FUN_00495a20",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_00495a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -292,13 +232,13 @@
     {
       "addr": "004b32d0",
       "from_addr": "004b34a1",
-      "name": "core_haystack.cpp_FUN_004b32d0",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004b32d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b6d80",
       "from_addr": "004b7513",
-      "name": "core_hostage.cpp_FUN_004b6d80",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004b6d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -316,7 +256,7 @@
     {
       "addr": "004b9fe0",
       "from_addr": "004ba1e5",
-      "name": "core_icepick.cpp_FUN_004b9fe0",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004b9fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -340,7 +280,7 @@
     {
       "addr": "004dc820",
       "from_addr": "004dc847",
-      "name": "core_mobster.cpp_FUN_004dc820",
+      "name": "core_mobster.cpp_CMobster_getTargetPoints_FUN_004dc820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -352,7 +292,7 @@
     {
       "addr": "004fbf20",
       "from_addr": "004fc0f8",
-      "name": "core_scat.cpp_FUN_004fbf20",
+      "name": "core_scat.cpp_CScat_process_FUN_004fbf20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -382,13 +322,13 @@
     {
       "addr": "00541d00",
       "from_addr": "00541f44",
-      "name": "core_svetlana.cpp_FUN_00541d00",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00541d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00557c70",
       "from_addr": "00557c8f",
-      "name": "core_werewolf.cpp_FUN_00557c70",
+      "name": "core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_00557c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -398,15 +338,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055ef50",
-      "from_addr": "0055f043",
-      "name": "core_zombie.cpp_FUN_0055ef50",
+      "addr": "005621f0",
+      "from_addr": "0056227e",
+      "name": "core_zombie.cpp_CZombie_getTargetPoints_FUN_005621f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005621f0",
-      "from_addr": "0056227e",
-      "name": "core_zombie.cpp_FUN_005621f0",
+      "addr": "0055ef50",
+      "from_addr": "0055f043",
+      "name": "core_zombie.cpp_CZombie_process_FUN_0055ef50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -452,7 +392,7 @@
       {
         "call_addr": "0043a121",
         "call_type": "direct",
-        "caller": "core_colonel.cpp_FUN_00439f50",
+        "caller": "core_colonel.cpp_CColonel_process_FUN_00439f50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -463,7 +403,7 @@
       {
         "call_addr": "0045abc5",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0045ab40",
+        "caller": "core_dracbrid.cpp_CDraculaBride_FUN_0045ab40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

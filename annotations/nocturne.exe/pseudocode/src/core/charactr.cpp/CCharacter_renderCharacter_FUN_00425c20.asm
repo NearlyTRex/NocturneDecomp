@@ -7,15 +7,15 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_batman.cpp_FUN_00414340 at 004143e7
-;   core_biggs.cpp_FUN_00415760 at 00415865
-;   core_boneguy.cpp_FUN_00419c20 at 00419c9d
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00414340 at 004143e7
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415760 at 00415865
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419c20 at 00419c9d
+;   core_charactr.cpp_CCharacter_renderBackground_FUN_00426510 at 00426551
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 004264a6
-;   core_charactr.cpp_FUN_00426510 at 00426551
-;   core_dracbrid.cpp_FUN_0045a260 at 0045a35b
-;   core_moloch.cpp_FUN_004de550 at 004de66c
-;   core_passngr.cpp_FUN_004efa60 at 004efac2
-;   core_succubus.cpp_FUN_00541640 at 005417af
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 at 0045a35b
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550 at 004de66c
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_004efa60 at 004efac2
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 at 005417af
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

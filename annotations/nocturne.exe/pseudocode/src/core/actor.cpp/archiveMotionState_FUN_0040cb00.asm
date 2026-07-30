@@ -8,15 +8,15 @@
 ; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[29]:
-;   core_armour.cpp_FUN_0040fb60 at 0040fb9d
-;   core_batcreat.cpp_FUN_00412d80 at 00412dbd
+;   core_armour.cpp_CArmour_archive_FUN_0040fb60 at 0040fb9d
+;   core_batcreat.cpp_CBatCreature_archive_FUN_00412d80 at 00412dbd
 ;   core_batman.cpp_CBatman_archive_FUN_00414510 at 0041454d
-;   core_beast.cpp_FUN_00415160 at 0041519d
+;   core_beast.cpp_CBeast_archive_FUN_00415160 at 0041519d
 ;   core_biggs.cpp_CBiggs_archive_FUN_00415870 at 004158ad
-;   core_boneguy.cpp_FUN_00419ce0 at 00419d41
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419ce0 at 00419d41
 ;   core_bride.cpp_CBride_archive_FUN_00420970 at 004209ee
-;   core_cow.cpp_FUN_0043c2e0 at 0043c32d
-;   core_dog.cpp_FUN_00454dc0 at 00454e0d
+;   core_cow.cpp_CZombieCow_archive_FUN_0043c2e0 at 0043c32d
+;   core_dog.cpp_CZombieDog_archive_FUN_00454dc0 at 00454e0d
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 at 0045a526
 ;   ... and 19 more
 ;
