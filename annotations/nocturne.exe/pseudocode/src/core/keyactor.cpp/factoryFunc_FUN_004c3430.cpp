@@ -9,13 +9,12 @@
 CKeyActor * __cdecl core_keyactor_cpp_factoryFunc_FUN_004c3430(void)
 
 {
-  int iVar1;
-  CKeyActor *pCVar2;
+  CKeyActor *pCVar1;
   
-  iVar1 = FUN_0056497c(0x314);
-  if (iVar1 == 0) {
+  pCVar1 = (CKeyActor *)FUN_0056497c(0x314);
+  if (pCVar1 == (CKeyActor *)0x0) {
     return (CKeyActor *)0x0;
   }
-  pCVar2 = (CKeyActor *)core_keyactor_cpp_FUN_004c3460(iVar1);
-  return pCVar2;
+  pCVar1 = core_keyactor_cpp_CKeyActor_ctor_FUN_004c3460(pCVar1);
+  return pCVar1;
 }

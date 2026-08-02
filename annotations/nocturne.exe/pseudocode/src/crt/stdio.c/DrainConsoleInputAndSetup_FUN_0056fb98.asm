@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056af50 at 0056af58
+;   crt_unknown.c_FUN_0056af50 at 0056af58
 ;
 ; Referenced Globals:
 ;   void* PTR_GetConsoleMode_005754f0 = 00175c94
@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0056fa80
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_005714e0
+;   crt_unknown.c_FUN_005714e0
 ;   GetConsoleMode
 ;   SetConsoleMode
 ;
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_0056fbd1
     CALL dword ptr [0x005c1ac0]         ; 0056fbd2 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     ADD ESP,0x4                         ; 0056fbd8
-    CALL FUN_005714e0                   ; 0056fbdb
-        ;   XREF to: 005714e0 (UNCONDITIONAL_CALL)  ; HANDLE FUN_005714e0()
+    CALL crt_unknown.c_FUN_005714e0     ; 0056fbdb
+        ;   XREF to: 005714e0 (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_FUN_005714e0()
     MOV EBX,EAX                         ; 0056fbe0
     MOV EAX,ESP                         ; 0056fbe2
     PUSH EAX                            ; 0056fbe4

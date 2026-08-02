@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_lever_cpp_CLever_dtor_FUN_004c6970(CDemonActor *param_1,byte param_2)
+; CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004c6970(CLever *this_ptr,uint flags)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLeverTypeInfo_0059fd20

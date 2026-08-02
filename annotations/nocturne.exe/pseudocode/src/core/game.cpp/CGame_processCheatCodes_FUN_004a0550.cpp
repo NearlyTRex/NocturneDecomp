@@ -27,6 +27,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
   CAmmo *pCVar12;
   CAmmo *pCVar13;
   CSkeleton *pCVar14;
+  CGasMask *this_ptr_02;
+  CGasMask *actor;
   int iVar15;
   int iVar16;
   CSkeleton *pCVar17;
@@ -1896,15 +1898,16 @@ LAB_004a2165:
       }
       if (iStack_fc == iStack_100) {
         DAT_01c78af0 = 0;
-        iVar6 = FUN_0056497c(0x2d0);
-        pCVar11 = (CDemonActor *)0x0;
-        if (iVar6 != 0) {
-          pCVar11 = (CDemonActor *)core_gasmask_cpp_FUN_004a8a10(iVar6);
+        this_ptr_02 = (CGasMask *)FUN_0056497c(0x2d0);
+        actor = (CGasMask *)0x0;
+        if (this_ptr_02 != (CGasMask *)0x0) {
+          actor = core_gasmask_cpp_CGasMask_ctor_FUN_004a8a10(this_ptr_02);
         }
-        core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,pCVar11);
-        (*((pCVar11->vtable)._ub)->setup)(pCVar11);
+        core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,&actor->base);
+        (*((actor->base).vtable._ub)->setup)(&actor->base);
         core_inv_cpp_CInventory_addItem_FUN_004bf360
-                  ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),pCVar11,1);
+                  ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),&actor->base,1)
+        ;
         fVar20 = 5.0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've got a gasmask!")
         ;

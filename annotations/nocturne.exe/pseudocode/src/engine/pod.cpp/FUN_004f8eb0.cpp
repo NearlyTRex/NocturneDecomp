@@ -26,7 +26,7 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
             (0x01BCD074,"Computing CRC over entire pod: %s...",param_2);
-  engine_pod_cpp_FUN_004f7a80(local_240);
+  engine_pod_cpp_CPodFile_ctor_FUN_004f7a80((CPodFile *)local_240);
   iVar2 = engine_pod_cpp_FUN_004f7ae0(local_240,param_2);
   if (iVar2 == 0) {
     PTR_01cc4800 = "..\\engine\\pod.cpp";

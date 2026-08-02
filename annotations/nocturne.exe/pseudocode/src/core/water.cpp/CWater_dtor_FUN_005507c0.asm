@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_water_cpp_CWater_dtor_FUN_005507c0(undefined4 param_1)
+; CWater * __cdecl core_water_cpp_CWater_dtor_FUN_005507c0(CWater *this_ptr,uint flags)
 ;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

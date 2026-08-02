@@ -18,7 +18,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(C
   UOrientationVector *pUVar4;
   CStrList local_17c [23];
   
-  shape_edittool_cpp_FUN_00474c90(local_17c);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_17c);
   pCVar3 = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
   while( true ) {
     if (pCVar3 == (CDemonActor *)0x0) {

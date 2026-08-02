@@ -9,13 +9,12 @@
 CBat * __cdecl core_bat_cpp_factoryFunc_FUN_004119e0(void)
 
 {
-  int iVar1;
-  CBat *pCVar2;
+  CBat *pCVar1;
   
-  iVar1 = FUN_0056497c(0x380);
-  if (iVar1 == 0) {
+  pCVar1 = (CBat *)FUN_0056497c(0x380);
+  if (pCVar1 == (CBat *)0x0) {
     return (CBat *)0x0;
   }
-  pCVar2 = (CBat *)core_bat_cpp_FUN_00411a10(iVar1);
-  return pCVar2;
+  pCVar1 = core_bat_cpp_CBat_ctor_FUN_00411a10(pCVar1);
+  return pCVar1;
 }

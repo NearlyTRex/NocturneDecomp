@@ -10,7 +10,6 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[12]:
-;   FUN_00571cc6 at 00571d33
 ;   crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d at 0056b7ee
 ;   crt_fstream.cpp_istream_seekg_FUN_00565f14 at 00565f57
 ;   crt_fstream.cpp_openFile_FUN_00565eb5 at 00565ef1
@@ -20,6 +19,7 @@
 ;   crt_stdio.c_fgetcInternal_FUN_0056b2b4 at 0056b313
 ;   crt_stdio.c_fgetc_buffered_FUN_00571c60 at 00571caf
 ;   crt_stdio.c_stream_flush_FUN_0056b3c2 at 0056b3f9
+;   crt_stdio.c_stream_setup_FUN_0056b227 at 0056b278
 ;   ... and 2 more
 ;
 ; Called Functions:

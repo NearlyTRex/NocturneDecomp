@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_spotview_cpp_CSpotView_dtor_FUN_00534740(undefined4 param_1)
+; CSpotView * __cdecl shape_spotview_cpp_CSpotView_dtor_FUN_00534740(CSpotView *this_ptr,uint flags)
 ;
+; Parameters:
+; CSpotView *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

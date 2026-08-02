@@ -11,10 +11,10 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
-;   shape_edittool.cpp_FUN_00474c90
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     XOR ECX,ECX                         ; 00470345
     PUSH EAX                            ; 00470347
     MOV dword ptr [ESP + 0x174],ECX     ; 00470348
-    CALL shape_edittool.cpp_FUN_00474c90 ; 0047034f
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 0047034f
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00470354
     PUSH 0x57e64e                       ; 00470357 | = "[Y]es"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0047035c

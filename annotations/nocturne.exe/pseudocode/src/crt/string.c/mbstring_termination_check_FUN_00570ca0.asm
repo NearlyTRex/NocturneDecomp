@@ -7,13 +7,13 @@
 ; char *           Stack[0x4]:4   str
 ;
 ; XREF[7]:
-;   FUN_00572d90 at 00572d9c
-;   FUN_00574000 at 00574009
 ;   crt_string.c__mbstrnicmp_FUN_0056dcd0 at 0056dce7
 ;   crt_string.c_char_in_set_FUN_00572a90 at 00572ab9
 ;   crt_string.c_mbstrnbytes_FUN_0056dbb0 at 0056dbbe
 ;   crt_string.c_mbstrnlen_FUN_0056db40 at 0056db4e
 ;   crt_string.c_strpbrk_FUN_00570870 at 0057087b
+;   crt_unknown.c_FUN_00572d90 at 00572d9c
+;   crt_unknown.c_FUN_00574000 at 00574009
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

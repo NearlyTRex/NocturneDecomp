@@ -15,6 +15,6 @@ void core_manpuz_cpp_FUN_004cbad0(void)
   if (this_ptr == (CMirrorHack *)0x0) {
     return;
   }
-  core_manpuz_cpp_FUN_004cbb00(this_ptr);
+  core_manpuz_cpp_CMirrorHack_ctor_FUN_004cbb00(this_ptr);
   return;
 }

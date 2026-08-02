@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   crt_stdio.c_get_standard_file_handle_FUN_0056fdf0
 ;   crt_stdio.c_stream_flush_FUN_0056b3c2
-;   FUN_00568890
+;   crt_unknown.c_FUN_00568890
 ;
 ; *****************************************************************************
 
@@ -56,16 +56,16 @@ section .text
         ;   XREF to: 0056fdf0 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_get_standard_file_handle_FUN_0056fdf0(int fd)
     ADD ESP,0x4                         ; 0056b3a1
     PUSH EAX                            ; 0056b3a4
-    CALL FUN_00568890                   ; 0056b3a5
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 0056b3a5
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 0056b3aa
     PUSH 0x2                            ; 0056b3ad
     CALL crt_stdio.c_get_standard_file_handle_FUN_0056fdf0 ; 0056b3af
         ;   XREF to: 0056fdf0 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_get_standard_file_handle_FUN_0056fdf0(int fd)
     ADD ESP,0x4                         ; 0056b3b4
     PUSH EAX                            ; 0056b3b7
-    CALL FUN_00568890                   ; 0056b3b8
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 0056b3b8
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 0056b3bd
     JMP 0x0056b37c                      ; 0056b3c0
         ;   XREF to: 0056b37c (UNCONDITIONAL_JUMP)  ; LAB_0056b37c

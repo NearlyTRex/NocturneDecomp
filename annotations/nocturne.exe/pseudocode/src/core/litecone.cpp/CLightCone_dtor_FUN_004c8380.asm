@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_litecone_cpp_CLightCone_dtor_FUN_004c8380(CDemonActor *param_1,byte param_2)
+; CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004c8380(CLightCone *this_ptr,uint flags)
 ;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLightConeTypeInfo_0059ffb0

@@ -23,9 +23,9 @@ void __cdecl CMinecar::setup(CMineCar *this_ptr);
 // Address: 004d6040
 void CMineCar::process(CPlatform *param_1,float param_2);
 
-// Original: core_minecar.cpp_FUN_004d60b0
+// Original: core_minecar.cpp_CMineCar_ctor_FUN_004d60b0
 // Address: 004d60b0
-void FUN_004d60b0(undefined4 param_1);
+CMineCar * __cdecl CMineCar::ctor(CMineCar *this_ptr);
 
 // Original: core_minecar.cpp_CMineCar_dtor_FUN_004d60d0
 // Address: 004d60d0

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_flamegun_cpp_CFlameThrower_dtor_FUN_0048ecb0(CWeapon *param_1,byte param_2)
+; CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_0048ecb0(CFlameThrower *this_ptr,uint flags)
 ;
+; Parameters:
+; CFlameThrower *  Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CFlameThrowerTypeInfo_0059d8b0

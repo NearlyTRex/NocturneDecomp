@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_anvil.cpp_FUN_0040f560
+;   core_anvil.cpp_CAnvil_ctor_FUN_0040f560
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0040f541
     PUSH EAX                            ; 0040f542
         ;   Label: LAB_0040f542
-    CALL core_anvil.cpp_FUN_0040f560    ; 0040f543
-        ;   XREF to: 0040f560 (UNCONDITIONAL_CALL)  ; CAnvil * core_anvil.cpp_FUN_0040f560(CAnvil * this_ptr)
+    CALL core_anvil.cpp_CAnvil_ctor_FUN_0040f560 ; 0040f543
+        ;   XREF to: 0040f560 (UNCONDITIONAL_CALL)  ; CAnvil * core_anvil.cpp_CAnvil_ctor_FUN_0040f560(CAnvil * this_ptr)
     ADD ESP,0x4                         ; 0040f548
     RET                                 ; 0040f54b
 

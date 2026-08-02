@@ -21,7 +21,7 @@ CGame * __cdecl CGame::ctor(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_dtor_FUN_0049a880
 // Address: 0049a880
-undefined4 CGame::dtor(undefined4 param_1);
+CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 
 // Original: core_game.cpp_CGame_saveClockTime_FUN_0049a890
 // Address: 0049a890
@@ -253,8 +253,8 @@ void __cdecl CGame::rollCredits(CGame *this_ptr);
 
 // Original: core_game.cpp_CSlew_ctor_FUN_004a72a0
 // Address: 004a72a0
-undefined4 CSlew::ctor(undefined4 param_1);
+CSlew * __cdecl CSlew::ctor(CSlew *this_ptr);
 
 // Original: core_game.cpp_CSlew_dtor_FUN_004a72b0
 // Address: 004a72b0
-undefined4 CSlew::dtor(undefined4 param_1);
+CSlew * __cdecl CSlew::dtor(CSlew *this_ptr,uint flags);

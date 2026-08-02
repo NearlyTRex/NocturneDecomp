@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_teleport_cpp_CTeleportDest_dtor_FUN_00543ab0(CDemonActor *param_1,byte param_2)
+; CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_00543ab0(CTeleportDest *this_ptr,uint flags)
 ;
+; Parameters:
+; CTeleportDest *  Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTeleportDestTypeInfo_005a30c0

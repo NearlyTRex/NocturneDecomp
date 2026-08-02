@@ -9,13 +9,12 @@
 CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_0043bbb0(void)
 
 {
-  int iVar1;
-  CZombieCow *pCVar2;
+  CZombieCow *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd58);
-  if (iVar1 == 0) {
+  pCVar1 = (CZombieCow *)FUN_0056497c(0xbd58);
+  if (pCVar1 == (CZombieCow *)0x0) {
     return (CZombieCow *)0x0;
   }
-  pCVar2 = (CZombieCow *)core_cow_cpp_FUN_0043bbe0(iVar1);
-  return pCVar2;
+  pCVar1 = core_cow_cpp_CZombieCow_ctor_FUN_0043bbe0(pCVar1);
+  return pCVar1;
 }

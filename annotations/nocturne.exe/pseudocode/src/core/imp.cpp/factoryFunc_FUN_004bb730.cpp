@@ -9,13 +9,12 @@
 CImp * __cdecl core_imp_cpp_factoryFunc_FUN_004bb730(void)
 
 {
-  int iVar1;
-  CImp *pCVar2;
+  CImp *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd5c);
-  if (iVar1 == 0) {
+  pCVar1 = (CImp *)FUN_0056497c(0xbd5c);
+  if (pCVar1 == (CImp *)0x0) {
     return (CImp *)0x0;
   }
-  pCVar2 = (CImp *)core_imp_cpp_FUN_004bb760(iVar1);
-  return pCVar2;
+  pCVar1 = core_imp_cpp_CImp_ctor_FUN_004bb760(pCVar1);
+  return pCVar1;
 }

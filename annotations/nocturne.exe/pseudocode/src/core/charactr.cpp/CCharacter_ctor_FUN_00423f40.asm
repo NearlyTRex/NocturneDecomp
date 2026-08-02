@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560 at 0047956b
 ;   core_hero.cpp_FUN_004b46d0 at 004b46d6
-;   core_npc.cpp_FUN_004ee950 at 004ee956
+;   core_npc.cpp_CNPC_ctor_FUN_004ee950 at 004ee956
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

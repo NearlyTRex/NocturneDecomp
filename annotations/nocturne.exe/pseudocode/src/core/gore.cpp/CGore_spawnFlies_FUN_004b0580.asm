@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,undefined4 param_3,float param_4,CDemonActor *param_5)
+; CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)
 ;
 ;
 ; XREF[1]:
@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
-;   core_flies.cpp_FUN_0048eef0
+;   core_flies.cpp_CFlies_ctor_FUN_0048eef0
 ;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
@@ -107,8 +107,8 @@ section .text
     RET                                 ; 004b0659
     PUSH EAX                            ; 004b065a
         ;   Label: LAB_004b065a
-    CALL core_flies.cpp_FUN_0048eef0    ; 004b065b
-        ;   XREF to: 0048eef0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_0048eef0()
+    CALL core_flies.cpp_CFlies_ctor_FUN_0048eef0 ; 004b065b
+        ;   XREF to: 0048eef0 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_CFlies_ctor_FUN_0048eef0(CFlies * this_ptr)
     ADD ESP,0x4                         ; 004b0660
     JMP 0x004b05a0                      ; 004b0663
         ;   XREF to: 004b05a0 (UNCONDITIONAL_JUMP)  ; LAB_004b05a0

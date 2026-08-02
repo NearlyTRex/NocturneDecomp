@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[65]:
-;   FUN_005674f8 at 00567505
-;   FUN_00568658 at 0056866a
-;   FUN_0056e230 at 0056e23b
-;   FUN_0056e324 at 0056e353
-;   FUN_0056e608 at 0056e640
-;   FUN_0056e890 at 0056e8ea
-;   FUN_00570f60 at 00571031
-;   FUN_0057104c at 0057105e
-;   FUN_00571280 at 005712b1
-;   FUN_005712ec at 00571317
+;   cockpit_ckptutil.c_FUN_004303d0 at 004304ac
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042eced
+;   cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80 at 004f3f8f
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46e1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f467f
+;   cockpit_pkbitmap.cpp_FUN_004f3f50 at 004f3f76
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0 at 004f56a3
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740 at 004f5814
+;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 at 00440220
+;   core_dcube.cpp_FUN_0044adf0 at 0044ae33
 ;   ... and 55 more
 ;
 ; Called Functions:

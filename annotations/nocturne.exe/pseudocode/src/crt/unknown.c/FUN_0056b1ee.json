@@ -1,0 +1,122 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 70,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056b1ee",
+    "address_range": [
+      [
+        "0056b1ee",
+        "0056b214"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056b1ee",
+    "signature": "void crt_unknown_c_FUN_0056b1ee(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005c1f50",
+      "name": "DAT_005c1f50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2666666666666666,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 10,
+      "INT_ADD": 5,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_005c1f50",
+      "severity": "mild",
+      "text": "while (DAT_005c1f50 != (uint *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005c1f50",
+      "severity": "mild",
+      "text": "piVar1 = DAT_005c1f50 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005c1f50",
+      "severity": "mild",
+      "text": "DAT_005c1f50 = (uint *)*DAT_005c1f50;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005c1f50",
+      "severity": "mild",
+      "text": "DAT_005c1f50 = (uint *)*DAT_005c1f50;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 4))(*(uint *)(*piVar1 + 8),0);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

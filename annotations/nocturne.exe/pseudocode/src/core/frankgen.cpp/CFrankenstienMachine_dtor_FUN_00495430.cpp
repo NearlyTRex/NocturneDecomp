@@ -9,7 +9,7 @@
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_00495430(CFrankenstienMachine *this_ptr,uint flags)
 
 {
-  CDemonTriangle *pCVar1;
+  CCourse *pCVar1;
   CFrankenstienMachine *pCVar2;
   void *ptr;
   
@@ -18,10 +18,9 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_0
     shape_memdbg_cpp_free_FUN_00564486(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
-                     ((CDemonTriangle *)&this_ptr->course,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_0043b5f0(&this_ptr->course,0);
   pCVar2 = (CFrankenstienMachine *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)&pCVar1[-0xe].vertex3,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)&pCVar1[-0x40].loop,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

@@ -1,0 +1,228 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 18,
+    "suspect_types": [
+      "concat_reconstruction",
+      "nonstandard_int",
+      "register_param",
+      "unaffected_reg"
+    ],
+    "total_lines": 35
+  },
+  "cross_references": [
+    {
+      "addr": "0056a388",
+      "from_addr": "0056a690",
+      "name": "crt_unknown.c_FUN_0056a388",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056a697",
+    "address_range": [
+      [
+        "0056a697",
+        "0056a6ac"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056a697",
+    "signature": "void crt_unknown_c_FUN_0056a697(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056a6ad",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056a6ad"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 1,
+      "INT_AND": 4,
+      "INT_DIV": 1,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 1,
+      "INT_LESS": 2,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "INT_ZEXT": 3,
+      "LOAD": 1,
+      "POPCOUNT": 2,
+      "STORE": 2,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 46
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (9999 < in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = in_EAX % 10000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = in_EAX % 10000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (99 < in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = (in_EAX & 0xffff) % 100;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = (in_EAX & 0xffff) % 100;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
+      "type": "register_param"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 17,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (9 < (byte)in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*unaff_EBX = (char)uVar1 + '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 17,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 19,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

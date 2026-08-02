@@ -19,9 +19,9 @@ CNPC * __cdecl factoryFunc(void);
 // Address: 004ee940
 CDemonActorType * CNPC::getActorType(void);
 
-// Original: core_npc.cpp_FUN_004ee950
+// Original: core_npc.cpp_CNPC_ctor_FUN_004ee950
 // Address: 004ee950
-CNPC * __cdecl FUN_004ee950(CNPC *this_ptr);
+CNPC * __cdecl CNPC::ctor(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setup_FUN_004ee9e0
 // Address: 004ee9e0

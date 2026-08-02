@@ -20,7 +20,7 @@ bool shape_edittool_cpp_FUN_00470230(uint param_1,char *param_2)
   local_c = &stack0x0000000c;
   _vsprintf((char *)0x1bcb4d0,param_2,(va_list_t)&local_c);
   local_c = (byte *)0x0;
-  shape_edittool_cpp_FUN_00474c90(&local_17c);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&local_17c);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es, I know what I'm doing and I hate these annoying prompts.");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_17c,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o, please, I didn't mean to do it!");

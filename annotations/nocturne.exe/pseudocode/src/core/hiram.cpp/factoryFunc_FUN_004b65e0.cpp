@@ -9,13 +9,12 @@
 CHiram * __cdecl core_hiram_cpp_factoryFunc_FUN_004b65e0(void)
 
 {
-  int iVar1;
-  CHiram *pCVar2;
+  CHiram *pCVar1;
   
-  iVar1 = FUN_0056497c(0x1f5d4);
-  if (iVar1 == 0) {
+  pCVar1 = (CHiram *)FUN_0056497c(0x1f5d4);
+  if (pCVar1 == (CHiram *)0x0) {
     return (CHiram *)0x0;
   }
-  pCVar2 = (CHiram *)core_hiram_cpp_FUN_004b6610(iVar1);
-  return pCVar2;
+  pCVar1 = core_hiram_cpp_CHiram_ctor_FUN_004b6610(pCVar1);
+  return pCVar1;
 }

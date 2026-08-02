@@ -24,8 +24,8 @@
 ; undefined2       Stack[-0x14]:2  local_14
 ;
 ; XREF[2]:
-;   FUN_00570ad0 at 00570b44
 ;   crt_io.c_getFileStat_FUN_00565dc0 at 00565dc0
+;   crt_unknown.c_FUN_00570ad0 at 00570b44
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005754c8 = 00175bf0
@@ -45,10 +45,10 @@
 ;   crt_string.c_strpbrk_FUN_00570870
 ;   crt_time.c_dos_datetime_to_time_t_FUN_005709b0
 ;   crt_unknown.c_FUN_00566570
+;   crt_unknown.c_FUN_005708c0
 ;   crt_watcom.c_getcwd_FUN_0056c5f0
 ;   FindClose
 ;   FindFirstFileA
-;   FUN_005708c0
 ;
 ; *****************************************************************************
 
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 0056ca12
     LEA EAX,[ESP + 0x1c]                ; 0056ca13
     PUSH EAX                            ; 0056ca17
-    CALL FUN_005708c0                   ; 0056ca18
-        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005708c0()
+    CALL crt_unknown.c_FUN_005708c0     ; 0056ca18
+        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005708c0()
     ADD ESP,0xc                         ; 0056ca1d
     XOR EAX,EAX                         ; 0056ca20
     MOV AX,word ptr [ESP + 0x354]       ; 0056ca22
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 0056ca50
     LEA EAX,[ESP + 0xc]                 ; 0056ca51
     PUSH EAX                            ; 0056ca55
-    CALL FUN_005708c0                   ; 0056ca56
-        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005708c0()
+    CALL crt_unknown.c_FUN_005708c0     ; 0056ca56
+        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005708c0()
     ADD ESP,0xc                         ; 0056ca5b
     MOV EAX,dword ptr [ESP + 0x350]     ; 0056ca5e
     CMP AX,word ptr [ESP + 0x348]       ; 0056ca65
@@ -288,8 +288,8 @@ section .text
     PUSH EAX                            ; 0056cab5
     LEA EAX,[ESP + 0x14]                ; 0056cab6
     PUSH EAX                            ; 0056caba
-    CALL FUN_005708c0                   ; 0056cabb
-        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005708c0()
+    CALL crt_unknown.c_FUN_005708c0     ; 0056cabb
+        ;   XREF to: 005708c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005708c0()
     ADD ESP,0xc                         ; 0056cac0
     MOV EAX,dword ptr [ESP + 0x350]     ; 0056cac3
     CMP AX,word ptr [ESP + 0x348]       ; 0056caca

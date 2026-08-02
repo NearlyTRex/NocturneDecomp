@@ -69,19 +69,19 @@ int __cdecl CCurtain::getBlockVirtualDirectorFlag(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_dtor_FUN_0043f8e0
 // Address: 0043f8e0
-CDemonActor * CCurtain::dtor(CDemonActor *param_1,byte param_2);
+CCurtain * __cdecl CCurtain::dtor(CCurtain *this_ptr,uint flags);
 
-// Original: core_curtain.cpp_FUN_0043f950
+// Original: core_curtain.cpp_SCurtainVertex_ctor_FUN_0043f950
 // Address: 0043f950
-undefined4 FUN_0043f950(undefined4 param_1);
+SCurtainVertex * __cdecl SCurtainVertex::ctor(SCurtainVertex *this_ptr);
 
-// Original: core_curtain.cpp_FUN_0043f960
+// Original: core_curtain.cpp_SCurtainVertex_dtor_FUN_0043f960
 // Address: 0043f960
-undefined4 FUN_0043f960(undefined4 param_1);
+SCurtainVertex * __cdecl SCurtainVertex::dtor(SCurtainVertex *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_SCollisionInfo_dtor_FUN_0043f970
 // Address: 0043f970
-undefined4 SCollisionInfo::dtor(undefined4 param_1);
+SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_FUN_0043f980
 // Address: 0043f980

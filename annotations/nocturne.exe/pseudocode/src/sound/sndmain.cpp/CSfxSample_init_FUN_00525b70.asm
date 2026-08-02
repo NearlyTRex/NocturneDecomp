@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d3dd
 ;   core_sound.cpp_FUN_0052ebc0 at 0052ebd1
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 00546634
-;   sound_sndmain.cpp_FUN_00523890 at 00523895
+;   sound_sndmain.cpp_CSfxSample_ctor_FUN_00523890 at 00523895
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a216c = 20

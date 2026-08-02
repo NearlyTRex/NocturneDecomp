@@ -97,8 +97,8 @@ void CFilmProjector::archive(CActorDestination *param_1);
 
 // Original: core_filmreel.cpp_CFilmReel_dtor_FUN_00482310
 // Address: 00482310
-CDemonActor * CFilmReel::dtor(CDemonActor *param_1,byte param_2);
+CFilmReel * __cdecl CFilmReel::dtor(CFilmReel *this_ptr,uint flags);
 
 // Original: core_filmreel.cpp_CFilmProjector_dtor_FUN_00482360
 // Address: 00482360
-CDemonActor * CFilmProjector::dtor(CDemonActor *param_1,byte param_2);
+CFilmProjector * __cdecl CFilmProjector::dtor(CFilmProjector *this_ptr,uint flags);

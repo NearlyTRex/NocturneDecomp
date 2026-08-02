@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_0056b327
-;   FUN_0056cd52
+;   crt_unknown.c_FUN_0056cd52
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     JZ 0x00565e7b                       ; 00565e6a
         ;   XREF to: 00565e7b (CONDITIONAL_JUMP)  ; LAB_00565e7b
     PUSH EDX                            ; 00565e6c
-    CALL FUN_0056cd52                   ; 00565e6d
-        ;   XREF to: 0056cd52 (UNCONDITIONAL_CALL)  ; undefined FUN_0056cd52()
+    CALL crt_unknown.c_FUN_0056cd52     ; 00565e6d
+        ;   XREF to: 0056cd52 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056cd52()
     ADD ESP,0x4                         ; 00565e72
     TEST EAX,EAX                        ; 00565e75
     JZ 0x00565e88                       ; 00565e77

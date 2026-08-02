@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *param_1,byte param_2)
+; CDemonActor * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CDemonActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBarrierTypeInfo_00599e50

@@ -15,9 +15,9 @@ CSentinel * __cdecl factoryFunc(void);
 // Address: 00505910
 CDemonActorType * CSentinel::getActorType(void);
 
-// Original: core_sentinel.cpp_FUN_00505920
+// Original: core_sentinel.cpp_CSentinel_ctor_FUN_00505920
 // Address: 00505920
-CEnemy * FUN_00505920(CEnemy *param_1);
+CSentinel * __cdecl CSentinel::ctor(CSentinel *this_ptr);
 
 // Original: core_sentinel.cpp_CSentinel_setup_FUN_00505990
 // Address: 00505990

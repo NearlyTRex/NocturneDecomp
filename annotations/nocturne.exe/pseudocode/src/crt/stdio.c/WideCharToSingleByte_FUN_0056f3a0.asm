@@ -8,10 +8,10 @@
 ; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[4]:
-;   FUN_0056966c at 00569699
-;   FUN_005698b0 at 005698db
-;   FUN_00569928 at 00569eaf
 ;   crt_string.c_wcstombs_FUN_00570bd0 at 00570c07
+;   crt_unknown.c_FUN_0056966c at 00569699
+;   crt_unknown.c_FUN_005698b0 at 005698db
+;   crt_unknown.c_FUN_00569928 at 00569eaf
 ;
 ; Referenced Globals:
 ;   void* PTR_WideCharToMultiByte_005755e4 = 00176118

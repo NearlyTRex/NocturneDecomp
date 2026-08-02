@@ -94,7 +94,7 @@ void __cdecl core_game_cpp_FUN_004a4b50(CGame *this_ptr,int select_mode)
   }
   else {
     while (iVar6 < 0) {
-      shape_edittool_cpp_FUN_00474c90(local_2b4);
+      shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_2b4);
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("Volume 1 - 'Dark Reign of the Vampire King'");
       shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_2b4,pcVar7);

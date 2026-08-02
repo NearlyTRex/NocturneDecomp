@@ -53,8 +53,8 @@ void __cdecl CTeleport::archive(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_dtor_FUN_00543a60
 // Address: 00543a60
-CDemonActor * CTeleport::dtor(CDemonActor *param_1,byte param_2);
+CTeleport * __cdecl CTeleport::dtor(CTeleport *this_ptr,uint flags);
 
 // Original: core_teleport.cpp_CTeleportDest_dtor_FUN_00543ab0
 // Address: 00543ab0
-CDemonActor * CTeleportDest::dtor(CDemonActor *param_1,byte param_2);
+CTeleportDest * __cdecl CTeleportDest::dtor(CTeleportDest *this_ptr,uint flags);

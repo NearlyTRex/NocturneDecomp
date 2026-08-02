@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_shotgun_cpp_CShotgun_dtor_FUN_00516960(CWeapon *param_1,byte param_2)
+; CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00516960(CShotgun *this_ptr,uint flags)
 ;
+; Parameters:
+; CShotgun *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CShotgunTypeInfo_005a1bf0

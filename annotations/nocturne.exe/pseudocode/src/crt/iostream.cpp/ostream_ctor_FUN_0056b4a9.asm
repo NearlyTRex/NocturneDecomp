@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a4908
 ;   void* PTR_crt_iostream.cpp_ostream_dtor_FUN_0056b538_005a4914 = 0056b538
-;   void* PTR_FUN_005a491c = 0056b4eb
+;   void* PTR_crt_unknown.c_FUN_0056b4eb_005a491c = 0056b4eb
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_ios_ctor_FUN_0056b503
@@ -37,7 +37,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0056b4bf
     MOV dword ptr [EAX + 0x4],0x5a4914  ; 0056b4c1 | PTR_crt_iostream.cpp_ostream_dtor_FUN_0056b538_005a4914
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056b4c8
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a491c ; 0056b4cb | PTR_FUN_005a491c
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a491c ; 0056b4cb | PTR_crt_unknown.c_FUN_0056b4eb_005a491c
     RET                                 ; 0056b4d3
     MOV dword ptr [EAX],0x5a4908        ; 0056b4d4 | DAT_005a4908
         ;   Label: LAB_0056b4d4

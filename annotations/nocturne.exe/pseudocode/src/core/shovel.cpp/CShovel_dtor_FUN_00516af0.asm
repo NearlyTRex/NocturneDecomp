@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_shovel_cpp_CShovel_dtor_FUN_00516af0(CWeapon *param_1,byte param_2)
+; CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00516af0(CShovel *this_ptr,uint flags)
 ;
+; Parameters:
+; CShovel *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CShovelTypeInfo_005a1d30

@@ -15,6 +15,6 @@ CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_004ee920(void)
   if (pCVar1 == (CNPC *)0x0) {
     return (CNPC *)0x0;
   }
-  pCVar1 = core_npc_cpp_FUN_004ee950(pCVar1);
+  pCVar1 = core_npc_cpp_CNPC_ctor_FUN_004ee950(pCVar1);
   return pCVar1;
 }

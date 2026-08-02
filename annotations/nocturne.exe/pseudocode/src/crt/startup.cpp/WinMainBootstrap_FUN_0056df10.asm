@@ -22,8 +22,8 @@
 ;   crt_stack.c_GetStackUsage_FUN_00571150
 ;   crt_startup.c_ExitApplication_FUN_0056fcd4
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458
+;   crt_unknown.c_FUN_00571160
 ;   crt_unknown.c_ProbeStackSpace_FUN_005670ed
-;   FUN_00571160
 ;   GetModuleHandleA
 ;   wincore_winrun.cpp_FUN_00559260
 ;
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_0056df86
     ADD EAX,EBX                         ; 0056df8c
     MOV [0x005c1cf4],EAX                ; 0056df8e | DAT_005c1cf4
-    CALL FUN_00571160                   ; 0056df93
-        ;   XREF to: 00571160 (UNCONDITIONAL_CALL)  ; undefined FUN_00571160()
+    CALL crt_unknown.c_FUN_00571160     ; 0056df93
+        ;   XREF to: 00571160 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571160()
     PUSH 0xa                            ; 0056df98
     MOV EBX,dword ptr [0x005c1ccc]      ; 0056df9a | DAT_005c1ccc
     PUSH EBX                            ; 0056dfa0

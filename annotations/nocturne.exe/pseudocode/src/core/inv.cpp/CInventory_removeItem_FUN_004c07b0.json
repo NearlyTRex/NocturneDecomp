@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,14 +52,8 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 36,
-        "message": "no matching function for call to 'core_actor_cpp_FUN_00409cd0'"
       }
     ],
     "success": false,
@@ -135,7 +129,7 @@
     {
       "addr": "00409cd0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00409cd0"
+      "name": "core_actor.cpp_destroyActor_FUN_00409cd0"
     },
     {
       "addr": "00566170",
@@ -281,15 +275,15 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 33,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar3 - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 24,
       "match": "memmove",
       "severity": "moderate",

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_004fe4d0 at 004fe4d6
+;   core_script.cpp_CScript_dtor_FUN_004fe4d0 at 004fe4d6
 ;   core_script.cpp_FUN_004febd0 at 004febf3
 ;
 ; Called Functions:

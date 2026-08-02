@@ -1,12 +1,12 @@
 // Name: core_hiram.cpp_CHiram_dtor_FUN_004b6670
 // Address: 004b6670
 // Address Range: [[004b6670, 004b6742]]
-// Convention: unknown
-// Signature: CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)
+CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;
@@ -15,16 +15,16 @@ CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte 
   CVector3f *pCVar4;
   CClothList *pCVar5;
   CDeformableModelInstance *pCVar6;
-  CDemonActor *pCVar7;
+  CHiram *pCVar7;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CHiramTypeInfo_0059eee0);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CHiramTypeInfo_0059eee0);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return this_ptr;
   }
-  (param_1->vtable)._ub = &g_CHiramVTable._ub;
-  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0((CPathMap *)&param_1[0x8f].standing_platform,0);
+  (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable._ub;
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0(&(this_ptr->base).path_map,0);
   pCVar2 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
                      ((CFlame *)(pCVar1[-1].height_cache_tags[0xc] + 0x39),0);
   pSVar3 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
@@ -34,9 +34,10 @@ CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte 
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
-  pCVar7 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+  pCVar7 = (CHiram *)
+           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
                      ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
-  if ((param_2 & 2) == 0) {
+  if ((flags & 2) == 0) {
     return pCVar7;
   }
   FUN_00564494(pCVar7);

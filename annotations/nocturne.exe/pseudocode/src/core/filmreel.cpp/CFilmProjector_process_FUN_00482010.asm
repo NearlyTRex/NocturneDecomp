@@ -136,7 +136,7 @@ section .text
     MOV EBP,dword ptr [0x005ad550]      ; 00482126 | DAT_005ad550
     PUSH EBP                            ; 0048212c
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 ; 0048212d
-        ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx * this_ptr, char * filename)
+        ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00482132
     MOV EAX,dword ptr [EBX + 0x3d8]     ; 00482135
     PUSH EAX                            ; 0048213b
@@ -156,7 +156,7 @@ section .text
     MOV ESI,dword ptr [0x005ad550]      ; 00482162 | DAT_005ad550
     PUSH ESI                            ; 00482168
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 ; 00482169
-        ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx * this_ptr, char * filename)
+        ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0048216e
     MOV EDI,dword ptr [EBX + 0x3d8]     ; 00482171
     PUSH EDI                            ; 00482177

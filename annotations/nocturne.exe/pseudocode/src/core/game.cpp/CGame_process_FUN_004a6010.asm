@@ -91,7 +91,7 @@ section .text
         ;   Label: LAB_004a6071
     PUSH EAX                            ; 004a6076
     CALL core_dfilter.cpp_CFilterFX_process_FUN_0044c4a0 ; 004a6077
-        ;   XREF to: 0044c4a0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx * this_ptr)
+        ;   XREF to: 0044c4a0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX * this_ptr)
     MOV EAX,[0x005b9354]                ; 004a607c | DAT_005b9354
     MOV EDX,dword ptr [EAX + 0x20c]     ; 004a6081 | DAT_01c777f8
     ADD ESP,0x4                         ; 004a6087

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_trap.cpp_FUN_00546820
+;   core_trap.cpp_CTrap_ctor_FUN_00546820
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00546801
     PUSH EAX                            ; 00546802
         ;   Label: LAB_00546802
-    CALL core_trap.cpp_FUN_00546820     ; 00546803
-        ;   XREF to: 00546820 (UNCONDITIONAL_CALL)  ; undefined core_trap.cpp_FUN_00546820()
+    CALL core_trap.cpp_CTrap_ctor_FUN_00546820 ; 00546803
+        ;   XREF to: 00546820 (UNCONDITIONAL_CALL)  ; CTrap * core_trap.cpp_CTrap_ctor_FUN_00546820(CTrap * this_ptr)
     ADD ESP,0x4                         ; 00546808
     RET                                 ; 0054680b
 

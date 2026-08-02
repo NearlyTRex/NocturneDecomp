@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)
+; void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xe8]:4  local_e8
 ; undefined4       Stack[-0xe4]:4  local_e4

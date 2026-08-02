@@ -14,18 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "00572d90",
-      "from_addr": "00572dbe",
-      "name": "FUN_00572d90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573db0",
-      "from_addr": "00573dbd",
-      "name": "FUN_00573db0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056626c",
       "from_addr": "0056630d",
       "name": "crt_file.c_makepath_FUN_0056626c",
@@ -35,6 +23,18 @@
       "addr": "00572a90",
       "from_addr": "00572aa0",
       "name": "crt_string.c_char_in_set_FUN_00572a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572d90",
+      "from_addr": "00572dbe",
+      "name": "crt_unknown.c_FUN_00572d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573db0",
+      "from_addr": "00573dbd",
+      "name": "crt_unknown.c_FUN_00573db0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,7 +91,7 @@
       {
         "call_addr": "00572dbe",
         "call_type": "direct",
-        "caller": "FUN_00572d90",
+        "caller": "crt_unknown.c_FUN_00572d90",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -102,7 +102,7 @@
       {
         "call_addr": "00573dbd",
         "call_type": "direct",
-        "caller": "FUN_00573db0",
+        "caller": "crt_unknown.c_FUN_00573db0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",

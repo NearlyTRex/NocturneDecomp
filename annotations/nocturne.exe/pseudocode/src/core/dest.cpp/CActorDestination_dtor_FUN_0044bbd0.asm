@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_dest_cpp_CActorDestination_dtor_FUN_0044bbd0(CDemonActor *param_1,byte param_2)
+; CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0044bbd0(CActorDestination *this_ptr,uint flags)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CActorDestinationTypeInfo_0059bf40

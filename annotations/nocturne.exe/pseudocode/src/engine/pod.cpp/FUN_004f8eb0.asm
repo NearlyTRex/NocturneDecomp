@@ -35,9 +35,9 @@
 ;   crt_stdio.c_fwrite_FUN_00563a50
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
+;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
 ;   engine_pod.cpp_crc32UpdateByte_FUN_004f77d0
-;   engine_pod.cpp_FUN_004f7a80
 ;   engine_pod.cpp_FUN_004f7ae0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 ;
@@ -61,8 +61,8 @@ section .text
     ADD ESP,0xc                         ; 004f8ed3
     MOV EAX,ESP                         ; 004f8ed6
     PUSH EAX                            ; 004f8ed8
-    CALL engine_pod.cpp_FUN_004f7a80    ; 004f8ed9
-        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f7a80()
+    CALL engine_pod.cpp_CPodFile_ctor_FUN_004f7a80 ; 004f8ed9
+        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_ctor_FUN_004f7a80(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 004f8ede
     MOV EBX,dword ptr [ESP + 0x248]     ; 004f8ee1
     PUSH EBX                            ; 004f8ee8

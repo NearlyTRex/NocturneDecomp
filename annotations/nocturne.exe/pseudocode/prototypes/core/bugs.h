@@ -159,13 +159,13 @@ float __cdecl maxFloat(float a,float b);
 // Address: 00423d90
 CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint flags);
 
-// Original: core_bugs.cpp_FUN_00423e60
+// Original: core_bugs.cpp_SBug_ctor_FUN_00423e60
 // Address: 00423e60
-undefined4 FUN_00423e60(undefined4 param_1);
+SBug * __cdecl SBug::ctor(SBug *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00423e70
+// Original: core_bugs.cpp_SBug_dtor_FUN_00423e70
 // Address: 00423e70
-undefined4 FUN_00423e70(undefined4 param_1);
+SBug * __cdecl SBug::dtor(SBug *this_ptr,uint flags);
 
 // Original: core_bugs.cpp_FUN_00423e80
 // Address: 00423e80

@@ -33,12 +33,12 @@
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
 ;   crt_unknown.c_FUN_0056497c
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
 ;   shape_edittool.cpp_FUN_0046fe60
-;   shape_edittool.cpp_FUN_00474c90
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x180]     ; 004d9c29
     MOV EAX,ESP                         ; 004d9c30
     PUSH EAX                            ; 004d9c32
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004d9c33
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004d9c33
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     MOV EBX,dword ptr [EDI + 0x514]     ; 004d9c38
     ADD ESP,0x4                         ; 004d9c3e
     TEST EBX,EBX                        ; 004d9c41

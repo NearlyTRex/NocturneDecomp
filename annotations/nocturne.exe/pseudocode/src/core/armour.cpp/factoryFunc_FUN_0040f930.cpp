@@ -15,6 +15,6 @@ CArmour * __cdecl core_armour_cpp_factoryFunc_FUN_0040f930(void)
   if (pCVar1 == (CArmour *)0x0) {
     return (CArmour *)0x0;
   }
-  pCVar1 = core_armour_cpp_FUN_0040f960(pCVar1);
+  pCVar1 = core_armour_cpp_CArmour_ctor_FUN_0040f960(pCVar1);
   return pCVar1;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_trash_cpp_CTrash_dtor_FUN_00547800(CDemonActor *param_1,byte param_2)
+; CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_00547800(CTrash *this_ptr,uint flags)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTrashTypeInfo_005a3620

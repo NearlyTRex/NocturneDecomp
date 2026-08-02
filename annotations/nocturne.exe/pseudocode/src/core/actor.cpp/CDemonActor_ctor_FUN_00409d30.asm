@@ -8,12 +8,12 @@
 ;
 ; XREF[48]:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 at 0040eb78
-;   core_ammobox.cpp_FUN_0040f040 at 0040f048
-;   core_anvil.cpp_FUN_0040f560 at 0040f568
-;   core_backgnd.cpp_FUN_0040fed0 at 0040fed6
+;   core_ammobox.cpp_CAmmoBox_ctor_FUN_0040f040 at 0040f048
+;   core_anvil.cpp_CAnvil_ctor_FUN_0040f560 at 0040f568
+;   core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040fed0 at 0040fed6
 ;   core_barrier.cpp_CBarrier_ctor_FUN_00411710 at 00411715
-;   core_bat.cpp_FUN_00411a10 at 00411a18
-;   core_battery.cpp_FUN_00414d80 at 00414d86
+;   core_bat.cpp_CBat_ctor_FUN_00411a10 at 00411a18
+;   core_battery.cpp_CBattery_ctor_FUN_00414d80 at 00414d86
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 at 00415d25
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300 at 0041e306
 ;   core_chain.cpp_CChain_ctor_FUN_0042b750 at 0042b757

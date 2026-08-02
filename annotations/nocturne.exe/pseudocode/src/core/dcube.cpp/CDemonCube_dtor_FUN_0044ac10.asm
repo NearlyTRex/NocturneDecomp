@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dcube_cpp_CDemonCube_dtor_FUN_0044ac10(undefined4 param_1)
+; CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_0044ac10(CDemonCube *this_ptr,uint flags)
 ;
+; Parameters:
+; CDemonCube *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dcube.cpp_FUN_0044adf0

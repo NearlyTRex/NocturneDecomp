@@ -23,9 +23,9 @@ CScat * __cdecl factoryFunc(void);
 // Address: 004fbbf0
 CDemonActorType * CScat::getActorType(void);
 
-// Original: core_scat.cpp_FUN_004fbc00
+// Original: core_scat.cpp_CScat_ctor_FUN_004fbc00
 // Address: 004fbc00
-CScat * __cdecl FUN_004fbc00(CScat *this_ptr);
+CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_setup_FUN_004fbcc0
 // Address: 004fbcc0

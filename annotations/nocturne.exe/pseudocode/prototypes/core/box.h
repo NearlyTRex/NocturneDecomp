@@ -43,13 +43,13 @@ void __cdecl CBox::saveToFile(CBox *this_ptr,_FILE *file_handle,char *indent_pre
 // Address: 0041cb40
 void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 
-// Original: core_box.cpp_FUN_0041cbc0
+// Original: core_box.cpp_SScrape_ctor_FUN_0041cbc0
 // Address: 0041cbc0
-undefined4 FUN_0041cbc0(undefined4 param_1);
+SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 
-// Original: core_box.cpp_FUN_0041cbd0
+// Original: core_box.cpp_SScrape_dtor_FUN_0041cbd0
 // Address: 0041cbd0
-undefined4 FUN_0041cbd0(undefined4 param_1);
+SScrape * __cdecl SScrape::dtor(SScrape *this_ptr,uint flags);
 
 // Original: core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
 // Address: 0041cbe0

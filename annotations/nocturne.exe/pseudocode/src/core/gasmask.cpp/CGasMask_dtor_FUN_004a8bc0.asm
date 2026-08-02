@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CDemonActor *param_1,byte param_2)
+; CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CGasMask *this_ptr,uint flags)
 ;
+; Parameters:
+; CGasMask *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGasMaskTypeInfo_0059e1c0

@@ -25,7 +25,7 @@
 ;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_stdio.c_lseek_FUN_005689c0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_0056f220
+;   crt_unknown.c_FUN_0056f220
 ;   GetLastError
 ;   ReadFile
 ;
@@ -61,8 +61,8 @@ section .text
     MOV EAX,dword ptr [EAX + EDX*0x4]   ; 00573418
     PUSH EDX                            ; 0057341b
     MOV dword ptr [ESP + 0x10],EAX      ; 0057341c
-    CALL FUN_0056f220                   ; 00573420
-        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f220()
+    CALL crt_unknown.c_FUN_0056f220     ; 00573420
+        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f220()
     ADD ESP,0x4                         ; 00573425
     MOV EBX,EAX                         ; 00573428
     MOV dword ptr [ESP + 0x8],EAX       ; 0057342a

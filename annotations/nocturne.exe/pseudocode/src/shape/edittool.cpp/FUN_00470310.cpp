@@ -20,7 +20,7 @@ bool shape_edittool_cpp_FUN_00470310(uint param_1,char *param_2)
   puStack_c = &stack0x0000000c;
   _vsprintf((char *)0x1bcb8d0,param_2,(va_list_t)&puStack_c);
   puStack_c = (byte *)0x0;
-  shape_edittool_cpp_FUN_00474c90(&CStack_17c);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&CStack_17c);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(&CStack_17c,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[N]o");

@@ -15,9 +15,9 @@ CGasMask * __cdecl factoryFunc(void);
 // Address: 004a8a00
 CDemonActorType * CGasMask::getActorType(void);
 
-// Original: core_gasmask.cpp_FUN_004a8a10
+// Original: core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10
 // Address: 004a8a10
-int * FUN_004a8a10(CDemonActor *param_1);
+CGasMask * __cdecl CGasMask::ctor(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_setup_FUN_004a8a60
 // Address: 004a8a60
@@ -49,4 +49,4 @@ CBoundingBox3D * __cdecl CGasMask::getBoundingBox(CGasMask *this_ptr,CBoundingBo
 
 // Original: core_gasmask.cpp_CGasMask_dtor_FUN_004a8bc0
 // Address: 004a8bc0
-CDemonActor * CGasMask::dtor(CDemonActor *param_1,byte param_2);
+CGasMask * __cdecl CGasMask::dtor(CGasMask *this_ptr,uint flags);

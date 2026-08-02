@@ -139,13 +139,13 @@ undefined4 FUN_0052ed40(undefined4 param_1,undefined4 param_2,int *param_3);
 // Address: 0052ede0
 void __cdecl CSound::setVolumeFade(CSound *this_ptr,float target_volume,float fade_time);
 
-// Original: core_sound.cpp_FUN_0052ee00
+// Original: core_sound.cpp_STrainNoise_ctor_FUN_0052ee00
 // Address: 0052ee00
-undefined4 FUN_0052ee00(undefined4 param_1);
+STrainNoise * __cdecl STrainNoise::ctor(STrainNoise *this_ptr);
 
-// Original: core_sound.cpp_FUN_0052ee10
+// Original: core_sound.cpp_STrainNoise_dtor_FUN_0052ee10
 // Address: 0052ee10
-undefined4 FUN_0052ee10(undefined4 param_1);
+STrainNoise * __cdecl STrainNoise::dtor(STrainNoise *this_ptr,uint flags);
 
 // Original: core_sound.cpp_FUN_0052ee20
 // Address: 0052ee20

@@ -1,13 +1,13 @@
 // Name: core_water.cpp_CWater_dtor_FUN_005507c0
 // Address: 005507c0
 // Address Range: [[005507c0, 005507c4]]
-// Convention: unknown
-// Signature: undefined4 core_water_cpp_CWater_dtor_FUN_005507c0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CWater * __cdecl core_water_cpp_CWater_dtor_FUN_005507c0(CWater *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint core_water_cpp_CWater_dtor_FUN_005507c0(uint param_1)
+CWater * __cdecl core_water_cpp_CWater_dtor_FUN_005507c0(CWater *this_ptr,uint flags)
 
 {
-  return param_1;
+  return this_ptr;
 }

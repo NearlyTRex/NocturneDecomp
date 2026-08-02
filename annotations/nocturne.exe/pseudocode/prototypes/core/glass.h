@@ -15,9 +15,9 @@ CGlass * __cdecl factoryFunc(void);
 // Address: 004abb40
 CDemonActorType * CGlass::getActorType(void);
 
-// Original: core_glass.cpp_FUN_004abb50
+// Original: core_glass.cpp_CGlass_ctor_FUN_004abb50
 // Address: 004abb50
-CGlass * __cdecl FUN_004abb50(CGlass *this_ptr);
+CGlass * __cdecl CGlass::ctor(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_setup_FUN_004abc90
 // Address: 004abc90
@@ -77,7 +77,7 @@ int __cdecl FUN_004aded0(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004adef0
 // Address: 004adef0
-CDemonActor * CGlass::dtor(CDemonActor *param_1,byte param_2);
+CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint flags);
 
 // Original: core_glass.cpp_CVector3f_arrdtor_FUN_004adf70
 // Address: 004adf70

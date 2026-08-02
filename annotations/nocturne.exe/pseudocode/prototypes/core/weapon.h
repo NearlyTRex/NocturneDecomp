@@ -57,7 +57,7 @@ EGroundType __cdecl CLadder::getGroundType(CLadder *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0
 // Address: 005543c0
-void CWeapon::updateLighting(CCharacter *param_1);
+void __cdecl CWeapon::updateLighting(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560
 // Address: 00554560
@@ -67,17 +67,17 @@ void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr,int weapon_state);
 // Address: 00554570
 void CWeapon::onPickup(CDemonActor *param_1,CDemonActor *param_2);
 
-// Original: core_weapon.cpp_FUN_00554590
+// Original: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_00554590
 // Address: 00554590
-undefined4 * FUN_00554590(int param_1,undefined4 *param_2);
+CVector3f * __cdecl CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
 
 // Original: core_weapon.cpp_CWeapon_fire_FUN_00554600
 // Address: 00554600
 int __cdecl CWeapon::fire(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00554630
+// Original: core_weapon.cpp_CWeapon_isReadyToFire_FUN_00554630
 // Address: 00554630
-bool FUN_00554630(int param_1);
+int __cdecl CWeapon::isReadyToFire(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_FUN_00554650
 // Address: 00554650
@@ -89,16 +89,16 @@ void __cdecl CWeapon::setupPhysicsBox(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750
 // Address: 00554750
-void CWeapon::fireProjectile(CCharacter *param_1);
+void __cdecl CWeapon::fireProjectile(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00554780
+// Original: core_weapon.cpp_CWeapon_onFired_FUN_00554780
 // Address: 00554780
-void FUN_00554780(void);
+void __cdecl CWeapon::onFired(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00554910
+// Original: core_weapon.cpp_CDemonGlobe_ctor_FUN_00554910
 // Address: 00554910
-undefined4 FUN_00554910(undefined4 param_1);
+CDemonGlobe * __cdecl CDemonGlobe::ctor(CDemonGlobe *this_ptr);
 
-// Original: core_weapon.cpp_FUN_00554920
+// Original: core_weapon.cpp_CDemonGlobe_dtor_FUN_00554920
 // Address: 00554920
-undefined4 FUN_00554920(undefined4 param_1);
+CDemonGlobe * __cdecl CDemonGlobe::dtor(CDemonGlobe *this_ptr,uint flags);

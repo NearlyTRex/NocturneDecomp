@@ -25,7 +25,7 @@ char * crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d(int *param_1,byte param_2,u
   iVar3 = *(int *)pcVar1;
   buffer_ptr[1]._streambuf.__b_lock = &PTR_crt_fstream_cpp_fstreambase_dtor_FUN_0056b810_005a4a24;
   *(byte ***)(buffer_ptr->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
-       &PTR_FUN_005a4a2c;
+       &PTR_crt_unknown_c_FUN_0056b7f8_005a4a2c;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a
             ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)buffer_ptr);
   iVar3 = FUN_0056cd9b(buffer_ptr,param_3,param_4,param_5);

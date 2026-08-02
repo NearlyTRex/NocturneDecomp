@@ -45,4 +45,4 @@ undefined4 CLightCone::getCollisionType(void);
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_004c8380
 // Address: 004c8380
-CDemonActor * CLightCone::dtor(CDemonActor *param_1,byte param_2);
+CLightCone * __cdecl CLightCone::dtor(CLightCone *this_ptr,uint flags);

@@ -8,7 +8,7 @@
 ;   core_batcreat.cpp_staticInit_FUN_004120a0 at 004120ac
 ;
 ; Called Functions:
-;   core_batcreat.cpp_FUN_00412100
+;   core_batcreat.cpp_CBatCreature_ctor_FUN_00412100
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 004120e1
     PUSH EAX                            ; 004120e2
         ;   Label: LAB_004120e2
-    CALL core_batcreat.cpp_FUN_00412100 ; 004120e3
-        ;   XREF to: 00412100 (UNCONDITIONAL_CALL)  ; undefined core_batcreat.cpp_FUN_00412100()
+    CALL core_batcreat.cpp_CBatCreature_ctor_FUN_00412100 ; 004120e3
+        ;   XREF to: 00412100 (UNCONDITIONAL_CALL)  ; CBatCreature * core_batcreat.cpp_CBatCreature_ctor_FUN_00412100(CBatCreature * this_ptr)
     ADD ESP,0x4                         ; 004120e8
     RET                                 ; 004120eb
 

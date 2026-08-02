@@ -1974,7 +1974,7 @@ section .text
     LEA EAX,[EBP + 0xfffffef6]          ; 00560444
     PUSH EAX                            ; 0056044a
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 0056044b
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
     MOV EAX,dword ptr [EBP + 0x76]      ; 00560450
     FLD float ptr [EAX]                 ; 00560453
     FSUB float ptr [ESI]                ; 00560455
@@ -2320,7 +2320,7 @@ section .text
     LEA EDI,[ESI + 0xc]                 ; 0056082c
     MOV dword ptr [EBP + 0x22],EAX      ; 0056082f
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00560832
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
     FLD float ptr [EDI]                 ; 00560837
     FSUB float ptr [ESI]                ; 00560839
     FSTP float ptr [EBP + 0xfffffe96]   ; 0056083b

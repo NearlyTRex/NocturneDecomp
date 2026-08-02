@@ -1,0 +1,242 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 212,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 16,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "0056fd26",
+      "from_addr": "0056fd5b",
+      "name": "crt_string.c_mbstrncpy_core_FUN_0056fd26",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00571cc6",
+    "address_range": [
+      [
+        "00571cc6",
+        "00571d4e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00571cc6",
+    "signature": "uint crt_unknown_c_FUN_00571cc6(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b327",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
+    },
+    {
+      "addr": "0056ce57",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056ce57"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056fd5b",
+        "call_type": "direct",
+        "caller": "crt_string.c_mbstrncpy_core_FUN_0056fd26",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 49,
+      "INT_ADD": 28,
+      "INT_AND": 20,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 13,
+      "LOAD": 21,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 209
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_00571cc6(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_0056ce57(param_1,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(int *)((int)param_1",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))(iVar2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((FileEmbeddedData *)(*(int *)(*param_1 + 4) + (int)param_1),4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((FileEmbeddedData *)(*(int *)(*param_1 + 4) + (int)param_1),4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 16,
+      "match": "(uint *)(iVar2 + 0x10)",
+      "severity": "moderate",
+      "text": "if (*(uint *)(iVar2 + 0x10) <= *(uint *)(iVar2 + 0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 17,
+      "match": "(int *)(iVar2 + 0x28)",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))(iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 23,
+      "match": "(byte **)(iVar2 + 0x14)",
+      "severity": "moderate",
+      "text": "pbVar1 = *(byte **)(iVar2 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 24,
+      "match": "(byte **)(iVar2 + 0x14)",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar2 + 0x14) = pbVar1 + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

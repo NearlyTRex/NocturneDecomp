@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_battery.cpp_FUN_00414d80
+;   core_battery.cpp_CBattery_ctor_FUN_00414d80
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00414d61
     PUSH EAX                            ; 00414d62
         ;   Label: LAB_00414d62
-    CALL core_battery.cpp_FUN_00414d80  ; 00414d63
-        ;   XREF to: 00414d80 (UNCONDITIONAL_CALL)  ; undefined core_battery.cpp_FUN_00414d80()
+    CALL core_battery.cpp_CBattery_ctor_FUN_00414d80 ; 00414d63
+        ;   XREF to: 00414d80 (UNCONDITIONAL_CALL)  ; CBattery * core_battery.cpp_CBattery_ctor_FUN_00414d80(CBattery * this_ptr)
     ADD ESP,0x4                         ; 00414d68
     RET                                 ; 00414d6b
 

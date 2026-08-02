@@ -45,4 +45,4 @@ void __cdecl CActorDestination::archive(CActorDestination *this_ptr);
 
 // Original: core_dest.cpp_CActorDestination_dtor_FUN_0044bbd0
 // Address: 0044bbd0
-CDemonActor * CActorDestination::dtor(CDemonActor *param_1,byte param_2);
+CActorDestination * __cdecl CActorDestination::dtor(CActorDestination *this_ptr,uint flags);

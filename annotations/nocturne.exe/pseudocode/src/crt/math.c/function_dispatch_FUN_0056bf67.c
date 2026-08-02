@@ -13,6 +13,6 @@ float10 __watcallRegister function_dispatch(int function_index)
   
                     /* WARNING: Could not recover jumptable at 0x0056bf6a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*(code *)(&PTR_FUN_005c3f84)[function_index])();
+  (*(code *)(&PTR_crt_unknown_c_FUN_0056bf71_005c3f84)[function_index])();
   return in_ST0;
 }

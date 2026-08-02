@@ -15,9 +15,9 @@ CMansionPuzzleCircle * __cdecl factoryFunc(void);
 // Address: 004c9420
 CDemonActorType * CMansionPuzzleCircle::getActorType(void);
 
-// Original: core_manpuz.cpp_FUN_004c9430
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430
 // Address: 004c9430
-CMansionPuzzleCircle * __cdecl FUN_004c9430(CMansionPuzzleCircle *this_ptr);
+CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::ctor(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004c9580
 // Address: 004c9580
@@ -135,9 +135,9 @@ void FUN_004cbad0(void);
 // Address: 004cbaf0
 CDemonActorType * CMirrorHack::getActorType(void);
 
-// Original: core_manpuz.cpp_FUN_004cbb00
+// Original: core_manpuz.cpp_CMirrorHack_ctor_FUN_004cbb00
 // Address: 004cbb00
-CMirrorHack * __cdecl FUN_004cbb00(CMirrorHack *this_ptr);
+CMirrorHack * __cdecl CMirrorHack::ctor(CMirrorHack *this_ptr);
 
 // Original: core_manpuz.cpp_CMirrorHack_setup_FUN_004cbb50
 // Address: 004cbb50
@@ -187,13 +187,13 @@ CMirrorHack * __cdecl CMirrorHack::dtor(CMirrorHack *this_ptr,uint flags);
 // Address: 004cbe20
 CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
 
-// Original: core_manpuz.cpp_FUN_004cbeb0
+// Original: core_manpuz.cpp_SReflector_ctor_FUN_004cbeb0
 // Address: 004cbeb0
-undefined4 FUN_004cbeb0(undefined4 param_1);
+SReflector * __cdecl SReflector::ctor(SReflector *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_004cbec0
+// Original: core_manpuz.cpp_SReflector_dtor_FUN_004cbec0
 // Address: 004cbec0
-undefined4 FUN_004cbec0(undefined4 param_1);
+SReflector * __cdecl SReflector::dtor(SReflector *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SGem_ctor_FUN_004cbed0
 // Address: 004cbed0
@@ -203,13 +203,13 @@ SGem * __cdecl SGem::ctor(SGem *this_ptr);
 // Address: 004cbef0
 SGem * __cdecl SGem::dtor(SGem *this_ptr,uint flags);
 
-// Original: core_manpuz.cpp_FUN_004cbf10
+// Original: core_manpuz.cpp_SPanel_ctor_FUN_004cbf10
 // Address: 004cbf10
-undefined4 FUN_004cbf10(undefined4 param_1);
+SPanel * __cdecl SPanel::ctor(SPanel *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_004cbf20
+// Original: core_manpuz.cpp_SPanel_dtor_FUN_004cbf20
 // Address: 004cbf20
-undefined4 FUN_004cbf20(undefined4 param_1);
+SPanel * __cdecl SPanel::dtor(SPanel *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_copyPanel_FUN_004cbf30
 // Address: 004cbf30

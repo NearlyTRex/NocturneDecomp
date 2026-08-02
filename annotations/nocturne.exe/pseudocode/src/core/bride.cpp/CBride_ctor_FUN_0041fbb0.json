@@ -1,0 +1,203 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 109,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 18,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "0041fb80",
+      "from_addr": "0041fb93",
+      "name": "core_bride.cpp_factoryFunc_FUN_0041fb80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041fbb0",
+    "address_range": [
+      [
+        "0041fbb0",
+        "0041fc15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bride.cpp_CBride_ctor_FUN_0041fbb0",
+    "signature": "CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_0041fbb0(CBride *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00479560",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00479560"
+    },
+    {
+      "addr": "0051e0c0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005799f4",
+      "name": "s_bride_dfm_005799f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0059ad10",
+      "name": "FLOAT_0059ad10",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "0059ad14",
+      "name": "FLOAT_0059ad14",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "0059ad24",
+      "name": "g_CBrideVTable",
+      "type": "CEnemy_full_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0041fb93",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_factoryFunc_FUN_0041fb80",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.086956521739131,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 53,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 12,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 117
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBride",
+        "offset": 0,
+        "vtable_addr": "0059ae74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

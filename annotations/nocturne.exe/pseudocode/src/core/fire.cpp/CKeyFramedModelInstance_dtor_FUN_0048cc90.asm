@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_0048cc90(undefined4 param_1)
+; CKeyFramedModelInstance * __cdecl core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_0048cc90(CKeyFramedModelInstance *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

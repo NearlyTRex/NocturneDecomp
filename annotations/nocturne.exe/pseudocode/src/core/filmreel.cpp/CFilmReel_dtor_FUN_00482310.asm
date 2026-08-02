@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CDemonActor *param_1,byte param_2)
+; CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CFilmReel *this_ptr,uint flags)
 ;
+; Parameters:
+; CFilmReel *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CFilmReelTypeInfo_0059d140

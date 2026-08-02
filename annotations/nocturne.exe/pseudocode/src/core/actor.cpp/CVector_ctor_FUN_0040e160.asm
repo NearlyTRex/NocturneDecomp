@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(undefined4 param_1)
+; CVector3f * __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(CVector3f *this_ptr)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 at 00419528

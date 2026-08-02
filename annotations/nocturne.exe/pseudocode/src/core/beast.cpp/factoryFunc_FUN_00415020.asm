@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_beast.cpp_FUN_00415050
+;   core_beast.cpp_CBeast_ctor_FUN_00415050
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00415031
     PUSH EAX                            ; 00415032
         ;   Label: LAB_00415032
-    CALL core_beast.cpp_FUN_00415050    ; 00415033
-        ;   XREF to: 00415050 (UNCONDITIONAL_CALL)  ; undefined core_beast.cpp_FUN_00415050()
+    CALL core_beast.cpp_CBeast_ctor_FUN_00415050 ; 00415033
+        ;   XREF to: 00415050 (UNCONDITIONAL_CALL)  ; CBeast * core_beast.cpp_CBeast_ctor_FUN_00415050(CBeast * this_ptr)
     ADD ESP,0x4                         ; 00415038
     RET                                 ; 0041503b
 

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CHero *param_1,byte param_2)
+; CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CColonel *this_ptr,uint flags)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CColonelTypeInfo_0059b6c0

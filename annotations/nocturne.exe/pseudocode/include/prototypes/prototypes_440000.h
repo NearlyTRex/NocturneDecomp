@@ -14,7 +14,7 @@
 #include "types/classes/CDemonImage.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CFilterFx.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
@@ -132,7 +132,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTri
 undefined4 core_dcube_cpp_FUN_0044a150(int *param_1,float *param_2,float *param_3);
 void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer);
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_0044abd0(CDemonCube *this_ptr);
-undefined4 core_dcube_cpp_CDemonCube_dtor_FUN_0044ac10(undefined4 param_1);
+CDemonCube * __cdecl core_dcube_cpp_CDemonCube_dtor_FUN_0044ac10(CDemonCube *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0(CDemonCube *this_ptr);
 void core_dcube_cpp_FUN_0044adf0(int *param_1);
@@ -155,10 +155,10 @@ undefined4 core_dest_cpp_FUN_0044ba10(void);
 undefined4 * core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(int param_1,undefined4 *param_2);
 int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0(CActorDestination *this_ptr,CDemonActor *actor);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(CActorDestination *this_ptr);
-CDemonActor * core_dest_cpp_CActorDestination_dtor_FUN_0044bbd0(CDemonActor *param_1,byte param_2);
+CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0044bbd0(CActorDestination *this_ptr,uint flags);
 void __cdecl core_dfilter_cpp_staticInit_FUN_0044bc20(void);
 CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(CFilterCache *this_ptr);
-CFilterCache * __cdecl core_dfilter_cpp_FUN_0044bcb0(CFilterCache *this_ptr);
+CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_dtor_FUN_0044bcb0(CFilterCache *this_ptr,uint flags);
 void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(CFilterCache *this_ptr);
 int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *param_2,int param_3);
 CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache *this_ptr,char *filter_name);
@@ -168,11 +168,11 @@ void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter
 void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(CDemonFilter *this_ptr);
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(CDemonFilter *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(CDemonFilter *this_ptr,float init_value,int flags);
-CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx *this_ptr);
-CFilterFx * core_dfilter_cpp_CFilterFX_dtor_FUN_0044c2d0(CFilterFx *param_1);
-void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx *this_ptr);
-void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx *this_ptr,char *filename);
-void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx *this_ptr);
+CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFX *this_ptr);
+CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_0044c2d0(CFilterFX *this_ptr,uint flags);
+void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX *this_ptr);
+void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_ptr,char *filename);
+void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr);
 void core_dfilter_cpp_FUN_0044c540(void *param_1);
 void __cdecl core_dfont_cpp_FUN_0044c560(void);
 void __cdecl core_dfont_cpp_FUN_0044cc00(void);
@@ -198,7 +198,7 @@ CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMat
 void core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(float *param_1,float *param_2);
 void __cdecl core_dlight_cpp_staticInit_FUN_0044e0f0(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
-void core_dlight_cpp_FUN_0044e1c0(CDemonLight *param_1);
+CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_0044e1c0(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_FUN_0044e2c0(CDemonLight *this_ptr);
 void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int pixel_count);

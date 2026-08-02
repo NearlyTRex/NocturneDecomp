@@ -1,0 +1,23 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void crt_unknown_c_FUN_0056e4ec(void)
+;
+;
+; XREF[1]:
+;   crt_unknown.c_FUN_0056e6e4 at 0056e706
+;
+; Called Functions:
+;   crt_unknown.c_FUN_0056e390
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x2de5bf0                      ; 0056e4ec
+        ;   Label: crt_unknown.c_FUN_0056e4ec
+    CALL crt_unknown.c_FUN_0056e390     ; 0056e4f1
+        ;   XREF to: 0056e390 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e390()
+    ADD ESP,0x4                         ; 0056e4f6
+    RET                                 ; 0056e4f9
+

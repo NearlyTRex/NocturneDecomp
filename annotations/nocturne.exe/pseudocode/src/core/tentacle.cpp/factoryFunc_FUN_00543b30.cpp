@@ -9,13 +9,12 @@
 CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_00543b30(void)
 
 {
-  int iVar1;
-  CTentacle *pCVar2;
+  CTentacle *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd94);
-  if (iVar1 == 0) {
+  pCVar1 = (CTentacle *)FUN_0056497c(0xbd94);
+  if (pCVar1 == (CTentacle *)0x0) {
     return (CTentacle *)0x0;
   }
-  pCVar2 = (CTentacle *)core_tentacle_cpp_FUN_00543b60(iVar1);
-  return pCVar2;
+  pCVar1 = core_tentacle_cpp_CTentacle_ctor_FUN_00543b60(pCVar1);
+  return pCVar1;
 }

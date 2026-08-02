@@ -15,9 +15,9 @@ CBackgroundActor * __cdecl factoryFunc(void);
 // Address: 0040fec0
 CDemonActorType * CBackgroundActor::getActorType(void);
 
-// Original: core_backgnd.cpp_FUN_0040fed0
+// Original: core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040fed0
 // Address: 0040fed0
-int * FUN_0040fed0(CDemonActor *param_1);
+CBackgroundActor * __cdecl CBackgroundActor::ctor(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30
 // Address: 0040ff30
@@ -53,4 +53,4 @@ EGroundType __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_dtor_FUN_004100f0
 // Address: 004100f0
-CDemonActor * CBackgroundActor::dtor(CDemonActor *param_1,byte param_2);
+CBackgroundActor * __cdecl CBackgroundActor::dtor(CBackgroundActor *this_ptr,uint flags);

@@ -15,9 +15,9 @@ CTrap * __cdecl factoryFunc(void);
 // Address: 00546810
 CDemonActorType * CTrap::getActorType(void);
 
-// Original: core_trap.cpp_FUN_00546820
+// Original: core_trap.cpp_CTrap_ctor_FUN_00546820
 // Address: 00546820
-int * FUN_00546820(CDemonActor *param_1);
+CTrap * __cdecl CTrap::ctor(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_setup_FUN_00546870
 // Address: 00546870
@@ -61,4 +61,4 @@ CBoundingBox3D * __cdecl CTrap::getBoundingBox(CTrap *this_ptr,CBoundingBox3D *o
 
 // Original: core_trap.cpp_CTrap_dtor_FUN_00546be0
 // Address: 00546be0
-CDemonActor * CTrap::dtor(CDemonActor *param_1,byte param_2);
+CTrap * __cdecl CTrap::dtor(CTrap *this_ptr,uint flags);

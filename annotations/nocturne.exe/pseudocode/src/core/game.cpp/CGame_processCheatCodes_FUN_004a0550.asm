@@ -3836,8 +3836,8 @@ section .text
     JZ 0x004a309c                       ; 004a3091
         ;   XREF to: 004a309c (CONDITIONAL_JUMP)  ; LAB_004a309c
     PUSH EAX                            ; 004a3093
-    CALL core_gasmask.cpp_FUN_004a8a10  ; 004a3094
-        ;   XREF to: 004a8a10 (UNCONDITIONAL_CALL)  ; undefined core_gasmask.cpp_FUN_004a8a10()
+    CALL core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10 ; 004a3094
+        ;   XREF to: 004a8a10 (UNCONDITIONAL_CALL)  ; CGasMask * core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10(CGasMask * this_ptr)
     ADD ESP,0x4                         ; 004a3099
     MOV EBX,EAX                         ; 004a309c
         ;   Label: LAB_004a309c

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
-;   core_skeleton.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0 at 005173b0
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0 at 005173cc
+;   core_skeleton.cpp_CSkeleton_dtor_FUN_005173a0 at 005173b0
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 at 005175fc
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 at 0051f743
 ;

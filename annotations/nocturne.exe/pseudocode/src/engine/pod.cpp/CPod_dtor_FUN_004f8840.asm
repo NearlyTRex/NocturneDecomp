@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_podmain.cpp_FUN_004f93e0 at 004f93ef
+;   core_podmain.cpp_CDemonPod_dtor_FUN_004f93e0 at 004f93ef
 ;
 ; Referenced Globals:
 ;   CPod_vtable g_CPodVTable

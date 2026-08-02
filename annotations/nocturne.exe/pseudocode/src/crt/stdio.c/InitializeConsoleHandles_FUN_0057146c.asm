@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005714e0 at 005714e0
-;   FUN_005714ec at 005714ec
+;   crt_unknown.c_FUN_005714e0 at 005714e0
+;   crt_unknown.c_FUN_005714ec at 005714ec
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFileA_00575498 = 00175b06

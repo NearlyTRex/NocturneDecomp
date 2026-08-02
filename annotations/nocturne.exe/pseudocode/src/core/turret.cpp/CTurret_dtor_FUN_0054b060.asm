@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_turret_cpp_CTurret_dtor_FUN_0054b060(CWeapon *param_1,byte param_2)
+; CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_0054b060(CTurret *this_ptr,uint flags)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTurretTypeInfo_005a38b0

@@ -15,9 +15,9 @@ CSuccubus * __cdecl factoryFunc(void);
 // Address: 00540b30
 CDemonActorType * CSuccubus::getActorType(void);
 
-// Original: core_succubus.cpp_FUN_00540b40
+// Original: core_succubus.cpp_CSuccubus_ctor_FUN_00540b40
 // Address: 00540b40
-CSuccubus * __cdecl FUN_00540b40(CSuccubus *this_ptr);
+CSuccubus * __cdecl CSuccubus::ctor(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_setup_FUN_00540c20
 // Address: 00540c20

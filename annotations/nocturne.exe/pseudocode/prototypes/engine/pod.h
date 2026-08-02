@@ -19,9 +19,9 @@ uint __cdecl crc32ComputeFromFile(_FILE *file_stream,uint total_bytes);
 // Address: 004f7980
 uint FUN_004f7980(char *param_1,int param_2);
 
-// Original: engine_pod.cpp_FUN_004f7a80
+// Original: engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 // Address: 004f7a80
-void FUN_004f7a80(undefined4 *param_1);
+CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 
 // Original: engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
 // Address: 004f7ac0

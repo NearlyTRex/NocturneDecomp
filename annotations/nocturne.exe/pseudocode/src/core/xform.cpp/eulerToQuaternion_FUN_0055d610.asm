@@ -19,7 +19,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 0049794b
 ;   core_haystack.cpp_CHaystack_process_FUN_004b32d0 at 004b3546
 ;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba2be
-;   core_platfrm.cpp_FUN_004f5d90 at 004f5e6f
+;   core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90 at 004f5e6f
 ;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc2a8
 ;   ... and 3 more
 ;

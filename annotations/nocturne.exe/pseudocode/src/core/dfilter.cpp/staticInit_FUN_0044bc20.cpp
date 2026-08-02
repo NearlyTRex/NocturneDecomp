@@ -15,7 +15,7 @@ void __cdecl core_dfilter_cpp_staticInit_FUN_0044bc20(void)
   _atexit(&g_WatcomStaticDestructorNode_005ad4ec);
   core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0((CFilterCache *)&DAT_014b8de8);
   _atexit(&g_WatcomStaticDestructorNode_005ad4fc);
-  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0((CFilterFx *)&DAT_014b98ec);
+  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0((CFilterFX *)&DAT_014b98ec);
   _atexit(&g_WatcomStaticDestructorNode_005ad50c);
   return;
 }

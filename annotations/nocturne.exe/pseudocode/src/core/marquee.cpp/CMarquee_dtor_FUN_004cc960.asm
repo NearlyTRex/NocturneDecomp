@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
+;   core_course.cpp_CCourse_dtor_FUN_0043b5f0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 004cc96c
     ADD EBX,0x19c                       ; 004cc96e
     PUSH EBX                            ; 004cc974
-    CALL core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0 ; 004cc975
-        ;   XREF to: 0043b5f0 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0(CDemonTriangle * objs, uint flags)
+    CALL core_course.cpp_CCourse_dtor_FUN_0043b5f0 ; 004cc975
+        ;   XREF to: 0043b5f0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_dtor_FUN_0043b5f0(CCourse * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cc97a
     PUSH 0x1                            ; 004cc97d
     LEA EBX,[EAX + 0xfffffe64]          ; 004cc97f

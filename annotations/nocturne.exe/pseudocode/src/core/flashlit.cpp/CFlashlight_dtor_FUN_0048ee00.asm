@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_flashlit_cpp_CFlashlight_dtor_FUN_0048ee00(CWeapon *param_1,byte param_2)
+; CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_0048ee00(CFlashlight *this_ptr,uint flags)
 ;
+; Parameters:
+; CFlashlight *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CFlashlightTypeInfo_0059d9f0

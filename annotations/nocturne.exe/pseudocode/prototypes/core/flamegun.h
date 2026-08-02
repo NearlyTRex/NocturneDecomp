@@ -37,4 +37,4 @@ void FUN_0048ec80(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_dtor_FUN_0048ecb0
 // Address: 0048ecb0
-CWeapon * CFlameThrower::dtor(CWeapon *param_1,byte param_2);
+CFlameThrower * __cdecl CFlameThrower::dtor(CFlameThrower *this_ptr,uint flags);

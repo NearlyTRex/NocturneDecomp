@@ -7,12 +7,12 @@
 ; int              Stack[0x4]:4   signal_number
 ;
 ; XREF[6]:
-;   FUN_005715ac at 005715c4
-;   FUN_00571630 at 00571633
-;   FUN_00571718 at 00571776
 ;   crt_signal.c_consoleCtrlHandler_FUN_005715d0 at 005715e2
 ;   crt_signal.c_processSignal_FUN_005717d8 at 005717df
 ;   crt_signal.c_raiseFPE_FUN_005716d8 at 005716db
+;   crt_unknown.c_FUN_005715ac at 005715c4
+;   crt_unknown.c_FUN_00571630 at 00571633
+;   crt_unknown.c_FUN_00571718 at 00571776
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc

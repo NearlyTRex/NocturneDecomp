@@ -1,0 +1,120 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 4,
+    "suspect_types": [
+      "fpu_register_input"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056c01b",
+    "address_range": [
+      [
+        "0056c01b",
+        "0056c02a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056c01b",
+    "signature": "void crt_unknown_c_FUN_0056c01b(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056be50",
+      "is_variadic": false,
+      "name": "crt_math.c_fdiv_FUN_0056be50"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.2,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 18,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 36
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST2",
+      "severity": "mild",
+      "text": "float10 in_ST2;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 6,
+      "match": "in_ST3",
+      "severity": "mild",
+      "text": "float10 in_ST3;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 8,
+      "match": "in_ST2",
+      "severity": "mild",
+      "text": "fdiv(in_ST2,in_ST3);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 8,
+      "match": "in_ST3",
+      "severity": "mild",
+      "text": "fdiv(in_ST2,in_ST3);",
+      "type": "fpu_register_input"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 60,
+        "vtable_addr": "005c3f84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

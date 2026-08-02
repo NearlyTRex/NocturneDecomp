@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_gasmask.cpp_FUN_004a8a10
+;   core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004a89f1
     PUSH EAX                            ; 004a89f2
         ;   Label: LAB_004a89f2
-    CALL core_gasmask.cpp_FUN_004a8a10  ; 004a89f3
-        ;   XREF to: 004a8a10 (UNCONDITIONAL_CALL)  ; undefined core_gasmask.cpp_FUN_004a8a10()
+    CALL core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10 ; 004a89f3
+        ;   XREF to: 004a8a10 (UNCONDITIONAL_CALL)  ; CGasMask * core_gasmask.cpp_CGasMask_ctor_FUN_004a8a10(CGasMask * this_ptr)
     ADD ESP,0x4                         ; 004a89f8
     RET                                 ; 004a89fb
 

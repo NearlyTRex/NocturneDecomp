@@ -7,8 +7,8 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0043ff30 at 0043ff36
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 0044001d
-;   core_dcamera.cpp_FUN_0043ff30 at 0043ff36
 ;   core_set.cpp_FUN_0050ad20 at 0050ad9a
 ;
 ; Called Functions:

@@ -8,10 +8,10 @@
 ; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[4]:
-;   FUN_00572d90 at 00572dbe
-;   FUN_00573db0 at 00573dbd
 ;   crt_file.c_makepath_FUN_0056626c at 0056630d
 ;   crt_string.c_char_in_set_FUN_00572a90 at 00572aa0
+;   crt_unknown.c_FUN_00572d90 at 00572dbe
+;   crt_unknown.c_FUN_00573db0 at 00573dbd
 ;
 ; *****************************************************************************
 

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_health.cpp_FUN_004b41f0
+;   core_health.cpp_CHealthItem_ctor_FUN_004b41f0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004b41d1
     PUSH EAX                            ; 004b41d2
         ;   Label: LAB_004b41d2
-    CALL core_health.cpp_FUN_004b41f0   ; 004b41d3
-        ;   XREF to: 004b41f0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_FUN_004b41f0()
+    CALL core_health.cpp_CHealthItem_ctor_FUN_004b41f0 ; 004b41d3
+        ;   XREF to: 004b41f0 (UNCONDITIONAL_CALL)  ; CHealthItem * core_health.cpp_CHealthItem_ctor_FUN_004b41f0(CHealthItem * this_ptr)
     ADD ESP,0x4                         ; 004b41d8
     RET                                 ; 004b41db
 

@@ -20,7 +20,7 @@
 ;   ... and 29 more
 ;
 ; Called Functions:
-;   FUN_0056ae10
+;   crt_unknown.c_FUN_0056ae10
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EDX                            ; 00564502
     MOV EBX,dword ptr [ESP + 0x14]      ; 00564503
     PUSH EBX                            ; 00564507
-    CALL FUN_0056ae10                   ; 00564508
-        ;   XREF to: 0056ae10 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ae10()
+    CALL crt_unknown.c_FUN_0056ae10     ; 00564508
+        ;   XREF to: 0056ae10 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056ae10()
     ADD ESP,0xc                         ; 0056450d
     ADD ESP,0x4                         ; 00564510
     POP EBX                             ; 00564513

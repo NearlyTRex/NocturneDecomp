@@ -19,14 +19,14 @@ CDemonActorType * CFlashlight::getActorType(void);
 // Address: 0048ed60
 CFlashlight * __cdecl CFlashlight::ctor(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_0048ede0
+// Original: core_flashlit.cpp_CFlashlight_fire_FUN_0048ede0
 // Address: 0048ede0
-undefined4 FUN_0048ede0(void);
+int __cdecl CFlashlight::fire(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_0048edf0
+// Original: core_flashlit.cpp_CFlashlight_getDamage_FUN_0048edf0
 // Address: 0048edf0
-undefined4 FUN_0048edf0(void);
+float __cdecl CFlashlight::getDamage(CFlashlight *this_ptr);
 
 // Original: core_flashlit.cpp_CFlashlight_dtor_FUN_0048ee00
 // Address: 0048ee00
-CWeapon * CFlashlight::dtor(CWeapon *param_1,byte param_2);
+CFlashlight * __cdecl CFlashlight::dtor(CFlashlight *this_ptr,uint flags);

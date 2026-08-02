@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00505881
     PUSH EBX                            ; 00505885
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00505886
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 0050588b
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050588e
     MOV dword ptr [EBX],EAX             ; 00505892

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_scat.cpp_FUN_004fbc00
+;   core_scat.cpp_CScat_ctor_FUN_004fbc00
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004fbbe1
     PUSH EAX                            ; 004fbbe2
         ;   Label: LAB_004fbbe2
-    CALL core_scat.cpp_FUN_004fbc00     ; 004fbbe3
-        ;   XREF to: 004fbc00 (UNCONDITIONAL_CALL)  ; CScat * core_scat.cpp_FUN_004fbc00(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_ctor_FUN_004fbc00 ; 004fbbe3
+        ;   XREF to: 004fbc00 (UNCONDITIONAL_CALL)  ; CScat * core_scat.cpp_CScat_ctor_FUN_004fbc00(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fbbe8
     RET                                 ; 004fbbeb
 

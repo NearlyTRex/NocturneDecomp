@@ -8,13 +8,13 @@
 ; char *           Stack[0x8]:4   mode
 ;
 ; XREF[22]:
-;   FUN_00568690 at 005686da
 ;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b3f
 ;   core_game.cpp_FUN_004a3b90 at 004a3c6a
 ;   core_game.cpp_FUN_004a4170 at 004a4541
 ;   core_game.cpp_FUN_004a4b50 at 004a4bdf
 ;   core_main.c_FUN_004c85f0 at 004c8646
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f92c9
+;   crt_unknown.c_FUN_00568690 at 005686da
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60 at 0043acf7
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456aba
 ;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0 at 004bd2d8

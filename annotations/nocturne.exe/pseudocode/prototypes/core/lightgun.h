@@ -53,4 +53,4 @@ void FUN_004c7ca0(CCharacter *param_1);
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_004c8040
 // Address: 004c8040
-CWeapon * CLightGun::dtor(CWeapon *param_1,byte param_2);
+CLightGun * __cdecl CLightGun::dtor(CLightGun *this_ptr,uint flags);

@@ -188,7 +188,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
           else {
             core_sound_cpp_CSound_shutdown_FUN_0052df90(0x02DC9450);
             xxx_unk_c_FUN_004940d0(INT_005b9284);
-            shape_edittool_cpp_FUN_00474c90(local_400 + 0x170);
+            shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)(local_400 + 0x170));
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Options");
@@ -320,7 +320,7 @@ LAB_0049dec1:
   iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
   if ((iVar3 == 2) && (this_ptr->need_chapter_reload == 0)) {
-    shape_edittool_cpp_FUN_00474c90(local_400);
+    shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_400);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
     shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)local_400,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");

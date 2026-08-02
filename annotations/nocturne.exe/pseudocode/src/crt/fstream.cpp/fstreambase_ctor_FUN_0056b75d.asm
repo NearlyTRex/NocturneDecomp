@@ -11,14 +11,14 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a4a18
 ;   void* PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24 = 0056b810
-;   void* PTR_FUN_005a4a2c = 0056b7f8
+;   void* PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c = 0056b7f8
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_filebuf_ctor_FUN_0057042d
 ;   crt_iostream.cpp_ios_ctor_FUN_0056b503
 ;   crt_iostream.cpp_streambuf_initBuffer_FUN_0056ff2a
 ;   crt_stdio.c_reportStreamError_FUN_0056b327
-;   FUN_0056cd9b
+;   crt_unknown.c_FUN_0056cd9b
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0056b797
     MOV dword ptr [EBX + 0x40],0x5a4a24 ; 0056b799 | PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b7a0
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_FUN_005a4a2c
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c
     MOV EAX,dword ptr [EBX]             ; 0056b7ab
     ADD ESP,0x4                         ; 0056b7ad
     LEA ESI,[EBX + 0x4]                 ; 0056b7b0
@@ -70,8 +70,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 0056b7cc
     PUSH EDI                            ; 0056b7d0
     PUSH ESI                            ; 0056b7d1
-    CALL FUN_0056cd9b                   ; 0056b7d2
-        ;   XREF to: 0056cd9b (UNCONDITIONAL_CALL)  ; undefined FUN_0056cd9b()
+    CALL crt_unknown.c_FUN_0056cd9b     ; 0056b7d2
+        ;   XREF to: 0056cd9b (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056cd9b()
     ADD ESP,0x10                        ; 0056b7d7
     TEST EAX,EAX                        ; 0056b7da
     JZ 0x0056b7e4                       ; 0056b7dc

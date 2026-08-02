@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   crt_string.c_mbstring_termination_check_FUN_00570ca0
 ;   crt_string.c_mbtowc_next_FUN_0056da80
-;   FUN_005710a0
+;   crt_unknown.c_FUN_005710a0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 0056dd2b (CONDITIONAL_JUMP)  ; LAB_0056dd2b
     PUSH EBX                            ; 0056dd00
     PUSH ESI                            ; 0056dd01
-    CALL FUN_005710a0                   ; 0056dd02
-        ;   XREF to: 005710a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005710a0()
+    CALL crt_unknown.c_FUN_005710a0     ; 0056dd02
+        ;   XREF to: 005710a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005710a0()
     ADD ESP,0x8                         ; 0056dd07
     MOV EBP,EAX                         ; 0056dd0a
     TEST EAX,EAX                        ; 0056dd0c

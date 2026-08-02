@@ -9,41 +9,40 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 518
+  Functions with static analysis data: 490
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
-    Files analyzed:      10
-    Files with findings: 10
-    Total diagnostics:   13
+    Files analyzed:      8
+    Files with findings: 8
+    Total diagnostics:   11
 
   Cppcheck (quick):
-    Files analyzed:      510
-    Files with findings: 510
-    Total diagnostics:   1589
+    Files analyzed:      484
+    Files with findings: 484
+    Total diagnostics:   1531
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
   bugprone-integer-division                                   6  [likely decompiler artifact]
-  cert-flp30-c                                                5
-  bugprone-signed-char-misuse                                 2
+  cert-flp30-c                                                5  [likely decompiler artifact]
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                 756  [likely decompiler artifact]
+  uninitvar                                                 709  [likely decompiler artifact]
   shiftTooManyBitsSigned                                    200
-  legacyUninitvar                                           142
+  legacyUninitvar                                           139
   wrongPrintfScanfArgNum                                    132
   invalidscanf                                               76
   arrayIndexOutOfBounds                                      69
-  invalidPointerCast                                         60
+  invalidPointerCast                                         59
   ignoredReturnValue                                         58
-  objectIndex                                                33
-  pointerOutOfBounds                                         19
+  objectIndex                                                32
+  pointerOutOfBounds                                         17
   nullPointer                                                 9
   shiftNegativeLHS                                            7
   nullPointerRedundantCheck                                   4

@@ -7,7 +7,7 @@
 ; CMotionList *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_00517350 at 0051735f
+;   core_skeleton.cpp_CSkeleton_ctor_FUN_00517350 at 0051735f
 ;
 ; *****************************************************************************
 

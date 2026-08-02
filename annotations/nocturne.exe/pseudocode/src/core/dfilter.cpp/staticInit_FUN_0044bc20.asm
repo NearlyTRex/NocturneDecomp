@@ -45,7 +45,7 @@ section .text
     ADD ESP,0x4                         ; 0044bc79
     PUSH 0x14b98ec                      ; 0044bc7c
     CALL core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0 ; 0044bc81
-        ;   XREF to: 0044c2b0 (UNCONDITIONAL_CALL)  ; CFilterFx * core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx * this_ptr)
+        ;   XREF to: 0044c2b0 (UNCONDITIONAL_CALL)  ; CFilterFX * core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFX * this_ptr)
     ADD ESP,0x4                         ; 0044bc86
     PUSH 0x5ad50c                       ; 0044bc89
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0044bc8e

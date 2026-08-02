@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00573e30 at 00573ea7
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458 at 0056748b
+;   crt_unknown.c_FUN_00573e30 at 00573ea7
 ;
 ; Referenced Globals:
 ;   void* PTR_SetUnhandledExceptionFilter_005755b4 = 00176048

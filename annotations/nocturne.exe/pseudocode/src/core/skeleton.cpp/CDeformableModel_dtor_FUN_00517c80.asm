@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(CDeformableModel *param_1)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(CDeformableModel *this_ptr,uint flags)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0

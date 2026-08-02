@@ -1,0 +1,291 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 232,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 143
+  },
+  "cross_references": [
+    {
+      "addr": "0056e52c",
+      "from_addr": "0056e558",
+      "name": "crt_unknown.c_FUN_0056e52c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005711a8",
+    "address_range": [
+      [
+        "005711a8",
+        "0057127c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005711a8",
+    "signature": "undefined4 * crt_unknown_c_FUN_005711a8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00564a70"
+    },
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "crt_startup.c_HandleRuntimeError_FUN_0056ddc0"
+    },
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    },
+    {
+      "addr": "00565c50",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00565c50"
+    },
+    {
+      "addr": "EXTERNAL:0000005d",
+      "is_variadic": false,
+      "name": "GetCurrentThreadId"
+    },
+    {
+      "addr": "EXTERNAL:00000090",
+      "is_variadic": false,
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575500",
+      "name": "PTR_GetCurrentThreadId_00575500",
+      "type": "void*",
+      "value": "00175ce8"
+    },
+    {
+      "addr": "005755cc",
+      "name": "PTR_TlsSetValue_005755cc",
+      "type": "void*",
+      "value": "001760aa"
+    },
+    {
+      "addr": "0059919c",
+      "name": "s_Unable_to_resize_thread_0059919c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005991c4",
+      "name": "s_Unable_to_resize_thread_005991c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1ab8",
+      "name": "DAT_005c1ab8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1ae8",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1aec",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c20cc",
+      "name": "DAT_005c20cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5d70",
+      "name": "DAT_02de5d70",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.391891891891892,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CALLIND": 4,
+      "CBRANCH": 8,
+      "COPY": 70,
+      "INT_ADD": 25,
+      "INT_AND": 41,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 27,
+      "INT_LESS": 2,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 33,
+      "INT_ZEXT": 4,
+      "LOAD": 15,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 325
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae8)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005c1ab8",
+      "severity": "mild",
+      "text": "DVar2 = DAT_005c1ab8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(byte *)((int)lpTlsValue",
+      "severity": "moderate",
+      "text": "*(byte *)((int)lpTlsValue + 0x52) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(byte *)((int)lpTlsValue",
+      "severity": "moderate",
+      "text": "*(byte *)((int)lpTlsValue + 0x53) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1aec)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `lpTlsValue` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)lpTlsValue",
+      "severity": "moderate",
+      "text": "*(byte *)((int)lpTlsValue + 0x52) = 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `lpTlsValue` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)lpTlsValue",
+      "severity": "moderate",
+      "text": "*(byte *)((int)lpTlsValue + 0x53) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 30,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 35,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0057123a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 68,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0057123a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -17,12 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "0056f220",
-      "from_addr": "0056f257",
-      "name": "FUN_0056f220",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056b960",
       "from_addr": "0056bb35",
       "name": "crt_stdio.c_CreateFileImpl_FUN_0056b960",
@@ -32,6 +26,12 @@
       "addr": "0056bbb0",
       "from_addr": "0056bbbf",
       "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f220",
+      "from_addr": "0056f257",
+      "name": "crt_unknown.c_FUN_0056f220",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -119,7 +119,7 @@
       {
         "call_addr": "0056f257",
         "call_type": "direct",
-        "caller": "FUN_0056f220",
+        "caller": "crt_unknown.c_FUN_0056f220",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

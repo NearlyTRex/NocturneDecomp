@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_tentacle.cpp_FUN_00543b60
+;   core_tentacle.cpp_CTentacle_ctor_FUN_00543b60
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00543b41
     PUSH EAX                            ; 00543b42
         ;   Label: LAB_00543b42
-    CALL core_tentacle.cpp_FUN_00543b60 ; 00543b43
-        ;   XREF to: 00543b60 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_FUN_00543b60()
+    CALL core_tentacle.cpp_CTentacle_ctor_FUN_00543b60 ; 00543b43
+        ;   XREF to: 00543b60 (UNCONDITIONAL_CALL)  ; CTentacle * core_tentacle.cpp_CTentacle_ctor_FUN_00543b60(CTentacle * this_ptr)
     ADD ESP,0x4                         ; 00543b48
     RET                                 ; 00543b4b
 

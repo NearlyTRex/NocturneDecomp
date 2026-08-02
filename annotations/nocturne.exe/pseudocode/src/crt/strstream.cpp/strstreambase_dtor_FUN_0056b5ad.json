@@ -2,25 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 57,
+    "complexity_score": 58,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 94
+    "total_lines": 95
   },
   "cross_references": [
-    {
-      "addr": "0056b491",
-      "from_addr": "0056b4a0",
-      "name": "FUN_0056b491",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00564fd8",
       "from_addr": "0056501e",
@@ -31,6 +25,12 @@
       "addr": "00564e98",
       "from_addr": "00564ede",
       "name": "crt_strstream.cpp_ostrstream_dtor_FUN_00564e98",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b491",
+      "from_addr": "0056b4a0",
+      "name": "crt_unknown.c_FUN_0056b491",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -82,7 +82,7 @@
     },
     {
       "addr": "005a48c4",
-      "name": "PTR_FUN_005a48c4",
+      "name": "PTR_crt_unknown.c_FUN_0056b491_005a48c4",
       "type": "void*",
       "value": "0056b491"
     },
@@ -121,7 +121,7 @@
       {
         "call_addr": "0056b4a0",
         "call_type": "direct",
-        "caller": "FUN_0056b491",
+        "caller": "crt_unknown.c_FUN_0056b491",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -186,7 +186,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 21,
       "match": "psVar3[-1].",
       "severity": "mild",
       "text": "this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;",
@@ -194,7 +194,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 24,
       "match": "piVar4[-2].",
       "severity": "mild",
       "text": "this_ptr = (strstreambase *)&piVar4[-2].__error_state;",

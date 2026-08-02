@@ -61,4 +61,4 @@ int __cdecl CLever::isAccessibleFrom(CLever *this_ptr,CVector3f *world_position)
 
 // Original: core_lever.cpp_CLever_dtor_FUN_004c6970
 // Address: 004c6970
-CDemonActor * CLever::dtor(CDemonActor *param_1,byte param_2);
+CLever * __cdecl CLever::dtor(CLever *this_ptr,uint flags);

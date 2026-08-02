@@ -9,13 +9,12 @@
 CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_00534780(void)
 
 {
-  int iVar1;
-  CStairs *pCVar2;
+  CStairs *pCVar1;
   
-  iVar1 = FUN_0056497c(0xa2c);
-  if (iVar1 == 0) {
+  pCVar1 = (CStairs *)FUN_0056497c(0xa2c);
+  if (pCVar1 == (CStairs *)0x0) {
     return (CStairs *)0x0;
   }
-  pCVar2 = (CStairs *)core_stairs_cpp_FUN_005347b0(iVar1);
-  return pCVar2;
+  pCVar1 = core_stairs_cpp_CStairs_ctor_FUN_005347b0(pCVar1);
+  return pCVar1;
 }

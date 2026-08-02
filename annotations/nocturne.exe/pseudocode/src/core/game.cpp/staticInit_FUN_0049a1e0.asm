@@ -8,7 +8,7 @@
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0044e110
 ;   core_game.cpp_CGame_ctor_FUN_0049a650
 ;   crt_unknown.c__atexit_FUN_00564bb0
-;   shape_edittool.cpp_FUN_00474c90
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0049a21b
     PUSH 0x1c78424                      ; 0049a21e
-    CALL shape_edittool.cpp_FUN_00474c90 ; 0049a223
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 0049a223
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049a228
     PUSH 0x5b92e0                       ; 0049a22b
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0049a230

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_crate_cpp_CCrate_dtor_FUN_0043ce60(CDemonActor *param_1,byte param_2)
+; CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_0043ce60(CCrate *this_ptr,uint flags)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CCrateTypeInfo_0059bb10

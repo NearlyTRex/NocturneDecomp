@@ -15,9 +15,9 @@ CElephantGun * __cdecl factoryFunc(void);
 // Address: 00477700
 CDemonActorType * CElephantGun::getActorType(void);
 
-// Original: core_elephant.cpp_FUN_00477710
+// Original: core_elephant.cpp_CElephantGun_ctor_FUN_00477710
 // Address: 00477710
-CWeapon * FUN_00477710(CWeapon *param_1);
+CElephantGun * __cdecl CElephantGun::ctor(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_process_FUN_004777a0
 // Address: 004777a0
@@ -41,4 +41,4 @@ void __cdecl CElephantGun::fireProjectile(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_dtor_FUN_00478310
 // Address: 00478310
-CWeapon * CElephantGun::dtor(CWeapon *param_1,byte param_2);
+CElephantGun * __cdecl CElephantGun::dtor(CElephantGun *this_ptr,uint flags);

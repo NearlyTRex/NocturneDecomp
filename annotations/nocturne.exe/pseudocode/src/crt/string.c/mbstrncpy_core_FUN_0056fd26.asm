@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_buffered_FUN_00571c60
-;   FUN_00571cc6
+;   crt_unknown.c_FUN_00571cc6
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     RET                                 ; 0056fd59
     PUSH EBX                            ; 0056fd5a
         ;   Label: LAB_0056fd5a
-    CALL FUN_00571cc6                   ; 0056fd5b
-        ;   XREF to: 00571cc6 (UNCONDITIONAL_CALL)  ; undefined FUN_00571cc6()
+    CALL crt_unknown.c_FUN_00571cc6     ; 0056fd5b
+        ;   XREF to: 00571cc6 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571cc6()
     ADD ESP,0x4                         ; 0056fd60
     JMP 0x0056fd2b                      ; 0056fd63
         ;   XREF to: 0056fd2b (UNCONDITIONAL_JUMP)  ; LAB_0056fd2b

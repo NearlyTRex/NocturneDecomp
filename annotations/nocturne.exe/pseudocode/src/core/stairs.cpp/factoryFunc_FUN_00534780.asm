@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_stairs.cpp_FUN_005347b0
+;   core_stairs.cpp_CStairs_ctor_FUN_005347b0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00534791
     PUSH EAX                            ; 00534792
         ;   Label: LAB_00534792
-    CALL core_stairs.cpp_FUN_005347b0   ; 00534793
-        ;   XREF to: 005347b0 (UNCONDITIONAL_CALL)  ; undefined core_stairs.cpp_FUN_005347b0()
+    CALL core_stairs.cpp_CStairs_ctor_FUN_005347b0 ; 00534793
+        ;   XREF to: 005347b0 (UNCONDITIONAL_CALL)  ; CStairs * core_stairs.cpp_CStairs_ctor_FUN_005347b0(CStairs * param_1)
     ADD ESP,0x4                         ; 00534798
     RET                                 ; 0053479b
 

@@ -19,7 +19,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
   CStrList local_284 [23];
   char local_114 [260];
   
-  shape_edittool_cpp_FUN_00474c90(local_284);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_284);
   shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004746b0
             (local_284,search_directory,file_pattern);
   if (local_284[0].item_count < 1) {

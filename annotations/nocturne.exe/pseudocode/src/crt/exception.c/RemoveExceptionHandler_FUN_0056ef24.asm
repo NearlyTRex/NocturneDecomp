@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00573fc8 at 00573fce
 ;   crt_exit.c_ExitProcess_FUN_005674b0 at 005674d4
+;   crt_unknown.c_FUN_00573fc8 at 00573fce
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc

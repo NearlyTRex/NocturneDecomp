@@ -8,12 +8,12 @@
 ; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[10]:
-;   FUN_0056adf0 at 0056adfe
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d7df
 ;   core_game.cpp_FUN_0049a320 at 0049a58e
 ;   crt_math.c_print_error_message_FUN_005729e8 at 00572a2a
 ;   crt_stdio.c_fputs_FUN_00573660 at 005736be
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563c0e
+;   crt_unknown.c_FUN_0056adf0 at 0056adfe
 ;   engine_pcx.c_FUN_004f2990 at 004f2af6
 ;   engine_pcx.c_saveScreenRaw16_FUN_004f2620 at 004f274c
 ;   engine_pcx.c_saveScreenRaw32_FUN_004f27e0 at 004f28fa
@@ -26,8 +26,8 @@
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_00568890
-;   FUN_00568ed0
+;   crt_unknown.c_FUN_00568890
+;   crt_unknown.c_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     JNZ 0x00566d44                      ; 00566d39
         ;   XREF to: 00566d44 (CONDITIONAL_JUMP)  ; LAB_00566d44
     PUSH EBX                            ; 00566d3b
-    CALL FUN_00568ed0                   ; 00566d3c
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_00568ed0()
+    CALL crt_unknown.c_FUN_00568ed0     ; 00566d3c
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
     ADD ESP,0x4                         ; 00566d41
     MOV EAX,dword ptr [ESP + 0x14]      ; 00566d44
         ;   Label: LAB_00566d44
@@ -120,8 +120,8 @@ section .text
     JNZ 0x00566da4                      ; 00566d7e
         ;   XREF to: 00566da4 (CONDITIONAL_JUMP)  ; LAB_00566da4
     PUSH EBX                            ; 00566d80
-    CALL FUN_00568890                   ; 00566d81
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 00566d81
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 00566d86
     TEST EAX,EAX                        ; 00566d89
     JZ 0x00566da4                       ; 00566d8b
@@ -158,8 +158,8 @@ section .text
         ;   XREF to: 00566df1 (CONDITIONAL_JUMP)  ; LAB_00566df1
     PUSH EBX                            ; 00566dcd
         ;   Label: LAB_00566dcd
-    CALL FUN_00568890                   ; 00566dce
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 00566dce
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 00566dd3
     TEST EAX,EAX                        ; 00566dd6
     JZ 0x00566df1                       ; 00566dd8

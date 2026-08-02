@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_keyactor.cpp_FUN_004c3460
+;   core_keyactor.cpp_CKeyActor_ctor_FUN_004c3460
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004c3441
     PUSH EAX                            ; 004c3442
         ;   Label: LAB_004c3442
-    CALL core_keyactor.cpp_FUN_004c3460 ; 004c3443
-        ;   XREF to: 004c3460 (UNCONDITIONAL_CALL)  ; undefined core_keyactor.cpp_FUN_004c3460()
+    CALL core_keyactor.cpp_CKeyActor_ctor_FUN_004c3460 ; 004c3443
+        ;   XREF to: 004c3460 (UNCONDITIONAL_CALL)  ; CKeyActor * core_keyactor.cpp_CKeyActor_ctor_FUN_004c3460(CKeyActor * this_ptr)
     ADD ESP,0x4                         ; 004c3448
     RET                                 ; 004c344b
 

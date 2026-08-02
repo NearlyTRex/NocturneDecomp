@@ -303,6 +303,1402 @@ void __watcallStack stack::overflow_handler(SIZE_T required_bytes);
 // Address: 005670ed
 void __stdcall ProbeStackSpace(uint size);
 
+// Original: crt_unknown.c_FUN_005671c6
+// Address: 005671c6
+void FUN_005671c6(void);
+
+// Original: crt_unknown.c_FUN_005674f8
+// Address: 005674f8
+void FUN_005674f8(void);
+
+// Original: crt_unknown.c_FUN_00567540
+// Address: 00567540
+void FUN_00567540(undefined4 *param_1);
+
+// Original: crt_unknown.c_FUN_0056754c
+// Address: 0056754c
+void FUN_0056754c(undefined4 param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00567560
+// Address: 00567560
+int FUN_00567560(int param_1,byte *param_2,undefined4 *param_3);
+
+// Original: crt_unknown.c_FUN_0056782c
+// Address: 0056782c
+byte * FUN_0056782c(byte *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00567928
+// Address: 00567928
+int FUN_00567928(int param_1);
+
+// Original: crt_unknown.c_FUN_00567964
+// Address: 00567964
+int FUN_00567964(int param_1,int *param_2);
+
+// Original: crt_unknown.c_FUN_00567a5c
+// Address: 00567a5c
+int FUN_00567a5c(int param_1,int *param_2);
+
+// Original: crt_unknown.c_FUN_00567bc0
+// Address: 00567bc0
+void FUN_00567bc0(int param_1,int *param_2,undefined4 param_3);
+
+// Original: crt_unknown.c_FUN_00567c2c
+// Address: 00567c2c
+byte * FUN_00567c2c(byte *param_1,void *param_2);
+
+// Original: crt_unknown.c_FUN_00567c74
+// Address: 00567c74
+int FUN_00567c74(int param_1,int *param_2,undefined4 *param_3);
+
+// Original: crt_unknown.c_FUN_00567d88
+// Address: 00567d88
+int FUN_00567d88(int param_1,int *param_2);
+
+// Original: crt_unknown.c_FUN_0056808c
+// Address: 0056808c
+int FUN_0056808c(int param_1,int *param_2,int param_3,int param_4);
+
+// Original: crt_unknown.c_FUN_005684f8
+// Address: 005684f8
+int FUN_005684f8(int param_1);
+
+// Original: crt_unknown.c_FUN_00568528
+// Address: 00568528
+undefined4 FUN_00568528(int param_1);
+
+// Original: crt_unknown.c_FUN_00568658
+// Address: 00568658
+void FUN_00568658(void);
+
+// Original: crt_unknown.c_FUN_00568690
+// Address: 00568690
+_FILE * FUN_00568690(void);
+
+// Original: crt_unknown.c_FUN_00568890
+// Address: 00568890
+int FUN_00568890(undefined4 *param_1);
+
+// Original: crt_unknown.c_FUN_00568e70
+// Address: 00568e70
+int __cdecl FUN_00568e70(uint size);
+
+// Original: crt_unknown.c_FUN_00568ed0
+// Address: 00568ed0
+void FUN_00568ed0(_FILE *param_1);
+
+// Original: crt_unknown.c_FUN_00568f70
+// Address: 00568f70
+DWORD FUN_00568f70(uint param_1,LPVOID param_2,DWORD param_3);
+
+// Original: crt_unknown.c_FUN_00569040
+// Address: 00569040
+undefined4 FUN_00569040(undefined4 param_1,char *param_2,int *param_3,code *param_4);
+
+// Original: crt_unknown.c_FUN_00569468
+// Address: 00569468
+byte * FUN_00569468(undefined4 param_1,int *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_005695cc
+// Address: 005695cc
+char * FUN_005695cc(char *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056963c
+// Address: 0056963c
+void FUN_0056963c(char *param_1,undefined4 param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_0056966c
+// Address: 0056966c
+int FUN_0056966c(ushort *param_1,undefined4 param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_005696e8
+// Address: 005696e8
+void FUN_005696e8(int param_1,char *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_0056974c
+// Address: 0056974c
+void FUN_0056974c(char *param_1,uint param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_00569850
+// Address: 00569850
+void FUN_00569850(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: crt_unknown.c_FUN_0056986c
+// Address: 0056986c
+void FUN_0056986c(int param_1);
+
+// Original: crt_unknown.c_FUN_005698b0
+// Address: 005698b0
+void FUN_005698b0(ushort *param_1,undefined4 param_2,int param_3,code *param_4);
+
+// Original: crt_unknown.c_FUN_00569928
+// Address: 00569928
+undefined8 FUN_00569928(byte *param_1,int *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_00569f8c
+// Address: 00569f8c
+void FUN_00569f8c(byte *param_1);
+
+// Original: crt_unknown.c_FUN_00569fb0
+// Address: 00569fb0
+DWORD FUN_00569fb0(uint param_1,LPCVOID param_2,DWORD param_3);
+
+// Original: crt_unknown.c_FUN_0056a0c0
+// Address: 0056a0c0
+void FUN_0056a0c0(void);
+
+// Original: crt_unknown.c_FUN_0056a0f7
+// Address: 0056a0f7
+void FUN_0056a0f7(void);
+
+// Original: crt_unknown.c_FUN_0056a170
+// Address: 0056a170
+void FUN_0056a170(void);
+
+// Original: crt_unknown.c_FUN_0056a189
+// Address: 0056a189
+void FUN_0056a189(char *param_1,undefined4 *param_2);
+
+// Original: crt_unknown.c_FUN_0056a1b5
+// Address: 0056a1b5
+undefined4 FUN_0056a1b5(double *param_1,float *param_2);
+
+// Original: crt_unknown.c_FUN_0056a234
+// Address: 0056a234
+void FUN_0056a234(float10 *param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056a28c
+// Address: 0056a28c
+void FUN_0056a28c(float10 *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056a320
+// Address: 0056a320
+void FUN_0056a320(undefined4 param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056a388
+// Address: 0056a388
+uint FUN_0056a388(uint *param_1,int *param_2,undefined1 *param_3);
+
+// Original: crt_unknown.c_FUN_0056a697
+// Address: 0056a697
+void FUN_0056a697(void);
+
+// Original: crt_unknown.c_FUN_0056a6ad
+// Address: 0056a6ad
+void FUN_0056a6ad(void);
+
+// Original: crt_unknown.c_FUN_0056a6c4
+// Address: 0056a6c4
+void FUN_0056a6c4(void);
+
+// Original: crt_unknown.c_FUN_0056a6dc
+// Address: 0056a6dc
+undefined2 FUN_0056a6dc(void);
+
+// Original: crt_unknown.c_FUN_0056a827
+// Address: 0056a827
+void FUN_0056a827(uint *param_1,char *param_2,uint param_3,uint param_4,char *param_5);
+
+// Original: crt_unknown.c_FUN_0056aa38
+// Address: 0056aa38
+void FUN_0056aa38(int *param_1,undefined4 *param_2,uint param_3,int param_4,undefined4 *param_5);
+
+// Original: crt_unknown.c_FUN_0056ad3f
+// Address: 0056ad3f
+void FUN_0056ad3f(void);
+
+// Original: crt_unknown.c_FUN_0056ada0
+// Address: 0056ada0
+void FUN_0056ada0(void);
+
+// Original: crt_unknown.c_FUN_0056ade4
+// Address: 0056ade4
+void FUN_0056ade4(void);
+
+// Original: crt_unknown.c_FUN_0056adf0
+// Address: 0056adf0
+void FUN_0056adf0(undefined4 *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056ae10
+// Address: 0056ae10
+undefined4 FUN_0056ae10(int param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: crt_unknown.c_FUN_0056aef0
+// Address: 0056aef0
+void FUN_0056aef0(void);
+
+// Original: crt_unknown.c_FUN_0056aefc
+// Address: 0056aefc
+int FUN_0056aefc(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056af50
+// Address: 0056af50
+int FUN_0056af50(void);
+
+// Original: crt_unknown.c_FUN_0056afd0
+// Address: 0056afd0
+void FUN_0056afd0(void *param_1,ulong param_2);
+
+// Original: crt_unknown.c_FUN_0056b1ee
+// Address: 0056b1ee
+void FUN_0056b1ee(void);
+
+// Original: crt_unknown.c_FUN_0056b491
+// Address: 0056b491
+void FUN_0056b491(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056b4eb
+// Address: 0056b4eb
+void FUN_0056b4eb(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056b6d0
+// Address: 0056b6d0
+void FUN_0056b6d0(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056b7f8
+// Address: 0056b7f8
+void FUN_0056b7f8(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056bbf0
+// Address: 0056bbf0
+int __watcallStack FUN_0056bbf0(char *filename);
+
+// Original: crt_unknown.c_FUN_0056bdc8
+// Address: 0056bdc8
+undefined1 FUN_0056bdc8(void);
+
+// Original: crt_unknown.c_FUN_0056bf71
+// Address: 0056bf71
+void FUN_0056bf71(void);
+
+// Original: crt_unknown.c_FUN_0056bf77
+// Address: 0056bf77
+void FUN_0056bf77(void);
+
+// Original: crt_unknown.c_FUN_0056bf7c
+// Address: 0056bf7c
+void FUN_0056bf7c(void);
+
+// Original: crt_unknown.c_FUN_0056bf82
+// Address: 0056bf82
+void FUN_0056bf82(void);
+
+// Original: crt_unknown.c_FUN_0056bf87
+// Address: 0056bf87
+void FUN_0056bf87(void);
+
+// Original: crt_unknown.c_FUN_0056bf8d
+// Address: 0056bf8d
+void FUN_0056bf8d(void);
+
+// Original: crt_unknown.c_FUN_0056bf93
+// Address: 0056bf93
+void FUN_0056bf93(void);
+
+// Original: crt_unknown.c_FUN_0056bf99
+// Address: 0056bf99
+void FUN_0056bf99(void);
+
+// Original: crt_unknown.c_FUN_0056bfbb
+// Address: 0056bfbb
+void FUN_0056bfbb(void);
+
+// Original: crt_unknown.c_FUN_0056bfc0
+// Address: 0056bfc0
+void FUN_0056bfc0(void);
+
+// Original: crt_unknown.c_FUN_0056bfd6
+// Address: 0056bfd6
+void FUN_0056bfd6(void);
+
+// Original: crt_unknown.c_FUN_0056bfdb
+// Address: 0056bfdb
+void FUN_0056bfdb(void);
+
+// Original: crt_unknown.c_FUN_0056bff7
+// Address: 0056bff7
+void FUN_0056bff7(void);
+
+// Original: crt_unknown.c_FUN_0056c01b
+// Address: 0056c01b
+void FUN_0056c01b(void);
+
+// Original: crt_unknown.c_FUN_0056c02b
+// Address: 0056c02b
+void FUN_0056c02b(void);
+
+// Original: crt_unknown.c_FUN_0056c04b
+// Address: 0056c04b
+void FUN_0056c04b(void);
+
+// Original: crt_unknown.c_FUN_0056c050
+// Address: 0056c050
+void FUN_0056c050(void);
+
+// Original: crt_unknown.c_FUN_0056c06a
+// Address: 0056c06a
+void FUN_0056c06a(void);
+
+// Original: crt_unknown.c_FUN_0056c06f
+// Address: 0056c06f
+void FUN_0056c06f(void);
+
+// Original: crt_unknown.c_FUN_0056c08f
+// Address: 0056c08f
+void FUN_0056c08f(void);
+
+// Original: crt_unknown.c_FUN_0056c0bb
+// Address: 0056c0bb
+void FUN_0056c0bb(void);
+
+// Original: crt_unknown.c_FUN_0056c0cf
+// Address: 0056c0cf
+void FUN_0056c0cf(void);
+
+// Original: crt_unknown.c_FUN_0056c0ef
+// Address: 0056c0ef
+void FUN_0056c0ef(void);
+
+// Original: crt_unknown.c_FUN_0056c0f4
+// Address: 0056c0f4
+void FUN_0056c0f4(void);
+
+// Original: crt_unknown.c_FUN_0056c10e
+// Address: 0056c10e
+void FUN_0056c10e(void);
+
+// Original: crt_unknown.c_FUN_0056c113
+// Address: 0056c113
+void FUN_0056c113(void);
+
+// Original: crt_unknown.c_FUN_0056c133
+// Address: 0056c133
+void FUN_0056c133(void);
+
+// Original: crt_unknown.c_FUN_0056c147
+// Address: 0056c147
+void FUN_0056c147(void);
+
+// Original: crt_unknown.c_FUN_0056c15f
+// Address: 0056c15f
+void FUN_0056c15f(void);
+
+// Original: crt_unknown.c_FUN_0056c173
+// Address: 0056c173
+void FUN_0056c173(void);
+
+// Original: crt_unknown.c_FUN_0056c193
+// Address: 0056c193
+void FUN_0056c193(void);
+
+// Original: crt_unknown.c_FUN_0056c198
+// Address: 0056c198
+void FUN_0056c198(void);
+
+// Original: crt_unknown.c_FUN_0056c1b2
+// Address: 0056c1b2
+void FUN_0056c1b2(void);
+
+// Original: crt_unknown.c_FUN_0056c1b7
+// Address: 0056c1b7
+void FUN_0056c1b7(void);
+
+// Original: crt_unknown.c_FUN_0056c1d7
+// Address: 0056c1d7
+void FUN_0056c1d7(void);
+
+// Original: crt_unknown.c_FUN_0056c203
+// Address: 0056c203
+void FUN_0056c203(void);
+
+// Original: crt_unknown.c_FUN_0056c217
+// Address: 0056c217
+void FUN_0056c217(void);
+
+// Original: crt_unknown.c_FUN_0056c237
+// Address: 0056c237
+void FUN_0056c237(void);
+
+// Original: crt_unknown.c_FUN_0056c23c
+// Address: 0056c23c
+void FUN_0056c23c(void);
+
+// Original: crt_unknown.c_FUN_0056c256
+// Address: 0056c256
+void FUN_0056c256(void);
+
+// Original: crt_unknown.c_FUN_0056c25b
+// Address: 0056c25b
+void FUN_0056c25b(void);
+
+// Original: crt_unknown.c_FUN_0056c27b
+// Address: 0056c27b
+void FUN_0056c27b(void);
+
+// Original: crt_unknown.c_FUN_0056c2a7
+// Address: 0056c2a7
+void FUN_0056c2a7(void);
+
+// Original: crt_unknown.c_FUN_0056c2bb
+// Address: 0056c2bb
+void FUN_0056c2bb(void);
+
+// Original: crt_unknown.c_FUN_0056c2db
+// Address: 0056c2db
+void FUN_0056c2db(void);
+
+// Original: crt_unknown.c_FUN_0056c2e0
+// Address: 0056c2e0
+void FUN_0056c2e0(void);
+
+// Original: crt_unknown.c_FUN_0056c2fa
+// Address: 0056c2fa
+void FUN_0056c2fa(void);
+
+// Original: crt_unknown.c_FUN_0056c2ff
+// Address: 0056c2ff
+void FUN_0056c2ff(void);
+
+// Original: crt_unknown.c_FUN_0056c31f
+// Address: 0056c31f
+void FUN_0056c31f(void);
+
+// Original: crt_unknown.c_FUN_0056c34b
+// Address: 0056c34b
+void FUN_0056c34b(void);
+
+// Original: crt_unknown.c_FUN_0056c35f
+// Address: 0056c35f
+void FUN_0056c35f(void);
+
+// Original: crt_unknown.c_FUN_0056c37f
+// Address: 0056c37f
+void FUN_0056c37f(void);
+
+// Original: crt_unknown.c_FUN_0056c384
+// Address: 0056c384
+void FUN_0056c384(void);
+
+// Original: crt_unknown.c_FUN_0056c39e
+// Address: 0056c39e
+void FUN_0056c39e(void);
+
+// Original: crt_unknown.c_FUN_0056c3a3
+// Address: 0056c3a3
+void FUN_0056c3a3(void);
+
+// Original: crt_unknown.c_FUN_0056c3c3
+// Address: 0056c3c3
+void FUN_0056c3c3(void);
+
+// Original: crt_unknown.c_FUN_0056c3ef
+// Address: 0056c3ef
+void FUN_0056c3ef(void);
+
+// Original: crt_unknown.c_FUN_0056c416
+// Address: 0056c416
+void FUN_0056c416(void);
+
+// Original: crt_unknown.c_FUN_0056c429
+// Address: 0056c429
+void FUN_0056c429(void);
+
+// Original: crt_unknown.c_FUN_0056c4d4
+// Address: 0056c4d4
+undefined4 FUN_0056c4d4(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056c520
+// Address: 0056c520
+undefined4 FUN_0056c520(undefined4 param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056c56c
+// Address: 0056c56c
+double FUN_0056c56c(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056c6a0
+// Address: 0056c6a0
+void FUN_0056c6a0(undefined4 param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056c6b8
+// Address: 0056c6b8
+void FUN_0056c6b8(DWORD param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056cd52
+// Address: 0056cd52
+int FUN_0056cd52(int param_1);
+
+// Original: crt_unknown.c_FUN_0056cd9b
+// Address: 0056cd9b
+int FUN_0056cd9b(int param_1,undefined4 param_2,uint param_3,undefined4 param_4);
+
+// Original: crt_unknown.c_FUN_0056ce57
+// Address: 0056ce57
+int FUN_0056ce57(_FILE *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056ced8
+// Address: 0056ced8
+int FUN_0056ced8(int param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056cfd8
+// Address: 0056cfd8
+undefined4 FUN_0056cfd8(int param_1,int param_2,undefined4 param_3);
+
+// Original: crt_unknown.c_FUN_0056d308
+// Address: 0056d308
+undefined4 FUN_0056d308(int *param_1,int *param_2);
+
+// Original: crt_unknown.c_FUN_0056d488
+// Address: 0056d488
+void FUN_0056d488(undefined4 *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056d4ab
+// Address: 0056d4ab
+void FUN_0056d4ab(undefined4 param_1);
+
+// Original: crt_unknown.c_FUN_0056d4d0
+// Address: 0056d4d0
+uint FUN_0056d4d0(void);
+
+// Original: crt_unknown.c_FUN_0056d4e8
+// Address: 0056d4e8
+uint FUN_0056d4e8(void);
+
+// Original: crt_unknown.c_FUN_0056ddf0
+// Address: 0056ddf0
+void FUN_0056ddf0(void);
+
+// Original: crt_unknown.c_FUN_0056de90
+// Address: 0056de90
+void FUN_0056de90(void);
+
+// Original: crt_unknown.c_FUN_0056deac
+// Address: 0056deac
+int FUN_0056deac(int param_1);
+
+// Original: crt_unknown.c_FUN_0056dfc0
+// Address: 0056dfc0
+undefined4 FUN_0056dfc0(void);
+
+// Original: crt_unknown.c_FUN_0056e010
+// Address: 0056e010
+int FUN_0056e010(int param_1);
+
+// Original: crt_unknown.c_FUN_0056e09c
+// Address: 0056e09c
+void FUN_0056e09c(HANDLE param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056e174
+// Address: 0056e174
+void FUN_0056e174(int param_1);
+
+// Original: crt_unknown.c_FUN_0056e1a0
+// Address: 0056e1a0
+void FUN_0056e1a0(void);
+
+// Original: crt_unknown.c_FUN_0056e208
+// Address: 0056e208
+HANDLE FUN_0056e208(void);
+
+// Original: crt_unknown.c_FUN_0056e230
+// Address: 0056e230
+void FUN_0056e230(void);
+
+// Original: crt_unknown.c_FUN_0056e250
+// Address: 0056e250
+void FUN_0056e250(void);
+
+// Original: crt_unknown.c_FUN_0056e254
+// Address: 0056e254
+LPCRITICAL_SECTION FUN_0056e254(void);
+
+// Original: crt_unknown.c_FUN_0056e2f8
+// Address: 0056e2f8
+void FUN_0056e2f8(void);
+
+// Original: crt_unknown.c_FUN_0056e324
+// Address: 0056e324
+void FUN_0056e324(void);
+
+// Original: crt_unknown.c_FUN_0056e37c
+// Address: 0056e37c
+void FUN_0056e37c(int param_1);
+
+// Original: crt_unknown.c_FUN_0056e390
+// Address: 0056e390
+void FUN_0056e390(undefined4 *param_1);
+
+// Original: crt_unknown.c_FUN_0056e3f4
+// Address: 0056e3f4
+void FUN_0056e3f4(undefined4 *param_1);
+
+// Original: crt_unknown.c_FUN_0056e41c
+// Address: 0056e41c
+void FUN_0056e41c(void);
+
+// Original: crt_unknown.c_FUN_0056e42c
+// Address: 0056e42c
+void FUN_0056e42c(void);
+
+// Original: crt_unknown.c_FUN_0056e43c
+// Address: 0056e43c
+void FUN_0056e43c(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056e458
+// Address: 0056e458
+void FUN_0056e458(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056e474
+// Address: 0056e474
+void FUN_0056e474(undefined4 param_1);
+
+// Original: crt_unknown.c_FUN_0056e484
+// Address: 0056e484
+void FUN_0056e484(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056e4ac
+// Address: 0056e4ac
+void FUN_0056e4ac(void);
+
+// Original: crt_unknown.c_FUN_0056e4bc
+// Address: 0056e4bc
+void FUN_0056e4bc(void);
+
+// Original: crt_unknown.c_FUN_0056e4cc
+// Address: 0056e4cc
+void FUN_0056e4cc(void);
+
+// Original: crt_unknown.c_FUN_0056e4dc
+// Address: 0056e4dc
+void FUN_0056e4dc(void);
+
+// Original: crt_unknown.c_FUN_0056e4ec
+// Address: 0056e4ec
+void FUN_0056e4ec(void);
+
+// Original: crt_unknown.c_FUN_0056e4fc
+// Address: 0056e4fc
+void FUN_0056e4fc(void);
+
+// Original: crt_unknown.c_FUN_0056e50c
+// Address: 0056e50c
+void FUN_0056e50c(void);
+
+// Original: crt_unknown.c_FUN_0056e51c
+// Address: 0056e51c
+void FUN_0056e51c(void);
+
+// Original: crt_unknown.c_FUN_0056e52c
+// Address: 0056e52c
+LPVOID FUN_0056e52c(void);
+
+// Original: crt_unknown.c_FUN_0056e56c
+// Address: 0056e56c
+int FUN_0056e56c(int param_1);
+
+// Original: crt_unknown.c_FUN_0056e5ac
+// Address: 0056e5ac
+bool FUN_0056e5ac(void);
+
+// Original: crt_unknown.c_FUN_0056e608
+// Address: 0056e608
+undefined4 FUN_0056e608(undefined4 param_1);
+
+// Original: crt_unknown.c_FUN_0056e664
+// Address: 0056e664
+void FUN_0056e664(int param_1);
+
+// Original: crt_unknown.c_FUN_0056e6b8
+// Address: 0056e6b8
+BOOL FUN_0056e6b8(void);
+
+// Original: crt_unknown.c_FUN_0056e6c4
+// Address: 0056e6c4
+void FUN_0056e6c4(void);
+
+// Original: crt_unknown.c_FUN_0056e6e4
+// Address: 0056e6e4
+void FUN_0056e6e4(void);
+
+// Original: crt_unknown.c_FUN_0056e7fc
+// Address: 0056e7fc
+void FUN_0056e7fc(void);
+
+// Original: crt_unknown.c_FUN_0056e890
+// Address: 0056e890
+DWORD FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3);
+
+// Original: crt_unknown.c_FUN_0056e940
+// Address: 0056e940
+char * FUN_0056e940(char *param_1);
+
+// Original: crt_unknown.c_FUN_0056e990
+// Address: 0056e990
+void * FUN_0056e990(undefined4 param_1);
+
+// Original: crt_unknown.c_FUN_0056f034
+// Address: 0056f034
+void FUN_0056f034(void);
+
+// Original: crt_unknown.c_FUN_0056f0f0
+// Address: 0056f0f0
+void FUN_0056f0f0(void);
+
+// Original: crt_unknown.c_FUN_0056f170
+// Address: 0056f170
+int FUN_0056f170(LPCSTR param_1,byte param_2);
+
+// Original: crt_unknown.c_FUN_0056f220
+// Address: 0056f220
+undefined4 FUN_0056f220(uint param_1);
+
+// Original: crt_unknown.c_FUN_0056f278
+// Address: 0056f278
+void FUN_0056f278(int param_1,uint param_2);
+
+// Original: crt_unknown.c_FUN_0056f2d0
+// Address: 0056f2d0
+undefined4 FUN_0056f2d0(void);
+
+// Original: crt_unknown.c_FUN_0056f30c
+// Address: 0056f30c
+undefined4 FUN_0056f30c(LPVOID param_1);
+
+// Original: crt_unknown.c_FUN_0056f36c
+// Address: 0056f36c
+void FUN_0056f36c(int param_1);
+
+// Original: crt_unknown.c_FUN_0056f480
+// Address: 0056f480
+char * FUN_0056f480(uint *param_1,char *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_0056f544
+// Address: 0056f544
+char * FUN_0056f544(uint param_1,char *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_0056f573
+// Address: 0056f573
+undefined8 FUN_0056f573(int param_1,int *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_0056f938
+// Address: 0056f938
+undefined4 FUN_0056f938(int *param_1);
+
+// Original: crt_unknown.c_FUN_0056f986
+// Address: 0056f986
+char * FUN_0056f986(char *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_0056f9c4
+// Address: 0056f9c4
+void FUN_0056f9c4(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+
+// Original: crt_unknown.c_FUN_0056fa00
+// Address: 0056fa00
+void FUN_0056fa00(undefined4 param_1,undefined4 param_2,int param_3,int *param_4,undefined4 param_5);
+
+// Original: crt_unknown.c_FUN_0056fa40
+// Address: 0056fa40
+void FUN_0056fa40(void);
+
+// Original: crt_unknown.c_FUN_0056fcd0
+// Address: 0056fcd0
+undefined1 __cdecl FUN_0056fcd0(void);
+
+// Original: crt_unknown.c_FUN_0056fd65
+// Address: 0056fd65
+int * FUN_0056fd65(int *param_1,undefined4 *param_2);
+
+// Original: crt_unknown.c_FUN_0056fd83
+// Address: 0056fd83
+int * FUN_0056fd83(int *param_1,undefined4 *param_2);
+
+// Original: crt_unknown.c_FUN_0056fda1
+// Address: 0056fda1
+int * FUN_0056fda1(int *param_1,undefined4 *param_2);
+
+// Original: crt_unknown.c_FUN_0056fdbf
+// Address: 0056fdbf
+int * FUN_0056fdbf(int *param_1,undefined4 *param_2);
+
+// Original: crt_unknown.c_FUN_00570510
+// Address: 00570510
+void FUN_00570510(int param_1,undefined4 *param_2,undefined4 *param_3);
+
+// Original: crt_unknown.c_FUN_00570554
+// Address: 00570554
+void FUN_00570554(uint param_1,byte *param_2);
+
+// Original: crt_unknown.c_FUN_00570630
+// Address: 00570630
+void FUN_00570630(void);
+
+// Original: crt_unknown.c_FUN_005708c0
+// Address: 005708c0
+void FUN_005708c0(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
+
+// Original: crt_unknown.c_FUN_00570a70
+// Address: 00570a70
+int FUN_00570a70(uint param_1);
+
+// Original: crt_unknown.c_FUN_00570ad0
+// Address: 00570ad0
+undefined4 FUN_00570ad0(char *param_1,uint *param_2,uint param_3);
+
+// Original: crt_unknown.c_FUN_00570ce0
+// Address: 00570ce0
+char * FUN_00570ce0(char *param_1,char *param_2,ulong param_3);
+
+// Original: crt_unknown.c_FUN_00570d50
+// Address: 00570d50
+undefined8 FUN_00570d50(void);
+
+// Original: crt_unknown.c_FUN_00570eb0
+// Address: 00570eb0
+undefined8 FUN_00570eb0(void);
+
+// Original: crt_unknown.c_FUN_00570ebb
+// Address: 00570ebb
+undefined8 FUN_00570ebb(void);
+
+// Original: crt_unknown.c_FUN_00570ec8
+// Address: 00570ec8
+undefined8 FUN_00570ec8(void);
+
+// Original: crt_unknown.c_FUN_00570edb
+// Address: 00570edb
+undefined8 FUN_00570edb(void);
+
+// Original: crt_unknown.c_FUN_00570ef0
+// Address: 00570ef0
+undefined8 FUN_00570ef0(void);
+
+// Original: crt_unknown.c_FUN_00570f03
+// Address: 00570f03
+undefined8 FUN_00570f03(void);
+
+// Original: crt_unknown.c_FUN_00570f18
+// Address: 00570f18
+undefined8 FUN_00570f18(void);
+
+// Original: crt_unknown.c_FUN_00570f2b
+// Address: 00570f2b
+undefined8 FUN_00570f2b(void);
+
+// Original: crt_unknown.c_FUN_00570f60
+// Address: 00570f60
+void FUN_00570f60(void);
+
+// Original: crt_unknown.c_FUN_0057104c
+// Address: 0057104c
+void FUN_0057104c(void);
+
+// Original: crt_unknown.c_FUN_005710a0
+// Address: 005710a0
+void FUN_005710a0(char *param_1,char *param_2);
+
+// Original: crt_unknown.c_FUN_00571160
+// Address: 00571160
+void FUN_00571160(void);
+
+// Original: crt_unknown.c_FUN_00571170
+// Address: 00571170
+LPVOID FUN_00571170(void);
+
+// Original: crt_unknown.c_FUN_005711a8
+// Address: 005711a8
+undefined4 * FUN_005711a8(void);
+
+// Original: crt_unknown.c_FUN_00571280
+// Address: 00571280
+undefined4 FUN_00571280(undefined4 param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_005712ec
+// Address: 005712ec
+void FUN_005712ec(int param_1);
+
+// Original: crt_unknown.c_FUN_00571364
+// Address: 00571364
+void FUN_00571364(void);
+
+// Original: crt_unknown.c_FUN_005713a0
+// Address: 005713a0
+void FUN_005713a0(ThreadData *param_1);
+
+// Original: crt_unknown.c_FUN_00571364
+// Address: 005713d0
+void FUN_00571364(void);
+
+// Original: crt_unknown.c_FUN_005713e0
+// Address: 005713e0
+int FUN_005713e0(short *param_1);
+
+// Original: crt_unknown.c_FUN_00571410
+// Address: 00571410
+undefined4 * FUN_00571410(undefined4 *param_1,undefined4 *param_2,uint param_3);
+
+// Original: crt_unknown.c_FUN_00571440
+// Address: 00571440
+undefined4 FUN_00571440(short *param_1);
+
+// Original: crt_unknown.c_FUN_005714e0
+// Address: 005714e0
+HANDLE __watcallRegister FUN_005714e0(void);
+
+// Original: crt_unknown.c_FUN_005714ec
+// Address: 005714ec
+HANDLE __cdecl FUN_005714ec(void);
+
+// Original: crt_unknown.c_FUN_00571500
+// Address: 00571500
+void __cdecl FUN_00571500(void);
+
+// Original: crt_unknown.c_FUN_00571588
+// Address: 00571588
+undefined4 FUN_00571588(int param_1);
+
+// Original: crt_unknown.c_FUN_005715ac
+// Address: 005715ac
+SIGNAL_HANDLER_TYPE FUN_005715ac(int param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00571630
+// Address: 00571630
+undefined4 FUN_00571630(void);
+
+// Original: crt_unknown.c_FUN_00571718
+// Address: 00571718
+SIGNAL_HANDLER_TYPE FUN_00571718(int param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00571858
+// Address: 00571858
+undefined2 FUN_00571858(void);
+
+// Original: crt_unknown.c_FUN_0057189c
+// Address: 0057189c
+void FUN_0057189c(void);
+
+// Original: crt_unknown.c_FUN_005718c4
+// Address: 005718c4
+void FUN_005718c4(void);
+
+// Original: crt_unknown.c_FUN_00571b2c
+// Address: 00571b2c
+void FUN_00571b2c(void);
+
+// Original: crt_unknown.c_FUN_00571b8e
+// Address: 00571b8e
+void FUN_00571b8e(void);
+
+// Original: crt_unknown.c_FUN_00571bd0
+// Address: 00571bd0
+int FUN_00571bd0(void);
+
+// Original: crt_unknown.c_FUN_00571bdc
+// Address: 00571bdc
+undefined4 FUN_00571bdc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 *param_5,int param_6,undefined4 param_7);
+
+// Original: crt_unknown.c_FUN_00571cc6
+// Address: 00571cc6
+uint FUN_00571cc6(int *param_1);
+
+// Original: crt_unknown.c_FUN_00571ee0
+// Address: 00571ee0
+void * __watcallStack FUN_00571ee0(uint size);
+
+// Original: crt_unknown.c_FUN_00571ef0
+// Address: 00571ef0
+void __watcallStack FUN_00571ef0(void *buffer);
+
+// Original: crt_unknown.c_FUN_00572b70
+// Address: 00572b70
+void FUN_00572b70(void);
+
+// Original: crt_unknown.c_FUN_00572d50
+// Address: 00572d50
+void FUN_00572d50(byte *param_1,byte *param_2);
+
+// Original: crt_unknown.c_FUN_00572d90
+// Address: 00572d90
+char * FUN_00572d90(char *param_1);
+
+// Original: crt_unknown.c_FUN_00572e00
+// Address: 00572e00
+int FUN_00572e00(byte *param_1,byte *param_2);
+
+// Original: crt_unknown.c_FUN_00572e60
+// Address: 00572e60
+undefined4 FUN_00572e60(void);
+
+// Original: crt_unknown.c_FUN_00572e64
+// Address: 00572e64
+void FUN_00572e64(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+
+// Original: crt_unknown.c_FUN_00572e88
+// Address: 00572e88
+void FUN_00572e88(void);
+
+// Original: crt_unknown.c_FUN_00572e90
+// Address: 00572e90
+void FUN_00572e90(undefined4 param_1);
+
+// Original: crt_unknown.c_FUN_00572ea0
+// Address: 00572ea0
+void FUN_00572ea0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+
+// Original: crt_unknown.c_FUN_00572ef0
+// Address: 00572ef0
+uint FUN_00572ef0(uint param_1,uint param_2);
+
 // Original: crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0
 // Address: 005733e0
 uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3);
+
+// Original: crt_unknown.c_FUN_00573ffb
+// Address: 00573650
+undefined4 FUN_00573ffb(void);
+
+// Original: crt_unknown.c_FUN_00573db0
+// Address: 00573db0
+void FUN_00573db0(wchar_t param_1);
+
+// Original: crt_unknown.c_FUN_00573e30
+// Address: 00573e30
+void FUN_00573e30(undefined4 *param_1);
+
+// Original: crt_unknown.c_FUN_00573ed0
+// Address: 00573ed0
+HANDLE FUN_00573ed0(undefined4 param_1,int param_2,undefined4 param_3);
+
+// Original: crt_unknown.c_FUN_00573fc8
+// Address: 00573fc8
+void FUN_00573fc8(void);
+
+// Original: crt_unknown.c_FUN_00573ffb
+// Address: 00573ffb
+undefined4 FUN_00573ffb(void);
+
+// Original: crt_unknown.c_FUN_00574000
+// Address: 00574000
+int FUN_00574000(char *param_1);
+
+// Original: crt_unknown.c_FUN_00574030
+// Address: 00574030
+int FUN_00574030(wchar_t *param_1,char *param_2,int param_3);
+
+// Original: crt_unknown.c_FUN_005740b0
+// Address: 005740b0
+int FUN_005740b0(wchar_t *param_1);
+
+// Original: crt_unknown.c_FUN_00574264
+// Address: 00574264
+undefined4 FUN_00574264(short *param_1);
+
+// Original: crt_unknown.c_FUN_00574404
+// Address: 00574404
+int FUN_00574404(short *param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00574540
+// Address: 00574540
+short * FUN_00574540(short *param_1,short param_2);
+
+// Original: crt_unknown.c_FUN_00574570
+// Address: 00574570
+BOOL FUN_00574570(LPCWSTR param_1,LPCWSTR param_2);
+
+// Original: crt_unknown.c_FUN_00574680
+// Address: 00574680
+void FUN_00574680(void);
+
+// Original: crt_unknown.c_FUN_005746f0
+// Address: 005746f0
+int FUN_005746f0(int param_1);
+
+// Original: crt_unknown.c_FUN_00574819
+// Address: 00574819
+void FUN_00574819(HANDLE param_1,FILETIME *param_2,FILETIME *param_3,FILETIME *param_4);
+
+// Original: crt_unknown.c_FUN_00574825
+// Address: 00574825
+void FUN_00574825(SYSTEMTIME *param_1,LPFILETIME param_2);
+
+// Original: crt_unknown.c_FUN_00574831
+// Address: 00574831
+void FUN_00574831(HANDLE param_1);
+
+// Original: crt_unknown.c_FUN_0057483d
+// Address: 0057483d
+void FUN_0057483d(LPCSTR param_1);
+
+// Original: crt_unknown.c_FUN_00574849
+// Address: 00574849
+void FUN_00574849(HANDLE param_1,LPCVOID param_2,DWORD param_3,LPDWORD param_4,LPOVERLAPPED param_5);
+
+// Original: crt_unknown.c_FUN_00574855
+// Address: 00574855
+void FUN_00574855(LPVOID param_1,SIZE_T param_2,DWORD param_3,DWORD param_4);
+
+// Original: crt_unknown.c_FUN_00574861
+// Address: 00574861
+void FUN_00574861(HANDLE param_1,LONG param_2,PLONG param_3,DWORD param_4);
+
+// Original: crt_unknown.c_FUN_0057486d
+// Address: 0057486d
+void FUN_0057486d(void);
+
+// Original: crt_unknown.c_FUN_00574879
+// Address: 00574879
+void FUN_00574879(void);
+
+// Original: crt_unknown.c_FUN_00574885
+// Address: 00574885
+void FUN_00574885(LPCSTR param_1,LPSECURITY_ATTRIBUTES param_2);
+
+// Original: crt_unknown.c_FUN_00574891
+// Address: 00574891
+void FUN_00574891(LPCSTR param_1,DWORD param_2,LPSTR param_3,LPSTR *param_4);
+
+// Original: crt_unknown.c_FUN_0057489d
+// Address: 0057489d
+void FUN_0057489d(HWND param_1,RECT *param_2,BOOL param_3);
+
+// Original: crt_unknown.c_FUN_005748a9
+// Address: 005748a9
+void FUN_005748a9(LPRECT param_1);
+
+// Original: crt_unknown.c_FUN_005748b5
+// Address: 005748b5
+void FUN_005748b5(HWND param_1,LPRECT param_2);
+
+// Original: crt_unknown.c_FUN_005748c1
+// Address: 005748c1
+void FUN_005748c1(UINT_PTR param_1,LPJOYCAPSA param_2,UINT param_3);
+
+// Original: crt_unknown.c_FUN_005748d5
+// Address: 005748d5
+void FUN_005748d5(void);
+
+// Original: crt_unknown.c_FUN_005748e5
+// Address: 005748e5
+void FUN_005748e5(HKEY param_1,LPCSTR param_2,DWORD param_3,REGSAM param_4,PHKEY param_5);
+
+// Original: crt_unknown.c_FUN_005748f1
+// Address: 005748f1
+void FUN_005748f1(HANDLE param_1);
+
+// Original: crt_unknown.c_FUN_005748fd
+// Address: 005748fd
+void FUN_005748fd(LPSECURITY_ATTRIBUTES param_1,BOOL param_2,LPCSTR param_3);
+
+// Original: crt_unknown.c_FUN_00574909
+// Address: 00574909
+void FUN_00574909(UINT param_1);
+
+// Original: crt_unknown.c_FUN_00574915
+// Address: 00574915
+void FUN_00574915(HWND param_1);
+
+// Original: crt_unknown.c_FUN_00574921
+// Address: 00574921
+void FUN_00574921(WNDCLASSA *param_1);
+
+// Original: crt_unknown.c_FUN_0057492d
+// Address: 0057492d
+void FUN_0057492d(HINSTANCE param_1,LPCSTR param_2);
+
+// Original: crt_unknown.c_FUN_00574939
+// Address: 00574939
+void FUN_00574939(LPCSTR param_1);
+
+// Original: crt_unknown.c_FUN_00574945
+// Address: 00574945
+void FUN_00574945(DWORD param_1,LPSTR param_2);
+
+// Original: crt_unknown.c_FUN_00574951
+// Address: 00574951
+void FUN_00574951(HWND param_1);
+
+// Original: crt_unknown.c_FUN_0057495d
+// Address: 0057495d
+void FUN_0057495d(HWND param_1);
+
+// Original: crt_unknown.c_FUN_00574969
+// Address: 00574969
+void FUN_00574969(LPCSTR param_1,LPCSTR param_2);
+
+// Original: crt_unknown.c_FUN_00574975
+// Address: 00574975
+void FUN_00574975(MSG *param_1);
+
+// Original: crt_unknown.c_FUN_00574981
+// Address: 00574981
+void FUN_00574981(LPMSG param_1,HWND param_2,UINT param_3,UINT param_4,UINT param_5);
+
+// Original: crt_unknown.c_FUN_0057498d
+// Address: 0057498d
+void FUN_0057498d(HANDLE param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_00574999
+// Address: 00574999
+void FUN_00574999(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4);
+
+// Original: crt_unknown.c_FUN_005749a5
+// Address: 005749a5
+void FUN_005749a5(int param_1,int param_2);
+
+// Original: crt_unknown.c_FUN_005749b1
+// Address: 005749b1
+void FUN_005749b1(UINT param_1);
+
+// Original: crt_unknown.c_FUN_005749bd
+// Address: 005749bd
+void FUN_005749bd(UINT param_1);
+
+// Original: crt_unknown.c_FUN_005749c9
+// Address: 005749c9
+void FUN_005749c9(LARGE_INTEGER *param_1);
+
+// Original: crt_unknown.c_FUN_005749d5
+// Address: 005749d5
+void FUN_005749d5(HDC param_1);
+
+// Original: crt_unknown.c_FUN_005749e1
+// Address: 005749e1
+void FUN_005749e1(HDC param_1,int param_2,int param_3,int param_4,int param_5);
+
+// Original: crt_unknown.c_FUN_005749ed
+// Address: 005749ed
+void FUN_005749ed(HDC param_1,COLORREF param_2);
+
+// Original: crt_unknown.c_FUN_005749f9
+// Address: 005749f9
+void FUN_005749f9(HDC param_1,HGDIOBJ param_2);
+
+// Original: crt_unknown.c_FUN_00574a05
+// Address: 00574a05
+void FUN_00574a05(HDC param_1);
+
+// Original: crt_unknown.c_FUN_00574a13
+// Address: 00574a13
+void FUN_00574a13(int param_1,int param_2,int param_3,DWORD param_4,DWORD param_5,DWORD param_6,DWORD param_7,DWORD param_8,DWORD param_9,DWORD param_10,DWORD param_11,LPCSTR param_12);
+
+// Original: crt_unknown.c_FUN_00574a23
+// Address: 00574a23
+void FUN_00574a23(LPCSTR param_1);
+
+// Original: crt_unknown.c_FUN_00574a2f
+// Address: 00574a2f
+void FUN_00574a2f(HWND param_1);
+
+// Original: crt_unknown.c_FUN_00574a3b
+// Address: 00574a3b
+void FUN_00574a3b(UINT_PTR param_1,LPWAVEOUTCAPSA param_2,UINT param_3);
+
+// Original: crt_unknown.c_FUN_00574a47
+// Address: 00574a47
+void FUN_00574a47(HWAVEOUT param_1);
+
+// Original: crt_unknown.c_FUN_00574a53
+// Address: 00574a53
+void FUN_00574a53(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
+
+// Original: crt_unknown.c_FUN_00574a5f
+// Address: 00574a5f
+void FUN_00574a5f(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
+
+// Original: crt_unknown.c_FUN_00574a6b
+// Address: 00574a6b
+void FUN_00574a6b(UINT param_1,HANDLE param_2);
+
+// Original: crt_unknown.c_FUN_00574a77
+// Address: 00574a77
+void FUN_00574a77(HGLOBAL param_1);
+
+// Original: crt_unknown.c_FUN_00574a83
+// Address: 00574a83
+void FUN_00574a83(void);
+
+// Original: crt_unknown.c_FUN_00574a8f
+// Address: 00574a8f
+void FUN_00574a8f(HWND param_1);
+
+// Original: crt_unknown.c_FUN_00574a9b
+// Address: 00574a9b
+void FUN_00574a9b(FILETIME *param_1,LPFILETIME param_2);
+
+// Original: crt_unknown.c_FUN_00574aa7
+// Address: 00574aa7
+void FUN_00574aa7(HANDLE param_1,LPWIN32_FIND_DATAA param_2);
+
+// Original: crt_unknown.c_FUN_00574ab3
+// Address: 00574ab3
+void FUN_00574ab3(LPCWSTR param_1,LPCWSTR param_2);
+
+// Original: crt_unknown.c_FUN_00574abf
+// Address: 00574abf
+void FUN_00574abf(void);
+
+// Original: crt_unknown.c_FUN_00574acb
+// Address: 00574acb
+void FUN_00574acb(LPSTR param_1,DWORD param_2);
+
+// Original: crt_unknown.c_FUN_00574ad9
+// Address: 00574ad9
+void FUN_00574ad9(void);
+
+// Original: crt_unknown.c_FUN_00574ae9
+// Address: 00574ae9
+void FUN_00574ae9(void);
+
+// Original: crt_unknown.c_FUN_00574af5
+// Address: 00574af5
+void FUN_00574af5(LPCH param_1);
+
+// Original: crt_unknown.c_FUN_00574b01
+// Address: 00574b01
+void FUN_00574b01(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
+
+// Original: crt_unknown.c_FUN_00574b0d
+// Address: 00574b0d
+void FUN_00574b0d(HANDLE param_1,DWORD param_2);
+
+// Original: crt_unknown.c_FUN_00574b19
+// Address: 00574b19
+void FUN_00574b19(HANDLE param_1,PINPUT_RECORD param_2,DWORD param_3,LPDWORD param_4);
+
+// Original: crt_unknown.c_FUN_00574b25
+// Address: 00574b25
+void FUN_00574b25(LPVOID param_1,SIZE_T param_2,DWORD param_3);
+
+// Original: crt_unknown.c_FUN_00574b31
+// Address: 00574b31
+void FUN_00574b31(LPCSTR param_1);
+
+// Original: crt_unknown.c_FUN_00574b3d
+// Address: 00574b3d
+void FUN_00574b3d(_EXCEPTION_POINTERS *param_1);
+
+// Original: crt_unknown.c_FUN_00574b49
+// Address: 00574b49
+void FUN_00574b49(UINT param_1,DWORD param_2,LPCSTR param_3,int param_4,LPWSTR param_5,int param_6);
+
+// Original: crt_unknown.c_FUN_00574b55
+// Address: 00574b55
+void FUN_00574b55(DWORD param_1);
+
+// Original: crt_unknown.c_FUN_00574b63
+// Address: 00574b63
+void FUN_00574b63(void);
+
+// Original: crt_unknown.c_FUN_00574b73
+// Address: 00574b73
+void FUN_00574b73(LPCRITICAL_SECTION param_1);
+
+// Original: crt_unknown.c_FUN_00574b7f
+// Address: 00574b7f
+void FUN_00574b7f(void);
+
+// Original: crt_unknown.c_FUN_00574b8b
+// Address: 00574b8b
+void FUN_00574b8b(LPCRITICAL_SECTION param_1);
+
+// Original: crt_unknown.c_FUN_00574b97
+// Address: 00574b97
+void FUN_00574b97(DWORD param_1);

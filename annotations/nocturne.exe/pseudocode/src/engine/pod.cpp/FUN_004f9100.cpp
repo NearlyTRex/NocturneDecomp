@@ -15,7 +15,7 @@ int engine_pod_cpp_FUN_004f9100(void)
   uint in_stack_00000008;
   byte local_220 [540];
   
-  engine_pod_cpp_FUN_004f7a80(local_220);
+  engine_pod_cpp_CPodFile_ctor_FUN_004f7a80((CPodFile *)local_220);
   iVar1 = engine_pod_cpp_FUN_004f7ae0(local_220,in_stack_00000008);
   if (iVar1 != 0) {
     iVar1 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240((CPodFile *)local_220);

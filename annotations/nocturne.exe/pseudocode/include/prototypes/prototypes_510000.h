@@ -16,11 +16,9 @@
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CEnemy.h"
-#include "types/classes/CLodMeshPrecomputeEntry.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMotionController.h"
-#include "types/classes/CMotionList.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CShotgun.h"
 #include "types/classes/CShovel.h"
@@ -30,9 +28,9 @@
 #include "types/classes/CSmiley.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/CWeapon.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLPrimitivePoly.h"
@@ -40,6 +38,7 @@
 #include "types/structs/SPartInstanceData.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SPoseData.h"
+#include "types/structs/SRaytraceState.h"
 #include "types/structs/SVDBox.h"
 #include "types/structs/SVert.h"
 #include "types/unions/UOrientationVector.h"
@@ -69,13 +68,13 @@ void __cdecl core_setcolid_cpp_FUN_00511a10(CDemonSet *this_ptr,CDemonActor *act
 void __cdecl core_setcolid_cpp_FUN_00511aa0(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30(CDemonSet *this_ptr);
 int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *this_ptr,CVector3f *point);
-undefined4 core_setcolid_cpp_FUN_00511c60(undefined4 param_1);
-undefined4 core_setcolid_cpp_FUN_00511c70(undefined4 param_1);
-undefined4 core_setcolid_cpp_FUN_00511c80(undefined4 param_1);
-undefined4 core_setcolid_cpp_FUN_00511c90(undefined4 param_1);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_00511c60(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_00511c70(SRaytraceState *this_ptr,uint flags);
+SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_ctor_FUN_00511c80(SIntersectXZCylinder *this_ptr);
+SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_00511c90(SIntersectXZCylinder *this_ptr,uint flags);
 void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_00511ca0(SDamageInfo *this_ptr,SDamageInfo *other);
-undefined4 core_setcolid_cpp_FUN_00511d20(undefined4 param_1);
-undefined4 core_setcolid_cpp_FUN_00511d30(undefined4 param_1);
+SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00511d20(SCollisionReturnInfo *this_ptr);
+SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00511d30(SCollisionReturnInfo *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00511d60(void);
 float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6);
 undefined4 core_setdir_cpp_FUN_005125a0(CDemonSet *param_1,CDemonActor *param_2,int param_3);
@@ -96,15 +95,15 @@ undefined4 * core_setdir_cpp_FUN_00514390(void);
 undefined4 * core_setdir_cpp_FUN_005143a0(void);
 undefined4 * core_setdir_cpp_FUN_005143b0(void);
 void core_setdir_cpp_FUN_005143c0(void);
-void core_setutil_cpp_FUN_005143e0(int param_1);
-undefined4 core_setutil_cpp_FUN_00514410(undefined4 param_1);
+C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_005143e0(C3DSCamera *this_ptr);
+C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00514410(C3DSCamera *this_ptr,uint flags);
 void core_setutil_cpp_FUN_00514430(int param_1);
 void core_setutil_cpp_FUN_00514470(void *param_1);
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,_FILE *file_handle);
 void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(C3DSCamera *this_ptr,_FILE *file_handle);
 void __cdecl core_setutil_cpp_FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera);
 int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00514980(C3DSCamera *this_ptr,CVector3f *world_position,float radius);
-C3DSLight * core_setutil_cpp_FUN_00514a50(C3DSLight *param_1);
+C3DSLight * __cdecl core_setutil_cpp_C3DSLight_ctor_FUN_00514a50(C3DSLight *this_ptr);
 void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(C3DSLight *this_ptr,_FILE *file_handle);
 CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *this_ptr);
 undefined4 core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,CDemonLight *param_2);
@@ -121,13 +120,13 @@ int core_setutil_cpp_FUN_00515c40(int param_1);
 void __cdecl core_shotgun_cpp_staticInit_FUN_00515cc0(void);
 CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00515cf0(void);
 CDemonActorType * core_shotgun_cpp_CShotgun_getActorType_FUN_00515d10(void);
-CWeapon * core_shotgun_cpp_FUN_00515d20(CWeapon *param_1);
+CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_00515d20(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00515db0(CShotgun *this_ptr,float delta_time);
 undefined4 core_shotgun_cpp_FUN_00515ea0(CCharacter *param_1);
 void core_shotgun_cpp_CShotgun_onFired_FUN_00516620(CDemonActor *param_1);
 float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_00516730(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_00516770(CShotgun *this_ptr);
-CWeapon * core_shotgun_cpp_CShotgun_dtor_FUN_00516960(CWeapon *param_1,byte param_2);
+CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00516960(CShotgun *this_ptr,uint flags);
 void __cdecl core_shovel_cpp_staticInit_FUN_005169b0(void);
 CShovel * __cdecl core_shovel_cpp_factoryFunc_FUN_005169e0(void);
 CDemonActorType * core_shovel_cpp_CShovel_getActorType_FUN_00516a00(void);
@@ -135,7 +134,7 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00516a10(CShovel *this_ptr);
 int __cdecl core_shovel_cpp_CShovel_fire_FUN_00516a90(CShovel *this_ptr);
 float core_shovel_cpp_FUN_00516ab0(void);
 void core_shovel_cpp_FUN_00516ae0(void);
-CWeapon * core_shovel_cpp_CShovel_dtor_FUN_00516af0(CWeapon *param_1,byte param_2);
+CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00516af0(CShovel *this_ptr,uint flags);
 void __cdecl core_simbox_cpp_staticInit_FUN_00516b40(void);
 CSimBox * __cdecl core_simbox_cpp_factoryFunc_FUN_00516b70(void);
 CDemonActorType * core_simbox_cpp_CSimBox_getActorType_FUN_00516b90(void);
@@ -150,8 +149,8 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005170d0(CSimBox *this_ptr,ui
 void __cdecl core_skeleton_cpp_staticInit_FUN_00517140(void);
 void core_skeleton_cpp_FUN_00517190(_FILE *param_1);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005171b0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);
-void core_skeleton_cpp_FUN_00517350(CMotionList *param_1);
-CLodMeshPrecomputeEntry * __cdecl core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0(CLodMeshPrecomputeEntry *this_ptr);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00517350(CSkeleton *this_ptr);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005173a0(CSkeleton *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *this_ptr,int bone_count,int frame_count);
 void core_skeleton_cpp_FUN_005174e0(int param_1);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(CSkeleton *this_ptr,char *filename);
@@ -161,8 +160,8 @@ CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0051
 CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation,CQuaternion4f *result_out);
 int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(CSkeleton *this_ptr,int start_bone_index,int target_bone_index);
 int __cdecl core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(CSkeleton *this_ptr);
-undefined4 * core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(int param_1);
-float * core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(CDeformableModel *param_1);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(CDeformableModel *this_ptr);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(CDeformableModel *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(CDeformableModel *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts);
 void core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);

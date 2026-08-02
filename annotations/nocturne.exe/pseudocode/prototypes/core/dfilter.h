@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 0044bca0
 CFilterCache * __cdecl CFilterCache::ctor(CFilterCache *this_ptr);
 
-// Original: core_dfilter.cpp_FUN_0044bcb0
+// Original: core_dfilter.cpp_CFilterCache_dtor_FUN_0044bcb0
 // Address: 0044bcb0
-CFilterCache * __cdecl FUN_0044bcb0(CFilterCache *this_ptr);
+CFilterCache * __cdecl CFilterCache::dtor(CFilterCache *this_ptr,uint flags);
 
 // Original: core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0
 // Address: 0044bcd0
@@ -53,23 +53,23 @@ void __cdecl CDemonFilter::init(CDemonFilter *this_ptr,float init_value,int flag
 
 // Original: core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0
 // Address: 0044c2b0
-CFilterFx * __cdecl CFilterFX::ctor(CFilterFx *this_ptr);
+CFilterFX * __cdecl CFilterFX::ctor(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_CFilterFX_dtor_FUN_0044c2d0
 // Address: 0044c2d0
-CFilterFx * CFilterFX::dtor(CFilterFx *param_1);
+CFilterFX * __cdecl CFilterFX::dtor(CFilterFX *this_ptr,uint flags);
 
 // Original: core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0
 // Address: 0044c2f0
-void __cdecl CFilterFX::free(CFilterFx *this_ptr);
+void __cdecl CFilterFX::free(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310
 // Address: 0044c310
-void __cdecl CFilterFX::openMovie(CFilterFx *this_ptr,char *filename);
+void __cdecl CFilterFX::openMovie(CFilterFX *this_ptr,char *filename);
 
 // Original: core_dfilter.cpp_CFilterFX_process_FUN_0044c4a0
 // Address: 0044c4a0
-void __cdecl CFilterFX::process(CFilterFx *this_ptr);
+void __cdecl CFilterFX::process(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_FUN_0044c540
 // Address: 0044c540

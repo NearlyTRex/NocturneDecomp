@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_tbplayer.cpp_FUN_00543150
+;   core_tbplayer.cpp_CBassPlayer_ctor_FUN_00543150
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00543131
     PUSH EAX                            ; 00543132
         ;   Label: LAB_00543132
-    CALL core_tbplayer.cpp_FUN_00543150 ; 00543133
-        ;   XREF to: 00543150 (UNCONDITIONAL_CALL)  ; undefined core_tbplayer.cpp_FUN_00543150()
+    CALL core_tbplayer.cpp_CBassPlayer_ctor_FUN_00543150 ; 00543133
+        ;   XREF to: 00543150 (UNCONDITIONAL_CALL)  ; CBassPlayer * core_tbplayer.cpp_CBassPlayer_ctor_FUN_00543150(CBassPlayer * this_ptr)
     ADD ESP,0x4                         ; 00543138
     RET                                 ; 0054313b
 

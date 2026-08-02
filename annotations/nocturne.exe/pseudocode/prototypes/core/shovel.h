@@ -33,4 +33,4 @@ void FUN_00516ae0(void);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00516af0
 // Address: 00516af0
-CWeapon * CShovel::dtor(CWeapon *param_1,byte param_2);
+CShovel * __cdecl CShovel::dtor(CShovel *this_ptr,uint flags);

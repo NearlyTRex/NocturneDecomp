@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 0044e110
 CDemonLight * __cdecl CDemonLight::ctor(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 
-// Original: core_dlight.cpp_FUN_0044e1c0
+// Original: core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
 // Address: 0044e1c0
-void FUN_0044e1c0(CDemonLight *param_1);
+CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint flags);
 
 // Original: core_dlight.cpp_CDemonLight_init_FUN_0044e1e0
 // Address: 0044e1e0

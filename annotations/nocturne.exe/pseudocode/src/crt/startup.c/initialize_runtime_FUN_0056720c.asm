@@ -30,12 +30,12 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
+;   crt_unknown.c_FUN_0056e1a0
+;   crt_unknown.c_FUN_0056e56c
+;   crt_unknown.c_FUN_0056e890
+;   crt_unknown.c_FUN_0056e940
+;   crt_unknown.c_FUN_0056e990
 ;   ExitProcess
-;   FUN_0056e1a0
-;   FUN_0056e56c
-;   FUN_0056e890
-;   FUN_0056e940
-;   FUN_0056e990
 ;   GetCommandLineA
 ;   GetCommandLineW
 ;   GetEnvironmentStrings
@@ -55,8 +55,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00567214
     PUSH EDX                            ; 00567218
     MOV dword ptr [0x02de4e30],ESI      ; 00567219 | DAT_02de4e30
-    CALL FUN_0056e56c                   ; 0056721f
-        ;   XREF to: 0056e56c (UNCONDITIONAL_CALL)  ; undefined FUN_0056e56c()
+    CALL crt_unknown.c_FUN_0056e56c     ; 0056721f
+        ;   XREF to: 0056e56c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e56c()
     ADD ESP,0x4                         ; 00567224
     MOV [0x02de4e3c],EAX                ; 00567227 | DAT_02de4e3c
     TEST EAX,EAX                        ; 0056722c
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 00567451 (CONDITIONAL_JUMP)  ; LAB_00567451
     PUSH 0x1                            ; 00567238
     CALL dword ptr CS:[0x5754b4]        ; 0056723a | PTR_ExitProcess_005754b4
-    CALL FUN_0056e1a0                   ; 00567241
-        ;   XREF to: 0056e1a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e1a0()
+    CALL crt_unknown.c_FUN_0056e1a0     ; 00567241
+        ;   XREF to: 0056e1a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e1a0()
         ;   Label: LAB_00567241
     CALL dword ptr CS:[0x575508]        ; 00567246 | PTR_GetEnvironmentStrings_00575508
     XOR EBX,EBX                         ; 0056724d
@@ -109,14 +109,14 @@ section .text
     PUSH 0x0                            ; 005672e3
     MOV EDI,0x2de4f44                   ; 005672e5
     MOV dword ptr [0x005c1cd0],ECX      ; 005672ea | DAT_005c1cd0
-    CALL FUN_0056e890                   ; 005672f0
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e890()
+    CALL crt_unknown.c_FUN_0056e890     ; 005672f0
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e890()
     ADD ESP,0xc                         ; 005672f5
     MOV dword ptr [0x005c1cdc],EDI      ; 005672f8 | DAT_005c1cdc
     CALL dword ptr CS:[0x5754e8]        ; 005672fe | PTR_GetCommandLineA_005754e8
     PUSH EAX                            ; 00567305
-    CALL FUN_0056e940                   ; 00567306
-        ;   XREF to: 0056e940 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e940()
+    CALL crt_unknown.c_FUN_0056e940     ; 00567306
+        ;   XREF to: 0056e940 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e940()
     MOV EDX,EAX                         ; 0056730b
     ADD ESP,0x4                         ; 0056730d
     MOV BL,byte ptr [EAX]               ; 00567310
@@ -175,8 +175,8 @@ section .text
     JZ 0x00567400                       ; 00567379
         ;   XREF to: 00567400 (CONDITIONAL_JUMP)  ; LAB_00567400
     PUSH EAX                            ; 0056737f
-    CALL FUN_0056e990                   ; 00567380
-        ;   XREF to: 0056e990 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e990()
+    CALL crt_unknown.c_FUN_0056e990     ; 00567380
+        ;   XREF to: 0056e990 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e990()
     MOV EDX,EAX                         ; 00567385
     ADD ESP,0x4                         ; 00567387
     MOV BX,word ptr [EAX]               ; 0056738a
@@ -250,8 +250,8 @@ section .text
     PUSH EBP                            ; 00567433
     MOV EBX,0x2de5250                   ; 00567434
     MOV [0x005c1cd4],EAX                ; 00567439 | DAT_005c1cd4
-    CALL FUN_0056e890                   ; 0056743e
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e890()
+    CALL crt_unknown.c_FUN_0056e890     ; 0056743e
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e890()
     ADD ESP,0xc                         ; 00567443
     MOV dword ptr [0x005c1ce0],EBX      ; 00567446 | DAT_005c1ce0
     MOV EAX,0x1                         ; 0056744c

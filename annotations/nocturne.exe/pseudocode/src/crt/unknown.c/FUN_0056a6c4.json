@@ -1,0 +1,140 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 106,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
+    "suspect_count": 8,
+    "suspect_types": [
+      "register_param",
+      "unaffected_reg"
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [
+    {
+      "addr": "0056a6ad",
+      "from_addr": "0056a6be",
+      "name": "crt_unknown.c_FUN_0056a6ad",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056a6c4",
+    "address_range": [
+      [
+        "0056a6c4",
+        "0056a6db"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056a6c4",
+    "signature": "void crt_unknown_c_FUN_0056a6c4(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.923076923076923,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 5,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_DIV": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 1,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 2,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 64
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "ushort in_AX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "bVar2 = (byte)in_AX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "cVar1 = (char)(in_AX >> 8);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "cVar1 = (char)(in_AX / 10);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "bVar2 = (byte)(in_AX % 10);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*unaff_EBX = cVar1 + '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX[1] = bVar2 + 0x30;",
+      "type": "unaffected_reg"
+    }
+  ]
+}

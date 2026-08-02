@@ -15,13 +15,13 @@ void FUN_00517190(_FILE *param_1);
 // Address: 005171b0
 float __cdecl distancePointToLineSegment(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);
 
-// Original: core_skeleton.cpp_FUN_00517350
+// Original: core_skeleton.cpp_CSkeleton_ctor_FUN_00517350
 // Address: 00517350
-void FUN_00517350(CMotionList *param_1);
+CSkeleton * __cdecl CSkeleton::ctor(CSkeleton *this_ptr);
 
-// Original: core_skeleton.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0
+// Original: core_skeleton.cpp_CSkeleton_dtor_FUN_005173a0
 // Address: 005173a0
-CLodMeshPrecomputeEntry * __cdecl CLodMeshPrecomputeEntry::ctor(CLodMeshPrecomputeEntry *this_ptr);
+CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
 // Address: 005173c0
@@ -61,11 +61,11 @@ int __cdecl CSkeleton::calculateFrameDataSize(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_ctor_FUN_00517b70
 // Address: 00517b70
-undefined4 * CDeformableModel::ctor(int param_1);
+CDeformableModel * __cdecl CDeformableModel::ctor(CDeformableModel *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80
 // Address: 00517c80
-float * CDeformableModel::dtor(CDeformableModel *param_1);
+CDeformableModel * __cdecl CDeformableModel::dtor(CDeformableModel *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
 // Address: 00517cc0

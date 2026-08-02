@@ -77,4 +77,4 @@ void __cdecl CIcePick::drawWeapon(CIcePick *this_ptr,int drawn);
 
 // Original: core_icepick.cpp_CIcePick_dtor_FUN_004bb6b0
 // Address: 004bb6b0
-CHero * CIcePick::dtor(CHero *param_1,byte param_2);
+CIcePick * __cdecl CIcePick::dtor(CIcePick *this_ptr,uint flags);

@@ -11,9 +11,9 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[3]:
-;   FUN_0056c56c at 0056c58c
 ;   crt_math.c_exp_FUN_0056bdd2 at 0056bdf6
 ;   crt_math.c_sqrt_FUN_0056c5a8 at 0056c5cc
+;   crt_unknown.c_FUN_0056c56c at 0056c58c
 ;
 ; Called Functions:
 ;   crt_math.c_set_math_errno_FUN_005706aa

@@ -761,9 +761,9 @@ LAB_004d1fd6:
       }
       break;
     case 7:
-      uVar19 = CONCAT44(uVar20,local_7e8);
+      uVar19 = CONCAT44(uVar20,(CPickList *)local_7e8);
       iVar4 = 0;
-      shape_edittool_cpp_FUN_00474c90(local_7e8);
+      shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_7e8);
       while( true ) {
         uVar20 = (uint)((ulonglong)uVar19 >> 0x20);
         iVar9 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230();

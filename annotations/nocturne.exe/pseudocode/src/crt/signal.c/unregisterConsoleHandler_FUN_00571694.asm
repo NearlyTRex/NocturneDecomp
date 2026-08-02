@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00571718 at 0057179a
-;   FUN_0057189c at 005718a5
 ;   crt_signal.c_processSignal_FUN_005717d8 at 0057183e
+;   crt_unknown.c_FUN_00571718 at 0057179a
+;   crt_unknown.c_FUN_0057189c at 005718a5
 ;
 ; Referenced Globals:
 ;   void* PTR_SetConsoleCtrlHandler_00575584 = 00175f5c

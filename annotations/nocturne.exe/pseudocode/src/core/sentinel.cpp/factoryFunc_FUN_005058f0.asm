@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_sentinel.cpp_FUN_00505920
+;   core_sentinel.cpp_CSentinel_ctor_FUN_00505920
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00505901
     PUSH EAX                            ; 00505902
         ;   Label: LAB_00505902
-    CALL core_sentinel.cpp_FUN_00505920 ; 00505903
-        ;   XREF to: 00505920 (UNCONDITIONAL_CALL)  ; undefined core_sentinel.cpp_FUN_00505920()
+    CALL core_sentinel.cpp_CSentinel_ctor_FUN_00505920 ; 00505903
+        ;   XREF to: 00505920 (UNCONDITIONAL_CALL)  ; CSentinel * core_sentinel.cpp_CSentinel_ctor_FUN_00505920(CSentinel * this_ptr)
     ADD ESP,0x4                         ; 00505908
     RET                                 ; 0050590b
 

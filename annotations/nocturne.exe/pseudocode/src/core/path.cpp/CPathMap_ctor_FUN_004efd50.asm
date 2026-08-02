@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004b46d0 at 004b46e4
-;   core_npc.cpp_FUN_004ee950 at 004ee964
+;   core_npc.cpp_CNPC_ctor_FUN_004ee950 at 004ee964
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc99

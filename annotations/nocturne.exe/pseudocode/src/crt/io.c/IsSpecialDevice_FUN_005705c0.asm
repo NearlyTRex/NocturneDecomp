@@ -7,9 +7,9 @@
 ; int              Stack[0x4]:4   handle_index
 ;
 ; XREF[3]:
-;   FUN_0056f220 at 0056f257
 ;   crt_stdio.c_CreateFileImpl_FUN_0056b960 at 0056bb35
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0 at 0056bbbf
+;   crt_unknown.c_FUN_0056f220 at 0056f257
 ;
 ; Referenced Globals:
 ;   void* PTR_GetFileType_00575514 = 00175d4e

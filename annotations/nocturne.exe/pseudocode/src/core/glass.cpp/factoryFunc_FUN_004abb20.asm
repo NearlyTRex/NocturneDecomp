@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_glass.cpp_FUN_004abb50
+;   core_glass.cpp_CGlass_ctor_FUN_004abb50
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004abb31
     PUSH EAX                            ; 004abb32
         ;   Label: LAB_004abb32
-    CALL core_glass.cpp_FUN_004abb50    ; 004abb33
-        ;   XREF to: 004abb50 (UNCONDITIONAL_CALL)  ; CGlass * core_glass.cpp_FUN_004abb50(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_ctor_FUN_004abb50 ; 004abb33
+        ;   XREF to: 004abb50 (UNCONDITIONAL_CALL)  ; CGlass * core_glass.cpp_CGlass_ctor_FUN_004abb50(CGlass * this_ptr)
     ADD ESP,0x4                         ; 004abb38
     RET                                 ; 004abb3b
 

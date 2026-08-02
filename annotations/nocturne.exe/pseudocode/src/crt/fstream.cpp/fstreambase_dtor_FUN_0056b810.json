@@ -2,26 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 81,
+    "complexity_score": 82,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [
-    {
-      "addr": "0056b7f8",
-      "from_addr": "0056b807",
-      "name": "FUN_0056b7f8",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00565264",
       "from_addr": "005652aa",
@@ -32,6 +26,12 @@
       "addr": "005651ca",
       "from_addr": "00565210",
       "name": "crt_fstream.cpp_ofstream_dtor_FUN_005651ca",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b7f8",
+      "from_addr": "0056b807",
+      "name": "crt_unknown.c_FUN_0056b7f8",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -83,7 +83,7 @@
     },
     {
       "addr": "005a4a2c",
-      "name": "PTR_FUN_005a4a2c",
+      "name": "PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c",
       "type": "void*",
       "value": "0056b7f8"
     },
@@ -122,7 +122,7 @@
       {
         "call_addr": "0056b807",
         "call_type": "direct",
-        "caller": "FUN_0056b7f8",
+        "caller": "crt_unknown.c_FUN_0056b7f8",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -198,12 +198,12 @@
       "line": 17,
       "match": "(int *)((int)(this_ptr->base).layout_info",
       "severity": "moderate",
-      "text": "*(int *)((int)(this_ptr->base).layout_info + 4) + -0x10) = &PTR_FUN_005a4a2c;",
+      "text": "*(int *)((int)(this_ptr->base).layout_info + 4) + -0x10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 20,
       "match": "pfVar2[-1].",
       "severity": "mild",
       "text": "this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);",
@@ -211,7 +211,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 23,
       "match": "piVar3[-2].",
       "severity": "mild",
       "text": "this_ptr = (fstreambase *)&piVar3[-2].__enabled_exceptions;",

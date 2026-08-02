@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (13 diagnostics)
+Clang-Tidy (quick) (11 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -60,213 +60,13 @@ cert-flp30-c (5)
     File: core/vampboss.cpp
     loop induction expression should not have floating-point type
 
-----------------------------------------------------------------------------------------------------
-bugprone-signed-char-misuse (2)
-----------------------------------------------------------------------------------------------------
-
-  FUN_00567964                                       line 74
-    File: .
-    'signed char' to 'short' conversion; consider casting to 'unsigned char' first.
-
-  FUN_00567a5c                                       line 77
-    File: .
-    'signed char' to 'short' conversion; consider casting to 'unsigned char' first.
-
 ====================================================================================================
-Cppcheck (quick) (1589 diagnostics)
+Cppcheck (quick) (1531 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (756)
+uninitvar (709)
 ----------------------------------------------------------------------------------------------------
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_68
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_5c
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_58
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_54
-
-  FUN_00569040                                       line 77
-    File: .
-    Uninitialized variable: cStack_72
-
-  FUN_00569928                                       line 40
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056a0c0                                       line 20
-    File: .
-    Uninitialized variable: in_ECX
-
-  FUN_0056a0c0                                       line 22
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056a0c0                                       line 23
-    File: .
-    Uninitialized variable: in_EDX
-
-  FUN_0056a0f7                                       line 19
-    File: .
-    Uninitialized variable: in_ECX
-
-  FUN_0056a0f7                                       line 21
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056a0f7                                       line 22
-    File: .
-    Uninitialized variable: in_EDX
-
-  FUN_0056a388                                       line 41
-    File: .
-    Uninitialized variable: in_FPUControlWord
-
-  FUN_0056a697                                       line 16
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056a697                                       line 28
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_0056a6ad                                       line 16
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056a6ad                                       line 24
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_0056a6c4                                       line 17
-    File: .
-    Uninitialized variable: in_AX
-
-  FUN_0056a6c4                                       line 19
-    File: .
-    Uninitialized variable: bVar2
-
-  FUN_0056a6c4                                       line 23
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_0056a6dc                                       line 22
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_0056a6dc                                       line 23
-    File: .
-    Uninitialized variable: unaff_EBP
-
-  FUN_0056a6dc                                       line 50
-    File: .
-    Uninitialized variable: unaff_ESI
-
-  FUN_0056bdc8                                       line 18
-    File: .
-    Uninitialized variable: in_ST0
-
-  FUN_0056c4d4                                       line 16
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056c4d4                                       line 18
-    File: .
-    Uninitialized variable: in_FPUStatusWord
-
-  FUN_0056c520                                       line 16
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056c520                                       line 18
-    File: .
-    Uninitialized variable: in_FPUStatusWord
-
-  FUN_0056f573                                       line 61
-    File: .
-    Uninitialized variable: uStack_34
-
-  FUN_0056f573                                       line 62
-    File: .
-    Uninitialized variable: uStack_30
-
-  FUN_0056f573                                       line 63
-    File: .
-    Uninitialized variable: uStack_2c
-
-  FUN_0056f573                                       line 64
-    File: .
-    Uninitialized variable: uStack_28
-
-  FUN_0056f573                                       line 65
-    File: .
-    Uninitialized variable: iStack_3c
-
-  FUN_0056f573                                       line 72
-    File: .
-    Uninitialized variable: extraout_EDX
-
-  FUN_0056fcd0                                       line 14
-    File: .
-    Uninitialized variable: in_AL
-
-  FUN_00570d50                                       line 25
-    File: .
-    Uninitialized variable: in_ST0
-
-  FUN_00570d50                                       line 27
-    File: .
-    Uninitialized variable: in_ST1
-
-  FUN_00571858                                       line 30
-    File: .
-    Uninitialized variable: in_DS
-
-  FUN_00571b2c                                       line 16
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_00571b2c                                       line 19
-    File: .
-    Uninitialized variable: in_EDX
-
-  FUN_00571b8e                                       line 22
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_00571b8e                                       line 22
-    File: .
-    Uninitialized variable: in_EDX
-
-  FUN_00571b8e                                       line 22
-    File: .
-    Uninitialized variable: unaff_EBP
-
-  FUN_00571bdc                                       line 37
-    File: .
-    Uninitialized variable: uStack_38
-
-  FUN_00571bdc                                       line 38
-    File: .
-    Uninitialized variable: uStack_3c
-
-  FUN_00572ef0                                       line 16
-    File: .
-    Uninitialized variable: in_FPUControlWord
-
-  FUN_00574264                                       line 35
-    File: .
-    Uninitialized variable: in_EAX
 
   cockpit_ckptutil.c_FUN_0042d180                    line 23
     File: cockpit/ckptutil.c
@@ -528,27 +328,27 @@ uninitvar (756)
     File: core/boneguy.cpp
     Uninitialized variable: local_48
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 53
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 51
     File: core/boneguy.cpp
     Uninitialized variable: local_84
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 54
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 52
     File: core/boneguy.cpp
     Uninitialized variable: local_8c
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 54
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 52
     File: core/boneguy.cpp
     Uninitialized variable: local_80
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 55
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 53
     File: core/boneguy.cpp
     Uninitialized variable: local_88
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 55
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 53
     File: core/boneguy.cpp
     Uninitialized variable: local_7c
 
-  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 92
+  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_F line 90
     File: core/boneguy.cpp
     Uninitialized variable: unaff_ESI
 
@@ -1996,13 +1796,13 @@ uninitvar (756)
     File: core/pendulum.cpp
     Uninitialized variable: local_3c
 
+  core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90       line 60
+    File: core/platfrm.cpp
+    Uninitialized variable: local_14
+
   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00 line 63
     File: core/platfrm.cpp
     Uninitialized variable: local_68
-
-  core_platfrm.cpp_FUN_004f5d90                      line 60
-    File: core/platfrm.cpp
-    Uninitialized variable: local_14
 
   core_platfrm.cpp_FUN_004f76c0                      line 18
     File: core/platfrm.cpp
@@ -2464,7 +2264,7 @@ uninitvar (756)
     File: core/wateract.cpp
     Uninitialized variable: local_2c
 
-  core_weapon.cpp_CWeapon_updateLighting_FUN_005543c line 31
+  core_weapon.cpp_CWeapon_updateLighting_FUN_005543c line 32
     File: core/weapon.cpp
     Uninitialized variable: fStack_14
 
@@ -2596,27 +2396,27 @@ uninitvar (756)
     File: core/xform.cpp
     Uninitialized variable: unaff_ESI
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 94
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 92
     File: core/zombie.cpp
     Uninitialized variable: local_d0
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 95
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 93
     File: core/zombie.cpp
     Uninitialized variable: local_d8
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 95
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 93
     File: core/zombie.cpp
     Uninitialized variable: local_cc
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 96
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 94
     File: core/zombie.cpp
     Uninitialized variable: local_d4
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 96
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 94
     File: core/zombie.cpp
     Uninitialized variable: local_c8
 
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 145
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN line 143
     File: core/zombie.cpp
     Uninitialized variable: unaff_ESI
 
@@ -3909,20 +3709,8 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (142)
+legacyUninitvar (139)
 ----------------------------------------------------------------------------------------------------
-
-  FUN_00569040                                       line 75
-    File: .
-    Uninitialized variable: iStack_84
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_64
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_60
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 64
     File: cockpit/ckptutil.c
@@ -5601,12 +5389,8 @@ arrayIndexOutOfBounds (69)
     Array 'local_94[18]' accessed at index 19, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (60)
+invalidPointerCast (59)
 ----------------------------------------------------------------------------------------------------
-
-  FUN_0056a1b5                                       line 14
-    File: .
-    Casting from double * to signed int * is not portable due to different binary data representations on different platforms.
 
   core_actor.cpp_FUN_0040bd90                        line 56
     File: core/actor.cpp
@@ -6081,12 +5865,8 @@ ignoredReturnValue (58)
     Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (33)
+objectIndex (32)
 ----------------------------------------------------------------------------------------------------
-
-  FUN_00573ed0                                       line 43
-    File: .
-    The address of local variable 'uStack_48' might be accessed at non-zero index.
 
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 168
     File: core/bodypart.cpp
@@ -6217,16 +5997,8 @@ objectIndex (33)
     The address of local variable 'local_8c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-pointerOutOfBounds (19)
+pointerOutOfBounds (17)
 ----------------------------------------------------------------------------------------------------
-
-  FUN_00573e30                                       line 26
-    File: .
-    Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.
-
-  FUN_00573e30                                       line 31
-    File: .
-    Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 264
     File: core/actor.cpp
@@ -6429,26 +6201,6 @@ negativeIndex (4)
     Array 'auStack_14[3]' accessed at index -1, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerArithmetic (4)
-----------------------------------------------------------------------------------------------------
-
-  FUN_00572b70                                       line 37
-    File: .
-    Pointer addition with NULL pointer.
-
-  FUN_00572b70                                       line 52
-    File: .
-    Pointer addition with NULL pointer.
-
-  FUN_00572b70                                       line 69
-    File: .
-    Pointer addition with NULL pointer.
-
-  core_main.c_FUN_004c8440                           line 54
-    File: core/main.c
-    Pointer addition with NULL pointer.
-
-----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -6509,17 +6261,17 @@ compareBoolExpressionWithInt (1)
     Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
+nullPointerArithmetic (1)
+----------------------------------------------------------------------------------------------------
+
+  core_main.c_FUN_004c8440                           line 54
+    File: core/main.c
+    Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
 integerOverflow (1)
 ----------------------------------------------------------------------------------------------------
 
   sound_sndmain.cpp_startSfx_FUN_005265a0            line 97
     File: sound/sndmain.cpp
     Signed integer overflow for expression 'iVar3+0x2dbd374'.
-
-----------------------------------------------------------------------------------------------------
-memleak (1)
-----------------------------------------------------------------------------------------------------
-
-  FUN_00574570                                       line 48
-    File: .
-    Memory leak: dest

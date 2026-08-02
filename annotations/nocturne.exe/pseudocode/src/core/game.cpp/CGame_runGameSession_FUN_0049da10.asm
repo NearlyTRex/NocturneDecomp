@@ -420,8 +420,8 @@ section .text
         ;   XREF to: 0049df83 (CONDITIONAL_JUMP)  ; LAB_0049df83
     LEA EAX,[EBP + 0xfffffc10]          ; 0049def6
     PUSH EAX                            ; 0049defc
-    CALL shape_edittool.cpp_FUN_00474c90 ; 0049defd
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 0049defd
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049df02
     PUSH 0x582989                       ; 0049df05 | = "Load game"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049df0a
@@ -674,8 +674,8 @@ section .text
     ADD ESP,0x4                         ; 0049e1d6
     LEA EAX,[EBP + 0xfffffd80]          ; 0049e1d9
     PUSH EAX                            ; 0049e1df
-    CALL shape_edittool.cpp_FUN_00474c90 ; 0049e1e0
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 0049e1e0
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049e1e5
     PUSH 0x582940                       ; 0049e1e8 | = "Return"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049e1ed

@@ -15,6 +15,6 @@ CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005524a0(void)
   if (pCVar1 == (CWayPoint *)0x0) {
     return (CWayPoint *)0x0;
   }
-  pCVar1 = core_waypoint_cpp_FUN_005524d0(pCVar1);
+  pCVar1 = core_waypoint_cpp_CWayPoint_ctor_FUN_005524d0(pCVar1);
   return pCVar1;
 }

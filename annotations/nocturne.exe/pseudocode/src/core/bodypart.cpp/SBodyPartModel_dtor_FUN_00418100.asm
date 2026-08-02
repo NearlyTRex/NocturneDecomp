@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_SBodyPartModel_dtor_FUN_00418100(undefined4 param_1)
+; SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_00418100(SBodyPartModel *this_ptr,uint flags)
 ;
+; Parameters:
+; SBodyPartModel * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

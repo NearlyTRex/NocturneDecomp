@@ -16,7 +16,7 @@
 ;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdcf
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_004100f0 at 004100ff
 ;   core_barrier.cpp_CBarrier_dtor_FUN_004118c0 at 004118cf
-;   core_bat.cpp_CStairs_dtor_FUN_00412000 at 00412026
+;   core_bat.cpp_CBat_dtor_FUN_00412000 at 00412026
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0 at 0041333a
 ;   ... and 82 more
 ;

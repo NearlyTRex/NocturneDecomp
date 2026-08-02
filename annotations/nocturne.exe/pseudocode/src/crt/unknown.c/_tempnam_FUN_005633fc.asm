@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
-;   FUN_00568690 at 005686ae
+;   crt_unknown.c_FUN_00568690 at 005686ae
 ;   crt_unknown.c_fclose_FUN_005634b0 at 0056355e
 ;
 ; Called Functions:

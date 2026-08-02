@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_0056b327
-;   FUN_0056ce57
+;   crt_unknown.c_FUN_0056ce57
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00571c62
     PUSH 0x1                            ; 00571c66
     PUSH EBX                            ; 00571c68
-    CALL FUN_0056ce57                   ; 00571c69
-        ;   XREF to: 0056ce57 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ce57()
+    CALL crt_unknown.c_FUN_0056ce57     ; 00571c69
+        ;   XREF to: 0056ce57 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056ce57()
     ADD ESP,0x8                         ; 00571c6e
     TEST EAX,EAX                        ; 00571c71
     JZ 0x00571cbc                       ; 00571c73

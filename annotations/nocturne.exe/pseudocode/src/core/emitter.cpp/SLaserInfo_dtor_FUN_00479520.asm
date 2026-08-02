@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(undefined4 param_1)
+; SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(SLaserInfo *this_ptr,uint flags)
 ;
+; Parameters:
+; SLaserInfo *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

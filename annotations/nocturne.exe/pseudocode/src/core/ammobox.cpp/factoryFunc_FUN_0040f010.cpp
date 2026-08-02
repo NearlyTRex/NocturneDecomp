@@ -15,6 +15,6 @@ CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_0040f010(void)
   if (pCVar1 == (CAmmoBox *)0x0) {
     return (CAmmoBox *)0x0;
   }
-  pCVar1 = core_ammobox_cpp_FUN_0040f040(pCVar1);
+  pCVar1 = core_ammobox_cpp_CAmmoBox_ctor_FUN_0040f040(pCVar1);
   return pCVar1;
 }

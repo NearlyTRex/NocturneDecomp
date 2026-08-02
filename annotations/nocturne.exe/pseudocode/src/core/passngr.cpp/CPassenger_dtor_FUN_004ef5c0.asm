@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CDemonActor *param_1,byte param_2)
+; CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CPassenger *this_ptr,uint flags)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CCharacter_full_vtable g_CPassengerVTable

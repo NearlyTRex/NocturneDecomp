@@ -2,12 +2,12 @@
 // Address: 0040e160
 // Address Range: [[0040e160, 0040e164]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(undefined4 param_1)
+// Signature: CVector3f * __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(CVector3f *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(uint param_1)
+CVector3f * __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(CVector3f *this_ptr)
 
 {
-  return param_1;
+  return this_ptr;
 }

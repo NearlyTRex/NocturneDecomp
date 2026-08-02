@@ -61,7 +61,7 @@
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
-;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -380,8 +380,8 @@ section .text
     LEA EAX,[ESP + 0x200]               ; 004a4f33
         ;   Label: LAB_004a4f33
     PUSH EAX                            ; 004a4f3a
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004a4f3b
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004a4f3b
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004a4f40
     PUSH 0x583e95                       ; 004a4f43 | = "Volume 1 - 'Dark Reign of the Vampire..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a4f48

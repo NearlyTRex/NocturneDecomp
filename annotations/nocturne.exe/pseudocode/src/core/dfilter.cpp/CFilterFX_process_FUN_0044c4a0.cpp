@@ -2,11 +2,11 @@
 // Address: 0044c4a0
 // Address Range: [[0044c4a0, 0044c530]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx *this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx *this_ptr)
+void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr)
 
 {
   CDemonFilter *pCVar1;

@@ -1,24 +1,24 @@
 // Name: core_gasmask.cpp_CGasMask_dtor_FUN_004a8bc0
 // Address: 004a8bc0
 // Address Range: [[004a8bc0, 004a8c0d]]
-// Convention: unknown
-// Signature: CDemonActor * core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CDemonActor *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CGasMask *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CDemonActor *param_1,byte param_2)
+CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CGasMask *this_ptr,uint flags)
 
 {
-  CDemonActor *pCVar1;
+  CGasMask *pCVar1;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CGasMaskTypeInfo_0059e1c0);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CGasMaskTypeInfo_0059e1c0);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(param_1,1);
-  if ((param_2 & 2) == 0) {
+  pCVar1 = (CGasMask *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
+  if ((flags & 2) == 0) {
     return pCVar1;
   }
   FUN_00564494(pCVar1);

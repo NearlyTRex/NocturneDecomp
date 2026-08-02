@@ -89,4 +89,4 @@ int __cdecl CTurret::canPickup(CTurret *this_ptr,CDemonActor *picker);
 
 // Original: core_turret.cpp_CTurret_dtor_FUN_0054b060
 // Address: 0054b060
-CWeapon * CTurret::dtor(CWeapon *param_1,byte param_2);
+CTurret * __cdecl CTurret::dtor(CTurret *this_ptr,uint flags);

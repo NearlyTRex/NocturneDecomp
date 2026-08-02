@@ -15,6 +15,6 @@ CAnvil * __cdecl core_anvil_cpp_factoryFunc_FUN_0040f530(void)
   if (pCVar1 == (CAnvil *)0x0) {
     return (CAnvil *)0x0;
   }
-  pCVar1 = core_anvil_cpp_FUN_0040f560(pCVar1);
+  pCVar1 = core_anvil_cpp_CAnvil_ctor_FUN_0040f560(pCVar1);
   return pCVar1;
 }

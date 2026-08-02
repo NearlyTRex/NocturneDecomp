@@ -15,13 +15,13 @@ CHiram * __cdecl factoryFunc(void);
 // Address: 004b6600
 CDemonActorType * CHiram::getActorType(void);
 
-// Original: core_hiram.cpp_FUN_004b6610
+// Original: core_hiram.cpp_CHiram_ctor_FUN_004b6610
 // Address: 004b6610
-CNPC * FUN_004b6610(CNPC *param_1);
+CHiram * __cdecl CHiram::ctor(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004b6670
 // Address: 004b6670
-CDemonActor * CHiram::dtor(CDemonActor *param_1,byte param_2);
+CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint flags);
 
 // Original: core_hiram.cpp_CHiram_setup_FUN_004b6750
 // Address: 004b6750

@@ -9,13 +9,12 @@
 CHaystack * __cdecl core_haystack_cpp_factoryFunc_FUN_004b3070(void)
 
 {
-  int iVar1;
-  CHaystack *pCVar2;
+  CHaystack *pCVar1;
   
-  iVar1 = FUN_0056497c(0x1fa54);
-  if (iVar1 == 0) {
+  pCVar1 = (CHaystack *)FUN_0056497c(0x1fa54);
+  if (pCVar1 == (CHaystack *)0x0) {
     return (CHaystack *)0x0;
   }
-  pCVar2 = (CHaystack *)core_haystack_cpp_FUN_004b30a0(iVar1);
-  return pCVar2;
+  pCVar1 = core_haystack_cpp_CHaystack_ctor_FUN_004b30a0(pCVar1);
+  return pCVar1;
 }

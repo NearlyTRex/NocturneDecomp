@@ -9,13 +9,12 @@
 CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_00543120(void)
 
 {
-  int iVar1;
-  CBassPlayer *pCVar2;
+  CBassPlayer *pCVar1;
   
-  iVar1 = FUN_0056497c(0x1f578);
-  if (iVar1 == 0) {
+  pCVar1 = (CBassPlayer *)FUN_0056497c(0x1f578);
+  if (pCVar1 == (CBassPlayer *)0x0) {
     return (CBassPlayer *)0x0;
   }
-  pCVar2 = (CBassPlayer *)core_tbplayer_cpp_FUN_00543150(iVar1);
-  return pCVar2;
+  pCVar1 = core_tbplayer_cpp_CBassPlayer_ctor_FUN_00543150(pCVar1);
+  return pCVar1;
 }

@@ -826,7 +826,7 @@ CDemonActor_vtable g_CStairsVTable = {
     .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_returnZero_FUN_0040a130,
     .calculateChecksum = (CDemonActor_calculateChecksum *)core_actor_cpp_CDemonActor_calculateChecksum_FUN_0040b0d0,
     .getActorType = (CDemonActor_getActorType *)core_stairs_cpp_CStairs_getActorType_FUN_005347a0,
-    .dtor = (CDemonActor_dtor *)core_stairs_cpp_CFlies_dtor_FUN_00534c10,
+    .dtor = (CDemonActor_dtor *)core_stairs_cpp_CStairs_dtor_FUN_00534c10,
     .archive = (CDemonActor_archive *)core_stairs_cpp_CStairs_archive_FUN_005348c0
 };
 CDemonActor_vtable g_CTempleStoneVTable = {
@@ -1372,7 +1372,7 @@ CDemonActor_vtable g_CWayPointVTable = {
 
 // CDemonPod_vtable
 CDemonPod_vtable g_CDemonPodVTable = {
-    .dtor = (void *)core_podmain_cpp_FUN_004f93e0,
+    .dtor = (void *)core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0,
     .load = (CPod_load *)core_podmain_cpp_CDemonPod_load_FUN_004f92b0,
     .findFile = (CPod_findFile *)engine_pod_cpp_CPod_findFile_FUN_004f9200,
     .mount = (CPod_mount *)engine_pod_cpp_CPod_mount_FUN_004f88a0,
@@ -2751,11 +2751,11 @@ CWeapon_full_vtable g_CMeleeVTable = {
         .archive = (CDemonActor_archive *)core_melee_cpp_CMelee_archive_FUN_004cedb0
     },
     ._uw = {
-        .onFired = (CWeapon_onFired *)core_weapon_cpp_FUN_00554780,
+        .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_melee_cpp_CMelee_setWeaponState_FUN_004cf180,
-        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_FUN_00554590,
+        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_melee_cpp_CMelee_fire_FUN_004ceed0,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_melee_cpp_FUN_004cef00,
         .fireProjectile = (CWeapon_fireProjectile *)core_melee_cpp_FUN_004cef30,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -2819,9 +2819,9 @@ CWeapon_full_vtable g_CShotgunVTable = {
     ._uw = {
         .onFired = (CWeapon_onFired *)core_shotgun_cpp_CShotgun_onFired_FUN_00516620,
         .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560,
-        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_FUN_00554590,
+        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_shotgun_cpp_FUN_00515ea0,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_shotgun_cpp_CShotgun_getDamage_FUN_00516730,
         .fireProjectile = (CWeapon_fireProjectile *)core_shotgun_cpp_CShotgun_fireProjectile_FUN_00516770,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -2883,11 +2883,11 @@ CWeapon_full_vtable g_CShovelVTable = {
         .archive = (CDemonActor_archive *)core_weapon_cpp_CWeapon_archive_FUN_00554170
     },
     ._uw = {
-        .onFired = (CWeapon_onFired *)core_weapon_cpp_FUN_00554780,
+        .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560,
-        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_FUN_00554590,
+        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_shovel_cpp_CShovel_fire_FUN_00516a90,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_shovel_cpp_FUN_00516ab0,
         .fireProjectile = (CWeapon_fireProjectile *)core_shovel_cpp_FUN_00516ae0,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -2949,11 +2949,11 @@ CWeapon_full_vtable g_CTommyGunVTable = {
         .archive = (CDemonActor_archive *)core_weapon_cpp_CWeapon_archive_FUN_00554170
     },
     ._uw = {
-        .onFired = (CWeapon_onFired *)core_weapon_cpp_FUN_00554780,
+        .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_tommygun_cpp_CTommyGun_setWeaponState_FUN_00546740,
-        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_FUN_00554590,
+        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_tommygun_cpp_FUN_00545c30,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_tommygun_cpp_FUN_00546470,
         .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -3015,11 +3015,11 @@ CWeapon_full_vtable g_CTurretVTable = {
         .archive = (CDemonActor_archive *)core_turret_cpp_CTurret_archive_FUN_0054a000
     },
     ._uw = {
-        .onFired = (CWeapon_onFired *)core_weapon_cpp_FUN_00554780,
+        .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560,
         .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_turret_cpp_FUN_0054aae0,
         .fire = (CWeapon_fire *)core_turret_cpp_CTurret_fire_FUN_0054ab10,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_turret_cpp_FUN_0054aab0,
         .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -3081,11 +3081,11 @@ CWeapon_full_vtable g_CWeaponVTable = {
         .archive = (CDemonActor_archive *)core_weapon_cpp_CWeapon_archive_FUN_00554170
     },
     ._uw = {
-        .onFired = (CWeapon_onFired *)core_weapon_cpp_FUN_00554780,
+        .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560,
-        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_FUN_00554590,
+        .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_weapon_cpp_CWeapon_fire_FUN_00554600,
-        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_FUN_00554630,
+        .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_weapon_cpp_FUN_00554650,
         .fireProjectile = (CWeapon_fireProjectile *)core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
@@ -3160,7 +3160,7 @@ WatcomDestructorCall g_WatcomDestructorCall_005a11d0 = {
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a14e0 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_podmain_cpp_FUN_004f93e0,
+    .destructor_func = (void *)core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0,
     .object_instance = (void *)0x01E528D0
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a16c0 = {
@@ -3170,7 +3170,7 @@ WatcomDestructorCall g_WatcomDestructorCall_005a16c0 = {
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a16cc = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_script_cpp_FUN_004fe4d0,
+    .destructor_func = (void *)core_script_cpp_CScript_dtor_FUN_004fe4d0,
     .object_instance = (void *)0x01E56DA0
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a18c0 = {
@@ -3180,7 +3180,7 @@ WatcomDestructorCall g_WatcomDestructorCall_005a18c0 = {
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a18cc = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_dcamera_cpp_FUN_0043ff30,
+    .destructor_func = (void *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0043ff30,
     .object_instance = (void *)0x01FB8508
 };
 WatcomDestructorCall g_WatcomDestructorCall_005a18d8 = {
@@ -3293,9 +3293,9 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae6b8 = {
 // WatcomTypeInfo
 WatcomTypeInfo g_SPanelTypeInfo_005a0210 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004cbf10,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_SPanel_ctor_FUN_004cbf10,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004cbf20,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_SPanel_dtor_FUN_004cbf20,
     .instance_size = (int)sizeof(SPanel),
     .class_name = (char *)s_SPanel_005badac
 };
@@ -3309,15 +3309,15 @@ WatcomTypeInfo g_SGemTypeInfo_005a0230 = {
 };
 WatcomTypeInfo g_SReflectorTypeInfo_005a0250 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004cbeb0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_SReflector_ctor_FUN_004cbeb0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004cbec0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_SReflector_dtor_FUN_004cbec0,
     .instance_size = (int)sizeof(SReflector),
     .class_name = (char *)s_SReflector_005bad8c
 };
 WatcomTypeInfo g_CMirrorHackTypeInfo_005a0270 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004cbb00,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_CMirrorHack_ctor_FUN_004cbb00,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_CMirrorHack_dtor_FUN_004cbdd0,
     .instance_size = (int)sizeof(CMirrorHack),
@@ -3325,7 +3325,7 @@ WatcomTypeInfo g_CMirrorHackTypeInfo_005a0270 = {
 };
 WatcomTypeInfo g_CMansionPuzzleCircleTypeInfo_005a0290 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_FUN_004c9430,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_004c9430,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20,
     .instance_size = (int)sizeof(CMansionPuzzleCircle),
@@ -3365,7 +3365,7 @@ WatcomTypeInfo g_CMimicTypeInfo_005a0740 = {
 };
 WatcomTypeInfo g_CMineCarTypeInfo_005a0860 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_minecar_cpp_FUN_004d60b0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_minecar_cpp_CMineCar_ctor_FUN_004d60b0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_minecar_cpp_CMineCar_dtor_FUN_004d60d0,
     .instance_size = 0x00000724 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
@@ -3373,17 +3373,17 @@ WatcomTypeInfo g_CMineCarTypeInfo_005a0860 = {
 };
 WatcomTypeInfo g_SClipPlaneTypeInfo_005a08a0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_mirror_cpp_FUN_004d7d70,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_mirror_cpp_SClipPlane_ctor_FUN_004d7d70,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_mirror_cpp_FUN_004d7d80,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_mirror_cpp_SClipPlane_dtor_FUN_004d7d80,
     .instance_size = (int)sizeof(SClipPlane),
     .class_name = (char *)s_SClipPlane_005baf74
 };
 WatcomTypeInfo g_CDemonMissionTypeInfo_005a08e0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_mission_cpp_FUN_004d9e50,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_mission_cpp_CDemonMission_ctor_FUN_004d9e50,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_mission_cpp_FUN_004d9e60,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_mission_cpp_CDemonMission_dtor_FUN_004d9e60,
     .instance_size = 0x0000279C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_CDemonMission_005bb0e4
 };
@@ -3407,16 +3407,16 @@ WatcomTypeInfo g_CCourseTypeInfo_005a0c80 = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_course_cpp_CCourse_ctor_FUN_0043b5d0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_course_cpp_CDemonTriangle_arrdtor_FUN_0043b5f0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_course_cpp_CCourse_dtor_FUN_0043b5f0,
     .instance_size = (int)sizeof(CCourse),
     .class_name = (char *)s_CCourse_005bb224
 };
 WatcomTypeInfo g_SBatTypeInfo_005a0ca0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_moon_cpp_FUN_004df190,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_moon_cpp_SBat_ctor_FUN_004df190,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_moon_cpp_FUN_004df1a0,
-    .instance_size = 0x00000018 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_moon_cpp_SBat_dtor_FUN_004df1a0,
+    .instance_size = (int)sizeof(SBat),
     .class_name = (char *)s_SBat_005bb218
 };
 WatcomTypeInfo g_CMorphModelTypeInfo_005a0ce0 = {
@@ -3445,9 +3445,9 @@ WatcomTypeInfo g_CNetGameTypeInfo_005a0dc0 = {
 };
 WatcomTypeInfo g_SChatHistoryTypeInfo_005a0de0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_netgame_cpp_FUN_004ede40,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_netgame_cpp_SChatHistory_ctor_FUN_004ede40,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_netgame_cpp_FUN_004ede50,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_netgame_cpp_SChatHistory_dtor_FUN_004ede50,
     .instance_size = (int)sizeof(SChatHistory),
     .class_name = (char *)s_SChatHistory_005bdf28
 };
@@ -3517,7 +3517,7 @@ WatcomTypeInfo g_CPodTypeInfo_005a14a0 = {
 };
 WatcomTypeInfo g_CPodFileTypeInfo_005a14c0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_pod_cpp_FUN_004f7a80,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_pod_cpp_CPodFile_ctor_FUN_004f7a80,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0,
     .instance_size = 0x0000021C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
@@ -3527,13 +3527,13 @@ WatcomTypeInfo g_CDemonPodTypeInfo_005a1510 = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_podmain_cpp_CDemonPod_ctor_FUN_004f93c0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_podmain_cpp_FUN_004f93e0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0,
     .instance_size = (int)sizeof(CDemonPod),
     .class_name = (char *)s_CDemonPod_005be1d4
 };
 WatcomTypeInfo g_CScatTypeInfo_005a16a0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_scat_cpp_FUN_004fbc00,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_scat_cpp_CScat_ctor_FUN_004fbc00,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_scat_cpp_CScat_dtor_FUN_004fde30,
     .instance_size = (int)sizeof(CScat),
@@ -3541,15 +3541,15 @@ WatcomTypeInfo g_CScatTypeInfo_005a16a0 = {
 };
 WatcomTypeInfo g_CScriptTypeInfo_005a1700 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_script_cpp_FUN_004fe490,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_script_cpp_CScript_ctor_FUN_004fe490,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_script_cpp_FUN_004fe4d0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_script_cpp_CScript_dtor_FUN_004fe4d0,
     .instance_size = 0x00000478 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_CScript_005be304
 };
 WatcomTypeInfo g_CSentinelTypeInfo_005a18a0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_sentinel_cpp_FUN_00505920,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_sentinel_cpp_CSentinel_ctor_FUN_00505920,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_sentinel_cpp_CSentinel_dtor_FUN_00506a80,
     .instance_size = (int)sizeof(CSentinel),
@@ -3567,7 +3567,7 @@ WatcomTypeInfo g_CDemonCameraTypeInfo_005a1930 = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_dcamera_cpp_FUN_0043ff30,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0043ff30,
     .instance_size = (int)sizeof(CDemonCamera),
     .class_name = (char *)s_CDemonCamera_005be704
 };
@@ -3581,63 +3581,63 @@ WatcomTypeInfo g_CDemonRaytraceTypeInfo_005a1950 = {
 };
 WatcomTypeInfo g_C3DSCameraTypeInfo_005a1970 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setutil_cpp_FUN_005143e0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setutil_cpp_C3DSCamera_ctor_FUN_005143e0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setutil_cpp_FUN_00514410,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setutil_cpp_C3DSCamera_dtor_FUN_00514410,
     .instance_size = 0x000001A0 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_C3DSCamera_005be6d8
 };
 WatcomTypeInfo g_C3DSLightTypeInfo_005a1990 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setutil_cpp_FUN_00514a50,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setutil_cpp_C3DSLight_ctor_FUN_00514a50,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_FUN_0050ea80,
-    .instance_size = 0x00001898 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_C3DSLight_dtor_FUN_0050ea80,
+    .instance_size = (int)sizeof(C3DSLight),
     .class_name = (char *)s_C3DSLight_005be6c4
 };
 WatcomTypeInfo g_SRoomTypeInfo_005a19b0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_set_cpp_FUN_0050ea40,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_set_cpp_SRoom_ctor_FUN_0050ea40,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_FUN_0050ea50,
-    .instance_size = 0x00000044 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_SRoom_dtor_FUN_0050ea50,
+    .instance_size = (int)sizeof(SRoom),
     .class_name = (char *)s_SRoom_CDemonSet_005be6ac
 };
 WatcomTypeInfo g_SVDBoxTypeInfo_005a19d0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_set_cpp_FUN_0050ea60,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_set_cpp_SVDBox_ctor_FUN_0050ea60,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_FUN_0050ea70,
-    .instance_size = 0x00000044 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_set_cpp_SVDBox_dtor_FUN_0050ea70,
+    .instance_size = (int)sizeof(SVDBox),
     .class_name = (char *)s_SVDBox_005be69c
 };
 WatcomTypeInfo g_SRaytraceStateTypeInfo_005a1a10 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511c60,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_SRaytraceState_ctor_FUN_00511c60,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511c70,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_SRaytraceState_dtor_FUN_00511c70,
     .instance_size = (int)sizeof(SRaytraceState),
     .class_name = (char *)s_SRaytraceState_005be761
 };
 WatcomTypeInfo g_SCollisionReturnTypeInfo_005a1a30 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511d20,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00511d20,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511d30,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00511d30,
     .instance_size = (int)sizeof(SCollisionReturnInfo),
     .class_name = (char *)s_SCollisionReturnInfo_005be745
 };
 WatcomTypeInfo g_SIntersectXZCylinderTypeInfo_005a1a50 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511c80,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_setcolid_cpp_SIntersectXZCylinder_ctor_FUN_00511c80,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_FUN_00511c90,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_00511c90,
     .instance_size = (int)sizeof(SIntersectXZCylinder),
     .class_name = (char *)s_SIntersectXZCylinder_005be729
 };
 WatcomTypeInfo g_CShotgunTypeInfo_005a1bf0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_shotgun_cpp_FUN_00515d20,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_shotgun_cpp_CShotgun_ctor_FUN_00515d20,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_shotgun_cpp_CShotgun_dtor_FUN_00516960,
     .instance_size = (int)sizeof(CShotgun),
@@ -3685,9 +3685,9 @@ WatcomTypeInfo g_CDeformableModelTypeInfo_005a1f20 = {
 };
 WatcomTypeInfo g_CSkeletonTypeInfo_005a1f40 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_skeleton_cpp_FUN_00517350,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_skeleton_cpp_CSkeleton_ctor_FUN_00517350,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_skeleton_cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_skeleton_cpp_CSkeleton_dtor_FUN_005173a0,
     .instance_size = 0x0002937C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_CSkeleton_005be9a4
 };
@@ -3701,25 +3701,25 @@ WatcomTypeInfo g_CSmileyTypeInfo_005a2100 = {
 };
 WatcomTypeInfo g_SSfxSlotTypeInfo_005a2180 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_00529a20,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_00529a40,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a40,
     .instance_size = 0x00000120 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_SfxSlot_005bed04
 };
 WatcomTypeInfo g_SSfxOptionsTypeInfo_005a21a0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_005299e0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxOptions_ctor_FUN_005299e0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_00529a50,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a50,
     .instance_size = 0x0000006C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_SfxOptions_005bece4
 };
 WatcomTypeInfo g_SSfxSampleTypeInfo_005a21c0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_00523890,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxSample_ctor_FUN_00523890,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_FUN_005238f0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)sound_sndmain_cpp_CSfxSample_dtor_FUN_005238f0,
     .instance_size = 0x00000168 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
     .class_name = (char *)s_SfxSample_005becc4
 };
@@ -3733,9 +3733,9 @@ WatcomTypeInfo g_CMP3DecoderTypeInfo_005a21e0 = {
 };
 WatcomTypeInfo g_STrainNoiseTypeInfo_005a22f0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_sound_cpp_FUN_0052ee00,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_sound_cpp_STrainNoise_ctor_FUN_0052ee00,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_sound_cpp_FUN_0052ee10,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_sound_cpp_STrainNoise_dtor_FUN_0052ee10,
     .instance_size = (int)sizeof(STrainNoise),
     .class_name = (char *)s_STrainNoise_005beff4
 };
@@ -3757,15 +3757,15 @@ WatcomTypeInfo g_CSpotViewTypeInfo_005a2470 = {
 };
 WatcomTypeInfo g_CStairsTypeInfo_005a2590 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stairs_cpp_FUN_005347b0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stairs_cpp_CStairs_ctor_FUN_005347b0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_stairs_cpp_CFlies_dtor_FUN_00534c10,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_stairs_cpp_CStairs_dtor_FUN_00534c10,
     .instance_size = (int)sizeof(CStairs),
     .class_name = (char *)s_CStairs_005c0fcc
 };
 WatcomTypeInfo g_CTempleStoneTypeInfo_005a26b0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stone_cpp_FUN_00534d00,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stone_cpp_CTempleStone_ctor_FUN_00534d00,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_stone_cpp_CTempleStone_dtor_FUN_00534dc0,
     .instance_size = (int)sizeof(CTempleStone),
@@ -3773,7 +3773,7 @@ WatcomTypeInfo g_CTempleStoneTypeInfo_005a26b0 = {
 };
 WatcomTypeInfo g_CStrangerTypeInfo_005a2890 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stranger_cpp_FUN_005350c0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stranger_cpp_CStranger_ctor_FUN_005350c0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_stranger_cpp_CStranger_dtor_FUN_00540a90,
     .instance_size = (int)sizeof(CStranger),
@@ -3781,7 +3781,7 @@ WatcomTypeInfo g_CStrangerTypeInfo_005a2890 = {
 };
 WatcomTypeInfo g_CSuccubusTypeInfo_005a2a30 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_succubus_cpp_FUN_00540b40,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_succubus_cpp_CSuccubus_ctor_FUN_00540b40,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_succubus_cpp_CSuccubus_dtor_FUN_00541860,
     .instance_size = (int)sizeof(CSuccubus),
@@ -3797,7 +3797,7 @@ WatcomTypeInfo g_CSvetlanaTypeInfo_005a2bc0 = {
 };
 WatcomTypeInfo g_CDrummerTypeInfo_005a2e80 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tbplayer_cpp_FUN_005433a0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tbplayer_cpp_CDrummer_ctor_FUN_005433a0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_tbplayer_cpp_CDrummer_dtor_FUN_00543620,
     .instance_size = (int)sizeof(CDrummer),
@@ -3805,7 +3805,7 @@ WatcomTypeInfo g_CDrummerTypeInfo_005a2e80 = {
 };
 WatcomTypeInfo g_CBassPlayerTypeInfo_005a2ea0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tbplayer_cpp_FUN_00543150,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tbplayer_cpp_CBassPlayer_ctor_FUN_00543150,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_tbplayer_cpp_CBassPlayer_dtor_FUN_005436f0,
     .instance_size = (int)sizeof(CBassPlayer),
@@ -3829,7 +3829,7 @@ WatcomTypeInfo g_CTeleportDestTypeInfo_005a30c0 = {
 };
 WatcomTypeInfo g_CTentacleTypeInfo_005a3250 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tentacle_cpp_FUN_00543b60,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tentacle_cpp_CTentacle_ctor_FUN_00543b60,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_tentacle_cpp_CTentacle_dtor_FUN_00544850,
     .instance_size = (int)sizeof(CTentacle),
@@ -3853,7 +3853,7 @@ WatcomTypeInfo g_CTommyGunTypeInfo_005a33e0 = {
 };
 WatcomTypeInfo g_CTrapTypeInfo_005a3500 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_trap_cpp_FUN_00546820,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_trap_cpp_CTrap_ctor_FUN_00546820,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_trap_cpp_CTrap_dtor_FUN_00546be0,
     .instance_size = (int)sizeof(CTrap),
@@ -3933,9 +3933,9 @@ WatcomTypeInfo g_CWaterTypeInfo_005a3eb0 = {
 };
 WatcomTypeInfo g_SWaterVertexTypeInfo_005a3fd0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_wateract_cpp_FUN_00552340,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_wateract_cpp_SWaterVertex_ctor_FUN_00552340,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_wateract_cpp_FUN_00552350,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_wateract_cpp_SWaterVertex_dtor_FUN_00552350,
     .instance_size = (int)sizeof(SWaterVertex),
     .class_name = (char *)s_SWaterVertex_005c1568
 };
@@ -3949,7 +3949,7 @@ WatcomTypeInfo g_CWaterActorTypeInfo_005a3ff0 = {
 };
 WatcomTypeInfo g_CWayPointTypeInfo_005a4110 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_waypoint_cpp_FUN_005524d0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_waypoint_cpp_CWayPoint_ctor_FUN_005524d0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_waypoint_cpp_CWayPoint_dtor_FUN_00552830,
     .instance_size = (int)sizeof(CWayPoint),
@@ -3965,9 +3965,9 @@ WatcomTypeInfo g_CWeaponTypeInfo_005a4250 = {
 };
 WatcomTypeInfo g_CDemonGlobeTypeInfo_005a4270 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_weapon_cpp_FUN_00554910,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_weapon_cpp_CDemonGlobe_ctor_FUN_00554910,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_weapon_cpp_FUN_00554920,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_weapon_cpp_CDemonGlobe_dtor_FUN_00554920,
     .instance_size = (int)sizeof(CDemonGlobe),
     .class_name = (char *)s_CDemonGlobe_005c1598
 };

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(undefined4 param_1)
+; SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(SCollisionInfo *this_ptr,uint flags)
 ;
+; Parameters:
+; SCollisionInfo * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

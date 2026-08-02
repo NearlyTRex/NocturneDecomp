@@ -27,13 +27,13 @@
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_0056626c
 ;   crt_string.c__stricmp_FUN_00564520
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0
 ;   shape_edittool.cpp_CStrList_sortAll_FUN_00473fd0
 ;   shape_edittool.cpp_FUN_0046fcd0
-;   shape_edittool.cpp_FUN_00474c90
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x698]     ; 0047055a
     LEA EAX,[ESP + 0x400]               ; 00470561
     PUSH EAX                            ; 00470568
-    CALL shape_edittool.cpp_FUN_00474c90 ; 00470569
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 00470569
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0047056e
     MOV EDX,dword ptr [ESP + 0x694]     ; 00470571
     PUSH EDX                            ; 00470578

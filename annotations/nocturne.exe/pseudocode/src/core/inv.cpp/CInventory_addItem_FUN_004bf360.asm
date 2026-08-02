@@ -42,7 +42,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_actor.cpp_createActorByName_FUN_0040d540
-;   core_actor.cpp_FUN_00409cd0
+;   core_actor.cpp_destroyActor_FUN_00409cd0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
@@ -1784,8 +1784,8 @@ section .text
     ADD ESP,0x8                         ; 004c0337
     MOV EDI,dword ptr [ESP + 0x33c]     ; 004c033a
     PUSH EDI                            ; 004c0341
-    CALL core_actor.cpp_FUN_00409cd0    ; 004c0342
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409cd0()
+    CALL core_actor.cpp_destroyActor_FUN_00409cd0 ; 004c0342
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c0347
     PUSH 0x5870e3                       ; 004c034a | = "Found dynamite.  Creating weapon for ..."
     MOV EAX,[0x005ad350]                ; 004c034f | PTR_DAT_005ad350
@@ -2034,8 +2034,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c05ef
     MOV EDX,dword ptr [EAX + 0xc]       ; 004c05f6
     PUSH EDX                            ; 004c05f9
-    CALL core_actor.cpp_FUN_00409cd0    ; 004c05fa
-        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409cd0()
+    CALL core_actor.cpp_destroyActor_FUN_00409cd0 ; 004c05fa
+        ;   XREF to: 00409cd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_destroyActor_FUN_00409cd0(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c05ff
     MOV EAX,dword ptr [ESP + 0x31c]     ; 004c0602
     PUSH EDI                            ; 004c0609

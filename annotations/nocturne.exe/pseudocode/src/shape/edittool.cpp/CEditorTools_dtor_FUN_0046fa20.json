@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 109,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 14,
+        "message": "use of undeclared identifier '_DAT_01bcd07c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 17,
+        "message": "use of undeclared identifier '_DAT_01bcd078'; did you mean 'DAT_005c5078'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_01bcd078'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_01bcd078'; did you mean 'DAT_005c5078'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 28,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046fa20",
+    "address_range": [
+      [
+        "0046fa20",
+        "0046fa76"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_dtor_FUN_0046fa20",
+    "signature": "CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0046fa20(CEditorTools *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005638d0"
+    },
+    {
+      "addr": "004721e0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01bcd078",
+      "name": "DAT_01bcd078",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcd07c",
+      "name": "DAT_01bcd07c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.787878787878788,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 34,
+      "INT_ADD": 11,
+      "INT_AND": 15,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 13,
+      "INT_NOTEQUAL": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 125
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEditorTools",
+        "offset": 8,
+        "vtable_addr": "0059cab4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

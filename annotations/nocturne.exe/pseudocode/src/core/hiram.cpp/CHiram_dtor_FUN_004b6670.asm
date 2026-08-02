@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)
+; CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint flags)
 ;
+; Parameters:
+; CHiram *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CCharacter_full_vtable g_CHiramVTable

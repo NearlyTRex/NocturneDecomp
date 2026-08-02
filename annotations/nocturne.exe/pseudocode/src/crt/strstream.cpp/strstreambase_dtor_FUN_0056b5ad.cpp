@@ -21,7 +21,8 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad(strstr
     pWVar2 = (this_ptr->_strstreambase_core).layout_info;
     *(byte ***)this_ptr->padding =
          &PTR_crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc;
-    *(byte ***)(this_ptr->padding + pWVar2->offset_to_vbase + -0x1c) = &PTR_FUN_005a48c4;
+    *(byte ***)(this_ptr->padding + pWVar2->offset_to_vbase + -0x1c) =
+         &PTR_crt_unknown_c_FUN_0056b491_005a48c4;
     psVar3 = crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf
                        (&(this_ptr->_strstreambase_core)._strstreambuf,0);
     this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;

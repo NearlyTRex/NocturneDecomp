@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[41]:
-;   FUN_00568890 at 005688a1
-;   FUN_00568f70 at 00568f9c
-;   FUN_00569fb0 at 00569fe9
-;   FUN_0056ae10 at 0056ae1c
-;   FUN_0056aefc at 0056af03
-;   FUN_0056e010 at 0056e011
-;   FUN_0056e174 at 0056e179
-;   FUN_0056f2d0 at 0056f2d2
-;   FUN_00570a70 at 00570a95
-;   FUN_005711a8 at 005711ac
+;   crt_exit.c_ExitProcess_FUN_005674b0 at 005674e5
+;   crt_heap.c_TryResizeInPlace_FUN_0056b1a4 at 0056b1a8
+;   crt_io.c_IsSpecialDevice_FUN_005705c0 at 005705c6
+;   crt_io.c_tell_FUN_0056bc10 at 0056bc3e
+;   crt_io.c_write_FUN_0057301c at 00573094
+;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98 at 0056fbd2
+;   crt_stdio.c_InitializeConsoleHandles_FUN_0057146c at 0057146e
+;   crt_stdio.c_WriteConsoleChar_FUN_0056fc30 at 0056fc60
+;   crt_stdio.c___allocfp_FUN_00568560 at 00568563
+;   crt_stdio.c_fclose_FUN_00563380 at 00563385
 ;   ... and 31 more
 ;
 ; *****************************************************************************

@@ -1,0 +1,704 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 344,
+    "complexity_score": 753,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 173,
+    "suspect_count": 54,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "concat_reconstruction",
+      "pointer_truncation",
+      "undefined_data",
+      "undefined_ptr_cast",
+      "unknown_field",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 517
+  },
+  "cross_references": [
+    {
+      "addr": "00567560",
+      "from_addr": "00567753",
+      "name": "crt_unknown.c_FUN_00567560",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00567d88",
+    "address_range": [
+      [
+        "00567d88",
+        "0056808a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00567d88",
+    "signature": "int crt_unknown_c_FUN_00567d88(int param_1,int *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056f100",
+      "is_variadic": false,
+      "name": "crt_math.c_doubleToFloat_FUN_0056f100"
+    },
+    {
+      "addr": "00567540",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00567540"
+    },
+    {
+      "addr": "0056754c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056754c"
+    },
+    {
+      "addr": "00568528",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00568528"
+    },
+    {
+      "addr": "0056f0f0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056f0f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c168c",
+      "name": "DAT_005c168c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1f8c",
+      "name": "PTR_crt_unknown.c_FUN_0056f0f0_005c1f8c",
+      "type": "void*",
+      "value": "0056f0f0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00567753",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_00567560",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9921259842519685,
+    "instruction_count": 254,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "CALL": 10,
+      "CALLIND": 1,
+      "CBRANCH": 40,
+      "COPY": 184,
+      "INT_2COMP": 1,
+      "INT_ADD": 103,
+      "INT_AND": 223,
+      "INT_CARRY": 16,
+      "INT_DIV": 1,
+      "INT_EQUAL": 194,
+      "INT_LEFT": 1,
+      "INT_LESS": 22,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 39,
+      "INT_SEXT": 3,
+      "INT_SLESS": 97,
+      "INT_SUB": 51,
+      "INT_XOR": 5,
+      "INT_ZEXT": 3,
+      "LOAD": 60,
+      "POPCOUNT": 97,
+      "RETURN": 1,
+      "STORE": 56,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 1268
+  },
+  "stack_frame": {
+    "frame_size": 132,
+    "local_size": 132,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7f",
+        "offset": -127,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7e",
+        "offset": -126,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7d",
+        "offset": -125,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7b",
+        "offset": -123,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7a",
+        "offset": -122,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00567d99",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_00567d88(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int FUN_00567d88(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00567540(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 2) == 0) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 2) != 0) goto LAB_00567fbd;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar12 = *(int *)(param_1 + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0xc) = iVar12 + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if ((((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) != 0) || (iVar5 == 0x2e)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_1c._0_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_1c._2_2_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 0x10) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_1c._2_2_ = (short)iVar5 + local_1c._2_2_ * 10 + -0x30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_1c._2_2_ = (short)iVar5 + local_1c._2_2_ * 10 + -0x30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "} while (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) != 0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if ((local_28 == 0) && (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) == 0))",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) == 0) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 0x10) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 97,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_1c._0_2_ = local_18;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((*(byte *)(param_1 + 0x10) & 0x10) == 0) && ((iVar5 == 0x65 || (iVar5 == 0x45)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "if (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00568528(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "} while (((&DAT_005c168c)[(byte)((char)iVar5 + 1)] & 0x20) != 0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 134,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0056754c(iVar5,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((0 < iVar11) && (iVar11 = iVar11 + local_24, (*(byte *)(param_1 + 0x10) & 1) != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 138,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "fVar7 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 139,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 0x10) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 140,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_0056f0f0_005c1f8c)(&local_80,&local_30);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 141,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "fVar7 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 144,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "fVar7 = (float)-CONCAT22(local_1c._2_2_,(ushort)local_1c);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 146,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 4) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 147,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_1 + 0x10) & 8) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 148,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 149,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (int)(puVar4 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 154,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (int)(puVar4 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Cast to undefined pointer type",
+      "line": 159,
+      "match": "(undefined6 *)",
+      "severity": "moderate",
+      "text": "puVar3 = (undefined6 *)*param_2;",
+      "type": "undefined_ptr_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar3 = (undefined6 *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 160,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (int)(puVar3 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 163,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bVar2 = *(byte *)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 171,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar7 = doubleToFloat(__BITCAST_DOUBLE(CONCAT44(local_2c,local_30)));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Pointer value `(puVar4 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)(puVar4 + 1)",
+      "severity": "moderate",
+      "text": "*param_2 = (int)(puVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(puVar4 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 154,
+      "match": "(int)(puVar4 + 1)",
+      "severity": "moderate",
+      "text": "*param_2 = (int)(puVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(puVar3 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 160,
+      "match": "(int)(puVar3 + 1)",
+      "severity": "moderate",
+      "text": "*param_2 = (int)(puVar3 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT12 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 93,
+      "match": "CONCAT12",
+      "severity": "moderate",
+      "text": "uVar6 = CONCAT12(*pcVar1 + -0x30,local_18) / 10;",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 138,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "fVar7 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 141,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "fVar7 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 144,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "fVar7 = (float)-CONCAT22(local_1c._2_2_,(ushort)local_1c);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

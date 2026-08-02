@@ -65,7 +65,7 @@ CTire * __cdecl CTire::ctor(CTire *this_ptr);
 
 // Original: core_vehicle.cpp_CTire_dtor_FUN_0054f890
 // Address: 0054f890
-undefined4 CTire::dtor(undefined4 param_1);
+CTire * __cdecl CTire::dtor(CTire *this_ptr,uint flags);
 
 // Original: core_vehicle.cpp_FUN_0054f8a0
 // Address: 0054f8a0

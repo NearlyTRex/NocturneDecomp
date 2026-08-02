@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -70,7 +70,7 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 52,
+        "line": 53,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -80,20 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 214,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 15,
+    "pseudocode_lines": 45,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 145
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -104,9 +103,9 @@
         "004d4648"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mimic.cpp_CMimic_dtor_FUN_004d4540",
-    "signature": "CDemonActor * core_mimic_cpp_CMimic_dtor_FUN_004d4540(CDemonActor *param_1,byte param_2)"
+    "signature": "CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -183,9 +182,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -214,70 +213,29 @@
     "pcode_op_count": 385
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * core_mimic_cpp_CMimic_dtor_FUN_004d4540(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * core_mimic_cpp_CMimic_dtor_FUN_004d4540(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ptr = __vec_delete(param_1,&g_CMimicTypeInfo_005a0740);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = param_1[0x365].platform_orientation_delta.x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->vtable)._ub = &g_CMimicVTable._ub;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 24,
@@ -293,22 +251,6 @@
       "severity": "moderate",
       "text": "(**(code **)(*(int *)((int)fVar1 + 0x14c) + 200))(fVar1,2);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x365].platform_orientation_delta.x = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = core_morph_cpp_CMorph_dtor_FUN_004e0070((CMorph *)(param_1[0x35c].create_event + 0x14),0)",
-      "type": "unnamed_param"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -328,19 +270,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 42,
       "match": "pCVar8[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 9),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 2) == 0) {",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

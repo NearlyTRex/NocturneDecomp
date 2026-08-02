@@ -15,6 +15,6 @@ CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_004182a0(void)
   if (pCVar1 == (CBoneGuy *)0x0) {
     return (CBoneGuy *)0x0;
   }
-  pCVar1 = core_boneguy_cpp_FUN_00418630(pCVar1);
+  pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00418630(pCVar1);
   return pCVar1;
 }

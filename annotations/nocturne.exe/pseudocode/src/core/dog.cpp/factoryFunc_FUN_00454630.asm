@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_dog.cpp_FUN_00454660
+;   core_dog.cpp_CZombieDog_ctor_FUN_00454660
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00454641
     PUSH EAX                            ; 00454642
         ;   Label: LAB_00454642
-    CALL core_dog.cpp_FUN_00454660      ; 00454643
-        ;   XREF to: 00454660 (UNCONDITIONAL_CALL)  ; undefined core_dog.cpp_FUN_00454660()
+    CALL core_dog.cpp_CZombieDog_ctor_FUN_00454660 ; 00454643
+        ;   XREF to: 00454660 (UNCONDITIONAL_CALL)  ; CZombieDog * core_dog.cpp_CZombieDog_ctor_FUN_00454660(CZombieDog * this_ptr)
     ADD ESP,0x4                         ; 00454648
     RET                                 ; 0045464b
 

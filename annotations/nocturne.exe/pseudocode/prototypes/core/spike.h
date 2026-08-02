@@ -49,4 +49,4 @@ void __cdecl FUN_00533750(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_00533c90
 // Address: 00533c90
-CDemonActor * CSpike::dtor(CDemonActor *param_1,byte param_2);
+CSpike * __cdecl CSpike::dtor(CSpike *this_ptr,uint flags);

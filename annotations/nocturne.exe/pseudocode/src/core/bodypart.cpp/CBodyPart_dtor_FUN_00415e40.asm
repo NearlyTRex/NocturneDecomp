@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CDemonActor *param_1,byte param_2)
+; CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CBodyPart *this_ptr,uint flags)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBodyPartVTable

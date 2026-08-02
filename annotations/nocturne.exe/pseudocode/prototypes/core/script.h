@@ -43,13 +43,13 @@ int * __cdecl getActionState(SPlayerActionState *action_state,char *action_name)
 // Address: 004fe3d0
 int __cdecl parseBodyPartMask(CCharacter *character,char *part_names,int *part_mask);
 
-// Original: core_script.cpp_FUN_004fe490
+// Original: core_script.cpp_CScript_ctor_FUN_004fe490
 // Address: 004fe490
-CScript * __cdecl FUN_004fe490(CScript *this_ptr);
+CScript * __cdecl CScript::ctor(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_004fe4d0
+// Original: core_script.cpp_CScript_dtor_FUN_004fe4d0
 // Address: 004fe4d0
-CStrList * FUN_004fe4d0(int param_1);
+CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
 // Original: core_script.cpp_FUN_004fe500
 // Address: 004fe500

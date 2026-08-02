@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[45]:
-;   FUN_0056bfbb at 0056bfc7
-;   FUN_0056bfd6 at 0056bfea
-;   FUN_0056bff7 at 0056bffe
-;   FUN_0056c01b at 0056c022
-;   FUN_0056c02b at 0056c03a
-;   FUN_0056c04b at 0056c059
-;   FUN_0056c06a at 0056c080
-;   FUN_0056c08f at 0056c098
-;   FUN_0056c0bb at 0056c0c4
-;   FUN_0056c0cf at 0056c0de
+;   crt_math.c_dispatch_divide_FUN_0056bf9f at 0056bfac
+;   crt_math.c_fdiv_thunk_FUN_0056c007 at 0056c00e
+;   crt_math.c_fdiv_thunk_FUN_0056c0a3 at 0056c0ac
+;   crt_math.c_fdiv_thunk_FUN_0056c1eb at 0056c1f4
+;   crt_math.c_fdiv_thunk_FUN_0056c28f at 0056c298
+;   crt_math.c_fdiv_thunk_FUN_0056c333 at 0056c33c
+;   crt_math.c_fdiv_thunk_FUN_0056c3d7 at 0056c3e0
+;   crt_math.c_pentiumFdivpWorkaround_FUN_0056c403 at 0056c40d
+;   crt_unknown.c_FUN_0056bfc0 at 0056bfc7
+;   crt_unknown.c_FUN_0056bfdb at 0056bfea
 ;   ... and 35 more
 ;
 ; Referenced Globals:

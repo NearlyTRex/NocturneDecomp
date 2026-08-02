@@ -13,7 +13,7 @@ CDemonSet * __cdecl CDemonSet::ctor(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_dtor_FUN_00506e50
 // Address: 00506e50
-int * CDemonSet::dtor(CDemonSet *param_1);
+CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 
 // Original: core_set.cpp_CDemonSet_clear_FUN_00506ec0
 // Address: 00506ec0
@@ -287,25 +287,25 @@ void __cdecl CDemonSet::loadStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 // Address: 0050ea10
 int __cdecl CVector3f::equals(CVector3f *a,CVector3f *b);
 
-// Original: core_set.cpp_FUN_0050ea40
+// Original: core_set.cpp_SRoom_ctor_FUN_0050ea40
 // Address: 0050ea40
-undefined4 FUN_0050ea40(undefined4 param_1);
+SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 
-// Original: core_set.cpp_FUN_0050ea50
+// Original: core_set.cpp_SRoom_dtor_FUN_0050ea50
 // Address: 0050ea50
-undefined4 FUN_0050ea50(undefined4 param_1);
+SRoom * __cdecl SRoom::dtor(SRoom *this_ptr,uint flags);
 
-// Original: core_set.cpp_FUN_0050ea60
+// Original: core_set.cpp_SVDBox_ctor_FUN_0050ea60
 // Address: 0050ea60
-undefined4 FUN_0050ea60(undefined4 param_1);
+SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
-// Original: core_set.cpp_FUN_0050ea70
+// Original: core_set.cpp_SVDBox_dtor_FUN_0050ea70
 // Address: 0050ea70
-undefined4 FUN_0050ea70(undefined4 param_1);
+SVDBox * __cdecl SVDBox::dtor(SVDBox *this_ptr,uint flags);
 
-// Original: core_set.cpp_FUN_0050ea80
+// Original: core_set.cpp_C3DSLight_dtor_FUN_0050ea80
 // Address: 0050ea80
-undefined4 FUN_0050ea80(undefined4 param_1);
+C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 
 // Original: core_set.cpp_CVector3f_copy_FUN_0050ea90
 // Address: 0050ea90

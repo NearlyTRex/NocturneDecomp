@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 00409860
 float __cdecl rayCylinderIntersect(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_actor.cpp_FUN_00409cd0
+// Original: core_actor.cpp_destroyActor_FUN_00409cd0
 // Address: 00409cd0
-void FUN_00409cd0(int param_1);
+void __cdecl destroyActor(CDemonActor *actor);
 
 // Original: core_actor.cpp_initTransformCache_FUN_00409cf0
 // Address: 00409cf0
@@ -413,11 +413,11 @@ void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
 // Original: core_actor.cpp_CVector_ctor_FUN_0040e160
 // Address: 0040e160
-undefined4 __cdecl CVector::ctor(undefined4 param_1);
+CVector3f * __cdecl CVector::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040e170
+// Original: core_actor.cpp_CVector_dtor_FUN_0040e170
 // Address: 0040e170
-undefined4 FUN_0040e170(undefined4 param_1);
+CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_actor.cpp_copyVector_FUN_0040e180
 // Address: 0040e180
@@ -433,11 +433,11 @@ void FUN_0040e1cc(void);
 
 // Original: core_actor.cpp_SDamageInfo_dtor_FUN_0040e220
 // Address: 0040e220
-undefined4 SDamageInfo::dtor(undefined4 param_1);
+SDamageInfo * __cdecl SDamageInfo::dtor(SDamageInfo *this_ptr,uint flags);
 
-// Original: core_actor.cpp_FUN_0040e230
+// Original: core_actor.cpp_CBoundingBox3D_ctor_FUN_0040e230
 // Address: 0040e230
-undefined4 FUN_0040e230(undefined4 param_1);
+CBoundingBox3D * __cdecl CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
 
 // Original: core_actor.cpp_CBoundingBox3D_copy_FUN_0040e240
 // Address: 0040e240
@@ -445,7 +445,7 @@ CBoundingBox3D * __cdecl CBoundingBox3D::copy(CBoundingBox3D *this_ptr,CBounding
 
 // Original: core_actor.cpp_CBoundingBox3D_dtor_FUN_0040e290
 // Address: 0040e290
-undefined4 CBoundingBox3D::dtor(undefined4 param_1);
+CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
 
 // Original: core_actor.cpp_CVector_copy_FUN_0040e2a0
 // Address: 0040e2a0

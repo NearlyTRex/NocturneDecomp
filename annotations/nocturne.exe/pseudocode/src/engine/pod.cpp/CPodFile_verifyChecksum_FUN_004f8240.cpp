@@ -35,7 +35,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
               (0x01BCD074,"Checking individual file CRCs");
     iVar9 = 0;
-    shape_edittool_cpp_FUN_00474c90(local_198);
+    shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_198);
     if (0 < *(int *)this_ptr->author_info) {
       iVar4 = 0;
       do {

@@ -15,6 +15,6 @@ void CDemonPod::load(int param_1);
 // Address: 004f93c0
 CDemonPod * __cdecl CDemonPod::ctor(CDemonPod *this_ptr);
 
-// Original: core_podmain.cpp_FUN_004f93e0
+// Original: core_podmain.cpp_CDemonPod_dtor_FUN_004f93e0
 // Address: 004f93e0
-CPod * FUN_004f93e0(CPod *param_1,byte param_2);
+CDemonPod * __cdecl CDemonPod::dtor(CDemonPod *this_ptr,uint flags);

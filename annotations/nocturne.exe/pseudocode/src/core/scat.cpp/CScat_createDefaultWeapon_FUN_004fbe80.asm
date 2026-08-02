@@ -7,7 +7,7 @@
 ; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_004fbc00 at 004fbc57
+;   core_scat.cpp_CScat_ctor_FUN_004fbc00 at 004fbc57
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBaronWeapon_0058de58

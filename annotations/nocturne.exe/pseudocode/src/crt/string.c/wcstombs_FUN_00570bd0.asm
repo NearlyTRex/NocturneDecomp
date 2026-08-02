@@ -11,9 +11,9 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[3]:
-;   FUN_005740b0 at 0057422d
-;   FUN_00574570 at 005745f8
 ;   crt_time.c_tzset_FUN_0056d608 at 0056d5b0
+;   crt_unknown.c_FUN_005740b0 at 0057422d
+;   crt_unknown.c_FUN_00574570 at 005745f8
 ;
 ; Called Functions:
 ;   crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0

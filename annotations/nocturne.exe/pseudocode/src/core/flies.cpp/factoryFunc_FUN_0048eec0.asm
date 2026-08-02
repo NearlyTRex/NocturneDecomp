@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_flies.cpp_FUN_0048eef0
+;   core_flies.cpp_CFlies_ctor_FUN_0048eef0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0048eed1
     PUSH EAX                            ; 0048eed2
         ;   Label: LAB_0048eed2
-    CALL core_flies.cpp_FUN_0048eef0    ; 0048eed3
-        ;   XREF to: 0048eef0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_0048eef0()
+    CALL core_flies.cpp_CFlies_ctor_FUN_0048eef0 ; 0048eed3
+        ;   XREF to: 0048eef0 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_CFlies_ctor_FUN_0048eef0(CFlies * this_ptr)
     ADD ESP,0x4                         ; 0048eed8
     RET                                 ; 0048eedb
 

@@ -27,11 +27,13 @@
 #include "types/classes/CGlassParticle.h"
 #include "types/classes/CGunFlame.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CLaserBeam.h"
 #include "types/classes/CLightningBolt.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
-#include "types/classes/CParticle.h"
+#include "types/classes/CPopcorn.h"
+#include "types/classes/CRainDrop.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CRuleList.h"
 #include "types/classes/CShell.h"
@@ -125,8 +127,8 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
 int core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004821d0(CDemonActor *param_1);
 void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CActorDestination *param_1);
-CDemonActor * core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CDemonActor *param_1,byte param_2);
-CDemonActor * core_filmreel_cpp_CFilmProjector_dtor_FUN_00482360(CDemonActor *param_1,byte param_2);
+CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CFilmReel *this_ptr,uint flags);
+CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_00482360(CFilmProjector *this_ptr,uint flags);
 void __cdecl core_fire_cpp_staticInit_FUN_004823b0(void);
 float __cdecl core_fire_cpp_safeAcos_FUN_00482630(float value);
 void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00482680(CSmokeParticle *this_ptr);
@@ -253,43 +255,43 @@ void __cdecl core_fire_cpp_transformWorldToScreen_FUN_0048c8d0(CVector3i *input,
 int core_fire_cpp_FUN_0048c920(void);
 void __cdecl core_fire_cpp_CBulletTrail_reset_FUN_0048c930(CBulletTrail *this_ptr);
 void core_fire_cpp_FUN_0048c93c(undefined4 *param_1);
-void core_fire_cpp_FUN_0048c960(CParticle *param_1);
-void core_fire_cpp_FUN_0048c980(CParticle *param_1);
-void core_fire_cpp_FUN_0048c990(CParticle *param_1);
-void core_fire_cpp_FUN_0048c9b0(CParticle *param_1);
-void core_fire_cpp_FUN_0048c9c0(CParticle *param_1);
-void core_fire_cpp_FUN_0048c9e0(CParticle *param_1);
-undefined4 core_fire_cpp_FUN_0048c9f0(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048ca00(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048ca10(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048ca20(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048ca30(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048ca40(undefined4 param_1);
+CRainDrop * __cdecl core_fire_cpp_CRaindrop_ctor_FUN_0048c960(CRainDrop *this_ptr);
+CRainDrop * __cdecl core_fire_cpp_CRaindrop_dtor_FUN_0048c980(CRainDrop *this_ptr,uint flags);
+CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_0048c990(CPopcorn *this_ptr);
+CPopcorn * __cdecl core_fire_cpp_CPopcorn_dtor_FUN_0048c9b0(CPopcorn *this_ptr,uint flags);
+CShell * __cdecl core_fire_cpp_CShell_ctor_FUN_0048c9c0(CShell *this_ptr);
+CShell * __cdecl core_fire_cpp_CShell_dtor_FUN_0048c9e0(CShell *this_ptr,uint flags);
+CTrail * __cdecl core_fire_cpp_CTrail_ctor_FUN_0048c9f0(CTrail *this_ptr);
+CTrail * __cdecl core_fire_cpp_CTrail_dtor_FUN_0048ca00(CTrail *this_ptr,uint flags);
+CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_ctor_FUN_0048ca10(CLightningBolt *this_ptr);
+CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_dtor_FUN_0048ca20(CLightningBolt *this_ptr,uint flags);
+CGunFlame * __cdecl core_fire_cpp_CGunFlame_ctor_FUN_0048ca30(CGunFlame *this_ptr);
+CGunFlame * __cdecl core_fire_cpp_CGunFlame_dtor_FUN_0048ca40(CGunFlame *this_ptr,uint flags);
 CCrater * __cdecl core_fire_cpp_CCrater_ctor_FUN_0048ca50(CCrater *this_ptr);
 CCrater * __cdecl core_fire_cpp_CCrater_dtor_FUN_0048ca70(CCrater *this_ptr,uint flags);
 CToss * __cdecl core_fire_cpp_CToss_dtor_FUN_0048ca90(CToss *this_ptr,uint flags);
-undefined4 core_fire_cpp_CExplosion_dtor_FUN_0048cab0(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cac0(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cad0(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cae0(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048caf0(undefined4 param_1);
+CExplosion * __cdecl core_fire_cpp_CExplosion_dtor_FUN_0048cab0(CExplosion *this_ptr,uint flags);
+CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_ctor_FUN_0048cac0(CLaserBeam *this_ptr);
+CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_dtor_FUN_0048cad0(CLaserBeam *this_ptr,uint flags);
+CBulletTrail * __cdecl core_fire_cpp_CBulletTrail_ctor_FUN_0048cae0(CBulletTrail *this_ptr);
+CBulletTrail * __cdecl core_fire_cpp_CBulletTrail_dtor_FUN_0048caf0(CBulletTrail *this_ptr,uint flags);
 CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_0048cb00(CGlassParticle *this_ptr);
 CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_0048cb30(CGlassParticle *this_ptr,uint flags);
-undefined4 core_fire_cpp_FUN_0048cb60(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cb70(undefined4 param_1);
-void core_fire_cpp_FUN_0048cb80(CParticle *param_1);
-void core_fire_cpp_FUN_0048cba0(CParticle *param_1);
-void core_fire_cpp_FUN_0048cbb0(CParticle *param_1);
-void core_fire_cpp_FUN_0048cbd0(CParticle *param_1);
-void core_fire_cpp_FUN_0048cbe0(CParticle *param_1);
-void core_fire_cpp_FUN_0048cc00(CParticle *param_1);
+CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_ctor_FUN_0048cb60(CMuzzleFlash *this_ptr);
+CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_dtor_FUN_0048cb70(CMuzzleFlash *this_ptr,uint flags);
+CRock * __cdecl core_fire_cpp_CRock_ctor_FUN_0048cb80(CRock *this_ptr);
+CRock * __cdecl core_fire_cpp_CRock_dtor_FUN_0048cba0(CRock *this_ptr,uint flags);
+CFireball * __cdecl core_fire_cpp_CFireball_ctor_FUN_0048cbb0(CFireball *this_ptr);
+CFireball * __cdecl core_fire_cpp_CFireball_dtor_FUN_0048cbd0(CFireball *this_ptr,uint flags);
+CSpark * __cdecl core_fire_cpp_CSpark_ctor_FUN_0048cbe0(CSpark *this_ptr);
+CSpark * __cdecl core_fire_cpp_CSpark_dtor_FUN_0048cc00(CSpark *this_ptr,uint flags);
 CStake * __cdecl core_fire_cpp_CStake_ctor_FUN_0048cc10(CStake *this_ptr);
-int * core_fire_cpp_CStake_dtor_FUN_0048cc30(int param_1);
-undefined4 core_fire_cpp_FUN_0048cc50(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cc60(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cc70(undefined4 param_1);
-undefined4 core_fire_cpp_FUN_0048cc80(undefined4 param_1);
-undefined4 core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_0048cc90(undefined4 param_1);
+CStake * __cdecl core_fire_cpp_CStake_dtor_FUN_0048cc30(CStake *this_ptr,uint flags);
+CBulletHole * __cdecl core_fire_cpp_CBulletHole_ctor_FUN_0048cc50(CBulletHole *this_ptr);
+CBulletHole * __cdecl core_fire_cpp_CBulletHole_dtor_FUN_0048cc60(CBulletHole *this_ptr,uint flags);
+CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_ctor_FUN_0048cc70(CSmokeParticle *this_ptr);
+CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_dtor_FUN_0048cc80(CSmokeParticle *this_ptr,uint flags);
+CKeyFramedModelInstance * __cdecl core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_0048cc90(CKeyFramedModelInstance *this_ptr);
 void core_fire_cpp_FUN_0048cca0(void *param_1);
 void core_fire_cpp_FUN_0048ccc0(void *param_1);
 void core_fire_cpp_FUN_0048cce0(void *param_1);
@@ -344,20 +346,20 @@ undefined4 core_flamegun_cpp_FUN_0048ea60(CCharacter *param_1);
 void core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CWeapon *param_1,float param_2);
 float core_flamegun_cpp_FUN_0048ec60(int param_1);
 void core_flamegun_cpp_FUN_0048ec80(void);
-CWeapon * core_flamegun_cpp_CFlameThrower_dtor_FUN_0048ecb0(CWeapon *param_1,byte param_2);
+CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_0048ecb0(CFlameThrower *this_ptr,uint flags);
 void __cdecl core_flashlit_cpp_staticInit_FUN_0048ed00(void);
 CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_0048ed30(void);
 CDemonActorType * core_flashlit_cpp_CFlashlight_getActorType_FUN_0048ed50(void);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(CFlashlight *this_ptr);
-undefined4 core_flashlit_cpp_FUN_0048ede0(void);
-undefined4 core_flashlit_cpp_FUN_0048edf0(void);
-CWeapon * core_flashlit_cpp_CFlashlight_dtor_FUN_0048ee00(CWeapon *param_1,byte param_2);
+int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_0048ede0(CFlashlight *this_ptr);
+float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_0048edf0(CFlashlight *this_ptr);
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_0048ee00(CFlashlight *this_ptr,uint flags);
 void __cdecl xxx_unk_c_staticInit_FUN_0048ee50(void);
 void xxx_unk_c_FUN_0048ee80(void);
 void __cdecl core_flies_cpp_staticInit_FUN_0048ee90(void);
 CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_0048eec0(void);
 CDemonActorType * core_flies_cpp_CFlies_getActorType_FUN_0048eee0(void);
-int core_flies_cpp_FUN_0048eef0(CDemonActor *param_1);
+CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_0048eef0(CFlies *this_ptr);
 void core_flies_cpp_CFlies_setup_FUN_0048efb0(CFlies *param_1);
 void core_flies_cpp_CFlies_archive_FUN_0048eff0(CDemonActor *param_1);
 void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2);
@@ -368,7 +370,7 @@ undefined4 core_flies_cpp_CFlies_getCollisionType_FUN_0048f8e0(void);
 void __cdecl core_flies_cpp_CFlies_initFly_FUN_0048f8f0(CFlies *this_ptr,int fly_index);
 CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point);
 CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(CDemonActor *actor);
-CDemonActor * core_flies_cpp_CFlies_dtor_FUN_0048fc30(CDemonActor *param_1,byte param_2);
+CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_0048fc30(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_0048fca0(SFly *this_ptr);
 SFly * __cdecl core_flies_cpp_SFly_dtor_FUN_0048fcc0(SFly *this_ptr,uint flags);
 void core_flies_cpp_FUN_0048fce0(void *param_1);

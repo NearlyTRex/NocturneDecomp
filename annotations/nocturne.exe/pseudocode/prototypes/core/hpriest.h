@@ -15,9 +15,9 @@ CHighPriestOfGardath * __cdecl factoryFunc(void);
 // Address: 004b9ae0
 CDemonActorType * CHighPriestOfGardath::getActorType(void);
 
-// Original: core_hpriest.cpp_FUN_004b9af0
+// Original: core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004b9af0
 // Address: 004b9af0
-CNPC * FUN_004b9af0(CNPC *param_1);
+CHighPriestOfGardath * __cdecl CHighPriestOfGardath::ctor(CHighPriestOfGardath *this_ptr);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004b9b50
 // Address: 004b9b50

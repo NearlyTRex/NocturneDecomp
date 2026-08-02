@@ -10,7 +10,7 @@
 ;   crt_iostream.cpp_ios_dtor_FUN_0056b633 at 0056b647
 ;
 ; Called Functions:
-;   FUN_00571ef0
+;   crt_unknown.c_FUN_00571ef0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EAX                            ; 0057041e
         ;   Label: LAB_0057041e
     MOV EBX,dword ptr [EAX]             ; 0057041f
-    CALL FUN_00571ef0                   ; 00570421
-        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void FUN_00571ef0(void * buffer)
+    CALL crt_unknown.c_FUN_00571ef0     ; 00570421
+        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00571ef0(void * buffer)
     ADD ESP,0x4                         ; 00570426
     MOV EAX,EBX                         ; 00570429
     JMP 0x00570418                      ; 0057042b

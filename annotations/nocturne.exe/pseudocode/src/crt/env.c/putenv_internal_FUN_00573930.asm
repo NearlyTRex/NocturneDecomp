@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00572b70 at 00572c9e
+;   crt_unknown.c_FUN_00572b70 at 00572c9e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de54a8
@@ -23,9 +23,9 @@
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_string.c_char_in_set_FUN_00572a90
 ;   crt_unknown.c_FUN_005638d0
-;   FUN_00574000
-;   FUN_00574030
-;   FUN_00574264
+;   crt_unknown.c_FUN_00574000
+;   crt_unknown.c_FUN_00574030
+;   crt_unknown.c_FUN_00574264
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 005739c4
     PUSH ESI                            ; 005739c8
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 005739c9
-    CALL FUN_00574000                   ; 005739cd
-        ;   XREF to: 00574000 (UNCONDITIONAL_CALL)  ; undefined FUN_00574000()
+    CALL crt_unknown.c_FUN_00574000     ; 005739cd
+        ;   XREF to: 00574000 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00574000()
     MOV EBP,EAX                         ; 005739d2
     ADD ESP,0x4                         ; 005739d4
     TEST EAX,EAX                        ; 005739d7
@@ -196,8 +196,8 @@ section .text
     JZ 0x00573af4                       ; 00573a86
         ;   XREF to: 00573af4 (CONDITIONAL_JUMP)  ; LAB_00573af4
     PUSH EDI                            ; 00573a88
-    CALL FUN_00574000                   ; 00573a89
-        ;   XREF to: 00574000 (UNCONDITIONAL_CALL)  ; undefined FUN_00574000()
+    CALL crt_unknown.c_FUN_00574000     ; 00573a89
+        ;   XREF to: 00574000 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00574000()
     ADD ESP,0x4                         ; 00573a8e
     LEA ESI,[EAX + 0x1]                 ; 00573a91
     MOV EAX,dword ptr [ESP + 0x4]       ; 00573a94
@@ -226,8 +226,8 @@ section .text
     PUSH ESI                            ; 00573ac5
     PUSH EDI                            ; 00573ac6
     PUSH EAX                            ; 00573ac7
-    CALL FUN_00574030                   ; 00573ac8
-        ;   XREF to: 00574030 (UNCONDITIONAL_CALL)  ; undefined FUN_00574030()
+    CALL crt_unknown.c_FUN_00574030     ; 00573ac8
+        ;   XREF to: 00574030 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00574030()
     ADD ESP,0xc                         ; 00573acd
     CMP EAX,-0x1                        ; 00573ad0
     JNZ 0x00573aeb                      ; 00573ad3
@@ -245,8 +245,8 @@ section .text
     RET                                 ; 00573aea
     PUSH EBX                            ; 00573aeb
         ;   Label: LAB_00573aeb
-    CALL FUN_00574264                   ; 00573aec
-        ;   XREF to: 00574264 (UNCONDITIONAL_CALL)  ; undefined FUN_00574264()
+    CALL crt_unknown.c_FUN_00574264     ; 00573aec
+        ;   XREF to: 00574264 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00574264()
     ADD ESP,0x4                         ; 00573af1
         ;   Label: LAB_00573af1
     ADD ESP,0x14                        ; 00573af4

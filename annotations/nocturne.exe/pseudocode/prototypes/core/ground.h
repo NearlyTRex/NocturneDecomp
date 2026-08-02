@@ -23,9 +23,9 @@ uint __cdecl getGroundTypeColor(EGroundType type);
 // Address: 004b1350
 CGround * __cdecl CGround::ctor(CGround *this_ptr,int width,int height);
 
-// Original: core_ground.cpp_FUN_004b13b0
+// Original: core_ground.cpp_CGround_dtor_FUN_004b13b0
 // Address: 004b13b0
-CGround * FUN_004b13b0(CGround *param_1);
+CGround * __cdecl CGround::dtor(CGround *this_ptr,uint flags);
 
 // Original: core_ground.cpp_CGround_init_FUN_004b13d0
 // Address: 004b13d0

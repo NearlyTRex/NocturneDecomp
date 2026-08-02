@@ -20,7 +20,7 @@ _istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_0056b6e8(_istream *this_ptr
          (WatcomThunkedDestructor *)&PTR_crt_iostream_cpp_istream_dtor_FUN_0056b6e8_005a49c4;
     *(byte ***)
      ((this_ptr->_ios).padding + ((this_ptr->_istream_core).layout_info)->offset_to_base + -9) =
-         &PTR_FUN_005a49cc;
+         &PTR_crt_unknown_c_FUN_0056b6d0_005a49cc;
     if ((flags & 1) == 0) {
       piVar2 = crt_iostream_cpp_ios_dtor_FUN_0056b633(&this_ptr->_ios,1);
       this_ptr = (_istream *)&piVar2[-1].__xalloc_list;

@@ -2,11 +2,11 @@
 // Address: 004ede70
 // Address Range: [[004ede70, 004edf2d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
+// Signature: SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
 
 #include "nocturne.h"
 
-void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
+SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other)
 
 {
   *(uint *)this_ptr->name = *(uint *)other->name;
@@ -39,5 +39,5 @@ void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,
   (this_ptr->player_input).strafe_speed = (other->player_input).strafe_speed;
   (this_ptr->player_input).turn_speed = (other->player_input).turn_speed;
   (this_ptr->player_input).look_up_down_speed = (other->player_input).look_up_down_speed;
-  return;
+  return this_ptr;
 }

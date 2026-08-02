@@ -15,8 +15,8 @@
 ;   crt_io.c_write_FUN_0057301c
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_lseek_FUN_005689c0
-;   FUN_0056f220
-;   FUN_0056f278
+;   crt_unknown.c_FUN_0056f220
+;   crt_unknown.c_FUN_0056f278
 ;
 ; *****************************************************************************
 
@@ -52,14 +52,14 @@ section .text
         ;   XREF to: 00572fe0 (CONDITIONAL_JUMP)  ; LAB_00572fe0
     PUSH EDI                            ; 00572f82
     SUB EBX,EAX                         ; 00572f83
-    CALL FUN_0056f220                   ; 00572f85
-        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f220()
+    CALL crt_unknown.c_FUN_0056f220     ; 00572f85
+        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f220()
     ADD ESP,0x4                         ; 00572f8a
     AND AH,0x7f                         ; 00572f8d
     PUSH EAX                            ; 00572f90
     PUSH EDI                            ; 00572f91
-    CALL FUN_0056f278                   ; 00572f92
-        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f278()
+    CALL crt_unknown.c_FUN_0056f278     ; 00572f92
+        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f278()
     ADD ESP,0x8                         ; 00572f97
     TEST EBX,EBX                        ; 00572f9a
     JLE 0x0057300d                      ; 00572f9c
@@ -105,14 +105,14 @@ section .text
     ADD ESP,0xc                         ; 00572fe9
     PUSH EDI                            ; 00572fec
     MOV EBX,EAX                         ; 00572fed
-    CALL FUN_0056f220                   ; 00572fef
-        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f220()
+    CALL crt_unknown.c_FUN_0056f220     ; 00572fef
+        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f220()
     ADD ESP,0x4                         ; 00572ff4
     AND AH,0x7f                         ; 00572ff7
     PUSH EAX                            ; 00572ffa
     PUSH EDI                            ; 00572ffb
-    CALL FUN_0056f278                   ; 00572ffc
-        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f278()
+    CALL crt_unknown.c_FUN_0056f278     ; 00572ffc
+        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f278()
     ADD ESP,0x8                         ; 00573001
     CMP EBX,-0x1                        ; 00573004
     JNZ 0x0057300d                      ; 00573007

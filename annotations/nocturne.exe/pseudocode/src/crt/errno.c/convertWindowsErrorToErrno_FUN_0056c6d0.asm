@@ -7,11 +7,11 @@
 ; DWORD            Stack[0x4]:4   windows_error
 ;
 ; XREF[5]:
-;   FUN_0056c6b8 at 0056c6c4
-;   FUN_0056f170 at 0056f192
-;   FUN_005740b0 at 00574210
 ;   crt_env.c_putenv_internal_FUN_00573930 at 00573aac
 ;   crt_errno.c___set_errno_FUN_0056c73c at 0056c744
+;   crt_unknown.c_FUN_0056c6b8 at 0056c6c4
+;   crt_unknown.c_FUN_0056f170 at 0056f192
+;   crt_unknown.c_FUN_005740b0 at 00574210
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1da9

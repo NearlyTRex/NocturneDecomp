@@ -13,6 +13,7 @@
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonPart.h"
 #include "types/classes/CDemonRenderer.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CDoor.h"
 #include "types/classes/CDraculaBride.h"
 #include "types/classes/CDrawSurface.h"
@@ -86,13 +87,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance *this_ptr);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance *this_ptr,char *filename);
-undefined4 core_dmodel_cpp_FUN_004545c0(undefined4 param_1);
-undefined4 core_dmodel_cpp_FUN_004545d0(undefined4 param_1);
+CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_004545c0(CDemonTriangle *this_ptr);
+CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_004545d0(CDemonTriangle *this_ptr,uint flags);
 void core_dmodel_cpp_FUN_004545e0(void *param_1);
 void __cdecl core_dog_cpp_staticInit_FUN_00454600(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_00454630(void);
 CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_00454650(void);
-CEnemy * core_dog_cpp_FUN_00454660(CEnemy *param_1);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_00454660(CZombieDog *this_ptr);
 void core_dog_cpp_CZombieDog_setup_FUN_004546d0(CEnemy *param_1);
 void core_dog_cpp_CZombieDog_process_FUN_00454750(CEnemy *param_1,float param_2);
 void core_dog_cpp_CZombieDog_archive_FUN_00454dc0(CEnemy *param_1);
@@ -121,7 +122,7 @@ void core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *param_1);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00456650(CDoor *this_ptr);
 CRuleList * core_door_cpp_FUN_00456690(void);
-CDemonActor * core_door_cpp_CDoor_dtor_FUN_004566b0(CDemonActor *param_1,byte param_2);
+CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_004566b0(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *dest_path,char *directory,char *filename);
 void engine_dosio_cpp_FUN_00456750(undefined4 param_1);
 int __cdecl engine_dosio_cpp_findFile_FUN_004567a0(SFoundFileInfo *context);
@@ -173,7 +174,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(CDraculaBride *this_pt
 void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0045b310(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_0045b330(SFreaky *this_ptr,uint flags);
-CDemonActor * core_dracbrid_cpp_CDraculaBride_dtor_FUN_0045b350(CDemonActor *param_1,byte param_2);
+CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0045b350(CDraculaBride *this_ptr,uint flags);
 CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f *objs,uint flags);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(SFreaky *objs,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);

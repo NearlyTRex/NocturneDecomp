@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   signal_number
 ;
 ; XREF[2]:
-;   FUN_00571858 at 00571886
 ;   crt_signal.c_consoleCtrlHandler_FUN_005715d0 at 005715f2
+;   crt_unknown.c_FUN_00571858 at 00571886
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005717a8 = 0057180b
@@ -18,8 +18,8 @@
 ;   crt_signal.c_raiseFPE_FUN_005716d8
 ;   crt_signal.c_setSignalHandler_FUN_00571510
 ;   crt_signal.c_unregisterConsoleHandler_FUN_00571694
+;   crt_unknown.c_FUN_00571630
 ;   crt_unknown.c_reportAbnormalTermination_FUN_00566f98
-;   FUN_00571630
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     PUSH ESI                            ; 0057182f
     CALL EBX                            ; 00571830
     ADD ESP,0x4                         ; 00571832
-    CALL FUN_00571630                   ; 00571835
-        ;   XREF to: 00571630 (UNCONDITIONAL_CALL)  ; undefined FUN_00571630()
+    CALL crt_unknown.c_FUN_00571630     ; 00571835
+        ;   XREF to: 00571630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571630()
         ;   Label: LAB_00571835
     TEST EAX,EAX                        ; 0057183a
     JNZ 0x00571850                      ; 0057183c

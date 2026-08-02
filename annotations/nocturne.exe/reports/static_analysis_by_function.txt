@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 518
-  Total diagnostics: 1602
+  Functions with findings: 490
+  Total diagnostics: 1542
   Functions flagged by multiple tools: 2
-  .keep.cpp files: 0, raw .cpp files: 518
+  .keep.cpp files: 0, raw .cpp files: 490
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -645,19 +645,6 @@ core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  [.cpp] [Cppcheck (quick)]
   Line  139: [uninitvar] Uninitialized variable: local_34
 
 ----------------------------------------------------------------------------------------------------
-FUN_00569040  [.cpp] [Cppcheck (quick)]
-  File: .  (8 diagnostics)
-
-  Line   75: [legacyUninitvar] Uninitialized variable: iStack_84
-  Line   76: [uninitvar] Uninitialized variable: iStack_68
-  Line   76: [uninitvar] Uninitialized variable: iStack_5c
-  Line   76: [uninitvar] Uninitialized variable: iStack_58
-  Line   76: [uninitvar] Uninitialized variable: iStack_54
-  Line   76: [legacyUninitvar] Uninitialized variable: iStack_64
-  Line   76: [legacyUninitvar] Uninitialized variable: iStack_60
-  Line   77: [uninitvar] Uninitialized variable: cStack_72
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (8 diagnostics)
 
@@ -885,17 +872,6 @@ engine_special.cpp_FUN_00530322  [.cpp] [Cppcheck (quick)]
   Line   80: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-FUN_0056f573  [.cpp] [Cppcheck (quick)]
-  File: .  (6 diagnostics)
-
-  Line   61: [uninitvar] Uninitialized variable: uStack_34
-  Line   62: [uninitvar] Uninitialized variable: uStack_30
-  Line   63: [uninitvar] Uninitialized variable: uStack_2c
-  Line   64: [uninitvar] Uninitialized variable: uStack_28
-  Line   65: [uninitvar] Uninitialized variable: iStack_3c
-  Line   72: [uninitvar] Uninitialized variable: extraout_EDX
-
-----------------------------------------------------------------------------------------------------
 cockpit_drawsurf.cpp_FUN_0045c400  [.cpp] [Cppcheck (quick)]
   File: cockpit/drawsurf.cpp  (6 diagnostics)
 
@@ -932,12 +908,12 @@ core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730  [.cpp] [Cp
 core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0  [.cpp] [Cppcheck (quick)]
   File: core/boneguy.cpp  (6 diagnostics)
 
-  Line   53: [uninitvar] Uninitialized variable: local_84
-  Line   54: [uninitvar] Uninitialized variable: local_8c
-  Line   54: [uninitvar] Uninitialized variable: local_80
-  Line   55: [uninitvar] Uninitialized variable: local_88
-  Line   55: [uninitvar] Uninitialized variable: local_7c
-  Line   92: [uninitvar] Uninitialized variable: unaff_ESI
+  Line   51: [uninitvar] Uninitialized variable: local_84
+  Line   52: [uninitvar] Uninitialized variable: local_8c
+  Line   52: [uninitvar] Uninitialized variable: local_80
+  Line   53: [uninitvar] Uninitialized variable: local_88
+  Line   53: [uninitvar] Uninitialized variable: local_7c
+  Line   90: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0  [.cpp] [Cppcheck (quick)]
@@ -1009,12 +985,12 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0  [.cpp] [Cppcheck (quick)]
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0  [.cpp] [Cppcheck (quick)]
   File: core/zombie.cpp  (6 diagnostics)
 
-  Line   94: [uninitvar] Uninitialized variable: local_d0
-  Line   95: [uninitvar] Uninitialized variable: local_d8
-  Line   95: [uninitvar] Uninitialized variable: local_cc
-  Line   96: [uninitvar] Uninitialized variable: local_d4
-  Line   96: [uninitvar] Uninitialized variable: local_c8
-  Line  145: [uninitvar] Uninitialized variable: unaff_ESI
+  Line   92: [uninitvar] Uninitialized variable: local_d0
+  Line   93: [uninitvar] Uninitialized variable: local_d8
+  Line   93: [uninitvar] Uninitialized variable: local_cc
+  Line   94: [uninitvar] Uninitialized variable: local_d4
+  Line   94: [uninitvar] Uninitialized variable: local_c8
+  Line  143: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_drawLine3D_FUN_00401710  [.cpp] [Cppcheck (quick)]
@@ -1490,54 +1466,6 @@ sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0  [.cpp] [Cppcheck (q
   Line   52: [legacyUninitvar] Uninitialized variable: piStack_24
   Line   73: [uninitvar] Uninitialized variable: iStack_6c
   Line   76: [uninitvar] Uninitialized variable: unaff_EBP
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a0c0  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   20: [uninitvar] Uninitialized variable: in_ECX
-  Line   22: [uninitvar] Uninitialized variable: in_EAX
-  Line   23: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a0f7  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   19: [uninitvar] Uninitialized variable: in_ECX
-  Line   21: [uninitvar] Uninitialized variable: in_EAX
-  Line   22: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a6c4  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   17: [uninitvar] Uninitialized variable: in_AX
-  Line   19: [uninitvar] Uninitialized variable: bVar2
-  Line   23: [uninitvar] Uninitialized variable: unaff_EBX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a6dc  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   22: [uninitvar] Uninitialized variable: unaff_EBX
-  Line   23: [uninitvar] Uninitialized variable: unaff_EBP
-  Line   50: [uninitvar] Uninitialized variable: unaff_ESI
-
-----------------------------------------------------------------------------------------------------
-FUN_00571b8e  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   22: [uninitvar] Uninitialized variable: in_EAX
-  Line   22: [uninitvar] Uninitialized variable: in_EDX
-  Line   22: [uninitvar] Uninitialized variable: unaff_EBP
-
-----------------------------------------------------------------------------------------------------
-FUN_00572b70  [.cpp] [Cppcheck (quick)]
-  File: .  (3 diagnostics)
-
-  Line   37: [nullPointerArithmetic] Pointer addition with NULL pointer.
-  Line   52: [nullPointerArithmetic] Pointer addition with NULL pointer.
-  Line   69: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_FUN_0042d180  [.cpp] [Cppcheck (quick)]
@@ -2066,62 +1994,6 @@ support_codec.cpp_readBitsFromStream_FUN_00438ab0  [.cpp] [Cppcheck (quick)]
   Line   23: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
   Line   38: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
   Line   59: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a697  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_EAX
-  Line   28: [uninitvar] Uninitialized variable: unaff_EBX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a6ad  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_EAX
-  Line   24: [uninitvar] Uninitialized variable: unaff_EBX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056c4d4  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_EAX
-  Line   18: [uninitvar] Uninitialized variable: in_FPUStatusWord
-
-----------------------------------------------------------------------------------------------------
-FUN_0056c520  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_EAX
-  Line   18: [uninitvar] Uninitialized variable: in_FPUStatusWord
-
-----------------------------------------------------------------------------------------------------
-FUN_00570d50  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   25: [uninitvar] Uninitialized variable: in_ST0
-  Line   27: [uninitvar] Uninitialized variable: in_ST1
-
-----------------------------------------------------------------------------------------------------
-FUN_00571b2c  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_EAX
-  Line   19: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-FUN_00571bdc  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   37: [uninitvar] Uninitialized variable: uStack_38
-  Line   38: [uninitvar] Uninitialized variable: uStack_3c
-
-----------------------------------------------------------------------------------------------------
-FUN_00573e30  [.cpp] [Cppcheck (quick)]
-  File: .  (2 diagnostics)
-
-  Line   26: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.
-  Line   31: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_FUN_00430630  [.cpp] [Cppcheck (quick)]
@@ -2831,78 +2703,6 @@ wincore_wddvmem.cpp_swapBuffers_FUN_00553910  [.cpp] [Cppcheck (quick)]
   Line   74: [uninitvar] Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-FUN_00567964  [.cpp] [Clang-Tidy (quick)]
-  File: .  (1 diagnostics)
-
-  Line   74: [bugprone-signed-char-misuse] 'signed char' to 'short' conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-FUN_00567a5c  [.cpp] [Clang-Tidy (quick)]
-  File: .  (1 diagnostics)
-
-  Line   77: [bugprone-signed-char-misuse] 'signed char' to 'short' conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-FUN_00569928  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   40: [uninitvar] Uninitialized variable: in_EAX
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a1b5  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   14: [invalidPointerCast] Casting from double * to signed int * is not portable due to different binary data representations on different platforms.
-
-----------------------------------------------------------------------------------------------------
-FUN_0056a388  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   41: [uninitvar] Uninitialized variable: in_FPUControlWord
-
-----------------------------------------------------------------------------------------------------
-FUN_0056bdc8  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   18: [uninitvar] Uninitialized variable: in_ST0
-
-----------------------------------------------------------------------------------------------------
-FUN_0056fcd0  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   14: [uninitvar] Uninitialized variable: in_AL
-
-----------------------------------------------------------------------------------------------------
-FUN_00571858  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   30: [uninitvar] Uninitialized variable: in_DS
-
-----------------------------------------------------------------------------------------------------
-FUN_00572ef0  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_FPUControlWord
-
-----------------------------------------------------------------------------------------------------
-FUN_00573ed0  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   43: [objectIndex] The address of local variable 'uStack_48' might be accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
-FUN_00574264  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   35: [uninitvar] Uninitialized variable: in_EAX
-
-----------------------------------------------------------------------------------------------------
-FUN_00574570  [.cpp] [Cppcheck (quick)]
-  File: .  (1 diagnostics)
-
-  Line   48: [memleak] Memory leak: dest
-
-----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_FUN_004301f0  [.cpp] [Cppcheck (quick)]
   File: cockpit/ckptutil.c  (1 diagnostics)
 
@@ -3503,16 +3303,16 @@ core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430  [.cpp] [Cppcheck (quick)]
   Line   88: [uninitvar] Uninitialized variable: local_3c
 
 ----------------------------------------------------------------------------------------------------
+core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90  [.cpp] [Cppcheck (quick)]
+  File: core/platfrm.cpp  (1 diagnostics)
+
+  Line   60: [uninitvar] Uninitialized variable: local_14
+
+----------------------------------------------------------------------------------------------------
 core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0  [.cpp] [Cppcheck (quick)]
   File: core/platfrm.cpp  (1 diagnostics)
 
   Line   63: [uninitvar] Uninitialized variable: local_68
-
-----------------------------------------------------------------------------------------------------
-core_platfrm.cpp_FUN_004f5d90  [.cpp] [Cppcheck (quick)]
-  File: core/platfrm.cpp  (1 diagnostics)
-
-  Line   60: [uninitvar] Uninitialized variable: local_14
 
 ----------------------------------------------------------------------------------------------------
 core_podmain.cpp_CDemonPod_load_FUN_004f92b0  [.cpp] [Cppcheck (quick)]
@@ -3716,7 +3516,7 @@ core_vampboss.cpp_FUN_0054c5f0  [.cpp] [Cppcheck (quick)]
 core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0  [.cpp] [Cppcheck (quick)]
   File: core/weapon.cpp  (1 diagnostics)
 
-  Line   31: [uninitvar] Uninitialized variable: fStack_14
+  Line   32: [uninitvar] Uninitialized variable: fStack_14
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_buildMirrorTransform_FUN_0055caf0  [.cpp] [Cppcheck (quick)]

@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -63,56 +63,44 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 21,
+        "column": 30,
         "line": 24,
         "message": "use of undeclared identifier 'DAT_01fb99d4'"
       },
       {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 25,
-        "message": "no matching function for call to 'core_dlight_cpp_FUN_0044e1c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 25,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 56,
-        "line": 25,
+        "column": 48,
+        "line": 26,
         "message": "use of undeclared identifier 'DAT_01fb99d4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier 'FUN_00564494'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 28,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_01fb99d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 30,
+        "line": 31,
         "message": "use of undeclared identifier 'DAT_01fb99d4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 35,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_01fb99d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 45,
+        "line": 46,
         "message": "use of undeclared identifier 'DAT_01fb8508'"
       }
     ],
@@ -122,18 +110,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 96,
+    "complexity_score": 97,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 37,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 108
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -176,7 +164,7 @@
     {
       "addr": "0044e1c0",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044e1c0"
+      "name": "core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0"
     },
     {
       "addr": "0044e3b0",
@@ -315,20 +303,20 @@
       "line": 17,
       "match": "DAT_01fb99d4",
       "severity": "mild",
-      "text": "if (*(int *)(&DAT_01fb99d4 + iVar3) != 0) {",
+      "text": "if (*(CDemonLight **)(&DAT_01fb99d4 + iVar3) != (CDemonLight *)0x0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_01fb99d4",
       "severity": "mild",
-      "text": "uVar2 = core_dlight_cpp_FUN_0044e1c0(*(int *)(&DAT_01fb99d4 + iVar3),0);",
+      "text": "(*(CDemonLight **)(&DAT_01fb99d4 + iVar3),0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_01fb99d4",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01fb99d4 + iVar3) = 0;",
@@ -336,7 +324,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01fb8508",
       "severity": "mild",
       "text": "core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)&DAT_01fb8508);",

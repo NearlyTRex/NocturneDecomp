@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_mimic_cpp_CMimic_dtor_FUN_004d4540(CDemonActor *param_1,byte param_2)
+; CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint flags)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CEnemy_full_vtable g_CMimicVTable

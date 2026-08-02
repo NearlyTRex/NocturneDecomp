@@ -7,7 +7,7 @@
 ; CFilterCache *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dfilter.cpp_FUN_0044bcb0 at 0044bcb6
+;   core_dfilter.cpp_CFilterCache_dtor_FUN_0044bcb0 at 0044bcb6
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 005084f6
 ;
 ; Called Functions:

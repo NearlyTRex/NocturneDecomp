@@ -15,9 +15,9 @@ CFlies * __cdecl factoryFunc(void);
 // Address: 0048eee0
 CDemonActorType * CFlies::getActorType(void);
 
-// Original: core_flies.cpp_FUN_0048eef0
+// Original: core_flies.cpp_CFlies_ctor_FUN_0048eef0
 // Address: 0048eef0
-int FUN_0048eef0(CDemonActor *param_1);
+CFlies * __cdecl CFlies::ctor(CFlies *this_ptr);
 
 // Original: core_flies.cpp_CFlies_setup_FUN_0048efb0
 // Address: 0048efb0
@@ -61,7 +61,7 @@ CFlies * __cdecl findFliesByFollowActor(CDemonActor *actor);
 
 // Original: core_flies.cpp_CFlies_dtor_FUN_0048fc30
 // Address: 0048fc30
-CDemonActor * CFlies::dtor(CDemonActor *param_1,byte param_2);
+CFlies * __cdecl CFlies::dtor(CFlies *this_ptr,uint flags);
 
 // Original: core_flies.cpp_SFly_ctor_FUN_0048fca0
 // Address: 0048fca0

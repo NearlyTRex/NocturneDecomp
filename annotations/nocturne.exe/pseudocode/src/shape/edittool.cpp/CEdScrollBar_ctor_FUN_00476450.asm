@@ -7,7 +7,7 @@
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00474c90 at 00474ca3
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90 at 00474ca3
 ;
 ; *****************************************************************************
 

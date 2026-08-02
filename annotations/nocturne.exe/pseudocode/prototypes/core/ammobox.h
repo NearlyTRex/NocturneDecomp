@@ -15,9 +15,9 @@ CAmmoBox * __cdecl factoryFunc(void);
 // Address: 0040f030
 CDemonActorType * CAmmoBox::getActorType(void);
 
-// Original: core_ammobox.cpp_FUN_0040f040
+// Original: core_ammobox.cpp_CAmmoBox_ctor_FUN_0040f040
 // Address: 0040f040
-CAmmoBox * __cdecl FUN_0040f040(CAmmoBox *this_ptr);
+CAmmoBox * __cdecl CAmmoBox::ctor(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_CAmmoBox_setup_FUN_0040f0f0
 // Address: 0040f0f0
@@ -57,4 +57,4 @@ undefined4 CAmmoBox::canPickup(int param_1,CDemonActor *param_2);
 
 // Original: core_ammobox.cpp_CAmmoBox_dtor_FUN_0040f4b0
 // Address: 0040f4b0
-CDemonActor * CAmmoBox::dtor(CDemonActor *param_1,byte param_2);
+CAmmoBox * __cdecl CAmmoBox::dtor(CAmmoBox *this_ptr,uint flags);

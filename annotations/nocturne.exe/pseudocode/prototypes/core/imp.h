@@ -15,9 +15,9 @@ CImp * __cdecl factoryFunc(void);
 // Address: 004bb750
 CDemonActorType * CImp::getActorType(void);
 
-// Original: core_imp.cpp_FUN_004bb760
+// Original: core_imp.cpp_CImp_ctor_FUN_004bb760
 // Address: 004bb760
-CEnemy * FUN_004bb760(CEnemy *param_1);
+CImp * __cdecl CImp::ctor(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_setup_FUN_004bb7d0
 // Address: 004bb7d0

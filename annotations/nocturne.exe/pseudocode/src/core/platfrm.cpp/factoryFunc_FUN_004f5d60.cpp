@@ -9,13 +9,12 @@
 CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_004f5d60(void)
 
 {
-  int iVar1;
-  CPlatform *pCVar2;
+  CPlatform *pCVar1;
   
-  iVar1 = FUN_0056497c(0x720);
-  if (iVar1 == 0) {
+  pCVar1 = (CPlatform *)FUN_0056497c(0x720);
+  if (pCVar1 == (CPlatform *)0x0) {
     return (CPlatform *)0x0;
   }
-  pCVar2 = (CPlatform *)core_platfrm_cpp_FUN_004f5d90(iVar1);
-  return pCVar2;
+  pCVar1 = core_platfrm_cpp_CPlatform_ctor_FUN_004f5d90(pCVar1);
+  return pCVar1;
 }

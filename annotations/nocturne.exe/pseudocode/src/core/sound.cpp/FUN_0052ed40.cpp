@@ -14,7 +14,7 @@ uint core_sound_cpp_FUN_0052ed40(uint param_1,uint param_2,int *param_3)
   CStrList aCStack_174 [23];
   
   iVar2 = 0;
-  shape_edittool_cpp_FUN_00474c90(aCStack_174);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)aCStack_174);
   do {
     puVar1 = (uint *)((int)&PTR_s_OFF_00594c3d_005bed6c + iVar2);
     iVar2 = iVar2 + 0x10;

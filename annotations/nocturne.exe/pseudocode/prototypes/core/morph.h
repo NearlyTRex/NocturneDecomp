@@ -13,7 +13,7 @@ CMorphModel * __cdecl CMorphModel::ctor(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_dtor_FUN_004df270
 // Address: 004df270
-CMorphModel * CMorphModel::dtor(CMorphModel *param_1);
+CMorphModel * __cdecl CMorphModel::dtor(CMorphModel *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CMorphModel_free_FUN_004df290
 // Address: 004df290

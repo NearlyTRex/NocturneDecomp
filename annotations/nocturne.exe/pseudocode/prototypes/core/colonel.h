@@ -15,9 +15,9 @@ CColonel * __cdecl factoryFunc(void);
 // Address: 00439d20
 CDemonActorType * CColonel::getActorType(void);
 
-// Original: core_colonel.cpp_FUN_00439d30
+// Original: core_colonel.cpp_CColonel_ctor_FUN_00439d30
 // Address: 00439d30
-CHero * FUN_00439d30(CHero *param_1);
+CColonel * __cdecl CColonel::ctor(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_setup_FUN_00439da0
 // Address: 00439da0
@@ -61,4 +61,4 @@ int __cdecl getCurrentMotionState(CMotionController *motion_ptr);
 
 // Original: core_colonel.cpp_CColonel_dtor_FUN_0043ab60
 // Address: 0043ab60
-CHero * CColonel::dtor(CHero *param_1,byte param_2);
+CColonel * __cdecl CColonel::dtor(CColonel *this_ptr,uint flags);

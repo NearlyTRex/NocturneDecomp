@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
 ;   crt_unknown.c_FUN_0056497c
-;   engine_pod.cpp_FUN_004f7a80
+;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 ;   engine_pod.cpp_FUN_004f7ae0
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     JZ 0x004f88c6                       ; 004f88bb
         ;   XREF to: 004f88c6 (CONDITIONAL_JUMP)  ; LAB_004f88c6
     PUSH EAX                            ; 004f88bd
-    CALL engine_pod.cpp_FUN_004f7a80    ; 004f88be
-        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f7a80()
+    CALL engine_pod.cpp_CPodFile_ctor_FUN_004f7a80 ; 004f88be
+        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_ctor_FUN_004f7a80(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 004f88c3
     MOV EDX,dword ptr [EBX]             ; 004f88c6
         ;   Label: LAB_004f88c6

@@ -1,13 +1,13 @@
 // Name: core_curtain.cpp_SCollisionInfo_dtor_FUN_0043f970
 // Address: 0043f970
 // Address Range: [[0043f970, 0043f974]]
-// Convention: unknown
-// Signature: undefined4 core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(undefined4 param_1)
+// Convention: __cdecl
+// Signature: SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(SCollisionInfo *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(uint param_1)
+SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(SCollisionInfo *this_ptr,uint flags)
 
 {
-  return param_1;
+  return this_ptr;
 }

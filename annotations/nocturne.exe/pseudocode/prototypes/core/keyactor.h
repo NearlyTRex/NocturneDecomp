@@ -15,9 +15,9 @@ CKeyActor * __cdecl factoryFunc(void);
 // Address: 004c3450
 CDemonActorType * CKeyActor::getActorType(void);
 
-// Original: core_keyactor.cpp_FUN_004c3460
+// Original: core_keyactor.cpp_CKeyActor_ctor_FUN_004c3460
 // Address: 004c3460
-int * FUN_004c3460(CDemonActor *param_1);
+CKeyActor * __cdecl CKeyActor::ctor(CKeyActor *this_ptr);
 
 // Original: core_keyactor.cpp_CKeyActor_setup_FUN_004c34c0
 // Address: 004c34c0
@@ -53,4 +53,4 @@ void CKeyActor::onPickup(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_keyactor.cpp_CKeyActor_dtor_FUN_004c3710
 // Address: 004c3710
-CDemonActor * CKeyActor::dtor(CDemonActor *param_1,byte param_2);
+CKeyActor * __cdecl CKeyActor::dtor(CKeyActor *this_ptr,uint flags);

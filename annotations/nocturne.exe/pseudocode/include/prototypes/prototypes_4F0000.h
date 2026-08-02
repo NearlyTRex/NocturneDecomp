@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CCharacter.h"
-#include "types/classes/CCourseFrame.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
@@ -20,7 +19,6 @@
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
-#include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -73,7 +71,7 @@ undefined4 * core_pendulum_cpp_CPendulum_getBoundingBox_FUN_004f3c00(int param_1
 void core_pendulum_cpp_CPendulum_archive_FUN_004f3c50(CDemonActor *param_1);
 ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_004f3df0(CPendulum *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_004f3e30(CPendulum *this_ptr);
-CDemonActor * core_pendulum_cpp_CPendulum_dtor_FUN_004f3e40(CDemonActor *param_1,byte param_2);
+CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_004f3e40(CPendulum *this_ptr,uint flags);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_004f3e90(CPackedBitmap *this_ptr);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_004f3eb0(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_004f3f00(CPackedBitmap *this_ptr,uint flags);
@@ -130,7 +128,7 @@ void cockpit_pkbmpset_cpp_FUN_004f5d10(void);
 void __cdecl core_platfrm_cpp_staticInit_FUN_004f5d30(void);
 CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_004f5d60(void);
 CDemonActorType * core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(void);
-CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(CDemonActor *param_1);
+CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_004f5d90(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_004f5f60(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_process_FUN_004f6170(CPlatform *this_ptr,float delta_time);
@@ -151,7 +149,7 @@ uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(uint current_crc,uchar 
 uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *data_buffer,uint byte_count,uint initial_crc);
 uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_004f78d0(_FILE *file_stream,uint total_bytes);
 uint engine_pod_cpp_FUN_004f7980(char *param_1,int param_2);
-void engine_pod_cpp_FUN_004f7a80(undefined4 *param_1);
+CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(CPodFile *this_ptr);
 CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile *this_ptr,uint flags);
 undefined4 engine_pod_cpp_FUN_004f7ae0(CPodFile *param_1,char *param_2);
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(CPodFile *this_ptr);
@@ -178,7 +176,7 @@ int __cdecl engine_pod_cpp_CPod_findFile_FUN_004f9200(CPod *this_ptr,SFoundFileI
 void __cdecl core_podmain_cpp_staticInit_FUN_004f9280(void);
 void core_podmain_cpp_CDemonPod_load_FUN_004f92b0(int param_1);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_004f93c0(CDemonPod *this_ptr);
-CPod * core_podmain_cpp_FUN_004f93e0(CPod *param_1,byte param_2);
+CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0(CDemonPod *this_ptr,uint flags);
 void engine_prim_c_FUN_004f942e(void);
 void engine_prim_c_FUN_004f9440(void);
 void __cdecl engine_prim_c_setCullingMode_FUN_004f9450(int culling_mode);
@@ -205,7 +203,7 @@ undefined4 core_scat_cpp_FUN_004fbb70(void);
 undefined4 core_scat_cpp_FUN_004fbbb0(int param_1);
 CScat * __cdecl core_scat_cpp_factoryFunc_FUN_004fbbd0(void);
 CDemonActorType * core_scat_cpp_CScat_getActorType_FUN_004fbbf0(void);
-CScat * __cdecl core_scat_cpp_FUN_004fbc00(CScat *this_ptr);
+CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_004fbc00(CScat *this_ptr);
 void core_scat_cpp_CScat_setup_FUN_004fbcc0(CHero *param_1);
 void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_004fbe80(CScat *this_ptr);
 void core_scat_cpp_CScat_process_FUN_004fbf20(CScat *param_1,float param_2);
@@ -234,8 +232,8 @@ char * __cdecl core_script_cpp_parseConditionExpr_FUN_004fe140(char **cursor,cha
 CDemonActor * __cdecl core_script_cpp_getActor_FUN_004fe180(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 int * __cdecl core_script_cpp_getActionState_FUN_004fe300(SPlayerActionState *action_state,char *action_name);
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(CCharacter *character,char *part_names,int *part_mask);
-CScript * __cdecl core_script_cpp_FUN_004fe490(CScript *this_ptr);
-CStrList * core_script_cpp_FUN_004fe4d0(int param_1);
+CScript * __cdecl core_script_cpp_CScript_ctor_FUN_004fe490(CScript *this_ptr);
+CScript * __cdecl core_script_cpp_CScript_dtor_FUN_004fe4d0(CScript *this_ptr,uint flags);
 void core_script_cpp_FUN_004fe500(CScript *param_1);
 void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_004fe550(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr);

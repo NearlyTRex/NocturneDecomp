@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_crate.cpp_FUN_0043c810
+;   core_crate.cpp_CCrate_ctor_FUN_0043c810
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0043c7f1
     PUSH EAX                            ; 0043c7f2
         ;   Label: LAB_0043c7f2
-    CALL core_crate.cpp_FUN_0043c810    ; 0043c7f3
-        ;   XREF to: 0043c810 (UNCONDITIONAL_CALL)  ; undefined core_crate.cpp_FUN_0043c810()
+    CALL core_crate.cpp_CCrate_ctor_FUN_0043c810 ; 0043c7f3
+        ;   XREF to: 0043c810 (UNCONDITIONAL_CALL)  ; CCrate * core_crate.cpp_CCrate_ctor_FUN_0043c810(CCrate * this_ptr)
     ADD ESP,0x4                         ; 0043c7f8
     RET                                 ; 0043c7fb
 

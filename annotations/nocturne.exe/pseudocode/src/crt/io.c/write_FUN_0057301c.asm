@@ -34,8 +34,8 @@
 ;   crt_io.c_extend_file_for_append_FUN_00572f40
 ;   crt_stack.c_GetStackUsage_FUN_00571150
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
+;   crt_unknown.c_FUN_0056f220
 ;   crt_unknown.c_stack_overflow_handler_FUN_005670e0
-;   FUN_0056f220
 ;   SetFilePointer
 ;   WriteFile
 ;
@@ -69,8 +69,8 @@ section .text
     MOV EAX,dword ptr [EDX + EDI*0x4]   ; 0057304b
     PUSH EDI                            ; 0057304e
     MOV dword ptr [EBP + -0x8],EAX      ; 0057304f
-    CALL FUN_0056f220                   ; 00573052
-        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f220()
+    CALL crt_unknown.c_FUN_0056f220     ; 00573052
+        ;   XREF to: 0056f220 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f220()
     MOV EBX,EAX                         ; 00573057
     ADD ESP,0x4                         ; 00573059
     MOV dword ptr [EBP + -0x4],EAX      ; 0057305c

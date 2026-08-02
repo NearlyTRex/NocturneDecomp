@@ -8,7 +8,7 @@
 ;   core_bat.cpp_staticInit_FUN_00411910 at 0041191c
 ;
 ; Called Functions:
-;   core_bat.cpp_FUN_00411a10
+;   core_bat.cpp_CBat_ctor_FUN_00411a10
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 004119f1
     PUSH EAX                            ; 004119f2
         ;   Label: LAB_004119f2
-    CALL core_bat.cpp_FUN_00411a10      ; 004119f3
-        ;   XREF to: 00411a10 (UNCONDITIONAL_CALL)  ; undefined core_bat.cpp_FUN_00411a10()
+    CALL core_bat.cpp_CBat_ctor_FUN_00411a10 ; 004119f3
+        ;   XREF to: 00411a10 (UNCONDITIONAL_CALL)  ; CBat * core_bat.cpp_CBat_ctor_FUN_00411a10(CBat * this_ptr)
     ADD ESP,0x4                         ; 004119f8
     RET                                 ; 004119fb
 

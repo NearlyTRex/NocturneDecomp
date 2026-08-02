@@ -94,7 +94,7 @@ LAB_0047078a:
     }
     getcwd(local_17dc,0x104);
     _sprintf(local_1c90,"%s\n%s",in_stack_00000008,local_17dc);
-    shape_edittool_cpp_FUN_00474c90(local_1a60);
+    shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)local_1a60);
     engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00((CFileFinder *)(local_1a60 + 0x170));
     if (in_stack_0000000c == (char *)0x0) {
       in_stack_0000000c = "*.*";

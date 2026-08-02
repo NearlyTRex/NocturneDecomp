@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
-;   core_dlight.cpp_FUN_0044e1c0
+;   core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -31,8 +31,8 @@ section .text
     PUSH 0x0                            ; 0041fa1c
     ADD EBX,0x668                       ; 0041fa1e
     PUSH EBX                            ; 0041fa24
-    CALL core_dlight.cpp_FUN_0044e1c0   ; 0041fa25
-        ;   XREF to: 0044e1c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044e1c0()
+    CALL core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0 ; 0041fa25
+        ;   XREF to: 0044e1c0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0(CDemonLight * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041fa2a
     PUSH 0x0                            ; 0041fa2d
     SUB EAX,0x2dc                       ; 0041fa2f

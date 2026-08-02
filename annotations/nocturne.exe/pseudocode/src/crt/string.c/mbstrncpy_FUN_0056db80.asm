@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c_mbstrnbytes_FUN_0056dbb0
-;   FUN_00570ce0
+;   crt_unknown.c_FUN_00570ce0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 0056db9a
     PUSH ESI                            ; 0056db9e
     PUSH EBX                            ; 0056db9f
-    CALL FUN_00570ce0                   ; 0056dba0
-        ;   XREF to: 00570ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00570ce0()
+    CALL crt_unknown.c_FUN_00570ce0     ; 0056dba0
+        ;   XREF to: 00570ce0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570ce0()
     ADD ESP,0xc                         ; 0056dba5
     MOV EAX,EBX                         ; 0056dba8
     POP ESI                             ; 0056dbaa

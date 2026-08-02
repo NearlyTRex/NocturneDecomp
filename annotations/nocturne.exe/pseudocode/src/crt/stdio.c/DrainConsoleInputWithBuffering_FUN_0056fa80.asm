@@ -24,7 +24,7 @@
 ;   undefined4 DAT_02de5d58
 ;
 ; Called Functions:
-;   FUN_00571440
+;   crt_unknown.c_FUN_00571440
 ;   ReadConsoleInputA
 ;
 ; *****************************************************************************
@@ -92,8 +92,8 @@ section .text
         ;   XREF to: 0056fb73 (CONDITIONAL_JUMP)  ; LAB_0056fb73
     MOV EAX,ESP                         ; 0056fb09
     PUSH EAX                            ; 0056fb0b
-    CALL FUN_00571440                   ; 0056fb0c
-        ;   XREF to: 00571440 (UNCONDITIONAL_CALL)  ; undefined FUN_00571440()
+    CALL crt_unknown.c_FUN_00571440     ; 0056fb0c
+        ;   XREF to: 00571440 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571440()
     ADD ESP,0x4                         ; 0056fb11
     TEST EAX,EAX                        ; 0056fb14
     JZ 0x0056faf1                       ; 0056fb16

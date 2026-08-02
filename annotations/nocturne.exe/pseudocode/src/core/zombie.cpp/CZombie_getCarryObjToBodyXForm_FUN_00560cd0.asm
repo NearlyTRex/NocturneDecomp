@@ -130,7 +130,7 @@ section .text
     LEA EAX,[EBP + 0x6a]                ; 00560d80
     PUSH EAX                            ; 00560d83
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00560d84
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
     FLD float ptr [EBP + -0x56]         ; 00560d89
     FLD float ptr [EBP + -0x52]         ; 00560d8c
     FLD float ptr [EBP + -0x4e]         ; 00560d8f
@@ -149,7 +149,7 @@ section .text
     FSTP float ptr [EBP + 0x6e]         ; 00560daf
     FSTP float ptr [EBP + 0x72]         ; 00560db2
     CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00560db5
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CVector_ctor_FUN_0040e160()
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
     FLD float ptr [0x00598782]          ; 00560dba | FLOAT_00598782
     FLD float ptr [EBP + 0x6a]          ; 00560dc0
     FMUL ST1                            ; 00560dc3

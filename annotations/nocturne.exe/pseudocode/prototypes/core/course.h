@@ -19,9 +19,9 @@ void FUN_0043b5b0(void);
 // Address: 0043b5d0
 CCourse * __cdecl CCourse::ctor(CCourse *this_ptr);
 
-// Original: core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
+// Original: core_course.cpp_CCourse_dtor_FUN_0043b5f0
 // Address: 0043b5f0
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
+CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_0043b610
 // Address: 0043b610

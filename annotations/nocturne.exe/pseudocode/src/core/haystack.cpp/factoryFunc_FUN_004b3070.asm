@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_haystack.cpp_FUN_004b30a0
+;   core_haystack.cpp_CHaystack_ctor_FUN_004b30a0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004b3081
     PUSH EAX                            ; 004b3082
         ;   Label: LAB_004b3082
-    CALL core_haystack.cpp_FUN_004b30a0 ; 004b3083
-        ;   XREF to: 004b30a0 (UNCONDITIONAL_CALL)  ; undefined core_haystack.cpp_FUN_004b30a0()
+    CALL core_haystack.cpp_CHaystack_ctor_FUN_004b30a0 ; 004b3083
+        ;   XREF to: 004b30a0 (UNCONDITIONAL_CALL)  ; CHaystack * core_haystack.cpp_CHaystack_ctor_FUN_004b30a0(CHaystack * this_ptr)
     ADD ESP,0x4                         ; 004b3088
     RET                                 ; 004b308b
 

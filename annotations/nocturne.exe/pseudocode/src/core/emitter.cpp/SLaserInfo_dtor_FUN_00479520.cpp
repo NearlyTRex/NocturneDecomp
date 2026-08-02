@@ -1,13 +1,13 @@
 // Name: core_emitter.cpp_SLaserInfo_dtor_FUN_00479520
 // Address: 00479520
 // Address Range: [[00479520, 00479524]]
-// Convention: unknown
-// Signature: undefined4 core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(undefined4 param_1)
+// Convention: __cdecl
+// Signature: SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(SLaserInfo *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(uint param_1)
+SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(SLaserInfo *this_ptr,uint flags)
 
 {
-  return param_1;
+  return this_ptr;
 }

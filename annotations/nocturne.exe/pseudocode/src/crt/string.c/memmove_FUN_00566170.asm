@@ -9,8 +9,6 @@
 ; SIZE_T           Stack[0xc]:4   n
 ;
 ; XREF[45]:
-;   FUN_00574264 at 005743bf
-;   FUN_00574404 at 005744b3
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310 at 0045d57a
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420 at 00480538
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 004803f8
@@ -19,6 +17,8 @@
 ;   core_event.cpp_CEventList_process_FUN_0047aa50 at 0047ab2e
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00480950 at 00480af6
 ;   core_event.cpp_CEventList_setCounter_FUN_004806d0 at 0048072e
+;   core_event.cpp_CEventList_setTimerEvent_FUN_00480550 at 0048060e
+;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e99
 ;   ... and 35 more
 ;
 ; *****************************************************************************

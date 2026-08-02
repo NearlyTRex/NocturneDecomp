@@ -9,13 +9,12 @@
 CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004120d0(void)
 
 {
-  int iVar1;
-  CBatCreature *pCVar2;
+  CBatCreature *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd6c);
-  if (iVar1 == 0) {
+  pCVar1 = (CBatCreature *)FUN_0056497c(0xbd6c);
+  if (pCVar1 == (CBatCreature *)0x0) {
     return (CBatCreature *)0x0;
   }
-  pCVar2 = (CBatCreature *)core_batcreat_cpp_FUN_00412100(iVar1);
-  return pCVar2;
+  pCVar1 = core_batcreat_cpp_CBatCreature_ctor_FUN_00412100(pCVar1);
+  return pCVar1;
 }

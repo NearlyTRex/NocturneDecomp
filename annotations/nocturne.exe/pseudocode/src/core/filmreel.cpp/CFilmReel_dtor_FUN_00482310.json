@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -68,16 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 91,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 56
   },
   "cross_references": [],
@@ -89,9 +87,9 @@
         "0048235d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_filmreel.cpp_CFilmReel_dtor_FUN_00482310",
-    "signature": "CDemonActor * core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CDemonActor *param_1,byte param_2)"
+    "signature": "CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CFilmReel *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -127,9 +125,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -155,71 +153,29 @@
     "pcode_op_count": 124
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilmReel *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * core_filmreel_cpp_CFilmReel_dtor_FUN_00482310(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ptr = __vec_delete(param_1,&g_CFilmReelTypeInfo_0059d140);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 2) == 0) {",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

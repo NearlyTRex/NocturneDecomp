@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx *this_ptr)
+; CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFX *this_ptr)
 ;
 ; Parameters:
-; CFilterFx *      Stack[0x4]:4   this_ptr
+; CFilterFX *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dfilter.cpp_staticInit_FUN_0044bc20 at 0044bc81

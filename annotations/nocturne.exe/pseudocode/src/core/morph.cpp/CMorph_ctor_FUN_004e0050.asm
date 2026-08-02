@@ -11,7 +11,7 @@
 ;   core_mimic.cpp_CMimic_ctor_FUN_004d4450 at 004d4473
 ;   core_moloch.cpp_CMoloch_ctor_FUN_004dd930 at 004dd954
 ;   core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 at 004ef4fb
-;   core_succubus.cpp_FUN_00540b40 at 00540b72
+;   core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 at 00540b72
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 at 0054c2fc
 ;
 ; Referenced Globals:

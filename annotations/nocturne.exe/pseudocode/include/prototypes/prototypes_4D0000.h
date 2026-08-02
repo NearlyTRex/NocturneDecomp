@@ -25,6 +25,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/EInputCodeType.h"
+#include "types/structs/SBat.h"
 #include "types/structs/SCPUInfo.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
@@ -59,7 +60,7 @@ void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void);
 CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_004d4420(void);
 CDemonActorType * core_mimic_cpp_CMimic_getActorType_FUN_004d4440(void);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr);
-CDemonActor * core_mimic_cpp_CMimic_dtor_FUN_004d4540(CDemonActor *param_1,byte param_2);
+CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint flags);
 void core_mimic_cpp_CMimic_setup_FUN_004d4650(CEnemy *param_1);
 void core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *param_1,float param_2);
 void __cdecl core_mimic_cpp_FUN_004d4ba0(CMimic *this_ptr);
@@ -79,7 +80,7 @@ CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_004d5fe0(void);
 CDemonActorType * core_minecar_cpp_CMineCar_getActorType_FUN_004d6010(void);
 void __cdecl core_minecar_cpp_CMinecar_setup_FUN_004d6020(CMineCar *this_ptr);
 void core_minecar_cpp_CMineCar_process_FUN_004d6040(CPlatform *param_1,float param_2);
-void core_minecar_cpp_FUN_004d60b0(undefined4 param_1);
+CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_004d60b0(CMineCar *this_ptr);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_004d60d0(CMineCar *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_004d6140(void);
 void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004d6170(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
@@ -99,8 +100,8 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(CMirror *this_ptr);
 void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(CMirrorReflection *param_1,int *param_2);
 void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *param_1,int *param_2,int *param_3);
-undefined4 core_mirror_cpp_FUN_004d7d70(undefined4 param_1);
-undefined4 core_mirror_cpp_FUN_004d7d80(undefined4 param_1);
+SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_004d7d70(SClipPlane *this_ptr);
+SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_004d7d80(SClipPlane *this_ptr,uint flags);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane *objs,uint flags);
 void core_mirror_cpp_FUN_004d7db0(void);
 void __cdecl core_mission_cpp_staticInit_FUN_004d7dd0(void);
@@ -141,8 +142,8 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission *this_ptr);
 int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(CDemonMission *this_ptr);
-undefined4 core_mission_cpp_FUN_004d9e50(undefined4 param_1);
-undefined4 core_mission_cpp_FUN_004d9e60(undefined4 param_1);
+CDemonMission * __cdecl core_mission_cpp_CDemonMission_ctor_FUN_004d9e50(CDemonMission *this_ptr);
+CDemonMission * __cdecl core_mission_cpp_CDemonMission_dtor_FUN_004d9e60(CDemonMission *this_ptr,uint flags);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_004d9e70(void);
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004d9f59(void);
@@ -182,7 +183,7 @@ void __cdecl core_moloch_cpp_staticInit_FUN_004dd8d0(void);
 CMoloch * __cdecl core_moloch_cpp_factoryFunc_FUN_004dd900(void);
 CDemonActorType * core_moloch_cpp_CMoloch_getActorType_FUN_004dd920(void);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_004dd930(CMoloch *this_ptr);
-CHero * core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CHero *param_1,byte param_2);
+CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CMoloch *this_ptr,uint flags);
 void core_moloch_cpp_CMoloch_setup_FUN_004dda70(CHero *param_1);
 void core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *param_1,float param_2);
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,float delta_time);
@@ -200,14 +201,14 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta
 void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr);
 void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *this_ptr);
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon *this_ptr);
-undefined4 core_moon_cpp_FUN_004df190(undefined4 param_1);
-undefined4 core_moon_cpp_FUN_004df1a0(undefined4 param_1);
+SBat * __cdecl core_moon_cpp_SBat_ctor_FUN_004df190(SBat *this_ptr);
+SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_004df1a0(SBat *this_ptr,uint flags);
 void core_moon_cpp_FUN_004df1b0(void);
 void core_moon_cpp_FUN_004df1d0(void *param_1);
 void core_moon_cpp_FUN_004df1f0(void *param_1);
 int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr);
-CMorphModel * core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *param_1);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *this_ptr,uint flags);
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(CMorphModel *this_ptr);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data);

@@ -11,7 +11,8 @@ int __cdecl _vsprintf(char *buffer,char *format,va_list_t args)
 {
   int iVar1;
   
-  iVar1 = FUN_00569040(buffer,format,args.value[0],StringBufferCallback);
+  iVar1 = FUN_00569040
+                    (buffer,format,args.value[0],StringBufferCallback);
   buffer[iVar1] = '\0';
   return iVar1;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_health_cpp_CHealthItem_dtor_FUN_004b4460(CDemonActor *param_1,byte param_2)
+; CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004b4460(CHealthItem *this_ptr,uint flags)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CHealthItemTypeInfo_0059eaf0

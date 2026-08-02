@@ -16,16 +16,16 @@
   },
   "cross_references": [
     {
-      "addr": "00570ad0",
-      "from_addr": "00570b44",
-      "name": "FUN_00570ad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00565dc0",
       "from_addr": "00565dc0",
       "name": "crt_io.c_getFileStat_FUN_00565dc0",
       "type": "UNCONDITIONAL_JUMP"
+    },
+    {
+      "addr": "00570ad0",
+      "from_addr": "00570b44",
+      "name": "crt_unknown.c_FUN_00570ad0",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -97,6 +97,11 @@
       "name": "crt_unknown.c_FUN_00566570"
     },
     {
+      "addr": "005708c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005708c0"
+    },
+    {
       "addr": "0056c5f0",
       "is_variadic": false,
       "name": "crt_watcom.c_getcwd_FUN_0056c5f0"
@@ -110,11 +115,6 @@
       "addr": "EXTERNAL:00000050",
       "is_variadic": false,
       "name": "FindFirstFileA"
-    },
-    {
-      "addr": "005708c0",
-      "is_variadic": false,
-      "name": "FUN_005708c0"
     }
   ],
   "globals": [
@@ -149,7 +149,7 @@
       {
         "call_addr": "00570b44",
         "call_type": "direct",
-        "caller": "FUN_00570ad0",
+        "caller": "crt_unknown.c_FUN_00570ad0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

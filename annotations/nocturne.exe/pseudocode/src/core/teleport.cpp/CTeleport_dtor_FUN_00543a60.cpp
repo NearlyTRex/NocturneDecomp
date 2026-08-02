@@ -1,24 +1,24 @@
 // Name: core_teleport.cpp_CTeleport_dtor_FUN_00543a60
 // Address: 00543a60
 // Address Range: [[00543a60, 00543aad]]
-// Convention: unknown
-// Signature: CDemonActor * core_teleport_cpp_CTeleport_dtor_FUN_00543a60(CDemonActor *param_1,byte param_2)
+// Convention: __cdecl
+// Signature: CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_00543a60(CTeleport *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-CDemonActor * core_teleport_cpp_CTeleport_dtor_FUN_00543a60(CDemonActor *param_1,byte param_2)
+CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_00543a60(CTeleport *this_ptr,uint flags)
 
 {
-  CDemonActor *pCVar1;
+  CTeleport *pCVar1;
   void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    ptr = __vec_delete(param_1,&g_CTeleportTypeInfo_005a30a0);
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CTeleportTypeInfo_005a30a0);
     shape_memdbg_cpp_free_FUN_00564486(ptr);
-    return param_1;
+    return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(param_1,1);
-  if ((param_2 & 2) == 0) {
+  pCVar1 = (CTeleport *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
+  if ((flags & 2) == 0) {
     return pCVar1;
   }
   FUN_00564494(pCVar1);

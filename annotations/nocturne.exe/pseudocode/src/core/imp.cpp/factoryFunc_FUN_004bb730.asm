@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_imp.cpp_FUN_004bb760
+;   core_imp.cpp_CImp_ctor_FUN_004bb760
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004bb741
     PUSH EAX                            ; 004bb742
         ;   Label: LAB_004bb742
-    CALL core_imp.cpp_FUN_004bb760      ; 004bb743
-        ;   XREF to: 004bb760 (UNCONDITIONAL_CALL)  ; undefined core_imp.cpp_FUN_004bb760()
+    CALL core_imp.cpp_CImp_ctor_FUN_004bb760 ; 004bb743
+        ;   XREF to: 004bb760 (UNCONDITIONAL_CALL)  ; CImp * core_imp.cpp_CImp_ctor_FUN_004bb760(CImp * this_ptr)
     ADD ESP,0x4                         ; 004bb748
     RET                                 ; 004bb74b
 

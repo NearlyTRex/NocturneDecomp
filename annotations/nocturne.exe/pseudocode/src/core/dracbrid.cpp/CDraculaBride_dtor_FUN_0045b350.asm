@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_dracbrid_cpp_CDraculaBride_dtor_FUN_0045b350(CDemonActor *param_1,byte param_2)
+; CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0045b350(CDraculaBride *this_ptr,uint flags)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDraculaBrideTypeInfo_0059c580

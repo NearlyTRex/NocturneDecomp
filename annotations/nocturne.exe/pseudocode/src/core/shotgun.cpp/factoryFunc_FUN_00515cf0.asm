@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_shotgun.cpp_FUN_00515d20
+;   core_shotgun.cpp_CShotgun_ctor_FUN_00515d20
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00515d01
     PUSH EAX                            ; 00515d02
         ;   Label: LAB_00515d02
-    CALL core_shotgun.cpp_FUN_00515d20  ; 00515d03
-        ;   XREF to: 00515d20 (UNCONDITIONAL_CALL)  ; undefined core_shotgun.cpp_FUN_00515d20()
+    CALL core_shotgun.cpp_CShotgun_ctor_FUN_00515d20 ; 00515d03
+        ;   XREF to: 00515d20 (UNCONDITIONAL_CALL)  ; CShotgun * core_shotgun.cpp_CShotgun_ctor_FUN_00515d20(CShotgun * this_ptr)
     ADD ESP,0x4                         ; 00515d08
     RET                                 ; 00515d0b
 

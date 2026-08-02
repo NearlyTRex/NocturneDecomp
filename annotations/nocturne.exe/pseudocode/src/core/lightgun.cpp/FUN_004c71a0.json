@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -69,7 +69,19 @@
       },
       {
         "category": "type_error",
+        "column": 57,
+        "line": 68,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
         "column": 13,
+        "line": 69,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
         "line": 69,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
@@ -80,40 +92,28 @@
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 78,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
+        "category": "type_error",
+        "column": 57,
+        "line": 70,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 79,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800'"
+        "category": "type_error",
+        "column": 32,
+        "line": 72,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 80,
-        "message": "no matching function for call to 'core_setcolid_cpp_FUN_00511740'"
+        "category": "type_error",
+        "column": 32,
+        "line": 73,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 81,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
-      },
-      {
-        "category": "cast_error",
-        "column": 27,
-        "line": 84,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 87,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0'"
+        "category": "type_error",
+        "column": 32,
+        "line": 74,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 810,
+    "complexity_score": 890,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 230,
-    "suspect_count": 53,
+    "suspect_count": 61,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
@@ -652,7 +652,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&param_1->base,&CStack_8c,(CVector3f *)(auStack_6c + 4));",
+      "text": "(&param_1->base,(CVector3f *)auStack_8c,(CVector3f *)(auStack_6c + 4));",
       "type": "unnamed_param"
     },
     {
@@ -660,7 +660,15 @@
       "line": 61,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "auStack_44._0_4_ = aCStack_a4[0].x + CStack_8c.x;",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -668,7 +676,15 @@
       "line": 62,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "auStack_44._4_4_ = aCStack_a4[0].y + CStack_8c.y;",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -676,7 +692,15 @@
       "line": 63,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "auStack_44._8_4_ = aCStack_a4[0].z + CStack_8c.z;",
+      "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
       "type": "unknown_field"
     },
     {
@@ -686,6 +710,30 @@
       "severity": "mild",
       "text": "fStack_2c = (float)1.5 / (param_1->model).transformed_vertices[0x1a].x;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -896,12 +944,28 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 188,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)param_1)->x;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "CStack_8c.z = (pCVar3->min).x + ((CVector3f *)param_1)->x;",
+      "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)param_1)->x;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
+      "type": "unknown_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

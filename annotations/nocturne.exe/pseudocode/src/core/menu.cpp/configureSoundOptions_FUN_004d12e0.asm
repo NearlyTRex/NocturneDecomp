@@ -71,10 +71,10 @@
 ;   crt_math.c_pow_FUN_00565ad6
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
-;   shape_edittool.cpp_FUN_00474c90
 ;   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
 ;   ... and 30 more
 ;
@@ -1474,8 +1474,8 @@ section .text
         ;   Label: caseD_7
     PUSH EAX                            ; 004d20d8
     XOR EBX,EBX                         ; 004d20d9
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004d20db
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004d20db
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004d20e0
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 004d20e3
         ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()

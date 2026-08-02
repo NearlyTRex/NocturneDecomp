@@ -15,7 +15,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(CConveyor *thi
   char *pcVar4;
   float *pfVar5;
   
-  pCVar2 = (CConveyor *)core_platfrm_cpp_FUN_004f5d90(this_ptr);
+  pCVar2 = (CConveyor *)core_platfrm_cpp_CPlatform_ctor_FUN_004f5d90(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CConveyorVTable;
   pcVar3 = "none";
   (pCVar2->base).rendered_in_background = 0x3f800000;

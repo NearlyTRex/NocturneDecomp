@@ -93,4 +93,4 @@ CRuleList * FUN_00456690(void);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_004566b0
 // Address: 004566b0
-CDemonActor * CDoor::dtor(CDemonActor *param_1,byte param_2);
+CDoor * __cdecl CDoor::dtor(CDoor *this_ptr,uint flags);

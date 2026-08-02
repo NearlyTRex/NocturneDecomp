@@ -9,14 +9,14 @@
 CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_004d5fe0(void)
 
 {
-  int iVar1;
-  CMineCar *pCVar2;
+  CPlatform *this_ptr;
+  CMineCar *pCVar1;
   
-  iVar1 = FUN_0056497c(0x724);
-  if (iVar1 == 0) {
+  this_ptr = (CPlatform *)FUN_0056497c(0x724);
+  if (this_ptr == (CPlatform *)0x0) {
     return (CMineCar *)0x0;
   }
-  pCVar2 = (CMineCar *)core_platfrm_cpp_FUN_004f5d90(iVar1);
-  (pCVar2->base).base.vtable._ub = &g_CMineCarVTable;
-  return pCVar2;
+  pCVar1 = (CMineCar *)core_platfrm_cpp_CPlatform_ctor_FUN_004f5d90(this_ptr);
+  (pCVar1->base).base.vtable._ub = &g_CMineCarVTable;
+  return pCVar1;
 }

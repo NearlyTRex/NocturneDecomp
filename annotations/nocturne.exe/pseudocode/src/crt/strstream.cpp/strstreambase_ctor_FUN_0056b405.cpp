@@ -30,7 +30,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(strstr
   this_ptr_00[1]._streambuf.__reserve_base =
        (char *)&PTR_crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc;
   *(byte ***)((int)&(this_ptr_00->_streambuf).__flags + *(int *)(iVar1 + 4)) =
-       &PTR_FUN_005a48c4;
+       &PTR_crt_unknown_c_FUN_0056b491_005a48c4;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a
             ((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);
   return (strstreambase *)psVar3;

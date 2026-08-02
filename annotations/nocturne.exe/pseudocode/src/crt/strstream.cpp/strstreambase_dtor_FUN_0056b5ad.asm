@@ -8,13 +8,13 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
-;   FUN_0056b491 at 0056b4a0
 ;   crt_strstream.cpp_istrstream_dtor_FUN_00564fd8 at 0056501e
 ;   crt_strstream.cpp_ostrstream_dtor_FUN_00564e98 at 00564ede
+;   crt_unknown.c_FUN_0056b491 at 0056b4a0
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc = 0056b5ad
-;   void* PTR_FUN_005a48c4 = 0056b491
+;   void* PTR_crt_unknown.c_FUN_0056b491_005a48c4 = 0056b491
 ;   WatcomTypeInfo g_strstreambaseTypeInfo_005a4980
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     ADD EBX,0x4                         ; 0056b5cf
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b5d2
     PUSH EBX                            ; 0056b5d5
-    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x5a48c4 ; 0056b5d6 | PTR_FUN_005a48c4
+    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x5a48c4 ; 0056b5d6 | PTR_crt_unknown.c_FUN_0056b491_005a48c4
     CALL crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf ; 0056b5de
         ;   XREF to: 005701cf (UNCONDITIONAL_CALL)  ; strstreambuf * crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf(strstreambuf * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0056b5e3

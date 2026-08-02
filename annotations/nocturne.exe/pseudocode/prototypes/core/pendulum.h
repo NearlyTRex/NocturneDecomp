@@ -61,4 +61,4 @@ EGroundType __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_dtor_FUN_004f3e40
 // Address: 004f3e40
-CDemonActor * CPendulum::dtor(CDemonActor *param_1,byte param_2);
+CPendulum * __cdecl CPendulum::dtor(CPendulum *this_ptr,uint flags);

@@ -7,7 +7,7 @@
 ; CMirror *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004abb50 at 004abb65
+;   core_glass.cpp_CGlass_ctor_FUN_004abb50 at 004abb65
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SClipPlaneTypeInfo_005a08a0

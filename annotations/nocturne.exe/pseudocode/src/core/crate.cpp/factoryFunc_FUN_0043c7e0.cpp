@@ -9,13 +9,12 @@
 CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_0043c7e0(void)
 
 {
-  int iVar1;
-  CCrate *pCVar2;
+  CCrate *pCVar1;
   
-  iVar1 = FUN_0056497c(0x2f4);
-  if (iVar1 == 0) {
+  pCVar1 = (CCrate *)FUN_0056497c(0x2f4);
+  if (pCVar1 == (CCrate *)0x0) {
     return (CCrate *)0x0;
   }
-  pCVar2 = (CCrate *)core_crate_cpp_FUN_0043c810(iVar1);
-  return pCVar2;
+  pCVar1 = core_crate_cpp_CCrate_ctor_FUN_0043c810(pCVar1);
+  return pCVar1;
 }

@@ -17,7 +17,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *t
   int *piVar6;
   SMRGLTextureBasic *pSVar7;
   
-  pCVar2 = core_npc_cpp_FUN_004ee950(&this_ptr->base);
+  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_004ee950(&this_ptr->base);
   pcVar4 = "wolfbrn.dfm";
   pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004e0050((CMorph *)&pCVar2[1].base.base.scale.y);
   piVar6 = &pCVar3[-1].models[1].textures[0x12].textures[0].base.count;

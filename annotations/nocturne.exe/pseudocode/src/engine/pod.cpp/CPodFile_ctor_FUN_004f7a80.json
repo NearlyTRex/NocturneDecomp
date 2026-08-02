@@ -1,0 +1,192 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 109,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 22,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "004f88a0",
+      "from_addr": "004f88be",
+      "name": "engine_pod.cpp_CPod_mount_FUN_004f88a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8eb0",
+      "from_addr": "004f8ed9",
+      "name": "engine_pod.cpp_FUN_004f8eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9100",
+      "from_addr": "004f910a",
+      "name": "engine_pod.cpp_FUN_004f9100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f7a80",
+    "address_range": [
+      [
+        "004f7a80",
+        "004f7ab6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPodFile_ctor_FUN_004f7a80",
+    "signature": "CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(CPodFile *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004f88be",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_mount_FUN_004f88a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f8ed9",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_004f8eb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f910a",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_004f9100",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.875,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "COPY": 7,
+      "INT_ADD": 7,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 23
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPodFile",
+        "offset": 0,
+        "vtable_addr": "005a14c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

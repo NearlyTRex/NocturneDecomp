@@ -93,7 +93,7 @@ CDemonCube * __cdecl CDemonCube::ctor(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_dtor_FUN_0044ac10
 // Address: 0044ac10
-undefined4 CDemonCube::dtor(undefined4 param_1);
+CDemonCube * __cdecl CDemonCube::dtor(CDemonCube *this_ptr,uint flags);
 
 // Original: core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30
 // Address: 0044ac30

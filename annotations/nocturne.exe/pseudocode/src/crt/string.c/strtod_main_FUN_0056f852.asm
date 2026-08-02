@@ -8,7 +8,7 @@
 ; char * *         Stack[0x8]:4   endptr
 ;
 ; XREF[1]:
-;   FUN_0056a189 at 0056a195
+;   crt_unknown.c_FUN_0056a189 at 0056a195
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a4b78

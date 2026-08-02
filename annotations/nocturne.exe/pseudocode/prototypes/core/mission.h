@@ -155,10 +155,10 @@ void __cdecl CDemonMission::ensureHeroPlaceholder(CDemonMission *this_ptr);
 // Address: 004d9df0
 int __cdecl CDemonMission::countDamageableEnemies(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004d9e50
+// Original: core_mission.cpp_CDemonMission_ctor_FUN_004d9e50
 // Address: 004d9e50
-undefined4 FUN_004d9e50(undefined4 param_1);
+CDemonMission * __cdecl CDemonMission::ctor(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004d9e60
+// Original: core_mission.cpp_CDemonMission_dtor_FUN_004d9e60
 // Address: 004d9e60
-undefined4 FUN_004d9e60(undefined4 param_1);
+CDemonMission * __cdecl CDemonMission::dtor(CDemonMission *this_ptr,uint flags);

@@ -776,7 +776,7 @@ RuntimeHandlerEntry g_InitHandlers[160] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056A170
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056a170
     },
     {
         .status = 0x00,
@@ -791,12 +791,12 @@ RuntimeHandlerEntry g_InitHandlers[160] = {
     {
         .status = 0x00,
         .priority = 0x02,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056ADA0
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056ada0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056DDF0
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056ddf0
     },
     {
         .status = 0x00,
@@ -806,22 +806,22 @@ RuntimeHandlerEntry g_InitHandlers[160] = {
     {
         .status = 0x00,
         .priority = 0x0B,
-        .func = (RUNTIME_HANDLER_FUNC *)0x005671C6
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005671c6
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x00570F60
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_00570f60
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056F034
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056f034
     },
     {
         .status = 0x00,
         .priority = 0x03,
-        .func = (RUNTIME_HANDLER_FUNC *)0x00570630
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_00570630
     }
 };
 
@@ -830,32 +830,32 @@ RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6] = {
     {
         .status = 0x00,
         .priority = 0x28,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056B1EE
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056b1ee
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056DE90
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056de90
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x005674F8
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005674f8
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0057104C
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0057104c
     },
     {
         .status = 0x00,
         .priority = 0x1F,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056E230
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056e230
     },
     {
         .status = 0x00,
         .priority = 0x0A,
-        .func = (RUNTIME_HANDLER_FUNC *)0x0056E7FC
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056e7fc
     }
 };
 

@@ -8,13 +8,13 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
-;   FUN_0056b7f8 at 0056b807
 ;   crt_fstream.cpp_ifstream_dtor_FUN_00565264 at 005652aa
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005651ca at 00565210
+;   crt_unknown.c_FUN_0056b7f8 at 0056b807
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24 = 0056b810
-;   void* PTR_FUN_005a4a2c = 0056b7f8
+;   void* PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c = 0056b7f8
 ;   WatcomTypeInfo g_fstreambaseTypeInfo_005a4a60
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     ADD EBX,0x4                         ; 0056b832
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b835
     PUSH EBX                            ; 0056b838
-    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x5a4a2c ; 0056b839 | PTR_FUN_005a4a2c
+    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x5a4a2c ; 0056b839 | PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c
     CALL crt_fstream.cpp_filebuf_dtor_FUN_00570449 ; 0056b841
         ;   XREF to: 00570449 (UNCONDITIONAL_CALL)  ; filebuf * crt_fstream.cpp_filebuf_dtor_FUN_00570449(filebuf * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0056b846

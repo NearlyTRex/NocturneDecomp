@@ -1,0 +1,73 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_0048eef0(CFlies *this_ptr)
+;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
+; Local Variables:
+; undefined4       Stack[-0xc]:4  local_c
+; undefined4       Stack[-0x8]:4  local_8
+; undefined4       Stack[-0x4]:4  local_4
+;
+; XREF[2]:
+;   core_flies.cpp_factoryFunc_FUN_0048eec0 at 0048eed3
+;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b065b
+;
+; Referenced Globals:
+;   CDemonActor_vtable g_CFliesVTable
+;   WatcomTypeInfo g_SFlyTypeInfo_0059db10
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
+;   crt_memory.c___arrinit_FUN_005644a7
+;
+; *****************************************************************************
+
+section .text
+
+    SUB ESP,0xc                         ; 0048eef0
+        ;   Label: core_flies.cpp_CFlies_ctor_FUN_0048eef0
+    MOV EDX,dword ptr [ESP + 0x10]      ; 0048eef3
+    PUSH EDX                            ; 0048eef7
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_00409d30 ; 0048eef8
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 0048eefd
+    PUSH 0x59db10                       ; 0048ef00 | g_SFlyTypeInfo_0059db10
+    PUSH 0xc8                           ; 0048ef05
+    ADD EAX,0x160                       ; 0048ef0a
+    PUSH EAX                            ; 0048ef0f
+    CALL crt_memory.c___arrinit_FUN_005644a7 ; 0048ef10
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
+    LEA EDX,[EAX + 0xfffffea0]          ; 0048ef15
+    MOV ECX,0x40a00000                  ; 0048ef1b
+    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | g_CFliesVTable
+    ADD ESP,0xc                         ; 0048ef2a
+    MOV dword ptr [EDX + 0x15c],0x14    ; 0048ef2d
+    MOV EAX,ESP                         ; 0048ef37
+    MOV dword ptr [ESP],ECX             ; 0048ef39
+    MOV dword ptr [ESP + 0x4],ECX       ; 0048ef3c
+    MOV dword ptr [ESP + 0x8],ECX       ; 0048ef40
+    LEA ECX,[EDX + 0x150]               ; 0048ef44
+    CMP ECX,EAX                         ; 0048ef4a
+    JNZ 0x0048ef90                      ; 0048ef4c
+        ;   XREF to: 0048ef90 (CONDITIONAL_JUMP)  ; LAB_0048ef90
+    MOV dword ptr [EDX + 0x2a0c],0x0    ; 0048ef4e
+        ;   Label: LAB_0048ef4e
+    MOV dword ptr [EDX + 0x2a08],0x0    ; 0048ef58
+    MOV dword ptr [EDX + 0x2a00],0x0    ; 0048ef62
+    MOV dword ptr [EDX + 0x2a10],0x0    ; 0048ef6c
+    MOV dword ptr [EDX + 0x2a14],0x1    ; 0048ef76
+    MOV EAX,EDX                         ; 0048ef80
+    MOV dword ptr [EDX + 0x2a04],0x0    ; 0048ef82
+    ADD ESP,0xc                         ; 0048ef8c
+    RET                                 ; 0048ef8f
+    MOV dword ptr [ECX],0x40a00000      ; 0048ef90
+        ;   Label: LAB_0048ef90
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0048ef96
+    MOV dword ptr [ECX + 0x4],EAX       ; 0048ef9a
+    MOV EAX,dword ptr [ESP + 0x8]       ; 0048ef9d
+    MOV dword ptr [ECX + 0x8],EAX       ; 0048efa1
+    JMP 0x0048ef4e                      ; 0048efa4
+        ;   XREF to: 0048ef4e (UNCONDITIONAL_JUMP)  ; LAB_0048ef4e
+

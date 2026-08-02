@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_curtain_cpp_CCurtain_dtor_FUN_0043f8e0(CDemonActor *param_1,byte param_2)
+; CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0043f8e0(CCurtain *this_ptr,uint flags)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CCurtainTypeInfo_0059bdb0

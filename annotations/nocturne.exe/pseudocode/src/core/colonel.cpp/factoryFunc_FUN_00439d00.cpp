@@ -9,13 +9,12 @@
 CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_00439d00(void)
 
 {
-  int iVar1;
-  CColonel *pCVar2;
+  CColonel *pCVar1;
   
-  iVar1 = FUN_0056497c(0x1fa54);
-  if (iVar1 == 0) {
+  pCVar1 = (CColonel *)FUN_0056497c(0x1fa54);
+  if (pCVar1 == (CColonel *)0x0) {
     return (CColonel *)0x0;
   }
-  pCVar2 = (CColonel *)core_colonel_cpp_FUN_00439d30(iVar1);
-  return pCVar2;
+  pCVar1 = core_colonel_cpp_CColonel_ctor_FUN_00439d30(pCVar1);
+  return pCVar1;
 }

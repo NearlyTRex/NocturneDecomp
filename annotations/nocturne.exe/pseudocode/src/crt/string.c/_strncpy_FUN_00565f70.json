@@ -14,12 +14,6 @@
   },
   "cross_references": [
     {
-      "addr": "00572b70",
-      "from_addr": "00572bbe",
-      "name": "FUN_00572b70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f3fc0",
       "from_addr": "004f3fcc",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0",
@@ -41,6 +35,12 @@
       "addr": "0056c864",
       "from_addr": "0056cb4b",
       "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572b70",
+      "from_addr": "00572bbe",
+      "name": "crt_unknown.c_FUN_00572b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -148,7 +148,7 @@
       {
         "call_addr": "00572bbe",
         "call_type": "direct",
-        "caller": "FUN_00572b70",
+        "caller": "crt_unknown.c_FUN_00572b70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "00572c09",
         "call_type": "direct",
-        "caller": "FUN_00572b70",
+        "caller": "crt_unknown.c_FUN_00572b70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +170,7 @@
       {
         "call_addr": "00572c56",
         "call_type": "direct",
-        "caller": "FUN_00572b70",
+        "caller": "crt_unknown.c_FUN_00572b70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -71,9 +71,9 @@ undefined4 FUN_0046f7e0(char *param_1,char *param_2,int param_3,byte param_4,int
 // Address: 0046f9f0
 CEditorTools * __cdecl CEditorTools::ctor(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0046fa20
+// Original: shape_edittool.cpp_CEditorTools_dtor_FUN_0046fa20
 // Address: 0046fa20
-CEditorTools * FUN_0046fa20(CEditorTools *param_1);
+CEditorTools * __cdecl CEditorTools::dtor(CEditorTools *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_FUN_0046fa80
 // Address: 0046fa80
@@ -331,9 +331,9 @@ void __cdecl CStrList::populateFromFilesNoDuplicates(CStrList *this_ptr,char *di
 // Address: 00474ae0
 void FUN_00474ae0(CStrList *param_1,char *param_2,char *param_3);
 
-// Original: shape_edittool.cpp_FUN_00474c90
+// Original: shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 // Address: 00474c90
-CEdScrollBar * FUN_00474c90(CStrList *param_1);
+CPickList * __cdecl CPickList::ctor(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 // Address: 00474cf0

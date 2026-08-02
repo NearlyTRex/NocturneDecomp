@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_backgnd_cpp_CBackgroundActor_dtor_FUN_004100f0(CDemonActor *param_1,byte param_2)
+; CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_dtor_FUN_004100f0(CBackgroundActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CBackgroundActor * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBackgroundActorTypeInfo_00599a80

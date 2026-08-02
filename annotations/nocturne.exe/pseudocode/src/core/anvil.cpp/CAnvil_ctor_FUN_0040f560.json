@@ -1,0 +1,267 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 109,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 91,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "0040f530",
+      "from_addr": "0040f543",
+      "name": "core_anvil.cpp_factoryFunc_FUN_0040f530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040f560",
+    "address_range": [
+      [
+        "0040f560",
+        "0040f5ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_anvil.cpp_CAnvil_ctor_FUN_0040f560",
+    "signature": "CAnvil * __cdecl core_anvil_cpp_CAnvil_ctor_FUN_0040f560(CAnvil *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409d30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00409d30"
+    },
+    {
+      "addr": "00454490",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490"
+    },
+    {
+      "addr": "00454580",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005783ef",
+      "name": "s_question_kfm_005783ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005783fc",
+      "name": "s_acmeanvilinc_005783fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005783fd",
+      "name": "s_cmeanvilinc_005783fc+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005783fe",
+      "name": "s_meanvilinc_005783fc+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005783ff",
+      "name": "s_eanvilinc_005783fc+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00599694",
+      "name": "g_CAnvilVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040f543",
+        "call_type": "direct",
+        "caller": "core_anvil.cpp_factoryFunc_FUN_0040f530",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 13,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAnvil *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAnvilVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 0xb);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(char *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(CKeyFramedModelInstance *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 0xb);",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAnvil",
+        "offset": 0,
+        "vtable_addr": "00599774"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

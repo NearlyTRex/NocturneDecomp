@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_backgnd.cpp_FUN_0040fed0
+;   core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040fed0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0040feb1
     PUSH EAX                            ; 0040feb2
         ;   Label: LAB_0040feb2
-    CALL core_backgnd.cpp_FUN_0040fed0  ; 0040feb3
-        ;   XREF to: 0040fed0 (UNCONDITIONAL_CALL)  ; undefined core_backgnd.cpp_FUN_0040fed0()
+    CALL core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040fed0 ; 0040feb3
+        ;   XREF to: 0040fed0 (UNCONDITIONAL_CALL)  ; CBackgroundActor * core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040fed0(CBackgroundActor * this_ptr)
     ADD ESP,0x4                         ; 0040feb8
     RET                                 ; 0040febb
 

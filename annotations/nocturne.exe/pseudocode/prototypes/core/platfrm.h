@@ -15,9 +15,9 @@ CPlatform * __cdecl factoryFunc(void);
 // Address: 004f5d80
 CDemonActorType * CPlatform::getActorType(void);
 
-// Original: core_platfrm.cpp_FUN_004f5d90
+// Original: core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90
 // Address: 004f5d90
-CCourseFrame ** FUN_004f5d90(CDemonActor *param_1);
+CPlatform * __cdecl CPlatform::ctor(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_setup_FUN_004f5f60
 // Address: 004f5f60

@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       }
     ],
@@ -62,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 63,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_param"
+      "negative_offset"
     ],
     "total_lines": 50
   },
@@ -84,9 +83,9 @@
         "00506eb0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_dtor_FUN_00506e50",
-    "signature": "int * core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)"
+    "signature": "CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -120,9 +119,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -148,44 +147,35 @@
     "pcode_op_count": 147
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_clear_FUN_00506ec0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar1 = core_set_cpp_FUN_0050eb60((SVDBox *)&param_1->rooms[5].rotation_matrix,0);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "return &pCVar4[-1].enabled;",
+      "text": "return (CDemonSet *)&pCVar4[-1].enabled;",
       "type": "negative_offset"
     }
   ],

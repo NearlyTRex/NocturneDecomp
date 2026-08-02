@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_keyactor_cpp_CKeyActor_dtor_FUN_004c3710(CDemonActor *param_1,byte param_2)
+; CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_004c3710(CKeyActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CKeyActor *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CKeyActorTypeInfo_0059f900

@@ -37,11 +37,11 @@
 ;   crt_io.c_IsSpecialDevice_FUN_005705c0
 ;   crt_io.c_register_handler_wrapper_FUN_005671e8
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_0056dfc0
-;   FUN_0056e208
-;   FUN_0056f278
-;   FUN_00570510
-;   FUN_00570554
+;   crt_unknown.c_FUN_0056dfc0
+;   crt_unknown.c_FUN_0056e208
+;   crt_unknown.c_FUN_0056f278
+;   crt_unknown.c_FUN_00570510
+;   crt_unknown.c_FUN_00570554
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EBP                            ; 0056b963
     SUB ESP,0x18                        ; 0056b964
     MOV EDI,dword ptr [ESP + 0x38]      ; 0056b967
-    CALL FUN_0056dfc0                   ; 0056b96b
-        ;   XREF to: 0056dfc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dfc0()
+    CALL crt_unknown.c_FUN_0056dfc0     ; 0056b96b
+        ;   XREF to: 0056dfc0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056dfc0()
     TEST EAX,EAX                        ; 0056b970
     JZ 0x0056b988                       ; 0056b972
         ;   XREF to: 0056b988 (CONDITIONAL_JUMP)  ; LAB_0056b988
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 0056b995
     AND ESI,0x7                         ; 0056b996
     PUSH ESI                            ; 0056b999
-    CALL FUN_00570510                   ; 0056b99a
-        ;   XREF to: 00570510 (UNCONDITIONAL_CALL)  ; undefined FUN_00570510()
+    CALL crt_unknown.c_FUN_00570510     ; 0056b99a
+        ;   XREF to: 00570510 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570510()
     ADD ESP,0xc                         ; 0056b99f
     LEA EAX,[ESP + 0xc]                 ; 0056b9a2
     PUSH EAX                            ; 0056b9a6
@@ -83,8 +83,8 @@ section .text
     OR EAX,ESI                          ; 0056b9ab
     PUSH EAX                            ; 0056b9ad
     MOV EBP,0x80                        ; 0056b9ae
-    CALL FUN_00570554                   ; 0056b9b3
-        ;   XREF to: 00570554 (UNCONDITIONAL_CALL)  ; undefined FUN_00570554()
+    CALL crt_unknown.c_FUN_00570554     ; 0056b9b3
+        ;   XREF to: 00570554 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570554()
     MOV EDX,0xc                         ; 0056b9b8
     ADD ESP,0x8                         ; 0056b9bd
     XOR ECX,ECX                         ; 0056b9c0
@@ -107,8 +107,8 @@ section .text
     TEST EAX,EAX                        ; 0056b9f7
     JNZ 0x0056ba24                      ; 0056b9f9
         ;   XREF to: 0056ba24 (CONDITIONAL_JUMP)  ; LAB_0056ba24
-    CALL FUN_0056e208                   ; 0056b9fb
-        ;   XREF to: 0056e208 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e208()
+    CALL crt_unknown.c_FUN_0056e208     ; 0056b9fb
+        ;   XREF to: 0056e208 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e208()
     PUSH EAX                            ; 0056ba00
     CALL dword ptr [0x005c1ac8]         ; 0056ba01 | PTR_crt_io.c_register_handler_wrapper_FUN_005671e8_005c1ac8
     ADD ESP,0x4                         ; 0056ba07
@@ -294,8 +294,8 @@ section .text
     PUSH EBX                            ; 0056bb8d
         ;   Label: LAB_0056bb8d
     PUSH EBP                            ; 0056bb8e
-    CALL FUN_0056f278                   ; 0056bb8f
-        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f278()
+    CALL crt_unknown.c_FUN_0056f278     ; 0056bb8f
+        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f278()
     ADD ESP,0x8                         ; 0056bb94
     MOV EAX,EBP                         ; 0056bb97
     ADD ESP,0x18                        ; 0056bb99

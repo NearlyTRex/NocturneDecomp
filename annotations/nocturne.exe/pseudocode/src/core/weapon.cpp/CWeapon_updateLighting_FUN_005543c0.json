@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,67 +52,67 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier '_DAT_01c762f4'; did you mean 'DAT_007672f4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 27,
+        "line": 28,
         "message": "use of undeclared identifier '_DAT_01c762fc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 28,
+        "line": 29,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "type_error",
         "column": 38,
-        "line": 29,
+        "line": 30,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 29,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_01c74744'; did you mean 'DAT_02DF4744'?"
       },
       {
         "category": "type_error",
         "column": 38,
-        "line": 30,
+        "line": 31,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 30,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_01c74748'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 31,
+        "line": 32,
         "message": "use of undeclared identifier '_DAT_01c7474c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 37,
+        "line": 38,
         "message": "use of undeclared identifier 'DAT_01c74750'; did you mean 'DAT_02DF4750'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 38,
+        "line": 39,
         "message": "use of undeclared identifier '_DAT_01c74740'; did you mean 'DAT_02DF4740'?"
       }
     ],
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 294,
+    "complexity_score": 200,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 21,
+    "pseudocode_lines": 50,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
       "unknown_field",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 178
+    "total_lines": 179
   },
   "cross_references": [],
   "function": {
@@ -149,9 +148,9 @@
         "00554550"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0",
-    "signature": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CCharacter *param_1)"
+    "signature": "void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_ptr)"
   },
   "function_calls": [
     {
@@ -328,9 +327,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -371,12 +370,20 @@
     "pcode_op_count": 471
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
   },
   "static_analysis": {
     "analyzed_file": "CWeapon_updateLighting_FUN_005543c0.cpp",
@@ -386,7 +393,7 @@
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 31,
+          "line": 32,
           "message": "Uninitialized variable: fStack_14",
           "severity": "error"
         }
@@ -405,14 +412,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
@@ -429,32 +428,8 @@
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,(CVector3f *)auStack_1c,input_local_point);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 22,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != (byte *)0x1c74760) {",
@@ -462,7 +437,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 22,
+      "line": 23,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_DAT_01c74744 = (float)auStack_1c._0_4_;",
@@ -470,63 +445,23 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 23,
+      "line": 24,
       "match": "._4_4_",
       "severity": "mild",
       "text": "_DAT_01c74748 = (float)auStack_1c._4_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_28.y = (param_1->base).orient.vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_28.z = (param_1->base).orient.vec.z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStack_28.x = (param_1->base).orient.vec.x + 0.3490658f;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_01c74750",
       "severity": "mild",
       "text": "((CMatrix3x3f *)&DAT_01c74750,&CStack_28);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_ffffffcc",
       "severity": "moderate",
       "text": "pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,in_stack_ffffffcc);",
@@ -534,7 +469,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = fVar1 * 0.06666667f;",
@@ -542,7 +477,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 42,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "((CDemonLight *)&DAT_01c74640,unaff_ESI);",
@@ -550,7 +485,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_01c74640",
       "severity": "mild",
       "text": "((CDemonLight *)&DAT_01c74640,unaff_ESI);",
@@ -558,7 +493,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_02ddf9c8",
       "severity": "mild",
       "text": "DAT_02ddf9c8 = 0x20;",
@@ -566,7 +501,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_14",
-      "line": 31,
+      "line": 32,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "_DAT_01c7474c = fStack_14;",

@@ -75,13 +75,13 @@ void CMirrorReflection::transformMirrorVertex(CMirrorReflection *param_1,int *pa
 // Address: 004d7bd0
 void CMirrorReflection::transformMirrorEdgeToIntegerSpace(CMirrorReflection *param_1,int *param_2,int *param_3);
 
-// Original: core_mirror.cpp_FUN_004d7d70
+// Original: core_mirror.cpp_SClipPlane_ctor_FUN_004d7d70
 // Address: 004d7d70
-undefined4 FUN_004d7d70(undefined4 param_1);
+SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);
 
-// Original: core_mirror.cpp_FUN_004d7d80
+// Original: core_mirror.cpp_SClipPlane_dtor_FUN_004d7d80
 // Address: 004d7d80
-undefined4 FUN_004d7d80(undefined4 param_1);
+SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90
 // Address: 004d7d90

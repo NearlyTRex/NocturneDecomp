@@ -89,4 +89,4 @@ ECollisionType CVampireBoss::getCollisionType(CCharacter *param_1,SCollisionInfo
 
 // Original: core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370
 // Address: 0054e370
-CDemonActor * CVampireBoss::dtor(CDemonActor *param_1,byte param_2);
+CVampireBoss * __cdecl CVampireBoss::dtor(CVampireBoss *this_ptr,uint flags);

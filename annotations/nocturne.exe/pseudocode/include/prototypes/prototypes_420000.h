@@ -29,6 +29,7 @@
 #include "types/structs/SEdge.h"
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/unions/UOrientationVector.h"
@@ -82,8 +83,8 @@ char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(CDeformableMode
 int * __cdecl core_bugs_cpp_swapIntegers_FUN_00423d40(int *a,int *b);
 float __cdecl core_bugs_cpp_maxFloat_FUN_00423d60(float a,float b);
 CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00423d90(CBugs *this_ptr,uint flags);
-undefined4 core_bugs_cpp_FUN_00423e60(undefined4 param_1);
-undefined4 core_bugs_cpp_FUN_00423e70(undefined4 param_1);
+SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_00423e60(SBug *this_ptr);
+SBug * __cdecl core_bugs_cpp_SBug_dtor_FUN_00423e70(SBug *this_ptr,uint flags);
 void core_bugs_cpp_FUN_00423e80(void *param_1);
 void __cdecl core_charactr_cpp_staticInit_FUN_00423ea0(void);
 SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo *this_ptr);
@@ -183,10 +184,10 @@ void core_charactr_cpp_FUN_0042b570(void);
 undefined4 core_charactr_cpp_FUN_0042b5a0(void);
 char * __cdecl core_charactr_cpp_getActorCreateEvent_FUN_0042b5b0(CDemonActor *actor);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr);
-CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags);
 undefined4 core_charactr_cpp_SFire_ctor_FUN_0042b690(undefined4 param_1);
-undefined4 core_charactr_cpp_FUN_0042b6a0(undefined4 param_1);
-undefined4 core_charactr_cpp_FUN_0042b6b0(undefined4 param_1);
+SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042b6a0(SPose *this_ptr);
+SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042b6b0(SPose *this_ptr,uint flags);
 undefined4 * core_charactr_cpp_FUN_0042b6c0(void);
 undefined4 * core_charactr_cpp_FUN_0042b6d0(void);
 undefined4 * core_charactr_cpp_FUN_0042b6e0(void);
@@ -206,8 +207,8 @@ undefined4 core_chain_cpp_FUN_0042cd00(void);
 undefined4 core_chain_cpp_FUN_0042cd10(void);
 float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value);
 CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_0042cd30(CChain *this_ptr,uint flags);
-undefined4 core_chain_cpp_FUN_0042cda0(undefined4 param_1);
-undefined4 core_chain_cpp_FUN_0042cdb0(undefined4 param_1);
+SChainVertex * __cdecl core_chain_cpp_SChainVertex_ctor_FUN_0042cda0(SChainVertex *this_ptr);
+SChainVertex * __cdecl core_chain_cpp_SChainVertex_dtor_FUN_0042cdb0(SChainVertex *this_ptr,uint flags);
 void core_chain_cpp_FUN_0042cdc0(void *param_1);
 void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_0042cde0(void *output_buffer,void *indexed_input_buffer,int pixel_count);
 void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_0042ceca(void *output_buffer,void *input_buffer,int pixel_count);

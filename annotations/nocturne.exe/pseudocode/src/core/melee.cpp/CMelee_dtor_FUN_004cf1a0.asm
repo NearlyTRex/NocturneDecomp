@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_melee_cpp_CMelee_dtor_FUN_004cf1a0(CWeapon *param_1,byte param_2)
+; CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004cf1a0(CMelee *this_ptr,uint flags)
 ;
+; Parameters:
+; CMelee *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CMeleeTypeInfo_005a04f0

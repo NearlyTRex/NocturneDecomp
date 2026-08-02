@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx *this_ptr)
+; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr)
 ;
 ; Parameters:
-; CFilterFx *      Stack[0x4]:4   this_ptr
+; CFilterFX *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

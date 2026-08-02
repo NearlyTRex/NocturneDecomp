@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   operation_type
 ;
 ; XREF[2]:
-;   FUN_0056ce57 at 0056ce96
 ;   crt_iostream.cpp_istream_get_FUN_00564c53 at 00564c7a
+;   crt_unknown.c_FUN_0056ce57 at 0056ce96
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_0056b327

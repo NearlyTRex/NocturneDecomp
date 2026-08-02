@@ -15,9 +15,9 @@ CHaystack * __cdecl factoryFunc(void);
 // Address: 004b3090
 CDemonActorType * CHaystack::getActorType(void);
 
-// Original: core_haystack.cpp_FUN_004b30a0
+// Original: core_haystack.cpp_CHaystack_ctor_FUN_004b30a0
 // Address: 004b30a0
-CHero * FUN_004b30a0(CHero *param_1);
+CHaystack * __cdecl CHaystack::ctor(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_setup_FUN_004b3110
 // Address: 004b3110
@@ -61,4 +61,4 @@ void __cdecl CHaystack::drawWeapon(CHaystack *this_ptr,int drawn);
 
 // Original: core_haystack.cpp_CHaystack_dtor_FUN_004b4140
 // Address: 004b4140
-CHero * CHaystack::dtor(CHero *param_1,byte param_2);
+CHaystack * __cdecl CHaystack::dtor(CHaystack *this_ptr,uint flags);

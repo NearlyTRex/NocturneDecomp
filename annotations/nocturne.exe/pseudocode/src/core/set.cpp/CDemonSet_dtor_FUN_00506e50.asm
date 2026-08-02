@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)
+; CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *this_ptr,uint flags)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_clear_FUN_00506ec0

@@ -12,7 +12,7 @@ void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
 
 {
   int iVar1;
-  uint uVar2;
+  CDemonLight *pCVar2;
   int iVar3;
   C3DSLight *this_ptr_00;
   int iVar4;
@@ -21,9 +21,10 @@ void __cdecl core_set_cpp_FUN_0050ad20(CDemonSet *this_ptr)
   if (0 < _DAT_01fb99d0) {
     iVar3 = 0;
     do {
-      if (*(int *)(&DAT_01fb99d4 + iVar3) != 0) {
-        uVar2 = core_dlight_cpp_FUN_0044e1c0(*(int *)(&DAT_01fb99d4 + iVar3),0);
-        FUN_00564494(uVar2);
+      if (*(CDemonLight **)(&DAT_01fb99d4 + iVar3) != (CDemonLight *)0x0) {
+        pCVar2 = core_dlight_cpp_CDemonLight_dtor_FUN_0044e1c0
+                           (*(CDemonLight **)(&DAT_01fb99d4 + iVar3),0);
+        FUN_00564494(pCVar2);
       }
       iVar1 = _DAT_01fb99d0;
       iVar4 = iVar4 + 1;

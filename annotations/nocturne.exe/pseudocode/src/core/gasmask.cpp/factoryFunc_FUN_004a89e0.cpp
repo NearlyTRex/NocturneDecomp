@@ -9,13 +9,12 @@
 CGasMask * __cdecl core_gasmask_cpp_factoryFunc_FUN_004a89e0(void)
 
 {
-  int iVar1;
-  CGasMask *pCVar2;
+  CGasMask *pCVar1;
   
-  iVar1 = FUN_0056497c(0x2d0);
-  if (iVar1 == 0) {
+  pCVar1 = (CGasMask *)FUN_0056497c(0x2d0);
+  if (pCVar1 == (CGasMask *)0x0) {
     return (CGasMask *)0x0;
   }
-  pCVar2 = (CGasMask *)core_gasmask_cpp_FUN_004a8a10(iVar1);
-  return pCVar2;
+  pCVar1 = core_gasmask_cpp_CGasMask_ctor_FUN_004a8a10(pCVar1);
+  return pCVar1;
 }

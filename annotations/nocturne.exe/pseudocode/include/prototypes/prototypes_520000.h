@@ -23,6 +23,7 @@
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/SStereoBuffers.h"
 #include "types/structs/SStereoGains.h"
+#include "types/structs/STrainNoise.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x520000
@@ -61,8 +62,8 @@ void sound_sndmain_cpp_FUN_00523550(void);
 void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(double input,int *out_integer_part,int *out_fractional_part);
 double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00523610(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
-void sound_sndmain_cpp_FUN_00523890(CSfxSample *param_1);
-CSfxSample * sound_sndmain_cpp_FUN_005238f0(CSfxSample *param_1);
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_00523890(CSfxSample *this_ptr);
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_005238f0(CSfxSample *this_ptr,uint flags);
 int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(CSfxSample *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_00523b20(CSfxSample *this_ptr);
@@ -191,11 +192,11 @@ void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int p
 void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void);
 void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode);
 void sound_sndmain_cpp_FUN_00529980(char *param_1);
-CSfxOptions * sound_sndmain_cpp_FUN_005299e0(CSfxOptions *param_1);
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_ctor_FUN_005299e0(CSfxOptions *this_ptr);
 int sound_sndmain_cpp_FUN_00529a00(void);
-CSfxOptions * sound_sndmain_cpp_FUN_00529a20(CSfxOptions *param_1);
-undefined4 sound_sndmain_cpp_FUN_00529a40(undefined4 param_1);
-undefined4 sound_sndmain_cpp_FUN_00529a50(undefined4 param_1);
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20(CSfxOptions *this_ptr);
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a40(CSfxOptions *this_ptr,uint flags);
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a50(CSfxOptions *this_ptr,uint flags);
 void sound_sndmain_cpp_FUN_00529a60(void *param_1);
 void __cdecl sound_snddx_cpp_staticInit_FUN_00529a80(void);
 char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code);
@@ -287,8 +288,8 @@ void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0(CSound 
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0052ece0(CSound *this_ptr,int index);
 undefined4 core_sound_cpp_FUN_0052ed40(undefined4 param_1,undefined4 param_2,int *param_3);
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(CSound *this_ptr,float target_volume,float fade_time);
-undefined4 core_sound_cpp_FUN_0052ee00(undefined4 param_1);
-undefined4 core_sound_cpp_FUN_0052ee10(undefined4 param_1);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_0052ee00(STrainNoise *this_ptr);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_0052ee10(STrainNoise *this_ptr,uint flags);
 undefined4 * core_sound_cpp_FUN_0052ee20(void);
 undefined4 * core_sound_cpp_FUN_0052ee30(void);
 undefined4 * core_sound_cpp_FUN_0052ee40(void);

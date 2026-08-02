@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vehicle_cpp_CTire_dtor_FUN_0054f890(undefined4 param_1)
+; CTire * __cdecl core_vehicle_cpp_CTire_dtor_FUN_0054f890(CTire *this_ptr,uint flags)
 ;
+; Parameters:
+; CTire *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

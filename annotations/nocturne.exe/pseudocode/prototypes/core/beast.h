@@ -15,9 +15,9 @@ CBeast * __cdecl factoryFunc(void);
 // Address: 00415040
 CDemonActorType * CBeast::getActorType(void);
 
-// Original: core_beast.cpp_FUN_00415050
+// Original: core_beast.cpp_CBeast_ctor_FUN_00415050
 // Address: 00415050
-CEnemy * FUN_00415050(CEnemy *param_1);
+CBeast * __cdecl CBeast::ctor(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_setup_FUN_004150b0
 // Address: 004150b0

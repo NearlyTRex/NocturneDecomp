@@ -15,9 +15,9 @@ CCrate * __cdecl factoryFunc(void);
 // Address: 0043c800
 CDemonActorType * CCrate::getActorType(void);
 
-// Original: core_crate.cpp_FUN_0043c810
+// Original: core_crate.cpp_CCrate_ctor_FUN_0043c810
 // Address: 0043c810
-int * FUN_0043c810(CDemonActor *param_1);
+CCrate * __cdecl CCrate::ctor(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_setup_FUN_0043c870
 // Address: 0043c870
@@ -73,4 +73,4 @@ void __cdecl CCrate::explode(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_dtor_FUN_0043ce60
 // Address: 0043ce60
-CDemonActor * CCrate::dtor(CDemonActor *param_1,byte param_2);
+CCrate * __cdecl CCrate::dtor(CCrate *this_ptr,uint flags);

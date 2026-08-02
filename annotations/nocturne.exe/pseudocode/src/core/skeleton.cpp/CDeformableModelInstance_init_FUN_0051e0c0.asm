@@ -9,14 +9,14 @@
 ;
 ; XREF[52]:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 at 0040cab1
-;   core_armour.cpp_FUN_0040f960 at 0040f98d
+;   core_armour.cpp_CArmour_ctor_FUN_0040f960 at 0040f98d
 ;   core_baron.cpp_CBaron_ctor_FUN_004101d0 at 004101f4
-;   core_batcreat.cpp_FUN_00412100 at 00412122
+;   core_batcreat.cpp_CBatCreature_ctor_FUN_00412100 at 00412122
 ;   core_batman.cpp_CBatman_ctor_FUN_004133e0 at 0041340f
-;   core_beast.cpp_FUN_00415050 at 00415072
+;   core_beast.cpp_CBeast_ctor_FUN_00415050 at 00415072
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00415370 at 004153b8
-;   core_boneguy.cpp_FUN_00418630 at 00418674
-;   core_bride.cpp_FUN_0041fbb0 at 0041fbd2
+;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 at 00418674
+;   core_bride.cpp_CBride_ctor_FUN_0041fbb0 at 0041fbd2
 ;   core_bugs.cpp_CBugs_ctor_FUN_00421040 at 00421109
 ;   ... and 42 more
 ;

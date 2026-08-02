@@ -65,4 +65,4 @@ void CMelee::setWeaponState(CWeapon *param_1,int param_2);
 
 // Original: core_melee.cpp_CMelee_dtor_FUN_004cf1a0
 // Address: 004cf1a0
-CWeapon * CMelee::dtor(CWeapon *param_1,byte param_2);
+CMelee * __cdecl CMelee::dtor(CMelee *this_ptr,uint flags);

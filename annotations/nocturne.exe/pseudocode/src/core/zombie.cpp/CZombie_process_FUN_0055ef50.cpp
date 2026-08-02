@@ -70,9 +70,7 @@ void core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *param_1,float param_2
   CVector3f local_218;
   CVector3f local_20c;
   CVector3f local_200;
-  float local_1f4;
-  float local_1f0;
-  float local_1ec;
+  CVector3f local_1f4;
   CVector3f local_1e8;
   float local_1dc;
   float local_1d8;
@@ -88,9 +86,7 @@ void core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *param_1,float param_2
   float local_1a0;
   uint local_19c;
   float local_198;
-  float local_194;
-  float local_190;
-  float local_18c;
+  CVector3f local_194;
   CVector3f local_188;
   CVector3f local_17c;
   CVector3f local_170;
@@ -123,7 +119,7 @@ void core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *param_1,float param_2
   float local_7c;
   float local_78;
   float local_74;
-  float *local_68;
+  CVector3f *local_68;
   float local_5c;
   CDoor *local_58;
   CVector3f *local_54;
@@ -561,10 +557,10 @@ LAB_0056033e:
                 pCVar13 = (*((pCVar17->vtable)._ub)->getBoundingBox)(pCVar17,&local_2cc);
                 local_14 = &pCVar13->max;
                 core_actor_cpp_CVector_ctor_FUN_0040e160(&local_194);
-                local_194 = local_14->x - (pCVar13->min).x;
-                local_190 = local_14->y - (pCVar13->min).y;
-                local_18c = local_14->z - (pCVar13->min).z;
-                local_44 = local_18c * (float)0.5 + 1.0;
+                local_194.x = local_14->x - (pCVar13->min).x;
+                local_194.y = local_14->y - (pCVar13->min).y;
+                local_194.z = local_14->z - (pCVar13->min).z;
+                local_44 = local_194.z * (float)0.5 + 1.0;
               }
               local_50 = local_44;
             }
@@ -682,10 +678,10 @@ LAB_00560776:
               pCVar13 = (*((pCVar17->vtable)._ub)->getBoundingBox)(pCVar17,&local_2fc);
               local_68 = &local_1f4;
               core_actor_cpp_CVector_ctor_FUN_0040e160(local_68);
-              local_1f4 = (pCVar13->max).x - (pCVar13->min).x;
-              local_1f0 = (pCVar13->max).y - (pCVar13->min).y;
-              local_1ec = (pCVar13->max).z - (pCVar13->min).z;
-              local_3c = local_68[2] * (float)0.5 + local_3c;
+              local_1f4.x = (pCVar13->max).x - (pCVar13->min).x;
+              local_1f4.y = (pCVar13->max).y - (pCVar13->min).y;
+              local_1f4.z = (pCVar13->max).z - (pCVar13->min).z;
+              local_3c = local_68->z * (float)0.5 + local_3c;
             }
             local_34 = local_3c;
             local_54 = (CVector3f *)

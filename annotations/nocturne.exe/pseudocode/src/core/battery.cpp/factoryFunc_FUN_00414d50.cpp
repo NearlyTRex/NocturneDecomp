@@ -9,13 +9,12 @@
 CBattery * __cdecl core_battery_cpp_factoryFunc_FUN_00414d50(void)
 
 {
-  int iVar1;
-  CBattery *pCVar2;
+  CBattery *pCVar1;
   
-  iVar1 = FUN_0056497c(0x2d8);
-  if (iVar1 == 0) {
+  pCVar1 = (CBattery *)FUN_0056497c(0x2d8);
+  if (pCVar1 == (CBattery *)0x0) {
     return (CBattery *)0x0;
   }
-  pCVar2 = (CBattery *)core_battery_cpp_FUN_00414d80(iVar1);
-  return pCVar2;
+  pCVar1 = core_battery_cpp_CBattery_ctor_FUN_00414d80(pCVar1);
+  return pCVar1;
 }

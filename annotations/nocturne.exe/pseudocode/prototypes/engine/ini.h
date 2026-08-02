@@ -67,10 +67,10 @@ void __cdecl CIniFile::getFloat(CIniFile *this_ptr,char *key,float *output);
 // Address: 004bdb20
 void __cdecl CIniFile::setFloatValue(CIniFile *this_ptr,char *key,float value);
 
-// Original: engine_ini.cpp_FUN_004bdb60
+// Original: engine_ini.cpp_CIni_ctor_FUN_004bdb60
 // Address: 004bdb60
-undefined4 FUN_004bdb60(undefined4 param_1);
+CIni * __cdecl CIni::ctor(CIni *this_ptr);
 
-// Original: engine_ini.cpp_FUN_004bdb70
+// Original: engine_ini.cpp_CIni_dtor_FUN_004bdb70
 // Address: 004bdb70
-undefined4 FUN_004bdb70(undefined4 param_1);
+CIni * __cdecl CIni::dtor(CIni *this_ptr,uint flags);

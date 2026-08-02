@@ -45,4 +45,4 @@ undefined4 CTrash::getCollisionType(void);
 
 // Original: core_trash.cpp_CTrash_dtor_FUN_00547800
 // Address: 00547800
-CDemonActor * CTrash::dtor(CDemonActor *param_1,byte param_2);
+CTrash * __cdecl CTrash::dtor(CTrash *this_ptr,uint flags);

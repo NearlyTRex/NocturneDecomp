@@ -15,9 +15,9 @@ CTentacle * __cdecl factoryFunc(void);
 // Address: 00543b50
 CDemonActorType * CTentacle::getActorType(void);
 
-// Original: core_tentacle.cpp_FUN_00543b60
+// Original: core_tentacle.cpp_CTentacle_ctor_FUN_00543b60
 // Address: 00543b60
-CEnemy * FUN_00543b60(CEnemy *param_1);
+CTentacle * __cdecl CTentacle::ctor(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_setup_FUN_00543bc0
 // Address: 00543bc0

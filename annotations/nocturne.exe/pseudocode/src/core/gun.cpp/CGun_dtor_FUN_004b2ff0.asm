@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_gun_cpp_CGun_dtor_FUN_004b2ff0(CWeapon *param_1,byte param_2)
+; CGun * __cdecl core_gun_cpp_CGun_dtor_FUN_004b2ff0(CGun *this_ptr,uint flags)
 ;
+; Parameters:
+; CGun *           Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGunTypeInfo_0059e840

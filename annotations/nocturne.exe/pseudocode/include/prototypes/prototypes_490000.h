@@ -129,7 +129,7 @@ void __cdecl core_game_cpp_staticInit_FUN_0049a1e0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_0049a240(void);
 void core_game_cpp_FUN_0049a320(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_0049a650(CGame *this_ptr);
-undefined4 core_game_cpp_CGame_dtor_FUN_0049a880(undefined4 param_1);
+CGame * __cdecl core_game_cpp_CGame_dtor_FUN_0049a880(CGame *this_ptr,uint flags);
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_0049a890(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateDT_FUN_0049a8a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(CGame *this_ptr);

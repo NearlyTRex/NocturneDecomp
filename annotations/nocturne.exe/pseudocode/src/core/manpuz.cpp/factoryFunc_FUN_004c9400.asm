@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_manpuz.cpp_FUN_004c9430
+;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004c9411
     PUSH EAX                            ; 004c9412
         ;   Label: LAB_004c9412
-    CALL core_manpuz.cpp_FUN_004c9430   ; 004c9413
-        ;   XREF to: 004c9430 (UNCONDITIONAL_CALL)  ; CMansionPuzzleCircle * core_manpuz.cpp_FUN_004c9430(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430 ; 004c9413
+        ;   XREF to: 004c9430 (UNCONDITIONAL_CALL)  ; CMansionPuzzleCircle * core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430(CMansionPuzzleCircle * this_ptr)
     ADD ESP,0x4                         ; 004c9418
     RET                                 ; 004c941b
 

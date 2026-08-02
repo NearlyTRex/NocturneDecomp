@@ -397,19 +397,19 @@ float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0
 // Address: 0042b5d0
-CDemonActor * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042b690
 // Address: 0042b690
 undefined4 SFire::ctor(undefined4 param_1);
 
-// Original: core_charactr.cpp_FUN_0042b6a0
+// Original: core_charactr.cpp_SPose_ctor_FUN_0042b6a0
 // Address: 0042b6a0
-undefined4 FUN_0042b6a0(undefined4 param_1);
+SPose * __cdecl SPose::ctor(SPose *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042b6b0
+// Original: core_charactr.cpp_SPose_dtor_FUN_0042b6b0
 // Address: 0042b6b0
-undefined4 FUN_0042b6b0(undefined4 param_1);
+SPose * __cdecl SPose::dtor(SPose *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_FUN_0042b6c0
 // Address: 0042b6c0

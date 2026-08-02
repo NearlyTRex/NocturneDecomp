@@ -99,13 +99,13 @@ double __cdecl mixResampleMonoToStereo(short *sample_data,SStereoBuffers *channe
 // Address: 00523750
 double __cdecl mixResampleStereoToStereo(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 
-// Original: sound_sndmain.cpp_FUN_00523890
+// Original: sound_sndmain.cpp_CSfxSample_ctor_FUN_00523890
 // Address: 00523890
-void FUN_00523890(CSfxSample *param_1);
+CSfxSample * __cdecl CSfxSample::ctor(CSfxSample *this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_005238f0
+// Original: sound_sndmain.cpp_CSfxSample_dtor_FUN_005238f0
 // Address: 005238f0
-CSfxSample * FUN_005238f0(CSfxSample *param_1);
+CSfxSample * __cdecl CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910
 // Address: 00523910
@@ -619,25 +619,25 @@ void __cdecl pollAllStreams(int paused_mode);
 // Address: 00529980
 void FUN_00529980(char *param_1);
 
-// Original: sound_sndmain.cpp_FUN_005299e0
+// Original: sound_sndmain.cpp_CSfxOptions_ctor_FUN_005299e0
 // Address: 005299e0
-CSfxOptions * FUN_005299e0(CSfxOptions *param_1);
+CSfxOptions * __cdecl CSfxOptions::ctor(CSfxOptions *this_ptr);
 
 // Original: sound_sndmain.cpp_FUN_00529a00
 // Address: 00529a00
 int FUN_00529a00(void);
 
-// Original: sound_sndmain.cpp_FUN_00529a20
+// Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_00529a20
 // Address: 00529a20
-CSfxOptions * FUN_00529a20(CSfxOptions *param_1);
+CSfxOptions * __cdecl CSfxSlot::ctor(CSfxOptions *this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_00529a40
+// Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_00529a40
 // Address: 00529a40
-undefined4 FUN_00529a40(undefined4 param_1);
+CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
-// Original: sound_sndmain.cpp_FUN_00529a50
+// Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_00529a50
 // Address: 00529a50
-undefined4 FUN_00529a50(undefined4 param_1);
+CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_FUN_00529a60
 // Address: 00529a60

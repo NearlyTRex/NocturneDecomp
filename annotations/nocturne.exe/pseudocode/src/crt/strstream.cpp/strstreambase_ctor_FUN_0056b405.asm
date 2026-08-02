@@ -18,7 +18,7 @@
 ;   strstreambuf_vtable g_StrstreambufVTable
 ;   undefined4 DAT_005a48b0
 ;   void* PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc = 0056b5ad
-;   void* PTR_FUN_005a48c4 = 0056b491
+;   void* PTR_crt_unknown.c_FUN_0056b491_005a48c4 = 0056b491
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_ios_ctor_FUN_0056b503
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [EBX + 0x44],0x5a48bc ; 0056b44c | PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b453
     ADD ESP,0x10                        ; 0056b456
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a48c4 ; 0056b459 | PTR_FUN_005a48c4
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a48c4 ; 0056b459 | PTR_crt_unknown.c_FUN_0056b491_005a48c4
     LEA EAX,[EBX + 0x4]                 ; 0056b461
     PUSH EAX                            ; 0056b464
     MOV EAX,dword ptr [EBX]             ; 0056b465

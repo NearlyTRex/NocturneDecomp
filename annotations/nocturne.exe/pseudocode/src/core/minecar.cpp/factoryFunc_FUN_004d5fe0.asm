@@ -8,7 +8,7 @@
 ;   CDemonActor_vtable g_CMineCarVTable
 ;
 ; Called Functions:
-;   core_platfrm.cpp_FUN_004f5d90
+;   core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 004d5ff1
     PUSH EAX                            ; 004d5ff2
         ;   Label: LAB_004d5ff2
-    CALL core_platfrm.cpp_FUN_004f5d90  ; 004d5ff3
-        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
+    CALL core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90 ; 004d5ff3
+        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; CPlatform * core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 004d5ff8
     MOV dword ptr [EAX + 0x14c],0x5a0784 ; 004d5ffb | g_CMineCarVTable
     RET                                 ; 004d6005

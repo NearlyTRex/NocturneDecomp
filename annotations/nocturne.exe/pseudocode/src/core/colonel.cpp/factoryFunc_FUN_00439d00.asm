@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_colonel.cpp_FUN_00439d30
+;   core_colonel.cpp_CColonel_ctor_FUN_00439d30
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00439d11
     PUSH EAX                            ; 00439d12
         ;   Label: LAB_00439d12
-    CALL core_colonel.cpp_FUN_00439d30  ; 00439d13
-        ;   XREF to: 00439d30 (UNCONDITIONAL_CALL)  ; undefined core_colonel.cpp_FUN_00439d30()
+    CALL core_colonel.cpp_CColonel_ctor_FUN_00439d30 ; 00439d13
+        ;   XREF to: 00439d30 (UNCONDITIONAL_CALL)  ; CColonel * core_colonel.cpp_CColonel_ctor_FUN_00439d30(CColonel * this_ptr)
     ADD ESP,0x4                         ; 00439d18
     RET                                 ; 00439d1b
 

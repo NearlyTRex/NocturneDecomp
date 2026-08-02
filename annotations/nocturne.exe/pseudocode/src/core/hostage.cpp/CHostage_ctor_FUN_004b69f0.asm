@@ -18,7 +18,7 @@
 ;   CCharacter_full_vtable g_CHostageVTable
 ;
 ; Called Functions:
-;   core_npc.cpp_FUN_004ee950
+;   core_npc.cpp_CNPC_ctor_FUN_004ee950
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     PUSH EDI                            ; 004b69f2
     MOV EDX,dword ptr [ESP + 0x10]      ; 004b69f3
     PUSH EDX                            ; 004b69f7
-    CALL core_npc.cpp_FUN_004ee950      ; 004b69f8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_ctor_FUN_004ee950 ; 004b69f8
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_CNPC_ctor_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004b69fd
     PUSH 0x5859f3                       ; 004b6a00 | = "hickdad.dfm"
     MOV EBX,EAX                         ; 004b6a05

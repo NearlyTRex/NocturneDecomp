@@ -19,9 +19,9 @@ CBat * __cdecl factoryFunc(void);
 // Address: 00411a00
 CDemonActorType * CBat::getActorType(void);
 
-// Original: core_bat.cpp_FUN_00411a10
+// Original: core_bat.cpp_CBat_ctor_FUN_00411a10
 // Address: 00411a10
-CKeyFramedModel ** FUN_00411a10(CDemonActor *param_1);
+CBat * __cdecl CBat::ctor(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_setup_FUN_00411ae0
 // Address: 00411ae0
@@ -47,9 +47,9 @@ undefined4 * CBat::getBoundingBox(int param_1,undefined4 *param_2);
 // Address: 00411f20
 void __cdecl CBat::updateCoursePosition(CBat *this_ptr);
 
-// Original: core_bat.cpp_CStairs_dtor_FUN_00412000
+// Original: core_bat.cpp_CBat_dtor_FUN_00412000
 // Address: 00412000
-CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
+CBat * __cdecl CBat::dtor(CBat *this_ptr,uint flags);
 
 // Original: core_bat.cpp_FUN_0041206c
 // Address: 0041206c

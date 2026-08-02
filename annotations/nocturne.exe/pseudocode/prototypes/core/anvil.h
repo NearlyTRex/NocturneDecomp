@@ -15,9 +15,9 @@ CAnvil * __cdecl factoryFunc(void);
 // Address: 0040f550
 CDemonActorType * CAnvil::getActorType(void);
 
-// Original: core_anvil.cpp_FUN_0040f560
+// Original: core_anvil.cpp_CAnvil_ctor_FUN_0040f560
 // Address: 0040f560
-CAnvil * __cdecl FUN_0040f560(CAnvil *this_ptr);
+CAnvil * __cdecl CAnvil::ctor(CAnvil *this_ptr);
 
 // Original: core_anvil.cpp_CAnvil_setup_FUN_0040f5f0
 // Address: 0040f5f0
@@ -45,4 +45,4 @@ CBoundingBox3D * __cdecl CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D 
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_0040f8b0
 // Address: 0040f8b0
-CDemonActor * CAnvil::dtor(CDemonActor *param_1,byte param_2);
+CAnvil * __cdecl CAnvil::dtor(CAnvil *this_ptr,uint flags);

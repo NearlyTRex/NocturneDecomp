@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_0040fdb0(SFire *this_ptr,uint flags)
+;
+; Parameters:
+; SFire *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0040fdb0
+        ;   Label: core_armour.cpp_SFire_dtor_FUN_0040fdb0
+    RET                                 ; 0040fdb4
+

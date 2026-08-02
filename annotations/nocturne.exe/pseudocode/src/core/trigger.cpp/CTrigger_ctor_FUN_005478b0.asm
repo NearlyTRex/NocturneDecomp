@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_trigger.cpp_factoryFunc_FUN_00547880 at 00547893
-;   core_waypoint.cpp_FUN_005524d0 at 005524d5
+;   core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0 at 005524d5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nobody_00596988

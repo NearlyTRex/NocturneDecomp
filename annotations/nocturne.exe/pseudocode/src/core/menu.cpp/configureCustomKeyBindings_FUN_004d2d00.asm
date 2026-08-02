@@ -47,10 +47,10 @@
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
-;   shape_edittool.cpp_FUN_0046fcd0
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -1245,8 +1245,8 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     LEA EAX,[ESP + 0x608]               ; 004d3aef
     PUSH EAX                            ; 004d3af6
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004d3af7
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004d3af7
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004d3afc
     PUSH 0x588f8b                       ; 004d3aff | = "Restore defaults"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d3b04

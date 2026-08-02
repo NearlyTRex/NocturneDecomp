@@ -18,7 +18,6 @@
 #include "types/classes/CPickList.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CWeapon.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 
@@ -85,7 +84,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
 void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004746b0(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void shape_edittool_cpp_FUN_00474ae0(CStrList *param_1,char *param_2,char *param_3);
-CEdScrollBar * shape_edittool_cpp_FUN_00474c90(CStrList *param_1);
+CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_00474c90(CPickList *this_ptr);
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(CPickList *this_ptr,uint flags);
 int shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *param_1,char *param_2,int param_3);
 void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
@@ -139,13 +138,13 @@ void shape_edittool_cpp_FUN_00477690(void);
 void __cdecl core_elephant_cpp_staticInit_FUN_004776b0(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004776e0(void);
 CDemonActorType * core_elephant_cpp_CElephantGun_getActorType_FUN_00477700(void);
-CWeapon * core_elephant_cpp_FUN_00477710(CWeapon *param_1);
+CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_00477710(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004777a0(CElephantGun *this_ptr,float delta_time);
 undefined4 core_elephant_cpp_FUN_00477890(CCharacter *param_1);
 void core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CDemonActor *param_1);
 float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004780e0(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_00478120(CElephantGun *this_ptr);
-CWeapon * core_elephant_cpp_CElephantGun_dtor_FUN_00478310(CWeapon *param_1,byte param_2);
+CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00478310(CElephantGun *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_staticInit_FUN_00478360(void);
 CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_00478390(void);
 CDemonActorType * core_emitter_cpp_CEmitter_getActorType_FUN_004783b0(void);
@@ -159,9 +158,9 @@ void core_emitter_cpp_CEmitter_getBoundingBox_FUN_00479140(int param_1,float *pa
 void core_emitter_cpp_CEmitter_archive_FUN_004791a0(CDemonActor *param_1);
 undefined4 core_emitter_cpp_CEmitter_getCollisionType_FUN_00479380(void);
 CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(CEmitter *this_ptr,CVector3f *out_point);
-CDemonActor * core_emitter_cpp_CEmitter_dtor_FUN_00479420(CDemonActor *param_1,byte param_2);
+CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_00479420(CEmitter *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_SLaserInfo_copy_FUN_00479470(SLaserInfo *this_ptr,SLaserInfo *copy);
-undefined4 core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(undefined4 param_1);
+SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_00479520(SLaserInfo *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_00479530(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00479560(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004796b0(CEnemy *this_ptr);

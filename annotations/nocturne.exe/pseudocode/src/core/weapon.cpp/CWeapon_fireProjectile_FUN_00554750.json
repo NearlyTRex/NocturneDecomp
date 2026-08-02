@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,20 +64,14 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 32,
+        "line": 33,
         "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 33,
-        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
-      },
-      {
-        "category": "cast_error",
-        "column": 12,
         "line": 34,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+        "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
       },
       {
         "category": "incompatible_types",
@@ -86,21 +80,15 @@
         "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_ignore_FUN_00511780'"
       },
       {
-        "category": "cast_error",
-        "column": 23,
-        "line": 45,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
         "category": "incompatible_types",
         "column": 3,
-        "line": 70,
+        "line": 69,
         "message": "no matching function for call to 'core_fire_cpp_FUN_0048b6f0'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 71,
+        "line": 70,
         "message": "no matching function for call to 'core_setcolid_cpp_CDemonSet_init_FUN_00511750'"
       }
     ],
@@ -110,19 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 218,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 14,
+    "pseudocode_lines": 62,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 226
+    "total_lines": 225
   },
   "cross_references": [],
   "function": {
@@ -137,10 +124,10 @@
         "00554903"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750",
-    "signature": "void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)"
+    "signature": "void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr)"
   },
   "function_calls": [
     {
@@ -226,9 +213,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -258,10 +245,10 @@
     "pcode_op_count": 523
   },
   "stack_frame": {
-    "frame_size": 236,
+    "frame_size": 240,
     "local_size": 236,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -606,18 +593,17 @@
         "offset": -16,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 14,
@@ -627,96 +613,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&param_1->base,&local_28,input_local_point);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c.z = (param_1->model).transformed_vertices[0x1a].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_34,&local_1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar2 = (CDemonActor *)(param_1->model).transformed_vertices[0x1c].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_94.color.r = (int)(param_1->model).transformed_vertices[0x1b].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_94.color.g = (int)(param_1->model).transformed_vertices[0x1b].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_94.color.b = (int)(param_1->model).transformed_vertices[0x1b].z;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDemonActor *)(param_1->model).transformed_vertices[0x1c].y,",
-      "type": "unnamed_param"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_94.color.r = (this_ptr->muzzle_flash_color).r;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (19 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
+      "line": 40,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_e8.intensity = local_94.intensity;",

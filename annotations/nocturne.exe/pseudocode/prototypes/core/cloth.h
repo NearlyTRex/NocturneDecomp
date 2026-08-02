@@ -143,13 +143,13 @@ CVector3f * __cdecl applyLightAttenuation(CVector3f *v);
 // Address: 00438950
 CVector3f * __cdecl scaleVector(CVector3f *out,float *scale,CVector3f *v);
 
-// Original: core_cloth.cpp_FUN_00438980
+// Original: core_cloth.cpp_SClothBone_ctor_FUN_00438980
 // Address: 00438980
-undefined4 FUN_00438980(undefined4 param_1);
+SClothBone * __cdecl SClothBone::ctor(SClothBone *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00438990
+// Original: core_cloth.cpp_SClothBone_dtor_FUN_00438990
 // Address: 00438990
-undefined4 FUN_00438990(undefined4 param_1);
+SClothBone * __cdecl SClothBone::dtor(SClothBone *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_004389a0
 // Address: 004389a0

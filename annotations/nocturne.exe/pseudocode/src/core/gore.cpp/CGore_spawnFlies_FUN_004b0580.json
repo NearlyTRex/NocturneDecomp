@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,49 +52,43 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 16,
+        "column": 24,
+        "line": 17,
         "message": "use of undeclared identifier 'FUN_0056497c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 19,
-        "message": "no matching function for call to 'core_flies_cpp_FUN_0048eef0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 22,
+        "line": 23,
         "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 22,
+        "line": 23,
         "message": "assigning to 'int' from incompatible type 'const char[17]'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 30,
+        "line": 31,
         "message": "member reference type 'int' is not a pointer"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 44,
+        "line": 42,
         "message": "no matching function for call to 'core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 45,
+        "line": 43,
         "message": "no matching function for call to 'core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60'"
       }
     ],
@@ -104,18 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 207,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 35,
     "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 122
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -135,13 +129,13 @@
     ],
     "convention": "unknown",
     "name": "core_gore.cpp_CGore_spawnFlies_FUN_004b0580",
-    "signature": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,undefined4 param_3,float param_4,CDemonActor *param_5)"
+    "signature": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)"
   },
   "function_calls": [
     {
       "addr": "0048eef0",
       "is_variadic": false,
-      "name": "core_flies.cpp_FUN_0048eef0"
+      "name": "core_flies.cpp_CFlies_ctor_FUN_0048eef0"
     },
     {
       "addr": "004c8440",
@@ -276,7 +270,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,uint param_3,float param_4,CDemonActor *param_5)",
+      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -284,7 +278,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,uint param_3,float param_4,CDemonActor *param_5)",
+      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -292,7 +286,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,uint param_3,float param_4,CDemonActor *param_5)",
+      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +294,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,uint param_3,float param_4,CDemonActor *param_5)",
+      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -308,15 +302,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,uint param_3,float param_4,CDemonActor *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr->location).position.x = *param_2;",
+      "text": "CFlies * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,float *param_2,int param_3,float param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -324,7 +310,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr->location).position.y = param_2[1];",
+      "text": "(this_ptr_00->base).location.position.x = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -332,23 +318,55 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr->location).position.z = param_2[2];",
+      "text": "(this_ptr_00->base).location.position.y = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(this_ptr_00->base).location.position.z = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "this_ptr_00->gather_count = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "this_ptr_00->gather_time = fVar2 / param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_3",
+      "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)(this_ptr[0x20].actor_name + 4) = param_3;",
+      "text": "if ((param_5 != (float *)0x0) && (&this_ptr_00->box_size != (CVector3f *)param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((param_5 != (float *)0x0) && (&this_ptr_00->box_size != (CVector3f *)param_5)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
-      "match": "param_4",
+      "match": "param_5",
       "severity": "mild",
-      "text": "*(float *)(this_ptr[0x20].actor_name + 0xc) = fVar1 / param_4;",
+      "text": "(this_ptr_00->box_size).x = *param_5;",
       "type": "unnamed_param"
     },
     {
@@ -356,15 +374,7 @@
       "line": 31,
       "match": "param_5",
       "severity": "mild",
-      "text": "if ((param_5 != (CDemonActor *)0x0) && (this_ptr + 1 != param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((param_5 != (CDemonActor *)0x0) && (this_ptr + 1 != param_5)) {",
+      "text": "(this_ptr_00->box_size).y = param_5[1];",
       "type": "unnamed_param"
     },
     {
@@ -372,23 +382,7 @@
       "line": 32,
       "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)this_ptr[1].actor_name = *(uint *)param_5->actor_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr[1].actor_name + 4) = *(uint *)(param_5->actor_name + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr[1].actor_name + 8) = *(uint *)(param_5->actor_name + 8);",
+      "text": "(this_ptr_00->box_size).z = param_5[2];",
       "type": "unnamed_param"
     },
     {

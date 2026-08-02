@@ -1,0 +1,527 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 495,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 495,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 496,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 496,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 109,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 58,
+        "message": "no matching function for call to 'core_xform_cpp_eulerToQuaternion_FUN_0055d610'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 62,
+        "message": "use of undeclared identifier 'stack0xfffffff0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 63,
+        "message": "use of undeclared identifier 'stack0xfffffff4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 66,
+        "message": "use of undeclared identifier 'stack0xfffffff4'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 365,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 85,
+    "suspect_count": 25,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [
+    {
+      "addr": "0043b050",
+      "from_addr": "0043b057",
+      "name": "core_conveyor.cpp_CConveyor_ctor_FUN_0043b050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d60b0",
+      "from_addr": "004d60b5",
+      "name": "core_minecar.cpp_CMineCar_ctor_FUN_004d60b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d5fe0",
+      "from_addr": "004d5ff3",
+      "name": "core_minecar.cpp_factoryFunc_FUN_004d5fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5d60",
+      "from_addr": "004f5d73",
+      "name": "core_platfrm.cpp_factoryFunc_FUN_004f5d60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f5d90",
+    "address_range": [
+      [
+        "004f5d90",
+        "004f5f52"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90",
+    "signature": "CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_004f5d90(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409d30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00409d30"
+    },
+    {
+      "addr": "0043b5d0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_ctor_FUN_0043b5d0"
+    },
+    {
+      "addr": "00454490",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490"
+    },
+    {
+      "addr": "00454580",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580"
+    },
+    {
+      "addr": "0055d610",
+      "is_variadic": false,
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_0055d610"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058d75f",
+      "name": "s_slider1_kfm_0058d75f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005a1384",
+      "name": "g_CPlatformVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0043b057",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_CConveyor_ctor_FUN_0043b050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d60b5",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_CMineCar_ctor_FUN_004d60b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d5ff3",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_factoryFunc_FUN_004d5fe0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f5d73",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_factoryFunc_FUN_004f5d60",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.377551020408164,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 96,
+      "INT_ADD": 76,
+      "INT_AND": 26,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LESS": 4,
+      "INT_MULT": 16,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 34,
+      "INT_ZEXT": 16,
+      "LOAD": 19,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 54
+    },
+    "pcode_op_count": 429
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CPlatform_ctor_FUN_004f5d90.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 60,
+          "message": "Uninitialized variable: local_14",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "apCStackY_17f0",
+      "severity": "moderate",
+      "text": "CCourseFrame *apCStackY_17f0 [1523];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "pCVar5[-5].",
+      "severity": "mild",
+      "text": "pCVar5[-5].len = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "pCVar5[-5].",
+      "severity": "mild",
+      "text": "pCVar5[-5].loop = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar5[-3].",
+      "severity": "mild",
+      "text": "pCVar5[-3].len = 0x40000000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
+      "match": "pCVar5[-4].",
+      "severity": "mild",
+      "text": "pCVar5[-4].loop = 0x40000000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar5[-5].",
+      "severity": "mild",
+      "text": "pCVar5[-5].frames = (CCourseFrame *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar5[-3].",
+      "severity": "mild",
+      "text": "*(byte *)&pCVar5[-3].frames = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*puVar7 = *(uint *)(&stack0xfffffff0 + (uint)bVar11 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*puVar8 = *(uint *)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "((int)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 76,
+      "match": "pCVar5[-4].",
+      "severity": "mild",
+      "text": "pCVar5[-4].len = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 77,
+      "match": "pCVar5[-4].",
+      "severity": "mild",
+      "text": "pCVar5[-4].frames = (CCourseFrame *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&g_CPlatformVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&g_CPlatformVTable",
+      "severity": "moderate",
+      "text": "pCVar5[-0x25].len = (int)&g_CPlatformVTable;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5[4].frames` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)pCVar5[4].frames",
+      "severity": "moderate",
+      "text": "pCVar5[3].len = (int)pCVar5[4].frames;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(ppCVar6 + 0xd)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)(ppCVar6 + 0xd)",
+      "severity": "moderate",
+      "text": "iVar2 = (int)(ppCVar6 + 0xd);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->len = pCVar5[-0x3e].len;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5[1].len = pCVar1->len;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 24,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((CCourse *)(pCVar4[1].part_visibility_flags + 0xf));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_14",
+      "line": 60,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "pCVar5[4].frames = local_14;",
+      "type": "static_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPlatform",
+        "offset": 0,
+        "vtable_addr": "0059b834"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

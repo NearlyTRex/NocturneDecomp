@@ -219,7 +219,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 162 sites)
   CMobster_aimTommyGun_FUN_004db6f0                                        2 sites  ~78 bytes
     0x004db962  4x MOVSD (16 bytes copy, 9 bytes borrowable)
     0x004db9b6  4x MOVSD (16 bytes copy, 8 bytes borrowable)
-  FUN_004f5d90                                                             2 sites  ~78 bytes
+  CPlatform_ctor_FUN_004f5d90                                              2 sites  ~78 bytes
     0x004f5e81  4x MOVSD (16 bytes copy, 10 bytes borrowable)
     0x004f5e91  4x MOVSD (16 bytes copy, 14 bytes borrowable)
   CSkeleton_getBoneAngleInterpolated_FUN_00517a80                          2 sites  ~78 bytes
@@ -468,10 +468,6 @@ FIXABLE 2x MOVSD SITES (8 bytes copy, 14 sites)
   FUN_0056808c                                                             2 sites  ~54 bytes
     0x00568434  2x MOVSD (8 bytes copy, 6 bytes borrowable)
     0x0056844f  2x MOVSD (8 bytes copy, 7 bytes borrowable)
-  FUN_00571858                                                             1 sites  ~27 bytes
-    0x0057187a  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  FUN_00573ed0                                                             1 sites  ~27 bytes
-    0x00573f37  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   CNetGame_addChatHistory_FUN_004ec500                                     1 sites  ~27 bytes
     0x004ec539  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   CNetGame_addPlayer_FUN_004eb440                                          1 sites  ~27 bytes
@@ -480,6 +476,10 @@ FIXABLE 2x MOVSD SITES (8 bytes copy, 14 sites)
     0x004e9bed  2x MOVSD (8 bytes copy, 9 bytes borrowable)
   CNetGame_sendGameSetting_FUN_004ecf50                                    1 sites  ~27 bytes
     0x004ed095  2x MOVSD (8 bytes copy, 5 bytes borrowable)
+  FUN_00571858                                                             1 sites  ~27 bytes
+    0x0057187a  2x MOVSD (8 bytes copy, 5 bytes borrowable)
+  FUN_00573ed0                                                             1 sites  ~27 bytes
+    0x00573f37  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   acceptConnection_FUN_00549170                                            1 sites  ~27 bytes
     0x005491cc  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   getSocketName_FUN_005491e0                                               1 sites  ~27 bytes
@@ -553,10 +553,10 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 16 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
 NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 3 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
-  FUN_0056f480                                                             1 sites
-    0x0056f49b  2x MOVSD (8 bytes copy)
   i64toa_FUN_0056f3e0                                                      1 sites
     0x0056f406  2x MOVSD (8 bytes copy)
+  FUN_0056f480                                                             1 sites
+    0x0056f49b  2x MOVSD (8 bytes copy)
   getTime_FUN_00558a30                                                     1 sites
     0x00558a5e  2x MOVSD (8 bytes copy)
 
@@ -1136,9 +1136,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (91 sites)
     0x0042ea92  REP MOVSD (dynamic count)
     0x0042eaa8  REP MOVSD (dynamic count)
     0x0042eabe  REP MOVSD (dynamic count)
-  FUN_0056aa38                                                             2 sites
-    0x0056aacb  REP MOVSD (dynamic count)
-    0x0056ab8a  REP MOVSD (dynamic count)
   FUN_004303d0                                                             2 sites
     0x0043049d  REP MOVSD (dynamic count)
     0x00430551  REP MOVSD (dynamic count)
@@ -1157,18 +1154,15 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (91 sites)
   strstreambuf_doallocate_FUN_00570272                                     2 sites
     0x0057031d  REP MOVSD (dynamic count)
     0x005703c8  REP MOVSD (dynamic count)
+  FUN_0056aa38                                                             2 sites
+    0x0056aacb  REP MOVSD (dynamic count)
+    0x0056ab8a  REP MOVSD (dynamic count)
   CEditorTools_createModalWindow_FUN_00471b50                              2 sites
     0x00471e22  REP MOVSD (dynamic count)
     0x00471f2a  REP MOVSD (dynamic count)
   CEditorTools_setClipboardText_FUN_00472d10                               2 sites
     0x00472d73  REP MOVSD (dynamic count)
     0x00472dcc  REP MOVSD (dynamic count)
-  FUN_0056e940                                                             1 sites
-    0x0056e97a  REP MOVSD (dynamic count)
-  FUN_005711a8                                                             1 sites
-    0x0057123a  REP MOVSD (dynamic count)
-  FUN_00571410                                                             1 sites
-    0x00571429  REP MOVSD (dynamic count)
   FUN_00430630                                                             1 sites
     0x004310c8  REP MOVSD (dynamic count)
   copyScreenRegion_FUN_0042e750                                            1 sites
@@ -1241,6 +1235,12 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (91 sites)
     0x00566a5f  REP MOVSD (dynamic count)
   parse_timezone_spec_FUN_0056d658                                         1 sites
     0x0056d6af  REP MOVSD (dynamic count)
+  FUN_0056e940                                                             1 sites
+    0x0056e97a  REP MOVSD (dynamic count)
+  FUN_005711a8                                                             1 sites
+    0x0057123a  REP MOVSD (dynamic count)
+  FUN_00571410                                                             1 sites
+    0x00571429  REP MOVSD (dynamic count)
   realloc__FUN_00564a88                                                    1 sites
     0x00564af5  REP MOVSD (dynamic count)
   getcwd_FUN_0056c5f0                                                      1 sites

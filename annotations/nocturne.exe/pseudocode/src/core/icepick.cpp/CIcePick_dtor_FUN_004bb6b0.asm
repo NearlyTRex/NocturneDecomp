@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_icepick_cpp_CIcePick_dtor_FUN_004bb6b0(CHero *param_1,byte param_2)
+; CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004bb6b0(CIcePick *this_ptr,uint flags)
 ;
+; Parameters:
+; CIcePick *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CIcePickTypeInfo_0059f530

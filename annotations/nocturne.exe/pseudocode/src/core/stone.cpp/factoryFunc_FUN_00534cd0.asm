@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_stone.cpp_FUN_00534d00
+;   core_stone.cpp_CTempleStone_ctor_FUN_00534d00
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00534ce1
     PUSH EAX                            ; 00534ce2
         ;   Label: LAB_00534ce2
-    CALL core_stone.cpp_FUN_00534d00    ; 00534ce3
-        ;   XREF to: 00534d00 (UNCONDITIONAL_CALL)  ; undefined core_stone.cpp_FUN_00534d00()
+    CALL core_stone.cpp_CTempleStone_ctor_FUN_00534d00 ; 00534ce3
+        ;   XREF to: 00534d00 (UNCONDITIONAL_CALL)  ; CTempleStone * core_stone.cpp_CTempleStone_ctor_FUN_00534d00(CTempleStone * this_ptr)
     ADD ESP,0x4                         ; 00534ce8
     RET                                 ; 00534ceb
 

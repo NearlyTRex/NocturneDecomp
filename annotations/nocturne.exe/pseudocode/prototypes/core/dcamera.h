@@ -27,9 +27,9 @@ void __cdecl updateFogScrollOffset(SFogGrid *fog_ptr,int time_major,int time_min
 // Address: 0043fee0
 CDemonCamera * __cdecl CDemonCamera::ctor(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_FUN_0043ff30
+// Original: core_dcamera.cpp_CDemonCamera_dtor_FUN_0043ff30
 // Address: 0043ff30
-CDemonCamera * FUN_0043ff30(CDemonCamera *param_1);
+CDemonCamera * __cdecl CDemonCamera::dtor(CDemonCamera *this_ptr,uint flags);
 
 // Original: core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50
 // Address: 0043ff50

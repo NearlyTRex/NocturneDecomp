@@ -44,9 +44,7 @@ void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int
   float local_30;
   float local_2c;
   CVector3f local_28;
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   int local_10;
   
   bVar7 = 0;
@@ -91,12 +89,12 @@ void core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(int param_1,int
               (&local_16c,(CVector3f *)&DAT_02dd1184,&local_94);
     (**(code **)(*(int *)(iVar5 + 0x14c) + 0x14))(iVar5,&local_dc);
     core_actor_cpp_CVector_ctor_FUN_0040e160(&local_1c);
-    local_1c = local_dc + local_d0;
-    local_18 = local_d8 + local_cc;
-    local_14 = local_d4 + local_c8;
+    local_1c.x = local_dc + local_d0;
+    local_1c.y = local_d8 + local_cc;
+    local_1c.z = local_d4 + local_c8;
     core_actor_cpp_CVector_ctor_FUN_0040e160(&local_7c);
-    local_7c.x = local_1c * 0.5f;
-    local_7c.y = local_18 * 0.5f;
+    local_7c.x = local_1c.x * 0.5f;
+    local_7c.y = local_1c.y * 0.5f;
     local_7c.z = local_d4 + (float)0.40000000000000002;
     if (&local_64 != &local_7c) {
       local_64.x = local_7c.x;

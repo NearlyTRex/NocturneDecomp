@@ -52,7 +52,7 @@ char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(CDeformab
 void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void);
 CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void);
 CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(void);
-CEnemy * core_sentinel_cpp_FUN_00505920(CEnemy *param_1);
+CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00505920(CSentinel *this_ptr);
 void core_sentinel_cpp_CSentinel_setup_FUN_00505990(CEnemy *param_1);
 void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(CEnemy *param_1,float param_2);
 undefined4 core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(CDemonActor *param_1,int param_2);
@@ -63,7 +63,7 @@ void core_sentinel_cpp_CSentinel_getCollisionType_FUN_00506a60(CCharacter *param
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00506a80(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_00506b40(void);
 CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_00506bc0(CDemonSet *this_ptr);
-int * core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00506ec0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *this_ptr,float frustum_param,int render_mode);
@@ -132,11 +132,11 @@ int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(CDemonSet 
 void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0050e920(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CVector3f_equals_FUN_0050ea10(CVector3f *a,CVector3f *b);
-undefined4 core_set_cpp_FUN_0050ea40(undefined4 param_1);
-undefined4 core_set_cpp_FUN_0050ea50(undefined4 param_1);
-undefined4 core_set_cpp_FUN_0050ea60(undefined4 param_1);
-undefined4 core_set_cpp_FUN_0050ea70(undefined4 param_1);
-undefined4 core_set_cpp_FUN_0050ea80(undefined4 param_1);
+SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0050ea40(SRoom *this_ptr);
+SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_0050ea50(SRoom *this_ptr,uint flags);
+SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_0050ea60(SVDBox *this_ptr);
+SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_0050ea70(SVDBox *this_ptr,uint flags);
+C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_0050ea80(C3DSLight *this_ptr,uint flags);
 CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b);
 CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(CVector3f *objs,uint flags);
 C3DSCamera * __cdecl core_set_cpp_FUN_0050eb00(C3DSCamera *objs,uint flags);

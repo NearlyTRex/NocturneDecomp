@@ -15,9 +15,9 @@ CArmour * __cdecl factoryFunc(void);
 // Address: 0040f950
 CDemonActorType * CArmour::getActorType(void);
 
-// Original: core_armour.cpp_FUN_0040f960
+// Original: core_armour.cpp_CArmour_ctor_FUN_0040f960
 // Address: 0040f960
-CArmour * __cdecl FUN_0040f960(CArmour *this_ptr);
+CArmour * __cdecl CArmour::ctor(CArmour *this_ptr);
 
 // Original: core_armour.cpp_CArmour_setup_FUN_0040fa00
 // Address: 0040fa00
@@ -51,9 +51,9 @@ CArmour * __cdecl CArmour::dtor(CArmour *this_ptr,uint flags);
 // Address: 0040fcf0
 CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
-// Original: core_armour.cpp_FUN_0040fdb0
+// Original: core_armour.cpp_SFire_dtor_FUN_0040fdb0
 // Address: 0040fdb0
-undefined4 FUN_0040fdb0(undefined4 param_1);
+SFire * __cdecl SFire::dtor(SFire *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CFlame_dtor_FUN_0040fdc0
 // Address: 0040fdc0

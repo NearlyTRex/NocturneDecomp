@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
-;   core_dlight.cpp_FUN_0044e1c0
+;   core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0
 ;   core_setutil.cpp_FUN_00515410
 ;   crt_unknown.c_FUN_00564494
@@ -90,8 +90,8 @@ section .text
     PUSH 0x0                            ; 0050ada7
         ;   Label: LAB_0050ada7
     PUSH EAX                            ; 0050ada9
-    CALL core_dlight.cpp_FUN_0044e1c0   ; 0050adaa
-        ;   XREF to: 0044e1c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044e1c0()
+    CALL core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0 ; 0050adaa
+        ;   XREF to: 0044e1c0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0(CDemonLight * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050adaf
     PUSH EAX                            ; 0050adb2
     CALL crt_unknown.c_FUN_00564494     ; 0050adb3

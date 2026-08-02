@@ -2,11 +2,11 @@
 // Address: 0044c2b0
 // Address Range: [[0044c2b0, 0044c2c8]]
 // Convention: __cdecl
-// Signature: CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx *this_ptr)
+// Signature: CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFX *this_ptr)
 
 #include "nocturne.h"
 
-CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx *this_ptr)
+CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFX *this_ptr)
 
 {
   this_ptr->frame_count = 0;

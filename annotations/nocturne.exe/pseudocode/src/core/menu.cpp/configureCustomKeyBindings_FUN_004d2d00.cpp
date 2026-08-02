@@ -580,7 +580,7 @@ LAB_004d2d2e:
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     engine_special_cpp_clearScreen_FUN_0052ee70();
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    shape_edittool_cpp_FUN_00474c90(&local_244);
+    shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&local_244);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Restore defaults");
     iVar29 = 0;
     shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_244,pcVar2);

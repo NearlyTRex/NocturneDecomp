@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_ctor_FUN_004e0050
-;   core_npc.cpp_FUN_004ee950
+;   core_npc.cpp_CNPC_ctor_FUN_004ee950
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EDI                            ; 004ef4e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004ef4e3
     PUSH EBX                            ; 004ef4e7
-    CALL core_npc.cpp_FUN_004ee950      ; 004ef4e8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_004ee950(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_ctor_FUN_004ee950 ; 004ef4e8
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_CNPC_ctor_FUN_004ee950(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004ef4ed
     ADD EAX,0x1f67c                     ; 004ef4f0
     PUSH EAX                            ; 004ef4f5

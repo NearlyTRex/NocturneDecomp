@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_004fe4d0 at 004fe4e4
+;   core_script.cpp_CScript_dtor_FUN_004fe4d0 at 004fe4e4
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d26
 ;
 ; Referenced Globals:

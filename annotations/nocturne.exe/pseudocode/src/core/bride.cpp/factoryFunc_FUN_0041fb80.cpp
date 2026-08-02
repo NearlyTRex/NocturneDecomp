@@ -15,6 +15,6 @@ CBride * __cdecl core_bride_cpp_factoryFunc_FUN_0041fb80(void)
   if (pCVar1 == (CBride *)0x0) {
     return (CBride *)0x0;
   }
-  pCVar1 = core_bride_cpp_FUN_0041fbb0(pCVar1);
+  pCVar1 = core_bride_cpp_CBride_ctor_FUN_0041fbb0(pCVar1);
   return pCVar1;
 }

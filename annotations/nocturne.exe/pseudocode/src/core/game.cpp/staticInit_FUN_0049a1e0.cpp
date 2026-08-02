@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_staticInit_FUN_0049a1e0(void)
   _atexit(&g_WatcomStaticDestructorNode_005b92c0);
   core_game_cpp_CGame_ctor_FUN_0049a650((CGame *)&DAT_01c775ec);
   _atexit(&g_WatcomStaticDestructorNode_005b92d0);
-  shape_edittool_cpp_FUN_00474c90(&DAT_01c78424);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&DAT_01c78424);
   _atexit(&g_WatcomStaticDestructorNode_005b92e0);
   return;
 }

@@ -16,7 +16,7 @@
 ;   crt_locale.c_wchar_to_bytes_FUN_0056da30
 ;   crt_string.c_mbstring_termination_check_FUN_00570ca0
 ;   crt_string.c_mbtowc_next_FUN_0056da80
-;   FUN_00572e00
+;   crt_unknown.c_FUN_00572e00
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EAX,ESP                         ; 00572ac5
     PUSH EAX                            ; 00572ac7
     PUSH EBX                            ; 00572ac8
-    CALL FUN_00572e00                   ; 00572ac9
-        ;   XREF to: 00572e00 (UNCONDITIONAL_CALL)  ; undefined FUN_00572e00()
+    CALL crt_unknown.c_FUN_00572e00     ; 00572ac9
+        ;   XREF to: 00572e00 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00572e00()
     ADD ESP,0x8                         ; 00572ace
     TEST EAX,EAX                        ; 00572ad1
     JZ 0x00572ae2                       ; 00572ad3

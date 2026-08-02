@@ -1,0 +1,116 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "0056e52c",
+      "from_addr": "0056e54b",
+      "name": "crt_unknown.c_FUN_0056e52c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00571170",
+    "address_range": [
+      [
+        "00571170",
+        "005711a6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00571170",
+    "signature": "LPVOID crt_unknown_c_FUN_00571170(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "crt_startup.c_HandleRuntimeError_FUN_0056ddc0"
+    },
+    {
+      "addr": "0056e608",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056e608"
+    },
+    {
+      "addr": "EXTERNAL:0000008f",
+      "is_variadic": false,
+      "name": "TlsGetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005755c8",
+      "name": "PTR_TlsGetValue_005755c8",
+      "type": "void*",
+      "value": "0017609c"
+    },
+    {
+      "addr": "00599174",
+      "name": "s_Thread_has_no_thread_spe_00599174",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1ab8",
+      "name": "DAT_005c1ab8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 4,
+      "INT_AND": 12,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 83
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005c1ab8",
+      "severity": "mild",
+      "text": "pvVar2 = TlsGetValue(DAT_005c1ab8);",
+      "type": "undefined_data"
+    }
+  ]
+}

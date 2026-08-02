@@ -57,7 +57,7 @@ CVector3f * __cdecl CEmitter::getRandomBoundingBoxPoint(CEmitter *this_ptr,CVect
 
 // Original: core_emitter.cpp_CEmitter_dtor_FUN_00479420
 // Address: 00479420
-CDemonActor * CEmitter::dtor(CDemonActor *param_1,byte param_2);
+CEmitter * __cdecl CEmitter::dtor(CEmitter *this_ptr,uint flags);
 
 // Original: core_emitter.cpp_SLaserInfo_copy_FUN_00479470
 // Address: 00479470
@@ -65,4 +65,4 @@ void __cdecl SLaserInfo::copy(SLaserInfo *this_ptr,SLaserInfo *copy);
 
 // Original: core_emitter.cpp_SLaserInfo_dtor_FUN_00479520
 // Address: 00479520
-undefined4 SLaserInfo::dtor(undefined4 param_1);
+SLaserInfo * __cdecl SLaserInfo::dtor(SLaserInfo *this_ptr,uint flags);

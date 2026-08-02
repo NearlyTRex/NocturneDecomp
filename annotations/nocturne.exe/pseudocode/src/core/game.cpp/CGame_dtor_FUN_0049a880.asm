@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_game_cpp_CGame_dtor_FUN_0049a880(undefined4 param_1)
+; CGame * __cdecl core_game_cpp_CGame_dtor_FUN_0049a880(CGame *this_ptr,uint flags)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; *****************************************************************************
 

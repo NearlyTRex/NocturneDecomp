@@ -1,0 +1,105 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "0056fb98",
+      "from_addr": "0056fbdb",
+      "name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005714e0",
+    "address_range": [
+      [
+        "005714e0",
+        "005714ea"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_unknown.c_FUN_005714e0",
+    "signature": "HANDLE __watcallRegister crt_unknown_c_FUN_005714e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057146c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0057146c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c20d0",
+      "name": "DAT_005c20d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056fbdb",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 1,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_005c20d0",
+      "severity": "mild",
+      "text": "return DAT_005c20d0;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -15,9 +15,9 @@ CBattery * __cdecl factoryFunc(void);
 // Address: 00414d70
 CDemonActorType * CBattery::getActorType(void);
 
-// Original: core_battery.cpp_FUN_00414d80
+// Original: core_battery.cpp_CBattery_ctor_FUN_00414d80
 // Address: 00414d80
-int * FUN_00414d80(CDemonActor *param_1);
+CBattery * __cdecl CBattery::ctor(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_setup_FUN_00414de0
 // Address: 00414de0
@@ -61,4 +61,4 @@ CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBo
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00414fa0
 // Address: 00414fa0
-CDemonActor * CBattery::dtor(CDemonActor *param_1,byte param_2);
+CBattery * __cdecl CBattery::dtor(CBattery *this_ptr,uint flags);

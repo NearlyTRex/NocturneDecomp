@@ -67,13 +67,13 @@ float __cdecl fastSqrt(float value);
 // Address: 0042cd30
 CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
-// Original: core_chain.cpp_FUN_0042cda0
+// Original: core_chain.cpp_SChainVertex_ctor_FUN_0042cda0
 // Address: 0042cda0
-undefined4 FUN_0042cda0(undefined4 param_1);
+SChainVertex * __cdecl SChainVertex::ctor(SChainVertex *this_ptr);
 
-// Original: core_chain.cpp_FUN_0042cdb0
+// Original: core_chain.cpp_SChainVertex_dtor_FUN_0042cdb0
 // Address: 0042cdb0
-undefined4 FUN_0042cdb0(undefined4 param_1);
+SChainVertex * __cdecl SChainVertex::dtor(SChainVertex *this_ptr,uint flags);
 
 // Original: core_chain.cpp_FUN_0042cdc0
 // Address: 0042cdc0

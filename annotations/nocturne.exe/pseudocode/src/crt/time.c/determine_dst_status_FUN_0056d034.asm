@@ -38,8 +38,8 @@
 ;
 ; Called Functions:
 ;   crt_time.c_is_leap_year_FUN_0056cea0
-;   FUN_0056cfd8
-;   FUN_0056d308
+;   crt_unknown.c_FUN_0056cfd8
+;   crt_unknown.c_FUN_0056d308
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EDX                            ; 0056d053
     PUSH 0x5c1de4                       ; 0056d054 | DAT_005c1de4
     PUSH 0x5c1dc0                       ; 0056d059 | DAT_005c1dc0
-    CALL FUN_0056cfd8                   ; 0056d05e
-        ;   XREF to: 0056cfd8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056cfd8()
+    CALL crt_unknown.c_FUN_0056cfd8     ; 0056d05e
+        ;   XREF to: 0056cfd8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056cfd8()
     ADD ESP,0xc                         ; 0056d063
     MOV dword ptr [ESP + 0x10],EAX      ; 0056d066
     TEST EAX,EAX                        ; 0056d06a
@@ -214,8 +214,8 @@ section .text
     PUSH EBP                            ; 0056d1d5 | DAT_005c1de4
         ;   Label: LAB_0056d1d5
     PUSH EBX                            ; 0056d1d6
-    CALL FUN_0056d308                   ; 0056d1d7
-        ;   XREF to: 0056d308 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d308()
+    CALL crt_unknown.c_FUN_0056d308     ; 0056d1d7
+        ;   XREF to: 0056d308 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056d308()
     ADD ESP,0x8                         ; 0056d1dc
     TEST EAX,EAX                        ; 0056d1df
     SETZ AL                             ; 0056d1e1
@@ -345,8 +345,8 @@ section .text
     PUSH EDI                            ; 0056d2e3 | DAT_005c1dc0
         ;   Label: LAB_0056d2e3
     PUSH EBX                            ; 0056d2e4
-    CALL FUN_0056d308                   ; 0056d2e5
-        ;   XREF to: 0056d308 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d308()
+    CALL crt_unknown.c_FUN_0056d308     ; 0056d2e5
+        ;   XREF to: 0056d308 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056d308()
     ADD ESP,0x8                         ; 0056d2ea
     MOV ESI,EAX                         ; 0056d2ed
     MOV EAX,dword ptr [ESP + 0x10]      ; 0056d2ef

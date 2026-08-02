@@ -27,9 +27,9 @@ CStranger * __cdecl factoryFunc(void);
 // Address: 005350b0
 CDemonActorType * CStranger::getActorType(void);
 
-// Original: core_stranger.cpp_FUN_005350c0
+// Original: core_stranger.cpp_CStranger_ctor_FUN_005350c0
 // Address: 005350c0
-CStranger * __cdecl FUN_005350c0(CStranger *this_ptr);
+CStranger * __cdecl CStranger::ctor(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_setup_FUN_00535450
 // Address: 00535450

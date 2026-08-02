@@ -13,8 +13,8 @@
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
-;   FUN_005713a0 at 005713b3
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458 at 0056747e
+;   crt_unknown.c_FUN_005713a0 at 005713b3
 ;
 ; Referenced Globals:
 ;   void* PTR_VirtualQuery_005755dc = 001760f2

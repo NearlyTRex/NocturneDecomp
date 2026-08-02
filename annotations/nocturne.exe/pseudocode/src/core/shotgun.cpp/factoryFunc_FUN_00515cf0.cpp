@@ -9,13 +9,12 @@
 CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00515cf0(void)
 
 {
-  int iVar1;
-  CShotgun *pCVar2;
+  CShotgun *pCVar1;
   
-  iVar1 = FUN_0056497c(0x57c);
-  if (iVar1 == 0) {
+  pCVar1 = (CShotgun *)FUN_0056497c(0x57c);
+  if (pCVar1 == (CShotgun *)0x0) {
     return (CShotgun *)0x0;
   }
-  pCVar2 = (CShotgun *)core_shotgun_cpp_FUN_00515d20(iVar1);
-  return pCVar2;
+  pCVar1 = core_shotgun_cpp_CShotgun_ctor_FUN_00515d20(pCVar1);
+  return pCVar1;
 }

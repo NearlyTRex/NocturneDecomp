@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWeapon * core_elephant_cpp_CElephantGun_dtor_FUN_00478310(CWeapon *param_1,byte param_2)
+; CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00478310(CElephantGun *this_ptr,uint flags)
 ;
+; Parameters:
+; CElephantGun *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CElephantGunTypeInfo_0059cc30

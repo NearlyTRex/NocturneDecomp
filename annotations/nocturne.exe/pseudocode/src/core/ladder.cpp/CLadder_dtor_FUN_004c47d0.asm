@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_ladder_cpp_CLadder_dtor_FUN_004c47d0(CDemonActor *param_1,byte param_2)
+; CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004c47d0(CLadder *this_ptr,uint flags)
 ;
+; Parameters:
+; CLadder *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CLadderTypeInfo_0059fa30

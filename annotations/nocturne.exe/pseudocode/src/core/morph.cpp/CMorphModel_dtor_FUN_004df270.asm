@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMorphModel * core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *param_1)
+; CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *this_ptr,uint flags)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_free_FUN_004df290

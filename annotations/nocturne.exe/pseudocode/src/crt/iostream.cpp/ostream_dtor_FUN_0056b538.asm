@@ -8,13 +8,13 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
-;   FUN_0056b4eb at 0056b4fa
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005651ca at 00565202
 ;   crt_strstream.cpp_ostrstream_dtor_FUN_00564e98 at 00564ed0
+;   crt_unknown.c_FUN_0056b4eb at 0056b4fa
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_iostream.cpp_ostream_dtor_FUN_0056b538_005a4914 = 0056b538
-;   void* PTR_FUN_005a491c = 0056b4eb
+;   void* PTR_crt_unknown.c_FUN_0056b4eb_005a491c = 0056b4eb
 ;   WatcomTypeInfo g_ostreamTypeInfo_005a4960
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [EBX + 0x4],0x5a4914  ; 0056b551 | PTR_crt_iostream.cpp_ostream_dtor_FUN_0056b538_005a4914
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b558
     MOV DL,byte ptr [ESP + 0xc]         ; 0056b55b
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a491c ; 0056b55f | PTR_FUN_005a491c
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a491c ; 0056b55f | PTR_crt_unknown.c_FUN_0056b4eb_005a491c
     TEST DL,0x1                         ; 0056b567
     JZ 0x0056b592                       ; 0056b56a
         ;   XREF to: 0056b592 (CONDITIONAL_JUMP)  ; LAB_0056b592

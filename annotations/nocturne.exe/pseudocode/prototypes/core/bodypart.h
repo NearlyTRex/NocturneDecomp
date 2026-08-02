@@ -25,7 +25,7 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40
 // Address: 00415e40
-CDemonActor * CBodyPart::dtor(CDemonActor *param_1,byte param_2);
+CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0
 // Address: 00415ee0
@@ -165,7 +165,7 @@ SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_SBodyPartModel_dtor_FUN_00418100
 // Address: 00418100
-undefined4 SBodyPartModel::dtor(undefined4 param_1);
+SBodyPartModel * __cdecl SBodyPartModel::dtor(SBodyPartModel *this_ptr,uint flags);
 
 // Original: core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
 // Address: 00418110

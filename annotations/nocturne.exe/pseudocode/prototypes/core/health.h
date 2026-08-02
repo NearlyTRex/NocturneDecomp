@@ -15,9 +15,9 @@ CHealthItem * __cdecl factoryFunc(void);
 // Address: 004b41e0
 CDemonActorType * CHealthItem::getActorType(void);
 
-// Original: core_health.cpp_FUN_004b41f0
+// Original: core_health.cpp_CHealthItem_ctor_FUN_004b41f0
 // Address: 004b41f0
-int * FUN_004b41f0(CDemonActor *param_1);
+CHealthItem * __cdecl CHealthItem::ctor(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_setup_FUN_004b4250
 // Address: 004b4250
@@ -57,4 +57,4 @@ void CHealthItem::onPickup(CDemonActor *param_1,CDemonActor *param_2);
 
 // Original: core_health.cpp_CHealthItem_dtor_FUN_004b4460
 // Address: 004b4460
-CDemonActor * CHealthItem::dtor(CDemonActor *param_1,byte param_2);
+CHealthItem * __cdecl CHealthItem::dtor(CHealthItem *this_ptr,uint flags);

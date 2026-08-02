@@ -9,13 +9,12 @@
 CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_00534cd0(void)
 
 {
-  int iVar1;
-  CTempleStone *pCVar2;
+  CTempleStone *pCVar1;
   
-  iVar1 = FUN_0056497c(0x668);
-  if (iVar1 == 0) {
+  pCVar1 = (CTempleStone *)FUN_0056497c(0x668);
+  if (pCVar1 == (CTempleStone *)0x0) {
     return (CTempleStone *)0x0;
   }
-  pCVar2 = (CTempleStone *)core_stone_cpp_FUN_00534d00(iVar1);
-  return pCVar2;
+  pCVar1 = core_stone_cpp_CTempleStone_ctor_FUN_00534d00(pCVar1);
+  return pCVar1;
 }

@@ -67,13 +67,13 @@ void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_inf
 // Address: 005522d0
 CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
-// Original: core_wateract.cpp_FUN_00552340
+// Original: core_wateract.cpp_SWaterVertex_ctor_FUN_00552340
 // Address: 00552340
-undefined4 FUN_00552340(undefined4 param_1);
+SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00552350
+// Original: core_wateract.cpp_SWaterVertex_dtor_FUN_00552350
 // Address: 00552350
-undefined4 FUN_00552350(undefined4 param_1);
+SWaterVertex * __cdecl SWaterVertex::dtor(SWaterVertex *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_FUN_00552360
 // Address: 00552360

@@ -28,9 +28,7 @@ void core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(int param_1,i
   CVector3f local_78;
   CVector3f local_6c;
   CVector3f local_60;
-  float local_54;
-  float local_50;
-  float local_4c;
+  CVector3f local_54;
   CVector3f local_48;
   float local_3c;
   float local_38;
@@ -50,12 +48,12 @@ void core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0(int param_1,i
             (&local_120,(CVector3f *)&DAT_02dd1184,&local_60);
   (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_90);
   core_actor_cpp_CVector_ctor_FUN_0040e160(&local_54);
-  local_54 = local_90 + local_84;
-  local_50 = local_8c + local_80;
-  local_4c = local_88 + local_7c;
+  local_54.x = local_90 + local_84;
+  local_54.y = local_8c + local_80;
+  local_54.z = local_88 + local_7c;
   core_actor_cpp_CVector_ctor_FUN_0040e160(&local_30);
-  local_30.x = local_54 * 5.2220990168285998e-315._0_4_;
-  local_30.y = local_50 * 5.2220990168285998e-315._0_4_;
+  local_30.x = local_54.x * 5.2220990168285998e-315._0_4_;
+  local_30.y = local_54.y * 5.2220990168285998e-315._0_4_;
   local_30.z = local_88 + (float)0.40000000000000002;
   if (&local_48 != &local_30) {
     local_48.x = local_30.x;

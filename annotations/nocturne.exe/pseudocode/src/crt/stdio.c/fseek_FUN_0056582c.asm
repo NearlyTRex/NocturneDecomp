@@ -30,9 +30,9 @@
 ;   crt_io.c_tell_FUN_0056bc10
 ;   crt_stdio.c_lseek_FUN_005689c0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
+;   crt_unknown.c_FUN_00568890
 ;   crt_unknown.c_seek_within_buffer_FUN_005657d0
 ;   crt_unknown.c_seek_within_buffer_FUN_00565814
-;   FUN_00568890
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     JZ 0x00565891                       ; 00565859
         ;   XREF to: 00565891 (CONDITIONAL_JUMP)  ; LAB_00565891
     PUSH EBX                            ; 0056585b
-    CALL FUN_00568890                   ; 0056585c
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 0056585c
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 00565861
     TEST EAX,EAX                        ; 00565864
     JZ 0x005658a8                       ; 00565866

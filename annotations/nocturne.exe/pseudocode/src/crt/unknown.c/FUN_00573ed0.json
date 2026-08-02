@@ -1,0 +1,297 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 170,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 10,
+    "suspect_types": [
+      "stack_alignment_array",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 153
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00573ed0",
+    "address_range": [
+      [
+        "00573ed0",
+        "00573fc4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00573ed0",
+    "signature": "HANDLE crt_unknown_c_FUN_00573ed0(undefined4 param_1,int param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000040",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:00000042",
+      "is_variadic": false,
+      "name": "CreateEventA"
+    },
+    {
+      "addr": "EXTERNAL:00000045",
+      "is_variadic": false,
+      "name": "CreateThread"
+    },
+    {
+      "addr": "0056dc68",
+      "is_variadic": false,
+      "name": "crt_stdio.c_IntegerToString_FUN_0056dc68"
+    },
+    {
+      "addr": "0056e5ac",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056e5ac"
+    },
+    {
+      "addr": "0056e6e4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056e6e4"
+    },
+    {
+      "addr": "EXTERNAL:0000005e",
+      "is_variadic": false,
+      "name": "GetCurrentThread"
+    },
+    {
+      "addr": "EXTERNAL:0000005d",
+      "is_variadic": false,
+      "name": "GetCurrentThreadId"
+    },
+    {
+      "addr": "EXTERNAL:00000095",
+      "is_variadic": false,
+      "name": "WaitForSingleObject"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057548c",
+      "name": "PTR_CloseHandle_0057548c",
+      "type": "void*",
+      "value": "00175ad4"
+    },
+    {
+      "addr": "00575494",
+      "name": "PTR_CreateEventA_00575494",
+      "type": "void*",
+      "value": "00175af6"
+    },
+    {
+      "addr": "005754a0",
+      "name": "PTR_CreateThread_005754a0",
+      "type": "void*",
+      "value": "00175b24"
+    },
+    {
+      "addr": "00575500",
+      "name": "PTR_GetCurrentThreadId_00575500",
+      "type": "void*",
+      "value": "00175ce8"
+    },
+    {
+      "addr": "00575504",
+      "name": "PTR_GetCurrentThread_00575504",
+      "type": "void*",
+      "value": "00175cfe"
+    },
+    {
+      "addr": "005755e0",
+      "name": "PTR_WaitForSingleObject_005755e0",
+      "type": "void*",
+      "value": "00176102"
+    },
+    {
+      "addr": "005992a4",
+      "name": "DAT_005992a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005992a8",
+      "name": "DAT_005992a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005992ac",
+      "name": "DAT_005992ac",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c1ab8",
+      "name": "DAT_005c1ab8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8072289156626504,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CALLIND": 7,
+      "CBRANCH": 4,
+      "COPY": 84,
+      "INT_ADD": 30,
+      "INT_AND": 24,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 40,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 15,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 316
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00573f10",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "acStackY_1034",
+      "severity": "moderate",
+      "text": "char acStackY_1034 [4048];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c1ab8",
+      "severity": "mild",
+      "text": "if (DAT_005c1ab8 == -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_2c = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uStack_28 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_005992a8",
+      "severity": "mild",
+      "text": "(&uStack_48)[(uint)bVar2 * -2] = (&DAT_005992a8)[(uint)bVar2 * -2];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_005992ac",
+      "severity": "mild",
+      "text": "(&DAT_005992ac)[(uint)bVar2 * -8 + (uint)bVar2 * -8];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "005c2164"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

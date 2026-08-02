@@ -55,7 +55,7 @@ LAB_005737c4:
   pcVar5 = pcVar4;
   puVar7 = (byte *)0x0;
   while (iVar3 = charToDigit(*pcVar5), iVar3 < base) {
-    if ((&PTR_FUN_005c216c)[base] < puVar7) {
+    if ((&PTR_crt_unknown_c_FUN_00573fc8_005c216c)[base] < puVar7) {
       bVar2 = true;
     }
     puVar6 = (byte *)((int)puVar7 * base + iVar3);

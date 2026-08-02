@@ -119,13 +119,13 @@ CKeyFramedModel * __cdecl CKeyFramedModelInstance::getModelPtr(CKeyFramedModelIn
 // Address: 00454580
 void __cdecl CKeyFramedModelInstance::setModelName(CKeyFramedModelInstance *this_ptr,char *filename);
 
-// Original: core_dmodel.cpp_FUN_004545c0
+// Original: core_dmodel.cpp_CDemonTriangle_ctor_FUN_004545c0
 // Address: 004545c0
-undefined4 FUN_004545c0(undefined4 param_1);
+CDemonTriangle * __cdecl CDemonTriangle::ctor(CDemonTriangle *this_ptr);
 
-// Original: core_dmodel.cpp_FUN_004545d0
+// Original: core_dmodel.cpp_CDemonTriangle_dtor_FUN_004545d0
 // Address: 004545d0
-undefined4 FUN_004545d0(undefined4 param_1);
+CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);
 
 // Original: core_dmodel.cpp_FUN_004545e0
 // Address: 004545e0

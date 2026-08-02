@@ -21,7 +21,7 @@ uint shape_edittool_cpp_FUN_004703f0(uint param_1,char *param_2)
   puStack_10 = &stack0x0000000c;
   _vsprintf((char *)0x1bcbcd0,param_2,(va_list_t)&puStack_10);
   puStack_10 = (byte *)0x0;
-  shape_edittool_cpp_FUN_00474c90(&CStack_180);
+  shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&CStack_180);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("[Y]es");
   shape_edittool_cpp_CStrList_add_FUN_00473cb0(&CStack_180,pcVar2);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Yes to [A]ll");

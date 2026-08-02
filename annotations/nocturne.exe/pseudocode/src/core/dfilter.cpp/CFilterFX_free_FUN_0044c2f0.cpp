@@ -2,11 +2,11 @@
 // Address: 0044c2f0
 // Address Range: [[0044c2f0, 0044c30f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx *this_ptr)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx *this_ptr)
+void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX *this_ptr)
 
 {
   if (this_ptr->movie_data == (SMovieFrame *)0x0) {

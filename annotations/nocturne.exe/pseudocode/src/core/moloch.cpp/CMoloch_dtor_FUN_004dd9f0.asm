@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CHero *param_1,byte param_2)
+; CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CMoloch *this_ptr,uint flags)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   CHero_full_vtable g_CMolochVTable

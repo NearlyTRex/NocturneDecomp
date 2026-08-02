@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_fire_cpp_CStake_dtor_FUN_0048cc30(int param_1)
+; CStake * __cdecl core_fire_cpp_CStake_dtor_FUN_0048cc30(CStake *this_ptr,uint flags)
 ;
+; Parameters:
+; CStake *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0

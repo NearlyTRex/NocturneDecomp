@@ -9,13 +9,12 @@
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004b9ac0(void)
 
 {
-  int iVar1;
-  CHighPriestOfGardath *pCVar2;
+  CHighPriestOfGardath *pCVar1;
   
-  iVar1 = FUN_0056497c(0x1f5d4);
-  if (iVar1 == 0) {
+  pCVar1 = (CHighPriestOfGardath *)FUN_0056497c(0x1f5d4);
+  if (pCVar1 == (CHighPriestOfGardath *)0x0) {
     return (CHighPriestOfGardath *)0x0;
   }
-  pCVar2 = (CHighPriestOfGardath *)core_hpriest_cpp_FUN_004b9af0(iVar1);
-  return pCVar2;
+  pCVar1 = core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004b9af0(pCVar1);
+  return pCVar1;
 }

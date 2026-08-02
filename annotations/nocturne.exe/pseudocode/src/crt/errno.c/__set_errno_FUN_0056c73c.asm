@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[18]:
-;   FUN_00568f70 at 00569017
-;   FUN_00569fb0 at 0056a01c
-;   FUN_0056bbf0 at 0056bbfe
-;   FUN_0056f170 at 0056f17f
 ;   crt_io.c__utime_FUN_0056cb60 at 0056cb8e
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c999
 ;   crt_io.c_tell_FUN_0056bc10 at 0056bc66
 ;   crt_io.c_write_FUN_0057301c at 005730c2
 ;   crt_stdio.c_CreateFileImpl_FUN_0056b960 at 0056baf0
 ;   crt_stdio.c_flushFileBuffers_FUN_0056f1c0 at 0056f204
+;   crt_stdio.c_lseek_FUN_005689c0 at 00568a3f
+;   crt_stdio.c_rename_FUN_00566f00 at 00566f16
+;   crt_stdlib.c__fullpath_FUN_00565d00 at 00565da7
+;   crt_unknown.c_FUN_00566570 at 0056657e
 ;   ... and 8 more
 ;
 ; Referenced Globals:

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_platfrm.cpp_FUN_004f5d90
+;   core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004f5d71
     PUSH EAX                            ; 004f5d72
         ;   Label: LAB_004f5d72
-    CALL core_platfrm.cpp_FUN_004f5d90  ; 004f5d73
-        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
+    CALL core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90 ; 004f5d73
+        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; CPlatform * core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 004f5d78
     RET                                 ; 004f5d7b
 

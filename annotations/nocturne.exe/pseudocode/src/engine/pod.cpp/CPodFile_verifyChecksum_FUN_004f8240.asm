@@ -46,10 +46,10 @@
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
-;   shape_edittool.cpp_FUN_004720c0
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -242,8 +242,8 @@ section .text
     MOV EAX,ESP                         ; 004f841e
     PUSH EAX                            ; 004f8420
     XOR EDI,EDI                         ; 004f8421
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004f8423
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004f8423
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     MOV EBP,dword ptr [EBX + 0x208]     ; 004f8428
     ADD ESP,0x4                         ; 004f842e
     TEST EBP,EBP                        ; 004f8431

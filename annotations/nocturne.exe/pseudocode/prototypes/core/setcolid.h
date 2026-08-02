@@ -131,30 +131,30 @@ void __cdecl CDemonSet::commitVoxelBuffer(CDemonSet *this_ptr);
 // Address: 00511b50
 int __cdecl CDemonSet::isPointInWater(CDemonSet *this_ptr,CVector3f *point);
 
-// Original: core_setcolid.cpp_FUN_00511c60
+// Original: core_setcolid.cpp_SRaytraceState_ctor_FUN_00511c60
 // Address: 00511c60
-undefined4 FUN_00511c60(undefined4 param_1);
+SRaytraceState * __cdecl SRaytraceState::ctor(SRaytraceState *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_00511c70
+// Original: core_setcolid.cpp_SRaytraceState_dtor_FUN_00511c70
 // Address: 00511c70
-undefined4 FUN_00511c70(undefined4 param_1);
+SRaytraceState * __cdecl SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);
 
-// Original: core_setcolid.cpp_FUN_00511c80
+// Original: core_setcolid.cpp_SIntersectXZCylinder_ctor_FUN_00511c80
 // Address: 00511c80
-undefined4 FUN_00511c80(undefined4 param_1);
+SIntersectXZCylinder * __cdecl SIntersectXZCylinder::ctor(SIntersectXZCylinder *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_00511c90
+// Original: core_setcolid.cpp_SIntersectXZCylinder_dtor_FUN_00511c90
 // Address: 00511c90
-undefined4 FUN_00511c90(undefined4 param_1);
+SIntersectXZCylinder * __cdecl SIntersectXZCylinder::dtor(SIntersectXZCylinder *this_ptr,uint flags);
 
 // Original: core_setcolid.cpp_SDamageInfo_copy_FUN_00511ca0
 // Address: 00511ca0
 void __cdecl SDamageInfo::copy(SDamageInfo *this_ptr,SDamageInfo *other);
 
-// Original: core_setcolid.cpp_FUN_00511d20
+// Original: core_setcolid.cpp_SCollisionReturnInfo_ctor_FUN_00511d20
 // Address: 00511d20
-undefined4 FUN_00511d20(undefined4 param_1);
+SCollisionReturnInfo * __cdecl SCollisionReturnInfo::ctor(SCollisionReturnInfo *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_00511d30
+// Original: core_setcolid.cpp_SCollisionReturnInfo_dtor_FUN_00511d30
 // Address: 00511d30
-undefined4 FUN_00511d30(undefined4 param_1);
+SCollisionReturnInfo * __cdecl SCollisionReturnInfo::dtor(SCollisionReturnInfo *this_ptr,uint flags);

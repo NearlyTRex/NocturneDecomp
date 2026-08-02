@@ -7,7 +7,7 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setutil.cpp_FUN_00514a50 at 00514a56
+;   core_setutil.cpp_C3DSLight_ctor_FUN_00514a50 at 00514a56
 ;
 ; *****************************************************************************
 

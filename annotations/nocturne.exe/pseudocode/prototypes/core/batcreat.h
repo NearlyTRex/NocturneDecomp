@@ -15,9 +15,9 @@ CBatCreature * __cdecl factoryFunc(void);
 // Address: 004120f0
 CDemonActorType * CBatCreature::getActorType(void);
 
-// Original: core_batcreat.cpp_FUN_00412100
+// Original: core_batcreat.cpp_CBatCreature_ctor_FUN_00412100
 // Address: 00412100
-CEnemy * FUN_00412100(CEnemy *param_1);
+CBatCreature * __cdecl CBatCreature::ctor(CBatCreature *this_ptr);
 
 // Original: core_batcreat.cpp_CBatCreature_setup_FUN_00412160
 // Address: 00412160

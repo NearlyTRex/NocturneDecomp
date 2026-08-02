@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005350c0 at 00535437
+;   core_stranger.cpp_CStranger_ctor_FUN_005350c0 at 00535437
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af2b

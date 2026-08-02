@@ -131,8 +131,8 @@ section .text
     ADD ESP,0x10                        ; 004707d1
     LEA EAX,[ESP + 0x238]               ; 004707d4
     PUSH EAX                            ; 004707db
-    CALL shape_edittool.cpp_FUN_00474c90 ; 004707dc
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_00474c90 ; 004707dc
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_00474c90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004707e1
     LEA EAX,[ESP + 0x3a8]               ; 004707e4
     PUSH EAX                            ; 004707eb

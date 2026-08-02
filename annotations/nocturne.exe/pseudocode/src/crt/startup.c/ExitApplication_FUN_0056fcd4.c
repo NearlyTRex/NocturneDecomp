@@ -9,7 +9,7 @@
 void __cdecl ExitApplication(int exit_code)
 
 {
-  (*(code *)PTR_FUN_005c2054)();
+  (*(code *)PTR_crt_unknown_c_FUN_0056fcd0_005c2054)();
   if (DAT_02de4e30 == '\0') {
     ProcessExitHandlers('\x10',0xff);
   }

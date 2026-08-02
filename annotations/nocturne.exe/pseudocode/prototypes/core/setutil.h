@@ -3,13 +3,13 @@
 // Function prototypes for core/setutil.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_setutil.cpp_FUN_005143e0
+// Original: core_setutil.cpp_C3DSCamera_ctor_FUN_005143e0
 // Address: 005143e0
-void FUN_005143e0(int param_1);
+C3DSCamera * __cdecl C3DSCamera::ctor(C3DSCamera *this_ptr);
 
-// Original: core_setutil.cpp_FUN_00514410
+// Original: core_setutil.cpp_C3DSCamera_dtor_FUN_00514410
 // Address: 00514410
-undefined4 FUN_00514410(undefined4 param_1);
+C3DSCamera * __cdecl C3DSCamera::dtor(C3DSCamera *this_ptr,uint flags);
 
 // Original: core_setutil.cpp_FUN_00514430
 // Address: 00514430
@@ -35,9 +35,9 @@ void __cdecl FUN_005148b0(C3DSCamera *this_ptr,CDemonCamera *camera);
 // Address: 00514980
 int __cdecl C3DSCamera::testSphereInFrustum(C3DSCamera *this_ptr,CVector3f *world_position,float radius);
 
-// Original: core_setutil.cpp_FUN_00514a50
+// Original: core_setutil.cpp_C3DSLight_ctor_FUN_00514a50
 // Address: 00514a50
-C3DSLight * FUN_00514a50(C3DSLight *param_1);
+C3DSLight * __cdecl C3DSLight::ctor(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_load_FUN_00514a70
 // Address: 00514a70

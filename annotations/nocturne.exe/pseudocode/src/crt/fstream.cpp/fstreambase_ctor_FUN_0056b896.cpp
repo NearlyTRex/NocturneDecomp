@@ -27,7 +27,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0056b896(fstreambase 
   pvVar3 = (pfVar1->base).layout_info;
   buffer_ptr[1]._streambuf.__b_lock = &PTR_crt_fstream_cpp_fstreambase_dtor_FUN_0056b810_005a4a24;
   *(byte ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10) =
-       &PTR_FUN_005a4a2c;
+       &PTR_crt_unknown_c_FUN_0056b7f8_005a4a2c;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a
             ((streambuf *)
              ((pfVar1->base)._filebuf.__unbuffered_get_area +

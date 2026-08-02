@@ -25,7 +25,7 @@ CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_dtor_FUN_004d4540
 // Address: 004d4540
-CDemonActor * CMimic::dtor(CDemonActor *param_1,byte param_2);
+CMimic * __cdecl CMimic::dtor(CMimic *this_ptr,uint flags);
 
 // Original: core_mimic.cpp_CMimic_setup_FUN_004d4650
 // Address: 004d4650

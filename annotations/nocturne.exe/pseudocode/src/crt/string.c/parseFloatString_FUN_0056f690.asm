@@ -12,8 +12,8 @@
 ;   crt_string.c_strtod_main_FUN_0056f852 at 0056f867
 ;
 ; Called Functions:
-;   FUN_0056a320
-;   FUN_00571b2c
+;   crt_unknown.c_FUN_0056a320
+;   crt_unknown.c_FUN_00571b2c
 ;
 ; *****************************************************************************
 
@@ -219,16 +219,16 @@ section .text
     LEA EDX,[EBP + -0x28]               ; 0056f7e6
     MOV byte ptr [EBX + EBP*0x1 + -0x3c],AL ; 0056f7e9
     LEA EAX,[EBP + -0x3c]               ; 0056f7ed
-    CALL FUN_00571b2c                   ; 0056f7f0
-        ;   XREF to: 00571b2c (UNCONDITIONAL_CALL)  ; undefined FUN_00571b2c()
+    CALL crt_unknown.c_FUN_00571b2c     ; 0056f7f0
+        ;   XREF to: 00571b2c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571b2c()
     TEST ESI,ESI                        ; 0056f7f5
     JZ 0x0056f806                       ; 0056f7f7
         ;   XREF to: 0056f806 (CONDITIONAL_JUMP)  ; LAB_0056f806
     PUSH ESI                            ; 0056f7f9
     LEA EAX,[EBP + -0x28]               ; 0056f7fa
     PUSH EAX                            ; 0056f7fd
-    CALL FUN_0056a320                   ; 0056f7fe
-        ;   XREF to: 0056a320 (UNCONDITIONAL_CALL)  ; undefined FUN_0056a320()
+    CALL crt_unknown.c_FUN_0056a320     ; 0056f7fe
+        ;   XREF to: 0056a320 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056a320()
     ADD ESP,0x8                         ; 0056f803
     TEST byte ptr [EBP + -0x10],0x1     ; 0056f806
         ;   Label: LAB_0056f806

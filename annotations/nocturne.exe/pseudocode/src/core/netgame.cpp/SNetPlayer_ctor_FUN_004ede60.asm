@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_netgame_cpp_SNetPlayer_ctor_FUN_004ede60(undefined4 param_1)
+; SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_ctor_FUN_004ede60(SNetPlayer *this_ptr)
 ;
+; Parameters:
+; SNetPlayer *     Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

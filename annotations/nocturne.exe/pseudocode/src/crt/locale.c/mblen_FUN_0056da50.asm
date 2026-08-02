@@ -7,14 +7,14 @@
 ; char *           Stack[0x4]:4   mb_string
 ;
 ; XREF[8]:
-;   FUN_005710a0 at 005710bc
-;   FUN_00572d90 at 00572dc9
-;   FUN_00573db0 at 00573dc8
 ;   crt_file.c_makepath_FUN_0056626c at 00566316
 ;   crt_locale.c_mbtowc_FUN_0056f040 at 0056f09e
 ;   crt_string.c_char_in_set_FUN_00572a90 at 00572aab
 ;   crt_string.c_mbstrnbytes_FUN_0056dbb0 at 0056dbef
 ;   crt_string.c_mbstrnlen_FUN_0056db40 at 0056db5f
+;   crt_unknown.c_FUN_005710a0 at 005710bc
+;   crt_unknown.c_FUN_00572d90 at 00572dc9
+;   crt_unknown.c_FUN_00573db0 at 00573dc8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

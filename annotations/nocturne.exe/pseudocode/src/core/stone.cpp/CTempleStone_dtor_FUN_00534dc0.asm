@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_stone_cpp_CTempleStone_dtor_FUN_00534dc0(CDemonActor *param_1,byte param_2)
+; CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_00534dc0(CTempleStone *this_ptr,uint flags)
 ;
+; Parameters:
+; CTempleStone *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CTempleStoneTypeInfo_005a26b0

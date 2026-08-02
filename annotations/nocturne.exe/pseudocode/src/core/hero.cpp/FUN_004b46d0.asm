@@ -8,13 +8,13 @@
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_ctor_FUN_004101d0 at 004101d8
-;   core_colonel.cpp_FUN_00439d30 at 00439d36
+;   core_colonel.cpp_CColonel_ctor_FUN_00439d30 at 00439d36
 ;   core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 at 004956a8
-;   core_haystack.cpp_FUN_004b30a0 at 004b30a6
+;   core_haystack.cpp_CHaystack_ctor_FUN_004b30a0 at 004b30a6
 ;   core_icepick.cpp_CIcePick_ctor_FUN_004b9d20 at 004b9d26
 ;   core_moloch.cpp_CMoloch_ctor_FUN_004dd930 at 004dd938
-;   core_scat.cpp_FUN_004fbc00 at 004fbc06
-;   core_stranger.cpp_FUN_005350c0 at 005350c8
+;   core_scat.cpp_CScat_ctor_FUN_004fbc00 at 004fbc06
+;   core_stranger.cpp_CStranger_ctor_FUN_005350c0 at 005350c8
 ;   core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 at 005419b6
 ;
 ; Referenced Globals:

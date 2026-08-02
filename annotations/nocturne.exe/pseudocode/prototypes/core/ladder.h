@@ -57,4 +57,4 @@ undefined4 CLadder::getGroundType(int param_1);
 
 // Original: core_ladder.cpp_CLadder_dtor_FUN_004c47d0
 // Address: 004c47d0
-CDemonActor * CLadder::dtor(CDemonActor *param_1,byte param_2);
+CLadder * __cdecl CLadder::dtor(CLadder *this_ptr,uint flags);

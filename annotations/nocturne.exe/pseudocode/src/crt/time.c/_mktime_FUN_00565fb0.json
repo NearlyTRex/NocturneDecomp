@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "0056ced8",
-      "from_addr": "0056cf59",
-      "name": "FUN_0056ced8",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00570a30",
       "from_addr": "00570a50",
       "name": "crt_time.c__time_FUN_00570a30",
@@ -31,6 +25,12 @@
       "addr": "005709b0",
       "from_addr": "00570a15",
       "name": "crt_time.c_dos_datetime_to_time_t_FUN_005709b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ced8",
+      "from_addr": "0056cf59",
+      "name": "crt_unknown.c_FUN_0056ced8",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -117,7 +117,7 @@
       {
         "call_addr": "0056cf59",
         "call_type": "direct",
-        "caller": "FUN_0056ced8",
+        "caller": "crt_unknown.c_FUN_0056ced8",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

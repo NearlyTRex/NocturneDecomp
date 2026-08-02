@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_battery_cpp_CBattery_dtor_FUN_00414fa0(CDemonActor *param_1,byte param_2)
+; CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00414fa0(CBattery *this_ptr,uint flags)
 ;
+; Parameters:
+; CBattery *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CBatteryTypeInfo_0059a3d0

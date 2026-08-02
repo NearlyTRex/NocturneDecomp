@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_spike_cpp_CSpike_dtor_FUN_00533c90(CDemonActor *param_1,byte param_2)
+; CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_00533c90(CSpike *this_ptr,uint flags)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CSpikeTypeInfo_005a2410

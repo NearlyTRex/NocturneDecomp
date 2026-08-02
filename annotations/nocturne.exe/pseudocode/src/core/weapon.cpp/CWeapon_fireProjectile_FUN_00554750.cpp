@@ -1,12 +1,12 @@
 // Name: core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750
 // Address: 00554750
 // Address Range: [[00554750, 0055477f] [00554781, 00554903]]
-// Convention: unknown
-// Signature: void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr)
 
 #include "nocturne.h"
 
-void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)
+void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr)
 
 {
   int iVar1;
@@ -22,28 +22,27 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1)
   if (iVar1 != 0) {
     return;
   }
-  input_local_point = (CVector3f *)(*(((param_1->base).vtable._uc)->_uc).canWalk)(param_1);
+  input_local_point =
+       (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-            (&param_1->base,&local_28,input_local_point);
-  local_1c.z = (param_1->model).transformed_vertices[0x1a].x;
+            (&this_ptr->base,&local_28,input_local_point);
+  local_1c.z = this_ptr->bolt_velocity;
   local_1c.x = 0.0;
   local_1c.y = 0.0;
-  core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&param_1->base,&local_34,&local_1c);
+  core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(&this_ptr->base,&local_34,&local_1c);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&param_1->base);
-  pCVar2 = (CDemonActor *)(param_1->model).transformed_vertices[0x1c].y;
-  if (pCVar2 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCVar2);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,&this_ptr->base);
+  if (this_ptr->carried_by_actor != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,this_ptr->carried_by_actor);
   }
   core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_94);
   local_94.laser_type = 1;
-  local_94.color.r = (int)(param_1->model).transformed_vertices[0x1b].x;
-  local_94.color.g = (int)(param_1->model).transformed_vertices[0x1b].y;
-  local_94.color.b = (int)(param_1->model).transformed_vertices[0x1b].z;
+  local_94.color.r = (this_ptr->muzzle_flash_color).r;
+  local_94.color.g = (this_ptr->muzzle_flash_color).g;
+  local_94.color.b = (this_ptr->muzzle_flash_color).b;
   local_94.intensity = 1.0;
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     ((CDemonActor *)(param_1->model).transformed_vertices[0x1c].y,
-                      g_CHeroActorType_01cae0ec.name_hash);
+                     (this_ptr->carried_by_actor,g_CHeroActorType_01cae0ec.name_hash);
   local_e8.is_hero_weapon = (int)(pCVar2 != (CDemonActor *)0x0);
   local_e8.intensity = local_94.intensity;
   local_e8.beam_width = local_94.beam_width;

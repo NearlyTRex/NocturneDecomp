@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_00567560
+;   crt_unknown.c_FUN_00567560
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 00563323
     MOV dword ptr [ESP + 0x14],EBX      ; 00563324
     MOV dword ptr [ESP + 0xc],EBP       ; 00563328
-    CALL FUN_00567560                   ; 0056332c
-        ;   XREF to: 00567560 (UNCONDITIONAL_CALL)  ; undefined FUN_00567560()
+    CALL crt_unknown.c_FUN_00567560     ; 0056332c
+        ;   XREF to: 00567560 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00567560()
     ADD ESP,0xc                         ; 00563331
     MOV EDI,dword ptr [EBX + 0x10]      ; 00563334
     PUSH EDI                            ; 00563337

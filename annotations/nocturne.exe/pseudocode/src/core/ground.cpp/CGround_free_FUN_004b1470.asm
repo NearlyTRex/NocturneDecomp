@@ -7,8 +7,8 @@
 ; CGround *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_ground.cpp_CGround_dtor_FUN_004b13b0 at 004b13b6
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b13d6
-;   core_ground.cpp_FUN_004b13b0 at 004b13b6
 ;   core_terrain.cpp_CTerrain_free_FUN_005492f0 at 005492f7
 ;
 ; Called Functions:

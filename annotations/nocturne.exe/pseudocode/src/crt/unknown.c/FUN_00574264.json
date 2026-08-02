@@ -1,0 +1,316 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 262,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 16,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "register_param",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 267
+  },
+  "cross_references": [
+    {
+      "addr": "00573930",
+      "from_addr": "00573aec",
+      "name": "crt_env.c_putenv_internal_FUN_00573930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005740b0",
+      "from_addr": "005741d4",
+      "name": "crt_unknown.c_FUN_005740b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574680",
+      "from_addr": "005746ca",
+      "name": "crt_unknown.c_FUN_00574680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574264",
+    "address_range": [
+      [
+        "00574264",
+        "00574401"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00574264",
+    "signature": "undefined4 crt_unknown_c_FUN_00574264(short *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "00563cc0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_00563cc0"
+    },
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00564a70"
+    },
+    {
+      "addr": "00566170",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_00566170"
+    },
+    {
+      "addr": "00571410",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00571410"
+    },
+    {
+      "addr": "00574404",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00574404"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02de54a0",
+      "name": "DAT_02de54a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de54a8",
+      "name": "DAT_02de54a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005746ca",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_00574680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005741d4",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005740b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573aec",
+        "call_type": "direct",
+        "caller": "crt_env.c_putenv_internal_FUN_00573930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.46,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 16,
+      "BRANCH": 4,
+      "CALL": 7,
+      "CBRANCH": 14,
+      "COPY": 129,
+      "INT_2COMP": 1,
+      "INT_ADD": 63,
+      "INT_AND": 100,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 80,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 41,
+      "INT_SUB": 32,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 38,
+      "POPCOUNT": 39,
+      "RETURN": 5,
+      "STORE": 33
+    },
+    "pcode_op_count": 669
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_00574264(short *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "short *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (short *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sVar1 = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "psVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "while ((in_EAX = psVar2 + 1, sVar1 != 0 && (*in_EAX != 0x3d))) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 25,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "psVar2 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (*in_EAX == 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 31,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "bVar4 = in_EAX[1] == 0;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_00574404(param_1,bVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ptr[n] = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(byte *)(n + (int)_DAT_02de54a0",
+      "severity": "moderate",
+      "text": "*(byte *)(n + (int)_DAT_02de54a0) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

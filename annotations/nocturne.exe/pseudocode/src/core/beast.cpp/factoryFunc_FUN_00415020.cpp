@@ -9,13 +9,12 @@
 CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_00415020(void)
 
 {
-  int iVar1;
-  CBeast *pCVar2;
+  CBeast *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd24);
-  if (iVar1 == 0) {
+  pCVar1 = (CBeast *)FUN_0056497c(0xbd24);
+  if (pCVar1 == (CBeast *)0x0) {
     return (CBeast *)0x0;
   }
-  pCVar2 = (CBeast *)core_beast_cpp_FUN_00415050(iVar1);
-  return pCVar2;
+  pCVar1 = core_beast_cpp_CBeast_ctor_FUN_00415050(pCVar1);
+  return pCVar1;
 }

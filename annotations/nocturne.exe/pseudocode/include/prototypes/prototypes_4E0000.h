@@ -25,6 +25,7 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SChatHistory.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLTextureLod.h"
@@ -44,6 +45,7 @@
 #include "types/structs/SNetPacketHeader.h"
 #include "types/structs/SNetPlayer.h"
 #include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayer.h"
 #include "types/structs/SPlayerInput.h"
 #include "types/structs/SSimFrame.h"
 #include "types/unions/UNetPacket.h"
@@ -215,11 +217,11 @@ void __cdecl core_netgame_cpp_CNetGame_setMode10_FUN_004edd00(CNetGame *this_ptr
 void __cdecl core_netgame_cpp_CNetGame_setMode12_FUN_004edd10(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_setMode13_FUN_004edd20(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(CNetGame *this_ptr,SNetPlayer *other);
-undefined4 core_netgame_cpp_SPlayer_ctor_FUN_004ede30(undefined4 param_1);
-undefined4 core_netgame_cpp_FUN_004ede40(undefined4 param_1);
-undefined4 core_netgame_cpp_FUN_004ede50(undefined4 param_1);
-undefined4 core_netgame_cpp_SNetPlayer_ctor_FUN_004ede60(undefined4 param_1);
-void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other);
+SPlayer * __cdecl core_netgame_cpp_SPlayer_ctor_FUN_004ede30(SPlayer *this_ptr);
+SChatHistory * __cdecl core_netgame_cpp_SChatHistory_ctor_FUN_004ede40(SChatHistory *this_ptr);
+SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_004ede50(SChatHistory *this_ptr,uint flags);
+SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_ctor_FUN_004ede60(SNetPlayer *this_ptr);
+SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(SNetPlayer *this_ptr,SNetPlayer *other);
 void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SPlayerInput *src);
 void __cdecl core_netgame_cpp_copyNetAddr_FUN_004edf80(SNetworkAddr *dest,SNetworkAddr *src);
 int * __cdecl core_netgame_cpp_assignInt1_FUN_004edfa0(int *dest,int *src);
@@ -242,7 +244,7 @@ CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(CAl
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_004ee920(void);
 CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_004ee940(void);
-CNPC * __cdecl core_npc_cpp_FUN_004ee950(CNPC *this_ptr);
+CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_004ee950(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_setup_FUN_004ee9e0(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_time);
 void __cdecl core_npc_cpp_CNPC_renderBackground_FUN_004eece0(CNPC *this_ptr,int layer_flag);
@@ -265,7 +267,7 @@ void __cdecl core_passngr_cpp_staticInit_FUN_004ef480(void);
 CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_004ef4b0(void);
 CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(void);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *this_ptr);
-CDemonActor * core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CDemonActor *param_1,byte param_2);
+CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CPassenger *this_ptr,uint flags);
 void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1);
 void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2);
 int core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CCharacter *param_1);

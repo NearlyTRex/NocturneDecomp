@@ -24,7 +24,7 @@ _istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_0056b67d(_istream *this_ptr
        (WatcomThunkedDestructor *)&PTR_crt_iostream_cpp_istream_dtor_FUN_0056b6e8_005a49c4;
   *(byte ***)
    ((this_ptr->_ios).padding + ((this_ptr->_istream_core).layout_info)->offset_to_base + -9) =
-       &PTR_FUN_005a49cc;
+       &PTR_crt_unknown_c_FUN_0056b6d0_005a49cc;
   (this_ptr->_istream_core).__last_read_length = 0;
   pcVar1 = (this_ptr->_ios).padding +
            ((this_ptr->_istream_core).layout_info)->offset_to_base + -0x25;

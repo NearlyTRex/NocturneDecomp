@@ -19,7 +19,7 @@
 ;   crt_iostream.cpp_streambuf_destructor_FUN_00571d9f
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_unknown.c_FUN_00564494
-;   FUN_0056cd52
+;   crt_unknown.c_FUN_0056cd52
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     JNZ 0x00570484                      ; 00570479
         ;   XREF to: 00570484 (CONDITIONAL_JUMP)  ; LAB_00570484
     PUSH EBX                            ; 0057047b
-    CALL FUN_0056cd52                   ; 0057047c
-        ;   XREF to: 0056cd52 (UNCONDITIONAL_CALL)  ; undefined FUN_0056cd52()
+    CALL crt_unknown.c_FUN_0056cd52     ; 0057047c
+        ;   XREF to: 0056cd52 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056cd52()
     ADD ESP,0x4                         ; 00570481
     PUSH 0x1                            ; 00570484
         ;   Label: LAB_00570484

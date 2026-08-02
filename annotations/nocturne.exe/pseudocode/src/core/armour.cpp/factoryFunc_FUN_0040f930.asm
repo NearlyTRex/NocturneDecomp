@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_armour.cpp_FUN_0040f960
+;   core_armour.cpp_CArmour_ctor_FUN_0040f960
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0040f941
     PUSH EAX                            ; 0040f942
         ;   Label: LAB_0040f942
-    CALL core_armour.cpp_FUN_0040f960   ; 0040f943
-        ;   XREF to: 0040f960 (UNCONDITIONAL_CALL)  ; CArmour * core_armour.cpp_FUN_0040f960(CArmour * this_ptr)
+    CALL core_armour.cpp_CArmour_ctor_FUN_0040f960 ; 0040f943
+        ;   XREF to: 0040f960 (UNCONDITIONAL_CALL)  ; CArmour * core_armour.cpp_CArmour_ctor_FUN_0040f960(CArmour * this_ptr)
     ADD ESP,0x4                         ; 0040f948
     RET                                 ; 0040f94b
 

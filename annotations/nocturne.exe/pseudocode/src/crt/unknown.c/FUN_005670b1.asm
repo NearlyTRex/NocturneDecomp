@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_skeleton.cpp_CLodMeshPrecomputeEntry_ctor_FUN_005173a0 at 005173a5
-;   core_skeleton.cpp_FUN_00517350 at 00517355
+;   core_skeleton.cpp_CSkeleton_ctor_FUN_00517350 at 00517355
+;   core_skeleton.cpp_CSkeleton_dtor_FUN_005173a0 at 005173a5
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005670c1

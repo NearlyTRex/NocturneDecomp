@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 38,
+        "line": 39,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 55,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 107
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -91,7 +91,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0",
-    "signature": "CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags)"
+    "signature": "CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -215,7 +215,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 28,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 9),1);",

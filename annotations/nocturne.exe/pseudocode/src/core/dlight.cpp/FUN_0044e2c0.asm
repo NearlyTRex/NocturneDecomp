@@ -7,8 +7,8 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0 at 0044e1c5
 ;   core_dlight.cpp_CDemonLight_init_FUN_0044e1e0 at 0044e1ea
-;   core_dlight.cpp_FUN_0044e1c0 at 0044e1c5
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440

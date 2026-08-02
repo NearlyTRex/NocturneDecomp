@@ -25,8 +25,8 @@
 ;
 ; Called Functions:
 ;   crt_signal.c_raiseFPE_FUN_005716d8
+;   crt_unknown.c_FUN_00571500
 ;   ExitProcess
-;   FUN_00571500
 ;   UnhandledExceptionFilter
 ;
 ; *****************************************************************************
@@ -147,8 +147,8 @@ section .text
         ;   XREF to: 0056ee52 (CONDITIONAL_JUMP)  ; default
     MOV byte ptr [0x02de5c24],0x1       ; 0056ee13 | DAT_02de5c24
         ;   Label: LAB_0056ee13
-    CALL FUN_00571500                   ; 0056ee1a
-        ;   XREF to: 00571500 (UNCONDITIONAL_CALL)  ; void FUN_00571500()
+    CALL crt_unknown.c_FUN_00571500     ; 0056ee1a
+        ;   XREF to: 00571500 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00571500()
     PUSH EBX                            ; 0056ee1f
     CALL crt_signal.c_raiseFPE_FUN_005716d8 ; 0056ee20
         ;   XREF to: 005716d8 (UNCONDITIONAL_CALL)  ; int crt_signal.c_raiseFPE_FUN_005716d8(int fpe_code)

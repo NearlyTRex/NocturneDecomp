@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_elephant.cpp_FUN_00477710
+;   core_elephant.cpp_CElephantGun_ctor_FUN_00477710
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004776f1
     PUSH EAX                            ; 004776f2
         ;   Label: LAB_004776f2
-    CALL core_elephant.cpp_FUN_00477710 ; 004776f3
-        ;   XREF to: 00477710 (UNCONDITIONAL_CALL)  ; undefined core_elephant.cpp_FUN_00477710()
+    CALL core_elephant.cpp_CElephantGun_ctor_FUN_00477710 ; 004776f3
+        ;   XREF to: 00477710 (UNCONDITIONAL_CALL)  ; CElephantGun * core_elephant.cpp_CElephantGun_ctor_FUN_00477710(CElephantGun * this_ptr)
     ADD ESP,0x4                         ; 004776f8
     RET                                 ; 004776fb
 

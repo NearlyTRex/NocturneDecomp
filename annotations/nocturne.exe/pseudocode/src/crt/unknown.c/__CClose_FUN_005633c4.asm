@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   close_flags
 ;
 ; XREF[2]:
-;   FUN_0056deac at 0056defc
 ;   crt_stdio.c_fclose_FUN_00563380 at 005633b7
+;   crt_unknown.c_FUN_0056deac at 0056defc
 ;
 ; Called Functions:
 ;   crt_stdio.c___freefp_FUN_00568620

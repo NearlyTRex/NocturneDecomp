@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_00568ed0
+;   crt_unknown.c_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     JNZ 0x005647de                      ; 005647d3
         ;   XREF to: 005647de (CONDITIONAL_JUMP)  ; LAB_005647de
     PUSH EBX                            ; 005647d5
-    CALL FUN_00568ed0                   ; 005647d6
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_00568ed0()
+    CALL crt_unknown.c_FUN_00568ed0     ; 005647d6
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
     ADD ESP,0x4                         ; 005647db
     MOV ECX,dword ptr [EBX + 0x4]       ; 005647de
         ;   Label: LAB_005647de

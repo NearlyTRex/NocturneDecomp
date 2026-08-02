@@ -21,7 +21,7 @@ CPassenger * __cdecl CPassenger::ctor(CPassenger *this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_dtor_FUN_004ef5c0
 // Address: 004ef5c0
-CDemonActor * CPassenger::dtor(CDemonActor *param_1,byte param_2);
+CPassenger * __cdecl CPassenger::dtor(CPassenger *this_ptr,uint flags);
 
 // Original: core_passngr.cpp_CPassenger_setup_FUN_004ef6d0
 // Address: 004ef6d0

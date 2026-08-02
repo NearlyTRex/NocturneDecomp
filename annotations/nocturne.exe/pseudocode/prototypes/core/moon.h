@@ -39,13 +39,13 @@ void __cdecl CMoon::renderJoystickCalibration(CMoon *this_ptr);
 // Address: 004df170
 int __cdecl CMoon::isAnimationFirstHalf(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_004df190
+// Original: core_moon.cpp_SBat_ctor_FUN_004df190
 // Address: 004df190
-undefined4 FUN_004df190(undefined4 param_1);
+SBat * __cdecl SBat::ctor(SBat *this_ptr);
 
-// Original: core_moon.cpp_FUN_004df1a0
+// Original: core_moon.cpp_SBat_dtor_FUN_004df1a0
 // Address: 004df1a0
-undefined4 FUN_004df1a0(undefined4 param_1);
+SBat * __cdecl SBat::dtor(SBat *this_ptr,uint flags);
 
 // Original: core_moon.cpp_FUN_004df1b0
 // Address: 004df1b0

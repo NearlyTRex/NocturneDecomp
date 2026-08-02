@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00570a70 at 00570a9f
+;   crt_unknown.c_FUN_00570a70 at 00570a9f
 ;   crt_unknown.c_fclose_FUN_005634b0 at 0056351e
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   CloseHandle
 ;   crt_errno.c_setErrno_FUN_00568e80
-;   FUN_0056f278
+;   crt_unknown.c_FUN_0056f278
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH 0x0                            ; 00568adf
         ;   Label: LAB_00568adf
     PUSH EBX                            ; 00568ae1
-    CALL FUN_0056f278                   ; 00568ae2
-        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f278()
+    CALL crt_unknown.c_FUN_0056f278     ; 00568ae2
+        ;   XREF to: 0056f278 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f278()
     ADD ESP,0x8                         ; 00568ae7
     MOV EAX,EDI                         ; 00568aea
         ;   Label: LAB_00568aea

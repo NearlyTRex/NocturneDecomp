@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_stairs.cpp_CFlies_dtor_FUN_00534c10 at 00534c25
+;   core_stairs.cpp_CStairs_dtor_FUN_00534c10 at 00534c25
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080

@@ -15,6 +15,6 @@ CScat * __cdecl core_scat_cpp_factoryFunc_FUN_004fbbd0(void)
   if (pCVar1 == (CScat *)0x0) {
     return (CScat *)0x0;
   }
-  pCVar1 = core_scat_cpp_FUN_004fbc00(pCVar1);
+  pCVar1 = core_scat_cpp_CScat_ctor_FUN_004fbc00(pCVar1);
   return pCVar1;
 }

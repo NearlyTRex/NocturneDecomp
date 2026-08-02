@@ -7,9 +7,9 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_script.cpp_FUN_004fe490 at 004fe498
+;   core_script.cpp_CScript_ctor_FUN_004fe490 at 004fe498
 ;   core_sound.cpp_staticInit_FUN_0052c8c0 at 0052c8d2
-;   shape_edittool.cpp_FUN_00474c90 at 00474c95
+;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90 at 00474c95
 ;
 ; Referenced Globals:
 ;   CStrList_vtable g_CStrListVTable

@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_0056b327
+;   crt_unknown.c_FUN_0056cd9b
 ;   crt_unknown.c_ios_clear_FUN_00565e94
-;   FUN_0056cd9b
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 00565ed5
     PUSH EDI                            ; 00565ed9
     PUSH EDX                            ; 00565eda
-    CALL FUN_0056cd9b                   ; 00565edb
-        ;   XREF to: 0056cd9b (UNCONDITIONAL_CALL)  ; undefined FUN_0056cd9b()
+    CALL crt_unknown.c_FUN_0056cd9b     ; 00565edb
+        ;   XREF to: 0056cd9b (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056cd9b()
     ADD ESP,0x10                        ; 00565ee0
     TEST EAX,EAX                        ; 00565ee3
     JNZ 0x00565f03                      ; 00565ee5

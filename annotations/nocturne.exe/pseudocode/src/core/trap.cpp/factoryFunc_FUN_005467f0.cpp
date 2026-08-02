@@ -9,13 +9,12 @@
 CTrap * __cdecl core_trap_cpp_factoryFunc_FUN_005467f0(void)
 
 {
-  int iVar1;
-  CTrap *pCVar2;
+  CTrap *pCVar1;
   
-  iVar1 = FUN_0056497c(0x2d4);
-  if (iVar1 == 0) {
+  pCVar1 = (CTrap *)FUN_0056497c(0x2d4);
+  if (pCVar1 == (CTrap *)0x0) {
     return (CTrap *)0x0;
   }
-  pCVar2 = (CTrap *)core_trap_cpp_FUN_00546820(iVar1);
-  return pCVar2;
+  pCVar1 = core_trap_cpp_CTrap_ctor_FUN_00546820(pCVar1);
+  return pCVar1;
 }

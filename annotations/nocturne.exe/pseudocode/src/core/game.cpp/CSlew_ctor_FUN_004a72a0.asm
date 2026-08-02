@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_game_cpp_CSlew_ctor_FUN_004a72a0(undefined4 param_1)
+; CSlew * __cdecl core_game_cpp_CSlew_ctor_FUN_004a72a0(CSlew *this_ptr)
 ;
+; Parameters:
+; CSlew *          Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

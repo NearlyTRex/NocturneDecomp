@@ -15,9 +15,9 @@ CZombieCow * __cdecl factoryFunc(void);
 // Address: 0043bbd0
 CDemonActorType * CZombieCow::getActorType(void);
 
-// Original: core_cow.cpp_FUN_0043bbe0
+// Original: core_cow.cpp_CZombieCow_ctor_FUN_0043bbe0
 // Address: 0043bbe0
-CEnemy * FUN_0043bbe0(CEnemy *param_1);
+CZombieCow * __cdecl CZombieCow::ctor(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_setup_FUN_0043bc50
 // Address: 0043bc50

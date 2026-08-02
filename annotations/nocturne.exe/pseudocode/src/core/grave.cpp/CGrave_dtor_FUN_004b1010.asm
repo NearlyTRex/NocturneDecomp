@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_grave_cpp_CGrave_dtor_FUN_004b1010(CDemonActor *param_1,byte param_2)
+; CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004b1010(CGrave *this_ptr,uint flags)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CGraveTypeInfo_0059e6b0

@@ -1,0 +1,376 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 270,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 22,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "005671e8",
+      "from_addr": "005671ed",
+      "name": "crt_io.c_register_handler_wrapper_FUN_005671e8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e1a0",
+      "from_addr": "0056e1ba",
+      "name": "crt_unknown.c_FUN_0056e1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e474",
+      "from_addr": "0056e479",
+      "name": "crt_unknown.c_FUN_0056e474",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e010",
+    "address_range": [
+      [
+        "0056e010",
+        "0056e09a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056e010",
+    "signature": "int crt_unknown_c_FUN_0056e010(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00564a70"
+    },
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1af0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1af4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1f54",
+      "name": "DAT_005c1f54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1f58",
+      "name": "DAT_005c1f58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0056e1ba",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056e1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056e1dc",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056e1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056e1fe",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056e1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005671ed",
+        "call_type": "direct",
+        "caller": "crt_io.c_register_handler_wrapper_FUN_005671e8",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056e479",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056e474",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.863636363636363,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CALLIND": 3,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 14,
+      "INT_AND": 53,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 19,
+      "INT_SUB": 12,
+      "INT_XOR": 4,
+      "LOAD": 7,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 258
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_0056e010(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "if (0 < DAT_005c1f58) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)DAT_005c1f54",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)DAT_005c1f54 + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "if (*(int *)((int)DAT_005c1f54 + iVar1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)DAT_005c1f54",
+      "severity": "moderate",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar1) = param_1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar1) = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar1) = param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "} while (iVar1 < DAT_005c1f58 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "DAT_005c1f54 = realloc(DAT_005c1f54,(DAT_005c1f58 + 1) * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "DAT_005c1f54 = realloc(DAT_005c1f54,(DAT_005c1f58 + 1) * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "DAT_005c1f54 = realloc(DAT_005c1f54,(DAT_005c1f58 + 1) * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "iVar2 = DAT_005c1f58 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "DAT_005c1f58 = DAT_005c1f58 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "DAT_005c1f58 = DAT_005c1f58 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)DAT_005c1f54",
+      "severity": "moderate",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar2) = param_1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar2) = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "*(int *)((int)DAT_005c1f54 + iVar2) = param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c1f58",
+      "severity": "mild",
+      "text": "return DAT_005c1f58 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

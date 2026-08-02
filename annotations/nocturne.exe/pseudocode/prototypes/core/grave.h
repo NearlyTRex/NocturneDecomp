@@ -53,4 +53,4 @@ undefined4 CGrave::getCollisionType(void);
 
 // Original: core_grave.cpp_CGrave_dtor_FUN_004b1010
 // Address: 004b1010
-CDemonActor * CGrave::dtor(CDemonActor *param_1,byte param_2);
+CGrave * __cdecl CGrave::dtor(CGrave *this_ptr,uint flags);

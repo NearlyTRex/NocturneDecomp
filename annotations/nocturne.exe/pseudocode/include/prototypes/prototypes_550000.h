@@ -10,6 +10,7 @@
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CLadder.h"
 #include "types/classes/CLocation.h"
@@ -34,6 +35,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SWaterVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x550000
@@ -49,7 +51,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005506c0(CCryptVess
 void __cdecl core_water_cpp_staticInit_FUN_00550730(void);
 float __cdecl core_water_cpp_calculateWaveHeight_FUN_00550750(int x,int y);
 CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005507a0(CWater *this_ptr);
-undefined4 core_water_cpp_CWater_dtor_FUN_005507c0(undefined4 param_1);
+CWater * __cdecl core_water_cpp_CWater_dtor_FUN_005507c0(CWater *this_ptr,uint flags);
 void __cdecl core_water_cpp_CWater_captureTextures_FUN_005507d0(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_process_FUN_00550860(CWater *this_ptr);
@@ -70,14 +72,14 @@ undefined4 core_wateract_cpp_CWaterActor_getGroundType_FUN_005520c0(void);
 float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,CVector3f *param_2,CVector3f *param_3,float *param_4);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005522a0(CWaterActor *this_ptr,SLaserInfo *laser_info);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005522d0(CWaterActor *this_ptr,uint flags);
-undefined4 core_wateract_cpp_FUN_00552340(undefined4 param_1);
-undefined4 core_wateract_cpp_FUN_00552350(undefined4 param_1);
+SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_00552340(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_dtor_FUN_00552350(SWaterVertex *this_ptr,uint flags);
 void core_wateract_cpp_FUN_00552360(void *param_1);
 void __cdecl core_waypoint_cpp_staticInit_FUN_00552380(void);
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005524a0(void);
 CDemonActorType * core_waypoint_cpp_CWayPoint_getActorType_FUN_005524c0(void);
-CWayPoint * __cdecl core_waypoint_cpp_FUN_005524d0(CWayPoint *this_ptr);
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005524d0(CWayPoint *this_ptr);
 void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1);
 undefined4 core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(void);
 void core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CTrigger *param_1);
@@ -118,18 +120,18 @@ int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDe
 void core_weapon_cpp_CWeapon_pickup_FUN_00554300(int param_1,undefined4 param_2);
 void core_weapon_cpp_CWeapon_onDropped_FUN_00554310(CCharacter *param_1,CVector3f *param_2);
 EGroundType __cdecl core_weapon_cpp_CLadder_getGroundType_FUN_005543b0(CLadder *this_ptr);
-void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CCharacter *param_1);
+void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560(CWeapon *this_ptr,int weapon_state);
 void core_weapon_cpp_CWeapon_onPickup_FUN_00554570(CDemonActor *param_1,CDemonActor *param_2);
-undefined4 * core_weapon_cpp_FUN_00554590(int param_1,undefined4 *param_2);
+CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590(CWeapon *this_ptr,CVector3f *out_point);
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr);
-bool core_weapon_cpp_FUN_00554630(int param_1);
+int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630(CWeapon *this_ptr);
 undefined4 core_weapon_cpp_FUN_00554650(void);
 void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(CWeapon *this_ptr);
-void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CCharacter *param_1);
-void core_weapon_cpp_FUN_00554780(void);
-undefined4 core_weapon_cpp_FUN_00554910(undefined4 param_1);
-undefined4 core_weapon_cpp_FUN_00554920(undefined4 param_1);
+void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_00554780(CWeapon *this_ptr);
+CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_00554910(CDemonGlobe *this_ptr);
+CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_00554920(CDemonGlobe *this_ptr,uint flags);
 void __cdecl core_weather_cpp_staticInit_FUN_00554930(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_00554960(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr);
@@ -138,7 +140,7 @@ void __cdecl core_weather_cpp_CWeather_createThunder_FUN_00554fd0(CWeather *this
 void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
-undefined4 core_weather_cpp_CWeather_dtor_FUN_005559d0(undefined4 param_1);
+CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005559d0(CWeather *this_ptr,uint flags);
 void core_weather_cpp_FUN_005559e0(void);
 void __cdecl core_werewolf_cpp_staticInit_FUN_00555a00(void);
 CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_00555a60(void);

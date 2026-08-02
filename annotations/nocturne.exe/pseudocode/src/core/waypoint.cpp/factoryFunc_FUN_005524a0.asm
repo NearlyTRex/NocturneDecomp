@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_waypoint.cpp_FUN_005524d0
+;   core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 005524b1
     PUSH EAX                            ; 005524b2
         ;   Label: LAB_005524b2
-    CALL core_waypoint.cpp_FUN_005524d0 ; 005524b3
-        ;   XREF to: 005524d0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_FUN_005524d0(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0 ; 005524b3
+        ;   XREF to: 005524d0 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0(CWayPoint * this_ptr)
     ADD ESP,0x4                         ; 005524b8
     RET                                 ; 005524bb
 

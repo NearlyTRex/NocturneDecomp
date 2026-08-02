@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx *this_ptr,char *filename)
+; void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_ptr,char *filename)
 ;
 ; Parameters:
-; CFilterFx *      Stack[0x4]:4   this_ptr
+; CFilterFX *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x114]     ; 0044c320
     PUSH ESI                            ; 0044c327
     CALL core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0 ; 0044c328
-        ;   XREF to: 0044c2f0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx * this_ptr)
+        ;   XREF to: 0044c2f0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX * this_ptr)
     ADD ESP,0x4                         ; 0044c32d
     TEST EBX,EBX                        ; 0044c330
     JZ 0x0044c431                       ; 0044c332

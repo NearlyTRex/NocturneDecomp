@@ -21,7 +21,7 @@
 ;   CDemonActor_vtable g_CConveyorVTable
 ;
 ; Called Functions:
-;   core_platfrm.cpp_FUN_004f5d90
+;   core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 0043b051
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043b052
     PUSH EDX                            ; 0043b056
-    CALL core_platfrm.cpp_FUN_004f5d90  ; 0043b057
-        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
+    CALL core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90 ; 0043b057
+        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; CPlatform * core_platfrm.cpp_CPlatform_ctor_FUN_004f5d90(CPlatform * this_ptr)
     MOV dword ptr [EAX + 0x14c],0x59b734 ; 0043b05c | g_CConveyorVTable
     MOV ESI,0x57b1d4                    ; 0043b066 | = "none"
     MOV dword ptr [EAX + 0x720],0x3f800000 ; 0043b06b

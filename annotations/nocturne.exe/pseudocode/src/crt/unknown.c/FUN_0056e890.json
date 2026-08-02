@@ -1,0 +1,286 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 168,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 13,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 111
+  },
+  "cross_references": [
+    {
+      "addr": "0056720c",
+      "from_addr": "005672f0",
+      "name": "crt_startup.c_initialize_runtime_FUN_0056720c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e890",
+    "address_range": [
+      [
+        "0056e890",
+        "0056e933"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056e890",
+    "signature": "DWORD crt_unknown_c_FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005638d0"
+    },
+    {
+      "addr": "005713e0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005713e0"
+    },
+    {
+      "addr": "EXTERNAL:00000066",
+      "is_variadic": false,
+      "name": "GetModuleFileNameA"
+    },
+    {
+      "addr": "EXTERNAL:00000067",
+      "is_variadic": false,
+      "name": "GetModuleFileNameW"
+    },
+    {
+      "addr": "EXTERNAL:0000006d",
+      "is_variadic": false,
+      "name": "GetVersion"
+    },
+    {
+      "addr": "EXTERNAL:00000078",
+      "is_variadic": false,
+      "name": "MultiByteToWideChar"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575524",
+      "name": "PTR_GetModuleFileNameA_00575524",
+      "type": "void*",
+      "value": "00175d90"
+    },
+    {
+      "addr": "00575528",
+      "name": "PTR_GetModuleFileNameW_00575528",
+      "type": "void*",
+      "value": "00175da6"
+    },
+    {
+      "addr": "00575540",
+      "name": "PTR_GetVersion_00575540",
+      "type": "void*",
+      "value": "00175e18"
+    },
+    {
+      "addr": "0057556c",
+      "name": "PTR_MultiByteToWideChar_0057556c",
+      "type": "void*",
+      "value": "00175ee0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005672f0",
+        "call_type": "direct",
+        "caller": "crt_startup.c_initialize_runtime_FUN_0056720c",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056743e",
+        "call_type": "direct",
+        "caller": "crt_startup.c_initialize_runtime_FUN_0056720c",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.614285714285714,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "CALL": 4,
+      "CALLIND": 4,
+      "CBRANCH": 4,
+      "COPY": 75,
+      "INT_ADD": 29,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 25,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 30,
+      "INT_XOR": 2,
+      "LOAD": 23,
+      "POPCOUNT": 12,
+      "RETURN": 4,
+      "STORE": 29
+    },
+    "pcode_op_count": 323
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DWORD FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DWORD FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "DWORD FUN_0056e890(HMODULE param_1,LPWSTR param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DVar1 = GetModuleFileNameW(param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DVar1 = GetModuleFileNameW(param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "DVar1 = GetModuleFileNameW(param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DVar1 = GetModuleFileNameA(param_1,lpFilename,0x208);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = MultiByteToWideChar(1,1,lpFilename,-1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = MultiByteToWideChar(1,1,lpFilename,-1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[param_3 - 1] = L'\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_2[param_3 - 1] = L'\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DVar1 = FUN_005713e0(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

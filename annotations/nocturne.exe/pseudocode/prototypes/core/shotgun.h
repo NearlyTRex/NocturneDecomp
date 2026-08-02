@@ -15,9 +15,9 @@ CShotgun * __cdecl factoryFunc(void);
 // Address: 00515d10
 CDemonActorType * CShotgun::getActorType(void);
 
-// Original: core_shotgun.cpp_FUN_00515d20
+// Original: core_shotgun.cpp_CShotgun_ctor_FUN_00515d20
 // Address: 00515d20
-CWeapon * FUN_00515d20(CWeapon *param_1);
+CShotgun * __cdecl CShotgun::ctor(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_process_FUN_00515db0
 // Address: 00515db0
@@ -41,4 +41,4 @@ void __cdecl CShotgun::fireProjectile(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_00516960
 // Address: 00516960
-CWeapon * CShotgun::dtor(CWeapon *param_1,byte param_2);
+CShotgun * __cdecl CShotgun::dtor(CShotgun *this_ptr,uint flags);

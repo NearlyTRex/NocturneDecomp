@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_anvil_cpp_CAnvil_dtor_FUN_0040f8b0(CDemonActor *param_1,byte param_2)
+; CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_0040f8b0(CAnvil *this_ptr,uint flags)
 ;
+; Parameters:
+; CAnvil *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CAnvilTypeInfo_00599770

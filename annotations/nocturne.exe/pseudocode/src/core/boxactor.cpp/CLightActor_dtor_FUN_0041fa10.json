@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,25 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 22,
-        "message": "no matching function for call to 'core_dlight_cpp_FUN_0044e1c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 22,
-        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 30,
+        "line": 31,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -80,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 37,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 75
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -119,7 +107,7 @@
     {
       "addr": "0044e1c0",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044e1c0"
+      "name": "core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0"
     },
     {
       "addr": "0056445f",
@@ -204,7 +192,15 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3ff),0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "((CDemonActor *)&pCVar2[-2].scrape_points[2].local_position.z,1);",

@@ -7,12 +7,12 @@
 ; int              Stack[0x4]:4   character
 ;
 ; XREF[8]:
-;   FUN_005684f8 at 0056850b
 ;   core_actor.cpp_getActorClassByName_FUN_0040d4d0 at 0040d51b
 ;   core_actor.cpp_matchClassTerm_FUN_0040d600 at 0040d6c2
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0 at 0040d482
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c9d1
 ;   crt_stdlib.c_charToDigit_FUN_005738c8 at 005738e3
+;   crt_unknown.c_FUN_005684f8 at 0056850b
 ;   crt_unknown.c_OpenFileAndInitialize_FUN_0056551c at 0056553b
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 at 00477628
 ;

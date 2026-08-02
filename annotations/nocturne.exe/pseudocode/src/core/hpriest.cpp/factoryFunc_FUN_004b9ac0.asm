@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_hpriest.cpp_FUN_004b9af0
+;   core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004b9af0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004b9ad1
     PUSH EAX                            ; 004b9ad2
         ;   Label: LAB_004b9ad2
-    CALL core_hpriest.cpp_FUN_004b9af0  ; 004b9ad3
-        ;   XREF to: 004b9af0 (UNCONDITIONAL_CALL)  ; undefined core_hpriest.cpp_FUN_004b9af0()
+    CALL core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004b9af0 ; 004b9ad3
+        ;   XREF to: 004b9af0 (UNCONDITIONAL_CALL)  ; CHighPriestOfGardath * core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004b9af0(CHighPriestOfGardath * this_ptr)
     ADD ESP,0x4                         ; 004b9ad8
     RET                                 ; 004b9adb
 

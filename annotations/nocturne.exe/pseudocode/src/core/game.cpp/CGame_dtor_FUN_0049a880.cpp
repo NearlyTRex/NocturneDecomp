@@ -1,13 +1,13 @@
 // Name: core_game.cpp_CGame_dtor_FUN_0049a880
 // Address: 0049a880
 // Address Range: [[0049a880, 0049a884]]
-// Convention: unknown
-// Signature: undefined4 core_game_cpp_CGame_dtor_FUN_0049a880(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CGame * __cdecl core_game_cpp_CGame_dtor_FUN_0049a880(CGame *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint core_game_cpp_CGame_dtor_FUN_0049a880(uint param_1)
+CGame * __cdecl core_game_cpp_CGame_dtor_FUN_0049a880(CGame *this_ptr,uint flags)
 
 {
-  return param_1;
+  return this_ptr;
 }

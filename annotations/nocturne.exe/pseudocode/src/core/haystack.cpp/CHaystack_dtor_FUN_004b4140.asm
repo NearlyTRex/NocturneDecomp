@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHero * core_haystack_cpp_CHaystack_dtor_FUN_004b4140(CHero *param_1,byte param_2)
+; CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004b4140(CHaystack *this_ptr,uint flags)
 ;
+; Parameters:
+; CHaystack *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CHaystackTypeInfo_0059e9d0

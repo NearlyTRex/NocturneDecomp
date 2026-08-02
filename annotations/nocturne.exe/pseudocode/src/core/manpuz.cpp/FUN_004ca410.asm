@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004c9430 at 004c9565
+;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430 at 004c9565
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004cae20

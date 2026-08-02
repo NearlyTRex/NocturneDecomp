@@ -11,7 +11,7 @@
 ;   core_moloch.cpp_CMoloch_ctor_FUN_004dd930 at 004dd946
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0 at 00519c2b
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 at 0051ad9c
-;   core_succubus.cpp_FUN_00540b40 at 00540b56
+;   core_succubus.cpp_CSuccubus_ctor_FUN_00540b40 at 00540b56
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 at 0054c2c4
 ;
 ; Referenced Globals:

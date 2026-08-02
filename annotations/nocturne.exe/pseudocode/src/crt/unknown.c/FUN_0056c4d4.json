@@ -1,0 +1,139 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 84,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
+    "suspect_types": [
+      "register_param",
+      "unnamed_param"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056c4d4",
+    "address_range": [
+      [
+        "0056c4d4",
+        "0056c51f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056c4d4",
+    "signature": "undefined4 crt_unknown_c_FUN_0056c4d4(uint param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056c416",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056c416"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.72,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 60,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_DIV": 1,
+      "INT_ADD": 14,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 143
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 10,
+        "type": "undefined1[10]"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_0056c4d4(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x7f800000) == 0x7f800000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    }
+  ]
+}

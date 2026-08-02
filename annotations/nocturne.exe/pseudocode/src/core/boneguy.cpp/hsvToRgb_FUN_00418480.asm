@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_FUN_00418630 at 004187b4
+;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 at 004187b4
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00418464 = 004184e4

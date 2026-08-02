@@ -17,12 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "00572b70",
-      "from_addr": "00572b7c",
-      "name": "FUN_00572b70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049f930",
       "from_addr": "0049fece",
       "name": "core_game.cpp_CGame_FUN_0049f930",
@@ -62,6 +56,12 @@
       "addr": "0056d608",
       "from_addr": "0056d60d",
       "name": "crt_time.c_tzset_FUN_0056d608",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572b70",
+      "from_addr": "00572b7c",
+      "name": "crt_unknown.c_FUN_00572b70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -197,7 +197,7 @@
       {
         "call_addr": "00572b7c",
         "call_type": "direct",
-        "caller": "FUN_00572b70",
+        "caller": "crt_unknown.c_FUN_00572b70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

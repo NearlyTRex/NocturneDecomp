@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,13 +52,13 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 42,
+        "line": 43,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -68,18 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 154,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_param"
+      "negative_offset"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -90,9 +89,9 @@
         "004b6742"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hiram.cpp_CHiram_dtor_FUN_004b6670",
-    "signature": "CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)"
+    "signature": "CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -164,9 +163,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -194,70 +193,29 @@
     "pcode_op_count": 318
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHiram *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * core_hiram_cpp_CHiram_dtor_FUN_004b6670(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ptr = __vec_delete(param_1,&g_CHiramTypeInfo_0059eee0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->vtable)._ub = &g_CHiramVTable._ub;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0((CPathMap *)&param_1[0x8f].standing_platform,0);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
@@ -276,19 +234,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 32,
       "match": "pCVar6[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 2) == 0) {",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {
@@ -299,7 +249,7 @@
         "vtable_addr": "0059eda4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHiram",
         "offset": 8,
         "vtable_addr": "0059eee4"
       }

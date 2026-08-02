@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x220]:1  local_220
 ;
 ; Called Functions:
+;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
-;   engine_pod.cpp_FUN_004f7a80
 ;   engine_pod.cpp_FUN_004f7ae0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
     SUB ESP,0x21c                       ; 004f9101
     MOV EAX,ESP                         ; 004f9107
     PUSH EAX                            ; 004f9109
-    CALL engine_pod.cpp_FUN_004f7a80    ; 004f910a
-        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f7a80()
+    CALL engine_pod.cpp_CPodFile_ctor_FUN_004f7a80 ; 004f910a
+        ;   XREF to: 004f7a80 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_ctor_FUN_004f7a80(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 004f910f
     MOV EDX,dword ptr [ESP + 0x228]     ; 004f9112
     PUSH EDX                            ; 004f9119

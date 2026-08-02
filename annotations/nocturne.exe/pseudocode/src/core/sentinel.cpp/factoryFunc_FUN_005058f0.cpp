@@ -9,13 +9,12 @@
 CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void)
 
 {
-  int iVar1;
-  CSentinel *pCVar2;
+  CSentinel *pCVar1;
   
-  iVar1 = FUN_0056497c(0xbd2c);
-  if (iVar1 == 0) {
+  pCVar1 = (CSentinel *)FUN_0056497c(0xbd2c);
+  if (pCVar1 == (CSentinel *)0x0) {
     return (CSentinel *)0x0;
   }
-  pCVar2 = (CSentinel *)core_sentinel_cpp_FUN_00505920(iVar1);
-  return pCVar2;
+  pCVar1 = core_sentinel_cpp_CSentinel_ctor_FUN_00505920(pCVar1);
+  return pCVar1;
 }

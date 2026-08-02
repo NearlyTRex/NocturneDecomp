@@ -15,6 +15,6 @@ CGlass * __cdecl core_glass_cpp_factoryFunc_FUN_004abb20(void)
   if (pCVar1 == (CGlass *)0x0) {
     return (CGlass *)0x0;
   }
-  pCVar1 = core_glass_cpp_FUN_004abb50(pCVar1);
+  pCVar1 = core_glass_cpp_CGlass_ctor_FUN_004abb50(pCVar1);
   return pCVar1;
 }

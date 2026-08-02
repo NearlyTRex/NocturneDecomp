@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[27]:
-;   core_armour.cpp_FUN_0040f960 at 0040f968
-;   core_batcreat.cpp_FUN_00412100 at 00412106
+;   core_armour.cpp_CArmour_ctor_FUN_0040f960 at 0040f968
+;   core_batcreat.cpp_CBatCreature_ctor_FUN_00412100 at 00412106
 ;   core_batman.cpp_CBatman_ctor_FUN_004133e0 at 004133e8
-;   core_beast.cpp_FUN_00415050 at 00415056
+;   core_beast.cpp_CBeast_ctor_FUN_00415050 at 00415056
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00415370 at 00415378
-;   core_boneguy.cpp_FUN_00418630 at 0041863b
-;   core_bride.cpp_FUN_0041fbb0 at 0041fbb6
+;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00418630 at 0041863b
+;   core_bride.cpp_CBride_ctor_FUN_0041fbb0 at 0041fbb6
 ;   core_bugs.cpp_CBugs_ctor_FUN_00421040 at 00421048
-;   core_cow.cpp_FUN_0043bbe0 at 0043bbe6
-;   core_dog.cpp_FUN_00454660 at 00454666
+;   core_cow.cpp_CZombieCow_ctor_FUN_0043bbe0 at 0043bbe6
+;   core_dog.cpp_CZombieDog_ctor_FUN_00454660 at 00454666
 ;   ... and 17 more
 ;
 ; Referenced Globals:

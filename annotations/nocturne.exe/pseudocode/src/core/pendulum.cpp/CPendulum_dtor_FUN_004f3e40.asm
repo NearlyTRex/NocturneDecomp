@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_pendulum_cpp_CPendulum_dtor_FUN_004f3e40(CDemonActor *param_1,byte param_2)
+; CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_004f3e40(CPendulum *this_ptr,uint flags)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPendulumTypeInfo_005a1320

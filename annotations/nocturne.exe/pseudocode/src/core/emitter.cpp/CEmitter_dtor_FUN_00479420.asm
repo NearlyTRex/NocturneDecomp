@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_emitter_cpp_CEmitter_dtor_FUN_00479420(CDemonActor *param_1,byte param_2)
+; CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_00479420(CEmitter *this_ptr,uint flags)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CEmitterTypeInfo_0059cd70

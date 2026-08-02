@@ -7,16 +7,16 @@
 ; ulong            Stack[0x4]:4   size
 ;
 ; XREF[49]:
-;   FUN_00568ed0 at 00568f10
-;   FUN_0056ddf0 at 0056de2b
-;   FUN_0056e890 at 0056e8c9
-;   FUN_0056e940 at 0056e95d
-;   FUN_0056e990 at 0056e9a8
-;   FUN_00571ee0 at 00571ee5
-;   FUN_005740b0 at 00574100
-;   FUN_00574264 at 005742d7
-;   FUN_00574570 at 005745a8
-;   FUN_00574680 at 005746ab
+;   cockpit_ckptutil.c_FUN_0042d180 at 0042d1e2
+;   cockpit_ckptutil.c_FUN_00430210 at 00430312
+;   cockpit_ckptutil.c_FUN_004303d0 at 004303ff
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ed04
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d2c9
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 at 004f4df2
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0 at 004f55b3
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740 at 004f577e
+;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 004400fa
+;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0 at 0044ad40
 ;   ... and 39 more
 ;
 ; Called Functions:

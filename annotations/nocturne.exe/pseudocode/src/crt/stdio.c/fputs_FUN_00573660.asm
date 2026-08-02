@@ -17,8 +17,8 @@
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_00566cc0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_00568890
-;   FUN_00568ed0
+;   crt_unknown.c_FUN_00568890
+;   crt_unknown.c_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     JNZ 0x0057368f                      ; 00573684
         ;   XREF to: 0057368f (CONDITIONAL_JUMP)  ; LAB_0057368f
     PUSH ESI                            ; 00573686
-    CALL FUN_00568ed0                   ; 00573687
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined FUN_00568ed0()
+    CALL crt_unknown.c_FUN_00568ed0     ; 00573687
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
     ADD ESP,0x4                         ; 0057368c
     MOV AH,byte ptr [ESI + 0xd]         ; 0057368f
         ;   Label: LAB_0057368f
@@ -91,8 +91,8 @@ section .text
     JNZ 0x005736f1                      ; 005736e4
         ;   XREF to: 005736f1 (CONDITIONAL_JUMP)  ; LAB_005736f1
     PUSH ESI                            ; 005736e6
-    CALL FUN_00568890                   ; 005736e7
-        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined FUN_00568890()
+    CALL crt_unknown.c_FUN_00568890     ; 005736e7
+        ;   XREF to: 00568890 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568890()
     ADD ESP,0x4                         ; 005736ec
     MOV EDI,EAX                         ; 005736ef
     TEST EDI,EDI                        ; 005736f1

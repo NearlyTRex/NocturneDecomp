@@ -7,14 +7,14 @@
 ; CParticle *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
+;   core_fire.cpp_CFireball_ctor_FUN_0048cbb0 at 0048cbb5
 ;   core_fire.cpp_CGlassParticle_ctor_FUN_0048cb00 at 0048cb05
-;   core_fire.cpp_FUN_0048c960 at 0048c965
-;   core_fire.cpp_FUN_0048c990 at 0048c995
-;   core_fire.cpp_FUN_0048c9c0 at 0048c9c5
-;   core_fire.cpp_FUN_0048cb80 at 0048cb85
-;   core_fire.cpp_FUN_0048cbb0 at 0048cbb5
-;   core_fire.cpp_FUN_0048cbe0 at 0048cbe5
-;   core_gore.cpp_FUN_004b0a30 at 004b0a35
+;   core_fire.cpp_CPopcorn_ctor_FUN_0048c990 at 0048c995
+;   core_fire.cpp_CRaindrop_ctor_FUN_0048c960 at 0048c965
+;   core_fire.cpp_CRock_ctor_FUN_0048cb80 at 0048cb85
+;   core_fire.cpp_CShell_ctor_FUN_0048c9c0 at 0048c9c5
+;   core_fire.cpp_CSpark_ctor_FUN_0048cbe0 at 0048cbe5
+;   core_gore.cpp_CBloodParticle_ctor_FUN_004b0a30 at 004b0a35
 ;
 ; Referenced Globals:
 ;   CParticle_vtable g_CParticleVTable

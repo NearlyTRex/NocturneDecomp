@@ -14,7 +14,7 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004b69f0(CHostage *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CHostage *)core_npc_cpp_FUN_004ee950(&this_ptr->base);
+  pCVar2 = (CHostage *)core_npc_cpp_CNPC_ctor_FUN_004ee950(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CHostageVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(pCVar2->base).base.model,"hickdad.dfm");

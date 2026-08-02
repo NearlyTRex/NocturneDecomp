@@ -13,7 +13,7 @@
 ;   crt_unknown.c_FUN_00566c6c at 00566c7b
 ;
 ; Called Functions:
-;   FUN_00570d50
+;   crt_unknown.c_FUN_00570d50
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     FNSAVE [ESP]                        ; 0056dca0
     FLD extended double ptr [ESP + 0x1c] ; 0056dca3
     FLD extended double ptr [ESP + 0x6c] ; 0056dca7
-    CALL FUN_00570d50                   ; 0056dcab
-        ;   XREF to: 00570d50 (UNCONDITIONAL_CALL)  ; undefined FUN_00570d50()
+    CALL crt_unknown.c_FUN_00570d50     ; 0056dcab
+        ;   XREF to: 00570d50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570d50()
     FNSTSW AX                           ; 0056dcb0
     FSTP extended double ptr [ESP + 0x1c] ; 0056dcb2
     AND AX,0xff                         ; 0056dcb6

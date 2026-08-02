@@ -33,7 +33,7 @@ uint core_lightgun_cpp_FUN_004c71a0(CCharacter *param_1)
   byte auStack_c8 [24];
   CVector3f CStack_b0;
   CVector3f aCStack_a4 [2];
-  CVector3f CStack_8c;
+  byte auStack_8c [12];
   float fStack_80;
   float fStack_7c;
   byte auStack_6c [8];
@@ -64,14 +64,14 @@ uint core_lightgun_cpp_FUN_004c71a0(CCharacter *param_1)
   auStack_6c._4_4_ = 0.0;
   fStack_64 = 0.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-            (&param_1->base,&CStack_8c,(CVector3f *)(auStack_6c + 4));
-  auStack_44._0_4_ = aCStack_a4[0].x + CStack_8c.x;
-  auStack_44._4_4_ = aCStack_a4[0].y + CStack_8c.y;
-  auStack_44._8_4_ = aCStack_a4[0].z + CStack_8c.z;
+            (&param_1->base,(CVector3f *)auStack_8c,(CVector3f *)(auStack_6c + 4));
+  auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;
+  auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;
+  auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;
   fStack_2c = (float)1.5 / (param_1->model).transformed_vertices[0x1a].x;
-  fStack_38 = CStack_8c.x * fStack_2c;
-  fStack_34 = CStack_8c.y * fStack_2c;
-  fStack_30 = CStack_8c.z * fStack_2c;
+  fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;
+  fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;
+  fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;
   CStack_50.x = aCStack_a4[0].x - fStack_38;
   CStack_50.y = aCStack_a4[0].y - fStack_34;
   CStack_50.z = aCStack_a4[0].z - fStack_30;
@@ -191,12 +191,12 @@ uint core_lightgun_cpp_FUN_004c71a0(CCharacter *param_1)
         pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                            (&this_ptr->base,(CBoundingBox3D *)auStack_c8);
         param_1 = (CCharacter *)&pCVar3->max;
-        core_actor_cpp_CVector_ctor_FUN_0040e160(&CStack_8c.z);
-        CStack_8c.z = (pCVar3->min).x + ((CVector3f *)param_1)->x;
+        core_actor_cpp_CVector_ctor_FUN_0040e160((CVector3f *)(auStack_8c + 8));
+        auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)param_1)->x;
         fStack_80 = (pCVar3->min).y + (pCVar3->max).y;
         fStack_7c = (pCVar3->min).z + (pCVar3->max).z;
         core_actor_cpp_CVector_ctor_FUN_0040e160(&local_60);
-        local_60.x = CStack_8c.z * 0.5f;
+        local_60.x = (float)auStack_8c._8_4_ * 0.5f;
         local_60.y = fStack_80 * 0.5f;
         local_60.z = fStack_7c * 0.5f;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240

@@ -16,7 +16,7 @@
 ;   crt_stdio.c_sscanf_FUN_00566b5c at 00566b74
 ;
 ; Called Functions:
-;   FUN_00567560
+;   crt_unknown.c_FUN_00567560
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 00566b45
     MOV dword ptr [ESP + 0xc],EDX       ; 00566b46
     MOV dword ptr [ESP + 0x10],EBX      ; 00566b4a
-    CALL FUN_00567560                   ; 00566b4e
-        ;   XREF to: 00567560 (UNCONDITIONAL_CALL)  ; undefined FUN_00567560()
+    CALL crt_unknown.c_FUN_00567560     ; 00566b4e
+        ;   XREF to: 00567560 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00567560()
     ADD ESP,0xc                         ; 00566b53
     ADD ESP,0x14                        ; 00566b56
     POP ESI                             ; 00566b59

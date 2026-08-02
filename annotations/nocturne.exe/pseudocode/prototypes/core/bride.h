@@ -15,9 +15,9 @@ CBride * __cdecl factoryFunc(void);
 // Address: 0041fba0
 CDemonActorType * CBride::getActorType(void);
 
-// Original: core_bride.cpp_FUN_0041fbb0
+// Original: core_bride.cpp_CBride_ctor_FUN_0041fbb0
 // Address: 0041fbb0
-CBride * __cdecl FUN_0041fbb0(CBride *this_ptr);
+CBride * __cdecl CBride::ctor(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_setup_FUN_0041fc20
 // Address: 0041fc20

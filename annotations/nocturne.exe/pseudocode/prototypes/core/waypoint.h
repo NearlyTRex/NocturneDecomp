@@ -19,9 +19,9 @@ CWayPoint * __cdecl factoryFunc(void);
 // Address: 005524c0
 CDemonActorType * CWayPoint::getActorType(void);
 
-// Original: core_waypoint.cpp_FUN_005524d0
+// Original: core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0
 // Address: 005524d0
-CWayPoint * __cdecl FUN_005524d0(CWayPoint *this_ptr);
+CWayPoint * __cdecl CWayPoint::ctor(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWaypoint_setup_FUN_00552510
 // Address: 00552510

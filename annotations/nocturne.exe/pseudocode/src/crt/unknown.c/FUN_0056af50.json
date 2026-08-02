@@ -1,0 +1,134 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 84,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "undefined_data",
+      "undefined_type"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "00564670",
+      "from_addr": "005646ce",
+      "name": "crt_unknown.c_FillInputBuffer_FUN_00564670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056af50",
+    "address_range": [
+      [
+        "0056af50",
+        "0056af75"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0056af50",
+    "signature": "int crt_unknown_c_FUN_0056af50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056fb98",
+      "is_variadic": false,
+      "name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98"
+    },
+    {
+      "addr": "0056fc30",
+      "is_variadic": false,
+      "name": "crt_stdio.c_WriteConsoleChar_FUN_0056fc30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1cf8",
+      "name": "DAT_005c1cf8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.75,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 4,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 60
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 7,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005c1cf8",
+      "severity": "mild",
+      "text": "iVar1 = DAT_005c1cf8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "character = CONCAT31(extraout_var,uVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 12,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "character = CONCAT31(extraout_var,uVar2);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

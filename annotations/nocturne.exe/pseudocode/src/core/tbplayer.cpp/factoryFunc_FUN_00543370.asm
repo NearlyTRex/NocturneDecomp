@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_tbplayer.cpp_FUN_005433a0
+;   core_tbplayer.cpp_CDrummer_ctor_FUN_005433a0
 ;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00543381
     PUSH EAX                            ; 00543382
         ;   Label: LAB_00543382
-    CALL core_tbplayer.cpp_FUN_005433a0 ; 00543383
-        ;   XREF to: 005433a0 (UNCONDITIONAL_CALL)  ; CDrummer * core_tbplayer.cpp_FUN_005433a0(CDrummer * this_ptr)
+    CALL core_tbplayer.cpp_CDrummer_ctor_FUN_005433a0 ; 00543383
+        ;   XREF to: 005433a0 (UNCONDITIONAL_CALL)  ; CDrummer * core_tbplayer.cpp_CDrummer_ctor_FUN_005433a0(CDrummer * this_ptr)
     ADD ESP,0x4                         ; 00543388
     RET                                 ; 0054338b
 

@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
@@ -64,7 +64,7 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 35,
+        "line": 36,
         "message": "use of undeclared identifier 'FUN_00564494'"
       }
     ],
@@ -74,18 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 157,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 12,
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_param"
+      "negative_offset"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -96,9 +95,9 @@
         "00415edb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40",
-    "signature": "CDemonActor * core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CDemonActor *param_1,byte param_2)"
+    "signature": "CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CBodyPart *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -160,9 +159,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -190,78 +189,29 @@
     "pcode_op_count": 231
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CDemonActor *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ptr = __vec_delete(param_1,&g_CBodyPartTypeInfo_0059a860);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->vtable)._ub = &g_CBodyPartVTable;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(param_1,0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_0041a6c0((CBox *)&param_1[9].platform_position_delta.y,0);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
@@ -280,19 +230,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 25,
       "match": "pSVar3[-2].",
       "severity": "mild",
       "text": "((CDemonActor *)(pSVar3[-2].model.model_name + 0x10),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 2) == 0) {",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

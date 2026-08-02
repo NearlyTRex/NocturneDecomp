@@ -25,4 +25,4 @@ void __cdecl CSpotView::clampValues(CSpotView *this_ptr);
 
 // Original: shape_spotview.cpp_CSpotView_dtor_FUN_00534740
 // Address: 00534740
-undefined4 CSpotView::dtor(undefined4 param_1);
+CSpotView * __cdecl CSpotView::dtor(CSpotView *this_ptr,uint flags);

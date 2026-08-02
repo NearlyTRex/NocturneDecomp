@@ -225,23 +225,23 @@ void __cdecl CNetGame::swapPlayerData(CNetGame *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_004ede30
 // Address: 004ede30
-undefined4 SPlayer::ctor(undefined4 param_1);
+SPlayer * __cdecl SPlayer::ctor(SPlayer *this_ptr);
 
-// Original: core_netgame.cpp_FUN_004ede40
+// Original: core_netgame.cpp_SChatHistory_ctor_FUN_004ede40
 // Address: 004ede40
-undefined4 FUN_004ede40(undefined4 param_1);
+SChatHistory * __cdecl SChatHistory::ctor(SChatHistory *this_ptr);
 
-// Original: core_netgame.cpp_FUN_004ede50
+// Original: core_netgame.cpp_SChatHistory_dtor_FUN_004ede50
 // Address: 004ede50
-undefined4 FUN_004ede50(undefined4 param_1);
+SChatHistory * __cdecl SChatHistory::dtor(SChatHistory *this_ptr,uint flags);
 
 // Original: core_netgame.cpp_SNetPlayer_ctor_FUN_004ede60
 // Address: 004ede60
-undefined4 SNetPlayer::ctor(undefined4 param_1);
+SNetPlayer * __cdecl SNetPlayer::ctor(SNetPlayer *this_ptr);
 
 // Original: core_netgame.cpp_SNetPlayer_copy_FUN_004ede70
 // Address: 004ede70
-void __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
+SNetPlayer * __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_copyPlayerInput_FUN_004edf30
 // Address: 004edf30

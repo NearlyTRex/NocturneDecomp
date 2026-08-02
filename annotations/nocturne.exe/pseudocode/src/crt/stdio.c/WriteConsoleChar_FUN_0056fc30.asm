@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
-;   FUN_0056af50 at 0056af69
+;   crt_unknown.c_FUN_0056af50 at 0056af69
 ;
 ; Referenced Globals:
 ;   void* PTR_WriteConsoleA_005755e8 = 0017612e
@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   FUN_005714ec
+;   crt_unknown.c_FUN_005714ec
 ;   WriteConsoleA
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_0056fc5e
     CALL dword ptr [0x005c1ac0]         ; 0056fc60 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     ADD ESP,0x4                         ; 0056fc66
-    CALL FUN_005714ec                   ; 0056fc69
-        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE FUN_005714ec()
+    CALL crt_unknown.c_FUN_005714ec     ; 0056fc69
+        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_FUN_005714ec()
     PUSH 0x0                            ; 0056fc6e
     LEA EDX,[ESP + 0x4]                 ; 0056fc70
     PUSH EDX                            ; 0056fc74

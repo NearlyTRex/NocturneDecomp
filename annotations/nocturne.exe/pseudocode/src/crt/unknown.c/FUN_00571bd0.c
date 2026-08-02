@@ -1,0 +1,16 @@
+// Name: crt_unknown.c_FUN_00571bd0
+// Address: 00571bd0
+// Address Range: [[00571bd0, 00571bdb]]
+// Convention: unknown
+// Signature: int crt_unknown_c_FUN_00571bd0(void)
+
+#include "nocturne.h"
+
+int FUN_00571bd0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
+  return iVar1 + 0xc6;
+}

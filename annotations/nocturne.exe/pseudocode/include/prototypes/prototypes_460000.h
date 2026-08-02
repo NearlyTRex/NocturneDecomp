@@ -253,7 +253,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(CInputString *thi
 void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(CInputString *this_ptr,int x_pos,int y_pos);
 undefined4 shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byte param_4,int param_5);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(CEditorTools *this_ptr);
-CEditorTools * shape_edittool_cpp_FUN_0046fa20(CEditorTools *param_1);
+CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0046fa20(CEditorTools *this_ptr,uint flags);
 void shape_edittool_cpp_FUN_0046fa80(void);
 void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2);
 void shape_edittool_cpp_FUN_0046fcd0(CEditorTools *param_1,char *param_2);

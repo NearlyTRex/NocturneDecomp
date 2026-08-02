@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(int param_1)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0

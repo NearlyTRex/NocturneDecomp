@@ -15,13 +15,13 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 85,
         "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 66,
+        "column": 80,
         "line": 269,
         "message": "unknown type name 'code'"
       },
@@ -52,68 +52,62 @@
       {
         "category": "other",
         "column": 64,
-        "line": 107,
+        "line": 109,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 16,
+        "line": 17,
         "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 16,
+        "line": 17,
         "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 20,
+        "column": 26,
+        "line": 21,
         "message": "use of undeclared identifier 'FUN_0056497c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 23,
-        "message": "no matching function for call to 'engine_pod_cpp_FUN_004f7a80'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 23,
-        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 27,
+        "line": 28,
         "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 27,
+        "line": 28,
         "message": "assigning to 'int' from incompatible type 'const char[18]'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 31,
+        "line": 32,
         "message": "no matching function for call to 'engine_pod_cpp_FUN_004f7ae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 36,
+        "line": 37,
         "message": "use of undeclared identifier 'PTR_01cc4800'; did you mean 'INT_01cc4804'?"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 36,
+        "line": 37,
         "message": "assigning to 'int' from incompatible type 'const char[18]'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 39,
+        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -122,17 +116,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 186,
+    "complexity_score": 202,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 16,
     "suspect_types": [
+      "pointer_truncation",
       "unnamed_param"
     ],
-    "total_lines": 112
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -161,7 +156,7 @@
     {
       "addr": "004f7a80",
       "is_variadic": false,
-      "name": "engine_pod.cpp_FUN_004f7a80"
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_004f7a80"
     },
     {
       "addr": "004f7ae0",
@@ -281,7 +276,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "if (99 < *param_1) {",
@@ -289,18 +284,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[*param_1 + 1] = iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 + 1] = iVar2;",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
       "type": "unnamed_param"
     },
     {
@@ -308,12 +295,12 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[*param_1 + 1] == 0) {",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[*param_1 + 1] == 0) {",
@@ -321,7 +308,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[*param_1 + 1] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = engine_pod_cpp_FUN_004f7ae0(param_1[*param_1 + 1],param_2);",
@@ -329,7 +324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = engine_pod_cpp_FUN_004f7ae0(param_1[*param_1 + 1],param_2);",
@@ -337,7 +332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = engine_pod_cpp_FUN_004f7ae0(param_1[*param_1 + 1],param_2);",
@@ -345,7 +340,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
@@ -353,7 +348,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
@@ -361,7 +356,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"Can't mount %s\",param_2);",
@@ -369,7 +364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
@@ -377,11 +372,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {
@@ -392,7 +395,7 @@
         "vtable_addr": "005a1484"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonPod",
         "offset": 12,
         "vtable_addr": "005a14f4"
       }
